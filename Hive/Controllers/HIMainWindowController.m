@@ -6,6 +6,7 @@
 //  Copyright (c) 2013 Hive Developers. All rights reserved.
 //
 
+#import <QuartzCore/QuartzCore.h>
 #import "BCClient.h"
 #import "HIAppDelegate.h"
 #import "HIApplicationsViewController.h"
@@ -18,7 +19,9 @@
 #import "HIViewController.h"
 #import "NSImage+NPEffects.h"
 #import "HIProfileViewController.h"
-static CGFloat TitleBarHeight = 35.0;
+
+static const CGFloat TitleBarHeight = 35.0;
+static const NSTimeInterval SlideAnimationDuration = 0.3;
 
 
 @interface HIMainWindowController ()
@@ -102,9 +105,6 @@ static CGFloat TitleBarHeight = 35.0;
     selectedController.view.autoresizingMask = NSViewWidthSizable | NSViewHeightSizable;
     selectedController.view.frame = _contentView.bounds;
 
-    
-    
-
     [selectedController viewWasSelectedFromTabBar];
 
     if (prevViewController) {
@@ -135,21 +135,34 @@ static CGFloat TitleBarHeight = 35.0;
     newTitleView.frame = f;
     newTitleView.alphaValue = 0.0;
     [((INAppStoreWindow *)self.window).titleBarView addSubview:newTitleView];
-    
+
     [NSAnimationContext runAnimationGroup:^(NSAnimationContext *context) {
-        context.duration = 0.3;
+        context.duration = SlideAnimationDuration;
+
         [[_titleView animator] setAlphaValue:0.0];
         [[newTitleView animator] setAlphaValue:1.0];
-        NSRect frame = newController.view.frame;
-        frame.origin.x = 0;
-        [newController.view.animator setFrame:frame];
-
-        frame = oldController.view.frame;
-        frame.origin.x = 0 - frame.size.width / 3.0;
-        [oldController.view.animator setFrame:frame];
     } completionHandler:^{
         [_titleView removeFromSuperview];
         _titleView = newTitleView;
+    }];
+
+    [NSAnimationContext runAnimationGroup:^(NSAnimationContext *context) {
+        context.duration = SlideAnimationDuration;
+        context.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseOut];
+
+        NSRect frame = newController.view.frame;
+        frame.origin.x = 0;
+        [newController.view.animator setFrame:frame];
+    } completionHandler:^{}];
+
+    [NSAnimationContext runAnimationGroup:^(NSAnimationContext *context) {
+        context.duration = SlideAnimationDuration;
+        context.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseIn];
+
+        NSRect frame = oldController.view.frame;
+        frame.origin.x = 0 - frame.size.width / 3.0;
+        [oldController.view.animator setFrame:frame];
+    } completionHandler:^{
         [oldController.view removeFromSuperview];
     }];
 }
