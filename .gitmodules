@@ -1,0 +1,6 @@
+[submodule "BitcoinKit"]
+	path = BitcoinKit
+	url = git@github.com:grabhive/BitcoinKit.git
+[submodule "Tor.framework"]
+	path = Tor.framework
+	url = git@github.com:grabhive/Tor.framework.git

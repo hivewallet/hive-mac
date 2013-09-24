@@ -20,6 +20,8 @@
 		581711DE17D0FEDD00DE775A /* HIProfileViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 581711DC17D0FEDD00DE775A /* HIProfileViewController.xib */; };
 		581818E217F1A8A800D00770 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 581818E117F1A8A800D00770 /* README.md */; };
 		582C699B17D8BAC700442294 /* HICurrencyAmountFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = 582C699A17D8BAC700442294 /* HICurrencyAmountFormatter.m */; };
+		5884A00F17F1B63D004A31FA /* Tor.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5884A00C17F1B5FF004A31FA /* Tor.framework */; };
+		5884A01017F1B646004A31FA /* Tor.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 5884A00C17F1B5FF004A31FA /* Tor.framework */; };
 		588EFB2E17D8D2970085F6E6 /* HIProfileTabView.m in Sources */ = {isa = PBXBuildFile; fileRef = 588EFB2D17D8D2970085F6E6 /* HIProfileTabView.m */; };
 		58A03AFC17D9C91600ADD5E5 /* HIProfileTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 58A03AFB17D9C91600ADD5E5 /* HIProfileTabBarController.m */; };
 		58A03B0D17D9DC4100ADD5E5 /* HIButtonWithSpinner.m in Sources */ = {isa = PBXBuildFile; fileRef = 58A03B0C17D9DC4100ADD5E5 /* HIButtonWithSpinner.m */; };
@@ -80,8 +82,6 @@
 		D948163117DF1AB3006A0312 /* icon-transactions-plus.pdf in Resources */ = {isa = PBXBuildFile; fileRef = D948161517DF1AB3006A0312 /* icon-transactions-plus.pdf */; };
 		D948163217DF1AB3006A0312 /* icon-your-profile__active.pdf in Resources */ = {isa = PBXBuildFile; fileRef = D948161617DF1AB3006A0312 /* icon-your-profile__active.pdf */; };
 		D948163317DF1AB3006A0312 /* icon-your-profile__inactive.pdf in Resources */ = {isa = PBXBuildFile; fileRef = D948161717DF1AB3006A0312 /* icon-your-profile__inactive.pdf */; };
-		D948163617DF51B6006A0312 /* Tor.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = D91FEAA217A01DAA001B37D8 /* Tor.framework */; };
-		D948163717DF51D3006A0312 /* Tor.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D91FEAA217A01DAA001B37D8 /* Tor.framework */; };
 		D948163917DF555A006A0312 /* avatar-empty.pdf in Resources */ = {isa = PBXBuildFile; fileRef = D948163817DF5557006A0312 /* avatar-empty.pdf */; };
 		D948164417E0A807006A0312 /* NSColor+NativeColor.m in Sources */ = {isa = PBXBuildFile; fileRef = D948164317E0A807006A0312 /* NSColor+NativeColor.m */; };
 		D958A8B817E8547A00CED98C /* HIFlippedView.m in Sources */ = {isa = PBXBuildFile; fileRef = D958A8B717E8547A00CED98C /* HIFlippedView.m */; };
@@ -115,6 +115,20 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		5884A00B17F1B5FF004A31FA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5884A00417F1B5FE004A31FA /* Tor.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = D9CEAE4A1786E5E4005F8DF0;
+			remoteInfo = Tor;
+		};
+		5884A00D17F1B5FF004A31FA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5884A00417F1B5FE004A31FA /* Tor.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = D9CEAE621786E5E4005F8DF0;
+			remoteInfo = TorTests;
+		};
 		D901F4F417B272CE0071780D /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D91FE8071793FEFC001B37D8 /* BitcoinKit.xcodeproj */;
@@ -143,27 +157,6 @@
 			remoteGlobalIDString = D91FE6FD178EB8C5001B37D8;
 			remoteInfo = bitcoin;
 		};
-		D91FEAA117A01DAA001B37D8 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = D91FEA9C17A01DAA001B37D8 /* Tor.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = D9CEAE4A1786E5E4005F8DF0;
-			remoteInfo = Tor;
-		};
-		D91FEAA317A01DAA001B37D8 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = D91FEA9C17A01DAA001B37D8 /* Tor.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = D9CEAE621786E5E4005F8DF0;
-			remoteInfo = TorTests;
-		};
-		D948163417DF51AB006A0312 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = D91FEA9C17A01DAA001B37D8 /* Tor.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = D9CEAE491786E5E4005F8DF0;
-			remoteInfo = Tor;
-		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -173,7 +166,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				D948163617DF51B6006A0312 /* Tor.framework in CopyFiles */,
+				5884A01017F1B646004A31FA /* Tor.framework in CopyFiles */,
 				D901F4F817B272E60071780D /* BitcoinJKit.framework in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 1;
@@ -202,6 +195,7 @@
 		581EFBCB17DA441B00E2738D /* HITransactionCellView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HITransactionCellView.m; sourceTree = "<group>"; };
 		582C699917D8BAC700442294 /* HICurrencyAmountFormatter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HICurrencyAmountFormatter.h; sourceTree = "<group>"; };
 		582C699A17D8BAC700442294 /* HICurrencyAmountFormatter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HICurrencyAmountFormatter.m; sourceTree = "<group>"; };
+		5884A00417F1B5FE004A31FA /* Tor.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Tor.xcodeproj; path = Tor.framework/Tor.xcodeproj; sourceTree = "<group>"; };
 		588EFB2C17D8D2970085F6E6 /* HIProfileTabView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HIProfileTabView.h; sourceTree = "<group>"; };
 		588EFB2D17D8D2970085F6E6 /* HIProfileTabView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HIProfileTabView.m; sourceTree = "<group>"; };
 		58A03AFA17D9C91600ADD5E5 /* HIProfileTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HIProfileTabBarController.h; path = Controllers/HIProfileTabBarController.h; sourceTree = "<group>"; };
@@ -232,7 +226,6 @@
 		D91FE826179887C4001B37D8 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		D91FE8281798911F001B37D8 /* HIApplicationURLProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HIApplicationURLProtocol.h; path = Controllers/HIApplicationURLProtocol.h; sourceTree = "<group>"; };
 		D91FE82917989120001B37D8 /* HIApplicationURLProtocol.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HIApplicationURLProtocol.m; path = Controllers/HIApplicationURLProtocol.m; sourceTree = "<group>"; };
-		D91FEA9C17A01DAA001B37D8 /* Tor.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Tor.xcodeproj; path = Tor/Tor.xcodeproj; sourceTree = "<group>"; };
 		D9235371177C4222003533DF /* HIApplication.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HIApplication.h; path = Database/HIApplication.h; sourceTree = "<group>"; };
 		D9235372177C4222003533DF /* HIApplication.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HIApplication.m; path = Database/HIApplication.m; sourceTree = "<group>"; };
 		D923537C177C55F6003533DF /* HIApplicationRuntimeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HIApplicationRuntimeViewController.h; path = Controllers/HIApplicationRuntimeViewController.h; sourceTree = "<group>"; };
@@ -347,7 +340,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D948163717DF51D3006A0312 /* Tor.framework in Frameworks */,
+				5884A00F17F1B63D004A31FA /* Tor.framework in Frameworks */,
 				D91FE827179887C5001B37D8 /* libz.dylib in Frameworks */,
 				D901F4F917B273440071780D /* BitcoinJKit.framework in Frameworks */,
 				D9235388177C6779003533DF /* JavaScriptCore.framework in Frameworks */,
@@ -381,6 +374,15 @@
 				582C699A17D8BAC700442294 /* HICurrencyAmountFormatter.m */,
 			);
 			path = Formatters;
+			sourceTree = "<group>";
+		};
+		5884A00517F1B5FE004A31FA /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				5884A00C17F1B5FF004A31FA /* Tor.framework */,
+				5884A00E17F1B5FF004A31FA /* TorTests.octest */,
+			);
+			name = Products;
 			sourceTree = "<group>";
 		};
 		58A2A7E817D8783D0001464A /* HISendBitcoinsViewController */ = {
@@ -417,15 +419,6 @@
 				D91FE82217988743001B37D8 /* NPZipHeader.m */,
 			);
 			path = NPZip;
-			sourceTree = "<group>";
-		};
-		D91FEA9D17A01DAA001B37D8 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				D91FEAA217A01DAA001B37D8 /* Tor.framework */,
-				D91FEAA417A01DAA001B37D8 /* TorTests.octest */,
-			);
-			name = Products;
 			sourceTree = "<group>";
 		};
 		D948157E17CE10D9006A0312 /* HITransactionsViewController */ = {
@@ -553,8 +546,8 @@
 			isa = PBXGroup;
 			children = (
 				D91FE826179887C4001B37D8 /* libz.dylib */,
-				D91FEA9C17A01DAA001B37D8 /* Tor.xcodeproj */,
 				D91FE8071793FEFC001B37D8 /* BitcoinKit.xcodeproj */,
+				5884A00417F1B5FE004A31FA /* Tor.xcodeproj */,
 				D9235387177C6779003533DF /* JavaScriptCore.framework */,
 				D95929DC17742B70008B4F43 /* WebKit.framework */,
 				D97E7FCD176BB64900D2350B /* SystemConfiguration.framework */,
@@ -715,7 +708,6 @@
 			buildRules = (
 			);
 			dependencies = (
-				D948163517DF51AB006A0312 /* PBXTargetDependency */,
 				D901F4F717B272D40071780D /* PBXTargetDependency */,
 			);
 			name = Hive;
@@ -749,8 +741,8 @@
 					ProjectRef = D91FE8071793FEFC001B37D8 /* BitcoinKit.xcodeproj */;
 				},
 				{
-					ProductGroup = D91FEA9D17A01DAA001B37D8 /* Products */;
-					ProjectRef = D91FEA9C17A01DAA001B37D8 /* Tor.xcodeproj */;
+					ProductGroup = 5884A00517F1B5FE004A31FA /* Products */;
+					ProjectRef = 5884A00417F1B5FE004A31FA /* Tor.xcodeproj */;
 				},
 			);
 			projectRoot = "";
@@ -761,6 +753,20 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
+		5884A00C17F1B5FF004A31FA /* Tor.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = Tor.framework;
+			remoteRef = 5884A00B17F1B5FF004A31FA /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		5884A00E17F1B5FF004A31FA /* TorTests.octest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = TorTests.octest;
+			remoteRef = 5884A00D17F1B5FF004A31FA /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
 		D901F4F517B272CE0071780D /* BitcoinJKit.framework */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.framework;
@@ -780,20 +786,6 @@
 			fileType = "compiled.mach-o.dylib";
 			path = bitcoin.a;
 			remoteRef = D91FE80E1793FEFC001B37D8 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		D91FEAA217A01DAA001B37D8 /* Tor.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = Tor.framework;
-			remoteRef = D91FEAA117A01DAA001B37D8 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		D91FEAA417A01DAA001B37D8 /* TorTests.octest */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.cfbundle;
-			path = TorTests.octest;
-			remoteRef = D91FEAA317A01DAA001B37D8 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 /* End PBXReferenceProxy section */
@@ -948,11 +940,6 @@
 			isa = PBXTargetDependency;
 			name = BitcoinJKit;
 			targetProxy = D901F4F617B272D40071780D /* PBXContainerItemProxy */;
-		};
-		D948163517DF51AB006A0312 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = Tor;
-			targetProxy = D948163417DF51AB006A0312 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
