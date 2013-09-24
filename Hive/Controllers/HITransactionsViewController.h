@@ -12,4 +12,6 @@
 
 @property (strong) IBOutlet NSArrayController *arrayController;
 
+- (id)initWithContact:(HIContact *)contact;
+
 @end

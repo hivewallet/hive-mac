@@ -9,6 +9,7 @@
 #import "HIProfileInfoViewController.h"
 #import "HIProfileViewController.h"
 #import "HISendBitcoinsWindowController.h"
+#import "HITransactionsViewController.h"
 
 @interface HIProfileViewController () {
     HIContact *_contact;
@@ -30,7 +31,6 @@
         self.title = NSLocalizedString(@"Profile", @"Profile view title string");        
 
         _infoPanel = [[HIProfileInfoViewController alloc] initWithParent:self];
-        _panelControllers = @[_infoPanel, [[NSViewController alloc] init]];
     }
 
     return self;
@@ -42,6 +42,8 @@
     if (self) {
         _contact = contact;
         self.title = _contact.name;
+
+        _panelControllers = @[_infoPanel, [[HITransactionsViewController alloc] initWithContact:_contact]];
 
         [[NSNotificationCenter defaultCenter] addObserver:self
                                                  selector:@selector(contactHasChanged:)
@@ -89,7 +91,7 @@
         [self configureViewForOwner];
     }
 
-    [self showControllerInContentView:_panelControllers[0]];
+    [self showControllerInContentView:_infoPanel];
 }
 
 - (void)configureViewForContact

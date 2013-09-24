@@ -14,6 +14,7 @@
 #import "HITransactionsViewController.h"
 
 @interface HITransactionsViewController () {
+    HIContact *_contact;
     NSDateFormatter *_transactionDateFormatter;
     NSNumberFormatter *_amountFormatter;
     NSFont *_amountLabelFont;
@@ -23,10 +24,12 @@
 
 @implementation HITransactionsViewController
 
-- (id)init {
+- (id)init
+{
     self = [super initWithNibName:@"HITransactionsViewController" bundle:nil];
 
-    if (self) {
+    if (self)
+    {
         self.title = NSLocalizedString(@"Transactions", @"Transactions view title");
         self.iconName = @"timeline";
 
@@ -43,12 +46,29 @@
     return self;
 }
 
+- (id)initWithContact:(HIContact *)contact
+{
+    self = [self init];
+
+    if (self)
+    {
+        _contact = contact;
+    }
+
+    return self;
+}
+
 - (void) loadView
 {
     [super loadView];
 
     self.arrayController.managedObjectContext = DBM;
     self.arrayController.sortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:@"date" ascending:NO]];
+
+    if (_contact)
+    {
+        self.arrayController.fetchPredicate = [NSPredicate predicateWithFormat:@"contact = %@", _contact];
+    }
 }
 
 
