@@ -13,7 +13,7 @@
 @protocol HIProfileTabBarControllerDelegate <NSObject>
 
 @optional
-- (void)controller:(HIProfileTabBarController *)controller switchedToTabIndex:(int)index;
+- (void)controller:(HIProfileTabBarController *)controller switchedToTabIndex:(NSInteger)index;
 
 @end
 

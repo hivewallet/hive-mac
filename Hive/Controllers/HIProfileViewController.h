@@ -21,16 +21,8 @@
 @property (strong) IBOutlet NSButton *sendBtcBtn;
 @property (strong) IBOutlet HIProfileTabView *tabView;
 @property (strong) IBOutlet NSView *contentView;
-@property (strong) IBOutlet NSScrollView *profileScrollView;
-@property (strong) IBOutlet NSView *profileView;
-
-@property (strong) IBOutlet NSView *profileScrollContent;
-@property (weak) IBOutlet HITextField *profileEmailField;
-@property (weak) IBOutlet HIBox *addressBoxView;
-
 
 - (id)initWithContact:(HIContact *)aContact;
-- (IBAction) sendBitcoinsPressed:(id)sender;
-- (IBAction)editButtonClicked:(NSButton *)sender;
+- (IBAction)sendBitcoinsPressed:(id)sender;
 
 @end

@@ -88,7 +88,9 @@ static NSInteger TabBarButtonTagStart = 1000;
     NSInteger buttonId = [sender tag] - TabBarButtonTagStart;
 
     if ([_tabDelegate respondsToSelector:@selector(controller:switchedToTabIndex:)])
-        [_tabDelegate controller:self switchedToTabIndex:(int)buttonId];
+    {
+        [_tabDelegate controller:self switchedToTabIndex:buttonId];
+    }
     
     for (NSButton *button in _tabBarButtons) {
         button.state = (button == sender) ? NSOnState : NSOffState;

@@ -22,6 +22,8 @@
 		582C699B17D8BAC700442294 /* HICurrencyAmountFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = 582C699A17D8BAC700442294 /* HICurrencyAmountFormatter.m */; };
 		5884A00F17F1B63D004A31FA /* Tor.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5884A00C17F1B5FF004A31FA /* Tor.framework */; };
 		5884A01017F1B646004A31FA /* Tor.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 5884A00C17F1B5FF004A31FA /* Tor.framework */; };
+		5884A01617F1BD5B004A31FA /* HIProfileInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5884A01417F1BD5B004A31FA /* HIProfileInfoViewController.m */; };
+		5884A01717F1BD5B004A31FA /* HIProfileInfoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5884A01517F1BD5B004A31FA /* HIProfileInfoViewController.xib */; };
 		588EFB2E17D8D2970085F6E6 /* HIProfileTabView.m in Sources */ = {isa = PBXBuildFile; fileRef = 588EFB2D17D8D2970085F6E6 /* HIProfileTabView.m */; };
 		58A03AFC17D9C91600ADD5E5 /* HIProfileTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 58A03AFB17D9C91600ADD5E5 /* HIProfileTabBarController.m */; };
 		58A03B0D17D9DC4100ADD5E5 /* HIButtonWithSpinner.m in Sources */ = {isa = PBXBuildFile; fileRef = 58A03B0C17D9DC4100ADD5E5 /* HIButtonWithSpinner.m */; };
@@ -196,6 +198,9 @@
 		582C699917D8BAC700442294 /* HICurrencyAmountFormatter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HICurrencyAmountFormatter.h; sourceTree = "<group>"; };
 		582C699A17D8BAC700442294 /* HICurrencyAmountFormatter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HICurrencyAmountFormatter.m; sourceTree = "<group>"; };
 		5884A00417F1B5FE004A31FA /* Tor.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Tor.xcodeproj; path = Tor.framework/Tor.xcodeproj; sourceTree = "<group>"; };
+		5884A01317F1BD5B004A31FA /* HIProfileInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HIProfileInfoViewController.h; path = Controllers/HIProfileInfoViewController.h; sourceTree = "<group>"; };
+		5884A01417F1BD5B004A31FA /* HIProfileInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HIProfileInfoViewController.m; path = Controllers/HIProfileInfoViewController.m; sourceTree = "<group>"; };
+		5884A01517F1BD5B004A31FA /* HIProfileInfoViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = HIProfileInfoViewController.xib; path = Controllers/HIProfileInfoViewController.xib; sourceTree = "<group>"; };
 		588EFB2C17D8D2970085F6E6 /* HIProfileTabView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HIProfileTabView.h; sourceTree = "<group>"; };
 		588EFB2D17D8D2970085F6E6 /* HIProfileTabView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HIProfileTabView.m; sourceTree = "<group>"; };
 		58A03AFA17D9C91600ADD5E5 /* HIProfileTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HIProfileTabBarController.h; path = Controllers/HIProfileTabBarController.h; sourceTree = "<group>"; };
@@ -358,6 +363,9 @@
 		581711D917D0FD8F00DE775A /* HIProfileViewController */ = {
 			isa = PBXGroup;
 			children = (
+				5884A01317F1BD5B004A31FA /* HIProfileInfoViewController.h */,
+				5884A01417F1BD5B004A31FA /* HIProfileInfoViewController.m */,
+				5884A01517F1BD5B004A31FA /* HIProfileInfoViewController.xib */,
 				58A03AFA17D9C91600ADD5E5 /* HIProfileTabBarController.h */,
 				58A03AFB17D9C91600ADD5E5 /* HIProfileTabBarController.m */,
 				581711DA17D0FEDD00DE775A /* HIProfileViewController.h */,
@@ -838,6 +846,7 @@
 				5802105B17ECA40E0039BA4B /* icon-dropdown-open.pdf in Resources */,
 				58C9F41817F06D9C0041624B /* icon-transactions-btc-symbol.pdf in Resources */,
 				581818E217F1A8A800D00770 /* README.md in Resources */,
+				5884A01717F1BD5B004A31FA /* HIProfileInfoViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -930,6 +939,7 @@
 				5802106317ECCAAA0039BA4B /* HIContactAutocompleteCellView.m in Sources */,
 				5802106017ECC4F50039BA4B /* HITransactionCellView.m in Sources */,
 				D939FE9C17F076E80088F5D3 /* HICopyView.m in Sources */,
+				5884A01617F1BD5B004A31FA /* HIProfileInfoViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
