@@ -11,6 +11,7 @@
 @interface HITransactionsViewController : HIViewController
 
 @property (strong) IBOutlet NSArrayController *arrayController;
+@property (strong) IBOutlet NSTableView *tableView;
 
 - (id)initWithContact:(HIContact *)contact;
 

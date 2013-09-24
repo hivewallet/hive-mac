@@ -141,4 +141,13 @@
     return summary;
 }
 
+- (void)tableViewSelectionDidChange:(NSNotification *)notification {
+    NSInteger row = self.tableView.selectedRow;
+    if (row == -1) {
+        return;
+    }
+
+    [self.tableView deselectRow:row];
+}
+
 @end
