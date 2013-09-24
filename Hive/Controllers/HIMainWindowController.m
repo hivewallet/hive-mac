@@ -14,11 +14,12 @@
 #import "HITransactionsViewController.h"
 #import "HIMainWindowController.h"
 #import "HINavigationController.h"
+#import "HIProfileViewController.h"
 #import "HISendBitcoinsWindowController.h"
 #import "HISidebarController.h"
 #import "HIViewController.h"
+#import "NSColor+NativeColor.h"
 #import "NSImage+NPEffects.h"
-#import "HIProfileViewController.h"
 
 static const CGFloat TitleBarHeight = 35.0;
 static const NSTimeInterval SlideAnimationDuration = 0.3;
@@ -136,6 +137,11 @@ static const NSTimeInterval SlideAnimationDuration = 0.3;
     newTitleView.alphaValue = 0.0;
     [((INAppStoreWindow *)self.window).titleBarView addSubview:newTitleView];
 
+    newController.view.layer.shadowColor = [[NSColor blackColor] NativeColor];
+    newController.view.layer.shadowOffset = CGSizeMake(50.0, 0.0);
+    newController.view.layer.shadowRadius = 50.0;
+    newController.view.layer.shadowOpacity = 0.25;
+
     [NSAnimationContext runAnimationGroup:^(NSAnimationContext *context) {
         context.duration = SlideAnimationDuration;
 
@@ -153,7 +159,9 @@ static const NSTimeInterval SlideAnimationDuration = 0.3;
         NSRect frame = newController.view.frame;
         frame.origin.x = 0;
         [newController.view.animator setFrame:frame];
-    } completionHandler:^{}];
+    } completionHandler:^{
+        newController.view.layer.shadowOpacity = 0.0;
+    }];
 
     [NSAnimationContext runAnimationGroup:^(NSAnimationContext *context) {
         context.duration = SlideAnimationDuration;

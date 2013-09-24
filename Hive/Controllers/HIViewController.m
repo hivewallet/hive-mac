@@ -26,10 +26,6 @@
     [super loadView];
 
     self.view.wantsLayer = YES;
-    self.view.layer.shadowColor = [[NSColor blackColor] NativeColor];
-    self.view.layer.shadowOffset = CGSizeMake(50.0, 0.0);
-    self.view.layer.shadowRadius = 50.0;
-    self.view.layer.shadowOpacity = 0.25;
 }
 
 - (BOOL)hideButtons
