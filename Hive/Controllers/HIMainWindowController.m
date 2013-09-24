@@ -144,6 +144,7 @@ static const NSTimeInterval SlideAnimationDuration = 0.3;
 
     [NSAnimationContext runAnimationGroup:^(NSAnimationContext *context) {
         context.duration = SlideAnimationDuration;
+        context.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseInEaseOut];
 
         [[_titleView animator] setAlphaValue:0.0];
         [[newTitleView animator] setAlphaValue:1.0];

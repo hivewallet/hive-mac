@@ -49,7 +49,6 @@ static NSString * const TitleKey = @"title";
     NSButton *btn = [[NSButton alloc] init];
     [btn setBordered:NO];
     [btn setButtonType:NSToggleButton];
-    [btn setWantsLayer:YES];
     [btn setTarget:self];
     [btn setAction:@selector(buttonClicked:)];
     [btn setTitle:title];
