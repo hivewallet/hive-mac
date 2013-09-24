@@ -6,8 +6,10 @@
 //  Copyright (c) 2013 Hive Developers. All rights reserved.
 //
 
+#import <QuartzCore/QuartzCore.h>
 #import "HINavigationController.h"
 #import "HITitleView.h"
+
 static CGFloat ViewSlideDuration = 0.3;
 
 
@@ -113,8 +115,10 @@ static CGFloat ViewSlideDuration = 0.3;
 
         [self.view addSubview:controller.view];
         _animating = YES;
+
         [NSAnimationContext runAnimationGroup:^(NSAnimationContext *context) {
             context.duration = ViewSlideDuration;
+            context.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseInEaseOut];
 
             NSRect frame = controller.view.frame;
             frame.origin.x = 0;
@@ -196,6 +200,7 @@ static CGFloat ViewSlideDuration = 0.3;
         _animating = YES;
         [NSAnimationContext runAnimationGroup:^(NSAnimationContext *context) {
             context.duration = ViewSlideDuration;
+            context.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseInEaseOut];
 
             if (current.rightNavigationView)
                 [[current.rightNavigationView animator] setAlphaValue:0.0];
