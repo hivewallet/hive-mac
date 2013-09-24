@@ -92,6 +92,8 @@
     [super loadView];
     [_infoPanel loadView];
 
+    self.view.layer.backgroundColor = [[NSColor colorWithCalibratedWhite:0.9 alpha:1.0] NativeColor];
+
     if (_contact)
     {
         [self configureViewForContact];
