@@ -358,7 +358,7 @@
 												<int key="NSCellFlags2">33554432</int>
 												<object class="NSCustomResource" key="NSContents">
 													<string key="NSClassName">NSImage</string>
-													<string key="NSResourceName">bitcoin</string>
+													<string key="NSResourceName">icon-bitcoin</string>
 												</object>
 												<string key="NSCellIdentifier">_NS:9</string>
 												<int key="NSAlign">0</int>
@@ -1010,7 +1010,7 @@
 		<bool key="IBDocument.PluginDeclaredDependenciesTrackSystemTargetVersion">YES</bool>
 		<int key="IBDocument.defaultPropertyAccessControl">3</int>
 		<dictionary class="NSMutableDictionary" key="IBDocument.LastKnownImageSizes">
-			<string key="bitcoin">{22, 22}</string>
+			<string key="icon-bitcoin">{16, 17}</string>
 			<string key="icon-dropdown-close">{7, 5}</string>
 			<string key="icon-dropdown-open">{7, 5}</string>
 		</dictionary>

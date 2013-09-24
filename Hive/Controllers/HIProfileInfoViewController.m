@@ -176,7 +176,7 @@ static const NSInteger AddressFieldTag = 2;
 
     [[BCClient sharedClient] addObserver:self
                               forKeyPath:@"walletHash"
-                                 options:NSKeyValueObservingOptionInitial | NSKeyValueObservingOptionNew
+                                 options:NSKeyValueObservingOptionInitial
                                  context:NULL];
 }
 

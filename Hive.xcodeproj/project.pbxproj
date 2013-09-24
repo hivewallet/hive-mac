@@ -24,12 +24,12 @@
 		5884A01017F1B646004A31FA /* Tor.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 5884A00C17F1B5FF004A31FA /* Tor.framework */; };
 		5884A01617F1BD5B004A31FA /* HIProfileInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5884A01417F1BD5B004A31FA /* HIProfileInfoViewController.m */; };
 		5884A01717F1BD5B004A31FA /* HIProfileInfoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5884A01517F1BD5B004A31FA /* HIProfileInfoViewController.xib */; };
+		5884A02117F1E818004A31FA /* icon-bitcoin.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 5884A02017F1E818004A31FA /* icon-bitcoin.pdf */; };
 		588EFB2E17D8D2970085F6E6 /* HIProfileTabView.m in Sources */ = {isa = PBXBuildFile; fileRef = 588EFB2D17D8D2970085F6E6 /* HIProfileTabView.m */; };
 		58A03AFC17D9C91600ADD5E5 /* HIProfileTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 58A03AFB17D9C91600ADD5E5 /* HIProfileTabBarController.m */; };
 		58A03B0D17D9DC4100ADD5E5 /* HIButtonWithSpinner.m in Sources */ = {isa = PBXBuildFile; fileRef = 58A03B0C17D9DC4100ADD5E5 /* HIButtonWithSpinner.m */; };
 		58A2A7F017D878840001464A /* HISendBitcoinsWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 58A2A7EE17D878840001464A /* HISendBitcoinsWindowController.m */; };
 		58A2A7F117D878840001464A /* HISendBitcoinsWindowController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 58A2A7EF17D878840001464A /* HISendBitcoinsWindowController.xib */; };
-		58A2A7F317D888E50001464A /* bitcoin.png in Resources */ = {isa = PBXBuildFile; fileRef = 58A2A7F217D888E50001464A /* bitcoin.png */; };
 		58C9F41817F06D9C0041624B /* icon-transactions-btc-symbol.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 58C9F41717F06D9C0041624B /* icon-transactions-btc-symbol.pdf */; };
 		58CFD95317CF914000A035FA /* HIContactCellView.m in Sources */ = {isa = PBXBuildFile; fileRef = 58CFD95017CF914000A035FA /* HIContactCellView.m */; };
 		58CFD95417CF914000A035FA /* HISidebarView.m in Sources */ = {isa = PBXBuildFile; fileRef = 58CFD95217CF914000A035FA /* HISidebarView.m */; };
@@ -201,6 +201,7 @@
 		5884A01317F1BD5B004A31FA /* HIProfileInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HIProfileInfoViewController.h; path = Controllers/HIProfileInfoViewController.h; sourceTree = "<group>"; };
 		5884A01417F1BD5B004A31FA /* HIProfileInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HIProfileInfoViewController.m; path = Controllers/HIProfileInfoViewController.m; sourceTree = "<group>"; };
 		5884A01517F1BD5B004A31FA /* HIProfileInfoViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = HIProfileInfoViewController.xib; path = Controllers/HIProfileInfoViewController.xib; sourceTree = "<group>"; };
+		5884A02017F1E818004A31FA /* icon-bitcoin.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; name = "icon-bitcoin.pdf"; path = "Images/icon-bitcoin.pdf"; sourceTree = "<group>"; };
 		588EFB2C17D8D2970085F6E6 /* HIProfileTabView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HIProfileTabView.h; sourceTree = "<group>"; };
 		588EFB2D17D8D2970085F6E6 /* HIProfileTabView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HIProfileTabView.m; sourceTree = "<group>"; };
 		58A03AFA17D9C91600ADD5E5 /* HIProfileTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HIProfileTabBarController.h; path = Controllers/HIProfileTabBarController.h; sourceTree = "<group>"; };
@@ -210,7 +211,6 @@
 		58A2A7ED17D878840001464A /* HISendBitcoinsWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HISendBitcoinsWindowController.h; path = Controllers/HISendBitcoinsWindowController.h; sourceTree = "<group>"; };
 		58A2A7EE17D878840001464A /* HISendBitcoinsWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HISendBitcoinsWindowController.m; path = Controllers/HISendBitcoinsWindowController.m; sourceTree = "<group>"; };
 		58A2A7EF17D878840001464A /* HISendBitcoinsWindowController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = HISendBitcoinsWindowController.xib; path = Controllers/HISendBitcoinsWindowController.xib; sourceTree = "<group>"; };
-		58A2A7F217D888E50001464A /* bitcoin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bitcoin.png; sourceTree = "<group>"; };
 		58C9F41717F06D9C0041624B /* icon-transactions-btc-symbol.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; name = "icon-transactions-btc-symbol.pdf"; path = "Images/icon-transactions-btc-symbol.pdf"; sourceTree = "<group>"; };
 		58CFD94F17CF914000A035FA /* HIContactCellView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HIContactCellView.h; sourceTree = "<group>"; };
 		58CFD95017CF914000A035FA /* HIContactCellView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HIContactCellView.m; sourceTree = "<group>"; };
@@ -613,35 +613,35 @@
 		D9A592131767C49F00502635 /* Images */ = {
 			isa = PBXGroup;
 			children = (
-				D9F0B9EE17EC5AF90050A0A2 /* icon-apps__active.pdf */,
-				D9F0B9EF17EC5AF90050A0A2 /* icon-apps__inactive.pdf */,
 				D948163817DF5557006A0312 /* avatar-empty.pdf */,
 				D94815FC17DF1AB1006A0312 /* bg-sidebar.pdf */,
 				D94815FD17DF1AB1006A0312 /* button__inset.pdf */,
+				D9F0B9EE17EC5AF90050A0A2 /* icon-apps__active.pdf */,
+				D9F0B9EF17EC5AF90050A0A2 /* icon-apps__inactive.pdf */,
+				5884A02017F1E818004A31FA /* icon-bitcoin.pdf */,
 				D90C9CF117E9C64100FC83CC /* icon-delete.pdf */,
 				5802105817ECA40E0039BA4B /* icon-dropdown-close.pdf */,
 				5802105917ECA40E0039BA4B /* icon-dropdown-open.pdf */,
 				D948160317DF1AB1006A0312 /* icon-group__active.pdf */,
 				D948160417DF1AB1006A0312 /* icon-group__inactive.pdf */,
-				D948161017DF1AB2006A0312 /* icon-timeline__active.pdf */,
-				D948161117DF1AB2006A0312 /* icon-timeline__inactive.pdf */,
-				D948161617DF1AB3006A0312 /* icon-your-profile__active.pdf */,
-				D948161717DF1AB3006A0312 /* icon-your-profile__inactive.pdf */,
 				D948160517DF1AB1006A0312 /* icon-nav-bar-back.pdf */,
-				D948160617DF1AB1006A0312 /* icon-next__active.pdf */,
 				D948160717DF1AB2006A0312 /* icon-next.pdf */,
+				D948160617DF1AB1006A0312 /* icon-next__active.pdf */,
 				D948160817DF1AB2006A0312 /* icon-plus.pdf */,
 				D948160917DF1AB2006A0312 /* icon-search.pdf */,
 				D948160C17DF1AB2006A0312 /* icon-tabbar-timeline__active.pdf */,
 				D948160D17DF1AB2006A0312 /* icon-tabbar-timeline__inactive.pdf */,
 				D948160E17DF1AB2006A0312 /* icon-tabbar-user__active.pdf */,
 				D948160F17DF1AB2006A0312 /* icon-tabbar-user__inactive.pdf */,
+				D948161017DF1AB2006A0312 /* icon-timeline__active.pdf */,
+				D948161117DF1AB2006A0312 /* icon-timeline__inactive.pdf */,
 				D948161217DF1AB2006A0312 /* icon-transactions-arrow-left.pdf */,
 				D948161317DF1AB2006A0312 /* icon-transactions-arrow-right.pdf */,
 				58C9F41717F06D9C0041624B /* icon-transactions-btc-symbol.pdf */,
 				D948161417DF1AB3006A0312 /* icon-transactions-minus.pdf */,
 				D948161517DF1AB3006A0312 /* icon-transactions-plus.pdf */,
-				58A2A7F217D888E50001464A /* bitcoin.png */,
+				D948161617DF1AB3006A0312 /* icon-your-profile__active.pdf */,
+				D948161717DF1AB3006A0312 /* icon-your-profile__inactive.pdf */,
 			);
 			name = Images;
 			sourceTree = "<group>";
@@ -815,7 +815,6 @@
 				581711DE17D0FEDD00DE775A /* HIProfileViewController.xib in Resources */,
 				D94815EF17D4CD46006A0312 /* HINewContactViewController.xib in Resources */,
 				58A2A7F117D878840001464A /* HISendBitcoinsWindowController.xib in Resources */,
-				58A2A7F317D888E50001464A /* bitcoin.png in Resources */,
 				D948161817DF1AB3006A0312 /* bg-sidebar.pdf in Resources */,
 				D948161917DF1AB3006A0312 /* button__inset.pdf in Resources */,
 				D948161F17DF1AB3006A0312 /* icon-group__active.pdf in Resources */,
@@ -847,6 +846,7 @@
 				58C9F41817F06D9C0041624B /* icon-transactions-btc-symbol.pdf in Resources */,
 				581818E217F1A8A800D00770 /* README.md in Resources */,
 				5884A01717F1BD5B004A31FA /* HIProfileInfoViewController.xib in Resources */,
+				5884A02117F1E818004A31FA /* icon-bitcoin.pdf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
