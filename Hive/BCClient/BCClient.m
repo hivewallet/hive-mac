@@ -209,28 +209,27 @@ static NSString * NPBase64EncodedStringFromString(NSString *string) {
 
 - (NSURL *)applicationsDirectory
 {
-    NSFileManager *fileManager = [NSFileManager defaultManager];
-    NSURL *appSupportURL = [[[fileManager URLsForDirectory:NSApplicationSupportDirectory inDomains:NSUserDomainMask] lastObject] URLByAppendingPathComponent:@"Hive/Applications"];
+    NSURL *appSupportURL = [(HIAppDelegate *) [NSApp delegate] applicationFilesDirectory];
+    NSURL *applicationsURL = [appSupportURL URLByAppendingPathComponent:@"Applications"];
     
-    [fileManager createDirectoryAtURL:appSupportURL withIntermediateDirectories:YES attributes:nil error:NULL];
-    
-    return appSupportURL;
+    [[NSFileManager defaultManager] createDirectoryAtURL:applicationsURL
+                             withIntermediateDirectories:YES
+                                              attributes:nil
+                                                   error:NULL];
+
+    return applicationsURL;
 }
 
 - (NSURL *)bitcoindDirectory
 {
-    NSFileManager *fileManager = [NSFileManager defaultManager];
-    NSURL *appSupportURL = [[fileManager URLsForDirectory:NSApplicationSupportDirectory inDomains:NSUserDomainMask] lastObject];
-    return [appSupportURL URLByAppendingPathComponent:@"Hive/BitcoinJ.network"];
-
+    NSURL *appSupportURL = [(HIAppDelegate *) [NSApp delegate] applicationFilesDirectory];
+    return [appSupportURL URLByAppendingPathComponent:@"BitcoinJ.network"];
 }
 
 - (NSURL *)torDirectory
 {
-    NSFileManager *fileManager = [NSFileManager defaultManager];
-    NSURL *appSupportURL = [[fileManager URLsForDirectory:NSApplicationSupportDirectory inDomains:NSUserDomainMask] lastObject];
-    return [appSupportURL URLByAppendingPathComponent:@"Hive/Tor.network"];
-    
+    NSURL *appSupportURL = [(HIAppDelegate *) [NSApp delegate] applicationFilesDirectory];
+    return [appSupportURL URLByAppendingPathComponent:@"Tor.network"];
 }
 
 - (BOOL)isRunning

@@ -46,12 +46,18 @@
     [[NSAppleEventManager sharedAppleEventManager] setEventHandler:self andSelector:@selector(handleURLEvent:withReplyEvent:) forEventClass:kInternetEventClass andEventID:kAEGetURL];
 }
 
-// Returns the directory the application uses to store the Core Data store file. This code uses a directory named "net.novaproject.Hive" in the user's Application Support directory.
+// Returns the directory the application uses to store the Core Data store file.
 - (NSURL *)applicationFilesDirectory
 {
     NSFileManager *fileManager = [NSFileManager defaultManager];
-    NSURL *appSupportURL = [[fileManager URLsForDirectory:NSApplicationSupportDirectory inDomains:NSUserDomainMask] lastObject];
+    NSArray *matchingURLs = [fileManager URLsForDirectory:NSApplicationSupportDirectory inDomains:NSUserDomainMask];
+    NSURL *appSupportURL = [matchingURLs lastObject];
+
+#ifdef TESTING_NETWORK
+    return [appSupportURL URLByAppendingPathComponent:@"HiveTest"];
+#else
     return [appSupportURL URLByAppendingPathComponent:@"Hive"];
+#endif
 }
 
 // Creates if necessary and returns the managed object model for the application.

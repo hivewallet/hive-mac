@@ -23,5 +23,6 @@
 - (IBAction)openSendBitcoinsWindow:(id)sender;
 - (HISendBitcoinsWindowController *)sendBitcoinsWindowForContact:(HIContact *)contact;
 - (HISendBitcoinsWindowController *)sendBitcoinsWindow;
+- (NSURL *)applicationFilesDirectory;
 
 @end
