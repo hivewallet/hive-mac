@@ -24,7 +24,7 @@ NSString * const kBCClientStartedNotification;
 - (NSURL *)applicationsDirectory;
 
 - (void)shutdown;
-- (void)updateNofications;
+- (void)updateNotifications;
 
 - (void)exchangeRateFor:(uint64)btcs forCurrency:(NSString *)currency completion:(void(^)(uint64 value))completion;
 

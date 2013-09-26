@@ -113,7 +113,7 @@ static NSString * NPBase64EncodedStringFromString(NSString *string) {
         _balance = [[[NSUserDefaults standardUserDefaults] objectForKey:@"LastBalance"] unsignedLongLongValue];
         [self didChangeValueForKey:@"balance"];
         
-        [self updateNofications];
+        [self updateNotifications];
     }
     return self;
 }
@@ -132,7 +132,6 @@ static NSString * NPBase64EncodedStringFromString(NSString *string) {
         _walletHash = [HIBitcoinManager defaultManager].walletAddress;
         [self didChangeValueForKey:@"walletHash"];
         
-        //    NSLog(@"Transaction list %@", [HIBitcoinManager defaultManager].allTransactions);
         if ([[NSUserDefaults standardUserDefaults] boolForKey:@"FirstRun"])
         {
             NSArray *transactions = [HIBitcoinManager defaultManager].allTransactions;
@@ -145,7 +144,7 @@ static NSString * NPBase64EncodedStringFromString(NSString *string) {
                 }
                 [_transactionUpdateContext save:NULL];
                 dispatch_async(dispatch_get_main_queue(), ^{
-                    [self updateNofications];
+                    [self updateNotifications];
                     [[NSUserDefaults standardUserDefaults] setBool:NO forKey:@"FirstRun"];
                 });
             }];
@@ -162,7 +161,7 @@ static NSString * NPBase64EncodedStringFromString(NSString *string) {
             [self parseTransaction:trans notify:YES];
             [_transactionUpdateContext save:NULL];
             dispatch_async(dispatch_get_main_queue(), ^{
-                [self updateNofications];
+                [self updateNotifications];
             });
         }];
     });
@@ -254,20 +253,18 @@ static NSString * NPBase64EncodedStringFromString(NSString *string) {
     return [_transactionUpdateContext countForFetchRequest:req error:NULL];
 }
 
-- (void)updateNofications
+- (void)updateNotifications
 {
     [self willChangeValueForKey:@"unreadTransactions"];
     
     if (self.unreadTransactions > 0)
     {
         [[NSApp dockTile] setBadgeLabel:[NSString stringWithFormat:@"%lu", self.unreadTransactions]];
-//        [[NSApp dockTile] setShowsApplicationBadge:YES];
         [NSApp requestUserAttention:NSInformationalRequest];
     }
     else
     {
         [[NSApp dockTile] setBadgeLabel:@""];
-//        [[NSApp dockTile] setShowsApplicationBadge:NO];
     }
     [self didChangeValueForKey:@"unreadTransactions"];
 }
