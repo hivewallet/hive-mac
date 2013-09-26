@@ -44,60 +44,6 @@
     _sendBitcoinsWindows = [NSMutableArray new];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(sendWindowDidClose:) name:HISendBitcoinsWindowDidClose object:nil];
     [[NSAppleEventManager sharedAppleEventManager] setEventHandler:self andSelector:@selector(handleURLEvent:withReplyEvent:) forEventClass:kInternetEventClass andEventID:kAEGetURL];
-
-    // TODO: mocked transactions - remove once real transactions are working
-    NSFetchRequest *transactionsRequest = [NSFetchRequest fetchRequestWithEntityName:HITransactionEntity];
-    for (HITransaction *transaction in [DBM executeFetchRequest:transactionsRequest error:nil])
-    {
-        [DBM deleteObject:transaction];
-    }
-
-    NSFetchRequest *contactsRequest = [NSFetchRequest fetchRequestWithEntityName:HIContactEntity];
-    NSArray *contacts = [DBM executeFetchRequest:contactsRequest error:nil];
-
-    HITransaction *t;
-    NSTimeInterval now = [[NSDate date] timeIntervalSince1970];
-
-    t = [NSEntityDescription insertNewObjectForEntityForName:HITransactionEntity inManagedObjectContext:DBM];
-    t.id = @"c87ba65b87ad65b87da5c";
-    t.read = YES;
-    t.amount = 150000000;
-    t.date = now - 3600;
-    t.senderHash = @"98d7cb0987ad0b987cb8ad8bc679";
-    t.contact = (contacts.count > 0) ? contacts[0] : nil;
-
-    t = [NSEntityDescription insertNewObjectForEntityForName:HITransactionEntity inManagedObjectContext:DBM];
-    t.id = @"cbca67b9d76b98cd8b706a";
-    t.read = YES;
-    t.amount = -50000000;
-    t.date = now - 86400;
-    t.senderHash = @"a87b6dc57865a798b698ad7698";
-    t.contact = (contacts.count > 1) ? contacts[1] : nil;
-
-    t = [NSEntityDescription insertNewObjectForEntityForName:HITransactionEntity inManagedObjectContext:DBM];
-    t.id = @"bcd786bd9a876b98da76c";
-    t.read = YES;
-    t.amount = 10000000;
-    t.date = now - 250000;
-    t.senderHash = @"adc4687c94d86abc9684bc8dabc79ad9b67b";
-    t.contact = (contacts.count > 2) ? contacts[2] : nil;
-
-    t = [NSEntityDescription insertNewObjectForEntityForName:HITransactionEntity inManagedObjectContext:DBM];
-    t.id = @"bacd565bc734576da54bc7653";
-    t.read = YES;
-    t.amount = -200000000;
-    t.date = now - 500000;
-    t.senderHash = @"dabc4875d4b684adbc9746dabc79";
-
-    t = [NSEntityDescription insertNewObjectForEntityForName:HITransactionEntity inManagedObjectContext:DBM];
-    t.id = @"ce65e8756dc9785bc98d759875";
-    t.read = YES;
-    t.amount = 4200000;
-    t.date = now - 350000;
-    t.senderHash = @"8769876985cd875987c5ecd897";
-
-    [DBM save:nil];
-    // end mocked transactions
 }
 
 // Returns the directory the application uses to store the Core Data store file. This code uses a directory named "net.novaproject.Hive" in the user's Application Support directory.
