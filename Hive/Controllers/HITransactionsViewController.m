@@ -6,6 +6,7 @@
 //  Copyright (c) 2013 Hive Developers. All rights reserved.
 //
 
+#import "BCClient.h"
 #import "HIAddress.h"
 #import "HIContact.h"
 #import "HIContactRowView.h"
@@ -69,6 +70,21 @@
     {
         self.arrayController.fetchPredicate = [NSPredicate predicateWithFormat:@"contact = %@", _contact];
     }
+}
+
+- (void)viewWillAppear
+{
+    for (HITransaction *transaction in self.arrayController.arrangedObjects)
+    {
+        if (!transaction.read)
+        {
+            transaction.read = YES;
+        }
+    }
+
+    [DBM save:nil];
+
+    [[BCClient sharedClient] updateNotifications];
 }
 
 
