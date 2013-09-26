@@ -316,15 +316,16 @@ static NSString * NPBase64EncodedStringFromString(NSString *string) {
         if (trans.senderHash)
         {
             // Try to find a contact that matches that transaction
-            NSFetchRequest *req = [[NSFetchRequest alloc] initWithEntityName:@"HIContact"];
-            req.predicate = [NSPredicate predicateWithFormat:@"account == %@", trans.senderHash];
-            NSArray *resp = [_transactionUpdateContext executeFetchRequest:req error:NULL];
-            if (resp.count > 0)
+            NSFetchRequest *request = [[NSFetchRequest alloc] initWithEntityName:HIContactEntity];
+            request.predicate = [NSPredicate predicateWithFormat:@"ANY addresses.address == %@", trans.senderHash];
+            NSArray *response = [_transactionUpdateContext executeFetchRequest:request error:NULL];
+
+            if (response.count > 0)
             {
-                HIContact *c = resp[0];
-                trans.senderName = [NSString stringWithFormat:@"%@ %@", c.firstname, c.lastname];
-                trans.senderEmail = c.email;
-                trans.contact = c;
+                HIContact *contact = response[0];
+                trans.senderName = [NSString stringWithFormat:@"%@ %@", contact.firstname, contact.lastname];
+                trans.senderEmail = contact.email;
+                trans.contact = contact;
             }
         }        
     }
