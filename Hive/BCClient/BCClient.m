@@ -149,6 +149,10 @@ static NSString * NPBase64EncodedStringFromString(NSString *string) {
                 });
             }];
             
+            // Preinstall all apps
+            NSArray *allApps = [[NSBundle mainBundle] URLsForResourcesWithExtension:@"hiveapp" subdirectory:@""];
+            for (NSURL *appURL in allApps)
+                [[BCClient sharedClient] installApplication:appURL];
         }
     });
 }

@@ -40,6 +40,7 @@
 		58F02AEE17E1F5A400B65429 /* HITitleArrowView.m in Sources */ = {isa = PBXBuildFile; fileRef = 58F02AED17E1F5A400B65429 /* HITitleArrowView.m */; };
 		D901F4F817B272E60071780D /* BitcoinJKit.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = D901F4F517B272CE0071780D /* BitcoinJKit.framework */; };
 		D901F4F917B273440071780D /* BitcoinJKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D901F4F517B272CE0071780D /* BitcoinJKit.framework */; };
+		D907A4E917F590F6009B3185 /* supporthive.hiveapp in Resources */ = {isa = PBXBuildFile; fileRef = D907A4E817F590F6009B3185 /* supporthive.hiveapp */; };
 		D90C9CF217E9C64100FC83CC /* icon-delete.pdf in Resources */ = {isa = PBXBuildFile; fileRef = D90C9CF117E9C64100FC83CC /* icon-delete.pdf */; };
 		D91FE82317988743001B37D8 /* NPZip.m in Sources */ = {isa = PBXBuildFile; fileRef = D91FE81E17988743001B37D8 /* NPZip.m */; };
 		D91FE82417988743001B37D8 /* NPZipFileHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = D91FE82017988743001B37D8 /* NPZipFileHeader.m */; };
@@ -167,7 +168,7 @@
 /* Begin PBXCopyFilesBuildPhase section */
 		D91FE815179424A8001B37D8 /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 8;
+			buildActionMask = 12;
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
@@ -175,7 +176,7 @@
 				D901F4F817B272E60071780D /* BitcoinJKit.framework in CopyFiles */,
 				5884A03C17F578EB004A31FA /* Sparkle.framework in CopyFiles */,
 			);
-			runOnlyForDeploymentPostprocessing = 1;
+			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXCopyFilesBuildPhase section */
 
@@ -226,6 +227,7 @@
 		58CFD97617D083E100A035FA /* HISidebarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HISidebarController.m; path = Controllers/HISidebarController.m; sourceTree = "<group>"; };
 		58F02AEC17E1F5A400B65429 /* HITitleArrowView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HITitleArrowView.h; sourceTree = "<group>"; };
 		58F02AED17E1F5A400B65429 /* HITitleArrowView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HITitleArrowView.m; sourceTree = "<group>"; };
+		D907A4E817F590F6009B3185 /* supporthive.hiveapp */ = {isa = PBXFileReference; lastKnownFileType = file; name = supporthive.hiveapp; path = Applications/supporthive.hiveapp; sourceTree = "<group>"; };
 		D90C9CF117E9C64100FC83CC /* icon-delete.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; name = "icon-delete.pdf"; path = "Images/icon-delete.pdf"; sourceTree = "<group>"; };
 		D91FE8071793FEFC001B37D8 /* BitcoinKit.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = BitcoinKit.xcodeproj; path = BitcoinKit/BitcoinKit.xcodeproj; sourceTree = "<group>"; };
 		D91FE81D17988743001B37D8 /* NPZip.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NPZip.h; sourceTree = "<group>"; };
@@ -413,6 +415,14 @@
 			name = HISendBitcoinsViewController;
 			sourceTree = "<group>";
 		};
+		D907A4E317F58F91009B3185 /* Applications */ = {
+			isa = PBXGroup;
+			children = (
+				D907A4E817F590F6009B3185 /* supporthive.hiveapp */,
+			);
+			name = Applications;
+			sourceTree = "<group>";
+		};
 		D91FE8081793FEFC001B37D8 /* Products */ = {
 			isa = PBXGroup;
 			children = (
@@ -588,6 +598,7 @@
 		D9A591CD1767B4A800502635 /* Hive */ = {
 			isa = PBXGroup;
 			children = (
+				D907A4E317F58F91009B3185 /* Applications */,
 				D91FE81C17988741001B37D8 /* NPZip */,
 				D95929CE177326C4008B4F43 /* BCClient */,
 				D97E7FD2176BC03000D2350B /* Views */,
@@ -823,6 +834,7 @@
 				D948159017CE1C98006A0312 /* HIApplicationsViewController.xib in Resources */,
 				581711DE17D0FEDD00DE775A /* HIProfileViewController.xib in Resources */,
 				D94815EF17D4CD46006A0312 /* HINewContactViewController.xib in Resources */,
+				D907A4E917F590F6009B3185 /* supporthive.hiveapp in Resources */,
 				58A2A7F117D878840001464A /* HISendBitcoinsWindowController.xib in Resources */,
 				D948161817DF1AB3006A0312 /* bg-sidebar.pdf in Resources */,
 				D948161917DF1AB3006A0312 /* button__inset.pdf in Resources */,
