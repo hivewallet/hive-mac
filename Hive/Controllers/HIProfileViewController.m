@@ -53,7 +53,7 @@
         _contact = contact;
         self.title = _contact.name;
 
-        _panelControllers = @[_infoPanel, [[HITransactionsViewController alloc] initWithContact:_contact]];
+        _panelControllers = @[[[HITransactionsViewController alloc] initWithContact:_contact], _infoPanel];
 
         [[NSNotificationCenter defaultCenter] addObserver:self
                                                  selector:@selector(contactHasChanged:)

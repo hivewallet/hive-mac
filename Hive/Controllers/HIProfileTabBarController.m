@@ -36,6 +36,8 @@ static NSInteger TabBarButtonTagStart = 1000;
     [self.view addSubview:[self horizontalLineAtPosition:1 color:RGB(177, 177, 177)]];
 
     [self.view addSubview:[self verticalSeparatorAtPosition:(width/2) color:RGB(187, 187, 187)]];
+    
+    self.selectedIndex = 1;
 }
 
 - (NSButton *)tabBarButtonAtPosition:(NSInteger)position iconName:(NSString *)name {
@@ -84,12 +86,22 @@ static NSInteger TabBarButtonTagStart = 1000;
     return line;
 }
 
+- (void)setSelectedIndex:(NSUInteger)selectedIndex
+{
+    _selectedIndex = selectedIndex;
+    
+    for (NSButton *button in _tabBarButtons) {
+        button.state = (button.tag == selectedIndex + TabBarButtonTagStart) ? NSOnState : NSOffState;
+    };
+    
+}
+
 - (void)tabBarClicked:(id)sender {
-    NSInteger buttonId = [sender tag] - TabBarButtonTagStart;
+    _selectedIndex = [sender tag] - TabBarButtonTagStart;
 
     if ([_tabDelegate respondsToSelector:@selector(controller:switchedToTabIndex:)])
     {
-        [_tabDelegate controller:self switchedToTabIndex:buttonId];
+        [_tabDelegate controller:self switchedToTabIndex:_selectedIndex];
     }
     
     for (NSButton *button in _tabBarButtons) {
