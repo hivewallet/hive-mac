@@ -25,6 +25,9 @@
 		5884A01617F1BD5B004A31FA /* HIProfileInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5884A01417F1BD5B004A31FA /* HIProfileInfoViewController.m */; };
 		5884A01717F1BD5B004A31FA /* HIProfileInfoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5884A01517F1BD5B004A31FA /* HIProfileInfoViewController.xib */; };
 		5884A02117F1E818004A31FA /* icon-bitcoin.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 5884A02017F1E818004A31FA /* icon-bitcoin.pdf */; };
+		5884A03717F56D86004A31FA /* Sparkle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5884A03617F56D86004A31FA /* Sparkle.framework */; };
+		5884A03C17F578EB004A31FA /* Sparkle.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 5884A03617F56D86004A31FA /* Sparkle.framework */; };
+		5884A03E17F57AE9004A31FA /* dsa_pub.pem in Resources */ = {isa = PBXBuildFile; fileRef = 5884A03D17F57AE9004A31FA /* dsa_pub.pem */; };
 		588EFB2E17D8D2970085F6E6 /* HIProfileTabView.m in Sources */ = {isa = PBXBuildFile; fileRef = 588EFB2D17D8D2970085F6E6 /* HIProfileTabView.m */; };
 		58A03AFC17D9C91600ADD5E5 /* HIProfileTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 58A03AFB17D9C91600ADD5E5 /* HIProfileTabBarController.m */; };
 		58A03B0D17D9DC4100ADD5E5 /* HIButtonWithSpinner.m in Sources */ = {isa = PBXBuildFile; fileRef = 58A03B0C17D9DC4100ADD5E5 /* HIButtonWithSpinner.m */; };
@@ -170,6 +173,7 @@
 			files = (
 				5884A01017F1B646004A31FA /* Tor.framework in CopyFiles */,
 				D901F4F817B272E60071780D /* BitcoinJKit.framework in CopyFiles */,
+				5884A03C17F578EB004A31FA /* Sparkle.framework in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 1;
 		};
@@ -202,6 +206,8 @@
 		5884A01417F1BD5B004A31FA /* HIProfileInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HIProfileInfoViewController.m; path = Controllers/HIProfileInfoViewController.m; sourceTree = "<group>"; };
 		5884A01517F1BD5B004A31FA /* HIProfileInfoViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = HIProfileInfoViewController.xib; path = Controllers/HIProfileInfoViewController.xib; sourceTree = "<group>"; };
 		5884A02017F1E818004A31FA /* icon-bitcoin.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; name = "icon-bitcoin.pdf"; path = "Images/icon-bitcoin.pdf"; sourceTree = "<group>"; };
+		5884A03617F56D86004A31FA /* Sparkle.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Sparkle.framework; sourceTree = "<group>"; };
+		5884A03D17F57AE9004A31FA /* dsa_pub.pem */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = dsa_pub.pem; sourceTree = "<group>"; };
 		588EFB2C17D8D2970085F6E6 /* HIProfileTabView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HIProfileTabView.h; sourceTree = "<group>"; };
 		588EFB2D17D8D2970085F6E6 /* HIProfileTabView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HIProfileTabView.m; sourceTree = "<group>"; };
 		58A03AFA17D9C91600ADD5E5 /* HIProfileTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HIProfileTabBarController.h; path = Controllers/HIProfileTabBarController.h; sourceTree = "<group>"; };
@@ -354,6 +360,7 @@
 				D9A592361768CBE400502635 /* QuartzCore.framework in Frameworks */,
 				D9A591C81767B4A800502635 /* Cocoa.framework in Frameworks */,
 				05D9F526F5294257A0422835 /* libPods.a in Frameworks */,
+				5884A03717F56D86004A31FA /* Sparkle.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -556,6 +563,7 @@
 				D91FE826179887C4001B37D8 /* libz.dylib */,
 				D91FE8071793FEFC001B37D8 /* BitcoinKit.xcodeproj */,
 				5884A00417F1B5FE004A31FA /* Tor.xcodeproj */,
+				5884A03617F56D86004A31FA /* Sparkle.framework */,
 				D9235387177C6779003533DF /* JavaScriptCore.framework */,
 				D95929DC17742B70008B4F43 /* WebKit.framework */,
 				D97E7FCD176BB64900D2350B /* SystemConfiguration.framework */,
@@ -606,6 +614,7 @@
 				D9A591D31767B4A800502635 /* main.m */,
 				D9A591D51767B4A800502635 /* Hive-Prefix.pch */,
 				D9A591D61767B4A800502635 /* Credits.rtf */,
+				5884A03D17F57AE9004A31FA /* dsa_pub.pem */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -847,6 +856,7 @@
 				581818E217F1A8A800D00770 /* README.md in Resources */,
 				5884A01717F1BD5B004A31FA /* HIProfileInfoViewController.xib in Resources */,
 				5884A02117F1E818004A31FA /* icon-bitcoin.pdf in Resources */,
+				5884A03E17F57AE9004A31FA /* dsa_pub.pem in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1054,6 +1064,10 @@
 			buildSettings = {
 				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)\"",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Hive/Hive-Prefix.pch";
 				INFOPLIST_FILE = "Hive/Hive-Info.plist";
@@ -1069,6 +1083,10 @@
 			buildSettings = {
 				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)\"",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Hive/Hive-Prefix.pch";
 				INFOPLIST_FILE = "Hive/Hive-Info.plist";
