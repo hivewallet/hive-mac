@@ -60,7 +60,6 @@
 		D948158B17CE1C29006A0312 /* HIContactsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D948158917CE1C29006A0312 /* HIContactsViewController.xib */; };
 		D948158F17CE1C98006A0312 /* HIApplicationsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D948158D17CE1C98006A0312 /* HIApplicationsViewController.m */; };
 		D948159017CE1C98006A0312 /* HIApplicationsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D948158E17CE1C98006A0312 /* HIApplicationsViewController.xib */; };
-		D948159317CE29D6006A0312 /* NSTextField+Centering.m in Sources */ = {isa = PBXBuildFile; fileRef = D948159217CE29D6006A0312 /* NSTextField+Centering.m */; };
 		D94815B417D492A0006A0312 /* HITitleView.m in Sources */ = {isa = PBXBuildFile; fileRef = D94815B317D492A0006A0312 /* HITitleView.m */; };
 		D94815E917D4BCEF006A0312 /* HIContactRowView.m in Sources */ = {isa = PBXBuildFile; fileRef = D94815E817D4BCEF006A0312 /* HIContactRowView.m */; };
 		D94815EE17D4CD46006A0312 /* HINewContactViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D94815EC17D4CD46006A0312 /* HINewContactViewController.m */; };
@@ -260,8 +259,6 @@
 		D948158C17CE1C97006A0312 /* HIApplicationsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HIApplicationsViewController.h; path = Controllers/HIApplicationsViewController.h; sourceTree = "<group>"; };
 		D948158D17CE1C98006A0312 /* HIApplicationsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HIApplicationsViewController.m; path = Controllers/HIApplicationsViewController.m; sourceTree = "<group>"; };
 		D948158E17CE1C98006A0312 /* HIApplicationsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = HIApplicationsViewController.xib; path = Controllers/HIApplicationsViewController.xib; sourceTree = "<group>"; };
-		D948159117CE29D6006A0312 /* NSTextField+Centering.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSTextField+Centering.h"; path = "Categories/NSTextField+Centering.h"; sourceTree = "<group>"; };
-		D948159217CE29D6006A0312 /* NSTextField+Centering.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSTextField+Centering.m"; path = "Categories/NSTextField+Centering.m"; sourceTree = "<group>"; };
 		D94815B217D492A0006A0312 /* HITitleView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HITitleView.h; sourceTree = "<group>"; };
 		D94815B317D492A0006A0312 /* HITitleView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HITitleView.m; sourceTree = "<group>"; };
 		D94815E717D4BCEF006A0312 /* HIContactRowView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HIContactRowView.h; sourceTree = "<group>"; };
@@ -693,8 +690,6 @@
 			children = (
 				D9A5922717684D6E00502635 /* NSImage+NPEffects.h */,
 				D9A5922817684D6E00502635 /* NSImage+NPEffects.m */,
-				D948159117CE29D6006A0312 /* NSTextField+Centering.h */,
-				D948159217CE29D6006A0312 /* NSTextField+Centering.m */,
 				D95929E317746CE9008B4F43 /* NSView+Snapshot.h */,
 				D95929E417746CE9008B4F43 /* NSView+Snapshot.m */,
 				D948164217E0A807006A0312 /* NSColor+NativeColor.h */,
@@ -930,7 +925,6 @@
 				D948158117CE19D3006A0312 /* HITransactionsViewController.m in Sources */,
 				D948158A17CE1C29006A0312 /* HIContactsViewController.m in Sources */,
 				D948158F17CE1C98006A0312 /* HIApplicationsViewController.m in Sources */,
-				D948159317CE29D6006A0312 /* NSTextField+Centering.m in Sources */,
 				58CFD95317CF914000A035FA /* HIContactCellView.m in Sources */,
 				58CFD95417CF914000A035FA /* HISidebarView.m in Sources */,
 				58CFD97717D083E100A035FA /* HISidebarController.m in Sources */,
