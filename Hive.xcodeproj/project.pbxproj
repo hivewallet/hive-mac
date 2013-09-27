@@ -41,6 +41,8 @@
 		D901F4F817B272E60071780D /* BitcoinJKit.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = D901F4F517B272CE0071780D /* BitcoinJKit.framework */; };
 		D901F4F917B273440071780D /* BitcoinJKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D901F4F517B272CE0071780D /* BitcoinJKit.framework */; };
 		D907A4E917F590F6009B3185 /* supporthive.hiveapp in Resources */ = {isa = PBXBuildFile; fileRef = D907A4E817F590F6009B3185 /* supporthive.hiveapp */; };
+		D907A4EC17F5C4BF009B3185 /* bitstamp.hiveapp in Resources */ = {isa = PBXBuildFile; fileRef = D907A4EA17F5C4BF009B3185 /* bitstamp.hiveapp */; };
+		D907A4ED17F5C4BF009B3185 /* minefield.hiveapp in Resources */ = {isa = PBXBuildFile; fileRef = D907A4EB17F5C4BF009B3185 /* minefield.hiveapp */; };
 		D90C9CF217E9C64100FC83CC /* icon-delete.pdf in Resources */ = {isa = PBXBuildFile; fileRef = D90C9CF117E9C64100FC83CC /* icon-delete.pdf */; };
 		D91FE82317988743001B37D8 /* NPZip.m in Sources */ = {isa = PBXBuildFile; fileRef = D91FE81E17988743001B37D8 /* NPZip.m */; };
 		D91FE82417988743001B37D8 /* NPZipFileHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = D91FE82017988743001B37D8 /* NPZipFileHeader.m */; };
@@ -227,6 +229,8 @@
 		58F02AEC17E1F5A400B65429 /* HITitleArrowView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HITitleArrowView.h; sourceTree = "<group>"; };
 		58F02AED17E1F5A400B65429 /* HITitleArrowView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HITitleArrowView.m; sourceTree = "<group>"; };
 		D907A4E817F590F6009B3185 /* supporthive.hiveapp */ = {isa = PBXFileReference; lastKnownFileType = file; name = supporthive.hiveapp; path = Applications/supporthive.hiveapp; sourceTree = "<group>"; };
+		D907A4EA17F5C4BF009B3185 /* bitstamp.hiveapp */ = {isa = PBXFileReference; lastKnownFileType = file; name = bitstamp.hiveapp; path = Applications/bitstamp.hiveapp; sourceTree = "<group>"; };
+		D907A4EB17F5C4BF009B3185 /* minefield.hiveapp */ = {isa = PBXFileReference; lastKnownFileType = file; name = minefield.hiveapp; path = Applications/minefield.hiveapp; sourceTree = "<group>"; };
 		D90C9CF117E9C64100FC83CC /* icon-delete.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; name = "icon-delete.pdf"; path = "Images/icon-delete.pdf"; sourceTree = "<group>"; };
 		D91FE8071793FEFC001B37D8 /* BitcoinKit.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = BitcoinKit.xcodeproj; path = BitcoinKit/BitcoinKit.xcodeproj; sourceTree = "<group>"; };
 		D91FE81D17988743001B37D8 /* NPZip.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NPZip.h; sourceTree = "<group>"; };
@@ -415,6 +419,8 @@
 		D907A4E317F58F91009B3185 /* Applications */ = {
 			isa = PBXGroup;
 			children = (
+				D907A4EA17F5C4BF009B3185 /* bitstamp.hiveapp */,
+				D907A4EB17F5C4BF009B3185 /* minefield.hiveapp */,
 				D907A4E817F590F6009B3185 /* supporthive.hiveapp */,
 			);
 			name = Applications;
@@ -843,6 +849,8 @@
 				D948162817DF1AB3006A0312 /* icon-tabbar-timeline__active.pdf in Resources */,
 				D948162917DF1AB3006A0312 /* icon-tabbar-timeline__inactive.pdf in Resources */,
 				D948162A17DF1AB3006A0312 /* icon-tabbar-user__active.pdf in Resources */,
+				D907A4ED17F5C4BF009B3185 /* minefield.hiveapp in Resources */,
+				D907A4EC17F5C4BF009B3185 /* bitstamp.hiveapp in Resources */,
 				D948162B17DF1AB3006A0312 /* icon-tabbar-user__inactive.pdf in Resources */,
 				D948162C17DF1AB3006A0312 /* icon-timeline__active.pdf in Resources */,
 				D948162D17DF1AB3006A0312 /* icon-timeline__inactive.pdf in Resources */,
