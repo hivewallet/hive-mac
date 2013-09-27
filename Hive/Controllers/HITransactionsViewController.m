@@ -40,6 +40,7 @@
         _amountFormatter = [[NSNumberFormatter alloc] init];
         _amountFormatter.numberStyle = NSNumberFormatterDecimalStyle;
         _amountFormatter.localizesFormat = YES;
+        _amountFormatter.maximumFractionDigits = 8;
 
         _amountLabelFont = [NSFont fontWithName:@"Helvetica Bold" size:13.0];
     }
