@@ -14,8 +14,6 @@
 - (void)drawBezelWithFrame:(NSRect)frame inView:(NSView *)controlView
 {
     NSBezierPath *p = [NSBezierPath bezierPathWithRoundedRect:frame xRadius:5 yRadius:5];
-    if (![[NSColor blackColor] respondsToSelector:@selector(CGColor)])
-        controlView.layer.shadowOffset = NSMakeSize(0, -1);
     if (self.isHighlighted)
     {
         NSBezierPath *sP = [NSBezierPath bezierPath];

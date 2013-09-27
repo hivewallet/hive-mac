@@ -17,8 +17,6 @@
     NSBezierPath *p = [NSBezierPath bezierPathWithRoundedRect:frame xRadius:5 yRadius:5];
     NSBezierPath *sP = [NSBezierPath bezierPath];
     p.lineWidth = 0.5;
-    if (![[NSColor blackColor] respondsToSelector:@selector(CGColor)])
-        controlView.layer.shadowOffset = NSMakeSize(0, -1);
     [sP moveToPoint:NSMakePoint(1, 3)];
     [sP curveToPoint:NSMakePoint(5, 1)
        controlPoint1:NSMakePoint(5, 1)
