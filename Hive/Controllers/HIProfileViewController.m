@@ -204,8 +204,11 @@
 
 - (void)updateBalance
 {
-    double balance = [[BCClient sharedClient] balance] * 1.0 / SATOSHI;
-    self.balanceLabel.stringValue = [_amountFormatter stringFromNumber:@(balance)];
+    NSDecimalNumber *balance = [NSDecimalNumber decimalNumberWithMantissa:[[BCClient sharedClient] balance]
+                                                                 exponent:-8
+                                                               isNegative:NO];
+
+    self.balanceLabel.stringValue = [_amountFormatter stringFromNumber:balance];
 }
 
 - (void)observeValueForKeyPath:(NSString *)keyPath

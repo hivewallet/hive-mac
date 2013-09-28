@@ -26,11 +26,11 @@ extern NSString * const HISendBitcoinsWindowSuccessKey;
 @property (strong) IBOutlet HIButtonWithSpinner *sendButton;
 @property (nonatomic, strong) IBOutlet NSButton *dropdownButton;
 
-@property (copy) void(^sendCompletion)(BOOL success, double amount, NSString *hash);
+@property (copy) void(^sendCompletion)(BOOL success, NSDecimalNumber *amount, NSString *hash);
 
 - (id)initWithContact:(HIContact *)contact;
 - (void)setHashAddress:(NSString *)hash;
-- (void)setLockedAmount:(double)amount;
+- (void)setLockedAmount:(NSDecimalNumber *)amount;
 
 - (IBAction)cancelClicked:(id)sender;
 - (IBAction)sendClicked:(id)sender;

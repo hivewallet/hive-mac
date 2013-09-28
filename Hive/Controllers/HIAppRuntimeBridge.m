@@ -69,9 +69,11 @@
     JSObjectCallAsFunction(ctx, ref, NULL, 1, &val, NULL);
 }
 
-- (void)send:(NSString *)hash amount:(CGFloat)amount callback:(WebScriptObject *)callback
+- (void)send:(NSString *)hash amount:(id)amount callback:(WebScriptObject *)callback
 {
-    [self.controller requestPaymentToHash:hash amount:amount completion:^(BOOL success, NSString *hash) {
+    NSDecimalNumber *amt = [NSDecimalNumber decimalNumberWithString:[amount description]];
+
+    [self.controller requestPaymentToHash:hash amount:amt completion:^(BOOL success, NSString *hash) {
         // Functions get passed in as WebScriptObjects, which give you access to the function as a JSObject
         JSObjectRef ref = [callback JSObject];
         
@@ -149,9 +151,11 @@
     JSStringRelease(dataString);
 }
 
-- (void)sendToAddress:(NSString *)hash amount:(CGFloat)amount callback:(WebScriptObject*)callback
+- (void)sendToAddress:(NSString *)hash amount:(id)amount callback:(WebScriptObject*)callback
 {
-    [self.controller requestPaymentWithAddressToHash:hash amount:amount completion:^(BOOL success, NSString *hash, NSDictionary *address) {
+    NSDecimalNumber *amt = [NSDecimalNumber decimalNumberWithString:[amount description]];
+
+    [self.controller requestPaymentWithAddressToHash:hash amount:amt completion:^(BOOL success, NSString *hash, NSDictionary *address) {
         // Functions get passed in as WebScriptObjects, which give you access to the function as a JSObject
         JSObjectRef ref = [callback JSObject];
         

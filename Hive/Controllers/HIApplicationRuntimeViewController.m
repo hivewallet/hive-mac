@@ -61,28 +61,36 @@
 
 #pragma mark - Money sends
 
-- (void)requestPaymentWithAddressToHash:(NSString *)hash amount:(CGFloat)amount completion:(void(^)(BOOL success, NSString *hash, NSDictionary *address))completion
+- (void)requestPaymentWithAddressToHash:(NSString *)hash
+                                 amount:(NSDecimalNumber *)amount
+                             completion:(void(^)(BOOL success, NSString *hash, NSDictionary *address))completion
 {
     HIAppDelegate *d = (HIAppDelegate *)[NSApp delegate];
     HISendBitcoinsWindowController *sc = [d sendBitcoinsWindow];
     [sc setHashAddress:hash];
     [sc setLockedAmount:amount];
-    sc.sendCompletion = ^(BOOL success, double amount, NSString *hash) {
+    sc.sendCompletion = ^(BOOL success, NSDecimalNumber *amount, NSString *hash) {
         if (completion)
+        {
             completion(success, hash, nil);
+        }
     };
     [sc showWindow:self];    
 }
 
-- (void)requestPaymentToHash:(NSString *)hash amount:(CGFloat)amount completion:(void(^)(BOOL success, NSString *hash))completion
+- (void)requestPaymentToHash:(NSString *)hash
+                      amount:(NSDecimalNumber *)amount
+                  completion:(void(^)(BOOL success, NSString *hash))completion
 {
     HIAppDelegate *d = (HIAppDelegate *)[NSApp delegate];
     HISendBitcoinsWindowController *sc = [d sendBitcoinsWindow];
     [sc setHashAddress:hash];
     [sc setLockedAmount:amount];
-    sc.sendCompletion = ^(BOOL success, double amount, NSString *hash) {
+    sc.sendCompletion = ^(BOOL success, NSDecimalNumber *amount, NSString *hash) {
         if (completion)
+        {
             completion(success, hash);
+        }
     };
     [sc showWindow:self];
 }

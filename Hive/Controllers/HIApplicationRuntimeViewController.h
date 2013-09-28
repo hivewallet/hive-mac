@@ -15,6 +15,12 @@
 @property (strong) HIApplication *application;
 @property (weak) IBOutlet WebView *webView;
 
-- (void)requestPaymentToHash:(NSString *)hash amount:(CGFloat)amount completion:(void(^)(BOOL success, NSString *hash))completion;
-- (void)requestPaymentWithAddressToHash:(NSString *)hash amount:(CGFloat)amount completion:(void(^)(BOOL success, NSString *hash, NSDictionary *address))completion;
+- (void)requestPaymentToHash:(NSString *)hash
+                      amount:(NSDecimalNumber *)amount
+                  completion:(void(^)(BOOL success, NSString *hash))completion;
+
+- (void)requestPaymentWithAddressToHash:(NSString *)hash
+                                 amount:(NSDecimalNumber *)amount
+                             completion:(void(^)(BOOL success, NSString *hash, NSDictionary *address))completion;
+
 @end

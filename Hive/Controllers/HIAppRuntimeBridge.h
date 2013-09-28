@@ -18,8 +18,8 @@
 
 - (void)killCallbacks;
 
-- (void)send:(NSString *)hash amount:(CGFloat)amount callback:(WebScriptObject*)callback;
-- (void)sendToAddress:(NSString *)hash amount:(CGFloat)amount callback:(WebScriptObject*)callback;
+- (void)send:(NSString *)hash amount:(id)amount callback:(WebScriptObject*)callback;
+- (void)sendToAddress:(NSString *)hash amount:(id)amount callback:(WebScriptObject*)callback;
 - (void)send:(NSString *)hash callback:(WebScriptObject*)callback;
 - (void)sendToAddress:(NSString *)hash callback:(WebScriptObject*)callback;
 - (void)transactionWithHash:(NSString *)hash callback:(WebScriptObject *)callback;

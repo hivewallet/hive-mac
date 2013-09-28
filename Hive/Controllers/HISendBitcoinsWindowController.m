@@ -19,7 +19,7 @@ NSString * const HISendBitcoinsWindowSuccessKey = @"success";
     HIContact *_contact;
     HIContactAutocompleteWindowController *_autocompleteController;
     NSString *_hashAddress;
-    double _amount;
+    NSDecimalNumber *_amount;
 }
 
 @end
@@ -32,7 +32,7 @@ NSString * const HISendBitcoinsWindowSuccessKey = @"success";
 
     if (self)
     {
-        _amount = -1;
+        _amount = nil;
     }
 
     return self;
@@ -73,13 +73,13 @@ NSString * const HISendBitcoinsWindowSuccessKey = @"success";
 
     self.wrapper.layer.cornerRadius = 5.0;
 
-    if (_amount <= 0)
+    if (_amount)
     {
-        self.amountField.stringValue = @"0";
+        [self setLockedAmount:_amount];
     }
     else
     {
-        [self setLockedAmount:_amount];
+        self.amountField.stringValue = @"0";
     }
 }
 
@@ -96,11 +96,11 @@ NSString * const HISendBitcoinsWindowSuccessKey = @"success";
     self.nameLabel.stringValue = _hashAddress;
 }
 
-- (void)setLockedAmount:(double)amount
+- (void)setLockedAmount:(NSDecimalNumber *)amount
 {
     _amount = amount;
 
-    [self.amountField setStringValue:[self.amountField.formatter stringFromNumber:@(_amount)]];
+    [self.amountField setStringValue:[self.amountField.formatter stringFromNumber:_amount]];
     [self.amountField setEditable:NO];
 }
 
@@ -166,10 +166,10 @@ NSString * const HISendBitcoinsWindowSuccessKey = @"success";
 - (void)sendClicked:(id)sender
 {
     NSNumberFormatter *formatter = self.amountField.formatter;
-    NSNumber *amount = [formatter numberFromString: self.amountField.stringValue];
-    uint64 satoshi = amount.doubleValue * SATOSHI;
+    NSDecimalNumber *amount = (NSDecimalNumber *) [formatter numberFromString: self.amountField.stringValue];
+    uint64 satoshi = [[amount decimalNumberByMultiplyingByPowerOf10:8] integerValue];
 
-    if (amount.floatValue == 0) {
+    if (satoshi == 0) {
         NSAlert *alert = [NSAlert new];
 
         alert.messageText = NSLocalizedString(@"Enter an amount greater than zero.",
@@ -201,11 +201,11 @@ NSString * const HISendBitcoinsWindowSuccessKey = @"success";
     NSString *target = _hashAddress ? _hashAddress : self.nameLabel.stringValue;
 
     [[BCClient sharedClient] sendBitcoins:satoshi toHash:target completion:^(BOOL success, NSString *hash) {
-        [self closeAndNotifyWithSuccess:YES amount:amount.doubleValue];
+        [self closeAndNotifyWithSuccess:YES amount:amount];
     }];
 }
 
-- (void)closeAndNotifyWithSuccess:(BOOL)success amount:(double)amount
+- (void)closeAndNotifyWithSuccess:(BOOL)success amount:(NSDecimalNumber *)amount
 {
     [self.sendButton hideSpinner];
 
