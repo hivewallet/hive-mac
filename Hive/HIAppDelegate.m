@@ -14,6 +14,9 @@
 #import "HISendBitcoinsWindowController.h"
 #import "HITransaction.h"
 
+static NSString * const WarningDisplayedKey = @"WarningDisplayed";
+
+
 @interface HIAppDelegate ()
 {
     HIMainWindowController *_mainWindowController;
@@ -56,6 +59,23 @@
                                                        andSelector:@selector(handleURLEvent:withReplyEvent:)
                                                      forEventClass:kInternetEventClass
                                                         andEventID:kAEGetURL];
+
+    [self showBetaWarning];
+}
+
+- (void)showBetaWarning
+{
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+
+    if (![defaults objectForKey:WarningDisplayedKey])
+    {
+        NSRunAlertPanel(@"Warning",
+                        @"This version is for testing and development purposes only! "
+                        @"Please do not move any money into it that you cannot afford to lose.",
+                        @"OK", nil, nil);
+
+        [defaults setObject:@(YES) forKey:WarningDisplayedKey];
+    }
 }
 
 // Returns the directory the application uses to store the Core Data store file.
