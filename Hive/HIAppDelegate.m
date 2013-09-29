@@ -33,8 +33,14 @@
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification
 {
-    [[NSUserDefaults standardUserDefaults] registerDefaults:@{@"Currency": @1, @"ExchangeCurrency1": @"USD", @"ExchangeCurrency2": @"PLN", @"FirstRun": @YES, @"LastBalance": @0,
-     @"WebKitDeveloperExtras": @YES}];
+    [[NSUserDefaults standardUserDefaults] registerDefaults:@{
+     @"Currency": @1,
+     @"ExchangeCurrency1": @"USD",
+     @"ExchangeCurrency2": @"PLN",
+     @"FirstRun": @YES,
+     @"LastBalance": @0,
+     @"WebKitDeveloperExtras": @YES
+    }];
     //[WebView registerURLSchemeAsLocal:@"hiveapp"];
     [NSURLProtocol registerClass:[HIApplicationURLProtocol class]];
 
@@ -42,8 +48,14 @@
     [_mainWindowController showWindow:self];
 
     _sendBitcoinsWindows = [NSMutableArray new];
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(sendWindowDidClose:) name:HISendBitcoinsWindowDidClose object:nil];
-    [[NSAppleEventManager sharedAppleEventManager] setEventHandler:self andSelector:@selector(handleURLEvent:withReplyEvent:) forEventClass:kInternetEventClass andEventID:kAEGetURL];
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(sendWindowDidClose:)
+                                                 name:HISendBitcoinsWindowDidClose
+                                               object:nil];
+    [[NSAppleEventManager sharedAppleEventManager] setEventHandler:self
+                                                       andSelector:@selector(handleURLEvent:withReplyEvent:)
+                                                     forEventClass:kInternetEventClass
+                                                        andEventID:kAEGetURL];
 }
 
 // Returns the directory the application uses to store the Core Data store file.
