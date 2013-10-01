@@ -135,6 +135,18 @@
     [alert runModal];
 }
 
+- (void)webView:(WebView *)sender
+                   resource:(id)identifier
+    didFailLoadingWithError:(NSError *)error
+             fromDataSource:(WebDataSource *)dataSource
+{
+    NSRunAlertPanel(NSLocalizedString(@"Application can't be loaded", @"App load error title"),
+                    NSLocalizedString(@"A network error has occurred or the application data file "
+                                      @"has been removed or corrupted.", @"App load error description"),
+                    NSLocalizedString(@"OK", @"OK Button title"),
+                    nil, nil);
+}
+
 - (void)dealloc
 {
     id window = [self.webView windowScriptObject];
