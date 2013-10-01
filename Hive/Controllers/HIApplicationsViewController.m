@@ -56,25 +56,25 @@
     [_collectionView removeObserver:self forKeyPath:@"selectionIndexes"];
 }
 
--(void)observeValueForKeyPath:(NSString *)keyPath
-                     ofObject:(id)object
-                       change:(NSDictionary *)change
-                      context:(void *)context
+- (void)observeValueForKeyPath:(NSString *)keyPath
+                      ofObject:(id)object
+                        change:(NSDictionary *)change
+                       context:(void *)context
 {
-    if([keyPath isEqualTo:@"selectionIndexes"])
+    if (object == self.collectionView && [keyPath isEqualTo:@"selectionIndexes"])
     {
-        if([_collectionView.selectionIndexes count] > 0)
+        if ([self.collectionView.selectionIndexes count] > 0)
         {
-            if (self.navigationController.topViewController == self)
-            {
-                HIApplication * app = (HIApplication *)[[_arrayController arrangedObjects] objectAtIndex:_collectionView.selectionIndexes.lastIndex];
-                dispatch_async(dispatch_get_main_queue(), ^{
-                    [_collectionView setSelectionIndexes:[NSIndexSet indexSet]];
-                });
-                HIApplicationRuntimeViewController *sub = [HIApplicationRuntimeViewController new];
-                sub.application = app;
-                [self.navigationController pushViewController:sub animated:YES];
-            }
+            NSUInteger index = self.collectionView.selectionIndexes.lastIndex;
+            HIApplication *app = (HIApplication *) [_arrayController arrangedObjects][index];
+
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [self.collectionView setSelectionIndexes:[NSIndexSet indexSet]];
+            });
+
+            HIApplicationRuntimeViewController *sub = [HIApplicationRuntimeViewController new];
+            sub.application = app;
+            [self.navigationController pushViewController:sub animated:YES];
         }
     }
 }

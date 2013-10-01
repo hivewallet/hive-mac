@@ -6,10 +6,10 @@
 //  Copyright (c) 2013 Hive Developers. All rights reserved.
 //
 
+#import "HIAppDelegate.h"
 #import "HIApplicationRuntimeViewController.h"
 #import "HIAppRuntimeBridge.h"
 #import "HIMainWindowController.h"
-#import "HIAppDelegate.h"
 #import "HISendBitcoinsWindowController.h"
 
 @interface WebPreferences (ItsThere)
@@ -23,7 +23,6 @@
     HIAppRuntimeBridge *_bridge;
 }
 
-- (void)requestFinished:(id)sender;
 @end
 
 @implementation HIApplicationRuntimeViewController
@@ -31,6 +30,7 @@
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
+
     if (self) {
         // Initialization code here.
     }
@@ -41,23 +41,43 @@
 - (void)loadView
 {
     [super loadView];
+
     self.title = self.application.name;
-    id win = [self.webView windowScriptObject];
+
+    // make the bridge object accessible from JS
+    id window = self.webView.windowScriptObject;
+
     _bridge = [[HIAppRuntimeBridge alloc] init];
     _bridge.frame = [self.webView mainFrame];
     _bridge.controller = self;
-    [win setValue:_bridge forKey:@"bitcoin"];
-    NSString* noSecurityPreferencesId = @"noSecurity";
-    WebPreferences* prefs = [[WebPreferences alloc] initWithIdentifier: noSecurityPreferencesId];
+
+    [window setValue:_bridge forKey:@"bitcoin"];
+
+    // disable cross-site security check
+    NSString *noSecurityPreferencesId = @"noSecurity";
+    WebPreferences *prefs = [[WebPreferences alloc] initWithIdentifier:noSecurityPreferencesId];
     [prefs setWebSecurityEnabled:NO];
-    [_webView setPreferencesIdentifier: noSecurityPreferencesId];
-    BOOL dir = NO;
-    [[NSFileManager defaultManager] fileExistsAtPath:self.application.path.path isDirectory:&dir];
-    if (dir)
-        [[self.webView mainFrame] loadRequest:[NSURLRequest requestWithURL:[self.application.path URLByAppendingPathComponent:@"index.html"]]];
+    [self.webView setPreferencesIdentifier:noSecurityPreferencesId];
+
+    // load the app
+    BOOL isDirectory = NO;
+    [[NSFileManager defaultManager] fileExistsAtPath:self.application.path.path isDirectory:&isDirectory];
+
+    NSURL *URLToLoad;
+
+    if (isDirectory)
+    {
+        URLToLoad = [self.application.path URLByAppendingPathComponent:@"index.html"];
+    }
     else
-        [[self.webView mainFrame] loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"http://localhost/%@/index.html", self.application.id]]]];
+    {
+        URLToLoad = [NSURL URLWithString:[NSString stringWithFormat:@"http://localhost/%@/index.html",
+                                          self.application.id]];
+    }
+
+    [self.webView.mainFrame loadRequest:[NSURLRequest requestWithURL:URLToLoad]];
 }
+
 
 #pragma mark - Money sends
 
@@ -95,33 +115,20 @@
     [sc showWindow:self];
 }
 
-- (void)requestFinished:(id)sender
-{
-}
-
 - (void)viewWillDisappear
 {
     [_bridge killCallbacks];
-    [[_webView mainFrame] loadHTMLString:@"" baseURL:nil];
+    [self.webView.mainFrame loadHTMLString:@"" baseURL:nil];
 }
 
 #pragma mark - Delegate for WebView
 
-
-- (NSURLRequest *)webView:(WebView *)sender resource:(id)identifier willSendRequest:(NSURLRequest *)request redirectResponse:(NSURLResponse *)redirectResponse fromDataSource:(WebDataSource *)dataSource
-{
-//    if ([request.URL.lastPathComponent compare:@"bitcoin.js"] == NSOrderedSame)
-//    {
-//        return [NSURLRequest requestWithURL:[[NSBundle mainBundle] URLForResource:@"bitcoin" withExtension:@"js"]];
-//    }
-    
-    return request;
-}
-
-- (void)webView:(WebView *)sender runJavaScriptAlertPanelWithMessage:(NSString *)message initiatedByFrame:(WebFrame *)frame
+- (void)webView:(WebView *)sender
+    runJavaScriptAlertPanelWithMessage:(NSString *)message
+                      initiatedByFrame:(WebFrame *)frame
 {
     NSAlert *alert = [[NSAlert alloc] init];
-    [alert setMessageText:_application.name];
+    [alert setMessageText:self.application.name];
     [alert setInformativeText:message];
     [alert addButtonWithTitle:@"Ok"];
     
@@ -130,7 +137,8 @@
 
 - (void)dealloc
 {
-    id win = [self.webView windowScriptObject];
-    [win removeObjectForKey:@"bitcoin"];
+    id window = [self.webView windowScriptObject];
+    [window removeObjectForKey:@"bitcoin"];
 }
+
 @end
