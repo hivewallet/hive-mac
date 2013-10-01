@@ -19,4 +19,6 @@ extern NSString * const HIApplicationEntity;
 @property (nonatomic, retain) NSString * name;
 @property (nonatomic, readonly, getter = icon) NSImage *icon;
 
+- (void)refreshIcon;
+
 @end

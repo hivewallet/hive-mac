@@ -420,12 +420,14 @@ static NSString * NPBase64EncodedStringFromString(NSString *string) {
 {
     NSDictionary *manifest = [self applicationMetadata:appURL];
     HIApplication *app = nil;
-    NSFetchRequest *req = [NSFetchRequest fetchRequestWithEntityName:HIApplicationEntity];
-    req.predicate = [NSPredicate predicateWithFormat:@"id == %@", manifest[@"id"]];
-    NSArray *rsp = [DBM executeFetchRequest:req error:NULL];
-    if (rsp.count > 0)
+
+    NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:HIApplicationEntity];
+    request.predicate = [NSPredicate predicateWithFormat:@"id == %@", manifest[@"id"]];
+    NSArray *response = [DBM executeFetchRequest:request error:NULL];
+
+    if (response.count > 0)
     {
-        app = rsp[0];
+        app = response[0];
     }
     else
     {
@@ -434,10 +436,14 @@ static NSString * NPBase64EncodedStringFromString(NSString *string) {
     
     app.id = manifest[@"id"];
     app.name = manifest[@"name"];
+
     NSURL *installedAppURL = [[self applicationsDirectory] URLByAppendingPathComponent:manifest[@"id"]];
     [[NSFileManager defaultManager] removeItemAtURL:installedAppURL error:NULL];
     [[NSFileManager defaultManager] copyItemAtURL:appURL toURL:installedAppURL error:NULL];
     app.path = installedAppURL;
+
+    [app refreshIcon];
+
     [DBM save:NULL];
 }
 @end

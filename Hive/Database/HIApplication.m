@@ -51,4 +51,10 @@ NSString * const HIApplicationEntity = @"HIApplication";
     return icon;
 }
 
+- (void)refreshIcon
+{
+    [self willChangeValueForKey:@"icon"];
+    [self didChangeValueForKey:@"icon"];
+}
+
 @end
