@@ -18,4 +18,5 @@ extern NSString * const HIApplicationEntity;
 @property (nonatomic, retain) NSURL * path;
 @property (nonatomic, retain) NSString * name;
 @property (nonatomic, readonly, getter = icon) NSImage *icon;
+
 @end

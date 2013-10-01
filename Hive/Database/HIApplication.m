@@ -21,28 +21,34 @@ NSString * const HIApplicationEntity = @"HIApplication";
 
 - (NSImage *)icon
 {
-    BOOL dir;
-    NSImage *ic = nil;
-    [[NSFileManager defaultManager] fileExistsAtPath:self.path.path isDirectory:&dir];
-    NSDictionary *manifest = nil;
-    if (dir)
+    NSImage *icon = [NSImage imageNamed:@"icon-apps__inactive.pdf"];
+
+    BOOL isDirectory;
+    BOOL exists = [[NSFileManager defaultManager] fileExistsAtPath:self.path.path isDirectory:&isDirectory];
+
+    if (exists && isDirectory)
     {
-        manifest = [NSJSONSerialization JSONObjectWithData:[NSData dataWithContentsOfURL:[self.path URLByAppendingPathComponent:@"manifest.json"]] options:0 error:NULL];
+        NSData *data = [NSData dataWithContentsOfURL:[self.path URLByAppendingPathComponent:@"manifest.json"]];
+        NSDictionary *manifest = [NSJSONSerialization JSONObjectWithData:data options:0 error:NULL];
+
         if (manifest[@"icon"])
         {
-            ic = [[NSImage alloc] initWithContentsOfURL:[self.path URLByAppendingPathComponent:manifest[@"icon"]]];
+            icon = [[NSImage alloc] initWithContentsOfURL:[self.path URLByAppendingPathComponent:manifest[@"icon"]]];
         }
     }
-    else
+    else if (exists)
     {
         NPZip *zip = [NPZip archiveWithFile:self.path.path];
-        manifest = [NSJSONSerialization JSONObjectWithData:[zip dataForEntryNamed:@"manifest.json"] options:0 error:NULL];
+        NSData *data = [zip dataForEntryNamed:@"manifest.json"];
+        NSDictionary *manifest = [NSJSONSerialization JSONObjectWithData:data options:0 error:NULL];
+
         if (manifest[@"icon"])
         {
-            ic = [[NSImage alloc] initWithData:[zip dataForEntryNamed:manifest[@"icon"]]];
+            icon = [[NSImage alloc] initWithData:[zip dataForEntryNamed:manifest[@"icon"]]];
         }
     }
     
-    return ic;
+    return icon;
 }
+
 @end
