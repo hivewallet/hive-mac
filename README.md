@@ -42,3 +42,8 @@ The version in the repository is set up to use a testing blockchain, which is co
 The builds published on grabhive.com and on the 'Releases' page are set up to use the production network. To use the main network, comment out the line `#define TESTING_NETWORK 1` in `Hive-Prefix.pch` and rebuild the app.
 
 **Warning: if you use the production network, be careful and don't transfer large amounts of bitcoins to the Hive wallet. The app is still in a beta phase and there's always a risk that something will go wrong and the wallet will be lost.**
+
+
+## Contributing
+
+Patches and pull requests are very welcome. If you want to send us any code, read the [Coding guidelines](https://github.com/grabhive/hive-osx/wiki/Code-style-guidelines) first.
