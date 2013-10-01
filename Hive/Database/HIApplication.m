@@ -10,6 +10,9 @@
 #import "NPZip.h"
 #import "BCClient.h"
 
+NSString * const HIApplicationEntity = @"HIApplication";
+
+
 @implementation HIApplication
 
 @dynamic id;

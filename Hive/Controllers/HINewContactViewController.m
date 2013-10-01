@@ -286,7 +286,7 @@
         {
             // We should create a contact now
             HIContact * c = [NSEntityDescription
-                            insertNewObjectForEntityForName:@"HIContact"
+                            insertNewObjectForEntityForName:HIContactEntity
                             inManagedObjectContext:DBM];
             
             if (_firstnameField.stringValue.length > 0)
@@ -306,7 +306,7 @@
                     continue;
                 
                 HIAddress * a = [NSEntityDescription
-                                 insertNewObjectForEntityForName:@"HIAddress"
+                                 insertNewObjectForEntityForName:HIAddressEntity
                                  inManagedObjectContext:DBM];
 
                 a.caption = caption;
@@ -348,7 +348,7 @@
                     continue;
                 
                 HIAddress * a = [NSEntityDescription
-                                 insertNewObjectForEntityForName:@"HIAddress"
+                                 insertNewObjectForEntityForName:HIAddressEntity
                                  inManagedObjectContext:DBM];
                 
                 a.caption = caption;

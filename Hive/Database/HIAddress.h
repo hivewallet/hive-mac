@@ -11,6 +11,9 @@
 
 @class HIContact;
 
+extern NSString * const HIAddressEntity;
+
+
 @interface HIAddress : NSManagedObject
 
 @property (nonatomic, retain) NSString * address;

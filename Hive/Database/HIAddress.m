@@ -11,6 +11,9 @@
 
 static const NSInteger SuffixLength = 8;
 
+NSString * const HIAddressEntity = @"HIAddress";
+
+
 @implementation HIAddress
 
 @dynamic address;

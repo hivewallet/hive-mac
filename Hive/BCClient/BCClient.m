@@ -251,7 +251,7 @@ static NSString * NPBase64EncodedStringFromString(NSString *string) {
 
 - (NSUInteger)unreadTransactions
 {
-    NSFetchRequest *req = [NSFetchRequest fetchRequestWithEntityName:@"HITransaction"];
+    NSFetchRequest *req = [NSFetchRequest fetchRequestWithEntityName:HITransactionEntity];
     req.predicate = [NSPredicate predicateWithFormat:@"read == NO"];
     
     return [_transactionUpdateContext countForFetchRequest:req error:NULL];
@@ -281,7 +281,7 @@ static NSString * NPBase64EncodedStringFromString(NSString *string) {
 - (BOOL)parseTransaction:(NSDictionary *)t notify:(BOOL)notify
 {
     BOOL continueFetching = YES;
-    NSFetchRequest *req = [[NSFetchRequest alloc] initWithEntityName:@"HITransaction"];
+    NSFetchRequest *req = [[NSFetchRequest alloc] initWithEntityName:HITransactionEntity];
     req.predicate = [NSPredicate predicateWithFormat:@"id == %@", t[@"txid"]];
     NSArray *resp = [_transactionUpdateContext executeFetchRequest:req error:NULL];
     if (resp.count > 0)
@@ -301,7 +301,7 @@ static NSString * NPBase64EncodedStringFromString(NSString *string) {
     {
         
         HITransaction *trans = [NSEntityDescription
-                                insertNewObjectForEntityForName:@"HITransaction"
+                                insertNewObjectForEntityForName:HITransactionEntity
                                 inManagedObjectContext:_transactionUpdateContext];
         trans.id = t[@"txid"];
         trans.date = [t[@"time"] timeIntervalSince1970];
@@ -410,7 +410,7 @@ static NSString * NPBase64EncodedStringFromString(NSString *string) {
 
 - (BOOL)hasApplicationOfId:(NSString *)appId
 {
-    NSFetchRequest *req = [NSFetchRequest fetchRequestWithEntityName:@"HIApplication"];
+    NSFetchRequest *req = [NSFetchRequest fetchRequestWithEntityName:HIApplicationEntity];
     req.predicate = [NSPredicate predicateWithFormat:@"id == %@", appId];
     NSArray *rsp = [DBM executeFetchRequest:req error:NULL];
     return (rsp.count > 0);
@@ -420,7 +420,7 @@ static NSString * NPBase64EncodedStringFromString(NSString *string) {
 {
     NSDictionary *manifest = [self applicationMetadata:appURL];
     HIApplication *app = nil;
-    NSFetchRequest *req = [NSFetchRequest fetchRequestWithEntityName:@"HIApplication"];
+    NSFetchRequest *req = [NSFetchRequest fetchRequestWithEntityName:HIApplicationEntity];
     req.predicate = [NSPredicate predicateWithFormat:@"id == %@", manifest[@"id"]];
     NSArray *rsp = [DBM executeFetchRequest:req error:NULL];
     if (rsp.count > 0)
@@ -429,9 +429,7 @@ static NSString * NPBase64EncodedStringFromString(NSString *string) {
     }
     else
     {
-        app = [NSEntityDescription
-               insertNewObjectForEntityForName:@"HIApplication"
-               inManagedObjectContext:DBM];
+        app = [NSEntityDescription insertNewObjectForEntityForName:HIApplicationEntity inManagedObjectContext:DBM];
     }
     
     app.id = manifest[@"id"];
