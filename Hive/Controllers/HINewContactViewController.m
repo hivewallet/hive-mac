@@ -6,11 +6,15 @@
 //  Copyright (c) 2013 Hive Developers. All rights reserved.
 //
 
-#import "HINewContactViewController.h"
-#import "HINavigationController.h"
-#import "HIContact.h"
 #import "HIAddress.h"
+#import "HIContact.h"
+#import "HINavigationController.h"
+#import "HINewContactViewController.h"
 #import "NSColor+Hive.h"
+
+static const CGFloat NameFieldsGap = 10.0;
+static const CGFloat NameFieldsLineSpacing = 10.0;
+static const CGFloat AddressCellHeight = 60.0;
 
 @interface HINewContactViewController ()
 {
@@ -22,7 +26,6 @@
     NSMutableArray *_separators;
 }
 
-- (void)deleteButtonTapped:(NSButton *)button;
 @end
 
 @implementation HINewContactViewController
@@ -30,354 +33,326 @@
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
+
+    if (self)
+    {
         self.title = NSLocalizedString(@"New contact", @"New contact view controller title");
     }
     
     return self;
 }
 
-- (void)addAddressPlaceholderAnimated:(BOOL)animated
-{
-    NSRect f = _walletsView.frame;
-    f.size.height += 60;
-    f.origin.y -= 60;
-    _walletsView.frame = f;
-    
-    f = _scrollContent.frame;
-    f.size.height += 60;
-    _scrollContent.frame = f;
-    
-    // If we already have fields, we need to add separator
-    if (_walletAddressFields.count > 0)
-    {
-        NSView *separator = [[NSView alloc] initWithFrame:NSMakeRect(1, 60, _walletsView.bounds.size.width-2, 1)];
-        
-        separator.wantsLayer = YES;
-        separator.layer.backgroundColor = [[NSColor colorWithCalibratedWhite:0.5 alpha:0.5] hiNativeColor];
-        separator.autoresizingMask = NSViewMinYMargin | NSViewWidthSizable;
-        [_walletsView addSubview:separator];
-        [_separators addObject:separator];
-        
-    }
-    
-    NSView *fieldContentView = [[NSView alloc] initWithFrame:NSMakeRect(0, 0, _walletsView.bounds.size.width - 40, 60)];
-    fieldContentView.layer.backgroundColor = [[NSColor clearColor] hiNativeColor];
-    fieldContentView.autoresizingMask = NSViewMinYMargin | NSViewWidthSizable;
-    [_walletsView addSubview:fieldContentView];
-    [_fieldContents addObject:fieldContentView];
-    
-    HITextField *nameField = [[HITextField alloc] initWithFrame:CGRectMake(10, 30, 100, 21)];
-    nameField.autoresizingMask = NSViewMinYMargin;
-    nameField.font = [NSFont fontWithName:@"Helvetica-Bold" size:14];
-    [nameField.cell setPlaceholderString:NSLocalizedString(@"Address caption", @"Address caption field placeholder")];
-    
-    HITextField *addressField = [[HITextField alloc] initWithFrame:CGRectMake(10, 5, 100, 21)];
-    addressField.autoresizingMask = NSViewMinYMargin;
-    [addressField.cell setPlaceholderString:NSLocalizedString(@"Address", @"Address field placeholder")];
-    addressField.font = [NSFont fontWithName:@"Helvetica" size:14];
-    nameField.nextKeyView = addressField;
-    addressField.nextKeyView = nameField;
-    [fieldContentView addSubview:nameField];
-    [fieldContentView addSubview:addressField];
-    [nameField recalcForString:@""];
-    [addressField recalcForString:@""];
-    [nameField awakeFromNib];
-    [addressField awakeFromNib];
-    
-    NSButton *delBtn = [[NSButton alloc] initWithFrame:NSMakeRect(_walletsView.bounds.size.width - 40, 15, 30, 30)];
-    delBtn.tag = _walletNameFields.count;
-    [delBtn setImage:[NSImage imageNamed:@"icon-delete"]];
-    [delBtn setTarget:self];
-    [delBtn setAction:@selector(deleteButtonTapped:)];
-    [delBtn setBordered:NO];
-    delBtn.autoresizingMask = NSViewMinXMargin | NSViewMinYMargin;
-    [_walletsView addSubview:delBtn];
-    [_walletRemovalButtons addObject:delBtn];
-    [_walletNameFields addObject:nameField];
-    [_walletAddressFields addObject:addressField];
-}
-
-- (void)deleteButtonTapped:(NSButton *)button
-{
-    NSUInteger idx = button.tag;
-    
-    NSRect f = _walletsView.frame;
-    f.size.height -= 60;
-    f.origin.y += 60;
-    _walletsView.frame = f;
-    
-    f = _scrollContent.frame;
-    f.size.height -= 60;
-    _scrollContent.frame = f;
-    
-    [_walletNameFields[idx] removeFromSuperview];
-    [_walletNameFields removeObjectAtIndex:idx];
-    [_walletAddressFields[idx] removeFromSuperview];
-    [_walletAddressFields removeObjectAtIndex:idx];
-    [_walletRemovalButtons[idx] removeFromSuperview];
-    [_walletRemovalButtons removeObjectAtIndex:idx];
-    [_fieldContents[idx] removeFromSuperview];
-    [_fieldContents removeObjectAtIndex:idx];
-    
-    // For all fields below this line we need to "move them up"
-    for (int i = (int)idx ; i < _walletNameFields.count; i++)
-    {
-        NSRect f = [_fieldContents[i] frame];
-        f.origin.y += 60;
-        [_fieldContents[i] setFrame:f];
-
-        f = [_walletRemovalButtons[i] frame];
-        f.origin.y += 60;
-        [_walletRemovalButtons[i] setFrame:f];
-        [_walletRemovalButtons[i] setTag:i];
-    }
-    
-    if (_separators.count > 0)
-    {
-        [_separators[_separators.count-1] removeFromSuperview];
-        [_separators removeObjectAtIndex:_separators.count-1];
-    }
-    
-
-}
-
 - (void)loadView
 {
     [super loadView];
+
     _avatarView.layer.backgroundColor = [[NSColor whiteColor] hiNativeColor];
-//    _addWalletBtn.layer.cornerRadius = 4.0;
-    
+
     // Hide remove button if necessary
-    if (!_contact)
-        [_removeContactBtn setHidden:YES];
-    
+    [self.removeContactButton setHidden:(_contact == nil)];
+
     // Calculate content size
-    
+    NSRect frame;
+
     // Add content to scrollview
-    NSRect f = _scrollContent.frame;
-    f.size.width = _scrollView.bounds.size.width;
-    _scrollContent.frame = f;
-    [_scrollView setDocumentView:_scrollContent];
-    
+    frame = self.scrollContent.frame;
+    frame.size.width = self.scrollView.bounds.size.width;
+    self.scrollContent.frame = frame;
+    [self.scrollView setDocumentView:self.scrollContent];
+
     // We need to set all placeholders manually
-    [_firstnameField.cell setPlaceholderString:NSLocalizedString(@"Firstname", @"Firstname field placeholder")];
-    [_lastnameField.cell setPlaceholderString:NSLocalizedString(@"Lastname", @"Lastname field placeholder")];
-    [_emailField.cell setPlaceholderString:NSLocalizedString(@"email", @"Email field placeholder")];
-//    [_walletAddressField.cell setPlaceholderString:NSLocalizedString(@"Address", @"Address field placeholder")];
-//    [_walletNameField.cell setPlaceholderString:NSLocalizedString(@"Address caption", @"Address caption field placeholder")];
-    
+    [self.firstnameField.cell setPlaceholderString:NSLocalizedString(@"Firstname", @"Firstname field placeholder")];
+    [self.lastnameField.cell setPlaceholderString:NSLocalizedString(@"Lastname", @"Lastname field placeholder")];
+    [self.emailField.cell setPlaceholderString:NSLocalizedString(@"email", @"Email field placeholder")];
+
     _walletAddressFields = [NSMutableArray new];
     _walletNameFields = [NSMutableArray new];
     _walletRemovalButtons = [NSMutableArray new];
     _fieldContents = [NSMutableArray new];
     _separators = [NSMutableArray new];
-    
-    [self addAddressPlaceholderAnimated:NO];
 
     // Now... if we have a contact here, we need to update
     if (_contact)
     {
         if (_contact.firstname)
         {
-            _firstnameField.stringValue = _contact.firstname;
-            [_firstnameField recalcForString:_contact.firstname];
+            [self.firstnameField setStringValue:_contact.firstname];
+            [self.firstnameField recalcForString:_contact.firstname];
         }
-        
+
         if (_contact.lastname)
         {
-            _lastnameField.stringValue = _contact.lastname;
-            [_lastnameField recalcForString:_contact.lastname];
+            [self.lastnameField setStringValue:_contact.lastname];
+            [self.lastnameField recalcForString:_contact.lastname];
         }
-        
+
         if (_contact.email)
         {
-            _emailField.stringValue = _contact.email;
-            [_emailField recalcForString:_contact.email];
+            [self.emailField setStringValue:_contact.email];
+            [self.emailField recalcForString:_contact.email];
         }
-        
-        // Create place for addresses
-        for (int i = 1; i < _contact.addresses.count; i++)
-            [self addAddressPlaceholderAnimated:NO];
-        
-        // Now copy all the stuff from addresses to save
-        int idx = 0;
-        for (HIAddress *addr in _contact.addresses)
+
+        for (HIAddress *address in _contact.addresses)
         {
-            HITextField *nF = _walletNameFields[idx];
-            HITextField *aF = _walletAddressFields[idx];
-            
-            if (addr.caption)
-            {
-                nF.stringValue = addr.caption;
-                [nF recalcForString:addr.caption];
-            }
-            
-            aF.stringValue = addr.address;
-            [aF recalcForString:addr.address];
-            idx++;
+            [self addAddressPlaceholderWithAddress:address];
         }
-        
     }
-    
+    else
+    {
+        // just create a placeholder for a single address
+        [self addAddressPlaceholderWithAddress:nil];
+    }
+
     dispatch_async(dispatch_get_main_queue(), ^{
-        [self.view.window makeFirstResponder:_firstnameField];
-        [self.view.window makeFirstResponder:_firstnameField];           
+        [self.view.window makeFirstResponder:self.firstnameField];
     });
 
-    
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(recalculateNames:) name:kHITextFieldContentChanged object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(recalculateNames:)
+                                                 name:kHITextFieldContentChanged
+                                               object:nil];
 }
-
 
 - (void)dealloc
 {
     [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
-- (void)recalculateNames:(NSNotification *)not;
+- (void)addAddressPlaceholderWithAddress:(HIAddress *)address
 {
-    NSRect r1, r2;
-    r1 = _firstnameField.frame;
-    r2 = _lastnameField.frame;
+    NSRect frame;
+    NSUInteger index = _walletNameFields.count;
+
+    frame = self.walletsView.frame;
+    frame.size.height += AddressCellHeight;
+    frame.origin.y -= AddressCellHeight;
+    self.walletsView.frame = frame;
+    
+    frame = self.scrollContent.frame;
+    frame.size.height += AddressCellHeight;
+    self.scrollContent.frame = frame;
+    
+    // If we already have fields, we need to add separator
+    if (_walletAddressFields.count > 0)
+    {
+        NSView *separator = [[NSView alloc] initWithFrame:
+                             NSMakeRect(1, AddressCellHeight, self.walletsView.bounds.size.width - 2, 1)];
+
+        separator.wantsLayer = YES;
+        separator.layer.backgroundColor = [[NSColor colorWithCalibratedWhite:0.5 alpha:0.5] hiNativeColor];
+        separator.autoresizingMask = NSViewMinYMargin | NSViewWidthSizable;
+
+        [self.walletsView addSubview:separator];
+        [_separators addObject:separator];
+    }
+
+    NSView *fieldContentView = [[NSView alloc] initWithFrame:
+                                NSMakeRect(0, 0, self.walletsView.bounds.size.width - 40, AddressCellHeight)];
+    fieldContentView.layer.backgroundColor = [[NSColor clearColor] hiNativeColor];
+    fieldContentView.autoresizingMask = NSViewMinYMargin | NSViewWidthSizable;
+    [self.walletsView addSubview:fieldContentView];
+    [_fieldContents addObject:fieldContentView];
+    
+    HITextField *nameField = [[HITextField alloc] initWithFrame:NSMakeRect(10, 30, 100, 21)];
+    nameField.autoresizingMask = NSViewMinYMargin;
+    nameField.font = [NSFont fontWithName:@"Helvetica-Bold" size:14];
+    nameField.stringValue = address.caption ? address.caption : @"";
+    [nameField.cell setPlaceholderString:NSLocalizedString(@"Address caption", @"Address caption field placeholder")];
+    [_walletNameFields addObject:nameField];
+
+    HITextField *addressField = [[HITextField alloc] initWithFrame:CGRectMake(10, 5, 100, 21)];
+    addressField.autoresizingMask = NSViewMinYMargin;
+    [addressField.cell setPlaceholderString:NSLocalizedString(@"Address", @"Address field placeholder")];
+    addressField.font = [NSFont fontWithName:@"Helvetica" size:14];
+    addressField.stringValue = address ? address.address : @"";
+    [_walletAddressFields addObject:addressField];
+
+    nameField.nextKeyView = addressField;
+    addressField.nextKeyView = nameField;
+
+    [fieldContentView addSubview:nameField];
+    [fieldContentView addSubview:addressField];
+
+    [nameField recalcForString:nameField.stringValue];
+    [addressField recalcForString:addressField.stringValue];
+    [nameField awakeFromNib];
+    [addressField awakeFromNib];
+
+    NSButton *deleteButton = [[NSButton alloc] initWithFrame:
+                              NSMakeRect(self.walletsView.bounds.size.width - 40, 15, 30, 30)];
+    [deleteButton setTag:index];
+    [deleteButton setImage:[NSImage imageNamed:@"icon-delete"]];
+    [deleteButton setTarget:self];
+    [deleteButton setAction:@selector(removeAddressClicked:)];
+    [deleteButton setBordered:NO];
+    [deleteButton setAutoresizingMask:(NSViewMinXMargin | NSViewMinYMargin)];
+
+    [self.walletsView addSubview:deleteButton];
+    [_walletRemovalButtons addObject:deleteButton];
+}
+
+- (void)recalculateNames:(NSNotification *)notification
+{
+    NSRect firstFrame = self.firstnameField.frame;
+    NSRect lastFrame = self.lastnameField.frame;
+
+    CGFloat totalWidth = firstFrame.size.width + NameFieldsGap + lastFrame.size.width;
+    BOOL fitsInOneLine = (totalWidth < self.view.bounds.size.width - firstFrame.origin.x);
+
     if (_nameInTwoLines)
     {
-        // Check if we can fit both in one line
-        if (r1.size.width + r2.size.width + 10 < self.view.bounds.size.width - r1.origin.x)
+        if (fitsInOneLine)
         {
             // We can make them in a single line again
-            r1.origin.y -= 10;
-            r2.origin.y += 10;
-            r2.origin.x = r1.origin.x + r1.size.width + 10;
-            _firstnameField.frame = r1;
-            _lastnameField.frame = r2;
+            firstFrame.origin.y -= NameFieldsLineSpacing;
+            lastFrame.origin.y += NameFieldsLineSpacing;
+            lastFrame.origin.x = firstFrame.origin.x + firstFrame.size.width + NameFieldsGap;
+            self.firstnameField.frame = firstFrame;
+            self.lastnameField.frame = lastFrame;
             _nameInTwoLines = NO;
         }
     }
     else
     {
-        // Check if those will fit a single line
-        if (r1.size.width + r2.size.width + 10 < self.view.bounds.size.width - r1.origin.x)
+        if (fitsInOneLine)
         {
             // Position firstname and lastname in a single line
-            r2.origin.x = r1.origin.x + r1.size.width + 10;
-            _lastnameField.frame = r2;
+            lastFrame.origin.x = firstFrame.origin.x + firstFrame.size.width + NameFieldsGap;
+            self.lastnameField.frame = lastFrame;
         }
         else
         {
             // Well... we need to split them in two lines
-            r2.origin.x = r1.origin.x;
-            r1.origin.y += 10;
-            r2.origin.y -= 10;
+            lastFrame.origin.x = firstFrame.origin.x;
+            firstFrame.origin.y += NameFieldsLineSpacing;
+            lastFrame.origin.y -= NameFieldsLineSpacing;
             _nameInTwoLines = YES;
-            _firstnameField.frame = r1;
-            _lastnameField.frame = r2;
+            self.firstnameField.frame = firstFrame;
+            self.lastnameField.frame = lastFrame;
         }
     }
 }
 
+- (IBAction)addAddressClicked:(NSButton *)sender
+{
+    [self addAddressPlaceholderWithAddress:nil];
+}
+
+- (void)removeAddressClicked:(NSButton *)button
+{
+    NSRect frame;
+    NSUInteger index = button.tag;
+
+    frame = self.walletsView.frame;
+    frame.size.height -= AddressCellHeight;
+    frame.origin.y += AddressCellHeight;
+    self.walletsView.frame = frame;
+
+    frame = self.scrollContent.frame;
+    frame.size.height -= AddressCellHeight;
+    self.scrollContent.frame = frame;
+
+    [_walletNameFields[index] removeFromSuperview];
+    [_walletNameFields removeObjectAtIndex:index];
+    [_walletAddressFields[index] removeFromSuperview];
+    [_walletAddressFields removeObjectAtIndex:index];
+    [_walletRemovalButtons[index] removeFromSuperview];
+    [_walletRemovalButtons removeObjectAtIndex:index];
+    [_fieldContents[index] removeFromSuperview];
+    [_fieldContents removeObjectAtIndex:index];
+
+    // For all fields below this line we need to "move them up"
+    for (NSUInteger i = index; i < _walletNameFields.count; i++)
+    {
+        frame = [_fieldContents[i] frame];
+        frame.origin.y += AddressCellHeight;
+        [_fieldContents[i] setFrame:frame];
+
+        frame = [_walletRemovalButtons[i] frame];
+        frame.origin.y += AddressCellHeight;
+        [_walletRemovalButtons[i] setFrame:frame];
+        [_walletRemovalButtons[i] setTag:i];
+    }
+
+    if (_separators.count > 0)
+    {
+        [_separators[_separators.count - 1] removeFromSuperview];
+        [_separators removeObjectAtIndex:_separators.count - 1];
+    }
+}
 
 - (IBAction)doneClicked:(NSButton *)sender
 {
-    if ((_firstnameField.stringValue.length > 0 && !_firstnameField.isEmpty) ||
-        (_lastnameField.stringValue.length > 0 && !_lastnameField.isEmpty))
+    NSString *firstName = self.firstnameField.stringValue;
+    NSString *lastName = self.lastnameField.stringValue;
+    NSString *email = self.emailField.stringValue;
+
+    if ((firstName.length > 0 && !self.firstnameField.isEmpty)
+        || (lastName.length > 0 && !self.lastnameField.isEmpty))
     {
         if (!_contact)
         {
-            // We should create a contact now
-            HIContact * c = [NSEntityDescription
-                            insertNewObjectForEntityForName:HIContactEntity
-                            inManagedObjectContext:DBM];
-            
-            if (_firstnameField.stringValue.length > 0)
-                c.firstname = _firstnameField.stringValue;
-            
-            if (_lastnameField.stringValue.length > 0)
-                c.lastname = _lastnameField.stringValue;
-            
-            if (_emailField.stringValue.length > 0)
-                c.email = _emailField.stringValue;
-            
-            for (int i = 0; i < _walletAddressFields.count; i++)
-            {
-                NSString *address = [_walletAddressFields[i] stringValue];
-                NSString *caption = [_walletNameFields[i] stringValue];
-                if (address.length == 0)
-                    continue;
-                
-                HIAddress * a = [NSEntityDescription
-                                 insertNewObjectForEntityForName:HIAddressEntity
-                                 inManagedObjectContext:DBM];
-
-                a.caption = caption;
-                a.address = address;
-
-                [c addAddressesObject:a];
-                a.contact = c;
-                
-            }
+            _contact = [NSEntityDescription insertNewObjectForEntityForName:HIContactEntity
+                                                     inManagedObjectContext:DBM];
         }
-        else
+
+        // first save the basics
+        _contact.firstname = (firstName.length > 0) ? firstName : nil;
+        _contact.lastname = (lastName.length > 0) ? lastName : nil;
+        _contact.email = (email.length > 0) ? email : nil;
+
+        // delete all old addresses first
+        for (HIAddress *address in _contact.addresses)
         {
-            // First save the basics
-            if (_firstnameField.stringValue.length > 0)
-                _contact.firstname = _firstnameField.stringValue;
-            else
-                _contact.firstname = nil;
-            
-            if (_lastnameField.stringValue.length > 0)
-                _contact.lastname = _lastnameField.stringValue;
-            else
-                _contact.lastname = nil;
-            
-            if (_emailField.stringValue.length > 0)
-                _contact.email = _emailField.stringValue;
-            else
-                _contact.email = nil;
-            
-            // Now - delete all the addresses first
-            for (HIAddress *addr in _contact.addresses)
-                [DBM deleteObject:addr];
-            
-            // And add them anew
-            for (int i = 0; i < _walletAddressFields.count; i++)
-            {
-                NSString *address = [_walletAddressFields[i] stringValue];
-                NSString *caption = [_walletNameFields[i] stringValue];
-                if (address.length == 0)
-                    continue;
-                
-                HIAddress * a = [NSEntityDescription
-                                 insertNewObjectForEntityForName:HIAddressEntity
-                                 inManagedObjectContext:DBM];
-                
-                a.caption = caption;
-                a.address = address;
-                
-                [_contact addAddressesObject:a];
-                a.contact = _contact;
-                
-            }
+            [DBM deleteObject:address];
         }
-        NSError *err = nil;
-        [DBM save:&err];
+
+        // add new addresses
+        for (int i = 0; i < _walletAddressFields.count; i++)
+        {
+            NSString *hash = [_walletAddressFields[i] stringValue];
+            NSString *caption = [_walletNameFields[i] stringValue];
+
+            if (hash.length == 0)
+            {
+                continue;
+            }
+
+            HIAddress *address = [NSEntityDescription insertNewObjectForEntityForName:HIAddressEntity
+                                                               inManagedObjectContext:DBM];
+
+            address.caption = caption;
+            address.address = hash;
+            address.contact = _contact;
+
+            [_contact addAddressesObject:address];
+        }
+
+        [DBM save:NULL];
     }
-    
+
     [self.navigationController popViewController:YES];
 }
 
-- (IBAction)removeClicked:(NSButton *)sender
+- (IBAction)removeContactClicked:(NSButton *)sender
 {
     NSAlert *alert = [[NSAlert alloc] init];
+
+    NSString *info = [NSString stringWithFormat:
+                      NSLocalizedString(@"Do you really want to remove %@ %@ from your contact list?",
+                                        @"Remove contact alert dialog body"),
+                      _contact.firstname,
+                      _contact.lastname];
+
     [alert setMessageText:NSLocalizedString(@"Remove contact", @"Remove contact alert dialog title")];
-    [alert setInformativeText:[NSString stringWithFormat:NSLocalizedString(@"Do you really want to remove %@ %@ from your contact list?", @"Remove contact alert dialog body"), _contact.firstname, _contact.lastname]];
+    [alert setInformativeText:info];
     [alert addButtonWithTitle:NSLocalizedString(@"No", nil)];
     [alert addButtonWithTitle:NSLocalizedString(@"Yes", nil)];
     
-    NSUInteger retVal = [alert runModal];
-    if (retVal == 1001)
+    NSUInteger result = [alert runModal];
+
+    if (result == NSAlertSecondButtonReturn)
     {
-        // Time to remove!
         [DBM deleteObject:_contact];
         [self.navigationController popToRootViewControllerAnimated:YES];
         [DBM save:NULL];
@@ -385,8 +360,4 @@
 
 }
 
-- (IBAction)addAddressClicked:(NSButton *)sender
-{
-    [self addAddressPlaceholderAnimated:YES];
-}
 @end

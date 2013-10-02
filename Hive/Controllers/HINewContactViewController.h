@@ -19,13 +19,14 @@
 @property (weak) IBOutlet HIBox *walletsView;
 @property (weak) IBOutlet NSScrollView *scrollView;
 @property (weak) IBOutlet NSView *footerView;
-@property (weak) IBOutlet NSButton *removeContactBtn;
+@property (weak) IBOutlet NSButton *removeContactButton;
 
 @property (strong) HIContact *contact;
 
-@property (strong) IBOutlet NSButton *addWalletBtn;
 @property (strong) IBOutlet NSImageView *avatarView;
+
 - (IBAction)doneClicked:(NSButton *)sender;
-- (IBAction)removeClicked:(NSButton *)sender;
+- (IBAction)removeContactClicked:(NSButton *)sender;
 - (IBAction)addAddressClicked:(NSButton *)sender;
+
 @end
