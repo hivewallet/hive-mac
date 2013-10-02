@@ -28,6 +28,7 @@
 		5884A03717F56D86004A31FA /* Sparkle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5884A03617F56D86004A31FA /* Sparkle.framework */; };
 		5884A03C17F578EB004A31FA /* Sparkle.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 5884A03617F56D86004A31FA /* Sparkle.framework */; };
 		5884A03E17F57AE9004A31FA /* dsa_pub.pem in Resources */ = {isa = PBXBuildFile; fileRef = 5884A03D17F57AE9004A31FA /* dsa_pub.pem */; };
+		588BFB3217FC4256004BE4C8 /* SUCodeSigningVerifier+DisableCodeSigningCheck.m in Sources */ = {isa = PBXBuildFile; fileRef = 588BFB3117FC4256004BE4C8 /* SUCodeSigningVerifier+DisableCodeSigningCheck.m */; };
 		588EFB2E17D8D2970085F6E6 /* HIProfileTabView.m in Sources */ = {isa = PBXBuildFile; fileRef = 588EFB2D17D8D2970085F6E6 /* HIProfileTabView.m */; };
 		58A03AFC17D9C91600ADD5E5 /* HIProfileTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 58A03AFB17D9C91600ADD5E5 /* HIProfileTabBarController.m */; };
 		58A03B0D17D9DC4100ADD5E5 /* HIButtonWithSpinner.m in Sources */ = {isa = PBXBuildFile; fileRef = 58A03B0C17D9DC4100ADD5E5 /* HIButtonWithSpinner.m */; };
@@ -210,6 +211,8 @@
 		5884A02017F1E818004A31FA /* icon-bitcoin.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; name = "icon-bitcoin.pdf"; path = "Images/icon-bitcoin.pdf"; sourceTree = "<group>"; };
 		5884A03617F56D86004A31FA /* Sparkle.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Sparkle.framework; sourceTree = "<group>"; };
 		5884A03D17F57AE9004A31FA /* dsa_pub.pem */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = dsa_pub.pem; sourceTree = "<group>"; };
+		588BFB3017FC4256004BE4C8 /* SUCodeSigningVerifier+DisableCodeSigningCheck.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "SUCodeSigningVerifier+DisableCodeSigningCheck.h"; path = "Categories/SUCodeSigningVerifier+DisableCodeSigningCheck.h"; sourceTree = "<group>"; };
+		588BFB3117FC4256004BE4C8 /* SUCodeSigningVerifier+DisableCodeSigningCheck.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "SUCodeSigningVerifier+DisableCodeSigningCheck.m"; path = "Categories/SUCodeSigningVerifier+DisableCodeSigningCheck.m"; sourceTree = "<group>"; };
 		588EFB2C17D8D2970085F6E6 /* HIProfileTabView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HIProfileTabView.h; sourceTree = "<group>"; };
 		588EFB2D17D8D2970085F6E6 /* HIProfileTabView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HIProfileTabView.m; sourceTree = "<group>"; };
 		58A03AFA17D9C91600ADD5E5 /* HIProfileTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HIProfileTabBarController.h; path = Controllers/HIProfileTabBarController.h; sourceTree = "<group>"; };
@@ -700,6 +703,8 @@
 				D95929E417746CE9008B4F43 /* NSView+Snapshot.m */,
 				D948164217E0A807006A0312 /* NSColor+Hive.h */,
 				D948164317E0A807006A0312 /* NSColor+Hive.m */,
+				588BFB3017FC4256004BE4C8 /* SUCodeSigningVerifier+DisableCodeSigningCheck.h */,
+				588BFB3117FC4256004BE4C8 /* SUCodeSigningVerifier+DisableCodeSigningCheck.m */,
 			);
 			name = Categories;
 			sourceTree = "<group>";
@@ -964,6 +969,7 @@
 				5802106017ECC4F50039BA4B /* HITransactionCellView.m in Sources */,
 				D939FE9C17F076E80088F5D3 /* HICopyView.m in Sources */,
 				5884A01617F1BD5B004A31FA /* HIProfileInfoViewController.m in Sources */,
+				588BFB3217FC4256004BE4C8 /* SUCodeSigningVerifier+DisableCodeSigningCheck.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
