@@ -13,6 +13,7 @@
 #import "HITransaction.h"
 #import "HITransactionCellView.h"
 #import "HITransactionsViewController.h"
+#import "NSColor+Hive.h"
 
 @interface HITransactionsViewController () {
     HIContact *_contact;
@@ -71,6 +72,32 @@
     {
         self.arrayController.fetchPredicate = [NSPredicate predicateWithFormat:@"contact = %@", _contact];
     }
+
+    [self.noTransactionsView setFrame:self.view.bounds];
+    [self.noTransactionsView setHidden:YES];
+    [self.noTransactionsView.layer setBackgroundColor:[[NSColor hiWindowBackgroundColor] hiNativeColor]];
+    [self.view addSubview:self.noTransactionsView];
+
+    [self.arrayController addObserver:self
+                           forKeyPath:@"arrangedObjects.@count"
+                              options:NSKeyValueObservingOptionInitial
+                              context:NULL];
+}
+
+- (void)dealloc
+{
+    [self.arrayController removeObserver:self forKeyPath:@"arrangedObjects.@count"];
+}
+
+- (void)observeValueForKeyPath:(NSString *)keyPath
+                      ofObject:(id)object
+                        change:(NSDictionary *)change
+                       context:(void *)context
+{
+    if (object == self.arrayController)
+    {
+        [self updateNoTransactionsView];
+    }
 }
 
 - (void)viewWillAppear
@@ -86,6 +113,17 @@
     [DBM save:nil];
 
     [[BCClient sharedClient] updateNotifications];
+}
+
+- (void)updateNoTransactionsView
+{
+    // don't take count from arrangedObjects because array controller might not have fetched data yet
+    NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:HITransactionEntity];
+    NSUInteger count = [DBM countForFetchRequest:request error:NULL];
+
+    BOOL hasTransactions = count > 0;
+    [self.noTransactionsView setHidden:hasTransactions];
+    [self.scrollView setHidden:!hasTransactions];
 }
 
 
