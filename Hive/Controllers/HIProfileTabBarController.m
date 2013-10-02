@@ -7,7 +7,8 @@
 //
 
 #import "HIProfileTabBarController.h"
-#import "NSColor+NativeColor.h"
+#import "NSColor+Hive.h"
+
 static NSInteger TabBarButtonTagStart = 1000;
 
 @interface HIProfileTabBarController () {
@@ -68,7 +69,7 @@ static NSInteger TabBarButtonTagStart = 1000;
     NSRect frame = NSMakeRect(0, position, self.view.frame.size.width, 1);
     NSView *line = [[NSView alloc] initWithFrame:frame];
     line.wantsLayer = YES;
-    line.layer.backgroundColor = [color NativeColor];
+    line.layer.backgroundColor = [color hiNativeColor];
     line.autoresizingMask = NSViewMinYMargin | NSViewMaxYMargin | NSViewWidthSizable;
     return line;
 }
@@ -77,8 +78,8 @@ static NSInteger TabBarButtonTagStart = 1000;
     NSRect frame = NSMakeRect(position, 10, 1, self.view.frame.size.height - 20);
     NSView *line = [[NSView alloc] initWithFrame:frame];
     line.wantsLayer = YES;
-    line.layer.backgroundColor = [color NativeColor];
-    line.layer.shadowColor = [[NSColor whiteColor] NativeColor];
+    line.layer.backgroundColor = [color hiNativeColor];
+    line.layer.shadowColor = [[NSColor whiteColor] hiNativeColor];
     line.layer.shadowOffset = NSMakeSize(1.0, 0.0);
     line.layer.shadowOpacity = 1.0;
     line.layer.shadowRadius = 0.0;

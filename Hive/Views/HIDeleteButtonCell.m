@@ -7,7 +7,7 @@
 //
 
 #import "HIDeleteButtonCell.h"
-#import "NSColor+NativeColor.h"
+#import "NSColor+Hive.h"
 
 @implementation HIDeleteButtonCell
 
@@ -31,14 +31,14 @@
         [RGB(167, 31, 39) setFill];
         [p fill];
         [[NSColor colorWithCalibratedWhite:0 alpha:0.35] set];
-        controlView.layer.shadowColor = [[NSColor whiteColor] NativeColor];
+        controlView.layer.shadowColor = [[NSColor whiteColor] hiNativeColor];
     }
     else
     {
         NSGradient *g = [[NSGradient alloc] initWithColors:@[RGB(248,85,94), RGB(167, 31, 39)]];
         [g drawInBezierPath:p angle:90];
         [RGB(255, 255, 255) set];
-        controlView.layer.shadowColor = [[NSColor blackColor] NativeColor];
+        controlView.layer.shadowColor = [[NSColor blackColor] hiNativeColor];
     }
     [sP stroke];
     

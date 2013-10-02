@@ -10,7 +10,7 @@
 #import "HINavigationController.h"
 #import "HIContact.h"
 #import "HIAddress.h"
-#import "NSColor+NativeColor.h"
+#import "NSColor+Hive.h"
 
 @interface HINewContactViewController ()
 {
@@ -54,7 +54,7 @@
         NSView *separator = [[NSView alloc] initWithFrame:NSMakeRect(1, 60, _walletsView.bounds.size.width-2, 1)];
         
         separator.wantsLayer = YES;
-        separator.layer.backgroundColor = [[NSColor colorWithCalibratedWhite:0.5 alpha:0.5] NativeColor];
+        separator.layer.backgroundColor = [[NSColor colorWithCalibratedWhite:0.5 alpha:0.5] hiNativeColor];
         separator.autoresizingMask = NSViewMinYMargin | NSViewWidthSizable;
         [_walletsView addSubview:separator];
         [_separators addObject:separator];
@@ -62,7 +62,7 @@
     }
     
     NSView *fieldContentView = [[NSView alloc] initWithFrame:NSMakeRect(0, 0, _walletsView.bounds.size.width - 40, 60)];
-    fieldContentView.layer.backgroundColor = [[NSColor clearColor] NativeColor];
+    fieldContentView.layer.backgroundColor = [[NSColor clearColor] hiNativeColor];
     fieldContentView.autoresizingMask = NSViewMinYMargin | NSViewWidthSizable;
     [_walletsView addSubview:fieldContentView];
     [_fieldContents addObject:fieldContentView];
@@ -145,7 +145,7 @@
 - (void)loadView
 {
     [super loadView];
-    _avatarView.layer.backgroundColor = [[NSColor whiteColor] NativeColor];
+    _avatarView.layer.backgroundColor = [[NSColor whiteColor] hiNativeColor];
 //    _addWalletBtn.layer.cornerRadius = 4.0;
     
     // Hide remove button if necessary

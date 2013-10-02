@@ -7,7 +7,6 @@
 //
 
 #import "HIViewController.h"
-#import "NSColor+NativeColor.h"
 
 @implementation HIViewController
 

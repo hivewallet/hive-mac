@@ -12,7 +12,7 @@
 #import "HIProfileViewController.h"
 #import "HISendBitcoinsWindowController.h"
 #import "HITransactionsViewController.h"
-#import "NSColor+NativeColor.h"
+#import "NSColor+Hive.h"
 
 @interface HIProfileViewController () {
     HIContact *_contact;
@@ -92,7 +92,7 @@
     [super loadView];
     [_infoPanel loadView];
 
-    self.view.layer.backgroundColor = [[NSColor colorWithCalibratedWhite:0.9 alpha:1.0] NativeColor];
+    self.view.layer.backgroundColor = [[NSColor hiWindowBackgroundColor] hiNativeColor];
 
     if (_contact)
     {
@@ -176,7 +176,7 @@
     NSView *separator = [[NSView alloc] initWithFrame:frame];
     separator.autoresizingMask = NSViewMinYMargin | NSViewWidthSizable;
     separator.wantsLayer = YES;
-    separator.layer.backgroundColor = [[NSColor colorWithCalibratedWhite:0.75 alpha:1.0] NativeColor];
+    separator.layer.backgroundColor = [[NSColor colorWithCalibratedWhite:0.75 alpha:1.0] hiNativeColor];
     return separator;
 }
 

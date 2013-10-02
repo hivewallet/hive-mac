@@ -8,8 +8,10 @@
 
 #import <Cocoa/Cocoa.h>
 
-@interface NSColor (NativeColor)
+@interface NSColor (Hive)
 
-- (CGColorRef)NativeColor;
++ (NSColor *)hiWindowBackgroundColor;
+
+- (CGColorRef)hiNativeColor;
 
 @end

@@ -7,7 +7,7 @@
 //
 #import <QuartzCore/QuartzCore.h>
 #import "HICopyView.h"
-#import "NSColor+NativeColor.h"
+#import "NSColor+Hive.h"
 
 @interface HICopyView ()
 {
@@ -31,7 +31,7 @@
         _selectionView = [[NSView alloc] initWithFrame:self.bounds];
         _selectionView.autoresizingMask = NSViewWidthSizable | NSViewMinYMargin;
         _selectionView.wantsLayer = YES;
-        _selectionView.layer.backgroundColor = [RGB(42, 140, 244) NativeColor];
+        _selectionView.layer.backgroundColor = [RGB(42, 140, 244) hiNativeColor];
         _selectionView.alphaValue = 0.0;
         [self addSubview:_selectionView];
         _copyLabel = [[NSTextField alloc] initWithFrame:NSMakeRect(self.frame.size.width - 120, self.frame.size.height - 25, 100, 15)];

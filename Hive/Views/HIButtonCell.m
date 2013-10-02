@@ -7,7 +7,7 @@
 //
 
 #import "HIButtonCell.h"
-#import "NSColor+NativeColor.h"
+#import "NSColor+Hive.h"
 
 @implementation HIButtonCell
 
@@ -27,7 +27,7 @@
         [p fill];
         [sP stroke];
         
-        controlView.layer.shadowColor = [[NSColor whiteColor] NativeColor];        
+        controlView.layer.shadowColor = [[NSColor whiteColor] hiNativeColor];
     }
     else
     {
@@ -36,7 +36,7 @@
         
         NSGradient *g = [[NSGradient alloc] initWithColors:@[RGB(250,250,250), RGB(237, 237, 237)]];
         [g drawInBezierPath:p angle:90];
-        controlView.layer.shadowColor = [[NSColor blackColor] NativeColor];        
+        controlView.layer.shadowColor = [[NSColor blackColor] hiNativeColor];
     }
     
     p.lineWidth = 0.5;    

@@ -6,11 +6,16 @@
 //  Copyright (c) 2013 Hive Developers. All rights reserved.
 //
 
-#import "NSColor+NativeColor.h"
+#import "NSColor+Hive.h"
 
-@implementation NSColor (NativeColor)
+@implementation NSColor (Hive)
 
-- (CGColorRef)NativeColor
++ (NSColor *)hiWindowBackgroundColor
+{
+    return [NSColor colorWithCalibratedWhite:0.9 alpha:1.0];
+}
+
+- (CGColorRef)hiNativeColor
 {
     const NSInteger numberOfComponents = [self numberOfComponents];
     CGFloat components[numberOfComponents];

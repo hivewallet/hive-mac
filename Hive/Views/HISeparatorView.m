@@ -7,14 +7,14 @@
 //
 
 #import "HISeparatorView.h"
-#import "NSColor+NativeColor.h"
+#import "NSColor+Hive.h"
 
 @implementation HISeparatorView
 
 - (void)awakeFromNib
 {
     self.wantsLayer = YES;
-    self.layer.backgroundColor = [RGB(211,211,211) NativeColor];
+    self.layer.backgroundColor = [RGB(211,211,211) hiNativeColor];
 }
 
 

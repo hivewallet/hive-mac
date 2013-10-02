@@ -90,7 +90,7 @@
 		D948163217DF1AB3006A0312 /* icon-your-profile__active.pdf in Resources */ = {isa = PBXBuildFile; fileRef = D948161617DF1AB3006A0312 /* icon-your-profile__active.pdf */; };
 		D948163317DF1AB3006A0312 /* icon-your-profile__inactive.pdf in Resources */ = {isa = PBXBuildFile; fileRef = D948161717DF1AB3006A0312 /* icon-your-profile__inactive.pdf */; };
 		D948163917DF555A006A0312 /* avatar-empty.pdf in Resources */ = {isa = PBXBuildFile; fileRef = D948163817DF5557006A0312 /* avatar-empty.pdf */; };
-		D948164417E0A807006A0312 /* NSColor+NativeColor.m in Sources */ = {isa = PBXBuildFile; fileRef = D948164317E0A807006A0312 /* NSColor+NativeColor.m */; };
+		D948164417E0A807006A0312 /* NSColor+Hive.m in Sources */ = {isa = PBXBuildFile; fileRef = D948164317E0A807006A0312 /* NSColor+Hive.m */; };
 		D958A8B817E8547A00CED98C /* HIFlippedView.m in Sources */ = {isa = PBXBuildFile; fileRef = D958A8B717E8547A00CED98C /* HIFlippedView.m */; };
 		D95929D1177326F2008B4F43 /* BCClient.m in Sources */ = {isa = PBXBuildFile; fileRef = D95929D0177326F2008B4F43 /* BCClient.m */; };
 		D95929DD17742B71008B4F43 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D95929DC17742B70008B4F43 /* WebKit.framework */; };
@@ -296,8 +296,8 @@
 		D948161617DF1AB3006A0312 /* icon-your-profile__active.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; name = "icon-your-profile__active.pdf"; path = "Images/icon-your-profile__active.pdf"; sourceTree = "<group>"; };
 		D948161717DF1AB3006A0312 /* icon-your-profile__inactive.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; name = "icon-your-profile__inactive.pdf"; path = "Images/icon-your-profile__inactive.pdf"; sourceTree = "<group>"; };
 		D948163817DF5557006A0312 /* avatar-empty.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; name = "avatar-empty.pdf"; path = "Images/avatar-empty.pdf"; sourceTree = "<group>"; };
-		D948164217E0A807006A0312 /* NSColor+NativeColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSColor+NativeColor.h"; path = "Categories/NSColor+NativeColor.h"; sourceTree = "<group>"; };
-		D948164317E0A807006A0312 /* NSColor+NativeColor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSColor+NativeColor.m"; path = "Categories/NSColor+NativeColor.m"; sourceTree = "<group>"; };
+		D948164217E0A807006A0312 /* NSColor+Hive.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSColor+Hive.h"; path = "Categories/NSColor+Hive.h"; sourceTree = "<group>"; };
+		D948164317E0A807006A0312 /* NSColor+Hive.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSColor+Hive.m"; path = "Categories/NSColor+Hive.m"; sourceTree = "<group>"; };
 		D958A8B617E8547A00CED98C /* HIFlippedView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HIFlippedView.h; sourceTree = "<group>"; };
 		D958A8B717E8547A00CED98C /* HIFlippedView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HIFlippedView.m; sourceTree = "<group>"; };
 		D95929CF177326F2008B4F43 /* BCClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BCClient.h; path = BCClient/BCClient.h; sourceTree = "<group>"; };
@@ -698,8 +698,8 @@
 				D9A5922817684D6E00502635 /* NSImage+NPEffects.m */,
 				D95929E317746CE9008B4F43 /* NSView+Snapshot.h */,
 				D95929E417746CE9008B4F43 /* NSView+Snapshot.m */,
-				D948164217E0A807006A0312 /* NSColor+NativeColor.h */,
-				D948164317E0A807006A0312 /* NSColor+NativeColor.m */,
+				D948164217E0A807006A0312 /* NSColor+Hive.h */,
+				D948164317E0A807006A0312 /* NSColor+Hive.m */,
 			);
 			name = Categories;
 			sourceTree = "<group>";
@@ -953,7 +953,7 @@
 				588EFB2E17D8D2970085F6E6 /* HIProfileTabView.m in Sources */,
 				58A03AFC17D9C91600ADD5E5 /* HIProfileTabBarController.m in Sources */,
 				58A03B0D17D9DC4100ADD5E5 /* HIButtonWithSpinner.m in Sources */,
-				D948164417E0A807006A0312 /* NSColor+NativeColor.m in Sources */,
+				D948164417E0A807006A0312 /* NSColor+Hive.m in Sources */,
 				58F02AEE17E1F5A400B65429 /* HITitleArrowView.m in Sources */,
 				D938F01017E6278B00566FFD /* HITextFieldCell.m in Sources */,
 				D958A8B817E8547A00CED98C /* HIFlippedView.m in Sources */,

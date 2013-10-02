@@ -7,7 +7,7 @@
 //
 
 #import "HITitleArrowView.h"
-#import "NSColor+NativeColor.h"
+#import "NSColor+Hive.h"
 
 @interface HITitleArrowView ()
 {
@@ -26,7 +26,7 @@
 
         _strokeColor = [NSColor colorWithCalibratedWhite:0.0 alpha:0.75];
 
-        self.layer.shadowColor = [[NSColor whiteColor] NativeColor];
+        self.layer.shadowColor = [[NSColor whiteColor] hiNativeColor];
         self.layer.shadowOffset = NSMakeSize(1, -1);
         self.layer.shadowOpacity = 1.0;
         self.layer.shadowRadius = 0.0;

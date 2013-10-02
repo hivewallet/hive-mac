@@ -18,7 +18,7 @@
 #import "HISendBitcoinsWindowController.h"
 #import "HISidebarController.h"
 #import "HIViewController.h"
-#import "NSColor+NativeColor.h"
+#import "NSColor+Hive.h"
 #import "NSImage+NPEffects.h"
 
 static const CGFloat TitleBarHeight = 35.0;
@@ -137,7 +137,7 @@ static const NSTimeInterval SlideAnimationDuration = 0.3;
     newTitleView.alphaValue = 0.0;
     [((INAppStoreWindow *)self.window).titleBarView addSubview:newTitleView];
 
-    newController.view.layer.shadowColor = [[NSColor blackColor] NativeColor];
+    newController.view.layer.shadowColor = [[NSColor blackColor] hiNativeColor];
     newController.view.layer.shadowOffset = CGSizeMake(50.0, 0.0);
     newController.view.layer.shadowRadius = 50.0;
     newController.view.layer.shadowOpacity = 0.25;

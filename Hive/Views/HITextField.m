@@ -7,8 +7,9 @@
 //
 
 #import "HITextField.h"
-#import "NSColor+NativeColor.h"
+#import "NSColor+Hive.h"
 #import "HITextFieldCell.h"
+
 NSString * const kHITextFieldContentChanged = @"kHITextFieldContentChanged";
 
 @interface HITextField ()
@@ -33,11 +34,11 @@ NSString * const kHITextFieldContentChanged = @"kHITextFieldContentChanged";
     self.delegate = self;
     _bgView = [[NSView alloc] initWithFrame:NSMakeRect(self.frame.origin.x-1, self.frame.origin.y+1, self.frame.size.width+2, self.frame.size.height+2)];
     _bgView.wantsLayer = YES;
-    _bgView.layer.backgroundColor = [[NSColor whiteColor] NativeColor];
+    _bgView.layer.backgroundColor = [[NSColor whiteColor] hiNativeColor];
     _bgView.layer.borderWidth = 1.0;
-    _bgView.layer.borderColor = [[NSColor blackColor] NativeColor];
+    _bgView.layer.borderColor = [[NSColor blackColor] hiNativeColor];
     _bgView.autoresizingMask = NSViewMaxYMargin | NSViewMinXMargin;
-    _bgView.layer.shadowColor = [[NSColor colorWithCalibratedWhite:0.3 alpha:1.0] NativeColor];
+    _bgView.layer.shadowColor = [[NSColor colorWithCalibratedWhite:0.3 alpha:1.0] hiNativeColor];
     _bgView.layer.shadowOffset = NSMakeSize(-2, -2);
     _bgView.layer.shadowOpacity = 0.8;
     _bgView.layer.shadowRadius = 2.0;

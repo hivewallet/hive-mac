@@ -14,7 +14,7 @@
 #import "HINewContactViewController.h"
 #import "HIProfileInfoViewController.h"
 #import "HIViewController.h"
-#import "NSColor+NativeColor.h"
+#import "NSColor+Hive.h"
 
 static const NSInteger AddressFieldTag = 2;
 
@@ -95,7 +95,7 @@ static const NSInteger AddressFieldTag = 2;
     NSView *separator = [[NSView alloc] initWithFrame:frame];
 
     separator.wantsLayer = YES;
-    separator.layer.backgroundColor = [[NSColor colorWithCalibratedWhite:0.5 alpha:0.5] NativeColor];
+    separator.layer.backgroundColor = [[NSColor colorWithCalibratedWhite:0.5 alpha:0.5] hiNativeColor];
     separator.autoresizingMask = NSViewMinYMargin | NSViewWidthSizable;
 
     return separator;
