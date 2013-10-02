@@ -106,7 +106,7 @@
 													<int key="NSCellFlags">337641536</int>
 													<int key="NSCellFlags2">2048</int>
 													<string key="NSContents">Text Cell</string>
-													<object class="NSFont" key="NSSupport" id="942679630">
+													<object class="NSFont" key="NSSupport" id="302579687">
 														<string key="NSName">LucidaGrande</string>
 														<double key="NSSize">13</double>
 														<int key="NSfFlags">1044</int>
@@ -189,6 +189,7 @@
 								<string key="NSFrame">{{1, 119}, {223, 15}}</string>
 								<reference key="NSSuperview" ref="182002774"/>
 								<reference key="NSWindow"/>
+								<reference key="NSNextKeyView"/>
 								<string key="NSReuseIdentifierKey">_NS:60</string>
 								<bool key="NSAllowsLogicalLayoutDirection">NO</bool>
 								<int key="NSsFlags">1</int>
@@ -225,47 +226,47 @@
 					<string key="NSEntityName">HITransaction</string>
 				</object>
 				<bool key="_NSIsUsingManagedProxy">YES</bool>
-				<bool key="_NSUsesLazyFetching">YES</bool>
 				<bool key="NSAvoidsEmptySelection">YES</bool>
 				<bool key="NSPreservesSelection">YES</bool>
 				<bool key="NSSelectsInsertedObjects">YES</bool>
 				<bool key="NSFilterRestrictsInsertion">YES</bool>
 				<bool key="NSClearsFilterPredicateOnInsertion">YES</bool>
 			</object>
-			<object class="NSCustomView" id="593934791">
+			<object class="NSCustomView" id="1050558918">
 				<reference key="NSNextResponder"/>
 				<int key="NSvFlags">274</int>
 				<array class="NSMutableArray" key="NSSubviews">
-					<object class="NSCustomView" id="539976100">
-						<reference key="NSNextResponder" ref="593934791"/>
+					<object class="NSCustomView" id="491397692">
+						<reference key="NSNextResponder" ref="1050558918"/>
 						<int key="NSvFlags">293</int>
 						<array class="NSMutableArray" key="NSSubviews">
-							<object class="NSTextField" id="1028345428">
-								<reference key="NSNextResponder" ref="539976100"/>
+							<object class="NSTextField" id="153503232">
+								<reference key="NSNextResponder" ref="491397692"/>
 								<int key="NSvFlags">292</int>
 								<string key="NSFrame">{{2, 15}, {196, 36}}</string>
-								<reference key="NSSuperview" ref="539976100"/>
+								<reference key="NSSuperview" ref="491397692"/>
 								<reference key="NSWindow"/>
+								<reference key="NSNextKeyView"/>
 								<object class="NSShadow" key="NSViewShadow">
 									<double key="NSShadowVert">1</double>
-									<object class="NSColor" key="NSShadowColor" id="398608394">
+									<object class="NSColor" key="NSShadowColor" id="389219925">
 										<int key="NSColorSpace">1</int>
 										<bytes key="NSRGB">MSAwLjk5OTg4OTQzMzQgMC45OTk5NTczMjMxAA</bytes>
 									</object>
 								</object>
 								<string key="NSReuseIdentifierKey">_NS:1535</string>
 								<bool key="NSEnabled">YES</bool>
-								<object class="NSTextFieldCell" key="NSCell" id="154956623">
+								<object class="NSTextFieldCell" key="NSCell" id="290758374">
 									<int key="NSCellFlags">67108864</int>
 									<int key="NSCellFlags2">138412032</int>
 									<string key="NSContents">You can then use the Send button to send someone money.</string>
-									<object class="NSFont" key="NSSupport" id="519445705">
+									<object class="NSFont" key="NSSupport" id="26681480">
 										<string key="NSName">Helvetica</string>
 										<double key="NSSize">13</double>
 										<int key="NSfFlags">16</int>
 									</object>
 									<string key="NSCellIdentifier">_NS:1535</string>
-									<reference key="NSControlView" ref="1028345428"/>
+									<reference key="NSControlView" ref="153503232"/>
 									<object class="NSColor" key="NSBackgroundColor" id="337976778">
 										<int key="NSColorSpace">6</int>
 										<string key="NSCatalogName">System</string>
@@ -281,28 +282,29 @@
 							</object>
 						</array>
 						<string key="NSFrame">{{61, 13}, {200, 67}}</string>
-						<reference key="NSSuperview" ref="593934791"/>
+						<reference key="NSSuperview" ref="1050558918"/>
 						<reference key="NSWindow"/>
-						<reference key="NSNextKeyView" ref="1028345428"/>
+						<reference key="NSNextKeyView" ref="153503232"/>
 						<string key="NSReuseIdentifierKey">_NS:9</string>
 						<string key="NSClassName">NSView</string>
 					</object>
-					<object class="NSButton" id="987482264">
-						<reference key="NSNextResponder" ref="593934791"/>
+					<object class="NSButton" id="172696643">
+						<reference key="NSNextResponder" ref="1050558918"/>
 						<int key="NSvFlags">269</int>
 						<array class="NSMutableArray" key="NSSubviews"/>
 						<string key="NSFrame">{{111, 139}, {100, 29}}</string>
-						<reference key="NSSuperview" ref="593934791"/>
+						<reference key="NSSuperview" ref="1050558918"/>
 						<reference key="NSWindow"/>
+						<reference key="NSNextKeyView"/>
 						<string key="NSReuseIdentifierKey">_NS:9</string>
 						<bool key="NSEnabled">YES</bool>
-						<object class="NSButtonCell" key="NSCell" id="162441664">
+						<object class="NSButtonCell" key="NSCell" id="614318851">
 							<int key="NSCellFlags">67108864</int>
 							<int key="NSCellFlags2">134217728</int>
 							<string key="NSContents">Send Bitcoin</string>
-							<reference key="NSSupport" ref="942679630"/>
+							<reference key="NSSupport" ref="302579687"/>
 							<string key="NSCellIdentifier">_NS:9</string>
-							<reference key="NSControlView" ref="987482264"/>
+							<reference key="NSControlView" ref="172696643"/>
 							<int key="NSButtonFlags">-2038284288</int>
 							<int key="NSButtonFlags2">130</int>
 							<string key="NSAlternateContents"/>
@@ -312,23 +314,23 @@
 						</object>
 						<bool key="NSAllowsLogicalLayoutDirection">NO</bool>
 					</object>
-					<object class="NSTextField" id="529960539">
-						<reference key="NSNextResponder" ref="593934791"/>
+					<object class="NSTextField" id="952593212">
+						<reference key="NSNextResponder" ref="1050558918"/>
 						<int key="NSvFlags">269</int>
 						<string key="NSFrame">{{69, 185}, {185, 80}}</string>
-						<reference key="NSSuperview" ref="593934791"/>
+						<reference key="NSSuperview" ref="1050558918"/>
 						<reference key="NSWindow"/>
-						<reference key="NSNextKeyView" ref="987482264"/>
+						<reference key="NSNextKeyView" ref="172696643"/>
 						<object class="NSShadow" key="NSViewShadow">
 							<double key="NSShadowVert">1</double>
-							<object class="NSColor" key="NSShadowColor" id="924554463">
+							<object class="NSColor" key="NSShadowColor" id="1010544662">
 								<int key="NSColorSpace">1</int>
 								<bytes key="NSRGB">MSAwLjk5OTk3NDM3IDAuOTk5OTkxMjk3NwA</bytes>
 							</object>
 						</object>
 						<string key="NSReuseIdentifierKey">_NS:1535</string>
 						<bool key="NSEnabled">YES</bool>
-						<object class="NSTextFieldCell" key="NSCell" id="509080919">
+						<object class="NSTextFieldCell" key="NSCell" id="736438665">
 							<int key="NSCellFlags">67108864</int>
 							<int key="NSCellFlags2">138412032</int>
 							<string key="NSContents">Looks like you haven't made any transactions yet. Send someone some Bitcoin!</string>
@@ -338,7 +340,7 @@
 								<int key="NSfFlags">16</int>
 							</object>
 							<string key="NSCellIdentifier">_NS:1535</string>
-							<reference key="NSControlView" ref="529960539"/>
+							<reference key="NSControlView" ref="952593212"/>
 							<reference key="NSBackgroundColor" ref="337976778"/>
 							<object class="NSColor" key="NSTextColor">
 								<int key="NSColorSpace">1</int>
@@ -351,7 +353,7 @@
 				<string key="NSFrameSize">{323, 411}</string>
 				<reference key="NSSuperview"/>
 				<reference key="NSWindow"/>
-				<reference key="NSNextKeyView" ref="529960539"/>
+				<reference key="NSNextKeyView" ref="952593212"/>
 				<bool key="NSViewIsLayerTreeHost">YES</bool>
 				<string key="NSReuseIdentifierKey">_NS:9</string>
 				<string key="NSClassName">NSView</string>
@@ -387,7 +389,7 @@
 					<object class="IBOutletConnection" key="connection">
 						<string key="label">noTransactionsView</string>
 						<reference key="source" ref="1001"/>
-						<reference key="destination" ref="593934791"/>
+						<reference key="destination" ref="1050558918"/>
 					</object>
 					<int key="connectionID">64</int>
 				</object>
@@ -403,7 +405,7 @@
 					<object class="IBActionConnection" key="connection">
 						<string key="label">openSendBitcoinsWindow:</string>
 						<reference key="source" ref="1003"/>
-						<reference key="destination" ref="987482264"/>
+						<reference key="destination" ref="172696643"/>
 					</object>
 					<int key="connectionID">67</int>
 				</object>
@@ -474,7 +476,7 @@
 										<int key="NSCellFlags">67108928</int>
 										<int key="NSCellFlags2">272631872</int>
 										<string key="NSContents">Received</string>
-										<reference key="NSSupport" ref="519445705"/>
+										<reference key="NSSupport" ref="26681480"/>
 										<reference key="NSControlView" ref="984926354"/>
 										<reference key="NSBackgroundColor" ref="337976778"/>
 										<reference key="NSTextColor" ref="364561628"/>
@@ -743,60 +745,60 @@
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">50</int>
-						<reference key="object" ref="593934791"/>
+						<reference key="object" ref="1050558918"/>
 						<array class="NSMutableArray" key="children">
-							<reference ref="539976100"/>
-							<reference ref="987482264"/>
-							<reference ref="529960539"/>
+							<reference ref="491397692"/>
+							<reference ref="172696643"/>
+							<reference ref="952593212"/>
 						</array>
 						<reference key="parent" ref="0"/>
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">51</int>
-						<reference key="object" ref="539976100"/>
+						<reference key="object" ref="491397692"/>
 						<array class="NSMutableArray" key="children">
-							<reference ref="1028345428"/>
+							<reference ref="153503232"/>
 						</array>
-						<reference key="parent" ref="593934791"/>
+						<reference key="parent" ref="1050558918"/>
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">52</int>
-						<reference key="object" ref="987482264"/>
+						<reference key="object" ref="172696643"/>
 						<array class="NSMutableArray" key="children">
-							<reference ref="162441664"/>
+							<reference ref="614318851"/>
 						</array>
-						<reference key="parent" ref="593934791"/>
+						<reference key="parent" ref="1050558918"/>
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">53</int>
-						<reference key="object" ref="529960539"/>
+						<reference key="object" ref="952593212"/>
 						<array class="NSMutableArray" key="children">
-							<reference ref="509080919"/>
+							<reference ref="736438665"/>
 						</array>
-						<reference key="parent" ref="593934791"/>
+						<reference key="parent" ref="1050558918"/>
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">54</int>
-						<reference key="object" ref="509080919"/>
-						<reference key="parent" ref="529960539"/>
+						<reference key="object" ref="736438665"/>
+						<reference key="parent" ref="952593212"/>
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">55</int>
-						<reference key="object" ref="162441664"/>
-						<reference key="parent" ref="987482264"/>
+						<reference key="object" ref="614318851"/>
+						<reference key="parent" ref="172696643"/>
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">56</int>
-						<reference key="object" ref="1028345428"/>
+						<reference key="object" ref="153503232"/>
 						<array class="NSMutableArray" key="children">
-							<reference ref="154956623"/>
+							<reference ref="290758374"/>
 						</array>
-						<reference key="parent" ref="539976100"/>
+						<reference key="parent" ref="491397692"/>
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">63</int>
-						<reference key="object" ref="154956623"/>
-						<reference key="parent" ref="1028345428"/>
+						<reference key="object" ref="290758374"/>
+						<reference key="parent" ref="153503232"/>
 					</object>
 				</array>
 			</object>
@@ -828,14 +830,14 @@
 				<string key="52.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="53.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<real value="0.0" key="53.IBViewIntegration.shadowBlurRadius"/>
-				<reference key="53.IBViewIntegration.shadowColor" ref="924554463"/>
+				<reference key="53.IBViewIntegration.shadowColor" ref="1010544662"/>
 				<real value="1" key="53.IBViewIntegration.shadowOffsetHeight"/>
 				<real value="0.0" key="53.IBViewIntegration.shadowOffsetWidth"/>
 				<string key="54.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="55.CustomClassName">HIDoneButtonCell</string>
 				<string key="55.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="56.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
-				<reference key="56.IBViewIntegration.shadowColor" ref="398608394"/>
+				<reference key="56.IBViewIntegration.shadowColor" ref="389219925"/>
 				<real value="1" key="56.IBViewIntegration.shadowOffsetHeight"/>
 				<string key="6.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<boolean value="YES" key="6.ibExternalAutomaticallyCalculatesRowSizeFromViewHeight"/>
