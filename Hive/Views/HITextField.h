@@ -16,5 +16,6 @@ extern NSString * const kHITextFieldContentChanged;
 @property (readonly, nonatomic, getter = isFocused) BOOL isFocused;
 
 - (void)recalcForString:(NSString *)str;
+- (NSString *)enteredValue;
 
 @end

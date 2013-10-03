@@ -14,6 +14,7 @@
 #import "HITransactionsViewController.h"
 #import "HIMainWindowController.h"
 #import "HINavigationController.h"
+#import "HIProfile.h"
 #import "HIProfileViewController.h"
 #import "HISendBitcoinsWindowController.h"
 #import "HISidebarController.h"
@@ -63,12 +64,19 @@ static const NSTimeInterval SlideAnimationDuration = 0.3;
 {
     [super windowDidLoad];
     ((INAppStoreWindow *)self.window).titleBarHeight = TitleBarHeight;
-    
-    [self.sidebarController addViewController:[[HINavigationController alloc] initWithRootViewController:[HITransactionsViewController new]]];
-    [self.sidebarController addViewController:[[HINavigationController alloc] initWithRootViewController:[HIContactsViewController new]]];
-    [self.sidebarController addViewController:[[HINavigationController alloc] initWithRootViewController:[HIApplicationsViewController new]]];
-    [self.sidebarController addViewController:[[HINavigationController alloc] initWithRootViewController:[HIProfileViewController new]]];
-        
+
+    NSArray *panels = @[
+                        [HITransactionsViewController new],
+                        [HIContactsViewController new],
+                        [HIApplicationsViewController new],
+                        [[HIProfileViewController alloc] initWithContact:((HIContact *) [HIProfile new])]
+                      ];
+
+    for (HIViewController *panel in panels)
+    {
+        [self.sidebarController addViewController:[[HINavigationController alloc] initWithRootViewController:panel]];
+    }
+
     [[BCClient sharedClient] addObserver:self
                               forKeyPath:@"isRunning"
                                  options:NSKeyValueObservingOptionInitial | NSKeyValueObservingOptionNew

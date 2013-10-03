@@ -12,6 +12,7 @@
 #import "HICopyView.h"
 #import "HINavigationController.h"
 #import "HINewContactViewController.h"
+#import "HIProfile.h"
 #import "HIProfileInfoViewController.h"
 #import "HIViewController.h"
 #import "NSColor+Hive.h"
@@ -21,8 +22,8 @@ static const NSInteger AddressFieldTag = 2;
 
 @interface HIProfileInfoViewController () {
     HIContact *_contact;
-    HICopyView *_ownerCopyView;
     HIViewController *_parent;
+    BOOL _observingWallet;
 }
 
 @end
@@ -41,28 +42,47 @@ static const NSInteger AddressFieldTag = 2;
     return self;
 }
 
+- (void)dealloc
+{
+    if (_observingWallet)
+    {
+        [[BCClient sharedClient] removeObserver:self forKeyPath:@"walletHash"];
+    }
+}
+
 - (IBAction)editButtonClicked:(NSButton *)sender
 {
-    if (_contact)
+    HINewContactViewController *vc = [HINewContactViewController new];
+    vc.contact = _contact;
+
+    if ([_contact isKindOfClass:[HIContact class]])
     {
-        HINewContactViewController *vc = [HINewContactViewController new];
-        vc.contact = _contact;
         vc.title = NSLocalizedString(@"Edit contact", nil);
-        [_parent.navigationController pushViewController:vc animated:YES];
     }
+    else
+    {
+        vc.title = NSLocalizedString(@"Edit profile", nil);
+    }
+
+    [_parent.navigationController pushViewController:vc animated:YES];
 }
 
 - (void)configureViewForContact:(HIContact *)contact
 {
+    if (_observingWallet)
+    {
+        [[BCClient sharedClient] removeObserver:self forKeyPath:@"walletHash"];
+        _observingWallet = NO;
+    }
+
     _contact = contact;
 
     [self configureScrollView];
 
-    if (_contact.email.length > 0)
-    {
-        [self.profileEmailField setStringValue:_contact.email];
-        [self.profileEmailField recalcForString:_contact.email];
-    }
+    NSString *email = (_contact.email.length > 0) ? _contact.email : @"";
+
+    [self.profileEmailField setStringValue:email];
+    [self.profileEmailField recalcForString:email];
 
     // configure box size
     NSRect f = self.addressBoxView.frame;
@@ -86,6 +106,16 @@ static const NSInteger AddressFieldTag = 2;
         [self.addressBoxView addSubview:[self copyViewAtIndex:index forAddress:address]];
 
         index++;
+    }
+
+    if ([_contact isKindOfClass:[HIProfile class]])
+    {
+        _observingWallet = YES;
+
+        [[BCClient sharedClient] addObserver:self
+                                  forKeyPath:@"walletHash"
+                                     options:NSKeyValueObservingOptionInitial
+                                     context:NULL];
     }
 }
 
@@ -160,31 +190,11 @@ static const NSInteger AddressFieldTag = 2;
     return copyView;
 }
 
-- (void)configureViewForOwner
-{
-    _contact = nil;
-
-    [self configureScrollView];
-
-    NSRect f = self.addressBoxView.frame;
-    f.size.height += 60;
-    f.origin.y -= 60;
-    self.addressBoxView.frame = f;
-
-    _ownerCopyView = [self copyViewAtIndex:0 forAddress:nil];
-    [self.addressBoxView addSubview:_ownerCopyView];
-
-    [[BCClient sharedClient] addObserver:self
-                              forKeyPath:@"walletHash"
-                                 options:NSKeyValueObservingOptionInitial
-                                 context:NULL];
-}
-
 - (void)configureScrollView
 {
     NSRect f = self.profileScrollContent.frame;
     f.size.width = self.profileScrollView.frame.size.width;
-    f.size.height = 161 + 60 * (_contact ? _contact.addresses.count : 1);
+    f.size.height = 161 + 60 * _contact.addresses.count;
     self.profileScrollContent.frame = f;
     [self.profileScrollView setDocumentView:self.profileScrollContent];
 }
@@ -203,8 +213,9 @@ static const NSInteger AddressFieldTag = 2;
 
                 if (walletHash)
                 {
-                    _ownerCopyView.contentToCopy = walletHash;
-                    [[_ownerCopyView viewWithTag:AddressFieldTag] setStringValue:walletHash];
+                    HICopyView *userAddressView = self.addressBoxView.subviews[0];
+                    [userAddressView setContentToCopy:walletHash];
+                    [[userAddressView viewWithTag:AddressFieldTag] setStringValue:walletHash];
                 }
             });
         }

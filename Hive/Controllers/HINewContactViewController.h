@@ -19,6 +19,7 @@
 @property (weak) IBOutlet HIBox *walletsView;
 @property (weak) IBOutlet NSScrollView *scrollView;
 @property (weak) IBOutlet NSView *footerView;
+@property (weak) IBOutlet NSButton *addAddressButton;
 @property (weak) IBOutlet NSButton *removeContactButton;
 
 @property (strong) HIContact *contact;

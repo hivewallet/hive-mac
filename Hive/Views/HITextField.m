@@ -158,6 +158,11 @@ NSString * const kHITextFieldContentChanged = @"kHITextFieldContentChanged";
     return _isFocused;
 }
 
+- (NSString *)enteredValue
+{
+    return (!_isEmpty && self.stringValue.length > 0) ? self.stringValue : nil;
+}
+
 - (void)dealloc
 {
     [_bgView removeFromSuperview];

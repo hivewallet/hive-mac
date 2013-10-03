@@ -10,6 +10,7 @@
 #import "HIContact.h"
 #import "HINavigationController.h"
 #import "HINewContactViewController.h"
+#import "HIProfile.h"
 #import "NSColor+Hive.h"
 
 static const CGFloat NameFieldsGap = 10.0;
@@ -48,8 +49,34 @@ static const CGFloat AddressCellHeight = 60.0;
 
     _avatarView.layer.backgroundColor = [[NSColor whiteColor] hiNativeColor];
 
-    // Hide remove button if necessary
-    [self.removeContactButton setHidden:(_contact == nil)];
+    // Hide some buttons if necessary
+
+    if (!_contact || ![_contact canBeRemoved])
+    {
+        [self.removeContactButton setHidden:YES];
+
+        NSRect frame = self.footerView.frame;
+        frame.size.height -= 50;
+        frame.origin.y += 50;
+        [self.footerView setFrame:frame];
+    }
+
+    if (_contact && ![_contact canEditAddresses])
+    {
+        [self.addAddressButton setHidden:YES];
+
+        for (NSView *subview in self.footerView.subviews)
+        {
+            NSRect frame = subview.frame;
+            frame.origin.y += 39;
+            [subview setFrame:frame];
+        }
+
+        NSRect frame = self.footerView.frame;
+        frame.size.height -= 39;
+        frame.origin.y += 39;
+        [self.footerView setFrame:frame];
+    }
 
     // Calculate content size
     NSRect frame;
@@ -189,6 +216,13 @@ static const CGFloat AddressCellHeight = 60.0;
 
     [self.walletsView addSubview:deleteButton];
     [_walletRemovalButtons addObject:deleteButton];
+
+    if (address && ![address.contact canEditAddresses])
+    {
+        [nameField setEditable:NO];
+        [addressField setEditable:NO];
+        [deleteButton setHidden:YES];
+    }
 }
 
 - (void)recalculateNames:(NSNotification *)notification
@@ -283,24 +317,42 @@ static const CGFloat AddressCellHeight = 60.0;
 
 - (IBAction)doneClicked:(NSButton *)sender
 {
-    NSString *firstName = self.firstnameField.stringValue;
-    NSString *lastName = self.lastnameField.stringValue;
-    NSString *email = self.emailField.stringValue;
+    NSString *firstName = self.firstnameField.enteredValue;
+    NSString *lastName = self.lastnameField.enteredValue;
+    NSString *email = self.emailField.enteredValue;
 
-    if ((firstName.length > 0 && !self.firstnameField.isEmpty)
-        || (lastName.length > 0 && !self.lastnameField.isEmpty))
+    if (!firstName && !lastName && (!_contact || [_contact isKindOfClass:[HIContact class]]))
     {
-        if (!_contact)
-        {
-            _contact = [NSEntityDescription insertNewObjectForEntityForName:HIContactEntity
-                                                     inManagedObjectContext:DBM];
-        }
+        NSAlert *alert = [[NSAlert alloc] init];
 
-        // first save the basics
-        _contact.firstname = (firstName.length > 0) ? firstName : nil;
-        _contact.lastname = (lastName.length > 0) ? lastName : nil;
-        _contact.email = (email.length > 0) ? email : nil;
+        alert.messageText = NSLocalizedString(@"Contact can't be saved.", @"Contact name empty alert title");
+        alert.informativeText = NSLocalizedString(@"You need to give the contact a name before you can add it "
+                                                  @"to the list.",
+                                                  @"Contact name empty alert message");
 
+        [alert addButtonWithTitle:NSLocalizedString(@"OK", @"OK button title")];
+
+        [alert beginSheetModalForWindow:self.view.window
+                          modalDelegate:nil
+                         didEndSelector:nil
+                            contextInfo:NULL];
+
+        return;
+    }
+
+    if (!_contact)
+    {
+        _contact = [NSEntityDescription insertNewObjectForEntityForName:HIContactEntity
+                                                 inManagedObjectContext:DBM];
+    }
+
+    // first save the basics
+    _contact.firstname = (firstName.length > 0) ? firstName : nil;
+    _contact.lastname = (lastName.length > 0) ? lastName : nil;
+    _contact.email = (email.length > 0) ? email : nil;
+
+    if ([_contact canEditAddresses])
+    {
         // delete all old addresses first
         for (HIAddress *address in _contact.addresses)
         {
@@ -327,9 +379,9 @@ static const CGFloat AddressCellHeight = 60.0;
 
             [_contact addAddressesObject:address];
         }
-
-        [DBM save:NULL];
     }
+
+    [DBM save:NULL];
 
     [self.navigationController popViewController:YES];
 }

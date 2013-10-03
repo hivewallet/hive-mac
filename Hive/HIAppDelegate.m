@@ -42,6 +42,7 @@ static NSString * const WarningDisplayedKey = @"WarningDisplayed";
      @"ExchangeCurrency2": @"PLN",
      @"FirstRun": @YES,
      @"LastBalance": @0,
+     @"Profile": @{},
      @"WebKitDeveloperExtras": @YES
     }];
     //[WebView registerURLSchemeAsLocal:@"hiveapp"];

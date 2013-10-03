@@ -22,6 +22,5 @@
 - (id)initWithParent:(HIViewController *)parent;
 - (IBAction)editButtonClicked:(NSButton *)sender;
 - (void)configureViewForContact:(HIContact *)contact;
-- (void)configureViewForOwner;
 
 @end

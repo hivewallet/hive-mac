@@ -14,6 +14,7 @@
 		5802105B17ECA40E0039BA4B /* icon-dropdown-open.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 5802105917ECA40E0039BA4B /* icon-dropdown-open.pdf */; };
 		5802106017ECC4F50039BA4B /* HITransactionCellView.m in Sources */ = {isa = PBXBuildFile; fileRef = 581EFBCB17DA441B00E2738D /* HITransactionCellView.m */; };
 		5802106317ECCAAA0039BA4B /* HIContactAutocompleteCellView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5802106217ECCAAA0039BA4B /* HIContactAutocompleteCellView.m */; };
+		5804C32617FC88BA003B7891 /* HIProfile.m in Sources */ = {isa = PBXBuildFile; fileRef = 5804C32517FC88BA003B7891 /* HIProfile.m */; };
 		5804C32917FD7B64003B7891 /* icon-gray-btc.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 5804C32717FD7B64003B7891 /* icon-gray-btc.pdf */; };
 		5804C32A17FD7B64003B7891 /* icon-sadface.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 5804C32817FD7B64003B7891 /* icon-sadface.pdf */; };
 		581711BE17D0A26D00DE775A /* HISidebarButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 581711BD17D0A26D00DE775A /* HISidebarButton.m */; };
@@ -194,6 +195,8 @@
 		5802105917ECA40E0039BA4B /* icon-dropdown-open.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; name = "icon-dropdown-open.pdf"; path = "Images/icon-dropdown-open.pdf"; sourceTree = "<group>"; };
 		5802106117ECCAAA0039BA4B /* HIContactAutocompleteCellView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HIContactAutocompleteCellView.h; sourceTree = "<group>"; };
 		5802106217ECCAAA0039BA4B /* HIContactAutocompleteCellView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HIContactAutocompleteCellView.m; sourceTree = "<group>"; };
+		5804C32417FC88BA003B7891 /* HIProfile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HIProfile.h; sourceTree = "<group>"; };
+		5804C32517FC88BA003B7891 /* HIProfile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HIProfile.m; sourceTree = "<group>"; };
 		5804C32717FD7B64003B7891 /* icon-gray-btc.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; name = "icon-gray-btc.pdf"; path = "Images/icon-gray-btc.pdf"; sourceTree = "<group>"; };
 		5804C32817FD7B64003B7891 /* icon-sadface.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; name = "icon-sadface.pdf"; path = "Images/icon-sadface.pdf"; sourceTree = "<group>"; };
 		581711BC17D0A26D00DE775A /* HISidebarButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HISidebarButton.h; sourceTree = "<group>"; };
@@ -377,6 +380,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5804C31F17FC884E003B7891 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				5804C32417FC88BA003B7891 /* HIProfile.h */,
+				5804C32517FC88BA003B7891 /* HIProfile.m */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		581711D917D0FD8F00DE775A /* HIProfileViewController */ = {
 			isa = PBXGroup;
 			children = (
@@ -616,6 +628,7 @@
 				D9A5922617684D5400502635 /* Categories */,
 				D9A592181768442000502635 /* Controllers */,
 				582C699417D8BA4F00442294 /* Formatters */,
+				5804C31F17FC884E003B7891 /* Models */,
 				D9A591D91767B4A800502635 /* HIAppDelegate.h */,
 				D9A591DA1767B4A800502635 /* HIAppDelegate.m */,
 				D9A591DC1767B4A800502635 /* MainMenu.xib */,
@@ -978,6 +991,7 @@
 				D939FE9C17F076E80088F5D3 /* HICopyView.m in Sources */,
 				5884A01617F1BD5B004A31FA /* HIProfileInfoViewController.m in Sources */,
 				588BFB3217FC4256004BE4C8 /* SUCodeSigningVerifier+DisableCodeSigningCheck.m in Sources */,
+				5804C32617FC88BA003B7891 /* HIProfile.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

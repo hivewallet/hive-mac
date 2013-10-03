@@ -26,6 +26,10 @@ extern NSString * const HIContactEntity;
 @property (nonatomic, readonly, getter = name) NSString *name;
 @property (nonatomic, readonly, getter = avatarImage) NSImage *avatarImage;
 @property (nonatomic, retain) NSSet *addresses;
+
+- (BOOL)canBeRemoved;
+- (BOOL)canEditAddresses;
+
 @end
 
 @interface HIContact (CoreDataGeneratedAccessors)

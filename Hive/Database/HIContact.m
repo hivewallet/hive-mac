@@ -24,14 +24,31 @@ NSString * const HIContactEntity = @"HIContact";
 
 - (NSString *)name
 {
-    return [NSString stringWithFormat:@"%@ %@", self.firstname, self.lastname];
+    return [NSString stringWithFormat:@"%@ %@",
+            self.firstname ? self.firstname : @"",
+            self.lastname ? self.lastname : @""];
 }
 
 - (NSImage *)avatarImage
 {
     if (self.avatar)
+    {
         return [[NSImage alloc] initWithData:self.avatar];
+    }
     else
+    {
         return [NSImage imageNamed:@"avatar-empty"];
+    }
 }
+
+- (BOOL)canBeRemoved
+{
+    return YES;
+}
+
+- (BOOL)canEditAddresses
+{
+    return YES;
+}
+
 @end
