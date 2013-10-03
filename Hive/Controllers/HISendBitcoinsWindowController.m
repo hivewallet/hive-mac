@@ -6,6 +6,7 @@
 //  Copyright (c) 2013 Hive Developers. All rights reserved.
 //
 
+#import <BitcoinJKit/BitcoinJKit.h>
 #import "BCClient.h"
 #import "HIAddress.h"
 #import "HIButtonWithSpinner.h"
@@ -169,40 +170,56 @@ NSString * const HISendBitcoinsWindowSuccessKey = @"success";
     NSDecimalNumber *amount = (NSDecimalNumber *) [formatter numberFromString: self.amountField.stringValue];
     uint64 satoshi = [[amount decimalNumberByMultiplyingByPowerOf10:8] integerValue];
 
-    if (satoshi == 0) {
-        NSAlert *alert = [NSAlert new];
-
-        alert.messageText = NSLocalizedString(@"Enter an amount greater than zero.",
-                                              @"Sending zero bitcoin alert title");
-        alert.informativeText = NSLocalizedString(@"Why would you want to send someone 0 BTC?",
-                                                  @"Sending zero bitcoin alert message");
-
-        [self showOKAlert:alert];
-
-        return;
-    }
-
-    if (satoshi > [BCClient sharedClient].balance)
-    {
-        NSAlert *alert = [NSAlert new];
-        
-        alert.messageText = NSLocalizedString(@"Amount exceeds balance.",
-                                              @"Amount exceeds balance alert title");
-        alert.informativeText = NSLocalizedString(@"You cannot send more money than you own.",
-                                                  @"Amount exceeds balance alert message");
-
-        [self showOKAlert:alert];
-
-        return;
-    }
-
-    [self.sendButton showSpinner];
-
     NSString *target = _hashAddress ? _hashAddress : self.nameLabel.stringValue;
 
-    [[BCClient sharedClient] sendBitcoins:satoshi toHash:target completion:^(BOOL success, NSString *hash) {
-        [self closeAndNotifyWithSuccess:YES amount:amount];
-    }];
+    if (satoshi == 0) {
+        [self showAlertWithTitle:NSLocalizedString(@"Enter an amount greater than zero.",
+                                                   @"Sending zero bitcoin alert title")
+                         message:NSLocalizedString(@"Why would you want to send someone 0 BTC?",
+                                                   @"Sending zero bitcoin alert message")];
+    }
+    else if (satoshi > [BCClient sharedClient].balance)
+    {
+        [self showAlertWithTitle:NSLocalizedString(@"Amount exceeds balance.",
+                                                   @"Amount exceeds balance alert title")
+                         message:NSLocalizedString(@"You cannot send more money than you own.",
+                                                   @"Amount exceeds balance alert message")];
+    }
+    else if (target.length == 0)
+    {
+        [self showAlertWithTitle:NSLocalizedString(@"No address entered.",
+                                                   @"Empty address alert title")
+                         message:NSLocalizedString(@"Please enter a valid Bitcoin address or select one "
+                                                   @"from the dropdown list.",
+                                                   @"Empty address alert message")];
+    }
+    else if (![[HIBitcoinManager defaultManager] isAddressValid:target])
+    {
+        [self showAlertWithTitle:NSLocalizedString(@"This isn't a valid Bitcoin address.",
+                                                   @"Invalid address alert title")
+                         message:NSLocalizedString(@"Please check if you have entered the address correctly.",
+                                                   @"Invalid address alert message")];
+    }
+    else
+    {
+        [self.sendButton showSpinner];
+
+        [[BCClient sharedClient] sendBitcoins:satoshi toHash:target completion:^(BOOL success, NSString *hash) {
+            if (success)
+            {
+                [self closeAndNotifyWithSuccess:YES amount:amount];
+            }
+            else
+            {
+                [self showAlertWithTitle:NSLocalizedString(@"Transaction could not be completed.",
+                                                           @"Transaction failed alert title")
+                                 message:NSLocalizedString(@"No bitcoin have been taken from your wallet.",
+                                                           @"Transaction failed alert message")];
+
+                [self.sendButton hideSpinner];
+            }
+        }];
+    }
 }
 
 - (void)closeAndNotifyWithSuccess:(BOOL)success amount:(NSDecimalNumber *)amount
@@ -221,8 +238,12 @@ NSString * const HISendBitcoinsWindowSuccessKey = @"success";
                                                       userInfo:@{HISendBitcoinsWindowSuccessKey: @(success)}];
 }
 
-- (void)showOKAlert:(NSAlert *)alert
+- (void)showAlertWithTitle:(NSString *)title message:(NSString *)message
 {
+    NSAlert *alert = [[NSAlert alloc] init];
+
+    [alert setMessageText:title];
+    [alert setInformativeText:message];
     [alert addButtonWithTitle:NSLocalizedString(@"OK", @"OK button title")];
 
     [alert beginSheetModalForWindow:self.window
