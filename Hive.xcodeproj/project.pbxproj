@@ -14,6 +14,8 @@
 		5802105B17ECA40E0039BA4B /* icon-dropdown-open.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 5802105917ECA40E0039BA4B /* icon-dropdown-open.pdf */; };
 		5802106017ECC4F50039BA4B /* HITransactionCellView.m in Sources */ = {isa = PBXBuildFile; fileRef = 581EFBCB17DA441B00E2738D /* HITransactionCellView.m */; };
 		5802106317ECCAAA0039BA4B /* HIContactAutocompleteCellView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5802106217ECCAAA0039BA4B /* HIContactAutocompleteCellView.m */; };
+		5804C32917FD7B64003B7891 /* icon-gray-btc.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 5804C32717FD7B64003B7891 /* icon-gray-btc.pdf */; };
+		5804C32A17FD7B64003B7891 /* icon-sadface.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 5804C32817FD7B64003B7891 /* icon-sadface.pdf */; };
 		581711BE17D0A26D00DE775A /* HISidebarButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 581711BD17D0A26D00DE775A /* HISidebarButton.m */; };
 		581711D817D0CB9600DE775A /* HINavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 581711D717D0CB9600DE775A /* HINavigationController.m */; };
 		581711DD17D0FEDD00DE775A /* HIProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 581711DB17D0FEDD00DE775A /* HIProfileViewController.m */; };
@@ -192,6 +194,8 @@
 		5802105917ECA40E0039BA4B /* icon-dropdown-open.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; name = "icon-dropdown-open.pdf"; path = "Images/icon-dropdown-open.pdf"; sourceTree = "<group>"; };
 		5802106117ECCAAA0039BA4B /* HIContactAutocompleteCellView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HIContactAutocompleteCellView.h; sourceTree = "<group>"; };
 		5802106217ECCAAA0039BA4B /* HIContactAutocompleteCellView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HIContactAutocompleteCellView.m; sourceTree = "<group>"; };
+		5804C32717FD7B64003B7891 /* icon-gray-btc.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; name = "icon-gray-btc.pdf"; path = "Images/icon-gray-btc.pdf"; sourceTree = "<group>"; };
+		5804C32817FD7B64003B7891 /* icon-sadface.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; name = "icon-sadface.pdf"; path = "Images/icon-sadface.pdf"; sourceTree = "<group>"; };
 		581711BC17D0A26D00DE775A /* HISidebarButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HISidebarButton.h; sourceTree = "<group>"; };
 		581711BD17D0A26D00DE775A /* HISidebarButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HISidebarButton.m; sourceTree = "<group>"; };
 		581711D617D0CB9600DE775A /* HINavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HINavigationController.h; path = Controllers/HINavigationController.h; sourceTree = "<group>"; };
@@ -648,12 +652,14 @@
 				D90C9CF117E9C64100FC83CC /* icon-delete.pdf */,
 				5802105817ECA40E0039BA4B /* icon-dropdown-close.pdf */,
 				5802105917ECA40E0039BA4B /* icon-dropdown-open.pdf */,
+				5804C32717FD7B64003B7891 /* icon-gray-btc.pdf */,
 				D948160317DF1AB1006A0312 /* icon-group__active.pdf */,
 				D948160417DF1AB1006A0312 /* icon-group__inactive.pdf */,
 				D948160517DF1AB1006A0312 /* icon-nav-bar-back.pdf */,
 				D948160717DF1AB2006A0312 /* icon-next.pdf */,
 				D948160617DF1AB1006A0312 /* icon-next__active.pdf */,
 				D948160817DF1AB2006A0312 /* icon-plus.pdf */,
+				5804C32817FD7B64003B7891 /* icon-sadface.pdf */,
 				D948160917DF1AB2006A0312 /* icon-search.pdf */,
 				D948160C17DF1AB2006A0312 /* icon-tabbar-timeline__active.pdf */,
 				D948160D17DF1AB2006A0312 /* icon-tabbar-timeline__inactive.pdf */,
@@ -877,6 +883,8 @@
 				5884A01717F1BD5B004A31FA /* HIProfileInfoViewController.xib in Resources */,
 				5884A02117F1E818004A31FA /* icon-bitcoin.pdf in Resources */,
 				5884A03E17F57AE9004A31FA /* dsa_pub.pem in Resources */,
+				5804C32917FD7B64003B7891 /* icon-gray-btc.pdf in Resources */,
+				5804C32A17FD7B64003B7891 /* icon-sadface.pdf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
