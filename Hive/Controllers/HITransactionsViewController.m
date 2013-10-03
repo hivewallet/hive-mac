@@ -121,9 +121,9 @@
     NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:HITransactionEntity];
     NSUInteger count = [DBM countForFetchRequest:request error:NULL];
 
-    BOOL hasTransactions = count > 0;
-    [self.noTransactionsView setHidden:hasTransactions];
-    [self.scrollView setHidden:!hasTransactions];
+    BOOL shouldShowTransactions = _contact || count > 0;
+    [self.noTransactionsView setHidden:shouldShowTransactions];
+    [self.scrollView setHidden:!shouldShowTransactions];
 }
 
 
