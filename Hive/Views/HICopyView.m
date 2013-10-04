@@ -82,12 +82,11 @@
     [pb declareTypes:[NSArray arrayWithObject:NSStringPboardType] owner:nil];
     [pb setString:_contentToCopy forType:NSStringPboardType];
     _copyLabel.stringValue = NSLocalizedString(@"copied!", nil);
-    _selectionView.alphaValue = 1.0;
-    dispatch_async(dispatch_get_main_queue(), ^{
-        [_selectionView.animator setAlphaValue:0.0];        
-    });
 
-    
+    CABasicAnimation *fadeOut = [CABasicAnimation animationWithKeyPath:@"opacity"];
+    [fadeOut setFromValue:@1.0];
+    [fadeOut setDuration:0.2];
+    [_selectionView.layer addAnimation:fadeOut forKey:@"opacity"];
 }
 
 @end
