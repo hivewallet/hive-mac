@@ -92,6 +92,10 @@ static const CGFloat AddressCellHeight = 60.0;
     [self.lastnameField.cell setPlaceholderString:NSLocalizedString(@"Lastname", @"Lastname field placeholder")];
     [self.emailField.cell setPlaceholderString:NSLocalizedString(@"email", @"Email field placeholder")];
 
+    // rebind nextKeyView connections
+    self.lastnameField.nextKeyView = self.emailField;
+    self.emailField.nextKeyView = self.firstnameField;
+
     _walletAddressFields = [NSMutableArray new];
     _walletNameFields = [NSMutableArray new];
     _walletRemovalButtons = [NSMutableArray new];
@@ -186,6 +190,7 @@ static const CGFloat AddressCellHeight = 60.0;
     nameField.stringValue = address.caption ? address.caption : @"";
     [nameField.cell setPlaceholderString:NSLocalizedString(@"Address caption", @"Address caption field placeholder")];
     [_walletNameFields addObject:nameField];
+    [fieldContentView addSubview:nameField];
 
     HITextField *addressField = [[HITextField alloc] initWithFrame:CGRectMake(10, 5, 100, 21)];
     addressField.autoresizingMask = NSViewMinYMargin;
@@ -193,11 +198,6 @@ static const CGFloat AddressCellHeight = 60.0;
     addressField.font = [NSFont fontWithName:@"Helvetica" size:14];
     addressField.stringValue = address ? address.address : @"";
     [_walletAddressFields addObject:addressField];
-
-    nameField.nextKeyView = addressField;
-    addressField.nextKeyView = nameField;
-
-    [fieldContentView addSubview:nameField];
     [fieldContentView addSubview:addressField];
 
     [nameField recalcForString:nameField.stringValue];
@@ -223,6 +223,18 @@ static const CGFloat AddressCellHeight = 60.0;
         [addressField setEditable:NO];
         [deleteButton setHidden:YES];
     }
+
+    if (index == 0)
+    {
+        self.lastnameField.nextKeyView = nameField;
+    }
+    else
+    {
+        [_walletAddressFields[index - 1] setNextKeyView:nameField];
+    }
+
+    nameField.nextKeyView = addressField;
+    addressField.nextKeyView = self.emailField;
 }
 
 - (void)recalculateNames:(NSNotification *)notification
@@ -312,6 +324,29 @@ static const CGFloat AddressCellHeight = 60.0;
     {
         [_separators[_separators.count - 1] removeFromSuperview];
         [_separators removeObjectAtIndex:_separators.count - 1];
+    }
+
+    if (index == 0)
+    {
+        if (_walletNameFields.count == 0)
+        {
+            self.lastnameField.nextKeyView = self.emailField;
+        }
+        else
+        {
+            self.lastnameField.nextKeyView = _walletNameFields[0];
+        }
+    }
+    else
+    {
+        if (index < _walletNameFields.count)
+        {
+            [_walletAddressFields[index - 1] setNextKeyView:_walletNameFields[index]];
+        }
+        else
+        {
+            [_walletAddressFields[index - 1] setNextKeyView:self.emailField];
+        }
     }
 }
 
