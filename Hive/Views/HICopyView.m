@@ -12,8 +12,8 @@
 @interface HICopyView ()
 {
     NSTextField *_copyLabel;
-    NSUInteger   _trackTag;
-    NSView      *_selectionView;
+    NSUInteger _trackTag;
+    NSView *_selectionView;
 }
 
 @end
@@ -24,17 +24,18 @@
 {
     self = [super initWithFrame:frame];
     if (self) {
-//        self.wantsLayer = YES;
-//        self.layer.backgroundColor = [[NSColor clearColor] NativeColor];
         self.autoresizingMask = NSViewWidthSizable | NSViewMinYMargin;
-        
+        self.autoresizesSubviews = YES;
+
         _selectionView = [[NSView alloc] initWithFrame:self.bounds];
         _selectionView.autoresizingMask = NSViewWidthSizable | NSViewMinYMargin;
         _selectionView.wantsLayer = YES;
         _selectionView.layer.backgroundColor = [RGB(42, 140, 244) hiNativeColor];
         _selectionView.alphaValue = 0.0;
         [self addSubview:_selectionView];
-        _copyLabel = [[NSTextField alloc] initWithFrame:NSMakeRect(self.frame.size.width - 120, self.frame.size.height - 25, 100, 15)];
+
+        _copyLabel = [[NSTextField alloc] initWithFrame:
+                      NSMakeRect(self.frame.size.width - 120, self.frame.size.height - 25, 100, 15)];
         [_copyLabel setBordered:NO];
         _copyLabel.backgroundColor = [NSColor clearColor];
         _copyLabel.font = [NSFont fontWithName:@"Helvetica-Bold" size:12];
@@ -43,10 +44,10 @@
         _copyLabel.autoresizingMask = NSViewMinXMargin | NSViewMinYMargin;
         [_copyLabel setSelectable:NO];
         [_copyLabel setEditable:NO];
-        self.autoresizesSubviews = YES;
         _copyLabel.stringValue = NSLocalizedString(@"click to copy", nil);
         [_copyLabel setHidden:YES];
         [self addSubview:_copyLabel];
+
         _trackTag = [self addTrackingRect:self.bounds owner:self userData:NULL assumeInside:YES];
     }
     
@@ -68,7 +69,6 @@
     [self displayIfNeeded];
 }
 
-
 - (void)mouseExited:(NSEvent *)theEvent {
     [_copyLabel setHidden:YES];
     [self displayIfNeeded];
@@ -79,8 +79,9 @@
     // Well, mouse up, copy data to pasteboard
     NSPasteboard *pb = [NSPasteboard generalPasteboard];
     [pb clearContents];
-    [pb declareTypes:[NSArray arrayWithObject:NSStringPboardType] owner:nil];
+    [pb declareTypes:@[NSStringPboardType] owner:nil];
     [pb setString:_contentToCopy forType:NSStringPboardType];
+
     _copyLabel.stringValue = NSLocalizedString(@"copied!", nil);
 
     CABasicAnimation *fadeOut = [CABasicAnimation animationWithKeyPath:@"opacity"];

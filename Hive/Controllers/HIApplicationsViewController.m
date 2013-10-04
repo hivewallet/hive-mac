@@ -13,15 +13,12 @@
 #import "HIApplicationRuntimeViewController.h"
 #import "HINavigationController.h"
 
-@interface HIApplicationsViewController ()
-
-@end
-
 @implementation HIApplicationsViewController
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
+
     if (self)
     {
         self.title = NSLocalizedString(@"Apps", @"Applications view title");

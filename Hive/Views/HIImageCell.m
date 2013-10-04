@@ -13,18 +13,18 @@
 - (void)drawInteriorWithFrame:(NSRect)frame inView:(NSView *)controlView
 {
     [NSGraphicsContext saveGraphicsState];
-    
-    NSBezierPath *path = [NSBezierPath bezierPathWithOvalInRect:NSMakeRect(frame.origin.x+1, frame.origin.y+1, frame.size.width-2, frame.size.height-2)];
-    
-//    [[NSColor colorWithCalibratedRed:97.0/255.0 green:186.0/255.0 blue:108.0/255.0 alpha:1] setFill];
-//    [path fill];
+
+    NSRect inset = NSInsetRect(frame, 1.0, 1.0);
+
+    NSBezierPath *path = [NSBezierPath bezierPathWithOvalInRect:inset];
     [path addClip];
     
-    [self.image drawInRect:NSMakeRect(frame.origin.x+1, frame.origin.y+1, frame.size.width-2, frame.size.width-2)
-             fromRect:NSZeroRect
-            operation:NSCompositeSourceOver
-             fraction:1.0];
-    
+    [self.image drawInRect:inset
+                  fromRect:NSZeroRect
+                 operation:NSCompositeSourceOver
+                  fraction:1.0];
+
     [NSGraphicsContext restoreGraphicsState];
 }
+
 @end
