@@ -107,20 +107,17 @@ static const CGFloat AddressCellHeight = 60.0;
     {
         if (_contact.firstname)
         {
-            [self.firstnameField setStringValue:_contact.firstname];
-            [self.firstnameField recalcForString:_contact.firstname];
+            [self.firstnameField setValueAndRecalc:_contact.firstname];
         }
 
         if (_contact.lastname)
         {
-            [self.lastnameField setStringValue:_contact.lastname];
-            [self.lastnameField recalcForString:_contact.lastname];
+            [self.lastnameField setValueAndRecalc:_contact.lastname];
         }
 
         if (_contact.email)
         {
-            [self.emailField setStringValue:_contact.email];
-            [self.emailField recalcForString:_contact.email];
+            [self.emailField setValueAndRecalc:_contact.email];
         }
 
         for (HIAddress *address in _contact.addresses)
@@ -187,7 +184,6 @@ static const CGFloat AddressCellHeight = 60.0;
     HITextField *nameField = [[HITextField alloc] initWithFrame:NSMakeRect(10, 30, 100, 21)];
     nameField.autoresizingMask = NSViewMinYMargin;
     nameField.font = [NSFont fontWithName:@"Helvetica-Bold" size:14];
-    nameField.stringValue = address.caption ? address.caption : @"";
     [nameField.cell setPlaceholderString:NSLocalizedString(@"Address caption", @"Address caption field placeholder")];
     [_walletNameFields addObject:nameField];
     [fieldContentView addSubview:nameField];
@@ -196,12 +192,12 @@ static const CGFloat AddressCellHeight = 60.0;
     addressField.autoresizingMask = NSViewMinYMargin;
     [addressField.cell setPlaceholderString:NSLocalizedString(@"Address", @"Address field placeholder")];
     addressField.font = [NSFont fontWithName:@"Helvetica" size:14];
-    addressField.stringValue = address ? address.address : @"";
     [_walletAddressFields addObject:addressField];
     [fieldContentView addSubview:addressField];
 
-    [nameField recalcForString:nameField.stringValue];
-    [addressField recalcForString:addressField.stringValue];
+    [nameField setValueAndRecalc:(address.caption ? address.caption : @"")];
+    [addressField setValueAndRecalc:(address ? address.address : @"")];
+
     [nameField awakeFromNib];
     [addressField awakeFromNib];
 

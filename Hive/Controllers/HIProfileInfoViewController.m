@@ -79,10 +79,7 @@ static const NSInteger AddressFieldTag = 2;
 
     [self configureScrollView];
 
-    NSString *email = (_contact.email.length > 0) ? _contact.email : @"";
-
-    [self.profileEmailField setStringValue:email];
-    [self.profileEmailField recalcForString:email];
+    [self.profileEmailField setValueAndRecalc:((_contact.email.length > 0) ? _contact.email : @"")];
 
     // configure box size
     NSRect f = self.addressBoxView.frame;

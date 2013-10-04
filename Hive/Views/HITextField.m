@@ -104,19 +104,27 @@ NSString * const kHITextFieldContentChanged = @"kHITextFieldContentChanged";
 {
     _isFocused = NO;
     [_bgView setHidden:YES];
+
     if (_isEmpty)
     {
-        [super setStringValue:@""];
-        [self recalcForString:@""];
+        [self setValueAndRecalc:@""];
     }
 }
 
-- (void)recalcForString:(NSString *)str
+- (void)setValueAndRecalc:(NSString *)value
 {
-    if (str.length == 0)
-        str = [self.cell placeholderString];
-    NSSize size = [str sizeWithAttributes:@{NSFontAttributeName: self.font}];
-    //_isEmpty = (self.stringValue.length == 0);
+    [self setStringValue:value];
+    [self recalcForString:value];
+}
+
+- (void)recalcForString:(NSString *)string
+{
+    if (string.length == 0)
+    {
+        string = [self.cell placeholderString];
+    }
+
+    NSSize size = [string sizeWithAttributes:@{NSFontAttributeName: self.font}];
     NSRect f = self.frame;
     f.size.width = size.width + 4;
     
