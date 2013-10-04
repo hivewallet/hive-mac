@@ -11,7 +11,8 @@
 
 static NSInteger TabBarButtonTagStart = 1000;
 
-@interface HIProfileTabBarController () {
+@interface HIProfileTabBarController ()
+{
     NSArray *_tabBarButtons;
 }
 
@@ -21,8 +22,8 @@ static NSInteger TabBarButtonTagStart = 1000;
 
 - (void)awakeFromNib {
     _tabBarButtons = @[
-                       [self tabBarButtonAtPosition:0 iconName:@"timeline"],
-                       [self tabBarButtonAtPosition:1 iconName:@"user"]
+                       [self tabBarButtonAtPosition:0 iconName:@"user"],
+                       [self tabBarButtonAtPosition:1 iconName:@"timeline"]
                      ];
 
     for (NSButton *button in _tabBarButtons) {
@@ -37,8 +38,6 @@ static NSInteger TabBarButtonTagStart = 1000;
     [self.view addSubview:[self horizontalLineAtPosition:1 color:RGB(177, 177, 177)]];
 
     [self.view addSubview:[self verticalSeparatorAtPosition:(width/2) color:RGB(187, 187, 187)]];
-    
-    self.selectedIndex = 1;
 }
 
 - (NSButton *)tabBarButtonAtPosition:(NSInteger)position iconName:(NSString *)name {
@@ -49,7 +48,7 @@ static NSInteger TabBarButtonTagStart = 1000;
     NSButton *button = [[NSButton alloc] initWithFrame:frame];
     button.buttonType = NSToggleButton;
     button.bordered = NO;
-    button.state = (position == 0) ? NSOnState : NSOffState;
+    button.state = NSOffState;
     button.tag = TabBarButtonTagStart + position;
     button.image = [NSImage imageNamed:[NSString stringWithFormat:@"icon-tabbar-%@__inactive", name]];
     button.alternateImage = [NSImage imageNamed:[NSString stringWithFormat:@"icon-tabbar-%@__active", name]];
@@ -87,27 +86,23 @@ static NSInteger TabBarButtonTagStart = 1000;
     return line;
 }
 
-- (void)setSelectedIndex:(NSUInteger)selectedIndex
+- (void)selectTabAtIndex:(NSUInteger)selectedIndex
 {
-    _selectedIndex = selectedIndex;
-    
-    for (NSButton *button in _tabBarButtons) {
-        button.state = (button.tag == selectedIndex + TabBarButtonTagStart) ? NSOnState : NSOffState;
-    };
-    
-}
-
-- (void)tabBarClicked:(id)sender {
-    _selectedIndex = [sender tag] - TabBarButtonTagStart;
+    for (NSInteger i = 0; i < _tabBarButtons.count; i++)
+    {
+        [_tabBarButtons[i] setState:(i == selectedIndex ? NSOnState : NSOffState)];
+    }
 
     if ([_tabDelegate respondsToSelector:@selector(controller:switchedToTabIndex:)])
     {
-        [_tabDelegate controller:self switchedToTabIndex:_selectedIndex];
+        [_tabDelegate controller:self switchedToTabIndex:selectedIndex];
     }
-    
-    for (NSButton *button in _tabBarButtons) {
-        button.state = (button == sender) ? NSOnState : NSOffState;
-    };
+}
+
+- (void)tabBarClicked:(id)sender {
+    NSInteger buttonId = [sender tag] - TabBarButtonTagStart;
+
+    [self selectTabAtIndex:buttonId];
 }
 
 @end

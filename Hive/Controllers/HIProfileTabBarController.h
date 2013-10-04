@@ -22,7 +22,7 @@
 @interface HIProfileTabBarController : NSViewController
 
 @property (nonatomic, strong) IBOutlet id<HIProfileTabBarControllerDelegate> tabDelegate;
-@property (nonatomic, assign, setter = setSelectedIndex:) NSUInteger selectedIndex;
 
+- (void)selectTabAtIndex:(NSUInteger)selectedIndex;
 
 @end

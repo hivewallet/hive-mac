@@ -22,6 +22,7 @@
 @property (strong) IBOutlet NSTextField *balanceLabel;
 @property (strong) IBOutlet NSButton *sendBitcoinButton;
 @property (strong) IBOutlet HIProfileTabView *tabView;
+@property (strong) IBOutlet HIProfileTabBarController *tabBarController;
 @property (strong) IBOutlet NSView *contentView;
 
 - (id)initWithContact:(HIContact *)aContact;

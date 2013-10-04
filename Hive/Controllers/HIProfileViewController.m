@@ -41,7 +41,7 @@
         {
             self.title = _contact.name;
 
-            _panelControllers = @[[[HITransactionsViewController alloc] initWithContact:_contact], _infoPanel];
+            _panelControllers = @[_infoPanel, [[HITransactionsViewController alloc] initWithContact:_contact]];
         }
         else
         {
@@ -73,7 +73,8 @@
 
     [self configureView];
     [self refreshData];
-    [self showControllerInContentView:_infoPanel];
+
+    [self.tabBarController selectTabAtIndex:0];
 }
 
 - (void)viewWillAppear
