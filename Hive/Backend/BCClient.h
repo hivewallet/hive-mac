@@ -8,8 +8,6 @@
 
 #import "AFHTTPClient.h"
 
-NSString * const kBCClientStartedNotification;
-
 @class HIContact;
 
 @interface BCClient : AFHTTPClient
