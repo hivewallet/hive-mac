@@ -180,20 +180,20 @@ static const CGFloat AddressCellHeight = 60.0;
     fieldContentView.autoresizingMask = NSViewMinYMargin | NSViewWidthSizable;
     [self.walletsView addSubview:fieldContentView];
     [_fieldContents addObject:fieldContentView];
-    
-    HITextField *nameField = [[HITextField alloc] initWithFrame:NSMakeRect(10, 30, 100, 21)];
-    nameField.autoresizingMask = NSViewMinYMargin;
-    nameField.font = [NSFont fontWithName:@"Helvetica-Bold" size:14];
-    [nameField.cell setPlaceholderString:NSLocalizedString(@"Address caption", @"Address caption field placeholder")];
-    [_walletNameFields addObject:nameField];
-    [fieldContentView addSubview:nameField];
 
-    HITextField *addressField = [[HITextField alloc] initWithFrame:CGRectMake(10, 5, 100, 21)];
+    HITextField *addressField = [[HITextField alloc] initWithFrame:CGRectMake(10, 30, 100, 21)];
     addressField.autoresizingMask = NSViewMinYMargin;
     [addressField.cell setPlaceholderString:NSLocalizedString(@"Address", @"Address field placeholder")];
     addressField.font = [NSFont fontWithName:@"Helvetica" size:14];
     [_walletAddressFields addObject:addressField];
     [fieldContentView addSubview:addressField];
+
+    HITextField *nameField = [[HITextField alloc] initWithFrame:NSMakeRect(10, 5, 100, 21)];
+    nameField.autoresizingMask = NSViewMinYMargin;
+    nameField.font = [NSFont fontWithName:@"Helvetica-Bold" size:14];
+    [nameField.cell setPlaceholderString:NSLocalizedString(@"Label", @"Address caption field placeholder")];
+    [_walletNameFields addObject:nameField];
+    [fieldContentView addSubview:nameField];
 
     [nameField setValueAndRecalc:(address.caption ? address.caption : @"")];
     [addressField setValueAndRecalc:(address ? address.address : @"")];
@@ -222,15 +222,15 @@ static const CGFloat AddressCellHeight = 60.0;
 
     if (index == 0)
     {
-        self.lastnameField.nextKeyView = nameField;
+        self.lastnameField.nextKeyView = addressField;
     }
     else
     {
-        [_walletAddressFields[index - 1] setNextKeyView:nameField];
+        [_walletNameFields[index - 1] setNextKeyView:addressField];
     }
 
-    nameField.nextKeyView = addressField;
-    addressField.nextKeyView = self.emailField;
+    addressField.nextKeyView = nameField;
+    nameField.nextKeyView = self.emailField;
 }
 
 - (void)recalculateNames:(NSNotification *)notification
@@ -324,24 +324,24 @@ static const CGFloat AddressCellHeight = 60.0;
 
     if (index == 0)
     {
-        if (_walletNameFields.count == 0)
+        if (_walletAddressFields.count == 0)
         {
             self.lastnameField.nextKeyView = self.emailField;
         }
         else
         {
-            self.lastnameField.nextKeyView = _walletNameFields[0];
+            self.lastnameField.nextKeyView = _walletAddressFields[0];
         }
     }
     else
     {
-        if (index < _walletNameFields.count)
+        if (index < _walletAddressFields.count)
         {
-            [_walletAddressFields[index - 1] setNextKeyView:_walletNameFields[index]];
+            [_walletNameFields[index - 1] setNextKeyView:_walletAddressFields[index]];
         }
         else
         {
-            [_walletAddressFields[index - 1] setNextKeyView:self.emailField];
+            [_walletNameFields[index - 1] setNextKeyView:self.emailField];
         }
     }
 }
