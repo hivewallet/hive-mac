@@ -8,97 +8,103 @@
 
 /* Begin PBXBuildFile section */
 		05D9F526F5294257A0422835 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1EFBACBE45EB458A8ED83785 /* libPods.a */; };
-		5802101417EC5F0A0039BA4B /* HIContactAutocompleteWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5802101217EC5F090039BA4B /* HIContactAutocompleteWindowController.m */; };
-		5802101517EC5F0A0039BA4B /* HIContactAutocompleteWindowController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5802101317EC5F090039BA4B /* HIContactAutocompleteWindowController.xib */; };
-		5802105A17ECA40E0039BA4B /* icon-dropdown-close.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 5802105817ECA40E0039BA4B /* icon-dropdown-close.pdf */; };
-		5802105B17ECA40E0039BA4B /* icon-dropdown-open.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 5802105917ECA40E0039BA4B /* icon-dropdown-open.pdf */; };
 		5802106017ECC4F50039BA4B /* HITransactionCellView.m in Sources */ = {isa = PBXBuildFile; fileRef = 581EFBCB17DA441B00E2738D /* HITransactionCellView.m */; };
 		5802106317ECCAAA0039BA4B /* HIContactAutocompleteCellView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5802106217ECCAAA0039BA4B /* HIContactAutocompleteCellView.m */; };
 		5804C32617FC88BA003B7891 /* HIProfile.m in Sources */ = {isa = PBXBuildFile; fileRef = 5804C32517FC88BA003B7891 /* HIProfile.m */; };
-		5804C32917FD7B64003B7891 /* icon-gray-btc.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 5804C32717FD7B64003B7891 /* icon-gray-btc.pdf */; };
-		5804C32A17FD7B64003B7891 /* icon-sadface.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 5804C32817FD7B64003B7891 /* icon-sadface.pdf */; };
 		581711BE17D0A26D00DE775A /* HISidebarButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 581711BD17D0A26D00DE775A /* HISidebarButton.m */; };
-		581711D817D0CB9600DE775A /* HINavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 581711D717D0CB9600DE775A /* HINavigationController.m */; };
-		581711DD17D0FEDD00DE775A /* HIProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 581711DB17D0FEDD00DE775A /* HIProfileViewController.m */; };
-		581711DE17D0FEDD00DE775A /* HIProfileViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 581711DC17D0FEDD00DE775A /* HIProfileViewController.xib */; };
 		581818E217F1A8A800D00770 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 581818E117F1A8A800D00770 /* README.md */; };
 		582C699B17D8BAC700442294 /* HICurrencyAmountFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = 582C699A17D8BAC700442294 /* HICurrencyAmountFormatter.m */; };
+		586059AF180419DF00FD9C2A /* bitstamp.hiveapp in Resources */ = {isa = PBXBuildFile; fileRef = 586059AC180419DF00FD9C2A /* bitstamp.hiveapp */; };
+		586059B0180419DF00FD9C2A /* minefield.hiveapp in Resources */ = {isa = PBXBuildFile; fileRef = 586059AD180419DF00FD9C2A /* minefield.hiveapp */; };
+		586059B1180419DF00FD9C2A /* supporthive.hiveapp in Resources */ = {isa = PBXBuildFile; fileRef = 586059AE180419DF00FD9C2A /* supporthive.hiveapp */; };
+		586059B4180419F500FD9C2A /* BCClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 586059B3180419F500FD9C2A /* BCClient.m */; };
+		586059BD18041A1300FD9C2A /* NSColor+Hive.m in Sources */ = {isa = PBXBuildFile; fileRef = 586059B618041A1300FD9C2A /* NSColor+Hive.m */; };
+		586059BE18041A1300FD9C2A /* NSImage+NPEffects.m in Sources */ = {isa = PBXBuildFile; fileRef = 586059B818041A1300FD9C2A /* NSImage+NPEffects.m */; };
+		586059BF18041A1300FD9C2A /* NSView+Snapshot.m in Sources */ = {isa = PBXBuildFile; fileRef = 586059BA18041A1300FD9C2A /* NSView+Snapshot.m */; };
+		586059C018041A1300FD9C2A /* SUCodeSigningVerifier+DisableCodeSigningCheck.m in Sources */ = {isa = PBXBuildFile; fileRef = 586059BC18041A1300FD9C2A /* SUCodeSigningVerifier+DisableCodeSigningCheck.m */; };
+		586059CB18041A6D00FD9C2A /* HIApplicationRuntimeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 586059C218041A6D00FD9C2A /* HIApplicationRuntimeViewController.m */; };
+		586059CC18041A6D00FD9C2A /* HIApplicationRuntimeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 586059C318041A6D00FD9C2A /* HIApplicationRuntimeViewController.xib */; };
+		586059CD18041A6D00FD9C2A /* HIApplicationsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 586059C518041A6D00FD9C2A /* HIApplicationsViewController.m */; };
+		586059CE18041A6D00FD9C2A /* HIApplicationsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 586059C618041A6D00FD9C2A /* HIApplicationsViewController.xib */; };
+		586059CF18041A6D00FD9C2A /* HIApplicationURLProtocol.m in Sources */ = {isa = PBXBuildFile; fileRef = 586059C818041A6D00FD9C2A /* HIApplicationURLProtocol.m */; };
+		586059D018041A6D00FD9C2A /* HIAppRuntimeBridge.m in Sources */ = {isa = PBXBuildFile; fileRef = 586059CA18041A6D00FD9C2A /* HIAppRuntimeBridge.m */; };
+		586059D418041A7A00FD9C2A /* HIContactsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 586059D218041A7A00FD9C2A /* HIContactsViewController.m */; };
+		586059D518041A7A00FD9C2A /* HIContactsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 586059D318041A7A00FD9C2A /* HIContactsViewController.xib */; };
+		586059D918041A8700FD9C2A /* HINewContactViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 586059D718041A8700FD9C2A /* HINewContactViewController.m */; };
+		586059DA18041A8700FD9C2A /* HINewContactViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 586059D818041A8700FD9C2A /* HINewContactViewController.xib */; };
+		586059E318041A9900FD9C2A /* HIProfileInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 586059DC18041A9900FD9C2A /* HIProfileInfoViewController.m */; };
+		586059E418041A9900FD9C2A /* HIProfileInfoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 586059DD18041A9900FD9C2A /* HIProfileInfoViewController.xib */; };
+		586059E518041A9900FD9C2A /* HIProfileTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 586059DF18041A9900FD9C2A /* HIProfileTabBarController.m */; };
+		586059E618041A9900FD9C2A /* HIProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 586059E118041A9900FD9C2A /* HIProfileViewController.m */; };
+		586059E718041A9900FD9C2A /* HIProfileViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 586059E218041A9900FD9C2A /* HIProfileViewController.xib */; };
+		586059EE18041AAF00FD9C2A /* HIContactAutocompleteWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 586059E918041AAF00FD9C2A /* HIContactAutocompleteWindowController.m */; };
+		586059EF18041AAF00FD9C2A /* HIContactAutocompleteWindowController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 586059EA18041AAF00FD9C2A /* HIContactAutocompleteWindowController.xib */; };
+		586059F018041AAF00FD9C2A /* HISendBitcoinsWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 586059EC18041AAF00FD9C2A /* HISendBitcoinsWindowController.m */; };
+		586059F118041AAF00FD9C2A /* HISendBitcoinsWindowController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 586059ED18041AAF00FD9C2A /* HISendBitcoinsWindowController.xib */; };
+		586059F518041ABD00FD9C2A /* HITransactionsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 586059F318041ABD00FD9C2A /* HITransactionsViewController.m */; };
+		586059F618041ABD00FD9C2A /* HITransactionsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 586059F418041ABD00FD9C2A /* HITransactionsViewController.xib */; };
+		586059FF18041AD600FD9C2A /* HIMainWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 586059F818041AD600FD9C2A /* HIMainWindowController.m */; };
+		58605A0018041AD600FD9C2A /* HINavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 586059FA18041AD600FD9C2A /* HINavigationController.m */; };
+		58605A0118041AD600FD9C2A /* HISidebarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 586059FC18041AD600FD9C2A /* HISidebarController.m */; };
+		58605A0218041AD600FD9C2A /* HIViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 586059FE18041AD600FD9C2A /* HIViewController.m */; };
+		58605A0418041B2200FD9C2A /* HIMainWindowController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 58605A0318041B2200FD9C2A /* HIMainWindowController.xib */; };
+		58605A4018041D0A00FD9C2A /* avatar-empty.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 58605A2118041D0A00FD9C2A /* avatar-empty.pdf */; };
+		58605A4118041D0A00FD9C2A /* bg-sidebar.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 58605A2218041D0A00FD9C2A /* bg-sidebar.pdf */; };
+		58605A4218041D0A00FD9C2A /* button__inset.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 58605A2318041D0A00FD9C2A /* button__inset.pdf */; };
+		58605A4318041D0A00FD9C2A /* icon-apps__active.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 58605A2418041D0A00FD9C2A /* icon-apps__active.pdf */; };
+		58605A4418041D0A00FD9C2A /* icon-apps__inactive.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 58605A2518041D0A00FD9C2A /* icon-apps__inactive.pdf */; };
+		58605A4518041D0A00FD9C2A /* icon-bitcoin.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 58605A2618041D0A00FD9C2A /* icon-bitcoin.pdf */; };
+		58605A4618041D0A00FD9C2A /* icon-delete.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 58605A2718041D0A00FD9C2A /* icon-delete.pdf */; };
+		58605A4718041D0A00FD9C2A /* icon-dropdown-close.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 58605A2818041D0A00FD9C2A /* icon-dropdown-close.pdf */; };
+		58605A4818041D0A00FD9C2A /* icon-dropdown-open.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 58605A2918041D0A00FD9C2A /* icon-dropdown-open.pdf */; };
+		58605A4918041D0A00FD9C2A /* icon-gray-btc.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 58605A2A18041D0A00FD9C2A /* icon-gray-btc.pdf */; };
+		58605A4A18041D0A00FD9C2A /* icon-group__active.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 58605A2B18041D0A00FD9C2A /* icon-group__active.pdf */; };
+		58605A4B18041D0A00FD9C2A /* icon-group__inactive.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 58605A2C18041D0A00FD9C2A /* icon-group__inactive.pdf */; };
+		58605A4C18041D0A00FD9C2A /* icon-nav-bar-back.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 58605A2D18041D0A00FD9C2A /* icon-nav-bar-back.pdf */; };
+		58605A4D18041D0A00FD9C2A /* icon-next__active.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 58605A2E18041D0A00FD9C2A /* icon-next__active.pdf */; };
+		58605A4E18041D0A00FD9C2A /* icon-next.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 58605A2F18041D0A00FD9C2A /* icon-next.pdf */; };
+		58605A4F18041D0A00FD9C2A /* icon-plus.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 58605A3018041D0A00FD9C2A /* icon-plus.pdf */; };
+		58605A5018041D0A00FD9C2A /* icon-sadface.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 58605A3118041D0A00FD9C2A /* icon-sadface.pdf */; };
+		58605A5118041D0A00FD9C2A /* icon-search.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 58605A3218041D0A00FD9C2A /* icon-search.pdf */; };
+		58605A5218041D0A00FD9C2A /* icon-tabbar-timeline__active.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 58605A3318041D0A00FD9C2A /* icon-tabbar-timeline__active.pdf */; };
+		58605A5318041D0A00FD9C2A /* icon-tabbar-timeline__inactive.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 58605A3418041D0A00FD9C2A /* icon-tabbar-timeline__inactive.pdf */; };
+		58605A5418041D0A00FD9C2A /* icon-tabbar-user__active.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 58605A3518041D0A00FD9C2A /* icon-tabbar-user__active.pdf */; };
+		58605A5518041D0A00FD9C2A /* icon-tabbar-user__inactive.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 58605A3618041D0A00FD9C2A /* icon-tabbar-user__inactive.pdf */; };
+		58605A5618041D0A00FD9C2A /* icon-timeline__active.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 58605A3718041D0A00FD9C2A /* icon-timeline__active.pdf */; };
+		58605A5718041D0A00FD9C2A /* icon-timeline__inactive.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 58605A3818041D0A00FD9C2A /* icon-timeline__inactive.pdf */; };
+		58605A5818041D0A00FD9C2A /* icon-transactions-arrow-left.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 58605A3918041D0A00FD9C2A /* icon-transactions-arrow-left.pdf */; };
+		58605A5918041D0A00FD9C2A /* icon-transactions-arrow-right.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 58605A3A18041D0A00FD9C2A /* icon-transactions-arrow-right.pdf */; };
+		58605A5A18041D0A00FD9C2A /* icon-transactions-btc-symbol.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 58605A3B18041D0A00FD9C2A /* icon-transactions-btc-symbol.pdf */; };
+		58605A5B18041D0A00FD9C2A /* icon-transactions-minus.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 58605A3C18041D0A00FD9C2A /* icon-transactions-minus.pdf */; };
+		58605A5C18041D0A00FD9C2A /* icon-transactions-plus.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 58605A3D18041D0A00FD9C2A /* icon-transactions-plus.pdf */; };
+		58605A5D18041D0A00FD9C2A /* icon-your-profile__active.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 58605A3E18041D0A00FD9C2A /* icon-your-profile__active.pdf */; };
+		58605A5E18041D0A00FD9C2A /* icon-your-profile__inactive.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 58605A3F18041D0A00FD9C2A /* icon-your-profile__inactive.pdf */; };
 		5884A00F17F1B63D004A31FA /* Tor.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5884A00C17F1B5FF004A31FA /* Tor.framework */; };
 		5884A01017F1B646004A31FA /* Tor.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 5884A00C17F1B5FF004A31FA /* Tor.framework */; };
-		5884A01617F1BD5B004A31FA /* HIProfileInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5884A01417F1BD5B004A31FA /* HIProfileInfoViewController.m */; };
-		5884A01717F1BD5B004A31FA /* HIProfileInfoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5884A01517F1BD5B004A31FA /* HIProfileInfoViewController.xib */; };
-		5884A02117F1E818004A31FA /* icon-bitcoin.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 5884A02017F1E818004A31FA /* icon-bitcoin.pdf */; };
 		5884A03717F56D86004A31FA /* Sparkle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5884A03617F56D86004A31FA /* Sparkle.framework */; };
 		5884A03C17F578EB004A31FA /* Sparkle.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 5884A03617F56D86004A31FA /* Sparkle.framework */; };
 		5884A03E17F57AE9004A31FA /* dsa_pub.pem in Resources */ = {isa = PBXBuildFile; fileRef = 5884A03D17F57AE9004A31FA /* dsa_pub.pem */; };
-		588BFB3217FC4256004BE4C8 /* SUCodeSigningVerifier+DisableCodeSigningCheck.m in Sources */ = {isa = PBXBuildFile; fileRef = 588BFB3117FC4256004BE4C8 /* SUCodeSigningVerifier+DisableCodeSigningCheck.m */; };
 		588EFB2E17D8D2970085F6E6 /* HIProfileTabView.m in Sources */ = {isa = PBXBuildFile; fileRef = 588EFB2D17D8D2970085F6E6 /* HIProfileTabView.m */; };
-		58A03AFC17D9C91600ADD5E5 /* HIProfileTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 58A03AFB17D9C91600ADD5E5 /* HIProfileTabBarController.m */; };
 		58A03B0D17D9DC4100ADD5E5 /* HIButtonWithSpinner.m in Sources */ = {isa = PBXBuildFile; fileRef = 58A03B0C17D9DC4100ADD5E5 /* HIButtonWithSpinner.m */; };
-		58A2A7F017D878840001464A /* HISendBitcoinsWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 58A2A7EE17D878840001464A /* HISendBitcoinsWindowController.m */; };
-		58A2A7F117D878840001464A /* HISendBitcoinsWindowController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 58A2A7EF17D878840001464A /* HISendBitcoinsWindowController.xib */; };
-		58C9F41817F06D9C0041624B /* icon-transactions-btc-symbol.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 58C9F41717F06D9C0041624B /* icon-transactions-btc-symbol.pdf */; };
 		58CFD95317CF914000A035FA /* HIContactCellView.m in Sources */ = {isa = PBXBuildFile; fileRef = 58CFD95017CF914000A035FA /* HIContactCellView.m */; };
 		58CFD95417CF914000A035FA /* HISidebarView.m in Sources */ = {isa = PBXBuildFile; fileRef = 58CFD95217CF914000A035FA /* HISidebarView.m */; };
-		58CFD97717D083E100A035FA /* HISidebarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 58CFD97617D083E100A035FA /* HISidebarController.m */; };
 		58F02AEE17E1F5A400B65429 /* HITitleArrowView.m in Sources */ = {isa = PBXBuildFile; fileRef = 58F02AED17E1F5A400B65429 /* HITitleArrowView.m */; };
 		D901F4F817B272E60071780D /* BitcoinJKit.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = D901F4F517B272CE0071780D /* BitcoinJKit.framework */; };
 		D901F4F917B273440071780D /* BitcoinJKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D901F4F517B272CE0071780D /* BitcoinJKit.framework */; };
-		D907A4E917F590F6009B3185 /* supporthive.hiveapp in Resources */ = {isa = PBXBuildFile; fileRef = D907A4E817F590F6009B3185 /* supporthive.hiveapp */; };
-		D907A4EC17F5C4BF009B3185 /* bitstamp.hiveapp in Resources */ = {isa = PBXBuildFile; fileRef = D907A4EA17F5C4BF009B3185 /* bitstamp.hiveapp */; };
-		D907A4ED17F5C4BF009B3185 /* minefield.hiveapp in Resources */ = {isa = PBXBuildFile; fileRef = D907A4EB17F5C4BF009B3185 /* minefield.hiveapp */; };
-		D90C9CF217E9C64100FC83CC /* icon-delete.pdf in Resources */ = {isa = PBXBuildFile; fileRef = D90C9CF117E9C64100FC83CC /* icon-delete.pdf */; };
 		D91FE82317988743001B37D8 /* NPZip.m in Sources */ = {isa = PBXBuildFile; fileRef = D91FE81E17988743001B37D8 /* NPZip.m */; };
 		D91FE82417988743001B37D8 /* NPZipFileHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = D91FE82017988743001B37D8 /* NPZipFileHeader.m */; };
 		D91FE82517988743001B37D8 /* NPZipHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = D91FE82217988743001B37D8 /* NPZipHeader.m */; };
 		D91FE827179887C5001B37D8 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = D91FE826179887C4001B37D8 /* libz.dylib */; };
-		D91FE82A17989120001B37D8 /* HIApplicationURLProtocol.m in Sources */ = {isa = PBXBuildFile; fileRef = D91FE82917989120001B37D8 /* HIApplicationURLProtocol.m */; };
 		D9235373177C4222003533DF /* HIApplication.m in Sources */ = {isa = PBXBuildFile; fileRef = D9235372177C4222003533DF /* HIApplication.m */; };
-		D923537F177C55F7003533DF /* HIApplicationRuntimeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D923537D177C55F7003533DF /* HIApplicationRuntimeViewController.m */; };
-		D9235380177C55F7003533DF /* HIApplicationRuntimeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D923537E177C55F7003533DF /* HIApplicationRuntimeViewController.xib */; };
-		D9235386177C60A5003533DF /* HIAppRuntimeBridge.m in Sources */ = {isa = PBXBuildFile; fileRef = D9235385177C60A5003533DF /* HIAppRuntimeBridge.m */; };
 		D9235388177C6779003533DF /* JavaScriptCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D9235387177C6779003533DF /* JavaScriptCore.framework */; };
 		D938F01017E6278B00566FFD /* HITextFieldCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D938F00F17E6278B00566FFD /* HITextFieldCell.m */; };
 		D939FE9C17F076E80088F5D3 /* HICopyView.m in Sources */ = {isa = PBXBuildFile; fileRef = D939FE9B17F076E80088F5D3 /* HICopyView.m */; };
-		D948158117CE19D3006A0312 /* HITransactionsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D948158017CE19D3006A0312 /* HITransactionsViewController.m */; };
-		D948158317CE19ED006A0312 /* HITransactionsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D948158217CE19ED006A0312 /* HITransactionsViewController.xib */; };
-		D948158A17CE1C29006A0312 /* HIContactsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D948158817CE1C29006A0312 /* HIContactsViewController.m */; };
-		D948158B17CE1C29006A0312 /* HIContactsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D948158917CE1C29006A0312 /* HIContactsViewController.xib */; };
-		D948158F17CE1C98006A0312 /* HIApplicationsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D948158D17CE1C98006A0312 /* HIApplicationsViewController.m */; };
-		D948159017CE1C98006A0312 /* HIApplicationsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D948158E17CE1C98006A0312 /* HIApplicationsViewController.xib */; };
 		D94815B417D492A0006A0312 /* HITitleView.m in Sources */ = {isa = PBXBuildFile; fileRef = D94815B317D492A0006A0312 /* HITitleView.m */; };
 		D94815E917D4BCEF006A0312 /* HIContactRowView.m in Sources */ = {isa = PBXBuildFile; fileRef = D94815E817D4BCEF006A0312 /* HIContactRowView.m */; };
-		D94815EE17D4CD46006A0312 /* HINewContactViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D94815EC17D4CD46006A0312 /* HINewContactViewController.m */; };
-		D94815EF17D4CD46006A0312 /* HINewContactViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D94815ED17D4CD46006A0312 /* HINewContactViewController.xib */; };
 		D94815F217D4D9AF006A0312 /* HISeparatorView.m in Sources */ = {isa = PBXBuildFile; fileRef = D94815F117D4D9AF006A0312 /* HISeparatorView.m */; };
 		D94815F517D72AF8006A0312 /* HITextField.m in Sources */ = {isa = PBXBuildFile; fileRef = D94815F417D72AF8006A0312 /* HITextField.m */; };
-		D948161817DF1AB3006A0312 /* bg-sidebar.pdf in Resources */ = {isa = PBXBuildFile; fileRef = D94815FC17DF1AB1006A0312 /* bg-sidebar.pdf */; };
-		D948161917DF1AB3006A0312 /* button__inset.pdf in Resources */ = {isa = PBXBuildFile; fileRef = D94815FD17DF1AB1006A0312 /* button__inset.pdf */; };
-		D948161F17DF1AB3006A0312 /* icon-group__active.pdf in Resources */ = {isa = PBXBuildFile; fileRef = D948160317DF1AB1006A0312 /* icon-group__active.pdf */; };
-		D948162017DF1AB3006A0312 /* icon-group__inactive.pdf in Resources */ = {isa = PBXBuildFile; fileRef = D948160417DF1AB1006A0312 /* icon-group__inactive.pdf */; };
-		D948162117DF1AB3006A0312 /* icon-nav-bar-back.pdf in Resources */ = {isa = PBXBuildFile; fileRef = D948160517DF1AB1006A0312 /* icon-nav-bar-back.pdf */; };
-		D948162217DF1AB3006A0312 /* icon-next__active.pdf in Resources */ = {isa = PBXBuildFile; fileRef = D948160617DF1AB1006A0312 /* icon-next__active.pdf */; };
-		D948162317DF1AB3006A0312 /* icon-next.pdf in Resources */ = {isa = PBXBuildFile; fileRef = D948160717DF1AB2006A0312 /* icon-next.pdf */; };
-		D948162417DF1AB3006A0312 /* icon-plus.pdf in Resources */ = {isa = PBXBuildFile; fileRef = D948160817DF1AB2006A0312 /* icon-plus.pdf */; };
-		D948162517DF1AB3006A0312 /* icon-search.pdf in Resources */ = {isa = PBXBuildFile; fileRef = D948160917DF1AB2006A0312 /* icon-search.pdf */; };
-		D948162817DF1AB3006A0312 /* icon-tabbar-timeline__active.pdf in Resources */ = {isa = PBXBuildFile; fileRef = D948160C17DF1AB2006A0312 /* icon-tabbar-timeline__active.pdf */; };
-		D948162917DF1AB3006A0312 /* icon-tabbar-timeline__inactive.pdf in Resources */ = {isa = PBXBuildFile; fileRef = D948160D17DF1AB2006A0312 /* icon-tabbar-timeline__inactive.pdf */; };
-		D948162A17DF1AB3006A0312 /* icon-tabbar-user__active.pdf in Resources */ = {isa = PBXBuildFile; fileRef = D948160E17DF1AB2006A0312 /* icon-tabbar-user__active.pdf */; };
-		D948162B17DF1AB3006A0312 /* icon-tabbar-user__inactive.pdf in Resources */ = {isa = PBXBuildFile; fileRef = D948160F17DF1AB2006A0312 /* icon-tabbar-user__inactive.pdf */; };
-		D948162C17DF1AB3006A0312 /* icon-timeline__active.pdf in Resources */ = {isa = PBXBuildFile; fileRef = D948161017DF1AB2006A0312 /* icon-timeline__active.pdf */; };
-		D948162D17DF1AB3006A0312 /* icon-timeline__inactive.pdf in Resources */ = {isa = PBXBuildFile; fileRef = D948161117DF1AB2006A0312 /* icon-timeline__inactive.pdf */; };
-		D948162E17DF1AB3006A0312 /* icon-transactions-arrow-left.pdf in Resources */ = {isa = PBXBuildFile; fileRef = D948161217DF1AB2006A0312 /* icon-transactions-arrow-left.pdf */; };
-		D948162F17DF1AB3006A0312 /* icon-transactions-arrow-right.pdf in Resources */ = {isa = PBXBuildFile; fileRef = D948161317DF1AB2006A0312 /* icon-transactions-arrow-right.pdf */; };
-		D948163017DF1AB3006A0312 /* icon-transactions-minus.pdf in Resources */ = {isa = PBXBuildFile; fileRef = D948161417DF1AB3006A0312 /* icon-transactions-minus.pdf */; };
-		D948163117DF1AB3006A0312 /* icon-transactions-plus.pdf in Resources */ = {isa = PBXBuildFile; fileRef = D948161517DF1AB3006A0312 /* icon-transactions-plus.pdf */; };
-		D948163217DF1AB3006A0312 /* icon-your-profile__active.pdf in Resources */ = {isa = PBXBuildFile; fileRef = D948161617DF1AB3006A0312 /* icon-your-profile__active.pdf */; };
-		D948163317DF1AB3006A0312 /* icon-your-profile__inactive.pdf in Resources */ = {isa = PBXBuildFile; fileRef = D948161717DF1AB3006A0312 /* icon-your-profile__inactive.pdf */; };
-		D948163917DF555A006A0312 /* avatar-empty.pdf in Resources */ = {isa = PBXBuildFile; fileRef = D948163817DF5557006A0312 /* avatar-empty.pdf */; };
-		D948164417E0A807006A0312 /* NSColor+Hive.m in Sources */ = {isa = PBXBuildFile; fileRef = D948164317E0A807006A0312 /* NSColor+Hive.m */; };
 		D958A8B817E8547A00CED98C /* HIFlippedView.m in Sources */ = {isa = PBXBuildFile; fileRef = D958A8B717E8547A00CED98C /* HIFlippedView.m */; };
-		D95929D1177326F2008B4F43 /* BCClient.m in Sources */ = {isa = PBXBuildFile; fileRef = D95929D0177326F2008B4F43 /* BCClient.m */; };
 		D95929DD17742B71008B4F43 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D95929DC17742B70008B4F43 /* WebKit.framework */; };
-		D95929E517746CE9008B4F43 /* NSView+Snapshot.m in Sources */ = {isa = PBXBuildFile; fileRef = D95929E417746CE9008B4F43 /* NSView+Snapshot.m */; };
 		D962AF031769FEF9009F882A /* Hive.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D962AF011769FEF9009F882A /* Hive.xcdatamodeld */; };
 		D9716B6D17D88F8800888F4E /* HIDoneButtonCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D9716B6C17D88F8800888F4E /* HIDoneButtonCell.m */; };
 		D9716B7217D8B42E00888F4E /* HIButtonCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D9716B7117D8B42E00888F4E /* HIButtonCell.m */; };
@@ -114,13 +120,7 @@
 		D9A591D81767B4A800502635 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = D9A591D61767B4A800502635 /* Credits.rtf */; };
 		D9A591DB1767B4A800502635 /* HIAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D9A591DA1767B4A800502635 /* HIAppDelegate.m */; };
 		D9A591DE1767B4A800502635 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = D9A591DC1767B4A800502635 /* MainMenu.xib */; };
-		D9A5921B1768444000502635 /* HIViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D9A5921A1768444000502635 /* HIViewController.m */; };
-		D9A5922917684D6E00502635 /* NSImage+NPEffects.m in Sources */ = {isa = PBXBuildFile; fileRef = D9A5922817684D6E00502635 /* NSImage+NPEffects.m */; };
 		D9A592361768CBE400502635 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D9A592351768CBE400502635 /* QuartzCore.framework */; };
-		D9EBE42F176878BE00297A63 /* HIMainWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = D9EBE42E176878BE00297A63 /* HIMainWindowController.m */; };
-		D9EBE432176878E800297A63 /* HIMainWindowController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D9EBE430176878E800297A63 /* HIMainWindowController.xib */; };
-		D9F0B9F017EC5AF90050A0A2 /* icon-apps__active.pdf in Resources */ = {isa = PBXBuildFile; fileRef = D9F0B9EE17EC5AF90050A0A2 /* icon-apps__active.pdf */; };
-		D9F0B9F117EC5AF90050A0A2 /* icon-apps__inactive.pdf in Resources */ = {isa = PBXBuildFile; fileRef = D9F0B9EF17EC5AF90050A0A2 /* icon-apps__inactive.pdf */; };
 		D9F0B9F817EC654C0050A0A2 /* HIImageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D9F0B9F717EC654C0050A0A2 /* HIImageCell.m */; };
 		D9F8454F1781C509004076F6 /* Icon.icns in Resources */ = {isa = PBXBuildFile; fileRef = D9F8454E1781C509004076F6 /* Icon.icns */; };
 /* End PBXBuildFile section */
@@ -188,60 +188,116 @@
 /* Begin PBXFileReference section */
 		10153A3CC4364D6799CB4A2D /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = SOURCE_ROOT; };
 		1EFBACBE45EB458A8ED83785 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		5802101117EC5F090039BA4B /* HIContactAutocompleteWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HIContactAutocompleteWindowController.h; path = Controllers/HIContactAutocompleteWindowController.h; sourceTree = "<group>"; };
-		5802101217EC5F090039BA4B /* HIContactAutocompleteWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HIContactAutocompleteWindowController.m; path = Controllers/HIContactAutocompleteWindowController.m; sourceTree = "<group>"; };
-		5802101317EC5F090039BA4B /* HIContactAutocompleteWindowController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = HIContactAutocompleteWindowController.xib; path = Controllers/HIContactAutocompleteWindowController.xib; sourceTree = "<group>"; };
-		5802105817ECA40E0039BA4B /* icon-dropdown-close.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; name = "icon-dropdown-close.pdf"; path = "Images/icon-dropdown-close.pdf"; sourceTree = "<group>"; };
-		5802105917ECA40E0039BA4B /* icon-dropdown-open.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; name = "icon-dropdown-open.pdf"; path = "Images/icon-dropdown-open.pdf"; sourceTree = "<group>"; };
 		5802106117ECCAAA0039BA4B /* HIContactAutocompleteCellView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HIContactAutocompleteCellView.h; sourceTree = "<group>"; };
 		5802106217ECCAAA0039BA4B /* HIContactAutocompleteCellView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HIContactAutocompleteCellView.m; sourceTree = "<group>"; };
 		5804C32417FC88BA003B7891 /* HIProfile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HIProfile.h; sourceTree = "<group>"; };
 		5804C32517FC88BA003B7891 /* HIProfile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HIProfile.m; sourceTree = "<group>"; };
-		5804C32717FD7B64003B7891 /* icon-gray-btc.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; name = "icon-gray-btc.pdf"; path = "Images/icon-gray-btc.pdf"; sourceTree = "<group>"; };
-		5804C32817FD7B64003B7891 /* icon-sadface.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; name = "icon-sadface.pdf"; path = "Images/icon-sadface.pdf"; sourceTree = "<group>"; };
 		581711BC17D0A26D00DE775A /* HISidebarButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HISidebarButton.h; sourceTree = "<group>"; };
 		581711BD17D0A26D00DE775A /* HISidebarButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HISidebarButton.m; sourceTree = "<group>"; };
-		581711D617D0CB9600DE775A /* HINavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HINavigationController.h; path = Controllers/HINavigationController.h; sourceTree = "<group>"; };
-		581711D717D0CB9600DE775A /* HINavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HINavigationController.m; path = Controllers/HINavigationController.m; sourceTree = "<group>"; };
-		581711DA17D0FEDD00DE775A /* HIProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HIProfileViewController.h; path = Controllers/HIProfileViewController.h; sourceTree = "<group>"; };
-		581711DB17D0FEDD00DE775A /* HIProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HIProfileViewController.m; path = Controllers/HIProfileViewController.m; sourceTree = "<group>"; };
-		581711DC17D0FEDD00DE775A /* HIProfileViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = HIProfileViewController.xib; path = Controllers/HIProfileViewController.xib; sourceTree = "<group>"; };
 		581818E117F1A8A800D00770 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = SOURCE_ROOT; };
 		581EFBCA17DA441A00E2738D /* HITransactionCellView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HITransactionCellView.h; sourceTree = "<group>"; };
 		581EFBCB17DA441B00E2738D /* HITransactionCellView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HITransactionCellView.m; sourceTree = "<group>"; };
 		582C699917D8BAC700442294 /* HICurrencyAmountFormatter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HICurrencyAmountFormatter.h; sourceTree = "<group>"; };
 		582C699A17D8BAC700442294 /* HICurrencyAmountFormatter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HICurrencyAmountFormatter.m; sourceTree = "<group>"; };
+		586059AC180419DF00FD9C2A /* bitstamp.hiveapp */ = {isa = PBXFileReference; lastKnownFileType = file; path = bitstamp.hiveapp; sourceTree = "<group>"; };
+		586059AD180419DF00FD9C2A /* minefield.hiveapp */ = {isa = PBXFileReference; lastKnownFileType = file; path = minefield.hiveapp; sourceTree = "<group>"; };
+		586059AE180419DF00FD9C2A /* supporthive.hiveapp */ = {isa = PBXFileReference; lastKnownFileType = file; path = supporthive.hiveapp; sourceTree = "<group>"; };
+		586059B2180419F500FD9C2A /* BCClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BCClient.h; sourceTree = "<group>"; };
+		586059B3180419F500FD9C2A /* BCClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BCClient.m; sourceTree = "<group>"; };
+		586059B518041A1300FD9C2A /* NSColor+Hive.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSColor+Hive.h"; sourceTree = "<group>"; };
+		586059B618041A1300FD9C2A /* NSColor+Hive.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSColor+Hive.m"; sourceTree = "<group>"; };
+		586059B718041A1300FD9C2A /* NSImage+NPEffects.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSImage+NPEffects.h"; sourceTree = "<group>"; };
+		586059B818041A1300FD9C2A /* NSImage+NPEffects.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSImage+NPEffects.m"; sourceTree = "<group>"; };
+		586059B918041A1300FD9C2A /* NSView+Snapshot.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSView+Snapshot.h"; sourceTree = "<group>"; };
+		586059BA18041A1300FD9C2A /* NSView+Snapshot.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSView+Snapshot.m"; sourceTree = "<group>"; };
+		586059BB18041A1300FD9C2A /* SUCodeSigningVerifier+DisableCodeSigningCheck.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SUCodeSigningVerifier+DisableCodeSigningCheck.h"; sourceTree = "<group>"; };
+		586059BC18041A1300FD9C2A /* SUCodeSigningVerifier+DisableCodeSigningCheck.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "SUCodeSigningVerifier+DisableCodeSigningCheck.m"; sourceTree = "<group>"; };
+		586059C118041A6D00FD9C2A /* HIApplicationRuntimeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HIApplicationRuntimeViewController.h; sourceTree = "<group>"; };
+		586059C218041A6D00FD9C2A /* HIApplicationRuntimeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HIApplicationRuntimeViewController.m; sourceTree = "<group>"; };
+		586059C318041A6D00FD9C2A /* HIApplicationRuntimeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HIApplicationRuntimeViewController.xib; sourceTree = "<group>"; };
+		586059C418041A6D00FD9C2A /* HIApplicationsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HIApplicationsViewController.h; sourceTree = "<group>"; };
+		586059C518041A6D00FD9C2A /* HIApplicationsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HIApplicationsViewController.m; sourceTree = "<group>"; };
+		586059C618041A6D00FD9C2A /* HIApplicationsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HIApplicationsViewController.xib; sourceTree = "<group>"; };
+		586059C718041A6D00FD9C2A /* HIApplicationURLProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HIApplicationURLProtocol.h; sourceTree = "<group>"; };
+		586059C818041A6D00FD9C2A /* HIApplicationURLProtocol.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HIApplicationURLProtocol.m; sourceTree = "<group>"; };
+		586059C918041A6D00FD9C2A /* HIAppRuntimeBridge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HIAppRuntimeBridge.h; sourceTree = "<group>"; };
+		586059CA18041A6D00FD9C2A /* HIAppRuntimeBridge.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HIAppRuntimeBridge.m; sourceTree = "<group>"; };
+		586059D118041A7A00FD9C2A /* HIContactsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HIContactsViewController.h; sourceTree = "<group>"; };
+		586059D218041A7A00FD9C2A /* HIContactsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HIContactsViewController.m; sourceTree = "<group>"; };
+		586059D318041A7A00FD9C2A /* HIContactsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HIContactsViewController.xib; sourceTree = "<group>"; };
+		586059D618041A8700FD9C2A /* HINewContactViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HINewContactViewController.h; sourceTree = "<group>"; };
+		586059D718041A8700FD9C2A /* HINewContactViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HINewContactViewController.m; sourceTree = "<group>"; };
+		586059D818041A8700FD9C2A /* HINewContactViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HINewContactViewController.xib; sourceTree = "<group>"; };
+		586059DB18041A9900FD9C2A /* HIProfileInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HIProfileInfoViewController.h; sourceTree = "<group>"; };
+		586059DC18041A9900FD9C2A /* HIProfileInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HIProfileInfoViewController.m; sourceTree = "<group>"; };
+		586059DD18041A9900FD9C2A /* HIProfileInfoViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HIProfileInfoViewController.xib; sourceTree = "<group>"; };
+		586059DE18041A9900FD9C2A /* HIProfileTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HIProfileTabBarController.h; sourceTree = "<group>"; };
+		586059DF18041A9900FD9C2A /* HIProfileTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HIProfileTabBarController.m; sourceTree = "<group>"; };
+		586059E018041A9900FD9C2A /* HIProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HIProfileViewController.h; sourceTree = "<group>"; };
+		586059E118041A9900FD9C2A /* HIProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HIProfileViewController.m; sourceTree = "<group>"; };
+		586059E218041A9900FD9C2A /* HIProfileViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HIProfileViewController.xib; sourceTree = "<group>"; };
+		586059E818041AAF00FD9C2A /* HIContactAutocompleteWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HIContactAutocompleteWindowController.h; sourceTree = "<group>"; };
+		586059E918041AAF00FD9C2A /* HIContactAutocompleteWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HIContactAutocompleteWindowController.m; sourceTree = "<group>"; };
+		586059EA18041AAF00FD9C2A /* HIContactAutocompleteWindowController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HIContactAutocompleteWindowController.xib; sourceTree = "<group>"; };
+		586059EB18041AAF00FD9C2A /* HISendBitcoinsWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HISendBitcoinsWindowController.h; sourceTree = "<group>"; };
+		586059EC18041AAF00FD9C2A /* HISendBitcoinsWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HISendBitcoinsWindowController.m; sourceTree = "<group>"; };
+		586059ED18041AAF00FD9C2A /* HISendBitcoinsWindowController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HISendBitcoinsWindowController.xib; sourceTree = "<group>"; };
+		586059F218041ABD00FD9C2A /* HITransactionsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HITransactionsViewController.h; sourceTree = "<group>"; };
+		586059F318041ABD00FD9C2A /* HITransactionsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HITransactionsViewController.m; sourceTree = "<group>"; };
+		586059F418041ABD00FD9C2A /* HITransactionsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HITransactionsViewController.xib; sourceTree = "<group>"; };
+		586059F718041AD600FD9C2A /* HIMainWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HIMainWindowController.h; sourceTree = "<group>"; };
+		586059F818041AD600FD9C2A /* HIMainWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HIMainWindowController.m; sourceTree = "<group>"; };
+		586059F918041AD600FD9C2A /* HINavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HINavigationController.h; sourceTree = "<group>"; };
+		586059FA18041AD600FD9C2A /* HINavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HINavigationController.m; sourceTree = "<group>"; };
+		586059FB18041AD600FD9C2A /* HISidebarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HISidebarController.h; sourceTree = "<group>"; };
+		586059FC18041AD600FD9C2A /* HISidebarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HISidebarController.m; sourceTree = "<group>"; };
+		586059FD18041AD600FD9C2A /* HIViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HIViewController.h; sourceTree = "<group>"; };
+		586059FE18041AD600FD9C2A /* HIViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HIViewController.m; sourceTree = "<group>"; };
+		58605A0318041B2200FD9C2A /* HIMainWindowController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HIMainWindowController.xib; sourceTree = "<group>"; };
+		58605A2118041D0A00FD9C2A /* avatar-empty.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "avatar-empty.pdf"; sourceTree = "<group>"; };
+		58605A2218041D0A00FD9C2A /* bg-sidebar.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "bg-sidebar.pdf"; sourceTree = "<group>"; };
+		58605A2318041D0A00FD9C2A /* button__inset.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = button__inset.pdf; sourceTree = "<group>"; };
+		58605A2418041D0A00FD9C2A /* icon-apps__active.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "icon-apps__active.pdf"; sourceTree = "<group>"; };
+		58605A2518041D0A00FD9C2A /* icon-apps__inactive.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "icon-apps__inactive.pdf"; sourceTree = "<group>"; };
+		58605A2618041D0A00FD9C2A /* icon-bitcoin.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "icon-bitcoin.pdf"; sourceTree = "<group>"; };
+		58605A2718041D0A00FD9C2A /* icon-delete.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "icon-delete.pdf"; sourceTree = "<group>"; };
+		58605A2818041D0A00FD9C2A /* icon-dropdown-close.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "icon-dropdown-close.pdf"; sourceTree = "<group>"; };
+		58605A2918041D0A00FD9C2A /* icon-dropdown-open.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "icon-dropdown-open.pdf"; sourceTree = "<group>"; };
+		58605A2A18041D0A00FD9C2A /* icon-gray-btc.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "icon-gray-btc.pdf"; sourceTree = "<group>"; };
+		58605A2B18041D0A00FD9C2A /* icon-group__active.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "icon-group__active.pdf"; sourceTree = "<group>"; };
+		58605A2C18041D0A00FD9C2A /* icon-group__inactive.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "icon-group__inactive.pdf"; sourceTree = "<group>"; };
+		58605A2D18041D0A00FD9C2A /* icon-nav-bar-back.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "icon-nav-bar-back.pdf"; sourceTree = "<group>"; };
+		58605A2E18041D0A00FD9C2A /* icon-next__active.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "icon-next__active.pdf"; sourceTree = "<group>"; };
+		58605A2F18041D0A00FD9C2A /* icon-next.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "icon-next.pdf"; sourceTree = "<group>"; };
+		58605A3018041D0A00FD9C2A /* icon-plus.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "icon-plus.pdf"; sourceTree = "<group>"; };
+		58605A3118041D0A00FD9C2A /* icon-sadface.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "icon-sadface.pdf"; sourceTree = "<group>"; };
+		58605A3218041D0A00FD9C2A /* icon-search.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "icon-search.pdf"; sourceTree = "<group>"; };
+		58605A3318041D0A00FD9C2A /* icon-tabbar-timeline__active.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "icon-tabbar-timeline__active.pdf"; sourceTree = "<group>"; };
+		58605A3418041D0A00FD9C2A /* icon-tabbar-timeline__inactive.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "icon-tabbar-timeline__inactive.pdf"; sourceTree = "<group>"; };
+		58605A3518041D0A00FD9C2A /* icon-tabbar-user__active.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "icon-tabbar-user__active.pdf"; sourceTree = "<group>"; };
+		58605A3618041D0A00FD9C2A /* icon-tabbar-user__inactive.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "icon-tabbar-user__inactive.pdf"; sourceTree = "<group>"; };
+		58605A3718041D0A00FD9C2A /* icon-timeline__active.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "icon-timeline__active.pdf"; sourceTree = "<group>"; };
+		58605A3818041D0A00FD9C2A /* icon-timeline__inactive.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "icon-timeline__inactive.pdf"; sourceTree = "<group>"; };
+		58605A3918041D0A00FD9C2A /* icon-transactions-arrow-left.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "icon-transactions-arrow-left.pdf"; sourceTree = "<group>"; };
+		58605A3A18041D0A00FD9C2A /* icon-transactions-arrow-right.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "icon-transactions-arrow-right.pdf"; sourceTree = "<group>"; };
+		58605A3B18041D0A00FD9C2A /* icon-transactions-btc-symbol.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "icon-transactions-btc-symbol.pdf"; sourceTree = "<group>"; };
+		58605A3C18041D0A00FD9C2A /* icon-transactions-minus.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "icon-transactions-minus.pdf"; sourceTree = "<group>"; };
+		58605A3D18041D0A00FD9C2A /* icon-transactions-plus.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "icon-transactions-plus.pdf"; sourceTree = "<group>"; };
+		58605A3E18041D0A00FD9C2A /* icon-your-profile__active.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "icon-your-profile__active.pdf"; sourceTree = "<group>"; };
+		58605A3F18041D0A00FD9C2A /* icon-your-profile__inactive.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "icon-your-profile__inactive.pdf"; sourceTree = "<group>"; };
 		5884A00417F1B5FE004A31FA /* Tor.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Tor.xcodeproj; path = Tor.framework/Tor.xcodeproj; sourceTree = "<group>"; };
-		5884A01317F1BD5B004A31FA /* HIProfileInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HIProfileInfoViewController.h; path = Controllers/HIProfileInfoViewController.h; sourceTree = "<group>"; };
-		5884A01417F1BD5B004A31FA /* HIProfileInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HIProfileInfoViewController.m; path = Controllers/HIProfileInfoViewController.m; sourceTree = "<group>"; };
-		5884A01517F1BD5B004A31FA /* HIProfileInfoViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = HIProfileInfoViewController.xib; path = Controllers/HIProfileInfoViewController.xib; sourceTree = "<group>"; };
-		5884A02017F1E818004A31FA /* icon-bitcoin.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; name = "icon-bitcoin.pdf"; path = "Images/icon-bitcoin.pdf"; sourceTree = "<group>"; };
 		5884A03617F56D86004A31FA /* Sparkle.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Sparkle.framework; sourceTree = "<group>"; };
 		5884A03D17F57AE9004A31FA /* dsa_pub.pem */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = dsa_pub.pem; sourceTree = "<group>"; };
-		588BFB3017FC4256004BE4C8 /* SUCodeSigningVerifier+DisableCodeSigningCheck.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "SUCodeSigningVerifier+DisableCodeSigningCheck.h"; path = "Categories/SUCodeSigningVerifier+DisableCodeSigningCheck.h"; sourceTree = "<group>"; };
-		588BFB3117FC4256004BE4C8 /* SUCodeSigningVerifier+DisableCodeSigningCheck.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "SUCodeSigningVerifier+DisableCodeSigningCheck.m"; path = "Categories/SUCodeSigningVerifier+DisableCodeSigningCheck.m"; sourceTree = "<group>"; };
 		588EFB2C17D8D2970085F6E6 /* HIProfileTabView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HIProfileTabView.h; sourceTree = "<group>"; };
 		588EFB2D17D8D2970085F6E6 /* HIProfileTabView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HIProfileTabView.m; sourceTree = "<group>"; };
-		58A03AFA17D9C91600ADD5E5 /* HIProfileTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HIProfileTabBarController.h; path = Controllers/HIProfileTabBarController.h; sourceTree = "<group>"; };
-		58A03AFB17D9C91600ADD5E5 /* HIProfileTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HIProfileTabBarController.m; path = Controllers/HIProfileTabBarController.m; sourceTree = "<group>"; };
 		58A03B0B17D9DC4100ADD5E5 /* HIButtonWithSpinner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HIButtonWithSpinner.h; sourceTree = "<group>"; };
 		58A03B0C17D9DC4100ADD5E5 /* HIButtonWithSpinner.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HIButtonWithSpinner.m; sourceTree = "<group>"; };
-		58A2A7ED17D878840001464A /* HISendBitcoinsWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HISendBitcoinsWindowController.h; path = Controllers/HISendBitcoinsWindowController.h; sourceTree = "<group>"; };
-		58A2A7EE17D878840001464A /* HISendBitcoinsWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HISendBitcoinsWindowController.m; path = Controllers/HISendBitcoinsWindowController.m; sourceTree = "<group>"; };
-		58A2A7EF17D878840001464A /* HISendBitcoinsWindowController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = HISendBitcoinsWindowController.xib; path = Controllers/HISendBitcoinsWindowController.xib; sourceTree = "<group>"; };
-		58C9F41717F06D9C0041624B /* icon-transactions-btc-symbol.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; name = "icon-transactions-btc-symbol.pdf"; path = "Images/icon-transactions-btc-symbol.pdf"; sourceTree = "<group>"; };
 		58CFD94F17CF914000A035FA /* HIContactCellView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HIContactCellView.h; sourceTree = "<group>"; };
 		58CFD95017CF914000A035FA /* HIContactCellView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HIContactCellView.m; sourceTree = "<group>"; };
 		58CFD95117CF914000A035FA /* HISidebarView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HISidebarView.h; sourceTree = "<group>"; };
 		58CFD95217CF914000A035FA /* HISidebarView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HISidebarView.m; sourceTree = "<group>"; };
-		58CFD97517D083E100A035FA /* HISidebarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HISidebarController.h; path = Controllers/HISidebarController.h; sourceTree = "<group>"; };
-		58CFD97617D083E100A035FA /* HISidebarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HISidebarController.m; path = Controllers/HISidebarController.m; sourceTree = "<group>"; };
 		58F02AEC17E1F5A400B65429 /* HITitleArrowView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HITitleArrowView.h; sourceTree = "<group>"; };
 		58F02AED17E1F5A400B65429 /* HITitleArrowView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HITitleArrowView.m; sourceTree = "<group>"; };
-		D907A4E817F590F6009B3185 /* supporthive.hiveapp */ = {isa = PBXFileReference; lastKnownFileType = file; name = supporthive.hiveapp; path = Applications/supporthive.hiveapp; sourceTree = "<group>"; };
-		D907A4EA17F5C4BF009B3185 /* bitstamp.hiveapp */ = {isa = PBXFileReference; lastKnownFileType = file; name = bitstamp.hiveapp; path = Applications/bitstamp.hiveapp; sourceTree = "<group>"; };
-		D907A4EB17F5C4BF009B3185 /* minefield.hiveapp */ = {isa = PBXFileReference; lastKnownFileType = file; name = minefield.hiveapp; path = Applications/minefield.hiveapp; sourceTree = "<group>"; };
-		D90C9CF117E9C64100FC83CC /* icon-delete.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; name = "icon-delete.pdf"; path = "Images/icon-delete.pdf"; sourceTree = "<group>"; };
 		D91FE8071793FEFC001B37D8 /* BitcoinKit.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = BitcoinKit.xcodeproj; path = BitcoinKit/BitcoinKit.xcodeproj; sourceTree = "<group>"; };
 		D91FE81D17988743001B37D8 /* NPZip.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NPZip.h; sourceTree = "<group>"; };
 		D91FE81E17988743001B37D8 /* NPZip.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NPZip.m; sourceTree = "<group>"; };
@@ -250,71 +306,24 @@
 		D91FE82117988743001B37D8 /* NPZipHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NPZipHeader.h; sourceTree = "<group>"; };
 		D91FE82217988743001B37D8 /* NPZipHeader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NPZipHeader.m; sourceTree = "<group>"; };
 		D91FE826179887C4001B37D8 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
-		D91FE8281798911F001B37D8 /* HIApplicationURLProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HIApplicationURLProtocol.h; path = Controllers/HIApplicationURLProtocol.h; sourceTree = "<group>"; };
-		D91FE82917989120001B37D8 /* HIApplicationURLProtocol.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HIApplicationURLProtocol.m; path = Controllers/HIApplicationURLProtocol.m; sourceTree = "<group>"; };
 		D9235371177C4222003533DF /* HIApplication.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HIApplication.h; path = Database/HIApplication.h; sourceTree = "<group>"; };
 		D9235372177C4222003533DF /* HIApplication.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HIApplication.m; path = Database/HIApplication.m; sourceTree = "<group>"; };
-		D923537C177C55F6003533DF /* HIApplicationRuntimeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HIApplicationRuntimeViewController.h; path = Controllers/HIApplicationRuntimeViewController.h; sourceTree = "<group>"; };
-		D923537D177C55F7003533DF /* HIApplicationRuntimeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HIApplicationRuntimeViewController.m; path = Controllers/HIApplicationRuntimeViewController.m; sourceTree = "<group>"; };
-		D923537E177C55F7003533DF /* HIApplicationRuntimeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = HIApplicationRuntimeViewController.xib; path = Controllers/HIApplicationRuntimeViewController.xib; sourceTree = "<group>"; };
-		D9235384177C60A5003533DF /* HIAppRuntimeBridge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HIAppRuntimeBridge.h; path = Controllers/HIAppRuntimeBridge.h; sourceTree = "<group>"; };
-		D9235385177C60A5003533DF /* HIAppRuntimeBridge.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HIAppRuntimeBridge.m; path = Controllers/HIAppRuntimeBridge.m; sourceTree = "<group>"; };
 		D9235387177C6779003533DF /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 		D938F00E17E6278B00566FFD /* HITextFieldCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HITextFieldCell.h; sourceTree = "<group>"; };
 		D938F00F17E6278B00566FFD /* HITextFieldCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HITextFieldCell.m; sourceTree = "<group>"; };
 		D939FE9A17F076E80088F5D3 /* HICopyView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HICopyView.h; sourceTree = "<group>"; };
 		D939FE9B17F076E80088F5D3 /* HICopyView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HICopyView.m; sourceTree = "<group>"; };
-		D948157F17CE19D3006A0312 /* HITransactionsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HITransactionsViewController.h; path = Controllers/HITransactionsViewController.h; sourceTree = "<group>"; };
-		D948158017CE19D3006A0312 /* HITransactionsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HITransactionsViewController.m; path = Controllers/HITransactionsViewController.m; sourceTree = "<group>"; };
-		D948158217CE19ED006A0312 /* HITransactionsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = HITransactionsViewController.xib; path = Controllers/HITransactionsViewController.xib; sourceTree = "<group>"; };
-		D948158717CE1C29006A0312 /* HIContactsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HIContactsViewController.h; path = Controllers/HIContactsViewController.h; sourceTree = "<group>"; };
-		D948158817CE1C29006A0312 /* HIContactsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HIContactsViewController.m; path = Controllers/HIContactsViewController.m; sourceTree = "<group>"; };
-		D948158917CE1C29006A0312 /* HIContactsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = HIContactsViewController.xib; path = Controllers/HIContactsViewController.xib; sourceTree = "<group>"; };
-		D948158C17CE1C97006A0312 /* HIApplicationsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HIApplicationsViewController.h; path = Controllers/HIApplicationsViewController.h; sourceTree = "<group>"; };
-		D948158D17CE1C98006A0312 /* HIApplicationsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HIApplicationsViewController.m; path = Controllers/HIApplicationsViewController.m; sourceTree = "<group>"; };
-		D948158E17CE1C98006A0312 /* HIApplicationsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = HIApplicationsViewController.xib; path = Controllers/HIApplicationsViewController.xib; sourceTree = "<group>"; };
 		D94815B217D492A0006A0312 /* HITitleView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HITitleView.h; sourceTree = "<group>"; };
 		D94815B317D492A0006A0312 /* HITitleView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HITitleView.m; sourceTree = "<group>"; };
 		D94815E717D4BCEF006A0312 /* HIContactRowView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HIContactRowView.h; sourceTree = "<group>"; };
 		D94815E817D4BCEF006A0312 /* HIContactRowView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HIContactRowView.m; sourceTree = "<group>"; };
-		D94815EB17D4CD46006A0312 /* HINewContactViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HINewContactViewController.h; path = Controllers/HINewContactViewController.h; sourceTree = "<group>"; };
-		D94815EC17D4CD46006A0312 /* HINewContactViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HINewContactViewController.m; path = Controllers/HINewContactViewController.m; sourceTree = "<group>"; };
-		D94815ED17D4CD46006A0312 /* HINewContactViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = HINewContactViewController.xib; path = Controllers/HINewContactViewController.xib; sourceTree = "<group>"; };
 		D94815F017D4D9AF006A0312 /* HISeparatorView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HISeparatorView.h; sourceTree = "<group>"; };
 		D94815F117D4D9AF006A0312 /* HISeparatorView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HISeparatorView.m; sourceTree = "<group>"; };
 		D94815F317D72AF8006A0312 /* HITextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HITextField.h; sourceTree = "<group>"; };
 		D94815F417D72AF8006A0312 /* HITextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HITextField.m; sourceTree = "<group>"; };
-		D94815FC17DF1AB1006A0312 /* bg-sidebar.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; name = "bg-sidebar.pdf"; path = "Images/bg-sidebar.pdf"; sourceTree = "<group>"; };
-		D94815FD17DF1AB1006A0312 /* button__inset.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; name = button__inset.pdf; path = Images/button__inset.pdf; sourceTree = "<group>"; };
-		D948160317DF1AB1006A0312 /* icon-group__active.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; name = "icon-group__active.pdf"; path = "Images/icon-group__active.pdf"; sourceTree = "<group>"; };
-		D948160417DF1AB1006A0312 /* icon-group__inactive.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; name = "icon-group__inactive.pdf"; path = "Images/icon-group__inactive.pdf"; sourceTree = "<group>"; };
-		D948160517DF1AB1006A0312 /* icon-nav-bar-back.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; name = "icon-nav-bar-back.pdf"; path = "Images/icon-nav-bar-back.pdf"; sourceTree = "<group>"; };
-		D948160617DF1AB1006A0312 /* icon-next__active.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; name = "icon-next__active.pdf"; path = "Images/icon-next__active.pdf"; sourceTree = "<group>"; };
-		D948160717DF1AB2006A0312 /* icon-next.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; name = "icon-next.pdf"; path = "Images/icon-next.pdf"; sourceTree = "<group>"; };
-		D948160817DF1AB2006A0312 /* icon-plus.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; name = "icon-plus.pdf"; path = "Images/icon-plus.pdf"; sourceTree = "<group>"; };
-		D948160917DF1AB2006A0312 /* icon-search.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; name = "icon-search.pdf"; path = "Images/icon-search.pdf"; sourceTree = "<group>"; };
-		D948160C17DF1AB2006A0312 /* icon-tabbar-timeline__active.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; name = "icon-tabbar-timeline__active.pdf"; path = "Images/icon-tabbar-timeline__active.pdf"; sourceTree = "<group>"; };
-		D948160D17DF1AB2006A0312 /* icon-tabbar-timeline__inactive.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; name = "icon-tabbar-timeline__inactive.pdf"; path = "Images/icon-tabbar-timeline__inactive.pdf"; sourceTree = "<group>"; };
-		D948160E17DF1AB2006A0312 /* icon-tabbar-user__active.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; name = "icon-tabbar-user__active.pdf"; path = "Images/icon-tabbar-user__active.pdf"; sourceTree = "<group>"; };
-		D948160F17DF1AB2006A0312 /* icon-tabbar-user__inactive.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; name = "icon-tabbar-user__inactive.pdf"; path = "Images/icon-tabbar-user__inactive.pdf"; sourceTree = "<group>"; };
-		D948161017DF1AB2006A0312 /* icon-timeline__active.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; name = "icon-timeline__active.pdf"; path = "Images/icon-timeline__active.pdf"; sourceTree = "<group>"; };
-		D948161117DF1AB2006A0312 /* icon-timeline__inactive.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; name = "icon-timeline__inactive.pdf"; path = "Images/icon-timeline__inactive.pdf"; sourceTree = "<group>"; };
-		D948161217DF1AB2006A0312 /* icon-transactions-arrow-left.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; name = "icon-transactions-arrow-left.pdf"; path = "Images/icon-transactions-arrow-left.pdf"; sourceTree = "<group>"; };
-		D948161317DF1AB2006A0312 /* icon-transactions-arrow-right.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; name = "icon-transactions-arrow-right.pdf"; path = "Images/icon-transactions-arrow-right.pdf"; sourceTree = "<group>"; };
-		D948161417DF1AB3006A0312 /* icon-transactions-minus.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; name = "icon-transactions-minus.pdf"; path = "Images/icon-transactions-minus.pdf"; sourceTree = "<group>"; };
-		D948161517DF1AB3006A0312 /* icon-transactions-plus.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; name = "icon-transactions-plus.pdf"; path = "Images/icon-transactions-plus.pdf"; sourceTree = "<group>"; };
-		D948161617DF1AB3006A0312 /* icon-your-profile__active.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; name = "icon-your-profile__active.pdf"; path = "Images/icon-your-profile__active.pdf"; sourceTree = "<group>"; };
-		D948161717DF1AB3006A0312 /* icon-your-profile__inactive.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; name = "icon-your-profile__inactive.pdf"; path = "Images/icon-your-profile__inactive.pdf"; sourceTree = "<group>"; };
-		D948163817DF5557006A0312 /* avatar-empty.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; name = "avatar-empty.pdf"; path = "Images/avatar-empty.pdf"; sourceTree = "<group>"; };
-		D948164217E0A807006A0312 /* NSColor+Hive.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSColor+Hive.h"; path = "Categories/NSColor+Hive.h"; sourceTree = "<group>"; };
-		D948164317E0A807006A0312 /* NSColor+Hive.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSColor+Hive.m"; path = "Categories/NSColor+Hive.m"; sourceTree = "<group>"; };
 		D958A8B617E8547A00CED98C /* HIFlippedView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HIFlippedView.h; sourceTree = "<group>"; };
 		D958A8B717E8547A00CED98C /* HIFlippedView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HIFlippedView.m; sourceTree = "<group>"; };
-		D95929CF177326F2008B4F43 /* BCClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BCClient.h; path = BCClient/BCClient.h; sourceTree = "<group>"; };
-		D95929D0177326F2008B4F43 /* BCClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BCClient.m; path = BCClient/BCClient.m; sourceTree = "<group>"; };
 		D95929DC17742B70008B4F43 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
-		D95929E317746CE9008B4F43 /* NSView+Snapshot.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSView+Snapshot.h"; path = "Categories/NSView+Snapshot.h"; sourceTree = "<group>"; };
-		D95929E417746CE9008B4F43 /* NSView+Snapshot.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSView+Snapshot.m"; path = "Categories/NSView+Snapshot.m"; sourceTree = "<group>"; };
 		D962AF021769FEF9009F882A /* Hive.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Hive.xcdatamodel; sourceTree = "<group>"; };
 		D9716B6B17D88F8800888F4E /* HIDoneButtonCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HIDoneButtonCell.h; sourceTree = "<group>"; };
 		D9716B6C17D88F8800888F4E /* HIDoneButtonCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HIDoneButtonCell.m; sourceTree = "<group>"; };
@@ -344,16 +353,7 @@
 		D9A591D91767B4A800502635 /* HIAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HIAppDelegate.h; sourceTree = "<group>"; };
 		D9A591DA1767B4A800502635 /* HIAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HIAppDelegate.m; sourceTree = "<group>"; };
 		D9A591DD1767B4A800502635 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = "<group>"; };
-		D9A592191768444000502635 /* HIViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HIViewController.h; path = Controllers/HIViewController.h; sourceTree = "<group>"; };
-		D9A5921A1768444000502635 /* HIViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HIViewController.m; path = Controllers/HIViewController.m; sourceTree = "<group>"; };
-		D9A5922717684D6E00502635 /* NSImage+NPEffects.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSImage+NPEffects.h"; path = "Categories/NSImage+NPEffects.h"; sourceTree = "<group>"; };
-		D9A5922817684D6E00502635 /* NSImage+NPEffects.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSImage+NPEffects.m"; path = "Categories/NSImage+NPEffects.m"; sourceTree = "<group>"; };
 		D9A592351768CBE400502635 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
-		D9EBE42D176878BD00297A63 /* HIMainWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HIMainWindowController.h; path = Controllers/HIMainWindowController.h; sourceTree = "<group>"; };
-		D9EBE42E176878BE00297A63 /* HIMainWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HIMainWindowController.m; path = Controllers/HIMainWindowController.m; sourceTree = "<group>"; };
-		D9EBE431176878E800297A63 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/HIMainWindowController.xib; sourceTree = "<group>"; };
-		D9F0B9EE17EC5AF90050A0A2 /* icon-apps__active.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; name = "icon-apps__active.pdf"; path = "Images/icon-apps__active.pdf"; sourceTree = "<group>"; };
-		D9F0B9EF17EC5AF90050A0A2 /* icon-apps__inactive.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; name = "icon-apps__inactive.pdf"; path = "Images/icon-apps__inactive.pdf"; sourceTree = "<group>"; };
 		D9F0B9F617EC654C0050A0A2 /* HIImageCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HIImageCell.h; sourceTree = "<group>"; };
 		D9F0B9F717EC654C0050A0A2 /* HIImageCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HIImageCell.m; sourceTree = "<group>"; };
 		D9F8454E1781C509004076F6 /* Icon.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; name = Icon.icns; path = ../Icon.icns; sourceTree = "<group>"; };
@@ -392,14 +392,14 @@
 		581711D917D0FD8F00DE775A /* HIProfileViewController */ = {
 			isa = PBXGroup;
 			children = (
-				5884A01317F1BD5B004A31FA /* HIProfileInfoViewController.h */,
-				5884A01417F1BD5B004A31FA /* HIProfileInfoViewController.m */,
-				5884A01517F1BD5B004A31FA /* HIProfileInfoViewController.xib */,
-				58A03AFA17D9C91600ADD5E5 /* HIProfileTabBarController.h */,
-				58A03AFB17D9C91600ADD5E5 /* HIProfileTabBarController.m */,
-				581711DA17D0FEDD00DE775A /* HIProfileViewController.h */,
-				581711DB17D0FEDD00DE775A /* HIProfileViewController.m */,
-				581711DC17D0FEDD00DE775A /* HIProfileViewController.xib */,
+				586059DB18041A9900FD9C2A /* HIProfileInfoViewController.h */,
+				586059DC18041A9900FD9C2A /* HIProfileInfoViewController.m */,
+				586059DD18041A9900FD9C2A /* HIProfileInfoViewController.xib */,
+				586059DE18041A9900FD9C2A /* HIProfileTabBarController.h */,
+				586059DF18041A9900FD9C2A /* HIProfileTabBarController.m */,
+				586059E018041A9900FD9C2A /* HIProfileViewController.h */,
+				586059E118041A9900FD9C2A /* HIProfileViewController.m */,
+				586059E218041A9900FD9C2A /* HIProfileViewController.xib */,
 			);
 			name = HIProfileViewController;
 			sourceTree = "<group>";
@@ -425,12 +425,12 @@
 		58A2A7E817D8783D0001464A /* HISendBitcoinsViewController */ = {
 			isa = PBXGroup;
 			children = (
-				5802101117EC5F090039BA4B /* HIContactAutocompleteWindowController.h */,
-				5802101217EC5F090039BA4B /* HIContactAutocompleteWindowController.m */,
-				5802101317EC5F090039BA4B /* HIContactAutocompleteWindowController.xib */,
-				58A2A7ED17D878840001464A /* HISendBitcoinsWindowController.h */,
-				58A2A7EE17D878840001464A /* HISendBitcoinsWindowController.m */,
-				58A2A7EF17D878840001464A /* HISendBitcoinsWindowController.xib */,
+				586059E818041AAF00FD9C2A /* HIContactAutocompleteWindowController.h */,
+				586059E918041AAF00FD9C2A /* HIContactAutocompleteWindowController.m */,
+				586059EA18041AAF00FD9C2A /* HIContactAutocompleteWindowController.xib */,
+				586059EB18041AAF00FD9C2A /* HISendBitcoinsWindowController.h */,
+				586059EC18041AAF00FD9C2A /* HISendBitcoinsWindowController.m */,
+				586059ED18041AAF00FD9C2A /* HISendBitcoinsWindowController.xib */,
 			);
 			name = HISendBitcoinsViewController;
 			sourceTree = "<group>";
@@ -438,11 +438,11 @@
 		D907A4E317F58F91009B3185 /* Applications */ = {
 			isa = PBXGroup;
 			children = (
-				D907A4EA17F5C4BF009B3185 /* bitstamp.hiveapp */,
-				D907A4EB17F5C4BF009B3185 /* minefield.hiveapp */,
-				D907A4E817F590F6009B3185 /* supporthive.hiveapp */,
+				586059AC180419DF00FD9C2A /* bitstamp.hiveapp */,
+				586059AD180419DF00FD9C2A /* minefield.hiveapp */,
+				586059AE180419DF00FD9C2A /* supporthive.hiveapp */,
 			);
-			name = Applications;
+			path = Applications;
 			sourceTree = "<group>";
 		};
 		D91FE8081793FEFC001B37D8 /* Products */ = {
@@ -471,9 +471,9 @@
 		D948157E17CE10D9006A0312 /* HITransactionsViewController */ = {
 			isa = PBXGroup;
 			children = (
-				D948157F17CE19D3006A0312 /* HITransactionsViewController.h */,
-				D948158017CE19D3006A0312 /* HITransactionsViewController.m */,
-				D948158217CE19ED006A0312 /* HITransactionsViewController.xib */,
+				586059F218041ABD00FD9C2A /* HITransactionsViewController.h */,
+				586059F318041ABD00FD9C2A /* HITransactionsViewController.m */,
+				586059F418041ABD00FD9C2A /* HITransactionsViewController.xib */,
 			);
 			name = HITransactionsViewController;
 			sourceTree = "<group>";
@@ -481,9 +481,9 @@
 		D948158417CE1BD4006A0312 /* HIContactsViewController */ = {
 			isa = PBXGroup;
 			children = (
-				D948158717CE1C29006A0312 /* HIContactsViewController.h */,
-				D948158817CE1C29006A0312 /* HIContactsViewController.m */,
-				D948158917CE1C29006A0312 /* HIContactsViewController.xib */,
+				586059D118041A7A00FD9C2A /* HIContactsViewController.h */,
+				586059D218041A7A00FD9C2A /* HIContactsViewController.m */,
+				586059D318041A7A00FD9C2A /* HIContactsViewController.xib */,
 			);
 			name = HIContactsViewController;
 			sourceTree = "<group>";
@@ -491,9 +491,9 @@
 		D94815EA17D4CD23006A0312 /* HINewContactViewController */ = {
 			isa = PBXGroup;
 			children = (
-				D94815EB17D4CD46006A0312 /* HINewContactViewController.h */,
-				D94815EC17D4CD46006A0312 /* HINewContactViewController.m */,
-				D94815ED17D4CD46006A0312 /* HINewContactViewController.xib */,
+				586059D618041A8700FD9C2A /* HINewContactViewController.h */,
+				586059D718041A8700FD9C2A /* HINewContactViewController.m */,
+				586059D818041A8700FD9C2A /* HINewContactViewController.xib */,
 			);
 			name = HINewContactViewController;
 			sourceTree = "<group>";
@@ -501,25 +501,25 @@
 		D95929CE177326C4008B4F43 /* BCClient */ = {
 			isa = PBXGroup;
 			children = (
-				D95929CF177326F2008B4F43 /* BCClient.h */,
-				D95929D0177326F2008B4F43 /* BCClient.m */,
+				586059B2180419F500FD9C2A /* BCClient.h */,
+				586059B3180419F500FD9C2A /* BCClient.m */,
 			);
-			name = BCClient;
+			path = BCClient;
 			sourceTree = "<group>";
 		};
 		D95929D617742ABB008B4F43 /* HIApplicationsViewController */ = {
 			isa = PBXGroup;
 			children = (
-				D923537C177C55F6003533DF /* HIApplicationRuntimeViewController.h */,
-				D923537D177C55F7003533DF /* HIApplicationRuntimeViewController.m */,
-				D923537E177C55F7003533DF /* HIApplicationRuntimeViewController.xib */,
-				D948158C17CE1C97006A0312 /* HIApplicationsViewController.h */,
-				D948158D17CE1C98006A0312 /* HIApplicationsViewController.m */,
-				D948158E17CE1C98006A0312 /* HIApplicationsViewController.xib */,
-				D91FE8281798911F001B37D8 /* HIApplicationURLProtocol.h */,
-				D91FE82917989120001B37D8 /* HIApplicationURLProtocol.m */,
-				D9235384177C60A5003533DF /* HIAppRuntimeBridge.h */,
-				D9235385177C60A5003533DF /* HIAppRuntimeBridge.m */,
+				586059C118041A6D00FD9C2A /* HIApplicationRuntimeViewController.h */,
+				586059C218041A6D00FD9C2A /* HIApplicationRuntimeViewController.m */,
+				586059C318041A6D00FD9C2A /* HIApplicationRuntimeViewController.xib */,
+				586059C418041A6D00FD9C2A /* HIApplicationsViewController.h */,
+				586059C518041A6D00FD9C2A /* HIApplicationsViewController.m */,
+				586059C618041A6D00FD9C2A /* HIApplicationsViewController.xib */,
+				586059C718041A6D00FD9C2A /* HIApplicationURLProtocol.h */,
+				586059C818041A6D00FD9C2A /* HIApplicationURLProtocol.m */,
+				586059C918041A6D00FD9C2A /* HIAppRuntimeBridge.h */,
+				586059CA18041A6D00FD9C2A /* HIAppRuntimeBridge.m */,
 			);
 			name = HIApplicationsViewController;
 			sourceTree = "<group>";
@@ -533,16 +533,22 @@
 				D9716B7117D8B42E00888F4E /* HIButtonCell.m */,
 				58A03B0B17D9DC4100ADD5E5 /* HIButtonWithSpinner.h */,
 				58A03B0C17D9DC4100ADD5E5 /* HIButtonWithSpinner.m */,
-				D99C9A5317E8F59200899CAB /* HIDeleteButtonCell.h */,
-				D99C9A5417E8F59200899CAB /* HIDeleteButtonCell.m */,
-				D9716B6B17D88F8800888F4E /* HIDoneButtonCell.h */,
-				D9716B6C17D88F8800888F4E /* HIDoneButtonCell.m */,
 				5802106117ECCAAA0039BA4B /* HIContactAutocompleteCellView.h */,
 				5802106217ECCAAA0039BA4B /* HIContactAutocompleteCellView.m */,
 				58CFD94F17CF914000A035FA /* HIContactCellView.h */,
 				58CFD95017CF914000A035FA /* HIContactCellView.m */,
 				D94815E717D4BCEF006A0312 /* HIContactRowView.h */,
 				D94815E817D4BCEF006A0312 /* HIContactRowView.m */,
+				D939FE9A17F076E80088F5D3 /* HICopyView.h */,
+				D939FE9B17F076E80088F5D3 /* HICopyView.m */,
+				D99C9A5317E8F59200899CAB /* HIDeleteButtonCell.h */,
+				D99C9A5417E8F59200899CAB /* HIDeleteButtonCell.m */,
+				D9716B6B17D88F8800888F4E /* HIDoneButtonCell.h */,
+				D9716B6C17D88F8800888F4E /* HIDoneButtonCell.m */,
+				D958A8B617E8547A00CED98C /* HIFlippedView.h */,
+				D958A8B717E8547A00CED98C /* HIFlippedView.m */,
+				D9F0B9F617EC654C0050A0A2 /* HIImageCell.h */,
+				D9F0B9F717EC654C0050A0A2 /* HIImageCell.m */,
 				588EFB2C17D8D2970085F6E6 /* HIProfileTabView.h */,
 				588EFB2D17D8D2970085F6E6 /* HIProfileTabView.m */,
 				D94815F017D4D9AF006A0312 /* HISeparatorView.h */,
@@ -561,12 +567,6 @@
 				D94815B317D492A0006A0312 /* HITitleView.m */,
 				581EFBCA17DA441A00E2738D /* HITransactionCellView.h */,
 				581EFBCB17DA441B00E2738D /* HITransactionCellView.m */,
-				D958A8B617E8547A00CED98C /* HIFlippedView.h */,
-				D958A8B717E8547A00CED98C /* HIFlippedView.m */,
-				D9F0B9F617EC654C0050A0A2 /* HIImageCell.h */,
-				D9F0B9F717EC654C0050A0A2 /* HIImageCell.m */,
-				D939FE9A17F076E80088F5D3 /* HICopyView.h */,
-				D939FE9B17F076E80088F5D3 /* HICopyView.m */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -621,14 +621,15 @@
 			isa = PBXGroup;
 			children = (
 				D907A4E317F58F91009B3185 /* Applications */,
-				D91FE81C17988741001B37D8 /* NPZip */,
 				D95929CE177326C4008B4F43 /* BCClient */,
-				D97E7FD2176BC03000D2350B /* Views */,
-				D9EBE4331768867200297A63 /* Database */,
 				D9A5922617684D5400502635 /* Categories */,
 				D9A592181768442000502635 /* Controllers */,
+				D9EBE4331768867200297A63 /* Database */,
 				582C699417D8BA4F00442294 /* Formatters */,
+				D9A592131767C49F00502635 /* Images */,
 				5804C31F17FC884E003B7891 /* Models */,
+				D91FE81C17988741001B37D8 /* NPZip */,
+				D97E7FD2176BC03000D2350B /* Views */,
 				D9A591D91767B4A800502635 /* HIAppDelegate.h */,
 				D9A591DA1767B4A800502635 /* HIAppDelegate.m */,
 				D9A591DC1767B4A800502635 /* MainMenu.xib */,
@@ -640,15 +641,14 @@
 		D9A591CE1767B4A800502635 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				581818E117F1A8A800D00770 /* README.md */,
-				D9F8454E1781C509004076F6 /* Icon.icns */,
-				D9A592131767C49F00502635 /* Images */,
-				D9A591CF1767B4A800502635 /* Hive-Info.plist */,
-				D9A591D01767B4A800502635 /* InfoPlist.strings */,
-				D9A591D31767B4A800502635 /* main.m */,
-				D9A591D51767B4A800502635 /* Hive-Prefix.pch */,
 				D9A591D61767B4A800502635 /* Credits.rtf */,
 				5884A03D17F57AE9004A31FA /* dsa_pub.pem */,
+				D9A591CF1767B4A800502635 /* Hive-Info.plist */,
+				D9A591D51767B4A800502635 /* Hive-Prefix.pch */,
+				D9F8454E1781C509004076F6 /* Icon.icns */,
+				D9A591D01767B4A800502635 /* InfoPlist.strings */,
+				D9A591D31767B4A800502635 /* main.m */,
+				581818E117F1A8A800D00770 /* README.md */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -656,39 +656,39 @@
 		D9A592131767C49F00502635 /* Images */ = {
 			isa = PBXGroup;
 			children = (
-				D948163817DF5557006A0312 /* avatar-empty.pdf */,
-				D94815FC17DF1AB1006A0312 /* bg-sidebar.pdf */,
-				D94815FD17DF1AB1006A0312 /* button__inset.pdf */,
-				D9F0B9EE17EC5AF90050A0A2 /* icon-apps__active.pdf */,
-				D9F0B9EF17EC5AF90050A0A2 /* icon-apps__inactive.pdf */,
-				5884A02017F1E818004A31FA /* icon-bitcoin.pdf */,
-				D90C9CF117E9C64100FC83CC /* icon-delete.pdf */,
-				5802105817ECA40E0039BA4B /* icon-dropdown-close.pdf */,
-				5802105917ECA40E0039BA4B /* icon-dropdown-open.pdf */,
-				5804C32717FD7B64003B7891 /* icon-gray-btc.pdf */,
-				D948160317DF1AB1006A0312 /* icon-group__active.pdf */,
-				D948160417DF1AB1006A0312 /* icon-group__inactive.pdf */,
-				D948160517DF1AB1006A0312 /* icon-nav-bar-back.pdf */,
-				D948160717DF1AB2006A0312 /* icon-next.pdf */,
-				D948160617DF1AB1006A0312 /* icon-next__active.pdf */,
-				D948160817DF1AB2006A0312 /* icon-plus.pdf */,
-				5804C32817FD7B64003B7891 /* icon-sadface.pdf */,
-				D948160917DF1AB2006A0312 /* icon-search.pdf */,
-				D948160C17DF1AB2006A0312 /* icon-tabbar-timeline__active.pdf */,
-				D948160D17DF1AB2006A0312 /* icon-tabbar-timeline__inactive.pdf */,
-				D948160E17DF1AB2006A0312 /* icon-tabbar-user__active.pdf */,
-				D948160F17DF1AB2006A0312 /* icon-tabbar-user__inactive.pdf */,
-				D948161017DF1AB2006A0312 /* icon-timeline__active.pdf */,
-				D948161117DF1AB2006A0312 /* icon-timeline__inactive.pdf */,
-				D948161217DF1AB2006A0312 /* icon-transactions-arrow-left.pdf */,
-				D948161317DF1AB2006A0312 /* icon-transactions-arrow-right.pdf */,
-				58C9F41717F06D9C0041624B /* icon-transactions-btc-symbol.pdf */,
-				D948161417DF1AB3006A0312 /* icon-transactions-minus.pdf */,
-				D948161517DF1AB3006A0312 /* icon-transactions-plus.pdf */,
-				D948161617DF1AB3006A0312 /* icon-your-profile__active.pdf */,
-				D948161717DF1AB3006A0312 /* icon-your-profile__inactive.pdf */,
+				58605A2118041D0A00FD9C2A /* avatar-empty.pdf */,
+				58605A2218041D0A00FD9C2A /* bg-sidebar.pdf */,
+				58605A2318041D0A00FD9C2A /* button__inset.pdf */,
+				58605A2418041D0A00FD9C2A /* icon-apps__active.pdf */,
+				58605A2518041D0A00FD9C2A /* icon-apps__inactive.pdf */,
+				58605A2618041D0A00FD9C2A /* icon-bitcoin.pdf */,
+				58605A2718041D0A00FD9C2A /* icon-delete.pdf */,
+				58605A2818041D0A00FD9C2A /* icon-dropdown-close.pdf */,
+				58605A2918041D0A00FD9C2A /* icon-dropdown-open.pdf */,
+				58605A2A18041D0A00FD9C2A /* icon-gray-btc.pdf */,
+				58605A2B18041D0A00FD9C2A /* icon-group__active.pdf */,
+				58605A2C18041D0A00FD9C2A /* icon-group__inactive.pdf */,
+				58605A2D18041D0A00FD9C2A /* icon-nav-bar-back.pdf */,
+				58605A2E18041D0A00FD9C2A /* icon-next__active.pdf */,
+				58605A2F18041D0A00FD9C2A /* icon-next.pdf */,
+				58605A3018041D0A00FD9C2A /* icon-plus.pdf */,
+				58605A3118041D0A00FD9C2A /* icon-sadface.pdf */,
+				58605A3218041D0A00FD9C2A /* icon-search.pdf */,
+				58605A3318041D0A00FD9C2A /* icon-tabbar-timeline__active.pdf */,
+				58605A3418041D0A00FD9C2A /* icon-tabbar-timeline__inactive.pdf */,
+				58605A3518041D0A00FD9C2A /* icon-tabbar-user__active.pdf */,
+				58605A3618041D0A00FD9C2A /* icon-tabbar-user__inactive.pdf */,
+				58605A3718041D0A00FD9C2A /* icon-timeline__active.pdf */,
+				58605A3818041D0A00FD9C2A /* icon-timeline__inactive.pdf */,
+				58605A3918041D0A00FD9C2A /* icon-transactions-arrow-left.pdf */,
+				58605A3A18041D0A00FD9C2A /* icon-transactions-arrow-right.pdf */,
+				58605A3B18041D0A00FD9C2A /* icon-transactions-btc-symbol.pdf */,
+				58605A3C18041D0A00FD9C2A /* icon-transactions-minus.pdf */,
+				58605A3D18041D0A00FD9C2A /* icon-transactions-plus.pdf */,
+				58605A3E18041D0A00FD9C2A /* icon-your-profile__active.pdf */,
+				58605A3F18041D0A00FD9C2A /* icon-your-profile__inactive.pdf */,
 			);
-			name = Images;
+			path = Images;
 			sourceTree = "<group>";
 		};
 		D9A592181768442000502635 /* Controllers */ = {
@@ -696,36 +696,36 @@
 			children = (
 				D95929D617742ABB008B4F43 /* HIApplicationsViewController */,
 				D948158417CE1BD4006A0312 /* HIContactsViewController */,
-				D9EBE42D176878BD00297A63 /* HIMainWindowController.h */,
-				D9EBE42E176878BE00297A63 /* HIMainWindowController.m */,
-				D9EBE430176878E800297A63 /* HIMainWindowController.xib */,
-				581711D617D0CB9600DE775A /* HINavigationController.h */,
-				581711D717D0CB9600DE775A /* HINavigationController.m */,
+				586059F718041AD600FD9C2A /* HIMainWindowController.h */,
+				586059F818041AD600FD9C2A /* HIMainWindowController.m */,
+				58605A0318041B2200FD9C2A /* HIMainWindowController.xib */,
+				586059F918041AD600FD9C2A /* HINavigationController.h */,
+				586059FA18041AD600FD9C2A /* HINavigationController.m */,
 				D94815EA17D4CD23006A0312 /* HINewContactViewController */,
 				581711D917D0FD8F00DE775A /* HIProfileViewController */,
 				58A2A7E817D8783D0001464A /* HISendBitcoinsViewController */,
-				58CFD97517D083E100A035FA /* HISidebarController.h */,
-				58CFD97617D083E100A035FA /* HISidebarController.m */,
+				586059FB18041AD600FD9C2A /* HISidebarController.h */,
+				586059FC18041AD600FD9C2A /* HISidebarController.m */,
 				D948157E17CE10D9006A0312 /* HITransactionsViewController */,
-				D9A592191768444000502635 /* HIViewController.h */,
-				D9A5921A1768444000502635 /* HIViewController.m */,
+				586059FD18041AD600FD9C2A /* HIViewController.h */,
+				586059FE18041AD600FD9C2A /* HIViewController.m */,
 			);
-			name = Controllers;
+			path = Controllers;
 			sourceTree = "<group>";
 		};
 		D9A5922617684D5400502635 /* Categories */ = {
 			isa = PBXGroup;
 			children = (
-				D9A5922717684D6E00502635 /* NSImage+NPEffects.h */,
-				D9A5922817684D6E00502635 /* NSImage+NPEffects.m */,
-				D95929E317746CE9008B4F43 /* NSView+Snapshot.h */,
-				D95929E417746CE9008B4F43 /* NSView+Snapshot.m */,
-				D948164217E0A807006A0312 /* NSColor+Hive.h */,
-				D948164317E0A807006A0312 /* NSColor+Hive.m */,
-				588BFB3017FC4256004BE4C8 /* SUCodeSigningVerifier+DisableCodeSigningCheck.h */,
-				588BFB3117FC4256004BE4C8 /* SUCodeSigningVerifier+DisableCodeSigningCheck.m */,
+				586059B518041A1300FD9C2A /* NSColor+Hive.h */,
+				586059B618041A1300FD9C2A /* NSColor+Hive.m */,
+				586059B718041A1300FD9C2A /* NSImage+NPEffects.h */,
+				586059B818041A1300FD9C2A /* NSImage+NPEffects.m */,
+				586059B918041A1300FD9C2A /* NSView+Snapshot.h */,
+				586059BA18041A1300FD9C2A /* NSView+Snapshot.m */,
+				586059BB18041A1300FD9C2A /* SUCodeSigningVerifier+DisableCodeSigningCheck.h */,
+				586059BC18041A1300FD9C2A /* SUCodeSigningVerifier+DisableCodeSigningCheck.m */,
 			);
-			name = Categories;
+			path = Categories;
 			sourceTree = "<group>";
 		};
 		D9EBE4331768867200297A63 /* Database */ = {
@@ -851,53 +851,53 @@
 				D9A591D21767B4A800502635 /* InfoPlist.strings in Resources */,
 				D9A591D81767B4A800502635 /* Credits.rtf in Resources */,
 				D9A591DE1767B4A800502635 /* MainMenu.xib in Resources */,
-				D9EBE432176878E800297A63 /* HIMainWindowController.xib in Resources */,
-				D9235380177C55F7003533DF /* HIApplicationRuntimeViewController.xib in Resources */,
 				D9F8454F1781C509004076F6 /* Icon.icns in Resources */,
-				D948158317CE19ED006A0312 /* HITransactionsViewController.xib in Resources */,
-				D948158B17CE1C29006A0312 /* HIContactsViewController.xib in Resources */,
-				D948159017CE1C98006A0312 /* HIApplicationsViewController.xib in Resources */,
-				581711DE17D0FEDD00DE775A /* HIProfileViewController.xib in Resources */,
-				D94815EF17D4CD46006A0312 /* HINewContactViewController.xib in Resources */,
-				D907A4E917F590F6009B3185 /* supporthive.hiveapp in Resources */,
-				58A2A7F117D878840001464A /* HISendBitcoinsWindowController.xib in Resources */,
-				D948161817DF1AB3006A0312 /* bg-sidebar.pdf in Resources */,
-				D948161917DF1AB3006A0312 /* button__inset.pdf in Resources */,
-				D948161F17DF1AB3006A0312 /* icon-group__active.pdf in Resources */,
-				D948162017DF1AB3006A0312 /* icon-group__inactive.pdf in Resources */,
-				D948162117DF1AB3006A0312 /* icon-nav-bar-back.pdf in Resources */,
-				D948162217DF1AB3006A0312 /* icon-next__active.pdf in Resources */,
-				D948162317DF1AB3006A0312 /* icon-next.pdf in Resources */,
-				D948162417DF1AB3006A0312 /* icon-plus.pdf in Resources */,
-				D948162517DF1AB3006A0312 /* icon-search.pdf in Resources */,
-				D948162817DF1AB3006A0312 /* icon-tabbar-timeline__active.pdf in Resources */,
-				D948162917DF1AB3006A0312 /* icon-tabbar-timeline__inactive.pdf in Resources */,
-				D948162A17DF1AB3006A0312 /* icon-tabbar-user__active.pdf in Resources */,
-				D907A4ED17F5C4BF009B3185 /* minefield.hiveapp in Resources */,
-				D907A4EC17F5C4BF009B3185 /* bitstamp.hiveapp in Resources */,
-				D948162B17DF1AB3006A0312 /* icon-tabbar-user__inactive.pdf in Resources */,
-				D948162C17DF1AB3006A0312 /* icon-timeline__active.pdf in Resources */,
-				D948162D17DF1AB3006A0312 /* icon-timeline__inactive.pdf in Resources */,
-				D948162E17DF1AB3006A0312 /* icon-transactions-arrow-left.pdf in Resources */,
-				D948162F17DF1AB3006A0312 /* icon-transactions-arrow-right.pdf in Resources */,
-				D948163017DF1AB3006A0312 /* icon-transactions-minus.pdf in Resources */,
-				D948163117DF1AB3006A0312 /* icon-transactions-plus.pdf in Resources */,
-				D948163217DF1AB3006A0312 /* icon-your-profile__active.pdf in Resources */,
-				D948163317DF1AB3006A0312 /* icon-your-profile__inactive.pdf in Resources */,
-				D948163917DF555A006A0312 /* avatar-empty.pdf in Resources */,
-				D90C9CF217E9C64100FC83CC /* icon-delete.pdf in Resources */,
-				D9F0B9F017EC5AF90050A0A2 /* icon-apps__active.pdf in Resources */,
-				D9F0B9F117EC5AF90050A0A2 /* icon-apps__inactive.pdf in Resources */,
-				5802101517EC5F0A0039BA4B /* HIContactAutocompleteWindowController.xib in Resources */,
-				5802105A17ECA40E0039BA4B /* icon-dropdown-close.pdf in Resources */,
-				5802105B17ECA40E0039BA4B /* icon-dropdown-open.pdf in Resources */,
-				58C9F41817F06D9C0041624B /* icon-transactions-btc-symbol.pdf in Resources */,
 				581818E217F1A8A800D00770 /* README.md in Resources */,
-				5884A01717F1BD5B004A31FA /* HIProfileInfoViewController.xib in Resources */,
-				5884A02117F1E818004A31FA /* icon-bitcoin.pdf in Resources */,
 				5884A03E17F57AE9004A31FA /* dsa_pub.pem in Resources */,
-				5804C32917FD7B64003B7891 /* icon-gray-btc.pdf in Resources */,
-				5804C32A17FD7B64003B7891 /* icon-sadface.pdf in Resources */,
+				586059AF180419DF00FD9C2A /* bitstamp.hiveapp in Resources */,
+				586059B0180419DF00FD9C2A /* minefield.hiveapp in Resources */,
+				586059B1180419DF00FD9C2A /* supporthive.hiveapp in Resources */,
+				586059CC18041A6D00FD9C2A /* HIApplicationRuntimeViewController.xib in Resources */,
+				586059CE18041A6D00FD9C2A /* HIApplicationsViewController.xib in Resources */,
+				586059D518041A7A00FD9C2A /* HIContactsViewController.xib in Resources */,
+				586059DA18041A8700FD9C2A /* HINewContactViewController.xib in Resources */,
+				586059E418041A9900FD9C2A /* HIProfileInfoViewController.xib in Resources */,
+				586059E718041A9900FD9C2A /* HIProfileViewController.xib in Resources */,
+				586059EF18041AAF00FD9C2A /* HIContactAutocompleteWindowController.xib in Resources */,
+				586059F118041AAF00FD9C2A /* HISendBitcoinsWindowController.xib in Resources */,
+				586059F618041ABD00FD9C2A /* HITransactionsViewController.xib in Resources */,
+				58605A0418041B2200FD9C2A /* HIMainWindowController.xib in Resources */,
+				58605A4018041D0A00FD9C2A /* avatar-empty.pdf in Resources */,
+				58605A4118041D0A00FD9C2A /* bg-sidebar.pdf in Resources */,
+				58605A4218041D0A00FD9C2A /* button__inset.pdf in Resources */,
+				58605A4318041D0A00FD9C2A /* icon-apps__active.pdf in Resources */,
+				58605A4418041D0A00FD9C2A /* icon-apps__inactive.pdf in Resources */,
+				58605A4518041D0A00FD9C2A /* icon-bitcoin.pdf in Resources */,
+				58605A4618041D0A00FD9C2A /* icon-delete.pdf in Resources */,
+				58605A4718041D0A00FD9C2A /* icon-dropdown-close.pdf in Resources */,
+				58605A4818041D0A00FD9C2A /* icon-dropdown-open.pdf in Resources */,
+				58605A4918041D0A00FD9C2A /* icon-gray-btc.pdf in Resources */,
+				58605A4A18041D0A00FD9C2A /* icon-group__active.pdf in Resources */,
+				58605A4B18041D0A00FD9C2A /* icon-group__inactive.pdf in Resources */,
+				58605A4C18041D0A00FD9C2A /* icon-nav-bar-back.pdf in Resources */,
+				58605A4D18041D0A00FD9C2A /* icon-next__active.pdf in Resources */,
+				58605A4E18041D0A00FD9C2A /* icon-next.pdf in Resources */,
+				58605A4F18041D0A00FD9C2A /* icon-plus.pdf in Resources */,
+				58605A5018041D0A00FD9C2A /* icon-sadface.pdf in Resources */,
+				58605A5118041D0A00FD9C2A /* icon-search.pdf in Resources */,
+				58605A5218041D0A00FD9C2A /* icon-tabbar-timeline__active.pdf in Resources */,
+				58605A5318041D0A00FD9C2A /* icon-tabbar-timeline__inactive.pdf in Resources */,
+				58605A5418041D0A00FD9C2A /* icon-tabbar-user__active.pdf in Resources */,
+				58605A5518041D0A00FD9C2A /* icon-tabbar-user__inactive.pdf in Resources */,
+				58605A5618041D0A00FD9C2A /* icon-timeline__active.pdf in Resources */,
+				58605A5718041D0A00FD9C2A /* icon-timeline__inactive.pdf in Resources */,
+				58605A5818041D0A00FD9C2A /* icon-transactions-arrow-left.pdf in Resources */,
+				58605A5918041D0A00FD9C2A /* icon-transactions-arrow-right.pdf in Resources */,
+				58605A5A18041D0A00FD9C2A /* icon-transactions-btc-symbol.pdf in Resources */,
+				58605A5B18041D0A00FD9C2A /* icon-transactions-minus.pdf in Resources */,
+				58605A5C18041D0A00FD9C2A /* icon-transactions-plus.pdf in Resources */,
+				58605A5D18041D0A00FD9C2A /* icon-your-profile__active.pdf in Resources */,
+				58605A5E18041D0A00FD9C2A /* icon-your-profile__inactive.pdf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -941,57 +941,57 @@
 			files = (
 				D9A591D41767B4A800502635 /* main.m in Sources */,
 				D9A591DB1767B4A800502635 /* HIAppDelegate.m in Sources */,
-				D9A5921B1768444000502635 /* HIViewController.m in Sources */,
-				D9A5922917684D6E00502635 /* NSImage+NPEffects.m in Sources */,
-				D9EBE42F176878BE00297A63 /* HIMainWindowController.m in Sources */,
 				D962AF031769FEF9009F882A /* Hive.xcdatamodeld in Sources */,
 				D983D0A317703CDE00844D69 /* HITransaction.m in Sources */,
 				D983D0A617703CE800844D69 /* HIContact.m in Sources */,
-				D95929D1177326F2008B4F43 /* BCClient.m in Sources */,
-				D95929E517746CE9008B4F43 /* NSView+Snapshot.m in Sources */,
 				D9235373177C4222003533DF /* HIApplication.m in Sources */,
-				D923537F177C55F7003533DF /* HIApplicationRuntimeViewController.m in Sources */,
-				D9235386177C60A5003533DF /* HIAppRuntimeBridge.m in Sources */,
 				D91FE82317988743001B37D8 /* NPZip.m in Sources */,
 				D91FE82417988743001B37D8 /* NPZipFileHeader.m in Sources */,
 				D91FE82517988743001B37D8 /* NPZipHeader.m in Sources */,
-				D91FE82A17989120001B37D8 /* HIApplicationURLProtocol.m in Sources */,
-				D948158117CE19D3006A0312 /* HITransactionsViewController.m in Sources */,
-				D948158A17CE1C29006A0312 /* HIContactsViewController.m in Sources */,
-				D948158F17CE1C98006A0312 /* HIApplicationsViewController.m in Sources */,
 				58CFD95317CF914000A035FA /* HIContactCellView.m in Sources */,
 				58CFD95417CF914000A035FA /* HISidebarView.m in Sources */,
-				58CFD97717D083E100A035FA /* HISidebarController.m in Sources */,
 				581711BE17D0A26D00DE775A /* HISidebarButton.m in Sources */,
-				581711D817D0CB9600DE775A /* HINavigationController.m in Sources */,
-				581711DD17D0FEDD00DE775A /* HIProfileViewController.m in Sources */,
 				D94815B417D492A0006A0312 /* HITitleView.m in Sources */,
 				D94815E917D4BCEF006A0312 /* HIContactRowView.m in Sources */,
-				D94815EE17D4CD46006A0312 /* HINewContactViewController.m in Sources */,
 				D94815F217D4D9AF006A0312 /* HISeparatorView.m in Sources */,
 				D94815F517D72AF8006A0312 /* HITextField.m in Sources */,
 				D9716B6D17D88F8800888F4E /* HIDoneButtonCell.m in Sources */,
 				D9716B7217D8B42E00888F4E /* HIButtonCell.m in Sources */,
 				D9716B7717D8C40100888F4E /* HIBox.m in Sources */,
-				58A2A7F017D878840001464A /* HISendBitcoinsWindowController.m in Sources */,
 				582C699B17D8BAC700442294 /* HICurrencyAmountFormatter.m in Sources */,
 				D9716B7E17D9C9F500888F4E /* HIAddress.m in Sources */,
 				588EFB2E17D8D2970085F6E6 /* HIProfileTabView.m in Sources */,
-				58A03AFC17D9C91600ADD5E5 /* HIProfileTabBarController.m in Sources */,
 				58A03B0D17D9DC4100ADD5E5 /* HIButtonWithSpinner.m in Sources */,
-				D948164417E0A807006A0312 /* NSColor+Hive.m in Sources */,
 				58F02AEE17E1F5A400B65429 /* HITitleArrowView.m in Sources */,
 				D938F01017E6278B00566FFD /* HITextFieldCell.m in Sources */,
 				D958A8B817E8547A00CED98C /* HIFlippedView.m in Sources */,
 				D99C9A5517E8F59200899CAB /* HIDeleteButtonCell.m in Sources */,
 				D9F0B9F817EC654C0050A0A2 /* HIImageCell.m in Sources */,
-				5802101417EC5F0A0039BA4B /* HIContactAutocompleteWindowController.m in Sources */,
 				5802106317ECCAAA0039BA4B /* HIContactAutocompleteCellView.m in Sources */,
 				5802106017ECC4F50039BA4B /* HITransactionCellView.m in Sources */,
 				D939FE9C17F076E80088F5D3 /* HICopyView.m in Sources */,
-				5884A01617F1BD5B004A31FA /* HIProfileInfoViewController.m in Sources */,
-				588BFB3217FC4256004BE4C8 /* SUCodeSigningVerifier+DisableCodeSigningCheck.m in Sources */,
 				5804C32617FC88BA003B7891 /* HIProfile.m in Sources */,
+				586059B4180419F500FD9C2A /* BCClient.m in Sources */,
+				586059BD18041A1300FD9C2A /* NSColor+Hive.m in Sources */,
+				586059BE18041A1300FD9C2A /* NSImage+NPEffects.m in Sources */,
+				586059BF18041A1300FD9C2A /* NSView+Snapshot.m in Sources */,
+				586059C018041A1300FD9C2A /* SUCodeSigningVerifier+DisableCodeSigningCheck.m in Sources */,
+				586059CB18041A6D00FD9C2A /* HIApplicationRuntimeViewController.m in Sources */,
+				586059CD18041A6D00FD9C2A /* HIApplicationsViewController.m in Sources */,
+				586059CF18041A6D00FD9C2A /* HIApplicationURLProtocol.m in Sources */,
+				586059D018041A6D00FD9C2A /* HIAppRuntimeBridge.m in Sources */,
+				586059D418041A7A00FD9C2A /* HIContactsViewController.m in Sources */,
+				586059D918041A8700FD9C2A /* HINewContactViewController.m in Sources */,
+				586059E318041A9900FD9C2A /* HIProfileInfoViewController.m in Sources */,
+				586059E518041A9900FD9C2A /* HIProfileTabBarController.m in Sources */,
+				586059E618041A9900FD9C2A /* HIProfileViewController.m in Sources */,
+				586059EE18041AAF00FD9C2A /* HIContactAutocompleteWindowController.m in Sources */,
+				586059F018041AAF00FD9C2A /* HISendBitcoinsWindowController.m in Sources */,
+				586059F518041ABD00FD9C2A /* HITransactionsViewController.m in Sources */,
+				586059FF18041AD600FD9C2A /* HIMainWindowController.m in Sources */,
+				58605A0018041AD600FD9C2A /* HINavigationController.m in Sources */,
+				58605A0118041AD600FD9C2A /* HISidebarController.m in Sources */,
+				58605A0218041AD600FD9C2A /* HIViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1028,14 +1028,6 @@
 				D9A591DD1767B4A800502635 /* en */,
 			);
 			name = MainMenu.xib;
-			sourceTree = "<group>";
-		};
-		D9EBE430176878E800297A63 /* HIMainWindowController.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				D9EBE431176878E800297A63 /* en */,
-			);
-			name = HIMainWindowController.xib;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
