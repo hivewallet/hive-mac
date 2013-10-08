@@ -506,13 +506,13 @@
 			name = HINewContactViewController;
 			sourceTree = "<group>";
 		};
-		D95929CE177326C4008B4F43 /* BCClient */ = {
+		D95929CE177326C4008B4F43 /* Backend */ = {
 			isa = PBXGroup;
 			children = (
 				586059B2180419F500FD9C2A /* BCClient.h */,
 				586059B3180419F500FD9C2A /* BCClient.m */,
 			);
-			path = BCClient;
+			path = Backend;
 			sourceTree = "<group>";
 		};
 		D95929D617742ABB008B4F43 /* HIApplicationsViewController */ = {
@@ -629,7 +629,7 @@
 			isa = PBXGroup;
 			children = (
 				D907A4E317F58F91009B3185 /* Applications */,
-				D95929CE177326C4008B4F43 /* BCClient */,
+				D95929CE177326C4008B4F43 /* Backend */,
 				D9A5922617684D5400502635 /* Categories */,
 				D9A592181768442000502635 /* Controllers */,
 				D9EBE4331768867200297A63 /* Database */,
