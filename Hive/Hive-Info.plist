@@ -60,6 +60,8 @@
 	<string>MainMenu</string>
 	<key>NSPrincipalClass</key>
 	<string>NSApplication</string>
+	<key>SUEnableAutomaticChecks</key>
+	<true/>
 	<key>SUFeedURL</key>
 	<string>http://grabhive.com/hive-osx-appcast.xml</string>
 	<key>SUPublicDSAKeyFile</key>
