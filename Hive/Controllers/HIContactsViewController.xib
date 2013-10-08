@@ -2,9 +2,9 @@
 <archive type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="8.00">
 	<data>
 		<int key="IBDocument.SystemTarget">1070</int>
-		<string key="IBDocument.SystemVersion">12E55</string>
+		<string key="IBDocument.SystemVersion">12F45</string>
 		<string key="IBDocument.InterfaceBuilderVersion">3084</string>
-		<string key="IBDocument.AppKitVersion">1187.39</string>
+		<string key="IBDocument.AppKitVersion">1187.40</string>
 		<string key="IBDocument.HIToolboxVersion">626.00</string>
 		<object class="NSMutableDictionary" key="IBDocument.PluginVersions">
 			<string key="NS.key.0">com.apple.InterfaceBuilder.CocoaPlugin</string>
@@ -237,41 +237,13 @@
 				<reference key="NSNextResponder"/>
 				<int key="NSvFlags">268</int>
 				<array class="NSMutableArray" key="NSSubviews">
-					<object class="NSButton" id="30494971">
-						<reference key="NSNextResponder" ref="539489335"/>
-						<int key="NSvFlags">268</int>
-						<string key="NSFrame">{{26, 3}, {29, 21}}</string>
-						<reference key="NSSuperview" ref="539489335"/>
-						<reference key="NSWindow"/>
-						<string key="NSReuseIdentifierKey">_NS:9</string>
-						<bool key="NSEnabled">YES</bool>
-						<object class="NSButtonCell" key="NSCell" id="1022893060">
-							<int key="NSCellFlags">67108864</int>
-							<int key="NSCellFlags2">134217728</int>
-							<string key="NSContents"/>
-							<reference key="NSSupport" ref="695255363"/>
-							<string key="NSCellIdentifier">_NS:9</string>
-							<reference key="NSControlView" ref="30494971"/>
-							<int key="NSButtonFlags">-935051264</int>
-							<int key="NSButtonFlags2">129</int>
-							<object class="NSCustomResource" key="NSNormalImage">
-								<string key="NSClassName">NSImage</string>
-								<string key="NSResourceName">icon-search</string>
-							</object>
-							<string key="NSAlternateContents"/>
-							<string key="NSKeyEquivalent"/>
-							<int key="NSPeriodicDelay">200</int>
-							<int key="NSPeriodicInterval">25</int>
-						</object>
-						<bool key="NSAllowsLogicalLayoutDirection">NO</bool>
-					</object>
 					<object class="NSButton" id="787334374">
 						<reference key="NSNextResponder" ref="539489335"/>
 						<int key="NSvFlags">268</int>
 						<string key="NSFrame">{{0, 5}, {27, 17}}</string>
 						<reference key="NSSuperview" ref="539489335"/>
 						<reference key="NSWindow"/>
-						<reference key="NSNextKeyView" ref="30494971"/>
+						<reference key="NSNextKeyView"/>
 						<string key="NSReuseIdentifierKey">_NS:9</string>
 						<bool key="NSEnabled">YES</bool>
 						<object class="NSButtonCell" key="NSCell" id="476272078">
@@ -295,7 +267,7 @@
 						<bool key="NSAllowsLogicalLayoutDirection">NO</bool>
 					</object>
 				</array>
-				<string key="NSFrameSize">{55, 32}</string>
+				<string key="NSFrameSize">{27, 32}</string>
 				<reference key="NSSuperview"/>
 				<reference key="NSWindow"/>
 				<reference key="NSNextKeyView" ref="787334374"/>
@@ -882,7 +854,6 @@
 						<reference key="object" ref="539489335"/>
 						<array class="NSMutableArray" key="children">
 							<reference ref="787334374"/>
-							<reference ref="30494971"/>
 						</array>
 						<reference key="parent" ref="0"/>
 					</object>
@@ -898,19 +869,6 @@
 						<int key="objectID">84</int>
 						<reference key="object" ref="476272078"/>
 						<reference key="parent" ref="787334374"/>
-					</object>
-					<object class="IBObjectRecord">
-						<int key="objectID">85</int>
-						<reference key="object" ref="30494971"/>
-						<array class="NSMutableArray" key="children">
-							<reference ref="1022893060"/>
-						</array>
-						<reference key="parent" ref="539489335"/>
-					</object>
-					<object class="IBObjectRecord">
-						<int key="objectID">86</int>
-						<reference key="object" ref="1022893060"/>
-						<reference key="parent" ref="30494971"/>
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">69</int>
@@ -1130,8 +1088,6 @@
 				<string key="82.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="83.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="84.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
-				<string key="85.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
-				<string key="86.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="9.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<boolean value="YES" key="9.isInViewBasedMode"/>
 				<array key="9.prototypeCellViews">
@@ -1224,7 +1180,6 @@
 			<string key="icon-next">{7, 9}</string>
 			<string key="icon-plus">{11, 12}</string>
 			<string key="icon-sadface">{63, 64}</string>
-			<string key="icon-search">{11, 13}</string>
 		</dictionary>
 	</data>
 </archive>
