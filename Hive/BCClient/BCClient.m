@@ -6,14 +6,14 @@
 //  Copyright (c) 2013 Hive Developers. All rights reserved.
 //
 
-#import "BCClient.h"
 #import <AFNetworking/AFJSONRequestOperation.h>
 #import <BitcoinJKit/BitcoinJKit.h>
 #import <Tor/Tor.h>
+#import "BCClient.h"
+#import "HIAppDelegate.h"
+#import "HIApplication.h"
 #import "HIContact.h"
 #import "HITransaction.h"
-#import "HIApplication.h"
-#import "HIAppDelegate.h"
 #import "NPZip.h"
 
 NSString * const kBCClientStartedNotification = @"kBCClientStartedNotification";
@@ -21,7 +21,9 @@ NSString * const kBCClientStartedNotification = @"kBCClientStartedNotification";
 static NSString * const kBCClientBaseURLString = @"https://grabhive.com/";
 
 static NSString * NPBase64EncodedStringFromString(NSString *string) {
-    NSData *data = [NSData dataWithBytes:[string UTF8String] length:[string lengthOfBytesUsingEncoding:NSUTF8StringEncoding]];
+    NSData *data = [NSData dataWithBytes:[string UTF8String]
+                                  length:[string lengthOfBytesUsingEncoding:NSUTF8StringEncoding]];
+
     NSUInteger length = [data length];
     NSMutableData *mutableData = [NSMutableData dataWithLength:((length + 2) / 3) * 4];
     
@@ -56,12 +58,6 @@ static NSString * NPBase64EncodedStringFromString(NSString *string) {
     AFHTTPRequestOperation *_exchangeRateOperation;
 }
 
-- (NSURL *)bitcoindDirectory;
-- (NSURL *)torDirectory;
-- (BOOL)parseTransaction:(NSDictionary *)transaction notify:(BOOL)notify;
-- (void)bitcoinKitStarted:(NSNotification *)not;
-//- (void)torStarted:(NSNotification *)not;
-- (void)transactionUpdated:(NSNotification *)not;
 @end
 
 @implementation BCClient
@@ -70,11 +66,14 @@ static NSString * NPBase64EncodedStringFromString(NSString *string) {
 {
     static BCClient *_sharedClient = nil;
     static dispatch_once_t oncePredicate;
+
     if (!_sharedClient)
+    {
         dispatch_once(&oncePredicate, ^{
             _sharedClient = [[self alloc] initWithBaseURL:[NSURL URLWithString:kBCClientBaseURLString]];
         });
-    
+    }
+
     return _sharedClient;
 }
 
@@ -84,16 +83,27 @@ static NSString * NPBase64EncodedStringFromString(NSString *string) {
     if (self)
     {
         [self registerHTTPOperationClass:[AFJSONRequestOperation class]];
+
         _checkInterval = 10;
-        _availableCurrencies = @[@"AUD", @"CAD", @"CHF", @"CNY", @"CZK", @"DKK", @"EUR", @"GBP", @"HKD", @"NOK", @"NZD", @"PLN", @"RUB", @"SEK", @"SGD", @"THB",@"USD", @"YPY"];
         _dateFormatter = [[NSDateFormatter alloc] init];
         _dateFormatter.dateFormat = @"yyyy'-'MM'-'dd'T'HH':'mm':'ssz";
+
         _transactionUpdateContext = [[NSManagedObjectContext alloc] initWithConcurrencyType:NSPrivateQueueConcurrencyType];
         _transactionUpdateContext.parentContext = [(HIAppDelegate *)[[NSApplication sharedApplication] delegate] managedObjectContext];
-        
-        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(torStarted:) name:kHITorManagerStarted object:nil];
-        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(bitcoinKitStarted:) name:kHIBitcoinManagerStartedNotification object:nil];
-        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(transactionUpdated:) name:kHIBitcoinManagerTransactionChangedNotification object:nil];        
+
+        [[NSNotificationCenter defaultCenter] addObserver:self
+                                                 selector:@selector(torStarted:)
+                                                     name:kHITorManagerStarted
+                                                   object:nil];
+        [[NSNotificationCenter defaultCenter] addObserver:self
+                                                 selector:@selector(bitcoinKitStarted:)
+                                                     name:kHIBitcoinManagerStartedNotification
+                                                   object:nil];
+        [[NSNotificationCenter defaultCenter] addObserver:self
+                                                 selector:@selector(transactionUpdated:)
+                                                     name:kHIBitcoinManagerTransactionChangedNotification
+                                                   object:nil];
+
         [HIBitcoinManager defaultManager].dataURL = [self bitcoindDirectory];
         [HITorManager defaultManager].dataDirectoryURL = [self torDirectory];
         [HITorManager defaultManager].port = 9999;
@@ -103,18 +113,31 @@ static NSString * NPBase64EncodedStringFromString(NSString *string) {
 #endif //TESTING_NETWORK
         
         // Register to all values changing
-        [[HIBitcoinManager defaultManager] addObserver:self forKeyPath:@"balance" options:NSKeyValueObservingOptionInitial | NSKeyValueObservingOptionNew context:NULL];
-        [[HIBitcoinManager defaultManager] addObserver:self forKeyPath:@"syncProgress" options:NSKeyValueObservingOptionInitial | NSKeyValueObservingOptionNew context:NULL];
-        [[HIBitcoinManager defaultManager] addObserver:self forKeyPath:@"connections" options:NSKeyValueObservingOptionInitial | NSKeyValueObservingOptionNew context:NULL];                
+        [[HIBitcoinManager defaultManager] addObserver:self
+                                            forKeyPath:@"balance"
+                                               options:NSKeyValueObservingOptionInitial | NSKeyValueObservingOptionNew
+                                               context:NULL];
+        [[HIBitcoinManager defaultManager] addObserver:self
+                                            forKeyPath:@"syncProgress"
+                                               options:NSKeyValueObservingOptionInitial | NSKeyValueObservingOptionNew
+                                               context:NULL];
+        [[HIBitcoinManager defaultManager] addObserver:self
+                                            forKeyPath:@"connections"
+                                               options:NSKeyValueObservingOptionInitial | NSKeyValueObservingOptionNew
+                                               context:NULL];
 
-//        [[HITorManager defaultManager] start];
+        // TOR disabled for now
+        // [[HITorManager defaultManager] start];
+
         [[HIBitcoinManager defaultManager] start];
+
         [self willChangeValueForKey:@"balance"];
         _balance = [[[NSUserDefaults standardUserDefaults] objectForKey:@"LastBalance"] unsignedLongLongValue];
         [self didChangeValueForKey:@"balance"];
-        
+
         [self updateNotifications];
     }
+
     return self;
 }
 
@@ -128,21 +151,23 @@ static NSString * NPBase64EncodedStringFromString(NSString *string) {
     dispatch_async(dispatch_get_main_queue(), ^{
         [self willChangeValueForKey:@"isRunning"];
         [self didChangeValueForKey:@"isRunning"];
+
         [self willChangeValueForKey:@"walletHash"];
         _walletHash = [HIBitcoinManager defaultManager].walletAddress;
         [self didChangeValueForKey:@"walletHash"];
-        
+
         if ([[NSUserDefaults standardUserDefaults] boolForKey:@"FirstRun"])
         {
             NSArray *transactions = [HIBitcoinManager defaultManager].allTransactions;
             [_transactionUpdateContext performBlock:^{
                 // We need to scan whole wallet in search for transactions
-
                 for (NSDictionary *transaction in transactions)
                 {
                     [self parseTransaction:transaction notify:YES];
                 }
+
                 [_transactionUpdateContext save:NULL];
+
                 dispatch_async(dispatch_get_main_queue(), ^{
                     [self updateNotifications];
                     [[NSUserDefaults standardUserDefaults] setBool:NO forKey:@"FirstRun"];
@@ -152,7 +177,9 @@ static NSString * NPBase64EncodedStringFromString(NSString *string) {
             // Preinstall all apps
             NSArray *allApps = [[NSBundle mainBundle] URLsForResourcesWithExtension:@"hiveapp" subdirectory:@""];
             for (NSURL *appURL in allApps)
+            {
                 [[BCClient sharedClient] installApplication:appURL];
+            }
         }
     });
 }
@@ -171,7 +198,10 @@ static NSString * NPBase64EncodedStringFromString(NSString *string) {
     });
 }
 
-- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context
+- (void)observeValueForKeyPath:(NSString *)keyPath
+                      ofObject:(id)object
+                        change:(NSDictionary *)change
+                       context:(void *)context
 {
     if (object == [HIBitcoinManager defaultManager])
     {
@@ -181,7 +211,8 @@ static NSString * NPBase64EncodedStringFromString(NSString *string) {
                 [self willChangeValueForKey:@"balance"];
                 _balance = [HIBitcoinManager defaultManager].balance;
                 [self didChangeValueForKey:@"balance"];
-                [[NSUserDefaults standardUserDefaults] setObject:[NSNumber numberWithUnsignedLongLong:_balance] forKey:@"LastBalance"];
+
+                [[NSUserDefaults standardUserDefaults] setObject:@(_balance) forKey:@"LastBalance"];
             });
         }
         else if ([keyPath compare:@"syncProgress"] == NSOrderedSame)
@@ -190,7 +221,6 @@ static NSString * NPBase64EncodedStringFromString(NSString *string) {
         else if([keyPath compare:@"connections"] == NSOrderedSame)
         {
         }
-        
     }
 }
 
@@ -243,7 +273,9 @@ static NSString * NPBase64EncodedStringFromString(NSString *string) {
 - (void)setCheckInterval:(NSUInteger)checkInterval
 {
     if (checkInterval == 0)
+    {
         return;
+    }
     
     _checkInterval = checkInterval;
 }
@@ -270,6 +302,7 @@ static NSString * NPBase64EncodedStringFromString(NSString *string) {
     {
         [[NSApp dockTile] setBadgeLabel:@""];
     }
+
     [self didChangeValueForKey:@"unreadTransactions"];
 }
 
@@ -281,9 +314,11 @@ static NSString * NPBase64EncodedStringFromString(NSString *string) {
 - (BOOL)parseTransaction:(NSDictionary *)t notify:(BOOL)notify
 {
     BOOL continueFetching = YES;
+
     NSFetchRequest *req = [[NSFetchRequest alloc] initWithEntityName:HITransactionEntity];
     req.predicate = [NSPredicate predicateWithFormat:@"id == %@", t[@"txid"]];
     NSArray *resp = [_transactionUpdateContext executeFetchRequest:req error:NULL];
+
     if (resp.count > 0)
     {
         HITransaction *trans = resp[0];
@@ -299,10 +334,10 @@ static NSString * NPBase64EncodedStringFromString(NSString *string) {
     }
     else
     {
-        
         HITransaction *trans = [NSEntityDescription
                                 insertNewObjectForEntityForName:HITransactionEntity
                                 inManagedObjectContext:_transactionUpdateContext];
+
         trans.id = t[@"txid"];
         trans.date = [t[@"time"] timeIntervalSince1970];
         trans.amount = [t[@"amount"] longLongValue];
@@ -310,7 +345,9 @@ static NSString * NPBase64EncodedStringFromString(NSString *string) {
         trans.confirmations = [t[@"confirmations"] intValue];
 
         if (!notify)
+        {
             trans.read = YES;
+        }
 
         trans.senderHash = t[@"details"][0][@"address"];
         
@@ -332,11 +369,12 @@ static NSString * NPBase64EncodedStringFromString(NSString *string) {
     }
     
     return continueFetching;
-    
 }
 
 
-- (void)sendBitcoins:(uint64)amount toHash:(NSString *)hash completion:(void(^)(BOOL success, NSString *hash))completion
+- (void)sendBitcoins:(uint64)amount
+              toHash:(NSString *)hash
+          completion:(void(^)(BOOL success, NSString *hash))completion
 {
     if (amount > _balance)
     {
@@ -355,17 +393,21 @@ static NSString * NPBase64EncodedStringFromString(NSString *string) {
         }
         else
         {
-            [[HIBitcoinManager defaultManager] sendCoins:amount toReceipent:hash comment:nil completion:^(NSString *sHash) {
+            [[HIBitcoinManager defaultManager] sendCoins:amount
+                                             toReceipent:hash
+                                                 comment:nil
+                                              completion:^(NSString *sHash) {
                 dispatch_async(dispatch_get_main_queue(), ^{
                     completion((sHash!=nil), sHash);
                 });
- 
             }];
         }
     }
 }
 
-- (void)sendBitcoins:(uint64)amount toContact:(HIContact *)contact completion:(void(^)(BOOL success, NSString *hash))completion
+- (void)sendBitcoins:(uint64)amount
+           toContact:(HIContact *)contact
+          completion:(void(^)(BOOL success, NSString *hash))completion
 {
     [self sendBitcoins:amount toHash:contact.account completion:completion];
 }
@@ -380,21 +422,22 @@ static NSString * NPBase64EncodedStringFromString(NSString *string) {
     return [[HIBitcoinManager defaultManager] importWalletFrom:walletURL];
 }
 
-- (void)exchangeRateFor:(uint64)btcs forCurrency:(NSString *)currency completion:(void(^)(uint64 value))completion
+- (void)exchangeRateFor:(uint64)amount forCurrency:(NSString *)currency completion:(void(^)(uint64 value))completion
 {
     if (_exchangeRateOperation)
     {
         [_exchangeRateOperation cancel];
         _exchangeRateOperation = nil;
     }
-    
-    _exchangeRateOperation = [self HTTPRequestOperationWithRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"http://data.mtgox.com/api/1/BTC%@/ticker_fast", currency]]] success:^(AFHTTPRequestOperation *operation, id responseObject) {
-        NSDictionary *resp = [NSJSONSerialization JSONObjectWithData:responseObject options:0 error:NULL];
+
+    NSURL *URL = [NSURL URLWithString:
+                  [NSString stringWithFormat:@"http://data.mtgox.com/api/1/BTC%@/ticker_fast", currency]];
+    _exchangeRateOperation = [self HTTPRequestOperationWithRequest:[NSURLRequest requestWithURL:URL]
+                                                           success:^(AFHTTPRequestOperation *operation, id response) {
+        NSDictionary *resp = [NSJSONSerialization JSONObjectWithData:response options:0 error:NULL];
         uint64 exchange = [resp[@"return"][@"sell"][@"value_int"] longLongValue];
         _exchangeRateOperation = nil;        
-        completion(btcs*exchange/10000000.0);
-
-
+        completion(amount * exchange * 10000000.0);
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         _exchangeRateOperation = nil;
     }];

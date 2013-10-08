@@ -39,25 +39,12 @@ static const NSTimeInterval SlideAnimationDuration = 0.3;
 
 - (id)initWithWindowNibName:(NSString *)windowNibName
 {
-    self = [super initWithWindowNibName:windowNibName];
-    return self;
+    return [super initWithWindowNibName:windowNibName];
 }
 
 - (void)dealloc
 {
-    [[BCClient sharedClient] removeObserver:self forKeyPath:@"isRunning"];    
-    [[NSUserDefaults standardUserDefaults] removeObserver:self forKeyPath:@"Currency"];
-}
-
-- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context
-{
-    if (object == [BCClient sharedClient])
-    {
-        if ([keyPath compare:@"isRunning"] == NSOrderedSame)
-        {
-            
-        }
-    }
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
 - (void)windowDidLoad
@@ -76,16 +63,6 @@ static const NSTimeInterval SlideAnimationDuration = 0.3;
     {
         [self.sidebarController addViewController:[[HINavigationController alloc] initWithRootViewController:panel]];
     }
-
-    [[BCClient sharedClient] addObserver:self
-                              forKeyPath:@"isRunning"
-                                 options:NSKeyValueObservingOptionInitial | NSKeyValueObservingOptionNew
-                                 context:NULL];
-
-    [[NSUserDefaults standardUserDefaults] addObserver:self
-                                            forKeyPath:@"Currency"
-                                               options:NSKeyValueObservingOptionNew | NSKeyValueObservingOptionInitial
-                                               context:NULL];
 
     [[NSNotificationCenter defaultCenter] addObserver:self
                                              selector:@selector(sendWindowDidClose:)

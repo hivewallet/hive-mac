@@ -38,8 +38,6 @@ static NSString * const WarningDisplayedKey = @"WarningDisplayed";
 {
     [[NSUserDefaults standardUserDefaults] registerDefaults:@{
      @"Currency": @1,
-     @"ExchangeCurrency1": @"USD",
-     @"ExchangeCurrency2": @"PLN",
      @"FirstRun": @YES,
      @"LastBalance": @0,
      @"Profile": @{},

@@ -7,12 +7,13 @@
 //
 
 #import "AFHTTPClient.h"
+
 NSString * const kBCClientStartedNotification;
 
 @class HIContact;
 
 @interface BCClient : AFHTTPClient
-@property (nonatomic, readonly) NSArray *availableCurrencies;
+
 @property (nonatomic, readonly, getter = unreadTransactions) NSUInteger unreadTransactions;
 @property (nonatomic, readonly) uint64 balance;
 @property (nonatomic, strong) NSString *walletHash;
@@ -28,8 +29,13 @@ NSString * const kBCClientStartedNotification;
 
 - (void)exchangeRateFor:(uint64)btcs forCurrency:(NSString *)currency completion:(void(^)(uint64 value))completion;
 
-- (void)sendBitcoins:(uint64)amount toHash:(NSString *)hash completion:(void(^)(BOOL success, NSString *hash))completion;
-- (void)sendBitcoins:(uint64)amount toContact:(HIContact *)contact completion:(void(^)(BOOL success, NSString *hash))completion;
+- (void)sendBitcoins:(uint64)amount
+              toHash:(NSString *)hash
+          completion:(void(^)(BOOL success, NSString *hash))completion;
+
+- (void)sendBitcoins:(uint64)amount
+           toContact:(HIContact *)contact
+          completion:(void(^)(BOOL success, NSString *hash))completion;
 
 - (NSDictionary *)transactionDefinitionWithHash:(NSString *)hash;
 
