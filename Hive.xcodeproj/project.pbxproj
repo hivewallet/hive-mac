@@ -79,6 +79,9 @@
 		58605A5C18041D0A00FD9C2A /* icon-transactions-plus.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 58605A3D18041D0A00FD9C2A /* icon-transactions-plus.pdf */; };
 		58605A5D18041D0A00FD9C2A /* icon-your-profile__active.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 58605A3E18041D0A00FD9C2A /* icon-your-profile__active.pdf */; };
 		58605A5E18041D0A00FD9C2A /* icon-your-profile__inactive.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 58605A3F18041D0A00FD9C2A /* icon-your-profile__inactive.pdf */; };
+		58605A6718041DFC00FD9C2A /* NPZip.m in Sources */ = {isa = PBXBuildFile; fileRef = 58605A6218041DFC00FD9C2A /* NPZip.m */; };
+		58605A6818041DFC00FD9C2A /* NPZipFileHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 58605A6418041DFC00FD9C2A /* NPZipFileHeader.m */; };
+		58605A6918041DFC00FD9C2A /* NPZipHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 58605A6618041DFC00FD9C2A /* NPZipHeader.m */; };
 		5884A00F17F1B63D004A31FA /* Tor.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5884A00C17F1B5FF004A31FA /* Tor.framework */; };
 		5884A01017F1B646004A31FA /* Tor.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 5884A00C17F1B5FF004A31FA /* Tor.framework */; };
 		5884A03717F56D86004A31FA /* Sparkle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5884A03617F56D86004A31FA /* Sparkle.framework */; };
@@ -91,9 +94,6 @@
 		58F02AEE17E1F5A400B65429 /* HITitleArrowView.m in Sources */ = {isa = PBXBuildFile; fileRef = 58F02AED17E1F5A400B65429 /* HITitleArrowView.m */; };
 		D901F4F817B272E60071780D /* BitcoinJKit.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = D901F4F517B272CE0071780D /* BitcoinJKit.framework */; };
 		D901F4F917B273440071780D /* BitcoinJKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D901F4F517B272CE0071780D /* BitcoinJKit.framework */; };
-		D91FE82317988743001B37D8 /* NPZip.m in Sources */ = {isa = PBXBuildFile; fileRef = D91FE81E17988743001B37D8 /* NPZip.m */; };
-		D91FE82417988743001B37D8 /* NPZipFileHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = D91FE82017988743001B37D8 /* NPZipFileHeader.m */; };
-		D91FE82517988743001B37D8 /* NPZipHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = D91FE82217988743001B37D8 /* NPZipHeader.m */; };
 		D91FE827179887C5001B37D8 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = D91FE826179887C4001B37D8 /* libz.dylib */; };
 		D9235373177C4222003533DF /* HIApplication.m in Sources */ = {isa = PBXBuildFile; fileRef = D9235372177C4222003533DF /* HIApplication.m */; };
 		D9235388177C6779003533DF /* JavaScriptCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D9235387177C6779003533DF /* JavaScriptCore.framework */; };
@@ -285,6 +285,12 @@
 		58605A3D18041D0A00FD9C2A /* icon-transactions-plus.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "icon-transactions-plus.pdf"; sourceTree = "<group>"; };
 		58605A3E18041D0A00FD9C2A /* icon-your-profile__active.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "icon-your-profile__active.pdf"; sourceTree = "<group>"; };
 		58605A3F18041D0A00FD9C2A /* icon-your-profile__inactive.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "icon-your-profile__inactive.pdf"; sourceTree = "<group>"; };
+		58605A6118041DFC00FD9C2A /* NPZip.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NPZip.h; sourceTree = "<group>"; };
+		58605A6218041DFC00FD9C2A /* NPZip.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NPZip.m; sourceTree = "<group>"; };
+		58605A6318041DFC00FD9C2A /* NPZipFileHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NPZipFileHeader.h; sourceTree = "<group>"; };
+		58605A6418041DFC00FD9C2A /* NPZipFileHeader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NPZipFileHeader.m; sourceTree = "<group>"; };
+		58605A6518041DFC00FD9C2A /* NPZipHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NPZipHeader.h; sourceTree = "<group>"; };
+		58605A6618041DFC00FD9C2A /* NPZipHeader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NPZipHeader.m; sourceTree = "<group>"; };
 		5884A00417F1B5FE004A31FA /* Tor.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Tor.xcodeproj; path = Tor.framework/Tor.xcodeproj; sourceTree = "<group>"; };
 		5884A03617F56D86004A31FA /* Sparkle.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Sparkle.framework; sourceTree = "<group>"; };
 		5884A03D17F57AE9004A31FA /* dsa_pub.pem */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = dsa_pub.pem; sourceTree = "<group>"; };
@@ -299,12 +305,6 @@
 		58F02AEC17E1F5A400B65429 /* HITitleArrowView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HITitleArrowView.h; sourceTree = "<group>"; };
 		58F02AED17E1F5A400B65429 /* HITitleArrowView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HITitleArrowView.m; sourceTree = "<group>"; };
 		D91FE8071793FEFC001B37D8 /* BitcoinKit.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = BitcoinKit.xcodeproj; path = BitcoinKit/BitcoinKit.xcodeproj; sourceTree = "<group>"; };
-		D91FE81D17988743001B37D8 /* NPZip.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NPZip.h; sourceTree = "<group>"; };
-		D91FE81E17988743001B37D8 /* NPZip.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NPZip.m; sourceTree = "<group>"; };
-		D91FE81F17988743001B37D8 /* NPZipFileHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NPZipFileHeader.h; sourceTree = "<group>"; };
-		D91FE82017988743001B37D8 /* NPZipFileHeader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NPZipFileHeader.m; sourceTree = "<group>"; };
-		D91FE82117988743001B37D8 /* NPZipHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NPZipHeader.h; sourceTree = "<group>"; };
-		D91FE82217988743001B37D8 /* NPZipHeader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NPZipHeader.m; sourceTree = "<group>"; };
 		D91FE826179887C4001B37D8 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		D9235371177C4222003533DF /* HIApplication.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HIApplication.h; path = Database/HIApplication.h; sourceTree = "<group>"; };
 		D9235372177C4222003533DF /* HIApplication.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HIApplication.m; path = Database/HIApplication.m; sourceTree = "<group>"; };
@@ -413,6 +413,27 @@
 			path = Formatters;
 			sourceTree = "<group>";
 		};
+		58605A5F18041DED00FD9C2A /* Lib */ = {
+			isa = PBXGroup;
+			children = (
+				58605A6018041DFC00FD9C2A /* NPZip */,
+			);
+			path = Lib;
+			sourceTree = "<group>";
+		};
+		58605A6018041DFC00FD9C2A /* NPZip */ = {
+			isa = PBXGroup;
+			children = (
+				58605A6118041DFC00FD9C2A /* NPZip.h */,
+				58605A6218041DFC00FD9C2A /* NPZip.m */,
+				58605A6318041DFC00FD9C2A /* NPZipFileHeader.h */,
+				58605A6418041DFC00FD9C2A /* NPZipFileHeader.m */,
+				58605A6518041DFC00FD9C2A /* NPZipHeader.h */,
+				58605A6618041DFC00FD9C2A /* NPZipHeader.m */,
+			);
+			path = NPZip;
+			sourceTree = "<group>";
+		};
 		5884A00517F1B5FE004A31FA /* Products */ = {
 			isa = PBXGroup;
 			children = (
@@ -453,19 +474,6 @@
 				D901F4F517B272CE0071780D /* BitcoinJKit.framework */,
 			);
 			name = Products;
-			sourceTree = "<group>";
-		};
-		D91FE81C17988741001B37D8 /* NPZip */ = {
-			isa = PBXGroup;
-			children = (
-				D91FE81D17988743001B37D8 /* NPZip.h */,
-				D91FE81E17988743001B37D8 /* NPZip.m */,
-				D91FE81F17988743001B37D8 /* NPZipFileHeader.h */,
-				D91FE82017988743001B37D8 /* NPZipFileHeader.m */,
-				D91FE82117988743001B37D8 /* NPZipHeader.h */,
-				D91FE82217988743001B37D8 /* NPZipHeader.m */,
-			);
-			path = NPZip;
 			sourceTree = "<group>";
 		};
 		D948157E17CE10D9006A0312 /* HITransactionsViewController */ = {
@@ -627,8 +635,8 @@
 				D9EBE4331768867200297A63 /* Database */,
 				582C699417D8BA4F00442294 /* Formatters */,
 				D9A592131767C49F00502635 /* Images */,
+				58605A5F18041DED00FD9C2A /* Lib */,
 				5804C31F17FC884E003B7891 /* Models */,
-				D91FE81C17988741001B37D8 /* NPZip */,
 				D97E7FD2176BC03000D2350B /* Views */,
 				D9A591D91767B4A800502635 /* HIAppDelegate.h */,
 				D9A591DA1767B4A800502635 /* HIAppDelegate.m */,
@@ -945,9 +953,6 @@
 				D983D0A317703CDE00844D69 /* HITransaction.m in Sources */,
 				D983D0A617703CE800844D69 /* HIContact.m in Sources */,
 				D9235373177C4222003533DF /* HIApplication.m in Sources */,
-				D91FE82317988743001B37D8 /* NPZip.m in Sources */,
-				D91FE82417988743001B37D8 /* NPZipFileHeader.m in Sources */,
-				D91FE82517988743001B37D8 /* NPZipHeader.m in Sources */,
 				58CFD95317CF914000A035FA /* HIContactCellView.m in Sources */,
 				58CFD95417CF914000A035FA /* HISidebarView.m in Sources */,
 				581711BE17D0A26D00DE775A /* HISidebarButton.m in Sources */,
@@ -992,6 +997,9 @@
 				58605A0018041AD600FD9C2A /* HINavigationController.m in Sources */,
 				58605A0118041AD600FD9C2A /* HISidebarController.m in Sources */,
 				58605A0218041AD600FD9C2A /* HIViewController.m in Sources */,
+				58605A6718041DFC00FD9C2A /* NPZip.m in Sources */,
+				58605A6818041DFC00FD9C2A /* NPZipFileHeader.m in Sources */,
+				58605A6918041DFC00FD9C2A /* NPZipHeader.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
