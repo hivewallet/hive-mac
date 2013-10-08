@@ -74,7 +74,14 @@
     [self configureView];
     [self refreshData];
 
-    [self.tabBarController selectTabAtIndex:0];
+    if (self.tabView.isHidden)
+    {
+        [self showControllerInContentView:_infoPanel];
+    }
+    else
+    {
+        [self.tabBarController selectTabAtIndex:0];
+    }
 }
 
 - (void)viewWillAppear
