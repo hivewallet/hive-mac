@@ -139,13 +139,6 @@ static NSString * const kBCClientBaseURLString = @"https://grabhive.com/";
                     [[NSUserDefaults standardUserDefaults] setBool:NO forKey:@"FirstRun"];
                 });
             }];
-            
-            // Preinstall all apps
-            NSArray *allApps = [[NSBundle mainBundle] URLsForResourcesWithExtension:@"hiveapp" subdirectory:@""];
-            for (NSURL *appURL in allApps)
-            {
-                [[HIApplicationsManager sharedManager] installApplication:appURL];
-            }
         }
     });
 }

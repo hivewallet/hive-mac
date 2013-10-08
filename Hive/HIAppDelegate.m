@@ -14,6 +14,7 @@
 #import "HISendBitcoinsWindowController.h"
 #import "HITransaction.h"
 
+static NSString * const LastVersionKey = @"LastHiveVersion";
 static NSString * const WarningDisplayedKey = @"WarningDisplayed";
 
 
@@ -60,6 +61,7 @@ static NSString * const WarningDisplayedKey = @"WarningDisplayed";
                                                         andEventID:kAEGetURL];
 
     [self showBetaWarning];
+    [self preinstallAppsIfNeeded];
 }
 
 - (void)showBetaWarning
@@ -74,6 +76,18 @@ static NSString * const WarningDisplayedKey = @"WarningDisplayed";
                         @"OK", nil, nil);
 
         [defaults setObject:@(YES) forKey:WarningDisplayedKey];
+    }
+}
+
+- (void)preinstallAppsIfNeeded
+{
+    NSString *currentVersion = [[NSBundle mainBundle] infoDictionary][@"CFBundleVersion"];
+    NSString *lastVersion = [[NSUserDefaults standardUserDefaults] objectForKey:LastVersionKey];
+
+    if (!lastVersion || [lastVersion compare:currentVersion] == NSOrderedAscending)
+    {
+        [[HIApplicationsManager sharedManager] preinstallApps];
+        [[NSUserDefaults standardUserDefaults] setObject:currentVersion forKey:LastVersionKey];
     }
 }
 

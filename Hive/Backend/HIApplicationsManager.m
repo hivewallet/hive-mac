@@ -44,6 +44,16 @@
     return (count > 0);
 }
 
+- (void)preinstallApps
+{
+    NSArray *allApps = [[NSBundle mainBundle] URLsForResourcesWithExtension:@"hiveapp" subdirectory:@""];
+
+    for (NSURL *applicationURL in allApps)
+    {
+        [self installApplication:applicationURL];
+    }
+}
+
 - (void)installApplication:(NSURL *)applicationURL
 {
     NSDictionary *manifest = [self applicationMetadata:applicationURL];

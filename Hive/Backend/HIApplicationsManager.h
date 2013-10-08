@@ -16,5 +16,6 @@
 - (void)installApplication:(NSURL *)applicationURL;
 - (BOOL)hasApplicationOfId:(NSString *)applicationId;
 - (NSDictionary *)applicationMetadata:(NSURL *)applicationPath;
+- (void)preinstallApps;
 
 @end
