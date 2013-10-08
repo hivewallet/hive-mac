@@ -11,10 +11,9 @@
 #import <Tor/Tor.h>
 #import "BCClient.h"
 #import "HIAppDelegate.h"
-#import "HIApplication.h"
+#import "HIApplicationsManager.h"
 #import "HIContact.h"
 #import "HITransaction.h"
-#import "NPZip.h"
 
 static NSString * const kBCClientBaseURLString = @"https://grabhive.com/";
 
@@ -145,7 +144,7 @@ static NSString * const kBCClientBaseURLString = @"https://grabhive.com/";
             NSArray *allApps = [[NSBundle mainBundle] URLsForResourcesWithExtension:@"hiveapp" subdirectory:@""];
             for (NSURL *appURL in allApps)
             {
-                [[BCClient sharedClient] installApplication:appURL];
+                [[HIApplicationsManager sharedManager] installApplication:appURL];
             }
         }
     });
@@ -205,19 +204,6 @@ static NSString * const kBCClientBaseURLString = @"https://grabhive.com/";
     [[HIBitcoinManager defaultManager] removeObserver:self forKeyPath:@"balance"];
     [[HIBitcoinManager defaultManager] removeObserver:self forKeyPath:@"syncProgress"];
     
-}
-
-- (NSURL *)applicationsDirectory
-{
-    NSURL *appSupportURL = [(HIAppDelegate *) [NSApp delegate] applicationFilesDirectory];
-    NSURL *applicationsURL = [appSupportURL URLByAppendingPathComponent:@"Applications"];
-    
-    [[NSFileManager defaultManager] createDirectoryAtURL:applicationsURL
-                             withIntermediateDirectories:YES
-                                              attributes:nil
-                                                   error:NULL];
-
-    return applicationsURL;
 }
 
 - (NSURL *)bitcoindDirectory
@@ -412,48 +398,4 @@ static NSString * const kBCClientBaseURLString = @"https://grabhive.com/";
     [self.operationQueue addOperation:_exchangeRateOperation];
 }
 
-- (NSDictionary *)applicationMetadata:(NSURL *)applicationPath
-{
-    NPZip *app = [NPZip archiveWithFile:applicationPath.path];
-    return [NSJSONSerialization JSONObjectWithData:[app dataForEntryNamed:@"manifest.json"] options:0 error:NULL];
-}
-
-- (BOOL)hasApplicationOfId:(NSString *)appId
-{
-    NSFetchRequest *req = [NSFetchRequest fetchRequestWithEntityName:HIApplicationEntity];
-    req.predicate = [NSPredicate predicateWithFormat:@"id == %@", appId];
-    NSArray *rsp = [DBM executeFetchRequest:req error:NULL];
-    return (rsp.count > 0);
-}
-
-- (void)installApplication:(NSURL *)appURL
-{
-    NSDictionary *manifest = [self applicationMetadata:appURL];
-    HIApplication *app = nil;
-
-    NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:HIApplicationEntity];
-    request.predicate = [NSPredicate predicateWithFormat:@"id == %@", manifest[@"id"]];
-    NSArray *response = [DBM executeFetchRequest:request error:NULL];
-
-    if (response.count > 0)
-    {
-        app = response[0];
-    }
-    else
-    {
-        app = [NSEntityDescription insertNewObjectForEntityForName:HIApplicationEntity inManagedObjectContext:DBM];
-    }
-    
-    app.id = manifest[@"id"];
-    app.name = manifest[@"name"];
-
-    NSURL *installedAppURL = [[self applicationsDirectory] URLByAppendingPathComponent:manifest[@"id"]];
-    [[NSFileManager defaultManager] removeItemAtURL:installedAppURL error:NULL];
-    [[NSFileManager defaultManager] copyItemAtURL:appURL toURL:installedAppURL error:NULL];
-    app.path = installedAppURL;
-
-    [app refreshIcon];
-
-    [DBM save:NULL];
-}
 @end

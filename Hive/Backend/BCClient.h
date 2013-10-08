@@ -20,8 +20,6 @@
 
 + (BCClient *)sharedClient;
 
-- (NSURL *)applicationsDirectory;
-
 - (void)shutdown;
 - (void)updateNotifications;
 
@@ -38,12 +36,6 @@
 - (NSDictionary *)transactionDefinitionWithHash:(NSString *)hash;
 
 - (BOOL)backupWalletAtURL:(NSURL *)backupURL;
-
 - (BOOL)importWalletFromURL:(NSURL *)walletURL;
 
-- (NSDictionary *)applicationMetadata:(NSURL *)applicationPath;
-
-- (BOOL)hasApplicationOfId:(NSString *)appId;
-
-- (void)installApplication:(NSURL *)appURL;
 @end

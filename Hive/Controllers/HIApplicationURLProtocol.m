@@ -6,11 +6,11 @@
 //  Copyright (c) 2013 Hive Developers. All rights reserved.
 //
 
+#import "HIApplicationsManager.h"
 #import "HIApplicationURLProtocol.h"
-#import "BCClient.h"
 #import "NPZip.h"
 
-static NPZip *f_zip = nil;
+static NPZip *zipFile = nil;
 
 @interface HIApplicationURLProtocol ()
 {
@@ -44,15 +44,21 @@ static NPZip *f_zip = nil;
 + (BOOL)URLisZipped:(NSURL *)request
 {
     if ([[request pathComponents] count] < 2)
+    {
         return NO;
-    
+    }
+
     // We need to check if that "file" isn't the zip file
-    NSURL *appURL = [[[BCClient sharedClient] applicationsDirectory] URLByAppendingPathComponent:[request pathComponents][1]];
+    NSURL *applicationsDirectory = [[HIApplicationsManager sharedManager] applicationsDirectory];
+    NSURL *applicationURL = [applicationsDirectory URLByAppendingPathComponent:request.pathComponents[1]];
+
     BOOL dir = YES;
-    if ([[NSFileManager defaultManager] fileExistsAtPath:appURL.path isDirectory:&dir])
+    if ([[NSFileManager defaultManager] fileExistsAtPath:applicationURL.path isDirectory:&dir])
     {
         if (!dir)
+        {
             return YES;
+        }
     }
     
     return NO;
@@ -64,32 +70,45 @@ static NPZip *f_zip = nil;
     {
         NSMutableURLRequest *req = [self.request mutableCopy];
         [req setValue:@"YES" forHTTPHeaderField:@"HIApplicationURLProtocolHandled"];
-//        NSLog(@"Starting downloading %@", self.request.URL);
         _conn = [[NSURLConnection alloc] initWithRequest:req delegate:self startImmediately:YES];
          
         return;
     }
-    if (!f_zip || [f_zip.name compare:self.request.URL.host] != NSOrderedSame)
+
+    if (!zipFile || ![zipFile.name isEqual:self.request.URL.host])
     {
-        NSURL *appURL = [[[BCClient sharedClient] applicationsDirectory] URLByAppendingPathComponent:[self.request.URL pathComponents][1]];
-        f_zip = [NPZip archiveWithFile:appURL.path];
+        NSURL *applicationsDirectory = [[HIApplicationsManager sharedManager] applicationsDirectory];
+        NSURL *applicationURL = [applicationsDirectory URLByAppendingPathComponent:self.request.URL.pathComponents[1]];
+        zipFile = [NPZip archiveWithFile:applicationURL.path];
     }
-    NSMutableArray *cs = [[self.request.URL pathComponents] mutableCopy];
+
+    NSMutableArray *cs = [self.request.URL.pathComponents mutableCopy];
     [cs removeObjectAtIndex:0];
     [cs removeObjectAtIndex:0];
-    NSData *contentData = [f_zip dataForEntryNamed:[NSString pathWithComponents:cs]];
+
+    NSData *contentData = [zipFile dataForEntryNamed:[NSString pathWithComponents:cs]];
     
     if (!contentData)
     {
-        [[self client] URLProtocol:self didFailWithError:[NSError errorWithDomain:NSURLErrorDomain code:NSURLErrorBadURL userInfo:nil]];
+        [[self client] URLProtocol:self
+                  didFailWithError:[NSError errorWithDomain:NSURLErrorDomain code:NSURLErrorBadURL userInfo:nil]];
     }
     else
     {
-        [[self client] URLProtocol:self didReceiveResponse:[[NSHTTPURLResponse alloc] initWithURL:self.request.URL
-                                                                                       statusCode:200 HTTPVersion:@"1.1"
-                                                                                     headerFields:@{@"Access-Control-Allow-Origin" : @"*",
-                                                                                                    @"Access-Control-Allow-Headers" : @"*"}]
+        NSDictionary *headers = @{
+                                  @"Access-Control-Allow-Origin": @"*",
+                                  @"Access-Control-Allow-Headers" : @"*"
+                                };
+
+        NSHTTPURLResponse *response = [[NSHTTPURLResponse alloc] initWithURL:self.request.URL
+                                                                  statusCode:200
+                                                                 HTTPVersion:@"1.1"
+                                                                headerFields:headers];
+
+        [[self client] URLProtocol:self
+                didReceiveResponse:response
                 cacheStoragePolicy:NSURLCacheStorageAllowedInMemoryOnly];
+
         [[self client] URLProtocol:self didLoadData:contentData];
         [[self client] URLProtocolDidFinishLoading:self];
     }

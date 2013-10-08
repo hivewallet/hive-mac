@@ -7,8 +7,8 @@
 //
 
 #import <WebKit/WebKit.h>
-#import "BCClient.h"
 #import "HIAppDelegate.h"
+#import "HIApplicationsManager.h"
 #import "HIApplicationURLProtocol.h"
 #import "HIMainWindowController.h"
 #import "HISendBitcoinsWindowController.h"
@@ -262,26 +262,40 @@ static NSString * const WarningDisplayedKey = @"WarningDisplayed";
 
 - (BOOL)application:(NSApplication *)sender openFile:(NSString *)filename
 {
-    if ([[filename pathExtension] compare:@"hiveapp"] == NSOrderedSame)
+    if ([filename.pathExtension isEqual:@"hiveapp"])
     {
-        NSDictionary *manifest = [[BCClient sharedClient] applicationMetadata:[NSURL fileURLWithPath:filename]];
+        HIApplicationsManager *manager = [HIApplicationsManager sharedManager];
+        NSURL *applicationURL = [NSURL fileURLWithPath:filename];
+        NSDictionary *manifest = [manager applicationMetadata:applicationURL];
+
         NSAlert *alert = [[NSAlert alloc] init];
-        [alert setMessageText:@"Install Hive App"];
-        [alert addButtonWithTitle:@"Yes"];
-        [alert addButtonWithTitle:@"No"];
-        if ([[BCClient sharedClient] hasApplicationOfId:manifest[@"id"]])
-            [alert setInformativeText:[NSString stringWithFormat:@"You already have \"%@\" application. Would you like to overwrite it?", manifest[@"name"]]];
+        [alert setMessageText:NSLocalizedString(@"Install Hive App", @"Install app popup title")];
+        [alert addButtonWithTitle:NSLocalizedString(@"Yes", nil)];
+        [alert addButtonWithTitle:NSLocalizedString(@"No", nil)];
+
+        NSString *text;
+
+        if ([manager hasApplicationOfId:manifest[@"id"]])
+        {
+            text = NSLocalizedString(@"You already have \"%@\" application. Would you like to overwrite it?",
+                                     @"Install app popup confirmation when app exists");
+        }
         else
-            [alert setInformativeText:[NSString stringWithFormat:@"Would you like to install \"%@\" application?", manifest[@"name"]]];
-        
+        {
+            text = NSLocalizedString(@"Would you like to install \"%@\" application?",
+                                     @"Install app popup confirmation");
+        }
+
+        [alert setInformativeText:[NSString stringWithFormat:text, manifest[@"name"]]];
+
         if ([alert runModal] == NSAlertFirstButtonReturn)
         {
-            [[BCClient sharedClient] installApplication:[NSURL fileURLWithPath:filename]];
+            [manager installApplication:applicationURL];
         }
-        
+
         return YES;
     }
-    
+
     return NO;
 }
 
