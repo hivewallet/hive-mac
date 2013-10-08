@@ -17,14 +17,16 @@ static const CGFloat NameFieldsGap = 10.0;
 static const CGFloat NameFieldsLineSpacing = 10.0;
 static const CGFloat AddressCellHeight = 60.0;
 
+static NSString * const AddressField = @"AddressField";
+static NSString * const NameField = @"NameField";
+static NSString * const DeleteButton = @"DeleteButton";
+static NSString * const ContentsView = @"ContentsView";
+static NSString * const Separator = @"Separator";
+
 @interface HINewContactViewController ()
 {
     BOOL _nameInTwoLines;
-    NSMutableArray *_walletNameFields;
-    NSMutableArray *_walletAddressFields;
-    NSMutableArray *_walletRemovalButtons;
-    NSMutableArray *_fieldContents;
-    NSMutableArray *_separators;
+    NSMutableArray *_placeholders;
 }
 
 @end
@@ -96,11 +98,7 @@ static const CGFloat AddressCellHeight = 60.0;
     self.lastnameField.nextKeyView = self.emailField;
     self.emailField.nextKeyView = self.firstnameField;
 
-    _walletAddressFields = [NSMutableArray new];
-    _walletNameFields = [NSMutableArray new];
-    _walletRemovalButtons = [NSMutableArray new];
-    _fieldContents = [NSMutableArray new];
-    _separators = [NSMutableArray new];
+    _placeholders = [[NSMutableArray alloc] init];
 
     // Now... if we have a contact here, we need to update
     if (_contact)
@@ -149,7 +147,8 @@ static const CGFloat AddressCellHeight = 60.0;
 - (void)addAddressPlaceholderWithAddress:(HIAddress *)address
 {
     NSRect frame;
-    NSUInteger index = _walletNameFields.count;
+    NSUInteger index = _placeholders.count;
+    NSMutableDictionary *parts = [[NSMutableDictionary alloc] init];
 
     frame = self.walletsView.frame;
     frame.size.height += AddressCellHeight;
@@ -159,9 +158,9 @@ static const CGFloat AddressCellHeight = 60.0;
     frame = self.scrollContent.frame;
     frame.size.height += AddressCellHeight;
     self.scrollContent.frame = frame;
-    
+
     // If we already have fields, we need to add separator
-    if (_walletAddressFields.count > 0)
+    if (_placeholders.count > 0)
     {
         NSView *separator = [[NSView alloc] initWithFrame:
                              NSMakeRect(1, AddressCellHeight, self.walletsView.bounds.size.width - 2, 1)];
@@ -171,7 +170,7 @@ static const CGFloat AddressCellHeight = 60.0;
         separator.autoresizingMask = NSViewMinYMargin | NSViewWidthSizable;
 
         [self.walletsView addSubview:separator];
-        [_separators addObject:separator];
+        parts[Separator] = separator;
     }
 
     NSView *fieldContentView = [[NSView alloc] initWithFrame:
@@ -179,21 +178,21 @@ static const CGFloat AddressCellHeight = 60.0;
     fieldContentView.layer.backgroundColor = [[NSColor clearColor] hiNativeColor];
     fieldContentView.autoresizingMask = NSViewMinYMargin | NSViewWidthSizable;
     [self.walletsView addSubview:fieldContentView];
-    [_fieldContents addObject:fieldContentView];
+    parts[ContentsView] = fieldContentView;
 
     HITextField *addressField = [[HITextField alloc] initWithFrame:CGRectMake(10, 30, 100, 21)];
     addressField.autoresizingMask = NSViewMinYMargin;
     [addressField.cell setPlaceholderString:NSLocalizedString(@"Address", @"Address field placeholder")];
     addressField.font = [NSFont fontWithName:@"Helvetica" size:14];
-    [_walletAddressFields addObject:addressField];
     [fieldContentView addSubview:addressField];
+    parts[AddressField] = addressField;
 
     HITextField *nameField = [[HITextField alloc] initWithFrame:NSMakeRect(10, 5, 100, 21)];
     nameField.autoresizingMask = NSViewMinYMargin;
     nameField.font = [NSFont fontWithName:@"Helvetica-Bold" size:14];
     [nameField.cell setPlaceholderString:NSLocalizedString(@"Label", @"Address caption field placeholder")];
-    [_walletNameFields addObject:nameField];
     [fieldContentView addSubview:nameField];
+    parts[NameField] = nameField;
 
     [nameField setValueAndRecalc:(address.caption ? address.caption : @"")];
     [addressField setValueAndRecalc:(address ? address.address : @"")];
@@ -211,7 +210,7 @@ static const CGFloat AddressCellHeight = 60.0;
     [deleteButton setAutoresizingMask:(NSViewMinXMargin | NSViewMinYMargin)];
 
     [self.walletsView addSubview:deleteButton];
-    [_walletRemovalButtons addObject:deleteButton];
+    parts[DeleteButton] = deleteButton;
 
     if (address && ![address.contact canEditAddresses])
     {
@@ -226,11 +225,13 @@ static const CGFloat AddressCellHeight = 60.0;
     }
     else
     {
-        [_walletNameFields[index - 1] setNextKeyView:addressField];
+        [_placeholders[index - 1][NameField] setNextKeyView:addressField];
     }
 
     addressField.nextKeyView = nameField;
     nameField.nextKeyView = self.emailField;
+
+    [_placeholders addObject:parts];
 }
 
 - (void)recalculateNames:(NSNotification *)notification
@@ -294,54 +295,45 @@ static const CGFloat AddressCellHeight = 60.0;
     frame.size.height -= AddressCellHeight;
     self.scrollContent.frame = frame;
 
-    [_walletNameFields[index] removeFromSuperview];
-    [_walletNameFields removeObjectAtIndex:index];
-    [_walletAddressFields[index] removeFromSuperview];
-    [_walletAddressFields removeObjectAtIndex:index];
-    [_walletRemovalButtons[index] removeFromSuperview];
-    [_walletRemovalButtons removeObjectAtIndex:index];
-    [_fieldContents[index] removeFromSuperview];
-    [_fieldContents removeObjectAtIndex:index];
+    [[_placeholders[index] allValues] makeObjectsPerformSelector:@selector(removeFromSuperview)];
+    [_placeholders removeObjectAtIndex:index];
 
     // For all fields below this line we need to "move them up"
-    for (NSUInteger i = index; i < _walletNameFields.count; i++)
+    for (NSUInteger i = index; i < _placeholders.count; i++)
     {
-        frame = [_fieldContents[i] frame];
-        frame.origin.y += AddressCellHeight;
-        [_fieldContents[i] setFrame:frame];
+        NSDictionary *parts = _placeholders[i];
 
-        frame = [_walletRemovalButtons[i] frame];
+        frame = [parts[ContentsView] frame];
         frame.origin.y += AddressCellHeight;
-        [_walletRemovalButtons[i] setFrame:frame];
-        [_walletRemovalButtons[i] setTag:i];
-    }
+        [parts[ContentsView] setFrame:frame];
 
-    if (_separators.count > 0)
-    {
-        [_separators[_separators.count - 1] removeFromSuperview];
-        [_separators removeObjectAtIndex:_separators.count - 1];
+        frame = [parts[DeleteButton] frame];
+        frame.origin.y += AddressCellHeight;
+        [parts[DeleteButton] setFrame:frame];
+
+        [parts[DeleteButton] setTag:i];
     }
 
     if (index == 0)
     {
-        if (_walletAddressFields.count == 0)
+        if (_placeholders.count == 0)
         {
             self.lastnameField.nextKeyView = self.emailField;
         }
         else
         {
-            self.lastnameField.nextKeyView = _walletAddressFields[0];
+            self.lastnameField.nextKeyView = _placeholders[0][AddressField];
         }
     }
     else
     {
-        if (index < _walletAddressFields.count)
+        if (index < _placeholders.count)
         {
-            [_walletNameFields[index - 1] setNextKeyView:_walletAddressFields[index]];
+            [_placeholders[index - 1][NameField] setNextKeyView:_placeholders[index][AddressField]];
         }
         else
         {
-            [_walletNameFields[index - 1] setNextKeyView:self.emailField];
+            [_placeholders[index - 1][NameField] setNextKeyView:self.emailField];
         }
     }
 }
@@ -391,10 +383,10 @@ static const CGFloat AddressCellHeight = 60.0;
         }
 
         // add new addresses
-        for (int i = 0; i < _walletAddressFields.count; i++)
+        for (NSDictionary *parts in _placeholders)
         {
-            NSString *hash = [_walletAddressFields[i] stringValue];
-            NSString *caption = [_walletNameFields[i] stringValue];
+            NSString *hash = [parts[AddressField] stringValue];
+            NSString *caption = [parts[NameField] stringValue];
 
             if (hash.length == 0)
             {
