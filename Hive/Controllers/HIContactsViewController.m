@@ -44,6 +44,11 @@
                               context:NULL];
 }
 
+- (void)viewWillAppear
+{
+    [self.arrayController rearrangeObjects];
+}
+
 - (void)dealloc
 {
     [self.arrayController removeObserver:self forKeyPath:@"arrangedObjects.@count"];
