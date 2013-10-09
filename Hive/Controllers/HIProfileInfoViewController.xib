@@ -2,9 +2,9 @@
 <archive type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="8.00">
 	<data>
 		<int key="IBDocument.SystemTarget">1070</int>
-		<string key="IBDocument.SystemVersion">12E55</string>
+		<string key="IBDocument.SystemVersion">12F45</string>
 		<string key="IBDocument.InterfaceBuilderVersion">3084</string>
-		<string key="IBDocument.AppKitVersion">1187.39</string>
+		<string key="IBDocument.AppKitVersion">1187.40</string>
 		<string key="IBDocument.HIToolboxVersion">626.00</string>
 		<object class="NSMutableDictionary" key="IBDocument.PluginVersions">
 			<string key="NS.key.0">com.apple.InterfaceBuilder.CocoaPlugin</string>
@@ -88,6 +88,7 @@
 						<reference key="NSSuperview" ref="119154223"/>
 						<reference key="NSWindow"/>
 						<reference key="NSNextKeyView" ref="825180706"/>
+						<bool key="NSViewIsLayerTreeHost">YES</bool>
 						<object class="NSShadow" key="NSViewShadow">
 							<double key="NSShadowVert">-1</double>
 							<double key="NSShadowBlurRadius">1</double>
@@ -185,7 +186,7 @@
 				<string key="NSClassName">NSView</string>
 			</object>
 			<object class="NSCustomView" id="1011306805">
-				<reference key="NSNextResponder"/>
+				<nil key="NSNextResponder"/>
 				<int key="NSvFlags">266</int>
 				<array class="NSMutableArray" key="NSSubviews">
 					<object class="NSCustomView" id="453676551">
@@ -198,7 +199,6 @@
 								<array class="NSMutableArray" key="NSSubviews"/>
 								<string key="NSFrame">{{17, 115}, {213, 1}}</string>
 								<reference key="NSSuperview" ref="453676551"/>
-								<reference key="NSWindow"/>
 								<reference key="NSNextKeyView" ref="550053396"/>
 								<string key="NSReuseIdentifierKey">_NS:9</string>
 								<string key="NSClassName">HIBox</string>
@@ -212,7 +212,6 @@
 										<int key="NSvFlags">268</int>
 										<string key="NSFrame">{{28, 55}, {234, 17}}</string>
 										<reference key="NSSuperview" ref="550053396"/>
-										<reference key="NSWindow"/>
 										<reference key="NSNextKeyView" ref="625571494"/>
 										<string key="NSReuseIdentifierKey">_NS:1535</string>
 										<bool key="NSEnabled">YES</bool>
@@ -244,8 +243,6 @@
 												<int key="NSvFlags">268</int>
 												<string key="NSFrame">{{58, 10}, {41, 22}}</string>
 												<reference key="NSSuperview" ref="625571494"/>
-												<reference key="NSWindow"/>
-												<reference key="NSNextKeyView"/>
 												<string key="NSReuseIdentifierKey">_NS:9</string>
 												<bool key="NSEnabled">YES</bool>
 												<object class="NSTextFieldCell" key="NSCell" id="258748903">
@@ -278,7 +275,6 @@
 												<int key="NSvFlags">268</int>
 												<string key="NSFrame">{{11, 13}, {42, 17}}</string>
 												<reference key="NSSuperview" ref="625571494"/>
-												<reference key="NSWindow"/>
 												<reference key="NSNextKeyView" ref="1028551388"/>
 												<string key="NSReuseIdentifierKey">_NS:1535</string>
 												<bool key="NSEnabled">YES</bool>
@@ -300,7 +296,6 @@
 										</array>
 										<string key="NSFrame">{{20, 6}, {207, 42}}</string>
 										<reference key="NSSuperview" ref="550053396"/>
-										<reference key="NSWindow"/>
 										<reference key="NSNextKeyView" ref="9918327"/>
 										<bool key="NSViewIsLayerTreeHost">YES</bool>
 										<string key="NSReuseIdentifierKey">_NS:9</string>
@@ -309,7 +304,6 @@
 								</array>
 								<string key="NSFrame">{{0, 12}, {251, 87}}</string>
 								<reference key="NSSuperview" ref="453676551"/>
-								<reference key="NSWindow"/>
 								<reference key="NSNextKeyView" ref="918974303"/>
 								<string key="NSReuseIdentifierKey">_NS:9</string>
 								<string key="NSClassName">NSView</string>
@@ -319,7 +313,6 @@
 								<int key="NSvFlags">268</int>
 								<string key="NSFrame">{{25, 124}, {234, 17}}</string>
 								<reference key="NSSuperview" ref="453676551"/>
-								<reference key="NSWindow"/>
 								<reference key="NSNextKeyView" ref="1027459864"/>
 								<string key="NSReuseIdentifierKey">_NS:1535</string>
 								<bool key="NSEnabled">YES</bool>
@@ -341,15 +334,12 @@
 						</array>
 						<string key="NSFrameSize">{251, 161}</string>
 						<reference key="NSSuperview" ref="1011306805"/>
-						<reference key="NSWindow"/>
 						<reference key="NSNextKeyView" ref="501634911"/>
 						<string key="NSReuseIdentifierKey">_NS:9</string>
 						<string key="NSClassName">NSView</string>
 					</object>
 				</array>
 				<string key="NSFrameSize">{251, 161}</string>
-				<reference key="NSSuperview"/>
-				<reference key="NSWindow"/>
 				<reference key="NSNextKeyView" ref="453676551"/>
 				<string key="NSReuseIdentifierKey">_NS:9</string>
 				<string key="NSClassName">HIFlippedView</string>

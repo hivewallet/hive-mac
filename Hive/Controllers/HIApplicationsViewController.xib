@@ -2,9 +2,9 @@
 <archive type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="8.00">
 	<data>
 		<int key="IBDocument.SystemTarget">1070</int>
-		<string key="IBDocument.SystemVersion">12E55</string>
+		<string key="IBDocument.SystemVersion">12F45</string>
 		<string key="IBDocument.InterfaceBuilderVersion">3084</string>
-		<string key="IBDocument.AppKitVersion">1187.39</string>
+		<string key="IBDocument.AppKitVersion">1187.40</string>
 		<string key="IBDocument.HIToolboxVersion">626.00</string>
 		<object class="NSMutableDictionary" key="IBDocument.PluginVersions">
 			<string key="NS.key.0">com.apple.InterfaceBuilder.CocoaPlugin</string>
@@ -55,7 +55,7 @@
 				<bool key="NSAutomaticallyRearrangesObjects">YES</bool>
 			</object>
 			<object class="NSCustomView" id="1005">
-				<reference key="NSNextResponder"/>
+				<nil key="NSNextResponder"/>
 				<int key="NSvFlags">268</int>
 				<array class="NSMutableArray" key="NSSubviews">
 					<object class="NSScrollView" id="1050815170">
@@ -71,7 +71,6 @@
 										<int key="NSvFlags">274</int>
 										<string key="NSFrameSize">{276, 308}</string>
 										<reference key="NSSuperview" ref="512423703"/>
-										<reference key="NSWindow"/>
 										<reference key="NSNextKeyView" ref="1012334701"/>
 										<string key="NSReuseIdentifierKey">_NS:80</string>
 										<string key="NSMinGridSize">{0, 0}</string>
@@ -96,7 +95,6 @@
 								</array>
 								<string key="NSFrameSize">{276, 308}</string>
 								<reference key="NSSuperview" ref="1050815170"/>
-								<reference key="NSWindow"/>
 								<reference key="NSNextKeyView" ref="715872900"/>
 								<string key="NSReuseIdentifierKey">_NS:78</string>
 								<reference key="NSDocView" ref="715872900"/>
@@ -113,7 +111,6 @@
 								<int key="NSvFlags">-2147483392</int>
 								<string key="NSFrame">{{234, 1}, {15, 143}}</string>
 								<reference key="NSSuperview" ref="1050815170"/>
-								<reference key="NSWindow"/>
 								<reference key="NSNextKeyView" ref="169663175"/>
 								<string key="NSReuseIdentifierKey">_NS:82</string>
 								<bool key="NSAllowsLogicalLayoutDirection">NO</bool>
@@ -127,8 +124,6 @@
 								<int key="NSvFlags">-2147483392</int>
 								<string key="NSFrame">{{1, 144}, {233, 15}}</string>
 								<reference key="NSSuperview" ref="1050815170"/>
-								<reference key="NSWindow"/>
-								<reference key="NSNextKeyView"/>
 								<string key="NSReuseIdentifierKey">_NS:91</string>
 								<bool key="NSAllowsLogicalLayoutDirection">NO</bool>
 								<int key="NSsFlags">1</int>
@@ -139,7 +134,6 @@
 						</array>
 						<string key="NSFrameSize">{276, 308}</string>
 						<reference key="NSSuperview" ref="1005"/>
-						<reference key="NSWindow"/>
 						<reference key="NSNextKeyView" ref="512423703"/>
 						<string key="NSReuseIdentifierKey">_NS:76</string>
 						<int key="NSsFlags">133680</int>
@@ -152,8 +146,6 @@
 					</object>
 				</array>
 				<string key="NSFrameSize">{276, 308}</string>
-				<reference key="NSSuperview"/>
-				<reference key="NSWindow"/>
 				<reference key="NSNextKeyView" ref="1050815170"/>
 				<bool key="NSViewIsLayerTreeHost">YES</bool>
 				<string key="NSClassName">NSView</string>
@@ -172,7 +164,6 @@
 						<string key="NSFrame">{{-3, 0}, {84, 34}}</string>
 						<reference key="NSSuperview" ref="510364153"/>
 						<reference key="NSWindow"/>
-						<reference key="NSNextKeyView"/>
 						<string key="NSReuseIdentifierKey">_NS:9</string>
 						<string key="NSAntiCompressionPriority">{250, 750}</string>
 						<bool key="NSEnabled">YES</bool>
@@ -199,7 +190,6 @@
 							</object>
 						</object>
 						<bool key="NSAllowsLogicalLayoutDirection">NO</bool>
-						<bool key="NSControlAutosetMaxLayoutWidth">YES</bool>
 					</object>
 					<object class="NSImageView" id="451379020">
 						<reference key="NSNextResponder" ref="510364153"/>
@@ -534,27 +524,6 @@
 					<object class="IBClassDescriptionSource" key="sourceIdentifier">
 						<string key="majorKey">IBProjectSource</string>
 						<string key="minorKey">./Classes/HIViewController.h</string>
-					</object>
-				</object>
-				<object class="IBPartialClassDescription">
-					<string key="className">NSCollectionViewItem</string>
-					<dictionary class="NSMutableDictionary" key="outlets">
-						<string key="imageView">NSImageView</string>
-						<string key="textField">NSTextField</string>
-					</dictionary>
-					<dictionary class="NSMutableDictionary" key="toOneOutletInfosByName">
-						<object class="IBToOneOutletInfo" key="imageView">
-							<string key="name">imageView</string>
-							<string key="candidateClassName">NSImageView</string>
-						</object>
-						<object class="IBToOneOutletInfo" key="textField">
-							<string key="name">textField</string>
-							<string key="candidateClassName">NSTextField</string>
-						</object>
-					</dictionary>
-					<object class="IBClassDescriptionSource" key="sourceIdentifier">
-						<string key="majorKey">IBProjectSource</string>
-						<string key="minorKey">./Classes/NSCollectionViewItem.h</string>
 					</object>
 				</object>
 			</array>
