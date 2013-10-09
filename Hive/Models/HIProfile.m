@@ -95,8 +95,26 @@
 
 - (NSImage *)avatarImage
 {
-    return [NSImage imageNamed:@"avatar-empty"];
+    if (self.avatar)
+    {
+        return [[NSImage alloc] initWithData:self.avatar];
+    }
+    else
+    {
+        return [NSImage imageNamed:@"avatar-empty"];
+    }
 }
+
+- (NSData *)avatar
+{
+    return [self profileData][@"avatar"];
+}
+
+- (void)setAvatar:(NSData *)avatar
+{
+    [self updateField:@"avatar" withValue:avatar];
+}
+
 
 - (BOOL)canBeRemoved
 {
