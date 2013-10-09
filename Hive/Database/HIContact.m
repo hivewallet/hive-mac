@@ -22,6 +22,16 @@ NSString * const HIContactEntity = @"HIContact";
 @dynamic transactions;
 @dynamic addresses;
 
++ (NSSet *)keyPathsForValuesAffectingName
+{
+    return [NSSet setWithObjects:@"firstname", @"lastname", nil];
+}
+
++ (NSSet *)keyPathsForValuesAffectingAvatarImage
+{
+    return [NSSet setWithObject:@"avatar"];
+}
+
 - (NSString *)name
 {
     return [NSString stringWithFormat:@"%@ %@",
