@@ -20,7 +20,7 @@
     return [[NSUserDefaults standardUserDefaults] objectForKey:@"Profile"];
 }
 
-- (void)updateField:(NSString *)key withValue:(NSString *)value
+- (void)updateField:(NSString *)key withValue:(id)value
 {
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     NSMutableDictionary *data = [[defaults objectForKey:@"Profile"] mutableCopy];
