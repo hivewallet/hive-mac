@@ -149,8 +149,4 @@ static NPZip *zipFile = nil;
     [[self client] URLProtocolDidFinishLoading:self];    
 }
 
-//- (void)connectionDidFinishDownloading:(NSURLConnection *)connection destinationURL:(NSURL *)destinationURL
-//{
-//    [self connectionDidFinishLoading:connection];
-//}
 @end

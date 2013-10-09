@@ -8,6 +8,6 @@
 
 #import <Foundation/Foundation.h>
 
-@interface HIApplicationURLProtocol : NSURLProtocol <NSURLConnectionDelegate, NSURLConnectionDownloadDelegate, NSURLConnectionDataDelegate>
+@interface HIApplicationURLProtocol : NSURLProtocol <NSURLConnectionDelegate, NSURLConnectionDataDelegate>
 
 @end
