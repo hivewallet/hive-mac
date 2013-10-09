@@ -39,14 +39,10 @@
 
         if ([contact isKindOfClass:[HIContact class]])
         {
-            self.title = _contact.name;
-
             _panelControllers = @[_infoPanel, [[HITransactionsViewController alloc] initWithContact:_contact]];
         }
         else
         {
-            self.title = NSLocalizedString(@"Profile", @"Profile view title string");
-
             [[BCClient sharedClient] addObserver:self
                                       forKeyPath:@"balance"
                                          options:NSKeyValueObservingOptionInitial
@@ -128,6 +124,15 @@
 
 - (void)refreshData
 {
+    if ([_contact isKindOfClass:[HIContact class]])
+    {
+        self.title = _contact.name;
+    }
+    else
+    {
+        self.title = NSLocalizedString(@"Profile", @"Profile view title string");
+    }
+
     self.nameLabel.stringValue = _contact.name;
     self.photoView.image = _contact.avatarImage;
 

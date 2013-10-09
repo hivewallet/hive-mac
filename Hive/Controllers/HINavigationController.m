@@ -157,6 +157,8 @@ static CGFloat ViewSlideDuration = 0.3;
             _animating = NO;
         }];
     }
+
+    [controller addObserver:self forKeyPath:@"title" options:0 context:NULL];
 }
 
 - (void)popToViewController:(HIViewController *)targetController animated:(BOOL)animated {
@@ -174,8 +176,13 @@ static CGFloat ViewSlideDuration = 0.3;
     [_titleView popToTitleAtPosition:index];
     [targetController viewWillAppear];
     [self.topViewController viewWillDisappear];
-    NSRange afterCurrent = NSMakeRange(index + 1, viewControllers.count - index - 1);
-    [viewControllers removeObjectsInRange:afterCurrent];
+
+    index++;
+    while (index < viewControllers.count)
+    {
+        [viewControllers[index] removeObserver:self forKeyPath:@"title"];
+        [viewControllers removeObjectAtIndex:index];
+    }
 
     targetController.view.frame = self.view.bounds;
     targetController.view.autoresizingMask = NSViewWidthSizable | NSViewHeightSizable;
@@ -264,6 +271,19 @@ static CGFloat ViewSlideDuration = 0.3;
 
 - (void)viewWasSelectedFromTabBarAgain {
     [self popToRootViewControllerAnimated:YES];
+}
+
+- (void)observeValueForKeyPath:(NSString *)keyPath
+                      ofObject:(id)object
+                        change:(NSDictionary *)change
+                       context:(void *)context
+{
+    NSUInteger index = [self.viewControllers indexOfObject:object];
+
+    if (index != NSNotFound)
+    {
+        [_titleView updateTitleAtPosition:index toValue:[object title]];
+    }
 }
 
 @end

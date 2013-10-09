@@ -115,6 +115,10 @@ static NSString * const TitleKey = @"title";
             [[btn animator] setFrame:f];
         } completionHandler:^{
             [_stack addObject:@{TitleKey: title, ButtonKey: btn}];
+
+            // just in case the title was changed in the meantime
+            [self resizeButtonAtPosition:(_stack.count - 1)];
+            [self resizeButtonAtPosition:(_stack.count - 2)];
         }];
     }
 }
@@ -226,6 +230,10 @@ static NSString * const TitleKey = @"title";
             f.origin.x = SidebarButtonWidth + beforePreviousButton.frame.size.width + ArrowViewLeftMargin;
             [_arrowView setFrame:f];
         }
+
+        // just in case the title was changed in the meantime
+        [self resizeButtonAtPosition:position];
+        [self resizeButtonAtPosition:(position - 1)];
     }];
 }
 
@@ -256,6 +264,60 @@ static NSString * const TitleKey = @"title";
     {
         [self.delegate requestedPop:self];
     }
+}
+
+- (void)resizeButtonAtPosition:(NSInteger)position
+{
+    if (position < 0 || position >= _stack.count)
+    {
+        return;
+    }
+
+    NSButton *button = _stack[position][ButtonKey];
+    NSString *title = _stack[position][TitleKey];
+
+    NSRect frame;
+    NSSize buttonSize;
+
+    if (position == _stack.count - 2)
+    {
+        buttonSize = [self setStyleForButton:button title:title small:YES animated:NO];
+
+        frame = button.frame;
+        frame.size.width = buttonSize.width;
+        button.frame = frame;
+    }
+    else if (position == _stack.count - 1)
+    {
+        buttonSize = [self setStyleForButton:button title:title small:NO animated:NO];
+
+        frame = button.frame;
+        frame.size.width = buttonSize.width;
+
+        if (position == 0)
+        {
+            frame.origin.x = (self.bounds.size.width - frame.size.width) / 2.0;
+        }
+        else
+        {
+            frame.origin.x = (self.bounds.size.width - frame.size.width + SidebarButtonWidth) / 2.0;
+        }
+
+        button.frame = frame;
+    }
+}
+
+- (void)updateTitleAtPosition:(NSInteger)position toValue:(NSString *)newTitle
+{
+    if (position < 0 || position >= _stack.count)
+    {
+        return;
+    }
+
+    NSButton *button = _stack[position][ButtonKey];
+    _stack[position] = @{TitleKey: newTitle, ButtonKey: button};
+
+    [self resizeButtonAtPosition:position];
 }
 
 @end

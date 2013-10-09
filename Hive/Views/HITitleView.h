@@ -22,5 +22,6 @@
 
 - (void)pushTitle:(NSString *)title;
 - (void)popToTitleAtPosition:(NSInteger)position;
+- (void)updateTitleAtPosition:(NSInteger)position toValue:(NSString *)newTitle;
 
 @end
