@@ -90,6 +90,7 @@
 		5884A03E17F57AE9004A31FA /* dsa_pub.pem in Resources */ = {isa = PBXBuildFile; fileRef = 5884A03D17F57AE9004A31FA /* dsa_pub.pem */; };
 		588EFB2E17D8D2970085F6E6 /* HIProfileTabView.m in Sources */ = {isa = PBXBuildFile; fileRef = 588EFB2D17D8D2970085F6E6 /* HIProfileTabView.m */; };
 		589064AE1805742C0082BE5C /* seansoutpost.hiveapp in Resources */ = {isa = PBXBuildFile; fileRef = 589064AD1805742C0082BE5C /* seansoutpost.hiveapp */; };
+		589064B7180596B80082BE5C /* HIEditableImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 589064B6180596B80082BE5C /* HIEditableImageView.m */; };
 		58A03B0D17D9DC4100ADD5E5 /* HIButtonWithSpinner.m in Sources */ = {isa = PBXBuildFile; fileRef = 58A03B0C17D9DC4100ADD5E5 /* HIButtonWithSpinner.m */; };
 		58CFD95317CF914000A035FA /* HIContactCellView.m in Sources */ = {isa = PBXBuildFile; fileRef = 58CFD95017CF914000A035FA /* HIContactCellView.m */; };
 		58CFD95417CF914000A035FA /* HISidebarView.m in Sources */ = {isa = PBXBuildFile; fileRef = 58CFD95217CF914000A035FA /* HISidebarView.m */; };
@@ -301,6 +302,8 @@
 		588EFB2C17D8D2970085F6E6 /* HIProfileTabView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HIProfileTabView.h; sourceTree = "<group>"; };
 		588EFB2D17D8D2970085F6E6 /* HIProfileTabView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HIProfileTabView.m; sourceTree = "<group>"; };
 		589064AD1805742C0082BE5C /* seansoutpost.hiveapp */ = {isa = PBXFileReference; lastKnownFileType = file; path = seansoutpost.hiveapp; sourceTree = "<group>"; };
+		589064B5180596B80082BE5C /* HIEditableImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HIEditableImageView.h; sourceTree = "<group>"; };
+		589064B6180596B80082BE5C /* HIEditableImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HIEditableImageView.m; sourceTree = "<group>"; };
 		58A03B0B17D9DC4100ADD5E5 /* HIButtonWithSpinner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HIButtonWithSpinner.h; sourceTree = "<group>"; };
 		58A03B0C17D9DC4100ADD5E5 /* HIButtonWithSpinner.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HIButtonWithSpinner.m; sourceTree = "<group>"; };
 		58CFD94F17CF914000A035FA /* HIContactCellView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HIContactCellView.h; sourceTree = "<group>"; };
@@ -561,6 +564,8 @@
 				D99C9A5417E8F59200899CAB /* HIDeleteButtonCell.m */,
 				D9716B6B17D88F8800888F4E /* HIDoneButtonCell.h */,
 				D9716B6C17D88F8800888F4E /* HIDoneButtonCell.m */,
+				589064B5180596B80082BE5C /* HIEditableImageView.h */,
+				589064B6180596B80082BE5C /* HIEditableImageView.m */,
 				D958A8B617E8547A00CED98C /* HIFlippedView.h */,
 				D958A8B717E8547A00CED98C /* HIFlippedView.m */,
 				D9F0B9F617EC654C0050A0A2 /* HIImageCell.h */,
@@ -1010,6 +1015,7 @@
 				58605A6818041DFC00FD9C2A /* NPZipFileHeader.m in Sources */,
 				58605A6918041DFC00FD9C2A /* NPZipHeader.m in Sources */,
 				5860D3FF180455B900BD852C /* HIApplicationsManager.m in Sources */,
+				589064B7180596B80082BE5C /* HIEditableImageView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
