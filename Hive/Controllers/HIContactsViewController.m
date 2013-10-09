@@ -15,11 +15,6 @@
 #import "HINewContactViewController.h"
 #import "NSColor+Hive.h"
 
-static NSString *DetailsCell = @"Details";
-
-@interface HIContactsViewController () 
-
-@end
 
 @implementation HIContactsViewController
 
@@ -126,22 +121,5 @@ static NSString *DetailsCell = @"Details";
         [self.tableView deselectRow:row];
     });
 }
-
-- (NSView *)tableView:(NSTableView *)tableView viewForTableColumn:(NSTableColumn *)tableColumn row:(NSInteger)row {
-
-    if ([tableColumn.identifier isEqual:DetailsCell])
-    {
-        HIContactCellView *cell = [tableView makeViewWithIdentifier:DetailsCell owner:self];
-        HIContact * c = _arrayController.arrangedObjects[row];
-
-        cell.imageView.image = c.avatarImage;
-        cell.textField.stringValue = c.name;
-
-        return cell;
-    }
-
-    return nil;
-}
-
 
 @end
