@@ -29,5 +29,6 @@
 - (IBAction)doneClicked:(NSButton *)sender;
 - (IBAction)removeContactClicked:(NSButton *)sender;
 - (IBAction)addAddressClicked:(NSButton *)sender;
+- (IBAction)avatarChanged:(id)sender;
 
 @end

@@ -26,6 +26,7 @@ static NSString * const Separator = @"Separator";
 @interface HINewContactViewController ()
 {
     BOOL _nameInTwoLines;
+    BOOL _avatarChanged;
     NSMutableArray *_placeholders;
 }
 
@@ -116,6 +117,11 @@ static NSString * const Separator = @"Separator";
         if (_contact.email)
         {
             [self.emailField setValueAndRecalc:_contact.email];
+        }
+
+        if (_contact.avatarImage)
+        {
+            self.avatarView.image = _contact.avatarImage;
         }
 
         for (HIAddress *address in _contact.addresses)
@@ -338,6 +344,11 @@ static NSString * const Separator = @"Separator";
     }
 }
 
+- (void)avatarChanged:(id)sender
+{
+    _avatarChanged = YES;
+}
+
 - (IBAction)doneClicked:(NSButton *)sender
 {
     NSString *firstName = self.firstnameField.enteredValue;
@@ -373,6 +384,11 @@ static NSString * const Separator = @"Separator";
     _contact.firstname = (firstName.length > 0) ? firstName : nil;
     _contact.lastname = (lastName.length > 0) ? lastName : nil;
     _contact.email = (email.length > 0) ? email : nil;
+
+    if (_avatarChanged)
+    {
+        _contact.avatar = [self.avatarView.image TIFFRepresentation];
+    }
 
     if ([_contact canEditAddresses])
     {
