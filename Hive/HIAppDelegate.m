@@ -337,6 +337,11 @@ static NSString * const WarningDisplayedKey = @"WarningDisplayed";
     [[self sendBitcoinsWindow] showWindow:self];
 }
 
+- (IBAction)openCoinMapSite:(id)sender
+{
+    [[NSWorkspace sharedWorkspace] openURL:[NSURL URLWithString:@"http://coinmap.org"]];
+}
+
 - (void)openPreferencesOnWalletConf:(BOOL)conf
 {
 //    if (!_preferencesWindowController)

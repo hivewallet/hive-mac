@@ -21,6 +21,7 @@
 - (IBAction)openPreferences:(id)sender;
 - (void)openPreferencesOnWalletConf:(BOOL)conf;
 - (IBAction)openSendBitcoinsWindow:(id)sender;
+- (IBAction)openCoinMapSite:(id)sender;
 - (HISendBitcoinsWindowController *)sendBitcoinsWindowForContact:(HIContact *)contact;
 - (HISendBitcoinsWindowController *)sendBitcoinsWindow;
 - (NSURL *)applicationFilesDirectory;
