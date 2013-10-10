@@ -342,7 +342,12 @@ NSString * const HISendBitcoinsWindowSuccessKey = @"success";
                                 popupFrame.size.height);
 
         [popup setFrame:popupFrame display:YES];
-        [self.window addChildWindow:popup ordered:NSWindowAbove];
+
+        // make the results list window a child of the send window
+        // but delay the call until the window fully initializes
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [self.window addChildWindow:popup ordered:NSWindowAbove];
+        });
     }
 
     self.dropdownButton.state = NSOnState;
