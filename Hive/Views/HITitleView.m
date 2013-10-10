@@ -118,6 +118,8 @@ static NSString * const TitleKey = @"title";
         } completionHandler:^{
             [_stack addObject:@{TitleKey: title, ButtonKey: btn}];
 
+            [prevToLast setHidden:YES];
+
             // just in case the title was changed in the meantime
             [self resizeButtonAtPosition:(_stack.count - 1)];
             [self resizeButtonAtPosition:(_stack.count - 2)];
@@ -211,6 +213,7 @@ static NSString * const TitleKey = @"title";
         }
         else
         {
+            [beforePreviousButton setHidden:NO];
             [beforePreviousButton.animator setAlphaValue:SmallLabelAlpha];
             [targetButton.animator setAlphaValue:1.0];
         }
