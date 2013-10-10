@@ -32,7 +32,9 @@ static NSString * const TitleKey = @"title";
 - (id)initWithFrame:(NSRect)frame
 {
     self = [super initWithFrame:frame];
-    if (self) {
+
+    if (self)
+    {
         _stack = [[NSMutableArray alloc] init];
     }
     
@@ -90,11 +92,11 @@ static NSString * const TitleKey = @"title";
         [self addSubview:_arrowView];
 
         [NSAnimationContext runAnimationGroup:^(NSAnimationContext *context) {
-            
             if (prevToLast)
             {
                 [[prevToLast animator] setAlphaValue:0];
             }
+
             NSSize leftLabelSize = [self setStyleForButton:lastButton title:lastTitle small:YES animated:YES];
 
             NSRect f = lastButton.frame;
@@ -168,9 +170,8 @@ static NSString * const TitleKey = @"title";
 
     NSButton *targetButton = _stack[position][ButtonKey];
     NSButton *previousButton = _stack[last][ButtonKey];
-    NSButton *beforePreviousButton = nil;
-    if (position > 0)
-        beforePreviousButton = _stack[position-1][ButtonKey];
+    NSButton *beforePreviousButton = (position > 0) ? _stack[position-1][ButtonKey] : nil;
+
     NSString *targetButtonTitle = _stack[position][TitleKey];
 
     for (NSInteger i = next; i < last; i++)
@@ -186,6 +187,7 @@ static NSString * const TitleKey = @"title";
         NSRect f = targetButton.frame;
         f.size.width = s.width;
         f.origin.y += 1;
+
         if (position == 0)
         {
             f.origin.x = (self.bounds.size.width - f.size.width) / 2.0;
@@ -194,6 +196,7 @@ static NSString * const TitleKey = @"title";
         {
             f.origin.x = (self.bounds.size.width - f.size.width + SidebarButtonWidth) / 2.0;
         }
+
         [targetButton.animator setFrame:f];
 
         targetButton.autoresizingMask = NSViewMinXMargin | NSViewMaxXMargin | NSViewMinYMargin | NSViewMaxYMargin;
@@ -211,6 +214,7 @@ static NSString * const TitleKey = @"title";
             [beforePreviousButton.animator setAlphaValue:SmallLabelAlpha];
             [targetButton.animator setAlphaValue:1.0];
         }
+
         f = previousButton.frame;
         f.origin.x = self.bounds.size.width;
         [previousButton.animator setFrame:f];
@@ -240,7 +244,9 @@ static NSString * const TitleKey = @"title";
 - (NSView *)arrowView
 {
     if (_arrowView)
+    {
         return _arrowView;
+    }
     
     NSRect frame = NSMakeRect(0, ArrowViewPadding,
                               ArrowViewWidth, self.bounds.size.height - 2 * ArrowViewPadding);
