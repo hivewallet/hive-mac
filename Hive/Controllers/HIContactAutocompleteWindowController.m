@@ -29,6 +29,11 @@ static const CGFloat MaxAutocompleteHeight = 300.0;
     [self.arrayController addObserver:self forKeyPath:@"arrangedObjects" options:0 context:NULL];
 }
 
+- (void)dealloc
+{
+    [self.arrayController removeObserver:self forKeyPath:@"arrangedObjects"];
+}
+
 
 #pragma mark - Filtering
 
