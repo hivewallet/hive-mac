@@ -14,11 +14,25 @@
 static const CGFloat MaxAutocompleteHeight = 300.0;
 
 
+@interface HIContactAutocompleteWindowController ()
+{
+    NSMutableDictionary *_trackingAreas;
+}
+
+@end
+
 @implementation HIContactAutocompleteWindowController
 
 - (id)init
 {
-    return [super initWithWindowNibName:@"HIContactAutocompleteWindowController"];
+    self = [super initWithWindowNibName:@"HIContactAutocompleteWindowController"];
+
+    if (self)
+    {
+        _trackingAreas = [[NSMutableDictionary alloc] init];
+    }
+
+    return self;
 }
 
 - (void)windowDidLoad
@@ -94,14 +108,54 @@ static const CGFloat MaxAutocompleteHeight = 300.0;
     return cell;
 }
 
-- (BOOL)tableView:(NSTableView *)tableView shouldSelectRow:(NSInteger)row
+- (IBAction)tableRowClicked:(id)sender
 {
-    // sent when user selects a row using a mouse click
+    NSInteger row = self.tableView.clickedRow;
+    [self.tableView selectRowIndexes:[NSIndexSet indexSetWithIndex:row] byExtendingSelection:NO];
+
     dispatch_async(dispatch_get_main_queue(), ^{
         [self confirmSelection];
     });
+}
 
-    return YES;
+- (void)tableView:(NSTableView *)tableView didAddRowView:(NSTableRowView *)rowView forRow:(NSInteger)row
+{
+    NSTrackingRectTag tag = [rowView addTrackingRect:rowView.bounds
+                                               owner:self
+                                            userData:(__bridge void *)(@(row))
+                                        assumeInside:NO];
+    _trackingAreas[@(row)] = @(tag);
+}
+
+- (void)tableView:(NSTableView *)tableView didRemoveRowView:(NSTableRowView *)rowView forRow:(NSInteger)row
+{
+    NSNumber *tag = _trackingAreas[@(row)];
+
+    if (tag)
+    {
+        [rowView removeTrackingRect:((NSTrackingRectTag) [tag integerValue])];
+        [_trackingAreas removeObjectForKey:@(row)];
+    }
+}
+
+- (void)mouseEntered:(NSEvent *)event
+{
+    NSNumber *row = (NSNumber *) event.userData;
+
+    if (row)
+    {
+        [self.tableView selectRowIndexes:[NSIndexSet indexSetWithIndex:[row integerValue]] byExtendingSelection:NO];
+    }
+}
+
+- (void)mouseExited:(NSEvent *)event
+{
+    NSNumber *row = (NSNumber *) event.userData;
+
+    if (row)
+    {
+        [self.tableView deselectRow:[row integerValue]];
+    }
 }
 
 

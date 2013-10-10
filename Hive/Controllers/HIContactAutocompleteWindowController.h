@@ -34,4 +34,6 @@
 - (void)moveSelectionDown;
 - (void)confirmSelection;
 
+- (IBAction)tableRowClicked:(id)sender;
+
 @end
