@@ -94,6 +94,16 @@ static const CGFloat MaxAutocompleteHeight = 300.0;
     return cell;
 }
 
+- (BOOL)tableView:(NSTableView *)tableView shouldSelectRow:(NSInteger)row
+{
+    // sent when user selects a row using a mouse click
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [self confirmSelection];
+    });
+
+    return YES;
+}
+
 
 #pragma mark - Reacting to keyboard events
 
