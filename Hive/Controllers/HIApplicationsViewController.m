@@ -8,7 +8,6 @@
 
 #import "HIApplicationsViewController.h"
 #import "HIContactRowView.h"
-#import "HIContactCellView.h"
 #import "HIApplication.h"
 #import "HIApplicationRuntimeViewController.h"
 #import "HINavigationController.h"

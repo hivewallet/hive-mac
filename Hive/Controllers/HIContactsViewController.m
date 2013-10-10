@@ -7,7 +7,6 @@
 //
 
 #import "HIContact.h"
-#import "HIContactCellView.h"
 #import "HIContactsViewController.h"
 #import "HINavigationController.h"
 #import "HIProfileViewController.h"
@@ -115,7 +114,7 @@
         return;
     }
 
-    HIContactCellView *cell = [self.tableView viewAtColumn:0 row:row makeIfNecessary:NO];
+    NSTableCellView *cell = [self.tableView viewAtColumn:0 row:row makeIfNecessary:NO];
     [cell setNeedsDisplay:YES];
 
     dispatch_async(dispatch_get_main_queue(), ^{
