@@ -20,7 +20,8 @@ extern NSString * const HISendBitcoinsWindowSuccessKey;
  Manages the "Send Bitcoin" window.
  */
 
-@interface HISendBitcoinsWindowController : NSWindowController <HIContactAutocompleteDelegate, NSWindowDelegate>
+@interface HISendBitcoinsWindowController : NSWindowController
+    <HIContactAutocompleteDelegate, NSWindowDelegate, NSControlTextEditingDelegate>
 
 @property (strong) IBOutlet NSBox *wrapper;
 @property (strong) IBOutlet NSBox *separator;

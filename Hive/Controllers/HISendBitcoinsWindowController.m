@@ -23,6 +23,8 @@ NSString * const HISendBitcoinsWindowSuccessKey = @"success";
     NSDecimalNumber *_amount;
 }
 
+@property (strong, readonly) HIContactAutocompleteWindowController *autocompleteController;
+
 @end
 
 @implementation HISendBitcoinsWindowController
@@ -144,6 +146,11 @@ NSString * const HISendBitcoinsWindowSuccessKey = @"success";
 {
     if ([sender state] == NSOnState)
     {
+        // focus name label, but don't select whole text, just put the cursor at the end
+        [self.window makeFirstResponder:self.nameLabel];
+        NSText *editor = [self.window fieldEditor:YES forObject:self.nameLabel];
+        [editor setSelectedRange:NSMakeRange(self.nameLabel.stringValue.length, 0)];
+
         if (_contact)
         {
             [self startAutocompleteForCurrentContact];
@@ -266,23 +273,61 @@ NSString * const HISendBitcoinsWindowSuccessKey = @"success";
     [self hideAutocompleteWindow];
 }
 
+- (BOOL)control:(NSControl *)control textView:(NSTextView *)textView doCommandBySelector:(SEL)selector
+{
+    if (selector == @selector(moveUp:))
+    {
+        [self showAutocompleteWindow];
+        [self.autocompleteController moveSelectionUp];
+    }
+    else if (selector == @selector(moveDown:))
+    {
+        [self showAutocompleteWindow];
+        [self.autocompleteController moveSelectionDown];
+    }
+    else if (selector == @selector(insertNewline:))
+    {
+        [self.autocompleteController confirmSelection];
+        [self.window makeFirstResponder:nil];
+    }
+    else if (selector == @selector(cancelOperation:))
+    {
+        if (self.autocompleteController.window.isVisible)
+        {
+            [self hideAutocompleteWindow];
+        }
+        else
+        {
+            // pass it to the cancel button
+            return NO;
+        }
+    }
+    else
+    {
+        // let the text field handle the key event
+        return NO;
+    }
+
+    return YES;
+}
+
 - (void)startAutocompleteForCurrentQuery
 {
     NSString *query = self.nameLabel.stringValue;
 
     [self showAutocompleteWindow];
-    [[self autocompleteController] searchWithQuery:query];
+    [self.autocompleteController searchWithQuery:query];
 }
 
 - (void)startAutocompleteForCurrentContact
 {
     [self showAutocompleteWindow];
-    [[self autocompleteController] searchWithContact:_contact];
+    [self.autocompleteController searchWithContact:_contact];
 }
 
 - (void)showAutocompleteWindow
 {
-    NSWindow *popup = [[self autocompleteController] window];
+    NSWindow *popup = self.autocompleteController.window;
 
     if (!popup.isVisible)
     {
@@ -305,7 +350,7 @@ NSString * const HISendBitcoinsWindowSuccessKey = @"success";
 
 - (void)hideAutocompleteWindow
 {
-    [[self autocompleteController] close];
+    [self.autocompleteController close];
 
     self.dropdownButton.state = NSOffState;
 }

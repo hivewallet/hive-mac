@@ -30,4 +30,8 @@
 - (void)searchWithContact:(HIContact *)contact;
 - (void)searchWithQuery:(NSString *)query;
 
+- (void)moveSelectionUp;
+- (void)moveSelectionDown;
+- (void)confirmSelection;
+
 @end

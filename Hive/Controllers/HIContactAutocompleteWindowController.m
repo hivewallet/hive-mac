@@ -89,7 +89,32 @@ static const CGFloat MaxAutocompleteHeight = 300.0;
     return cell;
 }
 
-- (void)tableViewSelectionDidChange:(NSNotification *)notification
+
+#pragma mark - Reacting to keyboard events
+
+- (void)moveSelectionUp
+{
+    if (self.tableView.numberOfRows > 0)
+    {
+        NSInteger row = self.tableView.selectedRow;
+        NSInteger newRow = (row >= 0) ? (row - 1 + self.tableView.numberOfRows) % self.tableView.numberOfRows : 0;
+
+        [self.tableView selectRowIndexes:[NSIndexSet indexSetWithIndex:newRow] byExtendingSelection:NO];
+    }
+}
+
+- (void)moveSelectionDown
+{
+    if (self.tableView.numberOfRows > 0)
+    {
+        NSInteger row = self.tableView.selectedRow;
+        NSInteger newRow = (row >= 0) ? (row + 1) % self.tableView.numberOfRows : 0;
+
+        [self.tableView selectRowIndexes:[NSIndexSet indexSetWithIndex:newRow] byExtendingSelection:NO];
+    }
+}
+
+- (void)confirmSelection
 {
     NSInteger row = self.tableView.selectedRow;
 
