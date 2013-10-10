@@ -10,11 +10,22 @@
 
 @class HITitleView;
 
+/*
+ Notifies the delegate (HINavigationController) that the "back" button was clicked in the breadcrumbs bar
+ and the current top view should be popped from the stack.
+ */
+
 @protocol HITitleViewDelegate <NSObject>
 
 - (void)requestedPop:(HITitleView *)titleView;
 
 @end
+
+
+/*
+ Implements the breadcrumbs view for the window title bar. Maintains a stack of titles, handles pushing and popping
+ titles from the stack with proper animations.
+ */
 
 @interface HITitleView : NSView
 

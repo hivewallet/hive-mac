@@ -16,6 +16,11 @@
 
 @end
 
+
+/*
+ Manages the results list that appears in the "Send Bitcoin" window when user starts typing to look up a contact.
+ */
+
 @interface HIContactAutocompleteWindowController : NSWindowController <NSTableViewDelegate>
 
 @property (nonatomic, strong) IBOutlet NSArrayController *arrayController;

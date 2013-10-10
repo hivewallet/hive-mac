@@ -8,6 +8,11 @@
 
 #import <Cocoa/Cocoa.h>
 
+/*
+ A view with flipped coordinates (i.e. like in every other UI environment on the planet). Right now used only
+ in the new contact view.
+ */
+
 @interface HIFlippedView : NSView
 
 @end

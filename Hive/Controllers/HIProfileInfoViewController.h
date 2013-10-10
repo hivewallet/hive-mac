@@ -12,6 +12,10 @@
 @class HITextField;
 @class HIViewController;
 
+/*
+ Manages the contact info panel shown in the left tab of the contact view and in the user's profile view.
+ */
+
 @interface HIProfileInfoViewController : NSViewController
 
 @property (weak) IBOutlet HIBox *addressBoxView;

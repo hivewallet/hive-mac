@@ -8,6 +8,10 @@
 
 #import <Cocoa/Cocoa.h>
 
+/*
+ A cell used by HITextField.
+ */
+
 @interface HITextFieldCell : NSTextFieldCell
 
 @end

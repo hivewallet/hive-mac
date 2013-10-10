@@ -8,6 +8,10 @@
 
 #import <Cocoa/Cocoa.h>
 
+/*
+ A "right arrow" separator used in the breadcrumbs view in the window's title bar.
+ */
+
 @interface HITitleArrowView : NSView
 
 @end

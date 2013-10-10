@@ -8,6 +8,10 @@
 
 #import <Cocoa/Cocoa.h>
 
+/*
+ Table cell view used on the transactions list, shows details of a specific transaction.
+ */
+
 @interface HITransactionCellView : NSTableCellView
 
 @property (strong, nonatomic) IBOutlet NSTextField *dateLabel;

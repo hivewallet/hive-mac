@@ -11,6 +11,11 @@
 @class HIMainWindowController;
 @class HINavigationController;
 
+
+/*
+ A base class for all view controllers of views that go into the right panel of the main window.
+ */
+
 @interface HIViewController : NSViewController
 
 @property (nonatomic, strong) NSString *iconName;
@@ -18,6 +23,7 @@
 @property (nonatomic, assign) HINavigationController *navigationController;
 @property (nonatomic, readonly, getter = titleBarView) NSView *titleBarView;
 @property (nonatomic, readonly, getter = rightNavigationView) NSView *rightNavigationView;
+
 - (void)viewWillAppear;
 - (void)viewWillDisappear;
 - (void)viewWasSelectedFromTabBar;

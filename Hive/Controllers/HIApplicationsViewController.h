@@ -8,6 +8,10 @@
 
 #import "HIViewController.h"
 
+/*
+ Manages the applications list view with application icons layed out in a grid.
+ */
+
 @interface HIApplicationsViewController : HIViewController
 
 @property (nonatomic, readonly, getter = managedObjectContext) NSManagedObjectContext *managedObjectContext;

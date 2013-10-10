@@ -8,6 +8,10 @@
 
 #import <Cocoa/Cocoa.h>
 
+/*
+ An NSBox with a custom rounded border and white background. Used in contact details views.
+ */
+
 @interface HIBox : NSView
 
 @end

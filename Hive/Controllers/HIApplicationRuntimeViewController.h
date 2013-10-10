@@ -10,6 +10,10 @@
 #import "HIViewController.h"
 #import "HIApplication.h"
 
+/*
+ Runs the selected application in a web view and manages its communication with Hive.
+ */
+
 @interface HIApplicationRuntimeViewController : HIViewController
 
 @property (strong) HIApplication *application;

@@ -14,6 +14,12 @@
 #import "HIBox.h"
 #import "HITextField.h"
 
+/*
+ Manages the contact view that shows information about a selected contact. Includes a tab bar and two tabs with
+ transactions list and contact's info. Also used for the user's own profile, though in that case the tab bar is
+ hidden and only the contact info panel is visible.
+ */
+
 @interface HIProfileViewController : HIViewController <HIProfileTabBarControllerDelegate>
 
 @property (strong) IBOutlet NSImageView *photoView;

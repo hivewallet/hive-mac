@@ -8,6 +8,10 @@
 
 #import <Cocoa/Cocoa.h>
 
+/*
+ Table cell view used in the autocomplete results table in Send window.
+ */
+
 @interface HIContactAutocompleteCellView : NSTableCellView
 
 @property (nonatomic, strong) IBOutlet NSTextField *addressLabel;

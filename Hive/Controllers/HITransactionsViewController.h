@@ -8,6 +8,10 @@
 
 #import "HIViewController.h"
 
+/*
+ Manages the transactions list view.
+ */
+
 @interface HITransactionsViewController : HIViewController
 
 @property (strong, nonatomic) IBOutlet NSView *noTransactionsView;

@@ -8,6 +8,10 @@
 
 #import <Foundation/Foundation.h>
 
+/*
+ Manages applications (HIApplication) in the database and on disk.
+ */
+
 @interface HIApplicationsManager : NSObject
 
 + (HIApplicationsManager *)sharedManager;

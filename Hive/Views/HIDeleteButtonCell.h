@@ -8,6 +8,10 @@
 
 #import <Cocoa/Cocoa.h>
 
+/*
+ A button cell for a red rounded button - used in contact edit view for the delete contact button.
+ */
+
 @interface HIDeleteButtonCell : NSButtonCell
 
 @end

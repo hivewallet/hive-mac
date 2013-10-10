@@ -25,21 +25,40 @@ typedef NS_ENUM(NSUInteger, HITransactionDirection) {
 extern NSString * const HITransactionEntity;
 
 
+/*
+ Represents a single transaction made or received by the user.
+ */
+
 @interface HITransaction : NSManagedObject
 
+// tells if the user has already seen this transaction; unseen transactions increase the number in the dock icon badge
 @property (nonatomic) BOOL read;
-@property (nonatomic, retain) NSString * id;
+
+// transaction id
+@property (nonatomic, retain) NSString *id;
+
+// BTC amount, in satoshis; for outgoing transactions the amount is negative
 @property (nonatomic) int64_t amount;
-@property (nonatomic, retain) NSString * senderName;
-@property (nonatomic, retain) NSString * senderHash;
+
+// currently unused?
+@property (nonatomic, retain) NSString *senderName;
+@property (nonatomic, retain) NSString *senderHash;
+@property (nonatomic, retain) NSString *senderEmail;
+
 @property (nonatomic) NSTimeInterval date;
-@property (nonatomic, retain) NSString * senderEmail;
 @property (nonatomic) int32_t confirmations;
 @property (nonatomic) BOOL request;
+
+// if the address hash matches any of the contacts' addreses, contact is linked here, otherwise it's nil
 @property (nonatomic, retain) HIContact *contact;
 
+// date property as NSDate
 @property (nonatomic, readonly, getter = dateObject) NSDate *dateObject;
+
+// HITransactionDirectionIncoming or HITransactionDirectionOutgoing
 @property (nonatomic, readonly, getter = direction) HITransactionDirection direction;
+
+// same as amount, but it's always positive
 @property (nonatomic, readonly, getter = absoluteAmount) uint64_t absoluteAmount;
 
 @end

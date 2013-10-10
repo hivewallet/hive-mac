@@ -8,6 +8,10 @@
 
 #import <Cocoa/Cocoa.h>
 
+/*
+ A button cell for a blue rounded button that executes or confirms an action (used in various places).
+ */
+
 @interface HIDoneButtonCell : NSButtonCell
 
 @end

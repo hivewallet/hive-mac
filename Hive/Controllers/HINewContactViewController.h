@@ -11,7 +11,13 @@
 #import "HIBox.h"
 #import "HIContact.h"
 
+/*
+ The contact edit form used for adding and editing contacts. Also handles editing of the user's profile if
+ an HIProfile object is passed in place of a contact.
+ */
+
 @interface HINewContactViewController : HIViewController
+
 @property (strong) IBOutlet HITextField *firstnameField;
 @property (strong) IBOutlet HITextField *lastnameField;
 @property (strong) IBOutlet HITextField *emailField;

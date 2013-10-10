@@ -8,6 +8,10 @@
 
 #import <Foundation/Foundation.h>
 
+/*
+ Used for formatting and parsing Bitcoin amounts as decimal fractions. Uses user's system locale.
+ */
+
 @interface HICurrencyAmountFormatter : NSNumberFormatter
 
 @end

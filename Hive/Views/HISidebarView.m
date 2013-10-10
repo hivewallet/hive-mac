@@ -8,7 +8,8 @@
 
 #import "HISidebarView.h"
 
-@interface HISidebarView () {
+@interface HISidebarView ()
+{
     NSColor *backgroundPattern;
 }
 
@@ -20,7 +21,8 @@
 {
     self = [super initWithFrame:frame];
 
-    if (self) {
+    if (self)
+    {
         backgroundPattern = [NSColor colorWithPatternImage:[NSImage imageNamed:@"bg-sidebar"]];
     }
 

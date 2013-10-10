@@ -12,6 +12,11 @@
 extern NSString * const HIApplicationEntity;
 
 
+/*
+ A single application, displayed in the Applications tab. An application has an HIApplication record in the database,
+ and also a bundle file in ~/Library/Application Support/Hive/Applications.
+ */
+
 @interface HIApplication : NSManagedObject
 
 @property (nonatomic, retain) NSString * id;

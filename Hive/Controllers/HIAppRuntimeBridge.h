@@ -11,6 +11,11 @@
 
 #import "HIApplicationRuntimeViewController.h"
 
+/*
+ Implements the window.bitcoin object in the application's JS context that acts as a gateway between the app
+ and Hive.
+ */
+
 @interface HIAppRuntimeBridge : NSObject
 
 @property (strong) HIApplicationRuntimeViewController *controller;

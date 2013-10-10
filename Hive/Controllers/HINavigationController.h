@@ -9,6 +9,11 @@
 #import "HIViewController.h"
 #import "HITitleView.h"
 
+/*
+ Manages a stack of views like iOS's UINavigationController, shows the titles of currently open view controllers
+ in the breadcrumbs bar through HITitleView.
+ */
+
 @interface HINavigationController : HIViewController <HITitleViewDelegate>
 
 @property (readonly) HIViewController *topViewController;

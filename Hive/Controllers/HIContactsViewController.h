@@ -8,6 +8,10 @@
 
 #import "HIViewController.h"
 
+/*
+ Manages the contacts list view.
+ */
+
 @interface HIContactsViewController : HIViewController <NSTableViewDataSource, NSTableViewDelegate>
 
 @property (strong) IBOutlet NSTableView *tableView;

@@ -11,6 +11,10 @@
 #import "HISidebarController.h"
 #import "HIViewController.h"
 
+/*
+ Manages the main Hive window, switching between tabs using sidebar buttons etc.
+ */
+
 @interface HIMainWindowController : NSWindowController <HISidebarControllerDelegate>
 
 @property (strong) IBOutlet NSView *contentView;

@@ -38,20 +38,13 @@
 - (id)initWithFrame:(NSRect)frame
 {
     self = [super initWithFrame:frame];
-    if (self) {
+
+    if (self)
+    {
         [self awakeFromNib];
     }
     
     return self;
-}
-
-//- (void)drawRect:(NSRect)dirtyRect
-//{
-//    // Drawing code here.
-//}
-
-- (void)drawSeparatorInRect:(NSRect)dirtyRect
-{
 }
 
 - (void)drawBackgroundInRect:(NSRect)dirtyRect

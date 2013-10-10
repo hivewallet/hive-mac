@@ -10,6 +10,10 @@
 
 @class HIContact;
 
+/*
+ This object acts as a single gateway to BitcoinKit and Tor, handles sending bitcoins, managing wallets etc.
+ */
+
 @interface BCClient : AFHTTPClient
 
 @property (nonatomic, readonly, getter = unreadTransactions) NSUInteger unreadTransactions;

@@ -8,6 +8,11 @@
 
 #import <Cocoa/Cocoa.h>
 
+/*
+ An NSButton subclass used for the buttons in the left window sidebar. When it's selected, it draws an "inset"
+ background gradient.
+ */
+
 @interface HISidebarButton : NSButton
 
 @end

@@ -16,22 +16,26 @@
 
 @implementation HIProfileTabView
 
-- (void)awakeFromNib {
+- (void)awakeFromNib
+{
     _gradient = [[NSGradient alloc] initWithStartingColor:RGB(245, 245, 245)
                                               endingColor:RGB(238, 238, 238)];
 }
 
-- (id)initWithFrame:(NSRect)frame {
+- (id)initWithFrame:(NSRect)frame
+{
     self = [super initWithFrame:frame];
 
-    if (self) {
+    if (self)
+    {
         [self awakeFromNib];
     }
     
     return self;
 }
 
-- (void)drawRect:(NSRect)dirtyRect {
+- (void)drawRect:(NSRect)dirtyRect
+{
     [_gradient drawInRect:self.bounds angle:270.0];
 }
 

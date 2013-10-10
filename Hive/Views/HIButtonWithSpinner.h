@@ -8,6 +8,11 @@
 
 #import <Cocoa/Cocoa.h>
 
+/*
+ An NSButton that can show a spinning indicator inside it and disable itself while an action is in progress.
+ Used in the "Send" dialog.
+ */
+
 @interface HIButtonWithSpinner : NSButton
 
 - (void)showSpinner;

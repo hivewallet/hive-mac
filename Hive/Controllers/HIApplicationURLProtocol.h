@@ -8,6 +8,10 @@
 
 #import <Foundation/Foundation.h>
 
+/*
+ Used for loading application files from the app bundle in user's Application Support folder.
+ */
+
 @interface HIApplicationURLProtocol : NSURLProtocol <NSURLConnectionDelegate, NSURLConnectionDataDelegate>
 
 @end

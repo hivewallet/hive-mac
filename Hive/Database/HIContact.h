@@ -15,6 +15,10 @@
 extern NSString * const HIContactEntity;
 
 
+/*
+ Represents a contact from the contacts list.
+ */
+
 @interface HIContact : NSManagedObject
 
 @property (nonatomic, retain) NSString * account;

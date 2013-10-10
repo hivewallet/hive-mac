@@ -8,6 +8,10 @@
 
 #import <Cocoa/Cocoa.h>
 
+/*
+ A view with a light gray background, used for some separator lines.
+ */
+
 @interface HISeparatorView : NSView
 
 @end

@@ -14,6 +14,10 @@
 extern NSString * const HIAddressEntity;
 
 
+/*
+ Represents a contact's single Bitcoin address. Includes a hash and a label/caption.
+ */
+
 @interface HIAddress : NSManagedObject
 
 @property (nonatomic, retain) NSString * address;
