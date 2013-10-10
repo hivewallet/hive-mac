@@ -238,6 +238,8 @@ static NSString * const Separator = @"Separator";
     nameField.nextKeyView = self.emailField;
 
     [_placeholders addObject:parts];
+
+    [self.view.window makeFirstResponder:addressField];
 }
 
 - (void)recalculateNames:(NSNotification *)notification
