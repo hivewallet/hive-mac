@@ -13,6 +13,7 @@
 - (void)awakeFromNib {
     self.generatesDecimalNumbers = YES;
     self.minimum = @0;
+    self.minimumIntegerDigits = 1;
     self.minimumFractionDigits = 2;
     self.maximumFractionDigits = 8;
     self.numberStyle = NSNumberFormatterDecimalStyle;
