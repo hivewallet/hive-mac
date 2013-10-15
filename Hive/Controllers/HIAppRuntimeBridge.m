@@ -55,17 +55,28 @@
     // Through WebView, you can get to the JS globalContext
     JSContextRef ctx = [_frame globalContext];
 
-    NSDictionary *t = [[BCClient sharedClient] transactionDefinitionWithHash:hash];
-    NSDateFormatter *df = [[NSDateFormatter alloc] init];
-    df.dateFormat = @"yyyy'-'MM'-'dd' 'HH':'mm':'ss' 'z";
+    NSDictionary *data = [[BCClient sharedClient] transactionDefinitionWithHash:hash];
+    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+    formatter.dateFormat = @"yyyy-MM-dd'T'HH:mm:ssZZZZZ";
+
+    NSInteger amount = [data[@"amount"] integerValue];
+    NSInteger absolute = labs(amount);
+    BOOL received = (amount >= 0);
+
+    NSArray *inputs = [data[@"details"] filteredArrayUsingPredicate:
+                       [NSPredicate predicateWithFormat:@"category = 'received'"]];
+    NSArray *outputs = [data[@"details"] filteredArrayUsingPredicate:
+                        [NSPredicate predicateWithFormat:@"category = 'sent'"]];
+
     NSDictionary *transaction = @{
-                                  @"amount": @((CGFloat) [t[@"amount"] doubleValue] / SATOSHI),
-                                  @"txid": t[@"txid"],
-                                  @"confirmations": t[@"confirmations"],
-                                  @"address": t[@"details"][0][@"address"],
-                                  @"category": t[@"details"][0][@"category"],
-                                  @"time": [df stringFromDate:t[@"time"]]
-                                  };
+                                  @"id": data[@"txid"],
+                                  @"amount": @(absolute),
+                                  @"received": @(received),
+                                  @"timestamp": [formatter stringFromDate:data[@"time"]],
+                                  @"inputAddresses": [inputs valueForKey:@"address"],
+                                  @"outputAddresses": [outputs valueForKey:@"address"]
+                                };
+
     NSString *jsonTransaction = [[NSString alloc] initWithData:[NSJSONSerialization dataWithJSONObject:transaction options:0 error:NULL] encoding:NSUTF8StringEncoding];
     
     JSStringRef transString = JSStringCreateWithCFString((__bridge CFStringRef)jsonTransaction);
