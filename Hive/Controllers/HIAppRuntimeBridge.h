@@ -29,5 +29,5 @@
 - (void)sendToAddress:(NSString *)hash callback:(WebScriptObject*)callback;
 - (void)transactionWithHash:(NSString *)hash callback:(WebScriptObject *)callback;
 - (void)clientInformation:(WebScriptObject *)callback;
-- (void)setCurrencyChangeCallback:(WebScriptObject *)callback;
+
 @end

@@ -10,63 +10,10 @@
 #import "HIAppRuntimeBridge.h"
 #import "BCClient.h"
 
-@interface HIAppRuntimeBridge ()
-{
-    WebScriptObject *_currencyCallback;
-}
-
-- (void)triggerCurrencyCallback;
-
-@end
-
 @implementation HIAppRuntimeBridge
-
-- (id)init
-{
-    self = [super init];
-    if (self)
-    {
-        [[NSUserDefaults standardUserDefaults]addObserver:self forKeyPath:@"Currency" options:NSKeyValueObservingOptionNew context:NULL];
-    }
-    
-    return self;
-}
-
-- (void)dealloc
-{
-    [[NSUserDefaults standardUserDefaults] removeObserver:self forKeyPath:@"Currency"];
-}
-
-- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context
-{
-    if (object == [NSUserDefaults standardUserDefaults])
-    {
-        if ([keyPath compare:@"Currency"] == NSOrderedSame)
-        {
-            [self triggerCurrencyCallback];
-        }
-    }
-}
 
 - (void)killCallbacks
 {
-    _currencyCallback = nil;
-}
-
-- (void)triggerCurrencyCallback
-{
-    if (!_currencyCallback)
-        return;
-    
-    JSObjectRef ref = [_currencyCallback JSObject];
-    
-    // Through WebView, you can get to the JS globalContext
-    JSContextRef ctx = [_frame globalContext];
-    
-    BOOL btc = ([[NSUserDefaults standardUserDefaults] integerForKey:@"Currency"] == 1);
-    
-    JSValueRef val = JSValueMakeBoolean(ctx, btc);
-    JSObjectCallAsFunction(ctx, ref, NULL, 1, &val, NULL);
 }
 
 - (void)send:(NSString *)hash amount:(id)amount callback:(WebScriptObject *)callback
@@ -190,13 +137,6 @@
     [self sendToAddress:hash amount:0 callback:callback];
 }
 
-- (void)setCurrencyChangeCallback:(WebScriptObject *)callback
-{
-    _currencyCallback = callback;
-    
-    [self triggerCurrencyCallback];
-}
-
 + (NSString *) webScriptNameForSelector:(SEL)sel
 {
     if (sel == @selector(send:amount:callback:))
@@ -211,10 +151,7 @@
         return @"getTransaction";
     if (sel == @selector(clientInformation:))
         return @"getClientInfo";
-    if (sel == @selector(setCurrencyChangeCallback:))
-        return @"setCurrencyChangeCallback";
-    
-    
+
     return nil;
 }
 
@@ -226,8 +163,8 @@
     else if (sel == @selector(sendToAddress:callback:)) return NO;
     else if (sel == @selector(transactionWithHash:callback:)) return NO;
     else if (sel == @selector(clientInformation:)) return NO;
-    else if (sel == @selector(setCurrencyChangeCallback:)) return NO;
-    
+
     return YES;
 }
+
 @end
