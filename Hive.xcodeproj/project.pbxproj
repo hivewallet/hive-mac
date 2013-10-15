@@ -92,6 +92,7 @@
 		589064AE1805742C0082BE5C /* seansoutpost.hiveapp in Resources */ = {isa = PBXBuildFile; fileRef = 589064AD1805742C0082BE5C /* seansoutpost.hiveapp */; };
 		589064B7180596B80082BE5C /* HIEditableImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 589064B6180596B80082BE5C /* HIEditableImageView.m */; };
 		58A03B0D17D9DC4100ADD5E5 /* HIButtonWithSpinner.m in Sources */ = {isa = PBXBuildFile; fileRef = 58A03B0C17D9DC4100ADD5E5 /* HIButtonWithSpinner.m */; };
+		58A37A8A180D747C00CFCDE3 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 58A37A8C180D747C00CFCDE3 /* Localizable.strings */; };
 		58CFD95417CF914000A035FA /* HISidebarView.m in Sources */ = {isa = PBXBuildFile; fileRef = 58CFD95217CF914000A035FA /* HISidebarView.m */; };
 		58F02AEE17E1F5A400B65429 /* HITitleArrowView.m in Sources */ = {isa = PBXBuildFile; fileRef = 58F02AED17E1F5A400B65429 /* HITitleArrowView.m */; };
 		D901F4F817B272E60071780D /* BitcoinJKit.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = D901F4F517B272CE0071780D /* BitcoinJKit.framework */; };
@@ -305,6 +306,7 @@
 		589064B6180596B80082BE5C /* HIEditableImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HIEditableImageView.m; sourceTree = "<group>"; };
 		58A03B0B17D9DC4100ADD5E5 /* HIButtonWithSpinner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HIButtonWithSpinner.h; sourceTree = "<group>"; };
 		58A03B0C17D9DC4100ADD5E5 /* HIButtonWithSpinner.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HIButtonWithSpinner.m; sourceTree = "<group>"; };
+		58A37A8B180D747C00CFCDE3 /* en */ = {isa = PBXFileReference; lastKnownFileType = file; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		58CFD95117CF914000A035FA /* HISidebarView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HISidebarView.h; sourceTree = "<group>"; };
 		58CFD95217CF914000A035FA /* HISidebarView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HISidebarView.m; sourceTree = "<group>"; };
 		58F02AEC17E1F5A400B65429 /* HITitleArrowView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HITitleArrowView.h; sourceTree = "<group>"; };
@@ -663,6 +665,7 @@
 				D9A591D51767B4A800502635 /* Hive-Prefix.pch */,
 				D9F8454E1781C509004076F6 /* Icon.icns */,
 				D9A591D01767B4A800502635 /* InfoPlist.strings */,
+				58A37A8C180D747C00CFCDE3 /* Localizable.strings */,
 				D9A591D31767B4A800502635 /* main.m */,
 				581818E117F1A8A800D00770 /* README.md */,
 			);
@@ -873,6 +876,7 @@
 				586059AF180419DF00FD9C2A /* bitstamp.hiveapp in Resources */,
 				586059B0180419DF00FD9C2A /* minefield.hiveapp in Resources */,
 				586059B1180419DF00FD9C2A /* supporthive.hiveapp in Resources */,
+				58A37A8A180D747C00CFCDE3 /* Localizable.strings in Resources */,
 				586059CC18041A6D00FD9C2A /* HIApplicationRuntimeViewController.xib in Resources */,
 				586059CE18041A6D00FD9C2A /* HIApplicationsViewController.xib in Resources */,
 				586059D518041A7A00FD9C2A /* HIContactsViewController.xib in Resources */,
@@ -1024,6 +1028,14 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		58A37A8C180D747C00CFCDE3 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				58A37A8B180D747C00CFCDE3 /* en */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
 		D9A591D01767B4A800502635 /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
