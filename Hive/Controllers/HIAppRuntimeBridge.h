@@ -28,6 +28,6 @@
 - (void)send:(NSString *)hash callback:(WebScriptObject*)callback;
 - (void)sendToAddress:(NSString *)hash callback:(WebScriptObject*)callback;
 - (void)transactionWithHash:(NSString *)hash callback:(WebScriptObject *)callback;
-- (void)clientInformation:(WebScriptObject *)callback;
+- (void)getClientInformationWithCallback:(WebScriptObject *)callback;
 
 @end

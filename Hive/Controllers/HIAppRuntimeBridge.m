@@ -7,8 +7,10 @@
 //
 
 #import <JavaScriptCore/JavaScriptCore.h>
-#import "HIAppRuntimeBridge.h"
 #import "BCClient.h"
+#import "HIAppRuntimeBridge.h"
+#import "HIProfile.h"
+
 
 @implementation HIAppRuntimeBridge
 
@@ -72,24 +74,22 @@
     JSStringRelease(transString);
 }
 
-- (void)clientInformation:(WebScriptObject *)callback
+- (void)getClientInformationWithCallback:(WebScriptObject *)callback
 {
     JSObjectRef ref = [callback JSObject];
     
     // Through WebView, you can get to the JS globalContext
     JSContextRef ctx = [_frame globalContext];
-    
+
+    HIProfile *profile = [[HIProfile alloc] init];
+
     NSDictionary *data = @{
-                                  @"email": @"test@test.com",
-                                  @"firstname": @"John",
-                                  @"lastname": @"Doe",
-                                  @"address": [BCClient sharedClient].walletHash,
-                                  @"street": @"Streetname 1234",
-                                  @"zipcode": @"54-242",
-                                  @"city": @"Wroclaw",
-                                  @"county": @"dolnoslaskie",
-                                  @"country": @"Poland"
-                                  };
+                           @"firstName": profile.firstname ? profile.lastname : [NSNull null],
+                           @"lastName": profile.lastname ? profile.lastname : [NSNull null],
+                           @"email": profile.email ? profile.email : [NSNull null],
+                           @"address": [[BCClient sharedClient] walletHash]
+                         };
+
     NSString *jsonData = [[NSString alloc] initWithData:[NSJSONSerialization dataWithJSONObject:data options:0 error:NULL] encoding:NSUTF8StringEncoding];
     
     JSStringRef dataString = JSStringCreateWithCFString((__bridge CFStringRef)jsonData);
@@ -149,7 +149,7 @@
         return @"requestCoinsAndAddress";
     if (sel == @selector(transactionWithHash:callback:))
         return @"getTransaction";
-    if (sel == @selector(clientInformation:))
+    if (sel == @selector(getClientInformationWithCallback:))
         return @"getClientInfo";
 
     return nil;
@@ -162,7 +162,7 @@
     else if (sel == @selector(sendToAddress:amount:callback:)) return NO;
     else if (sel == @selector(sendToAddress:callback:)) return NO;
     else if (sel == @selector(transactionWithHash:callback:)) return NO;
-    else if (sel == @selector(clientInformation:)) return NO;
+    else if (sel == @selector(getClientInformationWithCallback:)) return NO;
 
     return YES;
 }
