@@ -40,9 +40,11 @@ extern NSString * const HITransactionEntity;
 // BTC amount, in satoshis; for outgoing transactions the amount is negative
 @property (nonatomic) int64_t amount;
 
+// BTC address of the sender
+@property (nonatomic, retain) NSString *senderHash;
+
 // currently unused?
 @property (nonatomic, retain) NSString *senderName;
-@property (nonatomic, retain) NSString *senderHash;
 @property (nonatomic, retain) NSString *senderEmail;
 
 @property (nonatomic) NSTimeInterval date;
