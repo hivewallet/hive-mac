@@ -16,6 +16,9 @@
 @interface HIAppRuntimeBridge ()
 {
     NSDateFormatter *_ISODateFormatter;
+    NSInteger _BTCInSatoshi;
+    NSInteger _mBTCInSatoshi;
+    NSInteger _uBTCInSatoshi;
 }
 
 @end
@@ -31,6 +34,10 @@
     {
         _ISODateFormatter = [[NSDateFormatter alloc] init];
         _ISODateFormatter.dateFormat = @"yyyy-MM-dd'T'HH:mm:ssZZZZZ";
+
+        _BTCInSatoshi = SATOSHI;
+        _mBTCInSatoshi = SATOSHI / 1000;
+        _uBTCInSatoshi = SATOSHI / 1000 / 1000;
     }
 
     return self;
@@ -143,6 +150,22 @@
     return selectorMap;
 }
 
++ (NSDictionary *)keyMap
+{
+    static NSDictionary *keyMap;
+
+    if (!keyMap)
+    {
+        keyMap = @{
+                   @"_BTCInSatoshi": @"BTC_IN_SATOSHI",
+                   @"_mBTCInSatoshi": @"MBTC_IN_SATOSHI",
+                   @"_uBTCInSatoshi": @"UBTC_IN_SATOSHI"
+                 };
+    }
+
+    return keyMap;
+}
+
 + (NSString *)webScriptNameForSelector:(SEL)sel
 {
     return [self selectorMap][NSStringFromSelector(sel)];
@@ -151,6 +174,18 @@
 + (BOOL)isSelectorExcludedFromWebScript:(SEL)sel
 {
     return ([self selectorMap][NSStringFromSelector(sel)] == nil);
+}
+
++ (NSString *)webScriptNameForKey:(const char *)name
+{
+    NSString *key = [NSString stringWithCString:name encoding:NSASCIIStringEncoding];
+    return [self keyMap][key];
+}
+
++ (BOOL)isKeyExcludedFromWebScript:(const char *)name
+{
+    NSString *key = [NSString stringWithCString:name encoding:NSASCIIStringEncoding];
+    return ([self keyMap][key] == nil);
 }
 
 @end
