@@ -48,7 +48,7 @@
 {
 }
 
-- (void)sendMoneyToAddress:(NSString *)hash amount:(id)amount callback:(WebScriptObject *)callback
+- (void)sendMoneyToAddress:(NSString *)hash amount:(NSNumber *)amount callback:(WebScriptObject *)callback
 {
     if (IsNullOrUndefined(hash))
     {
