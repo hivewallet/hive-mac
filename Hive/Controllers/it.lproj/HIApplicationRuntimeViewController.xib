@@ -21,7 +21,9 @@
                 <webView id="3">
                     <rect key="frame" x="0.0" y="0.0" width="420" height="272"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                    <webPreferences key="preferences" defaultFontSize="12" defaultFixedFontSize="12"/>
+                    <webPreferences key="preferences" defaultFontSize="12" defaultFixedFontSize="12">
+                        <nil key="identifier"/>
+                    </webPreferences>
                     <connections>
                         <outlet property="UIDelegate" destination="-2" id="11"/>
                         <outlet property="frameLoadDelegate" destination="-2" id="13"/>
