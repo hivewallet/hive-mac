@@ -1,133 +1,133 @@
 /* App load error description */
-"A network error has occurred or the application data file has been removed or corrupted." = "A network error has occurred or the application data file has been removed or corrupted.";
+"A network error has occurred or the application data file has been removed or corrupted." = "Une erreur réseau est survenue ou le fichier data a été effacé ou corrompu.";
 
 /* Address field placeholder */
-"Address" = "Address";
+"Address" = "Adresse";
 
 /* Amount exceeds balance alert title */
-"Amount exceeds balance." = "Amount exceeds balance.";
+"Amount exceeds balance." = "Le montant excède les fonds disponibles";
 
 /* Anonymous username for profile page */
-"Anonymous" = "Anonymous";
+"Anonymous" = "Anonyme";
 
 /* App load error title */
-"Application can't be loaded" = "Application can't be loaded";
+"Application can't be loaded" = "L'application n'a pu démarrer";
 
 /* Applications view title */
 "Apps" = "Apps";
 
 /* Cancel button title */
-"Cancel" = "Cancel";
+"Cancel" = "Annuler";
 
 /* No comment provided by engineer. */
-"click to copy" = "click to copy";
+"click to copy" = "cliquer pour copier";
 
 /* Contact name empty alert title */
-"Contact can't be saved." = "Contact can't be saved.";
+"Contact can't be saved." = "Le contact ne peut être enregistré.";
 
 /* Contacts view title */
 "Contacts" = "Contacts";
 
 /* No comment provided by engineer. */
-"copied!" = "copied!";
+"copied!" = "copié !";
 
 /* Quit without saves error question message */
-"Could not save changes while quitting. Quit anyway?" = "Could not save changes while quitting. Quit anyway?";
+"Could not save changes while quitting. Quit anyway?" = "Les modifications n'ont pu être enregistrées. Quitter quand même ?";
 
 /* Remove contact alert dialog body */
-"Do you really want to remove %@ %@ from your contact list?" = "Do you really want to remove %1$@ %2$@ from your contact list?";
+"Do you really want to remove %@ %@ from your contact list?" = "Souhaitez-vous réellement retirer %1$@ %2$@ de votre liste de contacts ?";
 
 /* No comment provided by engineer. */
-"Edit contact" = "Edit contact";
+"Edit contact" = "Modifier le contact";
 
 /* No comment provided by engineer. */
-"Edit profile" = "Edit profile";
+"Edit profile" = "Modifier profil";
 
 /* Email field placeholder */
 "email" = "email";
 
 /* Sending zero bitcoin alert title */
-"Enter an amount greater than zero." = "Enter an amount greater than zero.";
+"Enter an amount greater than zero." = "Entrez un montant supérieur à zéro.";
 
 /* Firstname field placeholder */
-"Firstname" = "Firstname";
+"Firstname" = "Prénom";
 
 /* Install app popup title */
-"Install Hive App" = "Install Hive App";
+"Install Hive App" = "Installer Hive App";
 
 /* Address caption field placeholder */
-"Label" = "Label";
+"Label" = "Note";
 
 /* Lastname field placeholder */
-"Lastname" = "Lastname";
+"Lastname" = "Nom de famille";
 
 /* Main address caption */
-"main" = "main";
+"main" = "principale";
 
 /* Main address caption string for profiles */
-"Main address" = "Main address";
+"Main address" = "Adresse principale";
 
 /* New contact view controller title */
-"New contact" = "New contact";
+"New contact" = "Nouveau contact";
 
 /* No comment provided by engineer. */
-"No" = "No";
+"No" = "Non";
 
 /* Empty address alert title */
-"No address entered." = "No address entered.";
+"No address entered." = "Aucune adresse indiquée.";
 
 /* Transaction failed alert message */
-"No bitcoin have been taken from your wallet." = "No bitcoin have been taken from your wallet.";
+"No bitcoin have been taken from your wallet." = "Aucun bitcoin n'a été retiré de votre portefeuille.";
 
 /* OK Button title
    OK button title */
 "OK" = "OK";
 
 /* Autocomplete dropdown prompt */
-"or choose from the list" = "or choose from the list";
+"or choose from the list" = "ou choisissez dans la liste";
 
 /* Invalid address alert message */
-"Please check if you have entered the address correctly." = "Please check if you have entered the address correctly.";
+"Please check if you have entered the address correctly." = "Merci de vérifier que vous avez correctement entré l'adresse.";
 
 /* Empty address alert message */
-"Please enter a valid Bitcoin address or select one from the dropdown list." = "Please enter a valid Bitcoin address or select one from the dropdown list.";
+"Please enter a valid Bitcoin address or select one from the dropdown list." = "Merci d'indiquer une adresse Bitcoin valide ou de choisir dans la liste.";
 
 /* Profile view title string */
 "Profile" = "Profile";
 
 /* Quit anyway button title */
-"Quit anyway" = "Quit anyway";
+"Quit anyway" = "Quitter quand même";
 
 /* Quit without saves error question info */
-"Quitting now will lose any changes you have made since the last successful save" = "Quitting now will lose any changes you have made since the last successful save";
+"Quitting now will lose any changes you have made since the last successful save" = "Quitter maintenant vous fera perdre toute modification depuis le dernier enregistrement";
 
 /* Remove contact alert dialog title */
-"Remove contact" = "Remove contact";
+"Remove contact" = "Supprimer contact";
 
 /* Invalid address alert title */
-"This isn't a valid Bitcoin address." = "This isn't a valid Bitcoin address.";
+"This isn't a valid Bitcoin address." = "Cette adresse bitcoin est invalide";
 
 /* Transaction failed alert title */
-"Transaction could not be completed." = "Transaction could not be completed.";
+"Transaction could not be completed." = "La transaction n'a pu être effectuée";
 
 /* Transactions view title */
 "Transactions" = "Transactions";
 
 /* Sending zero bitcoin alert message */
-"Why would you want to send someone 0 BTC?" = "Why would you want to send someone 0 BTC?";
+"Why would you want to send someone 0 BTC?" = "Pourquoi voudiez-vous envoyer 0 BTC à quelqu'un ?";
 
 /* Install app popup confirmation */
-"Would you like to install \"%@\" application?" = "Would you like to install \"%@\" application?";
+"Would you like to install \"%@\" application?" = "Voulez-vous installer \"%@\" ?";
 
 /* No comment provided by engineer. */
-"Yes" = "Yes";
+"Yes" = "Oui";
 
 /* Install app popup confirmation when app exists */
-"You already have \"%@\" application. Would you like to overwrite it?" = "You already have \"%@\" application. Would you like to overwrite it?";
+"You already have \"%@\" application. Would you like to overwrite it?" = "\"%@\" est déjà installé. Voulez-vous le ré-installer ?";
 
 /* Amount exceeds balance alert message */
-"You cannot send more money than you own." = "You cannot send more money than you own.";
+"You cannot send more money than you own." = "Vous ne pouvez pas envoyer plus d'argent que vous n'en avez.";
 
 /* Contact name empty alert message */
-"You need to give the contact a name before you can add it to the list." = "You need to give the contact a name before you can add it to the list.";
+"You need to give the contact a name before you can add it to the list." = "Vous devez donner un nom au contact avant de pouvoir l'ajouter à la liste";
 

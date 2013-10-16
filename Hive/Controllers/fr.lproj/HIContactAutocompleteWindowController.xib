@@ -71,7 +71,7 @@
                                                         <textField verticalHuggingPriority="750" id="33">
                                                             <rect key="frame" x="52" y="5" width="425" height="17"/>
                                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
-                                                            <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Main address" id="34">
+                                                            <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Adresse principale" id="34">
                                                                 <font key="font" size="10" name="LucidaGrande"/>
                                                                 <color key="textColor" red="0.43490701910000001" green="0.43489405510000001" blue="0.43490141630000001" alpha="1" colorSpace="calibratedRGB"/>
                                                                 <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
