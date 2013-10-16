@@ -23,8 +23,8 @@
 
 - (void)killCallbacks;
 
-- (void)sendCoinsToAddress:(NSString *)hash amount:(id)amount callback:(WebScriptObject*)callback;
+- (void)sendMoneyToAddress:(NSString *)hash amount:(id)amount callback:(WebScriptObject*)callback;
 - (void)transactionWithHash:(NSString *)hash callback:(WebScriptObject *)callback;
-- (void)getClientInformationWithCallback:(WebScriptObject *)callback;
+- (void)getUserInformationWithCallback:(WebScriptObject *)callback;
 
 @end

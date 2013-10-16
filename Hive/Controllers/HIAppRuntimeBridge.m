@@ -48,7 +48,7 @@
 {
 }
 
-- (void)sendCoinsToAddress:(NSString *)hash amount:(id)amount callback:(WebScriptObject *)callback
+- (void)sendMoneyToAddress:(NSString *)hash amount:(id)amount callback:(WebScriptObject *)callback
 {
     if (IsNullOrUndefined(hash))
     {
@@ -129,7 +129,7 @@
     JSObjectCallAsFunction(ctx, ref, NULL, 1, &jsonValue, NULL);
 }
 
-- (void)getClientInformationWithCallback:(WebScriptObject *)callback
+- (void)getUserInformationWithCallback:(WebScriptObject *)callback
 {
     if (IsNullOrUndefined(callback))
     {
@@ -172,9 +172,9 @@
     if (!selectorMap)
     {
         selectorMap = @{
-                        @"sendCoinsToAddress:amount:callback:": @"sendCoins",
+                        @"sendMoneyToAddress:amount:callback:": @"sendMoney",
                         @"transactionWithHash:callback:": @"getTransaction",
-                        @"getClientInformationWithCallback:": @"getClientInfo"
+                        @"getUserInformationWithCallback:": @"getUserInfo"
                       };
     }
 
