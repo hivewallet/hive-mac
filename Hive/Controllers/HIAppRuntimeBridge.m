@@ -11,8 +11,30 @@
 #import "HIAppRuntimeBridge.h"
 #import "HIProfile.h"
 
+#define SafeJSONValue(x) ((x) ? (x) : [NSNull null])
+
+@interface HIAppRuntimeBridge ()
+{
+    NSDateFormatter *_ISODateFormatter;
+}
+
+@end
+
 
 @implementation HIAppRuntimeBridge
+
+- (id)init
+{
+    self = [super init];
+
+    if (self)
+    {
+        _ISODateFormatter = [[NSDateFormatter alloc] init];
+        _ISODateFormatter.dateFormat = @"yyyy-MM-dd'T'HH:mm:ssZZZZZ";
+    }
+
+    return self;
+}
 
 - (void)killCallbacks
 {
@@ -28,10 +50,7 @@
     }
 
     [self.controller requestPaymentToHash:hash amount:amount completion:^(BOOL success, NSString *hash) {
-        // Functions get passed in as WebScriptObjects, which give you access to the function as a JSObject
         JSObjectRef ref = [callback JSObject];
-
-        // Through WebView, you can get to the JS globalContext
         JSContextRef ctx = [_frame globalContext];
 
         JSValueRef params[2];
@@ -52,13 +71,9 @@
 - (void)transactionWithHash:(NSString *)hash callback:(WebScriptObject *)callback
 {
     JSObjectRef ref = [callback JSObject];
-    
-    // Through WebView, you can get to the JS globalContext
     JSContextRef ctx = [_frame globalContext];
 
     NSDictionary *data = [[BCClient sharedClient] transactionDefinitionWithHash:hash];
-    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
-    formatter.dateFormat = @"yyyy-MM-dd'T'HH:mm:ssZZZZZ";
 
     NSInteger amount = [data[@"amount"] integerValue];
     NSInteger absolute = labs(amount);
@@ -73,62 +88,69 @@
                                   @"id": data[@"txid"],
                                   @"amount": @(absolute),
                                   @"received": @(received),
-                                  @"timestamp": [formatter stringFromDate:data[@"time"]],
+                                  @"timestamp": [_ISODateFormatter stringFromDate:data[@"time"]],
                                   @"inputAddresses": [inputs valueForKey:@"address"],
                                   @"outputAddresses": [outputs valueForKey:@"address"]
                                 };
 
-    NSString *jsonTransaction = [[NSString alloc] initWithData:[NSJSONSerialization dataWithJSONObject:transaction options:0 error:NULL] encoding:NSUTF8StringEncoding];
-    
-    JSStringRef transString = JSStringCreateWithCFString((__bridge CFStringRef)jsonTransaction);
-    JSValueRef retValue = JSValueMakeFromJSONString(ctx, transString);
-    JSObjectCallAsFunction(ctx, ref, NULL, 1, &retValue, NULL);
-    JSStringRelease(transString);
+    JSValueRef jsonValue = [self valueObjectFromDictionary:transaction];
+    JSObjectCallAsFunction(ctx, ref, NULL, 1, &jsonValue, NULL);
 }
 
 - (void)getClientInformationWithCallback:(WebScriptObject *)callback
 {
     JSObjectRef ref = [callback JSObject];
-    
-    // Through WebView, you can get to the JS globalContext
     JSContextRef ctx = [_frame globalContext];
 
     HIProfile *profile = [[HIProfile alloc] init];
 
     NSDictionary *data = @{
-                           @"firstName": profile.firstname ? profile.lastname : [NSNull null],
-                           @"lastName": profile.lastname ? profile.lastname : [NSNull null],
-                           @"email": profile.email ? profile.email : [NSNull null],
+                           @"firstName": SafeJSONValue(profile.firstname),
+                           @"lastName": SafeJSONValue(profile.lastname),
+                           @"email": SafeJSONValue(profile.email),
                            @"address": [[BCClient sharedClient] walletHash]
                          };
 
-    NSString *jsonData = [[NSString alloc] initWithData:[NSJSONSerialization dataWithJSONObject:data options:0 error:NULL] encoding:NSUTF8StringEncoding];
-    
-    JSStringRef dataString = JSStringCreateWithCFString((__bridge CFStringRef)jsonData);
-    JSValueRef retValue = JSValueMakeFromJSONString(ctx, dataString);
-    JSObjectCallAsFunction(ctx, ref, NULL, 1, &retValue, NULL);
-    JSStringRelease(dataString);
+    JSValueRef jsonValue = [self valueObjectFromDictionary:data];
+    JSObjectCallAsFunction(ctx, ref, NULL, 1, &jsonValue, NULL);
 }
 
-+ (NSString *) webScriptNameForSelector:(SEL)sel
+- (JSValueRef)valueObjectFromDictionary:(NSDictionary *)dictionary
 {
-    if (sel == @selector(sendCoinsToAddress:amount:callback:))
-        return @"sendCoins";
-    if (sel == @selector(transactionWithHash:callback:))
-        return @"getTransaction";
-    if (sel == @selector(getClientInformationWithCallback:))
-        return @"getClientInfo";
+    NSData *jsonData = [NSJSONSerialization dataWithJSONObject:dictionary options:0 error:NULL];
+    NSString *jsonString = [[NSString alloc] initWithData:jsonData encoding:NSUTF8StringEncoding];
 
-    return nil;
+    JSStringRef jsString = JSStringCreateWithCFString((__bridge CFStringRef) jsonString);
+    JSValueRef jsValue = JSValueMakeFromJSONString(self.frame.globalContext, jsString);
+    JSStringRelease(jsString);
+
+    return jsValue;
+}
+
++ (NSDictionary *)selectorMap
+{
+    static NSDictionary *selectorMap;
+
+    if (!selectorMap)
+    {
+        selectorMap = @{
+                        @"sendCoinsToAddress:amount:callback:": @"sendCoins",
+                        @"transactionWithHash:callback:": @"getTransaction",
+                        @"getClientInformationWithCallback:": @"getClientInfo"
+                      };
+    }
+
+    return selectorMap;
+}
+
++ (NSString *)webScriptNameForSelector:(SEL)sel
+{
+    return [self selectorMap][NSStringFromSelector(sel)];
 }
 
 + (BOOL)isSelectorExcludedFromWebScript:(SEL)sel
 {
-    if (sel == @selector(sendCoinsToAddress:amount:callback:)) return NO;
-    else if (sel == @selector(transactionWithHash:callback:)) return NO;
-    else if (sel == @selector(getClientInformationWithCallback:)) return NO;
-
-    return YES;
+    return ([self selectorMap][NSStringFromSelector(sel)] == nil);
 }
 
 @end
