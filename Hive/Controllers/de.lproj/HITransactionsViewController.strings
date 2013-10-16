@@ -1,18 +1,18 @@
 
 /* Class = "NSTextFieldCell"; title = "Text Cell"; ObjectID = "13"; */
-"13.title" = "Text Cell";
+"13.title" = "Textcell";
 
 /* Class = "NSTextFieldCell"; title = "Received"; ObjectID = "22"; */
-"22.title" = "Received";
+"22.title" = "Erhalten";
 
 /* Class = "NSTextFieldCell"; title = "Date"; ObjectID = "41"; */
-"41.title" = "Date";
+"41.title" = "Datum";
 
 /* Class = "NSTextFieldCell"; title = "Looks like you haven't made any transactions yet. Send someone some Bitcoin!"; ObjectID = "54"; */
-"54.title" = "Looks like you haven't made any transactions yet. Send someone some Bitcoin!";
+"54.title" = "Wie es scheint haben Sie noch keine Transaktionen gemacht. Schicken Sie jemandem ein paar Bitcoins!";
 
 /* Class = "NSButtonCell"; title = "Send Bitcoin"; ObjectID = "55"; */
-"55.title" = "Send Bitcoin";
+"55.title" = "Bitcoins versenden";
 
 /* Class = "NSTextFieldCell"; title = "You can then use the Send button to send someone money."; ObjectID = "63"; */
-"63.title" = "You can then use the Send button to send someone money.";
+"63.title" = "Sie können dann den Bitcoins versenden Knopf benutzen um Bitcoins zu verschicken.";
