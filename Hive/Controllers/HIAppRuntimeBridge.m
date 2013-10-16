@@ -12,6 +12,7 @@
 #import "HIProfile.h"
 
 #define SafeJSONValue(x) ((x) ? (x) : [NSNull null])
+#define IsNullOrUndefined(x) (!(x) || [(x) isKindOfClass:[WebUndefined class]])
 
 @interface HIAppRuntimeBridge ()
 {
@@ -49,38 +50,62 @@
 
 - (void)sendCoinsToAddress:(NSString *)hash amount:(id)amount callback:(WebScriptObject *)callback
 {
-    if (amount)
+    if (IsNullOrUndefined(hash))
     {
-        amount = [NSDecimalNumber decimalNumberWithMantissa:[amount integerValue]
-                                                   exponent:-8
-                                                 isNegative:NO];
+        [WebScriptObject throwException:@"hash argument is undefined"];
+        return;
     }
 
-    [self.controller requestPaymentToHash:hash amount:amount completion:^(BOOL success, NSString *hash) {
-        JSObjectRef ref = [callback JSObject];
-        JSContextRef ctx = [_frame globalContext];
+    NSDecimalNumber *decimal = nil;
 
-        JSValueRef params[2];
-        JSStringRef hashParam = hash ? JSStringCreateWithCFString((__bridge CFStringRef) hash) : NULL;
-        params[0] = JSValueMakeBoolean(ctx, success);
-        params[1] = JSValueMakeString(ctx, hashParam);
+    if (!IsNullOrUndefined(amount))
+    {
+        decimal = [NSDecimalNumber decimalNumberWithMantissa:[amount integerValue]
+                                                    exponent:-8
+                                                  isNegative:NO];
+    }
 
-        // And here's where I call the callback and pass in the JS object
-        JSObjectCallAsFunction(ctx, ref, NULL, 2, params, NULL);
-
-        if (hashParam)
+    [self.controller requestPaymentToHash:hash amount:decimal completion:^(BOOL success, NSString *hash) {
+        if (!IsNullOrUndefined(callback))
         {
-            JSStringRelease(hashParam);
+            JSObjectRef ref = [callback JSObject];
+            JSContextRef ctx = [_frame globalContext];
+
+            JSValueRef params[2];
+            JSStringRef hashParam = hash ? JSStringCreateWithCFString((__bridge CFStringRef) hash) : NULL;
+            params[0] = JSValueMakeBoolean(ctx, success);
+            params[1] = JSValueMakeString(ctx, hashParam);
+
+            // And here's where I call the callback and pass in the JS object
+            JSObjectCallAsFunction(ctx, ref, NULL, 2, params, NULL);
+
+            if (hashParam)
+            {
+                JSStringRelease(hashParam);
+            }
         }
     }];
 }
 
 - (void)transactionWithHash:(NSString *)hash callback:(WebScriptObject *)callback
 {
+    if (IsNullOrUndefined(callback))
+    {
+        [WebScriptObject throwException:@"callback argument is undefined"];
+        return;
+    }
+
     JSObjectRef ref = [callback JSObject];
     JSContextRef ctx = [_frame globalContext];
 
     NSDictionary *data = [[BCClient sharedClient] transactionDefinitionWithHash:hash];
+
+    if (!data)
+    {
+        JSValueRef nullValue = JSValueMakeNull(ctx);
+        JSObjectCallAsFunction(ctx, ref, NULL, 1, &nullValue, NULL);
+        return;
+    }
 
     NSInteger amount = [data[@"amount"] integerValue];
     NSInteger absolute = labs(amount);
@@ -106,6 +131,12 @@
 
 - (void)getClientInformationWithCallback:(WebScriptObject *)callback
 {
+    if (IsNullOrUndefined(callback))
+    {
+        [WebScriptObject throwException:@"callback argument is undefined"];
+        return;
+    }
+
     JSObjectRef ref = [callback JSObject];
     JSContextRef ctx = [_frame globalContext];
 
