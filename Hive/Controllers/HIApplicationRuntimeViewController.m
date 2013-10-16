@@ -85,16 +85,22 @@
                       amount:(NSDecimalNumber *)amount
                   completion:(void(^)(BOOL success, NSString *hash))completion
 {
-    HIAppDelegate *d = (HIAppDelegate *)[NSApp delegate];
-    HISendBitcoinsWindowController *sc = [d sendBitcoinsWindow];
+    HIAppDelegate *delegate = (HIAppDelegate *) [NSApp delegate];
+    HISendBitcoinsWindowController *sc = [delegate sendBitcoinsWindow];
     [sc setHashAddress:hash];
-    [sc setLockedAmount:amount];
+
+    if (amount)
+    {
+        [sc setLockedAmount:amount];
+    }
+
     sc.sendCompletion = ^(BOOL success, NSDecimalNumber *amount, NSString *hash) {
         if (completion)
         {
             completion(success, hash);
         }
     };
+
     [sc showWindow:self];
 }
 
