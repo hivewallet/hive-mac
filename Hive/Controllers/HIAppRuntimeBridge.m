@@ -18,34 +18,30 @@
 {
 }
 
-- (void)send:(NSString *)hash amount:(id)amount callback:(WebScriptObject *)callback
+- (void)sendCoinsToAddress:(NSString *)hash amount:(id)amount callback:(WebScriptObject *)callback
 {
     NSDecimalNumber *amt = [NSDecimalNumber decimalNumberWithString:[amount description]];
 
     [self.controller requestPaymentToHash:hash amount:amt completion:^(BOOL success, NSString *hash) {
         // Functions get passed in as WebScriptObjects, which give you access to the function as a JSObject
         JSObjectRef ref = [callback JSObject];
-        
+
         // Through WebView, you can get to the JS globalContext
         JSContextRef ctx = [_frame globalContext];
-        
+
         JSValueRef params[2];
-        JSStringRef hashParam = NULL;
-        if (hash)
-            hashParam = JSStringCreateWithCFString((__bridge CFStringRef)hash);
+        JSStringRef hashParam = hash ? JSStringCreateWithCFString((__bridge CFStringRef) hash) : NULL;
         params[0] = JSValueMakeBoolean(ctx, success);
         params[1] = JSValueMakeString(ctx, hashParam);
+
         // And here's where I call the callback and pass in the JS object
         JSObjectCallAsFunction(ctx, ref, NULL, 2, params, NULL);
-        if (hash)
-            JSStringRelease(hashParam);
-        
-    }];
-}
 
-- (void)send:(NSString *)hash callback:(WebScriptObject*)callback
-{
-    [self send:hash amount:0 callback:callback];
+        if (hashParam)
+        {
+            JSStringRelease(hashParam);
+        }
+    }];
 }
 
 - (void)transactionWithHash:(NSString *)hash callback:(WebScriptObject *)callback
@@ -109,55 +105,10 @@
     JSStringRelease(dataString);
 }
 
-- (void)sendToAddress:(NSString *)hash amount:(id)amount callback:(WebScriptObject*)callback
-{
-    NSDecimalNumber *amt = [NSDecimalNumber decimalNumberWithString:[amount description]];
-
-    [self.controller requestPaymentWithAddressToHash:hash amount:amt completion:^(BOOL success, NSString *hash, NSDictionary *address) {
-        // Functions get passed in as WebScriptObjects, which give you access to the function as a JSObject
-        JSObjectRef ref = [callback JSObject];
-        
-        // Through WebView, you can get to the JS globalContext
-        JSContextRef ctx = [_frame globalContext];
-        
-        JSValueRef params[3];
-        int paramCount = 2;
-        JSStringRef hashParam = NULL;
-        if (hash)
-            hashParam = JSStringCreateWithCFString((__bridge CFStringRef)hash);
-        params[0] = JSValueMakeBoolean(ctx, success);
-        params[1] = JSValueMakeString(ctx, hashParam);
-        
-        if (address)
-        {
-            paramCount = 3;
-            NSString *jsonData = [[NSString alloc] initWithData:[NSJSONSerialization dataWithJSONObject:address options:0 error:NULL] encoding:NSUTF8StringEncoding];
-            JSStringRef dataString = JSStringCreateWithCFString((__bridge CFStringRef)jsonData);
-            params[2] = JSValueMakeFromJSONString(ctx, dataString);
-        }
-        // And here's where I call the callback and pass in the JS object
-        JSObjectCallAsFunction(ctx, ref, NULL, paramCount, params, NULL);
-        if (hash)
-            JSStringRelease(hashParam);
-        
-    }];
-}
-
-- (void)sendToAddress:(NSString *)hash callback:(WebScriptObject*)callback
-{
-    [self sendToAddress:hash amount:0 callback:callback];
-}
-
 + (NSString *) webScriptNameForSelector:(SEL)sel
 {
-    if (sel == @selector(send:amount:callback:))
+    if (sel == @selector(sendCoinsToAddress:amount:callback:))
         return @"sendCoins";
-    if (sel == @selector(send:callback:))
-        return @"requestCoins";
-    if (sel == @selector(sendToAddress:amount:callback:))
-        return @"sendCoinsForAddress";
-    if (sel == @selector(sendToAddress:callback:))
-        return @"requestCoinsAndAddress";
     if (sel == @selector(transactionWithHash:callback:))
         return @"getTransaction";
     if (sel == @selector(getClientInformationWithCallback:))
@@ -168,10 +119,7 @@
 
 + (BOOL)isSelectorExcludedFromWebScript:(SEL)sel
 {
-    if (sel == @selector(send:amount:callback:)) return NO;
-    else if (sel == @selector(send:callback:)) return NO;
-    else if (sel == @selector(sendToAddress:amount:callback:)) return NO;
-    else if (sel == @selector(sendToAddress:callback:)) return NO;
+    if (sel == @selector(sendCoinsToAddress:amount:callback:)) return NO;
     else if (sel == @selector(transactionWithHash:callback:)) return NO;
     else if (sel == @selector(getClientInformationWithCallback:)) return NO;
 
