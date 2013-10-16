@@ -20,9 +20,14 @@
 
 - (void)sendCoinsToAddress:(NSString *)hash amount:(id)amount callback:(WebScriptObject *)callback
 {
-    NSDecimalNumber *amt = [NSDecimalNumber decimalNumberWithString:[amount description]];
+    if (amount)
+    {
+        amount = [NSDecimalNumber decimalNumberWithMantissa:[amount integerValue]
+                                                   exponent:-8
+                                                 isNegative:NO];
+    }
 
-    [self.controller requestPaymentToHash:hash amount:amt completion:^(BOOL success, NSString *hash) {
+    [self.controller requestPaymentToHash:hash amount:amount completion:^(BOOL success, NSString *hash) {
         // Functions get passed in as WebScriptObjects, which give you access to the function as a JSObject
         JSObjectRef ref = [callback JSObject];
 
