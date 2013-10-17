@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="4510" systemVersion="12F45" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none">
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="4510" systemVersion="13A598" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none">
     <dependencies>
         <deployment version="1070" defaultVersion="1070" identifier="macosx"/>
         <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="4510"/>
@@ -141,7 +141,7 @@
                         <size key="offset" width="0.0" height="1"/>
                         <color key="color" red="1" green="0.99997437" blue="0.99999129769999995" alpha="1" colorSpace="calibratedRGB"/>
                     </shadow>
-                    <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="center" title="Looks like you don't have any contacts yet! Add your first one and start sending money!" id="123">
+                    <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="center" title="Du har endnu ikke nogen kontaktpersoner. Tilføj den første for at sende penge!" id="123">
                         <font key="font" size="16" name="Helvetica"/>
                         <color key="textColor" red="0.3291117549" green="0.32910189029999998" blue="0.32910749319999999" alpha="1" colorSpace="calibratedRGB"/>
                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
@@ -150,7 +150,7 @@
                 <button id="124">
                     <rect key="frame" x="111" y="206" width="100" height="29"/>
                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
-                    <buttonCell key="cell" type="bevel" title="Add contact" bezelStyle="regularSquare" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="125" customClass="HIDoneButtonCell">
+                    <buttonCell key="cell" type="bevel" title="Tilføj person" bezelStyle="regularSquare" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="125" customClass="HIDoneButtonCell">
                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                         <font key="font" metaFont="system"/>
                     </buttonCell>
@@ -169,7 +169,7 @@
                                 <size key="offset" width="0.0" height="1"/>
                                 <color key="color" red="1" green="0.99988943340000003" blue="0.99995732309999996" alpha="1" colorSpace="calibratedRGB"/>
                             </shadow>
-                            <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="You can then use the" id="129">
+                            <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Benyt også knappen" id="129">
                                 <font key="font" size="13" name="Helvetica"/>
                                 <color key="textColor" red="0.32231375579999999" green="0.3222793639" blue="0.32230004670000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
@@ -182,7 +182,7 @@
                                 <size key="offset" width="0.0" height="1"/>
                                 <color key="color" red="1" green="0.99988943340000003" blue="0.99995732309999996" alpha="1" colorSpace="calibratedRGB"/>
                             </shadow>
-                            <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="button" id="133">
+                            <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="øverst" id="133">
                                 <font key="font" size="13" name="Helvetica"/>
                                 <color key="textColor" red="0.32231375579999999" green="0.3222793639" blue="0.32230004670000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
@@ -195,7 +195,7 @@
                                 <size key="offset" width="0.0" height="1"/>
                                 <color key="color" red="1" green="0.99988943340000003" blue="0.99995732309999996" alpha="1" colorSpace="calibratedRGB"/>
                             </shadow>
-                            <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="on top to add more contacts." id="135">
+                            <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="for at tilføje flere personer." id="135">
                                 <font key="font" size="13" name="Helvetica"/>
                                 <color key="textColor" red="0.32231375579999999" green="0.3222793639" blue="0.32230004670000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
