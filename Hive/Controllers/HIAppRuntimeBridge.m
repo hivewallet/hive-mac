@@ -9,6 +9,7 @@
 #import <JavaScriptCore/JavaScriptCore.h>
 #import "BCClient.h"
 #import "HIAppRuntimeBridge.h"
+#import "HICurrencyAmountFormatter.h"
 #import "HIProfile.h"
 
 #define SafeJSONValue(x) ((x) ? (x) : [NSNull null])
@@ -17,6 +18,7 @@
 @interface HIAppRuntimeBridge ()
 {
     NSDateFormatter *_ISODateFormatter;
+    HICurrencyAmountFormatter *_currencyFormatter;
     NSInteger _BTCInSatoshi;
     NSInteger _mBTCInSatoshi;
     NSInteger _uBTCInSatoshi;
@@ -35,6 +37,7 @@
     {
         _ISODateFormatter = [[NSDateFormatter alloc] init];
         _ISODateFormatter.dateFormat = @"yyyy-MM-dd'T'HH:mm:ssZZZZZ";
+        _currencyFormatter = [[HICurrencyAmountFormatter alloc] init];
 
         _BTCInSatoshi = SATOSHI;
         _mBTCInSatoshi = SATOSHI / 1000;
@@ -69,7 +72,7 @@
         if (!IsNullOrUndefined(callback))
         {
             JSObjectRef ref = [callback JSObject];
-            JSContextRef ctx = [_frame globalContext];
+            JSContextRef ctx = self.frame.globalContext;
 
             JSValueRef params[2];
             JSStringRef hashParam = hash ? JSStringCreateWithCFString((__bridge CFStringRef) hash) : NULL;
@@ -96,7 +99,7 @@
     }
 
     JSObjectRef ref = [callback JSObject];
-    JSContextRef ctx = [_frame globalContext];
+    JSContextRef ctx = self.frame.globalContext;
 
     NSDictionary *data = [[BCClient sharedClient] transactionDefinitionWithHash:hash];
 
@@ -138,7 +141,7 @@
     }
 
     JSObjectRef ref = [callback JSObject];
-    JSContextRef ctx = [_frame globalContext];
+    JSContextRef ctx = self.frame.globalContext;
 
     HIProfile *profile = [[HIProfile alloc] init];
 
@@ -147,6 +150,25 @@
                            @"lastName": SafeJSONValue(profile.lastname),
                            @"email": SafeJSONValue(profile.email),
                            @"address": [[BCClient sharedClient] walletHash]
+                         };
+
+    JSValueRef jsonValue = [self valueObjectFromDictionary:data];
+    JSObjectCallAsFunction(ctx, ref, NULL, 1, &jsonValue, NULL);
+}
+
+- (void)getSystemInfoWithCallback:(WebScriptObject *)callback
+{
+    if (IsNullOrUndefined(callback))
+    {
+        [WebScriptObject throwException:@"callback argument is undefined"];
+        return;
+    }
+
+    JSObjectRef ref = [callback JSObject];
+    JSContextRef ctx = self.frame.globalContext;
+
+    NSDictionary *data = @{
+                           @"decimalSeparator": _currencyFormatter.decimalSeparator
                          };
 
     JSValueRef jsonValue = [self valueObjectFromDictionary:data];
@@ -174,7 +196,8 @@
         selectorMap = @{
                         @"sendMoneyToAddress:amount:callback:": @"sendMoney",
                         @"transactionWithHash:callback:": @"getTransaction",
-                        @"getUserInformationWithCallback:": @"getUserInfo"
+                        @"getUserInformationWithCallback:": @"getUserInfo",
+                        @"getSystemInfoWithCallback:": @"getSystemInfo"
                       };
     }
 
