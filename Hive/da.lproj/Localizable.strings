@@ -1,133 +1,133 @@
 /* App load error description */
-"A network error has occurred or the application data file has been removed or corrupted." = "A network error has occurred or the application data file has been removed or corrupted.";
+"A network error has occurred or the application data file has been removed or corrupted." = "En netværksfejl opstod, eller programmets dataarkiv er blevet fjernet eller er korrupt.";
 
 /* Address field placeholder */
-"Address" = "Address";
+"Address" = "Adresse";
 
 /* Amount exceeds balance alert title */
-"Amount exceeds balance." = "Amount exceeds balance.";
+"Amount exceeds balance." = "Beløbet er højere end din saldo.";
 
 /* Anonymous username for profile page */
-"Anonymous" = "Anonymous";
+"Anonymous" = "Anonym";
 
 /* App load error title */
-"Application can't be loaded" = "Application can't be loaded";
+"Application can't be loaded" = "Programmet kan ikke startes";
 
 /* Applications view title */
 "Apps" = "Apps";
 
 /* Cancel button title */
-"Cancel" = "Cancel";
+"Cancel" = "Annuller";
 
 /* No comment provided by engineer. */
-"click to copy" = "click to copy";
+"click to copy" = "kopier?";
 
 /* Contact name empty alert title */
-"Contact can't be saved." = "Contact can't be saved.";
+"Contact can't be saved." = "Kontaktpersonen kunne ikke gemmes.";
 
 /* Contacts view title */
-"Contacts" = "Contacts";
+"Contacts" = "Kontaktpersoner";
 
 /* No comment provided by engineer. */
-"copied!" = "copied!";
+"copied!" = "kopieret!";
 
 /* Quit without saves error question message */
-"Could not save changes while quitting. Quit anyway?" = "Could not save changes while quitting. Quit anyway?";
+"Could not save changes while quitting. Quit anyway?" = "Ændringerne blev ikke arkiveret ved afslutningen. Afslut alligevel?";
 
 /* Remove contact alert dialog body */
-"Do you really want to remove %@ %@ from your contact list?" = "Do you really want to remove %1$@ %2$@ from your contact list?";
+"Do you really want to remove %@ %@ from your contact list?" = "Er du sikker på at du ønsker at fjerne %1$@ %2$@ fra din kontaktliste?";
 
 /* No comment provided by engineer. */
-"Edit contact" = "Edit contact";
+"Edit contact" = "Rediger";
 
 /* No comment provided by engineer. */
-"Edit profile" = "Edit profile";
+"Edit profile" = "Rediger";
 
 /* Email field placeholder */
 "email" = "email";
 
 /* Sending zero bitcoin alert title */
-"Enter an amount greater than zero." = "Enter an amount greater than zero.";
+"Enter an amount greater than zero." = "Indtast et beløb større end nul.";
 
 /* Firstname field placeholder */
-"Firstname" = "Firstname";
+"Firstname" = "Fornavn";
 
 /* Install app popup title */
-"Install Hive App" = "Install Hive App";
+"Install Hive App" = "Installer Hive App";
 
 /* Address caption field placeholder */
-"Label" = "Label";
+"Label" = "Type";
 
 /* Lastname field placeholder */
-"Lastname" = "Lastname";
+"Lastname" = "Efternavn";
 
 /* Main address caption */
-"main" = "main";
+"main" = "primær";
 
 /* Main address caption string for profiles */
-"Main address" = "Main address";
+"Main address" = "Primær adresse";
 
 /* New contact view controller title */
-"New contact" = "New contact";
+"New contact" = "Ny kontaktperson";
 
 /* No comment provided by engineer. */
-"No" = "No";
+"No" = "Nej";
 
 /* Empty address alert title */
-"No address entered." = "No address entered.";
+"No address entered." = "Ingen adresse angivet.";
 
 /* Transaction failed alert message */
-"No bitcoin have been taken from your wallet." = "No bitcoin have been taken from your wallet.";
+"No bitcoin have been taken from your wallet." = "Ingen Bitcoins er blevet overført fra din Bitcoin-wallet.";
 
 /* OK Button title
    OK button title */
 "OK" = "OK";
 
 /* Autocomplete dropdown prompt */
-"or choose from the list" = "or choose from the list";
+"or choose from the list" = "eller vælg fra listen";
 
 /* Invalid address alert message */
-"Please check if you have entered the address correctly." = "Please check if you have entered the address correctly.";
+"Please check if you have entered the address correctly." = "Se venligst efter, om du har angivet adressen korrekt.";
 
 /* Empty address alert message */
-"Please enter a valid Bitcoin address or select one from the dropdown list." = "Please enter a valid Bitcoin address or select one from the dropdown list.";
+"Please enter a valid Bitcoin address or select one from the dropdown list." = "Indtast venligst en gyldig Bitcoin-adresse eller vælg fra lsiten.";
 
 /* Profile view title string */
-"Profile" = "Profile";
+"Profile" = "Dine oplysninger";
 
 /* Quit anyway button title */
-"Quit anyway" = "Quit anyway";
+"Quit anyway" = "Afslut alligevel";
 
 /* Quit without saves error question info */
-"Quitting now will lose any changes you have made since the last successful save" = "Quitting now will lose any changes you have made since the last successful save";
+"Quitting now will lose any changes you have made since the last successful save" = "Hvis du afslutter nu, vil du miste alle ændringer du har foretaget siden sidste arkivering.";
 
 /* Remove contact alert dialog title */
-"Remove contact" = "Remove contact";
+"Remove contact" = "Fjern kontaktperson";
 
 /* Invalid address alert title */
-"This isn't a valid Bitcoin address." = "This isn't a valid Bitcoin address.";
+"This isn't a valid Bitcoin address." = "Dette er ikke en gyldig Bitcoin-adresse.";
 
 /* Transaction failed alert title */
-"Transaction could not be completed." = "Transaction could not be completed.";
+"Transaction could not be completed." = "Transaktionen blev ikke gennemført.";
 
 /* Transactions view title */
-"Transactions" = "Transactions";
+"Transactions" = "Transaktioner";
 
 /* Sending zero bitcoin alert message */
-"Why would you want to send someone 0 BTC?" = "Why would you want to send someone 0 BTC?";
+"Why would you want to send someone 0 BTC?" = "Hvorfor ville du ønske at sende 0 BTC?";
 
 /* Install app popup confirmation */
-"Would you like to install \"%@\" application?" = "Would you like to install \"%@\" application?";
+"Would you like to install \"%@\" application?" = "Vil du installere programmet \"%@\"?";
 
 /* No comment provided by engineer. */
-"Yes" = "Yes";
+"Yes" = "Ja";
 
 /* Install app popup confirmation when app exists */
-"You already have \"%@\" application. Would you like to overwrite it?" = "You already have \"%@\" application. Would you like to overwrite it?";
+"You already have \"%@\" application. Would you like to overwrite it?" = "Du har allerede installeret programmet \"%@\". Ønsker du at overskrive det?";
 
 /* Amount exceeds balance alert message */
-"You cannot send more money than you own." = "You cannot send more money than you own.";
+"You cannot send more money than you own." = "Du kan ikke sende flere penge, end du har til rådighed.";
 
 /* Contact name empty alert message */
-"You need to give the contact a name before you can add it to the list." = "You need to give the contact a name before you can add it to the list.";
+"You need to give the contact a name before you can add it to the list." = "Det er nødvendigt at give kontaktpersonen et navn, før denne kan føjes til listen.";
 

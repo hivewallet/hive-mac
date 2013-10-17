@@ -3,25 +3,25 @@
 "1.title" = "Send Bitcoin";
 
 /* Class = "NSButtonCell"; title = "Cancel"; ObjectID = "6"; */
-"6.title" = "Cancel";
+"6.title" = "Annuller";
 
 /* Class = "NSButtonCell"; title = "Send"; ObjectID = "10"; */
 "10.title" = "Send";
 
 /* Class = "NSTextFieldCell"; title = "To:"; ObjectID = "14"; */
-"14.title" = "To:";
+"14.title" = "Til:";
 
 /* Class = "NSTextFieldCell"; title = "Amount:"; ObjectID = "16"; */
-"16.title" = "Amount:";
+"16.title" = "Beløb:";
 
 /* Class = "NSTextFieldCell"; placeholderString = "Type to search..."; ObjectID = "20"; */
-"20.placeholderString" = "Type to search...";
+"20.placeholderString" = "Tast for at søge…";
 
 /* Class = "NSTextFieldCell"; title = "John Whatshisface"; ObjectID = "20"; */
 "20.title" = "John Whatshisface";
 
 /* Class = "NSTextFieldCell"; title = "Main address"; ObjectID = "22"; */
-"22.title" = "Main address";
+"22.title" = "Primær adresse";
 
 /* Class = "NSBox"; title = "Box"; ObjectID = "23"; */
 "23.title" = "Box";
