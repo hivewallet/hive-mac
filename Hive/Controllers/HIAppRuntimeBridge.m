@@ -22,6 +22,8 @@
     NSInteger _BTCInSatoshi;
     NSInteger _mBTCInSatoshi;
     NSInteger _uBTCInSatoshi;
+    NSString *_IncomingTransactionType;
+    NSString *_OutgoingTransactionType;
 }
 
 @end
@@ -42,6 +44,9 @@
         _BTCInSatoshi = SATOSHI;
         _mBTCInSatoshi = SATOSHI / 1000;
         _uBTCInSatoshi = SATOSHI / 1000 / 1000;
+
+        _IncomingTransactionType = @"incoming";
+        _OutgoingTransactionType = @"outgoing";
     }
 
     return self;
@@ -118,7 +123,7 @@
 
     NSInteger amount = [data[@"amount"] integerValue];
     NSInteger absolute = labs(amount);
-    BOOL received = (amount >= 0);
+    BOOL incoming = (amount >= 0);
 
     NSArray *inputs = [data[@"details"] filteredArrayUsingPredicate:
                        [NSPredicate predicateWithFormat:@"category = 'received'"]];
@@ -127,8 +132,8 @@
 
     NSDictionary *transaction = @{
                                   @"id": data[@"txid"],
+                                  @"type": (incoming ? _IncomingTransactionType : _OutgoingTransactionType),
                                   @"amount": @(absolute),
-                                  @"received": @(received),
                                   @"timestamp": [_ISODateFormatter stringFromDate:data[@"time"]],
                                   @"inputAddresses": [inputs valueForKey:@"address"],
                                   @"outputAddresses": [outputs valueForKey:@"address"]
@@ -219,7 +224,9 @@
         keyMap = @{
                    @"_BTCInSatoshi": @"BTC_IN_SATOSHI",
                    @"_mBTCInSatoshi": @"MBTC_IN_SATOSHI",
-                   @"_uBTCInSatoshi": @"UBTC_IN_SATOSHI"
+                   @"_uBTCInSatoshi": @"UBTC_IN_SATOSHI",
+                   @"_IncomingTransactionType": @"TX_TYPE_INCOMING",
+                   @"_OutgoingTransactionType": @"TX_TYPE_OUTGOING"
                  };
     }
 
