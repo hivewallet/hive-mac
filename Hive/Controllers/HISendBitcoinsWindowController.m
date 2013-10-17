@@ -168,7 +168,7 @@ NSString * const HISendBitcoinsWindowSuccessKey = @"success";
 
 - (void)cancelClicked:(id)sender
 {
-    [self closeAndNotifyWithSuccess:NO amount:0];
+    [self closeAndNotifyWithSuccess:NO transactionId:nil];
 }
 
 - (void)sendClicked:(id)sender
@@ -211,10 +211,12 @@ NSString * const HISendBitcoinsWindowSuccessKey = @"success";
     {
         [self.sendButton showSpinner];
 
-        [[BCClient sharedClient] sendBitcoins:satoshi toHash:target completion:^(BOOL success, NSString *hash) {
+        [[BCClient sharedClient] sendBitcoins:satoshi
+                                       toHash:target
+                                   completion:^(BOOL success, NSString *transactionId) {
             if (success)
             {
-                [self closeAndNotifyWithSuccess:YES amount:amount];
+                [self closeAndNotifyWithSuccess:YES transactionId:transactionId];
             }
             else
             {
@@ -229,13 +231,13 @@ NSString * const HISendBitcoinsWindowSuccessKey = @"success";
     }
 }
 
-- (void)closeAndNotifyWithSuccess:(BOOL)success amount:(NSDecimalNumber *)amount
+- (void)closeAndNotifyWithSuccess:(BOOL)success transactionId:(NSString *)transactionId
 {
     [self.sendButton hideSpinner];
 
     if (_sendCompletion)
     {
-        _sendCompletion(success, amount, nil);
+        _sendCompletion(success, transactionId);
     }
 
     [self close];

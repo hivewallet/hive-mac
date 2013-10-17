@@ -68,23 +68,29 @@
                                                   isNegative:NO];
     }
 
-    [self.controller requestPaymentToHash:hash amount:decimal completion:^(BOOL success, NSString *hash) {
+    [self.controller requestPaymentToHash:hash
+                                   amount:decimal
+                               completion:^(BOOL success, NSString *transactionId) {
         if (!IsNullOrUndefined(callback))
         {
             JSObjectRef ref = [callback JSObject];
             JSContextRef ctx = self.frame.globalContext;
 
-            JSValueRef params[2];
-            JSStringRef hashParam = hash ? JSStringCreateWithCFString((__bridge CFStringRef) hash) : NULL;
-            params[0] = JSValueMakeBoolean(ctx, success);
-            params[1] = JSValueMakeString(ctx, hashParam);
-
-            // And here's where I call the callback and pass in the JS object
-            JSObjectCallAsFunction(ctx, ref, NULL, 2, params, NULL);
-
-            if (hashParam)
+            if (success)
             {
-                JSStringRelease(hashParam);
+                JSStringRef idParam = JSStringCreateWithCFString((__bridge CFStringRef) transactionId);
+
+                JSValueRef params[2];
+                params[0] = JSValueMakeBoolean(ctx, YES);
+                params[1] = JSValueMakeString(ctx, idParam);
+
+                JSObjectCallAsFunction(ctx, ref, NULL, 2, params, NULL);
+                JSStringRelease(idParam);
+            }
+            else
+            {
+                JSValueRef result = JSValueMakeBoolean(ctx, NO);
+                JSObjectCallAsFunction(ctx, ref, NULL, 1, &result, NULL);
             }
         }
     }];

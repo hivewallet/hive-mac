@@ -31,11 +31,11 @@
 
 - (void)sendBitcoins:(uint64)amount
               toHash:(NSString *)hash
-          completion:(void(^)(BOOL success, NSString *hash))completion;
+          completion:(void(^)(BOOL success, NSString *transactionId))completion;
 
 - (void)sendBitcoins:(uint64)amount
            toContact:(HIContact *)contact
-          completion:(void(^)(BOOL success, NSString *hash))completion;
+          completion:(void(^)(BOOL success, NSString *transactionId))completion;
 
 - (NSDictionary *)transactionDefinitionWithHash:(NSString *)hash;
 

@@ -320,7 +320,7 @@ static NSString * const kBCClientBaseURLString = @"https://grabhive.com/";
 
 - (void)sendBitcoins:(uint64)amount
               toHash:(NSString *)hash
-          completion:(void(^)(BOOL success, NSString *hash))completion
+          completion:(void(^)(BOOL success, NSString *transactionId))completion
 {
     if (amount > _balance)
     {
@@ -342,9 +342,9 @@ static NSString * const kBCClientBaseURLString = @"https://grabhive.com/";
             [[HIBitcoinManager defaultManager] sendCoins:amount
                                              toReceipent:hash
                                                  comment:nil
-                                              completion:^(NSString *sHash) {
+                                              completion:^(NSString *transactionId) {
                 dispatch_async(dispatch_get_main_queue(), ^{
-                    completion((sHash!=nil), sHash);
+                    completion((transactionId != nil), transactionId);
                 });
             }];
         }
@@ -353,7 +353,7 @@ static NSString * const kBCClientBaseURLString = @"https://grabhive.com/";
 
 - (void)sendBitcoins:(uint64)amount
            toContact:(HIContact *)contact
-          completion:(void(^)(BOOL success, NSString *hash))completion
+          completion:(void(^)(BOOL success, NSString *transactionId))completion
 {
     [self sendBitcoins:amount toHash:contact.account completion:completion];
 }

@@ -9,6 +9,7 @@
 #import <WebKit/WebKit.h>
 #import "HIViewController.h"
 #import "HIApplication.h"
+#import "HISendBitcoinsWindowController.h"
 
 /*
  Runs the selected application in a web view and manages its communication with Hive.
@@ -21,6 +22,6 @@
 
 - (void)requestPaymentToHash:(NSString *)hash
                       amount:(NSDecimalNumber *)amount
-                  completion:(void(^)(BOOL success, NSString *hash))completion;
+                  completion:(HITransactionCompletionCallback)completion;
 
 @end

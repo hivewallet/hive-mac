@@ -15,6 +15,7 @@
 extern NSString * const HISendBitcoinsWindowDidClose;
 extern NSString * const HISendBitcoinsWindowSuccessKey;
 
+typedef void(^HITransactionCompletionCallback)(BOOL success, NSString *transactionId);
 
 /*
  Manages the "Send Bitcoin" window.
@@ -32,7 +33,7 @@ extern NSString * const HISendBitcoinsWindowSuccessKey;
 @property (strong) IBOutlet HIButtonWithSpinner *sendButton;
 @property (nonatomic, strong) IBOutlet NSButton *dropdownButton;
 
-@property (copy) void(^sendCompletion)(BOOL success, NSDecimalNumber *amount, NSString *hash);
+@property (copy) HITransactionCompletionCallback sendCompletion;
 
 - (id)initWithContact:(HIContact *)contact;
 - (void)setHashAddress:(NSString *)hash;
