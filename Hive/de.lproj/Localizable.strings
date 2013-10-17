@@ -2,7 +2,7 @@
 "A network error has occurred or the application data file has been removed or corrupted." = "Ein Netzwerkfehler ist aufgetreten oder die Anwendungsdatei wurde entfernt oder beschädigt.";
 
 /* Address field placeholder */
-"Address" = "Addresse";
+"Address" = "Adresse";
 
 /* Amount exceeds balance alert title */
 "Amount exceeds balance." = "Gesamtbetrag ist größer als der Kontostand";
