@@ -1,133 +1,133 @@
 /* App load error description */
-"A network error has occurred or the application data file has been removed or corrupted." = "A network error has occurred or the application data file has been removed or corrupted.";
+"A network error has occurred or the application data file has been removed or corrupted." = "Een netwerkfout heeft plaatsgevonden, of het applicatie databestand is verwijderd of beschadigd.";
 
 /* Address field placeholder */
-"Address" = "Address";
+"Address" = "Adres";
 
 /* Amount exceeds balance alert title */
-"Amount exceeds balance." = "Amount exceeds balance.";
+"Amount exceeds balance." = "Bedrag is hoger dan de balans";
 
 /* Anonymous username for profile page */
-"Anonymous" = "Anonymous";
+"Anonymous" = "Anoniem";
 
 /* App load error title */
-"Application can't be loaded" = "Application can't be loaded";
+"Application can't be loaded" = "Applicatie kan niet worden geladen";
 
 /* Applications view title */
 "Apps" = "Apps";
 
 /* Cancel button title */
-"Cancel" = "Cancel";
+"Cancel" = "Annuleren";
 
 /* No comment provided by engineer. */
-"click to copy" = "click to copy";
+"click to copy" = "klik om te kopiëren";
 
 /* Contact name empty alert title */
-"Contact can't be saved." = "Contact can't be saved.";
+"Contact can't be saved." = "Contact kan niet worden opgeslagen.";
 
 /* Contacts view title */
-"Contacts" = "Contacts";
+"Contacts" = "Contacten";
 
 /* No comment provided by engineer. */
-"copied!" = "copied!";
+"copied!" = "gekopieërd!";
 
 /* Quit without saves error question message */
-"Could not save changes while quitting. Quit anyway?" = "Could not save changes while quitting. Quit anyway?";
+"Could not save changes while quitting. Quit anyway?" = "Wijzigingen konden niet worden opgeslagen. Toch stoppen?";
 
 /* Remove contact alert dialog body */
-"Do you really want to remove %@ %@ from your contact list?" = "Do you really want to remove %1$@ %2$@ from your contact list?";
+"Do you really want to remove %@ %@ from your contact list?" = "Wilt u %1$@ %2$@ echt verwijderen uit uw contactenlijst?";
 
 /* No comment provided by engineer. */
-"Edit contact" = "Edit contact";
+"Edit contact" = "Wijzig contact";
 
 /* No comment provided by engineer. */
-"Edit profile" = "Edit profile";
+"Edit profile" = "Wijzig profiel";
 
 /* Email field placeholder */
 "email" = "email";
 
 /* Sending zero bitcoin alert title */
-"Enter an amount greater than zero." = "Enter an amount greater than zero.";
+"Enter an amount greater than zero." = "Voer een bedrag in groter dan nul.";
 
 /* Firstname field placeholder */
-"Firstname" = "Firstname";
+"Firstname" = "Voornaam";
 
 /* Install app popup title */
-"Install Hive App" = "Install Hive App";
+"Install Hive App" = "Installeer Hive App";
 
 /* Address caption field placeholder */
 "Label" = "Label";
 
 /* Lastname field placeholder */
-"Lastname" = "Lastname";
+"Lastname" = "Achternaam";
 
 /* Main address caption */
-"main" = "main";
+"main" = "hoofd";
 
 /* Main address caption string for profiles */
-"Main address" = "Main address";
+"Main address" = "Hoofdadres";
 
 /* New contact view controller title */
-"New contact" = "New contact";
+"New contact" = "Nieuw contact";
 
 /* No comment provided by engineer. */
-"No" = "No";
+"No" = "Nee";
 
 /* Empty address alert title */
-"No address entered." = "No address entered.";
+"No address entered." = "Geen adres ingevoerd.";
 
 /* Transaction failed alert message */
-"No bitcoin have been taken from your wallet." = "No bitcoin have been taken from your wallet.";
+"No bitcoin have been taken from your wallet." = "Er zijn geen bitcoin uit uw portemonnee gehaald.";
 
 /* OK Button title
    OK button title */
-"OK" = "OK";
+"OK" = "Ok";
 
 /* Autocomplete dropdown prompt */
-"or choose from the list" = "or choose from the list";
+"or choose from the list" = "of kies uit de lijst";
 
 /* Invalid address alert message */
-"Please check if you have entered the address correctly." = "Please check if you have entered the address correctly.";
+"Please check if you have entered the address correctly." = "Controleer of u het adres juist heeft ingevoerd";
 
 /* Empty address alert message */
-"Please enter a valid Bitcoin address or select one from the dropdown list." = "Please enter a valid Bitcoin address or select one from the dropdown list.";
+"Please enter a valid Bitcoin address or select one from the dropdown list." = "Voer een geldig Bitcoinadres in of kies een adres uit de lijst.";
 
 /* Profile view title string */
-"Profile" = "Profile";
+"Profile" = "Profiel";
 
 /* Quit anyway button title */
-"Quit anyway" = "Quit anyway";
+"Quit anyway" = "Toch stoppen";
 
 /* Quit without saves error question info */
-"Quitting now will lose any changes you have made since the last successful save" = "Quitting now will lose any changes you have made since the last successful save";
+"Quitting now will lose any changes you have made since the last successful save" = "Als u nu stopt zullen de wijziging, die u gemaakt heeft sinds de laatste keer dat u heeft opgeslagen, verloren gaan";
 
 /* Remove contact alert dialog title */
-"Remove contact" = "Remove contact";
+"Remove contact" = "Verwijder contact";
 
 /* Invalid address alert title */
-"This isn't a valid Bitcoin address." = "This isn't a valid Bitcoin address.";
+"This isn't a valid Bitcoin address." = "Dit is geen geldig Bitcoinadres.";
 
 /* Transaction failed alert title */
-"Transaction could not be completed." = "Transaction could not be completed.";
+"Transaction could not be completed." = "Transactie kon niet worden voltooid.";
 
 /* Transactions view title */
-"Transactions" = "Transactions";
+"Transactions" = "Transacties";
 
 /* Sending zero bitcoin alert message */
-"Why would you want to send someone 0 BTC?" = "Why would you want to send someone 0 BTC?";
+"Why would you want to send someone 0 BTC?" = "Waarom wilt u iemand 0 BTC sturen?";
 
 /* Install app popup confirmation */
-"Would you like to install \"%@\" application?" = "Would you like to install \"%@\" application?";
+"Would you like to install \"%@\" application?" = "Wilt u \"%@\" applicatie installeren?";
 
 /* No comment provided by engineer. */
-"Yes" = "Yes";
+"Yes" = "Ja";
 
 /* Install app popup confirmation when app exists */
-"You already have \"%@\" application. Would you like to overwrite it?" = "You already have \"%@\" application. Would you like to overwrite it?";
+"You already have \"%@\" application. Would you like to overwrite it?" = "U heeft \"%@\" applicatie al. Wilt u de huidige applicatie vervangen?";
 
 /* Amount exceeds balance alert message */
-"You cannot send more money than you own." = "You cannot send more money than you own.";
+"You cannot send more money than you own." = "U kunt niet meer geld verzenden dan dat u daadwerkelijk heeft.";
 
 /* Contact name empty alert message */
-"You need to give the contact a name before you can add it to the list." = "You need to give the contact a name before you can add it to the list.";
+"You need to give the contact a name before you can add it to the list." = "U moet het contact een naam geven voordat u het aan de lijst kan toevoegen.";
 

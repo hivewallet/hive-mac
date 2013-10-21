@@ -33,7 +33,7 @@
                         <textField verticalHuggingPriority="750" id="65">
                             <rect key="frame" x="49" y="215" width="234" height="17"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                            <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Bitcoin addresses" id="81">
+                            <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Bitcoinadressen" id="81">
                                 <font key="font" size="13" name="Helvetica-Bold"/>
                                 <color key="textColor" red="0.57254901960000004" green="0.57254901960000004" blue="0.57254901960000004" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
@@ -50,7 +50,7 @@
                                         <size key="offset" width="0.0" height="1"/>
                                         <color key="color" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                     </shadow>
-                                    <buttonCell key="cell" type="square" title="Add address" bezelStyle="shadowlessSquare" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="80" customClass="HIButtonCell">
+                                    <buttonCell key="cell" type="square" title="Adres toevoegen" bezelStyle="shadowlessSquare" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="80" customClass="HIButtonCell">
                                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                         <font key="font" metaFont="system"/>
                                     </buttonCell>
@@ -65,7 +65,7 @@
                                         <size key="offset" width="0.0" height="1"/>
                                         <color key="color" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                     </shadow>
-                                    <buttonCell key="cell" type="square" title="Remove contact" bezelStyle="shadowlessSquare" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="97" customClass="HIDeleteButtonCell">
+                                    <buttonCell key="cell" type="square" title="Verwijder contact" bezelStyle="shadowlessSquare" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="97" customClass="HIDeleteButtonCell">
                                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                         <font key="font" metaFont="system"/>
                                     </buttonCell>
@@ -100,7 +100,7 @@
                                 <textField verticalHuggingPriority="750" id="74">
                                     <rect key="frame" x="28" y="119" width="234" height="17"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Contact information" id="75">
+                                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Contact informatie" id="75">
                                         <font key="font" size="13" name="Helvetica-Bold"/>
                                         <color key="textColor" red="0.57254901960000004" green="0.57254901960000004" blue="0.57254901960000004" alpha="1" colorSpace="calibratedRGB"/>
                                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
@@ -151,7 +151,7 @@
                         <size key="offset" width="0.0" height="1"/>
                         <color key="color" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                     </shadow>
-                    <buttonCell key="cell" type="bevel" title="Done" bezelStyle="regularSquare" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="14" customClass="HIDoneButtonCell">
+                    <buttonCell key="cell" type="bevel" title="Klaar" bezelStyle="regularSquare" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="14" customClass="HIDoneButtonCell">
                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                         <font key="font" metaFont="system"/>
                     </buttonCell>
@@ -208,7 +208,7 @@
                 <textField verticalHuggingPriority="750" id="106">
                     <rect key="frame" x="0.0" y="311" width="65" height="16"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="edit" drawsBackground="YES" id="107">
+                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="aanpassen" drawsBackground="YES" id="107">
                         <font key="font" size="12" name="Helvetica"/>
                         <color key="textColor" red="0.99987602229999994" green="0.99998402600000003" blue="0.99978637699999995" alpha="1" colorSpace="calibratedRGB"/>
                         <color key="backgroundColor" red="0.26450267430000002" green="0.2645250261" blue="0.2644736171" alpha="0.66000000000000003" colorSpace="calibratedRGB"/>
