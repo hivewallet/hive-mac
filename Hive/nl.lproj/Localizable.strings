@@ -20,7 +20,7 @@
 "Cancel" = "Annuleren";
 
 /* No comment provided by engineer. */
-"click to copy" = "klik om te kopiëren";
+"click to copy" = "klik om te kopiÃ«ren";
 
 /* Contact name empty alert title */
 "Contact can't be saved." = "Contact kan niet worden opgeslagen.";
@@ -29,7 +29,7 @@
 "Contacts" = "Contacten";
 
 /* No comment provided by engineer. */
-"copied!" = "gekopieërd!";
+"copied!" = "gekopieÃ«rd!";
 
 /* Quit without saves error question message */
 "Could not save changes while quitting. Quit anyway?" = "Wijzigingen konden niet worden opgeslagen. Toch stoppen?";

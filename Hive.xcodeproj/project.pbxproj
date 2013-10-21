@@ -262,7 +262,7 @@
 		585FFF331815374C005BCF73 /* nl */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = nl; path = nl.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		585FFF341815374C005BCF73 /* nl */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = nl; path = nl.lproj/Credits.rtf; sourceTree = "<group>"; };
 		585FFF351815374C005BCF73 /* nl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = nl; path = nl.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		585FFF361815374C005BCF73 /* nl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = nl; path = nl.lproj/Localizable.strings; sourceTree = "<group>"; };
+		585FFF361815374C005BCF73 /* nl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = nl; path = nl.lproj/Localizable.strings; sourceTree = "<group>"; };
 		586059AC180419DF00FD9C2A /* bitstamp.hiveapp */ = {isa = PBXFileReference; lastKnownFileType = file; path = bitstamp.hiveapp; sourceTree = "<group>"; };
 		586059AD180419DF00FD9C2A /* minefield.hiveapp */ = {isa = PBXFileReference; lastKnownFileType = file; path = minefield.hiveapp; sourceTree = "<group>"; };
 		586059AE180419DF00FD9C2A /* supporthive.hiveapp */ = {isa = PBXFileReference; lastKnownFileType = file; path = supporthive.hiveapp; sourceTree = "<group>"; };
