@@ -133,6 +133,11 @@ static NSString * const Separator = @"Separator";
     {
         // just create a placeholder for a single address
         [self addAddressPlaceholderWithAddress:nil];
+
+        // make sure placeholders are fully visible regardless of locale
+        [self.firstnameField recalcForString:[self.firstnameField.cell placeholderString]];
+        [self.lastnameField recalcForString:[self.lastnameField.cell placeholderString]];
+        [self.emailField recalcForString:[self.emailField.cell placeholderString]];
     }
 
     dispatch_async(dispatch_get_main_queue(), ^{
