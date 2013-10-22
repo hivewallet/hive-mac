@@ -52,6 +52,9 @@
 /* Firstname field placeholder */
 "Firstname" = "Imię";
 
+/* Direction label in transactions list when user is the receiver */
+"from" = "od";
+
 /* Install app popup title */
 "Install Hive App" = "Instalacja aplikacji";
 
@@ -106,6 +109,9 @@
 
 /* Invalid address alert title */
 "This isn't a valid Bitcoin address." = "Podany adres Bitcoin jest nieprawidłowy.";
+
+/* Direction label in transactions list when user is the sender */
+"to" = "do";
 
 /* Transaction failed alert title */
 "Transaction could not be completed." = "Transakcja nie mogła zostać wykonana.";

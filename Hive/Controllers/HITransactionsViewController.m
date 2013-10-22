@@ -170,7 +170,10 @@
 {
     NSString *formattedAmount = [_amountFormatter stringFromNumber:@(transaction.absoluteAmount * 1.0 / SATOSHI)];
     NSString *amountPart = [NSString stringWithFormat:@"%@ BTC", formattedAmount];
-    NSString *directionPart = (transaction.direction == HITransactionDirectionIncoming) ? @"from" : @"to";
+
+    NSString *directionPart = (transaction.direction == HITransactionDirectionIncoming) ?
+        NSLocalizedString(@"from", @"Direction label in transactions list when user is the receiver") :
+        NSLocalizedString(@"to", @"Direction label in transactions list when user is the sender");
 
     // TODO: dynamic truncation and styling for hashes
     NSString *contactPart;

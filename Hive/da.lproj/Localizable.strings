@@ -52,6 +52,9 @@
 /* Firstname field placeholder */
 "Firstname" = "Fornavn";
 
+/* Direction label in transactions list when user is the receiver */
+"from" = "fra";
+
 /* Install app popup title */
 "Install Hive App" = "Installer Hive App";
 
@@ -106,6 +109,9 @@
 
 /* Invalid address alert title */
 "This isn't a valid Bitcoin address." = "Dette er ikke en gyldig Bitcoin-adresse.";
+
+/* Direction label in transactions list when user is the sender */
+"to" = "til";
 
 /* Transaction failed alert title */
 "Transaction could not be completed." = "Transaktionen blev ikke gennemført.";
