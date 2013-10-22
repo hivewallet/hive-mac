@@ -79,6 +79,13 @@
         if (!IsNullOrUndefined(callback))
         {
             JSObjectRef ref = [callback JSObject];
+
+            if (!ref)
+            {
+                // app was already closed
+                return;
+            }
+
             JSContextRef ctx = self.frame.globalContext;
 
             if (success)
