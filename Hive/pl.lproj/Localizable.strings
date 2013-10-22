@@ -5,7 +5,7 @@
 "Address" = "Adres";
 
 /* Amount exceeds balance alert title */
-"Amount exceeds balance." = "Amount exceeds balance.";
+"Amount exceeds balance." = "Podana kwota jest zbyt duża.";
 
 /* Anonymous username for profile page */
 "Anonymous" = "Anonimowy użytkownik";
@@ -126,7 +126,7 @@
 "You already have \"%@\" application. Would you like to overwrite it?" = "Aplikacja \"%@\" jest już zainstalowana. Czy chcesz ją nadpisać?";
 
 /* Amount exceeds balance alert message */
-"You cannot send more money than you own." = "Nie możesz wysłać więcej Bitcoinów, niż masz na koncie.";
+"You cannot send more money than you own." = "Nie możesz wysłać więcej Bitcoinów niż masz na koncie.";
 
 /* Contact name empty alert message */
 "You need to give the contact a name before you can add it to the list." = "Kontakt musi mieć jakąś nazwę, żeby mógł zostać dodany do listy.";
