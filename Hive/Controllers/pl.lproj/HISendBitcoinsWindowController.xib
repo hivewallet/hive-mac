@@ -146,8 +146,8 @@ Gw
                                     </textFieldCell>
                                 </textField>
                                 <button id="51">
-                                    <rect key="frame" x="334" y="74" width="24" height="24"/>
-                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                    <rect key="frame" x="328" y="74" width="24" height="24"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES"/>
                                     <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="icon-dropdown-open" imagePosition="only" alignment="center" alternateImage="icon-dropdown-close" refusesFirstResponder="YES" imageScaling="proportionallyDown" inset="2" id="52">
                                         <behavior key="behavior" pushIn="YES" changeContents="YES" lightByContents="YES"/>
                                         <font key="font" metaFont="system"/>
