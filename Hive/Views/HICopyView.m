@@ -14,6 +14,8 @@
     NSTextField *_copyLabel;
     NSUInteger _trackTag;
     NSView *_selectionView;
+    NSString *_clickToCopyText;
+    NSString *_copiedText;
 }
 
 @end
@@ -23,9 +25,13 @@
 - (id)initWithFrame:(NSRect)frame
 {
     self = [super initWithFrame:frame];
+
     if (self) {
         self.autoresizingMask = NSViewWidthSizable | NSViewMinYMargin;
         self.autoresizesSubviews = YES;
+
+        _clickToCopyText = NSLocalizedString(@"click to copy", nil);
+        _copiedText = NSLocalizedString(@"copied!", nil);
 
         _selectionView = [[NSView alloc] initWithFrame:self.bounds];
         _selectionView.autoresizingMask = NSViewWidthSizable | NSViewMinYMargin;
@@ -34,17 +40,22 @@
         _selectionView.alphaValue = 0.0;
         [self addSubview:_selectionView];
 
+        NSFont *labelFont = [NSFont fontWithName:@"Helvetica-Bold" size:12];
+        NSSize clickTextSize = [_clickToCopyText sizeWithAttributes:@{NSFontAttributeName: labelFont}];
+        NSSize copiedTextSize = [_copiedText sizeWithAttributes:@{NSFontAttributeName: labelFont}];
+        CGFloat maxWidth = ceil(MAX(clickTextSize.width, copiedTextSize.width)) + 5.0;
+
         _copyLabel = [[NSTextField alloc] initWithFrame:
-                      NSMakeRect(self.frame.size.width - 120, self.frame.size.height - 25, 100, 15)];
+                      NSMakeRect(self.frame.size.width - maxWidth - 10, self.frame.size.height - 25, maxWidth, 15)];
         [_copyLabel setBordered:NO];
         _copyLabel.backgroundColor = [NSColor clearColor];
-        _copyLabel.font = [NSFont fontWithName:@"Helvetica-Bold" size:12];
+        _copyLabel.font = labelFont;
         _copyLabel.textColor = [NSColor colorWithCalibratedWhite:0 alpha:0.7];
         [_copyLabel setAlignment:NSRightTextAlignment];
         _copyLabel.autoresizingMask = NSViewMinXMargin | NSViewMinYMargin;
         [_copyLabel setSelectable:NO];
         [_copyLabel setEditable:NO];
-        _copyLabel.stringValue = NSLocalizedString(@"click to copy", nil);
+        _copyLabel.stringValue = _clickToCopyText;
         [_copyLabel setHidden:YES];
         [self addSubview:_copyLabel];
 
@@ -63,7 +74,7 @@
 
 - (void)mouseEntered:(NSEvent *)theEvent
 {
-    _copyLabel.stringValue = NSLocalizedString(@"click to copy", nil);    
+    _copyLabel.stringValue = _clickToCopyText;
     [self addSubview:_copyLabel];
     [_copyLabel setHidden:NO];
     [self displayIfNeeded];
@@ -82,7 +93,7 @@
     [pb declareTypes:@[NSStringPboardType] owner:nil];
     [pb setString:_contentToCopy forType:NSStringPboardType];
 
-    _copyLabel.stringValue = NSLocalizedString(@"copied!", nil);
+    _copyLabel.stringValue = _copiedText;
 
     CABasicAnimation *fadeOut = [CABasicAnimation animationWithKeyPath:@"opacity"];
     [fadeOut setFromValue:@1.0];
