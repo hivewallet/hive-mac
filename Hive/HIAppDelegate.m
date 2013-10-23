@@ -10,6 +10,7 @@
 #import "HIAppDelegate.h"
 #import "HIApplicationsManager.h"
 #import "HIApplicationURLProtocol.h"
+#import "HIBitcoinURL.h"
 #import "HIMainWindowController.h"
 #import "HISendBitcoinsWindowController.h"
 #import "HITransaction.h"
@@ -55,6 +56,11 @@ static NSString * const WarningDisplayedKey = @"WarningDisplayed";
                                              selector:@selector(sendWindowDidClose:)
                                                  name:HISendBitcoinsWindowDidClose
                                                object:nil];
+
+    [[NSAppleEventManager sharedAppleEventManager] setEventHandler:self
+                                                       andSelector:@selector(handleURLEvent:withReplyEvent:)
+                                                     forEventClass:kInternetEventClass
+                                                        andEventID:kAEGetURL];
 
     [self showBetaWarning];
     [self preinstallAppsIfNeeded];
@@ -209,6 +215,30 @@ static NSString * const WarningDisplayedKey = @"WarningDisplayed";
     [_managedObjectContext setPersistentStoreCoordinator:coordinator];
 
     return _managedObjectContext;
+}
+
+// handler for bitcoin:xxx URLs
+- (void)handleURLEvent:(NSAppleEventDescriptor *)event withReplyEvent:(NSAppleEventDescriptor *)reply
+{
+    NSString *URLString = [[event paramDescriptorForKeyword:keyDirectObject] stringValue];
+    HIBitcoinURL *bitcoinURL = [[HIBitcoinURL alloc] initWithURLString:URLString];
+
+    if (bitcoinURL.valid)
+    {
+        HISendBitcoinsWindowController *window = [self sendBitcoinsWindow];
+
+        if (bitcoinURL.address)
+        {
+            [window setHashAddress:bitcoinURL.address];
+        }
+
+        if (bitcoinURL.amount)
+        {
+            [window setLockedAmount:bitcoinURL.amount];
+        }
+
+        [window showWindow:self];
+    }
 }
 
 // Returns the NSUndoManager for the application.

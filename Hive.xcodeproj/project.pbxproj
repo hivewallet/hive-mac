@@ -79,6 +79,7 @@
 		5884A03717F56D86004A31FA /* Sparkle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5884A03617F56D86004A31FA /* Sparkle.framework */; };
 		5884A03C17F578EB004A31FA /* Sparkle.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 5884A03617F56D86004A31FA /* Sparkle.framework */; };
 		5884A03E17F57AE9004A31FA /* dsa_pub.pem in Resources */ = {isa = PBXBuildFile; fileRef = 5884A03D17F57AE9004A31FA /* dsa_pub.pem */; };
+		588E33B71817E6AE006A6A25 /* HIBitcoinURL.m in Sources */ = {isa = PBXBuildFile; fileRef = 588E33B61817E6AE006A6A25 /* HIBitcoinURL.m */; };
 		588EFB2E17D8D2970085F6E6 /* HIProfileTabView.m in Sources */ = {isa = PBXBuildFile; fileRef = 588EFB2D17D8D2970085F6E6 /* HIProfileTabView.m */; };
 		589064AE1805742C0082BE5C /* seansoutpost.hiveapp in Resources */ = {isa = PBXBuildFile; fileRef = 589064AD1805742C0082BE5C /* seansoutpost.hiveapp */; };
 		589064B7180596B80082BE5C /* HIEditableImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 589064B6180596B80082BE5C /* HIEditableImageView.m */; };
@@ -349,6 +350,8 @@
 		5884A00417F1B5FE004A31FA /* Tor.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Tor.xcodeproj; path = Tor.framework/Tor.xcodeproj; sourceTree = "<group>"; };
 		5884A03617F56D86004A31FA /* Sparkle.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Sparkle.framework; sourceTree = "<group>"; };
 		5884A03D17F57AE9004A31FA /* dsa_pub.pem */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = dsa_pub.pem; sourceTree = "<group>"; };
+		588E33B51817E6AE006A6A25 /* HIBitcoinURL.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HIBitcoinURL.h; sourceTree = "<group>"; };
+		588E33B61817E6AE006A6A25 /* HIBitcoinURL.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HIBitcoinURL.m; sourceTree = "<group>"; };
 		588EFB2C17D8D2970085F6E6 /* HIProfileTabView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HIProfileTabView.h; sourceTree = "<group>"; };
 		588EFB2D17D8D2970085F6E6 /* HIProfileTabView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HIProfileTabView.m; sourceTree = "<group>"; };
 		589064AD1805742C0082BE5C /* seansoutpost.hiveapp */ = {isa = PBXFileReference; lastKnownFileType = file; path = seansoutpost.hiveapp; sourceTree = "<group>"; };
@@ -604,6 +607,8 @@
 		5804C31F17FC884E003B7891 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				588E33B51817E6AE006A6A25 /* HIBitcoinURL.h */,
+				588E33B61817E6AE006A6A25 /* HIBitcoinURL.m */,
 				5804C32417FC88BA003B7891 /* HIProfile.h */,
 				5804C32517FC88BA003B7891 /* HIProfile.m */,
 			);
@@ -1251,6 +1256,7 @@
 				586059F518041ABD00FD9C2A /* HITransactionsViewController.m in Sources */,
 				586059FF18041AD600FD9C2A /* HIMainWindowController.m in Sources */,
 				58605A0018041AD600FD9C2A /* HINavigationController.m in Sources */,
+				588E33B71817E6AE006A6A25 /* HIBitcoinURL.m in Sources */,
 				58605A0118041AD600FD9C2A /* HISidebarController.m in Sources */,
 				58605A0218041AD600FD9C2A /* HIViewController.m in Sources */,
 				58605A6718041DFC00FD9C2A /* NPZip.m in Sources */,
