@@ -1,0 +1,133 @@
+/* App load error description */
+"A network error has occurred or the application data file has been removed or corrupted." = "Mayroong mali sa network o 'di kaya ang application file ay nasira o tinanggal.";
+
+/* Address field placeholder */
+"Address" = "Address";
+
+/* Amount exceeds balance alert title */
+"Amount exceeds balance." = "Mas malaki ang amount kaysa sa balance.";
+
+/* Anonymous username for profile page */
+"Anonymous" = "Anonymous";
+
+/* App load error title */
+"Application can't be loaded" = "Hindi mai-load ang application.";
+
+/* Applications view title */
+"Apps" = "Apps";
+
+/* Cancel button title */
+"Cancel" = "Cancel";
+
+/* No comment provided by engineer. */
+"click to copy" = "I-click para kopyahin";
+
+/* Contact name empty alert title */
+"Contact can't be saved." = "Hindi mai-save ang contact.";
+
+/* Contacts view title */
+"Contacts" = "Contacts";
+
+/* No comment provided by engineer. */
+"copied!" = "nakopya na!";
+
+/* Quit without saves error question message */
+"Could not save changes while quitting. Quit anyway?" = "Hinde mai-save ang mga binago habang nag-quit. Ituloy ang pag - quit?";
+
+/* Remove contact alert dialog body */
+"Do you really want to remove %@ %@ from your contact list?" = "Gusto mo ba talaga tanggalin %1$@ %2$@ sa iyong listahan ng mga contacts?";
+
+/* No comment provided by engineer. */
+"Edit contact" = "Baguhin ang contact";
+
+/* No comment provided by engineer. */
+"Edit profile" = "Baguhin ang profile";
+
+/* Email field placeholder */
+"email" = "email";
+
+/* Sending zero bitcoin alert title */
+"Enter an amount greater than zero." = "Maglagay ng halaga na mas malaki sa zero.";
+
+/* Firstname field placeholder */
+"Firstname" = "Pangalan";
+
+/* Install app popup title */
+"Install Hive App" = "I-install ang Hive App";
+
+/* Address caption field placeholder */
+"Label" = "Label";
+
+/* Lastname field placeholder */
+"Lastname" = "Apelyido";
+
+/* Main address caption */
+"main" = "main";
+
+/* Main address caption string for profiles */
+"Main address" = "Pangunahing address";
+
+/* New contact view controller title */
+"New contact" = "Bagong contact";
+
+/* No comment provided by engineer. */
+"No" = "No";
+
+/* Empty address alert title */
+"No address entered." = "Walang nilagay na address.";
+
+/* Transaction failed alert message */
+"No bitcoin have been taken from your wallet." = "Walang bitcoin na ibinawas sa iyong wallet.";
+
+/* OK Button title
+   OK button title */
+"OK" = "OK";
+
+/* Autocomplete dropdown prompt */
+"or choose from the list" = "o mamili sa listahan";
+
+/* Invalid address alert message */
+"Please check if you have entered the address correctly." = "Paki tingnan ulit kung inilagay ng tama ang iyong address.";
+
+/* Empty address alert message */
+"Please enter a valid Bitcoin address or select one from the dropdown list." = "Ilagay ang tamang Bitcoin address o mamili mula sa dropdown list.";
+
+/* Profile view title string */
+"Profile" = "Profile";
+
+/* Quit anyway button title */
+"Quit anyway" = "Ituloy ang pag - quit";
+
+/* Quit without saves error question info */
+"Quitting now will lose any changes you have made since the last successful save" = "Pag nag quit ka ngayun ay mawawala ang lahat ng pagbabagong iyong ginawa mula ng huli kang nag save";
+
+/* Remove contact alert dialog title */
+"Remove contact" = "Alisin ang contact";
+
+/* Invalid address alert title */
+"This isn't a valid Bitcoin address." = "Hindi ito tamang Bitcoin address.";
+
+/* Transaction failed alert title */
+"Transaction could not be completed." = "Hinde makumpleto ang transaction.";
+
+/* Transactions view title */
+"Transactions" = "Transactions";
+
+/* Sending zero bitcoin alert message */
+"Why would you want to send someone 0 BTC?" = "Bakit mo gusto magpadala ng zero BTC?";
+
+/* Install app popup confirmation */
+"Would you like to install \"%@\" application?" = "Gusto mo bang i-install ang \"%@\" application?";
+
+/* No comment provided by engineer. */
+"Yes" = "Oo";
+
+/* Install app popup confirmation when app exists */
+"You already have \"%@\" application. Would you like to overwrite it?" = "Mayroon ka ng \"%@\" application. Gusto mo ba itong i-overwrite?";
+
+/* Amount exceeds balance alert message */
+"You cannot send more money than you own." = "Hindi ka maaring magpadala ng pera ng higit sa kung ano ang meron ka.";
+
+/* Contact name empty alert message */
+"You need to give the contact a name before you can add it to the list." = "Kailangan mong pangalanan ang contact bago mo ito idagdag sa listahan.";
+
