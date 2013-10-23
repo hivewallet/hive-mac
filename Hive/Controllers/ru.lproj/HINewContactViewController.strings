@@ -1,21 +1,21 @@
 
 /* Class = "NSButtonCell"; title = "Done"; ObjectID = "14"; */
-"14.title" = "Done";
+"14.title" = "Готово";
 
 /* Class = "NSTextFieldCell"; title = "Contact information"; ObjectID = "75"; */
-"75.title" = "Contact information";
+"75.title" = "Контактная информация";
 
 /* Class = "NSTextFieldCell"; title = "Email:"; ObjectID = "78"; */
-"78.title" = "Email:";
+"78.title" = "Эл. почта:";
 
 /* Class = "NSButtonCell"; title = "Add address"; ObjectID = "80"; */
-"80.title" = "Add address";
+"80.title" = "Добавить адрес";
 
 /* Class = "NSTextFieldCell"; title = "Bitcoin addresses"; ObjectID = "81"; */
-"81.title" = "Bitcoin addresses";
+"81.title" = "Биткоин адреса";
 
 /* Class = "NSButtonCell"; title = "Remove contact"; ObjectID = "97"; */
-"97.title" = "Remove contact";
+"97.title" = "Удалить контакт";
 
 /* Class = "NSTextFieldCell"; title = "edit"; ObjectID = "107"; */
 "107.title" = "edit";

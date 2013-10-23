@@ -1,139 +1,133 @@
 /* App load error description */
-"A network error has occurred or the application data file has been removed or corrupted." = "A network error has occurred or the application data file has been removed or corrupted.";
+"A network error has occurred or the application data file has been removed or corrupted." = "Произошла сетевая ошибка или файл с данными приложения удален или поврежден.";
 
 /* Address field placeholder */
-"Address" = "Address";
+"Address" = "Адрес";
 
 /* Amount exceeds balance alert title */
-"Amount exceeds balance." = "Amount exceeds balance.";
+"Amount exceeds balance." = "Сумма платежа превышает баланс.";
 
 /* Anonymous username for profile page */
-"Anonymous" = "Anonymous";
+"Anonymous" = "Анонимный пользователь";
 
 /* App load error title */
-"Application can't be loaded" = "Application can't be loaded";
+"Application can't be loaded" = "Приложение не может быть загружено";
 
 /* Applications view title */
-"Apps" = "Apps";
+"Apps" = "Приложения";
 
 /* Cancel button title */
-"Cancel" = "Cancel";
+"Cancel" = "Отмена";
 
 /* No comment provided by engineer. */
-"click to copy" = "click to copy";
+"click to copy" = "скопировать";
 
 /* Contact name empty alert title */
-"Contact can't be saved." = "Contact can't be saved.";
+"Contact can't be saved." = "Контакт не может быть сохранен.";
 
 /* Contacts view title */
-"Contacts" = "Contacts";
+"Contacts" = "Контакты";
 
 /* No comment provided by engineer. */
-"copied!" = "copied!";
+"copied!" = "скопировано!";
 
 /* Quit without saves error question message */
-"Could not save changes while quitting. Quit anyway?" = "Could not save changes while quitting. Quit anyway?";
+"Could not save changes while quitting. Quit anyway?" = "Невозможно сохранить изменения. Все равно выйти?";
 
 /* Remove contact alert dialog body */
-"Do you really want to remove %@ %@ from your contact list?" = "Do you really want to remove %1$@ %2$@ from your contact list?";
+"Do you really want to remove %@ %@ from your contact list?" = "Вы действительно хотите удалить %1$@ %2$@ из ваших контактов?";
 
 /* No comment provided by engineer. */
-"Edit contact" = "Edit contact";
+"Edit contact" = "Редактировать контакт";
 
 /* No comment provided by engineer. */
-"Edit profile" = "Edit profile";
+"Edit profile" = "Редактировать профиль";
 
 /* Email field placeholder */
-"email" = "email";
+"email" = "эл. почта";
 
 /* Sending zero bitcoin alert title */
-"Enter an amount greater than zero." = "Enter an amount greater than zero.";
+"Enter an amount greater than zero." = "Введите сумму больше нуля.";
 
 /* Firstname field placeholder */
-"Firstname" = "Firstname";
-
-/* Direction label in transactions list when user is the receiver */
-"from" = "from";
+"Firstname" = "Имя";
 
 /* Install app popup title */
-"Install Hive App" = "Install Hive App";
+"Install Hive App" = "Установить приложение Hive";
 
 /* Address caption field placeholder */
-"Label" = "Label";
+"Label" = "Надпись";
 
 /* Lastname field placeholder */
-"Lastname" = "Lastname";
+"Lastname" = "Фамилия";
 
 /* Main address caption */
-"main" = "main";
+"main" = "основной";
 
 /* Main address caption string for profiles */
-"Main address" = "Main address";
+"Main address" = "Основной адрес";
 
 /* New contact view controller title */
-"New contact" = "New contact";
+"New contact" = "Добавить контакт";
 
 /* No comment provided by engineer. */
-"No" = "No";
+"No" = "Нет";
 
 /* Empty address alert title */
-"No address entered." = "No address entered.";
+"No address entered." = "Адрес не может быть пустым.";
 
 /* Transaction failed alert message */
-"No bitcoin have been taken from your wallet." = "No bitcoin have been taken from your wallet.";
+"No bitcoin have been taken from your wallet." = "Биткоины не были списаны с вашего кошелька.";
 
 /* OK Button title
    OK button title */
-"OK" = "OK";
+"OK" = "ОК";
 
 /* Autocomplete dropdown prompt */
-"or choose from the list" = "or choose from the list";
+"or choose from the list" = "или выберите из списка";
 
 /* Invalid address alert message */
-"Please check if you have entered the address correctly." = "Please check if you have entered the address correctly.";
+"Please check if you have entered the address correctly." = "Пожалуйста, проверьте правильность ввода адреса.";
 
 /* Empty address alert message */
-"Please enter a valid Bitcoin address or select one from the dropdown list." = "Please enter a valid Bitcoin address or select one from the dropdown list.";
+"Please enter a valid Bitcoin address or select one from the dropdown list." = "Пожалуйста, введите корректный Биткоин адрес или выберите из списка.";
 
 /* Profile view title string */
-"Profile" = "Profile";
+"Profile" = "Профиль";
 
 /* Quit anyway button title */
-"Quit anyway" = "Quit anyway";
+"Quit anyway" = "Все равно выйти";
 
 /* Quit without saves error question info */
-"Quitting now will lose any changes you have made since the last successful save" = "Quitting now will lose any changes you have made since the last successful save";
+"Quitting now will lose any changes you have made since the last successful save" = "Выйдя сейчас Вы потеряете все изменения с момента последнего успешного сохранения";
 
 /* Remove contact alert dialog title */
-"Remove contact" = "Remove contact";
+"Remove contact" = "Удалить контакт";
 
 /* Invalid address alert title */
-"This isn't a valid Bitcoin address." = "This isn't a valid Bitcoin address.";
-
-/* Direction label in transactions list when user is the sender */
-"to" = "to";
+"This isn't a valid Bitcoin address." = "Это некорректный Биткоин адрес.";
 
 /* Transaction failed alert title */
-"Transaction could not be completed." = "Transaction could not be completed.";
+"Transaction could not be completed." = "Транзакция не может быть завершена.";
 
 /* Transactions view title */
-"Transactions" = "Transactions";
+"Transactions" = "Транзакции";
 
 /* Sending zero bitcoin alert message */
-"Why would you want to send someone 0 BTC?" = "Why would you want to send someone 0 BTC?";
+"Why would you want to send someone 0 BTC?" = "Зачем отправлять кому-либо 0 BTC?";
 
 /* Install app popup confirmation */
-"Would you like to install \"%@\" application?" = "Would you like to install \"%@\" application?";
+"Would you like to install \"%@\" application?" = "Вы хотите установить приложение \"%@\"?";
 
 /* No comment provided by engineer. */
-"Yes" = "Yes";
+"Yes" = "Да";
 
 /* Install app popup confirmation when app exists */
-"You already have \"%@\" application. Would you like to overwrite it?" = "You already have \"%@\" application. Would you like to overwrite it?";
+"You already have \"%@\" application. Would you like to overwrite it?" = "Приложение \"%@\" уже установлено. Вы хотите заменить его?";
 
 /* Amount exceeds balance alert message */
-"You cannot send more money than you own." = "You cannot send more money than you own.";
+"You cannot send more money than you own." = "Невозможно отправить больше денег, чем у Вас есть.";
 
 /* Contact name empty alert message */
-"You need to give the contact a name before you can add it to the list." = "You need to give the contact a name before you can add it to the list.";
+"You need to give the contact a name before you can add it to the list." = "Необходимо придумать имя контакту, прежде чем Вы сможете добавить его.";
 
