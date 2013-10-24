@@ -32,22 +32,23 @@ static NSString * const kBCClientBaseURLString = @"https://grabhive.com/";
 
 + (BCClient *)sharedClient
 {
-    static BCClient *_sharedClient = nil;
+    static BCClient *sharedClient = nil;
     static dispatch_once_t oncePredicate;
 
-    if (!_sharedClient)
+    if (!sharedClient)
     {
         dispatch_once(&oncePredicate, ^{
-            _sharedClient = [[self alloc] initWithBaseURL:[NSURL URLWithString:kBCClientBaseURLString]];
+            sharedClient = [[self alloc] initWithBaseURL:[NSURL URLWithString:kBCClientBaseURLString]];
         });
     }
 
-    return _sharedClient;
+    return sharedClient;
 }
 
-- (id)initWithBaseURL:(NSURL *)url
+- (id)initWithBaseURL:(NSURL *)URL
 {
-    self = [super initWithBaseURL:url];
+    self = [super initWithBaseURL:URL];
+
     if (self)
     {
         [self registerHTTPOperationClass:[AFJSONRequestOperation class]];
@@ -59,45 +60,48 @@ static NSString * const kBCClientBaseURLString = @"https://grabhive.com/";
         _transactionUpdateContext = [[NSManagedObjectContext alloc] initWithConcurrencyType:NSPrivateQueueConcurrencyType];
         _transactionUpdateContext.parentContext = [(HIAppDelegate *) [NSApp delegate] managedObjectContext];
 
-        [[NSNotificationCenter defaultCenter] addObserver:self
-                                                 selector:@selector(torStarted:)
-                                                     name:kHITorManagerStarted
-                                                   object:nil];
-        [[NSNotificationCenter defaultCenter] addObserver:self
-                                                 selector:@selector(bitcoinKitStarted:)
-                                                     name:kHIBitcoinManagerStartedNotification
-                                                   object:nil];
-        [[NSNotificationCenter defaultCenter] addObserver:self
-                                                 selector:@selector(transactionUpdated:)
-                                                     name:kHIBitcoinManagerTransactionChangedNotification
-                                                   object:nil];
+        NSNotificationCenter *notificationCenter = [NSNotificationCenter defaultCenter];
+        [notificationCenter addObserver:self
+                               selector:@selector(torStarted:)
+                                   name:kHITorManagerStarted
+                                 object:nil];
+        [notificationCenter addObserver:self
+                               selector:@selector(bitcoinKitStarted:)
+                                   name:kHIBitcoinManagerStartedNotification
+                                 object:nil];
+        [notificationCenter addObserver:self
+                               selector:@selector(transactionUpdated:)
+                                   name:kHIBitcoinManagerTransactionChangedNotification
+                                 object:nil];
 
-        [HIBitcoinManager defaultManager].dataURL = [self bitcoindDirectory];
-        [HITorManager defaultManager].dataDirectoryURL = [self torDirectory];
-        [HITorManager defaultManager].port = 9999;
-        
+        HITorManager *tor = [HITorManager defaultManager];
+        tor.dataDirectoryURL = [self torDirectory];
+        tor.port = 9999;
+
+        HIBitcoinManager *bitcoin = [HIBitcoinManager defaultManager];
+        bitcoin.dataURL = [self bitcoindDirectory];
+
 #ifdef TESTING_NETWORK
-        [HIBitcoinManager defaultManager].testingNetwork = YES;
-#endif //TESTING_NETWORK
+        bitcoin.testingNetwork = YES;
+#endif
         
-        // Register to all values changing
-        [[HIBitcoinManager defaultManager] addObserver:self
-                                            forKeyPath:@"balance"
-                                               options:NSKeyValueObservingOptionInitial | NSKeyValueObservingOptionNew
-                                               context:NULL];
-        [[HIBitcoinManager defaultManager] addObserver:self
-                                            forKeyPath:@"syncProgress"
-                                               options:NSKeyValueObservingOptionInitial | NSKeyValueObservingOptionNew
-                                               context:NULL];
-        [[HIBitcoinManager defaultManager] addObserver:self
-                                            forKeyPath:@"connections"
-                                               options:NSKeyValueObservingOptionInitial | NSKeyValueObservingOptionNew
-                                               context:NULL];
+        [bitcoin addObserver:self
+                  forKeyPath:@"balance"
+                     options:NSKeyValueObservingOptionInitial | NSKeyValueObservingOptionNew
+                     context:NULL];
+        [bitcoin addObserver:self
+                  forKeyPath:@"syncProgress"
+                     options:NSKeyValueObservingOptionInitial | NSKeyValueObservingOptionNew
+                     context:NULL];
+        [bitcoin addObserver:self
+                  forKeyPath:@"connections"
+                     options:NSKeyValueObservingOptionInitial | NSKeyValueObservingOptionNew
+                     context:NULL];
 
         // TOR disabled for now
-        // [[HITorManager defaultManager] start];
+        // [tor start];
 
-        [[HIBitcoinManager defaultManager] start];
+        [bitcoin start];
 
         self.balance = [[[NSUserDefaults standardUserDefaults] objectForKey:@"LastBalance"] unsignedLongLongValue];
 
@@ -107,12 +111,12 @@ static NSString * const kBCClientBaseURLString = @"https://grabhive.com/";
     return self;
 }
 
-- (void)torStarted:(NSNotification *)not
+- (void)torStarted:(NSNotification *)notification
 {
     [HITorManager defaultManager].torRouting = YES;
 }
 
-- (void)bitcoinKitStarted:(NSNotification *)not
+- (void)bitcoinKitStarted:(NSNotification *)notification
 {
     dispatch_async(dispatch_get_main_queue(), ^{
         [self willChangeValueForKey:@"isRunning"];
@@ -143,12 +147,12 @@ static NSString * const kBCClientBaseURLString = @"https://grabhive.com/";
     });
 }
 
-- (void)transactionUpdated:(NSNotification *)not
+- (void)transactionUpdated:(NSNotification *)notification
 {
     dispatch_async(dispatch_get_main_queue(), ^{
-        NSDictionary *trans = [[HIBitcoinManager defaultManager] transactionForHash:not.object];
+        NSDictionary *transaction = [[HIBitcoinManager defaultManager] transactionForHash:notification.object];
         [_transactionUpdateContext performBlock:^{
-            [self parseTransaction:trans notify:YES];
+            [self parseTransaction:transaction notify:YES];
             [_transactionUpdateContext save:NULL];
             dispatch_async(dispatch_get_main_queue(), ^{
                 [self updateNotifications];
@@ -194,7 +198,6 @@ static NSString * const kBCClientBaseURLString = @"https://grabhive.com/";
     [[HIBitcoinManager defaultManager] removeObserver:self forKeyPath:@"connections"];
     [[HIBitcoinManager defaultManager] removeObserver:self forKeyPath:@"balance"];
     [[HIBitcoinManager defaultManager] removeObserver:self forKeyPath:@"syncProgress"];
-    
 }
 
 - (NSURL *)bitcoindDirectory
@@ -255,21 +258,22 @@ static NSString * const kBCClientBaseURLString = @"https://grabhive.com/";
     return [[HIBitcoinManager defaultManager] transactionForHash:hash];
 }
 
-- (BOOL)parseTransaction:(NSDictionary *)t notify:(BOOL)notify
+- (BOOL)parseTransaction:(NSDictionary *)data notify:(BOOL)notify
 {
     BOOL continueFetching = YES;
 
-    NSFetchRequest *req = [[NSFetchRequest alloc] initWithEntityName:HITransactionEntity];
-    req.predicate = [NSPredicate predicateWithFormat:@"id == %@", t[@"txid"]];
-    NSArray *resp = [_transactionUpdateContext executeFetchRequest:req error:NULL];
+    NSFetchRequest *request = [[NSFetchRequest alloc] initWithEntityName:HITransactionEntity];
+    request.predicate = [NSPredicate predicateWithFormat:@"id == %@", data[@"txid"]];
 
-    if (resp.count > 0)
+    NSArray *response = [_transactionUpdateContext executeFetchRequest:request error:NULL];
+
+    if (response.count > 0)
     {
-        HITransaction *trans = resp[0];
+        HITransaction *transaction = response[0];
         
-        if (trans.confirmations != [t[@"confirmations"] intValue])
+        if (transaction.confirmations != [data[@"confirmations"] integerValue])
         {
-            trans.confirmations = [t[@"confirmations"] intValue];
+            transaction.confirmations = [data[@"confirmations"] integerValue];
         }
         else
         {
@@ -278,40 +282,40 @@ static NSString * const kBCClientBaseURLString = @"https://grabhive.com/";
     }
     else
     {
-        HITransaction *trans = [NSEntityDescription
-                                insertNewObjectForEntityForName:HITransactionEntity
-                                inManagedObjectContext:_transactionUpdateContext];
+        HITransaction *transaction = [NSEntityDescription insertNewObjectForEntityForName:HITransactionEntity
+                                                                   inManagedObjectContext:_transactionUpdateContext];
 
-        trans.id = t[@"txid"];
-        trans.date = [t[@"time"] timeIntervalSince1970];
-        trans.amount = [t[@"amount"] longLongValue];
-        trans.request = (![t[@"details"][0][@"category"] isEqual:@"send"]);
-        trans.confirmations = [t[@"confirmations"] intValue];
+        transaction.id = data[@"txid"];
+        transaction.date = [data[@"time"] timeIntervalSince1970];
+        transaction.amount = [data[@"amount"] longLongValue];
+        transaction.request = (![data[@"details"][0][@"category"] isEqual:@"send"]);
+        transaction.confirmations = [data[@"confirmations"] integerValue];
 
         if (!notify)
         {
-            trans.read = YES;
+            transaction.read = YES;
         }
 
-        trans.senderHash = t[@"details"][0][@"address"];
+        transaction.senderHash = data[@"details"][0][@"address"];
         
-        if (trans.senderHash)
+        if (transaction.senderHash)
         {
             // Try to find a contact that matches that transaction
             NSFetchRequest *request = [[NSFetchRequest alloc] initWithEntityName:HIContactEntity];
-            request.predicate = [NSPredicate predicateWithFormat:@"ANY addresses.address == %@", trans.senderHash];
+            request.predicate = [NSPredicate predicateWithFormat:@"ANY addresses.address == %@", transaction.senderHash];
+
             NSArray *response = [_transactionUpdateContext executeFetchRequest:request error:NULL];
 
             if (response.count > 0)
             {
                 HIContact *contact = response[0];
-                trans.senderName = [NSString stringWithFormat:@"%@ %@", contact.firstname, contact.lastname];
-                trans.senderEmail = contact.email;
-                trans.contact = contact;
+                transaction.senderName = [NSString stringWithFormat:@"%@ %@", contact.firstname, contact.lastname];
+                transaction.senderEmail = contact.email;
+                transaction.contact = contact;
             }
-        }        
+        }
     }
-    
+
     return continueFetching;
 }
 
@@ -326,10 +330,10 @@ static NSString * const kBCClientBaseURLString = @"https://grabhive.com/";
     }
     else
     {
+        HIBitcoinManager *bitcoin = [HIBitcoinManager defaultManager];
+
         // Sanity check first
-        if (amount <= 0 ||
-            [[HIBitcoinManager defaultManager] balance] < amount ||
-            ![[HIBitcoinManager defaultManager] isAddressValid:hash])
+        if (amount <= 0 || [bitcoin balance] < amount || ![bitcoin isAddressValid:hash])
         {
             dispatch_async(dispatch_get_main_queue(), ^{
                 completion(NO, nil);
@@ -337,10 +341,10 @@ static NSString * const kBCClientBaseURLString = @"https://grabhive.com/";
         }
         else
         {
-            [[HIBitcoinManager defaultManager] sendCoins:amount
-                                             toReceipent:hash
-                                                 comment:nil
-                                              completion:^(NSString *transactionId) {
+            [bitcoin sendCoins:amount
+                   toReceipent:hash
+                       comment:nil
+                    completion:^(NSString *transactionId) {
                 dispatch_async(dispatch_get_main_queue(), ^{
                     completion((transactionId != nil), transactionId);
                 });

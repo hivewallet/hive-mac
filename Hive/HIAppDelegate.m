@@ -7,6 +7,7 @@
 //
 
 #import <WebKit/WebKit.h>
+#import "BCClient.h"
 #import "HIAppDelegate.h"
 #import "HIApplicationsManager.h"
 #import "HIApplicationURLProtocol.h"
@@ -46,6 +47,9 @@ static NSString * const WarningDisplayedKey = @"WarningDisplayed";
     }];
 
     [NSURLProtocol registerClass:[HIApplicationURLProtocol class]];
+
+    // create BCClient instance
+    [BCClient sharedClient];
 
     _mainWindowController = [[HIMainWindowController alloc] initWithWindowNibName:@"HIMainWindowController"];
     [_mainWindowController showWindow:self];

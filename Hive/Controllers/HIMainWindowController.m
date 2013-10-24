@@ -7,7 +7,6 @@
 //
 
 #import <QuartzCore/QuartzCore.h>
-#import "BCClient.h"
 #import "HIAppDelegate.h"
 #import "HIApplicationsViewController.h"
 #import "HIContactsViewController.h"
