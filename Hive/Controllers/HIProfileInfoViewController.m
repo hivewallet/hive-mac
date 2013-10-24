@@ -81,6 +81,8 @@ static const NSInteger AddressFieldTag = 2;
 
     [self.profileEmailField setValueAndRecalc:((_contact.email.length > 0) ? _contact.email : @"")];
 
+    [self.editButton sizeToFit];
+
     // configure box size
     NSRect f = self.addressBoxView.frame;
     f.size.height = 60 * _contact.addresses.count;

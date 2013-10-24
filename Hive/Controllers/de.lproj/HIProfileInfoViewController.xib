@@ -8,6 +8,7 @@
         <customObject id="-2" userLabel="File's Owner" customClass="HIProfileInfoViewController">
             <connections>
                 <outlet property="addressBoxView" destination="58" id="71"/>
+                <outlet property="editButton" destination="49" id="uaM-8M-Idi"/>
                 <outlet property="profileEmailField" destination="63" id="70"/>
                 <outlet property="profileScrollContent" destination="54" id="69"/>
                 <outlet property="profileScrollView" destination="42" id="46"/>

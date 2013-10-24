@@ -22,6 +22,7 @@
 @property (weak) IBOutlet HITextField *profileEmailField;
 @property (weak) IBOutlet NSScrollView *profileScrollView;
 @property (weak) IBOutlet NSView *profileScrollContent;
+@property (weak) IBOutlet NSButton *editButton;
 
 - (id)initWithParent:(HIViewController *)parent;
 - (IBAction)editButtonClicked:(NSButton *)sender;
