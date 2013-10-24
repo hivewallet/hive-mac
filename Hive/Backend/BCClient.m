@@ -164,7 +164,7 @@ static NSString * const kBCClientBaseURLString = @"https://grabhive.com/";
 {
     if (object == [HIBitcoinManager defaultManager])
     {
-        if ([keyPath compare:@"balance"] == NSOrderedSame)
+        if ([keyPath isEqual:@"balance"])
         {
             dispatch_async(dispatch_get_main_queue(), ^{
                 self.balance = [HIBitcoinManager defaultManager].balance;
@@ -172,10 +172,10 @@ static NSString * const kBCClientBaseURLString = @"https://grabhive.com/";
                 [[NSUserDefaults standardUserDefaults] setObject:@(self.balance) forKey:@"LastBalance"];
             });
         }
-        else if ([keyPath compare:@"syncProgress"] == NSOrderedSame)
+        else if ([keyPath isEqual:@"syncProgress"])
         {
         }
-        else if([keyPath compare:@"connections"] == NSOrderedSame)
+        else if([keyPath isEqual:@"connections"])
         {
         }
     }
@@ -285,7 +285,7 @@ static NSString * const kBCClientBaseURLString = @"https://grabhive.com/";
         trans.id = t[@"txid"];
         trans.date = [t[@"time"] timeIntervalSince1970];
         trans.amount = [t[@"amount"] longLongValue];
-        trans.request = ([(NSString *)t[@"details"][0][@"category"] compare:@"send"] != NSOrderedSame);
+        trans.request = (![t[@"details"][0][@"category"] isEqual:@"send"]);
         trans.confirmations = [t[@"confirmations"] intValue];
 
         if (!notify)
