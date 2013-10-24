@@ -154,7 +154,7 @@ static NSString * const WarningDisplayedKey = @"WarningDisplayed";
 
         if (!ok)
         {
-            [[NSApplication sharedApplication] presentError:error];
+            [NSApp presentError:error];
             return nil;
         }
     }
@@ -170,7 +170,7 @@ static NSString * const WarningDisplayedKey = @"WarningDisplayed";
             NSDictionary *dict = @{NSLocalizedDescriptionKey: failureDescription};
             error = [NSError errorWithDomain:@"net.novaproject.DatabaseError" code:101 userInfo:dict];
             
-            [[NSApplication sharedApplication] presentError:error];
+            [NSApp presentError:error];
             return nil;
         }
     }
@@ -207,7 +207,7 @@ static NSString * const WarningDisplayedKey = @"WarningDisplayed";
                              };
 
         NSError *error = [NSError errorWithDomain:@"YOUR_ERROR_DOMAIN" code:9999 userInfo:dict];
-        [[NSApplication sharedApplication] presentError:error];
+        [NSApp presentError:error];
         return nil;
     }
 
@@ -261,7 +261,7 @@ static NSString * const WarningDisplayedKey = @"WarningDisplayed";
 
     if (![[self managedObjectContext] save:&error])
     {
-        [[NSApplication sharedApplication] presentError:error];
+        [NSApp presentError:error];
     }
 }
 

@@ -55,7 +55,7 @@ static NSString * const kBCClientBaseURLString = @"https://grabhive.com/";
         _dateFormatter.dateFormat = @"yyyy'-'MM'-'dd'T'HH':'mm':'ssz";
 
         _transactionUpdateContext = [[NSManagedObjectContext alloc] initWithConcurrencyType:NSPrivateQueueConcurrencyType];
-        _transactionUpdateContext.parentContext = [(HIAppDelegate *)[[NSApplication sharedApplication] delegate] managedObjectContext];
+        _transactionUpdateContext.parentContext = [(HIAppDelegate *) [NSApp delegate] managedObjectContext];
 
         [[NSNotificationCenter defaultCenter] addObserver:self
                                                  selector:@selector(torStarted:)
