@@ -24,6 +24,8 @@ static NSString * const kBCClientBaseURLString = @"https://grabhive.com/";
     AFHTTPRequestOperation *_exchangeRateOperation;
 }
 
+@property (nonatomic) uint64 balance;
+
 @end
 
 @implementation BCClient
@@ -97,9 +99,7 @@ static NSString * const kBCClientBaseURLString = @"https://grabhive.com/";
 
         [[HIBitcoinManager defaultManager] start];
 
-        [self willChangeValueForKey:@"balance"];
-        _balance = [[[NSUserDefaults standardUserDefaults] objectForKey:@"LastBalance"] unsignedLongLongValue];
-        [self didChangeValueForKey:@"balance"];
+        self.balance = [[[NSUserDefaults standardUserDefaults] objectForKey:@"LastBalance"] unsignedLongLongValue];
 
         [self updateNotifications];
     }
@@ -167,11 +167,9 @@ static NSString * const kBCClientBaseURLString = @"https://grabhive.com/";
         if ([keyPath compare:@"balance"] == NSOrderedSame)
         {
             dispatch_async(dispatch_get_main_queue(), ^{
-                [self willChangeValueForKey:@"balance"];
-                _balance = [HIBitcoinManager defaultManager].balance;
-                [self didChangeValueForKey:@"balance"];
+                self.balance = [HIBitcoinManager defaultManager].balance;
 
-                [[NSUserDefaults standardUserDefaults] setObject:@(_balance) forKey:@"LastBalance"];
+                [[NSUserDefaults standardUserDefaults] setObject:@(self.balance) forKey:@"LastBalance"];
             });
         }
         else if ([keyPath compare:@"syncProgress"] == NSOrderedSame)
@@ -322,7 +320,7 @@ static NSString * const kBCClientBaseURLString = @"https://grabhive.com/";
               toHash:(NSString *)hash
           completion:(void(^)(BOOL success, NSString *transactionId))completion
 {
-    if (amount > _balance)
+    if (amount > self.balance)
     {
         completion(NO, nil);
     }

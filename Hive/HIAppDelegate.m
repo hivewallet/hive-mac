@@ -128,14 +128,14 @@ static NSString * const WarningDisplayedKey = @"WarningDisplayed";
         return _persistentStoreCoordinator;
     }
 
-    NSManagedObjectModel *mom = [self managedObjectModel];
+    NSManagedObjectModel *mom = self.managedObjectModel;
     if (!mom) {
-        NSLog(@"%@:%@ No model to generate a store from", [self class], NSStringFromSelector(_cmd));
+        NSLog(@"%@:%@ No model to generate a store from", self.class, NSStringFromSelector(_cmd));
         return nil;
     }
 
     NSFileManager *fileManager = [NSFileManager defaultManager];
-    NSURL *applicationFilesDirectory = [self applicationFilesDirectory];
+    NSURL *applicationFilesDirectory = self.applicationFilesDirectory;
     NSError *error = nil;
 
     NSDictionary *properties = [applicationFilesDirectory resourceValuesForKeys:@[NSURLIsDirectoryKey] error:&error];
@@ -182,7 +182,7 @@ static NSString * const WarningDisplayedKey = @"WarningDisplayed";
     {
         // So - we need to delete old file
         [[NSFileManager defaultManager] removeItemAtURL:url error:NULL];
-        return [self persistentStoreCoordinator];
+        return self.persistentStoreCoordinator;
     }
 
     _persistentStoreCoordinator = coordinator;
@@ -198,7 +198,7 @@ static NSString * const WarningDisplayedKey = @"WarningDisplayed";
         return _managedObjectContext;
     }
     
-    NSPersistentStoreCoordinator *coordinator = [self persistentStoreCoordinator];
+    NSPersistentStoreCoordinator *coordinator = self.persistentStoreCoordinator;
     if (!coordinator)
     {
         NSDictionary *dict = @{
@@ -245,7 +245,7 @@ static NSString * const WarningDisplayedKey = @"WarningDisplayed";
 // In this case, the manager returned is that of the managed object context for the application.
 - (NSUndoManager *)windowWillReturnUndoManager:(NSWindow *)window
 {
-    return [[self managedObjectContext] undoManager];
+    return self.managedObjectContext.undoManager;
 }
 
 // Performs the save action for the application, which is to send the save: message to the application's
@@ -254,12 +254,12 @@ static NSString * const WarningDisplayedKey = @"WarningDisplayed";
 {
     NSError *error = nil;
 
-    if (![[self managedObjectContext] commitEditing])
+    if (![self.managedObjectContext commitEditing])
     {
-        NSLog(@"%@:%@ unable to commit editing before saving", [self class], NSStringFromSelector(_cmd));
+        NSLog(@"%@:%@ unable to commit editing before saving", self.class, NSStringFromSelector(_cmd));
     }
 
-    if (![[self managedObjectContext] save:&error])
+    if (![self.managedObjectContext save:&error])
     {
         [NSApp presentError:error];
     }
@@ -279,20 +279,20 @@ static NSString * const WarningDisplayedKey = @"WarningDisplayed";
         return NSTerminateNow;
     }
 
-    if (![[self managedObjectContext] commitEditing])
+    if (![self.managedObjectContext commitEditing])
     {
-        NSLog(@"%@:%@ unable to commit editing to terminate", [self class], NSStringFromSelector(_cmd));
+        NSLog(@"%@:%@ unable to commit editing to terminate", self.class, NSStringFromSelector(_cmd));
         return NSTerminateCancel;
     }
 
-    if (![[self managedObjectContext] hasChanges])
+    if (!self.managedObjectContext.hasChanges)
     {
         return NSTerminateNow;
     }
 
     NSError *error = nil;
 
-    if (![[self managedObjectContext] save:&error])
+    if (![self.managedObjectContext save:&error])
     {
         // Customize this code block to include application-specific recovery steps.
         BOOL result = [sender presentError:error];
