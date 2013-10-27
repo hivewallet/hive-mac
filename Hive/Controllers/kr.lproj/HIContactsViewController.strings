@@ -1,0 +1,20 @@
+/* Class = "NSTextFieldCell"; title = "Text Cell"; ObjectID = "10"; */
+"10.title" = "Text Cell";
+
+/* Class = "NSTextFieldCell"; title = "Looks like you don't have any contacts yet! Add your first one and start sending money!"; ObjectID = "123"; */
+"123.title" = "아직 연락처가 없네요! 연락처를 추가하신 후에 Bitcoin을 보내세요!";
+
+/* Class = "NSButtonCell"; title = "Add contact"; ObjectID = "125"; */
+"125.title" = "연락처 추가하기";
+
+/* Class = "NSTextFieldCell"; title = "You can then use the"; ObjectID = "129"; */
+"129.title" = "를 사용하실 수 있습니다";
+
+/* Class = "NSTextFieldCell"; title = "button"; ObjectID = "133"; */
+"133.title" = "";
+
+/* Class = "NSTextFieldCell"; title = "on top to add more contacts."; ObjectID = "135"; */
+"135.title" = "연락처를 더 추가하기 위해선 위를";
+
+/* Class = "NSTextFieldCell"; title = "Label"; ObjectID = "205"; */
+"205.title" = "라벨";
