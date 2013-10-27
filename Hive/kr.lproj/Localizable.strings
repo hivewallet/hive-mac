@@ -1,0 +1,133 @@
+/* App load error description */
+"A network error has occurred or the application data file has been removed or corrupted." = "네트워크 오류가 발생하였거나 어플리케이션 파일이 제거되었거나 깨졌습니다";
+
+/* Address field placeholder */
+"Address" = "주소";
+
+/* Amount exceeds balance alert title */
+"Amount exceeds balance." = "잔금을 초과하였습니다";
+
+/* Anonymous username for profile page */
+"Anonymous" = "익명";
+
+/* App load error title */
+"Application can't be loaded" = "어플리케이션을 열 수 없습니다";
+
+/* Applications view title */
+"Apps" = "어플";
+
+/* Cancel button title */
+"Cancel" = "취소";
+
+/* No comment provided by engineer. */
+"click to copy" = "클릭하여 선택";
+
+/* Contact name empty alert title */
+"Contact can't be saved." = "연락처를 저장할 수 없습니다";
+
+/* Contacts view title */
+"Contacts" = "연락처";
+
+/* No comment provided by engineer. */
+"copied!" = "복사되었습니다!";
+
+/* Quit without saves error question message */
+"Could not save changes while quitting. Quit anyway?" ="나가는 동안 변경된 부분을 저장할 수 없었습니다. 그래도 나가시겠습니까?";
+
+/* Remove contact alert dialog body */
+"Do you really want to remove %@ %@ from your contact list?" = "정말로 %1$@ %2$@ 을(를) 연락처에서 삭제하시겠습니까?";
+
+/* No comment provided by engineer. */
+"Edit contact" = "연락처 수정";
+
+/* No comment provided by engineer. */
+"Edit profile" = "프로파일 수정";
+
+/* Email field placeholder */
+"email" = "이메일";
+
+/* Sending zero bitcoin alert title */
+"Enter an amount greater than zero." = "0 보다 큰 숫자를 써주십시오";
+
+/* Firstname field placeholder */
+"Firstname" = "이름";
+
+/* Install app popup title */
+"Install Hive App" = "하이브 어플리케이션 설치하기";
+
+/* Address caption field placeholder */
+"Label" = "라벨";
+
+/* Lastname field placeholder */
+"Lastname" = "성";
+
+/* Main address caption */
+"main" = "주소";
+
+/* Main address caption string for profiles */
+"Main address" = "주소";
+
+/* New contact view controller title */
+"New contact" = "새로운 연락처";
+
+/* No comment provided by engineer. */
+"No" = "아니오";
+
+/* Empty address alert title */
+"No address entered." = "주소가 입력되지 않았습니다";
+
+/* Transaction failed alert message */
+"No bitcoin have been taken from your wallet." = "Bitcoin 전송이 실패하였습니다.";
+
+/* OK Button title
+   OK button title */
+"OK" = "OK";
+
+/* Autocomplete dropdown prompt */
+"or choose from the list" = "직접 입력";
+
+/* Invalid address alert message */
+"Please check if you have entered the address correctly." = "주소를 정확히 입력하였는지 확인해 주십시오";
+
+/* Empty address alert message */
+"Please enter a valid Bitcoin address or select one from the dropdown list." = "유호한 Bitcoin 주소를 입력하시거나 드롭다운 리스트에서 선택해주십시오.";
+
+/* Profile view title string */
+"Profile" = "프로필";
+
+/* Quit anyway button title */
+"Quit anyway" = "강제로 나가기";
+
+/* Quit without saves error question info */
+"Quitting now will lose any changes you have made since the last successful save" = "지금 나가시면 마지막으로 저장한 부분 부터 수정된 모듯것을 잃을 수도 있습니다.";
+
+/* Remove contact alert dialog title */
+"Remove contact" = "연락처 삭제";
+
+/* Invalid address alert title */
+"This isn't a valid Bitcoin address." = "유호한 Bitcoin 주소가 아닙니다";
+
+/* Transaction failed alert title */
+"Transaction could not be completed." = "거래를 실패하였습니다";
+
+/* Transactions view title */
+"Transactions" = "거래";
+
+/* Sending zero bitcoin alert message */
+"Why would you want to send someone 0 BTC?" = "왜 0 Bitcoin을 보내시겠습니까?";
+
+/* Install app popup confirmation */
+"Would you like to install \"%@\" application?" = "\"%@\"를 설치하시겠습니까?";
+
+/* No comment provided by engineer. */
+"Yes" = "예";
+
+/* Install app popup confirmation when app exists */
+"You already have \"%@\" application. Would you like to overwrite it?" = "\"%@\" 가 이미 설치되어 있습니다. 덮어쓰시겠습니까 ?";
+
+/* Amount exceeds balance alert message */
+"You cannot send more money than you own." = "잔금보다 더 많은 잔액을 보내실 수 없습니다.";
+
+/* Contact name empty alert message */
+"You need to give the contact a name before you can add it to the list." = "연락처를 추가하기 전에 먼저 연락처 이름을 정하셔야 합니다.";
+

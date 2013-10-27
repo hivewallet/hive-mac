@@ -1,0 +1,11 @@
+/* Class = "NSWindow"; title = "Window"; ObjectID = "1"; */
+"1.title" = "Finestra";
+
+/* Class = "NSTextFieldCell"; title = "Text Cell"; ObjectID = "13"; */
+"13.title" = "Campo di testo";
+
+/* Class = "NSTextFieldCell"; title = "John Whatshisface"; ObjectID = "22"; */
+"22.title" = "John Whatshisface";
+
+/* Class = "NSTextFieldCell"; title = "Main address"; ObjectID = "34"; */
+"34.title" = "Indirizzo principale";
