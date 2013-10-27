@@ -1,0 +1,90 @@
+
+/* Class = "NSMenu"; title = "AMainMenu"; ObjectID = "29"; */
+"29.title" = "AMainMenu";
+
+/* Class = "NSMenuItem"; title = "Hive"; ObjectID = "56"; */
+"56.title" = "Hive";
+
+/* Class = "NSMenu"; title = "Hive"; ObjectID = "57"; */
+"57.title" = "Hive";
+
+/* Class = "NSMenuItem"; title = "About Hive"; ObjectID = "58"; */
+"58.title" = "عن Hive";
+
+/* Class = "NSMenuItem"; title = "Preferences…"; ObjectID = "129"; */
+"129.title" = "التفصيلات...";
+
+/* Class = "NSMenu"; title = "Services"; ObjectID = "130"; */
+"130.title" = "الخدمات";
+
+/* Class = "NSMenuItem"; title = "Services"; ObjectID = "131"; */
+"131.title" = "الخدمات";
+
+/* Class = "NSMenuItem"; title = "Hide Hive"; ObjectID = "134"; */
+"134.title" = "اخفاء Hive";
+
+/* Class = "NSMenuItem"; title = "Quit Hive"; ObjectID = "136"; */
+"136.title" = "أغلاق Hive";
+
+/* Class = "NSMenuItem"; title = "Hide Others"; ObjectID = "145"; */
+"145.title" = "أخفء الأخرون";
+
+/* Class = "NSMenuItem"; title = "Show All"; ObjectID = "150"; */
+"150.title" = "أظهار الكل";
+
+/* Class = "NSMenuItem"; title = "Item"; ObjectID = "800"; */
+"800.title" = "عنصر";
+
+/* Class = "NSMenuItem"; title = "Edit"; ObjectID = "801"; */
+"801.title" = "تعديل";
+
+/* Class = "NSMenu"; title = "Edit"; ObjectID = "802"; */
+"802.title" = "تعديل";
+
+/* Class = "NSMenuItem"; title = "Undo"; ObjectID = "804"; */
+"804.title" = "تراجع";
+
+/* Class = "NSMenuItem"; title = "Redo"; ObjectID = "805"; */
+"805.title" = "أعادة";
+
+/* Class = "NSMenuItem"; title = "Cut"; ObjectID = "807"; */
+"807.title" = "قص";
+
+/* Class = "NSMenuItem"; title = "Copy"; ObjectID = "808"; */
+"808.title" = "نسخ";
+
+/* Class = "NSMenuItem"; title = "Paste"; ObjectID = "809"; */
+"809.title" = "لصق";
+
+/* Class = "NSMenuItem"; title = "Delete"; ObjectID = "811"; */
+"811.title" = "مسح";
+
+/* Class = "NSMenuItem"; title = "Select All"; ObjectID = "812"; */
+"812.title" = "تحديد الكل";
+
+/* Class = "NSMenuItem"; title = "Window"; ObjectID = "854"; */
+"854.title" = "نافذة";
+
+/* Class = "NSMenu"; title = "Window"; ObjectID = "855"; */
+"855.title" = "نافذة";
+
+/* Class = "NSMenuItem"; title = "Minimize"; ObjectID = "857"; */
+"857.title" = "تصغير";
+
+/* Class = "NSMenuItem"; title = "Zoom"; ObjectID = "858"; */
+"858.title" = "تكبير";
+
+/* Class = "NSMenuItem"; title = "Bring All to Front"; ObjectID = "860"; */
+"860.title" = "أظهار الكل فى المقدمة";
+
+/* Class = "NSMenuItem"; title = "Close"; ObjectID = "864"; */
+"864.title" = "أغلاق";
+
+/* Class = "NSMenuItem"; title = "Send Bitcoins..."; ObjectID = "866"; */
+"866.title" = "أرسال بتكوين...";
+
+/* Class = "NSMenuItem"; title = "Check for Updates..."; ObjectID = "870"; */
+"870.title" = "البحث عن تحديثات...";
+
+/* Class = "NSMenuItem"; title = "Open CoinMap..."; ObjectID = "872"; */
+"872.title" = "أفتح CoinMap...";

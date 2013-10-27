@@ -1,0 +1,139 @@
+/* App load error description */
+"A network error has occurred or the application data file has been removed or corrupted." = "هناك مشكلة فى الاتصال بلشبكة او ملف البرنامج غير موجود او تالف";
+
+/* Address field placeholder */
+"Address" = "العنوان";
+
+/* Amount exceeds balance alert title */
+"Amount exceeds balance." = "الرصيد الحالى لا يكفى لأتمام العملية";
+
+/* Anonymous username for profile page */
+"Anonymous" = "مجهول";
+
+/* App load error title */
+"Application can't be loaded" = "تعذر تحميل البرنامج";
+
+/* Applications view title */
+"Apps" = "التطبيقات";
+
+/* Cancel button title */
+"Cancel" = "الغاء";
+
+/* No comment provided by engineer. */
+"click to copy" = "اضغط للنسخ";
+
+/* Contact name empty alert title */
+"Contact can't be saved." = "تعذر حفظ جهة الاتصال";
+
+/* Contacts view title */
+"Contacts" = "جهات الاتصال";
+
+/* No comment provided by engineer. */
+"copied!" = "تم النسخ!";
+
+/* Quit without saves error question message */
+"Could not save changes while quitting. Quit anyway?" = "لا يمكن حفظ التغييرات أثناء الأغلاق. هل تود المتابعة ؟";
+
+/* Remove contact alert dialog body */
+"Do you really want to remove %@ %@ from your contact list?" = "هل ترغب فى ازالة %1$@ %2$@ من جعات الاتصال الخاصة بك";
+
+/* No comment provided by engineer. */
+"Edit contact" = "تعديل جهة الاتصال";
+
+/* No comment provided by engineer. */
+"Edit profile" = "تعديل الملف الشخصى";
+
+/* Email field placeholder */
+"email" = "البريد الاليكترونى";
+
+/* Sending zero bitcoin alert title */
+"Enter an amount greater than zero." = "أدخل قيمة اكبر من صفر";
+
+/* Firstname field placeholder */
+"Firstname" = "لاسم الاول";
+
+/* Direction label in transactions list when user is the receiver */
+"from" = "من";
+
+/* Install app popup title */
+"Install Hive App" = "تنصيب برنامج Hive";
+
+/* Address caption field placeholder */
+"Label" = "ملصق";
+
+/* Lastname field placeholder */
+"Lastname" = "الاسم الاخير";
+
+/* Main address caption */
+"main" = "أساسي";
+
+/* Main address caption string for profiles */
+"Main address" = "العنوان الرئيسي";
+
+/* New contact view controller title */
+"New contact" = "جهة اتصال جديدة";
+
+/* No comment provided by engineer. */
+"No" = "لا";
+
+/* Empty address alert title */
+"No address entered." = "العنوان فارغ.";
+
+/* Transaction failed alert message */
+"No bitcoin have been taken from your wallet." = "لا يوجد بتكوين خرج من المحفظة.";
+
+/* OK Button title
+   OK button title */
+"OK" = "أوك";
+
+/* Autocomplete dropdown prompt */
+"or choose from the list" = "أو اختار من القائمة";
+
+/* Invalid address alert message */
+"Please check if you have entered the address correctly." = "رجاء التأكد انك أدخلت العنوان بشكل صحيح";
+
+/* Empty address alert message */
+"Please enter a valid Bitcoin address or select one from the dropdown list." = "فضلا أدخل عنوان  بتكوين صحيح  او أختار من القائمة.";
+
+/* Profile view title string */
+"Profile" = "الملف الشخصي";
+
+/* Quit anyway button title */
+"Quit anyway" = "متابعة الأغلاق";
+
+/* Quit without saves error question info */
+"Quitting now will lose any changes you have made since the last successful save" = "الأغلاق سوف يتسبب فى فقد التغييرات التى حدثت منذ اخر عملية حفظ";
+
+/* Remove contact alert dialog title */
+"Remove contact" = "مسح جهة الأتصال";
+
+/* Invalid address alert title */
+"This isn't a valid Bitcoin address." = "عنوان بتكوين غير صحيح";
+
+/* Direction label in transactions list when user is the sender */
+"to" = "إلى";
+
+/* Transaction failed alert title */
+"Transaction could not be completed." = "لا يمكن اتمام المعاملة";
+
+/* Transactions view title */
+"Transactions" = "المعاملة";
+
+/* Sending zero bitcoin alert message */
+"Why would you want to send someone 0 BTC?" = "لماذ ترغب فى أرسال 0 بتكوين الى شخص معين؟";
+
+/* Install app popup confirmation */
+"Would you like to install \"%@\" application?" = "هل ترغب فى تنصيب برنامج  \"%@\" ؟";
+
+/* No comment provided by engineer. */
+"Yes" = "نعم";
+
+/* Install app popup confirmation when app exists */
+"You already have \"%@\" application. Would you like to overwrite it?" = "برنامج  \"%@\" موجود مسبقا.هل ترغب فى تنصيبه ";
+
+/* Amount exceeds balance alert message */
+"You cannot send more money than you own." = "لا يمكنك أرسال أموال اكثر مما تملك";
+
+/* Contact name empty alert message */
+"You need to give the contact a name before you can add it to the list." = "يتوجب عليك أدخال أسم جهة الاتصال قبل أدراجه فى القائمة";
+
