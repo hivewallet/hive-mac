@@ -80,6 +80,7 @@
 		5884A03C17F578EB004A31FA /* Sparkle.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 5884A03617F56D86004A31FA /* Sparkle.framework */; };
 		5884A03E17F57AE9004A31FA /* dsa_pub.pem in Resources */ = {isa = PBXBuildFile; fileRef = 5884A03D17F57AE9004A31FA /* dsa_pub.pem */; };
 		588E33B71817E6AE006A6A25 /* HIBitcoinURL.m in Sources */ = {isa = PBXBuildFile; fileRef = 588E33B61817E6AE006A6A25 /* HIBitcoinURL.m */; };
+		588E34B7181E9F7B006A6A25 /* localbitcoins.hiveapp in Resources */ = {isa = PBXBuildFile; fileRef = 588E34B6181E9F7B006A6A25 /* localbitcoins.hiveapp */; };
 		588EFB2E17D8D2970085F6E6 /* HIProfileTabView.m in Sources */ = {isa = PBXBuildFile; fileRef = 588EFB2D17D8D2970085F6E6 /* HIProfileTabView.m */; };
 		589064AE1805742C0082BE5C /* seansoutpost.hiveapp in Resources */ = {isa = PBXBuildFile; fileRef = 589064AD1805742C0082BE5C /* seansoutpost.hiveapp */; };
 		589064B7180596B80082BE5C /* HIEditableImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 589064B6180596B80082BE5C /* HIEditableImageView.m */; };
@@ -544,6 +545,7 @@
 		588E34B3181E7B8E006A6A25 /* es */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = es; path = es.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		588E34B4181E7B8E006A6A25 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		588E34B5181E7B8E006A6A25 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Localizable.strings; sourceTree = "<group>"; };
+		588E34B6181E9F7B006A6A25 /* localbitcoins.hiveapp */ = {isa = PBXFileReference; lastKnownFileType = file; path = localbitcoins.hiveapp; sourceTree = "<group>"; };
 		588EFB2C17D8D2970085F6E6 /* HIProfileTabView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HIProfileTabView.h; sourceTree = "<group>"; };
 		588EFB2D17D8D2970085F6E6 /* HIProfileTabView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HIProfileTabView.m; sourceTree = "<group>"; };
 		589064AD1805742C0082BE5C /* seansoutpost.hiveapp */ = {isa = PBXFileReference; lastKnownFileType = file; path = seansoutpost.hiveapp; sourceTree = "<group>"; };
@@ -858,6 +860,7 @@
 			isa = PBXGroup;
 			children = (
 				586059AC180419DF00FD9C2A /* bitstamp.hiveapp */,
+				588E34B6181E9F7B006A6A25 /* localbitcoins.hiveapp */,
 				586059AD180419DF00FD9C2A /* minefield.hiveapp */,
 				589064AD1805742C0082BE5C /* seansoutpost.hiveapp */,
 				586059AE180419DF00FD9C2A /* supporthive.hiveapp */,
@@ -1303,6 +1306,7 @@
 				585FFF4418159803005BCF73 /* Credits.rtf in Resources */,
 				58A37AAA180D7B1000CFCDE3 /* HIContactAutocompleteWindowController.xib in Resources */,
 				58A37ACA180D993E00CFCDE3 /* HIApplicationsViewController.strings in Resources */,
+				588E34B7181E9F7B006A6A25 /* localbitcoins.hiveapp in Resources */,
 				58A37AAD180D7B1500CFCDE3 /* HISendBitcoinsWindowController.xib in Resources */,
 				58A37AB0180D7B1D00CFCDE3 /* HITransactionsViewController.xib in Resources */,
 				58A37A9E180D7AFC00CFCDE3 /* HIMainWindowController.xib in Resources */,
