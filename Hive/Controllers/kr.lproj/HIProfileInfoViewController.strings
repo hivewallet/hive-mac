@@ -1,0 +1,11 @@
+/* Class = "NSButtonCell"; title = "Edit"; ObjectID = "50"; */
+"50.title" = "편집";
+
+/* Class = "NSTextFieldCell"; title = "Contact information"; ObjectID = "62"; */
+"62.title" = "연락처 정보";
+
+/* Class = "NSTextFieldCell"; title = "Email:"; ObjectID = "65"; */
+"65.title" = "이메일:";
+
+/* Class = "NSTextFieldCell"; title = "Bitcoin addresses"; ObjectID = "68"; */
+"68.title" = "Bitcoin 주소";

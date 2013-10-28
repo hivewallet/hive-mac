@@ -1,0 +1,5 @@
+/* Class = "INAppStoreWindow"; title = "Hive"; ObjectID = "3"; */
+"3.title" = "하이브";
+
+/* Class = "NSButtonCell"; title = "Send"; ObjectID = "45"; */
+"45.title" = "보내기";
