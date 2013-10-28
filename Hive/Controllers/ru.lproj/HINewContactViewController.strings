@@ -18,4 +18,4 @@
 "97.title" = "Удалить контакт";
 
 /* Class = "NSTextFieldCell"; title = "edit"; ObjectID = "107"; */
-"107.title" = "";
+"107.title" = "edit";
