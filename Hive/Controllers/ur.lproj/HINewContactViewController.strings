@@ -12,7 +12,7 @@
 "80.title" = "ایڈریس شامل کریں";
 
 /* Class = "NSTextFieldCell"; title = "Bitcoin addresses"; ObjectID = "81"; */
-"81.title" = " Bitcoin ایڈریسز";
+"81.title" = "Bitcoin ایڈریسز";
 
 /* Class = "NSButtonCell"; title = "Remove contact"; ObjectID = "97"; */
 "97.title" = "رابطہ فہرست سےخارج کریں";
