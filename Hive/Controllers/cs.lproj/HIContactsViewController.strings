@@ -3,19 +3,19 @@
 "10.title" = "Text Cell";
 
 /* Class = "NSTextFieldCell"; title = "Looks like you don't have any contacts yet! Add your first one and start sending money!"; ObjectID = "123"; */
-"123.title" = "Looks like you don't have any contacts yet! Add your first one and start sending money!";
+"123.title" = "Zdá se, že nemáte žádné kontakty! Přidejte nějaké a začněte posílat peníze!";
 
 /* Class = "NSButtonCell"; title = "Add contact"; ObjectID = "125"; */
-"125.title" = "Add contact";
+"125.title" = "Přidat kontakt";
 
 /* Class = "NSTextFieldCell"; title = "You can then use the"; ObjectID = "129"; */
-"129.title" = "You can then use the";
+"129.title" = "Potom můžete použít tlačítko";
 
 /* Class = "NSTextFieldCell"; title = "button"; ObjectID = "133"; */
-"133.title" = "button";
+"133.title" = "nahoře,";
 
 /* Class = "NSTextFieldCell"; title = "on top to add more contacts."; ObjectID = "135"; */
-"135.title" = "on top to add more contacts.";
+"135.title" = "abyste přidali další kontakty.";
 
 /* Class = "NSTextFieldCell"; title = "Label"; ObjectID = "205"; */
 "205.title" = "Label";

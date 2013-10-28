@@ -1,12 +1,12 @@
 
 /* Class = "NSButtonCell"; title = "Edit"; ObjectID = "50"; */
-"50.title" = "Edit";
+"50.title" = "Editovat";
 
 /* Class = "NSTextFieldCell"; title = "Contact information"; ObjectID = "62"; */
-"62.title" = "Contact information";
+"62.title" = "Informace o kontaktu";
 
 /* Class = "NSTextFieldCell"; title = "Email:"; ObjectID = "65"; */
-"65.title" = "Email:";
+"65.title" = "E-mail:";
 
 /* Class = "NSTextFieldCell"; title = "Bitcoin addresses"; ObjectID = "68"; */
-"68.title" = "Bitcoin addresses";
+"68.title" = "Bitcoinové adresy";
