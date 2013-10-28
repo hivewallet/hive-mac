@@ -1,0 +1,133 @@
+/* App load error description */
+"A network error has occurred or the application data file has been removed or corrupted." = "无法进入 Hive, 可能网路有些问题，或数据库被损坏或删除。";
+
+/* Address field placeholder */
+"Address" = "地址";
+
+/* Amount exceeds balance alert title */
+"Amount exceeds balance." = "数量高于帐户余额。";
+
+/* Anonymous username for profile page */
+"Anonymous" = "(匿名者)";
+
+/* App load error title */
+"Application can't be loaded" = "应用程序无法加载";
+
+/* Applications view title */
+"Apps" = "应用程序";
+
+/* Cancel button title */
+"Cancel" = "取消";
+
+/* No comment provided by engineer. */
+"click to copy" = "点击进行复制";
+
+/* Contact name empty alert title */
+"Contact can't be saved." = "无法保存此联系";
+
+/* Contacts view title */
+"Contacts" = "联系簿";
+
+/* No comment provided by engineer. */
+"copied!" = "复制了！";
+
+/* Quit without saves error question message */
+"Could not save changes while quitting. Quit anyway?" = "退出时无法保存被更改的项目。真的要退出吗？";
+
+/* Remove contact alert dialog body */
+"Do you really want to remove %@ %@ from your contact list?" = "您要从联系簿中把 %1$@ %2$@ 删除掉吗？";
+
+/* No comment provided by engineer. */
+"Edit contact" = "更改联系";
+
+/* No comment provided by engineer. */
+"Edit profile" = "更改个人资料";
+
+/* Email field placeholder */
+"email" = "电邮地址";
+
+/* Sending zero bitcoin alert title */
+"Enter an amount greater than zero." = "请输入大于零的数量。";
+
+/* Firstname field placeholder */
+"Firstname" = "名";
+
+/* Install app popup title */
+"Install Hive App" = "安装 Hive";
+
+/* Address caption field placeholder */
+"Label" = "Label";
+
+/* Lastname field placeholder */
+"Lastname" = "姓";
+
+/* Main address caption */
+"main" = "主要";
+
+/* Main address caption string for profiles */
+"Main address" = "主要地址";
+
+/* New contact view controller title */
+"New contact" = "添加联系";
+
+/* No comment provided by engineer. */
+"No" = "否";
+
+/* Empty address alert title */
+"No address entered." = "地址没被填上。";
+
+/* Transaction failed alert message */
+"No bitcoin have been taken from your wallet." = "没有从帐户中取出比特币。";
+
+/* OK Button title
+   OK button title */
+"OK" = "OK";
+
+/* Autocomplete dropdown prompt */
+"or choose from the list" = "或从目录中选一个";
+
+/* Invalid address alert message */
+"Please check if you have entered the address correctly." = "请您检查比特币地址，确认输入时没有出差错。";
+
+/* Empty address alert message */
+"Please enter a valid Bitcoin address or select one from the dropdown list." = "请输入一个合格的比特币地址，或从目录中选一个。";
+
+/* Profile view title string */
+"Profile" = "个人资料";
+
+/* Quit anyway button title */
+"Quit anyway" = "退出";
+
+/* Quit without saves error question info */
+	"Quitting now will lose any changes you have made since the last successful save" = "如果现在退出，您将会失去从上次顺利保存更改后的所有更改。";
+
+/* Remove contact alert dialog title */
+"Remove contact" = "删除联系人";
+
+/* Invalid address alert title */
+"This isn't a valid Bitcoin address." = "这不是一个合格的比特币地址。";
+
+/* Transaction failed alert title */
+"Transaction could not be completed." = "交易无法完成。";
+
+/* Transactions view title */
+"Transactions" = "交易";
+
+/* Sending zero bitcoin alert message */
+"Why would you want to send someone 0 BTC?" = "您怎么想给人 0BTC 呢？";
+
+/* Install app popup confirmation */
+"Would you like to install \"%@\" application?" = "您要安装\"%@\"吗？";
+
+/* No comment provided by engineer. */
+"Yes" = "是";
+
+/* Install app popup confirmation when app exists */
+"You already have \"%@\" application. Would you like to overwrite it?" = "您已有 \"%@\" 了。 您要覆写上去吗？";
+
+/* Amount exceeds balance alert message */
+"You cannot send more money than you own." = "您要取出的数量不可高于帐户余额。";
+
+/* Contact name empty alert message */
+"You need to give the contact a name before you can add it to the list." = "加入联系簿之前，先给联系人一个名字。";
+

@@ -1,0 +1,90 @@
+
+/* Class = "NSMenu"; title = "AMainMenu"; ObjectID = "29"; */
+"29.title" = "AMainMenu";
+
+/* Class = "NSMenuItem"; title = "Hive"; ObjectID = "56"; */
+"56.title" = "Hive";
+
+/* Class = "NSMenu"; title = "Hive"; ObjectID = "57"; */
+"57.title" = "Hive";
+
+/* Class = "NSMenuItem"; title = "About Hive"; ObjectID = "58"; */
+"58.title" = "关于 Hive";
+
+/* Class = "NSMenuItem"; title = "Preferences…"; ObjectID = "129"; */
+"129.title" = "设置…";
+
+/* Class = "NSMenu"; title = "Services"; ObjectID = "130"; */
+"130.title" = "服务";
+
+/* Class = "NSMenuItem"; title = "Services"; ObjectID = "131"; */
+"131.title" = "服务";
+
+/* Class = "NSMenuItem"; title = "Hide Hive"; ObjectID = "134"; */
+"134.title" = "藏 Hive";
+
+/* Class = "NSMenuItem"; title = "Quit Hive"; ObjectID = "136"; */
+"136.title" = "退出 Hive";
+
+/* Class = "NSMenuItem"; title = "Hide Others"; ObjectID = "145"; */
+"145.title" = "藏其他";
+
+/* Class = "NSMenuItem"; title = "Show All"; ObjectID = "150"; */
+"150.title" = "显示全部";
+
+/* Class = "NSMenuItem"; title = "Item"; ObjectID = "800"; */
+"800.title" = "Item";
+
+/* Class = "NSMenuItem"; title = "Edit"; ObjectID = "801"; */
+"801.title" = "更改";
+
+/* Class = "NSMenu"; title = "Edit"; ObjectID = "802"; */
+"802.title" = "更改";
+
+/* Class = "NSMenuItem"; title = "Undo"; ObjectID = "804"; */
+"804.title" = "回改";
+
+/* Class = "NSMenuItem"; title = "Redo"; ObjectID = "805"; */
+"805.title" = "重做";
+
+/* Class = "NSMenuItem"; title = "Cut"; ObjectID = "807"; */
+"807.title" = "剪";
+
+/* Class = "NSMenuItem"; title = "Copy"; ObjectID = "808"; */
+"808.title" = "复制";
+
+/* Class = "NSMenuItem"; title = "Paste"; ObjectID = "809"; */
+"809.title" = "贴";
+
+/* Class = "NSMenuItem"; title = "Delete"; ObjectID = "811"; */
+"811.title" = "删除";
+
+/* Class = "NSMenuItem"; title = "Select All"; ObjectID = "812"; */
+"812.title" = "选择全部";
+
+/* Class = "NSMenuItem"; title = "Window"; ObjectID = "854"; */
+"854.title" = "窗户";
+
+/* Class = "NSMenu"; title = "Window"; ObjectID = "855"; */
+"855.title" = "窗户";
+
+/* Class = "NSMenuItem"; title = "Minimize"; ObjectID = "857"; */
+"857.title" = "小化";
+
+/* Class = "NSMenuItem"; title = "Zoom"; ObjectID = "858"; */
+"858.title" = "放大";
+
+/* Class = "NSMenuItem"; title = "Bring All to Front"; ObjectID = "860"; */
+"860.title" = "全部移来前面";
+
+/* Class = "NSMenuItem"; title = "Close"; ObjectID = "864"; */
+"864.title" = "关闭";
+
+/* Class = "NSMenuItem"; title = "Send Bitcoins..."; ObjectID = "866"; */
+"866.title" = "汇出比特币...";
+
+/* Class = "NSMenuItem"; title = "Check for Updates..."; ObjectID = "870"; */
+"870.title" = "查看是否有更新...";
+
+/* Class = "NSMenuItem"; title = "Open CoinMap..."; ObjectID = "872"; */
+"872.title" = "打开 CoinMap...";
