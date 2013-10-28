@@ -20,7 +20,7 @@
                 <outlet property="view" destination="35" id="41"/>
             </connections>
         </customObject>
-        <window title="Hive" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" frameAutosaveName="HiveMainAppWindow" animationBehavior="default" id="3" customClass="INAppStoreWindow">
+        <window title="하이브" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" frameAutosaveName="HiveMainAppWindow" animationBehavior="default" id="3" customClass="INAppStoreWindow">
             <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
             <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
             <rect key="contentRect" x="169" y="354" width="350" height="500"/>
@@ -38,7 +38,7 @@
                             <button id="44">
                                 <rect key="frame" x="6" y="6" width="60" height="29"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                                <buttonCell key="cell" type="bevel" title="Invia" bezelStyle="regularSquare" imagePosition="overlaps" alignment="center" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="45" customClass="HIDoneButtonCell">
+                                <buttonCell key="cell" type="bevel" title="보내기" bezelStyle="regularSquare" imagePosition="overlaps" alignment="center" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="45" customClass="HIDoneButtonCell">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="system"/>
                                 </buttonCell>

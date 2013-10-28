@@ -496,6 +496,30 @@
 		588E3468181E6DC0006A6A25 /* hi */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = hi; path = hi.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		588E3469181E6DC0006A6A25 /* hi */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = hi; path = hi.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		588E346A181E6DC0006A6A25 /* hi */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = hi; path = hi.lproj/Localizable.strings; sourceTree = "<group>"; };
+		588E347E181E77D1006A6A25 /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = ko.lproj/HIApplicationRuntimeViewController.strings; sourceTree = "<group>"; };
+		588E347F181E77D1006A6A25 /* ko */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = ko; path = ko.lproj/HIApplicationRuntimeViewController.xib; sourceTree = "<group>"; };
+		588E3480181E77D1006A6A25 /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = ko.lproj/HIApplicationsViewController.strings; sourceTree = "<group>"; };
+		588E3481181E77D1006A6A25 /* ko */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = ko; path = ko.lproj/HIApplicationsViewController.xib; sourceTree = "<group>"; };
+		588E3482181E77D2006A6A25 /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = ko.lproj/HIContactsViewController.strings; sourceTree = "<group>"; };
+		588E3483181E77D2006A6A25 /* ko */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = ko; path = ko.lproj/HIContactsViewController.xib; sourceTree = "<group>"; };
+		588E3484181E77D2006A6A25 /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = ko.lproj/HIMainWindowController.strings; sourceTree = "<group>"; };
+		588E3485181E77D2006A6A25 /* ko */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = ko; path = ko.lproj/HIMainWindowController.xib; sourceTree = "<group>"; };
+		588E3486181E77D2006A6A25 /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = ko.lproj/HINewContactViewController.strings; sourceTree = "<group>"; };
+		588E3487181E77D2006A6A25 /* ko */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = ko; path = ko.lproj/HINewContactViewController.xib; sourceTree = "<group>"; };
+		588E3488181E77D2006A6A25 /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = ko.lproj/HIProfileInfoViewController.strings; sourceTree = "<group>"; };
+		588E3489181E77D2006A6A25 /* ko */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = ko; path = ko.lproj/HIProfileInfoViewController.xib; sourceTree = "<group>"; };
+		588E348A181E77D2006A6A25 /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = ko.lproj/HIProfileViewController.strings; sourceTree = "<group>"; };
+		588E348B181E77D2006A6A25 /* ko */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = ko; path = ko.lproj/HIProfileViewController.xib; sourceTree = "<group>"; };
+		588E348C181E77D2006A6A25 /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = ko.lproj/HIContactAutocompleteWindowController.strings; sourceTree = "<group>"; };
+		588E348D181E77D2006A6A25 /* ko */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = ko; path = ko.lproj/HIContactAutocompleteWindowController.xib; sourceTree = "<group>"; };
+		588E348E181E77D2006A6A25 /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = ko.lproj/HISendBitcoinsWindowController.strings; sourceTree = "<group>"; };
+		588E348F181E77D2006A6A25 /* ko */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = ko; path = ko.lproj/HISendBitcoinsWindowController.xib; sourceTree = "<group>"; };
+		588E3490181E77D2006A6A25 /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = ko.lproj/HITransactionsViewController.strings; sourceTree = "<group>"; };
+		588E3491181E77D2006A6A25 /* ko */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = ko; path = ko.lproj/HITransactionsViewController.xib; sourceTree = "<group>"; };
+		588E3492181E77D3006A6A25 /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = ko.lproj/MainMenu.strings; sourceTree = "<group>"; };
+		588E3493181E77D3006A6A25 /* ko */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = ko; path = ko.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		588E3494181E77D3006A6A25 /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = ko.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		588E3495181E77D3006A6A25 /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = ko.lproj/Localizable.strings; sourceTree = "<group>"; };
 		588EFB2C17D8D2970085F6E6 /* HIProfileTabView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HIProfileTabView.h; sourceTree = "<group>"; };
 		588EFB2D17D8D2970085F6E6 /* HIProfileTabView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HIProfileTabView.m; sourceTree = "<group>"; };
 		589064AD1805742C0082BE5C /* seansoutpost.hiveapp */ = {isa = PBXFileReference; lastKnownFileType = file; path = seansoutpost.hiveapp; sourceTree = "<group>"; };
@@ -1167,6 +1191,7 @@
 				ar,
 				ur,
 				hi,
+				ko,
 			);
 			mainGroup = D9A591BB1767B4A800502635;
 			productRefGroup = D9A591C51767B4A800502635 /* Products */;
@@ -1421,6 +1446,7 @@
 				588E343A181E6D8C006A6A25 /* ar */,
 				588E3452181E6DA2006A6A25 /* ur */,
 				588E346A181E6DC0006A6A25 /* hi */,
+				588E3495181E77D3006A6A25 /* ko */,
 			);
 			name = Localizable.strings;
 			sourceTree = "<group>";
@@ -1442,6 +1468,7 @@
 				588E3424181E6D8B006A6A25 /* ar */,
 				588E343C181E6DA1006A6A25 /* ur */,
 				588E3454181E6DBF006A6A25 /* hi */,
+				588E347F181E77D1006A6A25 /* ko */,
 			);
 			name = HIApplicationRuntimeViewController.xib;
 			sourceTree = "<group>";
@@ -1463,6 +1490,7 @@
 				588E3426181E6D8B006A6A25 /* ar */,
 				588E343E181E6DA1006A6A25 /* ur */,
 				588E3456181E6DBF006A6A25 /* hi */,
+				588E3481181E77D1006A6A25 /* ko */,
 			);
 			name = HIApplicationsViewController.xib;
 			sourceTree = "<group>";
@@ -1484,6 +1512,7 @@
 				588E3428181E6D8B006A6A25 /* ar */,
 				588E3440181E6DA1006A6A25 /* ur */,
 				588E3458181E6DBF006A6A25 /* hi */,
+				588E3483181E77D2006A6A25 /* ko */,
 			);
 			name = HIContactsViewController.xib;
 			sourceTree = "<group>";
@@ -1505,6 +1534,7 @@
 				588E342A181E6D8B006A6A25 /* ar */,
 				588E3442181E6DA1006A6A25 /* ur */,
 				588E345A181E6DBF006A6A25 /* hi */,
+				588E3485181E77D2006A6A25 /* ko */,
 			);
 			name = HIMainWindowController.xib;
 			sourceTree = "<group>";
@@ -1526,6 +1556,7 @@
 				588E342C181E6D8C006A6A25 /* ar */,
 				588E3444181E6DA1006A6A25 /* ur */,
 				588E345C181E6DBF006A6A25 /* hi */,
+				588E3487181E77D2006A6A25 /* ko */,
 			);
 			name = HINewContactViewController.xib;
 			sourceTree = "<group>";
@@ -1547,6 +1578,7 @@
 				588E342E181E6D8C006A6A25 /* ar */,
 				588E3446181E6DA2006A6A25 /* ur */,
 				588E345E181E6DBF006A6A25 /* hi */,
+				588E3489181E77D2006A6A25 /* ko */,
 			);
 			name = HIProfileInfoViewController.xib;
 			sourceTree = "<group>";
@@ -1568,6 +1600,7 @@
 				588E3430181E6D8C006A6A25 /* ar */,
 				588E3448181E6DA2006A6A25 /* ur */,
 				588E3460181E6DBF006A6A25 /* hi */,
+				588E348B181E77D2006A6A25 /* ko */,
 			);
 			name = HIProfileViewController.xib;
 			sourceTree = "<group>";
@@ -1589,6 +1622,7 @@
 				588E3432181E6D8C006A6A25 /* ar */,
 				588E344A181E6DA2006A6A25 /* ur */,
 				588E3462181E6DBF006A6A25 /* hi */,
+				588E348D181E77D2006A6A25 /* ko */,
 			);
 			name = HIContactAutocompleteWindowController.xib;
 			sourceTree = "<group>";
@@ -1610,6 +1644,7 @@
 				588E3434181E6D8C006A6A25 /* ar */,
 				588E344C181E6DA2006A6A25 /* ur */,
 				588E3464181E6DC0006A6A25 /* hi */,
+				588E348F181E77D2006A6A25 /* ko */,
 			);
 			name = HISendBitcoinsWindowController.xib;
 			sourceTree = "<group>";
@@ -1631,6 +1666,7 @@
 				588E3436181E6D8C006A6A25 /* ar */,
 				588E344E181E6DA2006A6A25 /* ur */,
 				588E3466181E6DC0006A6A25 /* hi */,
+				588E3491181E77D2006A6A25 /* ko */,
 			);
 			name = HITransactionsViewController.xib;
 			sourceTree = "<group>";
@@ -1652,6 +1688,7 @@
 				588E3423181E6D8B006A6A25 /* ar */,
 				588E343B181E6DA1006A6A25 /* ur */,
 				588E3453181E6DBF006A6A25 /* hi */,
+				588E347E181E77D1006A6A25 /* ko */,
 			);
 			name = HIApplicationRuntimeViewController.strings;
 			sourceTree = "<group>";
@@ -1673,6 +1710,7 @@
 				588E3425181E6D8B006A6A25 /* ar */,
 				588E343D181E6DA1006A6A25 /* ur */,
 				588E3455181E6DBF006A6A25 /* hi */,
+				588E3480181E77D1006A6A25 /* ko */,
 			);
 			name = HIApplicationsViewController.strings;
 			sourceTree = "<group>";
@@ -1694,6 +1732,7 @@
 				588E3427181E6D8B006A6A25 /* ar */,
 				588E343F181E6DA1006A6A25 /* ur */,
 				588E3457181E6DBF006A6A25 /* hi */,
+				588E3482181E77D2006A6A25 /* ko */,
 			);
 			name = HIContactsViewController.strings;
 			sourceTree = "<group>";
@@ -1715,6 +1754,7 @@
 				588E342B181E6D8B006A6A25 /* ar */,
 				588E3443181E6DA1006A6A25 /* ur */,
 				588E345B181E6DBF006A6A25 /* hi */,
+				588E3486181E77D2006A6A25 /* ko */,
 			);
 			name = HINewContactViewController.strings;
 			sourceTree = "<group>";
@@ -1736,6 +1776,7 @@
 				588E342D181E6D8C006A6A25 /* ar */,
 				588E3445181E6DA1006A6A25 /* ur */,
 				588E345D181E6DBF006A6A25 /* hi */,
+				588E3488181E77D2006A6A25 /* ko */,
 			);
 			name = HIProfileInfoViewController.strings;
 			sourceTree = "<group>";
@@ -1757,6 +1798,7 @@
 				588E342F181E6D8C006A6A25 /* ar */,
 				588E3447181E6DA2006A6A25 /* ur */,
 				588E345F181E6DBF006A6A25 /* hi */,
+				588E348A181E77D2006A6A25 /* ko */,
 			);
 			name = HIProfileViewController.strings;
 			sourceTree = "<group>";
@@ -1778,6 +1820,7 @@
 				588E3431181E6D8C006A6A25 /* ar */,
 				588E3449181E6DA2006A6A25 /* ur */,
 				588E3461181E6DBF006A6A25 /* hi */,
+				588E348C181E77D2006A6A25 /* ko */,
 			);
 			name = HIContactAutocompleteWindowController.strings;
 			sourceTree = "<group>";
@@ -1799,6 +1842,7 @@
 				588E3433181E6D8C006A6A25 /* ar */,
 				588E344B181E6DA2006A6A25 /* ur */,
 				588E3463181E6DC0006A6A25 /* hi */,
+				588E348E181E77D2006A6A25 /* ko */,
 			);
 			name = HISendBitcoinsWindowController.strings;
 			sourceTree = "<group>";
@@ -1820,6 +1864,7 @@
 				588E3435181E6D8C006A6A25 /* ar */,
 				588E344D181E6DA2006A6A25 /* ur */,
 				588E3465181E6DC0006A6A25 /* hi */,
+				588E3490181E77D2006A6A25 /* ko */,
 			);
 			name = HITransactionsViewController.strings;
 			sourceTree = "<group>";
@@ -1841,6 +1886,7 @@
 				588E3429181E6D8B006A6A25 /* ar */,
 				588E3441181E6DA1006A6A25 /* ur */,
 				588E3459181E6DBF006A6A25 /* hi */,
+				588E3484181E77D2006A6A25 /* ko */,
 			);
 			name = HIMainWindowController.strings;
 			sourceTree = "<group>";
@@ -1862,6 +1908,7 @@
 				588E3437181E6D8C006A6A25 /* ar */,
 				588E344F181E6DA2006A6A25 /* ur */,
 				588E3467181E6DC0006A6A25 /* hi */,
+				588E3492181E77D3006A6A25 /* ko */,
 			);
 			name = MainMenu.strings;
 			sourceTree = "<group>";
@@ -1883,6 +1930,7 @@
 				588E3439181E6D8C006A6A25 /* ar */,
 				588E3451181E6DA2006A6A25 /* ur */,
 				588E3469181E6DC0006A6A25 /* hi */,
+				588E3494181E77D3006A6A25 /* ko */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
@@ -1904,6 +1952,7 @@
 				588E3438181E6D8C006A6A25 /* ar */,
 				588E3450181E6DA2006A6A25 /* ur */,
 				588E3468181E6DC0006A6A25 /* hi */,
+				588E3493181E77D3006A6A25 /* ko */,
 			);
 			name = MainMenu.xib;
 			sourceTree = "<group>";
