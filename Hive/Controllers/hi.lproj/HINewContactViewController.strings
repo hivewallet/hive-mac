@@ -1,21 +1,21 @@
 
 /* Class = "NSButtonCell"; title = "Done"; ObjectID = "14"; */
-"14.title" = "Done";
+"14.title" = "डन";
 
 /* Class = "NSTextFieldCell"; title = "Contact information"; ObjectID = "75"; */
-"75.title" = "Contact information";
+"75.title" = "कोन्टेक्ट इन्फोरमैशन";
 
 /* Class = "NSTextFieldCell"; title = "Email:"; ObjectID = "78"; */
-"78.title" = "Email:";
+"78.title" = "ईमेल:";
 
 /* Class = "NSButtonCell"; title = "Add address"; ObjectID = "80"; */
-"80.title" = "Add address";
+"80.title" = "पता जोड़ें";
 
 /* Class = "NSTextFieldCell"; title = "Bitcoin addresses"; ObjectID = "81"; */
-"81.title" = "Bitcoin addresses";
+"81.title" = "बिटकॅाइन एडरेस";
 
 /* Class = "NSButtonCell"; title = "Remove contact"; ObjectID = "97"; */
-"97.title" = "Remove contact";
+"97.title" = " रिमुव कोन्टेक्ट";
 
 /* Class = "NSTextFieldCell"; title = "edit"; ObjectID = "107"; */
-"107.title" = "edit";
+"107.title" = "संपादित करें";

@@ -3,19 +3,19 @@
 "10.title" = "Text Cell";
 
 /* Class = "NSTextFieldCell"; title = "Looks like you don't have any contacts yet! Add your first one and start sending money!"; ObjectID = "123"; */
-"123.title" = "Looks like you don't have any contacts yet! Add your first one and start sending money!";
+"123.title" = "लगता है आप ने अभी तक कोई संपर्क ( कोन्टेक्ट) नहीं जोडा  है   पहले  जोड़ें और पैसे भेजना शुरू करे";
 
 /* Class = "NSButtonCell"; title = "Add contact"; ObjectID = "125"; */
-"125.title" = "Add contact";
+"125.title" = "संपर्क सूची  जोड़े";
 
 /* Class = "NSTextFieldCell"; title = "You can then use the"; ObjectID = "129"; */
-"129.title" = "You can then use the";
+"129.title" = "तब आप उपयोग कर सकते हैं";
 
 /* Class = "NSTextFieldCell"; title = "button"; ObjectID = "133"; */
-"133.title" = "button";
+"133.title" = "बटन";
 
 /* Class = "NSTextFieldCell"; title = "on top to add more contacts."; ObjectID = "135"; */
-"135.title" = "on top to add more contacts.";
+"135.title" = "शीर्ष पर और अधिक संपर्क जोड़ने के लिए.";
 
 /* Class = "NSTextFieldCell"; title = "Label"; ObjectID = "205"; */
 "205.title" = "Label";
