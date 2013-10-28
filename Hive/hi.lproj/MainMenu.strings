@@ -1,0 +1,90 @@
+
+/* Class = "NSMenu"; title = "AMainMenu"; ObjectID = "29"; */
+"29.title" = "AMainMenu";
+
+/* Class = "NSMenuItem"; title = "Hive"; ObjectID = "56"; */
+"56.title" = "Hive";
+
+/* Class = "NSMenu"; title = "Hive"; ObjectID = "57"; */
+"57.title" = "Hive";
+
+/* Class = "NSMenuItem"; title = "About Hive"; ObjectID = "58"; */
+"58.title" = "Hive के बारे मे";
+
+/* Class = "NSMenuItem"; title = "Preferences…"; ObjectID = "129"; */
+"129.title" = "प्राथमिकता";
+
+/* Class = "NSMenu"; title = "Services"; ObjectID = "130"; */
+"130.title" = "सेवा";
+
+/* Class = "NSMenuItem"; title = "Services"; ObjectID = "131"; */
+"131.title" = "सेवा";
+
+/* Class = "NSMenuItem"; title = "Hide Hive"; ObjectID = "134"; */
+"134.title" = "Hive को छुपाय़े";
+
+/* Class = "NSMenuItem"; title = "Quit Hive"; ObjectID = "136"; */
+"136.title" = "Hive को बंद करे";
+
+/* Class = "NSMenuItem"; title = "Hide Others"; ObjectID = "145"; */
+"145.title" = "दूसरों को छिपाएँ";
+
+/* Class = "NSMenuItem"; title = "Show All"; ObjectID = "150"; */
+"150.title" = "सब देखें";
+
+/* Class = "NSMenuItem"; title = "Item"; ObjectID = "800"; */
+"800.title" = "आईटम";
+
+/* Class = "NSMenuItem"; title = "Edit"; ObjectID = "801"; */
+"801.title" = "ऐडीट करें";
+
+/* Class = "NSMenu"; title = "Edit"; ObjectID = "802"; */
+"802.title" = "ऐडीट करें";
+
+/* Class = "NSMenuItem"; title = "Undo"; ObjectID = "804"; */
+"804.title" = "इनकार करें";
+
+/* Class = "NSMenuItem"; title = "Redo"; ObjectID = "805"; */
+"805.title" = " दोबारा करें";
+
+/* Class = "NSMenuItem"; title = "Cut"; ObjectID = "807"; */
+"807.title" = "कट करें";
+
+/* Class = "NSMenuItem"; title = "Copy"; ObjectID = "808"; */
+"808.title" = "कॅापी करे";
+
+/* Class = "NSMenuItem"; title = "Paste"; ObjectID = "809"; */
+"809.title" = "पेस्ट करें";
+
+/* Class = "NSMenuItem"; title = "Delete"; ObjectID = "811"; */
+"811.title" = "मिटाएं";
+
+/* Class = "NSMenuItem"; title = "Select All"; ObjectID = "812"; */
+"812.title" = "सभी को चुने";
+
+/* Class = "NSMenuItem"; title = "Window"; ObjectID = "854"; */
+"854.title" = "विंडो";
+
+/* Class = "NSMenu"; title = "Window"; ObjectID = "855"; */
+"855.title" = "विंडो";
+
+/* Class = "NSMenuItem"; title = "Minimize"; ObjectID = "857"; */
+"857.title" = "छोटा करें";
+
+/* Class = "NSMenuItem"; title = "Zoom"; ObjectID = "858"; */
+"858.title" = "बडा करे";
+
+/* Class = "NSMenuItem"; title = "Bring All to Front"; ObjectID = "860"; */
+"860.title" = "सब को सामने लाऍ";
+
+/* Class = "NSMenuItem"; title = "Close"; ObjectID = "864"; */
+"864.title" = "बंद करें";
+
+/* Class = "NSMenuItem"; title = "Send Bitcoins..."; ObjectID = "866"; */
+"866.title" = "Bitcoins भेजें";
+
+/* Class = "NSMenuItem"; title = "Check for Updates..."; ObjectID = "870"; */
+"870.title" = "अपडेट के लिऍ चैक करें";
+
+/* Class = "NSMenuItem"; title = "Open CoinMap..."; ObjectID = "872"; */
+"872.title" = "CoinMap खोलें";

@@ -1,0 +1,21 @@
+
+/* Class = "NSButtonCell"; title = "Done"; ObjectID = "14"; */
+"14.title" = "تم";
+
+/* Class = "NSTextFieldCell"; title = "Contact information"; ObjectID = "75"; */
+"75.title" = "معلومات الاتصال";
+
+/* Class = "NSTextFieldCell"; title = "Email:"; ObjectID = "78"; */
+"78.title" = "بريد اليكترونى";
+
+/* Class = "NSButtonCell"; title = "Add address"; ObjectID = "80"; */
+"80.title" = "أضافة عنوان";
+
+/* Class = "NSTextFieldCell"; title = "Bitcoin addresses"; ObjectID = "81"; */
+"81.title" = "عنوان بيتكوين";
+
+/* Class = "NSButtonCell"; title = "Remove contact"; ObjectID = "97"; */
+"97.title" = "مسح جهة أتصال";
+
+/* Class = "NSTextFieldCell"; title = "edit"; ObjectID = "107"; */
+"107.title" = "تعديل";

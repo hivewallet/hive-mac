@@ -1,21 +1,21 @@
 
 /* Class = "NSButtonCell"; title = "Done"; ObjectID = "14"; */
-"14.title" = "Готово";
+"14.title" = "ہو گیا";
 
 /* Class = "NSTextFieldCell"; title = "Contact information"; ObjectID = "75"; */
-"75.title" = "Контактная информация";
+"75.title" = "رابطہ کی معلومات";
 
 /* Class = "NSTextFieldCell"; title = "Email:"; ObjectID = "78"; */
-"78.title" = "Эл. почта:";
+"78.title" = "ای میل";
 
 /* Class = "NSButtonCell"; title = "Add address"; ObjectID = "80"; */
-"80.title" = "Добавить адрес";
+"80.title" = "ایڈریس شامل کریں";
 
 /* Class = "NSTextFieldCell"; title = "Bitcoin addresses"; ObjectID = "81"; */
-"81.title" = "Биткоин адреса";
+"81.title" = "Bitcoin ایڈریسز";
 
 /* Class = "NSButtonCell"; title = "Remove contact"; ObjectID = "97"; */
-"97.title" = "Удалить контакт";
+"97.title" = "رابطہ فہرست سےخارج کریں";
 
 /* Class = "NSTextFieldCell"; title = "edit"; ObjectID = "107"; */
-"107.title" = "";
+"107.title" = "ترمیم کریں";

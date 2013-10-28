@@ -1,0 +1,139 @@
+/* App load error description */
+"A network error has occurred or the application data file has been removed or corrupted." = "नेटवर्क त्रुटि (खराब)हो गई है या अप्लीकेशन डेटा फ़ाइल हटा लिया गया है । या खराब हो गया है.";
+
+/* Address field placeholder */
+"Address" = "ऐडरेस";
+
+/* Amount exceeds balance alert title */
+"Amount exceeds balance." = "राशि शेष से अधिक है";
+
+/* Anonymous username for profile page */
+"Anonymous" = "गुमनाम";
+
+/* App load error title */
+"Application can't be loaded" = "अप्लीकेशन लोड नहीं किया जा सकता है";
+
+/* Applications view title */
+"Apps" = "अनुप्रयोगों";
+
+/* Cancel button title */
+"Cancel" = "अप्लीकेशन";
+
+/* No comment provided by engineer. */
+"click to copy" = "कॅापी के लिए क्लिक करें";
+
+/* Contact name empty alert title */
+"Contact can't be saved." = "कोंटेक्ट सेव नहीं किया जा सकता है.";
+
+/* Contacts view title */
+"Contacts" = "कोंटेक्ट";
+
+/* No comment provided by engineer. */
+"copied!" = "कॉपी बन गया";
+
+/* Quit without saves error question message */
+"Could not save changes while quitting. Quit anyway?" = "सेव चेन्ज नही हुआ है बंद से .कैसे भी बंद करे?";
+
+/* Remove contact alert dialog body */
+"Do you really want to remove %@ %@ from your contact list?" = "तुम सच %1$@ %2$@ आपकी संपर्क सूची से% को दूर करना चाहते हैं?";
+
+/* No comment provided by engineer. */
+"Edit contact" = "एडिट कोंटेक्ट";
+
+/* No comment provided by engineer. */
+"Edit profile" = "एडिट प्रोफाइल";
+
+/* Email field placeholder */
+"email" = "ईमेल";
+
+/* Sending zero bitcoin alert title */
+"Enter an amount greater than zero." = "शून्य से अधिक राशि दर्ज करें.";
+
+/* Firstname field placeholder */
+"Firstname" = "फस्ट नेम";
+
+/* Direction label in transactions list when user is the receiver */
+"from" = "from";
+
+/* Install app popup title */
+"Install Hive App" = "इंस्टोल Hive अप्लीकेशन";
+
+/* Address caption field placeholder */
+"Label" = "Label";
+
+/* Lastname field placeholder */
+"Lastname" = "लास्ट नेम";
+
+/* Main address caption */
+"main" = "लास्ट नेम";
+
+/* Main address caption string for profiles */
+"Main address" = "मैन एडरेस";
+
+/* New contact view controller title */
+"New contact" = "नया कोंटेक्ट";
+
+/* No comment provided by engineer. */
+"No" = "नही";
+
+/* Empty address alert title */
+"No address entered." = "एडरेस दर्ज नहीं किया.";
+
+/* Transaction failed alert message */
+"No bitcoin have been taken from your wallet." = "आप के वॅालेट से कोई बिटकॅाइन नही लिया है";
+
+/* OK Button title
+   OK button title */
+"OK" = "ठीक है";
+
+/* Autocomplete dropdown prompt */
+"or choose from the list" = "या सूची में से चुने";
+
+/* Invalid address alert message */
+"Please check if you have entered the address correctly." = "कृपया जांच करें कि क्या आप ने सही पता दर्ज किया है.";
+
+/* Empty address alert message */
+"Please enter a valid Bitcoin address or select one from the dropdown list." = "कृपया सही बिटकॅाइन एडरेस दर्ज करें या ड्रॉप डाउन सूची में से एक का चयन करें";
+
+/* Profile view title string */
+"Profile" = "प्रोफाइल";
+
+/* Quit anyway button title */
+"Quit anyway" = "बहरहाल बंद करें";
+
+/* Quit without saves error question info */
+"Quitting now will lose any changes you have made since the last successful save" = "अभी बंद करने से वह चेन्ज सेव नहीं होगा जो पिछले चेन्ज सेव करने के बाद किया होगा है";
+
+/* Remove contact alert dialog title */
+"Remove contact" = "कोंटेक्ट हटाये";
+
+/* Invalid address alert title */
+"This isn't a valid Bitcoin address." = "यह एक सही बिट कॅाइन एडरेस नहीं है";
+
+/* Direction label in transactions list when user is the sender */
+"to" = "to";
+
+/* Transaction failed alert title */
+"Transaction could not be completed." = "लेन - देन पूरा नहीं किया जा सकता है.";
+
+/* Transactions view title */
+"Transactions" = "लेन - देन";
+
+/* Sending zero bitcoin alert message */
+"Why would you want to send someone 0 BTC?" = "क्यों आप किसी को 0 बिट कॅाइन भेजना चाहते हो?";
+
+/* Install app popup confirmation */
+"Would you like to install \"%@\" application?" = "क्या आप \"%@\" अप्लीकेशन इंस्टोल करना चाहोगे?";
+
+/* No comment provided by engineer. */
+"Yes" = "हाँ";
+
+/* Install app popup confirmation when app exists */
+"You already have \"%@\" application. Would you like to overwrite it?" = "आपके पास पहले से हीअप्लीकेसन \"%@\" मौजूद है. क्या आप इसे फिर से शामिल करना चाहोगे?";
+
+/* Amount exceeds balance alert message */
+"You cannot send more money than you own." = "आप अपने खाते में मौजूद राशि से अधिक राशि नहीं भेज सकते हैं";
+
+/* Contact name empty alert message */
+"You need to give the contact a name before you can add it to the list." = "कृपया संपर्क सूची में जोड़ने से पहले कोई नाम दे";
+

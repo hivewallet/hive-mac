@@ -1,0 +1,21 @@
+
+/* Class = "NSTextFieldCell"; title = "Text Cell"; ObjectID = "10"; */
+"10.title" = "Text Cell";
+
+/* Class = "NSTextFieldCell"; title = "Looks like you don't have any contacts yet! Add your first one and start sending money!"; ObjectID = "123"; */
+"123.title" = "معلوم ھوتاھےآپ کی رابطہ فہرست خالی ھے اپنا پہلا رابطہ شامل کریں اور رقم بھیجنا شروع کریں";
+
+/* Class = "NSButtonCell"; title = "Add contact"; ObjectID = "125"; */
+"125.title" = "رابطہ فہرست میں اضافہ کریں";
+
+/* Class = "NSTextFieldCell"; title = "You can then use the"; ObjectID = "129"; */
+"129.title" = "اس کے بعد آپ استعمال کر سکتے ہیں";
+
+/* Class = "NSTextFieldCell"; title = "button"; ObjectID = "133"; */
+"133.title" = "بٹن";
+
+/* Class = "NSTextFieldCell"; title = "on top to add more contacts."; ObjectID = "135"; */
+"135.title" = "اوپرسےمزید رابطے شامل کریں";
+
+/* Class = "NSTextFieldCell"; title = "Label"; ObjectID = "205"; */
+"205.title" = "Label";

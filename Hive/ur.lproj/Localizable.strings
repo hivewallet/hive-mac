@@ -1,0 +1,139 @@
+/* App load error description */
+"A network error has occurred or the application data file has been removed or corrupted." = "نیٹ ورک میں خرابی یا درکار ڈیٹا فائل وھاں سے ہٹا دی یا خراب ہوگئ ہے";
+
+/* Address field placeholder */
+"Address" = "ایڈریس";
+
+/* Amount exceeds balance alert title */
+"Amount exceeds balance." = "رقم بیلنس سے زیادہ ہے";
+
+/* Anonymous username for profile page */
+"Anonymous" = "نامعلوم";
+
+/* App load error title */
+"Application can't be loaded" = "ایپلیکیشن لوڈ نہیں کر سکتے ہیں";
+
+/* Applications view title */
+"Apps" = "ایپلیکیشن";
+
+/* Cancel button title */
+"Cancel" = "منسوخ کریں";
+
+/* No comment provided by engineer. */
+"click to copy" = "کاپی کرنے کے لئے کلک کریں";
+
+/* Contact name empty alert title */
+"Contact can't be saved." = "رابطہ کو محفوظ نہیں کر سکتے ہیں";
+
+/* Contacts view title */
+"Contacts" = "رابطے";
+
+/* No comment provided by engineer. */
+"copied!" = "کاپی ھوگیا";
+
+/* Quit without saves error question message */
+"Could not save changes while quitting. Quit anyway?" = "مکمل بند کرنے سے تبدیلیاں محفوظ نہیں ھونگی. بہر حال بند کریں؟";
+
+/* Remove contact alert dialog body */
+"Do you really want to remove %@ %@ from your contact list?" = "کیا آپ واقعی @$2% @$1% کواپنی رابطہ فہرست میں سے خارج کرنا چاہتے ہیں ؟";
+
+/* No comment provided by engineer. */
+"Edit contact" = "رابطہ میں ترمیم کریں";
+
+/* No comment provided by engineer. */
+"Edit profile" = "پروفائل میں ترمیم کریں";
+
+/* Email field placeholder */
+"email" = "ای میل";
+
+/* Sending zero bitcoin alert title */
+"Enter an amount greater than zero." = "صفر سے بڑی رقم داخل کریں";
+
+/* Firstname field placeholder */
+"Firstname" = "پہلا نام";
+
+/* Direction label in transactions list when user is the receiver */
+"from" = "سے";
+
+/* Install app popup title */
+"Install Hive App" = "اپلیکیشن Hive انسٹال ";
+
+/* Address caption field placeholder */
+"Label" = "لیبل";
+
+/* Lastname field placeholder */
+"Lastname" = "آخری نام";
+
+/* Main address caption */
+"main" = "مین";
+
+/* Main address caption string for profiles */
+"Main address" = "مین ایڈریس";
+
+/* New contact view controller title */
+"New contact" = "نیا رابطہ";
+
+/* No comment provided by engineer. */
+"No" = "نہیں";
+
+/* Empty address alert title */
+"No address entered." = " کوئی ایڈریس نہیں ڈالا کیا گیا";
+
+/* Transaction failed alert message */
+"No bitcoin have been taken from your wallet." = "کوئی بھی بٹ کوئن آپ کے والٹ سے نھیں لیا گیا ہے";
+
+/* OK Button title
+   OK button title */
+"OK" = "او کے";
+
+/* Autocomplete dropdown prompt */
+"or choose from the list" = "یا فہرست میں سے منتخب کریں";
+
+/* Invalid address alert message */
+"Please check if you have entered the address correctly." = "براہ مہربانی چیک کریں کہ کیا آپ نے صحیح ایڈریس درج کیا ہے۔";
+
+/* Empty address alert message */
+"Please enter a valid Bitcoin address or select one from the dropdown list." = "براہ مہربانی درست بٹ کوئن ایڈریس داخل کریں یا پھر ڈراپ ڈاؤن فہرست میں سے ایک کو منتخب کریں";
+
+/* Profile view title string */
+"Profile" = "پروفائل";
+
+/* Quit anyway button title */
+"Quit anyway" = "بہر حال بند کریں";
+
+/* Quit without saves error question info */
+"Quitting now will lose any changes you have made since the last successful save" = "ابھی بند کرنے سے وہ تبدیلیاں محفوظ نہیں ہوگی جو آخری تبدیلیاں محفوظ کرنے کے بعد کی گی ہیں";
+
+/* Remove contact alert dialog title */
+"Remove contact" = "رابطہ ختم کریں";
+
+/* Invalid address alert title */
+"This isn't a valid Bitcoin address." = "یہ ایک درست بٹ کوئن ایڈریس نہیں ہے";
+
+/* Direction label in transactions list when user is the sender */
+"to" = "پر";
+
+/* Transaction failed alert title */
+"Transaction could not be completed." = "ٹرانزیکشن مکمل نہیں ہوسکتی ھیں";
+
+/* Transactions view title */
+"Transactions" = "ٹرانزیکشن";
+
+/* Sending zero bitcoin alert message */
+"Why would you want to send someone 0 BTC?" = "آپ کیوں کسی کو 0 بٹ کوئن بھیجنا چاھتےہو؟";
+
+/* Install app popup confirmation */
+"Would you like to install \"%@\" application?" = "کیا آپ "\@%"\ اپلیکیشن انسٹال کرنا چاہوگے؟";
+
+/* No comment provided by engineer. */
+"Yes" = "جی ہاں";
+
+/* Install app popup confirmation when app exists */
+"You already have \"%@\" application. Would you like to overwrite it?" = "آُپ کے پاس پہلے ہی سے موجود ہے۔ کیا آپ اس کو دوبارہ شامل کرنا چاہوگے؟ \"%@\"";
+
+/* Amount exceeds balance alert message */
+"You cannot send more money than you own." = "آپ اپنے اکاؤنٹ میں موجود رقم سے زیادہ رقم نہیں بھیج سکتے ہیں";
+
+/* Contact name empty alert message */
+"You need to give the contact a name before you can add it to the list." = "براہ مہربانی رابطہ کو فہرست میں شامل کرنے سے پہلے کوئی نام دے";
+
