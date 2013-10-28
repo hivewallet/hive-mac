@@ -9,13 +9,13 @@
 "125.title" = "رابطہ فہرست میں اضافہ کریں";
 
 /* Class = "NSTextFieldCell"; title = "You can then use the"; ObjectID = "129"; */
-"129.title" = " اس کے بعد آپ استعمال کر سکتے ہیں ";
+"129.title" = "اس کے بعد آپ استعمال کر سکتے ہیں";
 
 /* Class = "NSTextFieldCell"; title = "button"; ObjectID = "133"; */
 "133.title" = "بٹن";
 
 /* Class = "NSTextFieldCell"; title = "on top to add more contacts."; ObjectID = "135"; */
-"135.title" = " اوپرسےمزید رابطے شامل کریں";
+"135.title" = "اوپرسےمزید رابطے شامل کریں";
 
 /* Class = "NSTextFieldCell"; title = "Label"; ObjectID = "205"; */
 "205.title" = "Label";

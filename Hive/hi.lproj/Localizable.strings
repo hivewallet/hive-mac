@@ -11,7 +11,7 @@
 "Anonymous" = "गुमनाम";
 
 /* App load error title */
-"Application can't be loaded" = "अप्लीकेशन "लोड नहीं किया जा सकता है";
+"Application can't be loaded" = "अप्लीकेशन लोड नहीं किया जा सकता है";
 
 /* Applications view title */
 "Apps" = "अनुप्रयोगों";
@@ -123,7 +123,7 @@
 "Why would you want to send someone 0 BTC?" = "क्यों आप किसी को 0 बिट कॅाइन भेजना चाहते हो?";
 
 /* Install app popup confirmation */
-"Would you like to install \"%@\" application?" = "क्या आप \"@%\" अप्लीकेशन इंस्टोल करना चाहोगे?";
+"Would you like to install \"%@\" application?" = "क्या आप \"%@\" अप्लीकेशन इंस्टोल करना चाहोगे?";
 
 /* No comment provided by engineer. */
 "Yes" = "हाँ";
