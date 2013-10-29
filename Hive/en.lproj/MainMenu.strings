@@ -88,3 +88,6 @@
 
 /* Class = "NSMenuItem"; title = "Open CoinMap..."; ObjectID = "872"; */
 "872.title" = "Open CoinMap...";
+
+/* Class = "NSMenuItem"; title = "Debugging info..."; ObjectID = "Deb-tn-nNM"; */
+"Deb-tn-nNM.title" = "Debugging info...";

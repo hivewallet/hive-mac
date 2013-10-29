@@ -20,6 +20,7 @@
 
 - (IBAction)openSendBitcoinsWindow:(id)sender;
 - (IBAction)openCoinMapSite:(id)sender;
+- (IBAction)showDebuggingInfo:(id)sender;
 - (HISendBitcoinsWindowController *)sendBitcoinsWindowForContact:(HIContact *)contact;
 - (HISendBitcoinsWindowController *)sendBitcoinsWindow;
 - (NSURL *)applicationFilesDirectory;

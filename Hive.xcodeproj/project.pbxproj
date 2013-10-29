@@ -81,6 +81,9 @@
 		5884A03E17F57AE9004A31FA /* dsa_pub.pem in Resources */ = {isa = PBXBuildFile; fileRef = 5884A03D17F57AE9004A31FA /* dsa_pub.pem */; };
 		588E33B71817E6AE006A6A25 /* HIBitcoinURL.m in Sources */ = {isa = PBXBuildFile; fileRef = 588E33B61817E6AE006A6A25 /* HIBitcoinURL.m */; };
 		588E34B7181E9F7B006A6A25 /* localbitcoins.hiveapp in Resources */ = {isa = PBXBuildFile; fileRef = 588E34B6181E9F7B006A6A25 /* localbitcoins.hiveapp */; };
+		588E34D9181FF32B006A6A25 /* HIDebuggingInfoWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 588E34D7181FF32B006A6A25 /* HIDebuggingInfoWindowController.m */; };
+		588E34DB181FF8A7006A6A25 /* HIDebuggingInfoWindowController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 588E34DD181FF8A7006A6A25 /* HIDebuggingInfoWindowController.xib */; };
+		588E34F2182013E9006A6A25 /* HIDebuggingInfoWindowController.strings in Resources */ = {isa = PBXBuildFile; fileRef = 588E34F4182013E9006A6A25 /* HIDebuggingInfoWindowController.strings */; };
 		588EFB2E17D8D2970085F6E6 /* HIProfileTabView.m in Sources */ = {isa = PBXBuildFile; fileRef = 588EFB2D17D8D2970085F6E6 /* HIProfileTabView.m */; };
 		589064AE1805742C0082BE5C /* seansoutpost.hiveapp in Resources */ = {isa = PBXBuildFile; fileRef = 589064AD1805742C0082BE5C /* seansoutpost.hiveapp */; };
 		589064B7180596B80082BE5C /* HIEditableImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 589064B6180596B80082BE5C /* HIEditableImageView.m */; };
@@ -570,6 +573,42 @@
 		588E34CD181EBE07006A6A25 /* cs */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = cs; path = cs.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		588E34CE181EBE07006A6A25 /* cs */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = cs; path = cs.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		588E34CF181EBE07006A6A25 /* cs */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = cs; path = cs.lproj/Localizable.strings; sourceTree = "<group>"; };
+		588E34D6181FF32B006A6A25 /* HIDebuggingInfoWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HIDebuggingInfoWindowController.h; sourceTree = "<group>"; };
+		588E34D7181FF32B006A6A25 /* HIDebuggingInfoWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HIDebuggingInfoWindowController.m; sourceTree = "<group>"; };
+		588E34DC181FF8A7006A6A25 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/HIDebuggingInfoWindowController.xib; sourceTree = "<group>"; };
+		588E34DE182002B2006A6A25 /* pl */ = {isa = PBXFileReference; lastKnownFileType = file; name = pl; path = pl.lproj/HIDebuggingInfoWindowController.xib; sourceTree = "<group>"; };
+		588E34DF182002B3006A6A25 /* it */ = {isa = PBXFileReference; lastKnownFileType = file; name = it; path = it.lproj/HIDebuggingInfoWindowController.xib; sourceTree = "<group>"; };
+		588E34E0182002B3006A6A25 /* fr */ = {isa = PBXFileReference; lastKnownFileType = file; name = fr; path = fr.lproj/HIDebuggingInfoWindowController.xib; sourceTree = "<group>"; };
+		588E34E1182002B4006A6A25 /* fi */ = {isa = PBXFileReference; lastKnownFileType = file; name = fi; path = fi.lproj/HIDebuggingInfoWindowController.xib; sourceTree = "<group>"; };
+		588E34E2182002B6006A6A25 /* da */ = {isa = PBXFileReference; lastKnownFileType = file; name = da; path = da.lproj/HIDebuggingInfoWindowController.xib; sourceTree = "<group>"; };
+		588E34E3182002B6006A6A25 /* de */ = {isa = PBXFileReference; lastKnownFileType = file; name = de; path = de.lproj/HIDebuggingInfoWindowController.xib; sourceTree = "<group>"; };
+		588E34E4182002B7006A6A25 /* nl */ = {isa = PBXFileReference; lastKnownFileType = file; name = nl; path = nl.lproj/HIDebuggingInfoWindowController.xib; sourceTree = "<group>"; };
+		588E34E5182002B8006A6A25 /* ru */ = {isa = PBXFileReference; lastKnownFileType = file; name = ru; path = ru.lproj/HIDebuggingInfoWindowController.xib; sourceTree = "<group>"; };
+		588E34E6182002B9006A6A25 /* fil */ = {isa = PBXFileReference; lastKnownFileType = file; name = fil; path = fil.lproj/HIDebuggingInfoWindowController.xib; sourceTree = "<group>"; };
+		588E34E7182002B9006A6A25 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = file; name = "zh-Hans"; path = "zh-Hans.lproj/HIDebuggingInfoWindowController.xib"; sourceTree = "<group>"; };
+		588E34E8182002BE006A6A25 /* ar */ = {isa = PBXFileReference; lastKnownFileType = file; name = ar; path = ar.lproj/HIDebuggingInfoWindowController.xib; sourceTree = "<group>"; };
+		588E34E9182002BE006A6A25 /* ur */ = {isa = PBXFileReference; lastKnownFileType = file; name = ur; path = ur.lproj/HIDebuggingInfoWindowController.xib; sourceTree = "<group>"; };
+		588E34EA182002C0006A6A25 /* hi */ = {isa = PBXFileReference; lastKnownFileType = file; name = hi; path = hi.lproj/HIDebuggingInfoWindowController.xib; sourceTree = "<group>"; };
+		588E34EB182002C0006A6A25 /* ko */ = {isa = PBXFileReference; lastKnownFileType = file; name = ko; path = ko.lproj/HIDebuggingInfoWindowController.xib; sourceTree = "<group>"; };
+		588E34EC182002C1006A6A25 /* es */ = {isa = PBXFileReference; lastKnownFileType = file; name = es; path = es.lproj/HIDebuggingInfoWindowController.xib; sourceTree = "<group>"; };
+		588E34ED182002C2006A6A25 /* cs */ = {isa = PBXFileReference; lastKnownFileType = file; name = cs; path = cs.lproj/HIDebuggingInfoWindowController.xib; sourceTree = "<group>"; };
+		588E34F3182013E9006A6A25 /* en */ = {isa = PBXFileReference; lastKnownFileType = file; name = en; path = en.lproj/HIDebuggingInfoWindowController.strings; sourceTree = "<group>"; };
+		588E34F5182013ED006A6A25 /* pl */ = {isa = PBXFileReference; lastKnownFileType = file; name = pl; path = pl.lproj/HIDebuggingInfoWindowController.strings; sourceTree = "<group>"; };
+		588E34F6182013ED006A6A25 /* it */ = {isa = PBXFileReference; lastKnownFileType = file; name = it; path = it.lproj/HIDebuggingInfoWindowController.strings; sourceTree = "<group>"; };
+		588E34F7182013EE006A6A25 /* fr */ = {isa = PBXFileReference; lastKnownFileType = file; name = fr; path = fr.lproj/HIDebuggingInfoWindowController.strings; sourceTree = "<group>"; };
+		588E34F8182013EE006A6A25 /* fi */ = {isa = PBXFileReference; lastKnownFileType = file; name = fi; path = fi.lproj/HIDebuggingInfoWindowController.strings; sourceTree = "<group>"; };
+		588E34F9182013EF006A6A25 /* da */ = {isa = PBXFileReference; lastKnownFileType = file; name = da; path = da.lproj/HIDebuggingInfoWindowController.strings; sourceTree = "<group>"; };
+		588E34FA182013EF006A6A25 /* de */ = {isa = PBXFileReference; lastKnownFileType = file; name = de; path = de.lproj/HIDebuggingInfoWindowController.strings; sourceTree = "<group>"; };
+		588E34FB182013F0006A6A25 /* nl */ = {isa = PBXFileReference; lastKnownFileType = file; name = nl; path = nl.lproj/HIDebuggingInfoWindowController.strings; sourceTree = "<group>"; };
+		588E34FC182013F0006A6A25 /* ru */ = {isa = PBXFileReference; lastKnownFileType = file; name = ru; path = ru.lproj/HIDebuggingInfoWindowController.strings; sourceTree = "<group>"; };
+		588E34FD182013F1006A6A25 /* fil */ = {isa = PBXFileReference; lastKnownFileType = file; name = fil; path = fil.lproj/HIDebuggingInfoWindowController.strings; sourceTree = "<group>"; };
+		588E34FE182013F1006A6A25 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = file; name = "zh-Hans"; path = "zh-Hans.lproj/HIDebuggingInfoWindowController.strings"; sourceTree = "<group>"; };
+		588E34FF182013F4006A6A25 /* ar */ = {isa = PBXFileReference; lastKnownFileType = file; name = ar; path = ar.lproj/HIDebuggingInfoWindowController.strings; sourceTree = "<group>"; };
+		588E3500182013F4006A6A25 /* hi */ = {isa = PBXFileReference; lastKnownFileType = file; name = hi; path = hi.lproj/HIDebuggingInfoWindowController.strings; sourceTree = "<group>"; };
+		588E3501182013F5006A6A25 /* ur */ = {isa = PBXFileReference; lastKnownFileType = file; name = ur; path = ur.lproj/HIDebuggingInfoWindowController.strings; sourceTree = "<group>"; };
+		588E3502182013F6006A6A25 /* ko */ = {isa = PBXFileReference; lastKnownFileType = file; name = ko; path = ko.lproj/HIDebuggingInfoWindowController.strings; sourceTree = "<group>"; };
+		588E3503182013F6006A6A25 /* es */ = {isa = PBXFileReference; lastKnownFileType = file; name = es; path = es.lproj/HIDebuggingInfoWindowController.strings; sourceTree = "<group>"; };
+		588E3504182013F7006A6A25 /* cs */ = {isa = PBXFileReference; lastKnownFileType = file; name = cs; path = cs.lproj/HIDebuggingInfoWindowController.strings; sourceTree = "<group>"; };
 		588EFB2C17D8D2970085F6E6 /* HIProfileTabView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HIProfileTabView.h; sourceTree = "<group>"; };
 		588EFB2D17D8D2970085F6E6 /* HIProfileTabView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HIProfileTabView.m; sourceTree = "<group>"; };
 		589064AD1805742C0082BE5C /* seansoutpost.hiveapp */ = {isa = PBXFileReference; lastKnownFileType = file; path = seansoutpost.hiveapp; sourceTree = "<group>"; };
@@ -865,7 +904,18 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		58A2A7E817D8783D0001464A /* HISendBitcoinsViewController */ = {
+		588E34D0181FF28C006A6A25 /* HIDebuggingInfoWindowController */ = {
+			isa = PBXGroup;
+			children = (
+				588E34D6181FF32B006A6A25 /* HIDebuggingInfoWindowController.h */,
+				588E34D7181FF32B006A6A25 /* HIDebuggingInfoWindowController.m */,
+				588E34F4182013E9006A6A25 /* HIDebuggingInfoWindowController.strings */,
+				588E34DD181FF8A7006A6A25 /* HIDebuggingInfoWindowController.xib */,
+			);
+			name = HIDebuggingInfoWindowController;
+			sourceTree = "<group>";
+		};
+		58A2A7E817D8783D0001464A /* HISendBitcoinsWindowController */ = {
 			isa = PBXGroup;
 			children = (
 				586059E818041AAF00FD9C2A /* HIContactAutocompleteWindowController.h */,
@@ -877,7 +927,7 @@
 				58A37AD9180D997C00CFCDE3 /* HISendBitcoinsWindowController.strings */,
 				58A37AAF180D7B1500CFCDE3 /* HISendBitcoinsWindowController.xib */,
 			);
-			name = HISendBitcoinsViewController;
+			name = HISendBitcoinsWindowController;
 			sourceTree = "<group>";
 		};
 		D907A4E317F58F91009B3185 /* Applications */ = {
@@ -1139,6 +1189,7 @@
 			children = (
 				D95929D617742ABB008B4F43 /* HIApplicationsViewController */,
 				D948158417CE1BD4006A0312 /* HIContactsViewController */,
+				588E34D0181FF28C006A6A25 /* HIDebuggingInfoWindowController */,
 				586059F718041AD600FD9C2A /* HIMainWindowController.h */,
 				586059F818041AD600FD9C2A /* HIMainWindowController.m */,
 				58A37AE0180D99A100CFCDE3 /* HIMainWindowController.strings */,
@@ -1147,7 +1198,7 @@
 				586059FA18041AD600FD9C2A /* HINavigationController.m */,
 				D94815EA17D4CD23006A0312 /* HINewContactViewController */,
 				581711D917D0FD8F00DE775A /* HIProfileViewController */,
-				58A2A7E817D8783D0001464A /* HISendBitcoinsViewController */,
+				58A2A7E817D8783D0001464A /* HISendBitcoinsWindowController */,
 				586059FB18041AD600FD9C2A /* HISidebarController.h */,
 				586059FC18041AD600FD9C2A /* HISidebarController.m */,
 				D948157E17CE10D9006A0312 /* HITransactionsViewController */,
@@ -1245,6 +1296,7 @@
 				ko,
 				es,
 				cs,
+				fil,
 			);
 			mainGroup = D9A591BB1767B4A800502635;
 			productRefGroup = D9A591C51767B4A800502635 /* Products */;
@@ -1330,6 +1382,7 @@
 				58A37AA7180D7B0B00CFCDE3 /* HIProfileViewController.xib in Resources */,
 				585FFF4418159803005BCF73 /* Credits.rtf in Resources */,
 				58A37AAA180D7B1000CFCDE3 /* HIContactAutocompleteWindowController.xib in Resources */,
+				588E34DB181FF8A7006A6A25 /* HIDebuggingInfoWindowController.xib in Resources */,
 				58A37ACA180D993E00CFCDE3 /* HIApplicationsViewController.strings in Resources */,
 				588E34B7181E9F7B006A6A25 /* localbitcoins.hiveapp in Resources */,
 				58A37AAD180D7B1500CFCDE3 /* HISendBitcoinsWindowController.xib in Resources */,
@@ -1352,6 +1405,7 @@
 				58605A4B18041D0A00FD9C2A /* icon-group__inactive.pdf in Resources */,
 				58605A4C18041D0A00FD9C2A /* icon-nav-bar-back.pdf in Resources */,
 				58A37ADF180D998700CFCDE3 /* HITransactionsViewController.strings in Resources */,
+				588E34F2182013E9006A6A25 /* HIDebuggingInfoWindowController.strings in Resources */,
 				58605A4D18041D0A00FD9C2A /* icon-next__active.pdf in Resources */,
 				58605A4E18041D0A00FD9C2A /* icon-next.pdf in Resources */,
 				58605A4F18041D0A00FD9C2A /* icon-plus.pdf in Resources */,
@@ -1441,6 +1495,7 @@
 				5802106317ECCAAA0039BA4B /* HIContactAutocompleteCellView.m in Sources */,
 				5802106017ECC4F50039BA4B /* HITransactionCellView.m in Sources */,
 				D939FE9C17F076E80088F5D3 /* HICopyView.m in Sources */,
+				588E34D9181FF32B006A6A25 /* HIDebuggingInfoWindowController.m in Sources */,
 				5804C32617FC88BA003B7891 /* HIProfile.m in Sources */,
 				586059B4180419F500FD9C2A /* BCClient.m in Sources */,
 				586059BD18041A1300FD9C2A /* NSColor+Hive.m in Sources */,
@@ -1483,6 +1538,54 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		588E34DD181FF8A7006A6A25 /* HIDebuggingInfoWindowController.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				588E34DC181FF8A7006A6A25 /* en */,
+				588E34DE182002B2006A6A25 /* pl */,
+				588E34DF182002B3006A6A25 /* it */,
+				588E34E0182002B3006A6A25 /* fr */,
+				588E34E1182002B4006A6A25 /* fi */,
+				588E34E2182002B6006A6A25 /* da */,
+				588E34E3182002B6006A6A25 /* de */,
+				588E34E4182002B7006A6A25 /* nl */,
+				588E34E5182002B8006A6A25 /* ru */,
+				588E34E6182002B9006A6A25 /* fil */,
+				588E34E7182002B9006A6A25 /* zh-Hans */,
+				588E34E8182002BE006A6A25 /* ar */,
+				588E34E9182002BE006A6A25 /* ur */,
+				588E34EA182002C0006A6A25 /* hi */,
+				588E34EB182002C0006A6A25 /* ko */,
+				588E34EC182002C1006A6A25 /* es */,
+				588E34ED182002C2006A6A25 /* cs */,
+			);
+			name = HIDebuggingInfoWindowController.xib;
+			sourceTree = "<group>";
+		};
+		588E34F4182013E9006A6A25 /* HIDebuggingInfoWindowController.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				588E34F3182013E9006A6A25 /* en */,
+				588E34F5182013ED006A6A25 /* pl */,
+				588E34F6182013ED006A6A25 /* it */,
+				588E34F7182013EE006A6A25 /* fr */,
+				588E34F8182013EE006A6A25 /* fi */,
+				588E34F9182013EF006A6A25 /* da */,
+				588E34FA182013EF006A6A25 /* de */,
+				588E34FB182013F0006A6A25 /* nl */,
+				588E34FC182013F0006A6A25 /* ru */,
+				588E34FD182013F1006A6A25 /* fil */,
+				588E34FE182013F1006A6A25 /* zh-Hans */,
+				588E34FF182013F4006A6A25 /* ar */,
+				588E3500182013F4006A6A25 /* hi */,
+				588E3501182013F5006A6A25 /* ur */,
+				588E3502182013F6006A6A25 /* ko */,
+				588E3503182013F6006A6A25 /* es */,
+				588E3504182013F7006A6A25 /* cs */,
+			);
+			name = HIDebuggingInfoWindowController.strings;
+			sourceTree = "<group>";
+		};
 		58A37A8C180D747C00CFCDE3 /* Localizable.strings */ = {
 			isa = PBXVariantGroup;
 			children = (

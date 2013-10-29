@@ -48,6 +48,12 @@
                                     <action selector="checkForUpdates:" target="869" id="871"/>
                                 </connections>
                             </menuItem>
+                            <menuItem title="Debugging info..." id="Deb-tn-nNM">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                                <connections>
+                                    <action selector="showDebuggingInfo:" target="-1" id="4IC-10-S1w"/>
+                                </connections>
+                            </menuItem>
                             <menuItem isSeparatorItem="YES" id="143">
                                 <modifierMask key="keyEquivalentModifierMask" command="YES"/>
                             </menuItem>

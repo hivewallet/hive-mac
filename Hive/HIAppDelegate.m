@@ -12,6 +12,7 @@
 #import "HIApplicationsManager.h"
 #import "HIApplicationURLProtocol.h"
 #import "HIBitcoinURL.h"
+#import "HIDebuggingInfoWindowController.h"
 #import "HIMainWindowController.h"
 #import "HISendBitcoinsWindowController.h"
 #import "HITransaction.h"
@@ -22,8 +23,9 @@ static NSString * const WarningDisplayedKey = @"WarningDisplayed";
 
 @interface HIAppDelegate ()
 {
+    HIDebuggingInfoWindowController *_debuggingInfoWindowController;
     HIMainWindowController *_mainWindowController;
-    NSMutableArray *_sendBitcoinsWindows;
+    NSMutableArray *_popupWindows;
 }
 
 @end
@@ -54,11 +56,11 @@ static NSString * const WarningDisplayedKey = @"WarningDisplayed";
     _mainWindowController = [[HIMainWindowController alloc] initWithWindowNibName:@"HIMainWindowController"];
     [_mainWindowController showWindow:self];
 
-    _sendBitcoinsWindows = [NSMutableArray new];
+    _popupWindows = [NSMutableArray new];
 
     [[NSNotificationCenter defaultCenter] addObserver:self
-                                             selector:@selector(sendWindowDidClose:)
-                                                 name:HISendBitcoinsWindowDidClose
+                                             selector:@selector(popupWindowWillClose:)
+                                                 name:NSWindowWillCloseNotification
                                                object:nil];
 
     [[NSAppleEventManager sharedAppleEventManager] setEventHandler:self
@@ -385,24 +387,40 @@ static NSString * const WarningDisplayedKey = @"WarningDisplayed";
     [[NSWorkspace sharedWorkspace] openURL:[NSURL URLWithString:@"http://coinmap.org"]];
 }
 
+- (IBAction)showDebuggingInfo:(id)sender
+{
+    if (!_debuggingInfoWindowController)
+    {
+        _debuggingInfoWindowController = [[HIDebuggingInfoWindowController alloc] init];
+        [_popupWindows addObject:_debuggingInfoWindowController];
+    }
+
+    [_debuggingInfoWindowController showWindow:self];
+}
+
 - (HISendBitcoinsWindowController *)sendBitcoinsWindowForContact:(HIContact *)contact
 {
     HISendBitcoinsWindowController *wc = [[HISendBitcoinsWindowController alloc] initWithContact:contact];
-    [_sendBitcoinsWindows addObject:wc];
+    [_popupWindows addObject:wc];
     return wc;
 }
 
 - (HISendBitcoinsWindowController *)sendBitcoinsWindow
 {
     HISendBitcoinsWindowController *wc = [[HISendBitcoinsWindowController alloc] init];
-    [_sendBitcoinsWindows addObject:wc];
+    [_popupWindows addObject:wc];
     return wc;
 }
 
-- (void)sendWindowDidClose:(NSNotification *)notification
+- (void)popupWindowWillClose:(NSNotification *)notification
 {
-    HISendBitcoinsWindowController *wc = notification.object;
-    [_sendBitcoinsWindows removeObject:wc];
+    NSWindowController *wc = notification.object;
+    [_popupWindows removeObject:wc];
+
+    if (wc == _debuggingInfoWindowController)
+    {
+        _debuggingInfoWindowController = nil;
+    }
 }
 
 @end
