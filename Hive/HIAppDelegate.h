@@ -21,6 +21,7 @@
 - (IBAction)openSendBitcoinsWindow:(id)sender;
 - (IBAction)openCoinMapSite:(id)sender;
 - (IBAction)showDebuggingInfo:(id)sender;
+- (void)showExceptionWindowWithException:(NSException *)exception;
 - (HISendBitcoinsWindowController *)sendBitcoinsWindowForContact:(HIContact *)contact;
 - (HISendBitcoinsWindowController *)sendBitcoinsWindow;
 - (NSURL *)applicationFilesDirectory;

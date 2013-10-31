@@ -13,6 +13,7 @@
 #import "HIApplicationURLProtocol.h"
 #import "HIBitcoinURL.h"
 #import "HIDebuggingInfoWindowController.h"
+#import "HIErrorWindowController.h"
 #import "HIMainWindowController.h"
 #import "HISendBitcoinsWindowController.h"
 #import "HITransaction.h"
@@ -396,6 +397,13 @@ static NSString * const WarningDisplayedKey = @"WarningDisplayed";
     }
 
     [_debuggingInfoWindowController showWindow:self];
+}
+
+- (void)showExceptionWindowWithException:(NSException *)exception
+{
+    HIErrorWindowController *window = [[HIErrorWindowController alloc] initWithException:exception];
+    [window showWindow:self];
+    [_popupWindows addObject:window];
 }
 
 - (HISendBitcoinsWindowController *)sendBitcoinsWindowForContact:(HIContact *)contact

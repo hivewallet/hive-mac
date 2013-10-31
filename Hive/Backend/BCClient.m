@@ -80,6 +80,11 @@ static NSString * const kBCClientBaseURLString = @"https://grabhive.com/";
 
         HIBitcoinManager *bitcoin = [HIBitcoinManager defaultManager];
         bitcoin.dataURL = [self bitcoindDirectory];
+        bitcoin.exceptionHandler = ^(NSException *exception) {
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [[NSApp delegate] showExceptionWindowWithException:exception];
+            });
+        };
 
 #ifdef TESTING_NETWORK
         bitcoin.testingNetwork = YES;
@@ -342,7 +347,7 @@ static NSString * const kBCClientBaseURLString = @"https://grabhive.com/";
         else
         {
             [bitcoin sendCoins:amount
-                   toReceipent:hash
+                   toRecipient:hash
                        comment:nil
                     completion:^(NSString *transactionId) {
                 dispatch_async(dispatch_get_main_queue(), ^{

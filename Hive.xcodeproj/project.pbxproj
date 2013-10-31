@@ -84,6 +84,9 @@
 		588E34D9181FF32B006A6A25 /* HIDebuggingInfoWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 588E34D7181FF32B006A6A25 /* HIDebuggingInfoWindowController.m */; };
 		588E34DB181FF8A7006A6A25 /* HIDebuggingInfoWindowController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 588E34DD181FF8A7006A6A25 /* HIDebuggingInfoWindowController.xib */; };
 		588E34F2182013E9006A6A25 /* HIDebuggingInfoWindowController.strings in Resources */ = {isa = PBXBuildFile; fileRef = 588E34F4182013E9006A6A25 /* HIDebuggingInfoWindowController.strings */; };
+		588E354F18212BB8006A6A25 /* HIErrorWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 588E354D18212BB8006A6A25 /* HIErrorWindowController.m */; };
+		588E355318212BDF006A6A25 /* HIErrorWindowController.strings in Resources */ = {isa = PBXBuildFile; fileRef = 588E355518212BDF006A6A25 /* HIErrorWindowController.strings */; };
+		588E356618212BFB006A6A25 /* HIErrorWindowController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 588E356818212BFB006A6A25 /* HIErrorWindowController.xib */; };
 		588EFB2E17D8D2970085F6E6 /* HIProfileTabView.m in Sources */ = {isa = PBXBuildFile; fileRef = 588EFB2D17D8D2970085F6E6 /* HIProfileTabView.m */; };
 		589064AE1805742C0082BE5C /* seansoutpost.hiveapp in Resources */ = {isa = PBXBuildFile; fileRef = 589064AD1805742C0082BE5C /* seansoutpost.hiveapp */; };
 		589064B7180596B80082BE5C /* HIEditableImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 589064B6180596B80082BE5C /* HIEditableImageView.m */; };
@@ -609,6 +612,42 @@
 		588E3502182013F6006A6A25 /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = ko.lproj/HIDebuggingInfoWindowController.strings; sourceTree = "<group>"; };
 		588E3503182013F6006A6A25 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/HIDebuggingInfoWindowController.strings; sourceTree = "<group>"; };
 		588E3504182013F7006A6A25 /* cs */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = cs; path = cs.lproj/HIDebuggingInfoWindowController.strings; sourceTree = "<group>"; };
+		588E354C18212BB8006A6A25 /* HIErrorWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HIErrorWindowController.h; sourceTree = "<group>"; };
+		588E354D18212BB8006A6A25 /* HIErrorWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HIErrorWindowController.m; sourceTree = "<group>"; };
+		588E355418212BDF006A6A25 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/HIErrorWindowController.strings; sourceTree = "<group>"; };
+		588E355618212BE6006A6A25 /* pl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = pl; path = pl.lproj/HIErrorWindowController.strings; sourceTree = "<group>"; };
+		588E355718212BE7006A6A25 /* it */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = it; path = it.lproj/HIErrorWindowController.strings; sourceTree = "<group>"; };
+		588E355818212BE8006A6A25 /* fi */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fi; path = fi.lproj/HIErrorWindowController.strings; sourceTree = "<group>"; };
+		588E355918212BE8006A6A25 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/HIErrorWindowController.strings; sourceTree = "<group>"; };
+		588E355A18212BEA006A6A25 /* cs */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = cs; path = cs.lproj/HIErrorWindowController.strings; sourceTree = "<group>"; };
+		588E355B18212BEB006A6A25 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/HIErrorWindowController.strings; sourceTree = "<group>"; };
+		588E355C18212BEC006A6A25 /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = ko.lproj/HIErrorWindowController.strings; sourceTree = "<group>"; };
+		588E355D18212BEC006A6A25 /* hi */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = hi; path = hi.lproj/HIErrorWindowController.strings; sourceTree = "<group>"; };
+		588E355E18212BED006A6A25 /* ur */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ur; path = ur.lproj/HIErrorWindowController.strings; sourceTree = "<group>"; };
+		588E355F18212BED006A6A25 /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/HIErrorWindowController.strings; sourceTree = "<group>"; };
+		588E356018212BEE006A6A25 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/HIErrorWindowController.strings"; sourceTree = "<group>"; };
+		588E356118212BEF006A6A25 /* fil */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fil; path = fil.lproj/HIErrorWindowController.strings; sourceTree = "<group>"; };
+		588E356218212BF0006A6A25 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/HIErrorWindowController.strings; sourceTree = "<group>"; };
+		588E356318212BF1006A6A25 /* nl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = nl; path = nl.lproj/HIErrorWindowController.strings; sourceTree = "<group>"; };
+		588E356418212BF1006A6A25 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/HIErrorWindowController.strings; sourceTree = "<group>"; };
+		588E356518212BF2006A6A25 /* da */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = da; path = da.lproj/HIErrorWindowController.strings; sourceTree = "<group>"; };
+		588E356718212BFB006A6A25 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/HIErrorWindowController.xib; sourceTree = "<group>"; };
+		588E356918212BFF006A6A25 /* pl */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = pl; path = pl.lproj/HIErrorWindowController.xib; sourceTree = "<group>"; };
+		588E356A18212C00006A6A25 /* it */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = it; path = it.lproj/HIErrorWindowController.xib; sourceTree = "<group>"; };
+		588E356B18212C01006A6A25 /* fr */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = fr; path = fr.lproj/HIErrorWindowController.xib; sourceTree = "<group>"; };
+		588E356C18212C01006A6A25 /* fi */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = fi; path = fi.lproj/HIErrorWindowController.xib; sourceTree = "<group>"; };
+		588E356D18212C02006A6A25 /* da */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = da; path = da.lproj/HIErrorWindowController.xib; sourceTree = "<group>"; };
+		588E356E18212C04006A6A25 /* de */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = de; path = de.lproj/HIErrorWindowController.xib; sourceTree = "<group>"; };
+		588E356F18212C05006A6A25 /* nl */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = nl; path = nl.lproj/HIErrorWindowController.xib; sourceTree = "<group>"; };
+		588E357018212C06006A6A25 /* ru */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = ru; path = ru.lproj/HIErrorWindowController.xib; sourceTree = "<group>"; };
+		588E357118212C07006A6A25 /* fil */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = fil; path = fil.lproj/HIErrorWindowController.xib; sourceTree = "<group>"; };
+		588E357218212C08006A6A25 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = "zh-Hans"; path = "zh-Hans.lproj/HIErrorWindowController.xib"; sourceTree = "<group>"; };
+		588E357318212C0B006A6A25 /* ar */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = ar; path = ar.lproj/HIErrorWindowController.xib; sourceTree = "<group>"; };
+		588E357418212C0D006A6A25 /* ur */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = ur; path = ur.lproj/HIErrorWindowController.xib; sourceTree = "<group>"; };
+		588E357518212C0E006A6A25 /* hi */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = hi; path = hi.lproj/HIErrorWindowController.xib; sourceTree = "<group>"; };
+		588E357618212C0F006A6A25 /* ko */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = ko; path = ko.lproj/HIErrorWindowController.xib; sourceTree = "<group>"; };
+		588E357718212C10006A6A25 /* es */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = es; path = es.lproj/HIErrorWindowController.xib; sourceTree = "<group>"; };
+		588E357818212C11006A6A25 /* cs */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = cs; path = cs.lproj/HIErrorWindowController.xib; sourceTree = "<group>"; };
 		588EFB2C17D8D2970085F6E6 /* HIProfileTabView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HIProfileTabView.h; sourceTree = "<group>"; };
 		588EFB2D17D8D2970085F6E6 /* HIProfileTabView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HIProfileTabView.m; sourceTree = "<group>"; };
 		589064AD1805742C0082BE5C /* seansoutpost.hiveapp */ = {isa = PBXFileReference; lastKnownFileType = file; path = seansoutpost.hiveapp; sourceTree = "<group>"; };
@@ -915,6 +954,17 @@
 			name = HIDebuggingInfoWindowController;
 			sourceTree = "<group>";
 		};
+		588E354718212B79006A6A25 /* HIErrorWindowController */ = {
+			isa = PBXGroup;
+			children = (
+				588E354C18212BB8006A6A25 /* HIErrorWindowController.h */,
+				588E354D18212BB8006A6A25 /* HIErrorWindowController.m */,
+				588E355518212BDF006A6A25 /* HIErrorWindowController.strings */,
+				588E356818212BFB006A6A25 /* HIErrorWindowController.xib */,
+			);
+			name = HIErrorWindowController;
+			sourceTree = "<group>";
+		};
 		58A2A7E817D8783D0001464A /* HISendBitcoinsWindowController */ = {
 			isa = PBXGroup;
 			children = (
@@ -1190,6 +1240,7 @@
 				D95929D617742ABB008B4F43 /* HIApplicationsViewController */,
 				D948158417CE1BD4006A0312 /* HIContactsViewController */,
 				588E34D0181FF28C006A6A25 /* HIDebuggingInfoWindowController */,
+				588E354718212B79006A6A25 /* HIErrorWindowController */,
 				586059F718041AD600FD9C2A /* HIMainWindowController.h */,
 				586059F818041AD600FD9C2A /* HIMainWindowController.m */,
 				58A37AE0180D99A100CFCDE3 /* HIMainWindowController.strings */,
@@ -1371,6 +1422,7 @@
 				586059AF180419DF00FD9C2A /* bitstamp.hiveapp in Resources */,
 				58A37AD6180D996E00CFCDE3 /* HIProfileViewController.strings in Resources */,
 				586059B0180419DF00FD9C2A /* minefield.hiveapp in Resources */,
+				588E355318212BDF006A6A25 /* HIErrorWindowController.strings in Resources */,
 				586059B1180419DF00FD9C2A /* supporthive.hiveapp in Resources */,
 				58A37A8A180D747C00CFCDE3 /* Localizable.strings in Resources */,
 				58A37A91180D7AEB00CFCDE3 /* HIApplicationRuntimeViewController.xib in Resources */,
@@ -1405,6 +1457,7 @@
 				58605A4B18041D0A00FD9C2A /* icon-group__inactive.pdf in Resources */,
 				58605A4C18041D0A00FD9C2A /* icon-nav-bar-back.pdf in Resources */,
 				58A37ADF180D998700CFCDE3 /* HITransactionsViewController.strings in Resources */,
+				588E356618212BFB006A6A25 /* HIErrorWindowController.xib in Resources */,
 				588E34F2182013E9006A6A25 /* HIDebuggingInfoWindowController.strings in Resources */,
 				58605A4D18041D0A00FD9C2A /* icon-next__active.pdf in Resources */,
 				58605A4E18041D0A00FD9C2A /* icon-next.pdf in Resources */,
@@ -1519,6 +1572,7 @@
 				588E33B71817E6AE006A6A25 /* HIBitcoinURL.m in Sources */,
 				58605A0118041AD600FD9C2A /* HISidebarController.m in Sources */,
 				58605A0218041AD600FD9C2A /* HIViewController.m in Sources */,
+				588E354F18212BB8006A6A25 /* HIErrorWindowController.m in Sources */,
 				58605A6718041DFC00FD9C2A /* NPZip.m in Sources */,
 				58605A6818041DFC00FD9C2A /* NPZipFileHeader.m in Sources */,
 				58605A6918041DFC00FD9C2A /* NPZipHeader.m in Sources */,
@@ -1584,6 +1638,54 @@
 				588E3504182013F7006A6A25 /* cs */,
 			);
 			name = HIDebuggingInfoWindowController.strings;
+			sourceTree = "<group>";
+		};
+		588E355518212BDF006A6A25 /* HIErrorWindowController.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				588E355418212BDF006A6A25 /* en */,
+				588E355618212BE6006A6A25 /* pl */,
+				588E355718212BE7006A6A25 /* it */,
+				588E355818212BE8006A6A25 /* fi */,
+				588E355918212BE8006A6A25 /* fr */,
+				588E355A18212BEA006A6A25 /* cs */,
+				588E355B18212BEB006A6A25 /* es */,
+				588E355C18212BEC006A6A25 /* ko */,
+				588E355D18212BEC006A6A25 /* hi */,
+				588E355E18212BED006A6A25 /* ur */,
+				588E355F18212BED006A6A25 /* ar */,
+				588E356018212BEE006A6A25 /* zh-Hans */,
+				588E356118212BEF006A6A25 /* fil */,
+				588E356218212BF0006A6A25 /* ru */,
+				588E356318212BF1006A6A25 /* nl */,
+				588E356418212BF1006A6A25 /* de */,
+				588E356518212BF2006A6A25 /* da */,
+			);
+			name = HIErrorWindowController.strings;
+			sourceTree = "<group>";
+		};
+		588E356818212BFB006A6A25 /* HIErrorWindowController.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				588E356718212BFB006A6A25 /* en */,
+				588E356918212BFF006A6A25 /* pl */,
+				588E356A18212C00006A6A25 /* it */,
+				588E356B18212C01006A6A25 /* fr */,
+				588E356C18212C01006A6A25 /* fi */,
+				588E356D18212C02006A6A25 /* da */,
+				588E356E18212C04006A6A25 /* de */,
+				588E356F18212C05006A6A25 /* nl */,
+				588E357018212C06006A6A25 /* ru */,
+				588E357118212C07006A6A25 /* fil */,
+				588E357218212C08006A6A25 /* zh-Hans */,
+				588E357318212C0B006A6A25 /* ar */,
+				588E357418212C0D006A6A25 /* ur */,
+				588E357518212C0E006A6A25 /* hi */,
+				588E357618212C0F006A6A25 /* ko */,
+				588E357718212C10006A6A25 /* es */,
+				588E357818212C11006A6A25 /* cs */,
+			);
+			name = HIErrorWindowController.xib;
 			sourceTree = "<group>";
 		};
 		58A37A8C180D747C00CFCDE3 /* Localizable.strings */ = {
