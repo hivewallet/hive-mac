@@ -21,6 +21,7 @@
 @interface HIApplicationRuntimeViewController ()
 {
     HIAppRuntimeBridge *_bridge;
+    NSURL *_baseURL;
 }
 
 @end
@@ -63,19 +64,17 @@
     BOOL isDirectory = NO;
     [[NSFileManager defaultManager] fileExistsAtPath:self.application.path.path isDirectory:&isDirectory];
 
-    NSURL *URLToLoad;
-
     if (isDirectory)
     {
-        URLToLoad = [self.application.path URLByAppendingPathComponent:@"index.html"];
+        _baseURL = [self.application.path URLByAppendingPathComponent:@"index.html"];
     }
     else
     {
-        URLToLoad = [NSURL URLWithString:[NSString stringWithFormat:@"http://localhost/%@/index.html",
+        _baseURL = [NSURL URLWithString:[NSString stringWithFormat:@"http://localhost/%@/index.html",
                                           self.application.id]];
     }
 
-    [self.webView.mainFrame loadRequest:[NSURLRequest requestWithURL:URLToLoad]];
+    [self.webView.mainFrame loadRequest:[NSURLRequest requestWithURL:_baseURL]];
 }
 
 
@@ -123,11 +122,18 @@
     didFailLoadingWithError:(NSError *)error
              fromDataSource:(WebDataSource *)dataSource
 {
-    NSRunAlertPanel(NSLocalizedString(@"Application can't be loaded", @"App load error title"),
-                    NSLocalizedString(@"A network error has occurred or the application data file "
-                                      @"has been removed or corrupted.", @"App load error description"),
-                    NSLocalizedString(@"OK", @"OK Button title"),
-                    nil, nil);
+    NSLog(@"App loading error: %@", error);
+
+    NSURL *URL = error.userInfo[NSURLErrorFailingURLErrorKey];
+
+    if ([URL isEqual:_baseURL])
+    {
+        NSRunAlertPanel(NSLocalizedString(@"Application can't be loaded", @"App load error title"),
+                        NSLocalizedString(@"The application data file has been removed or corrupted.",
+                                          @"App load error description"),
+                        NSLocalizedString(@"OK", @"OK Button title"),
+                        nil, nil);
+    }
 }
 
 - (void)dealloc
