@@ -45,14 +45,9 @@
 
     self.title = self.application.name;
 
-    // make the bridge object accessible from JS
-    id window = self.webView.windowScriptObject;
-
     _bridge = [[HIAppRuntimeBridge alloc] init];
     _bridge.frame = [self.webView mainFrame];
     _bridge.controller = self;
-
-    [window setValue:_bridge forKey:@"bitcoin"];
 
     // disable cross-site security check
     NSString *noSecurityPreferencesId = @"noSecurity";
@@ -134,6 +129,15 @@
                         NSLocalizedString(@"OK", @"OK Button title"),
                         nil, nil);
     }
+}
+
+- (void)webView:(WebView *)sender didFinishLoadForFrame:(WebFrame *)frame
+{
+    // make the bridge object accessible from JS
+    id window = self.webView.windowScriptObject;
+
+    [window setValue:_bridge forKey:@"bitcoin"];
+
 }
 
 - (void)dealloc
