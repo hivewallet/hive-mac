@@ -173,8 +173,8 @@ NSString * const HISendBitcoinsWindowSuccessKey = @"success";
 
 - (void)sendClicked:(id)sender
 {
-    NSNumberFormatter *formatter = self.amountField.formatter;
-    NSDecimalNumber *amount = (NSDecimalNumber *) [formatter numberFromString: self.amountField.stringValue];
+    NSDecimalNumber *amount = [NSDecimalNumber decimalNumberWithString:self.amountField.stringValue
+                                                                locale:[NSLocale currentLocale]];
     uint64 satoshi = [[amount decimalNumberByMultiplyingByPowerOf10:8] integerValue];
 
     NSString *target = _hashAddress ? _hashAddress : self.nameLabel.stringValue;
