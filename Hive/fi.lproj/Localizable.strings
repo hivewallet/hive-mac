@@ -1,133 +1,139 @@
 /* App load error description */
-"A network error has occurred or the application data file has been removed or corrupted." = "A network error has occurred or the application data file has been removed or corrupted.";
+"A network error has occurred or the application data file has been removed or corrupted." = "Verkkoyhteydessä on ilmennyt virhe tai ohjelman tiedosto on poistettu tai se on virheellinen.";
 
 /* Address field placeholder */
-"Address" = "Address";
+"Address" = "Osoite";
 
 /* Amount exceeds balance alert title */
-"Amount exceeds balance." = "Amount exceeds balance.";
+"Amount exceeds balance." = "Summa ylittää tilin saldon";
 
 /* Anonymous username for profile page */
-"Anonymous" = "Anonymous";
+"Anonymous" = "Nimetön";
 
 /* App load error title */
-"Application can't be loaded" = "Application can't be loaded";
+"Application can't be loaded" = "Ohjelmaa ei voida ladat";
 
 /* Applications view title */
-"Apps" = "Apps";
+"Apps" = "Ohjelmat";
 
 /* Cancel button title */
-"Cancel" = "Cancel";
+"Cancel" = "Peruuta";
 
 /* No comment provided by engineer. */
-"click to copy" = "click to copy";
+"click to copy" = "klikkaa kopioidaksesi";
 
 /* Contact name empty alert title */
-"Contact can't be saved." = "Contact can't be saved.";
+"Contact can't be saved." = "Yhteystietoa ei voida tallentaa.";
 
 /* Contacts view title */
-"Contacts" = "Contacts";
+"Contacts" = "Yhteystiedot";
 
 /* No comment provided by engineer. */
-"copied!" = "copied!";
+"copied!" = "kopioitu!";
 
 /* Quit without saves error question message */
-"Could not save changes while quitting. Quit anyway?" = "Could not save changes while quitting. Quit anyway?";
+"Could not save changes while quitting. Quit anyway?" = "Muutoksia ei voitu tallentaa lopetettaessa. Lopetetaanko?";
 
 /* Remove contact alert dialog body */
-"Do you really want to remove %@ %@ from your contact list?" = "Do you really want to remove %1$@ %2$@ from your contact list?";
+"Do you really want to remove %@ %@ from your contact list?" = "Haluatko varmasti poistaa henkilön %1$@ %2$@ yhteystiedoistasi?";
 
 /* No comment provided by engineer. */
-"Edit contact" = "Edit contact";
+"Edit contact" = "Muokkaa yhteystietoa";
 
 /* No comment provided by engineer. */
-"Edit profile" = "Edit profile";
+"Edit profile" = "Muokkaa profiilia";
 
 /* Email field placeholder */
 "email" = "email";
 
 /* Sending zero bitcoin alert title */
-"Enter an amount greater than zero." = "Enter an amount greater than zero.";
+"Enter an amount greater than zero." = "Aseta summaksi suurempi kuin nolla.";
 
 /* Firstname field placeholder */
-"Firstname" = "Firstname";
+"Firstname" = "Etunimi";
+
+/* Direction label in transactions list when user is the receiver */
+"from" = "osoitteesta";
 
 /* Install app popup title */
-"Install Hive App" = "Install Hive App";
+"Install Hive App" = "Asenna Hive App";
 
 /* Address caption field placeholder */
 "Label" = "Label";
 
 /* Lastname field placeholder */
-"Lastname" = "Lastname";
+"Lastname" = "Sukunimi";
 
 /* Main address caption */
-"main" = "main";
+"main" = "pääosoite";
 
 /* Main address caption string for profiles */
-"Main address" = "Main address";
+"Main address" = "Pääasiallinen osoite";
 
 /* New contact view controller title */
-"New contact" = "New contact";
+"New contact" = "Uusi yhteystieto";
 
 /* No comment provided by engineer. */
-"No" = "No";
+"No" = "Ei";
 
 /* Empty address alert title */
-"No address entered." = "No address entered.";
+"No address entered." = "Osoitetta ei ilmoitettu.";
 
 /* Transaction failed alert message */
-"No bitcoin have been taken from your wallet." = "No bitcoin have been taken from your wallet.";
+"No bitcoin have been taken from your wallet." = "Bitcoineja ei otettu lompakostasi.";
 
 /* OK Button title
-   OK button title */
+ OK button title */
 "OK" = "OK";
 
 /* Autocomplete dropdown prompt */
-"or choose from the list" = "or choose from the list";
+"or choose from the list" = "tai valitse listasta";
 
 /* Invalid address alert message */
-"Please check if you have entered the address correctly." = "Please check if you have entered the address correctly.";
+"Please check if you have entered the address correctly." = "Tarkista, että ilmoitit osoitteen oikein.";
 
 /* Empty address alert message */
-"Please enter a valid Bitcoin address or select one from the dropdown list." = "Please enter a valid Bitcoin address or select one from the dropdown list.";
+"Please enter a valid Bitcoin address or select one from the dropdown list." = "Ilmoita voimassa oleva Bitcoin-osoite tai valitse pudotusvalikosta.";
 
 /* Profile view title string */
-"Profile" = "Profile";
+"Profile" = "Profiili";
 
 /* Quit anyway button title */
-"Quit anyway" = "Quit anyway";
+"Quit anyway" = "Lopeta siitä huolimatta";
 
 /* Quit without saves error question info */
-"Quitting now will lose any changes you have made since the last successful save" = "Quitting now will lose any changes you have made since the last successful save";
+"Quitting now will lose any changes you have made since the last successful save" = "Jos lopetat nyt menetät muutokset, jotka olet tehnyt edellisen tallennuksen jälkeen";
 
 /* Remove contact alert dialog title */
-"Remove contact" = "Remove contact";
+"Remove contact" = "Poista yhteystieto";
 
 /* Invalid address alert title */
-"This isn't a valid Bitcoin address." = "This isn't a valid Bitcoin address.";
+"This isn't a valid Bitcoin address." = "Tämä Bitcoin-osoite ole voimassa.";
+
+/* Direction label in transactions list when user is the sender */
+"to" = "osoitteeseen";
 
 /* Transaction failed alert title */
-"Transaction could not be completed." = "Transaction could not be completed.";
+"Transaction could not be completed." = "Rahansiirtoa ei voitu suorittaa loppuun.";
 
 /* Transactions view title */
-"Transactions" = "Transactions";
+"Transactions" = "Rahansiirrot";
 
 /* Sending zero bitcoin alert message */
-"Why would you want to send someone 0 BTC?" = "Why would you want to send someone 0 BTC?";
+"Why would you want to send someone 0 BTC?" = "Miksi haluaisit lähettää jollekin 0 BTC?";
 
 /* Install app popup confirmation */
-"Would you like to install \"%@\" application?" = "Would you like to install \"%@\" application?";
+"Would you like to install \"%@\" application?" = "Haluatko asentaa \"%@\" -ohjelman?";
 
 /* No comment provided by engineer. */
-"Yes" = "Yes";
+"Yes" = "Kyllä";
 
 /* Install app popup confirmation when app exists */
-"You already have \"%@\" application. Would you like to overwrite it?" = "You already have \"%@\" application. Would you like to overwrite it?";
+"You already have \"%@\" application. Would you like to overwrite it?" = "Sinulla on jo \"%@\" -ohjelma. Haluatko korvata sen?";
 
 /* Amount exceeds balance alert message */
-"You cannot send more money than you own." = "You cannot send more money than you own.";
+"You cannot send more money than you own." = "Et voi lähettää enempää rahaa kuin sinulla on.";
 
 /* Contact name empty alert message */
-"You need to give the contact a name before you can add it to the list." = "You need to give the contact a name before you can add it to the list.";
+"You need to give the contact a name before you can add it to the list." = "Sinun täytyy antaa  yhteystiedolle nimi ennen kuin voit lisätä sen luetteloon.";
 

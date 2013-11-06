@@ -1,6 +1,5 @@
-
 /* Class = "NSMenu"; title = "AMainMenu"; ObjectID = "29"; */
-"29.title" = "AMainMenu";
+"29.title" = "NSMenu";
 
 /* Class = "NSMenuItem"; title = "Hive"; ObjectID = "56"; */
 "56.title" = "Hive";
@@ -12,7 +11,7 @@
 "58.title" = "About Hive";
 
 /* Class = "NSMenuItem"; title = "Preferences…"; ObjectID = "129"; */
-"129.title" = "Preferences…";
+"129.title" = "Asetukset…";
 
 /* Class = "NSMenu"; title = "Services"; ObjectID = "130"; */
 "130.title" = "Services";
@@ -21,46 +20,46 @@
 "131.title" = "Services";
 
 /* Class = "NSMenuItem"; title = "Hide Hive"; ObjectID = "134"; */
-"134.title" = "Hide Hive";
+"134.title" = "Piilota Hive";
 
 /* Class = "NSMenuItem"; title = "Quit Hive"; ObjectID = "136"; */
-"136.title" = "Quit Hive";
+"136.title" = "Lopeta Hive";
 
 /* Class = "NSMenuItem"; title = "Hide Others"; ObjectID = "145"; */
-"145.title" = "Hide Others";
+"145.title" = "Piilota muut";
 
 /* Class = "NSMenuItem"; title = "Show All"; ObjectID = "150"; */
-"150.title" = "Show All";
+"150.title" = "Näytä kaikki";
 
 /* Class = "NSMenuItem"; title = "Item"; ObjectID = "800"; */
 "800.title" = "Item";
 
 /* Class = "NSMenuItem"; title = "Edit"; ObjectID = "801"; */
-"801.title" = "Edit";
+"801.title" = "Muokkaa";
 
 /* Class = "NSMenu"; title = "Edit"; ObjectID = "802"; */
-"802.title" = "Edit";
+"802.title" = "Muokkaa";
 
 /* Class = "NSMenuItem"; title = "Undo"; ObjectID = "804"; */
-"804.title" = "Undo";
+"804.title" = "Peruuta";
 
 /* Class = "NSMenuItem"; title = "Redo"; ObjectID = "805"; */
-"805.title" = "Redo";
+"805.title" = "Tee uudestaan";
 
 /* Class = "NSMenuItem"; title = "Cut"; ObjectID = "807"; */
-"807.title" = "Cut";
+"807.title" = "Leikkaa";
 
 /* Class = "NSMenuItem"; title = "Copy"; ObjectID = "808"; */
-"808.title" = "Copy";
+"808.title" = "Kopioi";
 
 /* Class = "NSMenuItem"; title = "Paste"; ObjectID = "809"; */
-"809.title" = "Paste";
+"809.title" = "Liitä";
 
 /* Class = "NSMenuItem"; title = "Delete"; ObjectID = "811"; */
-"811.title" = "Delete";
+"811.title" = "Poista";
 
 /* Class = "NSMenuItem"; title = "Select All"; ObjectID = "812"; */
-"812.title" = "Select All";
+"812.title" = "Valitse kaikki";
 
 /* Class = "NSMenuItem"; title = "Window"; ObjectID = "854"; */
 "854.title" = "Window";
@@ -69,22 +68,25 @@
 "855.title" = "Window";
 
 /* Class = "NSMenuItem"; title = "Minimize"; ObjectID = "857"; */
-"857.title" = "Minimize";
+"857.title" = "Pienennä";
 
 /* Class = "NSMenuItem"; title = "Zoom"; ObjectID = "858"; */
 "858.title" = "Zoom";
 
 /* Class = "NSMenuItem"; title = "Bring All to Front"; ObjectID = "860"; */
-"860.title" = "Bring All to Front";
+"860.title" = "Tuo kaikki eteen";
 
 /* Class = "NSMenuItem"; title = "Close"; ObjectID = "864"; */
-"864.title" = "Close";
+"864.title" = "Sulje";
 
 /* Class = "NSMenuItem"; title = "Send Bitcoins..."; ObjectID = "866"; */
-"866.title" = "Send Bitcoins...";
+"866.title" = "Lähetä Bitcoineja...";
 
 /* Class = "NSMenuItem"; title = "Check for Updates..."; ObjectID = "870"; */
-"870.title" = "Check for Updates...";
+"870.title" = "Tarkista päivitykset...";
 
 /* Class = "NSMenuItem"; title = "Open CoinMap..."; ObjectID = "872"; */
-"872.title" = "Open CoinMap...";
+"872.title" = "Avaa CoinMap...";
+
+/* Class = "NSMenuItem"; title = "Debugging info..."; ObjectID = "Deb-tn-nNM"; */
+"Deb-tn-nNM.title" = "Debugging info...";
