@@ -16,10 +16,14 @@
     return [self initWithWindowNibName:@"HIDebuggingInfoWindowController"];
 }
 
-- (void)windowDidLoad
+- (void)showWindow:(id)sender
 {
-    [super windowDidLoad];
+    [super showWindow:sender];
+    [self updateInfo];
+}
 
+- (void)updateInfo
+{
     NSMutableString *info = [[NSMutableString alloc] init];
     HIBitcoinManager *bitcoin = [HIBitcoinManager defaultManager];
 
