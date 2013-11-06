@@ -28,12 +28,16 @@
     HIBitcoinManager *bitcoin = [HIBitcoinManager defaultManager];
 
     [info appendFormat:@"## Basic info\n\n"];
+    [info appendFormat:@"Data generated at: %@\n", [NSDate date]];
     [info appendFormat:@"Wallet address: %@\n", bitcoin.walletAddress];
     [info appendFormat:@"Wallet balance: %lld\n", bitcoin.balance];
+    [info appendFormat:@"Estimated balance: %lld\n", bitcoin.estimatedBalance];
 
     [info appendFormat:@"\n## Transaction list\n\n"];
+    [info appendFormat:@"%@\n", bitcoin.allTransactions];
 
-    [info appendFormat:@"%@", bitcoin.allTransactions];
+    [info appendFormat:@"\n## Wallet details\n\n"];
+    [info appendString:bitcoin.walletDebuggingInfo];
 
     self.textView.string = info;
 }
