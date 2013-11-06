@@ -1,6 +1,6 @@
 
 /* Class = "NSTextFieldCell"; title = "Text Cell"; ObjectID = "10"; */
-"10.title" = "Metin Hücresi";
+"10.title" = "Text Cell";
 
 /* Class = "NSTextFieldCell"; title = "Looks like you don't have any contacts yet! Add your first one and start sending money!"; ObjectID = "123"; */
 "123.title" = "Hiç bir bağlantınız yok! İlk bağlantınız ekleyip para göndermeye başlayabilirsiniz!";
@@ -18,4 +18,4 @@
 "135.title" = "daha fazla bağlantı eklemek için yukarı.";
 
 /* Class = "NSTextFieldCell"; title = "Label"; ObjectID = "205"; */
-"205.title" = "Etiket";
+"205.title" = "Label";
