@@ -49,6 +49,10 @@
     _bridge.frame = [self.webView mainFrame];
     _bridge.controller = self;
 
+    // set custom user agent
+    NSString *hiveVersion = [[NSBundle mainBundle] infoDictionary][@"CFBundleShortVersionString"];
+    self.webView.applicationNameForUserAgent = [NSString stringWithFormat:@"Hive/%@", hiveVersion];
+
     // disable cross-site security check
     NSString *noSecurityPreferencesId = @"noSecurity";
     WebPreferences *prefs = [[WebPreferences alloc] initWithIdentifier:noSecurityPreferencesId];
