@@ -1,0 +1,139 @@
+/* App load error description */
+"A network error has occurred or the application data file has been removed or corrupted." = "Bir ağ hatası oluştu ya da uygulama veri dosyası bozuk veya silinmiş.";
+
+/* Address field placeholder */
+"Address" = "Adres";
+
+/* Amount exceeds balance alert title */
+"Amount exceeds balance." = "Tutar bakiyeden fazla.";
+
+/* Anonymous username for profile page */
+"Anonymous" = "Adsız kullanıcı";
+
+/* App load error title */
+"Application can't be loaded" = "Uygulama yüklenemiyor";
+
+/* Applications view title */
+"Apps" = "Uygulamalar";
+
+/* Cancel button title */
+"Cancel" = "İptal Et";
+
+/* No comment provided by engineer. */
+"click to copy" = "kopyalamak için tıkla";
+
+/* Contact name empty alert title */
+"Contact can't be saved." = "Bağlantı kaydedilemiyor.";
+
+/* Contacts view title */
+"Contacts" = "Bağlantılar";
+
+/* No comment provided by engineer. */
+"copied!" = "kopyalandı!";
+
+/* Quit without saves error question message */
+"Could not save changes while quitting. Quit anyway?" = "Kapatma esnasında değişiklikler kaydedilemedi. Gene de kapatmak istiyor musunuz?";
+
+/* Remove contact alert dialog body */
+"Do you really want to remove %@ %@ from your contact list?" = "Bağlantı listenizden %1$@ %2$@ bağlantısını kaldırmak istiyor musunuz?";
+
+/* No comment provided by engineer. */
+"Edit contact" = "Bağlantıyı düzenle";
+
+/* No comment provided by engineer. */
+"Edit profile" = "Profili düzenle";
+
+/* Email field placeholder */
+"email" = "eposta";
+
+/* Sending zero bitcoin alert title */
+"Enter an amount greater than zero." = "Sıfırdan büyük bir değer girin.";
+
+/* Firstname field placeholder */
+"Firstname" = "Adı";
+
+/* Direction label in transactions list when user is the receiver */
+"from" = "adresinden";
+
+/* Install app popup title */
+"Install Hive App" = "Hive Uygulamasını Yükle";
+
+/* Address caption field placeholder */
+"Label" = "Etiket";
+
+/* Lastname field placeholder */
+"Lastname" = "Soyadı";
+
+/* Main address caption */
+"main" = "ana";
+
+/* Main address caption string for profiles */
+"Main address" = "Ana adres";
+
+/* New contact view controller title */
+"New contact" = "Yeni bağlantı";
+
+/* No comment provided by engineer. */
+"No" = "Hayır";
+
+/* Empty address alert title */
+"No address entered." = "Adres girilmedi.";
+
+/* Transaction failed alert message */
+"No bitcoin have been taken from your wallet." = "Cüzdanınızdan hiç bir bitcoin alınmadı.";
+
+/* OK Button title
+   OK button title */
+"OK" = "Tamam";
+
+/* Autocomplete dropdown prompt */
+"or choose from the list" = "veya listeden seçin";
+
+/* Invalid address alert message */
+"Please check if you have entered the address correctly." = "Lütfen adresi doğru girdiğinizi kontrol edin.";
+
+/* Empty address alert message */
+"Please enter a valid Bitcoin address or select one from the dropdown list." = "Lütfen geçerli bir Bitcoin adresi girin ya da açılır listeden bir tane seçin.";
+
+/* Profile view title string */
+"Profile" = "Profil";
+
+/* Quit anyway button title */
+"Quit anyway" = "Gene de kapat";
+
+/* Quit without saves error question info */
+"Quitting now will lose any changes you have made since the last successful save" = "Şu anda kapatmak son başarılı kayıttan bu yana yaptığınız bütün değişiklikleri kaybettirecektir";
+
+/* Remove contact alert dialog title */
+"Remove contact" = "Bağlantıyı kaldır";
+
+/* Invalid address alert title */
+"This isn't a valid Bitcoin address." = "Bu geçerli bir Bitcoin adresi değil.";
+
+/* Direction label in transactions list when user is the sender */
+"to" = "adresine";
+
+/* Transaction failed alert title */
+"Transaction could not be completed." = "İşlem tamamlanamadı.";
+
+/* Transactions view title */
+"Transactions" = "İşlemler";
+
+/* Sending zero bitcoin alert message */
+"Why would you want to send someone 0 BTC?" = "Birisine neden 0 BTC göndermek isteyesiniz ki?";
+
+/* Install app popup confirmation */
+"Would you like to install \"%@\" application?" = "\"%@\" uygulamasını kurmak ister misiniz?";
+
+/* No comment provided by engineer. */
+"Yes" = "Evet";
+
+/* Install app popup confirmation when app exists */
+"You already have \"%@\" application. Would you like to overwrite it?" = "\"%@\" uygulaması zaten kurulu. Üzerine yazmak ister misiniz?";
+
+/* Amount exceeds balance alert message */
+"You cannot send more money than you own." = "Sahip olduğunuz miktardan daha fazla parayı gönderemezsiniz.";
+
+/* Contact name empty alert message */
+"You need to give the contact a name before you can add it to the list." = "Listeye eklemeden önce bağlantıya bir isim vermeniz gerekmekte.";
+

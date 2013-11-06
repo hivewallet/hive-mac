@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="4514" systemVersion="13A603" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none">
+    <dependencies>
+        <deployment version="1070" defaultVersion="1070" identifier="macosx"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="4514"/>
+    </dependencies>
+    <objects>
+        <customObject id="-2" userLabel="File's Owner" customClass="NSApplication">
+            <connections>
+                <outlet property="delegate" destination="494" id="495"/>
+            </connections>
+        </customObject>
+        <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
+        <customObject id="-3" userLabel="Application"/>
+        <menu title="AMainMenu" systemMenu="main" id="29">
+            <items>
+                <menuItem title="Hive" id="56">
+                    <menu key="submenu" title="Hive" systemMenu="apple" id="57">
+                        <items>
+                            <menuItem title="Hive Hakkında" id="58">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                                <connections>
+                                    <action selector="orderFrontStandardAboutPanel:" target="-2" id="142"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem isSeparatorItem="YES" id="236">
+                                <modifierMask key="keyEquivalentModifierMask" command="YES"/>
+                            </menuItem>
+                            <menuItem title="Seçenekler…" keyEquivalent="," id="129">
+                                <connections>
+                                    <action selector="openPreferences:" target="-1" id="754"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="Bitcoin Gönder..." keyEquivalent="S" id="866">
+                                <connections>
+                                    <action selector="openSendBitcoinsWindow:" target="-1" id="868"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="CoinMap'i Aç..." id="872">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                                <connections>
+                                    <action selector="openCoinMapSite:" target="494" id="874"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="Güncellemeleri Kontrol Et..." id="870">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                                <connections>
+                                    <action selector="checkForUpdates:" target="869" id="871"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="Hata giderme bilgisi..." id="Deb-tn-nNM">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                                <connections>
+                                    <action selector="showDebuggingInfo:" target="-1" id="4IC-10-S1w"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem isSeparatorItem="YES" id="143">
+                                <modifierMask key="keyEquivalentModifierMask" command="YES"/>
+                            </menuItem>
+                            <menuItem title="Hizmetler" id="131">
+                                <menu key="submenu" title="Hizmetler" systemMenu="services" id="130"/>
+                            </menuItem>
+                            <menuItem isSeparatorItem="YES" id="144">
+                                <modifierMask key="keyEquivalentModifierMask" command="YES"/>
+                            </menuItem>
+                            <menuItem title="Hive'ı Gizle" keyEquivalent="h" id="134">
+                                <connections>
+                                    <action selector="hide:" target="-1" id="367"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="Diğerlerini Gizle" keyEquivalent="h" id="145">
+                                <modifierMask key="keyEquivalentModifierMask" option="YES" command="YES"/>
+                                <connections>
+                                    <action selector="hideOtherApplications:" target="-1" id="368"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="Hepsini Göster" id="150">
+                                <connections>
+                                    <action selector="unhideAllApplications:" target="-1" id="370"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem isSeparatorItem="YES" id="149">
+                                <modifierMask key="keyEquivalentModifierMask" command="YES"/>
+                            </menuItem>
+                            <menuItem title="Hive'dan Çık" keyEquivalent="q" id="136">
+                                <connections>
+                                    <action selector="terminate:" target="-3" id="449"/>
+                                </connections>
+                            </menuItem>
+                        </items>
+                    </menu>
+                </menuItem>
+                <menuItem title="Düzenle" id="801">
+                    <modifierMask key="keyEquivalentModifierMask"/>
+                    <menu key="submenu" title="Düzenle" id="802">
+                        <items>
+                            <menuItem title="Geri Al" keyEquivalent="z" id="804">
+                                <connections>
+                                    <action selector="undo:" target="-1" id="848"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="Tekrar Yap" keyEquivalent="Z" id="805">
+                                <modifierMask key="keyEquivalentModifierMask" shift="YES" command="YES"/>
+                            </menuItem>
+                            <menuItem isSeparatorItem="YES" id="806">
+                                <modifierMask key="keyEquivalentModifierMask" command="YES"/>
+                            </menuItem>
+                            <menuItem title="Kes" keyEquivalent="x" id="807">
+                                <connections>
+                                    <action selector="cut:" target="-1" id="849"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="Kopyala" keyEquivalent="c" id="808">
+                                <connections>
+                                    <action selector="copy:" target="-1" id="850"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="Yapıştır" keyEquivalent="v" id="809">
+                                <connections>
+                                    <action selector="paste:" target="-1" id="851"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="Sil" id="811">
+                                <connections>
+                                    <action selector="delete:" target="-1" id="852"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="Hepsini Seç" keyEquivalent="a" id="812">
+                                <connections>
+                                    <action selector="selectAll:" target="-1" id="853"/>
+                                </connections>
+                            </menuItem>
+                        </items>
+                    </menu>
+                </menuItem>
+                <menuItem title="Pencere" id="854">
+                    <modifierMask key="keyEquivalentModifierMask"/>
+                    <menu key="submenu" title="Pencere" id="855">
+                        <items>
+                            <menuItem title="Küçült" keyEquivalent="m" id="857">
+                                <connections>
+                                    <action selector="performMiniaturize:" target="-1" id="861"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="Kapat" keyEquivalent="w" id="864">
+                                <connections>
+                                    <action selector="performClose:" target="-1" id="865"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="Yakınlaştır" id="858">
+                                <connections>
+                                    <action selector="performZoom:" target="-1" id="862"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem isSeparatorItem="YES" id="859">
+                                <modifierMask key="keyEquivalentModifierMask" command="YES"/>
+                            </menuItem>
+                            <menuItem title="Hepsini Öne Getir" id="860">
+                                <connections>
+                                    <action selector="arrangeInFront:" target="-1" id="863"/>
+                                </connections>
+                            </menuItem>
+                        </items>
+                    </menu>
+                </menuItem>
+            </items>
+        </menu>
+        <customObject id="494" customClass="HIAppDelegate"/>
+        <customObject id="420" customClass="NSFontManager"/>
+        <customObject id="869" customClass="SUUpdater"/>
+        <menuItem title="Öge" id="800">
+            <modifierMask key="keyEquivalentModifierMask"/>
+        </menuItem>
+    </objects>
+</document>

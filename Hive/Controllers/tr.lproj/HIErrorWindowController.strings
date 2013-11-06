@@ -1,0 +1,9 @@
+
+/* Class = "NSWindow"; title = "Error"; ObjectID = "1"; */
+"1.title" = "Hata";
+
+/* Class = "NSTextFieldCell"; title = "Oh no, something went wrong!"; ObjectID = "Mpx-rH-nUM"; */
+"Mpx-rH-nUM.title" = "Malesef bir şeyler yanlış gelişti!";
+
+/* Class = "NSTextFieldCell"; title = "An unexpected error has occurred in Hive."; ObjectID = "xF4-pJ-cQU"; */
+"xF4-pJ-cQU.title" = "Hive'da beklenmedik bir hata meydana geldi.";
