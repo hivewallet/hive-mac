@@ -9,85 +9,85 @@
 "57.title" = "Hive";
 
 /* Class = "NSMenuItem"; title = "About Hive"; ObjectID = "58"; */
-"58.title" = "About Hive";
+"58.title" = "Hive Hakkında";
 
 /* Class = "NSMenuItem"; title = "Preferences…"; ObjectID = "129"; */
-"129.title" = "Preferences…";
+"129.title" = "Seçenekler…";
 
 /* Class = "NSMenu"; title = "Services"; ObjectID = "130"; */
-"130.title" = "Services";
+"130.title" = "Hizmetler";
 
 /* Class = "NSMenuItem"; title = "Services"; ObjectID = "131"; */
-"131.title" = "Services";
+"131.title" = "Hizmetler";
 
 /* Class = "NSMenuItem"; title = "Hide Hive"; ObjectID = "134"; */
-"134.title" = "Hide Hive";
+"134.title" = "Hive'ı Gizle";
 
 /* Class = "NSMenuItem"; title = "Quit Hive"; ObjectID = "136"; */
-"136.title" = "Quit Hive";
+"136.title" = "Hive'dan Çık";
 
 /* Class = "NSMenuItem"; title = "Hide Others"; ObjectID = "145"; */
-"145.title" = "Hide Others";
+"145.title" = "Diğerlerini Gizle";
 
 /* Class = "NSMenuItem"; title = "Show All"; ObjectID = "150"; */
-"150.title" = "Show All";
+"150.title" = "Hepsini Göster";
 
 /* Class = "NSMenuItem"; title = "Item"; ObjectID = "800"; */
-"800.title" = "Item";
+"800.title" = "Öge";
 
 /* Class = "NSMenuItem"; title = "Edit"; ObjectID = "801"; */
-"801.title" = "Edit";
+"801.title" = "Düzenle";
 
 /* Class = "NSMenu"; title = "Edit"; ObjectID = "802"; */
-"802.title" = "Edit";
+"802.title" = "Düzenle";
 
 /* Class = "NSMenuItem"; title = "Undo"; ObjectID = "804"; */
-"804.title" = "Undo";
+"804.title" = "Geri Al";
 
 /* Class = "NSMenuItem"; title = "Redo"; ObjectID = "805"; */
-"805.title" = "Redo";
+"805.title" = "Tekrar Yap";
 
 /* Class = "NSMenuItem"; title = "Cut"; ObjectID = "807"; */
-"807.title" = "Cut";
+"807.title" = "Kes";
 
 /* Class = "NSMenuItem"; title = "Copy"; ObjectID = "808"; */
-"808.title" = "Copy";
+"808.title" = "Kopyala";
 
 /* Class = "NSMenuItem"; title = "Paste"; ObjectID = "809"; */
-"809.title" = "Paste";
+"809.title" = "Yapıştır";
 
 /* Class = "NSMenuItem"; title = "Delete"; ObjectID = "811"; */
-"811.title" = "Delete";
+"811.title" = "Sil";
 
 /* Class = "NSMenuItem"; title = "Select All"; ObjectID = "812"; */
-"812.title" = "Select All";
+"812.title" = "Hepsini Seç";
 
 /* Class = "NSMenuItem"; title = "Window"; ObjectID = "854"; */
-"854.title" = "Window";
+"854.title" = "Pencere";
 
 /* Class = "NSMenu"; title = "Window"; ObjectID = "855"; */
-"855.title" = "Window";
+"855.title" = "Pencere";
 
 /* Class = "NSMenuItem"; title = "Minimize"; ObjectID = "857"; */
-"857.title" = "Minimize";
+"857.title" = "Küçült";
 
 /* Class = "NSMenuItem"; title = "Zoom"; ObjectID = "858"; */
-"858.title" = "Zoom";
+"858.title" = "Yakınlaştır";
 
 /* Class = "NSMenuItem"; title = "Bring All to Front"; ObjectID = "860"; */
-"860.title" = "Bring All to Front";
+"860.title" = "Hepsini Öne Getir";
 
 /* Class = "NSMenuItem"; title = "Close"; ObjectID = "864"; */
-"864.title" = "Close";
+"864.title" = "Kapat";
 
 /* Class = "NSMenuItem"; title = "Send Bitcoins..."; ObjectID = "866"; */
-"866.title" = "Send Bitcoins...";
+"866.title" = "Bitcoin Gönder...";
 
 /* Class = "NSMenuItem"; title = "Check for Updates..."; ObjectID = "870"; */
-"870.title" = "Check for Updates...";
+"870.title" = "Güncellemeleri Kontrol Et...";
 
 /* Class = "NSMenuItem"; title = "Open CoinMap..."; ObjectID = "872"; */
-"872.title" = "Open CoinMap...";
+"872.title" = "CoinMap'i Aç...";
 
 /* Class = "NSMenuItem"; title = "Debugging info..."; ObjectID = "Deb-tn-nNM"; */
-"Deb-tn-nNM.title" = "Debugging info...";
+"Deb-tn-nNM.title" = "Hata giderme bilgisi...";
