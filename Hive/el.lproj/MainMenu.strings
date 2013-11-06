@@ -1,6 +1,6 @@
-
+﻿
 /* Class = "NSMenu"; title = "AMainMenu"; ObjectID = "29"; */
-"29.title" = "AMainMenu";
+"29.title" = "Βασικό Μενού";
 
 /* Class = "NSMenuItem"; title = "Hive"; ObjectID = "56"; */
 "56.title" = "Hive";
@@ -9,85 +9,85 @@
 "57.title" = "Hive";
 
 /* Class = "NSMenuItem"; title = "About Hive"; ObjectID = "58"; */
-"58.title" = "About Hive";
+"58.title" = "Σχετικά με το Hive";
 
 /* Class = "NSMenuItem"; title = "Preferences…"; ObjectID = "129"; */
-"129.title" = "Preferences…";
+"129.title" = "Προτιμίσεις…";
 
 /* Class = "NSMenu"; title = "Services"; ObjectID = "130"; */
-"130.title" = "Services";
+"130.title" = "Υπηρεσίες";
 
 /* Class = "NSMenuItem"; title = "Services"; ObjectID = "131"; */
-"131.title" = "Services";
+"131.title" = "Υπηρεσίες";
 
 /* Class = "NSMenuItem"; title = "Hide Hive"; ObjectID = "134"; */
-"134.title" = "Hide Hive";
+"134.title" = "Απόκρυψη Hive";
 
 /* Class = "NSMenuItem"; title = "Quit Hive"; ObjectID = "136"; */
-"136.title" = "Quit Hive";
+"136.title" = "Έξοδος από το Hive";
 
 /* Class = "NSMenuItem"; title = "Hide Others"; ObjectID = "145"; */
-"145.title" = "Hide Others";
+"145.title" = "Απόκρυψη άλλων";
 
 /* Class = "NSMenuItem"; title = "Show All"; ObjectID = "150"; */
-"150.title" = "Show All";
+"150.title" = "Εμφάνιση όλων";
 
 /* Class = "NSMenuItem"; title = "Item"; ObjectID = "800"; */
-"800.title" = "Item";
+"800.title" = "Είδος";
 
 /* Class = "NSMenuItem"; title = "Edit"; ObjectID = "801"; */
-"801.title" = "Edit";
+"801.title" = "Επεξεργασία";
 
 /* Class = "NSMenu"; title = "Edit"; ObjectID = "802"; */
-"802.title" = "Edit";
+"802.title" = "Επεξεργασία";
 
 /* Class = "NSMenuItem"; title = "Undo"; ObjectID = "804"; */
-"804.title" = "Undo";
+"804.title" = "Αναίρεση";
 
 /* Class = "NSMenuItem"; title = "Redo"; ObjectID = "805"; */
-"805.title" = "Redo";
+"805.title" = "Επανάληψη";
 
 /* Class = "NSMenuItem"; title = "Cut"; ObjectID = "807"; */
-"807.title" = "Cut";
+"807.title" = "Αποκοπή";
 
 /* Class = "NSMenuItem"; title = "Copy"; ObjectID = "808"; */
-"808.title" = "Copy";
+"808.title" = "Αντιγραφή";
 
 /* Class = "NSMenuItem"; title = "Paste"; ObjectID = "809"; */
-"809.title" = "Paste";
+"809.title" = "Επικόλληση";
 
 /* Class = "NSMenuItem"; title = "Delete"; ObjectID = "811"; */
-"811.title" = "Delete";
+"811.title" = "Διαγραφή";
 
 /* Class = "NSMenuItem"; title = "Select All"; ObjectID = "812"; */
-"812.title" = "Select All";
+"812.title" = "Επιλογή όλων";
 
 /* Class = "NSMenuItem"; title = "Window"; ObjectID = "854"; */
-"854.title" = "Window";
+"854.title" = "Παράθυρο";
 
 /* Class = "NSMenu"; title = "Window"; ObjectID = "855"; */
-"855.title" = "Window";
+"855.title" = "Παράθυρο";
 
 /* Class = "NSMenuItem"; title = "Minimize"; ObjectID = "857"; */
-"857.title" = "Minimize";
+"857.title" = "Ελαχιστοποίηση";
 
 /* Class = "NSMenuItem"; title = "Zoom"; ObjectID = "858"; */
-"858.title" = "Zoom";
+"858.title" = "Μεγέθυνση";
 
 /* Class = "NSMenuItem"; title = "Bring All to Front"; ObjectID = "860"; */
-"860.title" = "Bring All to Front";
+"860.title" = "Επαναφορά όλων στο προσκήνιο";
 
 /* Class = "NSMenuItem"; title = "Close"; ObjectID = "864"; */
-"864.title" = "Close";
+"864.title" = "Κλείσιμο";
 
 /* Class = "NSMenuItem"; title = "Send Bitcoins..."; ObjectID = "866"; */
-"866.title" = "Send Bitcoins...";
+"866.title" = "Αποστολή bitcoins...";
 
 /* Class = "NSMenuItem"; title = "Check for Updates..."; ObjectID = "870"; */
-"870.title" = "Check for Updates...";
+"870.title" = "Έλεγχος για ενημερώσεις...";
 
 /* Class = "NSMenuItem"; title = "Open CoinMap..."; ObjectID = "872"; */
-"872.title" = "Open CoinMap...";
+"872.title" = "Άνοιγμα CoinMap...";
 
 /* Class = "NSMenuItem"; title = "Debugging info..."; ObjectID = "Deb-tn-nNM"; */
-"Deb-tn-nNM.title" = "Debugging info...";
+"Deb-tn-nNM.title" = "Πληροφορίες αποσφαλμάτωσης...";

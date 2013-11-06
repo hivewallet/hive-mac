@@ -1,12 +1,12 @@
-
+﻿
 /* Class = "NSWindow"; title = "Window"; ObjectID = "1"; */
-"1.title" = "Window";
+"1.title" = "Παράθυρο";
 
 /* Class = "NSTextFieldCell"; title = "Text Cell"; ObjectID = "13"; */
-"13.title" = "Text Cell";
+"13.title" = "Κελί κειμένου";
 
 /* Class = "NSTextFieldCell"; title = "John Whatshisface"; ObjectID = "22"; */
 "22.title" = "John Whatshisface";
 
 /* Class = "NSTextFieldCell"; title = "Main address"; ObjectID = "34"; */
-"34.title" = "Main address";
+"34.title" = "Βασική διεύθυνση";

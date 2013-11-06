@@ -1,139 +1,139 @@
-/* App load error description */
-"A network error has occurred or the application data file has been removed or corrupted." = "A network error has occurred or the application data file has been removed or corrupted.";
+﻿/* App load error description */
+"A network error has occurred or the application data file has been removed or corrupted." = "Προέκυψε κάποιο σφάλμα δικτύου ή τα δεδομένα της εφαρμογής έχουν διαγραφεί / καταστραφεί.";
 
 /* Address field placeholder */
-"Address" = "Address";
+"Address" = "Διεύθυνση";
 
 /* Amount exceeds balance alert title */
-"Amount exceeds balance." = "Amount exceeds balance.";
+"Amount exceeds balance." = "Το ποσό υπερβαίνει το υπόλοιπο.";
 
 /* Anonymous username for profile page */
-"Anonymous" = "Anonymous";
+"Anonymous" = "Ανώνυμος";
 
 /* App load error title */
-"Application can't be loaded" = "Application can't be loaded";
+"Application can't be loaded" = "Αδύνατη η φόρτωση της εφαρμογής";
 
 /* Applications view title */
 "Apps" = "Apps";
 
 /* Cancel button title */
-"Cancel" = "Cancel";
+"Cancel" = "Ακύρωση";
 
 /* No comment provided by engineer. */
-"click to copy" = "click to copy";
+"click to copy" = "κλικ για αντιγραφή";
 
 /* Contact name empty alert title */
-"Contact can't be saved." = "Contact can't be saved.";
+"Contact can't be saved." = "Αδύνατη η αποθήκευση της επαφής.";
 
 /* Contacts view title */
-"Contacts" = "Contacts";
+"Contacts" = "Επαφές";
 
 /* No comment provided by engineer. */
-"copied!" = "copied!";
+"copied!" = "αντιγράφηκε!";
 
 /* Quit without saves error question message */
-"Could not save changes while quitting. Quit anyway?" = "Could not save changes while quitting. Quit anyway?";
+"Could not save changes while quitting. Quit anyway?" = "Αδύνατη η αποθήκευση των αλλαγών κατά την έξοδο. Είστε σίγουροι;";
 
 /* Remove contact alert dialog body */
-"Do you really want to remove %@ %@ from your contact list?" = "Do you really want to remove %1$@ %2$@ from your contact list?";
+"Do you really want to remove %@ %@ from your contact list?" = "Είστε σίγουροι πως θέλετε ν' αφαιρέσετε τον/ην %1$@ %2$@ από τη λίστα επαφών σας;";
 
 /* No comment provided by engineer. */
-"Edit contact" = "Edit contact";
+"Edit contact" = "Επεξεργασία επαφής";
 
 /* No comment provided by engineer. */
-"Edit profile" = "Edit profile";
+"Edit profile" = "Επεξεργασία προφίλ";
 
 /* Email field placeholder */
 "email" = "email";
 
 /* Sending zero bitcoin alert title */
-"Enter an amount greater than zero." = "Enter an amount greater than zero.";
+"Enter an amount greater than zero." = "Εισάγετε ένα ποσό μεγαλύτερο από μηδέν.";
 
 /* Firstname field placeholder */
-"Firstname" = "Firstname";
+"Firstname" = "Όνομα";
 
 /* Direction label in transactions list when user is the receiver */
-"from" = "from";
+"from" = "από";
 
 /* Install app popup title */
-"Install Hive App" = "Install Hive App";
+"Install Hive App" = "Εγκατάσταση Hive App";
 
 /* Address caption field placeholder */
-"Label" = "Label";
+"Label" = "Ετικέτα";
 
 /* Lastname field placeholder */
-"Lastname" = "Lastname";
+"Lastname" = "Επίθετο";
 
 /* Main address caption */
-"main" = "main";
+"main" = "βασική";
 
 /* Main address caption string for profiles */
-"Main address" = "Main address";
+"Main address" = "Βασική διεύθυνση";
 
 /* New contact view controller title */
-"New contact" = "New contact";
+"New contact" = "Νέα επαφή";
 
 /* No comment provided by engineer. */
-"No" = "No";
+"No" = "Όχι";
 
 /* Empty address alert title */
-"No address entered." = "No address entered.";
+"No address entered." = "Δε δόθηκε διεύθυνση.";
 
 /* Transaction failed alert message */
-"No bitcoin have been taken from your wallet." = "No bitcoin have been taken from your wallet.";
+"No bitcoin have been taken from your wallet." = "Δεν αφαιρέθηκαν bitcoins από το πορτοφόλι σας.";
 
 /* OK Button title
    OK button title */
 "OK" = "OK";
 
 /* Autocomplete dropdown prompt */
-"or choose from the list" = "or choose from the list";
+"or choose from the list" = "ή επιλέξτε από τη λίστα";
 
 /* Invalid address alert message */
-"Please check if you have entered the address correctly." = "Please check if you have entered the address correctly.";
+"Please check if you have entered the address correctly." = "Παρακαλώ επιβεβαιώστε την ορθή εισαγωγή της διεύθυνσης.";
 
 /* Empty address alert message */
-"Please enter a valid Bitcoin address or select one from the dropdown list." = "Please enter a valid Bitcoin address or select one from the dropdown list.";
+"Please enter a valid Bitcoin address or select one from the dropdown list." = "Παρακαλώ εισάγετε μια έγκυρη διεύθυνση Bitcoin ή επιλέξτε μία από τη λίστα.";
 
 /* Profile view title string */
-"Profile" = "Profile";
+"Profile" = "Προφίλ";
 
 /* Quit anyway button title */
-"Quit anyway" = "Quit anyway";
+"Quit anyway" = "Έξοδος";
 
 /* Quit without saves error question info */
-"Quitting now will lose any changes you have made since the last successful save" = "Quitting now will lose any changes you have made since the last successful save";
+"Quitting now will lose any changes you have made since the last successful save" = "Αν εγκαταλείψετε τώρα, θα χαθούν οι αλλαγές που έγιναν έως την προηγούμενη επιτυχημένη αποθήκευση";
 
 /* Remove contact alert dialog title */
-"Remove contact" = "Remove contact";
+"Remove contact" = "Αφαίρεση επαφής";
 
 /* Invalid address alert title */
-"This isn't a valid Bitcoin address." = "This isn't a valid Bitcoin address.";
+"This isn't a valid Bitcoin address." = "Μη έγκυρη διεύθυνση Bitcoin.";
 
 /* Direction label in transactions list when user is the sender */
-"to" = "to";
+"to" = "προς";
 
 /* Transaction failed alert title */
-"Transaction could not be completed." = "Transaction could not be completed.";
+"Transaction could not be completed." = "Αδύνατη η ολοκλήρωση της συναλλαγής.";
 
 /* Transactions view title */
-"Transactions" = "Transactions";
+"Transactions" = "Συναλλαγές";
 
 /* Sending zero bitcoin alert message */
-"Why would you want to send someone 0 BTC?" = "Why would you want to send someone 0 BTC?";
+"Why would you want to send someone 0 BTC?" = "Γιατί θέλετε να στείλετε σε κάποιον 0 BTC;";
 
 /* Install app popup confirmation */
-"Would you like to install \"%@\" application?" = "Would you like to install \"%@\" application?";
+"Would you like to install \"%@\" application?" = "Θέλετε να εγκαταστήσετε την εφαρμογή \"%@\" ;";
 
 /* No comment provided by engineer. */
-"Yes" = "Yes";
+"Yes" = "Ναι";
 
 /* Install app popup confirmation when app exists */
-"You already have \"%@\" application. Would you like to overwrite it?" = "You already have \"%@\" application. Would you like to overwrite it?";
+"You already have \"%@\" application. Would you like to overwrite it?" = "Έχετε ήδη την εφαρμογή \"%@\". Θέλετε να την αντικαταστήσετε;";
 
 /* Amount exceeds balance alert message */
-"You cannot send more money than you own." = "You cannot send more money than you own.";
+"You cannot send more money than you own." = "Δε μπορείτε να στείλετε περισσότερα από όσα έχετε.";
 
 /* Contact name empty alert message */
-"You need to give the contact a name before you can add it to the list." = "You need to give the contact a name before you can add it to the list.";
+"You need to give the contact a name before you can add it to the list." = "Πρέπει να δώσετε ένα όνομα στην επαφή πριν την προσθέσετε στη λίστα.";
 
