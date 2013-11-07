@@ -72,7 +72,7 @@ Gw
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             <subviews>
                                 <textField verticalHuggingPriority="750" id="13">
-                                    <rect key="frame" x="15" y="-36" width="59" height="17"/>
+                                    <rect key="frame" x="15" y="77" width="59" height="17"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="right" title="osoitteeseen:" id="14">
                                         <font key="font" metaFont="cellTitle"/>
@@ -81,7 +81,7 @@ Gw
                                     </textFieldCell>
                                 </textField>
                                 <textField verticalHuggingPriority="750" id="15">
-                                    <rect key="frame" x="15" y="-96" width="59" height="17"/>
+                                    <rect key="frame" x="15" y="17" width="59" height="17"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="right" title="Määrä:" id="16">
                                         <font key="font" metaFont="cellTitle"/>
@@ -90,12 +90,12 @@ Gw
                                     </textFieldCell>
                                 </textField>
                                 <imageView wantsLayer="YES" id="17">
-                                    <rect key="frame" x="80" y="-49" width="35" height="35"/>
+                                    <rect key="frame" x="80" y="64" width="35" height="35"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                     <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" id="18"/>
                                 </imageView>
                                 <textField focusRingType="none" verticalHuggingPriority="750" id="19">
-                                    <rect key="frame" x="122" y="-35" width="12" height="18"/>
+                                    <rect key="frame" x="122" y="78" width="212" height="18"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" focusRingType="none" title="John Whatshisface" placeholderString="Kirjoita hakeaksesi..." id="20">
                                         <font key="font" size="14" name="LucidaGrande-Bold"/>
@@ -107,7 +107,7 @@ Gw
                                     </connections>
                                 </textField>
                                 <textField verticalHuggingPriority="750" id="21">
-                                    <rect key="frame" x="122" y="-57" width="24" height="17"/>
+                                    <rect key="frame" x="122" y="56" width="230" height="17"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Pääasiallinen osoite" id="22">
                                         <font key="font" size="10" name="LucidaGrande"/>
@@ -116,22 +116,22 @@ Gw
                                     </textFieldCell>
                                 </textField>
                                 <box autoresizesSubviews="NO" title="Box" boxType="custom" borderType="line" id="23">
-                                    <rect key="frame" x="0.0" y="-64" width="161" height="1"/>
+                                    <rect key="frame" x="0.0" y="49" width="367" height="1"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                     <view key="contentView">
-                                        <rect key="frame" x="1" y="1" width="159" height="0.0"/>
+                                        <rect key="frame" x="1" y="1" width="365" height="0.0"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     </view>
                                     <color key="borderColor" red="0.69700002670000005" green="0.69688004260000003" blue="0.69695496560000003" alpha="0.41999999999999998" colorSpace="calibratedRGB"/>
                                     <color key="fillColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </box>
                                 <imageView id="24">
-                                    <rect key="frame" x="80" y="-99" width="22" height="22"/>
+                                    <rect key="frame" x="80" y="14" width="22" height="22"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                     <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="icon-bitcoin" id="25"/>
                                 </imageView>
                                 <textField focusRingType="none" verticalHuggingPriority="750" id="36">
-                                    <rect key="frame" x="110" y="-100" width="239" height="22"/>
+                                    <rect key="frame" x="110" y="13" width="239" height="22"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" focusRingType="none" title="0.0" drawsBackground="YES" id="37">
                                         <numberFormatter key="formatter" formatterBehavior="default10_4" positiveFormat="#" negativeFormat="#" usesGroupingSeparator="NO" groupingSize="0" minimumIntegerDigits="0" maximumIntegerDigits="42" minimumFractionDigits="0" maximumFractionDigits="0" decimalSeparator="," groupingSeparator=" " currencyDecimalSeparator="," id="42" customClass="HICurrencyAmountFormatter">
@@ -146,7 +146,7 @@ Gw
                                     </textFieldCell>
                                 </textField>
                                 <button id="51">
-                                    <rect key="frame" x="122" y="-39" width="24" height="24"/>
+                                    <rect key="frame" x="328" y="74" width="24" height="24"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES"/>
                                     <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="icon-dropdown-open" imagePosition="only" alignment="center" alternateImage="icon-dropdown-close" refusesFirstResponder="YES" imageScaling="proportionallyDown" inset="2" id="52">
                                         <behavior key="behavior" pushIn="YES" changeContents="YES" lightByContents="YES"/>
