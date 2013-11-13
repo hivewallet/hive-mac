@@ -13,7 +13,7 @@ Hive is a user-friendly Bitcoin wallet app for OSX.
 
 First, clone the GitHub repository:
 
-    git clone git@github.com:grabhive/hive-osx.git
+    git clone git@github.com:hivewallet/hive-osx.git
 
 Make sure you have CocoaPods installed:
 
