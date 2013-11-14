@@ -141,7 +141,13 @@ static NSString * const kBCClientBaseURLString = @"https://grabhive.com/";
                     [self parseTransaction:transaction notify:YES];
                 }
 
-                [_transactionUpdateContext save:NULL];
+                NSError *error;
+                [_transactionUpdateContext save:&error];
+
+                if (error)
+                {
+                    NSLog(@"Error saving updated transactions: %@", error);
+                }
 
                 dispatch_async(dispatch_get_main_queue(), ^{
                     [self updateNotifications];
@@ -158,7 +164,19 @@ static NSString * const kBCClientBaseURLString = @"https://grabhive.com/";
         NSDictionary *transaction = [[HIBitcoinManager defaultManager] transactionForHash:notification.object];
         [_transactionUpdateContext performBlock:^{
             [self parseTransaction:transaction notify:YES];
-            [_transactionUpdateContext save:NULL];
+
+            NSError *error;
+            [_transactionUpdateContext save:&error];
+
+            if (!error)
+            {
+                NSLog(@"Saved transaction %@", transaction[@"txid"]);
+            }
+            else
+            {
+                NSLog(@"Error saving transaction %@: %@", transaction[@"txid"], error);
+            }
+
             dispatch_async(dispatch_get_main_queue(), ^{
                 [self updateNotifications];
             });
