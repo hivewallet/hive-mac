@@ -142,22 +142,16 @@ static NSString * const WarningDisplayedKey = @"WarningDisplayed";
     }
 
     NSFileManager *fileManager = [NSFileManager defaultManager];
-    NSURL *applicationFilesDirectory = self.applicationFilesDirectory;
     NSError *error = nil;
+    BOOL isDirectory;
+    BOOL exists = [fileManager fileExistsAtPath:self.applicationFilesDirectory.path isDirectory:&isDirectory];
 
-    NSDictionary *properties = [applicationFilesDirectory resourceValuesForKeys:@[NSURLIsDirectoryKey] error:&error];
-
-    if (!properties)
+    if (!exists)
     {
-        BOOL ok = NO;
-
-        if ([error code] == NSFileReadNoSuchFileError)
-        {
-            ok = [fileManager createDirectoryAtPath:[applicationFilesDirectory path]
-                        withIntermediateDirectories:YES
-                                         attributes:nil
-                                              error:&error];
-        }
+        BOOL ok = [fileManager createDirectoryAtPath:self.applicationFilesDirectory.path
+                         withIntermediateDirectories:YES
+                                          attributes:nil
+                                               error:&error];
 
         if (!ok)
         {
@@ -165,24 +159,20 @@ static NSString * const WarningDisplayedKey = @"WarningDisplayed";
             return nil;
         }
     }
-    else
+    else if (!isDirectory)
     {
-        if (![properties[NSURLIsDirectoryKey] boolValue])
-        {
-            // Customize and localize this error.
-            NSString *failureDescription = [NSString stringWithFormat:
-                                            @"Expected a folder to store application data, found a file (%@).",
-                                            applicationFilesDirectory.path];
-            
-            NSDictionary *dict = @{NSLocalizedDescriptionKey: failureDescription};
-            error = [NSError errorWithDomain:@"net.novaproject.DatabaseError" code:101 userInfo:dict];
-            
-            [NSApp presentError:error];
-            return nil;
-        }
+        NSString *failureDescription = [NSString stringWithFormat:
+                                        @"Expected a folder to store application data, found a file (%@).",
+                                        self.applicationFilesDirectory.path];
+
+        NSDictionary *dict = @{NSLocalizedDescriptionKey: failureDescription};
+        error = [NSError errorWithDomain:@"net.novaproject.DatabaseError" code:101 userInfo:dict];
+
+        [NSApp presentError:error];
+        return nil;
     }
 
-    NSURL *url = [applicationFilesDirectory URLByAppendingPathComponent:@"Hive.storedata"];
+    NSURL *url = [self.applicationFilesDirectory URLByAppendingPathComponent:@"Hive.storedata"];
 
     NSPersistentStoreCoordinator *coordinator = [[NSPersistentStoreCoordinator alloc] initWithManagedObjectModel:mom];
     if (![coordinator addPersistentStoreWithType:NSXMLStoreType configuration:nil URL:url options:nil error:&error])
