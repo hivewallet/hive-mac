@@ -21,6 +21,8 @@
 static NSString * const LastVersionKey = @"LastHiveVersion";
 static NSString * const WarningDisplayedKey = @"WarningDisplayed";
 
+#define CheckError(error) if (error) { [NSApp presentError:(error)]; return nil; }
+
 
 @interface HIAppDelegate ()
 {
@@ -148,16 +150,12 @@ static NSString * const WarningDisplayedKey = @"WarningDisplayed";
 
     if (!exists)
     {
-        BOOL ok = [fileManager createDirectoryAtPath:self.applicationFilesDirectory.path
-                         withIntermediateDirectories:YES
-                                          attributes:nil
-                                               error:&error];
+        [fileManager createDirectoryAtPath:self.applicationFilesDirectory.path
+               withIntermediateDirectories:YES
+                                attributes:nil
+                                     error:&error];
 
-        if (!ok)
-        {
-            [NSApp presentError:error];
-            return nil;
-        }
+        CheckError(error);
     }
     else if (!isDirectory)
     {
@@ -168,22 +166,90 @@ static NSString * const WarningDisplayedKey = @"WarningDisplayed";
         NSDictionary *dict = @{NSLocalizedDescriptionKey: failureDescription};
         error = [NSError errorWithDomain:@"net.novaproject.DatabaseError" code:101 userInfo:dict];
 
-        [NSApp presentError:error];
-        return nil;
+        CheckError(error);
     }
 
     NSURL *url = [self.applicationFilesDirectory URLByAppendingPathComponent:@"Hive.storedata"];
 
     NSPersistentStoreCoordinator *coordinator = [[NSPersistentStoreCoordinator alloc] initWithManagedObjectModel:mom];
 
-    if (![coordinator addPersistentStoreWithType:NSXMLStoreType configuration:nil URL:url options:nil error:&error])
+    if (![coordinator addPersistentStoreWithType:NSSQLiteStoreType configuration:nil URL:url options:nil error:NULL])
     {
-        [NSApp presentError:error];
-        return nil;
+        // see if it isn't the old xml version
+        NSPersistentStore *xmlStore = [coordinator addPersistentStoreWithType:NSXMLStoreType
+                                                                configuration:nil
+                                                                          URL:url
+                                                                      options:nil
+                                                                        error:&error];
+
+        if (xmlStore)
+        {
+            NSPersistentStore *sqliteStore = [self migrateXMLStoreToSqlite:xmlStore inCoordinator:coordinator];
+
+            if (!sqliteStore)
+            {
+                return nil;
+            }
+        }
+        else
+        {
+            CheckError(error);
+        }
     }
 
     _persistentStoreCoordinator = coordinator;
     return _persistentStoreCoordinator;
+}
+
+- (NSPersistentStore *)migrateXMLStoreToSqlite:(NSPersistentStore *)xmlStore
+                                 inCoordinator:(NSPersistentStoreCoordinator *)coordinator
+{
+    NSFileManager *fileManager = [NSFileManager defaultManager];
+    NSError *error = nil;
+    NSURL *url = xmlStore.URL;
+
+    // convert old store to an sqlite store
+    NSURL *newUrl = [self.applicationFilesDirectory URLByAppendingPathComponent:@"Hive.storedata.new"];
+
+    if ([fileManager fileExistsAtPath:newUrl.path isDirectory:NULL])
+    {
+        [fileManager removeItemAtURL:newUrl error:&error];
+        CheckError(error);
+    }
+
+    NSPersistentStore *sqliteStore = [coordinator migratePersistentStore:xmlStore
+                                                                   toURL:newUrl
+                                                                 options:nil
+                                                                withType:NSSQLiteStoreType
+                                                                   error:&error];
+    CheckError(error);
+
+    [coordinator removePersistentStore:sqliteStore error:&error];
+    CheckError(error);
+
+    // move the new store to the old place
+    NSURL *backupUrl = [self.applicationFilesDirectory URLByAppendingPathComponent:@"Hive.storedata.old"];
+
+    if ([fileManager fileExistsAtPath:backupUrl.path isDirectory:NULL])
+    {
+        [fileManager removeItemAtURL:backupUrl error:&error];
+        CheckError(error);
+    }
+
+    [fileManager moveItemAtURL:url toURL:backupUrl error:&error];
+    CheckError(error);
+
+    [fileManager moveItemAtURL:newUrl toURL:url error:&error];
+    CheckError(error);
+
+    NSPersistentStore *newStore = [coordinator addPersistentStoreWithType:NSSQLiteStoreType
+                                                            configuration:nil
+                                                                      URL:url
+                                                                  options:nil
+                                                                    error:&error];
+    CheckError(error);
+
+    return newStore;
 }
 
 // Returns the managed object context for the application
