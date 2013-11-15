@@ -175,11 +175,11 @@ static NSString * const WarningDisplayedKey = @"WarningDisplayed";
     NSURL *url = [self.applicationFilesDirectory URLByAppendingPathComponent:@"Hive.storedata"];
 
     NSPersistentStoreCoordinator *coordinator = [[NSPersistentStoreCoordinator alloc] initWithManagedObjectModel:mom];
+
     if (![coordinator addPersistentStoreWithType:NSXMLStoreType configuration:nil URL:url options:nil error:&error])
     {
-        // So - we need to delete old file
-        [[NSFileManager defaultManager] removeItemAtURL:url error:NULL];
-        return self.persistentStoreCoordinator;
+        [NSApp presentError:error];
+        return nil;
     }
 
     _persistentStoreCoordinator = coordinator;
