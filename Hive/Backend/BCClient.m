@@ -57,8 +57,16 @@ static NSString * const kBCClientBaseURLString = @"https://grabhive.com/";
         _dateFormatter = [[NSDateFormatter alloc] init];
         _dateFormatter.dateFormat = @"yyyy'-'MM'-'dd'T'HH':'mm':'ssz";
 
-        _transactionUpdateContext = [[NSManagedObjectContext alloc] initWithConcurrencyType:NSPrivateQueueConcurrencyType];
-        _transactionUpdateContext.parentContext = [(HIAppDelegate *) [NSApp delegate] managedObjectContext];
+        NSManagedObjectContext *mainContext = [(HIAppDelegate *) [NSApp delegate] managedObjectContext];
+        if (!mainContext)
+        {
+            // something went seriously wrong
+            return nil;
+        }
+
+        _transactionUpdateContext = [[NSManagedObjectContext alloc]
+                                     initWithConcurrencyType:NSPrivateQueueConcurrencyType];
+        _transactionUpdateContext.parentContext = mainContext;
 
         NSNotificationCenter *notificationCenter = [NSNotificationCenter defaultCenter];
         [notificationCenter addObserver:self
@@ -211,16 +219,24 @@ static NSString * const kBCClientBaseURLString = @"https://grabhive.com/";
 - (void)shutdown
 {
     [[HIBitcoinManager defaultManager] stop];
-    [[HITorManager defaultManager] stop];
+    // [[HITorManager defaultManager] stop];
 }
 
 - (void)dealloc
 {
     [self shutdown];
     [[NSNotificationCenter defaultCenter] removeObserver:self];
-    [[HIBitcoinManager defaultManager] removeObserver:self forKeyPath:@"connections"];
-    [[HIBitcoinManager defaultManager] removeObserver:self forKeyPath:@"balance"];
-    [[HIBitcoinManager defaultManager] removeObserver:self forKeyPath:@"syncProgress"];
+
+    @try {
+        HIBitcoinManager *manager = [HIBitcoinManager defaultManager];
+
+        [manager removeObserver:self forKeyPath:@"connections"];
+        [manager removeObserver:self forKeyPath:@"balance"];
+        [manager removeObserver:self forKeyPath:@"syncProgress"];
+    }
+    @catch (NSException *exception) {
+        // there should be a way to check if I'm added as observer before calling remove but I don't know any...
+    }
 }
 
 - (NSURL *)bitcoindDirectory
