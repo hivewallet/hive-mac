@@ -38,6 +38,7 @@
           completion:(void(^)(BOOL success, NSString *transactionId))completion;
 
 - (NSDictionary *)transactionDefinitionWithHash:(NSString *)hash;
+- (void)rebuildTransactionsList;
 
 - (BOOL)backupWalletAtURL:(NSURL *)backupURL;
 - (BOOL)importWalletFromURL:(NSURL *)walletURL;

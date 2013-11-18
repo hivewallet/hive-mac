@@ -186,7 +186,14 @@ static NSString * const WarningDisplayedKey = @"WarningDisplayed";
         {
             NSPersistentStore *sqliteStore = [self migrateXMLStoreToSqlite:xmlStore inCoordinator:coordinator];
 
-            if (!sqliteStore)
+            if (sqliteStore)
+            {
+                // xml store had problems with saving all transactions so rebuild the list in case some were lost
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    [[BCClient sharedClient] rebuildTransactionsList];
+                });
+            }
+            else
             {
                 return nil;
             }

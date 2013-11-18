@@ -138,32 +138,31 @@ static NSString * const kBCClientBaseURLString = @"https://grabhive.com/";
         [self willChangeValueForKey:@"walletHash"];
         _walletHash = [HIBitcoinManager defaultManager].walletAddress;
         [self didChangeValueForKey:@"walletHash"];
-
-        if ([[NSUserDefaults standardUserDefaults] boolForKey:@"FirstRun"])
-        {
-            NSArray *transactions = [HIBitcoinManager defaultManager].allTransactions;
-            [_transactionUpdateContext performBlock:^{
-                // We need to scan whole wallet in search for transactions
-                for (NSDictionary *transaction in transactions)
-                {
-                    [self parseTransaction:transaction notify:YES];
-                }
-
-                NSError *error;
-                [_transactionUpdateContext save:&error];
-
-                if (error)
-                {
-                    NSLog(@"Error saving updated transactions: %@", error);
-                }
-
-                dispatch_async(dispatch_get_main_queue(), ^{
-                    [self updateNotifications];
-                    [[NSUserDefaults standardUserDefaults] setBool:NO forKey:@"FirstRun"];
-                });
-            }];
-        }
     });
+}
+
+- (void)rebuildTransactionsList
+{
+    NSArray *transactions = [[HIBitcoinManager defaultManager] allTransactions];
+
+    [_transactionUpdateContext performBlock:^{
+        for (NSDictionary *transaction in transactions)
+        {
+            [self parseTransaction:transaction notify:YES];
+        }
+
+        NSError *error;
+        [_transactionUpdateContext save:&error];
+
+        if (error)
+        {
+            NSLog(@"Error saving updated transactions: %@", error);
+        }
+
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [self updateNotifications];
+        });
+    }];
 }
 
 - (void)transactionUpdated:(NSNotification *)notification
