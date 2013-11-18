@@ -1,30 +1,30 @@
 
 /* Class = "NSWindow"; title = "Send Bitcoin"; ObjectID = "1"; */
-"1.title" = "Send Bitcoin";
+"1.title" = "Trimite Bitcoin";
 
 /* Class = "NSButtonCell"; title = "Cancel"; ObjectID = "6"; */
-"6.title" = "Cancel";
+"6.title" = "Revocare";
 
 /* Class = "NSButtonCell"; title = "Send"; ObjectID = "10"; */
-"10.title" = "Send";
+"10.title" = "Trimite";
 
 /* Class = "NSTextFieldCell"; title = "To:"; ObjectID = "14"; */
-"14.title" = "To:";
+"14.title" = "Către:";
 
 /* Class = "NSTextFieldCell"; title = "Amount:"; ObjectID = "16"; */
-"16.title" = "Amount:";
+"16.title" = "Suma:";
 
 /* Class = "NSTextFieldCell"; placeholderString = "Type to search..."; ObjectID = "20"; */
-"20.placeholderString" = "Type to search...";
+"20.placeholderString" = "Tastați pentru a căuta...";
 
 /* Class = "NSTextFieldCell"; title = "John Whatshisface"; ObjectID = "20"; */
 "20.title" = "John Whatshisface";
 
 /* Class = "NSTextFieldCell"; title = "Main address"; ObjectID = "22"; */
-"22.title" = "Main address";
+"22.title" = "Adresă principală";
 
 /* Class = "NSBox"; title = "Box"; ObjectID = "23"; */
-"23.title" = "Box";
+"23.title" = "Cutie";
 
 /* Class = "NSTextFieldCell"; title = "0.0"; ObjectID = "37"; */
 "37.title" = "0.0";

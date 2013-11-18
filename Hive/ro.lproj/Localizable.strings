@@ -1,139 +1,139 @@
 /* App load error description */
-"A network error has occurred or the application data file has been removed or corrupted." = "A network error has occurred or the application data file has been removed or corrupted.";
+"A network error has occurred or the application data file has been removed or corrupted." = "S-a produs o eroare de conexiune sau fișierul de date al aplicației a fost șters sau corupt.";
 
 /* Address field placeholder */
-"Address" = "Address";
+"Address" = "Adresă";
 
 /* Amount exceeds balance alert title */
-"Amount exceeds balance." = "Amount exceeds balance.";
+"Amount exceeds balance." = "Cantitatea depășește balanța.";
 
 /* Anonymous username for profile page */
-"Anonymous" = "Anonymous";
+"Anonymous" = "Anonim";
 
 /* App load error title */
-"Application can't be loaded" = "Application can't be loaded";
+"Application can't be loaded" = "Aplicația nu poate fi încarcată";
 
 /* Applications view title */
 "Apps" = "Apps";
 
 /* Cancel button title */
-"Cancel" = "Cancel";
+"Cancel" = "Revocare";
 
 /* No comment provided by engineer. */
-"click to copy" = "click to copy";
+"click to copy" = "click pentru copiere";
 
 /* Contact name empty alert title */
-"Contact can't be saved." = "Contact can't be saved.";
+"Contact can't be saved." = "Contactul nu poate fi salvat.";
 
 /* Contacts view title */
-"Contacts" = "Contacts";
+"Contacts" = "Contacte";
 
 /* No comment provided by engineer. */
-"copied!" = "copied!";
+"copied!" = "copiat!";
 
 /* Quit without saves error question message */
-"Could not save changes while quitting. Quit anyway?" = "Could not save changes while quitting. Quit anyway?";
+"Could not save changes while quitting. Quit anyway?" = "Schimbările nu pot fi salvate în timpul închiderii. închideți oricum?";
 
 /* Remove contact alert dialog body */
-"Do you really want to remove %@ %@ from your contact list?" = "Do you really want to remove %1$@ %2$@ from your contact list?";
+"Do you really want to remove %@ %@ from your contact list?" = "Sigur doriți să ștergeți %1$@ %2$@ din lista de contacte?";
 
 /* No comment provided by engineer. */
-"Edit contact" = "Edit contact";
+"Edit contact" = "Editare contact";
 
 /* No comment provided by engineer. */
-"Edit profile" = "Edit profile";
+"Edit profile" = "Editare profil";
 
 /* Email field placeholder */
 "email" = "email";
 
 /* Sending zero bitcoin alert title */
-"Enter an amount greater than zero." = "Enter an amount greater than zero.";
+"Enter an amount greater than zero." = "Introduceți o cantitate mai mare decât zero.";
 
 /* Firstname field placeholder */
-"Firstname" = "Firstname";
+"Firstname" = "Prenume";
 
 /* Direction label in transactions list when user is the receiver */
-"from" = "from";
+"from" = "de la";
 
 /* Install app popup title */
-"Install Hive App" = "Install Hive App";
+"Install Hive App" = "Instalare Aplicație Hive";
 
 /* Address caption field placeholder */
-"Label" = "Label";
+"Label" = "Etichetă";
 
 /* Lastname field placeholder */
-"Lastname" = "Lastname";
+"Lastname" = "Nume";
 
 /* Main address caption */
-"main" = "main";
+"main" = "principal";
 
 /* Main address caption string for profiles */
-"Main address" = "Main address";
+"Main address" = "Adresă principală";
 
 /* New contact view controller title */
-"New contact" = "New contact";
+"New contact" = "Contact nou";
 
 /* No comment provided by engineer. */
-"No" = "No";
+"No" = "Nu";
 
 /* Empty address alert title */
-"No address entered." = "No address entered.";
+"No address entered." = "Adresa nu a fost introdusă.";
 
 /* Transaction failed alert message */
-"No bitcoin have been taken from your wallet." = "No bitcoin have been taken from your wallet.";
+"No bitcoin have been taken from your wallet." = "Nu a fost retras niciun bitcoin din portofel.";
 
 /* OK Button title
    OK button title */
 "OK" = "OK";
 
 /* Autocomplete dropdown prompt */
-"or choose from the list" = "or choose from the list";
+"or choose from the list" = "sau alegeți din listă";
 
 /* Invalid address alert message */
-"Please check if you have entered the address correctly." = "Please check if you have entered the address correctly.";
+"Please check if you have entered the address correctly." = "Vă rugăm verificați daca ați introdus adresa corect.";
 
 /* Empty address alert message */
-"Please enter a valid Bitcoin address or select one from the dropdown list." = "Please enter a valid Bitcoin address or select one from the dropdown list.";
+"Please enter a valid Bitcoin address or select one from the dropdown list." = "Vă rugăm introduceți o adresă Bitcoin validă sau alegeți una din listă.";
 
 /* Profile view title string */
-"Profile" = "Profile";
+"Profile" = "Profil";
 
 /* Quit anyway button title */
-"Quit anyway" = "Quit anyway";
+"Quit anyway" = "închideți oricum";
 
 /* Quit without saves error question info */
-"Quitting now will lose any changes you have made since the last successful save" = "Quitting now will lose any changes you have made since the last successful save";
+"Quitting now will lose any changes you have made since the last successful save" = "Dacă închideți acum veți pierde modificările făcute de la ultima salvare facută cu succes.";
 
 /* Remove contact alert dialog title */
-"Remove contact" = "Remove contact";
+"Remove contact" = "ștergere contact";
 
 /* Invalid address alert title */
-"This isn't a valid Bitcoin address." = "This isn't a valid Bitcoin address.";
+"This isn't a valid Bitcoin address." = "Aceasta nu este o adresa Bitcoin validă.";
 
 /* Direction label in transactions list when user is the sender */
-"to" = "to";
+"to" = "la";
 
 /* Transaction failed alert title */
-"Transaction could not be completed." = "Transaction could not be completed.";
+"Transaction could not be completed." = "Tranzacția nu a putut fi efectuată.";
 
 /* Transactions view title */
-"Transactions" = "Transactions";
+"Transactions" = "Tranzacții";
 
 /* Sending zero bitcoin alert message */
-"Why would you want to send someone 0 BTC?" = "Why would you want to send someone 0 BTC?";
+"Why would you want to send someone 0 BTC?" = "De ce ați dori să trimiteți cuiva 0 BTC?";
 
 /* Install app popup confirmation */
-"Would you like to install \"%@\" application?" = "Would you like to install \"%@\" application?";
+"Would you like to install \"%@\" application?" = "Doriți să intalați aplicația \"%@\"?";
 
 /* No comment provided by engineer. */
-"Yes" = "Yes";
+"Yes" = "Da";
 
 /* Install app popup confirmation when app exists */
-"You already have \"%@\" application. Would you like to overwrite it?" = "You already have \"%@\" application. Would you like to overwrite it?";
+"You already have \"%@\" application. Would you like to overwrite it?" = "Deja aveți aplicația \"%@\". Doriți să o suprascrieți?";
 
 /* Amount exceeds balance alert message */
-"You cannot send more money than you own." = "You cannot send more money than you own.";
+"You cannot send more money than you own." = "Nu puteți trimite mai mulți bani decât aveți.";
 
 /* Contact name empty alert message */
-"You need to give the contact a name before you can add it to the list." = "You need to give the contact a name before you can add it to the list.";
+"You need to give the contact a name before you can add it to the list." = "Trebuie să atribuiți un nume contactului înainte să-l adăugați in listă.";
 

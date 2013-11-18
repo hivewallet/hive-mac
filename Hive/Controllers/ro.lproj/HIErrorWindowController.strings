@@ -1,9 +1,9 @@
 
 /* Class = "NSWindow"; title = "Error"; ObjectID = "1"; */
-"1.title" = "Error";
+"1.title" = "Eroare";
 
 /* Class = "NSTextFieldCell"; title = "Oh no, something went wrong!"; ObjectID = "Mpx-rH-nUM"; */
-"Mpx-rH-nUM.title" = "Oh no, something went wrong!";
+"Mpx-rH-nUM.title" = "O nu, ceva nu a mers bine!";
 
 /* Class = "NSTextFieldCell"; title = "An unexpected error has occurred in Hive."; ObjectID = "xF4-pJ-cQU"; */
-"xF4-pJ-cQU.title" = "An unexpected error has occurred in Hive.";
+"xF4-pJ-cQU.title" = "O eroare neașteptată s-a produs in Hive.";
