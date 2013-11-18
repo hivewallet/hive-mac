@@ -12,12 +12,12 @@
         </customObject>
         <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
         <customObject id="-3" userLabel="Application"/>
-        <menu title="Menu principal" systemMenu="main" id="29">
+        <menu title="Menu Principal" systemMenu="main" id="29">
             <items>
                 <menuItem title="Hive" id="56">
                     <menu key="submenu" title="Hive" systemMenu="apple" id="57">
                         <items>
-                            <menuItem title="Sobre Hive" id="58">
+                            <menuItem title="Sobre o Hive" id="58">
                                 <modifierMask key="keyEquivalentModifierMask"/>
                                 <connections>
                                     <action selector="orderFrontStandardAboutPanel:" target="-2" id="142"/>
@@ -26,7 +26,7 @@
                             <menuItem isSeparatorItem="YES" id="236">
                                 <modifierMask key="keyEquivalentModifierMask" command="YES"/>
                             </menuItem>
-                            <menuItem title="Preferências" keyEquivalent="," id="129">
+                            <menuItem title="Preferências…" keyEquivalent="," id="129">
                                 <connections>
                                     <action selector="openPreferences:" target="-1" id="754"/>
                                 </connections>
@@ -42,13 +42,13 @@
                                     <action selector="openCoinMapSite:" target="494" id="874"/>
                                 </connections>
                             </menuItem>
-                            <menuItem title="Buscar atualizações..." id="870">
+                            <menuItem title="Verificar Actualizações..." id="870">
                                 <modifierMask key="keyEquivalentModifierMask"/>
                                 <connections>
                                     <action selector="checkForUpdates:" target="869" id="871"/>
                                 </connections>
                             </menuItem>
-                            <menuItem title="Informações de Debug..." keyEquivalent="D" id="Deb-tn-nNM">
+                            <menuItem title="Informação de Depuração..." keyEquivalent="D" id="Deb-tn-nNM">
                                 <connections>
                                     <action selector="showDebuggingInfo:" target="-1" id="4IC-10-S1w"/>
                                 </connections>
@@ -62,18 +62,18 @@
                             <menuItem isSeparatorItem="YES" id="144">
                                 <modifierMask key="keyEquivalentModifierMask" command="YES"/>
                             </menuItem>
-                            <menuItem title="Ocultar Hive" keyEquivalent="h" id="134">
+                            <menuItem title="Ocultar o Hive" keyEquivalent="h" id="134">
                                 <connections>
                                     <action selector="hide:" target="-1" id="367"/>
                                 </connections>
                             </menuItem>
-                            <menuItem title="Ocultar outros" keyEquivalent="h" id="145">
+                            <menuItem title="Ocultar Outros" keyEquivalent="h" id="145">
                                 <modifierMask key="keyEquivalentModifierMask" option="YES" command="YES"/>
                                 <connections>
                                     <action selector="hideOtherApplications:" target="-1" id="368"/>
                                 </connections>
                             </menuItem>
-                            <menuItem title="Mostrar todos" id="150">
+                            <menuItem title="Mostrar Todos" id="150">
                                 <connections>
                                     <action selector="unhideAllApplications:" target="-1" id="370"/>
                                 </connections>
@@ -81,7 +81,7 @@
                             <menuItem isSeparatorItem="YES" id="149">
                                 <modifierMask key="keyEquivalentModifierMask" command="YES"/>
                             </menuItem>
-                            <menuItem title="Encerrar Hive" keyEquivalent="q" id="136">
+                            <menuItem title="Fechar o Hive" keyEquivalent="q" id="136">
                                 <connections>
                                     <action selector="terminate:" target="-3" id="449"/>
                                 </connections>
@@ -104,7 +104,7 @@
                             <menuItem isSeparatorItem="YES" id="806">
                                 <modifierMask key="keyEquivalentModifierMask" command="YES"/>
                             </menuItem>
-                            <menuItem title="Recortar" keyEquivalent="x" id="807">
+                            <menuItem title="Cortar" keyEquivalent="x" id="807">
                                 <connections>
                                     <action selector="cut:" target="-1" id="849"/>
                                 </connections>
@@ -119,12 +119,12 @@
                                     <action selector="paste:" target="-1" id="851"/>
                                 </connections>
                             </menuItem>
-                            <menuItem title="Deletar" id="811">
+                            <menuItem title="Eliminar" id="811">
                                 <connections>
                                     <action selector="delete:" target="-1" id="852"/>
                                 </connections>
                             </menuItem>
-                            <menuItem title="Selecionar tudo" keyEquivalent="a" id="812">
+                            <menuItem title="Selecionar Todos" keyEquivalent="a" id="812">
                                 <connections>
                                     <action selector="selectAll:" target="-1" id="853"/>
                                 </connections>
@@ -154,7 +154,7 @@
                             <menuItem isSeparatorItem="YES" id="859">
                                 <modifierMask key="keyEquivalentModifierMask" command="YES"/>
                             </menuItem>
-                            <menuItem title="Trazer todos para frente" id="860">
+                            <menuItem title="Colocar à frente de tudo" id="860">
                                 <connections>
                                     <action selector="arrangeInFront:" target="-1" id="863"/>
                                 </connections>

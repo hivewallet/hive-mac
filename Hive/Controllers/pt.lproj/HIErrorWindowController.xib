@@ -31,7 +31,7 @@
                     <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="rNO-jY-3PV">
                         <rect key="frame" x="17" y="420" width="556" height="17"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
-                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="Ah não, algo deu errado!" id="Mpx-rH-nUM">
+                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="Ooops! Houve um problema!" id="Mpx-rH-nUM">
                             <font key="font" size="13" name="LucidaGrande-Bold"/>
                             <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                             <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
@@ -40,7 +40,7 @@
                     <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="XU2-Dv-jOg">
                         <rect key="frame" x="17" y="395" width="556" height="17"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
-                        <textFieldCell key="cell" lineBreakMode="truncatingTail" sendsActionOnEndEditing="YES" alignment="center" title="Um erro inesperado ocorreu com o Hive." id="xF4-pJ-cQU">
+                        <textFieldCell key="cell" lineBreakMode="truncatingTail" sendsActionOnEndEditing="YES" alignment="center" title="Ocorreu um erro não esperado na aplicação Hive." id="xF4-pJ-cQU">
                             <font key="font" metaFont="system"/>
                             <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                             <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>

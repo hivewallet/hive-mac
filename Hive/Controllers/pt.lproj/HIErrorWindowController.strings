@@ -3,7 +3,7 @@
 "1.title" = "Erro";
 
 /* Class = "NSTextFieldCell"; title = "Oh no, something went wrong!"; ObjectID = "Mpx-rH-nUM"; */
-"Mpx-rH-nUM.title" = "Ah não, algo deu errado!";
+"Mpx-rH-nUM.title" = "Ooops! Houve um problema!";
 
 /* Class = "NSTextFieldCell"; title = "An unexpected error has occurred in Hive."; ObjectID = "xF4-pJ-cQU"; */
-"xF4-pJ-cQU.title" = "Um erro inesperado ocorreu com o Hive.";
+"xF4-pJ-cQU.title" = "Ocorreu um erro não esperado na aplicação Hive.";

@@ -39,7 +39,7 @@
                                             <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
                                             <color key="backgroundColor" white="0.33333298560000002" alpha="1" colorSpace="calibratedWhite"/>
                                         </tableHeaderCell>
-                                        <textFieldCell key="dataCell" lineBreakMode="truncatingTail" selectable="YES" editable="YES" alignment="left" title="Célula de texto" id="13">
+                                        <textFieldCell key="dataCell" lineBreakMode="truncatingTail" selectable="YES" editable="YES" alignment="left" title="Campo de Texto" id="13">
                                             <font key="font" metaFont="system"/>
                                             <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                                             <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
@@ -124,7 +124,7 @@
                         <size key="offset" width="0.0" height="1"/>
                         <color key="color" red="1" green="0.99997437" blue="0.99999129769999995" alpha="1" colorSpace="calibratedRGB"/>
                     </shadow>
-                    <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="center" title="Você ainda não fez transações Envie algumas Bitcoins!" id="54">
+                    <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="center" title="Ainda não fez nenhuma transação. Faça compras com Bitcoin!" id="54">
                         <font key="font" size="16" name="Helvetica"/>
                         <color key="textColor" red="0.3291117549" green="0.32910189029999998" blue="0.32910749319999999" alpha="1" colorSpace="calibratedRGB"/>
                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
@@ -152,7 +152,7 @@
                                 <size key="offset" width="0.0" height="1"/>
                                 <color key="color" red="1" green="0.99988943340000003" blue="0.99995732309999996" alpha="1" colorSpace="calibratedRGB"/>
                             </shadow>
-                            <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="center" title="Você pode usar o botão Enviar para enviar dinheiro a alguém." id="63">
+                            <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="center" title="Pode usar o botão Enviar para enviar dinheiro." id="63">
                                 <font key="font" size="13" name="Helvetica"/>
                                 <color key="textColor" red="0.32231375579999999" green="0.3222793639" blue="0.32230004670000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>

@@ -3,10 +3,10 @@
 "1.title" = "Janela";
 
 /* Class = "NSTextFieldCell"; title = "Text Cell"; ObjectID = "13"; */
-"13.title" = "Célula de texto";
+"13.title" = "Campo de Texto";
 
 /* Class = "NSTextFieldCell"; title = "John Whatshisface"; ObjectID = "22"; */
-"22.title" = "José da Silva";
+"22.title" = "Zé Ninguém";
 
 /* Class = "NSTextFieldCell"; title = "Main address"; ObjectID = "34"; */
 "34.title" = "Endereço principal";
