@@ -1,0 +1,138 @@
+/* App load error description */
+"A network error has occurred or the application data file has been removed or corrupted." = "Ocorreu um erro de rede ou o arquivo de aplicação de dados foi removido ou corrompido.";
+
+/* Address field placeholder */
+"Address" = "Endereço";
+
+/* Amount exceeds balance alert title */
+"Amount exceeds balance." = "Valor excede o saldo.";
+
+/* Anonymous username for profile page */
+"Anonymous" = "Anônimo";
+
+/* App load error title */
+"Application can't be loaded" = "Aplicação não pode ser carregada";
+
+/* Applications view title */
+"Apps" = "Apps";
+
+/* Cancel button title */
+"Cancel" = "Cancelar";
+
+/* No comment provided by engineer. */
+"click to copy" = "Clique para copiar";
+
+/* Contact name empty alert title */
+"Contact can't be saved." = "Contato não pode ser salvado.";
+
+/* Contacts view title */
+"Contacts" = "Contatos";
+
+/* No comment provided by engineer. */
+"copied!" = "copiado!";
+
+/* Quit without saves error question message */
+"Could not save changes while quitting. Quit anyway?" = "Não foi possível salvar as alterados. Fechar mesmo assim?";
+
+/* Remove contact alert dialog body */
+"Do you really want to remove %@ %@ from your contact list?" = "Realmente deseja remover %1$@ %2$@ da sua lista de contatos?";
+
+/* No comment provided by engineer. */
+"Edit contact" = "Editar contato";
+
+/* No comment provided by engineer. */
+"Edit profile" = "Editar perfil";
+
+/* Email field placeholder */
+"email" = "email";
+
+/* Sending zero bitcoin alert title */
+"Enter an amount greater than zero." = "Digite um valor maior que zero.";
+
+/* Firstname field placeholder */
+"Firstname" = "Primeiro nome";
+
+/* Direction label in transactions list when user is the receiver */
+"from" = "De";
+
+/* Install app popup title */
+"Install Hive App" = "Instalar app Hive";
+
+/* Address caption field placeholder */
+"Label" = "Label";
+
+/* Lastname field placeholder */
+"Lastname" = "Sobrenome";
+
+/* Main address caption */
+"main" = "Principal";
+
+/* Main address caption string for profiles */
+"Main address" = "Endereço principal";
+
+/* New contact view controller title */
+"New contact" = "Novo contato";
+
+/* No comment provided by engineer. */
+"No" = "Não";
+
+/* Empty address alert title */
+"No address entered." = "Endereço em branco.";
+
+/* Transaction failed alert message */
+"No bitcoin have been taken from your wallet." = "Bitcoins não foram removidas da sua carteira.";
+
+/* OK Button title
+   OK button title */
+"OK" = "OK";
+
+/* Autocomplete dropdown prompt */
+"or choose from the list" = "ou escolha da lista";
+
+/* Invalid address alert message */
+"Please check if you have entered the address correctly." = "Favor verificar se o endereço foi digitado corretamente.";
+
+/* Empty address alert message */
+"Please enter a valid Bitcoin address or select one from the dropdown list." = "Favor digitar um endereço de Bitcoin válido ou selecionar do menu.";
+
+/* Profile view title string */
+"Profile" = "Perfil";
+
+/* Quit anyway button title */
+"Quit anyway" = "Encerrar";
+
+/* Quit without saves error question info */
+"Quitting now will lose any changes you have made since the last successful save" = "Encerrar agora resultará na perda das alterações feitas desde a última vez que salvou";
+
+/* Remove contact alert dialog title */
+"Remove contact" = "Remover contato";
+
+/* Invalid address alert title */
+"This isn't a valid Bitcoin address." = "Este endereço de Bitcoin não é válido.";
+
+/* Direction label in transactions list when user is the sender */
+"to" = "Para";
+
+/* Transaction failed alert title */
+"Transaction could not be completed." = "Transação não pode ser completada.";
+
+/* Transactions view title */
+"Transactions" = "Transações";
+
+/* Sending zero bitcoin alert message */
+"Why would you want to send someone 0 BTC?" = "Por que você enviaria 0 BTC a alguém?";
+
+/* Install app popup confirmation */
+"Would you like to install \"%@\" application?" = "Gostaria de instalar a aplicação \"%@\"?";
+
+/* No comment provided by engineer. */
+"Yes" = "Sim";
+
+/* Install app popup confirmation when app exists */
+"You already have \"%@\" application. Would you like to overwrite it?" = "Você já tem a aplicação \"%@\". Gostaria de sobrepor?";
+
+/* Amount exceeds balance alert message */
+"You cannot send more money than you own." = "Você não pode enviar mais dinheiro do que você tem.";
+
+/* Contact name empty alert message */
+"You need to give the contact a name before you can add it to the list." = "Você precisa digitar o nome do contato antes de adicioná-lo a lista.";

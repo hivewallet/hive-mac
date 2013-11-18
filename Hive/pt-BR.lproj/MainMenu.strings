@@ -1,0 +1,92 @@
+/* Class = "NSMenu"; title = "AMainMenu"; ObjectID = "29"; */
+"29.title" = "Menu principal";
+
+/* Class = "NSMenuItem"; title = "Hive"; ObjectID = "56"; */
+"56.title" = "Hive";
+
+/* Class = "NSMenu"; title = "Hive"; ObjectID = "57"; */
+"57.title" = "Hive";
+
+/* Class = "NSMenuItem"; title = "About Hive"; ObjectID = "58"; */
+"58.title" = "Sobre Hive";
+
+/* Class = "NSMenuItem"; title = "Preferences"; ObjectID = "129"; */
+"129.title" = "Preferências";
+
+/* Class = "NSMenu"; title = "Services"; ObjectID = "130"; */
+"130.title" = "Serviços";
+
+/* Class = "NSMenuItem"; title = "Services"; ObjectID = "131"; */
+"131.title" = "Serviços";
+
+/* Class = "NSMenuItem"; title = "Hide Hive"; ObjectID = "134"; */
+"134.title" = "Ocultar Hive";
+
+/* Class = "NSMenuItem"; title = "Quit Hive"; ObjectID = "136"; */
+"136.title" = "Encerrar Hive";
+
+/* Class = "NSMenuItem"; title = "Hide Others"; ObjectID = "145"; */
+"145.title" = "Ocultar outros";
+
+/* Class = "NSMenuItem"; title = "Show All"; ObjectID = "150"; */
+"150.title" = "Mostrar todos";
+
+/* Class = "NSMenuItem"; title = "Item"; ObjectID = "800"; */
+"800.title" = "Item";
+
+/* Class = "NSMenuItem"; title = "Edit"; ObjectID = "801"; */
+"801.title" = "Editar";
+
+/* Class = "NSMenu"; title = "Edit"; ObjectID = "802"; */
+"802.title" = "Editar";
+
+/* Class = "NSMenuItem"; title = "Undo"; ObjectID = "804"; */
+"804.title" = "Desfazer";
+
+/* Class = "NSMenuItem"; title = "Redo"; ObjectID = "805"; */
+"805.title" = "Refazer";
+
+/* Class = "NSMenuItem"; title = "Cut"; ObjectID = "807"; */
+"807.title" = "Recortar";
+
+/* Class = "NSMenuItem"; title = "Copy"; ObjectID = "808"; */
+"808.title" = "Copiar";
+
+/* Class = "NSMenuItem"; title = "Paste"; ObjectID = "809"; */
+"809.title" = "Colar";
+
+/* Class = "NSMenuItem"; title = "Delete"; ObjectID = "811"; */
+"811.title" = "Deletar";
+
+/* Class = "NSMenuItem"; title = "Select All"; ObjectID = "812"; */
+"812.title" = "Selecionar tudo";
+
+/* Class = "NSMenuItem"; title = "Window"; ObjectID = "854"; */
+"854.title" = "Janela";
+
+/* Class = "NSMenu"; title = "Window"; ObjectID = "855"; */
+"855.title" = "Janela";
+
+/* Class = "NSMenuItem"; title = "Minimize"; ObjectID = "857"; */
+"857.title" = "Minimizar";
+
+/* Class = "NSMenuItem"; title = "Zoom"; ObjectID = "858"; */
+"858.title" = "Zoom";
+
+/* Class = "NSMenuItem"; title = "Bring All to Front"; ObjectID = "860"; */
+"860.title" = "Trazer todos para frente";
+
+/* Class = "NSMenuItem"; title = "Close"; ObjectID = "864"; */
+"864.title" = "Fechar";
+
+/* Class = "NSMenuItem"; title = "Send Bitcoins..."; ObjectID = "866"; */
+"866.title" = "Enviar Bitcoins...";
+
+/* Class = "NSMenuItem"; title = "Check for Updates..."; ObjectID = "870"; */
+"870.title" = "Buscar atualizações...";
+
+/* Class = "NSMenuItem"; title = "Open CoinMap..."; ObjectID = "872"; */
+"872.title" = "Abrir CoinMap...";
+
+/* Class = "NSMenuItem"; title = "Debugging info..."; ObjectID = "Deb-tn-nNM"; */
+"Deb-tn-nNM.title" = "Informações de Debug...";
