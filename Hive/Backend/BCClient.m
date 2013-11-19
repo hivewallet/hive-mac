@@ -25,6 +25,7 @@ static NSString * const kBCClientBaseURLString = @"https://grabhive.com/";
 }
 
 @property (nonatomic) uint64 balance;
+@property (nonatomic) uint64 pendingBalance;
 
 @end
 
@@ -103,6 +104,10 @@ static NSString * const kBCClientBaseURLString = @"https://grabhive.com/";
                      options:NSKeyValueObservingOptionInitial | NSKeyValueObservingOptionNew
                      context:NULL];
         [bitcoin addObserver:self
+                  forKeyPath:@"estimatedBalance"
+                     options:NSKeyValueObservingOptionInitial | NSKeyValueObservingOptionNew
+                     context:NULL];
+        [bitcoin addObserver:self
                   forKeyPath:@"syncProgress"
                      options:NSKeyValueObservingOptionInitial | NSKeyValueObservingOptionNew
                      context:NULL];
@@ -117,6 +122,7 @@ static NSString * const kBCClientBaseURLString = @"https://grabhive.com/";
         [bitcoin start];
 
         self.balance = [[[NSUserDefaults standardUserDefaults] objectForKey:@"LastBalance"] unsignedLongLongValue];
+        self.pendingBalance = 0;
 
         [self updateNotifications];
     }
@@ -201,16 +207,17 @@ static NSString * const kBCClientBaseURLString = @"https://grabhive.com/";
         if ([keyPath isEqual:@"balance"])
         {
             dispatch_async(dispatch_get_main_queue(), ^{
-                self.balance = [HIBitcoinManager defaultManager].balance;
+                self.balance = [object balance];
+                self.pendingBalance = [object estimatedBalance] - [object balance];
 
                 [[NSUserDefaults standardUserDefaults] setObject:@(self.balance) forKey:@"LastBalance"];
             });
         }
-        else if ([keyPath isEqual:@"syncProgress"])
+        else if ([keyPath isEqual:@"estimatedBalance"])
         {
-        }
-        else if([keyPath isEqual:@"connections"])
-        {
+            dispatch_async(dispatch_get_main_queue(), ^{
+                self.pendingBalance = [object estimatedBalance] - [object balance];
+            });
         }
     }
 }
@@ -231,6 +238,7 @@ static NSString * const kBCClientBaseURLString = @"https://grabhive.com/";
 
         [manager removeObserver:self forKeyPath:@"connections"];
         [manager removeObserver:self forKeyPath:@"balance"];
+        [manager removeObserver:self forKeyPath:@"estimatedBalance"];
         [manager removeObserver:self forKeyPath:@"syncProgress"];
     }
     @catch (NSException *exception) {

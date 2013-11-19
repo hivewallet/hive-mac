@@ -47,6 +47,10 @@
                                       forKeyPath:@"balance"
                                          options:NSKeyValueObservingOptionInitial
                                          context:NULL];
+            [[BCClient sharedClient] addObserver:self
+                                      forKeyPath:@"pendingBalance"
+                                         options:NSKeyValueObservingOptionInitial
+                                         context:NULL];
         }
     }
 
@@ -58,6 +62,7 @@
     if ([_contact isKindOfClass:[HIProfile class]])
     {
         [[BCClient sharedClient] removeObserver:self forKeyPath:@"balance"];
+        [[BCClient sharedClient] removeObserver:self forKeyPath:@"pendingBalance"];
     }
 }
 
@@ -176,7 +181,22 @@
                                                                  exponent:-8
                                                                isNegative:NO];
 
-    self.balanceLabel.stringValue = [_amountFormatter stringFromNumber:balance];
+    NSDecimalNumber *pending = [NSDecimalNumber decimalNumberWithMantissa:[[BCClient sharedClient] pendingBalance]
+                                                                 exponent:-8
+                                                               isNegative:NO];
+
+    if ([pending isGreaterThan:[NSDecimalNumber decimalNumberWithString:@"0"]])
+    {
+        self.balanceLabel.stringValue = [NSString stringWithFormat:@"%@ (+%@ %@)",
+                                         [_amountFormatter stringFromNumber:balance],
+                                         [_amountFormatter stringFromNumber:pending],
+                                         NSLocalizedString(@"pending",
+                                                           @"part of the balance amount that isn't available")];
+    }
+    else
+    {
+        self.balanceLabel.stringValue = [_amountFormatter stringFromNumber:balance];
+    }
 }
 
 - (void)observeValueForKeyPath:(NSString *)keyPath
@@ -186,7 +206,7 @@
 {
     if (object == [BCClient sharedClient])
     {
-        if ([keyPath isEqual:@"balance"])
+        if ([keyPath isEqual:@"balance"] || [keyPath isEqual:@"pendingBalance"])
         {
             dispatch_async(dispatch_get_main_queue(), ^{
                 [self updateBalance];
