@@ -1,5 +1,5 @@
 /* App load error description */
-"A network error has occurred or the application data file has been removed or corrupted." = "Ocorreu um erro de rede ou o arquivo de aplicação de dados foi removido ou corrompido.";
+"A network error has occurred or the application data file has been removed or corrupted." = "Ocorreu um erro de rede ou o arquivo de dados da aplicação foi removido ou está corrompido.";
 
 /* Address field placeholder */
 "Address" = "Endereço";
@@ -20,10 +20,10 @@
 "Cancel" = "Cancelar";
 
 /* No comment provided by engineer. */
-"click to copy" = "Clique para copiar";
+"click to copy" = "clique para copiar";
 
 /* Contact name empty alert title */
-"Contact can't be saved." = "Contato não pode ser salvado.";
+"Contact can't be saved." = "Contato não pode ser salvo.";
 
 /* Contacts view title */
 "Contacts" = "Contatos";
@@ -32,10 +32,10 @@
 "copied!" = "copiado!";
 
 /* Quit without saves error question message */
-"Could not save changes while quitting. Quit anyway?" = "Não foi possível salvar as alterados. Fechar mesmo assim?";
+"Could not save changes while quitting. Quit anyway?" = "Não foi possível salvar as alterações durante o fechamento. Deseja fechar mesmo assim?";
 
 /* Remove contact alert dialog body */
-"Do you really want to remove %@ %@ from your contact list?" = "Realmente deseja remover %1$@ %2$@ da sua lista de contatos?";
+"Do you really want to remove %@ %@ from your contact list?" = "Você realmente deseja remover %1$@ %2$@ da sua lista de contatos?";
 
 /* No comment provided by engineer. */
 "Edit contact" = "Editar contato";
@@ -53,7 +53,7 @@
 "Firstname" = "Primeiro nome";
 
 /* Direction label in transactions list when user is the receiver */
-"from" = "De";
+"from" = "de";
 
 /* Install app popup title */
 "Install Hive App" = "Instalar app Hive";
@@ -65,7 +65,7 @@
 "Lastname" = "Sobrenome";
 
 /* Main address caption */
-"main" = "Principal";
+"main" = "principal";
 
 /* Main address caption string for profiles */
 "Main address" = "Endereço principal";
@@ -80,7 +80,7 @@
 "No address entered." = "Endereço em branco.";
 
 /* Transaction failed alert message */
-"No bitcoin have been taken from your wallet." = "Bitcoins não foram removidas da sua carteira.";
+"No bitcoin have been taken from your wallet." = "Nenhum bitcoin foi removido da sua carteira.";
 
 /* OK Button title
    OK button title */
@@ -90,10 +90,10 @@
 "or choose from the list" = "ou escolha da lista";
 
 /* Invalid address alert message */
-"Please check if you have entered the address correctly." = "Favor verificar se o endereço foi digitado corretamente.";
+"Please check if you have entered the address correctly." = "Por favor, verifique se o endereço foi digitado corretamente.";
 
 /* Empty address alert message */
-"Please enter a valid Bitcoin address or select one from the dropdown list." = "Favor digitar um endereço de Bitcoin válido ou selecionar do menu.";
+"Please enter a valid Bitcoin address or select one from the dropdown list." = "Por favor digite um endereço de Bitcoin válido ou selecione no menu.";
 
 /* Profile view title string */
 "Profile" = "Perfil";
@@ -102,7 +102,7 @@
 "Quit anyway" = "Encerrar";
 
 /* Quit without saves error question info */
-"Quitting now will lose any changes you have made since the last successful save" = "Encerrar agora resultará na perda das alterações feitas desde a última vez que salvou";
+"Quitting now will lose any changes you have made since the last successful save" = "Encerrar agora resultará na perda das alterações feitas desde a última vez que se salvou com sucesso";
 
 /* Remove contact alert dialog title */
 "Remove contact" = "Remover contato";
@@ -111,7 +111,7 @@
 "This isn't a valid Bitcoin address." = "Este endereço de Bitcoin não é válido.";
 
 /* Direction label in transactions list when user is the sender */
-"to" = "Para";
+"to" = "para";
 
 /* Transaction failed alert title */
 "Transaction could not be completed." = "Transação não pode ser completada.";
@@ -120,16 +120,16 @@
 "Transactions" = "Transações";
 
 /* Sending zero bitcoin alert message */
-"Why would you want to send someone 0 BTC?" = "Por que você enviaria 0 BTC a alguém?";
+"Why would you want to send someone 0 BTC?" = "Por que você gostaria de enviar 0 BTC para alguém?";
 
 /* Install app popup confirmation */
-"Would you like to install \"%@\" application?" = "Gostaria de instalar a aplicação \"%@\"?";
+"Would you like to install \"%@\" application?" = "Você gostaria de instalar a aplicação \"%@\"?";
 
 /* No comment provided by engineer. */
 "Yes" = "Sim";
 
 /* Install app popup confirmation when app exists */
-"You already have \"%@\" application. Would you like to overwrite it?" = "Você já tem a aplicação \"%@\". Gostaria de sobrepor?";
+"You already have \"%@\" application. Would you like to overwrite it?" = "Você já tem a aplicação \"%@\". Gostaria de sobre escreve-la?";
 
 /* Amount exceeds balance alert message */
 "You cannot send more money than you own." = "Você não pode enviar mais dinheiro do que você tem.";

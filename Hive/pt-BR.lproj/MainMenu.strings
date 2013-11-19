@@ -10,8 +10,8 @@
 /* Class = "NSMenuItem"; title = "About Hive"; ObjectID = "58"; */
 "58.title" = "Sobre Hive";
 
-/* Class = "NSMenuItem"; title = "Preferences"; ObjectID = "129"; */
-"129.title" = "Preferências";
+/* Class = "NSMenuItem"; title = "Preferences…"; ObjectID = "129"; */
+"129.title" = "Preferências…";
 
 /* Class = "NSMenu"; title = "Services"; ObjectID = "130"; */
 "130.title" = "Serviços";

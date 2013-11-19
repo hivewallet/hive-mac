@@ -26,7 +26,7 @@
                             <menuItem isSeparatorItem="YES" id="236">
                                 <modifierMask key="keyEquivalentModifierMask" command="YES"/>
                             </menuItem>
-                            <menuItem title="Preferências" keyEquivalent="," id="129">
+                            <menuItem title="Preferências…" keyEquivalent="," id="129">
                                 <connections>
                                     <action selector="openPreferences:" target="-1" id="754"/>
                                 </connections>

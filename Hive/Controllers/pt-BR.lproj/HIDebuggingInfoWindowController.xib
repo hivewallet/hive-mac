@@ -57,7 +57,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                         <textFieldCell key="cell" sendsActionOnEndEditing="YES" id="o5O-SS-J37">
                             <font key="font" metaFont="system"/>
-                            <string key="title">Se tiver problemas com sua carteira, podemos pedir para você nos enviar o contúdo da área de text abaixo. Os dados não incluem sua chave privada e não permitirá que seus Bitcoins sejam acessados.!</string>
+                            <string key="title">Se tiver problemas com sua carteira, podemos pedir para você nos enviar o contúdo da área de texto abaixo. Observe que os dados NÃO incluem sua chave privada e consequentemente não permitirá que seus Bitcoins sejam acessados por nós!</string>
                             <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                             <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                         </textFieldCell>
