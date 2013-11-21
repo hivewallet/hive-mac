@@ -41,6 +41,11 @@ static NSString * const WarningDisplayedKey = @"WarningDisplayed";
 @synthesize managedObjectContext = _managedObjectContext;
 
 
+void handleException(NSException *exception)
+{
+    [[NSApp delegate] showExceptionWindowWithException:exception];
+}
+
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification
 {
     BITHockeyManager *hockeyapp = [BITHockeyManager sharedHockeyManager];
@@ -82,6 +87,8 @@ static NSString * const WarningDisplayedKey = @"WarningDisplayed";
 
     _mainWindowController = [[HIMainWindowController alloc] initWithWindowNibName:@"HIMainWindowController"];
     [_mainWindowController showWindow:self];
+
+    NSSetUncaughtExceptionHandler(&handleException);
 }
 
 - (void)showBetaWarning
