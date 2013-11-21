@@ -166,6 +166,14 @@ static NSString * const kBCClientBaseURLString = @"https://grabhive.com/";
         }
 
         dispatch_async(dispatch_get_main_queue(), ^{
+            NSError *error;
+            [DBM save:&error];
+
+            if (error)
+            {
+                NSLog(@"Error saving updated transactions: %@", error);
+            }
+
             [self updateNotifications];
         });
     }];
@@ -191,6 +199,14 @@ static NSString * const kBCClientBaseURLString = @"https://grabhive.com/";
             }
 
             dispatch_async(dispatch_get_main_queue(), ^{
+                NSError *error;
+                [DBM save:&error];
+
+                if (error)
+                {
+                    NSLog(@"Error saving transaction %@: %@", transaction[@"txid"], error);
+                }
+
                 [self updateNotifications];
             });
         }];
