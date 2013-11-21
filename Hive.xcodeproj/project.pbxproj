@@ -2624,6 +2624,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 10153A3CC4364D6799CB4A2D /* Pods.xcconfig */;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "Hive Self-Signed Certificate";
 				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = NO;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -2643,6 +2644,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 10153A3CC4364D6799CB4A2D /* Pods.xcconfig */;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "Hive Self-Signed Certificate";
 				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = YES;
 				FRAMEWORK_SEARCH_PATHS = (
