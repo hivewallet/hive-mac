@@ -8,6 +8,7 @@
 
 #import <BitcoinJKit/BitcoinJKit.h>
 #import "HIDebuggingInfoWindowController.h"
+#import "HITransaction.h"
 
 @implementation HIDebuggingInfoWindowController
 
@@ -33,7 +34,14 @@
     [info appendFormat:@"Wallet balance: %lld\n", bitcoin.balance];
     [info appendFormat:@"Estimated balance: %lld\n", bitcoin.estimatedBalance];
 
-    [info appendFormat:@"\n## Transaction list\n\n"];
+    NSFetchRequest *transactionRequest = [NSFetchRequest fetchRequestWithEntityName:HITransactionEntity];
+    transactionRequest.returnsObjectsAsFaults = NO;
+    NSArray *transactions = [DBM executeFetchRequest:transactionRequest error:NULL];
+
+    [info appendFormat:@"\n## Data store transactions\n\n"];
+    [info appendFormat:@"%@\n", transactions];
+
+    [info appendFormat:@"\n## Wallet transactions\n\n"];
     [info appendFormat:@"%@\n", bitcoin.allTransactions];
 
     [info appendFormat:@"\n## Wallet details\n\n"];
