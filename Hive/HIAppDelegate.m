@@ -43,6 +43,12 @@ static NSString * const WarningDisplayedKey = @"WarningDisplayed";
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification
 {
+    BITHockeyManager *hockeyapp = [BITHockeyManager sharedHockeyManager];
+    [hockeyapp configureWithIdentifier:@"e47f0624d130a873ecae31509e4d1124"
+                           companyName:@""
+                              delegate:self];
+    [hockeyapp startManager];
+
     [[NSUserDefaults standardUserDefaults] registerDefaults:@{
      @"Currency": @1,
      @"FirstRun": @YES,
@@ -52,12 +58,6 @@ static NSString * const WarningDisplayedKey = @"WarningDisplayed";
     }];
 
     [NSURLProtocol registerClass:[HIApplicationURLProtocol class]];
-
-    // create BCClient instance
-    [BCClient sharedClient];
-
-    _mainWindowController = [[HIMainWindowController alloc] initWithWindowNibName:@"HIMainWindowController"];
-    [_mainWindowController showWindow:self];
 
     _popupWindows = [NSMutableArray new];
 
@@ -73,6 +73,15 @@ static NSString * const WarningDisplayedKey = @"WarningDisplayed";
 
     [self showBetaWarning];
     [self preinstallAppsIfNeeded];
+}
+
+- (void)showMainApplicationWindowForCrashManager:(id)crashManager
+{
+    // create BCClient instance
+    [BCClient sharedClient];
+
+    _mainWindowController = [[HIMainWindowController alloc] initWithWindowNibName:@"HIMainWindowController"];
+    [_mainWindowController showWindow:self];
 }
 
 - (void)showBetaWarning

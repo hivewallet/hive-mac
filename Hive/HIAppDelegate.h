@@ -7,12 +7,13 @@
 //
 
 #import <Cocoa/Cocoa.h>
+#import <HockeySDK/HockeySDK.h>
 #import <INAppStoreWindow/INAppStoreWindow.h>
 
 @class HIContact;
 @class HISendBitcoinsWindowController;
 
-@interface HIAppDelegate : NSObject <NSApplicationDelegate>
+@interface HIAppDelegate : NSObject <NSApplicationDelegate, BITHockeyManagerDelegate>
 
 @property (readonly, strong, nonatomic) NSPersistentStoreCoordinator *persistentStoreCoordinator;
 @property (readonly, strong, nonatomic) NSManagedObjectModel *managedObjectModel;
