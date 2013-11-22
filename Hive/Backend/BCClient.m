@@ -432,7 +432,8 @@ static NSString * const kBCClientBaseURLString = @"https://grabhive.com/";
     return [[HIBitcoinManager defaultManager] importWalletFrom:walletURL];
 }
 
-- (void)exchangeRateFor:(uint64)amount forCurrency:(NSString *)currency completion:(void(^)(uint64 value))completion
+- (void)exchangeRateForCurrency:(NSString *)currency
+                     completion:(void(^)(NSDecimalNumber *value))completion
 {
     if (_exchangeRateOperation)
     {
@@ -445,9 +446,9 @@ static NSString * const kBCClientBaseURLString = @"https://grabhive.com/";
     _exchangeRateOperation = [self HTTPRequestOperationWithRequest:[NSURLRequest requestWithURL:URL]
                                                            success:^(AFHTTPRequestOperation *operation, id response) {
         NSDictionary *resp = [NSJSONSerialization JSONObjectWithData:response options:0 error:NULL];
-        uint64 exchange = [resp[@"return"][@"sell"][@"value_int"] longLongValue];
-        _exchangeRateOperation = nil;        
-        completion(amount * exchange * 10000000.0);
+        NSString *exchange = resp[@"return"][@"sell"][@"value"];
+        _exchangeRateOperation = nil;
+        completion([NSDecimalNumber decimalNumberWithString:exchange locale:@{NSLocaleDecimalSeparator: @"."}]);
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         _exchangeRateOperation = nil;
     }];
