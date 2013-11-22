@@ -24,6 +24,7 @@ NSString * const HISendBitcoinsWindowSuccessKey = @"success";
 }
 
 @property (copy) NSDecimalNumber *amountFieldValue;
+@property (copy) NSNumberFormatter *bitcoinNumberFormatter;
 @property (strong, readonly) HIContactAutocompleteWindowController *autocompleteController;
 
 @end
@@ -37,6 +38,9 @@ NSString * const HISendBitcoinsWindowSuccessKey = @"success";
     if (self)
     {
         _amount = nil;
+        _bitcoinNumberFormatter = [NSNumberFormatter new];
+        _bitcoinNumberFormatter.localizesFormat = YES;
+        _bitcoinNumberFormatter.format = @"#,##0.########";
     }
 
     return self;
@@ -144,16 +148,22 @@ NSString * const HISendBitcoinsWindowSuccessKey = @"success";
 
 - (void)setAmountFieldValue:(NSDecimalNumber *)amount
 {
-    [self.amountField setStringValue:[self.amountField.formatter stringFromNumber:amount]];
+    [self.amountField setStringValue:[self.bitcoinNumberFormatter stringFromNumber:amount]];
 
     NSDecimalNumber *convertedAmount = [self convertedAmountForBitcoinAmount:amount];
     [self.convertedAmountField setStringValue:[self.convertedAmountField.formatter stringFromNumber:convertedAmount]];
 }
 
+- (void)formatAmountField
+{
+    [self setAmountFieldValue:self.amountFieldValue];
+}
+
 - (NSDecimalNumber *)amountFieldValue
 {
-    return [NSDecimalNumber decimalNumberWithString:self.amountField.stringValue
+    NSDecimalNumber *number = [NSDecimalNumber decimalNumberWithString:self.amountField.stringValue
                                              locale:[NSLocale currentLocale]];
+    return number == [NSDecimalNumber notANumber] ? [NSDecimalNumber zero] : number;
 }
 
 #pragma mark - conversion
@@ -284,19 +294,30 @@ NSString * const HISendBitcoinsWindowSuccessKey = @"success";
                         contextInfo:NULL];
 }
 
+#pragma mark - NSTextField delegate
+
+- (void)controlTextDidChange:(NSNotification *)notification
+{
+    if (notification.object != self.amountField)
+    {
+        [self clearContact];
+    }
+}
+
+- (void)controlTextDidEndEditing:(NSNotification *)notification
+{
+    if (notification.object == self.amountField)
+    {
+        [self formatAmountField];
+    }
+    else
+    {
+        [self hideAutocompleteWindow];
+    }
+}
+
 
 #pragma mark - Autocomplete
-
-- (void)controlTextDidChange:(NSNotification *)obj
-{
-    [self clearContact];
-    [self startAutocompleteForCurrentQuery];
-}
-
-- (void)controlTextDidEndEditing:(NSNotification *)obj
-{
-    [self hideAutocompleteWindow];
-}
 
 - (BOOL)control:(NSControl *)control textView:(NSTextView *)textView doCommandBySelector:(SEL)selector
 {

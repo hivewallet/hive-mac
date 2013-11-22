@@ -154,16 +154,13 @@ Gw
                                     <rect key="frame" x="110" y="54" width="239" height="22"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" focusRingType="none" title="0.0" drawsBackground="YES" id="37">
-                                        <numberFormatter key="formatter" formatterBehavior="default10_4" positiveFormat="#" negativeFormat="#" usesGroupingSeparator="NO" groupingSize="0" minimumIntegerDigits="0" maximumIntegerDigits="42" minimumFractionDigits="0" maximumFractionDigits="0" decimalSeparator="," groupingSeparator=" " currencyDecimalSeparator="," id="42" customClass="HICurrencyAmountFormatter">
-                                            <real key="roundingIncrement" value="0.0"/>
-                                            <metadata>
-                                                <bool key="localizesFormat" value="YES"/>
-                                            </metadata>
-                                        </numberFormatter>
                                         <font key="font" size="15" name="LucidaGrande"/>
                                         <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
                                         <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                     </textFieldCell>
+                                    <connections>
+                                        <outlet property="delegate" destination="-2" id="Kkb-Ce-ODs"/>
+                                    </connections>
                                 </textField>
                                 <textField focusRingType="none" verticalHuggingPriority="750" id="l47-zx-4mb">
                                     <rect key="frame" x="110" y="11" width="239" height="22"/>
