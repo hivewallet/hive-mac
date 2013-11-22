@@ -27,6 +27,7 @@ NSString * const HISendBitcoinsWindowSuccessKey = @"success";
 @property (copy) NSDecimalNumber *convertedAmountFieldValue;
 @property (copy) NSNumberFormatter *bitcoinNumberFormatter;
 @property (copy) NSNumberFormatter *currencyNumberFormatter;
+@property (copy) NSDecimalNumber *exchangeRate;
 @property (strong, readonly) HIContactAutocompleteWindowController *autocompleteController;
 
 @end
@@ -46,6 +47,8 @@ NSString * const HISendBitcoinsWindowSuccessKey = @"success";
         _currencyNumberFormatter = [NSNumberFormatter new];
         _currencyNumberFormatter.localizesFormat = YES;
         _currencyNumberFormatter.format = @"#,##0.00";
+
+        [self fetchExchangeRate];
     }
 
     return self;
@@ -191,26 +194,48 @@ NSString * const HISendBitcoinsWindowSuccessKey = @"success";
 
 - (void)updateConvertedAmountFromAmount
 {
-    self.convertedAmountFieldValue = [self convertedAmountForBitcoinAmount:self.amountFieldValue];
+    if (self.exchangeRate)
+    {
+        self.convertedAmountFieldValue = [self convertedAmountForBitcoinAmount:self.amountFieldValue];
+    }
+    else
+    {
+        self.convertedAmountFieldValue = [NSDecimalNumber zero];
+    }
 }
 
 - (void)updateAmountFromConvertedAmount
 {
-    self.amountFieldValue = [self bitcoinAmountForConvertedAmount:self.convertedAmountFieldValue];
+    if (self.exchangeRate)
+    {
+        self.amountFieldValue = [self bitcoinAmountForConvertedAmount:self.convertedAmountFieldValue];
+    }
+    else
+    {
+        self.amountFieldValue = [NSDecimalNumber zero];
+    }
 }
 
 #pragma mark - conversion
 
+- (void)fetchExchangeRate
+{
+    // TODO: There should be a timer updating the exchange rate in case the window is open too long.
+    [[BCClient sharedClient] exchangeRateForCurrency:@"USD" completion:^(NSDecimalNumber *value) {
+        self.convertedAmountField.enabled = YES;
+        self.exchangeRate = value;
+        [self updateConvertedAmountFromAmount];
+    }];
+}
+
 - (NSDecimalNumber *)convertedAmountForBitcoinAmount:(NSDecimalNumber *)amount
 {
-    // TODO: Use real exchange rate
-    return [amount decimalNumberByMultiplyingBy:[NSDecimalNumber decimalNumberWithString:@"700"]];
+    return [amount decimalNumberByMultiplyingBy:self.exchangeRate];
 }
 
 - (NSDecimalNumber *)bitcoinAmountForConvertedAmount:(NSDecimalNumber *)amount
 {
-    // TODO: Use real exchange rate
-    return [amount decimalNumberByDividingBy:[NSDecimalNumber decimalNumberWithString:@"700"]];
+    return [amount decimalNumberByDividingBy:self.exchangeRate];
 }
 
 #pragma mark - Handling button clicks
