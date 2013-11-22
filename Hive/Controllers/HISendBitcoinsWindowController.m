@@ -24,7 +24,9 @@ NSString * const HISendBitcoinsWindowSuccessKey = @"success";
 }
 
 @property (copy) NSDecimalNumber *amountFieldValue;
+@property (copy) NSDecimalNumber *convertedAmountFieldValue;
 @property (copy) NSNumberFormatter *bitcoinNumberFormatter;
+@property (copy) NSNumberFormatter *currencyNumberFormatter;
 @property (strong, readonly) HIContactAutocompleteWindowController *autocompleteController;
 
 @end
@@ -41,6 +43,9 @@ NSString * const HISendBitcoinsWindowSuccessKey = @"success";
         _bitcoinNumberFormatter = [NSNumberFormatter new];
         _bitcoinNumberFormatter.localizesFormat = YES;
         _bitcoinNumberFormatter.format = @"#,##0.########";
+        _currencyNumberFormatter = [NSNumberFormatter new];
+        _currencyNumberFormatter.localizesFormat = YES;
+        _currencyNumberFormatter.format = @"#,##0.00";
     }
 
     return self;
@@ -89,6 +94,7 @@ NSString * const HISendBitcoinsWindowSuccessKey = @"success";
     {
         self.amountFieldValue = [NSDecimalNumber zero];
     }
+    [self updateConvertedAmountFromAmount];
 }
 
 - (void)windowWillClose:(NSNotification *)notification
@@ -109,6 +115,8 @@ NSString * const HISendBitcoinsWindowSuccessKey = @"success";
     _amount = amount;
 
     self.amountFieldValue = _amount;
+    [self updateConvertedAmountFromAmount];
+
     [self.amountField setEditable:NO];
 }
 
@@ -149,7 +157,6 @@ NSString * const HISendBitcoinsWindowSuccessKey = @"success";
 - (void)setAmountFieldValue:(NSDecimalNumber *)amount
 {
     [self.amountField setStringValue:[self.bitcoinNumberFormatter stringFromNumber:amount]];
-    [self updateConvertedAmount];
 }
 
 - (void)formatAmountField
@@ -164,10 +171,31 @@ NSString * const HISendBitcoinsWindowSuccessKey = @"success";
     return number == [NSDecimalNumber notANumber] ? [NSDecimalNumber zero] : number;
 }
 
-- (void)updateConvertedAmount
+- (void)setConvertedAmountFieldValue:(NSDecimalNumber *)amount
 {
-    NSDecimalNumber *convertedAmount = [self convertedAmountForBitcoinAmount:self.amountFieldValue];
-    [self.convertedAmountField setStringValue:[self.convertedAmountField.formatter stringFromNumber:convertedAmount]];
+    [self.convertedAmountField setStringValue:[self.currencyNumberFormatter stringFromNumber:amount]];
+}
+
+- (void)formatConvertedAmountField
+{
+    [self setConvertedAmountFieldValue:self.convertedAmountFieldValue];
+}
+
+- (NSDecimalNumber *)convertedAmountFieldValue
+{
+    NSDecimalNumber *number = [NSDecimalNumber decimalNumberWithString:self.convertedAmountField.stringValue
+                                                                locale:[NSLocale currentLocale]];
+    return number == [NSDecimalNumber notANumber] ? [NSDecimalNumber zero] : number;
+}
+
+- (void)updateConvertedAmountFromAmount
+{
+    self.convertedAmountFieldValue = [self convertedAmountForBitcoinAmount:self.amountFieldValue];
+}
+
+- (void)updateAmountFromConvertedAmount
+{
+    self.amountFieldValue = [self bitcoinAmountForConvertedAmount:self.convertedAmountFieldValue];
 }
 
 #pragma mark - conversion
@@ -176,6 +204,12 @@ NSString * const HISendBitcoinsWindowSuccessKey = @"success";
 {
     // TODO: Use real exchange rate
     return [amount decimalNumberByMultiplyingBy:[NSDecimalNumber decimalNumberWithString:@"700"]];
+}
+
+- (NSDecimalNumber *)bitcoinAmountForConvertedAmount:(NSDecimalNumber *)amount
+{
+    // TODO: Use real exchange rate
+    return [amount decimalNumberByDividingBy:[NSDecimalNumber decimalNumberWithString:@"700"]];
 }
 
 #pragma mark - Handling button clicks
@@ -304,7 +338,11 @@ NSString * const HISendBitcoinsWindowSuccessKey = @"success";
 {
     if (notification.object == self.amountField)
     {
-        [self updateConvertedAmount];
+        [self updateConvertedAmountFromAmount];
+    }
+    else if (notification.object == self.convertedAmountField)
+    {
+        [self updateAmountFromConvertedAmount];
     }
     else
     {
@@ -317,6 +355,10 @@ NSString * const HISendBitcoinsWindowSuccessKey = @"success";
     if (notification.object == self.amountField)
     {
         [self formatAmountField];
+    }
+    else if (notification.object == self.convertedAmountField)
+    {
+        [self formatConvertedAmountField];
     }
     else
     {
