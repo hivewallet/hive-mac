@@ -149,9 +149,7 @@ NSString * const HISendBitcoinsWindowSuccessKey = @"success";
 - (void)setAmountFieldValue:(NSDecimalNumber *)amount
 {
     [self.amountField setStringValue:[self.bitcoinNumberFormatter stringFromNumber:amount]];
-
-    NSDecimalNumber *convertedAmount = [self convertedAmountForBitcoinAmount:amount];
-    [self.convertedAmountField setStringValue:[self.convertedAmountField.formatter stringFromNumber:convertedAmount]];
+    [self updateConvertedAmount];
 }
 
 - (void)formatAmountField
@@ -164,6 +162,12 @@ NSString * const HISendBitcoinsWindowSuccessKey = @"success";
     NSDecimalNumber *number = [NSDecimalNumber decimalNumberWithString:self.amountField.stringValue
                                              locale:[NSLocale currentLocale]];
     return number == [NSDecimalNumber notANumber] ? [NSDecimalNumber zero] : number;
+}
+
+- (void)updateConvertedAmount
+{
+    NSDecimalNumber *convertedAmount = [self convertedAmountForBitcoinAmount:self.amountFieldValue];
+    [self.convertedAmountField setStringValue:[self.convertedAmountField.formatter stringFromNumber:convertedAmount]];
 }
 
 #pragma mark - conversion
@@ -298,7 +302,11 @@ NSString * const HISendBitcoinsWindowSuccessKey = @"success";
 
 - (void)controlTextDidChange:(NSNotification *)notification
 {
-    if (notification.object != self.amountField)
+    if (notification.object == self.amountField)
+    {
+        [self updateConvertedAmount];
+    }
+    else
     {
         [self clearContact];
     }
