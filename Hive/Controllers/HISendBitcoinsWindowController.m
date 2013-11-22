@@ -118,6 +118,7 @@ NSString * const HISendBitcoinsWindowSuccessKey = @"success";
     [self updateConvertedAmountFromAmount];
 
     [self.amountField setEditable:NO];
+    [self.convertedAmountField setEditable:NO];
 }
 
 - (void)clearContact
