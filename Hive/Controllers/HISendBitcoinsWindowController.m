@@ -145,12 +145,23 @@ NSString * const HISendBitcoinsWindowSuccessKey = @"success";
 - (void)setAmountFieldValue:(NSDecimalNumber *)amount
 {
     [self.amountField setStringValue:[self.amountField.formatter stringFromNumber:amount]];
+
+    NSDecimalNumber *convertedAmount = [self convertedAmountForBitcoinAmount:amount];
+    [self.convertedAmountField setStringValue:[self.convertedAmountField.formatter stringFromNumber:convertedAmount]];
 }
 
 - (NSDecimalNumber *)amountFieldValue
 {
     return [NSDecimalNumber decimalNumberWithString:self.amountField.stringValue
                                              locale:[NSLocale currentLocale]];
+}
+
+#pragma mark - conversion
+
+- (NSDecimalNumber *)convertedAmountForBitcoinAmount:(NSDecimalNumber *)amount
+{
+    // TODO: Use real exchange rate
+    return [amount decimalNumberByMultiplyingBy:[NSDecimalNumber decimalNumberWithString:@"700"]];
 }
 
 #pragma mark - Handling button clicks
