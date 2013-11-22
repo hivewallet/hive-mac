@@ -23,6 +23,7 @@ NSString * const HISendBitcoinsWindowSuccessKey = @"success";
     NSDecimalNumber *_amount;
 }
 
+@property (copy) NSDecimalNumber *amountFieldValue;
 @property (strong, readonly) HIContactAutocompleteWindowController *autocompleteController;
 
 @end
@@ -82,7 +83,7 @@ NSString * const HISendBitcoinsWindowSuccessKey = @"success";
     }
     else
     {
-        self.amountField.stringValue = @"0";
+        self.amountFieldValue = [NSDecimalNumber zero];
     }
 }
 
@@ -103,7 +104,7 @@ NSString * const HISendBitcoinsWindowSuccessKey = @"success";
 {
     _amount = amount;
 
-    [self.amountField setStringValue:[self.amountField.formatter stringFromNumber:_amount]];
+    self.amountFieldValue = _amount;
     [self.amountField setEditable:NO];
 }
 
@@ -139,6 +140,18 @@ NSString * const HISendBitcoinsWindowSuccessKey = @"success";
     return _autocompleteController;
 }
 
+#pragma mark - text fields
+
+- (void)setAmountFieldValue:(NSDecimalNumber *)amount
+{
+    [self.amountField setStringValue:[self.amountField.formatter stringFromNumber:amount]];
+}
+
+- (NSDecimalNumber *)amountFieldValue
+{
+    return [NSDecimalNumber decimalNumberWithString:self.amountField.stringValue
+                                             locale:[NSLocale currentLocale]];
+}
 
 #pragma mark - Handling button clicks
 
@@ -173,8 +186,7 @@ NSString * const HISendBitcoinsWindowSuccessKey = @"success";
 
 - (void)sendClicked:(id)sender
 {
-    NSDecimalNumber *amount = [NSDecimalNumber decimalNumberWithString:self.amountField.stringValue
-                                                                locale:[NSLocale currentLocale]];
+    NSDecimalNumber *amount = self.amountFieldValue;
     uint64 satoshi = [[amount decimalNumberByMultiplyingByPowerOf10:8] integerValue];
 
     NSString *target = _hashAddress ? _hashAddress : self.nameLabel.stringValue;
