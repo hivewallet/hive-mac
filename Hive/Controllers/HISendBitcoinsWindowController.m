@@ -240,6 +240,9 @@ static NSString *const HIConversionPreferenceKey = @"ConversionCurrency";
 - (void)fetchExchangeRate
 {
     // TODO: There should be a timer updating the exchange rate in case the window is open too long.
+    self.convertedAmountField.enabled = NO;
+    self.exchangeRate = nil;
+    [self updateConvertedAmountFromAmount];
     [[BCClient sharedClient] exchangeRateForCurrency:self.selectedCurrency completion:^(NSDecimalNumber *value) {
         self.convertedAmountField.enabled = YES;
         self.exchangeRate = value;
