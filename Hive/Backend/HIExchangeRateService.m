@@ -3,6 +3,8 @@
 #import "HIExchangeRateService.h"
 #import "BCClient.h"
 
+static NSString *const HIConversionPreferenceKey = @"ConversionCurrency";
+
 @interface HIExchangeRateService ()
 
 @property (nonatomic, strong) AFHTTPClient *client;
@@ -35,6 +37,26 @@
         _client = [BCClient sharedClient];
     }
     return self;
+}
+
+#pragma mark - user defaults
+
+- (NSString *)availableCurrencies
+{
+    // TODO: Add all ISO currency codes.
+    return @[@"USD", @"EUR", @"GBP"];
+}
+
+- (NSString *)preferredCurrency
+{
+    NSString *currency = [[NSUserDefaults standardUserDefaults] stringForKey:HIConversionPreferenceKey];
+    return [self.availableCurrencies containsObject:currency] ? currency : @"USD";
+}
+
+- (void)setPreferredCurrency:(NSString *)preferredCurrency
+{
+    [[NSUserDefaults standardUserDefaults] setObject:preferredCurrency
+                                              forKey:HIConversionPreferenceKey];
 }
 
 #pragma mark - networking

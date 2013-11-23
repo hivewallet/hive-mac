@@ -17,10 +17,6 @@
 
 NSString * const HISendBitcoinsWindowDidClose = @"HISendBitcoinsWindowDidClose";
 NSString * const HISendBitcoinsWindowSuccessKey = @"success";
-static NSString *const HIConversionPreferenceKey = @"ConversionCurrency";
-
-// TODO: Add all ISO currency codes.
-#define CURRENCIES (@[ @"USD", @"EUR", @"GBP" ])
 
 @interface HISendBitcoinsWindowController () {
     HIContact *_contact;
@@ -35,6 +31,7 @@ static NSString *const HIConversionPreferenceKey = @"ConversionCurrency";
 @property (copy) NSNumberFormatter *currencyNumberFormatter;
 @property (copy) NSDecimalNumber *exchangeRate;
 @property (copy) NSString *selectedCurrency;
+@property (strong, readonly) HIExchangeRateService *exchangeRateService;
 @property (strong, readonly) HIContactAutocompleteWindowController *autocompleteController;
 
 @end
@@ -52,8 +49,9 @@ static NSString *const HIConversionPreferenceKey = @"ConversionCurrency";
         _currencyNumberFormatter = [NSNumberFormatter new];
         _currencyNumberFormatter.localizesFormat = YES;
         _currencyNumberFormatter.format = @"#,##0.00";
-        NSString *currency = [[NSUserDefaults standardUserDefaults] stringForKey:HIConversionPreferenceKey];
-        self.selectedCurrency = [CURRENCIES containsObject:currency] ? currency : @"USD";
+
+        _exchangeRateService = [HIExchangeRateService sharedService];
+        self.selectedCurrency = _exchangeRateService.preferredCurrency;
     }
 
     return self;
@@ -109,7 +107,7 @@ static NSString *const HIConversionPreferenceKey = @"ConversionCurrency";
 
 - (void)setupCurrencyList
 {
-    [self.convertedCurrencyPopupButton addItemsWithTitles:CURRENCIES];
+    [self.convertedCurrencyPopupButton addItemsWithTitles:self.exchangeRateService.availableCurrencies];
     [self.convertedCurrencyPopupButton selectItemWithTitle:_selectedCurrency];
 }
 
@@ -234,7 +232,7 @@ static NSString *const HIConversionPreferenceKey = @"ConversionCurrency";
 - (void)setSelectedCurrency:(NSString *)selectedCurrency
 {
     _selectedCurrency = [selectedCurrency copy];
-    [[NSUserDefaults standardUserDefaults] setObject:_selectedCurrency forKey:HIConversionPreferenceKey];
+    self.exchangeRateService.preferredCurrency = selectedCurrency;
     [self fetchExchangeRate];
 }
 
