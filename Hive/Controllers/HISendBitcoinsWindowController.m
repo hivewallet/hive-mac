@@ -13,6 +13,7 @@
 #import "HIContactAutocompleteWindowController.h"
 #import "HISendBitcoinsWindowController.h"
 #import "HICurrencyAmountFormatter.h"
+#import "HIExchangeRateService.h"
 
 NSString * const HISendBitcoinsWindowDidClose = @"HISendBitcoinsWindowDidClose";
 NSString * const HISendBitcoinsWindowSuccessKey = @"success";
@@ -243,7 +244,8 @@ static NSString *const HIConversionPreferenceKey = @"ConversionCurrency";
     self.convertedAmountField.enabled = NO;
     self.exchangeRate = nil;
     [self updateConvertedAmountFromAmount];
-    [[BCClient sharedClient] exchangeRateForCurrency:self.selectedCurrency completion:^(NSDecimalNumber *value) {
+    [[HIExchangeRateService sharedService] exchangeRateForCurrency:self.selectedCurrency
+                                                        completion:^(NSDecimalNumber *value) {
         self.convertedAmountField.enabled = YES;
         self.exchangeRate = value;
         [self updateConvertedAmountFromAmount];

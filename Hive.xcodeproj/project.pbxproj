@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		05D9F526F5294257A0422835 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1EFBACBE45EB458A8ED83785 /* libPods.a */; };
+		1AA10A016757DBB9BE7808C5 /* HIExchangeRateService.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AA1032408E917EE5B7752AC /* HIExchangeRateService.m */; };
 		5802106017ECC4F50039BA4B /* HITransactionCellView.m in Sources */ = {isa = PBXBuildFile; fileRef = 581EFBCB17DA441B00E2738D /* HITransactionCellView.m */; };
 		5802106317ECCAAA0039BA4B /* HIContactAutocompleteCellView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5802106217ECCAAA0039BA4B /* HIContactAutocompleteCellView.m */; };
 		5804C32617FC88BA003B7891 /* HIProfile.m in Sources */ = {isa = PBXBuildFile; fileRef = 5804C32517FC88BA003B7891 /* HIProfile.m */; };
@@ -213,6 +214,8 @@
 
 /* Begin PBXFileReference section */
 		10153A3CC4364D6799CB4A2D /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = SOURCE_ROOT; };
+		1AA1032408E917EE5B7752AC /* HIExchangeRateService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HIExchangeRateService.m; sourceTree = "<group>"; };
+		1AA10C583F128C0BCD84C878 /* HIExchangeRateService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HIExchangeRateService.h; sourceTree = "<group>"; };
 		1EFBACBE45EB458A8ED83785 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		5802106117ECCAAA0039BA4B /* HIContactAutocompleteCellView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HIContactAutocompleteCellView.h; sourceTree = "<group>"; };
 		5802106217ECCAAA0039BA4B /* HIContactAutocompleteCellView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HIContactAutocompleteCellView.m; sourceTree = "<group>"; };
@@ -1190,6 +1193,8 @@
 				586059B3180419F500FD9C2A /* BCClient.m */,
 				5860D3FD180455B900BD852C /* HIApplicationsManager.h */,
 				5860D3FE180455B900BD852C /* HIApplicationsManager.m */,
+				1AA1032408E917EE5B7752AC /* HIExchangeRateService.m */,
+				1AA10C583F128C0BCD84C878 /* HIExchangeRateService.h */,
 			);
 			path = Backend;
 			sourceTree = "<group>";
@@ -1732,6 +1737,7 @@
 				58605A6918041DFC00FD9C2A /* NPZipHeader.m in Sources */,
 				5860D3FF180455B900BD852C /* HIApplicationsManager.m in Sources */,
 				589064B7180596B80082BE5C /* HIEditableImageView.m in Sources */,
+				1AA10A016757DBB9BE7808C5 /* HIExchangeRateService.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

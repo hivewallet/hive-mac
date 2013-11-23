@@ -21,7 +21,6 @@ static NSString * const kBCClientBaseURLString = @"https://grabhive.com/";
 {
     NSManagedObjectContext *_transactionUpdateContext;
     NSDateFormatter *_dateFormatter;
-    AFHTTPRequestOperation *_exchangeRateOperation;
 }
 
 @property (nonatomic) uint64 balance;
@@ -430,30 +429,6 @@ static NSString * const kBCClientBaseURLString = @"https://grabhive.com/";
 - (BOOL)importWalletFromURL:(NSURL *)walletURL
 {
     return [[HIBitcoinManager defaultManager] importWalletFrom:walletURL];
-}
-
-- (void)exchangeRateForCurrency:(NSString *)currency
-                     completion:(void(^)(NSDecimalNumber *value))completion
-{
-    if (_exchangeRateOperation)
-    {
-        [_exchangeRateOperation cancel];
-        _exchangeRateOperation = nil;
-    }
-
-    NSURL *URL = [NSURL URLWithString:
-                  [NSString stringWithFormat:@"http://data.mtgox.com/api/1/BTC%@/ticker_fast", currency]];
-    _exchangeRateOperation = [self HTTPRequestOperationWithRequest:[NSURLRequest requestWithURL:URL]
-                                                           success:^(AFHTTPRequestOperation *operation, id response) {
-        NSDictionary *resp = [NSJSONSerialization JSONObjectWithData:response options:0 error:NULL];
-        NSString *exchange = resp[@"return"][@"sell"][@"value"];
-        _exchangeRateOperation = nil;
-        completion([NSDecimalNumber decimalNumberWithString:exchange locale:@{NSLocaleDecimalSeparator: @"."}]);
-    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-        _exchangeRateOperation = nil;
-    }];
-
-    [self.operationQueue addOperation:_exchangeRateOperation];
 }
 
 @end
