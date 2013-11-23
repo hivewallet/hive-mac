@@ -9,6 +9,7 @@ static NSString *const HIConversionPreferenceKey = @"ConversionCurrency";
 
 @property (nonatomic, strong) AFHTTPClient *client;
 @property (nonatomic, strong) AFHTTPRequestOperation *exchangeRateOperation;
+@property (nonatomic, strong) NSMutableSet *observers;
 
 @end
 
@@ -35,6 +36,7 @@ static NSString *const HIConversionPreferenceKey = @"ConversionCurrency";
     if (self)
     {
         _client = [BCClient sharedClient];
+        _observers = [NSMutableSet new];
     }
     return self;
 }
@@ -59,10 +61,19 @@ static NSString *const HIConversionPreferenceKey = @"ConversionCurrency";
                                               forKey:HIConversionPreferenceKey];
 }
 
-#pragma mark - networking
+#pragma mark - exchange rate observation
 
-- (void)exchangeRateForCurrency:(NSString *)currency
-                     completion:(void(^)(NSDecimalNumber *value))completion
+- (void)addExchangeRateObserver:(id<HIExchangeRateObserver>)observer
+{
+    [self.observers addObject:observer];
+}
+
+- (void)removeExchangeRateObserver:(id<HIExchangeRateObserver>)observer
+{
+    [self.observers removeObject:observer];
+}
+
+- (void)updateExchangeRateForCurrency:(NSString *)currency
 {
     if (self.exchangeRateOperation)
     {
@@ -78,14 +89,28 @@ static NSString *const HIConversionPreferenceKey = @"ConversionCurrency";
                                              success:^(AFHTTPRequestOperation *operation, id response) {
 
         NSDictionary *resp = [NSJSONSerialization JSONObjectWithData:response options:0 error:NULL];
-        NSString *exchange = resp[@"return"][@"sell"][@"value"];
+        NSString *exchangeRateString = resp[@"return"][@"sell"][@"value"];
+        NSDecimalNumber *exchangeRate = [NSDecimalNumber decimalNumberWithString:exchangeRateString
+                                                                          locale:@{NSLocaleDecimalSeparator: @"."}];
+        [self notifyOfExchangeRate:exchangeRate
+                       forCurrency:currency];
         _exchangeRateOperation = nil;
-        completion([NSDecimalNumber decimalNumberWithString:exchange locale:@{NSLocaleDecimalSeparator: @"."}]);
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        [self notifyOfExchangeRate:nil
+                       forCurrency:currency];
         _exchangeRateOperation = nil;
     }];
 
     [self.client.operationQueue addOperation:_exchangeRateOperation];
+}
+
+- (void)notifyOfExchangeRate:(NSDecimalNumber *)exchangeRate
+                 forCurrency:(NSString *)currency
+{
+    for (id<HIExchangeRateObserver> observer in self.observers)
+    {
+        [observer exchangeRateUpdatedTo:exchangeRate forCurrency:currency];
+    }
 }
 
 @end

@@ -1,3 +1,5 @@
+@protocol HIExchangeRateObserver;
+
 /*
  This service fetches conversion rates and handles conversion.
  */
@@ -9,7 +11,16 @@
 
 + (HIExchangeRateService *)sharedService;
 
-- (void)exchangeRateForCurrency:(NSString *)currency
-                     completion:(void(^)(NSDecimalNumber *value))completion;
+- (void)addExchangeRateObserver:(id<HIExchangeRateObserver>)observer;
+- (void)removeExchangeRateObserver:(id<HIExchangeRateObserver>)observer;
+
+- (void)updateExchangeRateForCurrency:(NSString *)currency;
+
+@end
+
+@protocol HIExchangeRateObserver<NSObject>
+
+- (void)exchangeRateUpdatedTo:(NSDecimalNumber *)exchangeRate
+                  forCurrency:(NSString *)currency;
 
 @end

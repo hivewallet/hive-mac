@@ -18,7 +18,8 @@
 NSString * const HISendBitcoinsWindowDidClose = @"HISendBitcoinsWindowDidClose";
 NSString * const HISendBitcoinsWindowSuccessKey = @"success";
 
-@interface HISendBitcoinsWindowController () {
+@interface HISendBitcoinsWindowController () <HIExchangeRateObserver>
+{
     HIContact *_contact;
     HIContactAutocompleteWindowController *_autocompleteController;
     NSString *_hashAddress;
@@ -51,6 +52,7 @@ NSString * const HISendBitcoinsWindowSuccessKey = @"success";
         _currencyNumberFormatter.format = @"#,##0.00";
 
         _exchangeRateService = [HIExchangeRateService sharedService];
+        [_exchangeRateService addExchangeRateObserver:self];
         self.selectedCurrency = _exchangeRateService.preferredCurrency;
     }
 
@@ -66,6 +68,12 @@ NSString * const HISendBitcoinsWindowSuccessKey = @"success";
 
     return self;
 }
+
+- (void)dealloc
+{
+    [_exchangeRateService removeExchangeRateObserver:self];
+}
+
 
 - (void)windowDidLoad {
     [super windowDidLoad];
@@ -242,12 +250,7 @@ NSString * const HISendBitcoinsWindowSuccessKey = @"success";
     self.convertedAmountField.enabled = NO;
     self.exchangeRate = nil;
     [self updateConvertedAmountFromAmount];
-    [[HIExchangeRateService sharedService] exchangeRateForCurrency:self.selectedCurrency
-                                                        completion:^(NSDecimalNumber *value) {
-        self.convertedAmountField.enabled = YES;
-        self.exchangeRate = value;
-        [self updateConvertedAmountFromAmount];
-    }];
+    [_exchangeRateService updateExchangeRateForCurrency:self.selectedCurrency];
 }
 
 - (NSDecimalNumber *)convertedAmountForBitcoinAmount:(NSDecimalNumber *)amount
@@ -262,6 +265,18 @@ NSString * const HISendBitcoinsWindowSuccessKey = @"success";
 
 - (IBAction)currencyChanged:(id)sender {
     self.selectedCurrency = self.convertedCurrencyPopupButton.selectedItem.title;
+}
+
+#pragma mark - HIExchangeRateObserver
+
+- (void)exchangeRateUpdatedTo:(NSDecimalNumber *)exchangeRate
+                  forCurrency:(NSString *)currency
+{
+    if ([currency isEqual:_selectedCurrency]) {
+        self.convertedAmountField.enabled = YES;
+        self.exchangeRate = exchangeRate;
+        [self updateConvertedAmountFromAmount];
+    }
 }
 
 #pragma mark - Handling button clicks
