@@ -28,6 +28,7 @@ NSString * const HISendBitcoinsWindowSuccessKey = @"success";
 @property (copy) NSNumberFormatter *bitcoinNumberFormatter;
 @property (copy) NSNumberFormatter *currencyNumberFormatter;
 @property (copy) NSDecimalNumber *exchangeRate;
+@property (copy) NSString *selectedCurrency;
 @property (strong, readonly) HIContactAutocompleteWindowController *autocompleteController;
 
 @end
@@ -47,8 +48,8 @@ NSString * const HISendBitcoinsWindowSuccessKey = @"success";
         _currencyNumberFormatter = [NSNumberFormatter new];
         _currencyNumberFormatter.localizesFormat = YES;
         _currencyNumberFormatter.format = @"#,##0.00";
-
-        [self fetchExchangeRate];
+        // TODO: This should be stored in the user's preferences.
+        self.selectedCurrency = @"USD";
     }
 
     return self;
@@ -89,6 +90,8 @@ NSString * const HISendBitcoinsWindowSuccessKey = @"success";
 
     self.wrapper.layer.cornerRadius = 5.0;
 
+    [self setupCurrencyList];
+
     if (_amount)
     {
         [self setLockedAmount:_amount];
@@ -98,6 +101,17 @@ NSString * const HISendBitcoinsWindowSuccessKey = @"success";
         self.amountFieldValue = [NSDecimalNumber zero];
     }
     [self updateConvertedAmountFromAmount];
+}
+
+- (void)setupCurrencyList
+{
+    // TODO: Add all ISO currency codes.
+    [self.convertedCurrencyPopupButton addItemsWithTitles:@[
+            @"USD",
+            @"EUR",
+            @"GBP",
+    ]];
+    [self.convertedCurrencyPopupButton selectItemWithTitle:_selectedCurrency];
 }
 
 - (void)windowWillClose:(NSNotification *)notification
@@ -218,10 +232,16 @@ NSString * const HISendBitcoinsWindowSuccessKey = @"success";
 
 #pragma mark - conversion
 
+- (void)setSelectedCurrency:(NSString *)selectedCurrency
+{
+    _selectedCurrency = [selectedCurrency copy];
+    [self fetchExchangeRate];
+}
+
 - (void)fetchExchangeRate
 {
     // TODO: There should be a timer updating the exchange rate in case the window is open too long.
-    [[BCClient sharedClient] exchangeRateForCurrency:@"USD" completion:^(NSDecimalNumber *value) {
+    [[BCClient sharedClient] exchangeRateForCurrency:self.selectedCurrency completion:^(NSDecimalNumber *value) {
         self.convertedAmountField.enabled = YES;
         self.exchangeRate = value;
         [self updateConvertedAmountFromAmount];
@@ -236,6 +256,10 @@ NSString * const HISendBitcoinsWindowSuccessKey = @"success";
 - (NSDecimalNumber *)bitcoinAmountForConvertedAmount:(NSDecimalNumber *)amount
 {
     return [amount decimalNumberByDividingBy:self.exchangeRate];
+}
+
+- (IBAction)currencyChanged:(id)sender {
+    self.selectedCurrency = self.convertedCurrencyPopupButton.selectedItem.title;
 }
 
 #pragma mark - Handling button clicks

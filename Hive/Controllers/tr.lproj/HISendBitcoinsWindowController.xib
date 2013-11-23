@@ -10,6 +10,7 @@
                 <outlet property="addressLabel" destination="21" id="26"/>
                 <outlet property="amountField" destination="36" id="40"/>
                 <outlet property="convertedAmountField" destination="l47-zx-4mb" id="mgX-At-dSz"/>
+                <outlet property="convertedCurrencyPopupButton" destination="ZPL-GE-Omh" id="Sd0-4A-V3B"/>
                 <outlet property="dropdownButton" destination="51" id="54"/>
                 <outlet property="nameLabel" destination="19" id="27"/>
                 <outlet property="photoView" destination="17" id="28"/>
@@ -85,15 +86,6 @@ Gw
                                     <rect key="frame" x="15" y="58" width="59" height="17"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="right" title="Miktar:" id="16">
-                                        <font key="font" metaFont="cellTitle"/>
-                                        <color key="textColor" red="0.42444920539999997" green="0.42443650960000001" blue="0.42444372180000001" alpha="1" colorSpace="calibratedRGB"/>
-                                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
-                                    </textFieldCell>
-                                </textField>
-                                <textField verticalHuggingPriority="750" id="OeE-7U-9kI">
-                                    <rect key="frame" x="15" y="15" width="59" height="17"/>
-                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="right" title="USD" id="0gH-Kh-cy1">
                                         <font key="font" metaFont="cellTitle"/>
                                         <color key="textColor" red="0.42444920539999997" green="0.42443650960000001" blue="0.42444372180000001" alpha="1" colorSpace="calibratedRGB"/>
                                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
@@ -185,6 +177,18 @@ Gw
                                         <action selector="dropdownButtonClicked:" target="-2" id="53"/>
                                     </connections>
                                 </button>
+                                <popUpButton verticalHuggingPriority="750" id="ZPL-GE-Omh">
+                                    <rect key="frame" x="13" y="9" width="92" height="26"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                    <popUpButtonCell key="cell" type="push" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" id="riJ-35-blE">
+                                        <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
+                                        <font key="font" metaFont="menu"/>
+                                        <menu key="menu" title="OtherViews" id="WcM-4W-vgC"/>
+                                    </popUpButtonCell>
+                                    <connections>
+                                        <action selector="currencyChanged:" target="-2" id="hFj-Bb-yS9"/>
+                                    </connections>
+                                </popUpButton>
                             </subviews>
                         </view>
                         <color key="borderColor" red="0.42444920539999997" green="0.42443650960000001" blue="0.42444372180000001" alpha="0.41999999999999998" colorSpace="calibratedRGB"/>
