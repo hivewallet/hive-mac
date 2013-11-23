@@ -12,6 +12,7 @@
 #import "HIButtonWithSpinner.h"
 #import "HIContactAutocompleteWindowController.h"
 #import "HISendBitcoinsWindowController.h"
+#import "HICurrencyAmountFormatter.h"
 
 NSString * const HISendBitcoinsWindowDidClose = @"HISendBitcoinsWindowDidClose";
 NSString * const HISendBitcoinsWindowSuccessKey = @"success";
@@ -46,9 +47,7 @@ static NSString *const HIConversionPreferenceKey = @"ConversionCurrency";
     if (self)
     {
         _amount = nil;
-        _bitcoinNumberFormatter = [NSNumberFormatter new];
-        _bitcoinNumberFormatter.localizesFormat = YES;
-        _bitcoinNumberFormatter.format = @"#,##0.########";
+        _bitcoinNumberFormatter = [HICurrencyAmountFormatter new];
         _currencyNumberFormatter = [NSNumberFormatter new];
         _currencyNumberFormatter.localizesFormat = YES;
         _currencyNumberFormatter.format = @"#,##0.00";
