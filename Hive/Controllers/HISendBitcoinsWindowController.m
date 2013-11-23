@@ -15,6 +15,10 @@
 
 NSString * const HISendBitcoinsWindowDidClose = @"HISendBitcoinsWindowDidClose";
 NSString * const HISendBitcoinsWindowSuccessKey = @"success";
+static NSString *const HIConversionPreferenceKey = @"ConversionCurrency";
+
+// TODO: Add all ISO currency codes.
+#define CURRENCIES (@[ @"USD", @"EUR", @"GBP" ])
 
 @interface HISendBitcoinsWindowController () {
     HIContact *_contact;
@@ -48,8 +52,8 @@ NSString * const HISendBitcoinsWindowSuccessKey = @"success";
         _currencyNumberFormatter = [NSNumberFormatter new];
         _currencyNumberFormatter.localizesFormat = YES;
         _currencyNumberFormatter.format = @"#,##0.00";
-        // TODO: This should be stored in the user's preferences.
-        self.selectedCurrency = @"USD";
+        NSString *currency = [[NSUserDefaults standardUserDefaults] stringForKey:HIConversionPreferenceKey];
+        self.selectedCurrency = [CURRENCIES containsObject:currency] ? currency : @"USD";
     }
 
     return self;
@@ -105,12 +109,7 @@ NSString * const HISendBitcoinsWindowSuccessKey = @"success";
 
 - (void)setupCurrencyList
 {
-    // TODO: Add all ISO currency codes.
-    [self.convertedCurrencyPopupButton addItemsWithTitles:@[
-            @"USD",
-            @"EUR",
-            @"GBP",
-    ]];
+    [self.convertedCurrencyPopupButton addItemsWithTitles:CURRENCIES];
     [self.convertedCurrencyPopupButton selectItemWithTitle:_selectedCurrency];
 }
 
@@ -235,6 +234,7 @@ NSString * const HISendBitcoinsWindowSuccessKey = @"success";
 - (void)setSelectedCurrency:(NSString *)selectedCurrency
 {
     _selectedCurrency = [selectedCurrency copy];
+    [[NSUserDefaults standardUserDefaults] setObject:_selectedCurrency forKey:HIConversionPreferenceKey];
     [self fetchExchangeRate];
 }
 
