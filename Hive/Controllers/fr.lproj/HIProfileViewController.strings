@@ -2,8 +2,5 @@
 /* Class = "NSTextFieldCell"; title = "John Whatshisface"; ObjectID = "22"; */
 "22.title" = "John Whatshisface";
 
-/* Class = "NSButtonCell"; title = "Send Bitcoin"; ObjectID = "24"; */
-"24.title" = "Envoyer des Bitcoins";
-
 /* Class = "NSTextFieldCell"; title = "0.00"; ObjectID = "76"; */
 "76.title" = "0.00";

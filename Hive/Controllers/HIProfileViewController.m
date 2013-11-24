@@ -11,7 +11,6 @@
 #import "HIProfile.h"
 #import "HIContactInfoViewController.h"
 #import "HIProfileViewController.h"
-#import "HISendBitcoinsWindowController.h"
 #import "NSColor+Hive.h"
 
 @interface HIProfileViewController () {
@@ -188,12 +187,6 @@
             });
         }
     }
-}
-
-- (IBAction)sendBitcoinsPressed:(id)sender
-{
-    HISendBitcoinsWindowController *window = [[NSApp delegate] sendBitcoinsWindowForContact:_profile];
-    [window showWindow:self];
 }
 
 @end

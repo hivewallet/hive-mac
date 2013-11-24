@@ -25,11 +25,8 @@
 @property (strong) IBOutlet NSImageView *bitcoinSymbol;
 @property (strong) IBOutlet NSTextField *nameLabel;
 @property (strong) IBOutlet NSTextField *balanceLabel;
-@property (strong) IBOutlet NSButton *sendBitcoinButton;
 @property (strong) IBOutlet HIProfileTabView *tabView;
 @property (strong) IBOutlet HIContactTabBarController *tabBarController;
 @property (strong) IBOutlet NSView *contentView;
-
-- (IBAction)sendBitcoinsPressed:(id)sender;
 
 @end
