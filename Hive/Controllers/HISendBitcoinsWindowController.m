@@ -11,9 +11,9 @@
 #import "HIAddress.h"
 #import "HIButtonWithSpinner.h"
 #import "HIContactAutocompleteWindowController.h"
-#import "HISendBitcoinsWindowController.h"
 #import "HICurrencyAmountFormatter.h"
 #import "HIExchangeRateService.h"
+#import "HISendBitcoinsWindowController.h"
 
 NSString * const HISendBitcoinsWindowDidClose = @"HISendBitcoinsWindowDidClose";
 NSString * const HISendBitcoinsWindowSuccessKey = @"success";

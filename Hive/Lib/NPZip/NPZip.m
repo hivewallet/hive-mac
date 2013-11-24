@@ -6,8 +6,8 @@
 //  Copyright (c) 2011 Hive Developers. All rights reserved.
 //
 
-#import "NPZip.h"
 #import <zlib.h>
+#import "NPZip.h"
 
 static uint16_t NPReadUInt16(FILE *fp) {
 	uint16_t n;

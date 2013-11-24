@@ -6,8 +6,8 @@
 //  Copyright (c) 2013 Hive Developers. All rights reserved.
 //
 
-#import "HITextFieldCell.h"
 #import "HITextField.h"
+#import "HITextFieldCell.h"
 @implementation HITextFieldCell
 
 - (void)drawInteriorWithFrame:(NSRect)cellFrame inView:(NSView *)controlView

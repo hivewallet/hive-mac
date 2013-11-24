@@ -6,8 +6,8 @@
 //  Copyright (c) 2013 Hive Developers. All rights reserved.
 //
 
-#import "HITransaction.h"
 #import "HIContact.h"
+#import "HITransaction.h"
 
 NSString * const HITransactionEntity = @"HITransaction";
 

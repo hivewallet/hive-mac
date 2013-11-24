@@ -1,7 +1,7 @@
 #import <AFNetworking/AFHTTPClient.h>
 #import <AFNetworking/AFHTTPRequestOperation.h>
-#import "HIExchangeRateService.h"
 #import "BCClient.h"
+#import "HIExchangeRateService.h"
 
 static NSString *const HIConversionPreferenceKey = @"ConversionCurrency";
 

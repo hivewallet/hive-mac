@@ -6,10 +6,10 @@
 //  Copyright (c) 2013 Hive Developers. All rights reserved.
 //
 
-#import "HIViewController.h"
-#import "HITextField.h"
 #import "HIBox.h"
 #import "HIContact.h"
+#import "HITextField.h"
+#import "HIViewController.h"
 
 /*
  The contact edit form used for adding and editing contacts. Also handles editing of the user's profile if

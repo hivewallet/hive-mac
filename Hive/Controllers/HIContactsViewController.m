@@ -7,11 +7,11 @@
 //
 
 #import "HIContact.h"
+#import "HIContactRowView.h"
 #import "HIContactsViewController.h"
 #import "HINavigationController.h"
-#import "HIProfileViewController.h"
-#import "HIContactRowView.h"
 #import "HINewContactViewController.h"
+#import "HIProfileViewController.h"
 #import "NSColor+Hive.h"
 
 

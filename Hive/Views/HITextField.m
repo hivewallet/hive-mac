@@ -7,8 +7,8 @@
 //
 
 #import "HITextField.h"
-#import "NSColor+Hive.h"
 #import "HITextFieldCell.h"
+#import "NSColor+Hive.h"
 
 NSString * const kHITextFieldContentChanged = @"kHITextFieldContentChanged";
 

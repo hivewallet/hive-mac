@@ -6,13 +6,13 @@
 //  Copyright (c) 2013 Hive Developers. All rights reserved.
 //
 
-#import "HIViewController.h"
+#import "HIBox.h"
 #import "HIContact.h"
+#import "HIFlippedView.h"
 #import "HIProfileTabBarController.h"
 #import "HIProfileTabView.h"
-#import "HIFlippedView.h"
-#import "HIBox.h"
 #import "HITextField.h"
+#import "HIViewController.h"
 
 /*
  Manages the contact view that shows information about a selected contact. Includes a tab bar and two tabs with

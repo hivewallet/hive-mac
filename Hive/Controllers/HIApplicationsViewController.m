@@ -6,10 +6,10 @@
 //  Copyright (c) 2013 Hive Developers. All rights reserved.
 //
 
-#import "HIApplicationsViewController.h"
-#import "HIContactRowView.h"
 #import "HIApplication.h"
 #import "HIApplicationRuntimeViewController.h"
+#import "HIApplicationsViewController.h"
+#import "HIContactRowView.h"
 #import "HINavigationController.h"
 
 @implementation HIApplicationsViewController

@@ -7,9 +7,9 @@
 //
 
 #import <WebKit/WebKit.h>
-#import "HIViewController.h"
 #import "HIApplication.h"
 #import "HISendBitcoinsWindowController.h"
+#import "HIViewController.h"
 
 /*
  Runs the selected application in a web view and manages its communication with Hive.

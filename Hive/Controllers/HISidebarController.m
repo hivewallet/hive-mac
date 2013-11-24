@@ -6,9 +6,9 @@
 //  Copyright (c) 2013 Hive Developers. All rights reserved.
 //
 
-#import "HIViewController.h"
 #import "HISidebarButton.h"
 #import "HISidebarController.h"
+#import "HIViewController.h"
 
 const NSInteger SidebarButtonWidth = 75;
 const NSInteger SidebarButtonHeight = 52;

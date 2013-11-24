@@ -6,8 +6,8 @@
 //  Copyright (c) 2013 Hive Developers. All rights reserved.
 //
 
-#import "HIViewController.h"
 #import "HITitleView.h"
+#import "HIViewController.h"
 
 /*
  Manages a stack of views like iOS's UINavigationController, shows the titles of currently open view controllers

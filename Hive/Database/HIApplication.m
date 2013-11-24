@@ -6,9 +6,9 @@
 //  Copyright (c) 2013 Hive Developers. All rights reserved.
 //
 
+#import "BCClient.h"
 #import "HIApplication.h"
 #import "NPZip.h"
-#import "BCClient.h"
 
 NSString * const HIApplicationEntity = @"HIApplication";
 
