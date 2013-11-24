@@ -28,8 +28,6 @@
 - (void)shutdown;
 - (void)updateNotifications;
 
-- (void)exchangeRateFor:(uint64)btcs forCurrency:(NSString *)currency completion:(void(^)(uint64 value))completion;
-
 - (void)sendBitcoins:(uint64)amount
               toHash:(NSString *)hash
           completion:(void(^)(BOOL success, NSString *transactionId))completion;

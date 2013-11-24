@@ -12,17 +12,27 @@
 #import "HIButtonWithSpinner.h"
 #import "HIContactAutocompleteWindowController.h"
 #import "HISendBitcoinsWindowController.h"
+#import "HICurrencyAmountFormatter.h"
+#import "HIExchangeRateService.h"
 
 NSString * const HISendBitcoinsWindowDidClose = @"HISendBitcoinsWindowDidClose";
 NSString * const HISendBitcoinsWindowSuccessKey = @"success";
 
-@interface HISendBitcoinsWindowController () {
+@interface HISendBitcoinsWindowController () <HIExchangeRateObserver>
+{
     HIContact *_contact;
     HIContactAutocompleteWindowController *_autocompleteController;
     NSString *_hashAddress;
     NSDecimalNumber *_amount;
 }
 
+@property (copy) NSDecimalNumber *amountFieldValue;
+@property (copy) NSDecimalNumber *convertedAmountFieldValue;
+@property (copy) NSNumberFormatter *bitcoinNumberFormatter;
+@property (copy) NSNumberFormatter *currencyNumberFormatter;
+@property (copy) NSDecimalNumber *exchangeRate;
+@property (copy) NSString *selectedCurrency;
+@property (strong, readonly) HIExchangeRateService *exchangeRateService;
 @property (strong, readonly) HIContactAutocompleteWindowController *autocompleteController;
 
 @end
@@ -36,6 +46,14 @@ NSString * const HISendBitcoinsWindowSuccessKey = @"success";
     if (self)
     {
         _amount = nil;
+        _bitcoinNumberFormatter = [HICurrencyAmountFormatter new];
+        _currencyNumberFormatter = [NSNumberFormatter new];
+        _currencyNumberFormatter.localizesFormat = YES;
+        _currencyNumberFormatter.format = @"#,##0.00";
+
+        _exchangeRateService = [HIExchangeRateService sharedService];
+        [_exchangeRateService addExchangeRateObserver:self];
+        self.selectedCurrency = _exchangeRateService.preferredCurrency;
     }
 
     return self;
@@ -50,6 +68,12 @@ NSString * const HISendBitcoinsWindowSuccessKey = @"success";
 
     return self;
 }
+
+- (void)dealloc
+{
+    [_exchangeRateService removeExchangeRateObserver:self];
+}
+
 
 - (void)windowDidLoad {
     [super windowDidLoad];
@@ -76,14 +100,23 @@ NSString * const HISendBitcoinsWindowSuccessKey = @"success";
 
     self.wrapper.layer.cornerRadius = 5.0;
 
+    [self setupCurrencyList];
+
     if (_amount)
     {
         [self setLockedAmount:_amount];
     }
     else
     {
-        self.amountField.stringValue = @"0";
+        self.amountFieldValue = [NSDecimalNumber zero];
     }
+    [self updateConvertedAmountFromAmount];
+}
+
+- (void)setupCurrencyList
+{
+    [self.convertedCurrencyPopupButton addItemsWithTitles:self.exchangeRateService.availableCurrencies];
+    [self.convertedCurrencyPopupButton selectItemWithTitle:_selectedCurrency];
 }
 
 - (void)windowWillClose:(NSNotification *)notification
@@ -103,8 +136,11 @@ NSString * const HISendBitcoinsWindowSuccessKey = @"success";
 {
     _amount = amount;
 
-    [self.amountField setStringValue:[self.amountField.formatter stringFromNumber:_amount]];
+    self.amountFieldValue = _amount;
+    [self updateConvertedAmountFromAmount];
+
     [self.amountField setEditable:NO];
+    [self.convertedAmountField setEditable:NO];
 }
 
 - (void)clearContact
@@ -139,6 +175,109 @@ NSString * const HISendBitcoinsWindowSuccessKey = @"success";
     return _autocompleteController;
 }
 
+#pragma mark - text fields
+
+- (void)setAmountFieldValue:(NSDecimalNumber *)amount
+{
+    [self.amountField setStringValue:[self.bitcoinNumberFormatter stringFromNumber:amount]];
+}
+
+- (void)formatAmountField
+{
+    [self setAmountFieldValue:self.amountFieldValue];
+}
+
+- (NSDecimalNumber *)amountFieldValue
+{
+    NSDecimalNumber *number = [NSDecimalNumber decimalNumberWithString:self.amountField.stringValue
+                                             locale:[NSLocale currentLocale]];
+    return number == [NSDecimalNumber notANumber] ? [NSDecimalNumber zero] : number;
+}
+
+- (void)setConvertedAmountFieldValue:(NSDecimalNumber *)amount
+{
+    [self.convertedAmountField setStringValue:[self.currencyNumberFormatter stringFromNumber:amount]];
+}
+
+- (void)formatConvertedAmountField
+{
+    [self setConvertedAmountFieldValue:self.convertedAmountFieldValue];
+}
+
+- (NSDecimalNumber *)convertedAmountFieldValue
+{
+    NSDecimalNumber *number = [NSDecimalNumber decimalNumberWithString:self.convertedAmountField.stringValue
+                                                                locale:[NSLocale currentLocale]];
+    return number == [NSDecimalNumber notANumber] ? [NSDecimalNumber zero] : number;
+}
+
+- (void)updateConvertedAmountFromAmount
+{
+    if (self.exchangeRate)
+    {
+        self.convertedAmountFieldValue = [self convertedAmountForBitcoinAmount:self.amountFieldValue];
+    }
+    else
+    {
+        self.convertedAmountFieldValue = [NSDecimalNumber zero];
+    }
+}
+
+- (void)updateAmountFromConvertedAmount
+{
+    if (self.exchangeRate)
+    {
+        self.amountFieldValue = [self bitcoinAmountForConvertedAmount:self.convertedAmountFieldValue];
+    }
+    else
+    {
+        self.amountFieldValue = [NSDecimalNumber zero];
+    }
+}
+
+#pragma mark - conversion
+
+- (void)setSelectedCurrency:(NSString *)selectedCurrency
+{
+    _selectedCurrency = [selectedCurrency copy];
+    self.exchangeRateService.preferredCurrency = selectedCurrency;
+    [self fetchExchangeRate];
+}
+
+- (void)fetchExchangeRate
+{
+    // TODO: There should be a timer updating the exchange rate in case the window is open too long.
+    self.convertedAmountField.enabled = NO;
+    self.exchangeRate = nil;
+    [self updateConvertedAmountFromAmount];
+    [_exchangeRateService updateExchangeRateForCurrency:self.selectedCurrency];
+}
+
+- (NSDecimalNumber *)convertedAmountForBitcoinAmount:(NSDecimalNumber *)amount
+{
+    return [amount decimalNumberByMultiplyingBy:self.exchangeRate];
+}
+
+- (NSDecimalNumber *)bitcoinAmountForConvertedAmount:(NSDecimalNumber *)amount
+{
+    return [amount decimalNumberByDividingBy:self.exchangeRate];
+}
+
+- (IBAction)currencyChanged:(id)sender {
+    self.selectedCurrency = self.convertedCurrencyPopupButton.selectedItem.title;
+}
+
+#pragma mark - HIExchangeRateObserver
+
+- (void)exchangeRateUpdatedTo:(NSDecimalNumber *)exchangeRate
+                  forCurrency:(NSString *)currency
+{
+    if ([currency isEqual:_selectedCurrency]) {
+        self.convertedAmountField.enabled = YES;
+        self.exchangeRate = exchangeRate;
+        [self updateConvertedAmountFromAmount];
+    }
+}
 
 #pragma mark - Handling button clicks
 
@@ -173,8 +312,7 @@ NSString * const HISendBitcoinsWindowSuccessKey = @"success";
 
 - (void)sendClicked:(id)sender
 {
-    NSDecimalNumber *amount = [NSDecimalNumber decimalNumberWithString:self.amountField.stringValue
-                                                                locale:[NSLocale currentLocale]];
+    NSDecimalNumber *amount = self.amountFieldValue;
     uint64 satoshi = [[amount decimalNumberByMultiplyingByPowerOf10:8] integerValue];
 
     NSString *target = _hashAddress ? _hashAddress : self.nameLabel.stringValue;
@@ -261,19 +399,42 @@ NSString * const HISendBitcoinsWindowSuccessKey = @"success";
                         contextInfo:NULL];
 }
 
+#pragma mark - NSTextField delegate
+
+- (void)controlTextDidChange:(NSNotification *)notification
+{
+    if (notification.object == self.amountField)
+    {
+        [self updateConvertedAmountFromAmount];
+    }
+    else if (notification.object == self.convertedAmountField)
+    {
+        [self updateAmountFromConvertedAmount];
+    }
+    else
+    {
+        [self clearContact];
+    }
+}
+
+- (void)controlTextDidEndEditing:(NSNotification *)notification
+{
+    if (notification.object == self.amountField)
+    {
+        [self formatAmountField];
+    }
+    else if (notification.object == self.convertedAmountField)
+    {
+        [self formatConvertedAmountField];
+    }
+    else
+    {
+        [self hideAutocompleteWindow];
+    }
+}
+
 
 #pragma mark - Autocomplete
-
-- (void)controlTextDidChange:(NSNotification *)obj
-{
-    [self clearContact];
-    [self startAutocompleteForCurrentQuery];
-}
-
-- (void)controlTextDidEndEditing:(NSNotification *)obj
-{
-    [self hideAutocompleteWindow];
-}
 
 - (BOOL)control:(NSControl *)control textView:(NSTextView *)textView doCommandBySelector:(SEL)selector
 {
