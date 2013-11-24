@@ -63,6 +63,7 @@
     [self refreshData];
 
     [self showControllerInContentView:_infoPanel];
+
 }
 
 - (void)viewWillAppear
@@ -83,14 +84,7 @@
 - (void)showControllerInContentView:(NSViewController *)controller
 {
     [[_contentView subviews] makeObjectsPerformSelector:@selector(removeFromSuperview)];
-
-    NSRect f = controller.view.frame;
-    f.origin.x = 0;
-    f.origin.y = 0;
-    f.size.width = _contentView.bounds.size.width;
-    f.size.height = _contentView.bounds.size.height;
-    controller.view.frame = f;
-
+    controller.view.frame = _contentView.bounds;
     [_contentView addSubview:controller.view];
 }
 
