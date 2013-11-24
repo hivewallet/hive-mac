@@ -44,27 +44,14 @@
 
     self.view.layer.backgroundColor = [[NSColor hiWindowBackgroundColor] hiNativeColor];
 
-    [self configureView];
     [self refreshData];
 
-    if (self.tabView.isHidden)
-    {
-        [self showControllerInContentView:_infoPanel];
-    }
-    else
-    {
-        [self.tabBarController selectTabAtIndex:0];
-    }
+    [self.tabBarController selectTabAtIndex:0];
 }
 
 - (void)viewWillAppear
 {
     [self refreshData];
-}
-
-- (void)configureView
-{
-    [self.sendBitcoinButton setHidden:NO];
 }
 
 - (void)refreshData

@@ -17,7 +17,6 @@
     HIProfile *_profile;
     HICurrencyAmountFormatter *_amountFormatter;
     HIContactInfoViewController *_infoPanel;
-    NSArray *_panelControllers;
 }
 
 @end
@@ -63,14 +62,7 @@
     [self configureView];
     [self refreshData];
 
-    if (self.tabView.isHidden)
-    {
-        [self showControllerInContentView:_infoPanel];
-    }
-    else
-    {
-        [self.tabBarController selectTabAtIndex:0];
-    }
+    [self showControllerInContentView:_infoPanel];
 }
 
 - (void)viewWillAppear
@@ -88,9 +80,6 @@
     self.contentView.frame = f;
 
     // show account balance
-    [self.tabView setHidden:YES];
-    [self.bitcoinSymbol setHidden:NO];
-    [self.balanceLabel setHidden:NO];
     [self updateBalance];
 
     // add a separator above the balance
@@ -125,14 +114,6 @@
     separator.wantsLayer = YES;
     separator.layer.backgroundColor = [[NSColor colorWithCalibratedWhite:0.75 alpha:1.0] hiNativeColor];
     return separator;
-}
-
-- (void)controller:(HIContactTabBarController *)controller switchedToTabIndex:(NSInteger)index
-{
-    if (index < _panelControllers.count)
-    {
-        [self showControllerInContentView:_panelControllers[index]];
-    }
 }
 
 - (void)showControllerInContentView:(NSViewController *)controller

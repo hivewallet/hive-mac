@@ -8,12 +8,9 @@
         <customObject id="-2" userLabel="File's Owner" customClass="HIProfileViewController">
             <connections>
                 <outlet property="balanceLabel" destination="75" id="78"/>
-                <outlet property="bitcoinSymbol" destination="73" id="79"/>
                 <outlet property="contentView" destination="40" id="41"/>
                 <outlet property="nameLabel" destination="21" id="27"/>
                 <outlet property="photoView" destination="3" id="26"/>
-                <outlet property="tabBarController" destination="36" id="80"/>
-                <outlet property="tabView" destination="29" id="39"/>
                 <outlet property="view" destination="1" id="2"/>
             </connections>
         </customObject>
@@ -37,20 +34,16 @@
                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                     </textFieldCell>
                 </textField>
-                <customView id="29" customClass="HIProfileTabView">
-                    <rect key="frame" x="0.0" y="328" width="350" height="50"/>
-                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
-                </customView>
                 <customView id="40">
                     <rect key="frame" x="0.0" y="-5" width="350" height="335"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                 </customView>
-                <imageView hidden="YES" id="73">
+                <imageView id="73">
                     <rect key="frame" x="85" y="388" width="22" height="22"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="icon-bitcoin" id="74"/>
                 </imageView>
-                <textField hidden="YES" verticalHuggingPriority="750" id="75">
+                <textField verticalHuggingPriority="750" id="75">
                     <rect key="frame" x="109" y="392" width="228" height="17"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="0.00" usesSingleLineMode="YES" id="76">
@@ -61,12 +54,6 @@
                 </textField>
             </subviews>
         </customView>
-        <customObject id="36" customClass="HIContactTabBarController">
-            <connections>
-                <outlet property="tabDelegate" destination="-2" id="72"/>
-                <outlet property="view" destination="29" id="37"/>
-            </connections>
-        </customObject>
     </objects>
     <resources>
         <image name="icon-bitcoin" width="16" height="17"/>

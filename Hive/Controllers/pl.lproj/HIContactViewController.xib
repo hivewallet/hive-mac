@@ -36,7 +36,7 @@
                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                     </textFieldCell>
                 </textField>
-                <button hidden="YES" id="23">
+                <button id="23">
                     <rect key="frame" x="85" y="386" width="251" height="29"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                     <shadow key="shadow" blurRadius="1">
