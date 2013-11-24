@@ -13,7 +13,7 @@
 #import "HIMainWindowController.h"
 #import "HINavigationController.h"
 #import "HIProfile.h"
-#import "HIProfileViewController.h"
+#import "HIContactViewController.h"
 #import "HISendBitcoinsWindowController.h"
 #import "HISidebarController.h"
 #import "HITransactionsViewController.h"
@@ -55,7 +55,7 @@ static const NSTimeInterval SlideAnimationDuration = 0.3;
                         [HITransactionsViewController new],
                         [HIContactsViewController new],
                         [HIApplicationsViewController new],
-                        [[HIProfileViewController alloc] initWithContact:((HIContact *) [HIProfile new])]
+                        [[HIContactViewController alloc] initWithContact:((HIContact *) [HIProfile new])]
                       ];
 
     for (HIViewController *panel in panels)
