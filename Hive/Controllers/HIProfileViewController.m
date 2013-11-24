@@ -12,7 +12,6 @@
 #import "HIContactInfoViewController.h"
 #import "HIProfileViewController.h"
 #import "HISendBitcoinsWindowController.h"
-#import "HITransactionsViewController.h"
 #import "NSColor+Hive.h"
 
 @interface HIProfileViewController () {
@@ -26,32 +25,25 @@
 
 @implementation HIProfileViewController
 
-- (id)initWithContact:(HIContact *)contact {
+- (id)init {
     self = [super initWithNibName:@"HIProfileViewController" bundle:nil];
 
     if (self)
     {
         self.iconName = @"your-profile";
 
-        _contact = contact;
+        _contact = [HIProfile new];
         _amountFormatter = [[HICurrencyAmountFormatter alloc] init];
         _infoPanel = [[HIContactInfoViewController alloc] initWithParent:self];
 
-        if ([contact isKindOfClass:[HIContact class]])
-        {
-            _panelControllers = @[_infoPanel, [[HITransactionsViewController alloc] initWithContact:_contact]];
-        }
-        else
-        {
-            [[BCClient sharedClient] addObserver:self
-                                      forKeyPath:@"balance"
-                                         options:NSKeyValueObservingOptionInitial
-                                         context:NULL];
-            [[BCClient sharedClient] addObserver:self
-                                      forKeyPath:@"pendingBalance"
-                                         options:NSKeyValueObservingOptionInitial
-                                         context:NULL];
-        }
+        [[BCClient sharedClient] addObserver:self
+                                  forKeyPath:@"balance"
+                                     options:NSKeyValueObservingOptionInitial
+                                     context:NULL];
+        [[BCClient sharedClient] addObserver:self
+                                  forKeyPath:@"pendingBalance"
+                                     options:NSKeyValueObservingOptionInitial
+                                     context:NULL];
     }
 
     return self;
@@ -59,11 +51,8 @@
 
 - (void)dealloc
 {
-    if ([_contact isKindOfClass:[HIProfile class]])
-    {
-        [[BCClient sharedClient] removeObserver:self forKeyPath:@"balance"];
-        [[BCClient sharedClient] removeObserver:self forKeyPath:@"pendingBalance"];
-    }
+    [[BCClient sharedClient] removeObserver:self forKeyPath:@"balance"];
+    [[BCClient sharedClient] removeObserver:self forKeyPath:@"pendingBalance"];
 }
 
 - (void)loadView {
@@ -92,51 +81,37 @@
 
 - (void)configureView
 {
-    if ([_contact isKindOfClass:[HIContact class]])
-    {
-        [self.sendBitcoinButton setHidden:NO];
-    }
-    else
-    {
-        // make contentView fill whole area below the header
-        NSRect f = self.contentView.frame;
-        f.origin.y = 0;
-        f.size.height = self.view.bounds.size.height - 78;
-        f.size.width = self.view.bounds.size.width;
-        self.contentView.frame = f;
+    // make contentView fill whole area below the header
+    NSRect f = self.contentView.frame;
+    f.origin.y = 0;
+    f.size.height = self.view.bounds.size.height - 78;
+    f.size.width = self.view.bounds.size.width;
+    self.contentView.frame = f;
 
-        // show account balance
-        [self.tabView setHidden:YES];
-        [self.bitcoinSymbol setHidden:NO];
-        [self.balanceLabel setHidden:NO];
-        [self updateBalance];
+    // show account balance
+    [self.tabView setHidden:YES];
+    [self.bitcoinSymbol setHidden:NO];
+    [self.balanceLabel setHidden:NO];
+    [self updateBalance];
 
-        // add a separator above the balance
-        NSRect separatorFrame = NSMakeRect(self.photoView.frame.size.width + 15,
-            self.view.frame.size.height - self.photoView.frame.size.height / 2,
-            self.view.frame.size.width - self.photoView.frame.size.width - 30,
-            1);
-        [self.view addSubview:[self separatorViewWithFrame:separatorFrame]];
+    // add a separator above the balance
+    NSRect separatorFrame = NSMakeRect(self.photoView.frame.size.width + 15,
+        self.view.frame.size.height - self.photoView.frame.size.height / 2,
+        self.view.frame.size.width - self.photoView.frame.size.width - 30,
+        1);
+    [self.view addSubview:[self separatorViewWithFrame:separatorFrame]];
 
-        // add a separator below the header (since there's no tab bar)
-        separatorFrame = NSMakeRect(0,
-            self.view.frame.size.height - self.photoView.frame.size.height,
-            self.view.frame.size.width,
-            1);
-        [self.view addSubview:[self separatorViewWithFrame:separatorFrame]];
-    }
+    // add a separator below the header (since there's no tab bar)
+    separatorFrame = NSMakeRect(0,
+        self.view.frame.size.height - self.photoView.frame.size.height,
+        self.view.frame.size.width,
+        1);
+    [self.view addSubview:[self separatorViewWithFrame:separatorFrame]];
 }
 
 - (void)refreshData
 {
-    if ([_contact isKindOfClass:[HIContact class]])
-    {
-        self.title = _contact.name;
-    }
-    else
-    {
-        self.title = NSLocalizedString(@"Profile", @"Profile view title string");
-    }
+    self.title = NSLocalizedString(@"Profile", @"Profile view title string");
 
     self.nameLabel.stringValue = _contact.name;
     self.photoView.image = _contact.avatarImage;

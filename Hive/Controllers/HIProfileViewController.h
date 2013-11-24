@@ -7,7 +7,6 @@
 //
 
 #import "HIBox.h"
-#import "HIContact.h"
 #import "HIFlippedView.h"
 #import "HIContactTabBarController.h"
 #import "HIProfileTabView.h"
@@ -31,7 +30,6 @@
 @property (strong) IBOutlet HIContactTabBarController *tabBarController;
 @property (strong) IBOutlet NSView *contentView;
 
-- (id)initWithContact:(HIContact *)aContact;
 - (IBAction)sendBitcoinsPressed:(id)sender;
 
 @end

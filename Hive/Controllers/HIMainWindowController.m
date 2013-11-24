@@ -56,7 +56,7 @@ static const NSTimeInterval SlideAnimationDuration = 0.3;
                         [HITransactionsViewController new],
                         [HIContactsViewController new],
                         [HIApplicationsViewController new],
-                        [[HIProfileViewController alloc] initWithContact:((HIContact *) [HIProfile new])]
+                        [HIProfileViewController new],
                       ];
 
     for (HIViewController *panel in panels)
