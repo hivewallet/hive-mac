@@ -4,6 +4,3 @@
 
 /* Class = "NSButtonCell"; title = "Send Bitcoin"; ObjectID = "24"; */
 "24.title" = "Bitcoins Verschicken";
-
-/* Class = "NSTextFieldCell"; title = "0.00"; ObjectID = "76"; */
-"76.title" = "0.00";
