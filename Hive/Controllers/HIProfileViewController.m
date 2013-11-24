@@ -59,7 +59,7 @@
 
     self.view.layer.backgroundColor = [[NSColor hiWindowBackgroundColor] hiNativeColor];
 
-    [self configureView];
+    [self updateBalance];
     [self refreshData];
 
     [self showControllerInContentView:_infoPanel];
@@ -70,33 +70,6 @@
     [self refreshData];
 }
 
-- (void)configureView
-{
-    // make contentView fill whole area below the header
-    NSRect f = self.contentView.frame;
-    f.origin.y = 0;
-    f.size.height = self.view.bounds.size.height - 78;
-    f.size.width = self.view.bounds.size.width;
-    self.contentView.frame = f;
-
-    // show account balance
-    [self updateBalance];
-
-    // add a separator above the balance
-    NSRect separatorFrame = NSMakeRect(self.photoView.frame.size.width + 15,
-        self.view.frame.size.height - self.photoView.frame.size.height / 2,
-        self.view.frame.size.width - self.photoView.frame.size.width - 30,
-        1);
-    [self.view addSubview:[self separatorViewWithFrame:separatorFrame]];
-
-    // add a separator below the header (since there's no tab bar)
-    separatorFrame = NSMakeRect(0,
-        self.view.frame.size.height - self.photoView.frame.size.height,
-        self.view.frame.size.width,
-        1);
-    [self.view addSubview:[self separatorViewWithFrame:separatorFrame]];
-}
-
 - (void)refreshData
 {
     self.title = NSLocalizedString(@"Profile", @"Profile view title string");
@@ -105,15 +78,6 @@
     self.photoView.image = _profile.avatarImage;
 
     [_infoPanel configureViewForContact:_profile];
-}
-
-- (NSView *)separatorViewWithFrame:(NSRect)frame
-{
-    NSView *separator = [[NSView alloc] initWithFrame:frame];
-    separator.autoresizingMask = NSViewMinYMargin | NSViewWidthSizable;
-    separator.wantsLayer = YES;
-    separator.layer.backgroundColor = [[NSColor colorWithCalibratedWhite:0.75 alpha:1.0] hiNativeColor];
-    return separator;
 }
 
 - (void)showControllerInContentView:(NSViewController *)controller
