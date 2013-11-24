@@ -15,7 +15,7 @@
 #import "NSColor+Hive.h"
 
 @interface HIProfileViewController () {
-    HIContact *_contact;
+    HIProfile *_profile;
     HICurrencyAmountFormatter *_amountFormatter;
     HIContactInfoViewController *_infoPanel;
     NSArray *_panelControllers;
@@ -32,7 +32,7 @@
     {
         self.iconName = @"your-profile";
 
-        _contact = [HIProfile new];
+        _profile = [HIProfile new];
         _amountFormatter = [[HICurrencyAmountFormatter alloc] init];
         _infoPanel = [[HIContactInfoViewController alloc] initWithParent:self];
 
@@ -113,10 +113,10 @@
 {
     self.title = NSLocalizedString(@"Profile", @"Profile view title string");
 
-    self.nameLabel.stringValue = _contact.name;
-    self.photoView.image = _contact.avatarImage;
+    self.nameLabel.stringValue = _profile.name;
+    self.photoView.image = _profile.avatarImage;
 
-    [_infoPanel configureViewForContact:_contact];
+    [_infoPanel configureViewForContact:_profile];
 }
 
 - (NSView *)separatorViewWithFrame:(NSRect)frame
@@ -192,7 +192,7 @@
 
 - (IBAction)sendBitcoinsPressed:(id)sender
 {
-    HISendBitcoinsWindowController *window = [[NSApp delegate] sendBitcoinsWindowForContact:_contact];
+    HISendBitcoinsWindowController *window = [[NSApp delegate] sendBitcoinsWindowForContact:_profile];
     [window showWindow:self];
 }
 
