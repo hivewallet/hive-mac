@@ -13,13 +13,14 @@
 #import "HIMainWindowController.h"
 #import "HINavigationController.h"
 #import "HIProfile.h"
-#import "HIProfileViewController.h"
+#import "HIContactViewController.h"
 #import "HISendBitcoinsWindowController.h"
 #import "HISidebarController.h"
 #import "HITransactionsViewController.h"
 #import "HIViewController.h"
 #import "NSColor+Hive.h"
 #import "NSImage+NPEffects.h"
+#import "HIProfileViewController.h"
 
 static const CGFloat TitleBarHeight = 35.0;
 static const NSTimeInterval SlideAnimationDuration = 0.3;
@@ -55,7 +56,7 @@ static const NSTimeInterval SlideAnimationDuration = 0.3;
                         [HITransactionsViewController new],
                         [HIContactsViewController new],
                         [HIApplicationsViewController new],
-                        [[HIProfileViewController alloc] initWithContact:((HIContact *) [HIProfile new])]
+                        [HIProfileViewController new],
                       ];
 
     for (HIViewController *panel in panels)

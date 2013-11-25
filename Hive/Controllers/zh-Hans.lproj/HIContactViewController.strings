@@ -1,0 +1,6 @@
+
+/* Class = "NSTextFieldCell"; title = "John Whatshisface"; ObjectID = "22"; */
+"22.title" = "王小明";
+
+/* Class = "NSButtonCell"; title = "Send Bitcoin"; ObjectID = "24"; */
+"24.title" = "汇钱";

@@ -11,7 +11,7 @@
 #import "HIContactsViewController.h"
 #import "HINavigationController.h"
 #import "HINewContactViewController.h"
-#import "HIProfileViewController.h"
+#import "HIContactViewController.h"
 #import "NSColor+Hive.h"
 
 
@@ -118,7 +118,7 @@
     [cell setNeedsDisplay:YES];
 
     dispatch_async(dispatch_get_main_queue(), ^{
-        HIViewController *sub = [[HIProfileViewController alloc] initWithContact:_arrayController.arrangedObjects[row]];
+        HIViewController *sub = [[HIContactViewController alloc] initWithContact:_arrayController.arrangedObjects[row]];
         
         [self.navigationController pushViewController:sub animated:YES];
 

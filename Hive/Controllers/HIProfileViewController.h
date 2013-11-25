@@ -7,9 +7,7 @@
 //
 
 #import "HIBox.h"
-#import "HIContact.h"
 #import "HIFlippedView.h"
-#import "HIProfileTabBarController.h"
 #import "HIProfileTabView.h"
 #import "HITextField.h"
 #import "HIViewController.h"
@@ -20,18 +18,11 @@
  hidden and only the contact info panel is visible.
  */
 
-@interface HIProfileViewController : HIViewController <HIProfileTabBarControllerDelegate>
+@interface HIProfileViewController : HIViewController
 
 @property (strong) IBOutlet NSImageView *photoView;
-@property (strong) IBOutlet NSImageView *bitcoinSymbol;
 @property (strong) IBOutlet NSTextField *nameLabel;
 @property (strong) IBOutlet NSTextField *balanceLabel;
-@property (strong) IBOutlet NSButton *sendBitcoinButton;
-@property (strong) IBOutlet HIProfileTabView *tabView;
-@property (strong) IBOutlet HIProfileTabBarController *tabBarController;
 @property (strong) IBOutlet NSView *contentView;
-
-- (id)initWithContact:(HIContact *)aContact;
-- (IBAction)sendBitcoinsPressed:(id)sender;
 
 @end
