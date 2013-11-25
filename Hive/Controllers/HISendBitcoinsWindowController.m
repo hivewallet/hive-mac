@@ -237,7 +237,6 @@ NSString * const HISendBitcoinsWindowSuccessKey = @"success";
 - (void)setSelectedCurrency:(NSString *)selectedCurrency
 {
     _selectedCurrency = [selectedCurrency copy];
-    self.exchangeRateService.preferredCurrency = selectedCurrency;
     [self fetchExchangeRate];
 }
 
