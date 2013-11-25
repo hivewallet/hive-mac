@@ -26,6 +26,44 @@
                 <rect key="frame" x="0.0" y="0.0" width="590" height="539"/>
                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                 <subviews>
+                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="jpw-3Q-rrA">
+                        <rect key="frame" x="17" y="391" width="556" height="17"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="What were you doing when the error occurred?" id="CoM-ma-aHq">
+                            <font key="font" metaFont="system"/>
+                            <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                        </textFieldCell>
+                    </textField>
+                    <scrollView horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" usesPredominantAxisScrolling="NO" id="S1i-T6-wZ8">
+                        <rect key="frame" x="20" y="313" width="550" height="70"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                        <clipView key="contentView" id="kSl-kq-EgW">
+                            <rect key="frame" x="1" y="1" width="548" height="68"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            <subviews>
+                                <textView importsGraphics="NO" findStyle="panel" continuousSpellChecking="YES" allowsUndo="YES" usesRuler="YES" usesFontPanel="YES" verticallyResizable="YES" allowsNonContiguousLayout="YES" quoteSubstitution="YES" dashSubstitution="YES" smartInsertDelete="YES" id="tZn-ka-AjK">
+                                    <rect key="frame" x="0.0" y="0.0" width="548" height="68"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <size key="minSize" width="548" height="68"/>
+                                    <size key="maxSize" width="646" height="10000000"/>
+                                    <color key="insertionPointColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                    <size key="minSize" width="548" height="68"/>
+                                    <size key="maxSize" width="646" height="10000000"/>
+                                </textView>
+                            </subviews>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </clipView>
+                        <scroller key="horizontalScroller" hidden="YES" verticalHuggingPriority="750" doubleValue="1" horizontal="YES" id="Xpv-Va-RK8">
+                            <rect key="frame" x="-100" y="-100" width="87" height="18"/>
+                            <autoresizingMask key="autoresizingMask"/>
+                        </scroller>
+                        <scroller key="verticalScroller" verticalHuggingPriority="750" horizontal="NO" id="QLj-9K-nhd">
+                            <rect key="frame" x="533" y="1" width="16" height="68"/>
+                            <autoresizingMask key="autoresizingMask"/>
+                        </scroller>
+                    </scrollView>
                     <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" id="Ltu-9U-1aZ">
                         <rect key="frame" x="20" y="445" width="73" height="74"/>
                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
@@ -88,7 +126,7 @@
                         </textFieldCell>
                     </textField>
                     <textField verticalHuggingPriority="750" id="EwR-iX-Uii">
-                        <rect key="frame" x="20" y="361" width="240" height="22"/>
+                        <rect key="frame" x="20" y="252" width="240" height="22"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
                         <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" placeholderString="John Appleseed" drawsBackground="YES" id="By4-mz-4pa">
                             <font key="font" metaFont="system"/>
@@ -97,7 +135,7 @@
                         </textFieldCell>
                     </textField>
                     <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="LSU-nV-0H2">
-                        <rect key="frame" x="17" y="391" width="246" height="17"/>
+                        <rect key="frame" x="17" y="282" width="246" height="17"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
                         <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Name (optional)" id="yDj-TF-cJK">
                             <font key="font" metaFont="system"/>
@@ -106,7 +144,7 @@
                         </textFieldCell>
                     </textField>
                     <textField verticalHuggingPriority="750" id="3J0-Pc-EY6">
-                        <rect key="frame" x="278" y="361" width="292" height="22"/>
+                        <rect key="frame" x="278" y="252" width="292" height="22"/>
                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMinY="YES"/>
                         <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" placeholderString="email@domain.com" drawsBackground="YES" id="0m5-Xd-7pp">
                             <font key="font" metaFont="system"/>
@@ -115,7 +153,7 @@
                         </textFieldCell>
                     </textField>
                     <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="oWz-Ub-DR5">
-                        <rect key="frame" x="275" y="391" width="298" height="17"/>
+                        <rect key="frame" x="275" y="282" width="298" height="17"/>
                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMinY="YES"/>
                         <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Email (optional)" id="qVP-Mf-lLP">
                             <font key="font" metaFont="system"/>
@@ -130,44 +168,6 @@
                         <color key="fillColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         <font key="titleFont" metaFont="system"/>
                     </box>
-                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="jpw-3Q-rrA">
-                        <rect key="frame" x="17" y="329" width="556" height="17"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Please tell us what you were doing when the error occurred (optional):" id="CoM-ma-aHq">
-                            <font key="font" metaFont="system"/>
-                            <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
-                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
-                        </textFieldCell>
-                    </textField>
-                    <scrollView horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" usesPredominantAxisScrolling="NO" id="S1i-T6-wZ8">
-                        <rect key="frame" x="20" y="251" width="550" height="70"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
-                        <clipView key="contentView" id="kSl-kq-EgW">
-                            <rect key="frame" x="1" y="1" width="548" height="68"/>
-                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                            <subviews>
-                                <textView importsGraphics="NO" findStyle="panel" continuousSpellChecking="YES" allowsUndo="YES" usesRuler="YES" usesFontPanel="YES" verticallyResizable="YES" allowsNonContiguousLayout="YES" quoteSubstitution="YES" dashSubstitution="YES" smartInsertDelete="YES" id="tZn-ka-AjK">
-                                    <rect key="frame" x="0.0" y="0.0" width="548" height="68"/>
-                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                    <size key="minSize" width="548" height="68"/>
-                                    <size key="maxSize" width="646" height="10000000"/>
-                                    <color key="insertionPointColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                                    <size key="minSize" width="548" height="68"/>
-                                    <size key="maxSize" width="646" height="10000000"/>
-                                </textView>
-                            </subviews>
-                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        </clipView>
-                        <scroller key="horizontalScroller" hidden="YES" verticalHuggingPriority="750" doubleValue="1" horizontal="YES" id="Xpv-Va-RK8">
-                            <rect key="frame" x="-100" y="-100" width="87" height="18"/>
-                            <autoresizingMask key="autoresizingMask"/>
-                        </scroller>
-                        <scroller key="verticalScroller" verticalHuggingPriority="750" horizontal="NO" id="QLj-9K-nhd">
-                            <rect key="frame" x="533" y="1" width="16" height="68"/>
-                            <autoresizingMask key="autoresizingMask"/>
-                        </scroller>
-                    </scrollView>
                     <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="sox-gS-qeH">
                         <rect key="frame" x="17" y="220" width="223" height="17"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>

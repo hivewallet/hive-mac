@@ -70,6 +70,7 @@
     }
 
     self.exceptionDetails.string = info;
+    self.exceptionDetails.textColor = [NSColor colorWithCalibratedWhite:0.33 alpha:1.0];
 }
 
 - (IBAction)cancelReport:(id)sender
