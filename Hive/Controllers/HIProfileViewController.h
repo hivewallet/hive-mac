@@ -19,10 +19,4 @@
  */
 
 @interface HIProfileViewController : HIViewController
-
-@property (strong) IBOutlet NSImageView *photoView;
-@property (strong) IBOutlet NSTextField *nameLabel;
-@property (strong) IBOutlet NSTextField *balanceLabel;
-@property (strong) IBOutlet NSView *contentView;
-
 @end
