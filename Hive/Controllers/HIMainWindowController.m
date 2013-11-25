@@ -10,17 +10,17 @@
 #import "HIAppDelegate.h"
 #import "HIApplicationsViewController.h"
 #import "HIContactsViewController.h"
+#import "HIContactViewController.h"
 #import "HIMainWindowController.h"
 #import "HINavigationController.h"
 #import "HIProfile.h"
-#import "HIContactViewController.h"
+#import "HIProfileViewController.h"
 #import "HISendBitcoinsWindowController.h"
 #import "HISidebarController.h"
 #import "HITransactionsViewController.h"
 #import "HIViewController.h"
 #import "NSColor+Hive.h"
 #import "NSImage+NPEffects.h"
-#import "HIProfileViewController.h"
 
 static const CGFloat TitleBarHeight = 35.0;
 static const NSTimeInterval SlideAnimationDuration = 0.3;

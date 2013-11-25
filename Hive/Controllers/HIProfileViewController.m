@@ -7,12 +7,12 @@
 //
 
 #import "BCClient.h"
-#import "HICurrencyAmountFormatter.h"
-#import "HIProfile.h"
 #import "HIContactInfoViewController.h"
+#import "HICurrencyAmountFormatter.h"
+#import "HIExchangeRateService.h"
+#import "HIProfile.h"
 #import "HIProfileViewController.h"
 #import "NSColor+Hive.h"
-#import "HIExchangeRateService.h"
 
 @interface HIProfileViewController () <HIExchangeRateObserver>
 {

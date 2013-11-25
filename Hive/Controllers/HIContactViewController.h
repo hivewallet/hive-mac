@@ -8,8 +8,8 @@
 
 #import "HIBox.h"
 #import "HIContact.h"
-#import "HIFlippedView.h"
 #import "HIContactTabBarController.h"
+#import "HIFlippedView.h"
 #import "HIProfileTabView.h"
 #import "HITextField.h"
 #import "HIViewController.h"

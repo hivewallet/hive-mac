@@ -9,11 +9,11 @@
 #import "BCClient.h"
 #import "HIAddress.h"
 #import "HIContact.h"
+#import "HIContactInfoViewController.h"
 #import "HICopyView.h"
 #import "HINavigationController.h"
 #import "HINewContactViewController.h"
 #import "HIProfile.h"
-#import "HIContactInfoViewController.h"
 #import "HIViewController.h"
 #import "NSColor+Hive.h"
 
