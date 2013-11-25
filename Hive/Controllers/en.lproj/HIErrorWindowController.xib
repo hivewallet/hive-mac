@@ -99,7 +99,7 @@
                     <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="LSU-nV-0H2">
                         <rect key="frame" x="17" y="391" width="246" height="17"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
-                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Name" id="yDj-TF-cJK">
+                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Name (optional)" id="yDj-TF-cJK">
                             <font key="font" metaFont="system"/>
                             <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                             <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
@@ -117,7 +117,7 @@
                     <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="oWz-Ub-DR5">
                         <rect key="frame" x="275" y="391" width="298" height="17"/>
                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMinY="YES"/>
-                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Email" id="qVP-Mf-lLP">
+                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Email (optional)" id="qVP-Mf-lLP">
                             <font key="font" metaFont="system"/>
                             <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                             <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
@@ -133,7 +133,7 @@
                     <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="jpw-3Q-rrA">
                         <rect key="frame" x="17" y="329" width="556" height="17"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Please tell us what you were doing when the error occurred:" id="CoM-ma-aHq">
+                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Please tell us what you were doing when the error occurred (optional):" id="CoM-ma-aHq">
                             <font key="font" metaFont="system"/>
                             <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                             <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
