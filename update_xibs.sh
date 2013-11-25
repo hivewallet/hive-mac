@@ -14,7 +14,7 @@ done
 
 # pass as e.g. "-f MainMenu"
 if [ "$FILENAME" ]; then
-  QUERY=(-name "$FILENAME.xib")
+  QUERY=(-iname "*$FILENAME*.xib")
 else
   QUERY=(-name "*.xib")
 fi
