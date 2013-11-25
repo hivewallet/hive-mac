@@ -16,6 +16,9 @@
 
 - (void)updateExchangeRateForCurrency:(NSString *)currency;
 
+- (NSString *)formatValue:(NSDecimalNumber *)value
+               inCurrency:(NSString *)currency;
+
 @end
 
 @protocol HIExchangeRateObserver<NSObject>

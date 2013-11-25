@@ -113,4 +113,16 @@ static NSString *const HIConversionPreferenceKey = @"ConversionCurrency";
     }
 }
 
+#pragma mark - formatting
+
+- (NSString *)formatValue:(NSDecimalNumber *)value inCurrency:(NSString *)currency
+{
+    // TODO: Some currencies have a different number of decimal digits.
+    NSNumberFormatter *currencyNumberFormatter = [NSNumberFormatter new];
+    currencyNumberFormatter.localizesFormat = YES;
+    currencyNumberFormatter.format = @"#,##0.00";
+    return [currencyNumberFormatter stringFromNumber:value];
+}
+
+
 @end
