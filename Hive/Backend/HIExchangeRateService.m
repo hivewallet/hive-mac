@@ -76,10 +76,18 @@ static NSString *const HIConversionPreferenceKey = @"ConversionCurrency";
     return currencyDigits;
 }
 
-- (NSString *)availableCurrencies
+- (NSArray *)availableCurrencies
 {
-    // TODO: Add all ISO currency codes.
-    return @[@"USD", @"EUR", @"GBP"];
+    static NSArray *availableCurrencies;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^ {
+        availableCurrencies =
+            @[
+                @"USD", @"EUR", @"JPY", @"CAD", @"GBP", @"CHF", @"RUB", @"AUD", @"SEK", @"DKK", @"HKD", @"PLN", @"CNY",
+                @"SGD", @"THB", @"NZD",
+            ];
+    });
+    return availableCurrencies;
 }
 
 - (NSString *)preferredCurrency
