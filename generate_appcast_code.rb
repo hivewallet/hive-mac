@@ -23,7 +23,7 @@ unless release
   exit 1
 end
 
-date = Time.parse(release['created_at']).rfc822
+date = Time.parse(release['published_at']).rfc822
 release_notes = release['body'].gsub(/\- (.*?)\r\n/, "              <li>\\1</li>\n").strip
 zip_asset = release['assets'].detect { |a| a['content_type'] == 'application/zip' }
 
