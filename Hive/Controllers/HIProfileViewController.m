@@ -22,6 +22,8 @@
 @property (strong) IBOutlet NSImageView *photoView;
 @property (strong) IBOutlet NSTextField *nameLabel;
 @property (strong) IBOutlet NSTextField *balanceLabel;
+@property (strong) IBOutlet NSTextField *convertedBalanceLabel;
+@property (strong) IBOutlet NSPopUpButton *convertedCurrencyPopupButton;
 @property (strong) IBOutlet NSView *contentView;
 
 @end
