@@ -12,12 +12,21 @@
 #import "HIContactInfoViewController.h"
 #import "HIProfileViewController.h"
 #import "NSColor+Hive.h"
+#import "HIExchangeRateService.h"
 
-@interface HIProfileViewController () {
+@interface HIProfileViewController () <HIExchangeRateObserver>
+{
     HIProfile *_profile;
     HICurrencyAmountFormatter *_amountFormatter;
     HIContactInfoViewController *_infoPanel;
 }
+
+@property (strong, readonly) HIExchangeRateService *exchangeRateService;
+@property (copy) NSDecimalNumber *exchangeRate;
+@property (copy) NSString *selectedCurrency;
+@property (copy) NSDecimalNumber *balance;
+@property (copy) NSDecimalNumber *pendingBalance;
+@property (copy) NSNumberFormatter *currencyNumberFormatter;
 
 @property (strong) IBOutlet NSImageView *photoView;
 @property (strong) IBOutlet NSTextField *nameLabel;
@@ -49,6 +58,14 @@
                                   forKeyPath:@"pendingBalance"
                                      options:NSKeyValueObservingOptionInitial
                                      context:NULL];
+
+        _currencyNumberFormatter = [NSNumberFormatter new];
+        _currencyNumberFormatter.localizesFormat = YES;
+        _currencyNumberFormatter.format = @"#,##0.00";
+
+        _exchangeRateService = [HIExchangeRateService sharedService];
+        [_exchangeRateService addExchangeRateObserver:self];
+        self.selectedCurrency = _exchangeRateService.preferredCurrency;
     }
 
     return self;
@@ -58,6 +75,7 @@
 {
     [[BCClient sharedClient] removeObserver:self forKeyPath:@"balance"];
     [[BCClient sharedClient] removeObserver:self forKeyPath:@"pendingBalance"];
+    [_exchangeRateService removeExchangeRateObserver:self];
 }
 
 - (void)loadView {
@@ -66,11 +84,18 @@
 
     self.view.layer.backgroundColor = [[NSColor hiWindowBackgroundColor] hiNativeColor];
 
+    [self setupCurrencyList];
     [self updateBalance];
     [self refreshData];
 
     [self showControllerInContentView:_infoPanel];
 
+}
+
+- (void)setupCurrencyList
+{
+    [self.convertedCurrencyPopupButton addItemsWithTitles:self.exchangeRateService.availableCurrencies];
+    [self.convertedCurrencyPopupButton selectItemWithTitle:_selectedCurrency];
 }
 
 - (void)viewWillAppear
@@ -97,25 +122,32 @@
 
 - (void)updateBalance
 {
-    NSDecimalNumber *balance = [NSDecimalNumber decimalNumberWithMantissa:[[BCClient sharedClient] balance]
-                                                                 exponent:-8
-                                                               isNegative:NO];
+    self.balance = [NSDecimalNumber decimalNumberWithMantissa:[[BCClient sharedClient] balance]
+                                                     exponent:-8
+                                                   isNegative:NO];
 
-    NSDecimalNumber *pending = [NSDecimalNumber decimalNumberWithMantissa:[[BCClient sharedClient] pendingBalance]
-                                                                 exponent:-8
-                                                               isNegative:NO];
+    self.pendingBalance = [NSDecimalNumber decimalNumberWithMantissa:[[BCClient sharedClient] pendingBalance]
+                                                            exponent:-8
+                                                          isNegative:NO];
 
-    if ([pending isGreaterThan:[NSDecimalNumber decimalNumberWithString:@"0"]])
+    [self updateBalanceLabel];
+    [self updateConvertedBalanceLabel];
+}
+
+- (void)updateBalanceLabel
+{
+    if ([self.pendingBalance isGreaterThan:[NSDecimalNumber decimalNumberWithString:@"0"]])
     {
-        self.balanceLabel.stringValue = [NSString stringWithFormat:@"%@ (+%@ %@)",
-                                                                   [_amountFormatter stringFromNumber:balance],
-                                                                   [_amountFormatter stringFromNumber:pending],
-                                                                   NSLocalizedString(@"pending",
-                                                                   @"part of the balance amount that isn't available")];
+        self.balanceLabel.stringValue =
+            [NSString stringWithFormat:@"%@ (+%@ %@)",
+                                       [_amountFormatter stringFromNumber:self.balance],
+                                       [_amountFormatter stringFromNumber:self.pendingBalance],
+                                       NSLocalizedString(@"pending",
+                                       @"part of the balance amount that isn't available")];
     }
     else
     {
-        self.balanceLabel.stringValue = [_amountFormatter stringFromNumber:balance];
+        self.balanceLabel.stringValue = [_amountFormatter stringFromNumber:self.balance];
     }
 }
 
@@ -132,6 +164,53 @@
                 [self updateBalance];
             });
         }
+    }
+}
+
+#pragma mark - converted balance
+
+- (void)setSelectedCurrency:(NSString *)selectedCurrency
+{
+    _selectedCurrency = [selectedCurrency copy];
+    self.exchangeRateService.preferredCurrency = selectedCurrency;
+    [self fetchExchangeRate];
+}
+
+- (void)fetchExchangeRate
+{
+    // TODO: There should be a timer updating the exchange rate in case the window is open too long.
+    self.exchangeRate = nil;
+    [self updateConvertedBalanceLabel];
+    [self.exchangeRateService updateExchangeRateForCurrency:self.selectedCurrency];
+}
+
+- (void)updateConvertedBalanceLabel
+{
+    if (self.exchangeRate)
+    {
+        NSDecimalNumber *convertedBalance = [self convertedAmountForBitcoinAmount:self.balance];
+        self.convertedBalanceLabel.stringValue =
+            [self.currencyNumberFormatter stringFromNumber:convertedBalance];
+    }
+    else
+    {
+        self.convertedBalanceLabel.stringValue = @"?";
+    }
+}
+
+- (NSDecimalNumber *)convertedAmountForBitcoinAmount:(NSDecimalNumber *)amount
+{
+    return [amount decimalNumberByMultiplyingBy:self.exchangeRate];
+}
+
+#pragma mark - HIExchangeRateObserver
+
+- (void)exchangeRateUpdatedTo:(NSDecimalNumber *)exchangeRate
+                  forCurrency:(NSString *)currency
+{
+    if ([currency isEqual:self.selectedCurrency]) {
+        self.exchangeRate = exchangeRate;
+        [self updateConvertedBalanceLabel];
     }
 }
 
