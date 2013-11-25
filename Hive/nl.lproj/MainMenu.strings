@@ -1,4 +1,4 @@
-﻿
+
 /* Class = "NSMenu"; title = "AMainMenu"; ObjectID = "29"; */
 "29.title" = "Hoofdmenu";
 
@@ -87,4 +87,4 @@
 "870.title" = "Controleer voor updates...";
 
 /* Class = "NSMenuItem"; title = "Open CoinMap..."; ObjectID = "872"; */
-"872.title" = "Open CoinMap...";
+"ASP-Ns-ktD.title" = "Open CoinMap...";

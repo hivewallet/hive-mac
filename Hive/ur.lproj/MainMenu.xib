@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="4510" systemVersion="12F45" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none">
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="4514" systemVersion="12F45" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none">
     <dependencies>
         <deployment version="1070" defaultVersion="1070" identifier="macosx"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="4510"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="4514"/>
     </dependencies>
     <objects>
         <customObject id="-2" userLabel="File's Owner" customClass="NSApplication">
@@ -36,21 +36,10 @@
                                     <action selector="openSendBitcoinsWindow:" target="-1" id="868"/>
                                 </connections>
                             </menuItem>
-                            <menuItem title="...کھولیں CoinMap" id="872">
-                                <modifierMask key="keyEquivalentModifierMask"/>
-                                <connections>
-                                    <action selector="openCoinMapSite:" target="494" id="874"/>
-                                </connections>
-                            </menuItem>
                             <menuItem title="...اپ ڈیٹ کے لیے چیک کریں" id="870">
                                 <modifierMask key="keyEquivalentModifierMask"/>
                                 <connections>
                                     <action selector="checkForUpdates:" target="869" id="871"/>
-                                </connections>
-                            </menuItem>
-                            <menuItem title="Debugging info..." keyEquivalent="D" id="Deb-tn-nNM">
-                                <connections>
-                                    <action selector="showDebuggingInfo:" target="-1" id="4IC-10-S1w"/>
                                 </connections>
                             </menuItem>
                             <menuItem isSeparatorItem="YES" id="143">
@@ -127,6 +116,24 @@
                             <menuItem title="تمام کو منتخب کریں" keyEquivalent="a" id="812">
                                 <connections>
                                     <action selector="selectAll:" target="-1" id="853"/>
+                                </connections>
+                            </menuItem>
+                        </items>
+                    </menu>
+                </menuItem>
+                <menuItem title="Tools" id="eBU-ec-85y">
+                    <modifierMask key="keyEquivalentModifierMask"/>
+                    <menu key="submenu" title="Tools" id="cCx-Ak-fii">
+                        <items>
+                            <menuItem title="...کھولیں CoinMap" id="ASP-Ns-ktD">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                                <connections>
+                                    <action selector="openCoinMapSite:" target="494" id="Ozv-6D-Aab"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="Debugging info..." keyEquivalent="D" id="lLT-53-p4m">
+                                <connections>
+                                    <action selector="showDebuggingInfo:" target="-1" id="Exc-Ye-jOL"/>
                                 </connections>
                             </menuItem>
                         </items>

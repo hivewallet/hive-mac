@@ -86,8 +86,14 @@
 /* Class = "NSMenuItem"; title = "Check for Updates..."; ObjectID = "870"; */
 "870.title" = "Check for Updates...";
 
-/* Class = "NSMenuItem"; title = "Open CoinMap..."; ObjectID = "872"; */
-"872.title" = "Open CoinMap...";
+/* Class = "NSMenuItem"; title = "Open CoinMap..."; ObjectID = "ASP-Ns-ktD"; */
+"ASP-Ns-ktD.title" = "Open CoinMap...";
 
-/* Class = "NSMenuItem"; title = "Debugging info..."; ObjectID = "Deb-tn-nNM"; */
-"Deb-tn-nNM.title" = "Debugging info...";
+/* Class = "NSMenu"; title = "Tools"; ObjectID = "cCx-Ak-fii"; */
+"cCx-Ak-fii.title" = "Tools";
+
+/* Class = "NSMenuItem"; title = "Tools"; ObjectID = "eBU-ec-85y"; */
+"eBU-ec-85y.title" = "Tools";
+
+/* Class = "NSMenuItem"; title = "Debugging info..."; ObjectID = "lLT-53-p4m"; */
+"lLT-53-p4m.title" = "Debugging info...";

@@ -1,4 +1,4 @@
-﻿
+
 /* Class = "NSMenu"; title = "AMainMenu"; ObjectID = "29"; */
 "29.title" = "Βασικό Μενού";
 
@@ -87,7 +87,7 @@
 "870.title" = "Έλεγχος για ενημερώσεις...";
 
 /* Class = "NSMenuItem"; title = "Open CoinMap..."; ObjectID = "872"; */
-"872.title" = "Άνοιγμα CoinMap...";
+"ASP-Ns-ktD.title" = "Άνοιγμα CoinMap...";
 
 /* Class = "NSMenuItem"; title = "Debugging info..."; ObjectID = "Deb-tn-nNM"; */
-"Deb-tn-nNM.title" = "Πληροφορίες αποσφαλμάτωσης...";
+"lLT-53-p4m.title" = "Πληροφορίες αποσφαλμάτωσης...";
