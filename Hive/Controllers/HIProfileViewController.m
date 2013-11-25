@@ -26,7 +26,6 @@
 @property (copy) NSString *selectedCurrency;
 @property (copy) NSDecimalNumber *balance;
 @property (copy) NSDecimalNumber *pendingBalance;
-@property (copy) NSNumberFormatter *currencyNumberFormatter;
 
 @property (strong) IBOutlet NSImageView *photoView;
 @property (strong) IBOutlet NSTextField *nameLabel;
@@ -58,10 +57,6 @@
                                   forKeyPath:@"pendingBalance"
                                      options:NSKeyValueObservingOptionInitial
                                      context:NULL];
-
-        _currencyNumberFormatter = [NSNumberFormatter new];
-        _currencyNumberFormatter.localizesFormat = YES;
-        _currencyNumberFormatter.format = @"#,##0.00";
 
         _exchangeRateService = [HIExchangeRateService sharedService];
         [_exchangeRateService addExchangeRateObserver:self];
@@ -190,7 +185,7 @@
     {
         NSDecimalNumber *convertedBalance = [self convertedAmountForBitcoinAmount:self.balance];
         self.convertedBalanceLabel.stringValue =
-            [self.currencyNumberFormatter stringFromNumber:convertedBalance];
+            [_exchangeRateService formatValue:convertedBalance inCurrency:self.selectedCurrency];
     }
     else
     {

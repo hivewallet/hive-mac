@@ -29,7 +29,6 @@ NSString * const HISendBitcoinsWindowSuccessKey = @"success";
 @property (copy) NSDecimalNumber *amountFieldValue;
 @property (copy) NSDecimalNumber *convertedAmountFieldValue;
 @property (copy) NSNumberFormatter *bitcoinNumberFormatter;
-@property (copy) NSNumberFormatter *currencyNumberFormatter;
 @property (copy) NSDecimalNumber *exchangeRate;
 @property (copy) NSString *selectedCurrency;
 @property (strong, readonly) HIExchangeRateService *exchangeRateService;
@@ -47,9 +46,6 @@ NSString * const HISendBitcoinsWindowSuccessKey = @"success";
     {
         _amount = nil;
         _bitcoinNumberFormatter = [HICurrencyAmountFormatter new];
-        _currencyNumberFormatter = [NSNumberFormatter new];
-        _currencyNumberFormatter.localizesFormat = YES;
-        _currencyNumberFormatter.format = @"#,##0.00";
 
         _exchangeRateService = [HIExchangeRateService sharedService];
         [_exchangeRateService addExchangeRateObserver:self];
@@ -196,7 +192,8 @@ NSString * const HISendBitcoinsWindowSuccessKey = @"success";
 
 - (void)setConvertedAmountFieldValue:(NSDecimalNumber *)amount
 {
-    [self.convertedAmountField setStringValue:[self.currencyNumberFormatter stringFromNumber:amount]];
+    NSString *string = [self.exchangeRateService formatValue:amount inCurrency:self.selectedCurrency];
+    [self.convertedAmountField setStringValue:string];
 }
 
 - (void)formatConvertedAmountField
