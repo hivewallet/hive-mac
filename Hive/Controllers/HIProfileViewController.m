@@ -198,6 +198,10 @@
     return [amount decimalNumberByMultiplyingBy:self.exchangeRate];
 }
 
+- (IBAction)currencyChanged:(id)sender {
+    self.selectedCurrency = self.convertedCurrencyPopupButton.selectedItem.title;
+}
+
 #pragma mark - HIExchangeRateObserver
 
 - (void)exchangeRateUpdatedTo:(NSDecimalNumber *)exchangeRate

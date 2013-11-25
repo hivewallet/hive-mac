@@ -92,6 +92,9 @@
                         <font key="font" metaFont="menu"/>
                         <menu key="menu" title="OtherViews" id="Rwt-9J-8Ww"/>
                     </popUpButtonCell>
+                    <connections>
+                        <action selector="currencyChanged:" target="-2" id="x1O-fC-qcN"/>
+                    </connections>
                 </popUpButton>
                 <textField focusRingType="none" verticalHuggingPriority="750" id="ZMe-rr-2nF">
                     <rect key="frame" x="109" y="349" width="228" height="22"/>
