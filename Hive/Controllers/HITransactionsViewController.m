@@ -141,7 +141,7 @@
     HITransaction *transaction = self.arrayController.arrangedObjects[row];
 
     cell.textField.attributedStringValue = [self summaryTextForTransaction:transaction];
-    cell.dateLabel.stringValue = [_transactionDateFormatter stringFromDate:transaction.dateObject];
+    cell.dateLabel.stringValue = [_transactionDateFormatter stringFromDate:transaction.date];
 
     if (transaction.direction == HITransactionDirectionIncoming)
     {

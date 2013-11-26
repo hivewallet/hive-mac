@@ -80,6 +80,8 @@ void handleException(NSException *exception)
 
     [self showBetaWarning];
     [self preinstallAppsIfNeeded];
+    [self rebuildTransactionListIfNeeded];
+    [self updateLastVersionKey];
 }
 
 - (void)showMainApplicationWindowForCrashManager:(id)crashManager
@@ -113,10 +115,29 @@ void handleException(NSException *exception)
     NSString *currentVersion = [[NSBundle mainBundle] infoDictionary][@"CFBundleVersion"];
     NSString *lastVersion = [[NSUserDefaults standardUserDefaults] objectForKey:LastVersionKey];
 
-    if (!lastVersion || [lastVersion compare:currentVersion] == NSOrderedAscending)
+    if (!lastVersion || [currentVersion isGreaterThan:lastVersion])
     {
         [[HIApplicationsManager sharedManager] preinstallApps];
-        [[NSUserDefaults standardUserDefaults] setObject:currentVersion forKey:LastVersionKey];
+    }
+}
+
+- (void)updateLastVersionKey
+{
+    NSString *currentVersion = [[NSBundle mainBundle] infoDictionary][@"CFBundleVersion"];
+    [[NSUserDefaults standardUserDefaults] setObject:currentVersion forKey:LastVersionKey];
+}
+
+- (void)rebuildTransactionListIfNeeded
+{
+    NSString *lastVersion = [[NSUserDefaults standardUserDefaults] objectForKey:LastVersionKey];
+
+    if ([lastVersion isLessThan:@"2013112601"])
+    {
+        // rebuild the list once after changing HITransaction#date from NSTimeInterval to NSDate
+        // (which is how it was actually defined in the data model from the beginning)
+
+        [[BCClient sharedClient] clearTransactionsList];
+        [[BCClient sharedClient] rebuildTransactionsList];
     }
 }
 

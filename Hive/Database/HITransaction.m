@@ -25,11 +25,6 @@ NSString * const HITransactionEntity = @"HITransaction";
 @dynamic contact;
 @dynamic read;
 
-- (NSDate *)dateObject
-{
-    return [NSDate dateWithTimeIntervalSince1970:self.date];
-}
-
 - (HITransactionDirection)direction
 {
     return (self.amount >= 0) ? HITransactionDirectionIncoming : HITransactionDirectionOutgoing;

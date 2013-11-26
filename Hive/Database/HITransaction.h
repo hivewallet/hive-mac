@@ -47,15 +47,12 @@ extern NSString * const HITransactionEntity;
 @property (nonatomic, retain) NSString *senderName;
 @property (nonatomic, retain) NSString *senderEmail;
 
-@property (nonatomic) NSTimeInterval date;
+@property (nonatomic) NSDate *date;
 @property (nonatomic) int32_t confirmations;
 @property (nonatomic) BOOL request;
 
 // if the address hash matches any of the contacts' addreses, contact is linked here, otherwise it's nil
 @property (nonatomic, retain) HIContact *contact;
-
-// date property as NSDate
-@property (nonatomic, readonly, getter = dateObject) NSDate *dateObject;
 
 // HITransactionDirectionIncoming or HITransactionDirectionOutgoing
 @property (nonatomic, readonly, getter = direction) HITransactionDirection direction;

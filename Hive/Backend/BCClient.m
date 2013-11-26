@@ -373,7 +373,7 @@ static NSString * const kBCClientBaseURLString = @"https://grabhive.com/";
                                                                    inManagedObjectContext:_transactionUpdateContext];
 
         transaction.id = data[@"txid"];
-        transaction.date = [data[@"time"] timeIntervalSince1970];
+        transaction.date = data[@"time"];
         transaction.amount = [data[@"amount"] longLongValue];
         transaction.request = (![data[@"details"][0][@"category"] isEqual:@"send"]);
         transaction.confirmations = [data[@"confirmations"] integerValue];
