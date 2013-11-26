@@ -38,6 +38,7 @@
 
 - (NSDictionary *)transactionDefinitionWithHash:(NSString *)hash;
 - (void)rebuildTransactionsList;
+- (void)clearTransactionsList;
 
 - (BOOL)backupWalletAtURL:(NSURL *)backupURL;
 - (BOOL)importWalletFromURL:(NSURL *)walletURL;

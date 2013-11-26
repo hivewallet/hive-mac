@@ -136,6 +136,12 @@
                                     <action selector="showDebuggingInfo:" target="-1" id="Exc-Ye-jOL"/>
                                 </connections>
                             </menuItem>
+                            <menuItem title="Debugging tools..." id="Ue9-mi-gbe">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                                <connections>
+                                    <action selector="showDebuggingTools:" target="-1" id="s18-1s-iwD"/>
+                                </connections>
+                            </menuItem>
                         </items>
                     </menu>
                 </menuItem>

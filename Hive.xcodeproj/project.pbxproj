@@ -80,6 +80,9 @@
 		5860D3FF180455B900BD852C /* HIApplicationsManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 5860D3FE180455B900BD852C /* HIApplicationsManager.m */; };
 		58655D3C183D14FC000DE7AE /* HockeySDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 58655D3B183D14FC000DE7AE /* HockeySDK.framework */; };
 		58655D41183D1531000DE7AE /* HockeySDK.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 58655D3B183D14FC000DE7AE /* HockeySDK.framework */; };
+		586905961843DE5C0053D74F /* HIDebuggingToolsWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 586905941843DE5C0053D74F /* HIDebuggingToolsWindowController.m */; };
+		586905A01844C61C0053D74F /* HIDebuggingToolsWindowController.strings in Resources */ = {isa = PBXBuildFile; fileRef = 586905A21844C61C0053D74F /* HIDebuggingToolsWindowController.strings */; };
+		586905B81844CFC20053D74F /* HIDebuggingToolsWindowController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 586905BA1844CFC20053D74F /* HIDebuggingToolsWindowController.xib */; };
 		5884A00F17F1B63D004A31FA /* Tor.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5884A00C17F1B5FF004A31FA /* Tor.framework */; };
 		5884A01017F1B646004A31FA /* Tor.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 5884A00C17F1B5FF004A31FA /* Tor.framework */; };
 		5884A03717F56D86004A31FA /* Sparkle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5884A03617F56D86004A31FA /* Sparkle.framework */; };
@@ -411,6 +414,52 @@
 		5860D3FD180455B900BD852C /* HIApplicationsManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HIApplicationsManager.h; sourceTree = "<group>"; };
 		5860D3FE180455B900BD852C /* HIApplicationsManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HIApplicationsManager.m; sourceTree = "<group>"; };
 		58655D3B183D14FC000DE7AE /* HockeySDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = HockeySDK.framework; sourceTree = "<group>"; };
+		586905931843DE5C0053D74F /* HIDebuggingToolsWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HIDebuggingToolsWindowController.h; sourceTree = "<group>"; };
+		586905941843DE5C0053D74F /* HIDebuggingToolsWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HIDebuggingToolsWindowController.m; sourceTree = "<group>"; };
+		586905A11844C61C0053D74F /* en */ = {isa = PBXFileReference; lastKnownFileType = file; name = en; path = en.lproj/HIDebuggingToolsWindowController.strings; sourceTree = "<group>"; };
+		586905A31844C61F0053D74F /* pl */ = {isa = PBXFileReference; lastKnownFileType = file; name = pl; path = pl.lproj/HIDebuggingToolsWindowController.strings; sourceTree = "<group>"; };
+		586905A41844C6200053D74F /* it */ = {isa = PBXFileReference; lastKnownFileType = file; name = it; path = it.lproj/HIDebuggingToolsWindowController.strings; sourceTree = "<group>"; };
+		586905A51844C6200053D74F /* fr */ = {isa = PBXFileReference; lastKnownFileType = file; name = fr; path = fr.lproj/HIDebuggingToolsWindowController.strings; sourceTree = "<group>"; };
+		586905A61844C6210053D74F /* fi */ = {isa = PBXFileReference; lastKnownFileType = file; name = fi; path = fi.lproj/HIDebuggingToolsWindowController.strings; sourceTree = "<group>"; };
+		586905A71844C6210053D74F /* de */ = {isa = PBXFileReference; lastKnownFileType = file; name = de; path = de.lproj/HIDebuggingToolsWindowController.strings; sourceTree = "<group>"; };
+		586905A81844C6220053D74F /* nl */ = {isa = PBXFileReference; lastKnownFileType = file; name = nl; path = nl.lproj/HIDebuggingToolsWindowController.strings; sourceTree = "<group>"; };
+		586905A91844C6230053D74F /* da */ = {isa = PBXFileReference; lastKnownFileType = file; name = da; path = da.lproj/HIDebuggingToolsWindowController.strings; sourceTree = "<group>"; };
+		586905AA1844C6240053D74F /* ru */ = {isa = PBXFileReference; lastKnownFileType = file; name = ru; path = ru.lproj/HIDebuggingToolsWindowController.strings; sourceTree = "<group>"; };
+		586905AB1844C6240053D74F /* fil */ = {isa = PBXFileReference; lastKnownFileType = file; name = fil; path = fil.lproj/HIDebuggingToolsWindowController.strings; sourceTree = "<group>"; };
+		586905AC1844C6250053D74F /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = file; name = "zh-Hans"; path = "zh-Hans.lproj/HIDebuggingToolsWindowController.strings"; sourceTree = "<group>"; };
+		586905AD1844C6260053D74F /* ar */ = {isa = PBXFileReference; lastKnownFileType = file; name = ar; path = ar.lproj/HIDebuggingToolsWindowController.strings; sourceTree = "<group>"; };
+		586905AE1844C6260053D74F /* ur */ = {isa = PBXFileReference; lastKnownFileType = file; name = ur; path = ur.lproj/HIDebuggingToolsWindowController.strings; sourceTree = "<group>"; };
+		586905AF1844C6290053D74F /* hi */ = {isa = PBXFileReference; lastKnownFileType = file; name = hi; path = hi.lproj/HIDebuggingToolsWindowController.strings; sourceTree = "<group>"; };
+		586905B01844C62A0053D74F /* ko */ = {isa = PBXFileReference; lastKnownFileType = file; name = ko; path = ko.lproj/HIDebuggingToolsWindowController.strings; sourceTree = "<group>"; };
+		586905B11844C62A0053D74F /* es */ = {isa = PBXFileReference; lastKnownFileType = file; name = es; path = es.lproj/HIDebuggingToolsWindowController.strings; sourceTree = "<group>"; };
+		586905B21844C62B0053D74F /* cs */ = {isa = PBXFileReference; lastKnownFileType = file; name = cs; path = cs.lproj/HIDebuggingToolsWindowController.strings; sourceTree = "<group>"; };
+		586905B31844C62B0053D74F /* el */ = {isa = PBXFileReference; lastKnownFileType = file; name = el; path = el.lproj/HIDebuggingToolsWindowController.strings; sourceTree = "<group>"; };
+		586905B41844C62D0053D74F /* tr */ = {isa = PBXFileReference; lastKnownFileType = file; name = tr; path = tr.lproj/HIDebuggingToolsWindowController.strings; sourceTree = "<group>"; };
+		586905B51844C62E0053D74F /* pt */ = {isa = PBXFileReference; lastKnownFileType = file; name = pt; path = pt.lproj/HIDebuggingToolsWindowController.strings; sourceTree = "<group>"; };
+		586905B61844C62E0053D74F /* ro */ = {isa = PBXFileReference; lastKnownFileType = file; name = ro; path = ro.lproj/HIDebuggingToolsWindowController.strings; sourceTree = "<group>"; };
+		586905B71844C62F0053D74F /* pt-BR */ = {isa = PBXFileReference; lastKnownFileType = file; name = "pt-BR"; path = "pt-BR.lproj/HIDebuggingToolsWindowController.strings"; sourceTree = "<group>"; };
+		586905B91844CFC20053D74F /* en */ = {isa = PBXFileReference; lastKnownFileType = file; name = en; path = en.lproj/HIDebuggingToolsWindowController.xib; sourceTree = "<group>"; };
+		586905BB1844CFC80053D74F /* pl */ = {isa = PBXFileReference; lastKnownFileType = file; name = pl; path = pl.lproj/HIDebuggingToolsWindowController.xib; sourceTree = "<group>"; };
+		586905BC1844CFC90053D74F /* it */ = {isa = PBXFileReference; lastKnownFileType = file; name = it; path = it.lproj/HIDebuggingToolsWindowController.xib; sourceTree = "<group>"; };
+		586905BD1844CFCA0053D74F /* fr */ = {isa = PBXFileReference; lastKnownFileType = file; name = fr; path = fr.lproj/HIDebuggingToolsWindowController.xib; sourceTree = "<group>"; };
+		586905BE1844CFCC0053D74F /* fi */ = {isa = PBXFileReference; lastKnownFileType = file; name = fi; path = fi.lproj/HIDebuggingToolsWindowController.xib; sourceTree = "<group>"; };
+		586905BF1844CFCD0053D74F /* da */ = {isa = PBXFileReference; lastKnownFileType = file; name = da; path = da.lproj/HIDebuggingToolsWindowController.xib; sourceTree = "<group>"; };
+		586905C01844CFCE0053D74F /* de */ = {isa = PBXFileReference; lastKnownFileType = file; name = de; path = de.lproj/HIDebuggingToolsWindowController.xib; sourceTree = "<group>"; };
+		586905C11844CFD00053D74F /* nl */ = {isa = PBXFileReference; lastKnownFileType = file; name = nl; path = nl.lproj/HIDebuggingToolsWindowController.xib; sourceTree = "<group>"; };
+		586905C21844CFD20053D74F /* ru */ = {isa = PBXFileReference; lastKnownFileType = file; name = ru; path = ru.lproj/HIDebuggingToolsWindowController.xib; sourceTree = "<group>"; };
+		586905C31844CFD30053D74F /* fil */ = {isa = PBXFileReference; lastKnownFileType = file; name = fil; path = fil.lproj/HIDebuggingToolsWindowController.xib; sourceTree = "<group>"; };
+		586905C41844CFD40053D74F /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = file; name = "zh-Hans"; path = "zh-Hans.lproj/HIDebuggingToolsWindowController.xib"; sourceTree = "<group>"; };
+		586905C51844CFD40053D74F /* ar */ = {isa = PBXFileReference; lastKnownFileType = file; name = ar; path = ar.lproj/HIDebuggingToolsWindowController.xib; sourceTree = "<group>"; };
+		586905C61844CFD60053D74F /* ur */ = {isa = PBXFileReference; lastKnownFileType = file; name = ur; path = ur.lproj/HIDebuggingToolsWindowController.xib; sourceTree = "<group>"; };
+		586905C71844CFD70053D74F /* hi */ = {isa = PBXFileReference; lastKnownFileType = file; name = hi; path = hi.lproj/HIDebuggingToolsWindowController.xib; sourceTree = "<group>"; };
+		586905C81844CFD80053D74F /* ko */ = {isa = PBXFileReference; lastKnownFileType = file; name = ko; path = ko.lproj/HIDebuggingToolsWindowController.xib; sourceTree = "<group>"; };
+		586905C91844CFD90053D74F /* es */ = {isa = PBXFileReference; lastKnownFileType = file; name = es; path = es.lproj/HIDebuggingToolsWindowController.xib; sourceTree = "<group>"; };
+		586905CA1844CFDA0053D74F /* cs */ = {isa = PBXFileReference; lastKnownFileType = file; name = cs; path = cs.lproj/HIDebuggingToolsWindowController.xib; sourceTree = "<group>"; };
+		586905CB1844CFDB0053D74F /* el */ = {isa = PBXFileReference; lastKnownFileType = file; name = el; path = el.lproj/HIDebuggingToolsWindowController.xib; sourceTree = "<group>"; };
+		586905CC1844CFDD0053D74F /* tr */ = {isa = PBXFileReference; lastKnownFileType = file; name = tr; path = tr.lproj/HIDebuggingToolsWindowController.xib; sourceTree = "<group>"; };
+		586905CD1844CFDE0053D74F /* pt */ = {isa = PBXFileReference; lastKnownFileType = file; name = pt; path = pt.lproj/HIDebuggingToolsWindowController.xib; sourceTree = "<group>"; };
+		586905CE1844CFDF0053D74F /* ro */ = {isa = PBXFileReference; lastKnownFileType = file; name = ro; path = ro.lproj/HIDebuggingToolsWindowController.xib; sourceTree = "<group>"; };
+		586905CF1844CFE00053D74F /* pt-BR */ = {isa = PBXFileReference; lastKnownFileType = file; name = "pt-BR"; path = "pt-BR.lproj/HIDebuggingToolsWindowController.xib"; sourceTree = "<group>"; };
 		5884A00417F1B5FE004A31FA /* Tor.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Tor.xcodeproj; path = Tor.framework/Tor.xcodeproj; sourceTree = "<group>"; };
 		5884A03617F56D86004A31FA /* Sparkle.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Sparkle.framework; sourceTree = "<group>"; };
 		5884A03D17F57AE9004A31FA /* dsa_pub.pem */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = dsa_pub.pem; sourceTree = "<group>"; };
@@ -1144,6 +1193,17 @@
 			path = NPZip;
 			sourceTree = "<group>";
 		};
+		586905891843DE0C0053D74F /* HIDebuggingToolsWindowController */ = {
+			isa = PBXGroup;
+			children = (
+				586905931843DE5C0053D74F /* HIDebuggingToolsWindowController.h */,
+				586905941843DE5C0053D74F /* HIDebuggingToolsWindowController.m */,
+				586905A21844C61C0053D74F /* HIDebuggingToolsWindowController.strings */,
+				586905BA1844CFC20053D74F /* HIDebuggingToolsWindowController.xib */,
+			);
+			name = HIDebuggingToolsWindowController;
+			sourceTree = "<group>";
+		};
 		5884A00517F1B5FE004A31FA /* Products */ = {
 			isa = PBXGroup;
 			children = (
@@ -1455,6 +1515,7 @@
 				D948158417CE1BD4006A0312 /* HIContactsViewController */,
 				581711D917D0FD8F00DE775A /* HIContactViewController */,
 				588E34D0181FF28C006A6A25 /* HIDebuggingInfoWindowController */,
+				586905891843DE0C0053D74F /* HIDebuggingToolsWindowController */,
 				588E354718212B79006A6A25 /* HIErrorWindowController */,
 				586059F718041AD600FD9C2A /* HIMainWindowController.h */,
 				586059F818041AD600FD9C2A /* HIMainWindowController.m */,
@@ -1665,6 +1726,7 @@
 				58A37ACD180D995000CFCDE3 /* HIContactsViewController.strings in Resources */,
 				58605A4218041D0A00FD9C2A /* button__inset.pdf in Resources */,
 				58605A4318041D0A00FD9C2A /* icon-apps__active.pdf in Resources */,
+				586905B81844CFC20053D74F /* HIDebuggingToolsWindowController.xib in Resources */,
 				58605A4418041D0A00FD9C2A /* icon-apps__inactive.pdf in Resources */,
 				58605A4518041D0A00FD9C2A /* icon-bitcoin.pdf in Resources */,
 				58605A4618041D0A00FD9C2A /* icon-delete.pdf in Resources */,
@@ -1700,6 +1762,7 @@
 				58605A5D18041D0A00FD9C2A /* icon-your-profile__active.pdf in Resources */,
 				58D4D61F18290079009CB7A5 /* patten_hive.hiveapp in Resources */,
 				58605A5E18041D0A00FD9C2A /* icon-your-profile__inactive.pdf in Resources */,
+				586905A01844C61C0053D74F /* HIDebuggingToolsWindowController.strings in Resources */,
 				589064AE1805742C0082BE5C /* seansoutpost.hiveapp in Resources */,
 				1AA10ECC39D33A1362882EB2 /* HIProfileViewController.strings in Resources */,
 				1AA101EED53C9E95085C6DE3 /* HIProfileViewController.xib in Resources */,
@@ -1797,6 +1860,7 @@
 				58605A0218041AD600FD9C2A /* HIViewController.m in Sources */,
 				588E354F18212BB8006A6A25 /* HIErrorWindowController.m in Sources */,
 				58605A6718041DFC00FD9C2A /* NPZip.m in Sources */,
+				586905961843DE5C0053D74F /* HIDebuggingToolsWindowController.m in Sources */,
 				58605A6818041DFC00FD9C2A /* NPZipFileHeader.m in Sources */,
 				58605A6918041DFC00FD9C2A /* NPZipHeader.m in Sources */,
 				5860D3FF180455B900BD852C /* HIApplicationsManager.m in Sources */,
@@ -1873,6 +1937,64 @@
 				245CBB401842AE7900619953 /* fil */,
 			);
 			name = HIProfileViewController.xib;
+			sourceTree = "<group>";
+		};
+		586905A21844C61C0053D74F /* HIDebuggingToolsWindowController.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				586905A11844C61C0053D74F /* en */,
+				586905A31844C61F0053D74F /* pl */,
+				586905A41844C6200053D74F /* it */,
+				586905A51844C6200053D74F /* fr */,
+				586905A61844C6210053D74F /* fi */,
+				586905A71844C6210053D74F /* de */,
+				586905A81844C6220053D74F /* nl */,
+				586905A91844C6230053D74F /* da */,
+				586905AA1844C6240053D74F /* ru */,
+				586905AB1844C6240053D74F /* fil */,
+				586905AC1844C6250053D74F /* zh-Hans */,
+				586905AD1844C6260053D74F /* ar */,
+				586905AE1844C6260053D74F /* ur */,
+				586905AF1844C6290053D74F /* hi */,
+				586905B01844C62A0053D74F /* ko */,
+				586905B11844C62A0053D74F /* es */,
+				586905B21844C62B0053D74F /* cs */,
+				586905B31844C62B0053D74F /* el */,
+				586905B41844C62D0053D74F /* tr */,
+				586905B51844C62E0053D74F /* pt */,
+				586905B61844C62E0053D74F /* ro */,
+				586905B71844C62F0053D74F /* pt-BR */,
+			);
+			name = HIDebuggingToolsWindowController.strings;
+			sourceTree = "<group>";
+		};
+		586905BA1844CFC20053D74F /* HIDebuggingToolsWindowController.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				586905B91844CFC20053D74F /* en */,
+				586905BB1844CFC80053D74F /* pl */,
+				586905BC1844CFC90053D74F /* it */,
+				586905BD1844CFCA0053D74F /* fr */,
+				586905BE1844CFCC0053D74F /* fi */,
+				586905BF1844CFCD0053D74F /* da */,
+				586905C01844CFCE0053D74F /* de */,
+				586905C11844CFD00053D74F /* nl */,
+				586905C21844CFD20053D74F /* ru */,
+				586905C31844CFD30053D74F /* fil */,
+				586905C41844CFD40053D74F /* zh-Hans */,
+				586905C51844CFD40053D74F /* ar */,
+				586905C61844CFD60053D74F /* ur */,
+				586905C71844CFD70053D74F /* hi */,
+				586905C81844CFD80053D74F /* ko */,
+				586905C91844CFD90053D74F /* es */,
+				586905CA1844CFDA0053D74F /* cs */,
+				586905CB1844CFDB0053D74F /* el */,
+				586905CC1844CFDD0053D74F /* tr */,
+				586905CD1844CFDE0053D74F /* pt */,
+				586905CE1844CFDF0053D74F /* ro */,
+				586905CF1844CFE00053D74F /* pt-BR */,
+			);
+			name = HIDebuggingToolsWindowController.xib;
 			sourceTree = "<group>";
 		};
 		588E34DD181FF8A7006A6A25 /* HIDebuggingInfoWindowController.xib */ = {

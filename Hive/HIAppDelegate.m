@@ -13,6 +13,7 @@
 #import "HIApplicationURLProtocol.h"
 #import "HIBitcoinURL.h"
 #import "HIDebuggingInfoWindowController.h"
+#import "HIDebuggingToolsWindowController.h"
 #import "HIErrorWindowController.h"
 #import "HIMainWindowController.h"
 #import "HISendBitcoinsWindowController.h"
@@ -27,6 +28,7 @@ static NSString * const WarningDisplayedKey = @"WarningDisplayed";
 @interface HIAppDelegate ()
 {
     HIDebuggingInfoWindowController *_debuggingInfoWindowController;
+    HIDebuggingToolsWindowController *_debuggingToolsWindowController;
     HIMainWindowController *_mainWindowController;
     NSMutableArray *_popupWindows;
 }
@@ -476,6 +478,17 @@ void handleException(NSException *exception)
     }
 
     [_debuggingInfoWindowController showWindow:self];
+}
+
+- (IBAction)showDebuggingTools:(id)sender
+{
+    if (!_debuggingToolsWindowController)
+    {
+        _debuggingToolsWindowController = [[HIDebuggingToolsWindowController alloc] init];
+        [_popupWindows addObject:_debuggingToolsWindowController];
+    }
+
+    [_debuggingToolsWindowController showWindow:self];
 }
 
 - (void)showExceptionWindowWithException:(NSException *)exception

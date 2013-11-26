@@ -146,6 +146,32 @@ static NSString * const kBCClientBaseURLString = @"https://grabhive.com/";
     });
 }
 
+- (void)clearTransactionsList
+{
+    NSError *error;
+    NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:HITransactionEntity];
+    NSArray *transactions = [DBM executeFetchRequest:request error:&error];
+
+    if (error)
+    {
+        NSLog(@"%@: Error loading transactions: %@", NSStringFromSelector(_cmd), error);
+        return;
+    }
+
+    for (HITransaction *transaction in transactions)
+    {
+        [DBM deleteObject:transaction];
+    }
+
+    [DBM save:&error];
+
+    if (error)
+    {
+        NSLog(@"%@: Error deleting transactions: %@", NSStringFromSelector(_cmd), error);
+        return;
+    }
+}
+
 - (void)rebuildTransactionsList
 {
     NSArray *transactions = [[HIBitcoinManager defaultManager] allTransactions];
