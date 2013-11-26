@@ -1,39 +1,30 @@
 
 /* Class = "NSWindow"; title = "Send Bitcoin"; ObjectID = "1"; */
-"1.title" = "Send Bitcoin";
+"1.title" = "ビットコインを送る";
 
 /* Class = "NSButtonCell"; title = "Cancel"; ObjectID = "6"; */
-"6.title" = "Cancel";
+"6.title" = "キャンセル";
 
 /* Class = "NSButtonCell"; title = "Send"; ObjectID = "10"; */
-"10.title" = "Send";
+"10.title" = "送る";
 
 /* Class = "NSTextFieldCell"; title = "To:"; ObjectID = "14"; */
-"14.title" = "To:";
+"14.title" = "へ:";
 
 /* Class = "NSTextFieldCell"; title = "Amount:"; ObjectID = "16"; */
-"16.title" = "Amount:";
+"16.title" = "コイン額:";
 
 /* Class = "NSTextFieldCell"; placeholderString = "Type to search..."; ObjectID = "20"; */
-"20.placeholderString" = "Type to search...";
+"20.placeholderString" = "探すためにはタイプして...";
 
 /* Class = "NSTextFieldCell"; title = "John Whatshisface"; ObjectID = "20"; */
-"20.title" = "John Whatshisface";
+"20.title" = "ジョン何て言う顔だったっけ";
 
 /* Class = "NSTextFieldCell"; title = "Main address"; ObjectID = "22"; */
-"22.title" = "Main address";
+"22.title" = "メインアドレス";
 
 /* Class = "NSBox"; title = "Box"; ObjectID = "23"; */
-"23.title" = "Box";
+"23.title" = "ボックス";
 
 /* Class = "NSTextFieldCell"; title = "0.0"; ObjectID = "37"; */
 "37.title" = "0.0";
-
-/* Class = "NSTextFieldCell"; title = "0.0"; ObjectID = "DX5-Li-q9R"; */
-"DX5-Li-q9R.title" = "0.0";
-
-/* Class = "NSBox"; title = "Box"; ObjectID = "Uma-46-IZW"; */
-"Uma-46-IZW.title" = "Box";
-
-/* Class = "NSMenu"; title = "OtherViews"; ObjectID = "WcM-4W-vgC"; */
-"WcM-4W-vgC.title" = "OtherViews";

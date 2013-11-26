@@ -3,19 +3,19 @@
 "10.title" = "Text Cell";
 
 /* Class = "NSTextFieldCell"; title = "Looks like you don't have any contacts yet! Add your first one and start sending money!"; ObjectID = "123"; */
-"123.title" = "Looks like you don't have any contacts yet! Add your first one and start sending money!";
+"123.title" = "まだコンタクトがいなさそうですね。コンタクトを参加して、金を送り始めましょう";
 
 /* Class = "NSButtonCell"; title = "Add contact"; ObjectID = "125"; */
-"125.title" = "Add contact";
+"125.title" = "コンタクトを参加する";
 
 /* Class = "NSTextFieldCell"; title = "You can then use the"; ObjectID = "129"; */
-"129.title" = "You can then use the";
+"129.title" = "次の";
 
 /* Class = "NSTextFieldCell"; title = "button"; ObjectID = "133"; */
-"133.title" = "button";
+"133.title" = "ボタン";
 
 /* Class = "NSTextFieldCell"; title = "on top to add more contacts."; ObjectID = "135"; */
-"135.title" = "on top to add more contacts.";
+"135.title" = "を使って、コンタクトを参加出来る";
 
 /* Class = "NSTextFieldCell"; title = "Label"; ObjectID = "205"; */
 "205.title" = "Label";

@@ -1,6 +1,6 @@
 
 /* Class = "NSWindow"; title = "Error"; ObjectID = "1"; */
-"1.title" = "Error";
+"1.title" = "エラー";
 
 /* Class = "NSTextFieldCell"; placeholderString = "email@domain.com"; ObjectID = "0m5-Xd-7pp"; */
 "0m5-Xd-7pp.placeholderString" = "email@domain.com";
@@ -15,7 +15,7 @@
 "Cob-tq-o5r.title" = "Please send us a report to help us fix the problem.";
 
 /* Class = "NSTextFieldCell"; title = "Oh no, something went wrong!"; ObjectID = "Mpx-rH-nUM"; */
-"Mpx-rH-nUM.title" = "Oh no, something went wrong!";
+"Mpx-rH-nUM.title" = "あら、何かが正しく行かなかったみたい";
 
 /* Class = "NSBox"; title = "Box"; ObjectID = "W3G-l5-uNF"; */
 "W3G-l5-uNF.title" = "Box";
@@ -33,7 +33,7 @@
 "uLK-ff-isg.title" = "Error details:";
 
 /* Class = "NSTextFieldCell"; title = "An unexpected error has occurred in Hive."; ObjectID = "xF4-pJ-cQU"; */
-"xF4-pJ-cQU.title" = "An unexpected error has occurred in Hive.";
+"xF4-pJ-cQU.title" = "ハイブは不明なエラーを発生しました";
 
 /* Class = "NSTextFieldCell"; title = "Name (optional)"; ObjectID = "yDj-TF-cJK"; */
 "yDj-TF-cJK.title" = "Name (optional)";

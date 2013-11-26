@@ -1,151 +1,138 @@
+/* App load error description */
+"A network error has occurred or the application data file has been removed or corrupted." = "ネットワークエラーが発生した、またはファイルが破損しているか移動された.";
+
 /* Address field placeholder */
-"Address" = "Address";
+"Address" = "アドレス";
 
 /* Amount exceeds balance alert title */
-"Amount exceeds balance." = "Amount exceeds balance.";
+"Amount exceeds balance." = "残高以上のコイン額です.";
 
 /* Anonymous username for profile page */
-"Anonymous" = "Anonymous";
+"Anonymous" = "匿名";
 
 /* App load error title */
-"Application can't be loaded" = "Application can't be loaded";
+"Application can't be loaded" = "アプリケーションのロードは失敗";
 
 /* Applications view title */
-"Apps" = "Apps";
-
-/* Debugging tools confirmation popup title */
-"Are you sure?" = "Are you sure?";
+"Apps" = "アプリ";
 
 /* Cancel button title */
-"Cancel" = "Cancel";
+"Cancel" = "キャンセル";
 
 /* No comment provided by engineer. */
-"click to copy" = "click to copy";
+"click to copy" = "コピーするためにクリックして下さい";
 
 /* Contact name empty alert title */
-"Contact can't be saved." = "Contact can't be saved.";
+"Contact can't be saved." = "コンタクトの保存が出来なかった.";
 
 /* Contacts view title */
-"Contacts" = "Contacts";
+"Contacts" = "コンタクトアドレス";
 
 /* No comment provided by engineer. */
-"copied!" = "copied!";
+"copied!" = "コピーした!";
 
 /* Quit without saves error question message */
-"Could not save changes while quitting. Quit anyway?" = "Could not save changes while quitting. Quit anyway?";
+"Could not save changes while quitting. Quit anyway?" = "プログラムを止めるには変更を保存出来なかった。それでも閉じる？";
 
 /* Remove contact alert dialog body */
-"Do you really want to remove %@ %@ from your contact list?" = "Do you really want to remove %1$@ %2$@ from your contact list?";
+"Do you really want to remove %@ %@ from your contact list?" = "本当に %1$@ %2$@ をコンタクトリストから外す？";
 
 /* No comment provided by engineer. */
-"Edit contact" = "Edit contact";
+"Edit contact" = "コンタクトを変更";
 
 /* No comment provided by engineer. */
-"Edit profile" = "Edit profile";
+"Edit profile" = "プロフィールを変更";
 
 /* Email field placeholder */
-"email" = "email";
+"email" = "メール";
 
 /* Sending zero bitcoin alert title */
-"Enter an amount greater than zero." = "Enter an amount greater than zero.";
+"Enter an amount greater than zero." = "ゼロ以上のコイン額を入力してください.";
 
 /* Firstname field placeholder */
-"Firstname" = "Firstname";
+"Firstname" = "名";
 
 /* Direction label in transactions list when user is the receiver */
-"from" = "from";
+"from" = "から";
 
 /* Install app popup title */
-"Install Hive App" = "Install Hive App";
+"Install Hive App" = "ハイブをインストール";
 
 /* Address caption field placeholder */
-"Label" = "Label";
+"Label" = "ラベル";
 
 /* Lastname field placeholder */
-"Lastname" = "Lastname";
+"Lastname" = "姓";
 
 /* Main address caption */
-"main" = "main";
+"main" = "メイン";
 
 /* Main address caption string for profiles */
-"Main address" = "Main address";
+"Main address" = "メインアドレス";
 
 /* New contact view controller title */
-"New contact" = "New contact";
+"New contact" = "新しいコンタクト";
 
 /* No comment provided by engineer. */
-"No" = "No";
+"No" = "ない";
 
 /* Empty address alert title */
-"No address entered." = "No address entered.";
+"No address entered." = "アドレスを入力していない.";
 
 /* Transaction failed alert message */
-"No bitcoin have been taken from your wallet." = "No bitcoin have been taken from your wallet.";
+"No bitcoin have been taken from your wallet." = "ビットコインの出発は失敗.";
 
 /* OK Button title
-   OK button title */
-"OK" = "OK";
+    OK button title */
+"OK" = "はい";
 
 /* Autocomplete dropdown prompt */
-"or choose from the list" = "or choose from the list";
-
-/* part of the balance amount that isn't available */
-"pending" = "pending";
+"or choose from the list" = "またはリストから選ぶ";
 
 /* Invalid address alert message */
-"Please check if you have entered the address correctly." = "Please check if you have entered the address correctly.";
+"Please check if you have entered the address correctly." = "アドレスを正しく入力したかを再確認してください.";
 
 /* Empty address alert message */
-"Please enter a valid Bitcoin address or select one from the dropdown list." = "Please enter a valid Bitcoin address or select one from the dropdown list.";
+"Please enter a valid Bitcoin address or select one from the dropdown list." = "アドレスを入力かリストから選んで下さい.";
 
 /* Profile view title string */
-"Profile" = "Profile";
+"Profile" = "プロフィール";
 
 /* Quit anyway button title */
-"Quit anyway" = "Quit anyway";
+"Quit anyway" = "とにかく閉じる";
 
 /* Quit without saves error question info */
-"Quitting now will lose any changes you have made since the last successful save" = "Quitting now will lose any changes you have made since the last successful save";
-
-/* Rebuild transaction list button title */
-"Rebuild list" = "Rebuild list";
+"Quitting now will lose any changes you have made since the last successful save" = "今を閉じる場合、最新の保存以来の変更が保存しない";
 
 /* Remove contact alert dialog title */
-"Remove contact" = "Remove contact";
-
-/* App load error description */
-"The application data file has been removed or corrupted." = "The application data file has been removed or corrupted.";
+"Remove contact" = "コンタクトを外す";
 
 /* Invalid address alert title */
-"This isn't a valid Bitcoin address." = "This isn't a valid Bitcoin address.";
+"This isn't a valid Bitcoin address." = "アドレスは正しくない.";
 
 /* Direction label in transactions list when user is the sender */
-"to" = "to";
+"to" = "へ";
 
 /* Transaction failed alert title */
-"Transaction could not be completed." = "Transaction could not be completed.";
+"Transaction could not be completed." = "送受は出来なかった.";
 
 /* Transactions view title */
-"Transactions" = "Transactions";
+"Transactions" = "送受";
 
 /* Sending zero bitcoin alert message */
-"Why would you want to send someone 0 BTC?" = "Why would you want to send someone 0 BTC?";
+"Why would you want to send someone 0 BTC?" = "ほら！ゼロコインを送る意味がないでしょう！";
 
 /* Install app popup confirmation */
-"Would you like to install \"%@\" application?" = "Would you like to install \"%@\" application?";
+"Would you like to install \"%@\" application?" = " \"%@\"　のアプリをインストールしますか?";
 
 /* No comment provided by engineer. */
-"Yes" = "Yes";
+"Yes" = "はい";
 
 /* Install app popup confirmation when app exists */
-"You already have \"%@\" application. Would you like to overwrite it?" = "You already have \"%@\" application. Would you like to overwrite it?";
+"You already have \"%@\" application. Would you like to overwrite it?" = "同じ \"%@\" と言うアプリもうありますが、オーバーライトしますか";
 
 /* Amount exceeds balance alert message */
-"You cannot send more money than you own." = "You cannot send more money than you own.";
+"You cannot send more money than you own." = "持っていない金を送るのが不可能でござる.";
 
 /* Contact name empty alert message */
-"You need to give the contact a name before you can add it to the list." = "You need to give the contact a name before you can add it to the list.";
-
-/* Rebuild transaction list popup description */
-"Your transaction list will be rebuilt now." = "Your transaction list will be rebuilt now.";
-
+"You need to give the contact a name before you can add it to the list." = "リストに参加する前に名前を付ける必要がある.";

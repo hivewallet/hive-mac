@@ -3,16 +3,16 @@
 "13.title" = "Text Cell";
 
 /* Class = "NSTextFieldCell"; title = "Received"; ObjectID = "22"; */
-"22.title" = "Received";
+"22.title" = "届きました";
 
 /* Class = "NSTextFieldCell"; title = "Date"; ObjectID = "41"; */
-"41.title" = "Date";
+"41.title" = "日付";
 
 /* Class = "NSTextFieldCell"; title = "Looks like you haven't made any transactions yet. Send someone some Bitcoin!"; ObjectID = "54"; */
-"54.title" = "Looks like you haven't made any transactions yet. Send someone some Bitcoin!";
+"54.title" = "まだコインの送受がないみたいですね。少しコインを送りましょうよ。";
 
 /* Class = "NSButtonCell"; title = "Send Bitcoin"; ObjectID = "55"; */
-"55.title" = "Send Bitcoin";
+"55.title" = "ビットコインを送る";
 
 /* Class = "NSTextFieldCell"; title = "You can then use the Send button to send someone money."; ObjectID = "63"; */
-"63.title" = "You can then use the Send button to send someone money.";
+"63.title" = "そして、送ると言うボタンを利用してコインを送ることが出来る.";
