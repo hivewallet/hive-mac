@@ -28,3 +28,12 @@
 
 /* Class = "NSTextFieldCell"; title = "0.0"; ObjectID = "37"; */
 "37.title" = "0.0";
+
+/* Class = "NSTextFieldCell"; title = "0.0"; ObjectID = "DX5-Li-q9R"; */
+"DX5-Li-q9R.title" = "0.0";
+
+/* Class = "NSBox"; title = "Box"; ObjectID = "Uma-46-IZW"; */
+"Uma-46-IZW.title" = "Box";
+
+/* Class = "NSMenu"; title = "OtherViews"; ObjectID = "WcM-4W-vgC"; */
+"WcM-4W-vgC.title" = "OtherViews";
