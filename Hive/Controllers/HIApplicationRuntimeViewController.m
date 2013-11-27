@@ -60,18 +60,8 @@
     [self.webView setPreferencesIdentifier:noSecurityPreferencesId];
 
     // load the app
-    BOOL isDirectory = NO;
-    [[NSFileManager defaultManager] fileExistsAtPath:self.application.path.path isDirectory:&isDirectory];
-
-    if (isDirectory)
-    {
-        _baseURL = [self.application.path URLByAppendingPathComponent:@"index.html"];
-    }
-    else
-    {
-        _baseURL = [NSURL URLWithString:[NSString stringWithFormat:@"http://localhost/%@/index.html",
-                                          self.application.id]];
-    }
+    _baseURL = [NSURL URLWithString:[NSString stringWithFormat:@"http://localhost/%@/index.html",
+                                     self.application.id]];
 
     [self.webView.mainFrame loadRequest:[NSURLRequest requestWithURL:_baseURL]];
 }

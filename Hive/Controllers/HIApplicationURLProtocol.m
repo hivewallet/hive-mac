@@ -12,28 +12,16 @@
 
 static NPZip *zipFile = nil;
 
-@interface HIApplicationURLProtocol ()
-{
-    NSURLConnection *_conn;
-}
-
-@end
 
 @implementation HIApplicationURLProtocol
 
 + (BOOL)canInitWithRequest:(NSURLRequest *)request
 {
-    // only handle http requests we haven't marked with our header.
-    if ([request.URL.scheme isEqualToString:@"http"] || [request.URL.scheme isEqualToString:@"https"])
+    if ([request.URL.host isEqualToString:@"localhost"])
     {
-        if (request.allHTTPHeaderFields[@"HIApplicationURLProtocolHandled"])
-        {
-            return NO;
-        }
-        
         return YES;
     }
-    
+
     return NO;
 }
 
@@ -44,11 +32,6 @@ static NPZip *zipFile = nil;
 
 - (BOOL)isURLZipped:(NSURL *)URL
 {
-    if (URL.pathComponents.count < 2)
-    {
-        return NO;
-    }
-
     NSString *appName = URL.pathComponents[1];
     NSURL *applicationsDirectory = [[HIApplicationsManager sharedManager] applicationsDirectory];
     NSURL *applicationURL = [applicationsDirectory URLByAppendingPathComponent:appName];
@@ -67,28 +50,30 @@ static NPZip *zipFile = nil;
 
 - (void)startLoading
 {
-    if (![self isURLZipped:self.request.URL])
+    NSData *contentData;
+
+    NSArray *pathComponents = self.request.URL.pathComponents;
+    NSString *appName = pathComponents[1];
+    NSArray *localPathComponents = [pathComponents subarrayWithRange:NSMakeRange(2, pathComponents.count - 2)];
+    NSString *localPath = [NSString pathWithComponents:localPathComponents];
+
+    NSURL *applicationsDirectory = [[HIApplicationsManager sharedManager] applicationsDirectory];
+    NSURL *applicationURL = [applicationsDirectory URLByAppendingPathComponent:appName];
+
+    if ([self isURLZipped:self.request.URL])
     {
-        NSMutableURLRequest *req = [self.request mutableCopy];
-        [req setValue:@"YES" forHTTPHeaderField:@"HIApplicationURLProtocolHandled"];
-        _conn = [[NSURLConnection alloc] initWithRequest:req delegate:self startImmediately:YES];
-         
-        return;
+        if (!zipFile || ![zipFile.name isEqual:appName])
+        {
+            zipFile = [NPZip archiveWithFile:applicationURL.path];
+        }
+
+        contentData = [zipFile dataForEntryNamed:localPath];
+    }
+    else
+    {
+        contentData = [NSData dataWithContentsOfURL:[applicationURL URLByAppendingPathComponent:localPath]];
     }
 
-    if (!zipFile || ![zipFile.name isEqual:self.request.URL.host])
-    {
-        NSURL *applicationsDirectory = [[HIApplicationsManager sharedManager] applicationsDirectory];
-        NSURL *applicationURL = [applicationsDirectory URLByAppendingPathComponent:self.request.URL.pathComponents[1]];
-        zipFile = [NPZip archiveWithFile:applicationURL.path];
-    }
-
-    NSMutableArray *cs = [self.request.URL.pathComponents mutableCopy];
-    [cs removeObjectAtIndex:0];
-    [cs removeObjectAtIndex:0];
-
-    NSData *contentData = [zipFile dataForEntryNamed:[NSString pathWithComponents:cs]];
-    
     if (!contentData)
     {
         [self.client URLProtocol:self
@@ -117,43 +102,6 @@ static NPZip *zipFile = nil;
 
 - (void)stopLoading
 {
-    [_conn cancel];
-    _conn = nil;
-}
-
-
-- (void)connection:(NSURLConnection *)connection didFailWithError:(NSError *)error
-{
-    [self.client URLProtocol:self
-            didFailWithError:[NSError errorWithDomain:NSURLErrorDomain code:NSURLErrorBadURL userInfo:nil]];
-}
-
-- (void)connection:(NSURLConnection *)connection didReceiveResponse:(NSURLResponse *)response
-{
-    NSHTTPURLResponse *resp = (NSHTTPURLResponse *)response;
-
-    NSMutableDictionary *respHeaders = [resp.allHeaderFields mutableCopy];
-    [respHeaders setObject:@"*" forKey:@"Access-Control-Allow-Origin"];
-    [respHeaders setObject:@"*" forKey:@"Access-Control-Allow-Headers"];
-
-    NSHTTPURLResponse *returnedResponse = [[NSHTTPURLResponse alloc] initWithURL:self.request.URL
-                                                                      statusCode:resp.statusCode
-                                                                     HTTPVersion:@"1.1"
-                                                                    headerFields:respHeaders];
-
-    [self.client URLProtocol:self
-          didReceiveResponse:returnedResponse
-          cacheStoragePolicy:NSURLCacheStorageAllowedInMemoryOnly];
-}
-
-- (void)connection:(NSURLConnection *)connection didReceiveData:(NSData *)data
-{
-    [self.client URLProtocol:self didLoadData:data];
-}
-
-- (void)connectionDidFinishLoading:(NSURLConnection *)connection
-{
-    [self.client URLProtocolDidFinishLoading:self];
 }
 
 @end
