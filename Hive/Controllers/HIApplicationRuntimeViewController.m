@@ -60,8 +60,7 @@
     [self.webView setPreferencesIdentifier:noSecurityPreferencesId];
 
     // load the app
-    _baseURL = [NSURL URLWithString:[NSString stringWithFormat:@"http://localhost/%@/index.html",
-                                     self.application.id]];
+    _baseURL = [NSURL URLWithString:[NSString stringWithFormat:@"http://%@.hiveapp/index.html", self.application.id]];
 
     [self.webView.mainFrame loadRequest:[NSURLRequest requestWithURL:_baseURL]];
 }

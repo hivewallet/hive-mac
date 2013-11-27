@@ -17,12 +17,7 @@ static NPZip *zipFile = nil;
 
 + (BOOL)canInitWithRequest:(NSURLRequest *)request
 {
-    if ([request.URL.host isEqualToString:@"localhost"])
-    {
-        return YES;
-    }
-
-    return NO;
+    return [request.URL.host hasSuffix:@".hiveapp"];
 }
 
 + (NSURLRequest *)canonicalRequestForRequest:(NSURLRequest *)request
@@ -32,7 +27,7 @@ static NPZip *zipFile = nil;
 
 - (BOOL)isURLZipped:(NSURL *)URL
 {
-    NSString *appName = URL.pathComponents[1];
+    NSString *appName = [URL.host substringToIndex:(URL.host.length - 8)];
     NSURL *applicationsDirectory = [[HIApplicationsManager sharedManager] applicationsDirectory];
     NSURL *applicationURL = [applicationsDirectory URLByAppendingPathComponent:appName];
 
@@ -53,8 +48,8 @@ static NPZip *zipFile = nil;
     NSData *contentData;
 
     NSArray *pathComponents = self.request.URL.pathComponents;
-    NSString *appName = pathComponents[1];
-    NSArray *localPathComponents = [pathComponents subarrayWithRange:NSMakeRange(2, pathComponents.count - 2)];
+    NSString *appName = [self.request.URL.host substringToIndex:(self.request.URL.host.length - 8)];
+    NSArray *localPathComponents = [pathComponents subarrayWithRange:NSMakeRange(1, pathComponents.count - 1)];
     NSString *localPath = [NSString pathWithComponents:localPathComponents];
 
     NSURL *applicationsDirectory = [[HIApplicationsManager sharedManager] applicationsDirectory];
