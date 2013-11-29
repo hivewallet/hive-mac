@@ -1,30 +1,29 @@
-
 /* Class = "NSWindow"; title = "Send Bitcoin"; ObjectID = "1"; */
-"1.title" = "Send Bitcoin";
+"1.title" = "Pošaljite bitkoin";
 
 /* Class = "NSButtonCell"; title = "Cancel"; ObjectID = "6"; */
-"6.title" = "Cancel";
+"6.title" = "Odustanite";
 
 /* Class = "NSButtonCell"; title = "Send"; ObjectID = "10"; */
-"10.title" = "Send";
+"10.title" = "Pošaljite";
 
 /* Class = "NSTextFieldCell"; title = "To:"; ObjectID = "14"; */
-"14.title" = "To:";
+"14.title" = "Primalac:";
 
 /* Class = "NSTextFieldCell"; title = "Amount:"; ObjectID = "16"; */
-"16.title" = "Amount:";
+"16.title" = "Iznos:";
 
 /* Class = "NSTextFieldCell"; placeholderString = "Type to search..."; ObjectID = "20"; */
-"20.placeholderString" = "Type to search...";
+"20.placeholderString" = "Ukucajte radi pretrage...";
 
 /* Class = "NSTextFieldCell"; title = "John Whatshisface"; ObjectID = "20"; */
 "20.title" = "John Whatshisface";
 
 /* Class = "NSTextFieldCell"; title = "Main address"; ObjectID = "22"; */
-"22.title" = "Main address";
+"22.title" = "Glavna adresa";
 
 /* Class = "NSBox"; title = "Box"; ObjectID = "23"; */
-"23.title" = "Box";
+"23.title" = "Polje";
 
 /* Class = "NSTextFieldCell"; title = "0.0"; ObjectID = "37"; */
 "37.title" = "0.0";
@@ -33,7 +32,7 @@
 "DX5-Li-q9R.title" = "0.0";
 
 /* Class = "NSBox"; title = "Box"; ObjectID = "Uma-46-IZW"; */
-"Uma-46-IZW.title" = "Box";
+"Uma-46-IZW.title" = "Polje";
 
 /* Class = "NSMenu"; title = "OtherViews"; ObjectID = "WcM-4W-vgC"; */
-"WcM-4W-vgC.title" = "OtherViews";
+"WcM-4W-vgC.title" = "DrugaGledišta";

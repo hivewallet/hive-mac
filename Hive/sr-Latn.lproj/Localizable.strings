@@ -1,151 +1,152 @@
 /* Address field placeholder */
-"Address" = "Address";
+"Address" = "Adresa";
 
 /* Amount exceeds balance alert title */
-"Amount exceeds balance." = "Amount exceeds balance.";
+"Amount exceeds balance." = "Iznos je veći od bilansa.";
 
 /* Anonymous username for profile page */
-"Anonymous" = "Anonymous";
+"Anonymous" = "Anoniman";
 
 /* App load error title */
-"Application can't be loaded" = "Application can't be loaded";
+"Application can't be loaded" = "Aplikacija ne može da se učita";
 
 /* Applications view title */
-"Apps" = "Apps";
+"Apps" = "Aplikacije";
 
 /* Debugging tools confirmation popup title */
-"Are you sure?" = "Are you sure?";
+"Are you sure?" = "Da li ste sigurni?";
 
 /* Cancel button title */
-"Cancel" = "Cancel";
+"Cancel" = "Odustani";
 
 /* No comment provided by engineer. */
-"click to copy" = "click to copy";
+"click to copy" = "kliknite za kopiranje";
 
 /* Contact name empty alert title */
-"Contact can't be saved." = "Contact can't be saved.";
+"Contact can't be saved." = "Kontakti ne mogu biti sačuvani.";
 
 /* Contacts view title */
-"Contacts" = "Contacts";
+"Contacts" = "Kontakti";
 
 /* No comment provided by engineer. */
-"copied!" = "copied!";
+"copied!" = "iskopirano!";
 
 /* Quit without saves error question message */
-"Could not save changes while quitting. Quit anyway?" = "Could not save changes while quitting. Quit anyway?";
+"Could not save changes while quitting. Quit anyway?" = "Izmene nisu uspešno sačuvane prilikom izlaženja. Izaći svejedno?";
 
 /* Remove contact alert dialog body */
-"Do you really want to remove %@ %@ from your contact list?" = "Do you really want to remove %1$@ %2$@ from your contact list?";
+"Do you really want to remove %@ %@ from your contact list?" = "Da li zaista želite da uklonite %1$@ %2$@ iz vaše liste kontakata?";
 
 /* No comment provided by engineer. */
-"Edit contact" = "Edit contact";
+"Edit contact" = "Izmenite kontakt";
 
 /* No comment provided by engineer. */
-"Edit profile" = "Edit profile";
+"Edit profile" = "Izmenite profil";
 
 /* Email field placeholder */
 "email" = "email";
 
 /* Sending zero bitcoin alert title */
-"Enter an amount greater than zero." = "Enter an amount greater than zero.";
+"Enter an amount greater than zero." = "Unesite iznos veći od nule.";
 
 /* Firstname field placeholder */
-"Firstname" = "Firstname";
+"Firstname" = "Ime";
 
 /* Direction label in transactions list when user is the receiver */
-"from" = "from";
+"from" = "odakle";
 
 /* Install app popup title */
-"Install Hive App" = "Install Hive App";
+"Install Hive App" = "Instalirajte Hive aplikaciju";
 
 /* Address caption field placeholder */
-"Label" = "Label";
+"Label" = "Oznaka";
 
 /* Lastname field placeholder */
-"Lastname" = "Lastname";
+"Lastname" = "Prezime";
 
 /* Main address caption */
-"main" = "main";
+"main" = "glavna";
 
 /* Main address caption string for profiles */
-"Main address" = "Main address";
+"Main address" = "Glavna adresa";
 
 /* New contact view controller title */
-"New contact" = "New contact";
+"New contact" = "Novi kontakt";
 
 /* No comment provided by engineer. */
-"No" = "No";
+"No" = "Ne";
 
 /* Empty address alert title */
-"No address entered." = "No address entered.";
+"No address entered." = "Adresa nije upisana.";
 
 /* Transaction failed alert message */
-"No bitcoin have been taken from your wallet." = "No bitcoin have been taken from your wallet.";
+"No bitcoin have been taken from your wallet." = "Ni jedan bitkoin nije uzet iz vašeg novčanika.";
 
 /* OK Button title
    OK button title */
-"OK" = "OK";
+"OK" = "Ok";
 
 /* Autocomplete dropdown prompt */
-"or choose from the list" = "or choose from the list";
+"or choose from the list" = "ili izaberite sa liste";
 
 /* part of the balance amount that isn't available */
-"pending" = "pending";
+"pending" = "u toku";
 
 /* Invalid address alert message */
-"Please check if you have entered the address correctly." = "Please check if you have entered the address correctly.";
+"Please check if you have entered the address correctly." = "Molimo vas proverite da li ste ispravno uneli adresu.";
 
 /* Empty address alert message */
-"Please enter a valid Bitcoin address or select one from the dropdown list." = "Please enter a valid Bitcoin address or select one from the dropdown list.";
+"Please enter a valid Bitcoin address or select one from the dropdown list." = "Molimo vas unesite ispravnu bitkoin adresu ili izaberite jednu sa padajuće liste.";
 
 /* Profile view title string */
-"Profile" = "Profile";
+"Profile" = "Profil";
 
 /* Quit anyway button title */
-"Quit anyway" = "Quit anyway";
+"Quit anyway" = "Svejedno izađite";
 
 /* Quit without saves error question info */
-"Quitting now will lose any changes you have made since the last successful save" = "Quitting now will lose any changes you have made since the last successful save";
+"Quitting now will lose any changes you have made since the last successful save" = "Izlaženje sada bi uzrokovalo gubitak svih izmena koje ste napravili od prethodnog uspešnog čuvanja.";
 
 /* Rebuild transaction list button title */
-"Rebuild list" = "Rebuild list";
+"Rebuild list" = "Obnovite listu";
 
 /* Remove contact alert dialog title */
-"Remove contact" = "Remove contact";
+"Remove contact" = "Uklonite kontakt";
 
 /* App load error description */
-"The application data file has been removed or corrupted." = "The application data file has been removed or corrupted.";
+"The application data file has been removed or corrupted." = "Fajl sa podacima iz aplikacije je uklonjen ili oštećen.";
 
 /* Invalid address alert title */
-"This isn't a valid Bitcoin address." = "This isn't a valid Bitcoin address.";
+"This isn't a valid Bitcoin address." = "Ovo nije ispravna bitkoin adresa.";
 
 /* Direction label in transactions list when user is the sender */
-"to" = "to";
+"to" = "primalac";
 
 /* Transaction failed alert title */
-"Transaction could not be completed." = "Transaction could not be completed.";
+"Transaction could not be completed." = "Transakcija ne može biti izvršena.";
 
 /* Transactions view title */
-"Transactions" = "Transactions";
+"Transactions" = "Transakcije";
 
 /* Sending zero bitcoin alert message */
-"Why would you want to send someone 0 BTC?" = "Why would you want to send someone 0 BTC?";
+"Why would you want to send someone 0 BTC?" = "Zašto biste želeli nekome da pošaljete 0 BTC?";
 
 /* Install app popup confirmation */
-"Would you like to install \"%@\" application?" = "Would you like to install \"%@\" application?";
+"Would you like to install \"%@\" application?" = "Da li biste želeli da instalirate \"%@\" aplikaciju?";
 
 /* No comment provided by engineer. */
-"Yes" = "Yes";
+"Yes" = "Da";
 
 /* Install app popup confirmation when app exists */
-"You already have \"%@\" application. Would you like to overwrite it?" = "You already have \"%@\" application. Would you like to overwrite it?";
+"You already have \"%@\" application. Would you like to overwrite it?" = "Već imate \"%@\" aplikaciju. Da li želite da instalirate novu preko nje?";
 
 /* Amount exceeds balance alert message */
-"You cannot send more money than you own." = "You cannot send more money than you own.";
+"You cannot send more money than you own." = "Ne možete poslati više novca nego što imate.";
 
 /* Contact name empty alert message */
-"You need to give the contact a name before you can add it to the list." = "You need to give the contact a name before you can add it to the list.";
+"You need to give the contact a name before you can add it to the list." = "Morate navesti ime kontakta pre nego što ga dodate na listu.";
 
 /* Rebuild transaction list popup description */
-"Your transaction list will be rebuilt now." = "Your transaction list will be rebuilt now.";
+"Your transaction list will be rebuilt now." = "Vaša lista transakcija će sad biti obnovljena.";
+
 
