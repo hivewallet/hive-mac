@@ -159,7 +159,6 @@ static NSString *const HIConversionPreferenceKey = @"ConversionCurrency";
 - (NSString *)formatValue:(NSDecimalNumber *)value inCurrency:(NSString *)currency
 {
     NSNumberFormatter *currencyNumberFormatter = [NSNumberFormatter new];
-    currencyNumberFormatter.localizesFormat = YES;
     currencyNumberFormatter.format = @"#,##0.00";
     int digits = [self.currencyDigits[currency] intValue];
     currencyNumberFormatter.minimumFractionDigits = digits;

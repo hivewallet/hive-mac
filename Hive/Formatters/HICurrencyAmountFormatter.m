@@ -17,7 +17,6 @@
     self.minimumFractionDigits = 2;
     self.maximumFractionDigits = 8;
     self.numberStyle = NSNumberFormatterDecimalStyle;
-    self.localizesFormat = YES;
 }
 
 - (id)init {
