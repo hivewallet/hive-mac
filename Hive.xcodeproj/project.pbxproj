@@ -12,6 +12,8 @@
 		1AA10A016757DBB9BE7808C5 /* HIExchangeRateService.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AA1032408E917EE5B7752AC /* HIExchangeRateService.m */; };
 		1AA10B3C94C377F4EF024D41 /* HIProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AA1013FB9712D7B30A91BFB /* HIProfileViewController.m */; };
 		1AA10ECC39D33A1362882EB2 /* HIProfileViewController.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1AA108BDEC523213EF9B8309 /* HIProfileViewController.strings */; };
+		2478B8D3184A80A400BA2C35 /* HIFeeDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2478B8D1184A80A400BA2C35 /* HIFeeDetailsViewController.m */; };
+		2478B8D4184A80A400BA2C35 /* HIFeeDetailsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2478B8D2184A80A400BA2C35 /* HIFeeDetailsViewController.xib */; };
 		5802106017ECC4F50039BA4B /* HITransactionCellView.m in Sources */ = {isa = PBXBuildFile; fileRef = 581EFBCB17DA441B00E2738D /* HITransactionCellView.m */; };
 		5802106317ECCAAA0039BA4B /* HIContactAutocompleteCellView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5802106217ECCAAA0039BA4B /* HIContactAutocompleteCellView.m */; };
 		5804C32617FC88BA003B7891 /* HIProfile.m in Sources */ = {isa = PBXBuildFile; fileRef = 5804C32517FC88BA003B7891 /* HIProfile.m */; };
@@ -269,6 +271,9 @@
 		245CBB3F1842AE7200619953 /* pt-BR */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = "pt-BR"; path = "pt-BR.lproj/HIProfileViewController.xib"; sourceTree = "<group>"; };
 		245CBB401842AE7900619953 /* fil */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = fil; path = fil.lproj/HIProfileViewController.xib; sourceTree = "<group>"; };
 		245CBB411842AE7C00619953 /* fil */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fil; path = fil.lproj/HIProfileViewController.strings; sourceTree = "<group>"; };
+		2478B8D0184A80A400BA2C35 /* HIFeeDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HIFeeDetailsViewController.h; sourceTree = "<group>"; };
+		2478B8D1184A80A400BA2C35 /* HIFeeDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HIFeeDetailsViewController.m; sourceTree = "<group>"; };
+		2478B8D2184A80A400BA2C35 /* HIFeeDetailsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HIFeeDetailsViewController.xib; sourceTree = "<group>"; };
 		58003E2418492B2900CD19FE /* sr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = sr; path = sr.lproj/HIApplicationRuntimeViewController.strings; sourceTree = "<group>"; };
 		58003E2518492B2900CD19FE /* sr */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = sr; path = sr.lproj/HIApplicationRuntimeViewController.xib; sourceTree = "<group>"; };
 		58003E2618492B2900CD19FE /* sr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = sr; path = sr.lproj/HIApplicationsViewController.strings; sourceTree = "<group>"; };
@@ -1231,6 +1236,16 @@
 			name = HIProfileViewController;
 			sourceTree = "<group>";
 		};
+		2478B8C9184A7BE300BA2C35 /* HIFeeDetailsViewController */ = {
+			isa = PBXGroup;
+			children = (
+				2478B8D0184A80A400BA2C35 /* HIFeeDetailsViewController.h */,
+				2478B8D1184A80A400BA2C35 /* HIFeeDetailsViewController.m */,
+				2478B8D2184A80A400BA2C35 /* HIFeeDetailsViewController.xib */,
+			);
+			name = HIFeeDetailsViewController;
+			sourceTree = "<group>";
+		};
 		5804C31F17FC884E003B7891 /* Models */ = {
 			isa = PBXGroup;
 			children = (
@@ -1613,6 +1628,7 @@
 				588E34D0181FF28C006A6A25 /* HIDebuggingInfoWindowController */,
 				586905891843DE0C0053D74F /* HIDebuggingToolsWindowController */,
 				588E354718212B79006A6A25 /* HIErrorWindowController */,
+				2478B8C9184A7BE300BA2C35 /* HIFeeDetailsViewController */,
 				586059F718041AD600FD9C2A /* HIMainWindowController.h */,
 				586059F818041AD600FD9C2A /* HIMainWindowController.m */,
 				58A37AE0180D99A100CFCDE3 /* HIMainWindowController.strings */,
@@ -1801,6 +1817,7 @@
 				5884A03E17F57AE9004A31FA /* dsa_pub.pem in Resources */,
 				586059AF180419DF00FD9C2A /* bitstamp.hiveapp in Resources */,
 				58A37AD6180D996E00CFCDE3 /* HIContactViewController.strings in Resources */,
+				2478B8D4184A80A400BA2C35 /* HIFeeDetailsViewController.xib in Resources */,
 				586059B0180419DF00FD9C2A /* minefield.hiveapp in Resources */,
 				588E355318212BDF006A6A25 /* HIErrorWindowController.strings in Resources */,
 				586059B1180419DF00FD9C2A /* supporthive.hiveapp in Resources */,
@@ -1954,6 +1971,7 @@
 				586059F518041ABD00FD9C2A /* HITransactionsViewController.m in Sources */,
 				586059FF18041AD600FD9C2A /* HIMainWindowController.m in Sources */,
 				58605A0018041AD600FD9C2A /* HINavigationController.m in Sources */,
+				2478B8D3184A80A400BA2C35 /* HIFeeDetailsViewController.m in Sources */,
 				588E33B71817E6AE006A6A25 /* HIBitcoinURL.m in Sources */,
 				58605A0118041AD600FD9C2A /* HISidebarController.m in Sources */,
 				58605A0218041AD600FD9C2A /* HIViewController.m in Sources */,

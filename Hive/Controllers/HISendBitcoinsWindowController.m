@@ -13,6 +13,7 @@
 #import "HIContactAutocompleteWindowController.h"
 #import "HICurrencyAmountFormatter.h"
 #import "HIExchangeRateService.h"
+#import "HIFeeDetailsViewController.h"
 #import "HISendBitcoinsWindowController.h"
 
 NSString * const HISendBitcoinsWindowDidClose = @"HISendBitcoinsWindowDidClose";
@@ -33,6 +34,7 @@ NSString * const HISendBitcoinsWindowSuccessKey = @"success";
 @property (copy) NSString *selectedCurrency;
 @property (strong, readonly) HIExchangeRateService *exchangeRateService;
 @property (strong, readonly) HIContactAutocompleteWindowController *autocompleteController;
+@property (strong) HIFeeDetailsViewController *feeDetailsViewController;
 
 @end
 
@@ -307,8 +309,7 @@ NSString * const HISendBitcoinsWindowSuccessKey = @"success";
 
 - (void)updateFee
 {
-    uint64 amount = [self satoshiFromNumber:self.amountFieldValue];
-    uint64 fee = [[BCClient sharedClient] feeWhenSendingBitcoin:amount];
+    uint64 fee = self.currentFee;
     NSString *feeString =
         [@"+" stringByAppendingString:[self.bitcoinNumberFormatter stringFromNumber:[self numberFromSatoshi:fee]]];
     NSDictionary *attributes = @{
@@ -318,6 +319,28 @@ NSString * const HISendBitcoinsWindowSuccessKey = @"success";
     self.feeButton.attributedTitle = [[NSAttributedString alloc] initWithString:feeString
                                                                      attributes:attributes];
     self.feeButton.hidden = fee == 0;
+    self.feeDetailsViewController.fee = [self numberFromSatoshi:self.currentFee];
+}
+
+- (uint64)currentFee
+{
+    uint64 amount = [self satoshiFromNumber:self.amountFieldValue];
+    return [[BCClient sharedClient] feeWhenSendingBitcoin:amount];
+}
+
+- (IBAction)showFeePopover:(NSButton *)sender
+{
+    NSPopover *feePopover = [NSPopover new];
+    feePopover.behavior = NSPopoverBehaviorTransient;
+    if (!self.feeDetailsViewController)
+    {
+        self.feeDetailsViewController = [HIFeeDetailsViewController new];
+        self.feeDetailsViewController.fee = [self numberFromSatoshi:self.currentFee];
+    }
+    feePopover.contentViewController = self.feeDetailsViewController;
+    [feePopover showRelativeToRect:sender.bounds
+                            ofView:sender
+                     preferredEdge:NSMaxXEdge];
 }
 
 #pragma mark -

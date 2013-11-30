@@ -200,6 +200,9 @@ Gw
                                     <userDefinedRuntimeAttributes>
                                         <userDefinedRuntimeAttribute type="boolean" keyPath="showsBorderOnlyWhileMouseInside" value="YES"/>
                                     </userDefinedRuntimeAttributes>
+                                    <connections>
+                                        <action selector="showFeePopover:" target="-2" id="Me9-MI-7Gn"/>
+                                    </connections>
                                 </button>
                             </subviews>
                         </view>
