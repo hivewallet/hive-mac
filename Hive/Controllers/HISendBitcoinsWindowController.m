@@ -31,7 +31,7 @@ NSString * const HISendBitcoinsWindowSuccessKey = @"success";
 @property (copy) NSDecimalNumber *convertedAmountFieldValue;
 @property (copy) NSNumberFormatter *bitcoinNumberFormatter;
 @property (copy) NSDecimalNumber *exchangeRate;
-@property (copy) NSString *selectedCurrency;
+@property (nonatomic, copy) NSString *selectedCurrency;
 @property (strong, readonly) HIExchangeRateService *exchangeRateService;
 @property (strong, readonly) HIContactAutocompleteWindowController *autocompleteController;
 @property (strong) HIFeeDetailsViewController *feeDetailsViewController;
