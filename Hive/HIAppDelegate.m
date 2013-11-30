@@ -88,9 +88,13 @@ void handleException(NSException *exception)
 {
     // create BCClient instance
     [BCClient sharedClient];
-
-    _mainWindowController = [[HIMainWindowController alloc] initWithWindowNibName:@"HIMainWindowController"];
-    [_mainWindowController showWindow:self];
+    if ([BCClient sharedClient].initializationError) {
+        // TODO: Look at error code (e.g. kHIBitcoinManagerUnreadableWallet) and offer specific solution.
+        [[NSAlert alertWithError:[BCClient sharedClient].initializationError] runModal];
+    } else {
+        _mainWindowController = [[HIMainWindowController alloc] initWithWindowNibName:@"HIMainWindowController"];
+        [_mainWindowController showWindow:self];
+    }
 
     NSSetUncaughtExceptionHandler(&handleException);
 }
