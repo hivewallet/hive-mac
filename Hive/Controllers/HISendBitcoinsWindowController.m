@@ -13,6 +13,7 @@
 #import "HIContactAutocompleteWindowController.h"
 #import "HICurrencyAmountFormatter.h"
 #import "HIExchangeRateService.h"
+#import "HIFeeDetailsViewController.h"
 #import "HISendBitcoinsWindowController.h"
 
 NSString * const HISendBitcoinsWindowDidClose = @"HISendBitcoinsWindowDidClose";
@@ -33,6 +34,7 @@ NSString * const HISendBitcoinsWindowSuccessKey = @"success";
 @property (copy) NSString *selectedCurrency;
 @property (strong, readonly) HIExchangeRateService *exchangeRateService;
 @property (strong, readonly) HIContactAutocompleteWindowController *autocompleteController;
+@property (strong) HIFeeDetailsViewController *feeDetailsViewController;
 
 @end
 
@@ -190,6 +192,7 @@ NSString * const HISendBitcoinsWindowSuccessKey = @"success";
 - (void)setAmountFieldValue:(NSDecimalNumber *)amount
 {
     [self.amountField setStringValue:[self.bitcoinNumberFormatter stringFromNumber:amount]];
+    [self updateFee];
 }
 
 - (void)formatAmountField
@@ -273,8 +276,21 @@ NSString * const HISendBitcoinsWindowSuccessKey = @"success";
     return [amount decimalNumberByDividingBy:self.exchangeRate];
 }
 
-- (IBAction)currencyChanged:(id)sender {
+- (IBAction)currencyChanged:(id)sender
+{
     self.selectedCurrency = self.convertedCurrencyPopupButton.selectedItem.title;
+}
+
+- (uint64)satoshiFromNumber:(NSDecimalNumber *)amount
+{
+    return [[amount decimalNumberByMultiplyingByPowerOf10:8] longLongValue];
+}
+
+- (NSDecimalNumber *)numberFromSatoshi:(uint64)satoshi
+{
+    return [NSDecimalNumber decimalNumberWithMantissa:satoshi
+                                             exponent:-8
+                                           isNegative:NO];
 }
 
 #pragma mark - HIExchangeRateObserver
@@ -288,6 +304,46 @@ NSString * const HISendBitcoinsWindowSuccessKey = @"success";
         [self updateConvertedAmountFromAmount];
     }
 }
+
+#pragma mark - fees
+
+- (void)updateFee
+{
+    uint64 fee = self.currentFee;
+    NSString *feeString =
+        [@"+" stringByAppendingString:[self.bitcoinNumberFormatter stringFromNumber:[self numberFromSatoshi:fee]]];
+    NSDictionary *attributes = @{
+        NSForegroundColorAttributeName: [NSColor colorWithCalibratedWhite:.3 alpha:1.0],
+        NSFontAttributeName: [NSFont systemFontOfSize:9],
+    };
+    self.feeButton.attributedTitle = [[NSAttributedString alloc] initWithString:feeString
+                                                                     attributes:attributes];
+    self.feeButton.hidden = fee == 0;
+    self.feeDetailsViewController.fee = [self numberFromSatoshi:self.currentFee];
+}
+
+- (uint64)currentFee
+{
+    uint64 amount = [self satoshiFromNumber:self.amountFieldValue];
+    return [[BCClient sharedClient] feeWhenSendingBitcoin:amount];
+}
+
+- (IBAction)showFeePopover:(NSButton *)sender
+{
+    NSPopover *feePopover = [NSPopover new];
+    feePopover.behavior = NSPopoverBehaviorTransient;
+    if (!self.feeDetailsViewController)
+    {
+        self.feeDetailsViewController = [HIFeeDetailsViewController new];
+        self.feeDetailsViewController.fee = [self numberFromSatoshi:self.currentFee];
+    }
+    feePopover.contentViewController = self.feeDetailsViewController;
+    [feePopover showRelativeToRect:sender.bounds
+                            ofView:sender
+                     preferredEdge:NSMaxXEdge];
+}
+
+#pragma mark -
 
 #pragma mark - Handling button clicks
 
@@ -323,7 +379,7 @@ NSString * const HISendBitcoinsWindowSuccessKey = @"success";
 - (void)sendClicked:(id)sender
 {
     NSDecimalNumber *amount = self.amountFieldValue;
-    uint64 satoshi = [[amount decimalNumberByMultiplyingByPowerOf10:8] integerValue];
+    uint64 satoshi = [self satoshiFromNumber:amount];
 
     NSString *target = _hashAddress ? _hashAddress : self.nameLabel.stringValue;
 
@@ -416,6 +472,7 @@ NSString * const HISendBitcoinsWindowSuccessKey = @"success";
     if (notification.object == self.amountField)
     {
         [self updateConvertedAmountFromAmount];
+        [self updateFee];
     }
     else if (notification.object == self.convertedAmountField)
     {

@@ -1,0 +1,9 @@
+
+/* Class = "NSTextFieldCell"; title = "Transaction fees are added when sending Bitcoin."; ObjectID = "JVe-5I-zWC"; */
+"JVe-5I-zWC.title" = "Transaction fees are added when sending Bitcoin.";
+
+/* Class = "NSTextFieldCell"; title = "Current transaction fee:"; ObjectID = "exO-xB-xYk"; */
+"exO-xB-xYk.title" = "Current transaction fee:";
+
+/* Class = "NSTextFieldCell"; title = "0.0000001"; ObjectID = "l6i-QL-kg8"; */
+"l6i-QL-kg8.title" = "0.0000001";
