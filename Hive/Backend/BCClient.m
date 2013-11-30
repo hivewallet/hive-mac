@@ -456,6 +456,11 @@ static NSString * const kBCClientBaseURLString = @"https://grabhive.com/";
     [self sendBitcoins:amount toHash:contact.account completion:completion];
 }
 
+- (uint64)feeWhenSendingBitcoin:(uint64)amount
+{
+    return amount > 0 ? [[HIBitcoinManager defaultManager] calculateTransactionFeeForSendingCoins:amount] : 0;
+}
+
 - (BOOL)backupWalletAtURL:(NSURL *)backupURL
 {
     return [[HIBitcoinManager defaultManager] exportWalletTo:backupURL];

@@ -12,6 +12,7 @@
                 <outlet property="convertedAmountField" destination="l47-zx-4mb" id="mgX-At-dSz"/>
                 <outlet property="convertedCurrencyPopupButton" destination="ZPL-GE-Omh" id="Sd0-4A-V3B"/>
                 <outlet property="dropdownButton" destination="51" id="54"/>
+                <outlet property="feeButton" destination="fQu-xK-vvV" id="aWn-ee-8jl"/>
                 <outlet property="nameLabel" destination="19" id="27"/>
                 <outlet property="photoView" destination="17" id="28"/>
                 <outlet property="sendButton" destination="9" id="43"/>
@@ -189,7 +190,7 @@ Gw
                                         <action selector="currencyChanged:" target="-2" id="hFj-Bb-yS9"/>
                                     </connections>
                                 </popUpButton>
-                                <button id="fQu-xK-vvV">
+                                <button id="fQu-xK-vvV" userLabel="Fee">
                                     <rect key="frame" x="292" y="54" width="74" height="24"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                     <buttonCell key="cell" type="bevel" title="+0.00001" bezelStyle="regularSquare" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="PvI-F7-VRv">
