@@ -177,10 +177,10 @@ Gw
                                         <action selector="dropdownButtonClicked:" target="-2" id="53"/>
                                     </connections>
                                 </button>
-                                <popUpButton verticalHuggingPriority="750" id="ZPL-GE-Omh">
-                                    <rect key="frame" x="13" y="9" width="92" height="26"/>
+                                <popUpButton id="ZPL-GE-Omh">
+                                    <rect key="frame" x="37" y="12" width="60" height="21"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                    <popUpButtonCell key="cell" type="push" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" id="riJ-35-blE">
+                                    <popUpButtonCell key="cell" type="bevel" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" imageScaling="proportionallyDown" inset="2" id="riJ-35-blE">
                                         <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
                                         <font key="font" metaFont="menu"/>
                                         <menu key="menu" title="OtherViews" id="WcM-4W-vgC"/>
