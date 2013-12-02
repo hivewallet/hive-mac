@@ -6,7 +6,9 @@
 //  Copyright (c) 2013 Hive Developers. All rights reserved.
 //
 
+#import <BitcoinJKit/HIBitcoinErrorCodes.h>
 #import <WebKit/WebKit.h>
+
 #import "BCClient.h"
 #import "HIAppDelegate.h"
 #import "HIApplicationsManager.h"
@@ -88,15 +90,45 @@ void handleException(NSException *exception)
 {
     // create BCClient instance
     [BCClient sharedClient];
-    if ([BCClient sharedClient].initializationError) {
-        // TODO: Look at error code (e.g. kHIBitcoinManagerUnreadableWallet) and offer specific solution.
-        [[NSAlert alertWithError:[BCClient sharedClient].initializationError] runModal];
-    } else {
+    if ([BCClient sharedClient].initializationError)
+    {
+        [self showInitializationError:[BCClient sharedClient].initializationError];
+    }
+    else
+    {
         _mainWindowController = [[HIMainWindowController alloc] initWithWindowNibName:@"HIMainWindowController"];
         [_mainWindowController showWindow:self];
     }
 
     NSSetUncaughtExceptionHandler(&handleException);
+}
+
+- (void)showInitializationError:(NSError *)error
+{
+    // TODO: Look at error code (e.g. kHIBitcoinManagerUnreadableWallet) and offer specific solution.
+    NSString *message = nil;
+    if (error.code == kHIBitcoinManagerUnreadableWallet)
+    {
+        message = NSLocalizedString(@"Could not read wallet file. It might be damaged.", @"initialization error");
+    }
+    else if (error.code == kHIBitcoinManagerBlockStoreError)
+    {
+        message = NSLocalizedString(@"Could not write wallet file. Another instance of Hive might still be running.",
+                                    @"initialization error");
+    }
+    if (message)
+    {
+        [[NSAlert alertWithMessageText:NSLocalizedString(@"Error", @"Initialization error title")
+                         defaultButton:NSLocalizedString(@"OK", @"OK button title")
+                       alternateButton:nil
+                           otherButton:nil
+             informativeTextWithFormat:@"%@", message] runModal];
+    }
+    else
+    {
+        [[NSAlert alertWithError:error] runModal];
+    }
+    exit(1);
 }
 
 - (void)showBetaWarning
