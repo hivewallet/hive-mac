@@ -1,0 +1,14 @@
+/* Class = "NSWindow"; title = "Debugging Tools"; ObjectID = "1"; */
+"1.title" = "Алати за отклањање грешака";
+
+/* Class = "NSTextFieldCell"; title = "Warning: only use these if you know what you're doing."; ObjectID = "7s6-ad-XDN"; */
+"7s6-ad-XDN.title" = "Упозорење: користите ово само уколико сте сигурни да знате шта радите.";
+
+/* Class = "NSButtonCell"; title = "Rebuild transaction list"; ObjectID = "BEL-F2-2Mn"; */
+"BEL-F2-2Mn.title" = "Обновите листу трансакција";
+
+/* Class = "NSTextFieldCell"; title = "This will clear your transactions list and rebuild it from the data in the wallet file."; ObjectID = "F9Q-9W-L7l"; */
+"F9Q-9W-L7l.title" = "Ово ће очистити вашу листу трансакције и обновити је од података у вашем новчаник фајлу.";
+
+/* Class = "NSBox"; title = "Box"; ObjectID = "uKJ-hm-aZ8"; */
+"uKJ-hm-aZ8.title" = "Поље";

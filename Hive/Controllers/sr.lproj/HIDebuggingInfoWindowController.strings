@@ -1,0 +1,6 @@
+/* Class = "NSWindow"; title = "Debugging Info"; ObjectID = "1"; */
+"1.title" = "Информације за уклањање грешака";
+
+/* Class = "NSTextFieldCell"; title = "If you have problems with your wallet, we may ask you to send us the contents of the text area below. Please note that the data does NOT include your private keys and will not allow us to spend your Bitcoin!"; ObjectID = "o5O-SS-J37"; */
+"o5O-SS-J37.title" = "Ако имате проблема са нашим новчаником, молимо вас да нам пошаљете садржај поља са текстом испод. Имајте на уму да ти подаци НЕ садрже ваше приватне кључеве и да нам неће омогућити да трошимо ваше биткоине!";
+

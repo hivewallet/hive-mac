@@ -23,6 +23,7 @@ static NSString * const kBCClientBaseURLString = @"https://grabhive.com/";
     NSDateFormatter *_dateFormatter;
 }
 
+@property (nonatomic, copy) NSError *initializationError;
 @property (nonatomic) uint64 balance;
 @property (nonatomic) uint64 pendingBalance;
 
@@ -118,12 +119,20 @@ static NSString * const kBCClientBaseURLString = @"https://grabhive.com/";
         // TOR disabled for now
         // [tor start];
 
-        [bitcoin start];
+        NSError *error;
+        if ([bitcoin start:&error])
+        {
+            self.balance = [[[NSUserDefaults standardUserDefaults] objectForKey:@"LastBalance"] unsignedLongLongValue];
+            self.pendingBalance = 0;
 
-        self.balance = [[[NSUserDefaults standardUserDefaults] objectForKey:@"LastBalance"] unsignedLongLongValue];
-        self.pendingBalance = 0;
+            [self updateNotifications];
+        }
+        else
+        {
+            NSLog(@"BitcoinManager start error: %@", error);
+            self.initializationError = error;
+        }
 
-        [self updateNotifications];
     }
 
     return self;
@@ -445,6 +454,11 @@ static NSString * const kBCClientBaseURLString = @"https://grabhive.com/";
           completion:(void(^)(BOOL success, NSString *transactionId))completion
 {
     [self sendBitcoins:amount toHash:contact.account completion:completion];
+}
+
+- (uint64)feeWhenSendingBitcoin:(uint64)amount
+{
+    return amount > 0 ? [[HIBitcoinManager defaultManager] calculateTransactionFeeForSendingCoins:amount] : 0;
 }
 
 - (BOOL)backupWalletAtURL:(NSURL *)backupURL

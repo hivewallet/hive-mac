@@ -1,0 +1,20 @@
+/* Class = "NSTextFieldCell"; title = "Text Cell"; ObjectID = "10"; */
+"10.title" = "Поље за текст";
+
+/* Class = "NSTextFieldCell"; title = "Looks like you don't have any contacts yet! Add your first one and start sending money!"; ObjectID = "123"; */
+"123.title" = "Изгледа да још увек немате ни један контакт! Додајте свој први и почните да шаљете новац!";
+
+/* Class = "NSButtonCell"; title = "Add contact"; ObjectID = "125"; */
+"125.title" = "Додајте контакт";
+
+/* Class = "NSTextFieldCell"; title = "You can then use the"; ObjectID = "129"; */
+"129.title" = "Након тога можете користити";
+
+/* Class = "NSTextFieldCell"; title = "button"; ObjectID = "133"; */
+"133.title" = "дугме";
+
+/* Class = "NSTextFieldCell"; title = "on top to add more contacts."; ObjectID = "135"; */
+"135.title" = "на врху како би додали још контаката.";
+
+/* Class = "NSTextFieldCell"; title = "Label"; ObjectID = "205"; */
+"205.title" = "Ознака";

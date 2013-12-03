@@ -1,0 +1,38 @@
+/* Class = "NSWindow"; title = "Error"; ObjectID = "1"; */
+"1.title" = "Greška";
+
+/* Class = "NSTextFieldCell"; placeholderString = "email@domain.com"; ObjectID = "0m5-Xd-7pp"; */
+"0m5-Xd-7pp.placeholderString" = "email@domain.com";
+
+/* Class = "NSTextFieldCell"; placeholderString = "John Appleseed"; ObjectID = "By4-mz-4pa"; */
+"By4-mz-4pa.placeholderString" = "John Appleseed";
+
+/* Class = "NSTextFieldCell"; title = "What were you doing when the error occurred?"; ObjectID = "CoM-ma-aHq"; */
+"CoM-ma-aHq.title" = "Šta ste radili kada se greška dogodila?";
+
+/* Class = "NSTextFieldCell"; title = "Please send us a report to help us fix the problem."; ObjectID = "Cob-tq-o5r"; */
+"Cob-tq-o5r.title" = "Molimo vas da nam pošaljete izveštaj kako bi nam pomogli da rešimo problem.";
+
+/* Class = "NSTextFieldCell"; title = "Oh no, something went wrong!"; ObjectID = "Mpx-rH-nUM"; */
+"Mpx-rH-nUM.title" = "Oh ne, nešto je pošlo naopako!";
+
+/* Class = "NSBox"; title = "Box"; ObjectID = "W3G-l5-uNF"; */
+"W3G-l5-uNF.title" = "Polje";
+
+/* Class = "NSTextFieldCell"; title = "Email (optional)"; ObjectID = "qVP-Mf-lLP"; */
+"qVP-Mf-lLP.title" = "Email (opciono)";
+
+/* Class = "NSButtonCell"; title = "Send"; ObjectID = "tDm-yy-jVS"; */
+"tDm-yy-jVS.title" = "Pošaljite";
+
+/* Class = "NSButtonCell"; title = "Cancel"; ObjectID = "tR0-Dg-y0x"; */
+"tR0-Dg-y0x.title" = "Odustanite";
+
+/* Class = "NSTextFieldCell"; title = "Error details:"; ObjectID = "uLK-ff-isg"; */
+"uLK-ff-isg.title" = "Detalji o grešci:";
+
+/* Class = "NSTextFieldCell"; title = "An unexpected error has occurred in Hive."; ObjectID = "xF4-pJ-cQU"; */
+"xF4-pJ-cQU.title" = "Neočekivana greška se dogodila u Hive-u.";
+
+/* Class = "NSTextFieldCell"; title = "Name (optional)"; ObjectID = "yDj-TF-cJK"; */
+"yDj-TF-cJK.title" = "Ime (opciono)";

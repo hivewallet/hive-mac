@@ -1,0 +1,151 @@
+/* Address field placeholder */
+"Address" = "Адреса";
+
+/* Amount exceeds balance alert title */
+"Amount exceeds balance." = "Износ је већи од биланса.";
+
+/* Anonymous username for profile page */
+"Anonymous" = "Анониман";
+
+/* App load error title */
+"Application can't be loaded" = "Апликација не може да се учита";
+
+/* Applications view title */
+"Apps" = "Апликације";
+
+/* Debugging tools confirmation popup title */
+"Are you sure?" = "Да ли сте сигурни?";
+
+/* Cancel button title */
+"Cancel" = "Одустани";
+
+/* No comment provided by engineer. */
+"click to copy" = "кликните за копирање";
+
+/* Contact name empty alert title */
+"Contact can't be saved." = "Контакти не могу да се сачувају.";
+
+/* Contacts view title */
+"Contacts" = "Контакти";
+
+/* No comment provided by engineer. */
+"copied!" = "ископирано!";
+
+/* Quit without saves error question message */
+"Could not save changes while quitting. Quit anyway?" = "Измене нису успешно сачуване приликом излажења. Изаћи свеједно?";
+
+/* Remove contact alert dialog body */
+"Do you really want to remove %@ %@ from your contact list?" = "Да ли заиста желите да уклоните %1$@ %2$@ из ваше листе контаката?";
+
+/* No comment provided by engineer. */
+"Edit contact" = "Измените контакт";
+
+/* No comment provided by engineer. */
+"Edit profile" = "Измените профил";
+
+/* Email field placeholder */
+"email" = "е-маил";
+
+/* Sending zero bitcoin alert title */
+"Enter an amount greater than zero." = "Унесите износ већи од нуле.";
+
+/* Firstname field placeholder */
+"Firstname" = "Име";
+
+/* Direction label in transactions list when user is the receiver */
+"from" = "одакле";
+
+/* Install app popup title */
+"Install Hive App" = "Инсталирајте Hive апликацију";
+
+/* Address caption field placeholder */
+"Label" = "Ознака";
+
+/* Lastname field placeholder */
+"Lastname" = "Презиме";
+
+/* Main address caption */
+"main" = "главна";
+
+/* Main address caption string for profiles */
+"Main address" = "Главна адреса";
+
+/* New contact view controller title */
+"New contact" = "Нови контакт";
+
+/* No comment provided by engineer. */
+"No" = "Не";
+
+/* Empty address alert title */
+"No address entered." = "Адреса није уписана.";
+
+/* Transaction failed alert message */
+"No bitcoin have been taken from your wallet." = "Ни један биткоин није узет из вашег новчаника.";
+
+/* OK Button title
+   OK button title */
+"OK" = "Ок";
+
+/* Autocomplete dropdown prompt */
+"or choose from the list" = "или изаберите са листе";
+
+/* part of the balance amount that isn't available */
+"pending" = "у току";
+
+/* Invalid address alert message */
+"Please check if you have entered the address correctly." = "Молимо вас проверите да ли сте исправно унели адресу.";
+
+/* Empty address alert message */
+"Please enter a valid Bitcoin address or select one from the dropdown list." = "Молимо вас унесите исправну биткоин адресу или изаберите једну са падајуће листе.";
+
+/* Profile view title string */
+"Profile" = "Профил";
+
+/* Quit anyway button title */
+"Quit anyway" = "Свеједно изађите";
+
+/* Quit without saves error question info */
+"Quitting now will lose any changes you have made since the last successful save" = "Излажење сада би узроковало губитак свих измена које сте направили од претходног успешног чувања.";
+
+/* Rebuild transaction list button title */
+"Rebuild list" = "Обновите листу";
+
+/* Remove contact alert dialog title */
+"Remove contact" = "Уклоните контакт";
+
+/* App load error description */
+"The application data file has been removed or corrupted." = "Фајл са подацима из апликације је уклоњен или оштећен.";
+
+/* Invalid address alert title */
+"This isn't a valid Bitcoin address." = "Ово није исправна биткоин адреса.";
+
+/* Direction label in transactions list when user is the sender */
+"to" = "прималац";
+
+/* Transaction failed alert title */
+"Transaction could not be completed." = "Трансакција не може бити извршена.";
+
+/* Transactions view title */
+"Transactions" = "Трансакције";
+
+/* Sending zero bitcoin alert message */
+"Why would you want to send someone 0 BTC?" = "Зашто бисте желели некоме да пошаљете 0 БТЦ?";
+
+/* Install app popup confirmation */
+"Would you like to install \"%@\" application?" = "Да ли бисте желели да инсталирате \"%@\" апликацију?";
+
+/* No comment provided by engineer. */
+"Yes" = "Да";
+
+/* Install app popup confirmation when app exists */
+"You already have \"%@\" application. Would you like to overwrite it?" = "Већ имате \"%@\" апликацију. Да ли желите да инсталирате нову преко ње?";
+
+/* Amount exceeds balance alert message */
+"You cannot send more money than you own." = "Не можете послати више новца него што имате.";
+
+/* Contact name empty alert message */
+"You need to give the contact a name before you can add it to the list." = "Морате навести име контакта пре него што га додате на листу.";
+
+/* Rebuild transaction list popup description */
+"Your transaction list will be rebuilt now." = "Ваша листа трансакција ће сад бити обновљена.";
+

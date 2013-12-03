@@ -25,6 +25,11 @@
 
 + (BCClient *)sharedClient;
 
+/*
+ * Returns any error that prevented initialization, or nil if no error.
+ */
+- (NSError *)initializationError;
+
 - (void)shutdown;
 - (void)updateNotifications;
 
@@ -35,6 +40,8 @@
 - (void)sendBitcoins:(uint64)amount
            toContact:(HIContact *)contact
           completion:(void(^)(BOOL success, NSString *transactionId))completion;
+
+- (uint64)feeWhenSendingBitcoin:(uint64)amount;
 
 - (NSDictionary *)transactionDefinitionWithHash:(NSString *)hash;
 - (void)rebuildTransactionsList;
