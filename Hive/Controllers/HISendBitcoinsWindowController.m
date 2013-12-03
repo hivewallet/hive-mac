@@ -314,7 +314,7 @@ NSString * const HISendBitcoinsWindowSuccessKey = @"success";
         [@"+" stringByAppendingString:[self.bitcoinNumberFormatter stringFromNumber:[self numberFromSatoshi:fee]]];
     NSDictionary *attributes = @{
         NSForegroundColorAttributeName: [NSColor colorWithCalibratedWhite:.3 alpha:1.0],
-        NSFontAttributeName: [NSFont systemFontOfSize:9],
+        NSFontAttributeName: [NSFont systemFontOfSize:11],
     };
     self.feeButton.attributedTitle = [[NSAttributedString alloc] initWithString:feeString
                                                                      attributes:attributes];
