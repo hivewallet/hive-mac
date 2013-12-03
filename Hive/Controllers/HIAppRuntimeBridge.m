@@ -24,6 +24,8 @@
     NSInteger _uBTCInSatoshi;
     NSString *_IncomingTransactionType;
     NSString *_OutgoingTransactionType;
+    NSString *_hiveVersionNumber;
+    NSString *_hiveBuildNumber;
 }
 
 @end
@@ -47,6 +49,9 @@
 
         _IncomingTransactionType = @"incoming";
         _OutgoingTransactionType = @"outgoing";
+
+        _hiveBuildNumber = [[NSBundle mainBundle] infoDictionary][@"CFBundleVersion"];
+        _hiveVersionNumber = [[NSBundle mainBundle] infoDictionary][@"CFBundleShortVersionString"];
     }
 
     return self;
@@ -233,7 +238,9 @@
                    @"_mBTCInSatoshi": @"MBTC_IN_SATOSHI",
                    @"_uBTCInSatoshi": @"UBTC_IN_SATOSHI",
                    @"_IncomingTransactionType": @"TX_TYPE_INCOMING",
-                   @"_OutgoingTransactionType": @"TX_TYPE_OUTGOING"
+                   @"_OutgoingTransactionType": @"TX_TYPE_OUTGOING",
+                   @"_hiveBuildNumber": @"BUILD_NUMBER",
+                   @"_hiveVersionNumber": @"VERSION",
                  };
     }
 
