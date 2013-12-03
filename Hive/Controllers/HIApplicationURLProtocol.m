@@ -76,15 +76,10 @@ static NPZip *zipFile = nil;
     }
     else
     {
-        NSDictionary *headers = @{
-                                  @"Access-Control-Allow-Origin": @"*",
-                                  @"Access-Control-Allow-Headers" : @"*"
-                                };
-
         NSHTTPURLResponse *response = [[NSHTTPURLResponse alloc] initWithURL:self.request.URL
                                                                   statusCode:200
                                                                  HTTPVersion:@"1.1"
-                                                                headerFields:headers];
+                                                                headerFields:nil];
 
         [self.client URLProtocol:self
               didReceiveResponse:response
