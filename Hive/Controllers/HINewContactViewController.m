@@ -205,8 +205,8 @@ static NSString * const Separator = @"Separator";
     [fieldContentView addSubview:nameField];
     parts[NameField] = nameField;
 
-    [nameField setValueAndRecalc:(address.caption ? address.caption : @"")];
-    [addressField setValueAndRecalc:(address ? address.address : @"")];
+    [nameField setValueAndRecalc:(address.caption ?: @"")];
+    [addressField setValueAndRecalc:(address.address ?: @"")];
 
     [nameField awakeFromNib];
     [addressField awakeFromNib];

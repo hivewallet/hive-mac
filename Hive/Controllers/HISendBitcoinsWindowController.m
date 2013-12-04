@@ -170,7 +170,7 @@ NSString * const HISendBitcoinsWindowSuccessKey = @"success";
     _hashAddress = address.address;
 
     self.nameLabel.stringValue = contact.name;
-    self.addressLabel.stringValue = address ? address.addressSuffixWithCaption : @"";
+    self.addressLabel.stringValue = address.addressSuffixWithCaption ?: @"";
     self.photoView.image = _contact.avatarImage;
 
     [self.window makeFirstResponder:nil];
@@ -381,7 +381,7 @@ NSString * const HISendBitcoinsWindowSuccessKey = @"success";
     NSDecimalNumber *amount = self.amountFieldValue;
     uint64 satoshi = [self satoshiFromNumber:amount];
 
-    NSString *target = _hashAddress ? _hashAddress : self.nameLabel.stringValue;
+    NSString *target = _hashAddress ?: self.nameLabel.stringValue;
 
     if (satoshi == 0) {
         [self showAlertWithTitle:NSLocalizedString(@"Enter an amount greater than zero.",

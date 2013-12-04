@@ -12,7 +12,7 @@
 #import "HICurrencyAmountFormatter.h"
 #import "HIProfile.h"
 
-#define SafeJSONValue(x) ((x) ? (x) : [NSNull null])
+#define SafeJSONValue(x) ((x) ?: [NSNull null])
 #define IsNullOrUndefined(x) (!(x) || [(x) isKindOfClass:[WebUndefined class]])
 
 @interface HIAppRuntimeBridge ()

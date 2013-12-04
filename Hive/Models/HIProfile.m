@@ -75,7 +75,7 @@
 
     if (first || last)
     {
-        return [NSString stringWithFormat:@"%@ %@", first ? first : @"", last ? last : @""];
+        return [NSString stringWithFormat:@"%@ %@", first ?: @"", last ?: @""];
     }
     else
     {
