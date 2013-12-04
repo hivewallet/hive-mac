@@ -26,6 +26,7 @@
     NSString *_OutgoingTransactionType;
     NSString *_hiveVersionNumber;
     NSString *_hiveBuildNumber;
+    NSString *_locale;
 }
 
 @end
@@ -52,6 +53,11 @@
 
         _hiveBuildNumber = [[NSBundle mainBundle] infoDictionary][@"CFBundleVersion"];
         _hiveVersionNumber = [[NSBundle mainBundle] infoDictionary][@"CFBundleShortVersionString"];
+
+        NSArray *languages = [[NSUserDefaults standardUserDefaults] arrayForKey:@"AppleLanguages"];
+        NSArray *preferredLanguages =
+            (__bridge NSArray *)CFBundleCopyPreferredLocalizationsFromArray((__bridge CFArrayRef)languages);
+        _locale = preferredLanguages[0];
     }
 
     return self;
@@ -241,6 +247,7 @@
                    @"_OutgoingTransactionType": @"TX_TYPE_OUTGOING",
                    @"_hiveBuildNumber": @"BUILD_NUMBER",
                    @"_hiveVersionNumber": @"VERSION",
+                   @"_locale": @"LOCALE",
                  };
     }
 
