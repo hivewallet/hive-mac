@@ -30,6 +30,7 @@
     NSString *_hiveBuildNumber;
     NSString *_locale;
     NSString *_preferredCurrency;
+    NSMutableSet *_exchangeRateListeners;
 }
 
 @end
@@ -64,6 +65,7 @@
 
         HIExchangeRateService *exchangeRateService = [HIExchangeRateService sharedService];
         _preferredCurrency = exchangeRateService.preferredCurrency;
+        _exchangeRateListeners = [NSMutableSet new];
     }
 
     return self;
@@ -71,6 +73,7 @@
 
 - (void)killCallbacks
 {
+    [self removeAllExchangeRateListeners];
 }
 
 - (void)sendMoneyToAddress:(NSString *)hash amount:(NSNumber *)amount callback:(WebScriptObject *)callback
@@ -314,6 +317,29 @@
     return request;
 }
 
+- (void)addExchangeRateListener:(WebScriptObject *)listener
+{
+    if (IsNullOrUndefined(listener))
+    {
+        [WebScriptObject throwException:@"listener is undefined"];
+        return;
+    }
+    [_exchangeRateListeners addObject:listener];
+}
+
+- (void)removeExchangeRateListener:(WebScriptObject *)listener
+{
+    [_exchangeRateListeners removeObject:listener];
+}
+
+- (void)removeAllExchangeRateListeners
+{
+    for (WebScriptObject *listener in [_exchangeRateListeners copy])
+    {
+        [self removeExchangeRateListener:listener];
+    }
+}
+
 - (JSValueRef)valueObjectFromDictionary:(NSDictionary *)dictionary
 {
     NSData *jsonData = [NSJSONSerialization dataWithJSONObject:dictionary options:0 error:NULL];
@@ -398,6 +424,8 @@
                         @"getUserInformationWithCallback:": @"getUserInfo",
                         @"getSystemInfoWithCallback:": @"getSystemInfo",
                         @"makeProxiedRequestToURL:options:": @"makeRequest",
+                        @"addExchangeRateListener:": @"addExchangeRateListener",
+                        @"removeExchangeRateListener:": @"removeExchangeRateListener",
                       };
     }
 
