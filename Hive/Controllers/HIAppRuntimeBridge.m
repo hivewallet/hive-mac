@@ -11,6 +11,7 @@
 #import "BCClient.h"
 #import "HIAppRuntimeBridge.h"
 #import "HICurrencyAmountFormatter.h"
+#import "HIExchangeRateService.h"
 #import "HIProfile.h"
 
 #define SafeJSONValue(x) ((x) ?: [NSNull null])
@@ -28,6 +29,7 @@
     NSString *_hiveVersionNumber;
     NSString *_hiveBuildNumber;
     NSString *_locale;
+    NSString *_preferredCurrency;
 }
 
 @end
@@ -59,6 +61,9 @@
         NSArray *preferredLanguages =
             (__bridge NSArray *)CFBundleCopyPreferredLocalizationsFromArray((__bridge CFArrayRef)languages);
         _locale = preferredLanguages[0];
+
+        HIExchangeRateService *exchangeRateService = [HIExchangeRateService sharedService];
+        _preferredCurrency = exchangeRateService.preferredCurrency;
     }
 
     return self;
@@ -414,6 +419,7 @@
                    @"_hiveBuildNumber": @"BUILD_NUMBER",
                    @"_hiveVersionNumber": @"VERSION",
                    @"_locale": @"LOCALE",
+                   @"_preferredCurrency": @"PREFERRED_CURRENCY",
                  };
     }
 
