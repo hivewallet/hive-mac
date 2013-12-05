@@ -340,6 +340,11 @@
     }
 }
 
+- (void)updateExchangeRateForCurrency:(NSString *)currency
+{
+    [[HIExchangeRateService sharedService] updateExchangeRateForCurrency:currency];
+}
+
 - (JSValueRef)valueObjectFromDictionary:(NSDictionary *)dictionary
 {
     NSData *jsonData = [NSJSONSerialization dataWithJSONObject:dictionary options:0 error:NULL];
@@ -426,7 +431,8 @@
                         @"makeProxiedRequestToURL:options:": @"makeRequest",
                         @"addExchangeRateListener:": @"addExchangeRateListener",
                         @"removeExchangeRateListener:": @"removeExchangeRateListener",
-                      };
+                        @"updateExchangeRateForCurrency:": @"updateExchangeRate",
+        };
     }
 
     return selectorMap;
