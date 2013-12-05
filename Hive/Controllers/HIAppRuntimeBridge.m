@@ -223,7 +223,14 @@
     WebScriptObject *headers = [self webScriptObject:options valueForProperty:@"headers"];
     NSDictionary *headerHash = [self dictionaryFromWebScriptObject:headers];
 
-    NSMutableURLRequest *request = [self requestWithURL:url method:HTTPMethod headers:headerHash];
+    WebScriptObject *data = [self webScriptObject:options valueForProperty:@"data"];
+    id processedData = [data isKindOfClass:[NSString class]] ? data : [self dictionaryFromWebScriptObject:data];
+
+    NSMutableURLRequest *request = [self requestWithURL:url
+                                                 method:HTTPMethod
+                                                   data:processedData
+                                                headers:headerHash];
+
     AFHTTPRequestOperation *operation = [[AFHTTPRequestOperation alloc] initWithRequest:request];
 
     [operation setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject) {
@@ -257,10 +264,39 @@
     [operation start];
 }
 
-- (NSMutableURLRequest *)requestWithURL:(NSString *)url method:(NSString *)method headers:(NSDictionary *)headers
+- (NSMutableURLRequest *)requestWithURL:(NSString *)URL
+                                 method:(NSString *)method
+                                   data:(id)data
+                                headers:(NSDictionary *)headers
 {
-    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:url]];
+    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:URL]];
     [request setHTTPMethod:method];
+
+    if (data)
+    {
+        NSString *paramString;
+
+        if ([data isKindOfClass:[NSString class]])
+        {
+            paramString = data;
+        }
+        else
+        {
+            paramString = AFQueryStringFromParametersWithEncoding(data, NSUTF8StringEncoding);
+        }
+
+        if ([@[@"GET", @"HEAD", @"DELETE"] containsObject:method])
+        {
+            NSString *separator = ([URL rangeOfString:@"?"].location == NSNotFound) ? @"?" : @"&";
+            NSString *updatedURL = [URL stringByAppendingFormat:@"%@%@", separator, paramString];
+            [request setURL:[NSURL URLWithString:updatedURL]];
+        }
+        else
+        {
+            [request setValue:@"application/x-www-form-urlencoded; charset=UTF-8" forHTTPHeaderField:@"Content-Type"];
+            [request setHTTPBody:[paramString dataUsingEncoding:NSUTF8StringEncoding]];
+        }
+    }
 
     if (headers)
     {
