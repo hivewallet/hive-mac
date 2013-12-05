@@ -220,9 +220,10 @@
     WebScriptObject *errorCallback = [self webScriptObject:options valueForProperty:@"error"];
     WebScriptObject *completeCallback = [self webScriptObject:options valueForProperty:@"complete"];
 
-    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:url]];
-    [request setHTTPMethod:HTTPMethod];
+    WebScriptObject *headers = [self webScriptObject:options valueForProperty:@"headers"];
+    NSDictionary *headerHash = [self dictionaryFromWebScriptObject:headers];
 
+    NSMutableURLRequest *request = [self requestWithURL:url method:HTTPMethod headers:headerHash];
     AFHTTPRequestOperation *operation = [[AFHTTPRequestOperation alloc] initWithRequest:request];
 
     [operation setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject) {
@@ -256,6 +257,22 @@
     [operation start];
 }
 
+- (NSMutableURLRequest *)requestWithURL:(NSString *)url method:(NSString *)method headers:(NSDictionary *)headers
+{
+    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:url]];
+    [request setHTTPMethod:method];
+
+    if (headers)
+    {
+        for (NSString *key in headers)
+        {
+            [request addValue:[headers[key] description] forHTTPHeaderField:key];
+        }
+    }
+
+    return request;
+}
+
 - (JSValueRef)valueObjectFromDictionary:(NSDictionary *)dictionary
 {
     NSData *jsonData = [NSJSONSerialization dataWithJSONObject:dictionary options:0 error:NULL];
@@ -266,6 +283,40 @@
     JSStringRelease(jsString);
 
     return jsValue;
+}
+
+- (NSDictionary *)dictionaryFromWebScriptObject:(WebScriptObject *)object
+{
+    if (IsNullOrUndefined(object))
+    {
+        return nil;
+    }
+
+    JSPropertyNameArrayRef properties = JSObjectCopyPropertyNames(self.frame.globalContext, [object JSObject]);
+    size_t count = JSPropertyNameArrayGetCount(properties);
+
+    NSMutableDictionary *dictionary = [[NSMutableDictionary alloc] initWithCapacity:count];
+
+    for (NSInteger i = 0; i < count; i++)
+    {
+        JSStringRef property = JSPropertyNameArrayGetNameAtIndex(properties, i);
+        NSString *propertyName = CFBridgingRelease(JSStringCopyCFString(kCFAllocatorDefault, property));
+
+        id value = [object valueForKey:propertyName];
+
+        if ([value isKindOfClass:[NSString class]] || [value isKindOfClass:[NSNumber class]])
+        {
+            dictionary[propertyName] = value;
+        }
+        else
+        {
+            NSLog(@"dictionaryFromWebScriptObject: ignoring value for property %@: %@", propertyName, value);
+        }
+    }
+
+    JSPropertyNameArrayRelease(properties);
+
+    return dictionary;
 }
 
 - (id)webScriptObject:(WebScriptObject *)object valueForProperty:(NSString *)property
