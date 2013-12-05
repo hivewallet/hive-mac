@@ -6,6 +6,7 @@
 //  Copyright (c) 2013 Hive Developers. All rights reserved.
 //
 
+#import <AFNetworking/AFNetworking.h>
 #import <JavaScriptCore/JavaScriptCore.h>
 #import "BCClient.h"
 #import "HIAppRuntimeBridge.h"
@@ -204,6 +205,57 @@
     JSObjectCallAsFunction(ctx, ref, NULL, 1, &jsonValue, NULL);
 }
 
+- (void)makeProxiedRequestToURL:(NSString *)url options:(WebScriptObject *)options
+{
+    if (IsNullOrUndefined(url))
+    {
+        [WebScriptObject throwException:@"url argument is undefined"];
+        return;
+    }
+
+    JSContextRef context = self.frame.globalContext;
+
+    NSString *HTTPMethod = [self webScriptObject:options valueForProperty:@"type"] ?: @"GET";
+    WebScriptObject *successCallback = [self webScriptObject:options valueForProperty:@"success"];
+    WebScriptObject *errorCallback = [self webScriptObject:options valueForProperty:@"error"];
+    WebScriptObject *completeCallback = [self webScriptObject:options valueForProperty:@"complete"];
+
+    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:url]];
+    [request setHTTPMethod:HTTPMethod];
+
+    AFHTTPRequestOperation *operation = [[AFHTTPRequestOperation alloc] initWithRequest:request];
+
+    [operation setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject) {
+        NSString *text = [[NSString alloc] initWithData:responseObject encoding:operation.responseStringEncoding];
+
+        NSLog(@"success: %@", text);
+
+        if (successCallback)
+        {
+            JSObjectCallAsFunction(context, [successCallback JSObject], NULL, 0, NULL, NULL);
+        }
+
+        if (completeCallback)
+        {
+            JSObjectCallAsFunction(context, [completeCallback JSObject], NULL, 0, NULL, NULL);
+        }
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        NSLog(@"error: %@", error);
+
+        if (errorCallback)
+        {
+            JSObjectCallAsFunction(context, [errorCallback JSObject], NULL, 0, NULL, NULL);
+        }
+
+        if (completeCallback)
+        {
+            JSObjectCallAsFunction(context, [completeCallback JSObject], NULL, 0, NULL, NULL);
+        }
+    }];
+
+    [operation start];
+}
+
 - (JSValueRef)valueObjectFromDictionary:(NSDictionary *)dictionary
 {
     NSData *jsonData = [NSJSONSerialization dataWithJSONObject:dictionary options:0 error:NULL];
@@ -216,6 +268,32 @@
     return jsValue;
 }
 
+- (id)webScriptObject:(WebScriptObject *)object valueForProperty:(NSString *)property
+{
+    if ([self webScriptObject:object hasProperty:property])
+    {
+        return [object valueForKey:property];
+    }
+    else
+    {
+        return nil;
+    }
+}
+
+- (BOOL)webScriptObject:(WebScriptObject *)object hasProperty:(NSString *)property
+{
+    if (IsNullOrUndefined(object))
+    {
+        return NO;
+    }
+
+    JSStringRef jsString = JSStringCreateWithCFString((__bridge CFStringRef) property);
+    BOOL hasProperty = JSObjectHasProperty(self.frame.globalContext, [object JSObject], jsString);
+    JSStringRelease(jsString);
+
+    return hasProperty;
+}
+
 + (NSDictionary *)selectorMap
 {
     static NSDictionary *selectorMap;
@@ -226,7 +304,8 @@
                         @"sendMoneyToAddress:amount:callback:": @"sendMoney",
                         @"transactionWithHash:callback:": @"getTransaction",
                         @"getUserInformationWithCallback:": @"getUserInfo",
-                        @"getSystemInfoWithCallback:": @"getSystemInfo"
+                        @"getSystemInfoWithCallback:": @"getSystemInfo",
+                        @"makeProxiedRequestToURL:options:": @"makeRequest",
                       };
     }
 
