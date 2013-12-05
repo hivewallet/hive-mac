@@ -11,12 +11,13 @@
 #import "BCClient.h"
 #import "HIAppRuntimeBridge.h"
 #import "HICurrencyAmountFormatter.h"
+#import "HIExchangeRateService.h"
 #import "HIProfile.h"
 
 #define SafeJSONValue(x) ((x) ?: [NSNull null])
 #define IsNullOrUndefined(x) (!(x) || [(x) isKindOfClass:[WebUndefined class]])
 
-@interface HIAppRuntimeBridge ()
+@interface HIAppRuntimeBridge ()<HIExchangeRateObserver>
 {
     NSDateFormatter *_ISODateFormatter;
     HICurrencyAmountFormatter *_currencyFormatter;
@@ -28,6 +29,8 @@
     NSString *_hiveVersionNumber;
     NSString *_hiveBuildNumber;
     NSString *_locale;
+    NSString *_preferredCurrency;
+    NSMutableSet *_exchangeRateListeners;
 }
 
 @end
@@ -59,6 +62,10 @@
         NSArray *preferredLanguages =
             (__bridge NSArray *)CFBundleCopyPreferredLocalizationsFromArray((__bridge CFArrayRef)languages);
         _locale = preferredLanguages[0];
+
+        HIExchangeRateService *exchangeRateService = [HIExchangeRateService sharedService];
+        _preferredCurrency = exchangeRateService.preferredCurrency;
+        _exchangeRateListeners = [NSMutableSet new];
     }
 
     return self;
@@ -66,6 +73,7 @@
 
 - (void)killCallbacks
 {
+    [self removeAllExchangeRateListeners];
 }
 
 - (void)sendMoneyToAddress:(NSString *)hash amount:(NSNumber *)amount callback:(WebScriptObject *)callback
@@ -309,6 +317,42 @@
     return request;
 }
 
+- (void)addExchangeRateListener:(WebScriptObject *)listener
+{
+    if (IsNullOrUndefined(listener))
+    {
+        [WebScriptObject throwException:@"listener is undefined"];
+        return;
+    }
+    if (_exchangeRateListeners.count == 0)
+    {
+        [[HIExchangeRateService sharedService] addExchangeRateObserver:self];
+    }
+    [_exchangeRateListeners addObject:listener];
+}
+
+- (void)removeExchangeRateListener:(WebScriptObject *)listener
+{
+    [_exchangeRateListeners removeObject:listener];
+    if (_exchangeRateListeners.count == 0)
+    {
+        [[HIExchangeRateService sharedService] removeExchangeRateObserver:self];
+    }
+}
+
+- (void)removeAllExchangeRateListeners
+{
+    for (WebScriptObject *listener in [_exchangeRateListeners copy])
+    {
+        [self removeExchangeRateListener:listener];
+    }
+}
+
+- (void)updateExchangeRateForCurrency:(NSString *)currency
+{
+    [[HIExchangeRateService sharedService] updateExchangeRateForCurrency:currency];
+}
+
 - (JSValueRef)valueObjectFromDictionary:(NSDictionary *)dictionary
 {
     NSData *jsonData = [NSJSONSerialization dataWithJSONObject:dictionary options:0 error:NULL];
@@ -393,7 +437,10 @@
                         @"getUserInformationWithCallback:": @"getUserInfo",
                         @"getSystemInfoWithCallback:": @"getSystemInfo",
                         @"makeProxiedRequestToURL:options:": @"makeRequest",
-                      };
+                        @"addExchangeRateListener:": @"addExchangeRateListener",
+                        @"removeExchangeRateListener:": @"removeExchangeRateListener",
+                        @"updateExchangeRateForCurrency:": @"updateExchangeRate",
+        };
     }
 
     return selectorMap;
@@ -414,6 +461,7 @@
                    @"_hiveBuildNumber": @"BUILD_NUMBER",
                    @"_hiveVersionNumber": @"VERSION",
                    @"_locale": @"LOCALE",
+                   @"_preferredCurrency": @"PREFERRED_CURRENCY",
                  };
     }
 
@@ -440,6 +488,23 @@
 {
     NSString *key = [NSString stringWithCString:name encoding:NSASCIIStringEncoding];
     return ([self keyMap][key] == nil);
+}
+
+#pragma mark - HIExchangeRateObserver
+
+- (void)exchangeRateUpdatedTo:(NSDecimalNumber *)exchangeRate forCurrency:(NSString *)currency
+{
+    JSContextRef ctx = self.frame.globalContext;
+    JSValueRef params[2];
+    params[0] = JSValueMakeString(ctx, JSStringCreateWithCFString((__bridge CFStringRef)currency));
+    params[1] = JSValueMakeNumber(ctx, [exchangeRate decimalNumberByMultiplyingByPowerOf10:8].doubleValue);
+
+    for (WebScriptObject *listener in _exchangeRateListeners)
+    {
+        JSObjectRef ref = listener.JSObject;
+        JSObjectCallAsFunction(ctx, ref, NULL, 2, params, NULL);
+    }
+
 }
 
 @end
