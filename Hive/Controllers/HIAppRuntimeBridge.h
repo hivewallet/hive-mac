@@ -9,7 +9,8 @@
 #import <Foundation/Foundation.h>
 #import <WebKit/WebKit.h>
 
-#import "HIApplicationRuntimeViewController.h"
+@class HIApplication;
+@class HIApplicationRuntimeViewController;
 
 /*
  Implements the window.bitcoin object in the application's JS context that acts as a gateway between the app
@@ -20,6 +21,8 @@
 
 @property (strong) HIApplicationRuntimeViewController *controller;
 @property (strong) WebFrame *frame;
+
+- (id)initWithApplication:(HIApplication *)application;
 
 - (void)killCallbacks;
 

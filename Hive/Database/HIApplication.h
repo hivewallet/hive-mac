@@ -22,7 +22,8 @@ extern NSString * const HIApplicationEntity;
 @property (nonatomic, retain) NSString * id;
 @property (nonatomic, retain) NSURL * path;
 @property (nonatomic, retain) NSString * name;
-@property (nonatomic, readonly, getter = icon) NSImage *icon;
+@property (nonatomic, readonly) NSImage *icon;
+@property (nonatomic, readonly) NSDictionary *manifest;
 
 - (void)refreshIcon;
 

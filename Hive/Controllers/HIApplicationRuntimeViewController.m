@@ -45,7 +45,7 @@
 
     self.title = self.application.name;
 
-    _bridge = [[HIAppRuntimeBridge alloc] init];
+    _bridge = [[HIAppRuntimeBridge alloc] initWithApplication:self.application];
     _bridge.frame = [self.webView mainFrame];
     _bridge.controller = self;
 

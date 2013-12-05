@@ -9,6 +9,7 @@
 #import <AFNetworking/AFNetworking.h>
 #import <JavaScriptCore/JavaScriptCore.h>
 #import "BCClient.h"
+#import "HIApplicationRuntimeViewController.h"
 #import "HIAppRuntimeBridge.h"
 #import "HICurrencyAmountFormatter.h"
 #import "HIExchangeRateService.h"
@@ -34,6 +35,8 @@ static const NSInteger kHIAppRuntimeBridgeParsingError = -1000;
     NSString *_locale;
     NSString *_preferredCurrency;
     NSMutableSet *_exchangeRateListeners;
+    HIApplication *_application;
+    NSDictionary *_applicationManifest;
 }
 
 @end
@@ -41,12 +44,15 @@ static const NSInteger kHIAppRuntimeBridgeParsingError = -1000;
 
 @implementation HIAppRuntimeBridge
 
-- (id)init
+- (id)initWithApplication:(HIApplication *)application
 {
     self = [super init];
 
     if (self)
     {
+        _application = application;
+        _applicationManifest = application.manifest;
+
         _ISODateFormatter = [[NSDateFormatter alloc] init];
         _ISODateFormatter.dateFormat = @"yyyy-MM-dd'T'HH:mm:ssZZZZZ";
         _currencyFormatter = [[HICurrencyAmountFormatter alloc] init];
@@ -221,6 +227,16 @@ static const NSInteger kHIAppRuntimeBridgeParsingError = -1000;
     if (IsNullOrUndefined(url))
     {
         [WebScriptObject throwException:@"url argument is undefined"];
+        return;
+    }
+
+    NSString *hostname = [[NSURL URLWithString:url] host];
+    NSArray *allowedHosts = _applicationManifest[@"accessedHosts"];
+
+    if (![allowedHosts containsObject:hostname])
+    {
+        NSString *message = [NSString stringWithFormat:@"application is not allowed to connect to host %@", hostname];
+        [WebScriptObject throwException:message];
         return;
     }
 
