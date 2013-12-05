@@ -17,7 +17,7 @@
 #define SafeJSONValue(x) ((x) ?: [NSNull null])
 #define IsNullOrUndefined(x) (!(x) || [(x) isKindOfClass:[WebUndefined class]])
 
-@interface HIAppRuntimeBridge ()
+@interface HIAppRuntimeBridge ()<HIExchangeRateObserver>
 {
     NSDateFormatter *_ISODateFormatter;
     HICurrencyAmountFormatter *_currencyFormatter;
@@ -324,12 +324,20 @@
         [WebScriptObject throwException:@"listener is undefined"];
         return;
     }
+    if (_exchangeRateListeners.count == 0)
+    {
+        [[HIExchangeRateService sharedService] addExchangeRateObserver:self];
+    }
     [_exchangeRateListeners addObject:listener];
 }
 
 - (void)removeExchangeRateListener:(WebScriptObject *)listener
 {
     [_exchangeRateListeners removeObject:listener];
+    if (_exchangeRateListeners.count == 0)
+    {
+        [[HIExchangeRateService sharedService] removeExchangeRateObserver:self];
+    }
 }
 
 - (void)removeAllExchangeRateListeners
@@ -480,6 +488,23 @@
 {
     NSString *key = [NSString stringWithCString:name encoding:NSASCIIStringEncoding];
     return ([self keyMap][key] == nil);
+}
+
+#pragma mark - HIExchangeRateObserver
+
+- (void)exchangeRateUpdatedTo:(NSDecimalNumber *)exchangeRate forCurrency:(NSString *)currency
+{
+    JSContextRef ctx = self.frame.globalContext;
+    JSValueRef params[2];
+    params[0] = JSValueMakeString(ctx, JSStringCreateWithCFString((__bridge CFStringRef)currency));
+    params[1] = JSValueMakeNumber(ctx, [exchangeRate decimalNumberByMultiplyingByPowerOf10:8].doubleValue);
+
+    for (WebScriptObject *listener in _exchangeRateListeners)
+    {
+        JSObjectRef ref = listener.JSObject;
+        JSObjectCallAsFunction(ctx, ref, NULL, 2, params, NULL);
+    }
+
 }
 
 @end
