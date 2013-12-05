@@ -17,6 +17,9 @@
 #define SafeJSONValue(x) ((x) ?: [NSNull null])
 #define IsNullOrUndefined(x) (!(x) || [(x) isKindOfClass:[WebUndefined class]])
 
+static NSString * const kHIAppRuntimeBridgeErrorDomain = @"HIAppRuntimeBridgeErrorDomain";
+static const NSInteger kHIAppRuntimeBridgeParsingError = -1000;
+
 @interface HIAppRuntimeBridge ()<HIExchangeRateObserver>
 {
     NSDateFormatter *_ISODateFormatter;
@@ -221,9 +224,9 @@
         return;
     }
 
-    JSContextRef context = self.frame.globalContext;
-
     NSString *HTTPMethod = [self webScriptObject:options valueForProperty:@"type"] ?: @"GET";
+    NSString *dataType = [self webScriptObject:options valueForProperty:@"dataType"];
+
     WebScriptObject *successCallback = [self webScriptObject:options valueForProperty:@"success"];
     WebScriptObject *errorCallback = [self webScriptObject:options valueForProperty:@"error"];
     WebScriptObject *completeCallback = [self webScriptObject:options valueForProperty:@"complete"];
@@ -242,31 +245,16 @@
     AFHTTPRequestOperation *operation = [[AFHTTPRequestOperation alloc] initWithRequest:request];
 
     [operation setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject) {
-        NSString *text = [[NSString alloc] initWithData:responseObject encoding:operation.responseStringEncoding];
-
-        NSLog(@"success: %@", text);
-
-        if (successCallback)
-        {
-            JSObjectCallAsFunction(context, [successCallback JSObject], NULL, 0, NULL, NULL);
-        }
-
-        if (completeCallback)
-        {
-            JSObjectCallAsFunction(context, [completeCallback JSObject], NULL, 0, NULL, NULL);
-        }
+        [self handleSuccessForOperation:operation
+                      requestedDataType:dataType
+                        successCallback:successCallback
+                          errorCallback:errorCallback
+                       completeCallback:completeCallback];
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-        NSLog(@"error: %@", error);
-
-        if (errorCallback)
-        {
-            JSObjectCallAsFunction(context, [errorCallback JSObject], NULL, 0, NULL, NULL);
-        }
-
-        if (completeCallback)
-        {
-            JSObjectCallAsFunction(context, [completeCallback JSObject], NULL, 0, NULL, NULL);
-        }
+        [self handleError:error
+             forOperation:operation
+            errorCallback:errorCallback
+         completeCallback:completeCallback];
     }];
 
     [operation start];
@@ -351,6 +339,88 @@
 - (void)updateExchangeRateForCurrency:(NSString *)currency
 {
     [[HIExchangeRateService sharedService] updateExchangeRateForCurrency:currency];
+}
+
+- (JSValueRef)parseResponseFromOperation:(AFHTTPRequestOperation *)operation requestedDataType:(NSString *)dataType
+{
+    NSString *contentType = operation.response.allHeaderFields[@"Content-Type"];
+
+    JSStringRef jsString = JSStringCreateWithCFString((__bridge CFStringRef) (operation.responseString ?: @""));
+    JSValueRef jsValue;
+
+    if ([dataType isEqual:@"json"] || ([contentType hasSuffix:@"/json"] && IsNullOrUndefined(dataType)))
+    {
+        jsValue = JSValueMakeFromJSONString(self.frame.globalContext, jsString);
+    }
+    else
+    {
+        jsValue = JSValueMakeString(self.frame.globalContext, jsString);
+    }
+
+    JSStringRelease(jsString);
+
+    return jsValue;
+}
+
+
+- (void)handleSuccessForOperation:(AFHTTPRequestOperation *)operation
+                requestedDataType:(NSString *)dataType
+                  successCallback:(WebScriptObject *)successCallback
+                    errorCallback:(WebScriptObject *)errorCallback
+                 completeCallback:(WebScriptObject *)completeCallback
+{
+    JSGlobalContextRef context = self.frame.globalContext;
+    JSValueRef response = [self parseResponseFromOperation:operation requestedDataType:dataType];
+
+    if (response)
+    {
+        JSValueRef arguments[2];
+        arguments[0] = response;
+        arguments[1] = JSValueMakeNumber(context, operation.response.statusCode);
+
+        if (successCallback)
+        {
+            JSObjectCallAsFunction(context, [successCallback JSObject], NULL, 2, arguments, NULL);
+        }
+
+        if (completeCallback)
+        {
+            JSObjectCallAsFunction(context, [completeCallback JSObject], NULL, 2, arguments, NULL);
+        }
+    }
+    else
+    {
+        NSString *message = [NSString stringWithFormat:@"couldn't parse response: '%@'", operation.responseString];
+        NSError *error = [NSError errorWithDomain:kHIAppRuntimeBridgeErrorDomain
+                                             code:kHIAppRuntimeBridgeParsingError
+                                         userInfo:@{ NSLocalizedDescriptionKey: message }];
+
+        [self handleError:error forOperation:operation errorCallback:errorCallback completeCallback:completeCallback];
+    }
+}
+
+- (void)handleError:(NSError *)error
+       forOperation:(AFHTTPRequestOperation *)operation
+      errorCallback:(WebScriptObject *)errorCallback
+   completeCallback:(WebScriptObject *)completeCallback
+{
+    JSGlobalContextRef context = self.frame.globalContext;
+    NSDictionary *errorData = @{ @"message": error.localizedDescription };
+
+    JSValueRef arguments[3];
+    arguments[0] = [self parseResponseFromOperation:operation requestedDataType:@"text"];
+    arguments[1] = JSValueMakeNumber(context, operation.response.statusCode);
+    arguments[2] = [self valueObjectFromDictionary:errorData];
+
+    if (errorCallback)
+    {
+        JSObjectCallAsFunction(context, [errorCallback JSObject], NULL, 3, arguments, NULL);
+    }
+
+    if (completeCallback)
+    {
+        JSObjectCallAsFunction(context, [completeCallback JSObject], NULL, 3, arguments, NULL);
+    }
 }
 
 - (JSValueRef)valueObjectFromDictionary:(NSDictionary *)dictionary
