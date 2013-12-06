@@ -133,6 +133,16 @@
 
 }
 
+// we should be able to handle this in webView:createWebViewWithRequest:, but webkit is stupid and returns nil there
+- (void)webView:(WebView *)webView
+decidePolicyForNewWindowAction:(NSDictionary *)actionInformation
+        request:(NSURLRequest *)request
+   newFrameName:(NSString *)frameName
+decisionListener:(id<WebPolicyDecisionListener>)listener
+{
+    [[NSWorkspace sharedWorkspace] openURL:request.URL];
+}
+
 - (void)dealloc
 {
     id window = [self.webView windowScriptObject];
