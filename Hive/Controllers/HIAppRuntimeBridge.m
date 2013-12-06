@@ -7,7 +7,6 @@
 //
 
 #import <AFNetworking/AFNetworking.h>
-#import <JavaScriptCore/JavaScriptCore.h>
 #import "BCClient.h"
 #import "HIApplicationRuntimeViewController.h"
 #import "HIAppRuntimeBridge.h"
@@ -15,13 +14,10 @@
 #import "HIExchangeRateService.h"
 #import "HIProfile.h"
 
-#define SafeJSONValue(x) ((x) ?: [NSNull null])
-#define IsNullOrUndefined(x) (!(x) || [(x) isKindOfClass:[WebUndefined class]])
-
 static NSString * const kHIAppRuntimeBridgeErrorDomain = @"HIAppRuntimeBridgeErrorDomain";
 static const NSInteger kHIAppRuntimeBridgeParsingError = -1000;
 
-@interface HIAppRuntimeBridge ()<HIExchangeRateObserver>
+@interface HIAppRuntimeBridge () <HIExchangeRateObserver>
 {
     NSDateFormatter *_ISODateFormatter;
     HICurrencyAmountFormatter *_currencyFormatter;
@@ -115,23 +111,21 @@ static const NSInteger kHIAppRuntimeBridgeParsingError = -1000;
                 return;
             }
 
-            JSContextRef ctx = self.frame.globalContext;
-
             if (success)
             {
                 JSStringRef idParam = JSStringCreateWithCFString((__bridge CFStringRef) transactionId);
 
                 JSValueRef params[2];
-                params[0] = JSValueMakeBoolean(ctx, YES);
-                params[1] = JSValueMakeString(ctx, idParam);
+                params[0] = JSValueMakeBoolean(self.context, YES);
+                params[1] = JSValueMakeString(self.context, idParam);
 
-                JSObjectCallAsFunction(ctx, ref, NULL, 2, params, NULL);
+                JSObjectCallAsFunction(self.context, ref, NULL, 2, params, NULL);
                 JSStringRelease(idParam);
             }
             else
             {
-                JSValueRef result = JSValueMakeBoolean(ctx, NO);
-                JSObjectCallAsFunction(ctx, ref, NULL, 1, &result, NULL);
+                JSValueRef result = JSValueMakeBoolean(self.context, NO);
+                JSObjectCallAsFunction(self.context, ref, NULL, 1, &result, NULL);
             }
         }
     }];
@@ -146,14 +140,13 @@ static const NSInteger kHIAppRuntimeBridgeParsingError = -1000;
     }
 
     JSObjectRef ref = [callback JSObject];
-    JSContextRef ctx = self.frame.globalContext;
 
     NSDictionary *data = [[BCClient sharedClient] transactionDefinitionWithHash:hash];
 
     if (!data)
     {
-        JSValueRef nullValue = JSValueMakeNull(ctx);
-        JSObjectCallAsFunction(ctx, ref, NULL, 1, &nullValue, NULL);
+        JSValueRef nullValue = JSValueMakeNull(self.context);
+        JSObjectCallAsFunction(self.context, ref, NULL, 1, &nullValue, NULL);
         return;
     }
 
@@ -176,7 +169,7 @@ static const NSInteger kHIAppRuntimeBridgeParsingError = -1000;
                                 };
 
     JSValueRef jsonValue = [self valueObjectFromDictionary:transaction];
-    JSObjectCallAsFunction(ctx, ref, NULL, 1, &jsonValue, NULL);
+    JSObjectCallAsFunction(self.context, ref, NULL, 1, &jsonValue, NULL);
 }
 
 - (void)getUserInformationWithCallback:(WebScriptObject *)callback
@@ -188,7 +181,6 @@ static const NSInteger kHIAppRuntimeBridgeParsingError = -1000;
     }
 
     JSObjectRef ref = [callback JSObject];
-    JSContextRef ctx = self.frame.globalContext;
 
     HIProfile *profile = [[HIProfile alloc] init];
 
@@ -200,7 +192,7 @@ static const NSInteger kHIAppRuntimeBridgeParsingError = -1000;
                          };
 
     JSValueRef jsonValue = [self valueObjectFromDictionary:data];
-    JSObjectCallAsFunction(ctx, ref, NULL, 1, &jsonValue, NULL);
+    JSObjectCallAsFunction(self.context, ref, NULL, 1, &jsonValue, NULL);
 }
 
 - (void)getSystemInfoWithCallback:(WebScriptObject *)callback
@@ -212,14 +204,13 @@ static const NSInteger kHIAppRuntimeBridgeParsingError = -1000;
     }
 
     JSObjectRef ref = [callback JSObject];
-    JSContextRef ctx = self.frame.globalContext;
 
     NSDictionary *data = @{
                            @"decimalSeparator": _currencyFormatter.decimalSeparator
                          };
 
     JSValueRef jsonValue = [self valueObjectFromDictionary:data];
-    JSObjectCallAsFunction(ctx, ref, NULL, 1, &jsonValue, NULL);
+    JSObjectCallAsFunction(self.context, ref, NULL, 1, &jsonValue, NULL);
 }
 
 - (void)makeProxiedRequestToURL:(NSString *)url options:(WebScriptObject *)options
@@ -366,11 +357,11 @@ static const NSInteger kHIAppRuntimeBridgeParsingError = -1000;
 
     if ([dataType isEqual:@"json"] || ([contentType hasSuffix:@"/json"] && IsNullOrUndefined(dataType)))
     {
-        jsValue = JSValueMakeFromJSONString(self.frame.globalContext, jsString);
+        jsValue = JSValueMakeFromJSONString(self.context, jsString);
     }
     else
     {
-        jsValue = JSValueMakeString(self.frame.globalContext, jsString);
+        jsValue = JSValueMakeString(self.context, jsString);
     }
 
     JSStringRelease(jsString);
@@ -385,23 +376,22 @@ static const NSInteger kHIAppRuntimeBridgeParsingError = -1000;
                     errorCallback:(WebScriptObject *)errorCallback
                  completeCallback:(WebScriptObject *)completeCallback
 {
-    JSGlobalContextRef context = self.frame.globalContext;
     JSValueRef response = [self parseResponseFromOperation:operation requestedDataType:dataType];
 
     if (response)
     {
         JSValueRef arguments[2];
         arguments[0] = response;
-        arguments[1] = JSValueMakeNumber(context, operation.response.statusCode);
+        arguments[1] = JSValueMakeNumber(self.context, operation.response.statusCode);
 
         if (successCallback)
         {
-            JSObjectCallAsFunction(context, [successCallback JSObject], NULL, 2, arguments, NULL);
+            JSObjectCallAsFunction(self.context, [successCallback JSObject], NULL, 2, arguments, NULL);
         }
 
         if (completeCallback)
         {
-            JSObjectCallAsFunction(context, [completeCallback JSObject], NULL, 2, arguments, NULL);
+            JSObjectCallAsFunction(self.context, [completeCallback JSObject], NULL, 2, arguments, NULL);
         }
     }
     else
@@ -420,96 +410,24 @@ static const NSInteger kHIAppRuntimeBridgeParsingError = -1000;
       errorCallback:(WebScriptObject *)errorCallback
    completeCallback:(WebScriptObject *)completeCallback
 {
-    JSGlobalContextRef context = self.frame.globalContext;
     NSDictionary *errorData = @{ @"message": error.localizedDescription };
 
     JSValueRef arguments[3];
     arguments[0] = [self parseResponseFromOperation:operation requestedDataType:@"text"];
-    arguments[1] = JSValueMakeNumber(context, operation.response.statusCode);
+    arguments[1] = JSValueMakeNumber(self.context, operation.response.statusCode);
     arguments[2] = [self valueObjectFromDictionary:errorData];
 
     if (errorCallback)
     {
-        JSObjectCallAsFunction(context, [errorCallback JSObject], NULL, 3, arguments, NULL);
+        JSObjectCallAsFunction(self.context, [errorCallback JSObject], NULL, 3, arguments, NULL);
     }
 
     if (completeCallback)
     {
-        JSObjectCallAsFunction(context, [completeCallback JSObject], NULL, 3, arguments, NULL);
+        JSObjectCallAsFunction(self.context, [completeCallback JSObject], NULL, 3, arguments, NULL);
     }
 }
 
-- (JSValueRef)valueObjectFromDictionary:(NSDictionary *)dictionary
-{
-    NSData *jsonData = [NSJSONSerialization dataWithJSONObject:dictionary options:0 error:NULL];
-    NSString *jsonString = [[NSString alloc] initWithData:jsonData encoding:NSUTF8StringEncoding];
-
-    JSStringRef jsString = JSStringCreateWithCFString((__bridge CFStringRef) jsonString);
-    JSValueRef jsValue = JSValueMakeFromJSONString(self.frame.globalContext, jsString);
-    JSStringRelease(jsString);
-
-    return jsValue;
-}
-
-- (NSDictionary *)dictionaryFromWebScriptObject:(WebScriptObject *)object
-{
-    if (IsNullOrUndefined(object))
-    {
-        return nil;
-    }
-
-    JSPropertyNameArrayRef properties = JSObjectCopyPropertyNames(self.frame.globalContext, [object JSObject]);
-    size_t count = JSPropertyNameArrayGetCount(properties);
-
-    NSMutableDictionary *dictionary = [[NSMutableDictionary alloc] initWithCapacity:count];
-
-    for (NSInteger i = 0; i < count; i++)
-    {
-        JSStringRef property = JSPropertyNameArrayGetNameAtIndex(properties, i);
-        NSString *propertyName = CFBridgingRelease(JSStringCopyCFString(kCFAllocatorDefault, property));
-
-        id value = [object valueForKey:propertyName];
-
-        if ([value isKindOfClass:[NSString class]] || [value isKindOfClass:[NSNumber class]])
-        {
-            dictionary[propertyName] = value;
-        }
-        else
-        {
-            NSLog(@"dictionaryFromWebScriptObject: ignoring value for property %@: %@", propertyName, value);
-        }
-    }
-
-    JSPropertyNameArrayRelease(properties);
-
-    return dictionary;
-}
-
-- (id)webScriptObject:(WebScriptObject *)object valueForProperty:(NSString *)property
-{
-    if ([self webScriptObject:object hasProperty:property])
-    {
-        return [object valueForKey:property];
-    }
-    else
-    {
-        return nil;
-    }
-}
-
-- (BOOL)webScriptObject:(WebScriptObject *)object hasProperty:(NSString *)property
-{
-    if (IsNullOrUndefined(object))
-    {
-        return NO;
-    }
-
-    JSStringRef jsString = JSStringCreateWithCFString((__bridge CFStringRef) property);
-    BOOL hasProperty = JSObjectHasProperty(self.frame.globalContext, [object JSObject], jsString);
-    JSStringRelease(jsString);
-
-    return hasProperty;
-}
 
 + (NSDictionary *)selectorMap
 {
@@ -554,41 +472,20 @@ static const NSInteger kHIAppRuntimeBridgeParsingError = -1000;
     return keyMap;
 }
 
-+ (NSString *)webScriptNameForSelector:(SEL)sel
-{
-    return [self selectorMap][NSStringFromSelector(sel)];
-}
-
-+ (BOOL)isSelectorExcludedFromWebScript:(SEL)sel
-{
-    return ([self selectorMap][NSStringFromSelector(sel)] == nil);
-}
-
-+ (NSString *)webScriptNameForKey:(const char *)name
-{
-    NSString *key = [NSString stringWithCString:name encoding:NSASCIIStringEncoding];
-    return [self keyMap][key];
-}
-
-+ (BOOL)isKeyExcludedFromWebScript:(const char *)name
-{
-    NSString *key = [NSString stringWithCString:name encoding:NSASCIIStringEncoding];
-    return ([self keyMap][key] == nil);
-}
 
 #pragma mark - HIExchangeRateObserver
 
 - (void)exchangeRateUpdatedTo:(NSDecimalNumber *)exchangeRate forCurrency:(NSString *)currency
 {
-    JSContextRef ctx = self.frame.globalContext;
     JSValueRef params[2];
-    params[0] = JSValueMakeString(ctx, JSStringCreateWithCFString((__bridge CFStringRef)currency));
-    params[1] = JSValueMakeNumber(ctx, [exchangeRate decimalNumberByMultiplyingByPowerOf10:8].doubleValue);
+    params[0] = JSValueMakeString(self.context, JSStringCreateWithCFString((__bridge CFStringRef)currency));
+    params[1] = JSValueMakeNumber(self.context,
+                                  [exchangeRate decimalNumberByMultiplyingByPowerOf10:8].doubleValue);
 
     for (WebScriptObject *listener in _exchangeRateListeners)
     {
         JSObjectRef ref = listener.JSObject;
-        JSObjectCallAsFunction(ctx, ref, NULL, 2, params, NULL);
+        JSObjectCallAsFunction(self.context, ref, NULL, 2, params, NULL);
     }
 
 }

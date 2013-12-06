@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#import <WebKit/WebKit.h>
+#import "HIJavaScriptObject.h"
 
 @class HIApplication;
 @class HIApplicationRuntimeViewController;
@@ -17,10 +17,9 @@
  and Hive.
  */
 
-@interface HIAppRuntimeBridge : NSObject
+@interface HIAppRuntimeBridge : HIJavaScriptObject
 
 @property (strong) HIApplicationRuntimeViewController *controller;
-@property (strong) WebFrame *frame;
 
 - (id)initWithApplication:(HIApplication *)application;
 
