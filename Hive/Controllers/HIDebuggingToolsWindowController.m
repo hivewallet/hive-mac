@@ -19,15 +19,11 @@
 
 - (IBAction)rebuildTransactionListClicked:(id)sender
 {
-    NSAlert *alert = [NSAlert alertWithMessageText:NSLocalizedString(@"Are you sure?",
-                                                                     @"Debugging tools confirmation popup title")
-                                     defaultButton:NSLocalizedString(@"Rebuild list",
-                                                                     @"Rebuild transaction list button title")
-                                   alternateButton:NSLocalizedString(@"Cancel",
-                                                                     @"Cancel button title")
+    NSAlert *alert = [NSAlert alertWithMessageText:@"Are you sure?"
+                                     defaultButton:@"Rebuild list"
+                                   alternateButton:@"Cancel"
                                        otherButton:nil
-                         informativeTextWithFormat:NSLocalizedString(@"Your transaction list will be rebuilt now.",
-                                                                     @"Rebuild transaction list popup description")];
+                         informativeTextWithFormat:@"Your transaction list will be rebuilt now."];
 
     [alert beginSheetModalForWindow:self.window
                       modalDelegate:self
