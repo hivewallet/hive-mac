@@ -132,4 +132,14 @@
     return self.frame.globalContext;
 }
 
+- (void)callCallbackMethod:(WebScriptObject *)callback withArguments:(JSValueRef *)arguments count:(size_t)count
+{
+    JSObjectRef function = [callback JSObject];
+
+    if (function)
+    {
+        JSObjectCallAsFunction(self.context, function, NULL, count, arguments, NULL);
+    }
+}
+
 @end

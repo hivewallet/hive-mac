@@ -27,4 +27,6 @@
 - (id)webScriptObject:(WebScriptObject *)object valueForProperty:(NSString *)property;
 - (BOOL)webScriptObject:(WebScriptObject *)object hasProperty:(NSString *)property;
 
+- (void)callCallbackMethod:(WebScriptObject *)callback withArguments:(JSValueRef *)arguments count:(size_t)count;
+
 @end

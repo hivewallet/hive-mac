@@ -154,14 +154,6 @@ static const NSInteger kHIAppRuntimeBridgeParsingError = -1000;
                                completion:^(BOOL success, NSString *transactionId) {
         if (!IsNullOrUndefined(callback))
         {
-            JSObjectRef ref = [callback JSObject];
-
-            if (!ref)
-            {
-                // app was already closed
-                return;
-            }
-
             if (success)
             {
                 JSStringRef idParam = JSStringCreateWithCFString((__bridge CFStringRef) transactionId);
@@ -170,13 +162,15 @@ static const NSInteger kHIAppRuntimeBridgeParsingError = -1000;
                 params[0] = JSValueMakeBoolean(self.context, YES);
                 params[1] = JSValueMakeString(self.context, idParam);
 
-                JSObjectCallAsFunction(self.context, ref, NULL, 2, params, NULL);
+                [self callCallbackMethod:callback withArguments:params count:2];
+
                 JSStringRelease(idParam);
             }
             else
             {
                 JSValueRef result = JSValueMakeBoolean(self.context, NO);
-                JSObjectCallAsFunction(self.context, ref, NULL, 1, &result, NULL);
+
+                [self callCallbackMethod:callback withArguments:&result count:1];
             }
         }
     }];
@@ -190,14 +184,14 @@ static const NSInteger kHIAppRuntimeBridgeParsingError = -1000;
         return;
     }
 
-    JSObjectRef ref = [callback JSObject];
-
     NSDictionary *data = [[BCClient sharedClient] transactionDefinitionWithHash:hash];
 
     if (!data)
     {
         JSValueRef nullValue = JSValueMakeNull(self.context);
-        JSObjectCallAsFunction(self.context, ref, NULL, 1, &nullValue, NULL);
+
+        [self callCallbackMethod:callback withArguments:&nullValue count:1];
+
         return;
     }
 
@@ -220,7 +214,8 @@ static const NSInteger kHIAppRuntimeBridgeParsingError = -1000;
                                 };
 
     JSValueRef jsonValue = [self valueObjectFromDictionary:transaction];
-    JSObjectCallAsFunction(self.context, ref, NULL, 1, &jsonValue, NULL);
+
+    [self callCallbackMethod:callback withArguments:&jsonValue count:1];
 }
 
 - (void)getUserInformationWithCallback:(WebScriptObject *)callback
@@ -230,8 +225,6 @@ static const NSInteger kHIAppRuntimeBridgeParsingError = -1000;
         [WebScriptObject throwException:@"callback argument is undefined"];
         return;
     }
-
-    JSObjectRef ref = [callback JSObject];
 
     HIProfile *profile = [[HIProfile alloc] init];
 
@@ -243,7 +236,8 @@ static const NSInteger kHIAppRuntimeBridgeParsingError = -1000;
                          };
 
     JSValueRef jsonValue = [self valueObjectFromDictionary:data];
-    JSObjectCallAsFunction(self.context, ref, NULL, 1, &jsonValue, NULL);
+
+    [self callCallbackMethod:callback withArguments:&jsonValue count:1];
 }
 
 - (void)getSystemInfoWithCallback:(WebScriptObject *)callback
@@ -254,14 +248,13 @@ static const NSInteger kHIAppRuntimeBridgeParsingError = -1000;
         return;
     }
 
-    JSObjectRef ref = [callback JSObject];
-
     NSDictionary *data = @{
                            @"decimalSeparator": _currencyFormatter.decimalSeparator
                          };
 
     JSValueRef jsonValue = [self valueObjectFromDictionary:data];
-    JSObjectCallAsFunction(self.context, ref, NULL, 1, &jsonValue, NULL);
+
+    [self callCallbackMethod:callback withArguments:&jsonValue count:1];
 }
 
 - (void)makeProxiedRequestToURL:(NSString *)url options:(WebScriptObject *)options
@@ -366,8 +359,7 @@ static const NSInteger kHIAppRuntimeBridgeParsingError = -1000;
 
     for (WebScriptObject *listener in _exchangeRateListeners)
     {
-        JSObjectRef ref = listener.JSObject;
-        JSObjectCallAsFunction(self.context, ref, NULL, 2, params, NULL);
+        [self callCallbackMethod:listener withArguments:params count:2];
     }
 }
 
@@ -455,15 +447,8 @@ static const NSInteger kHIAppRuntimeBridgeParsingError = -1000;
         arguments[0] = response;
         arguments[1] = JSValueMakeNumber(self.context, operation.response.statusCode);
 
-        if (successCallback)
-        {
-            JSObjectCallAsFunction(self.context, [successCallback JSObject], NULL, 2, arguments, NULL);
-        }
-
-        if (completeCallback)
-        {
-            JSObjectCallAsFunction(self.context, [completeCallback JSObject], NULL, 2, arguments, NULL);
-        }
+        [self callCallbackMethod:successCallback withArguments:arguments count:2];
+        [self callCallbackMethod:completeCallback withArguments:arguments count:2];
     }
     else
     {
@@ -488,15 +473,8 @@ static const NSInteger kHIAppRuntimeBridgeParsingError = -1000;
     arguments[1] = JSValueMakeNumber(self.context, operation.response.statusCode);
     arguments[2] = [self valueObjectFromDictionary:errorData];
 
-    if (errorCallback)
-    {
-        JSObjectCallAsFunction(self.context, [errorCallback JSObject], NULL, 3, arguments, NULL);
-    }
-
-    if (completeCallback)
-    {
-        JSObjectCallAsFunction(self.context, [completeCallback JSObject], NULL, 3, arguments, NULL);
-    }
+    [self callCallbackMethod:errorCallback withArguments:arguments count:3];
+    [self callCallbackMethod:completeCallback withArguments:arguments count:3];
 }
 
 @end
