@@ -40,6 +40,54 @@ static const NSInteger kHIAppRuntimeBridgeParsingError = -1000;
 
 @implementation HIAppRuntimeBridge
 
+#pragma mark - Method & property mapping
+
++ (NSDictionary *)selectorMap
+{
+    static NSDictionary *selectorMap;
+
+    if (!selectorMap)
+    {
+        selectorMap = @{
+                        @"sendMoneyToAddress:amount:callback:": @"sendMoney",
+                        @"transactionWithHash:callback:": @"getTransaction",
+                        @"getUserInformationWithCallback:": @"getUserInfo",
+                        @"getSystemInfoWithCallback:": @"getSystemInfo",
+                        @"makeProxiedRequestToURL:options:": @"makeRequest",
+                        @"addExchangeRateListener:": @"addExchangeRateListener",
+                        @"removeExchangeRateListener:": @"removeExchangeRateListener",
+                        @"updateExchangeRateForCurrency:": @"updateExchangeRate",
+                        };
+    }
+
+    return selectorMap;
+}
+
++ (NSDictionary *)keyMap
+{
+    static NSDictionary *keyMap;
+
+    if (!keyMap)
+    {
+        keyMap = @{
+                   @"_BTCInSatoshi": @"BTC_IN_SATOSHI",
+                   @"_mBTCInSatoshi": @"MBTC_IN_SATOSHI",
+                   @"_uBTCInSatoshi": @"UBTC_IN_SATOSHI",
+                   @"_IncomingTransactionType": @"TX_TYPE_INCOMING",
+                   @"_OutgoingTransactionType": @"TX_TYPE_OUTGOING",
+                   @"_hiveBuildNumber": @"BUILD_NUMBER",
+                   @"_hiveVersionNumber": @"VERSION",
+                   @"_locale": @"LOCALE",
+                   @"_preferredCurrency": @"PREFERRED_CURRENCY",
+                   };
+    }
+
+    return keyMap;
+}
+
+
+#pragma mark - init & cleanup
+
 - (id)initWithApplication:(HIApplication *)application
 {
     self = [super init];
@@ -80,6 +128,9 @@ static const NSInteger kHIAppRuntimeBridgeParsingError = -1000;
 {
     [self removeAllExchangeRateListeners];
 }
+
+
+#pragma mark - JS API methods
 
 - (void)sendMoneyToAddress:(NSString *)hash amount:(NSNumber *)amount callback:(WebScriptObject *)callback
 {
@@ -267,6 +318,62 @@ static const NSInteger kHIAppRuntimeBridgeParsingError = -1000;
     [operation start];
 }
 
+
+#pragma mark - Exchange rate handling
+
+- (void)addExchangeRateListener:(WebScriptObject *)listener
+{
+    if (IsNullOrUndefined(listener))
+    {
+        [WebScriptObject throwException:@"listener is undefined"];
+        return;
+    }
+    if (_exchangeRateListeners.count == 0)
+    {
+        [[HIExchangeRateService sharedService] addExchangeRateObserver:self];
+    }
+    [_exchangeRateListeners addObject:listener];
+}
+
+- (void)removeExchangeRateListener:(WebScriptObject *)listener
+{
+    [_exchangeRateListeners removeObject:listener];
+    if (_exchangeRateListeners.count == 0)
+    {
+        [[HIExchangeRateService sharedService] removeExchangeRateObserver:self];
+    }
+}
+
+- (void)removeAllExchangeRateListeners
+{
+    for (WebScriptObject *listener in [_exchangeRateListeners copy])
+    {
+        [self removeExchangeRateListener:listener];
+    }
+}
+
+- (void)updateExchangeRateForCurrency:(NSString *)currency
+{
+    [[HIExchangeRateService sharedService] updateExchangeRateForCurrency:currency];
+}
+
+- (void)exchangeRateUpdatedTo:(NSDecimalNumber *)exchangeRate forCurrency:(NSString *)currency
+{
+    JSValueRef params[2];
+    params[0] = JSValueMakeString(self.context, JSStringCreateWithCFString((__bridge CFStringRef)currency));
+    params[1] = JSValueMakeNumber(self.context,
+                                  [exchangeRate decimalNumberByMultiplyingByPowerOf10:8].doubleValue);
+
+    for (WebScriptObject *listener in _exchangeRateListeners)
+    {
+        JSObjectRef ref = listener.JSObject;
+        JSObjectCallAsFunction(self.context, ref, NULL, 2, params, NULL);
+    }
+}
+
+
+#pragma mark - Proxied request & response handling
+
 - (NSMutableURLRequest *)requestWithURL:(NSString *)URL
                                  method:(NSString *)method
                                    data:(id)data
@@ -310,42 +417,6 @@ static const NSInteger kHIAppRuntimeBridgeParsingError = -1000;
     }
 
     return request;
-}
-
-- (void)addExchangeRateListener:(WebScriptObject *)listener
-{
-    if (IsNullOrUndefined(listener))
-    {
-        [WebScriptObject throwException:@"listener is undefined"];
-        return;
-    }
-    if (_exchangeRateListeners.count == 0)
-    {
-        [[HIExchangeRateService sharedService] addExchangeRateObserver:self];
-    }
-    [_exchangeRateListeners addObject:listener];
-}
-
-- (void)removeExchangeRateListener:(WebScriptObject *)listener
-{
-    [_exchangeRateListeners removeObject:listener];
-    if (_exchangeRateListeners.count == 0)
-    {
-        [[HIExchangeRateService sharedService] removeExchangeRateObserver:self];
-    }
-}
-
-- (void)removeAllExchangeRateListeners
-{
-    for (WebScriptObject *listener in [_exchangeRateListeners copy])
-    {
-        [self removeExchangeRateListener:listener];
-    }
-}
-
-- (void)updateExchangeRateForCurrency:(NSString *)currency
-{
-    [[HIExchangeRateService sharedService] updateExchangeRateForCurrency:currency];
 }
 
 - (JSValueRef)parseResponseFromOperation:(AFHTTPRequestOperation *)operation requestedDataType:(NSString *)dataType
@@ -426,68 +497,6 @@ static const NSInteger kHIAppRuntimeBridgeParsingError = -1000;
     {
         JSObjectCallAsFunction(self.context, [completeCallback JSObject], NULL, 3, arguments, NULL);
     }
-}
-
-
-+ (NSDictionary *)selectorMap
-{
-    static NSDictionary *selectorMap;
-
-    if (!selectorMap)
-    {
-        selectorMap = @{
-                        @"sendMoneyToAddress:amount:callback:": @"sendMoney",
-                        @"transactionWithHash:callback:": @"getTransaction",
-                        @"getUserInformationWithCallback:": @"getUserInfo",
-                        @"getSystemInfoWithCallback:": @"getSystemInfo",
-                        @"makeProxiedRequestToURL:options:": @"makeRequest",
-                        @"addExchangeRateListener:": @"addExchangeRateListener",
-                        @"removeExchangeRateListener:": @"removeExchangeRateListener",
-                        @"updateExchangeRateForCurrency:": @"updateExchangeRate",
-        };
-    }
-
-    return selectorMap;
-}
-
-+ (NSDictionary *)keyMap
-{
-    static NSDictionary *keyMap;
-
-    if (!keyMap)
-    {
-        keyMap = @{
-                   @"_BTCInSatoshi": @"BTC_IN_SATOSHI",
-                   @"_mBTCInSatoshi": @"MBTC_IN_SATOSHI",
-                   @"_uBTCInSatoshi": @"UBTC_IN_SATOSHI",
-                   @"_IncomingTransactionType": @"TX_TYPE_INCOMING",
-                   @"_OutgoingTransactionType": @"TX_TYPE_OUTGOING",
-                   @"_hiveBuildNumber": @"BUILD_NUMBER",
-                   @"_hiveVersionNumber": @"VERSION",
-                   @"_locale": @"LOCALE",
-                   @"_preferredCurrency": @"PREFERRED_CURRENCY",
-                 };
-    }
-
-    return keyMap;
-}
-
-
-#pragma mark - HIExchangeRateObserver
-
-- (void)exchangeRateUpdatedTo:(NSDecimalNumber *)exchangeRate forCurrency:(NSString *)currency
-{
-    JSValueRef params[2];
-    params[0] = JSValueMakeString(self.context, JSStringCreateWithCFString((__bridge CFStringRef)currency));
-    params[1] = JSValueMakeNumber(self.context,
-                                  [exchangeRate decimalNumberByMultiplyingByPowerOf10:8].doubleValue);
-
-    for (WebScriptObject *listener in _exchangeRateListeners)
-    {
-        JSObjectRef ref = listener.JSObject;
-        JSObjectCallAsFunction(self.context, ref, NULL, 2, params, NULL);
-    }
-
 }
 
 @end
