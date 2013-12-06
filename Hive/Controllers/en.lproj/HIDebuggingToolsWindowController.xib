@@ -15,15 +15,15 @@
         <window title="Debugging Tools" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" releasedWhenClosed="NO" wantsToBeColor="NO" animationBehavior="default" id="1">
             <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
             <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
-            <rect key="contentRect" x="196" y="240" width="423" height="156"/>
+            <rect key="contentRect" x="196" y="240" width="423" height="318"/>
             <rect key="screenRect" x="0.0" y="0.0" width="1440" height="878"/>
             <value key="minSize" type="size" width="400" height="175"/>
             <view key="contentView" id="2">
-                <rect key="frame" x="0.0" y="0.0" width="423" height="156"/>
+                <rect key="frame" x="0.0" y="0.0" width="423" height="318"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="8wv-1K-xGB">
-                        <rect key="frame" x="17" y="119" width="389" height="17"/>
+                        <rect key="frame" x="17" y="281" width="389" height="17"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                         <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="Warning: only use these if you know what you're doing." id="7s6-ad-XDN">
                             <font key="font" metaFont="systemBold"/>
@@ -32,28 +32,68 @@
                         </textFieldCell>
                     </textField>
                     <box autoresizesSubviews="NO" verticalHuggingPriority="750" title="Box" boxType="separator" titlePosition="noTitle" id="uKJ-hm-aZ8">
-                        <rect key="frame" x="20" y="101" width="383" height="5"/>
+                        <rect key="frame" x="20" y="263" width="383" height="5"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                         <color key="borderColor" white="0.0" alpha="0.41999999999999998" colorSpace="calibratedWhite"/>
                         <color key="fillColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         <font key="titleFont" metaFont="system"/>
                     </box>
                     <button verticalHuggingPriority="750" id="MnW-YW-NK4">
-                        <rect key="frame" x="14" y="53" width="212" height="32"/>
+                        <rect key="frame" x="14" y="215" width="212" height="32"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                         <buttonCell key="cell" type="push" title="Rebuild transaction list" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="BEL-F2-2Mn">
                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                             <font key="font" metaFont="system"/>
                         </buttonCell>
                         <connections>
-                            <action selector="rebuildTransactionList:" target="-2" id="jDS-lA-Gx1"/>
+                            <action selector="rebuildTransactionListClicked:" target="-2" id="ydM-9B-lgl"/>
                         </connections>
                     </button>
                     <textField verticalHuggingPriority="750" id="WR0-Y6-STC">
-                        <rect key="frame" x="17" y="20" width="389" height="32"/>
+                        <rect key="frame" x="17" y="182" width="389" height="32"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                         <textFieldCell key="cell" sendsActionOnEndEditing="YES" title="This will clear your transactions list and rebuild it from the data in the wallet file." id="F9Q-9W-L7l">
                             <font key="font" metaFont="cellTitle"/>
+                            <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                        </textFieldCell>
+                    </textField>
+                    <button verticalHuggingPriority="750" id="TB7-VX-Ewi">
+                        <rect key="frame" x="14" y="134" width="212" height="32"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                        <buttonCell key="cell" type="push" title="Rebuild application list" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="WRZ-5O-74t">
+                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                            <font key="font" metaFont="system"/>
+                        </buttonCell>
+                        <connections>
+                            <action selector="rebuildApplicationListClicked:" target="-2" id="jnx-Br-tN3"/>
+                        </connections>
+                    </button>
+                    <textField verticalHuggingPriority="750" id="h2z-1w-nan">
+                        <rect key="frame" x="17" y="101" width="389" height="32"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                        <textFieldCell key="cell" sendsActionOnEndEditing="YES" title="Updates the list of applications so that it reflects which apps are actually installed in Hive's Applications folder." id="qZF-y6-NSQ">
+                            <font key="font" metaFont="cellTitle"/>
+                            <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                        </textFieldCell>
+                    </textField>
+                    <button verticalHuggingPriority="750" id="heZ-TQ-oLf">
+                        <rect key="frame" x="14" y="53" width="212" height="32"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                        <buttonCell key="cell" type="push" title="Reinstall bundled apps" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="CRR-BK-g7L">
+                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                            <font key="font" metaFont="system"/>
+                        </buttonCell>
+                        <connections>
+                            <action selector="reinstallBundledAppsClicked:" target="-2" id="dLe-W2-BwP"/>
+                        </connections>
+                    </button>
+                    <textField verticalHuggingPriority="750" id="V9e-pJ-wRq">
+                        <rect key="frame" x="17" y="20" width="389" height="32"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                        <textFieldCell key="cell" sendsActionOnEndEditing="YES" title="Installs apps bundled inside Hive.app into your Applications directory." id="2tw-SV-J3A">
+                            <font key="font" size="12" name="LucidaGrande"/>
                             <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                             <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                         </textFieldCell>

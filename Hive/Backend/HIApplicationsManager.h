@@ -21,5 +21,6 @@
 - (BOOL)hasApplicationOfId:(NSString *)applicationId;
 - (NSDictionary *)applicationMetadata:(NSURL *)applicationPath;
 - (void)preinstallApps;
+- (void)rebuildAppsList;
 
 @end

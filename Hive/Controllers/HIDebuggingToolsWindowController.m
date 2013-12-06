@@ -7,13 +7,8 @@
 //
 
 #import "BCClient.h"
+#import "HIApplicationsManager.h"
 #import "HIDebuggingToolsWindowController.h"
-
-@interface HIDebuggingToolsWindowController ()
-
-- (IBAction)rebuildTransactionList:(id)sender;
-
-@end
 
 @implementation HIDebuggingToolsWindowController
 
@@ -22,7 +17,7 @@
     return [super initWithWindowNibName:@"HIDebuggingToolsWindowController"];
 }
 
-- (IBAction)rebuildTransactionList:(id)sender
+- (IBAction)rebuildTransactionListClicked:(id)sender
 {
     NSAlert *alert = [NSAlert alertWithMessageText:NSLocalizedString(@"Are you sure?",
                                                                      @"Debugging tools confirmation popup title")
@@ -36,17 +31,61 @@
 
     [alert beginSheetModalForWindow:self.window
                       modalDelegate:self
-                     didEndSelector:@selector(rebuildTransactionListAlertClosed:withReturnCode:context:)
-                        contextInfo:NULL];
+                     didEndSelector:@selector(alertClosed:withReturnCode:context:)
+                        contextInfo:@selector(rebuildTransactionList)];
 }
 
-- (void)rebuildTransactionListAlertClosed:(NSAlert *)alert withReturnCode:(NSInteger)code context:(void *)context
+- (IBAction)rebuildApplicationListClicked:(id)sender
+{
+    NSAlert *alert = [NSAlert alertWithMessageText:@"Are you sure?"
+                                     defaultButton:@"Rebuild application list"
+                                   alternateButton:@"Cancel"
+                                       otherButton:nil
+                         informativeTextWithFormat:@"Your application list will be rebuilt now."];
+
+    [alert beginSheetModalForWindow:self.window
+                      modalDelegate:self
+                     didEndSelector:@selector(alertClosed:withReturnCode:context:)
+                        contextInfo:@selector(rebuildApplicationList)];
+}
+
+- (IBAction)reinstallBundledAppsClicked:(id)sender
+{
+    NSAlert *alert = [NSAlert alertWithMessageText:@"Are you sure?"
+                                     defaultButton:@"Reinstall apps"
+                                   alternateButton:@"Cancel"
+                                       otherButton:nil
+                         informativeTextWithFormat:@"Any changes you've made to the code in those apps will be lost."];
+
+    [alert beginSheetModalForWindow:self.window
+                      modalDelegate:self
+                     didEndSelector:@selector(alertClosed:withReturnCode:context:)
+                        contextInfo:@selector(reinstallBundledApps)];
+}
+
+- (void)alertClosed:(NSAlert *)alert withReturnCode:(NSInteger)code context:(void *)context
 {
     if (code == NSAlertDefaultReturn)
     {
-        [[BCClient sharedClient] clearTransactionsList];
-        [[BCClient sharedClient] rebuildTransactionsList];
+        SEL selector = (SEL) context;
+        [self performSelector:selector withObject:nil];
     }
+}
+
+- (void)rebuildTransactionList
+{
+    [[BCClient sharedClient] clearTransactionsList];
+    [[BCClient sharedClient] rebuildTransactionsList];
+}
+
+- (void)rebuildApplicationList
+{
+    [[HIApplicationsManager sharedManager] rebuildAppsList];
+}
+
+- (void)reinstallBundledApps
+{
+    [[HIApplicationsManager sharedManager] preinstallApps];
 }
 
 @end
