@@ -95,10 +95,11 @@ static NSString * const kBCClientBaseURLString = @"https://grabhive.com/";
             });
         };
 
-#ifdef TESTING_NETWORK
-        bitcoin.testingNetwork = YES;
-#endif
-        
+        if (DEBUG_OPTION_ENABLED(TESTING_NETWORK))
+        {
+            bitcoin.testingNetwork = YES;
+        }
+
         [bitcoin addObserver:self
                   forKeyPath:@"balance"
                      options:NSKeyValueObservingOptionInitial | NSKeyValueObservingOptionNew

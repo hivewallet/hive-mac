@@ -184,11 +184,14 @@ void handleException(NSException *exception)
     NSArray *matchingURLs = [fileManager URLsForDirectory:NSApplicationSupportDirectory inDomains:NSUserDomainMask];
     NSURL *appSupportURL = [matchingURLs lastObject];
 
-#ifdef TESTING_NETWORK
-    return [appSupportURL URLByAppendingPathComponent:@"HiveTest"];
-#else
-    return [appSupportURL URLByAppendingPathComponent:@"Hive"];
-#endif
+    if (DEBUG_OPTION_ENABLED(TESTING_NETWORK))
+    {
+        return [appSupportURL URLByAppendingPathComponent:@"HiveTest"];
+    }
+    else
+    {
+        return [appSupportURL URLByAppendingPathComponent:@"Hive"];
+    }
 }
 
 // Creates if necessary and returns the managed object model for the application.

@@ -6,9 +6,15 @@
     #import <Cocoa/Cocoa.h>
     #import <SystemConfiguration/SystemConfiguration.h>
     #import "HIAppDelegate.h"
-// uncomment this to use the testing network, not the main blockchain
-//    #define TESTING_NETWORK 1
+// change this to 1 to use the testing network, not the main blockchain
+    #define TESTING_NETWORK 0
     #define SATOSHI 100000000
     #define DBM ((HIAppDelegate *) [NSApp delegate]).managedObjectContext
     #define RGB(r,g,b) [NSColor colorWithCalibratedRed:((CGFloat)r/255.0) green:((CGFloat)g/255.0) blue:((CGFloat)b/255.0) alpha:1.0]
+#endif
+
+#ifdef DEBUG
+    #define DEBUG_OPTION_ENABLED(name) (name || ({const char *v = getenv("HIVE_" # name); v && v[0];}))
+#else
+    #define DEBUG_OPTION_ENABLED(name) (name)
 #endif
