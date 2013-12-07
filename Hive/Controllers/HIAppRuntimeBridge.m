@@ -373,6 +373,7 @@ static const NSInteger kHIAppRuntimeBridgeParsingError = -1000;
 {
     NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:URL]];
     [request setHTTPMethod:method];
+    [request setHTTPShouldHandleCookies:NO];
 
     if (data)
     {
