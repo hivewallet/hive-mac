@@ -453,10 +453,9 @@ static const NSInteger kHIAppRuntimeBridgeParsingError = -1000;
     }
     else
     {
-        NSString *message = [NSString stringWithFormat:@"couldn't parse response: '%@'", operation.responseString];
         NSError *error = [NSError errorWithDomain:kHIAppRuntimeBridgeErrorDomain
                                              code:kHIAppRuntimeBridgeParsingError
-                                         userInfo:@{ NSLocalizedDescriptionKey: message }];
+                                         userInfo:@{ NSLocalizedDescriptionKey: @"couldn't parse JSON response" }];
 
         [self handleError:error forOperation:operation errorCallback:errorCallback completeCallback:completeCallback];
     }
