@@ -124,7 +124,7 @@
     }
 }
 
-- (void)webView:(WebView *)sender didFinishLoadForFrame:(WebFrame *)frame
+- (void)webView:(WebView *)sender didCommitLoadForFrame:(WebFrame *)frame
 {
     // make the bridge object accessible from JS
     id window = self.webView.windowScriptObject;
