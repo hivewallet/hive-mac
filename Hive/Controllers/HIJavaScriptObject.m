@@ -15,36 +15,30 @@
 
 // override these two in subclasses
 
-+ (NSDictionary *)selectorMap
-{
++ (NSDictionary *)selectorMap {
     // e.g. @{ @"sendMoneyToAddress:": @"sendMoney" }
     return @{};
 }
 
-+ (NSDictionary *)keyMap
-{
++ (NSDictionary *)keyMap {
     // e.g. @{ @"minFee": @"MIN_FEE" }
     return @{};
 }
 
-+ (NSString *)webScriptNameForSelector:(SEL)sel
-{
++ (NSString *)webScriptNameForSelector:(SEL)sel {
     return [self selectorMap][NSStringFromSelector(sel)];
 }
 
-+ (BOOL)isSelectorExcludedFromWebScript:(SEL)sel
-{
++ (BOOL)isSelectorExcludedFromWebScript:(SEL)sel {
     return ([self selectorMap][NSStringFromSelector(sel)] == nil);
 }
 
-+ (NSString *)webScriptNameForKey:(const char *)name
-{
++ (NSString *)webScriptNameForKey:(const char *)name {
     NSString *key = [NSString stringWithCString:name encoding:NSASCIIStringEncoding];
     return [self keyMap][key];
 }
 
-+ (BOOL)isKeyExcludedFromWebScript:(const char *)name
-{
++ (BOOL)isKeyExcludedFromWebScript:(const char *)name {
     NSString *key = [NSString stringWithCString:name encoding:NSASCIIStringEncoding];
     return ([self keyMap][key] == nil);
 }
@@ -52,8 +46,7 @@
 
 #pragma mark - JS/Cocoa conversion methods
 
-- (JSValueRef)valueObjectFromDictionary:(NSDictionary *)dictionary
-{
+- (JSValueRef)valueObjectFromDictionary:(NSDictionary *)dictionary {
     NSData *jsonData = [NSJSONSerialization dataWithJSONObject:dictionary options:0 error:NULL];
     NSString *jsonString = [[NSString alloc] initWithData:jsonData encoding:NSUTF8StringEncoding];
 
@@ -64,10 +57,8 @@
     return jsValue;
 }
 
-- (NSDictionary *)dictionaryFromWebScriptObject:(WebScriptObject *)object
-{
-    if (IsNullOrUndefined(object))
-    {
+- (NSDictionary *)dictionaryFromWebScriptObject:(WebScriptObject *)object {
+    if (IsNullOrUndefined(object)) {
         return nil;
     }
 
@@ -76,19 +67,15 @@
 
     NSMutableDictionary *dictionary = [[NSMutableDictionary alloc] initWithCapacity:count];
 
-    for (NSInteger i = 0; i < count; i++)
-    {
+    for (NSInteger i = 0; i < count; i++) {
         JSStringRef property = JSPropertyNameArrayGetNameAtIndex(properties, i);
         NSString *propertyName = CFBridgingRelease(JSStringCopyCFString(kCFAllocatorDefault, property));
 
         id value = [object valueForKey:propertyName];
 
-        if ([value isKindOfClass:[NSString class]] || [value isKindOfClass:[NSNumber class]])
-        {
+        if ([value isKindOfClass:[NSString class]] || [value isKindOfClass:[NSNumber class]]) {
             dictionary[propertyName] = value;
-        }
-        else
-        {
+        } else {
             NSLog(@"dictionaryFromWebScriptObject: ignoring value for property %@: %@", propertyName, value);
         }
     }
@@ -98,22 +85,16 @@
     return dictionary;
 }
 
-- (id)webScriptObject:(WebScriptObject *)object valueForProperty:(NSString *)property
-{
-    if ([self webScriptObject:object hasProperty:property])
-    {
+- (id)webScriptObject:(WebScriptObject *)object valueForProperty:(NSString *)property {
+    if ([self webScriptObject:object hasProperty:property]) {
         return [object valueForKey:property];
-    }
-    else
-    {
+    } else {
         return nil;
     }
 }
 
-- (BOOL)webScriptObject:(WebScriptObject *)object hasProperty:(NSString *)property
-{
-    if (IsNullOrUndefined(object))
-    {
+- (BOOL)webScriptObject:(WebScriptObject *)object hasProperty:(NSString *)property {
+    if (IsNullOrUndefined(object)) {
         return NO;
     }
 
@@ -127,15 +108,12 @@
 
 #pragma mark - Helpers
 
-- (JSGlobalContextRef)context
-{
+- (JSGlobalContextRef)context {
     return self.frame.globalContext;
 }
 
-- (void)callCallbackMethod:(WebScriptObject *)callback withArguments:(JSValueRef *)arguments count:(size_t)count
-{
-    if (callback && [callback respondsToSelector:@selector(JSObject)] && [callback JSObject])
-    {
+- (void)callCallbackMethod:(WebScriptObject *)callback withArguments:(JSValueRef *)arguments count:(size_t)count {
+    if (callback && [callback respondsToSelector:@selector(JSObject)] && [callback JSObject]) {
         JSObjectCallAsFunction(self.context, [callback JSObject], NULL, count, arguments, NULL);
     }
 }

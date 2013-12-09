@@ -27,8 +27,7 @@ static NSString * const WarningDisplayedKey = @"WarningDisplayed";
 #define CheckError(error) if (error) { [NSApp presentError:(error)]; return nil; }
 
 
-@interface HIAppDelegate ()
-{
+@interface HIAppDelegate () {
     HIDebuggingInfoWindowController *_debuggingInfoWindowController;
     HIDebuggingToolsWindowController *_debuggingToolsWindowController;
     HIMainWindowController *_mainWindowController;
@@ -45,13 +44,11 @@ static NSString * const WarningDisplayedKey = @"WarningDisplayed";
 @synthesize managedObjectContext = _managedObjectContext;
 
 
-void handleException(NSException *exception)
-{
+void handleException(NSException *exception) {
     [[NSApp delegate] showExceptionWindowWithException:exception];
 }
 
-- (void)applicationDidFinishLaunching:(NSNotification *)aNotification
-{
+- (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
     BITHockeyManager *hockeyapp = [BITHockeyManager sharedHockeyManager];
     [hockeyapp configureWithIdentifier:@"e47f0624d130a873ecae31509e4d1124"
                            companyName:@""
@@ -86,16 +83,12 @@ void handleException(NSException *exception)
     [self updateLastVersionKey];
 }
 
-- (void)showMainApplicationWindowForCrashManager:(id)crashManager
-{
+- (void)showMainApplicationWindowForCrashManager:(id)crashManager {
     // create BCClient instance
     [BCClient sharedClient];
-    if ([BCClient sharedClient].initializationError)
-    {
+    if ([BCClient sharedClient].initializationError) {
         [self showInitializationError:[BCClient sharedClient].initializationError];
-    }
-    else
-    {
+    } else {
         _mainWindowController = [[HIMainWindowController alloc] initWithWindowNibName:@"HIMainWindowController"];
         [_mainWindowController showWindow:self];
     }
@@ -103,40 +96,31 @@ void handleException(NSException *exception)
     NSSetUncaughtExceptionHandler(&handleException);
 }
 
-- (void)showInitializationError:(NSError *)error
-{
+- (void)showInitializationError:(NSError *)error {
     // TODO: Look at error code (e.g. kHIBitcoinManagerUnreadableWallet) and offer specific solution.
     NSString *message = nil;
-    if (error.code == kHIBitcoinManagerUnreadableWallet)
-    {
+    if (error.code == kHIBitcoinManagerUnreadableWallet) {
         message = NSLocalizedString(@"Could not read wallet file. It might be damaged.", @"initialization error");
-    }
-    else if (error.code == kHIBitcoinManagerBlockStoreError)
-    {
+    } else if (error.code == kHIBitcoinManagerBlockStoreError) {
         message = NSLocalizedString(@"Could not write wallet file. Another instance of Hive might still be running.",
                                     @"initialization error");
     }
-    if (message)
-    {
+    if (message) {
         [[NSAlert alertWithMessageText:NSLocalizedString(@"Error", @"Initialization error title")
                          defaultButton:NSLocalizedString(@"OK", @"OK button title")
                        alternateButton:nil
                            otherButton:nil
              informativeTextWithFormat:@"%@", message] runModal];
-    }
-    else
-    {
+    } else {
         [[NSAlert alertWithError:error] runModal];
     }
     exit(1);
 }
 
-- (void)showBetaWarning
-{
+- (void)showBetaWarning {
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
 
-    if (![defaults objectForKey:WarningDisplayedKey])
-    {
+    if (![defaults objectForKey:WarningDisplayedKey]) {
         NSRunAlertPanel(@"Warning",
                         @"This version is for testing and development purposes only! "
                         @"Please do not move any money into it that you cannot afford to lose.",
@@ -146,29 +130,24 @@ void handleException(NSException *exception)
     }
 }
 
-- (void)preinstallAppsIfNeeded
-{
+- (void)preinstallAppsIfNeeded {
     NSString *currentVersion = [[NSBundle mainBundle] infoDictionary][@"CFBundleVersion"];
     NSString *lastVersion = [[NSUserDefaults standardUserDefaults] objectForKey:LastVersionKey];
 
-    if (!lastVersion || [currentVersion isGreaterThan:lastVersion])
-    {
+    if (!lastVersion || [currentVersion isGreaterThan:lastVersion]) {
         [[HIApplicationsManager sharedManager] preinstallApps];
     }
 }
 
-- (void)updateLastVersionKey
-{
+- (void)updateLastVersionKey {
     NSString *currentVersion = [[NSBundle mainBundle] infoDictionary][@"CFBundleVersion"];
     [[NSUserDefaults standardUserDefaults] setObject:currentVersion forKey:LastVersionKey];
 }
 
-- (void)rebuildTransactionListIfNeeded
-{
+- (void)rebuildTransactionListIfNeeded {
     NSString *lastVersion = [[NSUserDefaults standardUserDefaults] objectForKey:LastVersionKey];
 
-    if ([lastVersion isLessThan:@"2013112601"])
-    {
+    if ([lastVersion isLessThan:@"2013112601"]) {
         // rebuild the list once after changing HITransaction#date from NSTimeInterval to NSDate
         // (which is how it was actually defined in the data model from the beginning)
 
@@ -178,27 +157,21 @@ void handleException(NSException *exception)
 }
 
 // Returns the directory the application uses to store the Core Data store file.
-- (NSURL *)applicationFilesDirectory
-{
+- (NSURL *)applicationFilesDirectory {
     NSFileManager *fileManager = [NSFileManager defaultManager];
     NSArray *matchingURLs = [fileManager URLsForDirectory:NSApplicationSupportDirectory inDomains:NSUserDomainMask];
     NSURL *appSupportURL = [matchingURLs lastObject];
 
-    if (DEBUG_OPTION_ENABLED(TESTING_NETWORK))
-    {
+    if (DEBUG_OPTION_ENABLED(TESTING_NETWORK)) {
         return [appSupportURL URLByAppendingPathComponent:@"HiveTest"];
-    }
-    else
-    {
+    } else {
         return [appSupportURL URLByAppendingPathComponent:@"Hive"];
     }
 }
 
 // Creates if necessary and returns the managed object model for the application.
-- (NSManagedObjectModel *)managedObjectModel
-{
-    if (!_managedObjectModel)
-    {
+- (NSManagedObjectModel *)managedObjectModel {
+    if (!_managedObjectModel) {
         NSURL *modelURL = [[NSBundle mainBundle] URLForResource:@"Hive" withExtension:@"momd"];
         _managedObjectModel = [[NSManagedObjectModel alloc] initWithContentsOfURL:modelURL];
     }
@@ -208,10 +181,8 @@ void handleException(NSException *exception)
 
 // Returns the persistent store coordinator for the application. This implementation creates and returns a coordinator,
 // having added the store for the application to it. (The directory for the store is created, if necessary.)
-- (NSPersistentStoreCoordinator *)persistentStoreCoordinator
-{
-    if (_persistentStoreCoordinator)
-    {
+- (NSPersistentStoreCoordinator *)persistentStoreCoordinator {
+    if (_persistentStoreCoordinator) {
         return _persistentStoreCoordinator;
     }
 
@@ -226,17 +197,14 @@ void handleException(NSException *exception)
     BOOL isDirectory;
     BOOL exists = [fileManager fileExistsAtPath:self.applicationFilesDirectory.path isDirectory:&isDirectory];
 
-    if (!exists)
-    {
+    if (!exists) {
         [fileManager createDirectoryAtPath:self.applicationFilesDirectory.path
                withIntermediateDirectories:YES
                                 attributes:nil
                                      error:&error];
 
         CheckError(error);
-    }
-    else if (!isDirectory)
-    {
+    } else if (!isDirectory) {
         NSString *failureDescription = [NSString stringWithFormat:
                                         @"Expected a folder to store application data, found a file (%@).",
                                         self.applicationFilesDirectory.path];
@@ -251,8 +219,7 @@ void handleException(NSException *exception)
 
     NSPersistentStoreCoordinator *coordinator = [[NSPersistentStoreCoordinator alloc] initWithManagedObjectModel:mom];
 
-    if (![coordinator addPersistentStoreWithType:NSSQLiteStoreType configuration:nil URL:url options:nil error:NULL])
-    {
+    if (![coordinator addPersistentStoreWithType:NSSQLiteStoreType configuration:nil URL:url options:nil error:NULL]) {
         // see if it isn't the old xml version
         NSPersistentStore *xmlStore = [coordinator addPersistentStoreWithType:NSXMLStoreType
                                                                 configuration:nil
@@ -260,24 +227,18 @@ void handleException(NSException *exception)
                                                                       options:nil
                                                                         error:&error];
 
-        if (xmlStore)
-        {
+        if (xmlStore) {
             NSPersistentStore *sqliteStore = [self migrateXMLStoreToSqlite:xmlStore inCoordinator:coordinator];
 
-            if (sqliteStore)
-            {
+            if (sqliteStore) {
                 // xml store had problems with saving all transactions so rebuild the list in case some were lost
                 dispatch_async(dispatch_get_main_queue(), ^{
                     [[BCClient sharedClient] rebuildTransactionsList];
                 });
-            }
-            else
-            {
+            } else {
                 return nil;
             }
-        }
-        else
-        {
+        } else {
             CheckError(error);
         }
     }
@@ -287,8 +248,7 @@ void handleException(NSException *exception)
 }
 
 - (NSPersistentStore *)migrateXMLStoreToSqlite:(NSPersistentStore *)xmlStore
-                                 inCoordinator:(NSPersistentStoreCoordinator *)coordinator
-{
+                                 inCoordinator:(NSPersistentStoreCoordinator *)coordinator {
     NSFileManager *fileManager = [NSFileManager defaultManager];
     NSError *error = nil;
     NSURL *url = xmlStore.URL;
@@ -296,8 +256,7 @@ void handleException(NSException *exception)
     // convert old store to an sqlite store
     NSURL *newUrl = [self.applicationFilesDirectory URLByAppendingPathComponent:@"Hive.storedata.new"];
 
-    if ([fileManager fileExistsAtPath:newUrl.path isDirectory:NULL])
-    {
+    if ([fileManager fileExistsAtPath:newUrl.path isDirectory:NULL]) {
         [fileManager removeItemAtURL:newUrl error:&error];
         CheckError(error);
     }
@@ -315,8 +274,7 @@ void handleException(NSException *exception)
     // move the new store to the old place
     NSURL *backupUrl = [self.applicationFilesDirectory URLByAppendingPathComponent:@"Hive.storedata.old"];
 
-    if ([fileManager fileExistsAtPath:backupUrl.path isDirectory:NULL])
-    {
+    if ([fileManager fileExistsAtPath:backupUrl.path isDirectory:NULL]) {
         [fileManager removeItemAtURL:backupUrl error:&error];
         CheckError(error);
     }
@@ -339,16 +297,13 @@ void handleException(NSException *exception)
 
 // Returns the managed object context for the application
 // (which is already bound to the persistent store coordinator for the application.)
-- (NSManagedObjectContext *)managedObjectContext
-{
-    if (_managedObjectContext)
-    {
+- (NSManagedObjectContext *)managedObjectContext {
+    if (_managedObjectContext) {
         return _managedObjectContext;
     }
     
     NSPersistentStoreCoordinator *coordinator = self.persistentStoreCoordinator;
-    if (!coordinator)
-    {
+    if (!coordinator) {
         NSDictionary *dict = @{
                                NSLocalizedDescriptionKey: @"Failed to initialize the store",
                                NSLocalizedFailureReasonErrorKey: @"There was an error building up the data file."
@@ -366,22 +321,18 @@ void handleException(NSException *exception)
 }
 
 // handler for bitcoin:xxx URLs
-- (void)handleURLEvent:(NSAppleEventDescriptor *)event withReplyEvent:(NSAppleEventDescriptor *)reply
-{
+- (void)handleURLEvent:(NSAppleEventDescriptor *)event withReplyEvent:(NSAppleEventDescriptor *)reply {
     NSString *URLString = [[event paramDescriptorForKeyword:keyDirectObject] stringValue];
     HIBitcoinURL *bitcoinURL = [[HIBitcoinURL alloc] initWithURLString:URLString];
 
-    if (bitcoinURL.valid)
-    {
+    if (bitcoinURL.valid) {
         HISendBitcoinsWindowController *window = [self sendBitcoinsWindow];
 
-        if (bitcoinURL.address)
-        {
+        if (bitcoinURL.address) {
             [window setHashAddress:bitcoinURL.address];
         }
 
-        if (bitcoinURL.amount)
-        {
+        if (bitcoinURL.amount) {
             [window setLockedAmount:bitcoinURL.amount];
         }
 
@@ -391,61 +342,50 @@ void handleException(NSException *exception)
 
 // Returns the NSUndoManager for the application.
 // In this case, the manager returned is that of the managed object context for the application.
-- (NSUndoManager *)windowWillReturnUndoManager:(NSWindow *)window
-{
+- (NSUndoManager *)windowWillReturnUndoManager:(NSWindow *)window {
     return self.managedObjectContext.undoManager;
 }
 
 // Performs the save action for the application, which is to send the save: message to the application's
 // managed object context. Any encountered errors are presented to the user.
-- (IBAction)saveAction:(id)sender
-{
+- (IBAction)saveAction:(id)sender {
     NSError *error = nil;
 
-    if (![self.managedObjectContext commitEditing])
-    {
+    if (![self.managedObjectContext commitEditing]) {
         NSLog(@"%@:%@ unable to commit editing before saving", self.class, NSStringFromSelector(_cmd));
     }
 
-    if (![self.managedObjectContext save:&error])
-    {
+    if (![self.managedObjectContext save:&error]) {
         [NSApp presentError:error];
     }
 }
 
-- (void)applicationWillTerminate:(NSNotification *)notification
-{
+- (void)applicationWillTerminate:(NSNotification *)notification {
 //    [[BCClient sharedClient] shutdown];
 }
 
-- (NSApplicationTerminateReply)applicationShouldTerminate:(NSApplication *)sender
-{
+- (NSApplicationTerminateReply)applicationShouldTerminate:(NSApplication *)sender {
     // Save changes in the application's managed object context before the application terminates.
 
-    if (!_managedObjectContext)
-    {
+    if (!_managedObjectContext) {
         return NSTerminateNow;
     }
 
-    if (![self.managedObjectContext commitEditing])
-    {
+    if (![self.managedObjectContext commitEditing]) {
         NSLog(@"%@:%@ unable to commit editing to terminate", self.class, NSStringFromSelector(_cmd));
         return NSTerminateCancel;
     }
 
-    if (!self.managedObjectContext.hasChanges)
-    {
+    if (!self.managedObjectContext.hasChanges) {
         return NSTerminateNow;
     }
 
     NSError *error = nil;
 
-    if (![self.managedObjectContext save:&error])
-    {
+    if (![self.managedObjectContext save:&error]) {
         // Customize this code block to include application-specific recovery steps.
         BOOL result = [sender presentError:error];
-        if (result)
-        {
+        if (result) {
             return NSTerminateCancel;
         }
 
@@ -465,8 +405,7 @@ void handleException(NSException *exception)
 
         NSInteger answer = [alert runModal];
 
-        if (answer == NSAlertAlternateReturn)
-        {
+        if (answer == NSAlertAlternateReturn) {
             return NSTerminateCancel;
         }
     }
@@ -474,16 +413,13 @@ void handleException(NSException *exception)
     return NSTerminateNow;
 }
 
-- (BOOL)applicationOpenUntitledFile:(NSApplication *)theApplication
-{
+- (BOOL)applicationOpenUntitledFile:(NSApplication *)theApplication {
     [_mainWindowController showWindow:nil];
     return  NO;
 }
 
-- (BOOL)application:(NSApplication *)sender openFile:(NSString *)filename
-{
-    if ([filename.pathExtension isEqual:@"hiveapp"])
-    {
+- (BOOL)application:(NSApplication *)sender openFile:(NSString *)filename {
+    if ([filename.pathExtension isEqual:@"hiveapp"]) {
         HIApplicationsManager *manager = [HIApplicationsManager sharedManager];
         NSURL *applicationURL = [NSURL fileURLWithPath:filename];
         NSDictionary *manifest = [manager applicationMetadata:applicationURL];
@@ -495,21 +431,17 @@ void handleException(NSException *exception)
 
         NSString *text;
 
-        if ([manager hasApplicationOfId:manifest[@"id"]])
-        {
+        if ([manager hasApplicationOfId:manifest[@"id"]]) {
             text = NSLocalizedString(@"You already have \"%@\" application. Would you like to overwrite it?",
                                      @"Install app popup confirmation when app exists");
-        }
-        else
-        {
+        } else {
             text = NSLocalizedString(@"Would you like to install \"%@\" application?",
                                      @"Install app popup confirmation");
         }
 
         [alert setInformativeText:[NSString stringWithFormat:text, manifest[@"name"]]];
 
-        if ([alert runModal] == NSAlertFirstButtonReturn)
-        {
+        if ([alert runModal] == NSAlertFirstButtonReturn) {
             [manager installApplication:applicationURL];
         }
 
@@ -519,20 +451,16 @@ void handleException(NSException *exception)
     return NO;
 }
 
-- (IBAction)openSendBitcoinsWindow:(id)sender
-{
+- (IBAction)openSendBitcoinsWindow:(id)sender {
     [[self sendBitcoinsWindow] showWindow:self];
 }
 
-- (IBAction)openCoinMapSite:(id)sender
-{
+- (IBAction)openCoinMapSite:(id)sender {
     [[NSWorkspace sharedWorkspace] openURL:[NSURL URLWithString:@"http://coinmap.org"]];
 }
 
-- (IBAction)showDebuggingInfo:(id)sender
-{
-    if (!_debuggingInfoWindowController)
-    {
+- (IBAction)showDebuggingInfo:(id)sender {
+    if (!_debuggingInfoWindowController) {
         _debuggingInfoWindowController = [[HIDebuggingInfoWindowController alloc] init];
         [_popupWindows addObject:_debuggingInfoWindowController];
     }
@@ -540,10 +468,8 @@ void handleException(NSException *exception)
     [_debuggingInfoWindowController showWindow:self];
 }
 
-- (IBAction)showDebuggingTools:(id)sender
-{
-    if (!_debuggingToolsWindowController)
-    {
+- (IBAction)showDebuggingTools:(id)sender {
+    if (!_debuggingToolsWindowController) {
         _debuggingToolsWindowController = [[HIDebuggingToolsWindowController alloc] init];
         [_popupWindows addObject:_debuggingToolsWindowController];
     }
@@ -551,34 +477,29 @@ void handleException(NSException *exception)
     [_debuggingToolsWindowController showWindow:self];
 }
 
-- (void)showExceptionWindowWithException:(NSException *)exception
-{
+- (void)showExceptionWindowWithException:(NSException *)exception {
     HIErrorWindowController *window = [[HIErrorWindowController alloc] initWithException:exception];
     [window showWindow:self];
     [_popupWindows addObject:window];
 }
 
-- (HISendBitcoinsWindowController *)sendBitcoinsWindowForContact:(HIContact *)contact
-{
+- (HISendBitcoinsWindowController *)sendBitcoinsWindowForContact:(HIContact *)contact {
     HISendBitcoinsWindowController *wc = [[HISendBitcoinsWindowController alloc] initWithContact:contact];
     [_popupWindows addObject:wc];
     return wc;
 }
 
-- (HISendBitcoinsWindowController *)sendBitcoinsWindow
-{
+- (HISendBitcoinsWindowController *)sendBitcoinsWindow {
     HISendBitcoinsWindowController *wc = [[HISendBitcoinsWindowController alloc] init];
     [_popupWindows addObject:wc];
     return wc;
 }
 
-- (void)popupWindowWillClose:(NSNotification *)notification
-{
+- (void)popupWindowWillClose:(NSNotification *)notification {
     NSWindowController *wc = notification.object;
     [_popupWindows removeObject:wc];
 
-    if (wc == _debuggingInfoWindowController)
-    {
+    if (wc == _debuggingInfoWindowController) {
         _debuggingInfoWindowController = nil;
     }
 }

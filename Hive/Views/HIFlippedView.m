@@ -10,8 +10,7 @@
 
 @implementation HIFlippedView
 
-- (BOOL)isFlipped
-{
+- (BOOL)isFlipped {
     return YES;
 }
 

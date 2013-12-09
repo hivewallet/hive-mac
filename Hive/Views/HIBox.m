@@ -10,8 +10,7 @@
 
 @implementation HIBox
 
-- (id)initWithFrame:(NSRect)frame
-{
+- (id)initWithFrame:(NSRect)frame {
     self = [super initWithFrame:frame];
     if (self) {
         // Initialization code here.
@@ -20,8 +19,7 @@
     return self;
 }
 
-- (void)drawRect:(NSRect)dirtyRect
-{
+- (void)drawRect:(NSRect)dirtyRect {
     NSBezierPath *p = [NSBezierPath bezierPathWithRoundedRect:self.bounds xRadius:5 yRadius:5];
     
     [[NSColor whiteColor] setFill];

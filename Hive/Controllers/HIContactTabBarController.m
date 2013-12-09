@@ -11,8 +11,7 @@
 
 static NSInteger TabBarButtonTagStart = 1000;
 
-@interface HIContactTabBarController ()
-{
+@interface HIContactTabBarController () {
     NSArray *_tabBarButtons;
 }
 
@@ -86,15 +85,12 @@ static NSInteger TabBarButtonTagStart = 1000;
     return line;
 }
 
-- (void)selectTabAtIndex:(NSUInteger)selectedIndex
-{
-    for (NSInteger i = 0; i < _tabBarButtons.count; i++)
-    {
+- (void)selectTabAtIndex:(NSUInteger)selectedIndex {
+    for (NSInteger i = 0; i < _tabBarButtons.count; i++) {
         [_tabBarButtons[i] setState:(i == selectedIndex ? NSOnState : NSOffState)];
     }
 
-    if ([_tabDelegate respondsToSelector:@selector(controller:switchedToTabIndex:)])
-    {
+    if ([_tabDelegate respondsToSelector:@selector(controller:switchedToTabIndex:)]) {
         [_tabDelegate controller:self switchedToTabIndex:selectedIndex];
     }
 }

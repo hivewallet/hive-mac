@@ -10,8 +10,7 @@
 
 @implementation HIImageCell
 
-- (void)drawInteriorWithFrame:(NSRect)frame inView:(NSView *)controlView
-{
+- (void)drawInteriorWithFrame:(NSRect)frame inView:(NSView *)controlView {
     [NSGraphicsContext saveGraphicsState];
 
     NSRect inset = NSInsetRect(frame, 1.0, 1.0);

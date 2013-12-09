@@ -19,8 +19,7 @@
 NSString * const HISendBitcoinsWindowDidClose = @"HISendBitcoinsWindowDidClose";
 NSString * const HISendBitcoinsWindowSuccessKey = @"success";
 
-@interface HISendBitcoinsWindowController () <HIExchangeRateObserver>
-{
+@interface HISendBitcoinsWindowController () <HIExchangeRateObserver> {
     HIContact *_contact;
     HIContactAutocompleteWindowController *_autocompleteController;
     NSString *_hashAddress;
@@ -40,12 +39,10 @@ NSString * const HISendBitcoinsWindowSuccessKey = @"success";
 
 @implementation HISendBitcoinsWindowController
 
-- (id)init
-{
+- (id)init {
     self = [super initWithWindowNibName:@"HISendBitcoinsWindowController"];
 
-    if (self)
-    {
+    if (self) {
         _amount = nil;
         _bitcoinNumberFormatter = [HICurrencyAmountFormatter new];
 
@@ -67,8 +64,7 @@ NSString * const HISendBitcoinsWindowSuccessKey = @"success";
     return self;
 }
 
-- (void)dealloc
-{
+- (void)dealloc {
     [_exchangeRateService removeExchangeRateObserver:self];
 }
 
@@ -77,17 +73,12 @@ NSString * const HISendBitcoinsWindowSuccessKey = @"success";
     [super windowDidLoad];
     [self.window center];
 
-    if (_contact)
-    {
+    if (_contact) {
         HIAddress *address = [_contact.addresses anyObject];
         [self selectContact:_contact address:address];
-    }
-    else if (_hashAddress)
-    {
+    } else if (_hashAddress) {
         [self setHashAddress:_hashAddress];
-    }
-    else
-    {
+    } else {
         [self setHashAddress:@""];
 
         self.addressLabel.stringValue = NSLocalizedString(@"or choose from the list", @"Autocomplete dropdown prompt");
@@ -100,52 +91,43 @@ NSString * const HISendBitcoinsWindowSuccessKey = @"success";
 
     [self setupCurrencyList];
 
-    if (_amount)
-    {
+    if (_amount) {
         [self setLockedAmount:_amount];
-    }
-    else
-    {
+    } else {
         self.amountFieldValue = [NSDecimalNumber zero];
     }
     [self updateConvertedAmountFromAmount];
 }
 
-- (void)setupCurrencyList
-{
+- (void)setupCurrencyList {
     [self.convertedCurrencyPopupButton addItemsWithTitles:self.exchangeRateService.availableCurrencies];
     [self.convertedCurrencyPopupButton selectItemWithTitle:_selectedCurrency];
     [self adjustPopUpButtonFont];
 }
 
-- (void)adjustPopUpButtonFont
-{
+- (void)adjustPopUpButtonFont {
     NSDictionary *attributes = @{
         NSForegroundColorAttributeName: [NSColor colorWithCalibratedWhite:.42 alpha:1.0],
         NSFontAttributeName: [NSFont controlContentFontOfSize:12],
     };
-    for (NSMenuItem *item in self.convertedCurrencyPopupButton.itemArray)
-    {
+    for (NSMenuItem *item in self.convertedCurrencyPopupButton.itemArray) {
         item.attributedTitle = [[NSAttributedString alloc] initWithString:item.title
                                                                attributes:attributes];
     }
 }
 
-- (void)windowWillClose:(NSNotification *)notification
-{
+- (void)windowWillClose:(NSNotification *)notification {
     _autocompleteController = nil;
 }
 
-- (void)setHashAddress:(NSString *)hash
-{
+- (void)setHashAddress:(NSString *)hash {
     [self clearContact];
 
     _hashAddress = hash;
     self.nameLabel.stringValue = _hashAddress;
 }
 
-- (void)setLockedAmount:(NSDecimalNumber *)amount
-{
+- (void)setLockedAmount:(NSDecimalNumber *)amount {
     _amount = amount;
 
     self.amountFieldValue = _amount;
@@ -155,8 +137,7 @@ NSString * const HISendBitcoinsWindowSuccessKey = @"success";
     [self.convertedAmountField setEditable:NO];
 }
 
-- (void)clearContact
-{
+- (void)clearContact {
     _contact = nil;
     _hashAddress = nil;
 
@@ -164,8 +145,7 @@ NSString * const HISendBitcoinsWindowSuccessKey = @"success";
     self.photoView.image = [NSImage imageNamed:@"avatar-empty"];
 }
 
-- (void)selectContact:(HIContact *)contact address:(HIAddress *)address
-{
+- (void)selectContact:(HIContact *)contact address:(HIAddress *)address {
     _contact = contact;
     _hashAddress = address.address;
 
@@ -176,10 +156,8 @@ NSString * const HISendBitcoinsWindowSuccessKey = @"success";
     [self.window makeFirstResponder:nil];
 }
 
-- (HIContactAutocompleteWindowController *)autocompleteController
-{
-    if (!_autocompleteController)
-    {
+- (HIContactAutocompleteWindowController *)autocompleteController {
+    if (!_autocompleteController) {
         _autocompleteController = [[HIContactAutocompleteWindowController alloc] init];
         _autocompleteController.delegate = self;
     }
@@ -189,76 +167,60 @@ NSString * const HISendBitcoinsWindowSuccessKey = @"success";
 
 #pragma mark - text fields
 
-- (void)setAmountFieldValue:(NSDecimalNumber *)amount
-{
+- (void)setAmountFieldValue:(NSDecimalNumber *)amount {
     [self.amountField setStringValue:[self.bitcoinNumberFormatter stringFromNumber:amount]];
     [self updateFee];
 }
 
-- (void)formatAmountField
-{
+- (void)formatAmountField {
     [self setAmountFieldValue:self.amountFieldValue];
 }
 
-- (NSDecimalNumber *)amountFieldValue
-{
+- (NSDecimalNumber *)amountFieldValue {
     NSDecimalNumber *number = [NSDecimalNumber decimalNumberWithString:self.amountField.stringValue
                                              locale:[NSLocale currentLocale]];
     return number == [NSDecimalNumber notANumber] ? [NSDecimalNumber zero] : number;
 }
 
-- (void)setConvertedAmountFieldValue:(NSDecimalNumber *)amount
-{
+- (void)setConvertedAmountFieldValue:(NSDecimalNumber *)amount {
     NSString *string = [self.exchangeRateService formatValue:amount inCurrency:self.selectedCurrency];
     [self.convertedAmountField setStringValue:string];
 }
 
-- (void)formatConvertedAmountField
-{
+- (void)formatConvertedAmountField {
     [self setConvertedAmountFieldValue:self.convertedAmountFieldValue];
 }
 
-- (NSDecimalNumber *)convertedAmountFieldValue
-{
+- (NSDecimalNumber *)convertedAmountFieldValue {
     NSDecimalNumber *number = [NSDecimalNumber decimalNumberWithString:self.convertedAmountField.stringValue
                                                                 locale:[NSLocale currentLocale]];
     return number == [NSDecimalNumber notANumber] ? [NSDecimalNumber zero] : number;
 }
 
-- (void)updateConvertedAmountFromAmount
-{
-    if (self.exchangeRate)
-    {
+- (void)updateConvertedAmountFromAmount {
+    if (self.exchangeRate) {
         self.convertedAmountFieldValue = [self convertedAmountForBitcoinAmount:self.amountFieldValue];
-    }
-    else
-    {
+    } else {
         self.convertedAmountFieldValue = [NSDecimalNumber zero];
     }
 }
 
-- (void)updateAmountFromConvertedAmount
-{
-    if (self.exchangeRate)
-    {
+- (void)updateAmountFromConvertedAmount {
+    if (self.exchangeRate) {
         self.amountFieldValue = [self bitcoinAmountForConvertedAmount:self.convertedAmountFieldValue];
-    }
-    else
-    {
+    } else {
         self.amountFieldValue = [NSDecimalNumber zero];
     }
 }
 
 #pragma mark - conversion
 
-- (void)setSelectedCurrency:(NSString *)selectedCurrency
-{
+- (void)setSelectedCurrency:(NSString *)selectedCurrency {
     _selectedCurrency = [selectedCurrency copy];
     [self fetchExchangeRate];
 }
 
-- (void)fetchExchangeRate
-{
+- (void)fetchExchangeRate {
     // TODO: There should be a timer updating the exchange rate in case the window is open too long.
     self.convertedAmountField.enabled = NO;
     self.exchangeRate = nil;
@@ -266,28 +228,23 @@ NSString * const HISendBitcoinsWindowSuccessKey = @"success";
     [_exchangeRateService updateExchangeRateForCurrency:self.selectedCurrency];
 }
 
-- (NSDecimalNumber *)convertedAmountForBitcoinAmount:(NSDecimalNumber *)amount
-{
+- (NSDecimalNumber *)convertedAmountForBitcoinAmount:(NSDecimalNumber *)amount {
     return [amount decimalNumberByMultiplyingBy:self.exchangeRate];
 }
 
-- (NSDecimalNumber *)bitcoinAmountForConvertedAmount:(NSDecimalNumber *)amount
-{
+- (NSDecimalNumber *)bitcoinAmountForConvertedAmount:(NSDecimalNumber *)amount {
     return [amount decimalNumberByDividingBy:self.exchangeRate];
 }
 
-- (IBAction)currencyChanged:(id)sender
-{
+- (IBAction)currencyChanged:(id)sender {
     self.selectedCurrency = self.convertedCurrencyPopupButton.selectedItem.title;
 }
 
-- (uint64)satoshiFromNumber:(NSDecimalNumber *)amount
-{
+- (uint64)satoshiFromNumber:(NSDecimalNumber *)amount {
     return [[amount decimalNumberByMultiplyingByPowerOf10:8] longLongValue];
 }
 
-- (NSDecimalNumber *)numberFromSatoshi:(uint64)satoshi
-{
+- (NSDecimalNumber *)numberFromSatoshi:(uint64)satoshi {
     return [NSDecimalNumber decimalNumberWithMantissa:satoshi
                                              exponent:-8
                                            isNegative:NO];
@@ -296,8 +253,7 @@ NSString * const HISendBitcoinsWindowSuccessKey = @"success";
 #pragma mark - HIExchangeRateObserver
 
 - (void)exchangeRateUpdatedTo:(NSDecimalNumber *)exchangeRate
-                  forCurrency:(NSString *)currency
-{
+                  forCurrency:(NSString *)currency {
     if ([currency isEqual:_selectedCurrency]) {
         self.convertedAmountField.enabled = YES;
         self.exchangeRate = exchangeRate;
@@ -307,8 +263,7 @@ NSString * const HISendBitcoinsWindowSuccessKey = @"success";
 
 #pragma mark - fees
 
-- (void)updateFee
-{
+- (void)updateFee {
     uint64 fee = self.currentFee;
     NSString *feeString =
         [@"+" stringByAppendingString:[self.bitcoinNumberFormatter stringFromNumber:[self numberFromSatoshi:fee]]];
@@ -322,18 +277,15 @@ NSString * const HISendBitcoinsWindowSuccessKey = @"success";
     self.feeDetailsViewController.fee = [self numberFromSatoshi:self.currentFee];
 }
 
-- (uint64)currentFee
-{
+- (uint64)currentFee {
     uint64 amount = [self satoshiFromNumber:self.amountFieldValue];
     return [[BCClient sharedClient] feeWhenSendingBitcoin:amount];
 }
 
-- (IBAction)showFeePopover:(NSButton *)sender
-{
+- (IBAction)showFeePopover:(NSButton *)sender {
     NSPopover *feePopover = [NSPopover new];
     feePopover.behavior = NSPopoverBehaviorTransient;
-    if (!self.feeDetailsViewController)
-    {
+    if (!self.feeDetailsViewController) {
         self.feeDetailsViewController = [HIFeeDetailsViewController new];
         self.feeDetailsViewController.fee = [self numberFromSatoshi:self.currentFee];
     }
@@ -347,37 +299,28 @@ NSString * const HISendBitcoinsWindowSuccessKey = @"success";
 
 #pragma mark - Handling button clicks
 
-- (void)dropdownButtonClicked:(id)sender
-{
-    if ([sender state] == NSOnState)
-    {
+- (void)dropdownButtonClicked:(id)sender {
+    if ([sender state] == NSOnState) {
         // focus name label, but don't select whole text, just put the cursor at the end
         [self.window makeFirstResponder:self.nameLabel];
         NSText *editor = [self.window fieldEditor:YES forObject:self.nameLabel];
         [editor setSelectedRange:NSMakeRange(self.nameLabel.stringValue.length, 0)];
 
-        if (_contact)
-        {
+        if (_contact) {
             [self startAutocompleteForCurrentContact];
-        }
-        else
-        {
+        } else {
             [self startAutocompleteForCurrentQuery];
         }
-    }
-    else
-    {
+    } else {
         [self hideAutocompleteWindow];
     }
 }
 
-- (void)cancelClicked:(id)sender
-{
+- (void)cancelClicked:(id)sender {
     [self closeAndNotifyWithSuccess:NO transactionId:nil];
 }
 
-- (void)sendClicked:(id)sender
-{
+- (void)sendClicked:(id)sender {
     NSDecimalNumber *amount = self.amountFieldValue;
     uint64 satoshi = [self satoshiFromNumber:amount];
 
@@ -388,42 +331,31 @@ NSString * const HISendBitcoinsWindowSuccessKey = @"success";
                                                    @"Sending zero bitcoin alert title")
                          message:NSLocalizedString(@"Why would you want to send someone 0 BTC?",
                                                    @"Sending zero bitcoin alert message")];
-    }
-    else if (satoshi > [BCClient sharedClient].balance)
-    {
+    } else if (satoshi > [BCClient sharedClient].balance) {
         [self showAlertWithTitle:NSLocalizedString(@"Amount exceeds balance.",
                                                    @"Amount exceeds balance alert title")
                          message:NSLocalizedString(@"You cannot send more money than you own.",
                                                    @"Amount exceeds balance alert message")];
-    }
-    else if (target.length == 0)
-    {
+    } else if (target.length == 0) {
         [self showAlertWithTitle:NSLocalizedString(@"No address entered.",
                                                    @"Empty address alert title")
                          message:NSLocalizedString(@"Please enter a valid Bitcoin address or select one "
                                                    @"from the dropdown list.",
                                                    @"Empty address alert message")];
-    }
-    else if (![[HIBitcoinManager defaultManager] isAddressValid:target])
-    {
+    } else if (![[HIBitcoinManager defaultManager] isAddressValid:target]) {
         [self showAlertWithTitle:NSLocalizedString(@"This isn't a valid Bitcoin address.",
                                                    @"Invalid address alert title")
                          message:NSLocalizedString(@"Please check if you have entered the address correctly.",
                                                    @"Invalid address alert message")];
-    }
-    else
-    {
+    } else {
         [self.sendButton showSpinner];
 
         [[BCClient sharedClient] sendBitcoins:satoshi
                                        toHash:target
                                    completion:^(BOOL success, NSString *transactionId) {
-            if (success)
-            {
+            if (success) {
                 [self closeAndNotifyWithSuccess:YES transactionId:transactionId];
-            }
-            else
-            {
+            } else {
                 [self showAlertWithTitle:NSLocalizedString(@"Transaction could not be completed.",
                                                            @"Transaction failed alert title")
                                  message:NSLocalizedString(@"No bitcoin have been taken from your wallet.",
@@ -435,12 +367,10 @@ NSString * const HISendBitcoinsWindowSuccessKey = @"success";
     }
 }
 
-- (void)closeAndNotifyWithSuccess:(BOOL)success transactionId:(NSString *)transactionId
-{
+- (void)closeAndNotifyWithSuccess:(BOOL)success transactionId:(NSString *)transactionId {
     [self.sendButton hideSpinner];
 
-    if (_sendCompletion)
-    {
+    if (_sendCompletion) {
         _sendCompletion(success, transactionId);
     }
 
@@ -451,8 +381,7 @@ NSString * const HISendBitcoinsWindowSuccessKey = @"success";
                                                       userInfo:@{HISendBitcoinsWindowSuccessKey: @(success)}];
 }
 
-- (void)showAlertWithTitle:(NSString *)title message:(NSString *)message
-{
+- (void)showAlertWithTitle:(NSString *)title message:(NSString *)message {
     NSAlert *alert = [[NSAlert alloc] init];
 
     [alert setMessageText:title];
@@ -467,35 +396,23 @@ NSString * const HISendBitcoinsWindowSuccessKey = @"success";
 
 #pragma mark - NSTextField delegate
 
-- (void)controlTextDidChange:(NSNotification *)notification
-{
-    if (notification.object == self.amountField)
-    {
+- (void)controlTextDidChange:(NSNotification *)notification {
+    if (notification.object == self.amountField) {
         [self updateConvertedAmountFromAmount];
         [self updateFee];
-    }
-    else if (notification.object == self.convertedAmountField)
-    {
+    } else if (notification.object == self.convertedAmountField) {
         [self updateAmountFromConvertedAmount];
-    }
-    else
-    {
+    } else {
         [self clearContact];
     }
 }
 
-- (void)controlTextDidEndEditing:(NSNotification *)notification
-{
-    if (notification.object == self.amountField)
-    {
+- (void)controlTextDidEndEditing:(NSNotification *)notification {
+    if (notification.object == self.amountField) {
         [self formatAmountField];
-    }
-    else if (notification.object == self.convertedAmountField)
-    {
+    } else if (notification.object == self.convertedAmountField) {
         [self formatConvertedAmountField];
-    }
-    else
-    {
+    } else {
         [self hideAutocompleteWindow];
     }
 }
@@ -503,37 +420,24 @@ NSString * const HISendBitcoinsWindowSuccessKey = @"success";
 
 #pragma mark - Autocomplete
 
-- (BOOL)control:(NSControl *)control textView:(NSTextView *)textView doCommandBySelector:(SEL)selector
-{
-    if (selector == @selector(moveUp:))
-    {
+- (BOOL)control:(NSControl *)control textView:(NSTextView *)textView doCommandBySelector:(SEL)selector {
+    if (selector == @selector(moveUp:)) {
         [self showAutocompleteWindow];
         [self.autocompleteController moveSelectionUp];
-    }
-    else if (selector == @selector(moveDown:))
-    {
+    } else if (selector == @selector(moveDown:)) {
         [self showAutocompleteWindow];
         [self.autocompleteController moveSelectionDown];
-    }
-    else if (selector == @selector(insertNewline:))
-    {
+    } else if (selector == @selector(insertNewline:)) {
         [self.autocompleteController confirmSelection];
         [self.window makeFirstResponder:nil];
-    }
-    else if (selector == @selector(cancelOperation:))
-    {
-        if (self.autocompleteController.window.isVisible)
-        {
+    } else if (selector == @selector(cancelOperation:)) {
+        if (self.autocompleteController.window.isVisible) {
             [self hideAutocompleteWindow];
-        }
-        else
-        {
+        } else {
             // pass it to the cancel button
             return NO;
         }
-    }
-    else
-    {
+    } else {
         // let the text field handle the key event
         return NO;
     }
@@ -541,26 +445,22 @@ NSString * const HISendBitcoinsWindowSuccessKey = @"success";
     return YES;
 }
 
-- (void)startAutocompleteForCurrentQuery
-{
+- (void)startAutocompleteForCurrentQuery {
     NSString *query = self.nameLabel.stringValue;
 
     [self showAutocompleteWindow];
     [self.autocompleteController searchWithQuery:query];
 }
 
-- (void)startAutocompleteForCurrentContact
-{
+- (void)startAutocompleteForCurrentContact {
     [self showAutocompleteWindow];
     [self.autocompleteController searchWithContact:_contact];
 }
 
-- (void)showAutocompleteWindow
-{
+- (void)showAutocompleteWindow {
     NSWindow *popup = self.autocompleteController.window;
 
-    if (!popup.isVisible)
-    {
+    if (!popup.isVisible) {
         NSRect dialogFrame = self.window.frame;
         NSRect popupFrame = popup.frame;
         NSRect separatorFrame = [self.window.contentView convertRect:self.separator.frame
@@ -583,15 +483,13 @@ NSString * const HISendBitcoinsWindowSuccessKey = @"success";
     self.dropdownButton.state = NSOnState;
 }
 
-- (void)hideAutocompleteWindow
-{
+- (void)hideAutocompleteWindow {
     [self.autocompleteController close];
 
     self.dropdownButton.state = NSOffState;
 }
 
-- (void)addressSelectedInAutocomplete:(HIAddress *)address
-{
+- (void)addressSelectedInAutocomplete:(HIAddress *)address {
     [self selectContact:address.contact address:address];
     [self hideAutocompleteWindow];
 }

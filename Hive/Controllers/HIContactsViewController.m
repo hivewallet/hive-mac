@@ -17,12 +17,10 @@
 
 @implementation HIContactsViewController
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
+- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
 
-    if (self)
-    {
+    if (self) {
         self.title = NSLocalizedString(@"Contacts", @"Contacts view title");
         self.iconName = @"group";
     }
@@ -30,8 +28,7 @@
     return self;
 }
 
-- (void)awakeFromNib
-{
+- (void)awakeFromNib {
     [self.foreverAloneScreen setFrame:self.view.bounds];
     [self.foreverAloneScreen setHidden:YES];
     [self.foreverAloneScreen.layer setBackgroundColor:[[NSColor hiWindowBackgroundColor] hiNativeColor]];
@@ -43,29 +40,24 @@
                               context:NULL];
 }
 
-- (void)viewWillAppear
-{
+- (void)viewWillAppear {
     [self.arrayController rearrangeObjects];
 }
 
-- (void)dealloc
-{
+- (void)dealloc {
     [self.arrayController removeObserver:self forKeyPath:@"arrangedObjects.@count"];
 }
 
 - (void)observeValueForKeyPath:(NSString *)keyPath
                       ofObject:(id)object
                         change:(NSDictionary *)change
-                       context:(void *)context
-{
-    if (object == self.arrayController)
-    {
+                       context:(void *)context {
+    if (object == self.arrayController) {
         [self updateForeverAloneScreen];
     }
 }
 
-- (void)updateForeverAloneScreen
-{
+- (void)updateForeverAloneScreen {
     // don't take count from arrangedObjects because array controller might not have fetched data yet
     NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:HIContactEntity];
     NSUInteger count = [DBM countForFetchRequest:request error:NULL];
@@ -75,23 +67,19 @@
     [self.scrollView setHidden:!hasFriends];
 }
 
-- (NSView *)rightNavigationView
-{
+- (NSView *)rightNavigationView {
     return _navigationView;
 }
 
-- (IBAction)newContactClicked:(NSButton *)sender
-{
+- (IBAction)newContactClicked:(NSButton *)sender {
     [self.navigationController pushViewController:[HINewContactViewController new] animated:YES];
 }
 
-- (NSManagedObjectContext *)managedObjectContext
-{
+- (NSManagedObjectContext *)managedObjectContext {
     return DBM;
 }
 
-- (NSArray *)sortDescriptors
-{
+- (NSArray *)sortDescriptors {
     return @[[NSSortDescriptor sortDescriptorWithKey:@"lastname" ascending:YES],
              [NSSortDescriptor sortDescriptorWithKey:@"firstname" ascending:YES]];
 }
@@ -103,8 +91,7 @@
 
 #pragma mark - NSTableViewDelegate
 
-- (NSTableRowView *)tableView:(NSTableView *)tableView rowViewForRow:(NSInteger)row
-{
+- (NSTableRowView *)tableView:(NSTableView *)tableView rowViewForRow:(NSInteger)row {
     return [HIContactRowView new];
 }
 

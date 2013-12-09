@@ -9,8 +9,7 @@
 #import <Foundation/Foundation.h>
 #import "NPZipHeader.h"
 
-@interface NPZip : NSObject
-{
+@interface NPZip : NSObject {
 	NSString *__file;
 	
 	NPZipHeader *__zipHeader;

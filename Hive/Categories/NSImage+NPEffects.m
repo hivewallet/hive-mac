@@ -10,8 +10,7 @@
 
 @implementation NSImage (NPEffects)
 
-- (NSImage *)darkImage
-{
+- (NSImage *)darkImage {
     NSImage *offImg = [self copy];
     
     [offImg setTemplate:YES];

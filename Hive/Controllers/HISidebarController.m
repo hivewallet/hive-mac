@@ -32,22 +32,19 @@ static const NSInteger SidebarIndexNotSelected = -1;
     viewControllers = [[NSMutableArray alloc] init];
 }
 
-- (void)addViewController:(HIViewController *)controller
-{
+- (void)addViewController:(HIViewController *)controller {
     [viewControllers addObject:controller];
 
     NSButton *button = [self tabBarButtonForController:controller];
     [barButtons addObject:button];
     [self.view addSubview:button];
 
-    if (barButtons.count == 1)
-    {
+    if (barButtons.count == 1) {
         [self selectControllerAtIndex:0];
     }
 }
 
-- (NSButton *)tabBarButtonForController:(HIViewController *)controller
-{
+- (NSButton *)tabBarButtonForController:(HIViewController *)controller {
     NSInteger position = barButtons.count;
     CGFloat positionY = self.view.bounds.size.height - (barButtons.count + 1) * SidebarButtonHeight;
     NSRect frame = NSMakeRect(0, positionY, SidebarButtonWidth, SidebarButtonHeight);
@@ -64,14 +61,12 @@ static const NSInteger SidebarIndexNotSelected = -1;
     return button;
 }
 
-- (void)tabBarClicked:(NSButton *)tabButton
-{
+- (void)tabBarClicked:(NSButton *)tabButton {
     NSInteger position = tabButton.tag - SidebarButtonTagStart;
     [self selectControllerAtIndex:position];
 }
 
-- (void)selectControllerAtIndex:(NSInteger)index
-{
+- (void)selectControllerAtIndex:(NSInteger)index {
     [barButtons[index] setState:NSOnState];
 
     NSInteger previousIndex = self.selectedTabIndex;
@@ -87,8 +82,7 @@ static const NSInteger SidebarIndexNotSelected = -1;
     [self.delegate sidebarDidSelectController:selectedController again:clickedAgain];
 }
 
-- (NSImage *)iconForController:(HIViewController *)controller active:(BOOL)active
-{
+- (NSImage *)iconForController:(HIViewController *)controller active:(BOOL)active {
     NSString *variant = active ? @"active" : @"inactive";
     NSString *iconName = [NSString stringWithFormat:@"icon-%@__%@", controller.iconName, variant];
     return [NSImage imageNamed:iconName];

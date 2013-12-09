@@ -12,8 +12,7 @@
 
 @implementation HIDoneButtonCell
 
-- (void)drawBezelWithFrame:(NSRect)frame inView:(NSView *)controlView
-{
+- (void)drawBezelWithFrame:(NSRect)frame inView:(NSView *)controlView {
     NSBezierPath *p = [NSBezierPath bezierPathWithRoundedRect:frame xRadius:5 yRadius:5];
     NSBezierPath *sP = [NSBezierPath bezierPath];
     p.lineWidth = 0.5;
@@ -27,15 +26,12 @@
        controlPoint1:NSMakePoint(frame.size.width-5, 1)
        controlPoint2:NSMakePoint(frame.size.width-5, 1)];
 
-    if (self.isHighlighted)
-    {
+    if (self.isHighlighted) {
         [RGB(35, 116, 238) setFill];
         [p fill];
         [[NSColor colorWithCalibratedWhite:0 alpha:0.35] set];
         controlView.layer.shadowColor = [[NSColor whiteColor] hiNativeColor];
-    }
-    else
-    {
+    } else {
         NSGradient *g = [[NSGradient alloc] initWithColors:@[RGB(54,185,251), RGB(35, 116, 238)]];
         [g drawInBezierPath:p angle:90];
         [RGB(255, 255, 255) set];        
@@ -50,8 +46,7 @@
 
 }
 
-- (NSRect)drawTitle:(NSAttributedString *)title withFrame:(NSRect)frame inView:(NSView *)controlView
-{
+- (NSRect)drawTitle:(NSAttributedString *)title withFrame:(NSRect)frame inView:(NSView *)controlView {
     NSShadow *sh = [[NSShadow alloc] init];
     sh.shadowColor = [NSColor blackColor];
     sh.shadowOffset = NSMakeSize(0, -1);

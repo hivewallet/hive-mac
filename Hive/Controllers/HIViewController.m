@@ -20,35 +20,29 @@
     return self;
 }
 
-- (void)loadView
-{
+- (void)loadView {
     [super loadView];
 
     self.view.wantsLayer = YES;
 }
 
-- (BOOL)hideButtons
-{
+- (BOOL)hideButtons {
     return YES;
 }
 
-- (void)viewWillAppear
-{
+- (void)viewWillAppear {
     
 }
 
-- (void)viewWillDisappear
-{
+- (void)viewWillDisappear {
     
 }
 
-- (NSView *)rightNavigationView
-{
+- (NSView *)rightNavigationView {
     return nil;
 }
 
-- (NSView *)titleBarView
-{
+- (NSView *)titleBarView {
     NSRect frame = NSMakeRect(0, 0, 100, 100);
     
     NSTextField *label = [[NSTextField alloc] initWithFrame:frame];

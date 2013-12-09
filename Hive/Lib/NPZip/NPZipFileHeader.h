@@ -8,8 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface NPZipFileHeader : NSObject
-{
+@interface NPZipFileHeader : NSObject {
 }
 
 @property (nonatomic, retain) NSString *name;

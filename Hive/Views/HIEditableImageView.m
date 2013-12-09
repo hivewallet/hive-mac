@@ -10,14 +10,12 @@
 
 @implementation HIEditableImageView
 
-- (void)mouseDown:(NSEvent *)theEvent
-{
+- (void)mouseDown:(NSEvent *)theEvent {
     NSOpenPanel *dialog = [NSOpenPanel openPanel];
     dialog.allowedFileTypes = @[@"public.image"];
 
     [dialog beginSheetModalForWindow:self.window completionHandler:^(NSInteger result) {
-        if (result == NSFileHandlingPanelOKButton)
-        {
+        if (result == NSFileHandlingPanelOKButton) {
             self.image = [[NSImage alloc] initWithContentsOfURL:dialog.URL];
             [self sendAction:self.action to:self.target];
         }

@@ -26,12 +26,10 @@
 
 @implementation HITransactionsViewController
 
-- (id)init
-{
+- (id)init {
     self = [super initWithNibName:@"HITransactionsViewController" bundle:nil];
 
-    if (self)
-    {
+    if (self) {
         self.title = NSLocalizedString(@"Transactions", @"Transactions view title");
         self.iconName = @"timeline";
 
@@ -49,27 +47,23 @@
     return self;
 }
 
-- (id)initWithContact:(HIContact *)contact
-{
+- (id)initWithContact:(HIContact *)contact {
     self = [self init];
 
-    if (self)
-    {
+    if (self) {
         _contact = contact;
     }
 
     return self;
 }
 
-- (void) loadView
-{
+- (void) loadView {
     [super loadView];
 
     self.arrayController.managedObjectContext = DBM;
     self.arrayController.sortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:@"date" ascending:NO]];
 
-    if (_contact)
-    {
+    if (_contact) {
         self.arrayController.fetchPredicate = [NSPredicate predicateWithFormat:@"contact = %@", _contact];
     }
 
@@ -84,28 +78,22 @@
                               context:NULL];
 }
 
-- (void)dealloc
-{
+- (void)dealloc {
     [self.arrayController removeObserver:self forKeyPath:@"arrangedObjects.@count"];
 }
 
 - (void)observeValueForKeyPath:(NSString *)keyPath
                       ofObject:(id)object
                         change:(NSDictionary *)change
-                       context:(void *)context
-{
-    if (object == self.arrayController)
-    {
+                       context:(void *)context {
+    if (object == self.arrayController) {
         [self updateNoTransactionsView];
     }
 }
 
-- (void)viewWillAppear
-{
-    for (HITransaction *transaction in self.arrayController.arrangedObjects)
-    {
-        if (!transaction.read)
-        {
+- (void)viewWillAppear {
+    for (HITransaction *transaction in self.arrayController.arrangedObjects) {
+        if (!transaction.read) {
             transaction.read = YES;
         }
     }
@@ -115,8 +103,7 @@
     [[BCClient sharedClient] updateNotifications];
 }
 
-- (void)updateNoTransactionsView
-{
+- (void)updateNoTransactionsView {
     // don't take count from arrangedObjects because array controller might not have fetched data yet
     NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:HITransactionEntity];
     NSUInteger count = [DBM countForFetchRequest:request error:NULL];
@@ -143,22 +130,16 @@
     cell.textField.attributedStringValue = [self summaryTextForTransaction:transaction];
     cell.dateLabel.stringValue = [_transactionDateFormatter stringFromDate:transaction.date];
 
-    if (transaction.direction == HITransactionDirectionIncoming)
-    {
+    if (transaction.direction == HITransactionDirectionIncoming) {
         cell.directionMark.image = [NSImage imageNamed:@"icon-transactions-plus"];
-    }
-    else
-    {
+    } else {
         cell.directionMark.image = [NSImage imageNamed:@"icon-transactions-minus"];
     }
 
-    if (transaction.contact && transaction.contact.avatarImage)
-    {
+    if (transaction.contact && transaction.contact.avatarImage) {
         cell.imageView.image = transaction.contact.avatarImage;
         cell.imageView.imageScaling = NSImageScaleProportionallyUpOrDown;
-    }
-    else
-    {
+    } else {
         cell.imageView.image = [NSImage imageNamed:@"icon-transactions-btc-symbol"];
         cell.imageView.imageScaling = NSImageScaleProportionallyDown;
     }
@@ -166,8 +147,7 @@
     return cell;
 }
 
-- (NSAttributedString *)summaryTextForTransaction:(HITransaction *)transaction
-{
+- (NSAttributedString *)summaryTextForTransaction:(HITransaction *)transaction {
     NSString *formattedAmount = [_amountFormatter stringFromNumber:@(transaction.absoluteAmount * 1.0 / SATOSHI)];
     NSString *amountPart = [NSString stringWithFormat:@"%@ BTC", formattedAmount];
 
@@ -177,12 +157,9 @@
 
     // TODO: dynamic truncation and styling for hashes
     NSString *contactPart;
-    if (transaction.contact)
-    {
+    if (transaction.contact) {
         contactPart = transaction.contact.firstname;
-    }
-    else
-    {
+    } else {
         contactPart = [HIAddress truncateAddress:transaction.senderHash];
     }
 

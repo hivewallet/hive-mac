@@ -12,19 +12,16 @@
 
 @implementation HIDebuggingInfoWindowController
 
-- (id)init
-{
+- (id)init {
     return [self initWithWindowNibName:@"HIDebuggingInfoWindowController"];
 }
 
-- (void)showWindow:(id)sender
-{
+- (void)showWindow:(id)sender {
     [super showWindow:sender];
     [self updateInfo];
 }
 
-- (void)updateInfo
-{
+- (void)updateInfo {
     NSMutableString *info = [[NSMutableString alloc] init];
     HIBitcoinManager *bitcoin = [HIBitcoinManager defaultManager];
 

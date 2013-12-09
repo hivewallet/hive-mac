@@ -14,12 +14,10 @@
 
 @implementation HIApplicationsViewController
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
+- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
 
-    if (self)
-    {
+    if (self) {
         self.title = NSLocalizedString(@"Apps", @"Applications view title");
         self.iconName = @"apps";
     }
@@ -27,18 +25,15 @@
     return self;
 }
 
-- (NSManagedObjectContext *)managedObjectContext
-{
+- (NSManagedObjectContext *)managedObjectContext {
     return DBM;
 }
 
-- (NSArray *)sortDescriptors
-{
+- (NSArray *)sortDescriptors {
     return @[[NSSortDescriptor sortDescriptorWithKey:@"name" ascending:YES]];
 }
 
-- (void)loadView
-{
+- (void)loadView {
     [super loadView];
     [_collectionView addObserver:self
                             forKeyPath:@"selectionIndexes"
@@ -47,20 +42,16 @@
 
 }
 
-- (void)dealloc
-{
+- (void)dealloc {
     [_collectionView removeObserver:self forKeyPath:@"selectionIndexes"];
 }
 
 - (void)observeValueForKeyPath:(NSString *)keyPath
                       ofObject:(id)object
                         change:(NSDictionary *)change
-                       context:(void *)context
-{
-    if (object == self.collectionView && [keyPath isEqualTo:@"selectionIndexes"])
-    {
-        if ([self.collectionView.selectionIndexes count] > 0)
-        {
+                       context:(void *)context {
+    if (object == self.collectionView && [keyPath isEqualTo:@"selectionIndexes"]) {
+        if ([self.collectionView.selectionIndexes count] > 0) {
             NSUInteger index = self.collectionView.selectionIndexes.lastIndex;
             HIApplication *app = (HIApplication *) [_arrayController arrangedObjects][index];
 

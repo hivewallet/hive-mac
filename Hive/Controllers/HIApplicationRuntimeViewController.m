@@ -18,8 +18,7 @@
 
 @end
 
-@interface HIApplicationRuntimeViewController ()
-{
+@interface HIApplicationRuntimeViewController () {
     HIAppRuntimeBridge *_bridge;
     NSURL *_baseURL;
 }
@@ -28,8 +27,7 @@
 
 @implementation HIApplicationRuntimeViewController
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
+- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
 
     if (self) {
@@ -39,8 +37,7 @@
     return self;
 }
 
-- (void)loadView
-{
+- (void)loadView {
     [super loadView];
 
     self.title = self.application.name;
@@ -70,23 +67,20 @@
 
 - (void)requestPaymentToHash:(NSString *)hash
                       amount:(NSDecimalNumber *)amount
-                  completion:(HITransactionCompletionCallback)completion
-{
+                  completion:(HITransactionCompletionCallback)completion {
     HIAppDelegate *delegate = (HIAppDelegate *) [NSApp delegate];
     HISendBitcoinsWindowController *sc = [delegate sendBitcoinsWindow];
     [sc setHashAddress:hash];
     [sc setSendCompletion:completion];
 
-    if (amount)
-    {
+    if (amount) {
         [sc setLockedAmount:amount];
     }
 
     [sc showWindow:self];
 }
 
-- (void)viewWillDisappear
-{
+- (void)viewWillDisappear {
     [_bridge killCallbacks];
     [self.webView.mainFrame loadHTMLString:@"" baseURL:nil];
 }
@@ -95,8 +89,7 @@
 
 - (void)webView:(WebView *)sender
     runJavaScriptAlertPanelWithMessage:(NSString *)message
-                      initiatedByFrame:(WebFrame *)frame
-{
+                      initiatedByFrame:(WebFrame *)frame {
     NSAlert *alert = [[NSAlert alloc] init];
     [alert setMessageText:self.application.name];
     [alert setInformativeText:message];
@@ -108,14 +101,12 @@
 - (void)webView:(WebView *)sender
                    resource:(id)identifier
     didFailLoadingWithError:(NSError *)error
-             fromDataSource:(WebDataSource *)dataSource
-{
+             fromDataSource:(WebDataSource *)dataSource {
     NSLog(@"App loading error: %@", error);
 
     NSURL *URL = error.userInfo[NSURLErrorFailingURLErrorKey];
 
-    if ([URL isEqual:_baseURL])
-    {
+    if ([URL isEqual:_baseURL]) {
         NSRunAlertPanel(NSLocalizedString(@"Application can't be loaded", @"App load error title"),
                         NSLocalizedString(@"The application data file has been removed or corrupted.",
                                           @"App load error description"),
@@ -124,8 +115,7 @@
     }
 }
 
-- (void)webView:(WebView *)sender didCommitLoadForFrame:(WebFrame *)frame
-{
+- (void)webView:(WebView *)sender didCommitLoadForFrame:(WebFrame *)frame {
     // make the bridge object accessible from JS
     id window = self.webView.windowScriptObject;
 
@@ -138,13 +128,11 @@
 decidePolicyForNewWindowAction:(NSDictionary *)actionInformation
         request:(NSURLRequest *)request
    newFrameName:(NSString *)frameName
-decisionListener:(id<WebPolicyDecisionListener>)listener
-{
+decisionListener:(id<WebPolicyDecisionListener>)listener {
     [[NSWorkspace sharedWorkspace] openURL:request.URL];
 }
 
-- (void)dealloc
-{
+- (void)dealloc {
     id window = [self.webView windowScriptObject];
     [window removeObjectForKey:@"bitcoin"];
 }

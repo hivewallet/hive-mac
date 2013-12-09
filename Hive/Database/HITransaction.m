@@ -25,13 +25,11 @@ NSString * const HITransactionEntity = @"HITransaction";
 @dynamic contact;
 @dynamic read;
 
-- (HITransactionDirection)direction
-{
+- (HITransactionDirection)direction {
     return (self.amount >= 0) ? HITransactionDirectionIncoming : HITransactionDirectionOutgoing;
 }
 
-- (uint64_t)absoluteAmount
-{
+- (uint64_t)absoluteAmount {
     return llabs(self.amount);
 }
 

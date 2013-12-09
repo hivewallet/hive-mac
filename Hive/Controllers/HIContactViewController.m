@@ -25,8 +25,7 @@
 - (id)initWithContact:(HIContact *)contact {
     self = [super initWithNibName:@"HIContactViewController" bundle:nil];
 
-    if (self)
-    {
+    if (self) {
         self.iconName = @"your-profile";
 
         _contact = contact;
@@ -49,13 +48,11 @@
     [self.tabBarController selectTabAtIndex:0];
 }
 
-- (void)viewWillAppear
-{
+- (void)viewWillAppear {
     [self refreshData];
 }
 
-- (void)refreshData
-{
+- (void)refreshData {
     self.title = _contact.name;
 
     self.nameLabel.stringValue = _contact.name;
@@ -64,23 +61,19 @@
     [_infoPanel configureViewForContact:_contact];
 }
 
-- (void)controller:(HIContactTabBarController *)controller switchedToTabIndex:(NSInteger)index
-{
-    if (index < _panelControllers.count)
-    {
+- (void)controller:(HIContactTabBarController *)controller switchedToTabIndex:(NSInteger)index {
+    if (index < _panelControllers.count) {
         [self showControllerInContentView:_panelControllers[index]];
     }
 }
 
-- (void)showControllerInContentView:(NSViewController *)controller
-{
+- (void)showControllerInContentView:(NSViewController *)controller {
     [[_contentView subviews] makeObjectsPerformSelector:@selector(removeFromSuperview)];
     controller.view.frame = _contentView.bounds;
     [_contentView addSubview:controller.view];
 }
 
-- (IBAction)sendBitcoinsPressed:(id)sender
-{
+- (IBAction)sendBitcoinsPressed:(id)sender {
     HISendBitcoinsWindowController *window = [[NSApp delegate] sendBitcoinsWindowForContact:_contact];
     [window showWindow:self];
 }

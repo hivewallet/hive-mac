@@ -26,8 +26,7 @@ static const CGFloat TitleBarHeight = 35.0;
 static const NSTimeInterval SlideAnimationDuration = 0.3;
 
 
-@interface HIMainWindowController ()
-{
+@interface HIMainWindowController () {
     NSView *_titleView;
     HIViewController *_currentViewController;
     HIViewController *_currentModalViewController;
@@ -37,18 +36,15 @@ static const NSTimeInterval SlideAnimationDuration = 0.3;
 
 @implementation HIMainWindowController
 
-- (id)initWithWindowNibName:(NSString *)windowNibName
-{
+- (id)initWithWindowNibName:(NSString *)windowNibName {
     return [super initWithWindowNibName:windowNibName];
 }
 
-- (void)dealloc
-{
+- (void)dealloc {
     [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
-- (void)windowDidLoad
-{
+- (void)windowDidLoad {
     [super windowDidLoad];
     ((INAppStoreWindow *)self.window).titleBarHeight = TitleBarHeight;
 
@@ -59,8 +55,7 @@ static const NSTimeInterval SlideAnimationDuration = 0.3;
                         [HITransactionsViewController new],
                       ];
 
-    for (HIViewController *panel in panels)
-    {
+    for (HIViewController *panel in panels) {
         [self.sidebarController addViewController:[[HINavigationController alloc] initWithRootViewController:panel]];
     }
 
@@ -73,8 +68,7 @@ static const NSTimeInterval SlideAnimationDuration = 0.3;
 - (void)sendWindowDidClose:(NSNotification *)notification {
     BOOL success = [notification.userInfo[HISendBitcoinsWindowSuccessKey] boolValue];
 
-    if (success)
-    {
+    if (success) {
         [self.window orderFront:self];
     }
 }
@@ -164,13 +158,11 @@ static const NSTimeInterval SlideAnimationDuration = 0.3;
 
 #pragma mark - Changing title bar state
 
-- (void)windowDidBecomeKey:(NSNotification *)notification
-{
+- (void)windowDidBecomeKey:(NSNotification *)notification {
     _titleView.alphaValue = 1.0;
 }
 
-- (void)windowDidResignKey:(NSNotification *)notification
-{
+- (void)windowDidResignKey:(NSNotification *)notification {
     _titleView.alphaValue = 0.6;
     [_currentViewController viewWillDisappear];
 }
@@ -178,13 +170,11 @@ static const NSTimeInterval SlideAnimationDuration = 0.3;
 
 #pragma mark - Modality methods
 
-- (void)presentModalViewController:(HIViewController *)controller animated:(BOOL)animated
-{
+- (void)presentModalViewController:(HIViewController *)controller animated:(BOOL)animated {
    
 }
 
-- (void)dismissModalViewControllerAnimated:(BOOL)animated
-{
+- (void)dismissModalViewControllerAnimated:(BOOL)animated {
 
 }
 

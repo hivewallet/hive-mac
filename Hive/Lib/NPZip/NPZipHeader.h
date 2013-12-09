@@ -9,8 +9,7 @@
 #import <Foundation/Foundation.h>
 #import "NPZipFileHeader.h"
 
-@interface NPZipHeader : NSObject
-{
+@interface NPZipHeader : NSObject {
 @private    
 	uint32_t signature; /* 0x04034b50 */
 	uint16_t min_version;

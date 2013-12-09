@@ -22,40 +22,31 @@ NSString * const HIContactEntity = @"HIContact";
 @dynamic transactions;
 @dynamic addresses;
 
-+ (NSSet *)keyPathsForValuesAffectingName
-{
++ (NSSet *)keyPathsForValuesAffectingName {
     return [NSSet setWithObjects:@"firstname", @"lastname", nil];
 }
 
-+ (NSSet *)keyPathsForValuesAffectingAvatarImage
-{
++ (NSSet *)keyPathsForValuesAffectingAvatarImage {
     return [NSSet setWithObject:@"avatar"];
 }
 
-- (NSString *)name
-{
+- (NSString *)name {
     return [NSString stringWithFormat:@"%@ %@", self.firstname ?: @"", self.lastname ?: @""];
 }
 
-- (NSImage *)avatarImage
-{
-    if (self.avatar)
-    {
+- (NSImage *)avatarImage {
+    if (self.avatar) {
         return [[NSImage alloc] initWithData:self.avatar];
-    }
-    else
-    {
+    } else {
         return [NSImage imageNamed:@"avatar-empty"];
     }
 }
 
-- (BOOL)canBeRemoved
-{
+- (BOOL)canBeRemoved {
     return YES;
 }
 
-- (BOOL)canEditAddresses
-{
+- (BOOL)canEditAddresses {
     return YES;
 }
 

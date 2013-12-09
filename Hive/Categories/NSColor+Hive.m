@@ -10,13 +10,11 @@
 
 @implementation NSColor (Hive)
 
-+ (NSColor *)hiWindowBackgroundColor
-{
++ (NSColor *)hiWindowBackgroundColor {
     return [NSColor colorWithCalibratedWhite:0.9 alpha:1.0];
 }
 
-- (CGColorRef)hiNativeColor
-{
+- (CGColorRef)hiNativeColor {
     const NSInteger numberOfComponents = [self numberOfComponents];
     CGFloat components[numberOfComponents];
     CGColorSpaceRef colorSpace = [[self colorSpace] CGColorSpace];

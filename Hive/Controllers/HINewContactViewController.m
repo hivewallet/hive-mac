@@ -23,8 +23,7 @@ static NSString * const DeleteButton = @"DeleteButton";
 static NSString * const ContentsView = @"ContentsView";
 static NSString * const Separator = @"Separator";
 
-@interface HINewContactViewController ()
-{
+@interface HINewContactViewController () {
     BOOL _nameInTwoLines;
     BOOL _avatarChanged;
     NSMutableArray *_placeholders;
@@ -34,28 +33,24 @@ static NSString * const Separator = @"Separator";
 
 @implementation HINewContactViewController
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
+- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
 
-    if (self)
-    {
+    if (self) {
         self.title = NSLocalizedString(@"New contact", @"New contact view controller title");
     }
     
     return self;
 }
 
-- (void)loadView
-{
+- (void)loadView {
     [super loadView];
 
     _avatarView.layer.backgroundColor = [[NSColor whiteColor] hiNativeColor];
 
     // Hide some buttons if necessary
 
-    if (!_contact || ![_contact canBeRemoved])
-    {
+    if (!_contact || ![_contact canBeRemoved]) {
         [self.removeContactButton setHidden:YES];
 
         NSRect frame = self.footerView.frame;
@@ -64,12 +59,10 @@ static NSString * const Separator = @"Separator";
         [self.footerView setFrame:frame];
     }
 
-    if (_contact && ![_contact canEditAddresses])
-    {
+    if (_contact && ![_contact canEditAddresses]) {
         [self.addAddressButton setHidden:YES];
 
-        for (NSView *subview in self.footerView.subviews)
-        {
+        for (NSView *subview in self.footerView.subviews) {
             NSRect frame = subview.frame;
             frame.origin.y += 39;
             [subview setFrame:frame];
@@ -102,35 +95,27 @@ static NSString * const Separator = @"Separator";
     _placeholders = [[NSMutableArray alloc] init];
 
     // Now... if we have a contact here, we need to update
-    if (_contact)
-    {
-        if (_contact.firstname)
-        {
+    if (_contact) {
+        if (_contact.firstname) {
             [self.firstnameField setValueAndRecalc:_contact.firstname];
         }
 
-        if (_contact.lastname)
-        {
+        if (_contact.lastname) {
             [self.lastnameField setValueAndRecalc:_contact.lastname];
         }
 
-        if (_contact.email)
-        {
+        if (_contact.email) {
             [self.emailField setValueAndRecalc:_contact.email];
         }
 
-        if (_contact.avatarImage)
-        {
+        if (_contact.avatarImage) {
             self.avatarView.image = _contact.avatarImage;
         }
 
-        for (HIAddress *address in _contact.addresses)
-        {
+        for (HIAddress *address in _contact.addresses) {
             [self addAddressPlaceholderWithAddress:address];
         }
-    }
-    else
-    {
+    } else {
         // just create a placeholder for a single address
         [self addAddressPlaceholderWithAddress:nil];
 
@@ -150,13 +135,11 @@ static NSString * const Separator = @"Separator";
                                                object:nil];
 }
 
-- (void)dealloc
-{
+- (void)dealloc {
     [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
-- (void)addAddressPlaceholderWithAddress:(HIAddress *)address
-{
+- (void)addAddressPlaceholderWithAddress:(HIAddress *)address {
     NSRect frame;
     NSUInteger index = _placeholders.count;
     NSMutableDictionary *parts = [[NSMutableDictionary alloc] init];
@@ -171,8 +154,7 @@ static NSString * const Separator = @"Separator";
     self.scrollContent.frame = frame;
 
     // If we already have fields, we need to add separator
-    if (_placeholders.count > 0)
-    {
+    if (_placeholders.count > 0) {
         NSView *separator = [[NSView alloc] initWithFrame:
                              NSMakeRect(1, AddressCellHeight, self.walletsView.bounds.size.width - 2, 1)];
 
@@ -223,19 +205,15 @@ static NSString * const Separator = @"Separator";
     [self.walletsView addSubview:deleteButton];
     parts[DeleteButton] = deleteButton;
 
-    if (address && ![address.contact canEditAddresses])
-    {
+    if (address && ![address.contact canEditAddresses]) {
         [nameField setEditable:NO];
         [addressField setEditable:NO];
         [deleteButton setHidden:YES];
     }
 
-    if (index == 0)
-    {
+    if (index == 0) {
         self.lastnameField.nextKeyView = addressField;
-    }
-    else
-    {
+    } else {
         [_placeholders[index - 1][NameField] setNextKeyView:addressField];
     }
 
@@ -247,18 +225,15 @@ static NSString * const Separator = @"Separator";
     [self.view.window makeFirstResponder:addressField];
 }
 
-- (void)recalculateNames:(NSNotification *)notification
-{
+- (void)recalculateNames:(NSNotification *)notification {
     NSRect firstFrame = self.firstnameField.frame;
     NSRect lastFrame = self.lastnameField.frame;
 
     CGFloat totalWidth = firstFrame.size.width + NameFieldsGap + lastFrame.size.width;
     BOOL fitsInOneLine = (totalWidth < self.view.bounds.size.width - firstFrame.origin.x);
 
-    if (_nameInTwoLines)
-    {
-        if (fitsInOneLine)
-        {
+    if (_nameInTwoLines) {
+        if (fitsInOneLine) {
             // We can make them in a single line again
             firstFrame.origin.y -= NameFieldsLineSpacing;
             lastFrame.origin.y += NameFieldsLineSpacing;
@@ -267,17 +242,12 @@ static NSString * const Separator = @"Separator";
             self.lastnameField.frame = lastFrame;
             _nameInTwoLines = NO;
         }
-    }
-    else
-    {
-        if (fitsInOneLine)
-        {
+    } else {
+        if (fitsInOneLine) {
             // Position firstname and lastname in a single line
             lastFrame.origin.x = firstFrame.origin.x + firstFrame.size.width + NameFieldsGap;
             self.lastnameField.frame = lastFrame;
-        }
-        else
-        {
+        } else {
             // Well... we need to split them in two lines
             lastFrame.origin.x = firstFrame.origin.x;
             firstFrame.origin.y += NameFieldsLineSpacing;
@@ -289,13 +259,11 @@ static NSString * const Separator = @"Separator";
     }
 }
 
-- (IBAction)addAddressClicked:(NSButton *)sender
-{
+- (IBAction)addAddressClicked:(NSButton *)sender {
     [self addAddressPlaceholderWithAddress:nil];
 }
 
-- (void)removeAddressClicked:(NSButton *)button
-{
+- (void)removeAddressClicked:(NSButton *)button {
     NSRect frame;
     NSUInteger index = button.tag;
 
@@ -312,8 +280,7 @@ static NSString * const Separator = @"Separator";
     [_placeholders removeObjectAtIndex:index];
 
     // For all fields below this line we need to "move them up"
-    for (NSUInteger i = index; i < _placeholders.count; i++)
-    {
+    for (NSUInteger i = index; i < _placeholders.count; i++) {
         NSDictionary *parts = _placeholders[i];
 
         frame = [parts[ContentsView] frame];
@@ -327,43 +294,31 @@ static NSString * const Separator = @"Separator";
         [parts[DeleteButton] setTag:i];
     }
 
-    if (index == 0)
-    {
-        if (_placeholders.count == 0)
-        {
+    if (index == 0) {
+        if (_placeholders.count == 0) {
             self.lastnameField.nextKeyView = self.emailField;
-        }
-        else
-        {
+        } else {
             self.lastnameField.nextKeyView = _placeholders[0][AddressField];
         }
-    }
-    else
-    {
-        if (index < _placeholders.count)
-        {
+    } else {
+        if (index < _placeholders.count) {
             [_placeholders[index - 1][NameField] setNextKeyView:_placeholders[index][AddressField]];
-        }
-        else
-        {
+        } else {
             [_placeholders[index - 1][NameField] setNextKeyView:self.emailField];
         }
     }
 }
 
-- (void)avatarChanged:(id)sender
-{
+- (void)avatarChanged:(id)sender {
     _avatarChanged = YES;
 }
 
-- (IBAction)doneClicked:(NSButton *)sender
-{
+- (IBAction)doneClicked:(NSButton *)sender {
     NSString *firstName = self.firstnameField.enteredValue;
     NSString *lastName = self.lastnameField.enteredValue;
     NSString *email = self.emailField.enteredValue;
 
-    if (!firstName && !lastName && (!_contact || [_contact isKindOfClass:[HIContact class]]))
-    {
+    if (!firstName && !lastName && (!_contact || [_contact isKindOfClass:[HIContact class]])) {
         NSAlert *alert = [[NSAlert alloc] init];
 
         alert.messageText = NSLocalizedString(@"Contact can't be saved.", @"Contact name empty alert title");
@@ -381,8 +336,7 @@ static NSString * const Separator = @"Separator";
         return;
     }
 
-    if (!_contact)
-    {
+    if (!_contact) {
         _contact = [NSEntityDescription insertNewObjectForEntityForName:HIContactEntity
                                                  inManagedObjectContext:DBM];
     }
@@ -392,27 +346,22 @@ static NSString * const Separator = @"Separator";
     _contact.lastname = (lastName.length > 0) ? lastName : nil;
     _contact.email = (email.length > 0) ? email : nil;
 
-    if (_avatarChanged)
-    {
+    if (_avatarChanged) {
         _contact.avatar = [self.avatarView.image TIFFRepresentation];
     }
 
-    if ([_contact canEditAddresses])
-    {
+    if ([_contact canEditAddresses]) {
         // delete all old addresses first
-        for (HIAddress *address in _contact.addresses)
-        {
+        for (HIAddress *address in _contact.addresses) {
             [DBM deleteObject:address];
         }
 
         // add new addresses
-        for (NSDictionary *parts in _placeholders)
-        {
+        for (NSDictionary *parts in _placeholders) {
             NSString *hash = [parts[AddressField] stringValue];
             NSString *caption = [parts[NameField] stringValue];
 
-            if (hash.length == 0)
-            {
+            if (hash.length == 0) {
                 continue;
             }
 
@@ -432,8 +381,7 @@ static NSString * const Separator = @"Separator";
     [self.navigationController popViewController:YES];
 }
 
-- (IBAction)removeContactClicked:(NSButton *)sender
-{
+- (IBAction)removeContactClicked:(NSButton *)sender {
     NSAlert *alert = [[NSAlert alloc] init];
 
     NSString *info = [NSString stringWithFormat:
@@ -449,8 +397,7 @@ static NSString * const Separator = @"Separator";
     
     NSUInteger result = [alert runModal];
 
-    if (result == NSAlertSecondButtonReturn)
-    {
+    if (result == NSAlertSecondButtonReturn) {
         [DBM deleteObject:_contact];
         [self.navigationController popToRootViewControllerAnimated:YES];
         [DBM save:NULL];

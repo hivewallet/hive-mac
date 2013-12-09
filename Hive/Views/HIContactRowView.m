@@ -8,8 +8,7 @@
 
 #import "HIContactRowView.h"
 
-@interface HIContactRowView ()
-{
+@interface HIContactRowView () {
     NSGradient *gradient;
     NSGradient *highlightedGradient;
     NSColor *separatorColor;
@@ -19,8 +18,7 @@
 
 @implementation HIContactRowView
 
-- (void)awakeFromNib
-{
+- (void)awakeFromNib {
     gradient = [[NSGradient alloc] initWithStartingColor:RGB(245, 245, 245)
                                              endingColor:[NSColor whiteColor]];
     
@@ -30,25 +28,21 @@
     separatorColor = RGB(192, 192, 192);
 }
 
-- (id)init
-{
+- (id)init {
     return [self initWithFrame:NSMakeRect(0, 0, 100, 100)];
 }
 
-- (id)initWithFrame:(NSRect)frame
-{
+- (id)initWithFrame:(NSRect)frame {
     self = [super initWithFrame:frame];
 
-    if (self)
-    {
+    if (self) {
         [self awakeFromNib];
     }
     
     return self;
 }
 
-- (void)drawBackgroundInRect:(NSRect)dirtyRect
-{
+- (void)drawBackgroundInRect:(NSRect)dirtyRect {
     [gradient drawInRect:self.bounds angle:270.0];
     [separatorColor set];
     
@@ -60,8 +54,7 @@
     
 }
 
-- (void)drawSelectionInRect:(NSRect)dirtyRect
-{
+- (void)drawSelectionInRect:(NSRect)dirtyRect {
     [highlightedGradient drawInRect:self.bounds angle:270.0];
 }
 

@@ -12,10 +12,8 @@ static NSString *InsetButtonImage = @"button__inset";
 
 @implementation HISidebarButton
 
-- (void)drawRect:(NSRect)dirtyRect
-{
-    if (self.state == NSOnState)
-    {
+- (void)drawRect:(NSRect)dirtyRect {
+    if (self.state == NSOnState) {
         NSImage *insetBackground = [NSImage imageNamed:InsetButtonImage];
         [insetBackground drawInRect:self.bounds
                            fromRect:NSMakeRect(0, 1, self.bounds.size.width, self.bounds.size.height)

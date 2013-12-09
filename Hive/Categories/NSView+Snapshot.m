@@ -10,8 +10,7 @@
 
 @implementation NSView (Snapshot)
 
-- (NSImage *)snapshot
-{
+- (NSImage *)snapshot {
     
     NSSize imgSize = self.bounds.size;
     

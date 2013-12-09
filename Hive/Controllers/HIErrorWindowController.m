@@ -18,8 +18,7 @@
 
 @end
 
-@interface HIErrorWindowController ()
-{
+@interface HIErrorWindowController () {
     NSException *_exception;
 }
 
@@ -27,45 +26,38 @@
 
 @implementation HIErrorWindowController
 
-- (id)initWithException:(NSException *)exception
-{
+- (id)initWithException:(NSException *)exception {
     self = [super initWithWindowNibName:@"HIErrorWindowController"];
 
-    if (self)
-    {
+    if (self) {
         _exception = exception;
     }
 
     return self;
 }
 
-- (void)windowDidLoad
-{
+- (void)windowDidLoad {
     [super windowDidLoad];
 
     BITCrashManager *crashManager = [[BITHockeyManager sharedHockeyManager] crashManager];
     [crashManager loadSettings];
 
-    if (crashManager.userName)
-    {
+    if (crashManager.userName) {
         self.nameField.stringValue = crashManager.userName;
     }
 
-    if (crashManager.userEmail)
-    {
+    if (crashManager.userEmail) {
         self.emailField.stringValue = crashManager.userEmail;
     }
 
     NSMutableString *info = [NSMutableString stringWithFormat:@"%@\n", _exception.reason];
 
     NSString *javaStackTrace = _exception.userInfo[@"stackTrace"];
-    if (javaStackTrace)
-    {
+    if (javaStackTrace) {
         [info appendFormat:@"\nJava stack trace:\n\n%@", javaStackTrace];
     }
 
-    if (_exception.callStackSymbols)
-    {
+    if (_exception.callStackSymbols) {
         [info appendFormat:@"\nCocoa stack trace:\n\n%@", _exception.callStackSymbols];
     }
 
@@ -73,13 +65,11 @@
     self.exceptionDetails.textColor = [NSColor colorWithCalibratedWhite:0.33 alpha:1.0];
 }
 
-- (IBAction)cancelReport:(id)sender
-{
+- (IBAction)cancelReport:(id)sender {
     [self close];
 }
 
-- (IBAction)sendReport:(id)sender
-{
+- (IBAction)sendReport:(id)sender {
     NSDictionary *appInfo = [[NSBundle mainBundle] infoDictionary];
     NSDictionary *systemVersionInfo = [NSDictionary dictionaryWithContentsOfFile:
                                        @"/System/Library/CoreServices/SystemVersion.plist"];
@@ -89,13 +79,11 @@
 
     BITCrashManager *crashManager = [[BITHockeyManager sharedHockeyManager] crashManager];
 
-    if (userName)
-    {
+    if (userName) {
         [crashManager addStringValueToKeychain:userName forKey:@"default.BITCrashMetaUserName"];
     }
 
-    if (userEmail)
-    {
+    if (userEmail) {
         [crashManager addStringValueToKeychain:userEmail forKey:@"default.BITCrashMetaUserEmail"];
     }
 

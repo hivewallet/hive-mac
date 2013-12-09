@@ -11,8 +11,7 @@
 
 @implementation HISeparatorView
 
-- (void)awakeFromNib
-{
+- (void)awakeFromNib {
     self.wantsLayer = YES;
     self.layer.backgroundColor = [RGB(211,211,211) hiNativeColor];
 }

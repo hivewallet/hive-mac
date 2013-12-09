@@ -15,27 +15,22 @@ static NPZip *zipFile = nil;
 
 @implementation HIApplicationURLProtocol
 
-+ (BOOL)canInitWithRequest:(NSURLRequest *)request
-{
++ (BOOL)canInitWithRequest:(NSURLRequest *)request {
     return [request.URL.host hasSuffix:@".hiveapp"];
 }
 
-+ (NSURLRequest *)canonicalRequestForRequest:(NSURLRequest *)request
-{
++ (NSURLRequest *)canonicalRequestForRequest:(NSURLRequest *)request {
     return request;
 }
 
-- (BOOL)isURLZipped:(NSURL *)URL
-{
+- (BOOL)isURLZipped:(NSURL *)URL {
     NSString *appName = [URL.host substringToIndex:(URL.host.length - 8)];
     NSURL *applicationsDirectory = [[HIApplicationsManager sharedManager] applicationsDirectory];
     NSURL *applicationURL = [applicationsDirectory URLByAppendingPathComponent:appName];
 
     BOOL dir;
-    if ([[NSFileManager defaultManager] fileExistsAtPath:applicationURL.path isDirectory:&dir])
-    {
-        if (!dir)
-        {
+    if ([[NSFileManager defaultManager] fileExistsAtPath:applicationURL.path isDirectory:&dir]) {
+        if (!dir) {
             return YES;
         }
     }
@@ -43,8 +38,7 @@ static NPZip *zipFile = nil;
     return NO;
 }
 
-- (void)startLoading
-{
+- (void)startLoading {
     NSData *contentData;
 
     NSArray *pathComponents = self.request.URL.pathComponents;
@@ -55,27 +49,20 @@ static NPZip *zipFile = nil;
     NSURL *applicationsDirectory = [[HIApplicationsManager sharedManager] applicationsDirectory];
     NSURL *applicationURL = [applicationsDirectory URLByAppendingPathComponent:appName];
 
-    if ([self isURLZipped:self.request.URL])
-    {
-        if (!zipFile || ![zipFile.name isEqual:appName])
-        {
+    if ([self isURLZipped:self.request.URL]) {
+        if (!zipFile || ![zipFile.name isEqual:appName]) {
             zipFile = [NPZip archiveWithFile:applicationURL.path];
         }
 
         contentData = [zipFile dataForEntryNamed:localPath];
-    }
-    else
-    {
+    } else {
         contentData = [NSData dataWithContentsOfURL:[applicationURL URLByAppendingPathComponent:localPath]];
     }
 
-    if (!contentData)
-    {
+    if (!contentData) {
         [self.client URLProtocol:self
                   didFailWithError:[NSError errorWithDomain:NSURLErrorDomain code:NSURLErrorBadURL userInfo:nil]];
-    }
-    else
-    {
+    } else {
         NSHTTPURLResponse *response = [[NSHTTPURLResponse alloc] initWithURL:self.request.URL
                                                                   statusCode:200
                                                                  HTTPVersion:@"1.1"
@@ -90,8 +77,7 @@ static NPZip *zipFile = nil;
     }
 }
 
-- (void)stopLoading
-{
+- (void)stopLoading {
 }
 
 @end

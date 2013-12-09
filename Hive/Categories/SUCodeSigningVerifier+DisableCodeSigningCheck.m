@@ -14,8 +14,7 @@
 
 @implementation SUCodeSigningVerifier (DisableCodeSigningCheck)
 
-+ (BOOL)hostApplicationIsCodeSigned
-{
++ (BOOL)hostApplicationIsCodeSigned {
     return NO;
 }
 

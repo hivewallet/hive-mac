@@ -12,13 +12,11 @@
 
 @implementation HIApplicationsManager
 
-+ (HIApplicationsManager *)sharedManager
-{
++ (HIApplicationsManager *)sharedManager {
     static HIApplicationsManager *_sharedManager = nil;
     static dispatch_once_t oncePredicate;
 
-    if (!_sharedManager)
-    {
+    if (!_sharedManager) {
         dispatch_once(&oncePredicate, ^{
             _sharedManager = [[self alloc] init];
         });
@@ -27,21 +25,16 @@
     return _sharedManager;
 }
 
-- (NSDictionary *)applicationMetadata:(NSURL *)applicationPath
-{
+- (NSDictionary *)applicationMetadata:(NSURL *)applicationPath {
     BOOL isDirectory;
     BOOL exists = [[NSFileManager defaultManager] fileExistsAtPath:applicationPath.path isDirectory:&isDirectory];
 
     NSData *data;
 
-    if (exists)
-    {
-        if (isDirectory)
-        {
+    if (exists) {
+        if (isDirectory) {
             data = [NSData dataWithContentsOfURL:[applicationPath URLByAppendingPathComponent:@"manifest.json"]];
-        }
-        else
-        {
+        } else {
             NPZip *zipFile = [NPZip archiveWithFile:applicationPath.path];
             data = [zipFile dataForEntryNamed:@"manifest.json"];
         }
@@ -50,8 +43,7 @@
     return data ? [NSJSONSerialization JSONObjectWithData:data options:0 error:NULL] : nil;
 }
 
-- (BOOL)hasApplicationOfId:(NSString *)applicationId
-{
+- (BOOL)hasApplicationOfId:(NSString *)applicationId {
     NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:HIApplicationEntity];
     request.predicate = [NSPredicate predicateWithFormat:@"id == %@", applicationId];
 
@@ -59,34 +51,29 @@
     return (count > 0);
 }
 
-- (void)removeAllApps
-{
+- (void)removeAllApps {
     NSError *error;
     NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:HIApplicationEntity];
     NSArray *apps = [DBM executeFetchRequest:request error:&error];
 
-    if (error)
-    {
+    if (error) {
         NSLog(@"%@: Error loading apps: %@", NSStringFromSelector(_cmd), error);
         return;
     }
 
-    for (HIApplication *app in apps)
-    {
+    for (HIApplication *app in apps) {
         [DBM deleteObject:app];
     }
 
     [DBM save:&error];
 
-    if (error)
-    {
+    if (error) {
         NSLog(@"%@: Error deleting apps: %@", NSStringFromSelector(_cmd), error);
         return;
     }
 }
 
-- (void)rebuildAppsList
-{
+- (void)rebuildAppsList {
     [self removeAllApps];
 
     NSArray *apps = [[NSFileManager defaultManager] contentsOfDirectoryAtURL:self.applicationsDirectory
@@ -94,35 +81,28 @@
                                                                      options:NSDirectoryEnumerationSkipsHiddenFiles
                                                                        error:NULL];
 
-    for (NSURL *appURL in apps)
-    {
+    for (NSURL *appURL in apps) {
         NSString *appName = [appURL lastPathComponent];
         NSDictionary *manifest = [self applicationMetadata:appURL];
         NSString *actualName = manifest[@"id"];
 
-        if ([appName isEqual:actualName])
-        {
+        if ([appName isEqual:actualName]) {
             [self installApplication:appURL];
-        }
-        else
-        {
+        } else {
             NSLog(@"App name for %@ doesn't match its manifest name (%@)", appURL, actualName);
         }
     }
 }
 
-- (void)preinstallApps
-{
+- (void)preinstallApps {
     NSArray *allApps = [[NSBundle mainBundle] URLsForResourcesWithExtension:@"hiveapp" subdirectory:@""];
 
-    for (NSURL *applicationURL in allApps)
-    {
+    for (NSURL *applicationURL in allApps) {
         [self installApplication:applicationURL];
     }
 }
 
-- (void)installApplication:(NSURL *)applicationURL
-{
+- (void)installApplication:(NSURL *)applicationURL {
     NSDictionary *manifest = [self applicationMetadata:applicationURL];
     HIApplication *app = nil;
 
@@ -130,19 +110,15 @@
     request.predicate = [NSPredicate predicateWithFormat:@"id == %@", manifest[@"id"]];
     NSArray *response = [DBM executeFetchRequest:request error:NULL];
 
-    if (response.count > 0)
-    {
+    if (response.count > 0) {
         app = response[0];
-    }
-    else
-    {
+    } else {
         app = [NSEntityDescription insertNewObjectForEntityForName:HIApplicationEntity inManagedObjectContext:DBM];
     }
 
     NSURL *installedAppURL = [[self applicationsDirectory] URLByAppendingPathComponent:manifest[@"id"]];
 
-    if (![installedAppURL isEqual:applicationURL])
-    {
+    if (![installedAppURL isEqual:applicationURL]) {
         [[NSFileManager defaultManager] removeItemAtURL:installedAppURL error:NULL];
         [[NSFileManager defaultManager] copyItemAtURL:applicationURL toURL:installedAppURL error:NULL];
     }
@@ -156,8 +132,7 @@
     [DBM save:NULL];
 }
 
-- (NSURL *)applicationsDirectory
-{
+- (NSURL *)applicationsDirectory {
     NSURL *appSupportURL = [(HIAppDelegate *) [NSApp delegate] applicationFilesDirectory];
     NSURL *applicationsURL = [appSupportURL URLByAppendingPathComponent:@"Applications"];
 

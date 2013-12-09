@@ -17,8 +17,7 @@
 
 static NSString * const kBCClientBaseURLString = @"https://grabhive.com/";
 
-@interface BCClient ()
-{
+@interface BCClient () {
     NSManagedObjectContext *_transactionUpdateContext;
     NSDateFormatter *_dateFormatter;
 }
@@ -31,13 +30,11 @@ static NSString * const kBCClientBaseURLString = @"https://grabhive.com/";
 
 @implementation BCClient
 
-+ (BCClient *)sharedClient
-{
++ (BCClient *)sharedClient {
     static BCClient *sharedClient = nil;
     static dispatch_once_t oncePredicate;
 
-    if (!sharedClient)
-    {
+    if (!sharedClient) {
         dispatch_once(&oncePredicate, ^{
             sharedClient = [[self alloc] initWithBaseURL:[NSURL URLWithString:kBCClientBaseURLString]];
         });
@@ -46,12 +43,10 @@ static NSString * const kBCClientBaseURLString = @"https://grabhive.com/";
     return sharedClient;
 }
 
-- (id)initWithBaseURL:(NSURL *)URL
-{
+- (id)initWithBaseURL:(NSURL *)URL {
     self = [super initWithBaseURL:URL];
 
-    if (self)
-    {
+    if (self) {
         [self registerHTTPOperationClass:[AFJSONRequestOperation class]];
 
         _checkInterval = 10;
@@ -59,8 +54,7 @@ static NSString * const kBCClientBaseURLString = @"https://grabhive.com/";
         _dateFormatter.dateFormat = @"yyyy'-'MM'-'dd'T'HH':'mm':'ssz";
 
         NSManagedObjectContext *mainContext = [(HIAppDelegate *) [NSApp delegate] managedObjectContext];
-        if (!mainContext)
-        {
+        if (!mainContext) {
             // something went seriously wrong
             return nil;
         }
@@ -95,8 +89,7 @@ static NSString * const kBCClientBaseURLString = @"https://grabhive.com/";
             });
         };
 
-        if (DEBUG_OPTION_ENABLED(TESTING_NETWORK))
-        {
+        if (DEBUG_OPTION_ENABLED(TESTING_NETWORK)) {
             bitcoin.testingNetwork = YES;
         }
 
@@ -121,15 +114,12 @@ static NSString * const kBCClientBaseURLString = @"https://grabhive.com/";
         // [tor start];
 
         NSError *error;
-        if ([bitcoin start:&error])
-        {
+        if ([bitcoin start:&error]) {
             self.balance = [[[NSUserDefaults standardUserDefaults] objectForKey:@"LastBalance"] unsignedLongLongValue];
             self.pendingBalance = 0;
 
             [self updateNotifications];
-        }
-        else
-        {
+        } else {
             NSLog(@"BitcoinManager start error: %@", error);
             self.initializationError = error;
         }
@@ -139,13 +129,11 @@ static NSString * const kBCClientBaseURLString = @"https://grabhive.com/";
     return self;
 }
 
-- (void)torStarted:(NSNotification *)notification
-{
+- (void)torStarted:(NSNotification *)notification {
     [HITorManager defaultManager].torRouting = YES;
 }
 
-- (void)bitcoinKitStarted:(NSNotification *)notification
-{
+- (void)bitcoinKitStarted:(NSNotification *)notification {
     dispatch_async(dispatch_get_main_queue(), ^{
         [self willChangeValueForKey:@"isRunning"];
         [self didChangeValueForKey:@"isRunning"];
@@ -156,47 +144,40 @@ static NSString * const kBCClientBaseURLString = @"https://grabhive.com/";
     });
 }
 
-- (void)clearTransactionsList
-{
+- (void)clearTransactionsList {
     NSError *error;
     NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:HITransactionEntity];
     NSArray *transactions = [DBM executeFetchRequest:request error:&error];
 
-    if (error)
-    {
+    if (error) {
         NSLog(@"%@: Error loading transactions: %@", NSStringFromSelector(_cmd), error);
         return;
     }
 
-    for (HITransaction *transaction in transactions)
-    {
+    for (HITransaction *transaction in transactions) {
         [DBM deleteObject:transaction];
     }
 
     [DBM save:&error];
 
-    if (error)
-    {
+    if (error) {
         NSLog(@"%@: Error deleting transactions: %@", NSStringFromSelector(_cmd), error);
         return;
     }
 }
 
-- (void)rebuildTransactionsList
-{
+- (void)rebuildTransactionsList {
     NSArray *transactions = [[HIBitcoinManager defaultManager] allTransactions];
 
     [_transactionUpdateContext performBlock:^{
-        for (NSDictionary *transaction in transactions)
-        {
+        for (NSDictionary *transaction in transactions) {
             [self parseTransaction:transaction notify:YES];
         }
 
         NSError *error;
         [_transactionUpdateContext save:&error];
 
-        if (error)
-        {
+        if (error) {
             NSLog(@"Error saving updated transactions: %@", error);
         }
 
@@ -204,8 +185,7 @@ static NSString * const kBCClientBaseURLString = @"https://grabhive.com/";
             NSError *error;
             [DBM save:&error];
 
-            if (error)
-            {
+            if (error) {
                 NSLog(@"Error saving updated transactions: %@", error);
             }
 
@@ -214,8 +194,7 @@ static NSString * const kBCClientBaseURLString = @"https://grabhive.com/";
     }];
 }
 
-- (void)transactionUpdated:(NSNotification *)notification
-{
+- (void)transactionUpdated:(NSNotification *)notification {
     dispatch_async(dispatch_get_main_queue(), ^{
         NSDictionary *transaction = [[HIBitcoinManager defaultManager] transactionForHash:notification.object];
         [_transactionUpdateContext performBlock:^{
@@ -224,12 +203,9 @@ static NSString * const kBCClientBaseURLString = @"https://grabhive.com/";
             NSError *error;
             [_transactionUpdateContext save:&error];
 
-            if (!error)
-            {
+            if (!error) {
                 NSLog(@"Saved transaction %@", transaction[@"txid"]);
-            }
-            else
-            {
+            } else {
                 NSLog(@"Error saving transaction %@: %@", transaction[@"txid"], error);
             }
 
@@ -237,8 +213,7 @@ static NSString * const kBCClientBaseURLString = @"https://grabhive.com/";
                 NSError *error;
                 [DBM save:&error];
 
-                if (error)
-                {
+                if (error) {
                     NSLog(@"Error saving transaction %@: %@", transaction[@"txid"], error);
                 }
 
@@ -251,21 +226,16 @@ static NSString * const kBCClientBaseURLString = @"https://grabhive.com/";
 - (void)observeValueForKeyPath:(NSString *)keyPath
                       ofObject:(id)object
                         change:(NSDictionary *)change
-                       context:(void *)context
-{
-    if (object == [HIBitcoinManager defaultManager])
-    {
-        if ([keyPath isEqual:@"balance"])
-        {
+                       context:(void *)context {
+    if (object == [HIBitcoinManager defaultManager]) {
+        if ([keyPath isEqual:@"balance"]) {
             dispatch_async(dispatch_get_main_queue(), ^{
                 self.balance = [object balance];
                 self.pendingBalance = [object estimatedBalance] - [object balance];
 
                 [[NSUserDefaults standardUserDefaults] setObject:@(self.balance) forKey:@"LastBalance"];
             });
-        }
-        else if ([keyPath isEqual:@"estimatedBalance"])
-        {
+        } else if ([keyPath isEqual:@"estimatedBalance"]) {
             dispatch_async(dispatch_get_main_queue(), ^{
                 self.pendingBalance = [object estimatedBalance] - [object balance];
             });
@@ -273,14 +243,12 @@ static NSString * const kBCClientBaseURLString = @"https://grabhive.com/";
     }
 }
 
-- (void)shutdown
-{
+- (void)shutdown {
     [[HIBitcoinManager defaultManager] stop];
     // [[HITorManager defaultManager] stop];
 }
 
-- (void)dealloc
-{
+- (void)dealloc {
     [self shutdown];
     [[NSNotificationCenter defaultCenter] removeObserver:self];
 
@@ -297,27 +265,22 @@ static NSString * const kBCClientBaseURLString = @"https://grabhive.com/";
     }
 }
 
-- (NSURL *)bitcoindDirectory
-{
+- (NSURL *)bitcoindDirectory {
     NSURL *appSupportURL = [(HIAppDelegate *) [NSApp delegate] applicationFilesDirectory];
     return [appSupportURL URLByAppendingPathComponent:@"BitcoinJ.network"];
 }
 
-- (NSURL *)torDirectory
-{
+- (NSURL *)torDirectory {
     NSURL *appSupportURL = [(HIAppDelegate *) [NSApp delegate] applicationFilesDirectory];
     return [appSupportURL URLByAppendingPathComponent:@"Tor.network"];
 }
 
-- (BOOL)isRunning
-{
+- (BOOL)isRunning {
     return [HIBitcoinManager defaultManager].isRunning;
 }
 
-- (void)setCheckInterval:(NSUInteger)checkInterval
-{
-    if (checkInterval == 0)
-    {
+- (void)setCheckInterval:(NSUInteger)checkInterval {
+    if (checkInterval == 0) {
         return;
     }
     
@@ -325,38 +288,31 @@ static NSString * const kBCClientBaseURLString = @"https://grabhive.com/";
 }
 
 
-- (NSUInteger)unreadTransactions
-{
+- (NSUInteger)unreadTransactions {
     NSFetchRequest *req = [NSFetchRequest fetchRequestWithEntityName:HITransactionEntity];
     req.predicate = [NSPredicate predicateWithFormat:@"read == NO"];
     
     return [_transactionUpdateContext countForFetchRequest:req error:NULL];
 }
 
-- (void)updateNotifications
-{
+- (void)updateNotifications {
     [self willChangeValueForKey:@"unreadTransactions"];
     
-    if (self.unreadTransactions > 0)
-    {
+    if (self.unreadTransactions > 0) {
         [[NSApp dockTile] setBadgeLabel:[NSString stringWithFormat:@"%lu", self.unreadTransactions]];
         [NSApp requestUserAttention:NSInformationalRequest];
-    }
-    else
-    {
+    } else {
         [[NSApp dockTile] setBadgeLabel:@""];
     }
 
     [self didChangeValueForKey:@"unreadTransactions"];
 }
 
-- (NSDictionary *)transactionDefinitionWithHash:(NSString *)hash
-{
+- (NSDictionary *)transactionDefinitionWithHash:(NSString *)hash {
     return [[HIBitcoinManager defaultManager] transactionForHash:hash];
 }
 
-- (BOOL)parseTransaction:(NSDictionary *)data notify:(BOOL)notify
-{
+- (BOOL)parseTransaction:(NSDictionary *)data notify:(BOOL)notify {
     BOOL continueFetching = YES;
 
     NSFetchRequest *request = [[NSFetchRequest alloc] initWithEntityName:HITransactionEntity];
@@ -364,21 +320,15 @@ static NSString * const kBCClientBaseURLString = @"https://grabhive.com/";
 
     NSArray *response = [_transactionUpdateContext executeFetchRequest:request error:NULL];
 
-    if (response.count > 0)
-    {
+    if (response.count > 0) {
         HITransaction *transaction = response[0];
         
-        if (transaction.confirmations != [data[@"confirmations"] integerValue])
-        {
+        if (transaction.confirmations != [data[@"confirmations"] integerValue]) {
             transaction.confirmations = [data[@"confirmations"] integerValue];
-        }
-        else
-        {
+        } else {
             continueFetching = NO;
         }
-    }
-    else
-    {
+    } else {
         HITransaction *transaction = [NSEntityDescription insertNewObjectForEntityForName:HITransactionEntity
                                                                    inManagedObjectContext:_transactionUpdateContext];
 
@@ -388,23 +338,20 @@ static NSString * const kBCClientBaseURLString = @"https://grabhive.com/";
         transaction.request = (![data[@"details"][0][@"category"] isEqual:@"send"]);
         transaction.confirmations = [data[@"confirmations"] integerValue];
 
-        if (!notify)
-        {
+        if (!notify) {
             transaction.read = YES;
         }
 
         transaction.senderHash = data[@"details"][0][@"address"];
         
-        if (transaction.senderHash)
-        {
+        if (transaction.senderHash) {
             // Try to find a contact that matches that transaction
             NSFetchRequest *request = [[NSFetchRequest alloc] initWithEntityName:HIContactEntity];
             request.predicate = [NSPredicate predicateWithFormat:@"ANY addresses.address == %@", transaction.senderHash];
 
             NSArray *response = [_transactionUpdateContext executeFetchRequest:request error:NULL];
 
-            if (response.count > 0)
-            {
+            if (response.count > 0) {
                 HIContact *contact = response[0];
                 transaction.senderName = [NSString stringWithFormat:@"%@ %@", contact.firstname, contact.lastname];
                 transaction.senderEmail = contact.email;
@@ -419,25 +366,18 @@ static NSString * const kBCClientBaseURLString = @"https://grabhive.com/";
 
 - (void)sendBitcoins:(uint64)amount
               toHash:(NSString *)hash
-          completion:(void(^)(BOOL success, NSString *transactionId))completion
-{
-    if (amount > self.balance)
-    {
+          completion:(void(^)(BOOL success, NSString *transactionId))completion {
+    if (amount > self.balance) {
         completion(NO, nil);
-    }
-    else
-    {
+    } else {
         HIBitcoinManager *bitcoin = [HIBitcoinManager defaultManager];
 
         // Sanity check first
-        if (amount <= 0 || [bitcoin balance] < amount || ![bitcoin isAddressValid:hash])
-        {
+        if (amount <= 0 || [bitcoin balance] < amount || ![bitcoin isAddressValid:hash]) {
             dispatch_async(dispatch_get_main_queue(), ^{
                 completion(NO, nil);
             });
-        }
-        else
-        {
+        } else {
             [bitcoin sendCoins:amount
                    toRecipient:hash
                        comment:nil
@@ -452,23 +392,19 @@ static NSString * const kBCClientBaseURLString = @"https://grabhive.com/";
 
 - (void)sendBitcoins:(uint64)amount
            toContact:(HIContact *)contact
-          completion:(void(^)(BOOL success, NSString *transactionId))completion
-{
+          completion:(void(^)(BOOL success, NSString *transactionId))completion {
     [self sendBitcoins:amount toHash:contact.account completion:completion];
 }
 
-- (uint64)feeWhenSendingBitcoin:(uint64)amount
-{
+- (uint64)feeWhenSendingBitcoin:(uint64)amount {
     return amount > 0 ? [[HIBitcoinManager defaultManager] calculateTransactionFeeForSendingCoins:amount] : 0;
 }
 
-- (BOOL)backupWalletAtURL:(NSURL *)backupURL
-{
+- (BOOL)backupWalletAtURL:(NSURL *)backupURL {
     return [[HIBitcoinManager defaultManager] exportWalletTo:backupURL];
 }
 
-- (BOOL)importWalletFromURL:(NSURL *)walletURL
-{
+- (BOOL)importWalletFromURL:(NSURL *)walletURL {
     return [[HIBitcoinManager defaultManager] importWalletFrom:walletURL];
 }
 

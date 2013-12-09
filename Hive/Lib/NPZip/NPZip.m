@@ -81,13 +81,11 @@ static uint32_t NPReadUInt32(FILE *fp) {
 	return [__zipHeader.files allKeys];
 }
 
-- (void) readZipHeader
-{
+- (void) readZipHeader {
     __zipHeader = [[NPZipHeader alloc] initWithFile:__file];
 }
 
-- (void) ommitHeader:(FILE *)fp
-{
+- (void) ommitHeader:(FILE *)fp {
 /*	NPReadUInt32(fp);
 	NPReadUInt16(fp);
 	NPReadUInt16(fp);
@@ -137,27 +135,23 @@ static uint32_t NPReadUInt32(FILE *fp) {
 	fseek(fp, extra_len, SEEK_CUR); // ignore extra field        
 }
 
-- (NSData *) dataForEntryNamed:(NSString *)fileName
-{
+- (NSData *) dataForEntryNamed:(NSString *)fileName {
     // Some sanity checks first
     if (__zipHeader == nil)
         [self readZipHeader];
     
     NPZipFileHeader *h = [__zipHeader.files objectForKey:fileName];
-    if (!h)
-    {
+    if (!h) {
         // We need to try to check if there's only one folder there
         NSString *foundRootFolder = nil;
-        for (NSString *file in __zipHeader.files.allKeys)
-        {
+        for (NSString *file in __zipHeader.files.allKeys) {
             if ([[file pathComponents] count] == 0)
                 return nil;
             
             NSString *rootFolder = [[file pathComponents] objectAtIndex:0];
             // Ommit hidden folders
             if ([rootFolder compare:@"__MACOSX"] != NSOrderedSame &&
-                ![rootFolder hasPrefix:@"."])
-            {
+                ![rootFolder hasPrefix:@"."]) {
                 if (!foundRootFolder || [foundRootFolder compare:rootFolder] == NSOrderedSame)
                     foundRootFolder = rootFolder;
                 else
@@ -186,18 +180,14 @@ static uint32_t NPReadUInt32(FILE *fp) {
     size_t to_read = 0;
     // It might be, that file is uncompressed - we should simply read it to buffer
     // Then unpack it
-    if (h.compressed == h.uncompressed)
-    {
-        while (total_read < h.uncompressed)
-        {
+    if (h.compressed == h.uncompressed) {
+        while (total_read < h.uncompressed) {
             to_read = (h.uncompressed - total_read < 1024) ? h.uncompressed - total_read : 1024;
             read = fread(buff, 1, to_read, fp);
             total_read += read;
             [dat appendBytes:buff length:read];
         }
-    }
-    else
-    {
+    } else {
         // Well.. in that particular - more probable - scenario - we have to inflate data from
         // the zip file
         z_stream stream;
@@ -208,8 +198,7 @@ static uint32_t NPReadUInt32(FILE *fp) {
         stream.avail_in = 0;
 
         int result = inflateInit2(&stream, -15);
-        if (result != Z_OK) 
-        {
+        if (result != Z_OK)  {
             NSLog(@"Could not initialize zip file %@ for reading %@", __file, fileName);
             fclose(fp);
             return nil;
@@ -217,8 +206,7 @@ static uint32_t NPReadUInt32(FILE *fp) {
         }
         // Because we have to read it all anyway - let's read whole buffer first and then - unpack it
         NSMutableData *packed = [[NSMutableData alloc] init];
-        while (total_read < h.compressed)
-        {
+        while (total_read < h.compressed) {
             to_read = (h.compressed - total_read < 1024) ? h.compressed - total_read : 1024;
             read = fread(buff, 1, to_read, fp);
             total_read += read;
@@ -238,8 +226,7 @@ static uint32_t NPReadUInt32(FILE *fp) {
         
         int res = Z_OK;
         res = inflate(&stream, Z_SYNC_FLUSH);
-        if (stream.total_out > 0)
-        {
+        if (stream.total_out > 0) {
             [dat appendBytes:unpacked_buff length:stream.total_out];
         }
         
@@ -247,8 +234,7 @@ static uint32_t NPReadUInt32(FILE *fp) {
         inflateEnd(&stream);
         
         // Let's check if we read everything
-        if ([dat length] != h.uncompressed)
-        {
+        if ([dat length] != h.uncompressed) {
             NSLog(@"Unpack fo file %@ from %@ failed. Read %lu bytes instead of %d", fileName, __file, [dat length], h.uncompressed);
             dat = nil;
         }

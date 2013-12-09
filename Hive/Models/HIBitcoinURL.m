@@ -12,16 +12,13 @@ static NSString * const BitcoinURLPrefix = @"bitcoin:";
 
 @implementation HIBitcoinURL
 
-- (id)initWithURLString:(NSString *)URL
-{
+- (id)initWithURLString:(NSString *)URL {
     self = [super init];
 
-    if (self)
-    {
+    if (self) {
         _URLString = URL;
 
-        if (![URL hasPrefix:BitcoinURLPrefix])
-        {
+        if (![URL hasPrefix:BitcoinURLPrefix]) {
             return nil;
         }
 
@@ -33,17 +30,13 @@ static NSString * const BitcoinURLPrefix = @"bitcoin:";
     return self;
 }
 
-- (void)extractFields
-{
+- (void)extractFields {
     NSRange questionMark = [self.URLString rangeOfString:@"?"];
     NSString *base;
 
-    if (questionMark.location == NSNotFound)
-    {
+    if (questionMark.location == NSNotFound) {
         base = [self.URLString copy];
-    }
-    else
-    {
+    } else {
         NSString *parameterString = [self.URLString substringFromIndex:(questionMark.location + 1)];
         _parameters = [self parseParameterString:parameterString];
         base = [self.URLString substringToIndex:questionMark.location];
@@ -57,12 +50,9 @@ static NSString * const BitcoinURLPrefix = @"bitcoin:";
     _amount = amountParameter ? [NSDecimalNumber decimalNumberWithString:amountParameter] : nil;
 }
 
-- (BOOL)validate
-{
-    for (NSString *key in self.parameters.allKeys)
-    {
-        if ([key hasPrefix:@"req-"])
-        {
+- (BOOL)validate {
+    for (NSString *key in self.parameters.allKeys) {
+        if ([key hasPrefix:@"req-"]) {
             return NO;
         }
     }
@@ -70,17 +60,14 @@ static NSString * const BitcoinURLPrefix = @"bitcoin:";
     return YES;
 }
 
-- (NSDictionary *)parseParameterString:(NSString *)string
-{
+- (NSDictionary *)parseParameterString:(NSString *)string {
     NSArray *tokens = [string componentsSeparatedByString:@"&"];
     NSMutableDictionary *parameters = [NSMutableDictionary dictionaryWithCapacity:tokens.count];
 
-    for (NSString *token in tokens)
-    {
+    for (NSString *token in tokens) {
         NSArray *parts = [token componentsSeparatedByString:@"="];
 
-        if (parts.count == 2)
-        {
+        if (parts.count == 2) {
             parameters[parts[0]] = [parts[1] stringByReplacingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
         }
     }

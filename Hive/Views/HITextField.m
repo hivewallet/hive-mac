@@ -12,8 +12,7 @@
 
 NSString * const kHITextFieldContentChanged = @"kHITextFieldContentChanged";
 
-@interface HITextField ()
-{
+@interface HITextField () {
     NSView *_bgView;
     BOOL _isEmpty;
     BOOL _isFocused;
@@ -23,13 +22,11 @@ NSString * const kHITextFieldContentChanged = @"kHITextFieldContentChanged";
 
 @implementation HITextField
 
-- (BOOL)isEmpty
-{
+- (BOOL)isEmpty {
     return _isEmpty;
 }
 
-- (void)awakeFromNib
-{
+- (void)awakeFromNib {
 //    self.wantsLayer = YES;
     self.delegate = self;
     _bgView = [[NSView alloc] initWithFrame:NSMakeRect(self.frame.origin.x-1, self.frame.origin.y+1, self.frame.size.width+2, self.frame.size.height+2)];
@@ -46,8 +43,7 @@ NSString * const kHITextFieldContentChanged = @"kHITextFieldContentChanged";
     [self.superview addSubview:_bgView positioned:NSWindowBelow relativeTo:self];
 }
 
-- (id)initWithFrame:(NSRect)frame
-{
+- (id)initWithFrame:(NSRect)frame {
     self = [super initWithFrame:frame];
     if (self) {
         self.cell = [HITextFieldCell new];
@@ -64,16 +60,13 @@ NSString * const kHITextFieldContentChanged = @"kHITextFieldContentChanged";
     return self;
 }
 
-- (BOOL)becomeFirstResponder
-{
+- (BOOL)becomeFirstResponder {
     BOOL become = [super becomeFirstResponder];
-    if (become)
-    {
+    if (become) {
         [_bgView setHidden:NO];
         [_bgView setNeedsDisplay:YES];
   
-        if (self.stringValue.length == 0)
-        {
+        if (self.stringValue.length == 0) {
             _isEmpty = YES;
             self.stringValue = [self.cell placeholderString];
 //            [self selectText:nil];
@@ -82,9 +75,7 @@ NSString * const kHITextFieldContentChanged = @"kHITextFieldContentChanged";
                 _isFocused = YES;
                 [[self currentEditor] setSelectedRange:NSMakeRange(0, self.stringValue.length)];                
             });
-        }
-        else
-        {
+        } else {
             dispatch_async(dispatch_get_main_queue(), ^{
                 _isFocused = YES;
             });
@@ -94,33 +85,27 @@ NSString * const kHITextFieldContentChanged = @"kHITextFieldContentChanged";
     return become;
 }
 
-- (void)mouseDown:(NSEvent *)theEvent
-{
+- (void)mouseDown:(NSEvent *)theEvent {
     if (_isFocused)
         [super mouseDown:theEvent];
 }
 
-- (void)controlTextDidEndEditing:(NSNotification *)obj
-{
+- (void)controlTextDidEndEditing:(NSNotification *)obj {
     _isFocused = NO;
     [_bgView setHidden:YES];
 
-    if (_isEmpty)
-    {
+    if (_isEmpty) {
         [self setValueAndRecalc:@""];
     }
 }
 
-- (void)setValueAndRecalc:(NSString *)value
-{
+- (void)setValueAndRecalc:(NSString *)value {
     [self setStringValue:value];
     [self recalcForString:value];
 }
 
-- (void)recalcForString:(NSString *)string
-{
-    if (string.length == 0)
-    {
+- (void)recalcForString:(NSString *)string {
+    if (string.length == 0) {
         string = [self.cell placeholderString];
     }
 
@@ -129,8 +114,7 @@ NSString * const kHITextFieldContentChanged = @"kHITextFieldContentChanged";
     f.size.width = size.width + 4;
     
     NSRect sf = self.superview.bounds;
-    if (f.origin.x + f.size.width - 10 > sf.size.width)
-    {
+    if (f.origin.x + f.size.width - 10 > sf.size.width) {
         f.size.width = sf.size.width - f.origin.x - 10;
     }
     
@@ -138,14 +122,12 @@ NSString * const kHITextFieldContentChanged = @"kHITextFieldContentChanged";
     [[NSNotificationCenter defaultCenter] postNotificationName:kHITextFieldContentChanged object:self];
 }
 
-- (void)controlTextDidChange:(NSNotification *)obj
-{
+- (void)controlTextDidChange:(NSNotification *)obj {
     // Recalculate sizes
     [_bgView setNeedsDisplay:YES];
     [self recalcForString:self.stringValue];
     _isEmpty = (self.stringValue.length == 0);
-    if (self.stringValue.length == 0)
-    {
+    if (self.stringValue.length == 0) {
         _isEmpty = YES;
         self.stringValue = [self.cell placeholderString];
         dispatch_async(dispatch_get_main_queue(), ^{
@@ -155,24 +137,20 @@ NSString * const kHITextFieldContentChanged = @"kHITextFieldContentChanged";
     }
 }
 
-- (void)setFrame:(NSRect)frameRect
-{
+- (void)setFrame:(NSRect)frameRect {
     [super setFrame:frameRect];
     _bgView.frame = NSMakeRect(self.frame.origin.x-1, self.frame.origin.y+1, self.frame.size.width+2, self.frame.size.height+2);
 }
 
-- (BOOL)isFocused
-{
+- (BOOL)isFocused {
     return _isFocused;
 }
 
-- (NSString *)enteredValue
-{
+- (NSString *)enteredValue {
     return (!_isEmpty && self.stringValue.length > 0) ? self.stringValue : nil;
 }
 
-- (void)dealloc
-{
+- (void)dealloc {
     [_bgView removeFromSuperview];
 }
 @end

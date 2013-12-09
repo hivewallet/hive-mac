@@ -17,8 +17,7 @@
 static NSString * const kHIAppRuntimeBridgeErrorDomain = @"HIAppRuntimeBridgeErrorDomain";
 static const NSInteger kHIAppRuntimeBridgeParsingError = -1000;
 
-@interface HIAppRuntimeBridge () <HIExchangeRateObserver>
-{
+@interface HIAppRuntimeBridge () <HIExchangeRateObserver> {
     NSDateFormatter *_ISODateFormatter;
     HICurrencyAmountFormatter *_currencyFormatter;
     NSInteger _BTCInSatoshi;
@@ -38,12 +37,10 @@ static const NSInteger kHIAppRuntimeBridgeParsingError = -1000;
 
 #pragma mark - Method & property mapping
 
-+ (NSDictionary *)selectorMap
-{
++ (NSDictionary *)selectorMap {
     static NSDictionary *selectorMap;
 
-    if (!selectorMap)
-    {
+    if (!selectorMap) {
         selectorMap = @{
                         @"sendMoneyToAddress:amount:callback:": @"sendMoney",
                         @"transactionWithHash:callback:": @"getTransaction",
@@ -59,12 +56,10 @@ static const NSInteger kHIAppRuntimeBridgeParsingError = -1000;
     return selectorMap;
 }
 
-+ (NSDictionary *)keyMap
-{
++ (NSDictionary *)keyMap {
     static NSDictionary *keyMap;
 
-    if (!keyMap)
-    {
+    if (!keyMap) {
         keyMap = @{
                    @"_BTCInSatoshi": @"BTC_IN_SATOSHI",
                    @"_mBTCInSatoshi": @"MBTC_IN_SATOSHI",
@@ -80,12 +75,10 @@ static const NSInteger kHIAppRuntimeBridgeParsingError = -1000;
 
 #pragma mark - init & cleanup
 
-- (id)initWithApplication:(HIApplication *)application
-{
+- (id)initWithApplication:(HIApplication *)application {
     self = [super init];
 
-    if (self)
-    {
+    if (self) {
         _application = application;
         _applicationManifest = application.manifest;
 
@@ -106,26 +99,22 @@ static const NSInteger kHIAppRuntimeBridgeParsingError = -1000;
     return self;
 }
 
-- (void)killCallbacks
-{
+- (void)killCallbacks {
     [self removeAllExchangeRateListeners];
 }
 
 
 #pragma mark - JS API methods
 
-- (void)sendMoneyToAddress:(NSString *)hash amount:(NSNumber *)amount callback:(WebScriptObject *)callback
-{
-    if (IsNullOrUndefined(hash))
-    {
+- (void)sendMoneyToAddress:(NSString *)hash amount:(NSNumber *)amount callback:(WebScriptObject *)callback {
+    if (IsNullOrUndefined(hash)) {
         [WebScriptObject throwException:@"hash argument is undefined"];
         return;
     }
 
     NSDecimalNumber *decimal = nil;
 
-    if (!IsNullOrUndefined(amount))
-    {
+    if (!IsNullOrUndefined(amount)) {
         decimal = [NSDecimalNumber decimalNumberWithMantissa:[amount integerValue]
                                                     exponent:-8
                                                   isNegative:NO];
@@ -134,10 +123,8 @@ static const NSInteger kHIAppRuntimeBridgeParsingError = -1000;
     [self.controller requestPaymentToHash:hash
                                    amount:decimal
                                completion:^(BOOL success, NSString *transactionId) {
-        if (!IsNullOrUndefined(callback))
-        {
-            if (success)
-            {
+        if (!IsNullOrUndefined(callback)) {
+            if (success) {
                 JSStringRef idParam = JSStringCreateWithCFString((__bridge CFStringRef) transactionId);
 
                 JSValueRef params[2];
@@ -147,9 +134,7 @@ static const NSInteger kHIAppRuntimeBridgeParsingError = -1000;
                 [self callCallbackMethod:callback withArguments:params count:2];
 
                 JSStringRelease(idParam);
-            }
-            else
-            {
+            } else {
                 JSValueRef result = JSValueMakeBoolean(self.context, NO);
 
                 [self callCallbackMethod:callback withArguments:&result count:1];
@@ -158,18 +143,15 @@ static const NSInteger kHIAppRuntimeBridgeParsingError = -1000;
     }];
 }
 
-- (void)transactionWithHash:(NSString *)hash callback:(WebScriptObject *)callback
-{
-    if (IsNullOrUndefined(callback))
-    {
+- (void)transactionWithHash:(NSString *)hash callback:(WebScriptObject *)callback {
+    if (IsNullOrUndefined(callback)) {
         [WebScriptObject throwException:@"callback argument is undefined"];
         return;
     }
 
     NSDictionary *data = [[BCClient sharedClient] transactionDefinitionWithHash:hash];
 
-    if (!data)
-    {
+    if (!data) {
         JSValueRef nullValue = JSValueMakeNull(self.context);
 
         [self callCallbackMethod:callback withArguments:&nullValue count:1];
@@ -200,10 +182,8 @@ static const NSInteger kHIAppRuntimeBridgeParsingError = -1000;
     [self callCallbackMethod:callback withArguments:&jsonValue count:1];
 }
 
-- (void)getUserInformationWithCallback:(WebScriptObject *)callback
-{
-    if (IsNullOrUndefined(callback))
-    {
+- (void)getUserInformationWithCallback:(WebScriptObject *)callback {
+    if (IsNullOrUndefined(callback)) {
         [WebScriptObject throwException:@"callback argument is undefined"];
         return;
     }
@@ -222,10 +202,8 @@ static const NSInteger kHIAppRuntimeBridgeParsingError = -1000;
     [self callCallbackMethod:callback withArguments:&jsonValue count:1];
 }
 
-- (void)getSystemInfoWithCallback:(WebScriptObject *)callback
-{
-    if (IsNullOrUndefined(callback))
-    {
+- (void)getSystemInfoWithCallback:(WebScriptObject *)callback {
+    if (IsNullOrUndefined(callback)) {
         [WebScriptObject throwException:@"callback argument is undefined"];
         return;
     }
@@ -247,10 +225,8 @@ static const NSInteger kHIAppRuntimeBridgeParsingError = -1000;
     [self callCallbackMethod:callback withArguments:&jsonValue count:1];
 }
 
-- (void)makeProxiedRequestToURL:(NSString *)url options:(WebScriptObject *)options
-{
-    if (IsNullOrUndefined(url))
-    {
+- (void)makeProxiedRequestToURL:(NSString *)url options:(WebScriptObject *)options {
+    if (IsNullOrUndefined(url)) {
         [WebScriptObject throwException:@"url argument is undefined"];
         return;
     }
@@ -258,8 +234,7 @@ static const NSInteger kHIAppRuntimeBridgeParsingError = -1000;
     NSString *hostname = [[NSURL URLWithString:url] host];
     NSArray *allowedHosts = _applicationManifest[@"accessedHosts"];
 
-    if (![allowedHosts containsObject:hostname])
-    {
+    if (![allowedHosts containsObject:hostname]) {
         NSString *message = [NSString stringWithFormat:@"application is not allowed to connect to host %@", hostname];
         [WebScriptObject throwException:message];
         return;
@@ -304,51 +279,41 @@ static const NSInteger kHIAppRuntimeBridgeParsingError = -1000;
 
 #pragma mark - Exchange rate handling
 
-- (void)addExchangeRateListener:(WebScriptObject *)listener
-{
-    if (IsNullOrUndefined(listener))
-    {
+- (void)addExchangeRateListener:(WebScriptObject *)listener {
+    if (IsNullOrUndefined(listener)) {
         [WebScriptObject throwException:@"listener is undefined"];
         return;
     }
-    if (_exchangeRateListeners.count == 0)
-    {
+    if (_exchangeRateListeners.count == 0) {
         [[HIExchangeRateService sharedService] addExchangeRateObserver:self];
     }
     [_exchangeRateListeners addObject:listener];
 }
 
-- (void)removeExchangeRateListener:(WebScriptObject *)listener
-{
+- (void)removeExchangeRateListener:(WebScriptObject *)listener {
     [_exchangeRateListeners removeObject:listener];
-    if (_exchangeRateListeners.count == 0)
-    {
+    if (_exchangeRateListeners.count == 0) {
         [[HIExchangeRateService sharedService] removeExchangeRateObserver:self];
     }
 }
 
-- (void)removeAllExchangeRateListeners
-{
-    for (WebScriptObject *listener in [_exchangeRateListeners copy])
-    {
+- (void)removeAllExchangeRateListeners {
+    for (WebScriptObject *listener in [_exchangeRateListeners copy]) {
         [self removeExchangeRateListener:listener];
     }
 }
 
-- (void)updateExchangeRateForCurrency:(NSString *)currency
-{
+- (void)updateExchangeRateForCurrency:(NSString *)currency {
     [[HIExchangeRateService sharedService] updateExchangeRateForCurrency:currency];
 }
 
-- (void)exchangeRateUpdatedTo:(NSDecimalNumber *)exchangeRate forCurrency:(NSString *)currency
-{
+- (void)exchangeRateUpdatedTo:(NSDecimalNumber *)exchangeRate forCurrency:(NSString *)currency {
     JSValueRef params[2];
     params[0] = JSValueMakeString(self.context, JSStringCreateWithCFString((__bridge CFStringRef)currency));
     params[1] = JSValueMakeNumber(self.context,
                                   [exchangeRate decimalNumberByMultiplyingByPowerOf10:8].doubleValue);
 
-    for (WebScriptObject *listener in _exchangeRateListeners)
-    {
+    for (WebScriptObject *listener in _exchangeRateListeners) {
         [self callCallbackMethod:listener withArguments:params count:2];
     }
 }
@@ -359,42 +324,32 @@ static const NSInteger kHIAppRuntimeBridgeParsingError = -1000;
 - (NSMutableURLRequest *)requestWithURL:(NSString *)URL
                                  method:(NSString *)method
                                    data:(id)data
-                                headers:(NSDictionary *)headers
-{
+                                headers:(NSDictionary *)headers {
     NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:URL]];
     [request setHTTPMethod:method];
     [request setHTTPShouldHandleCookies:NO];
 
-    if (data)
-    {
+    if (data) {
         NSString *paramString;
 
-        if ([data isKindOfClass:[NSString class]])
-        {
+        if ([data isKindOfClass:[NSString class]]) {
             paramString = data;
-        }
-        else
-        {
+        } else {
             paramString = AFQueryStringFromParametersWithEncoding(data, NSUTF8StringEncoding);
         }
 
-        if ([@[@"GET", @"HEAD", @"DELETE"] containsObject:method])
-        {
+        if ([@[@"GET", @"HEAD", @"DELETE"] containsObject:method]) {
             NSString *separator = ([URL rangeOfString:@"?"].location == NSNotFound) ? @"?" : @"&";
             NSString *updatedURL = [URL stringByAppendingFormat:@"%@%@", separator, paramString];
             [request setURL:[NSURL URLWithString:updatedURL]];
-        }
-        else
-        {
+        } else {
             [request setValue:@"application/x-www-form-urlencoded; charset=UTF-8" forHTTPHeaderField:@"Content-Type"];
             [request setHTTPBody:[paramString dataUsingEncoding:NSUTF8StringEncoding]];
         }
     }
 
-    if (headers)
-    {
-        for (NSString *key in headers)
-        {
+    if (headers) {
+        for (NSString *key in headers) {
             [request addValue:[headers[key] description] forHTTPHeaderField:key];
         }
     }
@@ -402,19 +357,15 @@ static const NSInteger kHIAppRuntimeBridgeParsingError = -1000;
     return request;
 }
 
-- (JSValueRef)parseResponseFromOperation:(AFHTTPRequestOperation *)operation requestedDataType:(NSString *)dataType
-{
+- (JSValueRef)parseResponseFromOperation:(AFHTTPRequestOperation *)operation requestedDataType:(NSString *)dataType {
     NSString *contentType = operation.response.allHeaderFields[@"Content-Type"];
 
     JSStringRef jsString = JSStringCreateWithCFString((__bridge CFStringRef) (operation.responseString ?: @""));
     JSValueRef jsValue;
 
-    if ([dataType isEqual:@"json"] || ([contentType hasSuffix:@"/json"] && IsNullOrUndefined(dataType)))
-    {
+    if ([dataType isEqual:@"json"] || ([contentType hasSuffix:@"/json"] && IsNullOrUndefined(dataType))) {
         jsValue = JSValueMakeFromJSONString(self.context, jsString);
-    }
-    else
-    {
+    } else {
         jsValue = JSValueMakeString(self.context, jsString);
     }
 
@@ -428,21 +379,17 @@ static const NSInteger kHIAppRuntimeBridgeParsingError = -1000;
                 requestedDataType:(NSString *)dataType
                   successCallback:(WebScriptObject *)successCallback
                     errorCallback:(WebScriptObject *)errorCallback
-                 completeCallback:(WebScriptObject *)completeCallback
-{
+                 completeCallback:(WebScriptObject *)completeCallback {
     JSValueRef response = [self parseResponseFromOperation:operation requestedDataType:dataType];
 
-    if (response)
-    {
+    if (response) {
         JSValueRef arguments[2];
         arguments[0] = response;
         arguments[1] = JSValueMakeNumber(self.context, operation.response.statusCode);
 
         [self callCallbackMethod:successCallback withArguments:arguments count:2];
         [self callCallbackMethod:completeCallback withArguments:arguments count:2];
-    }
-    else
-    {
+    } else {
         NSError *error = [NSError errorWithDomain:kHIAppRuntimeBridgeErrorDomain
                                              code:kHIAppRuntimeBridgeParsingError
                                          userInfo:@{ NSLocalizedDescriptionKey: @"couldn't parse JSON response" }];
@@ -454,8 +401,7 @@ static const NSInteger kHIAppRuntimeBridgeParsingError = -1000;
 - (void)handleError:(NSError *)error
        forOperation:(AFHTTPRequestOperation *)operation
       errorCallback:(WebScriptObject *)errorCallback
-   completeCallback:(WebScriptObject *)completeCallback
-{
+   completeCallback:(WebScriptObject *)completeCallback {
     NSDictionary *errorData = @{ @"message": error.localizedDescription };
 
     JSValueRef arguments[3];

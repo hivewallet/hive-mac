@@ -18,25 +18,21 @@
 
 @implementation HIFeeDetailsViewController
 
-- (id)init
-{
+- (id)init {
     return [self initWithNibName:[self className] bundle:nil];
 }
 
-- (void)awakeFromNib
-{
+- (void)awakeFromNib {
     [super awakeFromNib];
     [self updateFeeLabel];
 }
 
-- (void)setFee:(NSDecimalNumber *)fee
-{
+- (void)setFee:(NSDecimalNumber *)fee {
     _fee = [fee copy];
     [self updateFeeLabel];
 }
 
-- (void)updateFeeLabel
-{
+- (void)updateFeeLabel {
     self.feeLabel.stringValue = [[HICurrencyAmountFormatter new] stringFromNumber:self.fee];
 }
 

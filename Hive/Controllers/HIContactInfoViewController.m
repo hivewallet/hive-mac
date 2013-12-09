@@ -30,47 +30,37 @@ static const NSInteger AddressFieldTag = 2;
 
 @implementation HIContactInfoViewController
 
-- (id)initWithParent:(HIViewController *)parent
-{
+- (id)initWithParent:(HIViewController *)parent {
     self = [super initWithNibName:@"HIContactInfoViewController" bundle:nil];
 
-    if (self)
-    {
+    if (self) {
         _parent = parent;
     }
     
     return self;
 }
 
-- (void)dealloc
-{
-    if (_observingWallet)
-    {
+- (void)dealloc {
+    if (_observingWallet) {
         [[BCClient sharedClient] removeObserver:self forKeyPath:@"walletHash"];
     }
 }
 
-- (IBAction)editButtonClicked:(NSButton *)sender
-{
+- (IBAction)editButtonClicked:(NSButton *)sender {
     HINewContactViewController *vc = [HINewContactViewController new];
     vc.contact = _contact;
 
-    if ([_contact isKindOfClass:[HIContact class]])
-    {
+    if ([_contact isKindOfClass:[HIContact class]]) {
         vc.title = NSLocalizedString(@"Edit contact", nil);
-    }
-    else
-    {
+    } else {
         vc.title = NSLocalizedString(@"Edit profile", nil);
     }
 
     [_parent.navigationController pushViewController:vc animated:YES];
 }
 
-- (void)configureViewForContact:(HIContact *)contact
-{
-    if (_observingWallet)
-    {
+- (void)configureViewForContact:(HIContact *)contact {
+    if (_observingWallet) {
         [[BCClient sharedClient] removeObserver:self forKeyPath:@"walletHash"];
         _observingWallet = NO;
     }
@@ -95,10 +85,8 @@ static const NSInteger AddressFieldTag = 2;
     // fill it with new address views
     NSInteger index = 0;
 
-    for (HIAddress *address in _contact.addresses)
-    {
-        if (index > 0)
-        {
+    for (HIAddress *address in _contact.addresses) {
+        if (index > 0) {
             [self.addressBoxView addSubview:[self addressSeparatorViewAtIndex:index]];
         }
 
@@ -107,8 +95,7 @@ static const NSInteger AddressFieldTag = 2;
         index++;
     }
 
-    if ([_contact isKindOfClass:[HIProfile class]])
-    {
+    if ([_contact isKindOfClass:[HIProfile class]]) {
         _observingWallet = YES;
 
         [[BCClient sharedClient] addObserver:self
@@ -118,8 +105,7 @@ static const NSInteger AddressFieldTag = 2;
     }
 }
 
-- (NSView *)addressSeparatorViewAtIndex:(NSInteger)index
-{
+- (NSView *)addressSeparatorViewAtIndex:(NSInteger)index {
     NSRect frame = NSMakeRect(1, 60 * index, self.addressBoxView.bounds.size.width - 2, 1);
     NSView *separator = [[NSView alloc] initWithFrame:frame];
 
@@ -130,8 +116,7 @@ static const NSInteger AddressFieldTag = 2;
     return separator;
 }
 
-- (HICopyView *)copyViewAtIndex:(NSInteger)index forAddress:(HIAddress *)address
-{
+- (HICopyView *)copyViewAtIndex:(NSInteger)index forAddress:(HIAddress *)address {
     // build the copy view
     NSRect copyViewFrame = NSMakeRect(0, index * 60, self.addressBoxView.bounds.size.width, 60);
     HICopyView *copyView = [[HICopyView alloc] initWithFrame:copyViewFrame];
@@ -148,12 +133,9 @@ static const NSInteger AddressFieldTag = 2;
     [nameField setBordered:NO];
     [nameField setBackgroundColor:[NSColor clearColor]];
 
-    if (address.caption)
-    {
+    if (address.caption) {
         nameField.stringValue = address.caption;
-    }
-    else
-    {
+    } else {
         nameField.stringValue = NSLocalizedString(@"Main address", @"Main address caption string for profiles");
     }
 
@@ -171,8 +153,7 @@ static const NSInteger AddressFieldTag = 2;
     [addressField setTextColor:[NSColor colorWithCalibratedWhite:0.5 alpha:1.0]];
     [addressField setTag:AddressFieldTag];
 
-    if (address.address)
-    {
+    if (address.address) {
         [addressField setStringValue:address.address];
     }
 
@@ -189,8 +170,7 @@ static const NSInteger AddressFieldTag = 2;
     return copyView;
 }
 
-- (void)configureScrollView
-{
+- (void)configureScrollView {
     NSRect f = self.profileScrollContent.frame;
     f.size.width = self.profileScrollView.frame.size.width;
     f.size.height = 161 + 60 * _contact.addresses.count;
@@ -201,17 +181,13 @@ static const NSInteger AddressFieldTag = 2;
 - (void)observeValueForKeyPath:(NSString *)keyPath
                       ofObject:(id)object
                         change:(NSDictionary *)change
-                       context:(void *)context
-{
-    if (object == [BCClient sharedClient])
-    {
-        if ([keyPath isEqual:@"walletHash"])
-        {
+                       context:(void *)context {
+    if (object == [BCClient sharedClient]) {
+        if ([keyPath isEqual:@"walletHash"]) {
             dispatch_async(dispatch_get_main_queue(), ^{
                 NSString *walletHash = [[BCClient sharedClient] walletHash];
 
-                if (walletHash)
-                {
+                if (walletHash) {
                     HICopyView *userAddressView = self.addressBoxView.subviews[0];
                     [userAddressView setContentToCopy:walletHash];
                     [[userAddressView viewWithTag:AddressFieldTag] setStringValue:walletHash];

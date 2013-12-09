@@ -37,19 +37,16 @@ static BOOL isDiskTrailer(char *start) {
 
 @synthesize files = __files;
 
-- (id)initWithFile:(NSString *)filePath
-{
+- (id)initWithFile:(NSString *)filePath {
     self = [self init];
-    if (self)
-    {
+    if (self) {
         [self readHeaderFromFile:filePath];
     }
     
     return self;
 }
 
-- (long)trailerPositionInFile:(FILE *)file size:(long)size
-{
+- (long)trailerPositionInFile:(FILE *)file size:(long)size {
 	char *buffer = (char *) calloc(ZIP_BUFF_SIZE, sizeof(char));
 	long offset, buflen, trailerPosition;
 	
@@ -91,8 +88,7 @@ positionBreak:
 	return trailerPosition;    
 }
 
-- (void)readHeaderFromFile:(NSString *)file
-{
+- (void)readHeaderFromFile:(NSString *)file {
 	CDERecord trailer;
 	long filesize, trailerPosition, file_count;
 	FILE *fp = fopen([file UTF8String], "r");
@@ -101,8 +97,7 @@ positionBreak:
 	filesize = (int) ftell(fp);
 	
 	trailerPosition = [self trailerPositionInFile:fp size:filesize];
-	if (trailerPosition < 0) 
-    {
+	if (trailerPosition < 0)  {
 		return;
 	}
 	
@@ -129,28 +124,23 @@ positionBreak:
     // Now - it might happen that all files are put in single dictionary.
     // In that scenario we should truncate that folder name
     @autoreleasepool {
-        if ([[__files allValues] count] > 0)
-        {
+        if ([[__files allValues] count] > 0) {
             NSString *firstPathCmp = [[[[__files allKeys] objectAtIndex:0] componentsSeparatedByString:@"/"] objectAtIndex:0];
             int l = (int)[firstPathCmp length] + 1;
             BOOL common = YES;
             NSRange r;
-            for (NSString *k in [__files allKeys])
-            {
+            for (NSString *k in [__files allKeys]) {
                 r = [k rangeOfString:firstPathCmp];
-                if (r.location == NSNotFound)
-                {
+                if (r.location == NSNotFound) {
                     common = NO;
                     break;
                 }
             }            
             
-            if (common)
-            {
+            if (common) {
                 NPZipFileHeader *h = nil;
                 NSArray *keys = [[__files allKeys] copy];
-                for (NSString *k in keys)
-                {
+                for (NSString *k in keys) {
                     h = [__files objectForKey:k];
                     [__files setObject:h forKey:[k substringFromIndex:l]];
                     [__files removeObjectForKey:k];

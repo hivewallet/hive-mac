@@ -14,8 +14,7 @@
 static const CGFloat MaxAutocompleteHeight = 300.0;
 
 
-@interface HIContactAutocompleteWindowController ()
-{
+@interface HIContactAutocompleteWindowController () {
     NSMutableDictionary *_trackingAreas;
 }
 
@@ -23,53 +22,43 @@ static const CGFloat MaxAutocompleteHeight = 300.0;
 
 @implementation HIContactAutocompleteWindowController
 
-- (id)init
-{
+- (id)init {
     self = [super initWithWindowNibName:@"HIContactAutocompleteWindowController"];
 
-    if (self)
-    {
+    if (self) {
         _trackingAreas = [[NSMutableDictionary alloc] init];
     }
 
     return self;
 }
 
-- (void)windowDidLoad
-{
+- (void)windowDidLoad {
     [super windowDidLoad];
 
     [self.arrayController setManagedObjectContext: DBM];
     [self.arrayController addObserver:self forKeyPath:@"arrangedObjects" options:0 context:NULL];
 }
 
-- (void)dealloc
-{
+- (void)dealloc {
     [self.arrayController removeObserver:self forKeyPath:@"arrangedObjects"];
 }
 
 
 #pragma mark - Filtering
 
-- (void)searchWithQuery:(NSString *)query
-{
-    if (query.length > 0)
-    {
+- (void)searchWithQuery:(NSString *)query {
+    if (query.length > 0) {
         self.arrayController.filterPredicate = [self filterPredicateForQuery:query];
-    }
-    else
-    {
+    } else {
         self.arrayController.filterPredicate = nil;
     }
 }
 
-- (void)searchWithContact:(HIContact *)contact
-{
+- (void)searchWithContact:(HIContact *)contact {
     self.arrayController.filterPredicate = [NSPredicate predicateWithFormat:@"contact = %@", contact];
 }
 
-- (NSPredicate *)filterPredicateForQuery:(NSString *)query
-{
+- (NSPredicate *)filterPredicateForQuery:(NSString *)query {
     NSArray *tokens = [query componentsSeparatedByString:@" "];
 
     NSMutableArray *predicateParts = [[NSMutableArray alloc] init];
@@ -81,8 +70,7 @@ static const CGFloat MaxAutocompleteHeight = 300.0;
     @"contact.firstname CONTAINS[cd] %@ || "
     @"contact.lastname CONTAINS[cd] %@)";
 
-    for (NSString *token in tokens)
-    {
+    for (NSString *token in tokens) {
         if (token.length == 0) continue;
 
         [predicateParts addObject:predicatePartForToken];
@@ -96,8 +84,7 @@ static const CGFloat MaxAutocompleteHeight = 300.0;
 
 #pragma mark - NSTableViewDelegate
 
-- (NSView *)tableView:(NSTableView *)table viewForTableColumn:(NSTableColumn *)column row:(NSInteger)row
-{
+- (NSView *)tableView:(NSTableView *)table viewForTableColumn:(NSTableColumn *)column row:(NSInteger)row {
     HIContactAutocompleteCellView *cell = [table makeViewWithIdentifier:column.identifier owner:self];
     HIAddress *address = self.arrayController.arrangedObjects[row];
 
@@ -108,8 +95,7 @@ static const CGFloat MaxAutocompleteHeight = 300.0;
     return cell;
 }
 
-- (IBAction)tableRowClicked:(id)sender
-{
+- (IBAction)tableRowClicked:(id)sender {
     NSInteger row = self.tableView.clickedRow;
     [self.tableView selectRowIndexes:[NSIndexSet indexSetWithIndex:row] byExtendingSelection:NO];
 
@@ -118,8 +104,7 @@ static const CGFloat MaxAutocompleteHeight = 300.0;
     });
 }
 
-- (void)tableView:(NSTableView *)tableView didAddRowView:(NSTableRowView *)rowView forRow:(NSInteger)row
-{
+- (void)tableView:(NSTableView *)tableView didAddRowView:(NSTableRowView *)rowView forRow:(NSInteger)row {
     NSTrackingRectTag tag = [rowView addTrackingRect:rowView.bounds
                                                owner:self
                                             userData:(__bridge void *)(@(row))
@@ -127,33 +112,27 @@ static const CGFloat MaxAutocompleteHeight = 300.0;
     _trackingAreas[@(row)] = @(tag);
 }
 
-- (void)tableView:(NSTableView *)tableView didRemoveRowView:(NSTableRowView *)rowView forRow:(NSInteger)row
-{
+- (void)tableView:(NSTableView *)tableView didRemoveRowView:(NSTableRowView *)rowView forRow:(NSInteger)row {
     NSNumber *tag = _trackingAreas[@(row)];
 
-    if (tag)
-    {
+    if (tag) {
         [rowView removeTrackingRect:((NSTrackingRectTag) [tag integerValue])];
         [_trackingAreas removeObjectForKey:@(row)];
     }
 }
 
-- (void)mouseEntered:(NSEvent *)event
-{
+- (void)mouseEntered:(NSEvent *)event {
     NSNumber *row = (NSNumber *) event.userData;
 
-    if (row)
-    {
+    if (row) {
         [self.tableView selectRowIndexes:[NSIndexSet indexSetWithIndex:[row integerValue]] byExtendingSelection:NO];
     }
 }
 
-- (void)mouseExited:(NSEvent *)event
-{
+- (void)mouseExited:(NSEvent *)event {
     NSNumber *row = (NSNumber *) event.userData;
 
-    if (row)
-    {
+    if (row) {
         [self.tableView deselectRow:[row integerValue]];
     }
 }
@@ -161,10 +140,8 @@ static const CGFloat MaxAutocompleteHeight = 300.0;
 
 #pragma mark - Reacting to keyboard events
 
-- (void)moveSelectionUp
-{
-    if (self.tableView.numberOfRows > 0)
-    {
+- (void)moveSelectionUp {
+    if (self.tableView.numberOfRows > 0) {
         NSInteger row = self.tableView.selectedRow;
         NSInteger newRow = (row >= 0) ? (row - 1 + self.tableView.numberOfRows) % self.tableView.numberOfRows : 0;
 
@@ -172,10 +149,8 @@ static const CGFloat MaxAutocompleteHeight = 300.0;
     }
 }
 
-- (void)moveSelectionDown
-{
-    if (self.tableView.numberOfRows > 0)
-    {
+- (void)moveSelectionDown {
+    if (self.tableView.numberOfRows > 0) {
         NSInteger row = self.tableView.selectedRow;
         NSInteger newRow = (row >= 0) ? (row + 1) % self.tableView.numberOfRows : 0;
 
@@ -183,12 +158,10 @@ static const CGFloat MaxAutocompleteHeight = 300.0;
     }
 }
 
-- (void)confirmSelection
-{
+- (void)confirmSelection {
     NSInteger row = self.tableView.selectedRow;
 
-    if (row >= 0)
-    {
+    if (row >= 0) {
         HIAddress *address = self.arrayController.arrangedObjects[self.tableView.selectedRow];
         [self.delegate addressSelectedInAutocomplete:address];
         [self.tableView deselectAll:self];
@@ -201,18 +174,14 @@ static const CGFloat MaxAutocompleteHeight = 300.0;
 - (void)observeValueForKeyPath:(NSString *)keyPath
                       ofObject:(id)object
                         change:(NSDictionary *)change
-                       context:(void *)context
-{
-    if (object == self.arrayController)
-    {
+                       context:(void *)context {
+    if (object == self.arrayController) {
         [self resizeWindowToContentHeight];
     }
 }
 
-- (void)resizeWindowToContentHeight
-{
-    if (self.tableView.numberOfRows > 0)
-    {
+- (void)resizeWindowToContentHeight {
+    if (self.tableView.numberOfRows > 0) {
         CGFloat targetHeight = self.tableView.numberOfRows * self.tableView.rowHeight;
         targetHeight = MIN(MaxAutocompleteHeight, targetHeight);
 
@@ -223,9 +192,7 @@ static const CGFloat MaxAutocompleteHeight = 300.0;
 
         [self.window setFrame:windowFrame display:YES];
         [self.window setIsVisible:YES];
-    }
-    else
-    {
+    } else {
         [self.window setIsVisible:NO];
     }
 }

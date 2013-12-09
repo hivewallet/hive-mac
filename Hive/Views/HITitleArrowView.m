@@ -9,8 +9,7 @@
 #import "HITitleArrowView.h"
 #import "NSColor+Hive.h"
 
-@interface HITitleArrowView ()
-{
+@interface HITitleArrowView () {
     NSColor *_strokeColor;
 }
 
@@ -35,8 +34,7 @@
     return self;
 }
 
-- (void)drawRect:(NSRect)dirtyRect
-{
+- (void)drawRect:(NSRect)dirtyRect {
     [_strokeColor setStroke];
 
     NSBezierPath *line = [NSBezierPath bezierPath];

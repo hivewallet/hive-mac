@@ -10,13 +10,11 @@
 #import "HITextFieldCell.h"
 @implementation HITextFieldCell
 
-- (void)drawInteriorWithFrame:(NSRect)cellFrame inView:(NSView *)controlView
-{
+- (void)drawInteriorWithFrame:(NSRect)cellFrame inView:(NSView *)controlView {
     [super drawInteriorWithFrame:cellFrame inView:controlView];
 }
 
-- (void)drawWithFrame:(NSRect)cellFrame inView:(NSView *)controlView
-{
+- (void)drawWithFrame:(NSRect)cellFrame inView:(NSView *)controlView {
 //    [[NSColor clearColor] setFill];
 //    NSRectFill(cellFrame);
 //    [super drawWithFrame:cellFrame inView:controlView];
@@ -24,14 +22,11 @@
     if ([controlView isKindOfClass:[HITextField class]])
         tf = (HITextField *)controlView;
     
-    if (self.stringValue.length == 0 && !tf.isFocused)
-    {
+    if (self.stringValue.length == 0 && !tf.isFocused) {
         // We should draw placeholder here, so
         [self.placeholderString drawAtPoint:NSZeroPoint withAttributes:@{NSFontAttributeName: self.font, NSForegroundColorAttributeName: [NSColor colorWithCalibratedWhite:0 alpha:0.6]}];
         
-    }
-    else if (!tf.isFocused)
-    {
+    } else if (!tf.isFocused) {
         [super drawWithFrame:cellFrame inView:controlView];
     }
 

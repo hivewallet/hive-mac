@@ -9,8 +9,7 @@
 #import "HICopyView.h"
 #import "NSColor+Hive.h"
 
-@interface HICopyView ()
-{
+@interface HICopyView () {
     NSTextField *_copyLabel;
     NSUInteger _trackTag;
     NSView *_selectionView;
@@ -22,8 +21,7 @@
 
 @implementation HICopyView
 
-- (id)initWithFrame:(NSRect)frame
-{
+- (id)initWithFrame:(NSRect)frame {
     self = [super initWithFrame:frame];
 
     if (self) {
@@ -65,15 +63,13 @@
     return self;
 }
 
-- (void)setFrame:(NSRect)frameRect
-{
+- (void)setFrame:(NSRect)frameRect {
     [self removeTrackingRect:_trackTag];
     [super setFrame:frameRect];
     _trackTag = [self addTrackingRect:self.bounds owner:self userData:NULL assumeInside:YES];
 }
 
-- (void)mouseEntered:(NSEvent *)theEvent
-{
+- (void)mouseEntered:(NSEvent *)theEvent {
     _copyLabel.stringValue = _clickToCopyText;
     [self addSubview:_copyLabel];
     [_copyLabel setHidden:NO];
@@ -85,8 +81,7 @@
     [self displayIfNeeded];
 }
 
-- (void)mouseUp:(NSEvent *)theEvent
-{
+- (void)mouseUp:(NSEvent *)theEvent {
     // Well, mouse up, copy data to pasteboard
     NSPasteboard *pb = [NSPasteboard generalPasteboard];
     [pb clearContents];

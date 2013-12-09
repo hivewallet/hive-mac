@@ -15,13 +15,11 @@ static NSString *const HIConversionPreferenceKey = @"ConversionCurrency";
 
 @implementation HIExchangeRateService
 
-+ (HIExchangeRateService *)sharedService
-{
++ (HIExchangeRateService *)sharedService {
     static HIExchangeRateService *sharedService = nil;
     static dispatch_once_t oncePredicate;
 
-    if (!sharedService)
-    {
+    if (!sharedService) {
         dispatch_once(&oncePredicate, ^{
             sharedService = [[self class] new];
         });
@@ -30,11 +28,9 @@ static NSString *const HIConversionPreferenceKey = @"ConversionCurrency";
     return sharedService;
 }
 
-- (id)init
-{
+- (id)init {
     self = [super init];
-    if (self)
-    {
+    if (self) {
         _client = [BCClient sharedClient];
         _observers = [NSMutableSet new];
     }
@@ -43,8 +39,7 @@ static NSString *const HIConversionPreferenceKey = @"ConversionCurrency";
 
 #pragma mark - user defaults
 
-- (NSDictionary *)currencyDigits
-{
+- (NSDictionary *)currencyDigits {
     // the number of fraction digits for each currency
     static NSDictionary *currencyDigits;
     static dispatch_once_t onceToken;
@@ -76,8 +71,7 @@ static NSString *const HIConversionPreferenceKey = @"ConversionCurrency";
     return currencyDigits;
 }
 
-- (NSArray *)availableCurrencies
-{
+- (NSArray *)availableCurrencies {
     static NSArray *availableCurrencies;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^ {
@@ -90,34 +84,28 @@ static NSString *const HIConversionPreferenceKey = @"ConversionCurrency";
     return availableCurrencies;
 }
 
-- (NSString *)preferredCurrency
-{
+- (NSString *)preferredCurrency {
     NSString *currency = [[NSUserDefaults standardUserDefaults] stringForKey:HIConversionPreferenceKey];
     return [self.availableCurrencies containsObject:currency] ? currency : @"USD";
 }
 
-- (void)setPreferredCurrency:(NSString *)preferredCurrency
-{
+- (void)setPreferredCurrency:(NSString *)preferredCurrency {
     [[NSUserDefaults standardUserDefaults] setObject:preferredCurrency
                                               forKey:HIConversionPreferenceKey];
 }
 
 #pragma mark - exchange rate observation
 
-- (void)addExchangeRateObserver:(id<HIExchangeRateObserver>)observer
-{
+- (void)addExchangeRateObserver:(id<HIExchangeRateObserver>)observer {
     [self.observers addObject:observer];
 }
 
-- (void)removeExchangeRateObserver:(id<HIExchangeRateObserver>)observer
-{
+- (void)removeExchangeRateObserver:(id<HIExchangeRateObserver>)observer {
     [self.observers removeObject:observer];
 }
 
-- (void)updateExchangeRateForCurrency:(NSString *)currency
-{
-    if (self.exchangeRateOperation)
-    {
+- (void)updateExchangeRateForCurrency:(NSString *)currency {
+    if (self.exchangeRateOperation) {
         [self.exchangeRateOperation cancel];
         self.exchangeRateOperation = nil;
     }
@@ -146,18 +134,15 @@ static NSString *const HIConversionPreferenceKey = @"ConversionCurrency";
 }
 
 - (void)notifyOfExchangeRate:(NSDecimalNumber *)exchangeRate
-                 forCurrency:(NSString *)currency
-{
-    for (id<HIExchangeRateObserver> observer in self.observers)
-    {
+                 forCurrency:(NSString *)currency {
+    for (id<HIExchangeRateObserver> observer in self.observers) {
         [observer exchangeRateUpdatedTo:exchangeRate forCurrency:currency];
     }
 }
 
 #pragma mark - formatting
 
-- (NSString *)formatValue:(NSDecimalNumber *)value inCurrency:(NSString *)currency
-{
+- (NSString *)formatValue:(NSDecimalNumber *)value inCurrency:(NSString *)currency {
     NSNumberFormatter *currencyNumberFormatter = [NSNumberFormatter new];
     currencyNumberFormatter.format = @"#,##0.00";
     int digits = [self.currencyDigits[currency] intValue];

@@ -42,8 +42,7 @@ static CGFloat ViewSlideDuration = 0.3;
     [self pushViewController:_rootViewController animated:NO];
 }
 
-- (void)viewWillAppear
-{
+- (void)viewWillAppear {
     [[self topViewController] viewWillAppear];
 }
 
@@ -67,10 +66,8 @@ static CGFloat ViewSlideDuration = 0.3;
     return self.rootViewController.title;
 }
 
-- (NSView *)titleBarView
-{
-    if (!_titleView)
-    {
+- (NSView *)titleBarView {
+    if (!_titleView) {
         _titleView = [[HITitleView alloc] initWithFrame:NSMakeRect(0, 0, 200, 40)];
         _titleView.autoresizingMask = NSViewWidthSizable | NSViewHeightSizable;
         _titleView.delegate = self;
@@ -101,8 +98,7 @@ static CGFloat ViewSlideDuration = 0.3;
         if (previous.rightNavigationView)
             [previous.rightNavigationView removeFromSuperview];
         
-        if (controller.rightNavigationView)
-        {
+        if (controller.rightNavigationView) {
             NSRect f = controller.rightNavigationView.frame;
             f.origin.x = self.titleBarView.frame.size.width - f.size.width - 10;
             controller.rightNavigationView.frame = f;
@@ -138,8 +134,7 @@ static CGFloat ViewSlideDuration = 0.3;
             if (previous.rightNavigationView)
                 [[previous.rightNavigationView animator] setAlphaValue:0.0];
             
-            if (controller.rightNavigationView)
-            {
+            if (controller.rightNavigationView) {
                 NSRect f = controller.rightNavigationView.frame;
                 f.origin.x = _titleView.frame.size.width - f.size.width - 10;
                 controller.rightNavigationView.frame = f;
@@ -178,8 +173,7 @@ static CGFloat ViewSlideDuration = 0.3;
     [self.topViewController viewWillDisappear];
 
     index++;
-    while (index < viewControllers.count)
-    {
+    while (index < viewControllers.count) {
         [viewControllers[index] removeObserver:self forKeyPath:@"title"];
         [viewControllers removeObjectAtIndex:index];
     }
@@ -191,8 +185,7 @@ static CGFloat ViewSlideDuration = 0.3;
         if (current.rightNavigationView)
             [current.rightNavigationView removeFromSuperview];
         
-        if (targetController.rightNavigationView)
-        {
+        if (targetController.rightNavigationView) {
             NSRect f = targetController.rightNavigationView.frame;
             f.origin.x = _titleView.frame.size.width - f.size.width - 10;
             targetController.rightNavigationView.frame = f;
@@ -217,8 +210,7 @@ static CGFloat ViewSlideDuration = 0.3;
             if (current.rightNavigationView)
                 [[current.rightNavigationView animator] setAlphaValue:0.0];
             
-            if (targetController.rightNavigationView)
-            {
+            if (targetController.rightNavigationView) {
                 NSRect f = targetController.rightNavigationView.frame;
                 f.origin.x = _titleView.frame.size.width - f.size.width - 10;
                 targetController.rightNavigationView.frame = f;
@@ -244,8 +236,7 @@ static CGFloat ViewSlideDuration = 0.3;
     }
 }
 
-- (void)requestedPop:(HITitleView *)titleView
-{
+- (void)requestedPop:(HITitleView *)titleView {
     [self popViewController:YES];
 }
 
@@ -276,12 +267,10 @@ static CGFloat ViewSlideDuration = 0.3;
 - (void)observeValueForKeyPath:(NSString *)keyPath
                       ofObject:(id)object
                         change:(NSDictionary *)change
-                       context:(void *)context
-{
+                       context:(void *)context {
     NSUInteger index = [self.viewControllers indexOfObject:object];
 
-    if (index != NSNotFound)
-    {
+    if (index != NSNotFound) {
         [_titleView updateTitleAtPosition:index toValue:[object title]];
     }
 }

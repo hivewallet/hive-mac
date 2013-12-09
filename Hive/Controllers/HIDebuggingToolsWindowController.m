@@ -12,13 +12,11 @@
 
 @implementation HIDebuggingToolsWindowController
 
-- (id)init
-{
+- (id)init {
     return [super initWithWindowNibName:@"HIDebuggingToolsWindowController"];
 }
 
-- (IBAction)rebuildTransactionListClicked:(id)sender
-{
+- (IBAction)rebuildTransactionListClicked:(id)sender {
     NSAlert *alert = [NSAlert alertWithMessageText:@"Are you sure?"
                                      defaultButton:@"Rebuild list"
                                    alternateButton:@"Cancel"
@@ -31,8 +29,7 @@
                         contextInfo:@selector(rebuildTransactionList)];
 }
 
-- (IBAction)rebuildApplicationListClicked:(id)sender
-{
+- (IBAction)rebuildApplicationListClicked:(id)sender {
     NSAlert *alert = [NSAlert alertWithMessageText:@"Are you sure?"
                                      defaultButton:@"Rebuild application list"
                                    alternateButton:@"Cancel"
@@ -45,8 +42,7 @@
                         contextInfo:@selector(rebuildApplicationList)];
 }
 
-- (IBAction)reinstallBundledAppsClicked:(id)sender
-{
+- (IBAction)reinstallBundledAppsClicked:(id)sender {
     NSAlert *alert = [NSAlert alertWithMessageText:@"Are you sure?"
                                      defaultButton:@"Reinstall apps"
                                    alternateButton:@"Cancel"
@@ -59,28 +55,23 @@
                         contextInfo:@selector(reinstallBundledApps)];
 }
 
-- (void)alertClosed:(NSAlert *)alert withReturnCode:(NSInteger)code context:(void *)context
-{
-    if (code == NSAlertDefaultReturn)
-    {
+- (void)alertClosed:(NSAlert *)alert withReturnCode:(NSInteger)code context:(void *)context {
+    if (code == NSAlertDefaultReturn) {
         SEL selector = (SEL) context;
         [self performSelector:selector withObject:nil];
     }
 }
 
-- (void)rebuildTransactionList
-{
+- (void)rebuildTransactionList {
     [[BCClient sharedClient] clearTransactionsList];
     [[BCClient sharedClient] rebuildTransactionsList];
 }
 
-- (void)rebuildApplicationList
-{
+- (void)rebuildApplicationList {
     [[HIApplicationsManager sharedManager] rebuildAppsList];
 }
 
-- (void)reinstallBundledApps
-{
+- (void)reinstallBundledApps {
     [[HIApplicationsManager sharedManager] preinstallApps];
 }
 

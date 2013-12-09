@@ -15,22 +15,17 @@
 
 @implementation HIProfile
 
-- (NSDictionary *)profileData
-{
+- (NSDictionary *)profileData {
     return [[NSUserDefaults standardUserDefaults] objectForKey:@"Profile"];
 }
 
-- (void)updateField:(NSString *)key withValue:(id)value
-{
+- (void)updateField:(NSString *)key withValue:(id)value {
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     NSMutableDictionary *data = [[defaults objectForKey:@"Profile"] mutableCopy];
 
-    if (value)
-    {
+    if (value) {
         data[key] = value;
-    }
-    else
-    {
+    } else {
         [data removeObjectForKey:key];
     }
 
@@ -38,53 +33,42 @@
     [defaults synchronize];
 }
 
-- (NSString *)firstname
-{
+- (NSString *)firstname {
     return [self profileData][@"firstname"];
 }
 
-- (void)setFirstname:(NSString *)firstname
-{
+- (void)setFirstname:(NSString *)firstname {
     [self updateField:@"firstname" withValue:firstname];
 }
 
-- (NSString *)lastname
-{
+- (NSString *)lastname {
     return [self profileData][@"lastname"];
 }
 
-- (void)setLastname:(NSString *)lastname
-{
+- (void)setLastname:(NSString *)lastname {
     [self updateField:@"lastname" withValue:lastname];
 }
 
-- (NSString *)email
-{
+- (NSString *)email {
     return [self profileData][@"email"];
 }
 
-- (void)setEmail:(NSString *)email
-{
+- (void)setEmail:(NSString *)email {
     [self updateField:@"email" withValue:email];
 }
 
-- (NSString *)name
-{
+- (NSString *)name {
     NSString *first = self.firstname;
     NSString *last = self.lastname;
 
-    if (first || last)
-    {
+    if (first || last) {
         return [NSString stringWithFormat:@"%@ %@", first ?: @"", last ?: @""];
-    }
-    else
-    {
+    } else {
         return NSLocalizedString(@"Anonymous", @"Anonymous username for profile page");
     }
 }
 
-- (NSSet *)addresses
-{
+- (NSSet *)addresses {
     HIProfileAddress *address = [[HIProfileAddress alloc] init];
     address.address = [[BCClient sharedClient] walletHash];
     address.caption = NSLocalizedString(@"main", @"Main address caption");
@@ -93,36 +77,28 @@
     return [NSSet setWithObject:address];
 }
 
-- (NSImage *)avatarImage
-{
-    if (self.avatar)
-    {
+- (NSImage *)avatarImage {
+    if (self.avatar) {
         return [[NSImage alloc] initWithData:self.avatar];
-    }
-    else
-    {
+    } else {
         return [NSImage imageNamed:@"avatar-empty"];
     }
 }
 
-- (NSData *)avatar
-{
+- (NSData *)avatar {
     return [self profileData][@"avatar"];
 }
 
-- (void)setAvatar:(NSData *)avatar
-{
+- (void)setAvatar:(NSData *)avatar {
     [self updateField:@"avatar" withValue:avatar];
 }
 
 
-- (BOOL)canBeRemoved
-{
+- (BOOL)canBeRemoved {
     return NO;
 }
 
-- (BOOL)canEditAddresses
-{
+- (BOOL)canEditAddresses {
     return NO;
 }
 

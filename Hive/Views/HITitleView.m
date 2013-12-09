@@ -19,8 +19,7 @@ static const NSInteger MaxTitleLength = 15;
 static NSString * const ButtonKey = @"button";
 static NSString * const TitleKey = @"title";
 
-@interface HITitleView ()
-{
+@interface HITitleView () {
     NSMutableArray *_stack;
     NSView *_arrowView;
 }
@@ -29,22 +28,18 @@ static NSString * const TitleKey = @"title";
 
 @implementation HITitleView
 
-- (id)initWithFrame:(NSRect)frame
-{
+- (id)initWithFrame:(NSRect)frame {
     self = [super initWithFrame:frame];
 
-    if (self)
-    {
+    if (self) {
         _stack = [[NSMutableArray alloc] init];
     }
     
     return self;
 }
 
-- (void)pushTitle:(NSString *)title
-{
-    if (!title)
-    {
+- (void)pushTitle:(NSString *)title {
+    if (!title) {
         title = @"";
     }
 
@@ -62,13 +57,10 @@ static NSString * const TitleKey = @"title";
                            (self.bounds.size.height - centerLabelSize.height) / 2.0,
                            centerLabelSize.width, centerLabelSize.height);
 
-    if (_stack.count == 0)
-    {
+    if (_stack.count == 0) {
         [self addSubview:btn];
         [_stack addObject:@{TitleKey: title, ButtonKey: btn}];
-    }
-    else
-    {
+    } else {
         NSRect frame = btn.frame;
         frame.origin.x = self.bounds.size.width;
         btn.frame = frame;
@@ -76,8 +68,7 @@ static NSString * const TitleKey = @"title";
 
         NSButton *prevToLast = nil;
         
-        if (_stack.count > 1)
-        {
+        if (_stack.count > 1) {
             prevToLast = _stack[_stack.count-2][ButtonKey];
         }
         
@@ -92,8 +83,7 @@ static NSString * const TitleKey = @"title";
         [self addSubview:_arrowView];
 
         [NSAnimationContext runAnimationGroup:^(NSAnimationContext *context) {
-            if (prevToLast)
-            {
+            if (prevToLast) {
                 [[prevToLast animator] setAlphaValue:0];
             }
 
@@ -127,8 +117,7 @@ static NSString * const TitleKey = @"title";
     }
 }
 
-- (NSSize)setStyleForButton:(NSButton *)button title:(NSString *)title small:(BOOL)small animated:(BOOL)animated
-{
+- (NSSize)setStyleForButton:(NSButton *)button title:(NSString *)title small:(BOOL)small animated:(BOOL)animated {
     NSMutableParagraphStyle *centredStyle = [[NSParagraphStyle defaultParagraphStyle] mutableCopy];
     [centredStyle setAlignment:NSCenterTextAlignment];
 
@@ -160,13 +149,11 @@ static NSString * const TitleKey = @"title";
     return size;
 }
 
-- (void)popToTitleAtPosition:(NSInteger)position
-{
+- (void)popToTitleAtPosition:(NSInteger)position {
     NSInteger next = position + 1;
     NSInteger last = _stack.count - 1;
 
-    if (position < 0 || position >= last)
-    {
+    if (position < 0 || position >= last) {
         return;
     }
 
@@ -176,8 +163,7 @@ static NSString * const TitleKey = @"title";
 
     NSString *targetButtonTitle = _stack[position][TitleKey];
 
-    for (NSInteger i = next; i < last; i++)
-    {
+    for (NSInteger i = next; i < last; i++) {
         [_stack[i][ButtonKey] removeFromSuperview];
     }
 
@@ -190,12 +176,9 @@ static NSString * const TitleKey = @"title";
         f.size.width = s.width;
         f.origin.y += 1;
 
-        if (position == 0)
-        {
+        if (position == 0) {
             f.origin.x = (self.bounds.size.width - f.size.width) / 2.0;
-        }
-        else
-        {
+        } else {
             f.origin.x = (self.bounds.size.width - f.size.width + SidebarButtonWidth) / 2.0;
         }
 
@@ -207,12 +190,9 @@ static NSString * const TitleKey = @"title";
         f.origin.x = self.bounds.size.width / 2.0 + s.width / 2.0 + ArrowViewLeftMargin;
         [_arrowView.animator setFrame:f];
         
-        if (position == 0)
-        {
+        if (position == 0) {
             [_arrowView.animator setAlphaValue:0.0];
-        }
-        else
-        {
+        } else {
             [beforePreviousButton setHidden:NO];
             [beforePreviousButton.animator setAlphaValue:SmallLabelAlpha];
             [targetButton.animator setAlphaValue:1.0];
@@ -226,13 +206,10 @@ static NSString * const TitleKey = @"title";
 
         [_stack removeLastObject];
         
-        if (position == 0)
-        {
+        if (position == 0) {
             [_arrowView removeFromSuperview];
             _arrowView = nil;
-        }
-        else
-        {
+        } else {
             NSRect f = _arrowView.frame;
             f.origin.x = SidebarButtonWidth + beforePreviousButton.frame.size.width + ArrowViewLeftMargin;
             [_arrowView setFrame:f];
@@ -244,10 +221,8 @@ static NSString * const TitleKey = @"title";
     }];
 }
 
-- (NSView *)arrowView
-{
-    if (_arrowView)
-    {
+- (NSView *)arrowView {
+    if (_arrowView) {
         return _arrowView;
     }
     
@@ -257,28 +232,22 @@ static NSString * const TitleKey = @"title";
     return [[HITitleArrowView alloc] initWithFrame:frame];
 }
 
-- (NSString *)truncateTitleIfTooLong:(NSString *)title
-{
-    if (title.length > MaxTitleLength)
-    {
+- (NSString *)truncateTitleIfTooLong:(NSString *)title {
+    if (title.length > MaxTitleLength) {
         title = [[title substringToIndex:(MaxTitleLength - 1)] stringByAppendingString:@"…"];
     }
 
     return title;
 }
 
-- (void)buttonClicked:(NSButton *)button
-{
-    if (button != _stack.lastObject[ButtonKey])
-    {
+- (void)buttonClicked:(NSButton *)button {
+    if (button != _stack.lastObject[ButtonKey]) {
         [self.delegate requestedPop:self];
     }
 }
 
-- (void)resizeButtonAtPosition:(NSInteger)position
-{
-    if (position < 0 || position >= _stack.count)
-    {
+- (void)resizeButtonAtPosition:(NSInteger)position {
+    if (position < 0 || position >= _stack.count) {
         return;
     }
 
@@ -288,27 +257,21 @@ static NSString * const TitleKey = @"title";
     NSRect frame;
     NSSize buttonSize;
 
-    if (position == _stack.count - 2)
-    {
+    if (position == _stack.count - 2) {
         buttonSize = [self setStyleForButton:button title:title small:YES animated:NO];
 
         frame = button.frame;
         frame.size.width = buttonSize.width;
         button.frame = frame;
-    }
-    else if (position == _stack.count - 1)
-    {
+    } else if (position == _stack.count - 1) {
         buttonSize = [self setStyleForButton:button title:title small:NO animated:NO];
 
         frame = button.frame;
         frame.size.width = buttonSize.width;
 
-        if (position == 0)
-        {
+        if (position == 0) {
             frame.origin.x = (self.bounds.size.width - frame.size.width) / 2.0;
-        }
-        else
-        {
+        } else {
             frame.origin.x = (self.bounds.size.width - frame.size.width + SidebarButtonWidth) / 2.0;
         }
 
@@ -316,10 +279,8 @@ static NSString * const TitleKey = @"title";
     }
 }
 
-- (void)updateTitleAtPosition:(NSInteger)position toValue:(NSString *)newTitle
-{
-    if (position < 0 || position >= _stack.count)
-    {
+- (void)updateTitleAtPosition:(NSInteger)position toValue:(NSString *)newTitle {
+    if (position < 0 || position >= _stack.count) {
         return;
     }
 

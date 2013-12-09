@@ -11,11 +11,9 @@
 
 @implementation HIButtonCell
 
-- (void)drawBezelWithFrame:(NSRect)frame inView:(NSView *)controlView
-{
+- (void)drawBezelWithFrame:(NSRect)frame inView:(NSView *)controlView {
     NSBezierPath *p = [NSBezierPath bezierPathWithRoundedRect:frame xRadius:5 yRadius:5];
-    if (self.isHighlighted)
-    {
+    if (self.isHighlighted) {
         NSBezierPath *sP = [NSBezierPath bezierPath];
         
         [sP moveToPoint:NSMakePoint(1, 3)];
@@ -28,9 +26,7 @@
         [sP stroke];
         
         controlView.layer.shadowColor = [[NSColor whiteColor] hiNativeColor];
-    }
-    else
-    {
+    } else {
 //        [RGB(183, 183, 183) set];
 //        [sP stroke];
         
@@ -46,8 +42,7 @@
     
 }
 
-- (NSRect)drawTitle:(NSAttributedString *)title withFrame:(NSRect)frame inView:(NSView *)controlView
-{
+- (NSRect)drawTitle:(NSAttributedString *)title withFrame:(NSRect)frame inView:(NSView *)controlView {
     NSShadow *sh = [[NSShadow alloc] init];
     sh.shadowColor = [NSColor whiteColor];
     sh.shadowOffset = NSMakeSize(0, -1);
