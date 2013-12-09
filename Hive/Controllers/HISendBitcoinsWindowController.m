@@ -15,6 +15,7 @@
 #import "HIExchangeRateService.h"
 #import "HIFeeDetailsViewController.h"
 #import "HISendBitcoinsWindowController.h"
+#import "HIPasswordInputViewController.h"
 
 NSString * const HISendBitcoinsWindowDidClose = @"HISendBitcoinsWindowDidClose";
 NSString * const HISendBitcoinsWindowSuccessKey = @"success";
@@ -34,6 +35,7 @@ NSString * const HISendBitcoinsWindowSuccessKey = @"success";
 @property (strong, readonly) HIExchangeRateService *exchangeRateService;
 @property (strong, readonly) HIContactAutocompleteWindowController *autocompleteController;
 @property (strong) HIFeeDetailsViewController *feeDetailsViewController;
+@property (strong) HIPasswordInputViewController *passwordInputViewController;
 
 @end
 
@@ -348,9 +350,18 @@ NSString * const HISendBitcoinsWindowSuccessKey = @"success";
                          message:NSLocalizedString(@"Please check if you have entered the address correctly.",
                                                    @"Invalid address alert message")];
     } else {
-        [self.sendButton showSpinner];
+        if ([self isWalletEncrypted]) {
+            [self showPasswordPopover:sender];
+        } else {
+            [self sendBitcoin:satoshi toTarget:target];
+        }
+    }
+}
 
-        [[BCClient sharedClient] sendBitcoins:satoshi
+- (void)sendBitcoin:(uint64)satoshi toTarget:(NSString *)target {
+    [self.sendButton showSpinner];
+
+    [[BCClient sharedClient] sendBitcoins:satoshi
                                        toHash:target
                                    completion:^(BOOL success, NSString *transactionId) {
             if (success) {
@@ -364,7 +375,6 @@ NSString * const HISendBitcoinsWindowSuccessKey = @"success";
                 [self.sendButton hideSpinner];
             }
         }];
-    }
 }
 
 - (void)closeAndNotifyWithSuccess:(BOOL)success transactionId:(NSString *)transactionId {
@@ -493,5 +503,25 @@ NSString * const HISendBitcoinsWindowSuccessKey = @"success";
     [self selectContact:address.contact address:address];
     [self hideAutocompleteWindow];
 }
+
+#pragma mark - passwords
+
+- (BOOL)isWalletEncrypted {
+    // TODO
+    return NO;
+}
+
+- (void)showPasswordPopover:(NSButton *)sender {
+    NSPopover *passwordPopover = [NSPopover new];
+    passwordPopover.behavior = NSPopoverBehaviorTransient;
+    if (!self.passwordInputViewController) {
+        self.passwordInputViewController = [HIPasswordInputViewController new];
+    }
+    passwordPopover.contentViewController = self.passwordInputViewController;
+    [passwordPopover showRelativeToRect:sender.bounds
+                                 ofView:sender
+                          preferredEdge:NSMaxYEdge];
+}
+
 
 @end
