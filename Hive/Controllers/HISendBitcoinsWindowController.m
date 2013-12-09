@@ -520,7 +520,8 @@ NSString * const HISendBitcoinsWindowSuccessKey = @"success";
             NSLocalizedString(@"Enter your passphrase to complete the transaction:", @"Passphrase prompt for sending");
         self.passwordInputViewController.submitLabel = NSLocalizedString(@"Send", @"Send button next to passphrase");
         __weak __typeof__ (self) weakSelf = self;
-        self.passwordInputViewController.onSubmit = ^{
+        self.passwordInputViewController.onSubmit = ^(HIPasswordHolder *passwordHolder) {
+            // TODO: Pass password to BitcoinKit
             [weakSelf sendBitcoin:bitcoin toTarget:target];
         };
     }

@@ -6,6 +6,8 @@
 //  Copyright (c) 2013 Hive Developers. All rights reserved.
 //
 
+@class HIPasswordHolder;
+
 /*
  Requests an input from the user.
  */
@@ -14,6 +16,8 @@
 @property (nonatomic, copy) NSString *prompt;
 @property (nonatomic, copy) NSString *submitLabel;
 
-@property (nonatomic, copy) void (^onSubmit)();
+@property (nonatomic, copy) void (^onSubmit)(HIPasswordHolder *passwordHolder);
+
+@property (nonatomic, strong, readonly) NSString *password;
 
 @end
