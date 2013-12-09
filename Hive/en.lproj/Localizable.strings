@@ -119,6 +119,9 @@
 /* Remove contact alert dialog title */
 "Remove contact" = "Remove contact";
 
+/* Send button next to passphrase */
+"Send" = "Send";
+
 /* App load error description */
 "The application data file has been removed or corrupted." = "The application data file has been removed or corrupted.";
 

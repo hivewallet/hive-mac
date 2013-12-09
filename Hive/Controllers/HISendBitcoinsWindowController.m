@@ -351,7 +351,7 @@ NSString * const HISendBitcoinsWindowSuccessKey = @"success";
                                                    @"Invalid address alert message")];
     } else {
         if ([self isWalletEncrypted]) {
-            [self showPasswordPopover:sender];
+            [self showPasswordPopover:sender forSendingBitcoin:satoshi toTarget:target];
         } else {
             [self sendBitcoin:satoshi toTarget:target];
         }
@@ -511,13 +511,18 @@ NSString * const HISendBitcoinsWindowSuccessKey = @"success";
     return NO;
 }
 
-- (void)showPasswordPopover:(NSButton *)sender {
+- (void)showPasswordPopover:(NSButton *)sender forSendingBitcoin:(uint64)bitcoin toTarget:(NSString *)target {
     NSPopover *passwordPopover = [NSPopover new];
     passwordPopover.behavior = NSPopoverBehaviorTransient;
     if (!self.passwordInputViewController) {
         self.passwordInputViewController = [HIPasswordInputViewController new];
         self.passwordInputViewController.prompt =
             NSLocalizedString(@"Enter your passphrase to complete the transaction:", @"Passphrase prompt for sending");
+        self.passwordInputViewController.submitLabel = NSLocalizedString(@"Send", @"Send button next to passphrase");
+        __weak __typeof__ (self) weakSelf = self;
+        self.passwordInputViewController.onSubmit = ^{
+            [weakSelf sendBitcoin:bitcoin toTarget:target];
+        };
     }
     passwordPopover.contentViewController = self.passwordInputViewController;
     [passwordPopover showRelativeToRect:sender.bounds

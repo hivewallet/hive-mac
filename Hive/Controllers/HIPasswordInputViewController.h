@@ -12,5 +12,8 @@
 @interface HIPasswordInputViewController : NSViewController
 
 @property (nonatomic, copy) NSString *prompt;
+@property (nonatomic, copy) NSString *submitLabel;
+
+@property (nonatomic, copy) void (^onSubmit)();
 
 @end

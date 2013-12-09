@@ -18,4 +18,10 @@
     return [self initWithNibName:[self className] bundle:nil];
 }
 
+- (IBAction)submit:(id)sender {
+    if (self.onSubmit) {
+        self.onSubmit();
+    }
+}
+
 @end
