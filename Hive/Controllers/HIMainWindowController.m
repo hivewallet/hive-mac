@@ -53,10 +53,10 @@ static const NSTimeInterval SlideAnimationDuration = 0.3;
     ((INAppStoreWindow *)self.window).titleBarHeight = TitleBarHeight;
 
     NSArray *panels = @[
-                        [HITransactionsViewController new],
-                        [HIContactsViewController new],
-                        [HIApplicationsViewController new],
                         [HIProfileViewController new],
+                        [HIApplicationsViewController new],
+                        [HIContactsViewController new],
+                        [HITransactionsViewController new],
                       ];
 
     for (HIViewController *panel in panels)
