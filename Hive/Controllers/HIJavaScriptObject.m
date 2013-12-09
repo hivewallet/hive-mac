@@ -134,11 +134,9 @@
 
 - (void)callCallbackMethod:(WebScriptObject *)callback withArguments:(JSValueRef *)arguments count:(size_t)count
 {
-    JSObjectRef function = [callback JSObject];
-
-    if (function)
+    if (callback && [callback respondsToSelector:@selector(JSObject)] && [callback JSObject])
     {
-        JSObjectCallAsFunction(self.context, function, NULL, count, arguments, NULL);
+        JSObjectCallAsFunction(self.context, [callback JSObject], NULL, count, arguments, NULL);
     }
 }
 
