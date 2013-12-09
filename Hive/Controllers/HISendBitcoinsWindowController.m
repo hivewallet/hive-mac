@@ -516,6 +516,8 @@ NSString * const HISendBitcoinsWindowSuccessKey = @"success";
     passwordPopover.behavior = NSPopoverBehaviorTransient;
     if (!self.passwordInputViewController) {
         self.passwordInputViewController = [HIPasswordInputViewController new];
+        self.passwordInputViewController.prompt =
+            NSLocalizedString(@"Enter your passphrase to complete the transaction:", @"Passphrase prompt for sending");
     }
     passwordPopover.contentViewController = self.passwordInputViewController;
     [passwordPopover showRelativeToRect:sender.bounds

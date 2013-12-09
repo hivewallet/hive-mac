@@ -11,4 +11,6 @@
  */
 @interface HIPasswordInputViewController : NSViewController
 
+@property (nonatomic, copy) NSString *prompt;
+
 @end
