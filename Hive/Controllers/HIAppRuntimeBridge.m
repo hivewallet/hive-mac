@@ -232,9 +232,7 @@ static const NSInteger kHIAppRuntimeBridgeParsingError = -1000;
 
     NSDictionary *bundleInfo = [[NSBundle mainBundle] infoDictionary];
 
-    NSArray *languages = [[NSUserDefaults standardUserDefaults] arrayForKey:@"AppleLanguages"];
-    NSArray *preferredLanguages =
-        (__bridge NSArray *) CFBundleCopyPreferredLocalizationsFromArray((__bridge CFArrayRef) languages);
+    NSArray *preferredLanguages = [NSBundle preferredLocalizationsFromArray:[NSBundle mainBundle].localizations];
 
     NSDictionary *data = @{
                            @"decimalSeparator": _currencyFormatter.decimalSeparator,
