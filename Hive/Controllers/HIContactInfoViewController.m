@@ -148,7 +148,7 @@ static const NSInteger AddressFieldTag = 2;
     [nameField setBordered:NO];
     [nameField setBackgroundColor:[NSColor clearColor]];
 
-    if (address)
+    if (address.caption)
     {
         nameField.stringValue = address.caption;
     }
@@ -171,7 +171,7 @@ static const NSInteger AddressFieldTag = 2;
     [addressField setTextColor:[NSColor colorWithCalibratedWhite:0.5 alpha:1.0]];
     [addressField setTag:AddressFieldTag];
 
-    if (address)
+    if (address.address)
     {
         [addressField setStringValue:address.address];
     }
