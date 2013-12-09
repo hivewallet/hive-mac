@@ -26,10 +26,6 @@ static const NSInteger kHIAppRuntimeBridgeParsingError = -1000;
     NSInteger _uBTCInSatoshi;
     NSString *_IncomingTransactionType;
     NSString *_OutgoingTransactionType;
-    NSString *_hiveVersionNumber;
-    NSString *_hiveBuildNumber;
-    NSString *_locale;
-    NSString *_preferredCurrency;
     NSMutableSet *_exchangeRateListeners;
     HIApplication *_application;
     NSDictionary *_applicationManifest;
@@ -75,10 +71,6 @@ static const NSInteger kHIAppRuntimeBridgeParsingError = -1000;
                    @"_uBTCInSatoshi": @"UBTC_IN_SATOSHI",
                    @"_IncomingTransactionType": @"TX_TYPE_INCOMING",
                    @"_OutgoingTransactionType": @"TX_TYPE_OUTGOING",
-                   @"_hiveBuildNumber": @"BUILD_NUMBER",
-                   @"_hiveVersionNumber": @"VERSION",
-                   @"_locale": @"LOCALE",
-                   @"_preferredCurrency": @"PREFERRED_CURRENCY",
                    };
     }
 
@@ -108,16 +100,6 @@ static const NSInteger kHIAppRuntimeBridgeParsingError = -1000;
         _IncomingTransactionType = @"incoming";
         _OutgoingTransactionType = @"outgoing";
 
-        _hiveBuildNumber = [[NSBundle mainBundle] infoDictionary][@"CFBundleVersion"];
-        _hiveVersionNumber = [[NSBundle mainBundle] infoDictionary][@"CFBundleShortVersionString"];
-
-        NSArray *languages = [[NSUserDefaults standardUserDefaults] arrayForKey:@"AppleLanguages"];
-        NSArray *preferredLanguages =
-            (__bridge NSArray *)CFBundleCopyPreferredLocalizationsFromArray((__bridge CFArrayRef)languages);
-        _locale = preferredLanguages[0];
-
-        HIExchangeRateService *exchangeRateService = [HIExchangeRateService sharedService];
-        _preferredCurrency = exchangeRateService.preferredCurrency;
         _exchangeRateListeners = [NSMutableSet new];
     }
 
@@ -248,8 +230,18 @@ static const NSInteger kHIAppRuntimeBridgeParsingError = -1000;
         return;
     }
 
+    NSDictionary *bundleInfo = [[NSBundle mainBundle] infoDictionary];
+
+    NSArray *languages = [[NSUserDefaults standardUserDefaults] arrayForKey:@"AppleLanguages"];
+    NSArray *preferredLanguages =
+        (__bridge NSArray *) CFBundleCopyPreferredLocalizationsFromArray((__bridge CFArrayRef) languages);
+
     NSDictionary *data = @{
-                           @"decimalSeparator": _currencyFormatter.decimalSeparator
+                           @"decimalSeparator": _currencyFormatter.decimalSeparator,
+                           @"locale": preferredLanguages[0],
+                           @"preferredCurrency": [[HIExchangeRateService sharedService] preferredCurrency],
+                           @"buildNumber": bundleInfo[@"CFBundleVersion"],
+                           @"version": bundleInfo[@"CFBundleShortVersionString"],
                          };
 
     JSValueRef jsonValue = [self valueObjectFromDictionary:data];
