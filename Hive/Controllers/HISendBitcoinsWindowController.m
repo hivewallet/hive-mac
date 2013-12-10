@@ -20,7 +20,7 @@
 NSString * const HISendBitcoinsWindowDidClose = @"HISendBitcoinsWindowDidClose";
 NSString * const HISendBitcoinsWindowSuccessKey = @"success";
 
-@interface HISendBitcoinsWindowController () <HIExchangeRateObserver> {
+@interface HISendBitcoinsWindowController () <HIExchangeRateObserver, NSPopoverDelegate> {
     HIContact *_contact;
     HIContactAutocompleteWindowController *_autocompleteController;
     NSString *_hashAddress;
@@ -514,6 +514,7 @@ NSString * const HISendBitcoinsWindowSuccessKey = @"success";
 - (void)showPasswordPopover:(NSButton *)sender forSendingBitcoin:(uint64)bitcoin toTarget:(NSString *)target {
     NSPopover *passwordPopover = [NSPopover new];
     passwordPopover.behavior = NSPopoverBehaviorTransient;
+    passwordPopover.delegate = self;
     if (!self.passwordInputViewController) {
         self.passwordInputViewController = [HIPasswordInputViewController new];
         self.passwordInputViewController.prompt =
@@ -531,5 +532,10 @@ NSString * const HISendBitcoinsWindowSuccessKey = @"success";
                           preferredEdge:NSMaxYEdge];
 }
 
+#pragma mark - NSPopoverDelegate
+
+- (void)popoverDidClose:(NSNotification *)notification {
+    [self.passwordInputViewController resetInput];
+}
 
 @end
