@@ -77,8 +77,8 @@ static NSString *const HIConversionPreferenceKey = @"ConversionCurrency";
     dispatch_once(&onceToken, ^ {
         availableCurrencies =
             @[
-                @"USD", @"EUR", @"JPY", @"CAD", @"GBP", @"CHF", @"RUB", @"AUD", @"SEK", @"DKK", @"HKD", @"PLN", @"CNY",
-                @"SGD", @"THB", @"NZD",
+              @"AUD", @"BRL", @"CAD", @"CHF", @"CNY", @"CZK", @"EUR", @"GBP", @"ILS", @"JPY",
+              @"NOK", @"NZD", @"PLN", @"RUB", @"SEK", @"SGD", @"USD", @"ZAR",
             ];
     });
     return availableCurrencies;
@@ -111,15 +111,14 @@ static NSString *const HIConversionPreferenceKey = @"ConversionCurrency";
     }
 
     NSURL *URL =
-        [NSURL URLWithString:[NSString stringWithFormat:@"http://data.mtgox.com/api/1/BTC%@/ticker_fast", currency]];
+        [NSURL URLWithString:[NSString stringWithFormat:@"https://api.bitcoinaverage.com/ticker/%@", currency]];
 
     self.exchangeRateOperation =
         [self.client HTTPRequestOperationWithRequest:[NSURLRequest requestWithURL:URL]
-                                             success:^(AFHTTPRequestOperation *operation, id response) {
+                                             success:^(AFHTTPRequestOperation *operation, id responseData) {
 
-        NSDictionary *resp = [NSJSONSerialization JSONObjectWithData:response options:0 error:NULL];
-        NSString *exchangeRateString = resp[@"return"][@"sell"][@"value"];
-        NSDecimalNumber *exchangeRate = [NSDecimalNumber decimalNumberWithString:exchangeRateString
+        NSDictionary *response = [NSJSONSerialization JSONObjectWithData:responseData options:0 error:NULL];
+        NSDecimalNumber *exchangeRate = [NSDecimalNumber decimalNumberWithString:[response[@"last"] description]
                                                                           locale:@{NSLocaleDecimalSeparator: @"."}];
         [self notifyOfExchangeRate:exchangeRate
                        forCurrency:currency];
