@@ -10,9 +10,11 @@
 
 #import "HIPasswordHolder.h"
 
-@interface HIPasswordInputViewController ()
+@interface HIPasswordInputViewController ()<NSTextFieldDelegate>
 
 @property (nonatomic, strong) IBOutlet NSSecureTextField *passwordField;
+
+@property (nonatomic, assign) BOOL submitButtonEnabled;
 
 @end
 
@@ -32,6 +34,12 @@
     } @finally {
         [passwordHolder clear];
     }
+}
+
+#pragma mark - NSTextFieldDelegate
+
+- (void)controlTextDidChange:(NSNotification *)notification {
+    self.submitButtonEnabled = self.passwordField.stringValue.length > 0;
 }
 
 @end
