@@ -310,8 +310,7 @@ static const NSInteger kHIAppRuntimeBridgeParsingError = -1000;
 - (void)exchangeRateUpdatedTo:(NSDecimalNumber *)exchangeRate forCurrency:(NSString *)currency {
     JSValueRef params[2];
     params[0] = JSValueMakeString(self.context, JSStringCreateWithCFString((__bridge CFStringRef)currency));
-    params[1] = JSValueMakeNumber(self.context,
-                                  [exchangeRate decimalNumberByMultiplyingByPowerOf10:8].doubleValue);
+    params[1] = JSValueMakeNumber(self.context, exchangeRate.doubleValue);
 
     for (WebScriptObject *listener in _exchangeRateListeners) {
         [self callCallbackMethod:listener withArguments:params count:2];
