@@ -8,6 +8,7 @@
 
 #import "HIApplication.h"
 #import "HIApplicationsManager.h"
+#import "HIDatabaseManager.h"
 #import "NPZip.h"
 
 @implementation HIApplicationsManager

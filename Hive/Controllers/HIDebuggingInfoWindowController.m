@@ -7,6 +7,7 @@
 //
 
 #import <BitcoinJKit/BitcoinJKit.h>
+#import "HIDatabaseManager.h"
 #import "HIDebuggingInfoWindowController.h"
 #import "HITransaction.h"
 

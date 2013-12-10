@@ -10,6 +10,7 @@
 #import "HIApplicationRuntimeViewController.h"
 #import "HIApplicationsViewController.h"
 #import "HIContactRowView.h"
+#import "HIDatabaseManager.h"
 #import "HINavigationController.h"
 
 @implementation HIApplicationsViewController

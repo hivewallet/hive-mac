@@ -25,6 +25,7 @@
 		582C7DA6185219A000126C10 /* HIDebuggingToolsWindowController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 582C7DA5185219A000126C10 /* HIDebuggingToolsWindowController.xib */; };
 		582C7DA918521A3500126C10 /* HIJavaScriptObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 582C7DA818521A3500126C10 /* HIJavaScriptObject.m */; };
 		582C7DAB185273D400126C10 /* HIApplicationRuntimeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 582C7DAA185273D400126C10 /* HIApplicationRuntimeViewController.xib */; };
+		585A8B2518576F020096888C /* HIDatabaseManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 585A8B2418576F020096888C /* HIDatabaseManager.m */; };
 		585FFF4418159803005BCF73 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 585FFF4318159803005BCF73 /* Credits.rtf */; };
 		586059AF180419DF00FD9C2A /* bitstamp.hiveapp in Resources */ = {isa = PBXBuildFile; fileRef = 586059AC180419DF00FD9C2A /* bitstamp.hiveapp */; };
 		586059B0180419DF00FD9C2A /* minefield.hiveapp in Resources */ = {isa = PBXBuildFile; fileRef = 586059AD180419DF00FD9C2A /* minefield.hiveapp */; };
@@ -419,6 +420,8 @@
 		5832C539180ECF46002A673F /* de */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = de; path = de.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		5832C53B180ECF46002A673F /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		5832C53C180ECF46002A673F /* de */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Localizable.strings; sourceTree = "<group>"; };
+		585A8B2318576F020096888C /* HIDatabaseManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HIDatabaseManager.h; sourceTree = "<group>"; };
+		585A8B2418576F020096888C /* HIDatabaseManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HIDatabaseManager.m; sourceTree = "<group>"; };
 		585FFF201815374B005BCF73 /* nl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = nl; path = nl.lproj/HIApplicationsViewController.strings; sourceTree = "<group>"; };
 		585FFF211815374B005BCF73 /* nl */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = nl; path = nl.lproj/HIApplicationsViewController.xib; sourceTree = "<group>"; };
 		585FFF221815374B005BCF73 /* nl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = nl; path = nl.lproj/HIContactsViewController.strings; sourceTree = "<group>"; };
@@ -1380,6 +1383,8 @@
 				586059B3180419F500FD9C2A /* BCClient.m */,
 				5860D3FD180455B900BD852C /* HIApplicationsManager.h */,
 				5860D3FE180455B900BD852C /* HIApplicationsManager.m */,
+				585A8B2318576F020096888C /* HIDatabaseManager.h */,
+				585A8B2418576F020096888C /* HIDatabaseManager.m */,
 				1AA1032408E917EE5B7752AC /* HIExchangeRateService.m */,
 				1AA10C583F128C0BCD84C878 /* HIExchangeRateService.h */,
 			);
@@ -1896,6 +1901,7 @@
 				D9716B6D17D88F8800888F4E /* HIDoneButtonCell.m in Sources */,
 				D9716B7217D8B42E00888F4E /* HIButtonCell.m in Sources */,
 				D9716B7717D8C40100888F4E /* HIBox.m in Sources */,
+				585A8B2518576F020096888C /* HIDatabaseManager.m in Sources */,
 				582C699B17D8BAC700442294 /* HICurrencyAmountFormatter.m in Sources */,
 				D9716B7E17D9C9F500888F4E /* HIAddress.m in Sources */,
 				588EFB2E17D8D2970085F6E6 /* HIProfileTabView.m in Sources */,

@@ -8,6 +8,7 @@
 
 #import "HIAddress.h"
 #import "HIContact.h"
+#import "HIDatabaseManager.h"
 #import "HINavigationController.h"
 #import "HINewContactViewController.h"
 #import "HIProfile.h"

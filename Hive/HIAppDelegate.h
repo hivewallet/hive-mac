@@ -15,10 +15,6 @@
 
 @interface HIAppDelegate : NSObject <NSApplicationDelegate, BITHockeyManagerDelegate>
 
-@property (readonly, strong, nonatomic) NSPersistentStoreCoordinator *persistentStoreCoordinator;
-@property (readonly, strong, nonatomic) NSManagedObjectModel *managedObjectModel;
-@property (readonly, strong, nonatomic) NSManagedObjectContext *managedObjectContext;
-
 - (IBAction)openSendBitcoinsWindow:(id)sender;
 - (IBAction)openCoinMapSite:(id)sender;
 - (IBAction)showDebuggingInfo:(id)sender;

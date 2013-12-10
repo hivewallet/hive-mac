@@ -10,6 +10,7 @@
 #import "HIContactRowView.h"
 #import "HIContactsViewController.h"
 #import "HIContactViewController.h"
+#import "HIDatabaseManager.h"
 #import "HINavigationController.h"
 #import "HINewContactViewController.h"
 #import "NSColor+Hive.h"

@@ -13,6 +13,7 @@
 #import "HIAppDelegate.h"
 #import "HIApplicationsManager.h"
 #import "HIContact.h"
+#import "HIDatabaseManager.h"
 #import "HITransaction.h"
 
 static NSString * const kBCClientBaseURLString = @"https://grabhive.com/";
@@ -53,7 +54,7 @@ static NSString * const kBCClientBaseURLString = @"https://grabhive.com/";
         _dateFormatter = [[NSDateFormatter alloc] init];
         _dateFormatter.dateFormat = @"yyyy'-'MM'-'dd'T'HH':'mm':'ssz";
 
-        NSManagedObjectContext *mainContext = [(HIAppDelegate *) [NSApp delegate] managedObjectContext];
+        NSManagedObjectContext *mainContext = DBM;
         if (!mainContext) {
             // something went seriously wrong
             return nil;

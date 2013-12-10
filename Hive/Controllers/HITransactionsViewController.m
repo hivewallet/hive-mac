@@ -10,6 +10,7 @@
 #import "HIAddress.h"
 #import "HIContact.h"
 #import "HIContactRowView.h"
+#import "HIDatabaseManager.h"
 #import "HITransaction.h"
 #import "HITransactionCellView.h"
 #import "HITransactionsViewController.h"

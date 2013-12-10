@@ -10,6 +10,7 @@
 #import "HIContact.h"
 #import "HIContactAutocompleteCellView.h"
 #import "HIContactAutocompleteWindowController.h"
+#import "HIDatabaseManager.h"
 
 static const CGFloat MaxAutocompleteHeight = 300.0;
 
