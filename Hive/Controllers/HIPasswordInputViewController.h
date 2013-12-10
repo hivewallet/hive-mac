@@ -20,4 +20,6 @@
 
 @property (nonatomic, strong, readonly) NSString *password;
 
+- (void)resetInput;
+
 @end
