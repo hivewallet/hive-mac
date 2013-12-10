@@ -52,6 +52,9 @@
 /* Sending zero bitcoin alert title */
 "Enter an amount greater than zero." = "Enter an amount greater than zero.";
 
+/* Passphrase prompt for sending */
+"Enter your passphrase to complete the transaction:" = "Enter your passphrase to complete the transaction:";
+
 /* Initialization error title */
 "Error" = "Error";
 
@@ -115,6 +118,9 @@
 
 /* Remove contact alert dialog title */
 "Remove contact" = "Remove contact";
+
+/* Send button next to passphrase */
+"Send" = "Send";
 
 /* App load error description */
 "The application data file has been removed or corrupted." = "The application data file has been removed or corrupted.";

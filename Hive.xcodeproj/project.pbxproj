@@ -11,8 +11,11 @@
 		1AA1008D9D0E0DC1B7F4E36D /* HILinkTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AA100BCED704B381898FF89 /* HILinkTextField.m */; };
 		1AA101EED53C9E95085C6DE3 /* HIProfileViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1AA10EA4B4E51F7D0E32DC6D /* HIProfileViewController.xib */; };
 		1AA10A016757DBB9BE7808C5 /* HIExchangeRateService.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AA1032408E917EE5B7752AC /* HIExchangeRateService.m */; };
+		1AA10AB8CB13510790BD9A6D /* HIPasswordHolder.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AA10711079E121245A12DED /* HIPasswordHolder.m */; };
 		1AA10B3C94C377F4EF024D41 /* HIProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AA1013FB9712D7B30A91BFB /* HIProfileViewController.m */; };
 		1AA10ECC39D33A1362882EB2 /* HIProfileViewController.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1AA108BDEC523213EF9B8309 /* HIProfileViewController.strings */; };
+		244303BA1856712000AD59B8 /* HIPasswordInputViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 244303B81856712000AD59B8 /* HIPasswordInputViewController.m */; };
+		244303BB1856712000AD59B8 /* HIPasswordInputViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 244303B91856712000AD59B8 /* HIPasswordInputViewController.xib */; };
 		2478B8D3184A80A400BA2C35 /* HIFeeDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2478B8D1184A80A400BA2C35 /* HIFeeDetailsViewController.m */; };
 		2478B8D5184A88E700BA2C35 /* HIFeeDetailsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2478B8D7184A88E700BA2C35 /* HIFeeDetailsViewController.xib */; };
 		2478B8F2184A89EA00BA2C35 /* HIFeeDetailsViewController.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2478B8F0184A89EA00BA2C35 /* HIFeeDetailsViewController.strings */; };
@@ -229,10 +232,15 @@
 		1AA1032408E917EE5B7752AC /* HIExchangeRateService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HIExchangeRateService.m; sourceTree = "<group>"; };
 		1AA10497F9EEF9DF75030891 /* HILinkTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HILinkTextField.h; sourceTree = "<group>"; };
 		1AA105D02E607E309205E8EC /* ar */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/HIProfileViewController.strings; sourceTree = "<group>"; };
+		1AA106F09BEB25F235D75A80 /* HIPasswordHolder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HIPasswordHolder.h; sourceTree = "<group>"; };
+		1AA10711079E121245A12DED /* HIPasswordHolder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HIPasswordHolder.m; sourceTree = "<group>"; };
 		1AA1095B1D4E2BF3C14C3FC2 /* ar */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = ar; path = ar.lproj/HIProfileViewController.xib; sourceTree = "<group>"; };
 		1AA10C583F128C0BCD84C878 /* HIExchangeRateService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HIExchangeRateService.h; sourceTree = "<group>"; };
 		1AA10F3E7660E657A58361D9 /* HIProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HIProfileViewController.h; sourceTree = "<group>"; };
 		1EFBACBE45EB458A8ED83785 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		244303B71856712000AD59B8 /* HIPasswordInputViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HIPasswordInputViewController.h; sourceTree = "<group>"; };
+		244303B81856712000AD59B8 /* HIPasswordInputViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HIPasswordInputViewController.m; sourceTree = "<group>"; };
+		244303B91856712000AD59B8 /* HIPasswordInputViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HIPasswordInputViewController.xib; sourceTree = "<group>"; };
 		245CBB101842ADF800619953 /* cs */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = cs; path = cs.lproj/HIProfileViewController.strings; sourceTree = "<group>"; };
 		245CBB111842ADF800619953 /* cs */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = cs; path = cs.lproj/HIProfileViewController.xib; sourceTree = "<group>"; };
 		245CBB161842AE1600619953 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/HIProfileViewController.strings; sourceTree = "<group>"; };
@@ -1195,6 +1203,18 @@
 			name = HIProfileViewController;
 			sourceTree = "<group>";
 		};
+		244303B2185670DB00AD59B8 /* HIPasswordInputViewController */ = {
+			isa = PBXGroup;
+			children = (
+				244303B71856712000AD59B8 /* HIPasswordInputViewController.h */,
+				244303B81856712000AD59B8 /* HIPasswordInputViewController.m */,
+				244303B91856712000AD59B8 /* HIPasswordInputViewController.xib */,
+				1AA10711079E121245A12DED /* HIPasswordHolder.m */,
+				1AA106F09BEB25F235D75A80 /* HIPasswordHolder.h */,
+			);
+			name = HIPasswordInputViewController;
+			sourceTree = "<group>";
+		};
 		2478B8C9184A7BE300BA2C35 /* HIFeeDetailsViewController */ = {
 			isa = PBXGroup;
 			children = (
@@ -1600,6 +1620,7 @@
 				586059F918041AD600FD9C2A /* HINavigationController.h */,
 				586059FA18041AD600FD9C2A /* HINavigationController.m */,
 				D94815EA17D4CD23006A0312 /* HINewContactViewController */,
+				244303B2185670DB00AD59B8 /* HIPasswordInputViewController */,
 				1AA103C2AED626BF5E200D14 /* HIProfileViewController */,
 				58A2A7E817D8783D0001464A /* HISendBitcoinsWindowController */,
 				586059FB18041AD600FD9C2A /* HISidebarController.h */,
@@ -1833,6 +1854,7 @@
 				58605A5418041D0A00FD9C2A /* icon-tabbar-user__active.pdf in Resources */,
 				58605A5518041D0A00FD9C2A /* icon-tabbar-user__inactive.pdf in Resources */,
 				58605A5618041D0A00FD9C2A /* icon-timeline__active.pdf in Resources */,
+				244303BB1856712000AD59B8 /* HIPasswordInputViewController.xib in Resources */,
 				58605A5718041D0A00FD9C2A /* icon-timeline__inactive.pdf in Resources */,
 				58605A5818041D0A00FD9C2A /* icon-transactions-arrow-left.pdf in Resources */,
 				58605A5918041D0A00FD9C2A /* icon-transactions-arrow-right.pdf in Resources */,
@@ -1932,6 +1954,7 @@
 				586059E618041A9900FD9C2A /* HIContactViewController.m in Sources */,
 				586059EE18041AAF00FD9C2A /* HIContactAutocompleteWindowController.m in Sources */,
 				586059F018041AAF00FD9C2A /* HISendBitcoinsWindowController.m in Sources */,
+				244303BA1856712000AD59B8 /* HIPasswordInputViewController.m in Sources */,
 				586059F518041ABD00FD9C2A /* HITransactionsViewController.m in Sources */,
 				586059FF18041AD600FD9C2A /* HIMainWindowController.m in Sources */,
 				58605A0018041AD600FD9C2A /* HINavigationController.m in Sources */,
@@ -1950,6 +1973,7 @@
 				1AA10A016757DBB9BE7808C5 /* HIExchangeRateService.m in Sources */,
 				1AA10B3C94C377F4EF024D41 /* HIProfileViewController.m in Sources */,
 				1AA1008D9D0E0DC1B7F4E36D /* HILinkTextField.m in Sources */,
+				1AA10AB8CB13510790BD9A6D /* HIPasswordHolder.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
