@@ -247,6 +247,22 @@ void handleException(NSException *exception) {
     return _persistentStoreCoordinator;
 }
 
+- (void)deletePersistentStoreAtURL:(NSURL *)URL error:(NSError **)error {
+    NSFileManager *fileManager = [NSFileManager defaultManager];
+
+    for (NSString *suffix in @[@"", @"-journal", @"-wal", @"-shm"]) {
+        NSString *path = [URL.path stringByAppendingString:suffix];
+
+        if ([fileManager fileExistsAtPath:path]) {
+            [fileManager removeItemAtPath:path error:error];
+
+            if (error && *error) {
+                return;
+            }
+        }
+    }
+}
+
 - (NSPersistentStore *)migrateXMLStoreToSqlite:(NSPersistentStore *)xmlStore
                                  inCoordinator:(NSPersistentStoreCoordinator *)coordinator {
     NSFileManager *fileManager = [NSFileManager defaultManager];
@@ -257,7 +273,7 @@ void handleException(NSException *exception) {
     NSURL *newUrl = [self.applicationFilesDirectory URLByAppendingPathComponent:@"Hive.storedata.new"];
 
     if ([fileManager fileExistsAtPath:newUrl.path isDirectory:NULL]) {
-        [fileManager removeItemAtURL:newUrl error:&error];
+        [self deletePersistentStoreAtURL:newUrl error:&error];
         CheckError(error);
     }
 
@@ -268,10 +284,7 @@ void handleException(NSException *exception) {
                                                                    error:&error];
     CheckError(error);
 
-    [coordinator removePersistentStore:sqliteStore error:&error];
-    CheckError(error);
-
-    // move the new store to the old place
+    // back up the old store
     NSURL *backupUrl = [self.applicationFilesDirectory URLByAppendingPathComponent:@"Hive.storedata.old"];
 
     if ([fileManager fileExistsAtPath:backupUrl.path isDirectory:NULL]) {
@@ -282,17 +295,18 @@ void handleException(NSException *exception) {
     [fileManager moveItemAtURL:url toURL:backupUrl error:&error];
     CheckError(error);
 
-    [fileManager moveItemAtURL:newUrl toURL:url error:&error];
+    // move the new store to the old place
+    NSPersistentStore *movedSqliteStore = [coordinator migratePersistentStore:sqliteStore
+                                                                        toURL:url
+                                                                      options:nil
+                                                                     withType:NSSQLiteStoreType
+                                                                        error:&error];
     CheckError(error);
 
-    NSPersistentStore *newStore = [coordinator addPersistentStoreWithType:NSSQLiteStoreType
-                                                            configuration:nil
-                                                                      URL:url
-                                                                  options:nil
-                                                                    error:&error];
+    [self deletePersistentStoreAtURL:newUrl error:&error];
     CheckError(error);
 
-    return newStore;
+    return movedSqliteStore;
 }
 
 // Returns the managed object context for the application
