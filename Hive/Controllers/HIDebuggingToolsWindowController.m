@@ -55,12 +55,15 @@
                         contextInfo:@selector(reinstallBundledApps)];
 }
 
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Warc-performSelector-leaks"
 - (void)alertClosed:(NSAlert *)alert withReturnCode:(NSInteger)code context:(void *)context {
     if (code == NSAlertDefaultReturn) {
         SEL selector = (SEL) context;
         [self performSelector:selector withObject:nil];
     }
 }
+#pragma clang diagnostic pop
 
 - (void)rebuildTransactionList {
     [[BCClient sharedClient] clearTransactionsList];
