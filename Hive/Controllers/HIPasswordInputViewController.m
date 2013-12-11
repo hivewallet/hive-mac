@@ -19,7 +19,6 @@ static const NSTimeInterval IDLE_RESET_DELAY = 30.0;
 
 @property (nonatomic, strong) IBOutlet NSSecureTextField *passwordField;
 
-@property (nonatomic, strong) NSTimer *resetTimer;
 @property (nonatomic, assign) BOOL submitButtonEnabled;
 
 @end
@@ -31,35 +30,38 @@ static const NSTimeInterval IDLE_RESET_DELAY = 30.0;
 }
 
 - (IBAction)submit:(id)sender {
-    HIPasswordHolder *passwordHolder = [[HIPasswordHolder alloc] initWithString:self.passwordField.stringValue];
-    @try {
-        [self resetInput];
-        if (self.onSubmit) {
-            self.onSubmit(passwordHolder);
+    @autoreleasepool {
+        HIPasswordHolder *passwordHolder = [[HIPasswordHolder alloc] initWithString:self.passwordField.stringValue];
+        @try {
+            [self resetInput];
+            if (self.onSubmit) {
+                self.onSubmit(passwordHolder);
+            }
+        } @finally {
+            [passwordHolder clear];
         }
-    } @finally {
-        [passwordHolder clear];
     }
 }
 
 - (void)resetInput {
     self.passwordField.stringValue = @"";
+    [self updateIdleResetDelay];
 }
 
 #pragma mark - NSTextFieldDelegate
 
 - (void)controlTextDidChange:(NSNotification *)notification {
     self.submitButtonEnabled = self.passwordField.stringValue.length > 0;
-    [self startHIdleResetDelay];
+    [self updateIdleResetDelay];
 }
 
-- (void)startHIdleResetDelay {
-    [NSObject cancelPreviousPerformRequestsWithTarget:self
-                                             selector:@selector(resetInput)
-                                               object:nil];
-    [self performSelector:@selector(resetInput)
-               withObject:nil
-               afterDelay:IDLE_RESET_DELAY];
+- (void)updateIdleResetDelay {
+    [NSObject cancelPreviousPerformRequestsWithTarget:self selector:@selector(resetInput) object:nil];
+    if (self.passwordField.stringValue.length > 0) {
+        [self performSelector:@selector(resetInput)
+                   withObject:nil
+                   afterDelay:IDLE_RESET_DELAY];
+    }
 }
 
 @end
