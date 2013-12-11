@@ -114,7 +114,8 @@ static NSString * const kBCClientBaseURLString = @"https://grabhive.com/";
         // TOR disabled for now
         // [tor start];
 
-        NSError *error;
+        NSError *error = nil;
+
         if ([bitcoin start:&error]) {
             self.balance = [[[NSUserDefaults standardUserDefaults] objectForKey:@"LastBalance"] unsignedLongLongValue];
             self.pendingBalance = 0;
@@ -146,7 +147,7 @@ static NSString * const kBCClientBaseURLString = @"https://grabhive.com/";
 }
 
 - (void)clearTransactionsList {
-    NSError *error;
+    NSError *error = nil;
     NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:HITransactionEntity];
     NSArray *transactions = [DBM executeFetchRequest:request error:&error];
 
@@ -175,7 +176,7 @@ static NSString * const kBCClientBaseURLString = @"https://grabhive.com/";
             [self parseTransaction:transaction notify:YES];
         }
 
-        NSError *error;
+        NSError *error = nil;
         [_transactionUpdateContext save:&error];
 
         if (error) {
@@ -183,7 +184,7 @@ static NSString * const kBCClientBaseURLString = @"https://grabhive.com/";
         }
 
         dispatch_async(dispatch_get_main_queue(), ^{
-            NSError *error;
+            NSError *error = nil;
             [DBM save:&error];
 
             if (error) {
@@ -198,10 +199,16 @@ static NSString * const kBCClientBaseURLString = @"https://grabhive.com/";
 - (void)transactionUpdated:(NSNotification *)notification {
     dispatch_async(dispatch_get_main_queue(), ^{
         NSDictionary *transaction = [[HIBitcoinManager defaultManager] transactionForHash:notification.object];
+
+        if (!transaction) {
+            NSLog(@"Error: transactionUpdated: no such transaction %@", notification.object);
+            return;
+        }
+
         [_transactionUpdateContext performBlock:^{
             [self parseTransaction:transaction notify:YES];
 
-            NSError *error;
+            NSError *error = nil;
             [_transactionUpdateContext save:&error];
 
             if (!error) {
@@ -211,7 +218,7 @@ static NSString * const kBCClientBaseURLString = @"https://grabhive.com/";
             }
 
             dispatch_async(dispatch_get_main_queue(), ^{
-                NSError *error;
+                NSError *error = nil;
                 [DBM save:&error];
 
                 if (error) {

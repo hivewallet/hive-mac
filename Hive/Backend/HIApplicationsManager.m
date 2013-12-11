@@ -53,7 +53,7 @@
 }
 
 - (void)removeAllApps {
-    NSError *error;
+    NSError *error = nil;
     NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:HIApplicationEntity];
     NSArray *apps = [DBM executeFetchRequest:request error:&error];
 
