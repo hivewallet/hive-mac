@@ -117,9 +117,18 @@ static NSString *const HIConversionPreferenceKey = @"ConversionCurrency";
         [self.client HTTPRequestOperationWithRequest:[NSURLRequest requestWithURL:URL]
                                              success:^(AFHTTPRequestOperation *operation, id responseData) {
 
-        NSDictionary *response = [NSJSONSerialization JSONObjectWithData:responseData options:0 error:NULL];
-        NSDecimalNumber *exchangeRate = [NSDecimalNumber decimalNumberWithString:[response[@"last"] description]
-                                                                          locale:@{NSLocaleDecimalSeparator: @"."}];
+        NSError *error = nil;
+        NSDictionary *response = [NSJSONSerialization JSONObjectWithData:responseData options:0 error:&error];
+
+        NSDecimalNumber *exchangeRate = nil;
+        if (response && !error) {
+            NSString *string = [response[@"last"] description];
+            exchangeRate = [NSDecimalNumber decimalNumberWithString:string
+                                                             locale:@{NSLocaleDecimalSeparator: @"."}];
+            if (exchangeRate == [NSDecimalNumber notANumber]) {
+                exchangeRate = nil;
+            }
+        }
         [self notifyOfExchangeRate:exchangeRate
                        forCurrency:currency];
         _exchangeRateOperation = nil;
