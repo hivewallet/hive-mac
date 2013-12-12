@@ -414,6 +414,7 @@ NSString * const HISendBitcoinsWindowSuccessKey = @"success";
         [self updateAmountFromConvertedAmount];
     } else {
         [self clearContact];
+        [self startAutocompleteForCurrentQuery];
     }
 }
 
