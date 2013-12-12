@@ -137,7 +137,7 @@
     // convert old store to an sqlite store
     NSURL *newUrl = [applicationFilesDirectory URLByAppendingPathComponent:@"Hive.storedata.new"];
 
-    if ([fileManager fileExistsAtPath:newUrl.path isDirectory:NULL]) {
+    if ([fileManager fileExistsAtPath:newUrl.path]) {
         [self deletePersistentStoreAtURL:newUrl error:&error];
         CheckError(error);
     }
@@ -152,7 +152,7 @@
     // back up the old store
     NSURL *backupUrl = [applicationFilesDirectory URLByAppendingPathComponent:@"Hive.storedata.old"];
 
-    if ([fileManager fileExistsAtPath:backupUrl.path isDirectory:NULL]) {
+    if ([fileManager fileExistsAtPath:backupUrl.path]) {
         [fileManager removeItemAtURL:backupUrl error:&error];
         CheckError(error);
     }
