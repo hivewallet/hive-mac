@@ -25,11 +25,7 @@
 
 + (BCClient *)sharedClient;
 
-/*
- * Returns any error that prevented initialization, or nil if no error.
- */
-- (NSError *)initializationError;
-
+- (BOOL)start:(NSError **)error;
 - (void)shutdown;
 - (void)updateNotifications;
 

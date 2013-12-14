@@ -23,7 +23,6 @@ static NSString * const kBCClientBaseURLString = @"https://grabhive.com/";
     NSDateFormatter *_dateFormatter;
 }
 
-@property (nonatomic, copy) NSError *initializationError;
 @property (nonatomic) uint64 balance;
 @property (nonatomic) uint64 pendingBalance;
 
@@ -110,25 +109,26 @@ static NSString * const kBCClientBaseURLString = @"https://grabhive.com/";
                   forKeyPath:@"connections"
                      options:NSKeyValueObservingOptionInitial | NSKeyValueObservingOptionNew
                      context:NULL];
-
-        // TOR disabled for now
-        // [tor start];
-
-        NSError *error = nil;
-
-        if ([bitcoin start:&error]) {
-            self.balance = [[[NSUserDefaults standardUserDefaults] objectForKey:@"LastBalance"] unsignedLongLongValue];
-            self.pendingBalance = 0;
-
-            [self updateNotifications];
-        } else {
-            NSLog(@"BitcoinManager start error: %@", error);
-            self.initializationError = error;
-        }
-
     }
 
     return self;
+}
+
+- (BOOL)start:(NSError **)error {
+
+    // TOR disabled for now
+    // [tor start];
+
+    if ([[HIBitcoinManager defaultManager] start:error]) {
+        self.balance = [[[NSUserDefaults standardUserDefaults] objectForKey:@"LastBalance"] unsignedLongLongValue];
+        self.pendingBalance = 0;
+
+        [self updateNotifications];
+        return YES;
+    } else {
+        NSLog(@"BitcoinManager start error: %@", *error);
+        return NO;
+    }
 }
 
 - (void)torStarted:(NSNotification *)notification {

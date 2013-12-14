@@ -78,10 +78,10 @@ void handleException(NSException *exception) {
 }
 
 - (void)showMainApplicationWindowForCrashManager:(id)crashManager {
-    // create BCClient instance
-    [BCClient sharedClient];
-    if ([BCClient sharedClient].initializationError) {
-        [self showInitializationError:[BCClient sharedClient].initializationError];
+    NSError *error = nil;
+    [[BCClient sharedClient] start:&error];
+    if (error) {
+        [self showInitializationError:error];
     } else {
         _mainWindowController = [[HIMainWindowController alloc] initWithWindowNibName:@"HIMainWindowController"];
         [_mainWindowController showWindow:self];
