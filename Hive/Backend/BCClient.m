@@ -119,16 +119,19 @@ static NSString * const kBCClientBaseURLString = @"https://grabhive.com/";
     // TOR disabled for now
     // [tor start];
 
+    *error = nil;
     if ([[HIBitcoinManager defaultManager] start:error]) {
         self.balance = [[[NSUserDefaults standardUserDefaults] objectForKey:@"LastBalance"] unsignedLongLongValue];
         self.pendingBalance = 0;
 
         [self updateNotifications];
-        return YES;
-    } else {
-        NSLog(@"BitcoinManager start error: %@", *error);
-        return NO;
     }
+    return !*error;
+}
+
+- (void)createWallet:(NSError **)error {
+    NSLog(@"Creating new wallet...");
+    [[HIBitcoinManager defaultManager] createWallet:error];
 }
 
 - (void)torStarted:(NSNotification *)notification {

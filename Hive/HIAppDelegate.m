@@ -80,7 +80,12 @@ void handleException(NSException *exception) {
 - (void)showMainApplicationWindowForCrashManager:(id)crashManager {
     NSError *error = nil;
     [[BCClient sharedClient] start:&error];
+    if (error.code == kHIBitcoinManagerNoWallet) {
+        error = nil;
+        [[BCClient sharedClient] createWallet:&error];
+    }
     if (error) {
+        NSLog(@"BitcoinManager start error: %@", error);
         [self showInitializationError:error];
     } else {
         _mainWindowController = [[HIMainWindowController alloc] initWithWindowNibName:@"HIMainWindowController"];

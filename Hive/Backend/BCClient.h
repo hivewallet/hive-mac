@@ -29,6 +29,8 @@
 - (void)shutdown;
 - (void)updateNotifications;
 
+- (void)createWallet:(NSError **)error;
+
 - (void)sendBitcoins:(uint64)amount
               toHash:(NSString *)hash
           completion:(void(^)(BOOL success, NSString *transactionId))completion;
