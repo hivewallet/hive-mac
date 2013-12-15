@@ -15,6 +15,7 @@
 #import "HIContact.h"
 #import "HIDatabaseManager.h"
 #import "HITransaction.h"
+#import "HIPasswordHolder.h"
 
 static NSString * const kBCClientBaseURLString = @"https://grabhive.com/";
 
@@ -132,6 +133,12 @@ static NSString * const kBCClientBaseURLString = @"https://grabhive.com/";
 - (void)createWallet:(NSError **)error {
     NSLog(@"Creating new wallet...");
     [[HIBitcoinManager defaultManager] createWallet:error];
+}
+
+- (void)createWalletWithPassword:(HIPasswordHolder *)password
+                           error:(NSError **)error {
+    NSLog(@"Creating new protected wallet...");
+    [[HIBitcoinManager defaultManager] createWalletWithPassword:password.data error:error];
 }
 
 - (void)torStarted:(NSNotification *)notification {
@@ -377,7 +384,9 @@ static NSString * const kBCClientBaseURLString = @"https://grabhive.com/";
 
 - (void)sendBitcoins:(uint64)amount
               toHash:(NSString *)hash
-          completion:(void(^)(BOOL success, NSString *transactionId))completion {
+            password:(HIPasswordHolder *)password
+          completion:(void (^)(BOOL success, NSString *transactionId))completion {
+
     if (amount > self.balance) {
         completion(NO, nil);
     } else {
@@ -392,6 +401,7 @@ static NSString * const kBCClientBaseURLString = @"https://grabhive.com/";
             [bitcoin sendCoins:amount
                    toRecipient:hash
                        comment:nil
+                      password:password.data
                     completion:^(NSString *transactionId) {
                 dispatch_async(dispatch_get_main_queue(), ^{
                     completion((transactionId != nil), transactionId);
@@ -403,8 +413,9 @@ static NSString * const kBCClientBaseURLString = @"https://grabhive.com/";
 
 - (void)sendBitcoins:(uint64)amount
            toContact:(HIContact *)contact
+            password:(HIPasswordHolder *)password
           completion:(void(^)(BOOL success, NSString *transactionId))completion {
-    [self sendBitcoins:amount toHash:contact.account completion:completion];
+    [self sendBitcoins:amount toHash:contact.account password:password completion:completion];
 }
 
 - (uint64)feeWhenSendingBitcoin:(uint64)amount {
@@ -417,6 +428,10 @@ static NSString * const kBCClientBaseURLString = @"https://grabhive.com/";
 
 - (BOOL)importWalletFromURL:(NSURL *)walletURL {
     return [[HIBitcoinManager defaultManager] importWalletFrom:walletURL];
+}
+
+- (BOOL)isWalletPasswordProtected {
+    return [HIBitcoinManager defaultManager].isWalletEncrypted;
 }
 
 @end

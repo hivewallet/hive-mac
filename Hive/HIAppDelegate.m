@@ -82,6 +82,7 @@ void handleException(NSException *exception) {
     [[BCClient sharedClient] start:&error];
     if (error.code == kHIBitcoinManagerNoWallet) {
         error = nil;
+        // TODO: Ask for a password and create protected wallet.
         [[BCClient sharedClient] createWallet:&error];
     }
     if (error) {

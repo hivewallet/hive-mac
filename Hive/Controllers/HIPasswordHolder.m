@@ -20,9 +20,13 @@
 - (id)initWithString:(NSString *)password {
     self = [super init];
     if (self) {
-        _mutableDataPassword = [[password dataUsingEncoding:NSUTF8StringEncoding] mutableCopy];
+        _mutableDataPassword = [[password dataUsingEncoding:NSUTF16StringEncoding] mutableCopy];
     }
     return self;
+}
+
+- (NSData *)data {
+    return self.mutableDataPassword;
 }
 
 - (void)clear {

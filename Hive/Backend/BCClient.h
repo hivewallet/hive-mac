@@ -9,6 +9,7 @@
 #import "AFHTTPClient.h"
 
 @class HIContact;
+@class HIPasswordHolder;
 
 /*
  This object acts as a single gateway to BitcoinKit and Tor, handles sending bitcoins, managing wallets etc.
@@ -22,6 +23,7 @@
 @property (nonatomic, strong) NSString *walletHash;
 @property (nonatomic, readonly, getter = isRunning) BOOL isRunning;
 @property (nonatomic, assign, setter = setCheckInterval:) NSUInteger checkInterval;
+@property (nonatomic, readonly, getter = isWalletPasswordProtected) BOOL walletPasswordProtected;
 
 + (BCClient *)sharedClient;
 
@@ -30,13 +32,17 @@
 - (void)updateNotifications;
 
 - (void)createWallet:(NSError **)error;
+- (void)createWalletWithPassword:(HIPasswordHolder *)password
+                           error:(NSError **)error;
 
 - (void)sendBitcoins:(uint64)amount
               toHash:(NSString *)hash
-          completion:(void(^)(BOOL success, NSString *transactionId))completion;
+            password:(HIPasswordHolder *)password
+          completion:(void (^)(BOOL success, NSString *transactionId))completion;
 
 - (void)sendBitcoins:(uint64)amount
            toContact:(HIContact *)contact
+            password:(HIPasswordHolder *)password
           completion:(void(^)(BOOL success, NSString *transactionId))completion;
 
 - (uint64)feeWhenSendingBitcoin:(uint64)amount;

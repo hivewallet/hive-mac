@@ -350,31 +350,32 @@ NSString * const HISendBitcoinsWindowSuccessKey = @"success";
                          message:NSLocalizedString(@"Please check if you have entered the address correctly.",
                                                    @"Invalid address alert message")];
     } else {
-        if ([self isWalletEncrypted]) {
+        if ([self isPasswordRequired]) {
             [self showPasswordPopover:sender forSendingBitcoin:satoshi toTarget:target];
         } else {
-            [self sendBitcoin:satoshi toTarget:target];
+            [self sendBitcoin:satoshi toTarget:target password:nil];
         }
     }
 }
 
-- (void)sendBitcoin:(uint64)satoshi toTarget:(NSString *)target {
+- (void)sendBitcoin:(uint64)satoshi toTarget:(NSString *)target password:(HIPasswordHolder *)password {
     [self.sendButton showSpinner];
 
     [[BCClient sharedClient] sendBitcoins:satoshi
-                                       toHash:target
-                                   completion:^(BOOL success, NSString *transactionId) {
-            if (success) {
-                [self closeAndNotifyWithSuccess:YES transactionId:transactionId];
-            } else {
-                [self showAlertWithTitle:NSLocalizedString(@"Transaction could not be completed.",
-                                                           @"Transaction failed alert title")
-                                 message:NSLocalizedString(@"No bitcoin have been taken from your wallet.",
-                                                           @"Transaction failed alert message")];
+                                   toHash:target
+                                 password:password
+                               completion:^(BOOL success, NSString *transactionId) {
+        if (success) {
+            [self closeAndNotifyWithSuccess:YES transactionId:transactionId];
+        } else {
+            [self showAlertWithTitle:NSLocalizedString(@"Transaction could not be completed.",
+            @"Transaction failed alert title")
+                             message:NSLocalizedString(@"No bitcoin have been taken from your wallet.",
+                             @"Transaction failed alert message")];
 
-                [self.sendButton hideSpinner];
-            }
-        }];
+            [self.sendButton hideSpinner];
+        }
+    }];
 }
 
 - (void)closeAndNotifyWithSuccess:(BOOL)success transactionId:(NSString *)transactionId {
@@ -507,9 +508,8 @@ NSString * const HISendBitcoinsWindowSuccessKey = @"success";
 
 #pragma mark - passwords
 
-- (BOOL)isWalletEncrypted {
-    // TODO
-    return NO;
+- (BOOL)isPasswordRequired {
+    return [BCClient sharedClient].isWalletPasswordProtected;
 }
 
 - (void)showPasswordPopover:(NSButton *)sender forSendingBitcoin:(uint64)bitcoin toTarget:(NSString *)target {
@@ -524,7 +524,7 @@ NSString * const HISendBitcoinsWindowSuccessKey = @"success";
         __weak __typeof__ (self) weakSelf = self;
         self.passwordInputViewController.onSubmit = ^(HIPasswordHolder *passwordHolder) {
             // TODO: Pass password to BitcoinKit
-            [weakSelf sendBitcoin:bitcoin toTarget:target];
+            [weakSelf sendBitcoin:bitcoin toTarget:target password:passwordHolder];
         };
     }
     passwordPopover.contentViewController = self.passwordInputViewController;
