@@ -22,7 +22,7 @@
 
 @property (strong, readonly) HIExchangeRateService *exchangeRateService;
 @property (copy) NSDecimalNumber *exchangeRate;
-@property (copy) NSString *selectedCurrency;
+@property (copy, nonatomic) NSString *selectedCurrency;
 @property (copy) NSDecimalNumber *balance;
 @property (copy) NSDecimalNumber *pendingBalance;
 
