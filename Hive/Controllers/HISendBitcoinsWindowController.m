@@ -371,21 +371,26 @@ NSString * const HISendBitcoinsWindowSuccessKey = @"success";
         if (success) {
             [self closeAndNotifyWithSuccess:YES transactionId:transactionId];
         } else {
-            [self showAlertWithTitle:NSLocalizedString(@"Transaction could not be completed.",
-            @"Transaction failed alert title")
-                             message:NSLocalizedString(@"No bitcoin have been taken from your wallet.",
-                             @"Transaction failed alert message")];
-
+            [self showTransactionErrorAlert];
             [self.sendButton hideSpinner];
         }
     }];
     if (error) {
         if (error.code == kHIBitcoinManagerWalletExists) {
             [self.window hiShake];
+        } else {
+            [self showTransactionErrorAlert];
         }
     } else {
         [self.sendButton showSpinner];
     }
+}
+
+- (void)showTransactionErrorAlert {
+    [self showAlertWithTitle:NSLocalizedString(@"Transaction could not be completed.",
+                                               @"Transaction failed alert title")
+                     message:NSLocalizedString(@"No bitcoin have been taken from your wallet.",
+                                               @"Transaction failed alert message")];
 }
 
 - (void)closeAndNotifyWithSuccess:(BOOL)success transactionId:(NSString *)transactionId {
