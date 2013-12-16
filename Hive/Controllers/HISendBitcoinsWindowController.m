@@ -17,6 +17,7 @@
 #import "HIFeeDetailsViewController.h"
 #import "HISendBitcoinsWindowController.h"
 #import "HIPasswordInputViewController.h"
+#import "NSWindow+HIShake.h"
 
 NSString * const HISendBitcoinsWindowDidClose = @"HISendBitcoinsWindowDidClose";
 NSString * const HISendBitcoinsWindowSuccessKey = @"success";
@@ -380,8 +381,7 @@ NSString * const HISendBitcoinsWindowSuccessKey = @"success";
     }];
     if (error) {
         if (error.code == kHIBitcoinManagerWalletExists) {
-            // TODO: Tell the user. :)
-            [self showPasswordPopover:self.sendButton forSendingBitcoin:satoshi toTarget:target];
+            [self.window hiShake];
         }
     } else {
         [self.sendButton showSpinner];
