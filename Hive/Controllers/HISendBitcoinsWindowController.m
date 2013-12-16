@@ -7,6 +7,7 @@
 //
 
 #import <BitcoinJKit/BitcoinJKit.h>
+#import <BitcoinJKit/HIBitcoinErrorCodes.h>
 #import "BCClient.h"
 #import "HIAddress.h"
 #import "HIButtonWithSpinner.h"
@@ -359,11 +360,12 @@ NSString * const HISendBitcoinsWindowSuccessKey = @"success";
 }
 
 - (void)sendBitcoin:(uint64)satoshi toTarget:(NSString *)target password:(HIPasswordHolder *)password {
-    [self.sendButton showSpinner];
 
+    NSError *error = nil;
     [[BCClient sharedClient] sendBitcoins:satoshi
                                    toHash:target
                                  password:password
+                                    error:&error
                                completion:^(BOOL success, NSString *transactionId) {
         if (success) {
             [self closeAndNotifyWithSuccess:YES transactionId:transactionId];
@@ -376,6 +378,14 @@ NSString * const HISendBitcoinsWindowSuccessKey = @"success";
             [self.sendButton hideSpinner];
         }
     }];
+    if (error) {
+        if (error.code == kHIBitcoinManagerWalletExists) {
+            // TODO: Tell the user. :)
+            [self showPasswordPopover:self.sendButton forSendingBitcoin:satoshi toTarget:target];
+        }
+    } else {
+        [self.sendButton showSpinner];
+    }
 }
 
 - (void)closeAndNotifyWithSuccess:(BOOL)success transactionId:(NSString *)transactionId {

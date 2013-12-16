@@ -38,11 +38,13 @@
 - (void)sendBitcoins:(uint64)amount
               toHash:(NSString *)hash
             password:(HIPasswordHolder *)password
+               error:(NSError **)error
           completion:(void (^)(BOOL success, NSString *transactionId))completion;
 
 - (void)sendBitcoins:(uint64)amount
            toContact:(HIContact *)contact
             password:(HIPasswordHolder *)password
+               error:(NSError **)error
           completion:(void(^)(BOOL success, NSString *transactionId))completion;
 
 - (uint64)feeWhenSendingBitcoin:(uint64)amount;

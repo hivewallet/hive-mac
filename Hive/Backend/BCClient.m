@@ -385,6 +385,7 @@ static NSString * const kBCClientBaseURLString = @"https://grabhive.com/";
 - (void)sendBitcoins:(uint64)amount
               toHash:(NSString *)hash
             password:(HIPasswordHolder *)password
+               error:(NSError **)error
           completion:(void (^)(BOOL success, NSString *transactionId))completion {
 
     if (amount > self.balance) {
@@ -402,6 +403,7 @@ static NSString * const kBCClientBaseURLString = @"https://grabhive.com/";
                    toRecipient:hash
                        comment:nil
                       password:password.data
+                         error:error
                     completion:^(NSString *transactionId) {
                 dispatch_async(dispatch_get_main_queue(), ^{
                     completion((transactionId != nil), transactionId);
@@ -414,8 +416,9 @@ static NSString * const kBCClientBaseURLString = @"https://grabhive.com/";
 - (void)sendBitcoins:(uint64)amount
            toContact:(HIContact *)contact
             password:(HIPasswordHolder *)password
+               error:(NSError **)error
           completion:(void(^)(BOOL success, NSString *transactionId))completion {
-    [self sendBitcoins:amount toHash:contact.account password:password completion:completion];
+    [self sendBitcoins:amount toHash:contact.account password:password error:error completion:completion];
 }
 
 - (uint64)feeWhenSendingBitcoin:(uint64)amount {
