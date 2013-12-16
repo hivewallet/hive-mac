@@ -16,12 +16,13 @@
 #import "HIProfile.h"
 #import "HIViewController.h"
 #import "NSColor+Hive.h"
+#import "HIPerson.h"
 
 static const NSInteger AddressFieldTag = 2;
 
 
 @interface HIContactInfoViewController () {
-    HIContact *_contact;
+    id<HIPerson> _contact;
     HIViewController *_parent;
     BOOL _observingWallet;
 }
@@ -59,7 +60,7 @@ static const NSInteger AddressFieldTag = 2;
     [_parent.navigationController pushViewController:vc animated:YES];
 }
 
-- (void)configureViewForContact:(HIContact *)contact {
+- (void)configureViewForContact:(id<HIPerson>)contact {
     if (_observingWallet) {
         [[BCClient sharedClient] removeObserver:self forKeyPath:@"walletHash"];
         _observingWallet = NO;

@@ -7,13 +7,16 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "HIPerson.h"
+
+@class HIAddress;
 
 /*
  This is a representation of user's profile data (stored in NSUserDefaults) with an API partially compatible
  with HIContact/HIAddress, so that it can be used as a contact in some view controllers.
  */
 
-@interface HIProfile : NSObject
+@interface HIProfile : NSObject<HIPerson>
 
 @property (nonatomic, strong) NSString *email;
 @property (nonatomic, strong) NSString *firstname;

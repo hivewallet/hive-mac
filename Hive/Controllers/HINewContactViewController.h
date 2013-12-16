@@ -28,7 +28,7 @@
 @property (weak) IBOutlet NSButton *addAddressButton;
 @property (weak) IBOutlet NSButton *removeContactButton;
 
-@property (strong) HIContact *contact;
+@property (strong) id<HIPerson> contact;
 
 @property (strong) IBOutlet NSImageView *avatarView;
 

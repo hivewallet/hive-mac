@@ -8,6 +8,7 @@
 
 #import "BCClient.h"
 #import "HIProfile.h"
+#import "HIAddress.h"
 
 @implementation HIProfileAddress
 
@@ -100,6 +101,10 @@
 
 - (BOOL)canEditAddresses {
     return NO;
+}
+
+- (void)addAddressesObject:(HIAddress *)value {
+    NSAssert(self.canEditAddresses, @"This object's addresses cannot be edited.");
 }
 
 @end

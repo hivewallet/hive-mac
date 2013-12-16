@@ -8,6 +8,7 @@
 
 #import <CoreData/CoreData.h>
 #import <Foundation/Foundation.h>
+#import "HIPerson.h"
 
 @class HITransaction;
 @class HIAddress;
@@ -36,7 +37,7 @@ extern NSString * const HIContactEntity;
 
 @end
 
-@interface HIContact (CoreDataGeneratedAccessors)
+@interface HIContact (CoreDataGeneratedAccessors)<HIPerson>
 
 - (void)insertObject:(HITransaction *)value inTransactionsAtIndex:(NSUInteger)idx;
 - (void)removeObjectFromTransactionsAtIndex:(NSUInteger)idx;

@@ -11,6 +11,7 @@
 @class HIBox;
 @class HITextField;
 @class HIViewController;
+@protocol HIPerson;
 
 /*
  Manages the contact info panel shown in the left tab of the contact view and in the user's profile view.
@@ -26,6 +27,6 @@
 
 - (id)initWithParent:(HIViewController *)parent;
 - (IBAction)editButtonClicked:(NSButton *)sender;
-- (void)configureViewForContact:(HIContact *)contact;
+- (void)configureViewForContact:(id<HIPerson>)contact;
 
 @end
