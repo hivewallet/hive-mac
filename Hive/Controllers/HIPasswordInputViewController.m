@@ -50,6 +50,16 @@ static const NSTimeInterval IDLE_RESET_DELAY = 30.0;
 
 #pragma mark - NSTextFieldDelegate
 
+- (BOOL)control:(NSControl *)control textView:(NSTextView *)textView doCommandBySelector:(SEL)commandSelector {
+    if (commandSelector == @selector(insertNewline:)) {
+        [self submit:control];
+        return YES;
+    } else {
+        return NO;
+    }
+}
+
+
 - (void)controlTextDidChange:(NSNotification *)notification {
     self.submitButtonEnabled = self.passwordField.stringValue.length > 0;
     [self updateIdleResetDelay];
