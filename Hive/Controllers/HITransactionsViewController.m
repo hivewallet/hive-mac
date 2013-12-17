@@ -145,6 +145,24 @@
         cell.imageView.imageScaling = NSImageScaleProportionallyDown;
     }
 
+    switch (transaction.status) {
+        case HITransactionStatusBuilding:
+            [cell.pendingLabel setHidden:YES];
+            break;
+
+        case HITransactionStatusDead:
+            [cell.pendingLabel setHidden:NO];
+            cell.pendingLabel.stringValue = NSLocalizedString(@"CANCELLED", @"Dead transaction label");
+            cell.pendingLabel.textColor = [NSColor redColor];
+            break;
+
+        default:
+            [cell.pendingLabel setHidden:NO];
+            cell.pendingLabel.stringValue = NSLocalizedString(@"PENDING", @"Pending transaction label");
+            cell.pendingLabel.textColor = [NSColor colorWithCalibratedWhite:0.6 alpha:1.0];
+            break;
+    }
+
     return cell;
 }
 
