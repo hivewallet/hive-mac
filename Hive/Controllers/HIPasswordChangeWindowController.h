@@ -6,6 +6,10 @@
 //  Copyright (c) 2013 Hive Developers. All rights reserved.
 //
 
+@class HIPasswordHolder;
+
 @interface HIPasswordChangeWindowController : NSWindowController
+
+- (void)resetInput;
 
 @end
