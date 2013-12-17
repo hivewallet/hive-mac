@@ -376,7 +376,7 @@ NSString * const HISendBitcoinsWindowSuccessKey = @"success";
         }
     }];
     if (error) {
-        if (error.code == kHIBitcoinManagerWalletExists) {
+        if (error.code == kHIBitcoinManagerWrongPassword) {
             [self.window hiShake];
         } else {
             [self showTransactionErrorAlert];
