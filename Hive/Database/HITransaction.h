@@ -11,16 +11,19 @@
 
 @class HIContact;
 
-enum {
-    TRANSACTION_STATUS_UNKNOWN = 0,
-    TRANSACTION_STATUS_PENDING,
-    TRANSACTION_STATUS_COMPLETE
+typedef NS_ENUM(int16_t, HITransactionStatus) {
+    HITransactionStatusUnknown = 0,      // we don't know yet what the status is
+    HITransactionStatusPending = 1,      // transaction was broadcasted, but not included in a block yet
+    HITransactionStatusBuilding = 2,     // transaction was included in at least one block
+    HITransactionStatusDead = 3,         // transaction was cancelled by the network
 };
 
 typedef NS_ENUM(NSUInteger, HITransactionDirection) {
-    HITransactionDirectionIncoming,
-    HITransactionDirectionOutgoing
+    HITransactionDirectionIncoming,      // we're receiving the money
+    HITransactionDirectionOutgoing       // we're sending the money
 };
+
+
 
 extern NSString * const HITransactionEntity;
 
@@ -46,6 +49,9 @@ extern NSString * const HITransactionEntity;
 // currently unused?
 @property (nonatomic, retain) NSString *senderName;
 @property (nonatomic, retain) NSString *senderEmail;
+
+// transaction status (pending, building etc.)
+@property (nonatomic) HITransactionStatus status;
 
 @property (nonatomic) NSDate *date;
 @property (nonatomic) int32_t confirmations;

@@ -147,10 +147,8 @@ void handleException(NSException *exception) {
 - (void)rebuildTransactionListIfNeeded {
     NSString *lastVersion = [[NSUserDefaults standardUserDefaults] objectForKey:LastVersionKey];
 
-    if ([lastVersion isLessThan:@"2013112601"]) {
-        // rebuild the list once after changing HITransaction#date from NSTimeInterval to NSDate
-        // (which is how it was actually defined in the data model from the beginning)
-
+    if ([lastVersion isLessThan:@"2013121701"]) {
+        // rebuild the list to get data matching the latest schema
         [[BCClient sharedClient] clearTransactionsList];
         [[BCClient sharedClient] rebuildTransactionsList];
     }

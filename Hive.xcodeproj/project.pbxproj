@@ -432,6 +432,7 @@
 		5832C539180ECF46002A673F /* de */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = de; path = de.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		5832C53B180ECF46002A673F /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		5832C53C180ECF46002A673F /* de */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Localizable.strings; sourceTree = "<group>"; };
+		58357A3B186068A70077B717 /* 2013121701.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = file; path = 2013121701.xcdatamodel; sourceTree = "<group>"; };
 		585A8B2318576F020096888C /* HIDatabaseManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HIDatabaseManager.h; sourceTree = "<group>"; };
 		585A8B2418576F020096888C /* HIDatabaseManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HIDatabaseManager.m; sourceTree = "<group>"; };
 		585FFF201815374B005BCF73 /* nl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = nl; path = nl.lproj/HIApplicationsViewController.strings; sourceTree = "<group>"; };
@@ -3085,9 +3086,10 @@
 		D962AF011769FEF9009F882A /* Hive.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
+				58357A3B186068A70077B717 /* 2013121701.xcdatamodel */,
 				D962AF021769FEF9009F882A /* Hive.xcdatamodel */,
 			);
-			currentVersion = D962AF021769FEF9009F882A /* Hive.xcdatamodel */;
+			currentVersion = 58357A3B186068A70077B717 /* 2013121701.xcdatamodel */;
 			path = Hive.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;

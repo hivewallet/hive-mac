@@ -330,42 +330,35 @@ static NSString * const kBCClientBaseURLString = @"https://grabhive.com/";
     return [[HIBitcoinManager defaultManager] transactionForHash:hash];
 }
 
-- (BOOL)parseTransaction:(NSDictionary *)data notify:(BOOL)notify {
-    BOOL continueFetching = YES;
-
+- (void)parseTransaction:(NSDictionary *)data notify:(BOOL)notify {
     NSFetchRequest *request = [[NSFetchRequest alloc] initWithEntityName:HITransactionEntity];
     request.predicate = [NSPredicate predicateWithFormat:@"id == %@", data[@"txid"]];
 
+    HITransaction *transaction;
     NSArray *response = [_transactionUpdateContext executeFetchRequest:request error:NULL];
 
     if (response.count > 0) {
-        HITransaction *transaction = response[0];
-        
-        if (transaction.confirmations != [data[@"confirmations"] integerValue]) {
-            transaction.confirmations = [data[@"confirmations"] integerValue];
-        } else {
-            continueFetching = NO;
-        }
+        transaction = response[0];
     } else {
-        HITransaction *transaction = [NSEntityDescription insertNewObjectForEntityForName:HITransactionEntity
-                                                                   inManagedObjectContext:_transactionUpdateContext];
+        transaction = [NSEntityDescription insertNewObjectForEntityForName:HITransactionEntity
+                                                    inManagedObjectContext:_transactionUpdateContext];
 
         transaction.id = data[@"txid"];
         transaction.date = data[@"time"];
         transaction.amount = [data[@"amount"] longLongValue];
         transaction.request = (![data[@"details"][0][@"category"] isEqual:@"send"]);
-        transaction.confirmations = [data[@"confirmations"] integerValue];
 
         if (!notify) {
             transaction.read = YES;
         }
 
         transaction.senderHash = data[@"details"][0][@"address"];
-        
+
         if (transaction.senderHash) {
             // Try to find a contact that matches that transaction
             NSFetchRequest *request = [[NSFetchRequest alloc] initWithEntityName:HIContactEntity];
-            request.predicate = [NSPredicate predicateWithFormat:@"ANY addresses.address == %@", transaction.senderHash];
+            request.predicate = [NSPredicate predicateWithFormat:@"ANY addresses.address == %@",
+                                 transaction.senderHash];
 
             NSArray *response = [_transactionUpdateContext executeFetchRequest:request error:NULL];
 
@@ -378,7 +371,17 @@ static NSString * const kBCClientBaseURLString = @"https://grabhive.com/";
         }
     }
 
-    return continueFetching;
+    NSString *confidence = data[@"confidence"];
+
+    if ([confidence isEqual:@"building"]) {
+        transaction.status = HITransactionStatusBuilding;
+    } else if ([confidence isEqual:@"dead"]) {
+        transaction.status = HITransactionStatusDead;
+    } else if ([confidence isEqual:@"pending"]) {
+        transaction.status = HITransactionStatusPending;
+    } else {
+        transaction.status = HITransactionStatusUnknown;
+    }
 }
 
 

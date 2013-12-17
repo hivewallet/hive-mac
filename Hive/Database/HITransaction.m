@@ -18,6 +18,7 @@ NSString * const HITransactionEntity = @"HITransaction";
 @dynamic amount;
 @dynamic senderName;
 @dynamic senderHash;
+@dynamic status;
 @dynamic date;
 @dynamic senderEmail;
 @dynamic confirmations;

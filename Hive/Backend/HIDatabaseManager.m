@@ -83,7 +83,16 @@
 
     NSPersistentStoreCoordinator *coordinator = [[NSPersistentStoreCoordinator alloc] initWithManagedObjectModel:mom];
 
-    if (![coordinator addPersistentStoreWithType:NSSQLiteStoreType configuration:nil URL:url options:nil error:NULL]) {
+    NSDictionary *storeOptions = @{NSMigratePersistentStoresAutomaticallyOption: @YES,
+                                   NSInferMappingModelAutomaticallyOption: @YES};
+
+    NSPersistentStore *sqliteStore = [coordinator addPersistentStoreWithType:NSSQLiteStoreType
+                                                               configuration:nil
+                                                                         URL:url
+                                                                     options:storeOptions
+                                                                       error:&error];
+
+    if (!sqliteStore) {
         // see if it isn't the old xml version
         NSPersistentStore *xmlStore = [coordinator addPersistentStoreWithType:NSXMLStoreType
                                                                 configuration:nil
