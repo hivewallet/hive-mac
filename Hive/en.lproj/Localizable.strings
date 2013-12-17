@@ -16,6 +16,9 @@
 /* Cancel button title */
 "Cancel" = "Cancel";
 
+/* Dead transaction label */
+"CANCELLED" = "CANCELLED";
+
 /* No comment provided by engineer. */
 "click to copy" = "click to copy";
 
@@ -100,6 +103,9 @@
 
 /* part of the balance amount that isn't available */
 "pending" = "pending";
+
+/* Pending transaction label */
+"PENDING" = "PENDING";
 
 /* Invalid address alert message */
 "Please check if you have entered the address correctly." = "Please check if you have entered the address correctly.";

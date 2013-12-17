@@ -16,3 +16,6 @@
 
 /* Class = "NSTextFieldCell"; title = "You can then use the Send button to send someone money."; ObjectID = "63"; */
 "63.title" = "You can then use the Send button to send someone money.";
+
+/* Class = "NSTextFieldCell"; title = "PENDING"; ObjectID = "oXJ-Jx-H6s"; */
+"oXJ-Jx-H6s.title" = "PENDING";
