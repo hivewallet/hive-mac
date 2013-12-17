@@ -25,6 +25,7 @@
 #import "HIMainWindowController.h"
 #import "HISendBitcoinsWindowController.h"
 #import "HITransaction.h"
+#import "HIPasswordChangeWindowController.h"
 
 static NSString * const LastVersionKey = @"LastHiveVersion";
 static NSString * const WarningDisplayedKey = @"WarningDisplayed";
@@ -33,6 +34,7 @@ int ddLogLevel = LOG_LEVEL_VERBOSE;
 
 
 @interface HIAppDelegate () {
+    HIPasswordChangeWindowController *_passwordChangeWindowController;
     HIDebuggingInfoWindowController *_debuggingInfoWindowController;
     HIDebuggingToolsWindowController *_debuggingToolsWindowController;
     HIMainWindowController *_mainWindowController;
@@ -350,6 +352,15 @@ void handleException(NSException *exception) {
 
 - (IBAction)openSendBitcoinsWindow:(id)sender {
     [[self sendBitcoinsWindow] showWindow:self];
+}
+
+- (IBAction)changeWalletPassword:(id)sender {
+    if (!_passwordChangeWindowController) {
+        _passwordChangeWindowController = [HIPasswordChangeWindowController new];
+        [_popupWindows addObject:_passwordChangeWindowController];
+    }
+
+    [_passwordChangeWindowController showWindow:self];
 }
 
 - (IBAction)openCoinMapSite:(id)sender {
