@@ -12,7 +12,7 @@
     if (self.mutableDataPassword) {
         // The owner should have called clear right away.
         // Who knows how long it might have been retained.
-        NSLog(@"Error: Password was not wiped from memory until deallocation.");
+        HILogWarn(@"Error: Password was not wiped from memory until deallocation.");
         [self clear];
     }
 }

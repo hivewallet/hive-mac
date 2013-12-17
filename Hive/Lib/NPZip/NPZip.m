@@ -199,7 +199,7 @@ static uint32_t NPReadUInt32(FILE *fp) {
 
         int result = inflateInit2(&stream, -15);
         if (result != Z_OK)  {
-            NSLog(@"Could not initialize zip file %@ for reading %@", __file, fileName);
+            HILogError(@"Could not initialize zip file %@ for reading %@", __file, fileName);
             fclose(fp);
             return nil;
                 
@@ -235,7 +235,7 @@ static uint32_t NPReadUInt32(FILE *fp) {
         
         // Let's check if we read everything
         if ([dat length] != h.uncompressed) {
-            NSLog(@"Unpack fo file %@ from %@ failed. Read %lu bytes instead of %d", fileName, __file, [dat length], h.uncompressed);
+            HILogError(@"Unpack fo file %@ from %@ failed. Read %lu bytes instead of %d", fileName, __file, [dat length], h.uncompressed);
             dat = nil;
         }
         

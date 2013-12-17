@@ -102,7 +102,7 @@
                    resource:(id)identifier
     didFailLoadingWithError:(NSError *)error
              fromDataSource:(WebDataSource *)dataSource {
-    NSLog(@"App loading error: %@", error);
+    HILogWarn(@"App loading error: %@", error);
 
     NSURL *URL = error.userInfo[NSURLErrorFailingURLErrorKey];
 

@@ -76,7 +76,7 @@
         if ([value isKindOfClass:[NSString class]] || [value isKindOfClass:[NSNumber class]]) {
             dictionary[propertyName] = value;
         } else {
-            NSLog(@"dictionaryFromWebScriptObject: ignoring value for property %@: %@", propertyName, value);
+            HILogWarn(@"dictionaryFromWebScriptObject: ignoring value for property %@: %@", propertyName, value);
         }
     }
 

@@ -131,13 +131,13 @@ static NSString * const kBCClientBaseURLString = @"https://grabhive.com/";
 }
 
 - (void)createWallet:(NSError **)error {
-    NSLog(@"Creating new wallet...");
+    HILogInfo(@"Creating new wallet...");
     [[HIBitcoinManager defaultManager] createWallet:error];
 }
 
 - (void)createWalletWithPassword:(HIPasswordHolder *)password
                            error:(NSError **)error {
-    NSLog(@"Creating new protected wallet...");
+    HILogInfo(@"Creating new protected wallet...");
     [[HIBitcoinManager defaultManager] createWalletWithPassword:password.data error:error];
 }
 
@@ -162,7 +162,7 @@ static NSString * const kBCClientBaseURLString = @"https://grabhive.com/";
     NSArray *transactions = [DBM executeFetchRequest:request error:&error];
 
     if (error) {
-        NSLog(@"%@: Error loading transactions: %@", NSStringFromSelector(_cmd), error);
+        HILogError(@"%@: Error loading transactions: %@", NSStringFromSelector(_cmd), error);
         return;
     }
 
@@ -173,7 +173,7 @@ static NSString * const kBCClientBaseURLString = @"https://grabhive.com/";
     [DBM save:&error];
 
     if (error) {
-        NSLog(@"%@: Error deleting transactions: %@", NSStringFromSelector(_cmd), error);
+        HILogError(@"%@: Error deleting transactions: %@", NSStringFromSelector(_cmd), error);
         return;
     }
 }
@@ -190,7 +190,7 @@ static NSString * const kBCClientBaseURLString = @"https://grabhive.com/";
         [_transactionUpdateContext save:&error];
 
         if (error) {
-            NSLog(@"Error saving updated transactions: %@", error);
+            HILogError(@"Error saving updated transactions: %@", error);
         }
 
         dispatch_async(dispatch_get_main_queue(), ^{
@@ -198,7 +198,7 @@ static NSString * const kBCClientBaseURLString = @"https://grabhive.com/";
             [DBM save:&error];
 
             if (error) {
-                NSLog(@"Error saving updated transactions: %@", error);
+                HILogError(@"Error saving updated transactions: %@", error);
             }
 
             [self updateNotifications];
@@ -211,7 +211,7 @@ static NSString * const kBCClientBaseURLString = @"https://grabhive.com/";
         NSDictionary *transaction = [[HIBitcoinManager defaultManager] transactionForHash:notification.object];
 
         if (!transaction) {
-            NSLog(@"Error: transactionUpdated: no such transaction %@", notification.object);
+            HILogError(@"Error: transactionUpdated: no such transaction %@", notification.object);
             return;
         }
 
@@ -222,9 +222,9 @@ static NSString * const kBCClientBaseURLString = @"https://grabhive.com/";
             [_transactionUpdateContext save:&error];
 
             if (!error) {
-                NSLog(@"Saved transaction %@", transaction[@"txid"]);
+                HILogInfo(@"Saved transaction %@", transaction[@"txid"]);
             } else {
-                NSLog(@"Error saving transaction %@: %@", transaction[@"txid"], error);
+                HILogError(@"Error saving transaction %@: %@", transaction[@"txid"], error);
             }
 
             dispatch_async(dispatch_get_main_queue(), ^{
@@ -232,7 +232,7 @@ static NSString * const kBCClientBaseURLString = @"https://grabhive.com/";
                 [DBM save:&error];
 
                 if (error) {
-                    NSLog(@"Error saving transaction %@: %@", transaction[@"txid"], error);
+                    HILogError(@"Error saving transaction %@: %@", transaction[@"txid"], error);
                 }
 
                 [self updateNotifications];

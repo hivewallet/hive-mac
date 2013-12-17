@@ -7,7 +7,6 @@
 //
 
 #import <BitcoinJKit/HIBitcoinErrorCodes.h>
-#import <BitcoinJKit/HILogger.h>
 #import <CocoaLumberjack/DDLog.h>
 #import <CocoaLumberjack/DDASLLogger.h>
 #import <CocoaLumberjack/DDFileLogger.h>
@@ -140,7 +139,7 @@ void handleException(NSException *exception) {
         [[BCClient sharedClient] createWallet:&error];
     }
     if (error) {
-        NSLog(@"BitcoinManager start error: %@", error);
+        HILogError(@"BitcoinManager start error: %@", error);
         [self showInitializationError:error];
     } else {
         _mainWindowController = [[HIMainWindowController alloc] initWithWindowNibName:@"HIMainWindowController"];
@@ -253,7 +252,7 @@ void handleException(NSException *exception) {
     NSError *error = nil;
 
     if (![DBM commitEditing]) {
-        NSLog(@"%@:%@ unable to commit editing before saving", self.class, NSStringFromSelector(_cmd));
+        HILogError(@"%@:%@ unable to commit editing before saving", self.class, NSStringFromSelector(_cmd));
     }
 
     if (![DBM save:&error]) {
@@ -273,7 +272,7 @@ void handleException(NSException *exception) {
     }
 
     if (![DBM commitEditing]) {
-        NSLog(@"%@:%@ unable to commit editing to terminate", self.class, NSStringFromSelector(_cmd));
+        HILogError(@"%@:%@ unable to commit editing to terminate", self.class, NSStringFromSelector(_cmd));
         return NSTerminateCancel;
     }
 

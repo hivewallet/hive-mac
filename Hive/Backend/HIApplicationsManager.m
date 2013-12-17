@@ -58,7 +58,7 @@
     NSArray *apps = [DBM executeFetchRequest:request error:&error];
 
     if (error) {
-        NSLog(@"%@: Error loading apps: %@", NSStringFromSelector(_cmd), error);
+        HILogError(@"%@: Error loading apps: %@", NSStringFromSelector(_cmd), error);
         return;
     }
 
@@ -69,7 +69,7 @@
     [DBM save:&error];
 
     if (error) {
-        NSLog(@"%@: Error deleting apps: %@", NSStringFromSelector(_cmd), error);
+        HILogError(@"%@: Error deleting apps: %@", NSStringFromSelector(_cmd), error);
         return;
     }
 }
@@ -90,7 +90,7 @@
         if ([appName isEqual:actualName]) {
             [self installApplication:appURL];
         } else {
-            NSLog(@"App name for %@ doesn't match its manifest name (%@)", appURL, actualName);
+            HILogWarn(@"App name for %@ doesn't match its manifest name (%@)", appURL, actualName);
         }
     }
 }

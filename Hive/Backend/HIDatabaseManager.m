@@ -51,7 +51,7 @@
     NSManagedObjectModel *mom = self.managedObjectModel;
 
     if (!mom) {
-        NSLog(@"%@:%@ No model to generate a store from", self.class, NSStringFromSelector(_cmd));
+        HILogError(@"%@:%@ No model to generate a store from", self.class, NSStringFromSelector(_cmd));
         return nil;
     }
 
