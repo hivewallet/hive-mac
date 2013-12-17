@@ -11,6 +11,9 @@
     #define SATOSHI 100000000
     #define DBM [[HIDatabaseManager sharedManager] managedObjectContext]
     #define RGB(r,g,b) [NSColor colorWithCalibratedRed:((CGFloat)r/255.0) green:((CGFloat)g/255.0) blue:((CGFloat)b/255.0) alpha:1.0]
+
+    #import <CocoaLumberjack/DDLog.h>
+    extern int ddLogLevel;
 #endif
 
 #ifdef DEBUG

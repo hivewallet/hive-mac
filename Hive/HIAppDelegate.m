@@ -7,6 +7,10 @@
 //
 
 #import <BitcoinJKit/HIBitcoinErrorCodes.h>
+#import <CocoaLumberjack/DDLog.h>
+#import <CocoaLumberjack/DDASLLogger.h>
+#import <CocoaLumberjack/DDFileLogger.h>
+#import <CocoaLumberjack/DDTTYLogger.h>
 #import <WebKit/WebKit.h>
 
 #import "BCClient.h"
@@ -24,6 +28,8 @@
 
 static NSString * const LastVersionKey = @"LastHiveVersion";
 static NSString * const WarningDisplayedKey = @"WarningDisplayed";
+
+int ddLogLevel = LOG_LEVEL_VERBOSE;
 
 
 @interface HIAppDelegate () {
@@ -43,6 +49,8 @@ void handleException(NSException *exception) {
 }
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
+    [self configureLoggers];
+
     BITHockeyManager *hockeyapp = [BITHockeyManager sharedHockeyManager];
     [hockeyapp configureWithIdentifier:@"e47f0624d130a873ecae31509e4d1124"
                            companyName:@""
@@ -75,6 +83,26 @@ void handleException(NSException *exception) {
     [self preinstallAppsIfNeeded];
     [self rebuildTransactionListIfNeeded];
     [self updateLastVersionKey];
+}
+
+- (void)configureLoggers {
+    // default loggers - Console.app and Xcode console
+    [DDLog addLogger:[DDASLLogger sharedInstance] withLogLevel:LOG_LEVEL_WARN];
+    [DDLog addLogger:[DDTTYLogger sharedInstance] withLogLevel:LOG_LEVEL_VERBOSE];
+
+    // file logger
+    DDFileLogger *fileLogger = [[DDFileLogger alloc] init];
+
+    // roll file after a week or when it reaches 10 MB
+    fileLogger.rollingFrequency = 7 * 86400;
+    fileLogger.maximumFileSize = 10 * 1024 * 1024;
+
+    // keep 4 log files, use timestamps for naming
+    DDLogFileManagerDefault *logFileManager = (DDLogFileManagerDefault *) fileLogger.logFileManager;
+    logFileManager.maximumNumberOfLogFiles = 4;
+    logFileManager.fileNamingConvention = DDLogFileNamingConventionTimestamp;
+
+    [DDLog addLogger:fileLogger withLogLevel:LOG_LEVEL_VERBOSE];
 }
 
 - (void)showMainApplicationWindowForCrashManager:(id)crashManager {
