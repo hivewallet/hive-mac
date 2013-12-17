@@ -18,8 +18,6 @@
 
 @property (nonatomic, copy) void (^onSubmit)(HIPasswordHolder *passwordHolder);
 
-@property (nonatomic, strong, readonly) NSString *password;
-
 - (void)resetInput;
 
 @end
