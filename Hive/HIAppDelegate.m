@@ -7,6 +7,7 @@
 //
 
 #import <BitcoinJKit/HIBitcoinErrorCodes.h>
+#import <BitcoinJKit/HILogger.h>
 #import <CocoaLumberjack/DDLog.h>
 #import <CocoaLumberjack/DDASLLogger.h>
 #import <CocoaLumberjack/DDFileLogger.h>
@@ -103,6 +104,31 @@ void handleException(NSException *exception) {
     logFileManager.fileNamingConvention = DDLogFileNamingConventionTimestamp;
 
     [DDLog addLogger:fileLogger withLogLevel:LOG_LEVEL_VERBOSE];
+
+    // configure BitcoinKit logger to use CocoaLumberjack system
+    [[HILogger sharedLogger] setLogHandler:^(HILoggerLevel level, NSString *message) {
+        switch (level) {
+            case HILoggerLevelVerbose:
+                DDLogVerbose(@"%@", message);
+                break;
+            case HILoggerLevelDebug:
+                DDLogDebug(@"%@", message);
+                break;
+            case HILoggerLevelInfo:
+                DDLogInfo(@"%@", message);
+                break;
+            case HILoggerLevelWarn:
+                DDLogWarn(@"%@", message);
+                break;
+            case HILoggerLevelError:
+                DDLogError(@"%@", message);
+                break;
+            default:
+                DDLogError(@"Unknown HILoggerLevel value: %d", level);
+                DDLogError(@"%@", message);
+        }
+    }];
+
 }
 
 - (void)showMainApplicationWindowForCrashManager:(id)crashManager {
