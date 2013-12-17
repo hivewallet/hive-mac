@@ -95,6 +95,9 @@ static const NSTimeInterval IDLE_RESET_DELAY = 30.0;
             [self.repeatedPasswordField becomeFirstResponder];
         } else if (self.submitButtonEnabled) {
             [self submit:control];
+        } else {
+            [self updateValidation];
+            [self.repeatedPasswordField becomeFirstResponder];
         }
         return YES;
     } else {
@@ -104,12 +107,38 @@ static const NSTimeInterval IDLE_RESET_DELAY = 30.0;
 
 - (void)controlTextDidChange:(NSNotification *)notification {
     // TODO: Do we impose password complexity rules?
+    BOOL passwordsEqual = [self arePasswordsEqual];
+
     self.submitButtonEnabled = (!self.passwordField.isEnabled || self.passwordField.stringValue.length > 0)
-        && self.updatedPasswordField.stringValue.length > 0
-        && [self.updatedPasswordField.stringValue isEqualToString:self.repeatedPasswordField.stringValue];
+        && self.updatedPasswordField.stringValue.length > 0 && passwordsEqual;
+
+    if (self.repeatedPasswordField != notification.object) {
+        [self updateValidation];
+    } else if (passwordsEqual) {
+        [self clearValidationProblems];
+    }
     [self updateIdleResetDelay];
 }
 
+- (BOOL)arePasswordsEqual {
+    return [self.updatedPasswordField.stringValue isEqualToString:self.repeatedPasswordField.stringValue];
+}
+
+- (void)controlTextDidEndEditing:(NSNotification *)obj {
+    [self updateValidation];
+}
+
+- (void)updateValidation {
+    if ([self arePasswordsEqual]) {
+        [self clearValidationProblems];
+    } else if (self.repeatedPasswordField.stringValue.length > 0) {
+        self.repeatedPasswordField.backgroundColor = [[NSColor redColor] colorWithAlphaComponent:0.25];
+    }
+}
+
+- (void)clearValidationProblems {
+    self.repeatedPasswordField.backgroundColor = [NSColor clearColor];
+}
 
 - (void)updateIdleResetDelay {
     [NSObject cancelPreviousPerformRequestsWithTarget:self selector:@selector(resetInput) object:nil];
