@@ -107,9 +107,6 @@ void handleException(NSException *exception) {
     // configure BitcoinKit logger to use CocoaLumberjack system
     [[HILogger sharedLogger] setLogHandler:^(HILoggerLevel level, NSString *message) {
         switch (level) {
-            case HILoggerLevelVerbose:
-                DDLogVerbose(@"%@", message);
-                break;
             case HILoggerLevelDebug:
                 DDLogDebug(@"%@", message);
                 break;
