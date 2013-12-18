@@ -3,6 +3,7 @@
 @interface HIPasswordHolder ()
 
 @property (nonatomic, strong) NSMutableData *mutableDataPassword;
+@property (nonatomic, strong) NSData *dataPasswordSubset;
 
 @end
 
@@ -20,7 +21,15 @@
 - (id)initWithString:(NSString *)password {
     self = [super init];
     if (self) {
-        _mutableDataPassword = [[password dataUsingEncoding:NSUTF16StringEncoding] mutableCopy];
+        NSData *data = [password dataUsingEncoding:NSUTF16StringEncoding];
+        if ([data isKindOfClass:[NSMutableData class]]) {
+            _mutableDataPassword = (NSMutableData *)data;
+        } else {
+            // Doesn't happen on OS X 10.9.
+            HILogWarn(@"Leaking password into memory");
+            _mutableDataPassword = [data mutableCopy];
+        }
+
         [self stripByteOrderMark];
     }
     return self;
@@ -29,14 +38,14 @@
 - (void)stripByteOrderMark {
     uint16_t first = ((uint16_t *) _mutableDataPassword.bytes)[0];
     if (first == L'\ufeff' || first == L'\ufffe') {
-        [self.mutableDataPassword replaceBytesInRange:NSMakeRange(0, self.mutableDataPassword.length)
-                                            withBytes:_mutableDataPassword.bytes + 2
-                                               length:self.mutableDataPassword.length - 2];
+        self.dataPasswordSubset = [[NSData alloc] initWithBytesNoCopy:(void *)_mutableDataPassword.bytes + 2
+                                                               length:self.mutableDataPassword.length - 2
+                                                         freeWhenDone:NO];
     }
 }
 
 - (NSData *)data {
-    return self.mutableDataPassword;
+    return self.dataPasswordSubset ?: self.mutableDataPassword;
 }
 
 - (void)clear {
