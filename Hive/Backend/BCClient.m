@@ -141,6 +141,15 @@ static NSString * const kBCClientBaseURLString = @"https://grabhive.com/";
     [[HIBitcoinManager defaultManager] createWalletWithPassword:password.data error:error];
 }
 
+- (void)changeWalletPassword:(HIPasswordHolder *)fromPassword
+                  toPassword:(HIPasswordHolder *)toPassword
+                       error:(NSError **)error {
+    HILogInfo(@"Changing wallet password...");
+    [[HIBitcoinManager defaultManager] changeWalletPassword:fromPassword.data
+                                                 toPassword:toPassword.data
+                                                      error:error];
+}
+
 - (void)torStarted:(NSNotification *)notification {
     [HITorManager defaultManager].torRouting = YES;
 }

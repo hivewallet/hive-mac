@@ -35,6 +35,10 @@
 - (void)createWalletWithPassword:(HIPasswordHolder *)password
                            error:(NSError **)error;
 
+- (void)changeWalletPassword:(HIPasswordHolder *)fromPassword
+                  toPassword:(HIPasswordHolder *)toPassword
+                       error:(NSError **)error;
+
 - (void)sendBitcoins:(uint64)amount
               toHash:(NSString *)hash
             password:(HIPasswordHolder *)password
