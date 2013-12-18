@@ -31,11 +31,6 @@
                                     <action selector="openPreferences:" target="-1" id="754"/>
                                 </connections>
                             </menuItem>
-                            <menuItem title="Lähetä Bitcoineja..." keyEquivalent="S" id="866">
-                                <connections>
-                                    <action selector="openSendBitcoinsWindow:" target="-1" id="868"/>
-                                </connections>
-                            </menuItem>
                             <menuItem title="Tarkista päivitykset..." id="870">
                                 <modifierMask key="keyEquivalentModifierMask"/>
                                 <connections>
@@ -81,6 +76,12 @@
                 <menuItem title="Wallet" id="GX7-xG-GKH">
                     <menu key="submenu" title="Wallet" id="jrd-Ul-XjV">
                         <items>
+                            <menuItem title="Lähetä Bitcoineja..." keyEquivalent="S" id="866">
+                                <connections>
+                                    <action selector="openSendBitcoinsWindow:" target="-1" id="868"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem isSeparatorItem="YES" id="CGD-5y-ezT"/>
                             <menuItem title="Change Password…" id="1HB-Qg-iyg">
                                 <modifierMask key="keyEquivalentModifierMask"/>
                                 <connections>
