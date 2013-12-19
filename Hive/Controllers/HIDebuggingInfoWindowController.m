@@ -54,12 +54,18 @@
     [panel beginSheetModalForWindow:self.window completionHandler:^(NSInteger result) {
         if (result == NSFileHandlingPanelOKButton) {
             NSError *error = nil;
-            [self.textView.string writeToURL:panel.URL atomically:YES encoding:NSUTF8StringEncoding error:&error];
+            NSString *path = panel.URL.path;
+
+            if (path.pathExtension.length == 0) {
+                path = [path stringByAppendingString:@".txt"];
+            }
+
+            [self.textView.string writeToFile:path atomically:YES encoding:NSUTF8StringEncoding error:&error];
 
             [panel orderOut:nil];
 
             if (error) {
-                HILogError(@"Couldn't save debugging info to %@: %@", panel.URL, error);
+                HILogError(@"Couldn't save debugging info to %@: %@", path, error);
 
                 [[NSAlert alertWithError:error] beginSheetModalForWindow:self.window
                                                            modalDelegate:nil
