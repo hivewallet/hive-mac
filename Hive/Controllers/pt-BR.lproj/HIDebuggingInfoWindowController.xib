@@ -16,28 +16,28 @@
         <window title="Informações de Debug" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" restorable="NO" oneShot="NO" releasedWhenClosed="NO" wantsToBeColor="NO" frameAutosaveName="DebuggingInfoWindow" animationBehavior="default" id="1">
             <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
             <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
-            <rect key="contentRect" x="196" y="240" width="650" height="659"/>
+            <rect key="contentRect" x="196" y="240" width="650" height="622"/>
             <rect key="screenRect" x="0.0" y="0.0" width="1440" height="878"/>
             <value key="minSize" type="size" width="550" height="550"/>
             <view key="contentView" id="2">
-                <rect key="frame" x="0.0" y="0.0" width="650" height="659"/>
+                <rect key="frame" x="0.0" y="0.0" width="650" height="622"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <scrollView horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" usesPredominantAxisScrolling="NO" id="BFl-4M-70B">
-                        <rect key="frame" x="20" y="61" width="610" height="497"/>
+                        <rect key="frame" x="20" y="61" width="610" height="460"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <clipView key="contentView" id="Zet-VK-Ouf">
-                            <rect key="frame" x="1" y="1" width="593" height="495"/>
+                            <rect key="frame" x="1" y="1" width="593" height="458"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             <subviews>
                                 <textView editable="NO" importsGraphics="NO" findStyle="panel" continuousSpellChecking="YES" allowsUndo="YES" usesRuler="YES" usesFontPanel="YES" verticallyResizable="YES" allowsNonContiguousLayout="YES" quoteSubstitution="YES" dashSubstitution="YES" smartInsertDelete="YES" id="1y2-mO-PsH">
-                                    <rect key="frame" x="0.0" y="0.0" width="593" height="495"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="593" height="458"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                    <size key="minSize" width="593" height="495"/>
+                                    <size key="minSize" width="593" height="458"/>
                                     <size key="maxSize" width="686" height="10000000"/>
                                     <color key="insertionPointColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                                    <size key="minSize" width="593" height="495"/>
+                                    <size key="minSize" width="593" height="458"/>
                                     <size key="maxSize" width="686" height="10000000"/>
                                 </textView>
                             </subviews>
@@ -48,12 +48,12 @@
                             <autoresizingMask key="autoresizingMask"/>
                         </scroller>
                         <scroller key="verticalScroller" verticalHuggingPriority="750" doubleValue="1" horizontal="NO" id="Op0-A6-avL">
-                            <rect key="frame" x="593" y="1" width="16" height="495"/>
+                            <rect key="frame" x="593" y="1" width="16" height="458"/>
                             <autoresizingMask key="autoresizingMask"/>
                         </scroller>
                     </scrollView>
                     <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="hey-Jk-5AG">
-                        <rect key="frame" x="17" y="566" width="616" height="73"/>
+                        <rect key="frame" x="17" y="529" width="616" height="73"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                         <textFieldCell key="cell" sendsActionOnEndEditing="YES" id="o5O-SS-J37">
                             <font key="font" metaFont="system"/>
