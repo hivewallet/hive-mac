@@ -56,7 +56,7 @@ static NSString * const kBCClientBaseURLString = @"https://grabhive.com/";
 
         NSManagedObjectContext *mainContext = DBM;
         if (!mainContext) {
-            // something went seriously wrong
+            HILogError(@"No main managed object context?!");
             return nil;
         }
 
@@ -172,6 +172,8 @@ static NSString * const kBCClientBaseURLString = @"https://grabhive.com/";
     NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:HITransactionEntity];
     NSArray *transactions = [DBM executeFetchRequest:request error:&error];
 
+    HILogInfo(@"Clearing transaction list");
+
     if (error) {
         HILogError(@"%@: Error loading transactions: %@", NSStringFromSelector(_cmd), error);
         return;
@@ -191,6 +193,8 @@ static NSString * const kBCClientBaseURLString = @"https://grabhive.com/";
 
 - (void)rebuildTransactionsList {
     NSArray *transactions = [[HIBitcoinManager defaultManager] allTransactions];
+
+    HILogInfo(@"Adding %ld transactions to database", transactions.count);
 
     [_transactionUpdateContext performBlock:^{
         for (NSDictionary *transaction in transactions) {
@@ -291,6 +295,7 @@ static NSString * const kBCClientBaseURLString = @"https://grabhive.com/";
     }
     @catch (NSException *exception) {
         // there should be a way to check if I'm added as observer before calling remove but I don't know any...
+        HILogError(@"Dealloc failed: %@", exception);
     }
 }
 
@@ -402,13 +407,24 @@ static NSString * const kBCClientBaseURLString = @"https://grabhive.com/";
                error:(NSError **)error
           completion:(void (^)(BOOL success, NSString *transactionId))completion {
 
+    HILogInfo(@"Sending %lld satoshi to %@ (%@ password)", amount, hash, password ? @"with" : @"no");
+
     if (amount > self.balance) {
+        HILogWarn(@"Not enough balance: only %lld satoshi available", self.balance);
         completion(NO, nil);
     } else {
         HIBitcoinManager *bitcoin = [HIBitcoinManager defaultManager];
 
         // Sanity check first
         if (amount <= 0 || [bitcoin balance] < amount || ![bitcoin isAddressValid:hash]) {
+            if (amount <= 0 || amount > bitcoin.balance) {
+                HILogError(@"Sanity check failed: only %lld satoshi available, amount = %lld", self.balance, amount);
+            }
+
+            if (![bitcoin isAddressValid:hash]) {
+                HILogError(@"Sanity check failed: address %@ is invalid", hash);
+            }
+
             dispatch_async(dispatch_get_main_queue(), ^{
                 completion(NO, nil);
             });
@@ -420,6 +436,7 @@ static NSString * const kBCClientBaseURLString = @"https://grabhive.com/";
                          error:error
                     completion:^(NSString *transactionId) {
                 dispatch_async(dispatch_get_main_queue(), ^{
+                    HILogInfo(@"Transaction %@: id = %@", transactionId ? @"succeeded" : @"failed", transactionId);
                     completion((transactionId != nil), transactionId);
                 });
             }];

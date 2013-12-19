@@ -57,6 +57,8 @@
     NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:HIApplicationEntity];
     NSArray *apps = [DBM executeFetchRequest:request error:&error];
 
+    HILogInfo(@"Removing all apps");
+
     if (error) {
         HILogError(@"%@: Error loading apps: %@", NSStringFromSelector(_cmd), error);
         return;
@@ -82,6 +84,8 @@
                                                                      options:NSDirectoryEnumerationSkipsHiddenFiles
                                                                        error:NULL];
 
+    HILogInfo(@"Adding %ld apps to the database", apps.count);
+
     for (NSURL *appURL in apps) {
         NSString *appName = [appURL lastPathComponent];
         NSDictionary *manifest = [self applicationMetadata:appURL];
@@ -104,6 +108,8 @@
 }
 
 - (void)installApplication:(NSURL *)applicationURL {
+    HILogInfo(@"Installing app from %@", applicationURL);
+
     NSDictionary *manifest = [self applicationMetadata:applicationURL];
     HIApplication *app = nil;
 

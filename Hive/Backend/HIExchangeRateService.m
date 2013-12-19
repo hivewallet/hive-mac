@@ -125,14 +125,21 @@ static NSString *const HIConversionPreferenceKey = @"ConversionCurrency";
             NSString *string = [response[@"last"] description];
             exchangeRate = [NSDecimalNumber decimalNumberWithString:string
                                                              locale:@{NSLocaleDecimalSeparator: @"."}];
+
+            HILogInfo(@"Got response from exchange rate API for %@: %@", currency, string);
+
             if (exchangeRate == [NSDecimalNumber notANumber]) {
                 exchangeRate = nil;
             }
+        } else {
+            HILogWarn(@"Invalid response from exchange rate API for %@: %@", currency, error);
         }
 
         [self notifyOfExchangeRate:exchangeRate forCurrency:currency];
         _exchangeRateOperation = nil;
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        HILogWarn(@"Couldn't get response from exchange rate API for %@: %@", currency, error);
+
         [self notifyOfExchangeRate:nil forCurrency:currency];
         _exchangeRateOperation = nil;
     }];

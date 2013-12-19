@@ -237,6 +237,7 @@ static const NSInteger kHIAppRuntimeBridgeParsingError = -1000;
     if (![allowedHosts containsObject:hostname]) {
         NSString *message = [NSString stringWithFormat:@"application is not allowed to connect to host %@", hostname];
         [WebScriptObject throwException:message];
+        HILogWarn(@"%@: %@", _application.name, message);
         return;
     }
 
@@ -267,6 +268,8 @@ static const NSInteger kHIAppRuntimeBridgeParsingError = -1000;
                           errorCallback:errorCallback
                        completeCallback:completeCallback];
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        HILogWarn(@"%@: Proxied request to %@ has failed: %@", _application.name, url, error);
+
         [self handleError:error
              forOperation:operation
             errorCallback:errorCallback

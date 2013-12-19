@@ -61,6 +61,8 @@ void handleException(NSException *exception) {
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
     [self configureLoggers];
 
+    HILogInfo(@"Starting Hive v. %@...", [[NSBundle mainBundle] infoDictionary][@"CFBundleVersion"]);
+
     BITHockeyManager *hockeyapp = [BITHockeyManager sharedHockeyManager];
     [hockeyapp configureWithIdentifier:@"e47f0624d130a873ecae31509e4d1124"
                            companyName:@""
@@ -182,6 +184,9 @@ void handleException(NSException *exception) {
         message = NSLocalizedString(@"Could not write wallet file. Another instance of Hive might still be running.",
                                     @"initialization error");
     }
+
+    HILogError(@"Aborting launch because of initialization error: %@", error);
+
     if (message) {
         [[NSAlert alertWithMessageText:NSLocalizedString(@"Error", @"Initialization error title")
                          defaultButton:NSLocalizedString(@"OK", @"OK button title")
@@ -224,9 +229,11 @@ void handleException(NSException *exception) {
 
 - (void)rebuildTransactionListIfNeeded {
     NSString *lastVersion = [[NSUserDefaults standardUserDefaults] objectForKey:LastVersionKey];
+    NSString *versionAfterUpdate = @"2013121701";
 
-    if ([lastVersion isLessThan:@"2013121701"]) {
-        // rebuild the list to get data matching the latest schema
+    if ([lastVersion isLessThan:versionAfterUpdate]) {
+        HILogInfo(@"Rebuilding transaction list to match latest schema (%@ < %@)", lastVersion, versionAfterUpdate);
+
         [[BCClient sharedClient] clearTransactionsList];
         [[BCClient sharedClient] rebuildTransactionsList];
     }

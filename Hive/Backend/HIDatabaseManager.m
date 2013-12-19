@@ -9,7 +9,7 @@
 #import "BCClient.h"
 #import "HIDatabaseManager.h"
 
-#define CheckError(error) if (error) { [NSApp presentError:(error)]; return nil; }
+#define CheckError(error) if (error) { HILogError(@"%@", error); [NSApp presentError:(error)]; return nil; }
 
 @interface HIDatabaseManager ()
 
@@ -93,6 +93,8 @@
                                                                        error:&error];
 
     if (!sqliteStore) {
+        HILogWarn(@"Can't open SQLite store: %@", error);
+
         // see if it isn't the old xml version
         NSPersistentStore *xmlStore = [coordinator addPersistentStoreWithType:NSXMLStoreType
                                                                 configuration:nil
@@ -130,6 +132,7 @@
             [fileManager removeItemAtPath:path error:error];
 
             if (error && *error) {
+                HILogError(@"Can't delete persistent store at %@: %@", path, *error);
                 return;
             }
         }
@@ -138,6 +141,8 @@
 
 - (NSPersistentStore *)migrateXMLStoreToSqlite:(NSPersistentStore *)xmlStore
                                  inCoordinator:(NSPersistentStoreCoordinator *)coordinator {
+    HILogInfo(@"Migrating XML store to SQLite");
+
     NSFileManager *fileManager = [NSFileManager defaultManager];
     NSError *error = nil;
     NSURL *url = xmlStore.URL;
