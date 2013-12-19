@@ -112,7 +112,6 @@ void handleException(NSException *exception) {
     // keep 4 log files, use timestamps for naming
     DDLogFileManagerDefault *logFileManager = (DDLogFileManagerDefault *) fileLogger.logFileManager;
     logFileManager.maximumNumberOfLogFiles = 4;
-    logFileManager.fileNamingConvention = DDLogFileNamingConventionTimestamp;
 
     [DDLog addLogger:fileLogger withLogLevel:LOG_LEVEL_VERBOSE];
 
