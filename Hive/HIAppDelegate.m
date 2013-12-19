@@ -22,6 +22,7 @@
 #import "HIDebuggingInfoWindowController.h"
 #import "HIDebuggingToolsWindowController.h"
 #import "HIErrorWindowController.h"
+#import "HILogFormatter.h"
 #import "HIMainWindowController.h"
 #import "HISendBitcoinsWindowController.h"
 #import "HITransaction.h"
@@ -30,8 +31,13 @@
 static NSString * const LastVersionKey = @"LastHiveVersion";
 static NSString * const WarningDisplayedKey = @"WarningDisplayed";
 
-int ddLogLevel = LOG_LEVEL_VERBOSE;
+static int ddLogLevel = LOG_LEVEL_VERBOSE;
 
+@interface DDLog (ExposePrivateMethod)
+
++ (void)queueLogMessage:(DDLogMessage *)logMessage asynchronously:(BOOL)asyncFlag;
+
+@end
 
 @interface HIAppDelegate () {
     HIPasswordChangeWindowController *_passwordChangeWindowController;
@@ -88,9 +94,12 @@ void handleException(NSException *exception) {
 }
 
 - (void)configureLoggers {
+    HILogFormatter *formatter = [HILogFormatter new];
+
     // default loggers - Console.app and Xcode console
     [DDLog addLogger:[DDASLLogger sharedInstance] withLogLevel:LOG_LEVEL_WARN];
     [DDLog addLogger:[DDTTYLogger sharedInstance] withLogLevel:LOG_LEVEL_VERBOSE];
+    [[DDTTYLogger sharedInstance] setLogFormatter:formatter];
 
     // file logger
     DDFileLogger *fileLogger = [[DDFileLogger alloc] init];
@@ -98,6 +107,7 @@ void handleException(NSException *exception) {
     // roll file after a week or when it reaches 10 MB
     fileLogger.rollingFrequency = 7 * 86400;
     fileLogger.maximumFileSize = 10 * 1024 * 1024;
+    fileLogger.logFormatter = formatter;
 
     // keep 4 log files, use timestamps for naming
     DDLogFileManagerDefault *logFileManager = (DDLogFileManagerDefault *) fileLogger.logFileManager;
@@ -107,26 +117,37 @@ void handleException(NSException *exception) {
     [DDLog addLogger:fileLogger withLogLevel:LOG_LEVEL_VERBOSE];
 
     // configure BitcoinKit logger to use CocoaLumberjack system
-    [[HILogger sharedLogger] setLogHandler:^(HILoggerLevel level, NSString *message) {
+    [[HILogger sharedLogger] setLogHandler:^(const char *fileName, const char *functionName, int lineNumber,
+                                             HILoggerLevel level, NSString *message) {
+        int flag;
+
         switch (level) {
-            case HILoggerLevelDebug:
-                DDLogDebug(@"%@", message);
-                break;
             case HILoggerLevelInfo:
-                DDLogInfo(@"%@", message);
+                flag = LOG_FLAG_INFO;
                 break;
             case HILoggerLevelWarn:
-                DDLogWarn(@"%@", message);
+                flag = LOG_FLAG_WARN;
                 break;
             case HILoggerLevelError:
-                DDLogError(@"%@", message);
+                flag = LOG_FLAG_ERROR;
                 break;
             default:
-                DDLogError(@"Unknown HILoggerLevel value: %d", level);
-                DDLogError(@"%@", message);
+                flag = LOG_FLAG_DEBUG;
+                break;
         }
-    }];
 
+        DDLogMessage *log = [[DDLogMessage alloc] initWithLogMsg:message
+                                                           level:ddLogLevel
+                                                            flag:flag
+                                                         context:0
+                                                            file:fileName
+                                                        function:functionName
+                                                            line:lineNumber
+                                                             tag:nil
+                                                         options:DDLogMessageCopyFile | DDLogMessageCopyFunction];
+
+        [DDLog queueLogMessage:log asynchronously:YES];
+    }];
 }
 
 - (void)showMainApplicationWindowForCrashManager:(id)crashManager {
