@@ -129,12 +129,11 @@ static NSString *const HIConversionPreferenceKey = @"ConversionCurrency";
                 exchangeRate = nil;
             }
         }
-        [self notifyOfExchangeRate:exchangeRate
-                       forCurrency:currency];
+
+        [self notifyOfExchangeRate:exchangeRate forCurrency:currency];
         _exchangeRateOperation = nil;
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-        [self notifyOfExchangeRate:nil
-                       forCurrency:currency];
+        [self notifyOfExchangeRate:nil forCurrency:currency];
         _exchangeRateOperation = nil;
     }];
 

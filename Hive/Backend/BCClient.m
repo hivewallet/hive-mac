@@ -121,12 +121,14 @@ static NSString * const kBCClientBaseURLString = @"https://grabhive.com/";
     // [tor start];
 
     *error = nil;
+
     if ([[HIBitcoinManager defaultManager] start:error]) {
         self.balance = [[[NSUserDefaults standardUserDefaults] objectForKey:@"LastBalance"] unsignedLongLongValue];
         self.pendingBalance = 0;
 
         [self updateNotifications];
     }
+
     return !*error;
 }
 

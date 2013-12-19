@@ -1194,8 +1194,8 @@
 		1AA103C2AED626BF5E200D14 /* HIProfileViewController */ = {
 			isa = PBXGroup;
 			children = (
-				1AA1013FB9712D7B30A91BFB /* HIProfileViewController.m */,
 				1AA10F3E7660E657A58361D9 /* HIProfileViewController.h */,
+				1AA1013FB9712D7B30A91BFB /* HIProfileViewController.m */,
 				1AA108BDEC523213EF9B8309 /* HIProfileViewController.strings */,
 				1AA10EA4B4E51F7D0E32DC6D /* HIProfileViewController.xib */,
 			);
@@ -1240,9 +1240,9 @@
 			children = (
 				588E33B51817E6AE006A6A25 /* HIBitcoinURL.h */,
 				588E33B61817E6AE006A6A25 /* HIBitcoinURL.m */,
+				1AA10683D3C0D3D1757EE24E /* HIPerson.h */,
 				5804C32417FC88BA003B7891 /* HIProfile.h */,
 				5804C32517FC88BA003B7891 /* HIProfile.m */,
-				1AA10683D3C0D3D1757EE24E /* HIPerson.h */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -1415,8 +1415,8 @@
 				5860D3FE180455B900BD852C /* HIApplicationsManager.m */,
 				585A8B2318576F020096888C /* HIDatabaseManager.h */,
 				585A8B2418576F020096888C /* HIDatabaseManager.m */,
-				1AA1032408E917EE5B7752AC /* HIExchangeRateService.m */,
 				1AA10C583F128C0BCD84C878 /* HIExchangeRateService.h */,
+				1AA1032408E917EE5B7752AC /* HIExchangeRateService.m */,
 			);
 			path = Backend;
 			sourceTree = "<group>";

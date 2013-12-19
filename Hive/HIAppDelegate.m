@@ -154,11 +154,13 @@ void handleException(NSException *exception) {
 - (void)showMainApplicationWindowForCrashManager:(id)crashManager {
     NSError *error = nil;
     [[BCClient sharedClient] start:&error];
+
     if (error.code == kHIBitcoinManagerNoWallet) {
         error = nil;
         // TODO: Ask for a password and create protected wallet.
         [[BCClient sharedClient] createWallet:&error];
     }
+
     if (error) {
         HILogError(@"BitcoinManager start error: %@", error);
         [self showInitializationError:error];
@@ -173,6 +175,7 @@ void handleException(NSException *exception) {
 - (void)showInitializationError:(NSError *)error {
     // TODO: Look at error code (e.g. kHIBitcoinManagerUnreadableWallet) and offer specific solution.
     NSString *message = nil;
+
     if (error.code == kHIBitcoinManagerUnreadableWallet) {
         message = NSLocalizedString(@"Could not read wallet file. It might be damaged.", @"initialization error");
     } else if (error.code == kHIBitcoinManagerBlockStoreError) {
@@ -188,6 +191,7 @@ void handleException(NSException *exception) {
     } else {
         [[NSAlert alertWithError:error] runModal];
     }
+
     exit(1);
 }
 
