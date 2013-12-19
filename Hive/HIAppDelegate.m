@@ -53,6 +53,8 @@ static int ddLogLevel = LOG_LEVEL_VERBOSE;
 @implementation HIAppDelegate
 
 void handleException(NSException *exception) {
+    HILogError(@"Exception caught: %@", exception);
+
     [[NSApp delegate] showExceptionWindowWithException:exception];
 }
 
