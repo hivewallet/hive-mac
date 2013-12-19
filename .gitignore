@@ -27,5 +27,4 @@ profile
 sourcetreeconfig
 
 # Podfiles
-Podfile.lock
 Pods/*
