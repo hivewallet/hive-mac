@@ -48,4 +48,26 @@
     self.textView.string = info;
 }
 
+- (IBAction)saveToFilePressed:(id)sender {
+    NSSavePanel *panel = [NSSavePanel savePanel];
+
+    [panel beginSheetModalForWindow:self.window completionHandler:^(NSInteger result) {
+        if (result == NSFileHandlingPanelOKButton) {
+            NSError *error = nil;
+            [self.textView.string writeToURL:panel.URL atomically:YES encoding:NSUTF8StringEncoding error:&error];
+
+            [panel orderOut:nil];
+
+            if (error) {
+                HILogError(@"Couldn't save debugging info to %@: %@", panel.URL, error);
+
+                [[NSAlert alertWithError:error] beginSheetModalForWindow:self.window
+                                                           modalDelegate:nil
+                                                          didEndSelector:nil
+                                                             contextInfo:NULL];
+            }
+        }
+    }];
+}
+
 @end
