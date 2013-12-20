@@ -13,6 +13,7 @@
 #import "HICurrencyAmountFormatter.h"
 #import "HIExchangeRateService.h"
 #import "HIProfile.h"
+#import "HISecureAppStorage.h"
 
 static NSString * const kHIAppRuntimeBridgeErrorDomain = @"HIAppRuntimeBridgeErrorDomain";
 static const NSInteger kHIAppRuntimeBridgeParsingError = -1000;
@@ -28,6 +29,7 @@ static const NSInteger kHIAppRuntimeBridgeParsingError = -1000;
     NSMutableSet *_exchangeRateListeners;
     HIApplication *_application;
     NSDictionary *_applicationManifest;
+    HISecureAppStorage *_secureStorage;
 }
 
 @end
@@ -66,6 +68,7 @@ static const NSInteger kHIAppRuntimeBridgeParsingError = -1000;
                    @"_uBTCInSatoshi": @"UBTC_IN_SATOSHI",
                    @"_IncomingTransactionType": @"TX_TYPE_INCOMING",
                    @"_OutgoingTransactionType": @"TX_TYPE_OUTGOING",
+                   @"_secureStorage": @"secureStorage",
                    };
     }
 
@@ -75,12 +78,13 @@ static const NSInteger kHIAppRuntimeBridgeParsingError = -1000;
 
 #pragma mark - init & cleanup
 
-- (id)initWithApplication:(HIApplication *)application {
+- (id)initWithApplication:(HIApplication *)application frame:(WebFrame *)frame {
     self = [super init];
 
     if (self) {
         _application = application;
         _applicationManifest = application.manifest;
+        self.frame = frame;
 
         _ISODateFormatter = [[NSDateFormatter alloc] init];
         _ISODateFormatter.dateFormat = @"yyyy-MM-dd'T'HH:mm:ssZZZZZ";
@@ -94,6 +98,7 @@ static const NSInteger kHIAppRuntimeBridgeParsingError = -1000;
         _OutgoingTransactionType = @"outgoing";
 
         _exchangeRateListeners = [NSMutableSet new];
+        _secureStorage = [[HISecureAppStorage alloc] initWithApplication:application frame:self.frame];
     }
 
     return self;

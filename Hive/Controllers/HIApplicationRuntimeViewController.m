@@ -42,8 +42,7 @@
 
     self.title = self.application.name;
 
-    _bridge = [[HIAppRuntimeBridge alloc] initWithApplication:self.application];
-    _bridge.frame = [self.webView mainFrame];
+    _bridge = [[HIAppRuntimeBridge alloc] initWithApplication:self.application frame:self.webView.mainFrame];
     _bridge.controller = self;
 
     // set custom user agent

@@ -32,6 +32,7 @@
 		582C7DA918521A3500126C10 /* HIJavaScriptObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 582C7DA818521A3500126C10 /* HIJavaScriptObject.m */; };
 		582C7DAB185273D400126C10 /* HIApplicationRuntimeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 582C7DAA185273D400126C10 /* HIApplicationRuntimeViewController.xib */; };
 		583B1DD118620BA800817EF8 /* HILogFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = 583B1DD018620BA800817EF8 /* HILogFormatter.m */; };
+		583B1DE41864A32900817EF8 /* HISecureAppStorage.m in Sources */ = {isa = PBXBuildFile; fileRef = 583B1DE31864A32900817EF8 /* HISecureAppStorage.m */; };
 		585A8B2518576F020096888C /* HIDatabaseManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 585A8B2418576F020096888C /* HIDatabaseManager.m */; };
 		585FFF4418159803005BCF73 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 585FFF4318159803005BCF73 /* Credits.rtf */; };
 		586059AF180419DF00FD9C2A /* bitstamp.hiveapp in Resources */ = {isa = PBXBuildFile; fileRef = 586059AC180419DF00FD9C2A /* bitstamp.hiveapp */; };
@@ -427,6 +428,8 @@
 		58357A3B186068A70077B717 /* 2013121701.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = 2013121701.xcdatamodel; sourceTree = "<group>"; };
 		583B1DCF18620BA800817EF8 /* HILogFormatter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HILogFormatter.h; sourceTree = "<group>"; };
 		583B1DD018620BA800817EF8 /* HILogFormatter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HILogFormatter.m; sourceTree = "<group>"; };
+		583B1DE21864A32900817EF8 /* HISecureAppStorage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HISecureAppStorage.h; sourceTree = "<group>"; };
+		583B1DE31864A32900817EF8 /* HISecureAppStorage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HISecureAppStorage.m; sourceTree = "<group>"; };
 		585A8B2318576F020096888C /* HIDatabaseManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HIDatabaseManager.h; sourceTree = "<group>"; };
 		585A8B2418576F020096888C /* HIDatabaseManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HIDatabaseManager.m; sourceTree = "<group>"; };
 		585FFF201815374B005BCF73 /* nl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = nl; path = nl.lproj/HIApplicationsViewController.strings; sourceTree = "<group>"; };
@@ -1218,8 +1221,8 @@
 				244303B71856712000AD59B8 /* HIPasswordInputViewController.h */,
 				244303B81856712000AD59B8 /* HIPasswordInputViewController.m */,
 				244303B91856712000AD59B8 /* HIPasswordInputViewController.xib */,
-				1AA10711079E121245A12DED /* HIPasswordHolder.m */,
 				1AA106F09BEB25F235D75A80 /* HIPasswordHolder.h */,
+				1AA10711079E121245A12DED /* HIPasswordHolder.m */,
 			);
 			name = HIPasswordInputViewController;
 			sourceTree = "<group>";
@@ -1437,6 +1440,8 @@
 				586059CA18041A6D00FD9C2A /* HIAppRuntimeBridge.m */,
 				582C7DA718521A3500126C10 /* HIJavaScriptObject.h */,
 				582C7DA818521A3500126C10 /* HIJavaScriptObject.m */,
+				583B1DE21864A32900817EF8 /* HISecureAppStorage.h */,
+				583B1DE31864A32900817EF8 /* HISecureAppStorage.m */,
 			);
 			name = HIApplicationsViewController;
 			sourceTree = "<group>";
@@ -1929,6 +1934,7 @@
 				583B1DD118620BA800817EF8 /* HILogFormatter.m in Sources */,
 				588EFB2E17D8D2970085F6E6 /* HIProfileTabView.m in Sources */,
 				58A03B0D17D9DC4100ADD5E5 /* HIButtonWithSpinner.m in Sources */,
+				583B1DE41864A32900817EF8 /* HISecureAppStorage.m in Sources */,
 				58F02AEE17E1F5A400B65429 /* HITitleArrowView.m in Sources */,
 				D938F01017E6278B00566FFD /* HITextFieldCell.m in Sources */,
 				D958A8B817E8547A00CED98C /* HIFlippedView.m in Sources */,
