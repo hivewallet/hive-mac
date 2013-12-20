@@ -8,6 +8,10 @@
 
 #import <Cocoa/Cocoa.h>
 
+/*
+ Implements the "Debugging Info" window with details about wallet contents, transactions etc.
+ */
+
 @interface HIDebuggingInfoWindowController : NSWindowController <NSWindowDelegate>
 
 @property (strong) IBOutlet NSTextView *textView;

@@ -9,6 +9,7 @@
 /*
  Shows details about the transaction fee.
  */
+
 @interface HIFeeDetailsViewController : NSViewController
 
 @property (nonatomic, copy) NSDecimalNumber *fee;

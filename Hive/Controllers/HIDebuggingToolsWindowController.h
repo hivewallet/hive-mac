@@ -8,6 +8,11 @@
 
 #import <Cocoa/Cocoa.h>
 
+/*
+ Implements the "Debugging Tools" window which provides access to various hacks like resetting applications or
+ transactions list etc.
+ */
+
 @interface HIDebuggingToolsWindowController : NSWindowController
 
 @end

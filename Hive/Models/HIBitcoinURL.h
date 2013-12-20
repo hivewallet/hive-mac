@@ -8,6 +8,11 @@
 
 #import <Foundation/Foundation.h>
 
+
+/*
+ Represents a bitcoin: URL that opens a send window when clicked e.g. in a browser.
+ */
+
 @interface HIBitcoinURL : NSObject
 
 @property (readonly) BOOL valid;

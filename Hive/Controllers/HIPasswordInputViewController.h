@@ -9,8 +9,9 @@
 @class HIPasswordHolder;
 
 /*
- Requests an input from the user.
+ A popup which requests a password from the user and keeps it in a secure storage.
  */
+
 @interface HIPasswordInputViewController : NSViewController
 
 @property (nonatomic, copy) NSString *prompt;

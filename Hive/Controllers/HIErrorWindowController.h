@@ -8,6 +8,11 @@
 
 #import <Cocoa/Cocoa.h>
 
+/*
+ Implements the error popup that shows up when an exception is caught. Exception details can be sent to the Hockeyapp
+ API.
+ */
+
 @interface HIErrorWindowController : NSWindowController
 
 @property (strong) IBOutlet NSTextField *nameField;

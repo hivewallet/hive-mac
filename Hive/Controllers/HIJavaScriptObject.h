@@ -13,6 +13,10 @@
 #define SafeJSONValue(x) ((x) ?: [NSNull null])
 #define IsNullOrUndefined(x) (!(x) || [(x) isKindOfClass:[WebUndefined class]])
 
+/*
+ Base class for objects whose methods and properties are exposed in the JS API.
+ */
+
 @interface HIJavaScriptObject : NSObject
 
 @property (strong) WebFrame *frame;

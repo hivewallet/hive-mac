@@ -1,5 +1,10 @@
 @class HIAddress;
 
+
+/*
+ A common interface for HIProfile and HIContact.
+ */
+
 @protocol HIPerson<NSObject>
 
 @property (nonatomic, strong) NSString *email;

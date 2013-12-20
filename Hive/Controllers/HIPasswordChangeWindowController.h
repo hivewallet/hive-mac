@@ -8,6 +8,10 @@
 
 @class HIPasswordHolder;
 
+/*
+ Implements a window in which you can change your wallet password and re-encrypt it.
+ */
+
 @interface HIPasswordChangeWindowController : NSWindowController
 
 - (void)resetInput;

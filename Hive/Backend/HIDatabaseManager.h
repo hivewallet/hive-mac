@@ -8,6 +8,10 @@
 
 #import <Foundation/Foundation.h>
 
+/*
+ Manages Core Data helper objects (model, context, store coordinator).
+ */
+
 @interface HIDatabaseManager : NSObject
 
 + (HIDatabaseManager *)sharedManager;
