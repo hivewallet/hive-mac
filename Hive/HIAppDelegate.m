@@ -27,6 +27,7 @@
 #import "HISendBitcoinsWindowController.h"
 #import "HITransaction.h"
 #import "HIPasswordChangeWindowController.h"
+#import "PFMoveApplication.h"
 
 static NSString * const LastVersionKey = @"LastHiveVersion";
 static NSString * const WarningDisplayedKey = @"WarningDisplayed";
@@ -56,6 +57,12 @@ void handleException(NSException *exception) {
     HILogError(@"Exception caught: %@", exception);
 
     [[NSApp delegate] showExceptionWindowWithException:exception];
+}
+
+- (void)applicationWillFinishLaunching:(NSNotification *)notification {
+#ifndef DEBUG
+    PFMoveToApplicationsFolderIfNecessary();
+#endif
 }
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
