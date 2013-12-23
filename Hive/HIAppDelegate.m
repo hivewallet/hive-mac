@@ -440,7 +440,7 @@ void handleException(NSException *exception) {
 }
 
 - (void)popupWindowWillClose:(NSNotification *)notification {
-    [_popupWindows removeObject:notification.object];
+    [_popupWindows removeObject:[notification.object delegate]];
 }
 
 - (void)openPopupWindowWithClass:(Class)klass {
