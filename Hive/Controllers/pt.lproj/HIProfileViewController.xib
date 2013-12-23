@@ -53,17 +53,20 @@
                     <color key="borderColor" white="0.75" alpha="1" colorSpace="calibratedWhite"/>
                     <color key="fillColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                 </box>
-                <imageView translatesAutoresizingMaskIntoConstraints="NO" id="73" userLabel="Bitcoin symbol">
-                    <rect key="frame" x="85" y="388" width="22" height="22"/>
+                <popUpButton verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="qOj-X5-bn0">
+                    <rect key="frame" x="88" y="387" width="68" height="26"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <constraints>
-                        <constraint firstAttribute="width" constant="22" id="Tk1-ZG-sIU"/>
-                        <constraint firstAttribute="height" constant="22" id="xuh-1A-QwE"/>
+                        <constraint firstAttribute="width" constant="63" id="vnY-ge-9y3"/>
                     </constraints>
-                    <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="icon-bitcoin" id="74"/>
-                </imageView>
+                    <popUpButtonCell key="cell" type="push" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="60C-is-Qdt">
+                        <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
+                        <font key="font" metaFont="menu"/>
+                        <menu key="menu" title="OtherViews" id="ldN-fb-2LB"/>
+                    </popUpButtonCell>
+                </popUpButton>
                 <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="75">
-                    <rect key="frame" x="109" y="392" width="33" height="17"/>
+                    <rect key="frame" x="159" y="392" width="33" height="17"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="0.00" usesSingleLineMode="YES" id="76">
                         <font key="font" metaFont="systemBold"/>
@@ -85,11 +88,8 @@
                     <color key="fillColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                 </box>
                 <popUpButton verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Oga-wU-PlF">
-                    <rect key="frame" x="38" y="349" width="68" height="26"/>
+                    <rect key="frame" x="88" y="349" width="68" height="26"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                    <constraints>
-                        <constraint firstAttribute="width" constant="63" id="afR-gN-qnd"/>
-                    </constraints>
                     <popUpButtonCell key="cell" type="push" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="6nQ-ap-d7s">
                         <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
                         <font key="font" metaFont="menu"/>
@@ -100,7 +100,7 @@
                     </connections>
                 </popUpButton>
                 <textField focusRingType="none" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="ZMe-rr-2nF">
-                    <rect key="frame" x="109" y="354" width="33" height="17"/>
+                    <rect key="frame" x="159" y="354" width="33" height="17"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" state="on" focusRingType="none" title="0.00" id="0SG-Yr-r9j">
                         <font key="font" metaFont="system"/>
@@ -134,31 +134,29 @@
                 <constraint firstItem="40" firstAttribute="top" secondItem="5Bs-DP-BDu" secondAttribute="bottom" constant="2" id="BDX-S4-iZX"/>
                 <constraint firstItem="Zcf-4u-dGc" firstAttribute="top" secondItem="75" secondAttribute="bottom" constant="11" id="Bqz-kd-0PI"/>
                 <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="75" secondAttribute="trailing" constant="20" symbolic="YES" id="FLw-XB-yvh"/>
-                <constraint firstItem="73" firstAttribute="leading" secondItem="2tC-mD-mf4" secondAttribute="leading" constant="-5" id="Ffr-qH-Tk4"/>
                 <constraint firstAttribute="trailing" secondItem="2tC-mD-mf4" secondAttribute="trailing" constant="15" id="JFg-E5-jSS"/>
-                <constraint firstItem="73" firstAttribute="centerY" secondItem="75" secondAttribute="centerY" constant="1.5" id="LBR-0m-13T"/>
                 <constraint firstItem="21" firstAttribute="top" secondItem="1" secondAttribute="top" constant="14" id="LxU-9R-YVm"/>
+                <constraint firstItem="qOj-X5-bn0" firstAttribute="leading" secondItem="21" secondAttribute="leading" id="PAM-Z4-F7O"/>
                 <constraint firstItem="2tC-mD-mf4" firstAttribute="leading" secondItem="3" secondAttribute="trailing" constant="15" id="Pbi-N9-7mk"/>
                 <constraint firstAttribute="trailing" secondItem="40" secondAttribute="trailing" id="Stz-aQ-bvK"/>
                 <constraint firstItem="2tC-mD-mf4" firstAttribute="leading" secondItem="Zcf-4u-dGc" secondAttribute="leading" constant="15" id="Tdh-DR-AAb"/>
                 <constraint firstAttribute="bottom" secondItem="40" secondAttribute="bottom" id="VbB-Gj-ao8"/>
                 <constraint firstAttribute="trailing" secondItem="5Bs-DP-BDu" secondAttribute="trailing" id="X1j-Mb-sCM"/>
+                <constraint firstItem="75" firstAttribute="leading" secondItem="qOj-X5-bn0" secondAttribute="trailing" constant="8" id="YAa-EK-jd7"/>
                 <constraint firstItem="5Bs-DP-BDu" firstAttribute="leading" secondItem="1" secondAttribute="leading" id="YN1-wK-g1f"/>
-                <constraint firstItem="75" firstAttribute="leading" secondItem="73" secondAttribute="trailing" constant="4" id="cFG-df-O39"/>
+                <constraint firstItem="qOj-X5-bn0" firstAttribute="width" secondItem="Oga-wU-PlF" secondAttribute="width" id="YdD-i3-bVn"/>
                 <constraint firstItem="3" firstAttribute="leading" secondItem="1" secondAttribute="leading" id="jVQ-r7-Xm2"/>
+                <constraint firstItem="75" firstAttribute="centerY" secondItem="qOj-X5-bn0" secondAttribute="centerY" id="jwk-Hj-AHR"/>
                 <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="21" secondAttribute="trailing" constant="20" symbolic="YES" id="lUt-En-MWN"/>
                 <constraint firstItem="5Bs-DP-BDu" firstAttribute="top" secondItem="Oga-wU-PlF" secondAttribute="bottom" constant="8" id="lZE-VG-4Mz"/>
                 <constraint firstItem="ZMe-rr-2nF" firstAttribute="top" secondItem="Zcf-4u-dGc" secondAttribute="bottom" constant="9" id="m1I-jf-u2B"/>
                 <constraint firstItem="40" firstAttribute="leading" secondItem="1" secondAttribute="leading" id="sS1-F7-MfT"/>
+                <constraint firstItem="qOj-X5-bn0" firstAttribute="leading" secondItem="Oga-wU-PlF" secondAttribute="leading" id="u7t-GJ-3eN"/>
                 <constraint firstItem="21" firstAttribute="leading" secondItem="3" secondAttribute="trailing" constant="15" id="usy-IH-QZK"/>
                 <constraint firstItem="ZMe-rr-2nF" firstAttribute="centerY" secondItem="Oga-wU-PlF" secondAttribute="centerY" id="wGI-Qj-b5Z"/>
                 <constraint firstItem="75" firstAttribute="top" secondItem="2tC-mD-mf4" secondAttribute="bottom" constant="7" id="x4V-2k-OdP"/>
-                <constraint firstItem="73" firstAttribute="trailing" secondItem="Oga-wU-PlF" secondAttribute="trailing" constant="4" id="xoP-p8-mn1"/>
                 <constraint firstItem="ZMe-rr-2nF" firstAttribute="leading" secondItem="Oga-wU-PlF" secondAttribute="trailing" constant="8" id="zxC-kg-J09"/>
             </constraints>
         </customView>
     </objects>
-    <resources>
-        <image name="icon-bitcoin" width="16" height="17"/>
-    </resources>
 </document>
