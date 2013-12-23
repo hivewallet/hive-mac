@@ -1,5 +1,7 @@
 #import "HIBitcoinFormatService.h"
 
+static NSString *const HIFormatPreferenceKey = @"BitcoinFormat";
+
 @implementation HIBitcoinFormatService
 
 + (HIBitcoinFormatService *)sharedService {
@@ -22,6 +24,16 @@
         availableBitcoinFormats = @[@"BTC", @"mBTC", @"µBTC", @"satoshi"];
     });
     return availableBitcoinFormats;
+}
+
+- (NSString *)preferredFormat {
+    NSString *currency = [[NSUserDefaults standardUserDefaults] stringForKey:HIFormatPreferenceKey];
+    return [self.availableFormats containsObject:currency] ? currency : @"BTC";
+}
+
+- (void)setPreferredFormat:(NSString *)preferredFormat {
+    [[NSUserDefaults standardUserDefaults] setObject:preferredFormat
+                                              forKey:HIFormatPreferenceKey];
 }
 
 @end

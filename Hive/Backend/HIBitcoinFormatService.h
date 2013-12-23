@@ -5,8 +5,9 @@ typedef uint64 satoshi_t;
  */
 @interface HIBitcoinFormatService : NSObject
 
-+ (HIBitcoinFormatService *)sharedService;
-
 @property (nonatomic, copy, readonly) NSArray *availableFormats;
+@property (nonatomic, copy) NSString *preferredFormat;
+
++ (HIBitcoinFormatService *)sharedService;
 
 @end

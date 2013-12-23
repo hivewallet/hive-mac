@@ -65,6 +65,9 @@
                         <font key="font" metaFont="menu"/>
                         <menu key="menu" title="OtherViews" id="ldN-fb-2LB"/>
                     </popUpButtonCell>
+                    <connections>
+                        <binding destination="-2" name="selectedValue" keyPath="selectedBitcoinFormat" id="oGG-Yr-ViG"/>
+                    </connections>
                 </popUpButton>
                 <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="75">
                     <rect key="frame" x="159" y="392" width="33" height="17"/>

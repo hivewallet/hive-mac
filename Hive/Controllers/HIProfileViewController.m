@@ -25,6 +25,7 @@
 @property (strong, readonly) HIBitcoinFormatService *bitcoinFormatService;
 @property (copy) NSDecimalNumber *exchangeRate;
 @property (copy, nonatomic) NSString *selectedCurrency;
+@property (copy, nonatomic) NSString *selectedBitcoinFormat;
 @property (copy) NSDecimalNumber *balance;
 @property (copy) NSDecimalNumber *pendingBalance;
 
@@ -64,6 +65,7 @@
         self.selectedCurrency = _exchangeRateService.preferredCurrency;
 
         _bitcoinFormatService = [HIBitcoinFormatService sharedService];
+        _selectedBitcoinFormat = _bitcoinFormatService.preferredFormat;
     }
 
     return self;
@@ -91,6 +93,7 @@
 
 - (void)setupCurrencyLists {
     [self.bitcoinCurrencyPopupButton addItemsWithTitles:self.bitcoinFormatService.availableFormats];
+    [self.bitcoinCurrencyPopupButton selectItemWithTitle:self.selectedBitcoinFormat];
     [self.convertedCurrencyPopupButton addItemsWithTitles:self.exchangeRateService.availableCurrencies];
     [self.convertedCurrencyPopupButton selectItemWithTitle:_selectedCurrency];
 }
@@ -151,6 +154,13 @@
             });
         }
     }
+}
+
+#pragma mark - bitcoin format
+
+- (void)setSelectedBitcoinFormat:(NSString *)selectedBitcoinFormat {
+    _selectedBitcoinFormat = [selectedBitcoinFormat copy];
+    self.bitcoinFormatService.preferredFormat = _selectedBitcoinFormat;
 }
 
 #pragma mark - converted balance
