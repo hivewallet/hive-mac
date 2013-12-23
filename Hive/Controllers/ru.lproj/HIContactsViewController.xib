@@ -134,9 +134,12 @@
             <rect key="frame" x="0.0" y="0.0" width="323" height="520"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" setsMaxLayoutWidthAtFirstLayout="YES" translatesAutoresizingMaskIntoConstraints="NO" id="122">
+                <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" setsMaxLayoutWidthAtFirstLayout="YES" translatesAutoresizingMaskIntoConstraints="NO" id="122">
                     <rect key="frame" x="69" y="252" width="185" height="80"/>
                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="181" id="nb2-46-PIE"/>
+                    </constraints>
                     <shadow key="shadow">
                         <size key="offset" width="0.0" height="1"/>
                         <color key="color" red="1" green="0.99997437" blue="0.99999129769999995" alpha="1" colorSpace="calibratedRGB"/>
@@ -147,9 +150,12 @@
                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                     </textFieldCell>
                 </textField>
-                <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="124">
+                <button translatesAutoresizingMaskIntoConstraints="NO" id="124">
                     <rect key="frame" x="111" y="206" width="100" height="29"/>
                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="24" id="6Il-Zc-l24"/>
+                    </constraints>
                     <buttonCell key="cell" type="bevel" title="Добавить контакт" bezelStyle="regularSquare" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="125" customClass="HIDoneButtonCell">
                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                         <font key="font" metaFont="system"/>
@@ -158,12 +164,12 @@
                         <action selector="newContactClicked:" target="-2" id="140"/>
                     </connections>
                 </button>
-                <customView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="139">
-                    <rect key="frame" x="61" y="8" width="200" height="67"/>
+                <customView ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="139">
+                    <rect key="frame" x="49" y="8" width="225" height="67"/>
                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <subviews>
-                        <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="128">
-                            <rect key="frame" x="6" y="39" width="126" height="17"/>
+                        <textField verticalHuggingPriority="750" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="128">
+                            <rect key="frame" x="18" y="39" width="126" height="17"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <shadow key="shadow">
                                 <size key="offset" width="0.0" height="1"/>
@@ -175,8 +181,8 @@
                                 <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                             </textFieldCell>
                         </textField>
-                        <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="132">
-                            <rect key="frame" x="154" y="39" width="41" height="17"/>
+                        <textField verticalHuggingPriority="750" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="132">
+                            <rect key="frame" x="166" y="39" width="41" height="17"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <shadow key="shadow">
                                 <size key="offset" width="0.0" height="1"/>
@@ -188,8 +194,8 @@
                                 <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                             </textFieldCell>
                         </textField>
-                        <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="134">
-                            <rect key="frame" x="17" y="20" width="166" height="17"/>
+                        <textField verticalHuggingPriority="750" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="134">
+                            <rect key="frame" x="29" y="20" width="169" height="17"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <shadow key="shadow">
                                 <size key="offset" width="0.0" height="1"/>
@@ -201,19 +207,56 @@
                                 <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                             </textFieldCell>
                         </textField>
-                        <imageView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="136">
-                            <rect key="frame" x="130" y="34" width="24" height="24"/>
+                        <imageView ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="136">
+                            <rect key="frame" x="142" y="34" width="24" height="24"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="24" id="jWi-A6-lXD"/>
+                            </constraints>
                             <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="icon-plus" id="137"/>
                         </imageView>
                     </subviews>
+                    <constraints>
+                        <constraint firstItem="132" firstAttribute="leading" secondItem="136" secondAttribute="trailing" constant="2" id="1aK-Bg-itw"/>
+                        <constraint firstItem="134" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="139" secondAttribute="leading" constant="20" symbolic="YES" id="EmU-Rd-I6p"/>
+                        <constraint firstItem="132" firstAttribute="baseline" secondItem="128" secondAttribute="baseline" id="G3W-0K-IIN"/>
+                        <constraint firstItem="136" firstAttribute="leading" secondItem="128" secondAttribute="trailing" id="G9K-HG-KgU"/>
+                        <constraint firstItem="136" firstAttribute="leading" secondItem="128" secondAttribute="trailing" id="TrK-2m-Gya"/>
+                        <constraint firstItem="128" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="139" secondAttribute="leading" constant="20" symbolic="YES" id="W5c-xa-d3d"/>
+                        <constraint firstItem="132" firstAttribute="leading" secondItem="136" secondAttribute="trailing" constant="2" id="cX7-uP-8ZQ"/>
+                        <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="134" secondAttribute="trailing" constant="20" symbolic="YES" id="eVD-98-Q40"/>
+                        <constraint firstItem="128" firstAttribute="top" secondItem="139" secondAttribute="top" constant="11" id="gZ8-md-im7"/>
+                        <constraint firstItem="136" firstAttribute="centerY" secondItem="128" secondAttribute="centerY" constant="1.5" id="gnF-M5-kpl"/>
+                        <constraint firstAttribute="bottom" secondItem="134" secondAttribute="bottom" constant="20" symbolic="YES" id="h2G-jm-O0U"/>
+                        <constraint firstItem="134" firstAttribute="top" secondItem="132" secondAttribute="bottom" constant="2" id="l6N-WA-tCp"/>
+                        <constraint firstItem="136" firstAttribute="top" secondItem="139" secondAttribute="top" constant="9" id="mpN-C0-GFc"/>
+                        <constraint firstAttribute="centerX" secondItem="134" secondAttribute="centerX" constant="-1" id="nnI-P9-NMo"/>
+                        <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="132" secondAttribute="trailing" constant="20" symbolic="YES" id="qiq-fF-EhT"/>
+                    </constraints>
                 </customView>
-                <imageView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="143">
+                <imageView translatesAutoresizingMaskIntoConstraints="NO" id="143">
                     <rect key="frame" x="127" y="362" width="68" height="68"/>
                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="68" id="t5J-7M-N5H"/>
+                    </constraints>
                     <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="icon-sadface" id="144"/>
                 </imageView>
             </subviews>
+            <constraints>
+                <constraint firstItem="124" firstAttribute="top" secondItem="122" secondAttribute="bottom" constant="19" id="3dS-Cd-ipT"/>
+                <constraint firstAttribute="centerX" secondItem="124" secondAttribute="centerX" constant="0.5" id="7g4-SN-4bV"/>
+                <constraint firstItem="124" firstAttribute="top" secondItem="122" secondAttribute="bottom" constant="19" id="9h4-0o-avX"/>
+                <constraint firstItem="122" firstAttribute="leading" secondItem="121" secondAttribute="leading" constant="71" id="K06-Cl-Asq"/>
+                <constraint firstItem="124" firstAttribute="centerX" secondItem="139" secondAttribute="centerX" id="Nx6-mz-iGi"/>
+                <constraint firstAttribute="centerX" secondItem="122" secondAttribute="centerX" id="PVi-PF-Qcu"/>
+                <constraint firstAttribute="bottom" secondItem="124" secondAttribute="bottom" constant="209" id="XHn-Q0-sld"/>
+                <constraint firstAttribute="centerX" secondItem="143" secondAttribute="centerX" constant="0.5" id="b17-7L-lc1"/>
+                <constraint firstItem="122" firstAttribute="top" secondItem="143" secondAttribute="bottom" constant="30" id="bey-bI-OpS"/>
+                <constraint firstItem="143" firstAttribute="top" secondItem="121" secondAttribute="top" constant="90" id="bgz-i1-RMX"/>
+                <constraint firstAttribute="bottom" secondItem="139" secondAttribute="bottom" constant="8" id="eoG-7t-etE"/>
+                <constraint firstAttribute="centerX" secondItem="139" secondAttribute="centerX" constant="0.5" id="fbj-T2-P75"/>
+            </constraints>
         </customView>
         <userDefaultsController representsSharedInstance="YES" id="162"/>
     </objects>
