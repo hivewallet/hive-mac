@@ -8,14 +8,8 @@
 /* Class = "NSButtonCell"; title = "Add contact"; ObjectID = "125"; */
 "125.title" = "加新联系";
 
-/* Class = "NSTextFieldCell"; title = "You can then use the"; ObjectID = "129"; */
-"129.title" = "你可以用以上的";
-
-/* Class = "NSTextFieldCell"; title = "button"; ObjectID = "133"; */
-"133.title" = "按钮";
-
-/* Class = "NSTextFieldCell"; title = "on top to add more contacts."; ObjectID = "135"; */
-"135.title" = "来加新的联系。";
+/* Class = "NSTextFieldCell"; title = "You can then use the \U2795 button on top to add more contacts."; ObjectID = "129"; */
+"129.title" = "你可以用以上的 \U2795 按钮 来加新的联系。";
 
 /* Class = "NSTextFieldCell"; title = "Label"; ObjectID = "205"; */
 "205.title" = "标签";
