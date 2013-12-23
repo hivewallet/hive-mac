@@ -15,7 +15,7 @@
 "16.title" = "Betrag:";
 
 /* Class = "NSTextFieldCell"; placeholderString = "Type to search..."; ObjectID = "20"; */
-"20.placeholderString" = "Suchkriterien eingeben um zu suchen...";
+"20.placeholderString" = "Suchkriterien eingeben...";
 
 /* Class = "NSTextFieldCell"; title = "John Whatshisface"; ObjectID = "20"; */
 "20.title" = "John Whatshisface";
