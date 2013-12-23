@@ -7,14 +7,8 @@
 /* Class = "NSButtonCell"; title = "Add contact"; ObjectID = "125"; */
 "125.title" = "Додајте контакт";
 
-/* Class = "NSTextFieldCell"; title = "You can then use the"; ObjectID = "129"; */
-"129.title" = "Након тога можете користити";
-
-/* Class = "NSTextFieldCell"; title = "button"; ObjectID = "133"; */
-"133.title" = "дугме";
-
-/* Class = "NSTextFieldCell"; title = "on top to add more contacts."; ObjectID = "135"; */
-"135.title" = "на врху како би додали још контаката.";
+/* Class = "NSTextFieldCell"; title = "You can then use the \U2795 button on top to add more contacts."; ObjectID = "129"; */
+"129.title" = "Након тога можете користити \U2795 дугме на врху како би додали још контаката.";
 
 /* Class = "NSTextFieldCell"; title = "Label"; ObjectID = "205"; */
 "205.title" = "Ознака";

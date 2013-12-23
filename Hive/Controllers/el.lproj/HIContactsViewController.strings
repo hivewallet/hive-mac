@@ -8,14 +8,8 @@
 /* Class = "NSButtonCell"; title = "Add contact"; ObjectID = "125"; */
 "125.title" = "Προσθήκη επαφής";
 
-/* Class = "NSTextFieldCell"; title = "You can then use the"; ObjectID = "129"; */
-"129.title" = "Μπορείτε μετά να χρησιμοποιήσετε το";
-
-/* Class = "NSTextFieldCell"; title = "button"; ObjectID = "133"; */
-"133.title" = "κουμπί";
-
-/* Class = "NSTextFieldCell"; title = "on top to add more contacts."; ObjectID = "135"; */
-"135.title" = "στην κορυφή για να προσθέσετε κι άλλες επαφές.";
+/* Class = "NSTextFieldCell"; title = "You can then use the \U2795 button on top to add more contacts."; ObjectID = "129"; */
+"129.title" = "Μπορείτε μετά να χρησιμοποιήσετε το \U2795 κουμπί στην κορυφή για να προσθέσετε κι άλλες επαφές.";
 
 /* Class = "NSTextFieldCell"; title = "Label"; ObjectID = "205"; */
 "205.title" = "Ετικέτα";

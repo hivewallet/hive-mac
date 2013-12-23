@@ -164,76 +164,6 @@
                         <action selector="newContactClicked:" target="-2" id="140"/>
                     </connections>
                 </button>
-                <customView ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="139">
-                    <rect key="frame" x="49" y="8" width="225" height="67"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <subviews>
-                        <textField verticalHuggingPriority="750" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="128">
-                            <rect key="frame" x="18" y="39" width="126" height="17"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <shadow key="shadow">
-                                <size key="offset" width="0.0" height="1"/>
-                                <color key="color" red="1" green="0.99988943340000003" blue="0.99995732309999996" alpha="1" colorSpace="calibratedRGB"/>
-                            </shadow>
-                            <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Apoi puteți folosi" id="129">
-                                <font key="font" size="13" name="Helvetica"/>
-                                <color key="textColor" red="0.32231375579999999" green="0.3222793639" blue="0.32230004670000001" alpha="1" colorSpace="calibratedRGB"/>
-                                <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
-                            </textFieldCell>
-                        </textField>
-                        <textField verticalHuggingPriority="750" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="132">
-                            <rect key="frame" x="166" y="39" width="41" height="17"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <shadow key="shadow">
-                                <size key="offset" width="0.0" height="1"/>
-                                <color key="color" red="1" green="0.99988943340000003" blue="0.99995732309999996" alpha="1" colorSpace="calibratedRGB"/>
-                            </shadow>
-                            <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="buton" id="133">
-                                <font key="font" size="13" name="Helvetica"/>
-                                <color key="textColor" red="0.32231375579999999" green="0.3222793639" blue="0.32230004670000001" alpha="1" colorSpace="calibratedRGB"/>
-                                <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
-                            </textFieldCell>
-                        </textField>
-                        <textField verticalHuggingPriority="750" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="134">
-                            <rect key="frame" x="29" y="20" width="169" height="17"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <shadow key="shadow">
-                                <size key="offset" width="0.0" height="1"/>
-                                <color key="color" red="1" green="0.99988943340000003" blue="0.99995732309999996" alpha="1" colorSpace="calibratedRGB"/>
-                            </shadow>
-                            <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="deasupra să adăugați mai multe contacte." id="135">
-                                <font key="font" size="13" name="Helvetica"/>
-                                <color key="textColor" red="0.32231375579999999" green="0.3222793639" blue="0.32230004670000001" alpha="1" colorSpace="calibratedRGB"/>
-                                <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
-                            </textFieldCell>
-                        </textField>
-                        <imageView ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="136">
-                            <rect key="frame" x="142" y="34" width="24" height="24"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <constraints>
-                                <constraint firstAttribute="width" constant="24" id="jWi-A6-lXD"/>
-                            </constraints>
-                            <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="icon-plus" id="137"/>
-                        </imageView>
-                    </subviews>
-                    <constraints>
-                        <constraint firstItem="132" firstAttribute="leading" secondItem="136" secondAttribute="trailing" constant="2" id="1aK-Bg-itw"/>
-                        <constraint firstItem="134" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="139" secondAttribute="leading" constant="20" symbolic="YES" id="EmU-Rd-I6p"/>
-                        <constraint firstItem="132" firstAttribute="baseline" secondItem="128" secondAttribute="baseline" id="G3W-0K-IIN"/>
-                        <constraint firstItem="136" firstAttribute="leading" secondItem="128" secondAttribute="trailing" id="G9K-HG-KgU"/>
-                        <constraint firstItem="136" firstAttribute="leading" secondItem="128" secondAttribute="trailing" id="TrK-2m-Gya"/>
-                        <constraint firstItem="128" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="139" secondAttribute="leading" constant="20" symbolic="YES" id="W5c-xa-d3d"/>
-                        <constraint firstItem="132" firstAttribute="leading" secondItem="136" secondAttribute="trailing" constant="2" id="cX7-uP-8ZQ"/>
-                        <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="134" secondAttribute="trailing" constant="20" symbolic="YES" id="eVD-98-Q40"/>
-                        <constraint firstItem="128" firstAttribute="top" secondItem="139" secondAttribute="top" constant="11" id="gZ8-md-im7"/>
-                        <constraint firstItem="136" firstAttribute="centerY" secondItem="128" secondAttribute="centerY" constant="1.5" id="gnF-M5-kpl"/>
-                        <constraint firstAttribute="bottom" secondItem="134" secondAttribute="bottom" constant="20" symbolic="YES" id="h2G-jm-O0U"/>
-                        <constraint firstItem="134" firstAttribute="top" secondItem="132" secondAttribute="bottom" constant="2" id="l6N-WA-tCp"/>
-                        <constraint firstItem="136" firstAttribute="top" secondItem="139" secondAttribute="top" constant="9" id="mpN-C0-GFc"/>
-                        <constraint firstAttribute="centerX" secondItem="134" secondAttribute="centerX" constant="-1" id="nnI-P9-NMo"/>
-                        <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="132" secondAttribute="trailing" constant="20" symbolic="YES" id="qiq-fF-EhT"/>
-                    </constraints>
-                </customView>
                 <imageView translatesAutoresizingMaskIntoConstraints="NO" id="143">
                     <rect key="frame" x="127" y="362" width="68" height="68"/>
                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
@@ -242,20 +172,35 @@
                     </constraints>
                     <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="icon-sadface" id="144"/>
                 </imageView>
+                <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="128">
+                    <rect key="frame" x="59" y="20" width="204" height="34"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="200" id="prj-BL-NUg"/>
+                    </constraints>
+                    <shadow key="shadow">
+                        <size key="offset" width="0.0" height="1"/>
+                        <color key="color" red="1" green="0.99988943340000003" blue="0.99995732309999996" alpha="1" colorSpace="calibratedRGB"/>
+                    </shadow>
+                    <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="center" title="Apoi puteți folosi ➕ buton deasupra să adăugați mai multe contacte." id="129">
+                        <font key="font" size="13" name="Helvetica"/>
+                        <color key="textColor" red="0.32231375579999999" green="0.3222793639" blue="0.32230004670000001" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
             </subviews>
             <constraints>
                 <constraint firstItem="124" firstAttribute="top" secondItem="122" secondAttribute="bottom" constant="19" id="3dS-Cd-ipT"/>
                 <constraint firstAttribute="centerX" secondItem="124" secondAttribute="centerX" constant="0.5" id="7g4-SN-4bV"/>
+                <constraint firstAttribute="centerX" secondItem="128" secondAttribute="centerX" constant="0.5" id="8BE-bj-4Nx"/>
                 <constraint firstItem="124" firstAttribute="top" secondItem="122" secondAttribute="bottom" constant="19" id="9h4-0o-avX"/>
+                <constraint firstAttribute="bottom" secondItem="128" secondAttribute="bottom" constant="20" id="Csf-yO-ULX"/>
                 <constraint firstItem="122" firstAttribute="leading" secondItem="121" secondAttribute="leading" constant="71" id="K06-Cl-Asq"/>
-                <constraint firstItem="124" firstAttribute="centerX" secondItem="139" secondAttribute="centerX" id="Nx6-mz-iGi"/>
                 <constraint firstAttribute="centerX" secondItem="122" secondAttribute="centerX" id="PVi-PF-Qcu"/>
                 <constraint firstAttribute="bottom" secondItem="124" secondAttribute="bottom" constant="209" id="XHn-Q0-sld"/>
                 <constraint firstAttribute="centerX" secondItem="143" secondAttribute="centerX" constant="0.5" id="b17-7L-lc1"/>
                 <constraint firstItem="122" firstAttribute="top" secondItem="143" secondAttribute="bottom" constant="30" id="bey-bI-OpS"/>
                 <constraint firstItem="143" firstAttribute="top" secondItem="121" secondAttribute="top" constant="90" id="bgz-i1-RMX"/>
-                <constraint firstAttribute="bottom" secondItem="139" secondAttribute="bottom" constant="8" id="eoG-7t-etE"/>
-                <constraint firstAttribute="centerX" secondItem="139" secondAttribute="centerX" constant="0.5" id="fbj-T2-P75"/>
             </constraints>
         </customView>
         <userDefaultsController representsSharedInstance="YES" id="162"/>
