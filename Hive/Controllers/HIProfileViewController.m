@@ -7,6 +7,7 @@
 //
 
 #import "BCClient.h"
+#import "HIBitcoinFormatService.h"
 #import "HIContactInfoViewController.h"
 #import "HICurrencyAmountFormatter.h"
 #import "HIExchangeRateService.h"
@@ -21,6 +22,7 @@
 }
 
 @property (strong, readonly) HIExchangeRateService *exchangeRateService;
+@property (strong, readonly) HIBitcoinFormatService *bitcoinFormatService;
 @property (copy) NSDecimalNumber *exchangeRate;
 @property (copy, nonatomic) NSString *selectedCurrency;
 @property (copy) NSDecimalNumber *balance;
@@ -31,6 +33,7 @@
 @property (strong) IBOutlet NSTextField *balanceLabel;
 @property (strong) IBOutlet NSTextField *convertedBalanceLabel;
 @property (strong) IBOutlet NSPopUpButton *convertedCurrencyPopupButton;
+@property (strong) IBOutlet NSPopUpButton *bitcoinCurrencyPopupButton;
 @property (strong) IBOutlet NSView *contentView;
 
 @end
@@ -59,6 +62,8 @@
         _exchangeRateService = [HIExchangeRateService sharedService];
         [_exchangeRateService addExchangeRateObserver:self];
         self.selectedCurrency = _exchangeRateService.preferredCurrency;
+
+        _bitcoinFormatService = [HIBitcoinFormatService sharedService];
     }
 
     return self;
@@ -76,7 +81,7 @@
 
     self.view.layer.backgroundColor = [[NSColor hiWindowBackgroundColor] hiNativeColor];
 
-    [self setupCurrencyList];
+    [self setupCurrencyLists];
     [self updateBalance];
     [self refreshData];
 
@@ -84,7 +89,8 @@
 
 }
 
-- (void)setupCurrencyList {
+- (void)setupCurrencyLists {
+    [self.bitcoinCurrencyPopupButton addItemsWithTitles:self.bitcoinFormatService.availableFormats];
     [self.convertedCurrencyPopupButton addItemsWithTitles:self.exchangeRateService.availableCurrencies];
     [self.convertedCurrencyPopupButton selectItemWithTitle:_selectedCurrency];
 }

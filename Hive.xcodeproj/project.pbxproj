@@ -10,6 +10,7 @@
 		05D9F526F5294257A0422835 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1EFBACBE45EB458A8ED83785 /* libPods.a */; };
 		1AA1008D9D0E0DC1B7F4E36D /* HILinkTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AA100BCED704B381898FF89 /* HILinkTextField.m */; };
 		1AA101EED53C9E95085C6DE3 /* HIProfileViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1AA10EA4B4E51F7D0E32DC6D /* HIProfileViewController.xib */; };
+		1AA1031B9A110C6B939AB603 /* HIBitcoinFormatService.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AA100CAE5EF0CB61AF126DB /* HIBitcoinFormatService.m */; };
 		1AA1079715A3C2B9CD4CC308 /* NSWindow+HIShake.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AA10B9F1D9322FFF21821DA /* NSWindow+HIShake.m */; };
 		1AA10A016757DBB9BE7808C5 /* HIExchangeRateService.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AA1032408E917EE5B7752AC /* HIExchangeRateService.m */; };
 		1AA10AB8CB13510790BD9A6D /* HIPasswordHolder.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AA10711079E121245A12DED /* HIPasswordHolder.m */; };
@@ -227,11 +228,13 @@
 /* Begin PBXFileReference section */
 		10153A3CC4364D6799CB4A2D /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = SOURCE_ROOT; };
 		1AA100BCED704B381898FF89 /* HILinkTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HILinkTextField.m; sourceTree = "<group>"; };
+		1AA100CAE5EF0CB61AF126DB /* HIBitcoinFormatService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HIBitcoinFormatService.m; sourceTree = "<group>"; };
 		1AA1013FB9712D7B30A91BFB /* HIProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HIProfileViewController.m; sourceTree = "<group>"; };
 		1AA1021B2F3F04674129E978 /* NSWindow+HIShake.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSWindow+HIShake.h"; sourceTree = "<group>"; };
 		1AA1032408E917EE5B7752AC /* HIExchangeRateService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HIExchangeRateService.m; sourceTree = "<group>"; };
 		1AA10497F9EEF9DF75030891 /* HILinkTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HILinkTextField.h; sourceTree = "<group>"; };
 		1AA105D02E607E309205E8EC /* ar */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/HIProfileViewController.strings; sourceTree = "<group>"; };
+		1AA105D345F413155D76B5B8 /* HIBitcoinFormatService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HIBitcoinFormatService.h; sourceTree = "<group>"; };
 		1AA10683D3C0D3D1757EE24E /* HIPerson.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HIPerson.h; sourceTree = "<group>"; };
 		1AA106F09BEB25F235D75A80 /* HIPasswordHolder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HIPasswordHolder.h; sourceTree = "<group>"; };
 		1AA10711079E121245A12DED /* HIPasswordHolder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HIPasswordHolder.m; sourceTree = "<group>"; };
@@ -1468,6 +1471,8 @@
 				585A8B2418576F020096888C /* HIDatabaseManager.m */,
 				1AA10C583F128C0BCD84C878 /* HIExchangeRateService.h */,
 				1AA1032408E917EE5B7752AC /* HIExchangeRateService.m */,
+				1AA100CAE5EF0CB61AF126DB /* HIBitcoinFormatService.m */,
+				1AA105D345F413155D76B5B8 /* HIBitcoinFormatService.h */,
 			);
 			path = Backend;
 			sourceTree = "<group>";
@@ -2043,6 +2048,7 @@
 				1AA1008D9D0E0DC1B7F4E36D /* HILinkTextField.m in Sources */,
 				1AA10AB8CB13510790BD9A6D /* HIPasswordHolder.m in Sources */,
 				1AA1079715A3C2B9CD4CC308 /* NSWindow+HIShake.m in Sources */,
+				1AA1031B9A110C6B939AB603 /* HIBitcoinFormatService.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

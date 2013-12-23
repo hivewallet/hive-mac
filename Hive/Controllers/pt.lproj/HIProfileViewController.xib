@@ -8,6 +8,7 @@
         <customObject id="-2" userLabel="File's Owner" customClass="HIProfileViewController">
             <connections>
                 <outlet property="balanceLabel" destination="75" id="78"/>
+                <outlet property="bitcoinCurrencyPopupButton" destination="qOj-X5-bn0" id="iM1-M2-Sv5"/>
                 <outlet property="contentView" destination="40" id="41"/>
                 <outlet property="convertedBalanceLabel" destination="ZMe-rr-2nF" id="NEF-fa-ioj"/>
                 <outlet property="convertedCurrencyPopupButton" destination="Oga-wU-PlF" id="Sv7-Rq-uRb"/>
