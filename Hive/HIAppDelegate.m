@@ -18,6 +18,7 @@
 #import "HIApplicationsManager.h"
 #import "HIApplicationURLProtocol.h"
 #import "HIBackupCenterWindowController.h"
+#import "HIBackupManager.h"
 #import "HIBitcoinURL.h"
 #import "HIDatabaseManager.h"
 #import "HIDebuggingInfoWindowController.h"
@@ -95,6 +96,8 @@ void handleException(NSException *exception) {
                                                        andSelector:@selector(handleURLEvent:withReplyEvent:)
                                                      forEventClass:kInternetEventClass
                                                         andEventID:kAEGetURL];
+
+    [[HIBackupManager sharedManager] initializeAdapters];
 
     [self showBetaWarning];
     [self preinstallAppsIfNeeded];

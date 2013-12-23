@@ -40,6 +40,7 @@
 		583B1DFE18686C8400817EF8 /* HIDropboxBackup.m in Sources */ = {isa = PBXBuildFile; fileRef = 583B1DFD18686C8400817EF8 /* HIDropboxBackup.m */; };
 		583B1E011868784600817EF8 /* HIBackupManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 583B1E001868784600817EF8 /* HIBackupManager.m */; };
 		583B1E0318687CF400817EF8 /* dropbox-glyph-blue.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 583B1E0218687CF400817EF8 /* dropbox-glyph-blue.pdf */; };
+		583B1E0D1868BAC000817EF8 /* HIBackupActionsCellView.m in Sources */ = {isa = PBXBuildFile; fileRef = 583B1E0C1868BAC000817EF8 /* HIBackupActionsCellView.m */; };
 		585A8B2518576F020096888C /* HIDatabaseManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 585A8B2418576F020096888C /* HIDatabaseManager.m */; };
 		585FFF4418159803005BCF73 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 585FFF4318159803005BCF73 /* Credits.rtf */; };
 		586059AF180419DF00FD9C2A /* bitstamp.hiveapp in Resources */ = {isa = PBXBuildFile; fileRef = 586059AC180419DF00FD9C2A /* bitstamp.hiveapp */; };
@@ -449,6 +450,8 @@
 		583B1DFF1868784600817EF8 /* HIBackupManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HIBackupManager.h; sourceTree = "<group>"; };
 		583B1E001868784600817EF8 /* HIBackupManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HIBackupManager.m; sourceTree = "<group>"; };
 		583B1E0218687CF400817EF8 /* dropbox-glyph-blue.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "dropbox-glyph-blue.pdf"; sourceTree = "<group>"; };
+		583B1E0B1868BAC000817EF8 /* HIBackupActionsCellView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HIBackupActionsCellView.h; sourceTree = "<group>"; };
+		583B1E0C1868BAC000817EF8 /* HIBackupActionsCellView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HIBackupActionsCellView.m; sourceTree = "<group>"; };
 		585A8B2318576F020096888C /* HIDatabaseManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HIDatabaseManager.h; sourceTree = "<group>"; };
 		585A8B2418576F020096888C /* HIDatabaseManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HIDatabaseManager.m; sourceTree = "<group>"; };
 		585FFF201815374B005BCF73 /* nl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = nl; path = nl.lproj/HIApplicationsViewController.strings; sourceTree = "<group>"; };
@@ -1494,6 +1497,8 @@
 		D97E7FD2176BC03000D2350B /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				583B1E0B1868BAC000817EF8 /* HIBackupActionsCellView.h */,
+				583B1E0C1868BAC000817EF8 /* HIBackupActionsCellView.m */,
 				D9716B7517D8C40100888F4E /* HIBox.h */,
 				D9716B7617D8C40100888F4E /* HIBox.m */,
 				D9716B7017D8B42E00888F4E /* HIButtonCell.h */,
@@ -1516,8 +1521,8 @@
 				D958A8B717E8547A00CED98C /* HIFlippedView.m */,
 				D9F0B9F617EC654C0050A0A2 /* HIImageCell.h */,
 				D9F0B9F717EC654C0050A0A2 /* HIImageCell.m */,
-				1AA100BCED704B381898FF89 /* HILinkTextField.m */,
 				1AA10497F9EEF9DF75030891 /* HILinkTextField.h */,
+				1AA100BCED704B381898FF89 /* HILinkTextField.m */,
 				588EFB2C17D8D2970085F6E6 /* HIProfileTabView.h */,
 				588EFB2D17D8D2970085F6E6 /* HIProfileTabView.m */,
 				D94815F017D4D9AF006A0312 /* HISeparatorView.h */,
@@ -1973,6 +1978,7 @@
 				D94815B417D492A0006A0312 /* HITitleView.m in Sources */,
 				D94815E917D4BCEF006A0312 /* HIContactRowView.m in Sources */,
 				D94815F217D4D9AF006A0312 /* HISeparatorView.m in Sources */,
+				583B1E0D1868BAC000817EF8 /* HIBackupActionsCellView.m in Sources */,
 				D94815F517D72AF8006A0312 /* HITextField.m in Sources */,
 				D9716B6D17D88F8800888F4E /* HIDoneButtonCell.m in Sources */,
 				D9716B7217D8B42E00888F4E /* HIButtonCell.m in Sources */,

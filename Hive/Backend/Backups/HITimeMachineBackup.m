@@ -11,11 +11,27 @@
 @implementation HITimeMachineBackup
 
 - (NSString *)name {
+    return @"time_machine";
+}
+
+- (NSString *)displayedName {
     return @"Time Machine";
 }
 
 - (NSImage *)icon {
     return [[NSImage alloc] initWithContentsOfFile:@"/Applications/Time Machine.app/Contents/Resources/backup.icns"];
+}
+
+- (HIBackupAdapterStatus)status {
+    if (!self.enabled) {
+        return HIBackupStatusDisabled;
+    } else {
+        return HIBackupStatusUpToDate;
+    }
+}
+
+- (BOOL)isEnabledByDefault {
+    return YES;
 }
 
 @end

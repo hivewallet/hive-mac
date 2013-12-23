@@ -11,6 +11,10 @@
 @implementation HIDropboxBackup
 
 - (NSString *)name {
+    return @"dropbox";
+}
+
+- (NSString *)displayedName {
     return @"Dropbox";
 }
 
@@ -20,6 +24,18 @@
 
 - (CGFloat)iconSize {
     return 44.0;
+}
+
+- (HIBackupAdapterStatus)status {
+    if (!self.enabled) {
+        return HIBackupStatusDisabled;
+    } else {
+        return HIBackupStatusUpToDate;
+    }
+}
+
+- (BOOL)isEnabledByDefault {
+    return NO;
 }
 
 @end

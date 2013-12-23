@@ -13,5 +13,6 @@
 @property (readonly) NSArray *adapters;
 
 + (HIBackupManager *)sharedManager;
+- (void)initializeAdapters;
 
 @end

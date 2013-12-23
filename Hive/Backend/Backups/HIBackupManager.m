@@ -39,4 +39,16 @@
     return self;
 }
 
+- (void)initializeAdapters {
+    NSDictionary *settings = [HIBackupAdapter backupSettings];
+
+    for (HIBackupAdapter *adapter in _adapters) {
+        if (![settings objectForKey:adapter.name]) {
+            adapter.enabled = [adapter isEnabledByDefault];
+        }
+    }
+
+    [[NSUserDefaults standardUserDefaults] synchronize];
+}
+
 @end
