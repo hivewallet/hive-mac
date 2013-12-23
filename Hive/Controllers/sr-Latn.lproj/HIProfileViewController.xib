@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="4514" systemVersion="12F45" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none">
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="4514" systemVersion="13C32" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
         <deployment version="1070" defaultVersion="1070" identifier="macosx"/>
         <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="4514"/>
@@ -22,12 +22,12 @@
             <rect key="frame" x="0.0" y="0.0" width="350" height="456"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView id="3">
+                <imageView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3">
                     <rect key="frame" x="0.0" y="381" width="75" height="75"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyUpOrDown" id="4"/>
                 </imageView>
-                <textField verticalHuggingPriority="750" id="21">
+                <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="21">
                     <rect key="frame" x="88" y="425" width="236" height="17"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="John Whatshisface" id="22">
@@ -36,16 +36,16 @@
                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                     </textFieldCell>
                 </textField>
-                <customView id="40">
+                <customView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="40">
                     <rect key="frame" x="0.0" y="0.0" width="350" height="341"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                 </customView>
-                <imageView id="73">
+                <imageView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="73">
                     <rect key="frame" x="85" y="388" width="22" height="22"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="icon-bitcoin" id="74"/>
                 </imageView>
-                <textField verticalHuggingPriority="750" id="75">
+                <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="75">
                     <rect key="frame" x="109" y="392" width="228" height="17"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="0.00" usesSingleLineMode="YES" id="76">
@@ -54,7 +54,7 @@
                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                     </textFieldCell>
                 </textField>
-                <box autoresizesSubviews="NO" title="Polje" boxType="custom" borderType="line" id="2tC-mD-mf4">
+                <box autoresizesSubviews="NO" fixedFrame="YES" title="Polje" boxType="custom" borderType="line" translatesAutoresizingMaskIntoConstraints="NO" id="2tC-mD-mf4">
                     <rect key="frame" x="90" y="416" width="245" height="1"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                     <view key="contentView">
@@ -64,7 +64,7 @@
                     <color key="borderColor" white="0.75" alpha="1" colorSpace="calibratedWhite"/>
                     <color key="fillColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                 </box>
-                <box autoresizesSubviews="NO" title="Polje" boxType="custom" borderType="line" id="Zcf-4u-dGc">
+                <box autoresizesSubviews="NO" fixedFrame="YES" title="Polje" boxType="custom" borderType="line" translatesAutoresizingMaskIntoConstraints="NO" id="Zcf-4u-dGc">
                     <rect key="frame" x="75" y="380" width="275" height="1"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                     <view key="contentView">
@@ -74,7 +74,7 @@
                     <color key="borderColor" white="0.75" alpha="1" colorSpace="calibratedWhite"/>
                     <color key="fillColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                 </box>
-                <box autoresizesSubviews="NO" title="Polje" boxType="custom" borderType="line" id="5Bs-DP-BDu">
+                <box autoresizesSubviews="NO" fixedFrame="YES" title="Polje" boxType="custom" borderType="line" translatesAutoresizingMaskIntoConstraints="NO" id="5Bs-DP-BDu">
                     <rect key="frame" x="0.0" y="343" width="350" height="1"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                     <view key="contentView">
@@ -84,10 +84,10 @@
                     <color key="borderColor" white="0.75" alpha="1" colorSpace="calibratedWhite"/>
                     <color key="fillColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                 </box>
-                <popUpButton verticalHuggingPriority="750" id="Oga-wU-PlF">
-                    <rect key="frame" x="18" y="349" width="88" height="26"/>
+                <popUpButton verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Oga-wU-PlF">
+                    <rect key="frame" x="38" y="349" width="68" height="26"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                    <popUpButtonCell key="cell" type="push" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" id="6nQ-ap-d7s">
+                    <popUpButtonCell key="cell" type="push" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="6nQ-ap-d7s">
                         <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
                         <font key="font" metaFont="menu"/>
                         <menu key="menu" title="DrugaGledišta" id="Rwt-9J-8Ww"/>
@@ -96,10 +96,10 @@
                         <action selector="currencyChanged:" target="-2" id="x1O-fC-qcN"/>
                     </connections>
                 </popUpButton>
-                <textField focusRingType="none" verticalHuggingPriority="750" id="ZMe-rr-2nF">
+                <textField focusRingType="none" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ZMe-rr-2nF">
                     <rect key="frame" x="109" y="349" width="228" height="22"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" focusRingType="none" title="0.00" id="0SG-Yr-r9j">
+                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" state="on" focusRingType="none" title="0.00" id="0SG-Yr-r9j">
                         <font key="font" metaFont="system"/>
                         <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
