@@ -16,19 +16,15 @@ DEPENDENCIES:
   - CocoaLumberjack
   - FXKeychain
   - INAppStoreWindow
-  - LetsMove (from `etc/LetsMove.podspec`)
+  - LetsMove
   - NXOAuth2Client
-
-EXTERNAL SOURCES:
-  LetsMove:
-    :podspec: etc/LetsMove.podspec
 
 SPEC CHECKSUMS:
   AFNetworking: 61fdd49e2ffe6380378df37b3b6e70630bb9dd66
   CocoaLumberjack: be87113f649942f020a37c061c58009b6ee5ff68
   FXKeychain: 649efca683aa602c446620701a46780515d25610
   INAppStoreWindow: 265a8810a450c7d3279fc9f9686bbd563bb78dc5
-  LetsMove: 771db3c820e60372363338d8e4b8f672801c6632
+  LetsMove: 136b97193dd04d01965cfd962713f1d2e4750fbe
   NXOAuth2Client: 4666d0d73ba7689181ef4597e1b1beda3978c724
 
 COCOAPODS: 0.28.0

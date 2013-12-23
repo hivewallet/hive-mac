@@ -5,7 +5,7 @@ pod 'AFNetworking',       '~> 1.3.2'
 pod 'NXOAuth2Client'
 pod 'FXKeychain'
 pod 'CocoaLumberjack'
-pod 'LetsMove', :podspec => 'etc/LetsMove.podspec'
+pod 'LetsMove'
 
 # Map old locale names (used in LetsMove) to ours
 pre_install do |installer|
