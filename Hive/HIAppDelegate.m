@@ -41,9 +41,6 @@ static int ddLogLevel = LOG_LEVEL_VERBOSE;
 @end
 
 @interface HIAppDelegate () {
-    HIPasswordChangeWindowController *_passwordChangeWindowController;
-    HIDebuggingInfoWindowController *_debuggingInfoWindowController;
-    HIDebuggingToolsWindowController *_debuggingToolsWindowController;
     HIMainWindowController *_mainWindowController;
     NSMutableArray *_popupWindows;
 }
@@ -390,17 +387,15 @@ void handleException(NSException *exception) {
     return NO;
 }
 
+
+#pragma mark - Handling menu actions
+
 - (IBAction)openSendBitcoinsWindow:(id)sender {
     [[self sendBitcoinsWindow] showWindow:self];
 }
 
 - (IBAction)changeWalletPassword:(id)sender {
-    if (!_passwordChangeWindowController) {
-        _passwordChangeWindowController = [HIPasswordChangeWindowController new];
-        [_popupWindows addObject:_passwordChangeWindowController];
-    }
-
-    [_passwordChangeWindowController showWindow:self];
+    [self openPopupWindowWithClass:[HIPasswordChangeWindowController class]];
 }
 
 - (IBAction)openCoinMapSite:(id)sender {
@@ -408,22 +403,15 @@ void handleException(NSException *exception) {
 }
 
 - (IBAction)showDebuggingInfo:(id)sender {
-    if (!_debuggingInfoWindowController) {
-        _debuggingInfoWindowController = [[HIDebuggingInfoWindowController alloc] init];
-        [_popupWindows addObject:_debuggingInfoWindowController];
-    }
-
-    [_debuggingInfoWindowController showWindow:self];
+    [self openPopupWindowWithClass:[HIDebuggingInfoWindowController class]];
 }
 
 - (IBAction)showDebuggingTools:(id)sender {
-    if (!_debuggingToolsWindowController) {
-        _debuggingToolsWindowController = [[HIDebuggingToolsWindowController alloc] init];
-        [_popupWindows addObject:_debuggingToolsWindowController];
-    }
-
-    [_debuggingToolsWindowController showWindow:self];
+    [self openPopupWindowWithClass:[HIDebuggingToolsWindowController class]];
 }
+
+
+#pragma mark - Popup window handling
 
 - (void)showExceptionWindowWithException:(NSException *)exception {
     HIErrorWindowController *window = [[HIErrorWindowController alloc] initWithException:exception];
@@ -444,12 +432,25 @@ void handleException(NSException *exception) {
 }
 
 - (void)popupWindowWillClose:(NSNotification *)notification {
-    NSWindowController *wc = notification.object;
-    [_popupWindows removeObject:wc];
+    [_popupWindows removeObject:notification.object];
+}
 
-    if (wc == _debuggingInfoWindowController) {
-        _debuggingInfoWindowController = nil;
+- (void)openPopupWindowWithClass:(Class)klass {
+    NSWindowController *controller = nil;
+
+    for (NSWindowController *wc in _popupWindows) {
+        if ([wc isKindOfClass:klass]) {
+            controller = wc;
+            break;
+        }
     }
+
+    if (!controller) {
+        controller = [[klass alloc] init];
+        [_popupWindows addObject:controller];
+    }
+
+    [controller showWindow:self];
 }
 
 @end
