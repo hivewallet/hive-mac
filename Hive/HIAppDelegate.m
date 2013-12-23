@@ -17,6 +17,7 @@
 #import "HIAppDelegate.h"
 #import "HIApplicationsManager.h"
 #import "HIApplicationURLProtocol.h"
+#import "HIBackupCenterWindowController.h"
 #import "HIBitcoinURL.h"
 #import "HIDatabaseManager.h"
 #import "HIDebuggingInfoWindowController.h"
@@ -408,6 +409,10 @@ void handleException(NSException *exception) {
 
 - (IBAction)showDebuggingTools:(id)sender {
     [self openPopupWindowWithClass:[HIDebuggingToolsWindowController class]];
+}
+
+- (IBAction)showBackupCenter:(id)sender {
+    [self openPopupWindowWithClass:[HIBackupCenterWindowController class]];
 }
 
 

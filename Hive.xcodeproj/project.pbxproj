@@ -33,6 +33,13 @@
 		582C7DAB185273D400126C10 /* HIApplicationRuntimeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 582C7DAA185273D400126C10 /* HIApplicationRuntimeViewController.xib */; };
 		583B1DD118620BA800817EF8 /* HILogFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = 583B1DD018620BA800817EF8 /* HILogFormatter.m */; };
 		583B1DE41864A32900817EF8 /* HISecureAppStorage.m in Sources */ = {isa = PBXBuildFile; fileRef = 583B1DE31864A32900817EF8 /* HISecureAppStorage.m */; };
+		583B1DED186860EC00817EF8 /* HIBackupCenterWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 583B1DEB186860EC00817EF8 /* HIBackupCenterWindowController.m */; };
+		583B1DEE186860EC00817EF8 /* HIBackupCenterWindowController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 583B1DEC186860EC00817EF8 /* HIBackupCenterWindowController.xib */; };
+		583B1DF818686C3800817EF8 /* HIBackupAdapter.m in Sources */ = {isa = PBXBuildFile; fileRef = 583B1DF718686C3800817EF8 /* HIBackupAdapter.m */; };
+		583B1DFB18686C4700817EF8 /* HITimeMachineBackup.m in Sources */ = {isa = PBXBuildFile; fileRef = 583B1DFA18686C4700817EF8 /* HITimeMachineBackup.m */; };
+		583B1DFE18686C8400817EF8 /* HIDropboxBackup.m in Sources */ = {isa = PBXBuildFile; fileRef = 583B1DFD18686C8400817EF8 /* HIDropboxBackup.m */; };
+		583B1E011868784600817EF8 /* HIBackupManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 583B1E001868784600817EF8 /* HIBackupManager.m */; };
+		583B1E0318687CF400817EF8 /* dropbox-glyph-blue.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 583B1E0218687CF400817EF8 /* dropbox-glyph-blue.pdf */; };
 		585A8B2518576F020096888C /* HIDatabaseManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 585A8B2418576F020096888C /* HIDatabaseManager.m */; };
 		585FFF4418159803005BCF73 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 585FFF4318159803005BCF73 /* Credits.rtf */; };
 		586059AF180419DF00FD9C2A /* bitstamp.hiveapp in Resources */ = {isa = PBXBuildFile; fileRef = 586059AC180419DF00FD9C2A /* bitstamp.hiveapp */; };
@@ -430,6 +437,18 @@
 		583B1DD018620BA800817EF8 /* HILogFormatter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HILogFormatter.m; sourceTree = "<group>"; };
 		583B1DE21864A32900817EF8 /* HISecureAppStorage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HISecureAppStorage.h; sourceTree = "<group>"; };
 		583B1DE31864A32900817EF8 /* HISecureAppStorage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HISecureAppStorage.m; sourceTree = "<group>"; };
+		583B1DEA186860EC00817EF8 /* HIBackupCenterWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HIBackupCenterWindowController.h; sourceTree = "<group>"; };
+		583B1DEB186860EC00817EF8 /* HIBackupCenterWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HIBackupCenterWindowController.m; sourceTree = "<group>"; };
+		583B1DEC186860EC00817EF8 /* HIBackupCenterWindowController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HIBackupCenterWindowController.xib; sourceTree = "<group>"; };
+		583B1DF618686C3800817EF8 /* HIBackupAdapter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HIBackupAdapter.h; sourceTree = "<group>"; };
+		583B1DF718686C3800817EF8 /* HIBackupAdapter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HIBackupAdapter.m; sourceTree = "<group>"; };
+		583B1DF918686C4700817EF8 /* HITimeMachineBackup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HITimeMachineBackup.h; sourceTree = "<group>"; };
+		583B1DFA18686C4700817EF8 /* HITimeMachineBackup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HITimeMachineBackup.m; sourceTree = "<group>"; };
+		583B1DFC18686C8400817EF8 /* HIDropboxBackup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HIDropboxBackup.h; sourceTree = "<group>"; };
+		583B1DFD18686C8400817EF8 /* HIDropboxBackup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HIDropboxBackup.m; sourceTree = "<group>"; };
+		583B1DFF1868784600817EF8 /* HIBackupManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HIBackupManager.h; sourceTree = "<group>"; };
+		583B1E001868784600817EF8 /* HIBackupManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HIBackupManager.m; sourceTree = "<group>"; };
+		583B1E0218687CF400817EF8 /* dropbox-glyph-blue.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "dropbox-glyph-blue.pdf"; sourceTree = "<group>"; };
 		585A8B2318576F020096888C /* HIDatabaseManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HIDatabaseManager.h; sourceTree = "<group>"; };
 		585A8B2418576F020096888C /* HIDatabaseManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HIDatabaseManager.m; sourceTree = "<group>"; };
 		585FFF201815374B005BCF73 /* nl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = nl; path = nl.lproj/HIApplicationsViewController.strings; sourceTree = "<group>"; };
@@ -1278,6 +1297,31 @@
 			path = Formatters;
 			sourceTree = "<group>";
 		};
+		583B1DE7186860C600817EF8 /* HIBackupCenterWindowController */ = {
+			isa = PBXGroup;
+			children = (
+				583B1DEA186860EC00817EF8 /* HIBackupCenterWindowController.h */,
+				583B1DEB186860EC00817EF8 /* HIBackupCenterWindowController.m */,
+				583B1DEC186860EC00817EF8 /* HIBackupCenterWindowController.xib */,
+			);
+			name = HIBackupCenterWindowController;
+			sourceTree = "<group>";
+		};
+		583B1DF318686BD900817EF8 /* Backups */ = {
+			isa = PBXGroup;
+			children = (
+				583B1DF618686C3800817EF8 /* HIBackupAdapter.h */,
+				583B1DF718686C3800817EF8 /* HIBackupAdapter.m */,
+				583B1DFF1868784600817EF8 /* HIBackupManager.h */,
+				583B1E001868784600817EF8 /* HIBackupManager.m */,
+				583B1DFC18686C8400817EF8 /* HIDropboxBackup.h */,
+				583B1DFD18686C8400817EF8 /* HIDropboxBackup.m */,
+				583B1DF918686C4700817EF8 /* HITimeMachineBackup.h */,
+				583B1DFA18686C4700817EF8 /* HITimeMachineBackup.m */,
+			);
+			path = Backups;
+			sourceTree = "<group>";
+		};
 		58605A5F18041DED00FD9C2A /* Lib */ = {
 			isa = PBXGroup;
 			children = (
@@ -1412,6 +1456,7 @@
 		D95929CE177326C4008B4F43 /* Backend */ = {
 			isa = PBXGroup;
 			children = (
+				583B1DF318686BD900817EF8 /* Backups */,
 				586059B2180419F500FD9C2A /* BCClient.h */,
 				586059B3180419F500FD9C2A /* BCClient.m */,
 				5860D3FD180455B900BD852C /* HIApplicationsManager.h */,
@@ -1586,6 +1631,7 @@
 				58605A2118041D0A00FD9C2A /* avatar-empty.pdf */,
 				58605A2218041D0A00FD9C2A /* bg-sidebar.pdf */,
 				58605A2318041D0A00FD9C2A /* button__inset.pdf */,
+				583B1E0218687CF400817EF8 /* dropbox-glyph-blue.pdf */,
 				58605A2418041D0A00FD9C2A /* icon-apps__active.pdf */,
 				58605A2518041D0A00FD9C2A /* icon-apps__inactive.pdf */,
 				58605A2618041D0A00FD9C2A /* icon-bitcoin.pdf */,
@@ -1622,6 +1668,7 @@
 			isa = PBXGroup;
 			children = (
 				D95929D617742ABB008B4F43 /* HIApplicationsViewController */,
+				583B1DE7186860C600817EF8 /* HIBackupCenterWindowController */,
 				D948158417CE1BD4006A0312 /* HIContactsViewController */,
 				581711D917D0FD8F00DE775A /* HIContactViewController */,
 				588E34D0181FF28C006A6A25 /* HIDebuggingInfoWindowController */,
@@ -1844,6 +1891,7 @@
 				58605A4918041D0A00FD9C2A /* icon-gray-btc.pdf in Resources */,
 				58605A4A18041D0A00FD9C2A /* icon-group__active.pdf in Resources */,
 				58605A4B18041D0A00FD9C2A /* icon-group__inactive.pdf in Resources */,
+				583B1DEE186860EC00817EF8 /* HIBackupCenterWindowController.xib in Resources */,
 				58605A4C18041D0A00FD9C2A /* icon-nav-bar-back.pdf in Resources */,
 				58A37ADF180D998700CFCDE3 /* HITransactionsViewController.strings in Resources */,
 				588E356618212BFB006A6A25 /* HIErrorWindowController.xib in Resources */,
@@ -1865,6 +1913,7 @@
 				58605A5918041D0A00FD9C2A /* icon-transactions-arrow-right.pdf in Resources */,
 				58605A5A18041D0A00FD9C2A /* icon-transactions-btc-symbol.pdf in Resources */,
 				58605A5B18041D0A00FD9C2A /* icon-transactions-minus.pdf in Resources */,
+				583B1E0318687CF400817EF8 /* dropbox-glyph-blue.pdf in Resources */,
 				58605A5C18041D0A00FD9C2A /* icon-transactions-plus.pdf in Resources */,
 				58605A5D18041D0A00FD9C2A /* icon-your-profile__active.pdf in Resources */,
 				58D4D61F18290079009CB7A5 /* patten_hive.hiveapp in Resources */,
@@ -1933,6 +1982,7 @@
 				D9716B7E17D9C9F500888F4E /* HIAddress.m in Sources */,
 				583B1DD118620BA800817EF8 /* HILogFormatter.m in Sources */,
 				588EFB2E17D8D2970085F6E6 /* HIProfileTabView.m in Sources */,
+				583B1DF818686C3800817EF8 /* HIBackupAdapter.m in Sources */,
 				58A03B0D17D9DC4100ADD5E5 /* HIButtonWithSpinner.m in Sources */,
 				583B1DE41864A32900817EF8 /* HISecureAppStorage.m in Sources */,
 				58F02AEE17E1F5A400B65429 /* HITitleArrowView.m in Sources */,
@@ -1952,7 +2002,9 @@
 				586059C018041A1300FD9C2A /* SUCodeSigningVerifier+DisableCodeSigningCheck.m in Sources */,
 				586059CB18041A6D00FD9C2A /* HIApplicationRuntimeViewController.m in Sources */,
 				586059CD18041A6D00FD9C2A /* HIApplicationsViewController.m in Sources */,
+				583B1DED186860EC00817EF8 /* HIBackupCenterWindowController.m in Sources */,
 				586059CF18041A6D00FD9C2A /* HIApplicationURLProtocol.m in Sources */,
+				583B1E011868784600817EF8 /* HIBackupManager.m in Sources */,
 				586059D018041A6D00FD9C2A /* HIAppRuntimeBridge.m in Sources */,
 				586059D418041A7A00FD9C2A /* HIContactsViewController.m in Sources */,
 				586059D918041A8700FD9C2A /* HINewContactViewController.m in Sources */,
@@ -1961,6 +2013,7 @@
 				586059E618041A9900FD9C2A /* HIContactViewController.m in Sources */,
 				586059EE18041AAF00FD9C2A /* HIContactAutocompleteWindowController.m in Sources */,
 				586059F018041AAF00FD9C2A /* HISendBitcoinsWindowController.m in Sources */,
+				583B1DFB18686C4700817EF8 /* HITimeMachineBackup.m in Sources */,
 				244303BA1856712000AD59B8 /* HIPasswordInputViewController.m in Sources */,
 				586059F518041ABD00FD9C2A /* HITransactionsViewController.m in Sources */,
 				586059FF18041AD600FD9C2A /* HIMainWindowController.m in Sources */,
@@ -1973,6 +2026,7 @@
 				588E354F18212BB8006A6A25 /* HIErrorWindowController.m in Sources */,
 				58605A6718041DFC00FD9C2A /* NPZip.m in Sources */,
 				586905961843DE5C0053D74F /* HIDebuggingToolsWindowController.m in Sources */,
+				583B1DFE18686C8400817EF8 /* HIDropboxBackup.m in Sources */,
 				58605A6818041DFC00FD9C2A /* NPZipFileHeader.m in Sources */,
 				58605A6918041DFC00FD9C2A /* NPZipHeader.m in Sources */,
 				5860D3FF180455B900BD852C /* HIApplicationsManager.m in Sources */,
