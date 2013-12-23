@@ -9,7 +9,7 @@
 "10.title" = "Senden";
 
 /* Class = "NSTextFieldCell"; title = "To:"; ObjectID = "14"; */
-"14.title" = "zu:";
+"14.title" = "an:";
 
 /* Class = "NSTextFieldCell"; title = "Amount:"; ObjectID = "16"; */
 "16.title" = "Betrag:";
