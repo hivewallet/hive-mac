@@ -27,10 +27,10 @@
             <rect key="frame" x="0.0" y="0.0" width="431" height="63"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
             <subviews>
-                <scrollView fixedFrame="YES" borderType="none" autohidesScrollers="YES" horizontalLineScroll="17" horizontalPageScroll="10" verticalLineScroll="17" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3">
+                <scrollView borderType="none" autohidesScrollers="YES" horizontalLineScroll="17" horizontalPageScroll="10" verticalLineScroll="17" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3">
                     <rect key="frame" x="0.0" y="0.0" width="431" height="63"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                    <clipView key="contentView" ambiguous="YES" misplaced="YES" id="V5H-Ji-Vmp">
+                    <clipView key="contentView" id="V5H-Ji-Vmp">
                         <rect key="frame" x="0.0" y="0.0" width="431" height="63"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -112,6 +112,12 @@
                     </scroller>
                 </scrollView>
             </subviews>
+            <constraints>
+                <constraint firstItem="3" firstAttribute="top" secondItem="1" secondAttribute="top" id="0Lu-PZ-PK4"/>
+                <constraint firstItem="3" firstAttribute="leading" secondItem="1" secondAttribute="leading" id="Kft-iA-vkw"/>
+                <constraint firstAttribute="bottom" secondItem="3" secondAttribute="bottom" id="NGE-OX-7gr"/>
+                <constraint firstAttribute="trailing" secondItem="3" secondAttribute="trailing" id="R9L-cP-r0H"/>
+            </constraints>
         </customView>
         <customView id="82">
             <rect key="frame" x="0.0" y="0.0" width="27" height="32"/>
@@ -134,7 +140,7 @@
             <rect key="frame" x="0.0" y="0.0" width="323" height="536"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" setsMaxLayoutWidthAtFirstLayout="YES" translatesAutoresizingMaskIntoConstraints="NO" id="122">
+                <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="122">
                     <rect key="frame" x="69" y="252" width="185" height="80"/>
                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <constraints>

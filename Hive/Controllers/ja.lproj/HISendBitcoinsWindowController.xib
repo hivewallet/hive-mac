@@ -26,12 +26,12 @@
         <window title="ビットコインを送る" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" restorable="NO" oneShot="NO" wantsToBeColor="NO" frameAutosaveName="SendBitcoinWindow" animationBehavior="default" id="1">
             <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
             <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
-            <rect key="contentRect" x="196" y="240" width="436" height="238"/>
+            <rect key="contentRect" x="196" y="240" width="435" height="238"/>
             <rect key="screenRect" x="0.0" y="0.0" width="1920" height="1058"/>
             <value key="minSize" type="size" width="403" height="238"/>
             <value key="maxSize" type="size" width="1000" height="238"/>
             <view key="contentView" wantsLayer="YES" id="2">
-                <rect key="frame" x="0.0" y="0.0" width="436" height="238"/>
+                <rect key="frame" x="0.0" y="0.0" width="435" height="238"/>
                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                 <subviews>
                     <button translatesAutoresizingMaskIntoConstraints="NO" id="5">
@@ -56,7 +56,7 @@ Gw
                         </connections>
                     </button>
                     <button translatesAutoresizingMaskIntoConstraints="NO" id="9" customClass="HIButtonWithSpinner">
-                        <rect key="frame" x="339" y="19" width="80" height="29"/>
+                        <rect key="frame" x="338" y="19" width="80" height="29"/>
                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="76" id="uHK-iv-97X"/>
@@ -74,13 +74,13 @@ Gw
                         </connections>
                     </button>
                     <box autoresizesSubviews="NO" wantsLayer="YES" boxType="custom" borderType="line" titlePosition="noTitle" translatesAutoresizingMaskIntoConstraints="NO" id="11">
-                        <rect key="frame" x="17" y="64" width="402" height="156"/>
+                        <rect key="frame" x="17" y="64" width="401" height="156"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <view key="contentView">
-                            <rect key="frame" x="1" y="1" width="400" height="154"/>
+                            <rect key="frame" x="1" y="1" width="399" height="154"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             <subviews>
-                                <textField horizontalHuggingPriority="1000" verticalHuggingPriority="750" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="13">
+                                <textField horizontalHuggingPriority="1000" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="13">
                                     <rect key="frame" x="48" y="118" width="22" height="17"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="right" title="へ:" id="14">
@@ -99,7 +99,7 @@ Gw
                                     </textFieldCell>
                                 </textField>
                                 <imageView wantsLayer="YES" translatesAutoresizingMaskIntoConstraints="NO" id="17" userLabel="Contact image">
-                                    <rect key="frame" x="80" y="105" width="35" height="35"/>
+                                    <rect key="frame" x="76" y="105" width="35" height="35"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="35" id="5at-fu-ybr"/>
@@ -108,7 +108,7 @@ Gw
                                     <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" id="18"/>
                                 </imageView>
                                 <textField focusRingType="none" verticalHuggingPriority="750" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" translatesAutoresizingMaskIntoConstraints="NO" id="19">
-                                    <rect key="frame" x="122" y="119" width="244" height="18"/>
+                                    <rect key="frame" x="118" y="119" width="248" height="18"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                     <constraints>
                                         <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="240" id="K3U-Ag-cCK"/>
@@ -123,7 +123,7 @@ Gw
                                     </connections>
                                 </textField>
                                 <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="21">
-                                    <rect key="frame" x="122" y="97" width="262" height="17"/>
+                                    <rect key="frame" x="118" y="97" width="266" height="17"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="メインアドレス" id="22">
                                         <font key="font" size="10" name="LucidaGrande"/>
@@ -131,11 +131,11 @@ Gw
                                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                     </textFieldCell>
                                 </textField>
-                                <box autoresizesSubviews="NO" misplaced="YES" title="ボックス" boxType="custom" borderType="line" translatesAutoresizingMaskIntoConstraints="NO" id="23" userLabel="separator 1">
-                                    <rect key="frame" x="0.0" y="90" width="400" height="1"/>
+                                <box autoresizesSubviews="NO" title="ボックス" boxType="custom" borderType="line" translatesAutoresizingMaskIntoConstraints="NO" id="23" userLabel="separator 1">
+                                    <rect key="frame" x="-1" y="90" width="401" height="1"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                     <view key="contentView">
-                                        <rect key="frame" x="1" y="1" width="398" height="0.0"/>
+                                        <rect key="frame" x="1" y="1" width="399" height="0.0"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     </view>
                                     <constraints>
@@ -144,11 +144,11 @@ Gw
                                     <color key="borderColor" red="0.69700002670000005" green="0.69688004260000003" blue="0.69695496560000003" alpha="0.41999999999999998" colorSpace="calibratedRGB"/>
                                     <color key="fillColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </box>
-                                <box autoresizesSubviews="NO" misplaced="YES" title="Box" boxType="custom" borderType="line" translatesAutoresizingMaskIntoConstraints="NO" id="Uma-46-IZW" userLabel="separator 2">
-                                    <rect key="frame" x="0.0" y="45" width="400" height="1"/>
+                                <box autoresizesSubviews="NO" title="Box" boxType="custom" borderType="line" translatesAutoresizingMaskIntoConstraints="NO" id="Uma-46-IZW" userLabel="separator 2">
+                                    <rect key="frame" x="-1" y="45" width="401" height="1"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                     <view key="contentView">
-                                        <rect key="frame" x="1" y="1" width="398" height="0.0"/>
+                                        <rect key="frame" x="1" y="1" width="399" height="0.0"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     </view>
                                     <constraints>
@@ -158,15 +158,12 @@ Gw
                                     <color key="fillColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </box>
                                 <imageView translatesAutoresizingMaskIntoConstraints="NO" id="24" userLabel="Bitcoin symbol">
-                                    <rect key="frame" x="80" y="55" width="22" height="22"/>
+                                    <rect key="frame" x="76" y="55" width="16" height="22"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                    <constraints>
-                                        <constraint firstAttribute="width" constant="22" id="lpe-jj-HGk"/>
-                                    </constraints>
                                     <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="icon-bitcoin" id="25"/>
                                 </imageView>
                                 <textField focusRingType="none" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="36">
-                                    <rect key="frame" x="110" y="54" width="208" height="22"/>
+                                    <rect key="frame" x="100" y="54" width="218" height="22"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" focusRingType="none" title="0.0" drawsBackground="YES" id="37">
                                         <font key="font" size="15" name="LucidaGrande"/>
@@ -178,7 +175,7 @@ Gw
                                     </connections>
                                 </textField>
                                 <textField focusRingType="none" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="l47-zx-4mb">
-                                    <rect key="frame" x="110" y="11" width="271" height="22"/>
+                                    <rect key="frame" x="100" y="11" width="281" height="22"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" enabled="NO" sendsActionOnEndEditing="YES" state="on" focusRingType="none" title="0.0" drawsBackground="YES" id="DX5-Li-q9R">
                                         <font key="font" size="15" name="LucidaGrande"/>
@@ -190,7 +187,7 @@ Gw
                                     </connections>
                                 </textField>
                                 <button translatesAutoresizingMaskIntoConstraints="NO" id="51" userLabel="Pop up completions button">
-                                    <rect key="frame" x="361" y="115" width="24" height="24"/>
+                                    <rect key="frame" x="360" y="115" width="24" height="24"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES"/>
                                     <constraints>
                                         <constraint firstAttribute="width" constant="24" id="7H2-FH-EOC"/>
@@ -268,7 +265,6 @@ Gw
                             <constraint firstItem="13" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="11" secondAttribute="leading" constant="18" id="eku-pP-dNv"/>
                             <constraint firstItem="19" firstAttribute="leading" secondItem="17" secondAttribute="trailing" constant="9" id="frb-Ck-rTQ"/>
                             <constraint firstItem="21" firstAttribute="top" secondItem="51" secondAttribute="bottom" constant="1" id="i58-yb-pMr"/>
-                            <constraint firstItem="24" firstAttribute="leading" secondItem="15" secondAttribute="trailing" constant="12" id="iUb-tD-FBh"/>
                             <constraint firstItem="23" firstAttribute="leading" secondItem="11" secondAttribute="leading" id="l82-lV-iwC"/>
                             <constraint firstItem="Uma-46-IZW" firstAttribute="top" secondItem="24" secondAttribute="bottom" constant="9" id="lwB-Af-V2A"/>
                             <constraint firstItem="17" firstAttribute="leading" secondItem="13" secondAttribute="trailing" constant="8" id="mfi-ow-FaY"/>
