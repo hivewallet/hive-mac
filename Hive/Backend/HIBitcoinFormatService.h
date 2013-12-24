@@ -10,4 +10,11 @@ typedef uint64 satoshi_t;
 
 + (HIBitcoinFormatService *)sharedService;
 
+/* Formats a bitcoin value in the user's preferred format. */
+- (NSString *)stringForBitcoin:(satoshi_t)satoshi;
+
+/* Formats a bitcoin value in a specific format. */
+- (NSString *)stringForBitcoin:(satoshi_t)satoshi
+                    withFormat:(NSString *)format;
+
 @end
