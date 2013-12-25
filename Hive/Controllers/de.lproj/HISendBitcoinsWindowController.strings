@@ -1,6 +1,6 @@
 
 /* Class = "NSWindow"; title = "Send Bitcoin"; ObjectID = "1"; */
-"1.title" = "Bitcoins verschicken";
+"1.title" = "Bitcoins versenden";
 
 /* Class = "NSButtonCell"; title = "Cancel"; ObjectID = "6"; */
 "6.title" = "Abbrechen";

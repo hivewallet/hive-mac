@@ -3,10 +3,10 @@
 "50.title" = "Bearbeiten";
 
 /* Class = "NSTextFieldCell"; title = "Contact information"; ObjectID = "62"; */
-"62.title" = "Kontaktinformation";
+"62.title" = "Kontaktinformationen";
 
 /* Class = "NSTextFieldCell"; title = "Email:"; ObjectID = "65"; */
-"65.title" = "Email:";
+"65.title" = "E-Mail:";
 
 /* Class = "NSTextFieldCell"; title = "Bitcoin addresses"; ObjectID = "68"; */
-"68.title" = "Bitcoinadressen";
+"68.title" = "Bitcoin-Adressen";

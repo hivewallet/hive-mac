@@ -6,13 +6,13 @@
 "75.title" = "Kontaktinformationen";
 
 /* Class = "NSTextFieldCell"; title = "Email:"; ObjectID = "78"; */
-"78.title" = "Email:";
+"78.title" = "E-Mail:";
 
 /* Class = "NSButtonCell"; title = "Add address"; ObjectID = "80"; */
 "80.title" = "Adresse hinzufügen";
 
 /* Class = "NSTextFieldCell"; title = "Bitcoin addresses"; ObjectID = "81"; */
-"81.title" = "Bitcoinadressen";
+"81.title" = "Bitcoin-Adressen";
 
 /* Class = "NSButtonCell"; title = "Remove contact"; ObjectID = "97"; */
 "97.title" = "Kontakt entfernen";

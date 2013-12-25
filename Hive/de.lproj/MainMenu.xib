@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="4514" systemVersion="12F45" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none">
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="4514" systemVersion="13C32" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none">
     <dependencies>
         <deployment version="1070" defaultVersion="1070" identifier="macosx"/>
         <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="4514"/>
@@ -12,7 +12,7 @@
         </customObject>
         <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
         <customObject id="-3" userLabel="Application"/>
-        <menu title="Hauptmenü" systemMenu="main" id="29">
+        <menu title="AMainMenu" systemMenu="main" id="29">
             <items>
                 <menuItem title="Hive" id="56">
                     <menu key="submenu" title="Hive" systemMenu="apple" id="57">
@@ -46,18 +46,18 @@
                             <menuItem isSeparatorItem="YES" id="144">
                                 <modifierMask key="keyEquivalentModifierMask" command="YES"/>
                             </menuItem>
-                            <menuItem title="Hive verbergen" keyEquivalent="h" id="134">
+                            <menuItem title="Hive ausblenden" keyEquivalent="h" id="134">
                                 <connections>
                                     <action selector="hide:" target="-1" id="367"/>
                                 </connections>
                             </menuItem>
-                            <menuItem title="Andere verbergen" keyEquivalent="h" id="145">
+                            <menuItem title="Andere ausblenden" keyEquivalent="h" id="145">
                                 <modifierMask key="keyEquivalentModifierMask" option="YES" command="YES"/>
                                 <connections>
                                     <action selector="hideOtherApplications:" target="-1" id="368"/>
                                 </connections>
                             </menuItem>
-                            <menuItem title="Alle anzeigen" id="150">
+                            <menuItem title="Alle einblenden" id="150">
                                 <connections>
                                     <action selector="unhideAllApplications:" target="-1" id="370"/>
                                 </connections>
@@ -76,7 +76,7 @@
                 <menuItem title="Wallet" id="GX7-xG-GKH">
                     <menu key="submenu" title="Wallet" id="jrd-Ul-XjV">
                         <items>
-                            <menuItem title="Bitcoins werden verschickt..." keyEquivalent="S" id="866">
+                            <menuItem title="Bitcoins versenden..." keyEquivalent="S" id="866">
                                 <connections>
                                     <action selector="openSendBitcoinsWindow:" target="-1" id="868"/>
                                 </connections>
@@ -95,7 +95,7 @@
                     <modifierMask key="keyEquivalentModifierMask"/>
                     <menu key="submenu" title="Bearbeiten" id="802">
                         <items>
-                            <menuItem title="Rückgängig machen" keyEquivalent="z" id="804">
+                            <menuItem title="Widerrufen" keyEquivalent="z" id="804">
                                 <connections>
                                     <action selector="undo:" target="-1" id="848"/>
                                 </connections>
@@ -116,7 +116,7 @@
                                     <action selector="copy:" target="-1" id="850"/>
                                 </connections>
                             </menuItem>
-                            <menuItem title="Einfügen" keyEquivalent="v" id="809">
+                            <menuItem title="Einsetzen" keyEquivalent="v" id="809">
                                 <connections>
                                     <action selector="paste:" target="-1" id="851"/>
                                 </connections>
@@ -126,7 +126,7 @@
                                     <action selector="delete:" target="-1" id="852"/>
                                 </connections>
                             </menuItem>
-                            <menuItem title="Alle auswählen" keyEquivalent="a" id="812">
+                            <menuItem title="Alles auswählen" keyEquivalent="a" id="812">
                                 <connections>
                                     <action selector="selectAll:" target="-1" id="853"/>
                                 </connections>
@@ -168,7 +168,7 @@
                     <modifierMask key="keyEquivalentModifierMask"/>
                     <menu key="submenu" title="Fenster" id="855">
                         <items>
-                            <menuItem title="Minimieren" keyEquivalent="m" id="857">
+                            <menuItem title="Im Dock ablegen" keyEquivalent="m" id="857">
                                 <connections>
                                     <action selector="performMiniaturize:" target="-1" id="861"/>
                                 </connections>
@@ -178,7 +178,7 @@
                                     <action selector="performClose:" target="-1" id="865"/>
                                 </connections>
                             </menuItem>
-                            <menuItem title="Zoom" id="858">
+                            <menuItem title="Zoomen" id="858">
                                 <connections>
                                     <action selector="performZoom:" target="-1" id="862"/>
                                 </connections>
@@ -186,7 +186,7 @@
                             <menuItem isSeparatorItem="YES" id="859">
                                 <modifierMask key="keyEquivalentModifierMask" command="YES"/>
                             </menuItem>
-                            <menuItem title="Alles in den Vordergrund bringen" id="860">
+                            <menuItem title="Alle nach vorne bringen" id="860">
                                 <connections>
                                     <action selector="arrangeInFront:" target="-1" id="863"/>
                                 </connections>
@@ -199,7 +199,7 @@
         <customObject id="494" customClass="HIAppDelegate"/>
         <customObject id="420" customClass="NSFontManager"/>
         <customObject id="869" customClass="SUUpdater"/>
-        <menuItem title="Objekt" id="800">
+        <menuItem title="Item" id="800">
             <modifierMask key="keyEquivalentModifierMask"/>
         </menuItem>
     </objects>

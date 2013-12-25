@@ -1,15 +1,15 @@
 
 /* Class = "NSTextFieldCell"; title = "Text Cell"; ObjectID = "10"; */
-"10.title" = "Textcell";
+"10.title" = "Text Cell";
 
 /* Class = "NSTextFieldCell"; title = "Looks like you don't have any contacts yet! Add your first one and start sending money!"; ObjectID = "123"; */
-"123.title" = "Sieht so aus als hätten Sie noch keine Kontakte in ihrer Kontaktliste! Fügen !";
+"123.title" = "Sieht so aus, als hätten Sie noch keine Kontakte in ihrer Liste! Fügen Sie den ersten hinzu und fangen Sie an Geld zu verschicken!";
 
 /* Class = "NSButtonCell"; title = "Add contact"; ObjectID = "125"; */
 "125.title" = "Kontakt hinzufügen";
 
 /* Class = "NSTextFieldCell"; title = "You can then use the \U2795 button on top to add more contacts."; ObjectID = "129"; */
-"129.title" = "Folgendes können Sie dann nutzen \U2795 Knopf Nach oben um mehr Kontakte hinzuzufügen.";
+"129.title" = "Verwenden Sie den \U2795-Knopf, um mehr Kontakte hinzuzufügen.";
 
 /* Class = "NSTextFieldCell"; title = "Label"; ObjectID = "205"; */
-"205.title" = "Bezeichnung";
+"205.title" = "Label";
