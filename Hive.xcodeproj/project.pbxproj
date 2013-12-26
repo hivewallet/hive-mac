@@ -28,7 +28,6 @@
 		5804C32617FC88BA003B7891 /* HIProfile.m in Sources */ = {isa = PBXBuildFile; fileRef = 5804C32517FC88BA003B7891 /* HIProfile.m */; };
 		581711BE17D0A26D00DE775A /* HISidebarButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 581711BD17D0A26D00DE775A /* HISidebarButton.m */; };
 		581818E217F1A8A800D00770 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 581818E117F1A8A800D00770 /* README.md */; };
-		582C699B17D8BAC700442294 /* HICurrencyAmountFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = 582C699A17D8BAC700442294 /* HICurrencyAmountFormatter.m */; };
 		582C7DA6185219A000126C10 /* HIDebuggingToolsWindowController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 582C7DA5185219A000126C10 /* HIDebuggingToolsWindowController.xib */; };
 		582C7DA918521A3500126C10 /* HIJavaScriptObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 582C7DA818521A3500126C10 /* HIJavaScriptObject.m */; };
 		582C7DAB185273D400126C10 /* HIApplicationRuntimeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 582C7DAA185273D400126C10 /* HIApplicationRuntimeViewController.xib */; };
@@ -408,8 +407,6 @@
 		581818E117F1A8A800D00770 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = SOURCE_ROOT; };
 		581EFBCA17DA441A00E2738D /* HITransactionCellView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HITransactionCellView.h; sourceTree = "<group>"; };
 		581EFBCB17DA441B00E2738D /* HITransactionCellView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HITransactionCellView.m; sourceTree = "<group>"; };
-		582C699917D8BAC700442294 /* HICurrencyAmountFormatter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HICurrencyAmountFormatter.h; sourceTree = "<group>"; };
-		582C699A17D8BAC700442294 /* HICurrencyAmountFormatter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HICurrencyAmountFormatter.m; sourceTree = "<group>"; };
 		582C7DA5185219A000126C10 /* HIDebuggingToolsWindowController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HIDebuggingToolsWindowController.xib; sourceTree = "<group>"; };
 		582C7DA718521A3500126C10 /* HIJavaScriptObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HIJavaScriptObject.h; sourceTree = "<group>"; };
 		582C7DA818521A3500126C10 /* HIJavaScriptObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HIJavaScriptObject.m; sourceTree = "<group>"; };
@@ -1295,8 +1292,6 @@
 		582C699417D8BA4F00442294 /* Formatters */ = {
 			isa = PBXGroup;
 			children = (
-				582C699917D8BAC700442294 /* HICurrencyAmountFormatter.h */,
-				582C699A17D8BAC700442294 /* HICurrencyAmountFormatter.m */,
 				583B1DCF18620BA800817EF8 /* HILogFormatter.h */,
 				583B1DD018620BA800817EF8 /* HILogFormatter.m */,
 			);
@@ -1989,7 +1984,6 @@
 				D9716B7217D8B42E00888F4E /* HIButtonCell.m in Sources */,
 				D9716B7717D8C40100888F4E /* HIBox.m in Sources */,
 				585A8B2518576F020096888C /* HIDatabaseManager.m in Sources */,
-				582C699B17D8BAC700442294 /* HICurrencyAmountFormatter.m in Sources */,
 				D9716B7E17D9C9F500888F4E /* HIAddress.m in Sources */,
 				583B1DD118620BA800817EF8 /* HILogFormatter.m in Sources */,
 				588EFB2E17D8D2970085F6E6 /* HIProfileTabView.m in Sources */,

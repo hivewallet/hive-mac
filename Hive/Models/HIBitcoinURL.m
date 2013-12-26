@@ -47,7 +47,7 @@ static NSString * const BitcoinURLPrefix = @"bitcoin:";
     _message = self.parameters[@"message"];
 
     NSString *amountParameter = self.parameters[@"amount"];
-    _amount = amountParameter ? [NSDecimalNumber decimalNumberWithString:amountParameter] : nil;
+    _amount = amountParameter ? strtoull(amountParameter.UTF8String, NULL, 10) : 0ll;
 }
 
 - (BOOL)validate {

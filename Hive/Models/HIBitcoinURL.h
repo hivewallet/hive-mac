@@ -21,7 +21,7 @@
 @property (readonly) NSDictionary *parameters;
 @property (readonly) NSString *label;
 @property (readonly) NSString *message;
-@property (readonly) NSDecimalNumber *amount;
+@property (readonly) satoshi_t amount;
 
 - (id)initWithURLString:(NSString *)URL;
 

@@ -1,10 +1,9 @@
-typedef uint64 satoshi_t;
-
 /*
  This service handles the various Bitcoin formats.
  */
 @interface HIBitcoinFormatService : NSObject
 
+@property (nonatomic, copy, readonly) NSString *decimalSeparator;
 @property (nonatomic, copy, readonly) NSArray *availableFormats;
 @property (nonatomic, copy) NSString *preferredFormat;
 
@@ -16,5 +15,10 @@ typedef uint64 satoshi_t;
 /* Formats a bitcoin value in a specific format. */
 - (NSString *)stringForBitcoin:(satoshi_t)satoshi
                     withFormat:(NSString *)format;
+
+/* Parses a bitcoin value in a specific format. */
+- (satoshi_t)parseString:(NSString *)string
+              withFormat:(NSString *)format
+                   error:(NSError **)error;
 
 @end

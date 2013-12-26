@@ -8,7 +8,7 @@
 
 #import "HIFeeDetailsViewController.h"
 
-#import "HICurrencyAmountFormatter.h"
+#import "HIBitcoinFormatService.h"
 
 @interface HIFeeDetailsViewController ()
 
@@ -27,13 +27,14 @@
     [self updateFeeLabel];
 }
 
-- (void)setFee:(NSDecimalNumber *)fee {
-    _fee = [fee copy];
+- (void)setFee:(satoshi_t)fee {
+    _fee = fee;
     [self updateFeeLabel];
 }
 
 - (void)updateFeeLabel {
-    self.feeLabel.stringValue = [[HICurrencyAmountFormatter new] stringFromNumber:self.fee];
+    self.feeLabel.stringValue = [[HIBitcoinFormatService sharedService] stringForBitcoin:_fee
+                                                                              withFormat:@"BTC"];
 }
 
 

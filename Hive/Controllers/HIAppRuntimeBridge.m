@@ -10,7 +10,7 @@
 #import "BCClient.h"
 #import "HIApplicationRuntimeViewController.h"
 #import "HIAppRuntimeBridge.h"
-#import "HICurrencyAmountFormatter.h"
+#import "HIBitcoinFormatService.h"
 #import "HIExchangeRateService.h"
 #import "HIProfile.h"
 #import "HISecureAppStorage.h"
@@ -20,7 +20,6 @@ static const NSInteger kHIAppRuntimeBridgeParsingError = -1000;
 
 @interface HIAppRuntimeBridge () <HIExchangeRateObserver> {
     NSDateFormatter *_ISODateFormatter;
-    HICurrencyAmountFormatter *_currencyFormatter;
     NSInteger _BTCInSatoshi;
     NSInteger _mBTCInSatoshi;
     NSInteger _uBTCInSatoshi;
@@ -88,7 +87,6 @@ static const NSInteger kHIAppRuntimeBridgeParsingError = -1000;
 
         _ISODateFormatter = [[NSDateFormatter alloc] init];
         _ISODateFormatter.dateFormat = @"yyyy-MM-dd'T'HH:mm:ssZZZZZ";
-        _currencyFormatter = [[HICurrencyAmountFormatter alloc] init];
 
         _BTCInSatoshi = SATOSHI;
         _mBTCInSatoshi = SATOSHI / 1000;
@@ -117,12 +115,10 @@ static const NSInteger kHIAppRuntimeBridgeParsingError = -1000;
         return;
     }
 
-    NSDecimalNumber *decimal = nil;
+    satoshi_t decimal = 0ll;
 
     if (!IsNullOrUndefined(amount)) {
-        decimal = [NSDecimalNumber decimalNumberWithMantissa:[amount integerValue]
-                                                    exponent:-8
-                                                  isNegative:NO];
+        decimal = amount.unsignedLongLongValue;
     }
 
     [self.controller requestPaymentToHash:hash
@@ -218,7 +214,7 @@ static const NSInteger kHIAppRuntimeBridgeParsingError = -1000;
     NSArray *preferredLanguages = [NSBundle preferredLocalizationsFromArray:[NSBundle mainBundle].localizations];
 
     NSDictionary *data = @{
-                           @"decimalSeparator": _currencyFormatter.decimalSeparator,
+                           @"decimalSeparator": [HIBitcoinFormatService sharedService].decimalSeparator,
                            @"locale": preferredLanguages[0],
                            @"preferredCurrency": [[HIExchangeRateService sharedService] preferredCurrency],
                            @"buildNumber": bundleInfo[@"CFBundleVersion"],
