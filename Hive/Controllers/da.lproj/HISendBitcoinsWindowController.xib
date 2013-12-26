@@ -83,7 +83,7 @@ Gw
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             <subviews>
                                 <textField horizontalHuggingPriority="1000" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="13">
-                                    <rect key="frame" x="7" y="118" width="42" height="16"/>
+                                    <rect key="frame" x="-12" y="118" width="61" height="16"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="right" title="Til:" id="14">
                                         <font key="font" metaFont="cellTitle"/>
@@ -154,10 +154,10 @@ Gw
                                     <color key="fillColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </box>
                                 <popUpButton translatesAutoresizingMaskIntoConstraints="NO" id="u5l-cR-nXn" userLabel="Bitcoin format pop up">
-                                    <rect key="frame" x="37" y="56" width="51" height="21"/>
+                                    <rect key="frame" x="18" y="56" width="70" height="21"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                     <constraints>
-                                        <constraint firstAttribute="width" constant="51" id="Obz-c1-tc0"/>
+                                        <constraint firstAttribute="width" constant="70" id="Obz-c1-tc0"/>
                                         <constraint firstAttribute="height" constant="21" id="kxS-Va-p8l"/>
                                     </constraints>
                                     <popUpButtonCell key="cell" type="bevel" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" imageScaling="proportionallyDown" inset="2" id="XqJ-Al-H2K">
@@ -213,7 +213,7 @@ Gw
                                     <color key="fillColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </box>
                                 <popUpButton translatesAutoresizingMaskIntoConstraints="NO" id="ZPL-GE-Omh" userLabel="Currency pop up">
-                                    <rect key="frame" x="37" y="11" width="51" height="21"/>
+                                    <rect key="frame" x="18" y="11" width="70" height="21"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="21" id="v3B-Fq-FVO"/>
