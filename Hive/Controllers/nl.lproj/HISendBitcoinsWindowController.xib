@@ -9,6 +9,7 @@
             <connections>
                 <outlet property="addressLabel" destination="21" id="26"/>
                 <outlet property="amountField" destination="36" id="40"/>
+                <outlet property="bitcoinCurrencyPopupButton" destination="u5l-cR-nXn" id="oLd-Li-Te1"/>
                 <outlet property="convertedAmountField" destination="l47-zx-4mb" id="mgX-At-dSz"/>
                 <outlet property="convertedCurrencyPopupButton" destination="ZPL-GE-Omh" id="Sd0-4A-V3B"/>
                 <outlet property="dropdownButton" destination="51" id="54"/>
@@ -164,6 +165,9 @@ Gw
                                         <font key="font" metaFont="menu"/>
                                         <menu key="menu" title="OtherViews" id="p6H-gm-BnX"/>
                                     </popUpButtonCell>
+                                    <connections>
+                                        <binding destination="-2" name="selectedValue" keyPath="selectedBitcoinFormat" id="xpQ-lX-uX9"/>
+                                    </connections>
                                 </popUpButton>
                                 <textField focusRingType="none" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="36" userLabel="Bitcoin amount">
                                     <rect key="frame" x="100" y="57" width="218" height="19"/>

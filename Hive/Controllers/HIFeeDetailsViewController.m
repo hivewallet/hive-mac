@@ -32,9 +32,16 @@
     [self updateFeeLabel];
 }
 
+- (void)setBitcoinFormat:(NSString *)bitcoinFormat {
+    _bitcoinFormat = [bitcoinFormat copy];
+    [self updateFeeLabel];
+}
+
 - (void)updateFeeLabel {
-    self.feeLabel.stringValue = [[HIBitcoinFormatService sharedService] stringForBitcoin:_fee
-                                                                              withFormat:@"BTC"];
+    if (self.bitcoinFormat && self.fee) {
+        self.feeLabel.stringValue = [[HIBitcoinFormatService sharedService] stringForBitcoin:self.fee
+                                                                                  withFormat:self.bitcoinFormat];
+    }
 }
 
 
