@@ -32,7 +32,7 @@ static NSString *const HIFormatPreferenceKey = @"BitcoinFormat";
 
 - (NSString *)preferredFormat {
     NSString *currency = [[NSUserDefaults standardUserDefaults] stringForKey:HIFormatPreferenceKey];
-    return [self.availableFormats containsObject:currency] ? currency : @"BTC";
+    return [self.availableFormats containsObject:currency] ? currency : @"mBTC";
 }
 
 - (void)setPreferredFormat:(NSString *)preferredFormat {
