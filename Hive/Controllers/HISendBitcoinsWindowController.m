@@ -10,9 +10,9 @@
 #import <BitcoinJKit/HIBitcoinErrorCodes.h>
 #import "BCClient.h"
 #import "HIAddress.h"
+#import "HIBitcoinFormatService.h"
 #import "HIButtonWithSpinner.h"
 #import "HIContactAutocompleteWindowController.h"
-#import "HICurrencyAmountFormatter.h"
 #import "HIExchangeRateService.h"
 #import "HIFeeDetailsViewController.h"
 #import "HISendBitcoinsWindowController.h"
@@ -26,15 +26,16 @@ NSString * const HISendBitcoinsWindowSuccessKey = @"success";
     HIContact *_contact;
     HIContactAutocompleteWindowController *_autocompleteController;
     NSString *_hashAddress;
-    NSDecimalNumber *_amount;
+    satoshi_t _amount;
 }
 
-@property (copy) NSDecimalNumber *amountFieldValue;
+@property (assign) satoshi_t amountFieldValue;
 @property (copy) NSDecimalNumber *convertedAmountFieldValue;
-@property (copy) NSNumberFormatter *bitcoinNumberFormatter;
 @property (copy) NSDecimalNumber *exchangeRate;
 @property (nonatomic, copy) NSString *selectedCurrency;
+@property (copy, nonatomic) NSString *selectedBitcoinFormat;
 @property (strong, readonly) HIExchangeRateService *exchangeRateService;
+@property (strong, readonly) HIBitcoinFormatService *bitcoinFormatService;
 @property (strong, readonly) HIContactAutocompleteWindowController *autocompleteController;
 @property (strong) HIFeeDetailsViewController *feeDetailsViewController;
 @property (strong) HIPasswordInputViewController *passwordInputViewController;
@@ -47,12 +48,14 @@ NSString * const HISendBitcoinsWindowSuccessKey = @"success";
     self = [super initWithWindowNibName:@"HISendBitcoinsWindowController"];
 
     if (self) {
-        _amount = nil;
-        _bitcoinNumberFormatter = [HICurrencyAmountFormatter new];
+        _amount = 0ll;
 
         _exchangeRateService = [HIExchangeRateService sharedService];
         [_exchangeRateService addExchangeRateObserver:self];
         self.selectedCurrency = _exchangeRateService.preferredCurrency;
+
+        _bitcoinFormatService = [HIBitcoinFormatService sharedService];
+        _selectedBitcoinFormat = _bitcoinFormatService.preferredFormat;
     }
 
     return self;
@@ -98,23 +101,26 @@ NSString * const HISendBitcoinsWindowSuccessKey = @"success";
     if (_amount) {
         [self setLockedAmount:_amount];
     } else {
-        self.amountFieldValue = [NSDecimalNumber zero];
+        self.amountFieldValue = 0ll;
     }
     [self updateConvertedAmountFromAmount];
 }
 
 - (void)setupCurrencyList {
+    [self.bitcoinCurrencyPopupButton addItemsWithTitles:self.bitcoinFormatService.availableFormats];
+    [self.bitcoinCurrencyPopupButton selectItemWithTitle:self.bitcoinFormatService.preferredFormat];
+    [self adjustPopUpButtonFont:self.bitcoinCurrencyPopupButton];
     [self.convertedCurrencyPopupButton addItemsWithTitles:self.exchangeRateService.availableCurrencies];
     [self.convertedCurrencyPopupButton selectItemWithTitle:_selectedCurrency];
-    [self adjustPopUpButtonFont];
+    [self adjustPopUpButtonFont:self.convertedCurrencyPopupButton];
 }
 
-- (void)adjustPopUpButtonFont {
+- (void)adjustPopUpButtonFont:(NSPopUpButton *)button {
     NSDictionary *attributes = @{
         NSForegroundColorAttributeName: [NSColor colorWithCalibratedWhite:.42 alpha:1.0],
         NSFontAttributeName: [NSFont controlContentFontOfSize:12],
     };
-    for (NSMenuItem *item in self.convertedCurrencyPopupButton.itemArray) {
+    for (NSMenuItem *item in button.itemArray) {
         item.attributedTitle = [[NSAttributedString alloc] initWithString:item.title
                                                                attributes:attributes];
     }
@@ -131,7 +137,7 @@ NSString * const HISendBitcoinsWindowSuccessKey = @"success";
     self.nameLabel.stringValue = _hashAddress;
 }
 
-- (void)setLockedAmount:(NSDecimalNumber *)amount {
+- (void)setLockedAmount:(satoshi_t)amount {
     _amount = amount;
 
     self.amountFieldValue = _amount;
@@ -171,8 +177,15 @@ NSString * const HISendBitcoinsWindowSuccessKey = @"success";
 
 #pragma mark - text fields
 
-- (void)setAmountFieldValue:(NSDecimalNumber *)amount {
-    [self.amountField setStringValue:[self.bitcoinNumberFormatter stringFromNumber:amount]];
+- (void)setSelectedBitcoinFormat:(NSString *)selectedBitcoinFormat {
+    _selectedBitcoinFormat = [selectedBitcoinFormat copy];
+    [self formatAmountField];
+    self.feeDetailsViewController.bitcoinFormat = self.selectedBitcoinFormat;
+}
+
+- (void)setAmountFieldValue:(satoshi_t)amount {
+    self.amountField.stringValue = [self.bitcoinFormatService stringForBitcoin:amount
+                                                                    withFormat:self.selectedBitcoinFormat];
     [self updateFee];
 }
 
@@ -180,10 +193,10 @@ NSString * const HISendBitcoinsWindowSuccessKey = @"success";
     [self setAmountFieldValue:self.amountFieldValue];
 }
 
-- (NSDecimalNumber *)amountFieldValue {
-    NSDecimalNumber *number = [NSDecimalNumber decimalNumberWithString:self.amountField.stringValue
-                                             locale:[NSLocale currentLocale]];
-    return number == [NSDecimalNumber notANumber] ? [NSDecimalNumber zero] : number;
+- (satoshi_t)amountFieldValue {
+    return [self.bitcoinFormatService parseString:self.amountField.stringValue
+                                       withFormat:self.selectedBitcoinFormat
+                                            error:NULL];
 }
 
 - (void)setConvertedAmountFieldValue:(NSDecimalNumber *)amount {
@@ -213,7 +226,7 @@ NSString * const HISendBitcoinsWindowSuccessKey = @"success";
     if (self.exchangeRate) {
         self.amountFieldValue = [self bitcoinAmountForConvertedAmount:self.convertedAmountFieldValue];
     } else {
-        self.amountFieldValue = [NSDecimalNumber zero];
+        self.amountFieldValue = 0ll;
     }
 }
 
@@ -232,23 +245,23 @@ NSString * const HISendBitcoinsWindowSuccessKey = @"success";
     [_exchangeRateService updateExchangeRateForCurrency:self.selectedCurrency];
 }
 
-- (NSDecimalNumber *)convertedAmountForBitcoinAmount:(NSDecimalNumber *)amount {
-    return [amount decimalNumberByMultiplyingBy:self.exchangeRate];
+- (NSDecimalNumber *)convertedAmountForBitcoinAmount:(satoshi_t)amount {
+    return [[self numberFromSatoshi:amount] decimalNumberByMultiplyingBy:self.exchangeRate];
 }
 
-- (NSDecimalNumber *)bitcoinAmountForConvertedAmount:(NSDecimalNumber *)amount {
-    return [amount decimalNumberByDividingBy:self.exchangeRate];
+- (satoshi_t)bitcoinAmountForConvertedAmount:(NSDecimalNumber *)amount {
+    return [self satoshiFromNumber:[amount decimalNumberByDividingBy:self.exchangeRate]];
 }
 
 - (IBAction)currencyChanged:(id)sender {
     self.selectedCurrency = self.convertedCurrencyPopupButton.selectedItem.title;
 }
 
-- (uint64)satoshiFromNumber:(NSDecimalNumber *)amount {
+- (satoshi_t)satoshiFromNumber:(NSDecimalNumber *)amount {
     return [[amount decimalNumberByMultiplyingByPowerOf10:8] longLongValue];
 }
 
-- (NSDecimalNumber *)numberFromSatoshi:(uint64)satoshi {
+- (NSDecimalNumber *)numberFromSatoshi:(satoshi_t)satoshi {
     return [NSDecimalNumber decimalNumberWithMantissa:satoshi
                                              exponent:-8
                                            isNegative:NO];
@@ -268,9 +281,9 @@ NSString * const HISendBitcoinsWindowSuccessKey = @"success";
 #pragma mark - fees
 
 - (void)updateFee {
-    uint64 fee = self.currentFee;
-    NSString *feeString =
-        [@"+" stringByAppendingString:[self.bitcoinNumberFormatter stringFromNumber:[self numberFromSatoshi:fee]]];
+    satoshi_t fee = self.currentFee;
+    NSString *feeString = [self.bitcoinFormatService stringForBitcoin:fee withFormat:self.selectedBitcoinFormat];
+    feeString = [@"+" stringByAppendingString:feeString];
     NSDictionary *attributes = @{
         NSForegroundColorAttributeName: [NSColor colorWithCalibratedWhite:.3 alpha:1.0],
         NSFontAttributeName: [NSFont systemFontOfSize:11],
@@ -278,12 +291,11 @@ NSString * const HISendBitcoinsWindowSuccessKey = @"success";
     self.feeButton.attributedTitle = [[NSAttributedString alloc] initWithString:feeString
                                                                      attributes:attributes];
     self.feeButton.hidden = fee == 0;
-    self.feeDetailsViewController.fee = [self numberFromSatoshi:self.currentFee];
+    self.feeDetailsViewController.fee = self.currentFee;
 }
 
-- (uint64)currentFee {
-    uint64 amount = [self satoshiFromNumber:self.amountFieldValue];
-    return [[BCClient sharedClient] feeWhenSendingBitcoin:amount];
+- (satoshi_t)currentFee {
+    return [[BCClient sharedClient] feeWhenSendingBitcoin:self.amountFieldValue];
 }
 
 - (IBAction)showFeePopover:(NSButton *)sender {
@@ -291,7 +303,8 @@ NSString * const HISendBitcoinsWindowSuccessKey = @"success";
     feePopover.behavior = NSPopoverBehaviorTransient;
     if (!self.feeDetailsViewController) {
         self.feeDetailsViewController = [HIFeeDetailsViewController new];
-        self.feeDetailsViewController.fee = [self numberFromSatoshi:self.currentFee];
+        self.feeDetailsViewController.fee = self.currentFee;
+        self.feeDetailsViewController.bitcoinFormat = self.selectedBitcoinFormat;
     }
     feePopover.contentViewController = self.feeDetailsViewController;
     [feePopover showRelativeToRect:sender.bounds
@@ -325,8 +338,7 @@ NSString * const HISendBitcoinsWindowSuccessKey = @"success";
 }
 
 - (void)sendClicked:(id)sender {
-    NSDecimalNumber *amount = self.amountFieldValue;
-    uint64 satoshi = [self satoshiFromNumber:amount];
+    uint64 satoshi = self.amountFieldValue;
 
     NSString *target = _hashAddress ?: self.nameLabel.stringValue;
 

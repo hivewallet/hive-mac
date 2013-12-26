@@ -65,7 +65,7 @@
 #pragma mark - Money sends
 
 - (void)requestPaymentToHash:(NSString *)hash
-                      amount:(NSDecimalNumber *)amount
+                      amount:(satoshi_t)amount
                   completion:(HITransactionCompletionCallback)completion {
     HIAppDelegate *delegate = (HIAppDelegate *) [NSApp delegate];
     HISendBitcoinsWindowController *sc = [delegate sendBitcoinsWindow];

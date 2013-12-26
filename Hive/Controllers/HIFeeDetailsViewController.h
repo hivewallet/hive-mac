@@ -12,6 +12,7 @@
 
 @interface HIFeeDetailsViewController : NSViewController
 
-@property (nonatomic, copy) NSDecimalNumber *fee;
+@property (nonatomic, assign) satoshi_t fee;
+@property (nonatomic, copy) NSString *bitcoinFormat;
 
 @end

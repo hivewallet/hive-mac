@@ -21,7 +21,7 @@
 @property (weak) IBOutlet WebView *webView;
 
 - (void)requestPaymentToHash:(NSString *)hash
-                      amount:(NSDecimalNumber *)amount
+                      amount:(satoshi_t)amount
                   completion:(HITransactionCompletionCallback)completion;
 
 @end

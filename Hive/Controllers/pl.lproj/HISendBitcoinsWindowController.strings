@@ -11,9 +11,6 @@
 /* Class = "NSTextFieldCell"; title = "To:"; ObjectID = "14"; */
 "14.title" = "Do:";
 
-/* Class = "NSTextFieldCell"; title = "Amount:"; ObjectID = "16"; */
-"16.title" = "Kwota:";
-
 /* Class = "NSTextFieldCell"; placeholderString = "Type to search..."; ObjectID = "20"; */
 "20.placeholderString" = "Wpisz adres lub nazwę kontaktu...";
 

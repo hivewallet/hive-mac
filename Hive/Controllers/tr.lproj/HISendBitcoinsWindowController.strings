@@ -11,9 +11,6 @@
 /* Class = "NSTextFieldCell"; title = "To:"; ObjectID = "14"; */
 "14.title" = "Kime:";
 
-/* Class = "NSTextFieldCell"; title = "Amount:"; ObjectID = "16"; */
-"16.title" = "Miktar:";
-
 /* Class = "NSTextFieldCell"; placeholderString = "Type to search..."; ObjectID = "20"; */
 "20.placeholderString" = "Aramak için yazýn.";
 

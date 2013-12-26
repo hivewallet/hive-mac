@@ -20,3 +20,6 @@
 #else
     #define DEBUG_OPTION_ENABLED(name) (name)
 #endif
+
+/* Type to store Bitcoin values in. */
+typedef uint64 satoshi_t;

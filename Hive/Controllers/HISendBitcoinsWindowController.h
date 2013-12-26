@@ -32,6 +32,7 @@ typedef void(^HITransactionCompletionCallback)(BOOL success, NSString *transacti
 @property (strong) IBOutlet NSTextField *amountField;
 @property (strong) IBOutlet NSTextField *convertedAmountField;
 @property (strong) IBOutlet NSPopUpButton *convertedCurrencyPopupButton;
+@property (strong) IBOutlet NSPopUpButton *bitcoinCurrencyPopupButton;
 @property (strong) IBOutlet NSButton *feeButton;
 @property (strong) IBOutlet HIButtonWithSpinner *sendButton;
 @property (nonatomic, strong) IBOutlet NSButton *dropdownButton;
@@ -40,7 +41,7 @@ typedef void(^HITransactionCompletionCallback)(BOOL success, NSString *transacti
 
 - (id)initWithContact:(HIContact *)contact;
 - (void)setHashAddress:(NSString *)hash;
-- (void)setLockedAmount:(NSDecimalNumber *)amount;
+- (void)setLockedAmount:(satoshi_t)amount;
 
 - (IBAction)cancelClicked:(id)sender;
 - (IBAction)sendClicked:(id)sender;

@@ -51,7 +51,7 @@
                error:(NSError **)error
           completion:(void(^)(BOOL success, NSString *transactionId))completion;
 
-- (uint64)feeWhenSendingBitcoin:(uint64)amount;
+- (satoshi_t)feeWhenSendingBitcoin:(uint64)amount;
 
 - (NSDictionary *)transactionDefinitionWithHash:(NSString *)hash;
 - (void)rebuildTransactionsList;

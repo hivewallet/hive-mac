@@ -7,8 +7,8 @@
 //
 
 #import "BCClient.h"
+#import "HIBitcoinFormatService.h"
 #import "HIContactInfoViewController.h"
-#import "HICurrencyAmountFormatter.h"
 #import "HIExchangeRateService.h"
 #import "HIProfile.h"
 #import "HIProfileViewController.h"
@@ -16,21 +16,23 @@
 
 @interface HIProfileViewController () <HIExchangeRateObserver> {
     HIProfile *_profile;
-    HICurrencyAmountFormatter *_amountFormatter;
     HIContactInfoViewController *_infoPanel;
 }
 
 @property (strong, readonly) HIExchangeRateService *exchangeRateService;
+@property (strong, readonly) HIBitcoinFormatService *bitcoinFormatService;
 @property (copy) NSDecimalNumber *exchangeRate;
 @property (copy, nonatomic) NSString *selectedCurrency;
-@property (copy) NSDecimalNumber *balance;
-@property (copy) NSDecimalNumber *pendingBalance;
+@property (copy, nonatomic) NSString *selectedBitcoinFormat;
+@property (assign, nonatomic) satoshi_t balance;
+@property (assign, nonatomic) satoshi_t pendingBalance;
 
 @property (strong) IBOutlet NSImageView *photoView;
 @property (strong) IBOutlet NSTextField *nameLabel;
 @property (strong) IBOutlet NSTextField *balanceLabel;
 @property (strong) IBOutlet NSTextField *convertedBalanceLabel;
 @property (strong) IBOutlet NSPopUpButton *convertedCurrencyPopupButton;
+@property (strong) IBOutlet NSPopUpButton *bitcoinCurrencyPopupButton;
 @property (strong) IBOutlet NSView *contentView;
 
 @end
@@ -44,7 +46,6 @@
         self.iconName = @"your-profile";
 
         _profile = [HIProfile new];
-        _amountFormatter = [[HICurrencyAmountFormatter alloc] init];
         _infoPanel = [[HIContactInfoViewController alloc] initWithParent:self];
 
         [[BCClient sharedClient] addObserver:self
@@ -59,6 +60,9 @@
         _exchangeRateService = [HIExchangeRateService sharedService];
         [_exchangeRateService addExchangeRateObserver:self];
         self.selectedCurrency = _exchangeRateService.preferredCurrency;
+
+        _bitcoinFormatService = [HIBitcoinFormatService sharedService];
+        _selectedBitcoinFormat = _bitcoinFormatService.preferredFormat;
     }
 
     return self;
@@ -76,7 +80,7 @@
 
     self.view.layer.backgroundColor = [[NSColor hiWindowBackgroundColor] hiNativeColor];
 
-    [self setupCurrencyList];
+    [self setupCurrencyLists];
     [self updateBalance];
     [self refreshData];
 
@@ -84,7 +88,9 @@
 
 }
 
-- (void)setupCurrencyList {
+- (void)setupCurrencyLists {
+    [self.bitcoinCurrencyPopupButton addItemsWithTitles:self.bitcoinFormatService.availableFormats];
+    [self.bitcoinCurrencyPopupButton selectItemWithTitle:self.selectedBitcoinFormat];
     [self.convertedCurrencyPopupButton addItemsWithTitles:self.exchangeRateService.availableCurrencies];
     [self.convertedCurrencyPopupButton selectItemWithTitle:_selectedCurrency];
 }
@@ -109,28 +115,23 @@
 }
 
 - (void)updateBalance {
-    self.balance = [NSDecimalNumber decimalNumberWithMantissa:[[BCClient sharedClient] balance]
-                                                     exponent:-8
-                                                   isNegative:NO];
-
-    self.pendingBalance = [NSDecimalNumber decimalNumberWithMantissa:[[BCClient sharedClient] pendingBalance]
-                                                            exponent:-8
-                                                          isNegative:NO];
+    self.balance = [[BCClient sharedClient] balance];
+    self.pendingBalance = [[BCClient sharedClient] pendingBalance];
 
     [self updateBalanceLabel];
     [self updateConvertedBalanceLabel];
 }
 
 - (void)updateBalanceLabel {
-    if ([self.pendingBalance isGreaterThan:[NSDecimalNumber decimalNumberWithString:@"0"]]) {
+    if (self.pendingBalance > 0ll) {
         self.balanceLabel.stringValue =
             [NSString stringWithFormat:@"%@ (+%@ %@)",
-                                       [_amountFormatter stringFromNumber:self.balance],
-                                       [_amountFormatter stringFromNumber:self.pendingBalance],
+                                       [self.bitcoinFormatService stringForBitcoin:self.balance],
+                                       [self.bitcoinFormatService stringForBitcoin:self.pendingBalance],
                                        NSLocalizedString(@"pending",
                                        @"part of the balance amount that isn't available")];
     } else {
-        self.balanceLabel.stringValue = [_amountFormatter stringFromNumber:self.balance];
+        self.balanceLabel.stringValue = [self.bitcoinFormatService stringForBitcoin:self.balance];
     }
 }
 
@@ -145,6 +146,14 @@
             });
         }
     }
+}
+
+#pragma mark - bitcoin format
+
+- (void)setSelectedBitcoinFormat:(NSString *)selectedBitcoinFormat {
+    _selectedBitcoinFormat = [selectedBitcoinFormat copy];
+    self.bitcoinFormatService.preferredFormat = _selectedBitcoinFormat;
+    [self updateBalanceLabel];
 }
 
 #pragma mark - converted balance
@@ -172,8 +181,11 @@
     }
 }
 
-- (NSDecimalNumber *)convertedAmountForBitcoinAmount:(NSDecimalNumber *)amount {
-    return [amount decimalNumberByMultiplyingBy:self.exchangeRate];
+- (NSDecimalNumber *)convertedAmountForBitcoinAmount:(satoshi_t)amount {
+    return [[NSDecimalNumber decimalNumberWithMantissa:amount
+                                              exponent:-8
+                                            isNegative:NO]
+        decimalNumberByMultiplyingBy:self.exchangeRate];
 }
 
 - (IBAction)currencyChanged:(id)sender {
