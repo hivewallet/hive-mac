@@ -7,6 +7,11 @@ pod 'FXKeychain'
 pod 'CocoaLumberjack'
 pod 'LetsMove'
 
+target :test, :exclusive => true do
+  link_with 'HiveTests'
+  pod 'OCHamcrest', '~> 3.0'
+end
+
 # Map old locale names (used in LetsMove) to ours
 pre_install do |installer|
   locale_mapping = {

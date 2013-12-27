@@ -24,6 +24,9 @@
 		2478B8D3184A80A400BA2C35 /* HIFeeDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2478B8D1184A80A400BA2C35 /* HIFeeDetailsViewController.m */; };
 		2478B8D5184A88E700BA2C35 /* HIFeeDetailsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2478B8D7184A88E700BA2C35 /* HIFeeDetailsViewController.xib */; };
 		2478B8F2184A89EA00BA2C35 /* HIFeeDetailsViewController.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2478B8F0184A89EA00BA2C35 /* HIFeeDetailsViewController.strings */; };
+		24EAAFC1186E1BBD00E1D2D3 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 24EAAFC0186E1BBD00E1D2D3 /* XCTest.framework */; };
+		24EAAFC7186E1BBD00E1D2D3 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 24EAAFC5186E1BBD00E1D2D3 /* InfoPlist.strings */; };
+		24EAAFC9186E1BBD00E1D2D3 /* HiveTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 24EAAFC8186E1BBD00E1D2D3 /* HiveTests.m */; };
 		5802106017ECC4F50039BA4B /* HITransactionCellView.m in Sources */ = {isa = PBXBuildFile; fileRef = 581EFBCB17DA441B00E2738D /* HITransactionCellView.m */; };
 		5802106317ECCAAA0039BA4B /* HIContactAutocompleteCellView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5802106217ECCAAA0039BA4B /* HIContactAutocompleteCellView.m */; };
 		5804C32617FC88BA003B7891 /* HIProfile.m in Sources */ = {isa = PBXBuildFile; fileRef = 5804C32517FC88BA003B7891 /* HIProfile.m */; };
@@ -176,9 +179,17 @@
 		D9A592361768CBE400502635 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D9A592351768CBE400502635 /* QuartzCore.framework */; };
 		D9F0B9F817EC654C0050A0A2 /* HIImageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D9F0B9F717EC654C0050A0A2 /* HIImageCell.m */; };
 		D9F8454F1781C509004076F6 /* Icon.icns in Resources */ = {isa = PBXBuildFile; fileRef = D9F8454E1781C509004076F6 /* Icon.icns */; };
+		DCDAE98650D74356A85FD777 /* libPods-test.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D217EA4BBEC47F5A47AFC8E /* libPods-test.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		24EAAFCB186E1BBE00E1D2D3 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D9A591BC1767B4A800502635 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D9A591C31767B4A800502635;
+			remoteInfo = Hive;
+		};
 		5884A00B17F1B5FF004A31FA /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 5884A00417F1B5FE004A31FA /* Tor.xcodeproj */;
@@ -345,6 +356,13 @@
 		2478B908184A8A0200BA2C35 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/HIFeeDetailsViewController.strings; sourceTree = "<group>"; };
 		2478B909184A8A0200BA2C35 /* sr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = sr; path = sr.lproj/HIFeeDetailsViewController.strings; sourceTree = "<group>"; };
 		2478B90A184A8A0300BA2C35 /* sr-Latn */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "sr-Latn"; path = "sr-Latn.lproj/HIFeeDetailsViewController.strings"; sourceTree = "<group>"; };
+		24EAAFBF186E1BBD00E1D2D3 /* HiveTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HiveTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		24EAAFC0186E1BBD00E1D2D3 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		24EAAFC4186E1BBD00E1D2D3 /* HiveTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "HiveTests-Info.plist"; sourceTree = "<group>"; };
+		24EAAFC6186E1BBD00E1D2D3 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		24EAAFC8186E1BBD00E1D2D3 /* HiveTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HiveTests.m; sourceTree = "<group>"; };
+		24EAAFCA186E1BBD00E1D2D3 /* HiveTests-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "HiveTests-Prefix.pch"; sourceTree = "<group>"; };
+		4D217EA4BBEC47F5A47AFC8E /* libPods-test.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-test.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		58003E2618492B2900CD19FE /* sr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = sr; path = sr.lproj/HIApplicationsViewController.strings; sourceTree = "<group>"; };
 		58003E2718492B2A00CD19FE /* sr */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = sr; path = sr.lproj/HIApplicationsViewController.xib; sourceTree = "<group>"; };
 		58003E2818492B2A00CD19FE /* sr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = sr; path = sr.lproj/HIContactsViewController.strings; sourceTree = "<group>"; };
@@ -1143,6 +1161,7 @@
 		58F56BB61832909100C57640 /* pt */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = pt; path = pt.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		58F56BB71832909100C57640 /* pt */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = pt; path = pt.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		58F56BB81832909100C57640 /* pt */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = pt; path = pt.lproj/Localizable.strings; sourceTree = "<group>"; };
+		B9458D6A454B45408789DFA5 /* Pods-test.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-test.xcconfig"; path = "Pods/Pods-test.xcconfig"; sourceTree = "<group>"; };
 		D91FE8071793FEFC001B37D8 /* BitcoinKit.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = BitcoinKit.xcodeproj; path = BitcoinKit/BitcoinKit.xcodeproj; sourceTree = "<group>"; };
 		D91FE826179887C4001B37D8 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		D9235371177C4222003533DF /* HIApplication.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HIApplication.h; path = Database/HIApplication.h; sourceTree = "<group>"; };
@@ -1198,6 +1217,15 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		24EAAFBC186E1BBD00E1D2D3 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				24EAAFC1186E1BBD00E1D2D3 /* XCTest.framework in Frameworks */,
+				DCDAE98650D74356A85FD777 /* libPods-test.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		D9A591C11767B4A800502635 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -1261,6 +1289,25 @@
 				2478B8D7184A88E700BA2C35 /* HIFeeDetailsViewController.xib */,
 			);
 			name = HIFeeDetailsViewController;
+			sourceTree = "<group>";
+		};
+		24EAAFC2186E1BBD00E1D2D3 /* HiveTests */ = {
+			isa = PBXGroup;
+			children = (
+				24EAAFC8186E1BBD00E1D2D3 /* HiveTests.m */,
+				24EAAFC3186E1BBD00E1D2D3 /* Supporting Files */,
+			);
+			path = HiveTests;
+			sourceTree = "<group>";
+		};
+		24EAAFC3186E1BBD00E1D2D3 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				24EAAFC4186E1BBD00E1D2D3 /* HiveTests-Info.plist */,
+				24EAAFC5186E1BBD00E1D2D3 /* InfoPlist.strings */,
+				24EAAFCA186E1BBD00E1D2D3 /* HiveTests-Prefix.pch */,
+			);
+			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
 		5804C31F17FC884E003B7891 /* Models */ = {
@@ -1552,9 +1599,11 @@
 			isa = PBXGroup;
 			children = (
 				D9A591CD1767B4A800502635 /* Hive */,
+				24EAAFC2186E1BBD00E1D2D3 /* HiveTests */,
 				D9A591C61767B4A800502635 /* Frameworks */,
 				D9A591C51767B4A800502635 /* Products */,
 				10153A3CC4364D6799CB4A2D /* Pods.xcconfig */,
+				B9458D6A454B45408789DFA5 /* Pods-test.xcconfig */,
 			);
 			sourceTree = "<group>";
 		};
@@ -1562,6 +1611,7 @@
 			isa = PBXGroup;
 			children = (
 				D9A591C41767B4A800502635 /* Hive.app */,
+				24EAAFBF186E1BBD00E1D2D3 /* HiveTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -1580,7 +1630,9 @@
 				D95929DC17742B70008B4F43 /* WebKit.framework */,
 				D91FE8071793FEFC001B37D8 /* BitcoinKit.xcodeproj */,
 				5884A00417F1B5FE004A31FA /* Tor.xcodeproj */,
+				24EAAFC0186E1BBD00E1D2D3 /* XCTest.framework */,
 				D9A591C91767B4A800502635 /* Other Frameworks */,
+				4D217EA4BBEC47F5A47AFC8E /* libPods-test.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -1741,6 +1793,26 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		24EAAFBE186E1BBD00E1D2D3 /* HiveTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 24EAAFD1186E1BBE00E1D2D3 /* Build configuration list for PBXNativeTarget "HiveTests" */;
+			buildPhases = (
+				06286C700A054417970F51CA /* Check Pods Manifest.lock */,
+				24EAAFBB186E1BBD00E1D2D3 /* Sources */,
+				24EAAFBC186E1BBD00E1D2D3 /* Frameworks */,
+				24EAAFBD186E1BBD00E1D2D3 /* Resources */,
+				9C2C93EA614A4323B0C3CF98 /* Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				24EAAFCC186E1BBE00E1D2D3 /* PBXTargetDependency */,
+			);
+			name = HiveTests;
+			productName = HiveTests;
+			productReference = 24EAAFBF186E1BBD00E1D2D3 /* HiveTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		D9A591C31767B4A800502635 /* Hive */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = D9A591E41767B4A800502635 /* Build configuration list for PBXNativeTarget "Hive" */;
@@ -1771,6 +1843,11 @@
 				CLASSPREFIX = HI;
 				LastUpgradeCheck = 0500;
 				ORGANIZATIONNAME = "Hive Developers";
+				TargetAttributes = {
+					24EAAFBE186E1BBD00E1D2D3 = {
+						TestTargetID = D9A591C31767B4A800502635;
+					};
+				};
 			};
 			buildConfigurationList = D9A591BF1767B4A800502635 /* Build configuration list for PBXProject "Hive" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -1821,6 +1898,7 @@
 			projectRoot = "";
 			targets = (
 				D9A591C31767B4A800502635 /* Hive */,
+				24EAAFBE186E1BBD00E1D2D3 /* HiveTests */,
 			);
 		};
 /* End PBXProject section */
@@ -1850,6 +1928,14 @@
 /* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
+		24EAAFBD186E1BBD00E1D2D3 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				24EAAFC7186E1BBD00E1D2D3 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		D9A591C21767B4A800502635 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -1937,6 +2023,21 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		06286C700A054417970F51CA /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
 		145A6D7ED7BD4D8BAE1D6E18 /* Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -1965,9 +2066,32 @@
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
 		};
+		9C2C93EA614A4323B0C3CF98 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-test-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		24EAAFBB186E1BBD00E1D2D3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				24EAAFC9186E1BBD00E1D2D3 /* HiveTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		D9A591C01767B4A800502635 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -2055,6 +2179,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		24EAAFCC186E1BBE00E1D2D3 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D9A591C31767B4A800502635 /* Hive */;
+			targetProxy = 24EAAFCB186E1BBE00E1D2D3 /* PBXContainerItemProxy */;
+		};
 		D901F4F717B272D40071780D /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = BitcoinJKit;
@@ -2189,6 +2318,14 @@
 				2478B90A184A8A0300BA2C35 /* sr-Latn */,
 			);
 			name = HIFeeDetailsViewController.strings;
+			sourceTree = "<group>";
+		};
+		24EAAFC5186E1BBD00E1D2D3 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				24EAAFC6186E1BBD00E1D2D3 /* en */,
+			);
+			name = InfoPlist.strings;
 			sourceTree = "<group>";
 		};
 		588E34DD181FF8A7006A6A25 /* HIDebuggingInfoWindowController.xib */ = {
@@ -3026,6 +3163,61 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		24EAAFCD186E1BBE00E1D2D3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B9458D6A454B45408789DFA5 /* Pods-test.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Hive.app/Contents/MacOS/Hive";
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"$(inherited)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "HiveTests/HiveTests-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				INFOPLIST_FILE = "HiveTests/HiveTests-Info.plist";
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		24EAAFCE186E1BBE00E1D2D3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B9458D6A454B45408789DFA5 /* Pods-test.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Hive.app/Contents/MacOS/Hive";
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				ENABLE_NS_ASSERTIONS = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"$(inherited)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "HiveTests/HiveTests-Prefix.pch";
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				INFOPLIST_FILE = "HiveTests/HiveTests-Info.plist";
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
 		D9A591E21767B4A800502635 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -3128,6 +3320,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		24EAAFD1186E1BBE00E1D2D3 /* Build configuration list for PBXNativeTarget "HiveTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				24EAAFCD186E1BBE00E1D2D3 /* Debug */,
+				24EAAFCE186E1BBE00E1D2D3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		D9A591BF1767B4A800502635 /* Build configuration list for PBXProject "Hive" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
