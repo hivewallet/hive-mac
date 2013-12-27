@@ -8,6 +8,8 @@
 
 #import "HIBitcoinURL.h"
 
+#import "NSDecimalNumber+HISatoshiConversion.h"
+
 static NSString * const BitcoinURLPrefix = @"bitcoin:";
 
 @implementation HIBitcoinURL
@@ -47,7 +49,7 @@ static NSString * const BitcoinURLPrefix = @"bitcoin:";
     _message = self.parameters[@"message"];
 
     NSString *amountParameter = self.parameters[@"amount"];
-    _amount = amountParameter ? strtoull(amountParameter.UTF8String, NULL, 10) : 0ll;
+    _amount = amountParameter ? [NSDecimalNumber decimalNumberWithString:amountParameter].hiSatoshi : 0;
 }
 
 - (BOOL)validate {
