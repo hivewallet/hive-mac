@@ -100,7 +100,7 @@ NSString * const HISendBitcoinsWindowSuccessKey = @"success";
     [self setupCurrencyList];
 
     if (_amount) {
-        [self setLockedAmount:_amount];
+        [self updateFieldsForLockedAmount];
     } else {
         self.amountFieldValue = 0ll;
     }
@@ -140,7 +140,12 @@ NSString * const HISendBitcoinsWindowSuccessKey = @"success";
 
 - (void)setLockedAmount:(satoshi_t)amount {
     _amount = amount;
+    if ([self isWindowLoaded]) {
+        [self updateFieldsForLockedAmount];
+    }
+}
 
+- (void)updateFieldsForLockedAmount {
     self.amountFieldValue = _amount;
     [self updateConvertedAmountFromAmount];
 

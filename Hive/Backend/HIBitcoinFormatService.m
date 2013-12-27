@@ -87,6 +87,8 @@ static NSString *const HIFormatPreferenceKey = @"BitcoinFormat";
               withFormat:(NSString *)format
                    error:(NSError **)error {
 
+    NSParameterAssert(string);
+
     NSNumberFormatter *formatter = [self createNumberFormatterWithFormat:format];
     if (error) {
         *error = nil;
