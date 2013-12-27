@@ -86,8 +86,29 @@
 /* Class = "NSMenuItem"; title = "Check for Updates..."; ObjectID = "870"; */
 "870.title" = "Verificar Actualizações...";
 
-/* Class = "NSMenuItem"; title = "Open CoinMap..."; ObjectID = "872"; */
+/* Class = "NSMenuItem"; title = "Change Password…"; ObjectID = "1HB-Qg-iyg"; */
+"1HB-Qg-iyg.title" = "Mudar a Senha…";
+
+/* Class = "NSMenuItem"; title = "Open CoinMap..."; ObjectID = "ASP-Ns-ktD"; */
 "ASP-Ns-ktD.title" = "Abrir CoinMap...";
 
-/* Class = "NSMenuItem"; title = "Debugging info..."; ObjectID = "Deb-tn-nNM"; */
+/* Class = "NSMenuItem"; title = "Wallet"; ObjectID = "GX7-xG-GKH"; */
+"GX7-xG-GKH.title" = "Carteira";
+
+/* Class = "NSMenuItem"; title = "Debugging tools..."; ObjectID = "Ue9-mi-gbe"; */
+"Ue9-mi-gbe.title" = "Ferramentas de depuração...";
+
+/* Class = "NSMenuItem"; title = "Backup Center..."; ObjectID = "V0L-sM-c8h"; */
+"V0L-sM-c8h.title" = "Cópia Central...";
+
+/* Class = "NSMenu"; title = "Tools"; ObjectID = "cCx-Ak-fii"; */
+"cCx-Ak-fii.title" = "Ferramentas";
+
+/* Class = "NSMenuItem"; title = "Tools"; ObjectID = "eBU-ec-85y"; */
+"eBU-ec-85y.title" = "Ferramentas";
+
+/* Class = "NSMenu"; title = "Wallet"; ObjectID = "jrd-Ul-XjV"; */
+"jrd-Ul-XjV.title" = "Carteira";
+
+/* Class = "NSMenuItem"; title = "Debugging info..."; ObjectID = "lLT-53-p4m"; */
 "lLT-53-p4m.title" = "Informação de Depuração...";
