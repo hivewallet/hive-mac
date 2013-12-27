@@ -40,6 +40,12 @@
 /* initialization error */
 "Could not write wallet file. Another instance of Hive might still be running." = "Could not write wallet file. Another instance of Hive might still be running.";
 
+/* Disable backup button title */
+"Disable" = "Disable";
+
+/* Disabled backup adapter */
+"Disabled" = "Disabled";
+
 /* Remove contact alert dialog body */
 "Do you really want to remove %@ %@ from your contact list?" = "Do you really want to remove %1$@ %2$@ from your contact list?";
 
@@ -51,6 +57,9 @@
 
 /* Email field placeholder */
 "email" = "email";
+
+/* Enable backup button title */
+"Enable" = "Enable";
 
 /* Sending zero bitcoin alert title */
 "Enter an amount greater than zero." = "Enter an amount greater than zero.";
@@ -142,6 +151,9 @@
 
 /* Transactions view title */
 "Transactions" = "Transactions";
+
+/* Backup adapter up to date */
+"Up to date" = "Up to date";
 
 /* Sending zero bitcoin alert message */
 "Why would you want to send someone 0 BTC?" = "Why would you want to send someone 0 BTC?";

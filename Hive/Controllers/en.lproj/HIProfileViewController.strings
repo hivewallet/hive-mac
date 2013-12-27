@@ -19,3 +19,6 @@
 
 /* Class = "NSBox"; title = "Box"; ObjectID = "Zcf-4u-dGc"; */
 "Zcf-4u-dGc.title" = "Box";
+
+/* Class = "NSMenu"; title = "OtherViews"; ObjectID = "ldN-fb-2LB"; */
+"ldN-fb-2LB.title" = "OtherViews";
