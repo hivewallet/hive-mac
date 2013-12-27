@@ -19,6 +19,14 @@ static NSString *const HIFormatPreferenceKey = @"BitcoinFormat";
     return sharedService;
 }
 
+- (id)init {
+    self = [super init];
+    if (self) {
+        _locale = [NSLocale currentLocale];
+    }
+    return self;
+}
+
 - (NSString *)decimalSeparator {
     return [self createNumberFormatterWithFormat:@"BTC"].decimalSeparator;
 }
@@ -47,15 +55,18 @@ static NSString *const HIFormatPreferenceKey = @"BitcoinFormat";
 }
 
 - (NSString *)stringForBitcoin:(satoshi_t)satoshi withFormat:(NSString *)format {
-
-    // @1e-8 does not work as a multiplier. The values are always zero.
-    // So we convert to a fraction.
     NSNumberFormatter *formatter = [self createNumberFormatterWithFormat:format];
-    return [formatter stringFromNumber:[NSDecimalNumber hiDecimalNumberWithSatoshi:satoshi]];
+
+    NSDecimalNumber *number = [NSDecimalNumber hiDecimalNumberWithSatoshi:satoshi];
+    number = [number decimalNumberByMultiplyingByPowerOf10:[self shiftForFormat:format]];
+
+    return [formatter stringFromNumber:number];
 }
 
-- (NSNumberFormatter *)createNumberFormatterWithFormat:(id)format {
+- (NSNumberFormatter *)createNumberFormatterWithFormat:(NSString *)format {
+    // Do not use the formatter's multiplier! It causes rounding errors!
     NSNumberFormatter *formatter = [NSNumberFormatter new];
+    formatter.locale = _locale;
     formatter.generatesDecimalNumbers = YES;
     formatter.minimum = @0;
     formatter.numberStyle = NSNumberFormatterDecimalStyle;
@@ -63,24 +74,39 @@ static NSString *const HIFormatPreferenceKey = @"BitcoinFormat";
     if ([format isEqualToString:@"BTC"]) {
         formatter.minimumFractionDigits = 2;
         formatter.maximumFractionDigits = 8;
-        formatter.multiplier = @1;
     } else if ([format isEqualToString:@"mBTC"]) {
         formatter.minimumFractionDigits = 0;
         formatter.maximumFractionDigits = 5;
-        formatter.multiplier = @1e3;
     } else if ([format isEqualToString:@"µBTC"]) {
         formatter.minimumFractionDigits = 0;
         formatter.maximumFractionDigits = 2;
-        formatter.multiplier = @1e6;
     } else if ([format isEqualToString:@"satoshi"]) {
         formatter.minimumFractionDigits = 0;
         formatter.maximumFractionDigits = 0;
-        formatter.multiplier = @1e8;
     } else {
-        [NSException raise:@"UnknownBitcoinFormatException"
-                    format:@"Unknown Bitcoin format %@", format];
+        @throw [self createUnknownFormatException:format];
     }
     return formatter;
+}
+
+- (NSException *)createUnknownFormatException:(NSString *)format {
+    return [NSException exceptionWithName:@"UnknownBitcoinFormatException"
+                                       reason:[NSString stringWithFormat:@"Unknown Bitcoin format %@", format]
+                                     userInfo:nil];
+}
+
+- (int)shiftForFormat:(NSString *)format {
+    if ([format isEqualToString:@"BTC"]) {
+        return 0;
+    } else if ([format isEqualToString:@"mBTC"]) {
+        return 3;
+    } else if ([format isEqualToString:@"µBTC"]) {
+        return 6;
+    } else if ([format isEqualToString:@"satoshi"]) {
+        return 8;
+    } else {
+        @throw [self createUnknownFormatException:format];
+    }
 }
 
 - (satoshi_t)parseString:(NSString *)string
@@ -98,6 +124,7 @@ static NSString *const HIFormatPreferenceKey = @"BitcoinFormat";
                         forString:string
                             range:NULL
                             error:error]) {
+        number = [number decimalNumberByMultiplyingByPowerOf10:-[self shiftForFormat:format]];
         return number.hiSatoshi;
     } else {
         return 0ll;

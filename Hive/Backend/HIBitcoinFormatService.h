@@ -6,6 +6,7 @@
 @property (nonatomic, copy, readonly) NSString *decimalSeparator;
 @property (nonatomic, copy, readonly) NSArray *availableFormats;
 @property (nonatomic, copy) NSString *preferredFormat;
+@property (nonatomic, copy) NSLocale *locale;
 
 + (HIBitcoinFormatService *)sharedService;
 

@@ -26,7 +26,7 @@
 		2478B8F2184A89EA00BA2C35 /* HIFeeDetailsViewController.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2478B8F0184A89EA00BA2C35 /* HIFeeDetailsViewController.strings */; };
 		24EAAFC1186E1BBD00E1D2D3 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 24EAAFC0186E1BBD00E1D2D3 /* XCTest.framework */; };
 		24EAAFC7186E1BBD00E1D2D3 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 24EAAFC5186E1BBD00E1D2D3 /* InfoPlist.strings */; };
-		24EAAFC9186E1BBD00E1D2D3 /* HiveTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 24EAAFC8186E1BBD00E1D2D3 /* HiveTests.m */; };
+		24EAAFC9186E1BBD00E1D2D3 /* HIBitcoinFormatServiceTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 24EAAFC8186E1BBD00E1D2D3 /* HIBitcoinFormatServiceTests.m */; };
 		5802106017ECC4F50039BA4B /* HITransactionCellView.m in Sources */ = {isa = PBXBuildFile; fileRef = 581EFBCB17DA441B00E2738D /* HITransactionCellView.m */; };
 		5802106317ECCAAA0039BA4B /* HIContactAutocompleteCellView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5802106217ECCAAA0039BA4B /* HIContactAutocompleteCellView.m */; };
 		5804C32617FC88BA003B7891 /* HIProfile.m in Sources */ = {isa = PBXBuildFile; fileRef = 5804C32517FC88BA003B7891 /* HIProfile.m */; };
@@ -360,7 +360,7 @@
 		24EAAFC0186E1BBD00E1D2D3 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		24EAAFC4186E1BBD00E1D2D3 /* HiveTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "HiveTests-Info.plist"; sourceTree = "<group>"; };
 		24EAAFC6186E1BBD00E1D2D3 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		24EAAFC8186E1BBD00E1D2D3 /* HiveTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HiveTests.m; sourceTree = "<group>"; };
+		24EAAFC8186E1BBD00E1D2D3 /* HIBitcoinFormatServiceTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HIBitcoinFormatServiceTests.m; sourceTree = "<group>"; };
 		24EAAFCA186E1BBD00E1D2D3 /* HiveTests-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "HiveTests-Prefix.pch"; sourceTree = "<group>"; };
 		4D217EA4BBEC47F5A47AFC8E /* libPods-test.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-test.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		58003E2618492B2900CD19FE /* sr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = sr; path = sr.lproj/HIApplicationsViewController.strings; sourceTree = "<group>"; };
@@ -1294,7 +1294,7 @@
 		24EAAFC2186E1BBD00E1D2D3 /* HiveTests */ = {
 			isa = PBXGroup;
 			children = (
-				24EAAFC8186E1BBD00E1D2D3 /* HiveTests.m */,
+				24EAAFC8186E1BBD00E1D2D3 /* HIBitcoinFormatServiceTests.m */,
 				24EAAFC3186E1BBD00E1D2D3 /* Supporting Files */,
 			);
 			path = HiveTests;
@@ -2088,7 +2088,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				24EAAFC9186E1BBD00E1D2D3 /* HiveTests.m in Sources */,
+				24EAAFC9186E1BBD00E1D2D3 /* HIBitcoinFormatServiceTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
