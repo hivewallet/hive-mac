@@ -8,6 +8,7 @@
 
 #import <Cocoa/Cocoa.h>
 
-@interface HIBackupCenterWindowController : NSWindowController <NSTableViewDataSource, NSTableViewDelegate>
+@interface HIBackupCenterWindowController : NSWindowController
+    <NSTableViewDataSource, NSTableViewDelegate, NSWindowDelegate>
 
 @end

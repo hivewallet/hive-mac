@@ -35,6 +35,10 @@ static NSString * const EnabledKey = @"enabled";
     return 0;
 }
 
+- (void)updateStatus {
+    [self doesNotRecognizeSelector:_cmd];
+}
+
 - (BOOL)isEnabledByDefault {
     [self doesNotRecognizeSelector:_cmd];
     return NO;

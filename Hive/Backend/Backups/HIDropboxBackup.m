@@ -34,6 +34,12 @@
     }
 }
 
+- (void)updateStatus {
+    // TODO
+    [self willChangeValueForKey:@"status"];
+    [self didChangeValueForKey:@"status"];
+}
+
 - (BOOL)isEnabledByDefault {
     return NO;
 }

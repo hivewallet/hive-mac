@@ -9,8 +9,20 @@
 #import <Foundation/Foundation.h>
 
 typedef NS_ENUM(NSUInteger, HIBackupAdapterStatus) {
+    // adapter is disabled - user doesn't want to use it
     HIBackupStatusDisabled,
+
+    // backup was done and will (probably) be done again
     HIBackupStatusUpToDate,
+
+    // backup was not done yet but will (probably) be done soon
+    HIBackupStatusWaiting,
+
+    // backup was done before (so the keys are safe), but probably won't be done again
+    HIBackupStatusOutdated,
+
+    // backup wasn't done and we know or suspect that it will never be
+    HIBackupStatusFailure,
 };
 
 @interface HIBackupAdapter : NSObject
@@ -24,5 +36,6 @@ typedef NS_ENUM(NSUInteger, HIBackupAdapterStatus) {
 
 + (NSDictionary *)backupSettings;
 - (BOOL)isEnabledByDefault;
+- (void)updateStatus;
 
 @end

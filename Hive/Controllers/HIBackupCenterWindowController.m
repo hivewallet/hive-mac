@@ -11,10 +11,12 @@
 #import "HIBackupAdapter.h"
 #import "HIBackupManager.h"
 
-static const CGFloat rowHeight = 50.0;
+static const CGFloat TableRowHeight = 50.0;
+static const NSTimeInterval UpdateTimerInterval = 5.0;
 
 @interface HIBackupCenterWindowController () {
     HIBackupManager *_backupManager;
+    NSTimer *_updateTimer;
 }
 
 @property (nonatomic, strong) IBOutlet NSTableView *tableView;
@@ -32,19 +34,23 @@ static const CGFloat rowHeight = 50.0;
         for (HIBackupAdapter *adapter in _backupManager.adapters) {
             [adapter addObserver:self forKeyPath:@"status" options:0 context:NULL];
         }
+
+        [self startTimer];
     }
 
     return self;
 }
 
 - (void)dealloc {
+    [self stopTimer];
+
     for (HIBackupAdapter *adapter in _backupManager.adapters) {
         [adapter removeObserver:self forKeyPath:@"status"];
     }
 }
 
 - (void)awakeFromNib {
-    self.tableView.rowHeight = rowHeight;
+    self.tableView.rowHeight = TableRowHeight;
 }
 
 - (NSInteger)numberOfRowsInTableView:(NSTableView *)tableView {
@@ -61,8 +67,8 @@ static const CGFloat rowHeight = 50.0;
         cell.textField.stringValue = adapter.displayedName;
         cell.imageView.image = adapter.icon;
 
-        NSRect fullRowIcon = NSMakeRect(0, 0, rowHeight, rowHeight);
-        CGFloat padding = (rowHeight - adapter.iconSize) / 2.0;
+        NSRect fullRowIcon = NSMakeRect(0, 0, TableRowHeight, TableRowHeight);
+        CGFloat padding = (TableRowHeight - adapter.iconSize) / 2.0;
         cell.imageView.frame = NSInsetRect(fullRowIcon, padding, padding);
     } else if ([tableColumn.identifier isEqual:@"Status"]) {
         cell.textField.stringValue = [self statusNameForStatus:status];
@@ -85,9 +91,15 @@ static const CGFloat rowHeight = 50.0;
 - (NSString *)statusNameForStatus:(HIBackupAdapterStatus)status {
     switch (status) {
         case HIBackupStatusDisabled:
-            return NSLocalizedString(@"Disabled", @"Disabled backup adapter");
+            return NSLocalizedString(@"Disabled", @"Backup adapter status: adapter disabled");
         case HIBackupStatusUpToDate:
-            return NSLocalizedString(@"Up to date", @"Backup adapter up to date");
+            return NSLocalizedString(@"Up to date", @"Backup adapter status: backup up to date");
+        case HIBackupStatusOutdated:
+            return NSLocalizedString(@"Backup problem", @"Backup adapter status: backup done but not updated recently");
+        case HIBackupStatusWaiting:
+            return NSLocalizedString(@"Waiting for backup", @"Backup adapter status: backup scheduled or in progress");
+        case HIBackupStatusFailure:
+            return NSLocalizedString(@"Backup error", @"Backup adapter status: backup can't or won't be completed");
         default:
             return @"Unknown status";
     }
@@ -99,6 +111,9 @@ static const CGFloat rowHeight = 50.0;
             return [NSImage imageNamed:NSImageNameStatusNone];
         case HIBackupStatusUpToDate:
             return [NSImage imageNamed:NSImageNameStatusAvailable];
+        case HIBackupStatusOutdated:
+        case HIBackupStatusWaiting:
+            return [NSImage imageNamed:NSImageNameStatusPartiallyAvailable];
         default:
             return [NSImage imageNamed:NSImageNameStatusUnavailable];
     }
@@ -127,6 +142,40 @@ static const CGFloat rowHeight = 50.0;
     if (row != NSNotFound) {
         [self.tableView reloadDataForRowIndexes:[NSIndexSet indexSetWithIndex:row]
                                   columnIndexes:[NSIndexSet indexSetWithIndexesInRange:NSMakeRange(1, 2)]];
+    }
+}
+
+- (void)updateStatus {
+    [_backupManager.adapters makeObjectsPerformSelector:@selector(updateStatus)];
+}
+
+- (void)startTimer {
+    _updateTimer = [NSTimer scheduledTimerWithTimeInterval:UpdateTimerInterval
+                                                    target:self
+                                                  selector:@selector(updateStatus)
+                                                  userInfo:nil
+                                                   repeats:YES];
+
+    if ([_updateTimer respondsToSelector:@selector(setTolerance:)]) {
+        _updateTimer.tolerance = 1.0;
+    }
+
+    [self updateStatus];
+}
+
+- (void)stopTimer {
+    [_updateTimer invalidate];
+    _updateTimer = nil;
+}
+
+// mavericks fuck yeah
+- (void)windowDidChangeOcclusionState:(NSNotification *)notification {
+    BOOL visible = (self.window.occlusionState & NSWindowOcclusionStateVisible);
+
+    if (visible && !_updateTimer) {
+        [self startTimer];
+    } else if (!visible && _updateTimer) {
+        [self stopTimer];
     }
 }
 

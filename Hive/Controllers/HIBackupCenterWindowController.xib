@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="4514" systemVersion="12F45" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none">
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="4514" systemVersion="13B42" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none">
     <dependencies>
         <deployment defaultVersion="1070" identifier="macosx"/>
         <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="4514"/>
@@ -76,7 +76,7 @@
                                                 </tableCellView>
                                             </prototypeCellViews>
                                         </tableColumn>
-                                        <tableColumn identifier="Status" width="150" minWidth="10" maxWidth="3.4028234663852886e+38" id="ggB-aI-7mE">
+                                        <tableColumn identifier="Status" width="185" minWidth="10" maxWidth="3.4028234663852886e+38" id="ggB-aI-7mE">
                                             <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border" alignment="left" title="Status">
                                                 <font key="font" metaFont="smallSystem"/>
                                                 <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
@@ -90,11 +90,11 @@
                                             <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
                                             <prototypeCellViews>
                                                 <tableCellView id="Nuy-wL-TJC">
-                                                    <rect key="frame" x="204" y="1" width="150" height="50"/>
+                                                    <rect key="frame" x="204" y="1" width="185" height="50"/>
                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                     <subviews>
                                                         <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" id="ndJ-Ad-G7n">
-                                                            <rect key="frame" x="27" y="17" width="123" height="17"/>
+                                                            <rect key="frame" x="27" y="17" width="158" height="17"/>
                                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                                             <textFieldCell key="cell" lineBreakMode="truncatingTail" sendsActionOnEndEditing="YES" title="Disabled" id="CNI-B2-pea">
                                                                 <font key="font" metaFont="system"/>
@@ -115,7 +115,7 @@
                                                 </tableCellView>
                                             </prototypeCellViews>
                                         </tableColumn>
-                                        <tableColumn identifier="Actions" width="155" minWidth="10" maxWidth="3.4028234663852886e+38" id="5e5-Co-YVU">
+                                        <tableColumn identifier="Actions" width="120" minWidth="10" maxWidth="3.4028234663852886e+38" id="5e5-Co-YVU">
                                             <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border" alignment="left" title="Actions">
                                                 <font key="font" metaFont="smallSystem"/>
                                                 <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
@@ -129,7 +129,7 @@
                                             <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
                                             <prototypeCellViews>
                                                 <tableCellView id="BKw-st-8j8" customClass="HIBackupActionsCellView">
-                                                    <rect key="frame" x="357" y="1" width="155" height="50"/>
+                                                    <rect key="frame" x="392" y="1" width="120" height="50"/>
                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                     <subviews>
                                                         <button verticalHuggingPriority="750" id="WsG-jX-84n">
