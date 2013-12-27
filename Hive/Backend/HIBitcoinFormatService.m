@@ -1,5 +1,7 @@
 #import "HIBitcoinFormatService.h"
 
+#import "NSDecimalNumber+HISatoshiConversion.h"
+
 static NSString *const HIFormatPreferenceKey = @"BitcoinFormat";
 
 @implementation HIBitcoinFormatService
@@ -48,11 +50,8 @@ static NSString *const HIFormatPreferenceKey = @"BitcoinFormat";
 
     // @1e-8 does not work as a multiplier. The values are always zero.
     // So we convert to a fraction.
-    NSNumber *x = [NSDecimalNumber decimalNumberWithMantissa:satoshi
-                                                    exponent:-8
-                                                  isNegative:NO];
     NSNumberFormatter *formatter = [self createNumberFormatterWithFormat:format];
-    return [formatter stringFromNumber:x];
+    return [formatter stringFromNumber:[NSDecimalNumber hiDecimalNumberWithSatoshi:satoshi]];
 }
 
 - (NSNumberFormatter *)createNumberFormatterWithFormat:(id)format {
@@ -97,7 +96,7 @@ static NSString *const HIFormatPreferenceKey = @"BitcoinFormat";
                         forString:string
                             range:NULL
                             error:error]) {
-        return [number decimalNumberByMultiplyingByPowerOf10:8].longLongValue;
+        return number.hiSatoshi;
     } else {
         return 0ll;
     }

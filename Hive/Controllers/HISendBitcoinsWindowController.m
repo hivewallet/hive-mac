@@ -13,6 +13,7 @@
 #import "HIBitcoinFormatService.h"
 #import "HIButtonWithSpinner.h"
 #import "HIContactAutocompleteWindowController.h"
+#import "NSDecimalNumber+HISatoshiConversion.h"
 #import "HIExchangeRateService.h"
 #import "HIFeeDetailsViewController.h"
 #import "HISendBitcoinsWindowController.h"
@@ -246,25 +247,15 @@ NSString * const HISendBitcoinsWindowSuccessKey = @"success";
 }
 
 - (NSDecimalNumber *)convertedAmountForBitcoinAmount:(satoshi_t)amount {
-    return [[self numberFromSatoshi:amount] decimalNumberByMultiplyingBy:self.exchangeRate];
+    return [[NSDecimalNumber hiDecimalNumberWithSatoshi:amount] decimalNumberByMultiplyingBy:self.exchangeRate];
 }
 
 - (satoshi_t)bitcoinAmountForConvertedAmount:(NSDecimalNumber *)amount {
-    return [self satoshiFromNumber:[amount decimalNumberByDividingBy:self.exchangeRate]];
+    return [amount decimalNumberByDividingBy:self.exchangeRate].hiSatoshi;
 }
 
 - (IBAction)currencyChanged:(id)sender {
     self.selectedCurrency = self.convertedCurrencyPopupButton.selectedItem.title;
-}
-
-- (satoshi_t)satoshiFromNumber:(NSDecimalNumber *)amount {
-    return [[amount decimalNumberByMultiplyingByPowerOf10:8] longLongValue];
-}
-
-- (NSDecimalNumber *)numberFromSatoshi:(satoshi_t)satoshi {
-    return [NSDecimalNumber decimalNumberWithMantissa:satoshi
-                                             exponent:-8
-                                           isNegative:NO];
 }
 
 #pragma mark - HIExchangeRateObserver

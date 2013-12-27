@@ -9,6 +9,7 @@
 #import "BCClient.h"
 #import "HIBitcoinFormatService.h"
 #import "HIContactInfoViewController.h"
+#import "NSDecimalNumber+HISatoshiConversion.h"
 #import "HIExchangeRateService.h"
 #import "HIProfile.h"
 #import "HIProfileViewController.h"
@@ -182,10 +183,7 @@
 }
 
 - (NSDecimalNumber *)convertedAmountForBitcoinAmount:(satoshi_t)amount {
-    return [[NSDecimalNumber decimalNumberWithMantissa:amount
-                                              exponent:-8
-                                            isNegative:NO]
-        decimalNumberByMultiplyingBy:self.exchangeRate];
+    return [[NSDecimalNumber hiDecimalNumberWithSatoshi:amount] decimalNumberByMultiplyingBy:self.exchangeRate];
 }
 
 - (IBAction)currencyChanged:(id)sender {
