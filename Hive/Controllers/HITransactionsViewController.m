@@ -15,11 +15,11 @@
 #import "HITransactionCellView.h"
 #import "HITransactionsViewController.h"
 #import "NSColor+Hive.h"
+#import "HIBitcoinFormatService.h"
 
 @interface HITransactionsViewController () {
     HIContact *_contact;
     NSDateFormatter *_transactionDateFormatter;
-    NSNumberFormatter *_amountFormatter;
     NSFont *_amountLabelFont;
 }
 
@@ -36,11 +36,6 @@
 
         _transactionDateFormatter = [NSDateFormatter new];
         _transactionDateFormatter.dateFormat = @"LLL d";
-
-        _amountFormatter = [[NSNumberFormatter alloc] init];
-        _amountFormatter.numberStyle = NSNumberFormatterDecimalStyle;
-        _amountFormatter.localizesFormat = YES;
-        _amountFormatter.maximumFractionDigits = 8;
 
         _amountLabelFont = [NSFont fontWithName:@"Helvetica Bold" size:13.0];
     }
@@ -167,8 +162,8 @@
 }
 
 - (NSAttributedString *)summaryTextForTransaction:(HITransaction *)transaction {
-    NSString *formattedAmount = [_amountFormatter stringFromNumber:@(transaction.absoluteAmount * 1.0 / SATOSHI)];
-    NSString *amountPart = [NSString stringWithFormat:@"%@ BTC", formattedAmount];
+    NSString *amountPart =
+        [[HIBitcoinFormatService sharedService] stringWithDesignatorForBitcoin:transaction.absoluteAmount];
 
     NSString *directionPart = (transaction.direction == HITransactionDirectionIncoming) ?
         NSLocalizedString(@"from", @"Direction label in transactions list when user is the receiver") :

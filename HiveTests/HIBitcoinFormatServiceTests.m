@@ -17,6 +17,22 @@
 
 #pragma mark - formatting
 
+- (void)testPreferredFormatString {
+    self.service.preferredFormat = @"mBTC";
+
+    NSString *string = [self.service stringForBitcoin:160000];
+
+    assertThat(string, equalTo(@"1.6"));
+}
+
+- (void)testPreferredFormatStringWithDesignator {
+    self.service.preferredFormat = @"µBTC";
+
+    NSString *string = [self.service stringWithDesignatorForBitcoin:160];
+
+    assertThat(string, equalTo(@"1.6 µBTC"));
+}
+
 - (void)testFormatBtcString {
     NSString *format = @"BTC";
 
