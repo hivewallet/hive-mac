@@ -11,6 +11,7 @@
 #import <CocoaLumberjack/DDASLLogger.h>
 #import <CocoaLumberjack/DDFileLogger.h>
 #import <CocoaLumberjack/DDTTYLogger.h>
+#import <HockeySDK/HockeySDK.h>
 #import <WebKit/WebKit.h>
 
 #import "BCClient.h"
@@ -42,7 +43,7 @@ static int ddLogLevel = LOG_LEVEL_VERBOSE;
 
 @end
 
-@interface HIAppDelegate () {
+@interface HIAppDelegate ()<BITHockeyManagerDelegate> {
     HIMainWindowController *_mainWindowController;
     NSMutableArray *_popupWindows;
 }

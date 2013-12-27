@@ -7,13 +7,12 @@
 //
 
 #import <Cocoa/Cocoa.h>
-#import <HockeySDK/HockeySDK.h>
 #import <INAppStoreWindow/INAppStoreWindow.h>
 
 @class HIContact;
 @class HISendBitcoinsWindowController;
 
-@interface HIAppDelegate : NSObject <NSApplicationDelegate, BITHockeyManagerDelegate>
+@interface HIAppDelegate : NSObject <NSApplicationDelegate>
 
 - (void)showExceptionWindowWithException:(NSException *)exception;
 - (HISendBitcoinsWindowController *)sendBitcoinsWindowForContact:(HIContact *)contact;
