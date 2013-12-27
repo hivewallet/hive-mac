@@ -15,30 +15,36 @@ static NSString * const EnabledKey = @"enabled";
 
 #pragma mark - Abstract methods
 
+/* Internal name of the adapter, e.g. @"time_machine" */
 - (NSString *)name {
     [self doesNotRecognizeSelector:_cmd];
     return nil;
 }
 
+/* Displayed name of the adapter, e.g. @"Time Machine" */
 - (NSString *)displayedName {
     [self doesNotRecognizeSelector:_cmd];
     return nil;
 }
 
+/* Image/icon displayed next to the adapter name */
 - (NSImage *)icon {
     [self doesNotRecognizeSelector:_cmd];
     return nil;
 }
 
+/* Last known backup status */
 - (HIBackupAdapterStatus)status {
     [self doesNotRecognizeSelector:_cmd];
     return 0;
 }
 
+/* Check if backup status has changed, and update self.status if necessary */
 - (void)updateStatus {
     [self doesNotRecognizeSelector:_cmd];
 }
 
+/* Tells if the adapter should be enabled by default on first launch */
 - (BOOL)isEnabledByDefault {
     [self doesNotRecognizeSelector:_cmd];
     return NO;
@@ -47,12 +53,13 @@ static NSString * const EnabledKey = @"enabled";
 
 #pragma mark - Other properties
 
-+ (NSDictionary *)backupSettings {
-    return [[NSUserDefaults standardUserDefaults] dictionaryForKey:BackupSettingsKey];
+/* Override if you need a different icon size */
+- (CGFloat)iconSize {
+  return 36.0;
 }
 
-- (CGFloat)iconSize {
-    return 36.0;
++ (NSDictionary *)backupSettings {
+    return [[NSUserDefaults standardUserDefaults] dictionaryForKey:BackupSettingsKey];
 }
 
 - (BOOL)isEnabled {
