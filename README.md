@@ -39,7 +39,7 @@ Then you can open the project workspace in Xcode (`Hive.xcworkspace`, not `Hive.
 
 Hive is currently set up to use the main blockchain. If you prefer to use the testing network to avoid risking real Bitcoin while testing the app, change the line `#define TESTING_NETWORK 0` in `Hive-Prefix.pch` to `1` and rebuild the app or launch it with the `Hive (Test Network)` scheme in Xcode.
 
-**Warning: if you use the production network, be careful and don't transfer large amounts of bitcoins to the Hive wallet. The app is still in a beta phase and there's always a risk that something will go wrong and the wallet will be lost.**
+**Warning: if you use the production network, be careful and don't transfer large amounts of Bitcoin to the Hive wallet. The app is still in a beta phase and there's always a risk that something will go wrong and the wallet will be lost.**
 
 
 ## Contributing

@@ -76,7 +76,7 @@
                 <menuItem title="Wallet" id="GX7-xG-GKH">
                     <menu key="submenu" title="Wallet" id="jrd-Ul-XjV">
                         <items>
-                            <menuItem title="Send Bitcoins..." keyEquivalent="S" id="866">
+                            <menuItem title="Send Bitcoin..." keyEquivalent="S" id="866">
                                 <connections>
                                     <action selector="openSendBitcoinsWindow:" target="-1" id="868"/>
                                 </connections>

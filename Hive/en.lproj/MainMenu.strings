@@ -80,8 +80,8 @@
 /* Class = "NSMenuItem"; title = "Close"; ObjectID = "864"; */
 "864.title" = "Close";
 
-/* Class = "NSMenuItem"; title = "Send Bitcoins..."; ObjectID = "866"; */
-"866.title" = "Send Bitcoins...";
+/* Class = "NSMenuItem"; title = "Send Bitcoin..."; ObjectID = "866"; */
+"866.title" = "Send Bitcoin...";
 
 /* Class = "NSMenuItem"; title = "Check for Updates..."; ObjectID = "870"; */
 "870.title" = "Check for Updates...";
