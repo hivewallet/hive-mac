@@ -29,6 +29,7 @@
             HILogWarn(@"Leaking password into memory");
             _mutableDataPassword = [data mutableCopy];
         }
+        _dataPasswordSubset = _mutableDataPassword;
 
         [self stripByteOrderMark];
     }
@@ -45,7 +46,7 @@
 }
 
 - (NSData *)data {
-    return self.dataPasswordSubset ?: self.mutableDataPassword;
+    return self.dataPasswordSubset;
 }
 
 - (void)clear {

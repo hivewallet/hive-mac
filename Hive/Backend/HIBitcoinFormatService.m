@@ -37,7 +37,7 @@ static NSString *const HIFormatPreferenceKey = @"BitcoinFormat";
     static NSArray *availableBitcoinFormats;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^ {
-        availableBitcoinFormats = @[@"BTC", @"mBTC", @"µBTC", @"satoshi"];
+        availableBitcoinFormats = @[@"BTC", @"mBTC", @"µBTC"];
     });
     return availableBitcoinFormats;
 }
