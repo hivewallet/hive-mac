@@ -185,6 +185,7 @@ NSString * const HISendBitcoinsWindowSuccessKey = @"success";
 
 - (void)setSelectedBitcoinFormat:(NSString *)selectedBitcoinFormat {
     _selectedBitcoinFormat = [selectedBitcoinFormat copy];
+    self.bitcoinFormatService.preferredFormat = _selectedBitcoinFormat;
     [self formatAmountField];
     self.feeDetailsViewController.bitcoinFormat = self.selectedBitcoinFormat;
 }
