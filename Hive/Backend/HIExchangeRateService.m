@@ -4,11 +4,11 @@
 #import "HIExchangeRateService.h"
 
 static NSString *const HIConversionPreferenceKey = @"ConversionCurrency";
+static const NSTimeInterval HIExchangeRateAutomaticUpdateInterval = 60.0 * 60.0;
 
 @interface HIExchangeRateService ()
 
 @property (nonatomic, strong) AFHTTPClient *client;
-@property (nonatomic, strong) AFHTTPRequestOperation *exchangeRateOperation;
 @property (nonatomic, strong) NSMutableSet *observers;
 
 @end
@@ -33,8 +33,15 @@ static NSString *const HIConversionPreferenceKey = @"ConversionCurrency";
     if (self) {
         _client = [BCClient sharedClient];
         _observers = [NSMutableSet new];
+
+        [self registerAppNapNotifications];
     }
     return self;
+}
+
+- (void)dealloc {
+    [self cancelAutomaticUpdate];
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
 #pragma mark - user defaults
@@ -97,23 +104,24 @@ static NSString *const HIConversionPreferenceKey = @"ConversionCurrency";
 #pragma mark - exchange rate observation
 
 - (void)addExchangeRateObserver:(id<HIExchangeRateObserver>)observer {
+    if (self.observers.count == 0 && [self shouldUpdateAutomatically]) {
+        [self scheduleAutomaticUpdate];
+    }
     [self.observers addObject:observer];
 }
 
 - (void)removeExchangeRateObserver:(id<HIExchangeRateObserver>)observer {
     [self.observers removeObject:observer];
+    if (self.observers.count == 0) {
+        [self cancelAutomaticUpdate];
+    }
 }
 
 - (void)updateExchangeRateForCurrency:(NSString *)currency {
-    if (self.exchangeRateOperation) {
-        [self.exchangeRateOperation cancel];
-        self.exchangeRateOperation = nil;
-    }
-
     NSURL *URL =
         [NSURL URLWithString:[NSString stringWithFormat:@"https://api.bitcoinaverage.com/ticker/%@", currency]];
 
-    self.exchangeRateOperation =
+    AFHTTPRequestOperation *exchangeRateOperation =
         [self.client HTTPRequestOperationWithRequest:[NSURLRequest requestWithURL:URL]
                                              success:^(AFHTTPRequestOperation *operation, id responseData) {
 
@@ -136,21 +144,69 @@ static NSString *const HIConversionPreferenceKey = @"ConversionCurrency";
         }
 
         [self notifyOfExchangeRate:exchangeRate forCurrency:currency];
-        _exchangeRateOperation = nil;
+
+        [self scheduleAutomaticUpdate];
+
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         HILogWarn(@"Couldn't get response from exchange rate API for %@: %@", currency, error);
 
         [self notifyOfExchangeRate:nil forCurrency:currency];
-        _exchangeRateOperation = nil;
     }];
 
-    [self.client.operationQueue addOperation:_exchangeRateOperation];
+    [self.client.operationQueue addOperation:exchangeRateOperation];
 }
 
 - (void)notifyOfExchangeRate:(NSDecimalNumber *)exchangeRate
                  forCurrency:(NSString *)currency {
     for (id<HIExchangeRateObserver> observer in self.observers) {
         [observer exchangeRateUpdatedTo:exchangeRate forCurrency:currency];
+    }
+}
+
+#pragma mark - automatic updates
+
+- (void)performAutomaticUpdate {
+    [self updateExchangeRateForCurrency:self.preferredCurrency];
+}
+
+- (void)scheduleAutomaticUpdate {
+    [self cancelAutomaticUpdate];
+    [self performSelector:@selector(performAutomaticUpdate)
+               withObject:nil
+               afterDelay:HIExchangeRateAutomaticUpdateInterval];
+}
+
+- (void)cancelAutomaticUpdate {
+    [NSObject cancelPreviousPerformRequestsWithTarget:self
+                                             selector:@selector(performAutomaticUpdate)
+                                               object:nil];
+}
+
+#pragma mark - app nap
+
+- (void)didChangeAppNapState:(NSNotification *)notification {
+    BOOL visible = [self shouldUpdateAutomatically];
+    if (visible) {
+        HILogDebug(@"Hive became visible");
+        if (self.observers.count > 0) {
+            [self performAutomaticUpdate];
+        }
+    } else {
+        HILogDebug(@"Hive became invisible");
+        [self cancelAutomaticUpdate];
+    }
+}
+
+- (BOOL)shouldUpdateAutomatically {
+    return [NSApplication sharedApplication].occlusionState & NSApplicationOcclusionStateVisible;
+}
+
+- (void)registerAppNapNotifications {
+    if (floor(NSAppKitVersionNumber) > NSAppKitVersionNumber10_8) {
+        [[NSNotificationCenter defaultCenter] addObserver:self
+                                                 selector:@selector(didChangeAppNapState:)
+                                                     name:NSApplicationDidChangeOcclusionStateNotification
+                                                   object:nil];
     }
 }
 
