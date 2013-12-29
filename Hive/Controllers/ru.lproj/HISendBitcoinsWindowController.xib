@@ -83,7 +83,7 @@ Gw
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             <subviews>
                                 <textField horizontalHuggingPriority="1000" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="13">
-                                    <rect key="frame" x="-12" y="118" width="61" height="16"/>
+                                    <rect key="frame" x="16" y="118" width="33" height="16"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="right" title="Кому:" id="14">
                                         <font key="font" metaFont="cellTitle"/>
@@ -253,7 +253,7 @@ Gw
                             <constraint firstItem="36" firstAttribute="leading" secondItem="l47-zx-4mb" secondAttribute="leading" id="HLv-cn-PIg"/>
                             <constraint firstItem="l47-zx-4mb" firstAttribute="top" secondItem="Uma-46-IZW" secondAttribute="bottom" constant="14" id="KN9-ej-ood"/>
                             <constraint firstItem="23" firstAttribute="leading" secondItem="11" secondAttribute="leading" id="Q3f-pp-Wei"/>
-                            <constraint firstItem="u5l-cR-nXn" firstAttribute="leading" secondItem="13" secondAttribute="leading" constant="28" id="SSt-wx-3g1"/>
+                            <constraint firstItem="u5l-cR-nXn" firstAttribute="leading" secondItem="13" secondAttribute="leading" id="SSt-wx-3g1"/>
                             <constraint firstItem="ZPL-GE-Omh" firstAttribute="baseline" secondItem="l47-zx-4mb" secondAttribute="baseline" id="SWI-VU-4PG"/>
                             <constraint firstItem="u5l-cR-nXn" firstAttribute="trailing" secondItem="ZPL-GE-Omh" secondAttribute="trailing" id="TaX-HF-bnb"/>
                             <constraint firstItem="36" firstAttribute="leading" secondItem="u5l-cR-nXn" secondAttribute="trailing" constant="12" id="VOV-PI-Ej1"/>
