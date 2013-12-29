@@ -72,10 +72,16 @@
                            forKeyPath:@"arrangedObjects.@count"
                               options:NSKeyValueObservingOptionInitial
                               context:NULL];
+
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(updateBitcoinFormat:)
+                                                 name:HIPreferredFormatChangeNotification
+                                               object:nil];
 }
 
 - (void)dealloc {
     [self.arrayController removeObserver:self forKeyPath:@"arrangedObjects.@count"];
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
 - (void)observeValueForKeyPath:(NSString *)keyPath
@@ -109,6 +115,11 @@
     [self.scrollView setHidden:!shouldShowTransactions];
 }
 
+#pragma mark - bitcoin format
+
+- (void)updateBitcoinFormat:(NSNotification *)notification {
+    [self.tableView reloadData];
+}
 
 #pragma mark - NSTableViewDelegate
 

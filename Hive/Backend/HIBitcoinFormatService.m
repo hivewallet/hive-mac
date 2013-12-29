@@ -2,6 +2,8 @@
 
 #import "NSDecimalNumber+HISatoshiConversion.h"
 
+NSString *const HIPreferredFormatChangeNotification = @"HIPreferredFormatChangeNotification";
+
 static NSString *const HIFormatPreferenceKey = @"BitcoinFormat";
 
 @implementation HIBitcoinFormatService
@@ -46,8 +48,14 @@ static NSString *const HIFormatPreferenceKey = @"BitcoinFormat";
 }
 
 - (void)setPreferredFormat:(NSString *)preferredFormat {
-    [[NSUserDefaults standardUserDefaults] setObject:preferredFormat
-                                              forKey:HIFormatPreferenceKey];
+    NSString *oldValue = self.preferredFormat;
+    if (![oldValue isEqualToString:preferredFormat]) {
+        [[NSUserDefaults standardUserDefaults] setObject:preferredFormat
+                                                  forKey:HIFormatPreferenceKey];
+        [[NSNotificationCenter defaultCenter] postNotificationName:HIPreferredFormatChangeNotification
+                                                            object:self
+                                                          userInfo:nil];
+    }
 }
 
 - (NSString *)stringWithDesignatorForBitcoin:(satoshi_t)satoshi {

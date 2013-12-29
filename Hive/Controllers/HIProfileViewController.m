@@ -58,6 +58,11 @@
                                      options:NSKeyValueObservingOptionInitial
                                      context:NULL];
 
+        [[NSNotificationCenter defaultCenter] addObserver:self
+                                                 selector:@selector(updateBitcoinFormat:)
+                                                     name:HIPreferredFormatChangeNotification
+                                                   object:nil];
+
         _exchangeRateService = [HIExchangeRateService sharedService];
         [_exchangeRateService addExchangeRateObserver:self];
         self.selectedCurrency = _exchangeRateService.preferredCurrency;
@@ -72,6 +77,7 @@
 - (void)dealloc {
     [[BCClient sharedClient] removeObserver:self forKeyPath:@"balance"];
     [[BCClient sharedClient] removeObserver:self forKeyPath:@"pendingBalance"];
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
     [_exchangeRateService removeExchangeRateObserver:self];
 }
 
@@ -150,6 +156,10 @@
 }
 
 #pragma mark - bitcoin format
+
+- (void)updateBitcoinFormat:(NSNotification *)notification {
+    self.selectedBitcoinFormat = [HIBitcoinFormatService sharedService].preferredFormat;
+}
 
 - (void)setSelectedBitcoinFormat:(NSString *)selectedBitcoinFormat {
     _selectedBitcoinFormat = [selectedBitcoinFormat copy];

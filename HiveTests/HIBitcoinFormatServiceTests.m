@@ -4,6 +4,8 @@
 
 @property (nonatomic, strong, readonly) HIBitcoinFormatService *service;
 
+@property (nonatomic, copy) NSNotification *receivedNotification;
+
 @end
 
 @implementation HIBitcoinFormatServiceTests
@@ -13,7 +15,16 @@
 
     _service = [HIBitcoinFormatService new];
     _service.locale = [[NSLocale alloc] initWithLocaleIdentifier:@"en_US"];
+
+    _receivedNotification = nil;
 }
+
+- (void)tearDown {
+    [super tearDown];
+
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+}
+
 
 #pragma mark - formatting
 
@@ -155,6 +166,27 @@
                                            error:NULL];
 
     assertThat(@(amount), equalToUnsignedLongLong(0));
+}
+
+#pragma mark - notification
+
+- (void)testNotification {
+    // given
+    self.service.preferredFormat = @"BTC";
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(receiveNotification:)
+                                                 name:HIPreferredFormatChangeNotification
+                                               object:nil];
+
+    // when
+    self.service.preferredFormat = @"mBTC";
+
+    // then
+    assertThat(self.receivedNotification.name, equalTo(HIPreferredFormatChangeNotification));
+}
+
+- (void)receiveNotification:(NSNotification *)notification {
+    self.receivedNotification = notification;
 }
 
 @end

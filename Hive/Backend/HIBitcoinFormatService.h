@@ -1,3 +1,6 @@
+/* Notification that the preferred Bitcoin format changed. */
+extern NSString *const HIPreferredFormatChangeNotification;
+
 /*
  This service handles the various Bitcoin formats.
  */
