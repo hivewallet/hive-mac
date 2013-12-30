@@ -118,4 +118,22 @@
     }
 }
 
+#pragma mark - validation
+
+- (void)validateType:(Class)class ofArgument:(id)argument name:(NSString *)name cmd:(SEL)cmd {
+    if (![argument isKindOfClass:class]) {
+        NSString *exception = [NSString stringWithFormat:@"%@ did not match expected type %@", name, class];
+        [WebScriptObject throwException:exception];
+        @throw [NSException exceptionWithName:@"IllegalArgumentException"
+                                       reason:exception
+                                     userInfo:nil];
+    }
+}
+
+- (void)validateType:(Class)class ofOptionalArgument:(id)argument name:(NSString *)name cmd:(SEL)cmd {
+    if (!IsNullOrUndefined(argument)) {
+        [self validateType:class ofArgument:argument name:name cmd:cmd];
+    }
+}
+
 @end

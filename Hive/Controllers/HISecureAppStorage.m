@@ -57,10 +57,9 @@
 // TODO: fake in-memory implementation, replace with a real one
 
 - (void)setItemForKey:(NSString *)key value:(id)value callback:(WebScriptObject *)callback {
-    if (![key isKindOfClass:[NSString class]]) {
-        [WebScriptObject throwException:@"key must be a string"];
-        return;
-    }
+
+    ValidateArgument(NSString, key);
+    ValidateOptionalArgument(WebScriptObject, callback);
 
     if ([value isKindOfClass:[NSString class]] || [value isKindOfClass:[NSNumber class]]) {
         _items[key] = value;
@@ -78,10 +77,9 @@
 }
 
 - (void)getItemForKey:(NSString *)key callback:(WebScriptObject *)callback {
-    if (IsNullOrUndefined(callback)) {
-        [WebScriptObject throwException:@"callback argument is undefined"];
-        return;
-    }
+
+    ValidateArgument(NSString, key);
+    ValidateArgument(WebScriptObject, callback);
 
     JSValueRef result;
 
@@ -99,6 +97,10 @@
 }
 
 - (void)removeItemForKey:(NSString *)key callback:(WebScriptObject *)callback {
+
+    ValidateArgument(NSString, key);
+    ValidateOptionalArgument(WebScriptObject, callback);
+
     [_items removeObjectForKey:key];
 
     if (!IsNullOrUndefined(callback)) {
@@ -108,6 +110,9 @@
 }
 
 - (void)clearStorageWithCallback:(WebScriptObject *)callback {
+
+    ValidateOptionalArgument(WebScriptObject, callback);
+
     [_items removeAllObjects];
 
     if (!IsNullOrUndefined(callback)) {

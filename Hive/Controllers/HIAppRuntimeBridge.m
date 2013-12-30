@@ -110,13 +110,12 @@ static const NSInteger kHIAppRuntimeBridgeParsingError = -1000;
 #pragma mark - JS API methods
 
 - (void)sendMoneyToAddress:(NSString *)hash amount:(NSNumber *)amount callback:(WebScriptObject *)callback {
-    if (IsNullOrUndefined(hash)) {
-        [WebScriptObject throwException:@"hash argument is undefined"];
-        return;
-    }
+
+    ValidateArgument(NSString, hash);
+    ValidateOptionalArgument(NSNumber, amount);
+    ValidateOptionalArgument(WebScriptObject, callback);
 
     satoshi_t decimal = 0ll;
-
     if (!IsNullOrUndefined(amount)) {
         decimal = amount.unsignedLongLongValue;
     }
@@ -145,10 +144,9 @@ static const NSInteger kHIAppRuntimeBridgeParsingError = -1000;
 }
 
 - (void)transactionWithHash:(NSString *)hash callback:(WebScriptObject *)callback {
-    if (IsNullOrUndefined(callback)) {
-        [WebScriptObject throwException:@"callback argument is undefined"];
-        return;
-    }
+
+    ValidateArgument(NSString, hash);
+    ValidateArgument(WebScriptObject, callback);
 
     NSDictionary *data = [[BCClient sharedClient] transactionDefinitionWithHash:hash];
 
@@ -184,10 +182,8 @@ static const NSInteger kHIAppRuntimeBridgeParsingError = -1000;
 }
 
 - (void)getUserInformationWithCallback:(WebScriptObject *)callback {
-    if (IsNullOrUndefined(callback)) {
-        [WebScriptObject throwException:@"callback argument is undefined"];
-        return;
-    }
+
+    ValidateArgument(WebScriptObject, callback);
 
     HIProfile *profile = [[HIProfile alloc] init];
 
@@ -204,10 +200,8 @@ static const NSInteger kHIAppRuntimeBridgeParsingError = -1000;
 }
 
 - (void)getSystemInfoWithCallback:(WebScriptObject *)callback {
-    if (IsNullOrUndefined(callback)) {
-        [WebScriptObject throwException:@"callback argument is undefined"];
-        return;
-    }
+
+    ValidateArgument(WebScriptObject, callback);
 
     NSDictionary *bundleInfo = [[NSBundle mainBundle] infoDictionary];
 
@@ -227,10 +221,9 @@ static const NSInteger kHIAppRuntimeBridgeParsingError = -1000;
 }
 
 - (void)makeProxiedRequestToURL:(NSString *)url options:(WebScriptObject *)options {
-    if (IsNullOrUndefined(url)) {
-        [WebScriptObject throwException:@"url argument is undefined"];
-        return;
-    }
+
+    ValidateArgument(NSString, url);
+    ValidateOptionalArgument(WebScriptObject, options);
 
     NSString *hostname = [[NSURL URLWithString:url] host];
     NSArray *allowedHosts = _applicationManifest[@"accessedHosts"];
@@ -284,10 +277,7 @@ static const NSInteger kHIAppRuntimeBridgeParsingError = -1000;
 #pragma mark - Exchange rate handling
 
 - (void)addExchangeRateListener:(WebScriptObject *)listener {
-    if (IsNullOrUndefined(listener)) {
-        [WebScriptObject throwException:@"listener is undefined"];
-        return;
-    }
+    ValidateArgument(WebScriptObject, listener);
     if (_exchangeRateListeners.count == 0) {
         [[HIExchangeRateService sharedService] addExchangeRateObserver:self];
     }
@@ -295,6 +285,7 @@ static const NSInteger kHIAppRuntimeBridgeParsingError = -1000;
 }
 
 - (void)removeExchangeRateListener:(WebScriptObject *)listener {
+    ValidateArgument(WebScriptObject, listener);
     [_exchangeRateListeners removeObject:listener];
     if (_exchangeRateListeners.count == 0) {
         [[HIExchangeRateService sharedService] removeExchangeRateObserver:self];
@@ -308,6 +299,7 @@ static const NSInteger kHIAppRuntimeBridgeParsingError = -1000;
 }
 
 - (void)updateExchangeRateForCurrency:(NSString *)currency {
+    ValidateArgument(NSString, currency);
     [[HIExchangeRateService sharedService] updateExchangeRateForCurrency:currency];
 }
 
