@@ -105,6 +105,8 @@ static NSString * const EnabledKey = @"enabled";
 
     [self didChangeValueForKey:@"status"];
     [self didChangeValueForKey:@"enabled"];
+
+    [self updateStatus];
 }
 
 @end
