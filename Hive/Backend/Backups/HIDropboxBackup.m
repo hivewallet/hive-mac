@@ -12,6 +12,8 @@ static NSString * const LocationKey = @"location";
 
 @implementation HIDropboxBackup
 
+#pragma mark - Superclass method overrides
+
 - (NSString *)name {
     return @"dropbox";
 }
@@ -28,28 +30,6 @@ static NSString * const LocationKey = @"location";
     return 44.0;
 }
 
-- (HIBackupAdapterStatus)status {
-    if (!self.enabled) {
-        return HIBackupStatusDisabled;
-    } else {
-        return HIBackupStatusUpToDate;
-    }
-}
-
-- (NSError *)error {
-    return nil;
-}
-
-- (NSDate *)lastBackupDate {
-    return nil;
-}
-
-- (void)updateStatus {
-    // TODO
-    [self willChangeValueForKey:@"status"];
-    [self didChangeValueForKey:@"status"];
-}
-
 - (BOOL)isEnabledByDefault {
     return NO;
 }
@@ -58,37 +38,35 @@ static NSString * const LocationKey = @"location";
     return YES;
 }
 
+- (void)updateStatus {
+    // TODO
+
+    if (!self.enabled) {
+        self.status = HIBackupStatusDisabled;
+    } else {
+        self.status = HIBackupStatusUpToDate;
+    }
+}
+
+
+#pragma mark - Configuring backup
+
+- (NSString *)dropboxFolder {
+    return [NSHomeDirectory() stringByAppendingPathComponent:@"Dropbox"];
+}
+
 - (NSString *)backupLocation {
-    NSDictionary *backupsDictionary = [[self class] backupSettings];
-    return backupsDictionary[self.name][LocationKey];
+    return self.adapterSettings[LocationKey];
 }
 
 - (void)setBackupLocation:(NSString *)location {
-    NSDictionary *backupsDictionary = [[self class] backupSettings];
-
-    if (backupsDictionary) {
-        backupsDictionary = [backupsDictionary mutableCopy];
-    } else {
-        backupsDictionary = [NSMutableDictionary new];
-    }
-
-    NSDictionary *adapterData = backupsDictionary[self.name];
-
-    if (adapterData) {
-        adapterData = [adapterData mutableCopy];
-    } else {
-        adapterData = [NSMutableDictionary new];
-    }
-
-    [(NSMutableDictionary *)adapterData setObject:location forKey:LocationKey];
-    [(NSMutableDictionary *)backupsDictionary setObject:adapterData forKey:self.name];
-
-    [[NSUserDefaults standardUserDefaults] setObject:backupsDictionary forKey:BackupSettingsKey];
-    [[NSUserDefaults standardUserDefaults] synchronize];
+    NSMutableDictionary *adapterSettings = self.adapterSettings;
+    [adapterSettings setObject:location forKey:LocationKey];
+    [self saveAdapterSettings:adapterSettings];
 }
 
 - (void)configureInWindow:(NSWindow *)window {
-    NSString *dropboxFolder = [NSHomeDirectory() stringByAppendingPathComponent:@"Dropbox"];
+    NSString *dropboxFolder = [self dropboxFolder];
     BOOL isDirectory;
     BOOL exists = [[NSFileManager defaultManager] fileExistsAtPath:dropboxFolder isDirectory:&isDirectory];
 
@@ -120,9 +98,7 @@ static NSString * const LocationKey = @"location";
 }
 
 - (void)backupFolderSelected:(NSString *)selectedDirectory inWindow:(NSWindow *)window {
-    NSString *dropboxFolder = [NSHomeDirectory() stringByAppendingPathComponent:@"Dropbox"];
-
-    if (![selectedDirectory hasPrefix:dropboxFolder]) {
+    if (![selectedDirectory hasPrefix:[self dropboxFolder]]) {
         NSAlert *alert = [NSAlert alertWithMessageText:NSLocalizedString(@"Selected directory is outside Dropbox folder",
                                                                          @"Dropbox invalid folder alert title")
                                          defaultButton:NSLocalizedString(@"OK", @"OK button title")

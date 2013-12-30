@@ -8,7 +8,10 @@
 
 #import <Foundation/Foundation.h>
 
-extern NSString * const BackupSettingsKey;
+#define BackupError(domain, errorCode, reason) [NSError errorWithDomain:domain \
+                                                                   code:errorCode \
+                                                               userInfo:@{NSLocalizedFailureReasonErrorKey: \
+                                                                          NSLocalizedString(reason, nil)}];
 
 typedef NS_ENUM(NSUInteger, HIBackupAdapterStatus) {
     // adapter is disabled - user doesn't want to use it
@@ -33,15 +36,20 @@ typedef NS_ENUM(NSUInteger, HIBackupAdapterStatus) {
 @property (readonly) NSString *displayedName;
 @property (readonly) NSImage *icon;
 @property (readonly) CGFloat iconSize;
-@property (nonatomic, readonly) HIBackupAdapterStatus status;
-@property (nonatomic, readonly) NSError *error;
-@property (nonatomic, readonly) NSDate *lastBackupDate;
+@property (readonly) BOOL needsToBeConfigured;
+@property (readonly, getter = isEnabledByDefault) BOOL enabledByDefault;
+
+@property (nonatomic) HIBackupAdapterStatus status;
+@property (nonatomic, strong) NSError *error;
+@property (nonatomic, strong) NSDate *lastBackupDate;
 @property (nonatomic, getter = isEnabled) BOOL enabled;
 
 + (NSDictionary *)backupSettings;
-- (BOOL)isEnabledByDefault;
-- (BOOL)needsToBeConfigured;
+
 - (void)updateStatus;
 - (void)configureInWindow:(NSWindow *)window;
+
+- (NSMutableDictionary *)adapterSettings;
+- (void)saveAdapterSettings:(NSDictionary *)settings;
 
 @end

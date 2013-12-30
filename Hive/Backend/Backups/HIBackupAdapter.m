@@ -8,8 +8,9 @@
 
 #import "HIBackupAdapter.h"
 
-NSString * const BackupSettingsKey = @"BackupAdapters";
+static NSString * const BackupSettingsKey = @"BackupAdapters";
 static NSString * const EnabledKey = @"enabled";
+
 
 @implementation HIBackupAdapter
 
@@ -33,29 +34,6 @@ static NSString * const EnabledKey = @"enabled";
     return nil;
 }
 
-/* Last known backup status */
-- (HIBackupAdapterStatus)status {
-    [self doesNotRecognizeSelector:_cmd];
-    return 0;
-}
-
-/* Details of the problem with the backup, if there is any  */
-- (NSError *)error {
-    [self doesNotRecognizeSelector:_cmd];
-    return nil;
-}
-
-/* Date of the last backup, if there was any */
-- (NSDate *)lastBackupDate {
-    [self doesNotRecognizeSelector:_cmd];
-    return nil;
-}
-
-/* Check if backup status has changed, and update self.status if necessary */
-- (void)updateStatus {
-    [self doesNotRecognizeSelector:_cmd];
-}
-
 /* Tells if the adapter should be enabled by default on first launch */
 - (BOOL)isEnabledByDefault {
     [self doesNotRecognizeSelector:_cmd];
@@ -68,57 +46,88 @@ static NSString * const EnabledKey = @"enabled";
     return NO;
 }
 
+/* Check if backup status has changed, and update self.status, self.error and self.lastBackupDate if needed */
+- (void)updateStatus {
+    [self doesNotRecognizeSelector:_cmd];
+}
 
-#pragma mark - Other properties
+
+#pragma mark - Overridable methods
 
 /* Override if you need a different icon size */
 - (CGFloat)iconSize {
   return 36.0;
 }
 
+- (void)configureInWindow:(NSWindow *)window {
+    // not required if needsToBeConfigured == NO
+}
+
+
+#pragma mark - Helpers and other properties
+
 + (NSDictionary *)backupSettings {
     return [[NSUserDefaults standardUserDefaults] dictionaryForKey:BackupSettingsKey];
 }
 
-- (BOOL)isEnabled {
+/* Last known backup status */
+- (void)setStatus:(HIBackupAdapterStatus)status {
+    if (status != _status) {
+        [self willChangeValueForKey:@"status"];
+        _status = status;
+        [self didChangeValueForKey:@"status"];
+    }
+}
+
+/* Details of the problem with the backup, if there is any  */
+- (void)setError:(NSError *)error {
+    if (error != _error) {
+        [self willChangeValueForKey:@"error"];
+        _error = error;
+        [self didChangeValueForKey:@"error"];
+    }
+}
+
+/* Date of the last backup, if there was any */
+- (void)setLastBackupDate:(NSDate *)lastBackupDate {
+    if (lastBackupDate != _lastBackupDate) {
+        [self willChangeValueForKey:@"lastBackupDate"];
+        _lastBackupDate = lastBackupDate;
+        [self didChangeValueForKey:@"lastBackupDate"];
+    }
+}
+
+- (NSMutableDictionary *)adapterSettings {
     NSDictionary *backupsDictionary = [[self class] backupSettings];
-    return [backupsDictionary[self.name][EnabledKey] boolValue];
+
+    return [backupsDictionary[self.name] mutableCopy] ?: [NSMutableDictionary new];
+}
+
+- (void)saveAdapterSettings:(NSDictionary *)settings {
+    NSMutableDictionary *backupsDictionary = [[[self class] backupSettings] mutableCopy] ?: [NSMutableDictionary new];
+
+    backupsDictionary[self.name] = settings;
+
+    [[NSUserDefaults standardUserDefaults] setObject:backupsDictionary forKey:BackupSettingsKey];
+    [[NSUserDefaults standardUserDefaults] synchronize];
+}
+
+- (BOOL)isEnabled {
+    return [self.adapterSettings[EnabledKey] boolValue];
 }
 
 - (void)setEnabled:(BOOL)enabled {
     [self willChangeValueForKey:@"status"];
     [self willChangeValueForKey:@"enabled"];
 
-    NSDictionary *backupsDictionary = [[self class] backupSettings];
-
-    if (backupsDictionary) {
-        backupsDictionary = [backupsDictionary mutableCopy];
-    } else {
-        backupsDictionary = [NSMutableDictionary new];
-    }
-
-    NSDictionary *adapterData = backupsDictionary[self.name];
-
-    if (adapterData) {
-        adapterData = [adapterData mutableCopy];
-    } else {
-        adapterData = [NSMutableDictionary new];
-    }
-
-    [(NSMutableDictionary *)adapterData setObject:@(enabled) forKey:EnabledKey];
-    [(NSMutableDictionary *)backupsDictionary setObject:adapterData forKey:self.name];
-
-    [[NSUserDefaults standardUserDefaults] setObject:backupsDictionary forKey:BackupSettingsKey];
-    [[NSUserDefaults standardUserDefaults] synchronize];
+    NSMutableDictionary *adapterSettings = self.adapterSettings;
+    [adapterSettings setObject:@(enabled) forKey:EnabledKey];
+    [self saveAdapterSettings:adapterSettings];
 
     [self didChangeValueForKey:@"status"];
     [self didChangeValueForKey:@"enabled"];
 
     [self updateStatus];
-}
-
-- (void)configureInWindow:(NSWindow *)window {
-    // not required if needsToBeConfigured == NO
 }
 
 @end

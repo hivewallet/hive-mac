@@ -8,11 +8,6 @@
 
 #import "HITimeMachineBackup.h"
 
-#define BackupError(errorCode, reason) [NSError errorWithDomain:HITimeMachineBackupError \
-                                                           code:errorCode \
-                                                       userInfo:@{NSLocalizedFailureReasonErrorKey: \
-                                                                  NSLocalizedString(reason, nil)}];
-
 static const NSTimeInterval RecentBackupLimit = 86400 * 30; // 30 days
 
 NSString * const HITimeMachineBackupError = @"HITimeMachineBackupError";
@@ -20,11 +15,9 @@ const NSInteger HITimeMachineBackupDisabled = -1;
 const NSInteger HITimeMachineBackupPathExcluded = -2;
 
 
-@implementation HITimeMachineBackup {
-    HIBackupAdapterStatus _status;
-    NSError *_error;
-    NSDate *_lastBackupDate;
-}
+@implementation HITimeMachineBackup
+
+#pragma mark - Superclass method overrides
 
 - (NSString *)name {
     return @"time_machine";
@@ -38,40 +31,12 @@ const NSInteger HITimeMachineBackupPathExcluded = -2;
     return [[NSImage alloc] initWithContentsOfFile:@"/Applications/Time Machine.app/Contents/Resources/backup.icns"];
 }
 
-- (HIBackupAdapterStatus)status {
-    return _status;
+- (BOOL)isEnabledByDefault {
+    return YES;
 }
 
-- (void)setStatus:(HIBackupAdapterStatus)status {
-    if (status != _status) {
-        [self willChangeValueForKey:@"status"];
-        _status = status;
-        [self didChangeValueForKey:@"status"];
-    }
-}
-
-- (NSError *)error {
-    return _error;
-}
-
-- (void)setError:(NSError *)error {
-    if (error != _error) {
-        [self willChangeValueForKey:@"error"];
-        _error = error;
-        [self didChangeValueForKey:@"error"];
-    }
-}
-
-- (NSDate *)lastBackupDate {
-    return _lastBackupDate;
-}
-
-- (void)setLastBackupDate:(NSDate *)lastBackupDate {
-    if (lastBackupDate != _lastBackupDate) {
-        [self willChangeValueForKey:@"lastBackupDate"];
-        _lastBackupDate = lastBackupDate;
-        [self didChangeValueForKey:@"lastBackupDate"];
-    }
+- (BOOL)needsToBeConfigured {
+    return NO;
 }
 
 - (void)updateStatus {
@@ -91,7 +56,7 @@ const NSInteger HITimeMachineBackupPathExcluded = -2;
 
     if ([self isExcludedFromBackup]) {
         self.status = HIBackupStatusFailure;
-        self.error = BackupError(HITimeMachineBackupPathExcluded,
+        self.error = BackupError(HITimeMachineBackupError, HITimeMachineBackupPathExcluded,
                                  @"Hive directory is excluded from Time Machine backup");
         return;
     }
@@ -122,7 +87,8 @@ const NSInteger HITimeMachineBackupPathExcluded = -2;
             self.status = HIBackupStatusFailure;
         }
     } else { // !backupsEnabled
-        self.error = BackupError(HITimeMachineBackupDisabled, @"Time Machine is disabled in System Preferences");
+        self.error = BackupError(HITimeMachineBackupError, HITimeMachineBackupDisabled,
+                                 @"Time Machine is disabled in System Preferences");
 
         if (afterLastWalletChange) {
             // we have a backup, but we won't have another
@@ -134,13 +100,8 @@ const NSInteger HITimeMachineBackupPathExcluded = -2;
     }
 }
 
-- (BOOL)isEnabledByDefault {
-    return YES;
-}
 
-- (BOOL)needsToBeConfigured {
-    return NO;
-}
+#pragma mark - Helpers for checking Time Machine status
 
 - (NSDictionary *)timeMachineSettings {
     NSURL *library = [[[NSFileManager defaultManager] URLsForDirectory:NSLibraryDirectory
