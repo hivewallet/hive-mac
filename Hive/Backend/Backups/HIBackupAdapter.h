@@ -8,6 +8,8 @@
 
 #import <Foundation/Foundation.h>
 
+extern NSString * const BackupSettingsKey;
+
 typedef NS_ENUM(NSUInteger, HIBackupAdapterStatus) {
     // adapter is disabled - user doesn't want to use it
     HIBackupStatusDisabled,
@@ -38,6 +40,8 @@ typedef NS_ENUM(NSUInteger, HIBackupAdapterStatus) {
 
 + (NSDictionary *)backupSettings;
 - (BOOL)isEnabledByDefault;
+- (BOOL)needsToBeConfigured;
 - (void)updateStatus;
+- (void)configureInWindow:(NSWindow *)window;
 
 @end

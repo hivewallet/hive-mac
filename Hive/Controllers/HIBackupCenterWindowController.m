@@ -150,8 +150,10 @@ static const NSTimeInterval UpdateTimerInterval = 5.0;
 
     if (adapter.enabled) {
         [enableButton setTitle:NSLocalizedString(@"Disable", @"Disable backup button title")];
+    } else if (adapter.needsToBeConfigured) {
+        [enableButton setTitle:NSLocalizedString(@"Enable...", @"Enable backup button title (requires configuration)")];
     } else {
-        [enableButton setTitle:NSLocalizedString(@"Enable", @"Enable backup button title")];
+        [enableButton setTitle:NSLocalizedString(@"Enable", @"Enable backup button title (no configuration required)")];
     }
 
     [enableButton setTag:row];
@@ -166,7 +168,11 @@ static const NSTimeInterval UpdateTimerInterval = 5.0;
     HIBackupAdapter *adapter = _backupManager.adapters[row];
 
     if (adapter) {
-        adapter.enabled = !adapter.enabled;
+        if (!adapter.enabled && adapter.needsToBeConfigured) {
+            [adapter configureInWindow:self.window];
+        } else {
+            adapter.enabled = !adapter.enabled;
+        }
     }
 }
 

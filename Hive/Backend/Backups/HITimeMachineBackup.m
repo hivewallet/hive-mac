@@ -138,6 +138,10 @@ const NSInteger HITimeMachineBackupPathExcluded = -2;
     return YES;
 }
 
+- (BOOL)needsToBeConfigured {
+    return NO;
+}
+
 - (NSDictionary *)timeMachineSettings {
     NSURL *library = [[[NSFileManager defaultManager] URLsForDirectory:NSLibraryDirectory
                                                              inDomains:NSLocalDomainMask] firstObject];
