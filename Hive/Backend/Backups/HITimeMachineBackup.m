@@ -23,6 +23,7 @@ const NSInteger HITimeMachineBackupPathExcluded = -2;
 @implementation HITimeMachineBackup {
     HIBackupAdapterStatus _status;
     NSError *_error;
+    NSDate *_lastBackupDate;
 }
 
 - (NSString *)name {
@@ -61,16 +62,29 @@ const NSInteger HITimeMachineBackupPathExcluded = -2;
     }
 }
 
+- (NSDate *)lastBackupDate {
+    return _lastBackupDate;
+}
+
+- (void)setLastBackupDate:(NSDate *)lastBackupDate {
+    if (lastBackupDate != _lastBackupDate) {
+        [self willChangeValueForKey:@"lastBackupDate"];
+        _lastBackupDate = lastBackupDate;
+        [self didChangeValueForKey:@"lastBackupDate"];
+    }
+}
+
 - (void)updateStatus {
     if (!self.enabled) {
         self.status = HIBackupStatusDisabled;
         self.error = nil;
+        self.lastBackupDate = nil;
         return;
     }
 
     NSDictionary *settings = [self timeMachineSettings];
     BOOL backupsEnabled = [settings[@"AutoBackup"] boolValue];
-    NSDate *lastBackup = [settings[@"Destinations"][0][@"SnapshotDates"] lastObject];
+    self.lastBackupDate = [settings[@"Destinations"][0][@"SnapshotDates"] lastObject];
 
     // TODO: record last change date in the wallet file
     NSDate *lastWalletChange = [NSDate distantPast];
@@ -82,8 +96,10 @@ const NSInteger HITimeMachineBackupPathExcluded = -2;
         return;
     }
 
-    BOOL updatedRecently = lastBackup && ([[NSDate date] timeIntervalSinceDate:lastBackup] < RecentBackupLimit);
-    BOOL afterLastWalletChange = [lastBackup isGreaterThan:lastWalletChange];
+    BOOL updatedRecently = self.lastBackupDate &&
+        ([[NSDate date] timeIntervalSinceDate:self.lastBackupDate] < RecentBackupLimit);
+
+    BOOL afterLastWalletChange = [self.lastBackupDate isGreaterThan:lastWalletChange];
 
     if (backupsEnabled && updatedRecently) {
         self.error = nil;

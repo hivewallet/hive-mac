@@ -45,6 +45,12 @@ static NSString * const EnabledKey = @"enabled";
     return nil;
 }
 
+/* Date of the last backup, if there was any */
+- (NSDate *)lastBackupDate {
+    [self doesNotRecognizeSelector:_cmd];
+    return nil;
+}
+
 /* Check if backup status has changed, and update self.status if necessary */
 - (void)updateStatus {
     [self doesNotRecognizeSelector:_cmd];
