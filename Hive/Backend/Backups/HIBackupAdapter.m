@@ -81,7 +81,7 @@ static NSString * const EnabledKey = @"enabled";
 }
 
 - (BOOL)isEnabled {
-    NSDictionary *backupsDictionary = [[NSUserDefaults standardUserDefaults] dictionaryForKey:BackupSettingsKey];
+    NSDictionary *backupsDictionary = [[self class] backupSettings];
     return [backupsDictionary[self.name][EnabledKey] boolValue];
 }
 
@@ -107,7 +107,9 @@ static NSString * const EnabledKey = @"enabled";
 
     [(NSMutableDictionary *)adapterData setObject:@(enabled) forKey:EnabledKey];
     [(NSMutableDictionary *)backupsDictionary setObject:adapterData forKey:self.name];
+
     [[NSUserDefaults standardUserDefaults] setObject:backupsDictionary forKey:BackupSettingsKey];
+    [[NSUserDefaults standardUserDefaults] synchronize];
 
     [self didChangeValueForKey:@"status"];
     [self didChangeValueForKey:@"enabled"];
