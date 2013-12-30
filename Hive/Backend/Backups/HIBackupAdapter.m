@@ -39,6 +39,12 @@ static NSString * const EnabledKey = @"enabled";
     return 0;
 }
 
+/* Details of the problem with the backup, if there is any  */
+- (NSError *)error {
+    [self doesNotRecognizeSelector:_cmd];
+    return nil;
+}
+
 /* Check if backup status has changed, and update self.status if necessary */
 - (void)updateStatus {
     [self doesNotRecognizeSelector:_cmd];

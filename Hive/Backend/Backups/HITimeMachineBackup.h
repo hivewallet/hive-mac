@@ -8,6 +8,10 @@
 
 #import "HIBackupAdapter.h"
 
+extern NSString * const HITimeMachineBackupError;
+extern const NSInteger HITimeMachineBackupDisabled;
+extern const NSInteger HITimeMachineBackupPathExcluded;
+
 @interface HITimeMachineBackup : HIBackupAdapter
 
 @end

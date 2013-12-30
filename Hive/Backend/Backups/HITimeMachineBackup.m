@@ -8,20 +8,22 @@
 
 #import "HITimeMachineBackup.h"
 
+#define BackupError(errorCode, reason) [NSError errorWithDomain:HITimeMachineBackupError \
+                                                           code:errorCode \
+                                                       userInfo:@{NSLocalizedFailureReasonErrorKey: \
+                                                                  NSLocalizedString(reason, nil)}];
+
 static const NSTimeInterval RecentBackupLimit = 86400 * 30; // 30 days
 
-
-@interface HITimeMachineBackup ()
-
-@property (nonatomic) HIBackupAdapterStatus status;
-
-@end
+NSString * const HITimeMachineBackupError = @"HITimeMachineBackupError";
+const NSInteger HITimeMachineBackupDisabled = -1;
+const NSInteger HITimeMachineBackupPathExcluded = -2;
 
 
-@implementation HITimeMachineBackup
-
-// override abstract superclass implementation
-@synthesize status;
+@implementation HITimeMachineBackup {
+    HIBackupAdapterStatus _status;
+    NSError *_error;
+}
 
 - (NSString *)name {
     return @"time_machine";
@@ -35,17 +37,35 @@ static const NSTimeInterval RecentBackupLimit = 86400 * 30; // 30 days
     return [[NSImage alloc] initWithContentsOfFile:@"/Applications/Time Machine.app/Contents/Resources/backup.icns"];
 }
 
-- (void)updateStatus {
-    HIBackupAdapterStatus currentStatus = [self currentStatus];
+- (HIBackupAdapterStatus)status {
+    return _status;
+}
 
-    if (currentStatus != self.status) {
-        self.status = currentStatus;
+- (void)setStatus:(HIBackupAdapterStatus)status {
+    if (status != _status) {
+        [self willChangeValueForKey:@"status"];
+        _status = status;
+        [self didChangeValueForKey:@"status"];
     }
 }
 
-- (HIBackupAdapterStatus)currentStatus {
+- (NSError *)error {
+    return _error;
+}
+
+- (void)setError:(NSError *)error {
+    if (error != _error) {
+        [self willChangeValueForKey:@"error"];
+        _error = error;
+        [self didChangeValueForKey:@"error"];
+    }
+}
+
+- (void)updateStatus {
     if (!self.enabled) {
-        return HIBackupStatusDisabled;
+        self.status = HIBackupStatusDisabled;
+        self.error = nil;
+        return;
     }
 
     NSDictionary *settings = [self timeMachineSettings];
@@ -55,29 +75,45 @@ static const NSTimeInterval RecentBackupLimit = 86400 * 30; // 30 days
     // TODO: record last change date in the wallet file
     NSDate *lastWalletChange = [NSDate distantPast];
 
-    if (!lastBackup || [self isExcludedFromBackup]) {
-        // backups aren't happening at all or Hive isn't included in them
-        return HIBackupStatusFailure;
+    if ([self isExcludedFromBackup]) {
+        self.status = HIBackupStatusFailure;
+        self.error = BackupError(HITimeMachineBackupPathExcluded,
+                                 @"Hive directory is excluded from Time Machine backup");
+        return;
     }
 
-    BOOL updatedRecently = ([[NSDate date] timeIntervalSinceDate:lastBackup] < RecentBackupLimit);
+    BOOL updatedRecently = lastBackup && ([[NSDate date] timeIntervalSinceDate:lastBackup] < RecentBackupLimit);
     BOOL afterLastWalletChange = [lastBackup isGreaterThan:lastWalletChange];
 
     if (backupsEnabled && updatedRecently) {
+        self.error = nil;
+
         if (afterLastWalletChange) {
             // everything's fresh
-            return HIBackupStatusUpToDate;
+            self.status = HIBackupStatusUpToDate;
         } else {
             // we don't have a backup, but we should have one soon
-            return HIBackupStatusWaiting;
+            self.status = HIBackupStatusWaiting;
         }
-    } else {
+    } else if (backupsEnabled) { // && !updatedRecently
+        self.error = nil;
+
         if (afterLastWalletChange) {
             // we have a backup, but we probably won't have another
-            return HIBackupStatusOutdated;
+            self.status = HIBackupStatusOutdated;
         } else {
-            // we don't have a backup and we probably won't have another
-            return HIBackupStatusFailure;
+            // we don't have a backup and we probably won't have one
+            self.status = HIBackupStatusFailure;
+        }
+    } else { // !backupsEnabled
+        self.error = BackupError(HITimeMachineBackupDisabled, @"Time Machine is disabled in System Preferences");
+
+        if (afterLastWalletChange) {
+            // we have a backup, but we won't have another
+            self.status = HIBackupStatusOutdated;
+        } else {
+            // we don't have a backup and we won't have one
+            self.status = HIBackupStatusFailure;
         }
     }
 }

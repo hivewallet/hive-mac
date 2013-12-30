@@ -10,8 +10,9 @@
 #import "HIBackupActionsCellView.h"
 #import "HIBackupAdapter.h"
 #import "HIBackupManager.h"
+#import "HIBackupStatusCellView.h"
 
-static const CGFloat TableRowHeight = 50.0;
+static const CGFloat TableRowHeight = 60.0;
 static const NSTimeInterval UpdateTimerInterval = 5.0;
 
 @interface HIBackupCenterWindowController () {
@@ -33,6 +34,7 @@ static const NSTimeInterval UpdateTimerInterval = 5.0;
 
         for (HIBackupAdapter *adapter in _backupManager.adapters) {
             [adapter addObserver:self forKeyPath:@"status" options:0 context:NULL];
+            [adapter addObserver:self forKeyPath:@"error" options:0 context:NULL];
         }
 
         [self startTimer];
@@ -46,6 +48,7 @@ static const NSTimeInterval UpdateTimerInterval = 5.0;
 
     for (HIBackupAdapter *adapter in _backupManager.adapters) {
         [adapter removeObserver:self forKeyPath:@"status"];
+        [adapter removeObserver:self forKeyPath:@"error"];
     }
 }
 
@@ -59,64 +62,82 @@ static const NSTimeInterval UpdateTimerInterval = 5.0;
 
 - (NSView *)tableView:(NSTableView *)tableView viewForTableColumn:(NSTableColumn *)tableColumn row:(NSInteger)row {
     HIBackupAdapter *adapter = _backupManager.adapters[row];
-    HIBackupAdapterStatus status = adapter.status;
-
     NSTableCellView *cell = [tableView makeViewWithIdentifier:tableColumn.identifier owner:self];
 
     if ([tableColumn.identifier isEqual:@"Name"]) {
-        cell.textField.stringValue = adapter.displayedName;
-        cell.imageView.image = adapter.icon;
-
-        NSRect fullRowIcon = NSMakeRect(0, 0, TableRowHeight, TableRowHeight);
-        CGFloat padding = (TableRowHeight - adapter.iconSize) / 2.0;
-        cell.imageView.frame = NSInsetRect(fullRowIcon, padding, padding);
+        [self updateNameCell:cell forAdapter:adapter inRow:row];
     } else if ([tableColumn.identifier isEqual:@"Status"]) {
-        cell.textField.stringValue = [self statusNameForStatus:status];
-        cell.imageView.image = [self statusImageForStatus:status];
+        [self updateStatusCell:(HIBackupStatusCellView *)cell forAdapter:adapter inRow:row];
     } else {
-        NSButton *enableButton = [(HIBackupActionsCellView *)cell enableButton];
-
-        if (adapter.enabled) {
-            [enableButton setTitle:NSLocalizedString(@"Disable", @"Disable backup button title")];
-        } else {
-            [enableButton setTitle:NSLocalizedString(@"Enable", @"Enable backup button title")];
-        }
-
-        [enableButton setTag:row];
+        [self updateActionsCell:(HIBackupActionsCellView *)cell forAdapter:adapter inRow:row];
     }
 
     return cell;
 }
 
-- (NSString *)statusNameForStatus:(HIBackupAdapterStatus)status {
-    switch (status) {
+- (void)updateNameCell:(NSTableCellView *)cell forAdapter:(HIBackupAdapter *)adapter inRow:(NSInteger)row {
+    cell.textField.stringValue = adapter.displayedName;
+    cell.imageView.image = adapter.icon;
+
+    NSRect fullRowIcon = NSMakeRect(0, 0, TableRowHeight, TableRowHeight);
+    CGFloat padding = (TableRowHeight - adapter.iconSize) / 2.0;
+    cell.imageView.frame = NSInsetRect(fullRowIcon, padding, padding);
+}
+
+- (void)updateStatusCell:(HIBackupStatusCellView *)cell forAdapter:(HIBackupAdapter *)adapter inRow:(NSInteger)row {
+    switch (adapter.status) {
         case HIBackupStatusDisabled:
-            return NSLocalizedString(@"Disabled", @"Backup adapter status: adapter disabled");
+            cell.textField.stringValue = NSLocalizedString(@"Disabled",
+                                                           @"Backup status: adapter disabled");
+            cell.imageView.image = [NSImage imageNamed:NSImageNameStatusNone];
+            cell.statusDetailsLabel.stringValue = @"";
+            break;
+
         case HIBackupStatusUpToDate:
-            return NSLocalizedString(@"Up to date", @"Backup adapter status: backup up to date");
+            cell.textField.stringValue = NSLocalizedString(@"Up to date",
+                                                           @"Backup status: backup up to date");
+            cell.imageView.image = [NSImage imageNamed:NSImageNameStatusAvailable];
+            cell.statusDetailsLabel.stringValue = @"";
+            break;
+
         case HIBackupStatusOutdated:
-            return NSLocalizedString(@"Backup problem", @"Backup adapter status: backup done but not updated recently");
+            cell.textField.stringValue = NSLocalizedString(@"Backup problem",
+                                                           @"Backup status: backup done but not updated recently");
+            cell.imageView.image = [NSImage imageNamed:NSImageNameStatusPartiallyAvailable];
+            cell.statusDetailsLabel.stringValue = [adapter.error localizedFailureReason] ?: @"";
+            break;
+
         case HIBackupStatusWaiting:
-            return NSLocalizedString(@"Waiting for backup", @"Backup adapter status: backup scheduled or in progress");
+            cell.textField.stringValue = NSLocalizedString(@"Waiting for backup",
+                                                           @"Backup status: backup scheduled or in progress");
+            cell.imageView.image = [NSImage imageNamed:NSImageNameStatusPartiallyAvailable];
+            cell.statusDetailsLabel.stringValue = @"";
+            break;
+
         case HIBackupStatusFailure:
-            return NSLocalizedString(@"Backup error", @"Backup adapter status: backup can't or won't be completed");
+            cell.textField.stringValue = NSLocalizedString(@"Backup error",
+                                                           @"Backup status: backup can't or won't be completed");
+            cell.imageView.image = [NSImage imageNamed:NSImageNameStatusUnavailable];
+            cell.statusDetailsLabel.stringValue = [adapter.error localizedFailureReason] ?: @"";
+            break;
+
         default:
-            return @"Unknown status";
+            cell.textField.stringValue = @"Unknown status";
+            cell.imageView.image = [NSImage imageNamed:NSImageNameStatusUnavailable];
+            cell.statusDetailsLabel.stringValue = @"";
     }
 }
 
-- (NSImage *)statusImageForStatus:(HIBackupAdapterStatus)status {
-    switch (status) {
-        case HIBackupStatusDisabled:
-            return [NSImage imageNamed:NSImageNameStatusNone];
-        case HIBackupStatusUpToDate:
-            return [NSImage imageNamed:NSImageNameStatusAvailable];
-        case HIBackupStatusOutdated:
-        case HIBackupStatusWaiting:
-            return [NSImage imageNamed:NSImageNameStatusPartiallyAvailable];
-        default:
-            return [NSImage imageNamed:NSImageNameStatusUnavailable];
+- (void)updateActionsCell:(HIBackupActionsCellView *)cell forAdapter:(HIBackupAdapter *)adapter inRow:(NSInteger)row {
+    NSButton *enableButton = [cell enableButton];
+
+    if (adapter.enabled) {
+        [enableButton setTitle:NSLocalizedString(@"Disable", @"Disable backup button title")];
+    } else {
+        [enableButton setTitle:NSLocalizedString(@"Enable", @"Enable backup button title")];
     }
+
+    [enableButton setTag:row];
 }
 
 - (void)tableViewSelectionDidChange:(NSNotification *)notification {

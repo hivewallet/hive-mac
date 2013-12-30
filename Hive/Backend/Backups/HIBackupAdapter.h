@@ -32,6 +32,7 @@ typedef NS_ENUM(NSUInteger, HIBackupAdapterStatus) {
 @property (readonly) NSImage *icon;
 @property (readonly) CGFloat iconSize;
 @property (nonatomic, readonly) HIBackupAdapterStatus status;
+@property (nonatomic, readonly) NSError *error;
 @property (nonatomic, getter = isEnabled) BOOL enabled;
 
 + (NSDictionary *)backupSettings;

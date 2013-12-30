@@ -34,6 +34,10 @@
     }
 }
 
+- (NSError *)error {
+    return nil;
+}
+
 - (void)updateStatus {
     // TODO
     [self willChangeValueForKey:@"status"];

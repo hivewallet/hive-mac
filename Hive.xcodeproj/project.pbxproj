@@ -123,6 +123,7 @@
 		588E355318212BDF006A6A25 /* HIErrorWindowController.strings in Resources */ = {isa = PBXBuildFile; fileRef = 588E355518212BDF006A6A25 /* HIErrorWindowController.strings */; };
 		588E356618212BFB006A6A25 /* HIErrorWindowController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 588E356818212BFB006A6A25 /* HIErrorWindowController.xib */; };
 		588EFB2E17D8D2970085F6E6 /* HIProfileTabView.m in Sources */ = {isa = PBXBuildFile; fileRef = 588EFB2D17D8D2970085F6E6 /* HIProfileTabView.m */; };
+		588F3E8518719A9000FF42EA /* HIBackupStatusCellView.m in Sources */ = {isa = PBXBuildFile; fileRef = 588F3E8418719A9000FF42EA /* HIBackupStatusCellView.m */; };
 		589064AE1805742C0082BE5C /* seansoutpost.hiveapp in Resources */ = {isa = PBXBuildFile; fileRef = 589064AD1805742C0082BE5C /* seansoutpost.hiveapp */; };
 		589064B7180596B80082BE5C /* HIEditableImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 589064B6180596B80082BE5C /* HIEditableImageView.m */; };
 		58A03B0D17D9DC4100ADD5E5 /* HIButtonWithSpinner.m in Sources */ = {isa = PBXBuildFile; fileRef = 58A03B0C17D9DC4100ADD5E5 /* HIButtonWithSpinner.m */; };
@@ -891,6 +892,8 @@
 		588E357818212C11006A6A25 /* cs */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = cs; path = cs.lproj/HIErrorWindowController.xib; sourceTree = "<group>"; };
 		588EFB2C17D8D2970085F6E6 /* HIProfileTabView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HIProfileTabView.h; sourceTree = "<group>"; };
 		588EFB2D17D8D2970085F6E6 /* HIProfileTabView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HIProfileTabView.m; sourceTree = "<group>"; };
+		588F3E8318719A9000FF42EA /* HIBackupStatusCellView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HIBackupStatusCellView.h; sourceTree = "<group>"; };
+		588F3E8418719A9000FF42EA /* HIBackupStatusCellView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HIBackupStatusCellView.m; sourceTree = "<group>"; };
 		589064AD1805742C0082BE5C /* seansoutpost.hiveapp */ = {isa = PBXFileReference; lastKnownFileType = file; path = seansoutpost.hiveapp; sourceTree = "<group>"; };
 		589064B5180596B80082BE5C /* HIEditableImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HIEditableImageView.h; sourceTree = "<group>"; };
 		589064B6180596B80082BE5C /* HIEditableImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HIEditableImageView.m; sourceTree = "<group>"; };
@@ -1549,6 +1552,8 @@
 			children = (
 				583B1E0B1868BAC000817EF8 /* HIBackupActionsCellView.h */,
 				583B1E0C1868BAC000817EF8 /* HIBackupActionsCellView.m */,
+				588F3E8318719A9000FF42EA /* HIBackupStatusCellView.h */,
+				588F3E8418719A9000FF42EA /* HIBackupStatusCellView.m */,
 				D9716B7517D8C40100888F4E /* HIBox.h */,
 				D9716B7617D8C40100888F4E /* HIBox.m */,
 				D9716B7017D8B42E00888F4E /* HIButtonCell.h */,
@@ -2141,6 +2146,7 @@
 				583B1E011868784600817EF8 /* HIBackupManager.m in Sources */,
 				586059D018041A6D00FD9C2A /* HIAppRuntimeBridge.m in Sources */,
 				586059D418041A7A00FD9C2A /* HIContactsViewController.m in Sources */,
+				588F3E8518719A9000FF42EA /* HIBackupStatusCellView.m in Sources */,
 				586059D918041A8700FD9C2A /* HINewContactViewController.m in Sources */,
 				586059E318041A9900FD9C2A /* HIContactInfoViewController.m in Sources */,
 				586059E518041A9900FD9C2A /* HIContactTabBarController.m in Sources */,
