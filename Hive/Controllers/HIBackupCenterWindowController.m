@@ -94,12 +94,16 @@ static const NSTimeInterval UpdateTimerInterval = 5.0;
 - (void)updateStatusCell:(HIBackupStatusCellView *)cell forAdapter:(HIBackupAdapter *)adapter inRow:(NSInteger)row {
     NSString *lastBackupInfo;
 
-    if (adapter.lastBackupDate) {
+    if (!adapter.lastBackupDate) {
+        lastBackupInfo = NSLocalizedString(@"Backup hasn't been done yet", nil);
+    } else if (adapter.status == HIBackupStatusFailure || adapter.status == HIBackupStatusOutdated) {
+        lastBackupInfo = [NSString stringWithFormat:NSLocalizedString(@"No backup since %@",
+                                                                      @"Backup is outdated, last backup was on that date"),
+                          [_lastBackupDateFormatter stringFromDate:adapter.lastBackupDate]];
+    } else {
         lastBackupInfo = [NSString stringWithFormat:NSLocalizedString(@"Last backup on %@",
                                                                       @"On what date was the last backup done"),
                           [_lastBackupDateFormatter stringFromDate:adapter.lastBackupDate]];
-    } else {
-        lastBackupInfo = NSLocalizedString(@"Backup hasn't been done yet", nil);
     }
 
     switch (adapter.status) {
