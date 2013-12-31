@@ -196,11 +196,11 @@ static NSString * const StoreFileName = @"Hive.storedata";
     return movedSqliteStore;
 }
 
-- (NSError *)backupStoreToURL:(NSURL *)backupLocation {
+- (void)backupStoreToDirectory:(NSURL *)backupLocation error:(NSError **)error {
     HILogInfo(@"Backing up Core Data store to %@", backupLocation);
     NSAssert(dispatch_get_current_queue() == dispatch_get_main_queue(), @"This method must be run on the main thread");
 
-    NSError *error = nil;
+    NSError *backupError = nil;
 
     NSURL *standardLocation = [self persistentStoreURL];
     NSURL *backupFileLocation = [backupLocation URLByAppendingPathComponent:StoreFileName];
@@ -210,33 +210,34 @@ static NSString * const StoreFileName = @"Hive.storedata";
                                                                    toURL:backupFileLocation
                                                                  options:nil
                                                                 withType:NSSQLiteStoreType
-                                                                   error:&error];
+                                                                   error:&backupError];
 
-    if (error) {
-        HILogError(@"Error during store backup: %@", error);
-        return error;
+    if (backupError) {
+        HILogError(@"Error during store backup: %@", backupError);
+        *error = backupError;
+        return;
     }
 
     [coordinator removePersistentStore:backupStore
-                                 error:&error];
+                                 error:&backupError];
 
-    if (error) {
-        HILogError(@"Error during store backup: %@", error);
-        return error;
+    if (backupError) {
+        HILogError(@"Error during store backup: %@", backupError);
+        *error = backupError;
+        return;
     }
 
     [coordinator addPersistentStoreWithType:NSSQLiteStoreType
                               configuration:nil
                                         URL:standardLocation
                                     options:nil
-                                      error:&error];
+                                      error:&backupError];
 
-    if (error) {
-        HILogError(@"Error during store backup: %@", error);
-        return error;
+    if (backupError) {
+        HILogError(@"Error during store backup: %@", backupError);
+        *error = backupError;
+        return;
     }
-
-    return nil;
 }
 
 - (NSManagedObjectContext *)managedObjectContext {

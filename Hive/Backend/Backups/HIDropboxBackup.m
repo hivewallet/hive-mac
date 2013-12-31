@@ -207,7 +207,9 @@ const NSInteger HIDropboxBackupNotRunning = -3;
 
 - (BOOL)backUpCoreDataStore {
     NSURL *backupLocation = [NSURL fileURLWithPath:self.backupLocation];
-    NSError *error = [[HIDatabaseManager sharedManager] backupStoreToURL:backupLocation];
+    NSError *error = nil;
+
+    [[HIDatabaseManager sharedManager] backupStoreToDirectory:backupLocation error:&error];
 
     if (error) {
         [NSApp presentError:error];
