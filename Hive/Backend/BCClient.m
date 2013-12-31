@@ -18,6 +18,8 @@
 #import "HIPasswordHolder.h"
 
 static NSString * const kBCClientBaseURLString = @"https://grabhive.com/";
+NSString * const BCClientBitcoinjDirectory = @"BitcoinJ.network";
+NSString * const BCClientTorDirectory = @"Tor.network";
 
 @interface BCClient () {
     NSManagedObjectContext *_transactionUpdateContext;
@@ -83,7 +85,7 @@ static NSString * const kBCClientBaseURLString = @"https://grabhive.com/";
         tor.port = 9999;
 
         HIBitcoinManager *bitcoin = [HIBitcoinManager defaultManager];
-        bitcoin.dataURL = [self bitcoindDirectory];
+        bitcoin.dataURL = [self bitcoinjDirectory];
         bitcoin.exceptionHandler = ^(NSException *exception) {
             dispatch_async(dispatch_get_main_queue(), ^{
                 [[NSApp delegate] showExceptionWindowWithException:exception];
@@ -299,14 +301,14 @@ static NSString * const kBCClientBaseURLString = @"https://grabhive.com/";
     }
 }
 
-- (NSURL *)bitcoindDirectory {
+- (NSURL *)bitcoinjDirectory {
     NSURL *appSupportURL = [(HIAppDelegate *) [NSApp delegate] applicationFilesDirectory];
-    return [appSupportURL URLByAppendingPathComponent:@"BitcoinJ.network"];
+    return [appSupportURL URLByAppendingPathComponent:BCClientBitcoinjDirectory];
 }
 
 - (NSURL *)torDirectory {
     NSURL *appSupportURL = [(HIAppDelegate *) [NSApp delegate] applicationFilesDirectory];
-    return [appSupportURL URLByAppendingPathComponent:@"Tor.network"];
+    return [appSupportURL URLByAppendingPathComponent:BCClientTorDirectory];
 }
 
 - (BOOL)isRunning {
@@ -456,12 +458,9 @@ static NSString * const kBCClientBaseURLString = @"https://grabhive.com/";
     return amount > 0 ? [[HIBitcoinManager defaultManager] calculateTransactionFeeForSendingCoins:amount] : 0;
 }
 
-- (BOOL)backupWalletAtURL:(NSURL *)backupURL {
-    return [[HIBitcoinManager defaultManager] exportWalletTo:backupURL];
-}
-
-- (BOOL)importWalletFromURL:(NSURL *)walletURL {
-    return [[HIBitcoinManager defaultManager] importWalletFrom:walletURL];
+- (void)backupWalletToDirectory:(NSURL *)backupURL error:(NSError **)error {
+    NSURL *backupFileURL = [backupURL URLByAppendingPathComponent:@"bitcoinkit.wallet"];
+    return [[HIBitcoinManager defaultManager] exportWalletTo:backupFileURL error:error];
 }
 
 - (BOOL)isWalletPasswordProtected {

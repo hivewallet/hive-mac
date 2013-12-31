@@ -6,6 +6,7 @@
 //  Copyright (c) 2013 Hive Developers. All rights reserved.
 //
 
+#import "BCClient.h"
 #import "HIDatabaseManager.h"
 #import "HIDropboxBackup.h"
 
@@ -170,16 +171,16 @@ const NSInteger HIDropboxBackupNotRunning = -3;
         return;
     }
 
-    NSString *backupDirectory = self.backupLocation;
+    NSURL *backupLocation = [NSURL fileURLWithPath:self.backupLocation];
 
-    if (!backupDirectory) {
+    if (!backupLocation) {
         self.status = HIBackupStatusFailure;
         self.error = BackupError(HIDropboxBackupError, HIDropboxBackupNotConfigured, @"Backup is not configured");
         return;
     }
 
     BOOL isDirectory;
-    BOOL exists = [[NSFileManager defaultManager] fileExistsAtPath:backupDirectory isDirectory:&isDirectory];
+    BOOL exists = [[NSFileManager defaultManager] fileExistsAtPath:backupLocation.path isDirectory:&isDirectory];
 
     if (!exists || !isDirectory) {
         self.status = HIBackupStatusFailure;
@@ -187,16 +188,13 @@ const NSInteger HIDropboxBackupNotRunning = -3;
         return;
     }
 
-    NSError *error = [[HIDatabaseManager sharedManager] backupStoreToURL:[NSURL fileURLWithPath:self.backupLocation]];
-
-    if (error) {
-        [NSApp presentError:error];
-        self.status = HIBackupStatusFailure;
-        self.error = BackupError(HIDropboxBackupError, HIDropboxBackupCouldntComplete, error.localizedFailureReason);
+    if (![self backUpCoreDataStore]) {
         return;
     }
 
-    // TODO: backup the wallet
+    if (![self backUpWallet]) {
+        return;
+    }
 
     if ([self isDropboxRunning]) {
         [self registerSuccessfulBackup];
@@ -205,6 +203,61 @@ const NSInteger HIDropboxBackupNotRunning = -3;
         self.status = [self updatedAfterLastWalletChange] ? HIBackupStatusOutdated : HIBackupStatusFailure;
         self.error = BackupError(HIDropboxBackupError, HIDropboxBackupNotRunning, @"Dropbox isn't running");
     }
+}
+
+- (BOOL)backUpCoreDataStore {
+    NSURL *backupLocation = [NSURL fileURLWithPath:self.backupLocation];
+    NSError *error = [[HIDatabaseManager sharedManager] backupStoreToURL:backupLocation];
+
+    if (error) {
+        [NSApp presentError:error];
+        self.status = HIBackupStatusFailure;
+        self.error = BackupError(HIDropboxBackupError, HIDropboxBackupCouldntComplete, error.localizedFailureReason);
+        return NO;
+    }
+
+    return YES;
+}
+
+- (BOOL)backUpWallet {
+    NSURL *backupLocation = [NSURL fileURLWithPath:self.backupLocation];
+    NSURL *bitcoinjDirectory = [backupLocation URLByAppendingPathComponent:BCClientBitcoinjDirectory];
+
+    BOOL isDirectory;
+    BOOL exists = [[NSFileManager defaultManager] fileExistsAtPath:bitcoinjDirectory.path isDirectory:&isDirectory];
+
+    NSError *error = nil;
+
+    if (!exists) {
+        [[NSFileManager defaultManager] createDirectoryAtURL:bitcoinjDirectory
+                                 withIntermediateDirectories:NO
+                                                  attributes:nil
+                                                       error:&error];
+
+        if (error) {
+            [NSApp presentError:error];
+            self.status = HIBackupStatusFailure;
+            self.error = BackupError(HIDropboxBackupError, HIDropboxBackupCouldntComplete, error.localizedFailureReason);
+            return NO;
+        }
+    } else if (!isDirectory) {
+        self.status = HIBackupStatusFailure;
+        self.error = BackupError(HIDropboxBackupError, HIDropboxBackupCouldntComplete,
+                                 @"Can't create a directory to store the wallet backup");
+        [NSApp presentError:self.error];
+        return NO;
+    }
+
+    [[BCClient sharedClient] backupWalletToDirectory:bitcoinjDirectory error:&error];
+
+    if (error) {
+        [NSApp presentError:error];
+        self.status = HIBackupStatusFailure;
+        self.error = BackupError(HIDropboxBackupError, HIDropboxBackupCouldntComplete, error.localizedFailureReason);
+        return NO;
+    }
+
+    return YES;
 }
 
 - (void)registerSuccessfulBackup {

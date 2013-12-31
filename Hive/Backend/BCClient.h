@@ -11,6 +11,9 @@
 @class HIContact;
 @class HIPasswordHolder;
 
+extern NSString * const BCClientBitcoinjDirectory;
+extern NSString * const BCClientTorDirectory;
+
 /*
  This object acts as a single gateway to BitcoinKit and Tor, handles sending bitcoins, managing wallets etc.
  */
@@ -57,7 +60,6 @@
 - (void)rebuildTransactionsList;
 - (void)clearTransactionsList;
 
-- (BOOL)backupWalletAtURL:(NSURL *)backupURL;
-- (BOOL)importWalletFromURL:(NSURL *)walletURL;
+- (void)backupWalletToDirectory:(NSURL *)backupURL error:(NSError **)error;
 
 @end
