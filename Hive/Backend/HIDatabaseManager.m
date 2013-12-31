@@ -206,9 +206,13 @@ static NSString * const StoreFileName = @"Hive.storedata";
     NSURL *backupFileLocation = [backupLocation URLByAppendingPathComponent:StoreFileName];
 
     NSPersistentStoreCoordinator *coordinator = self.persistentStoreCoordinator;
+
+    // prevent creating additional journal files (sha/wal)
+    NSDictionary *storeOptions = @{ NSSQLitePragmasOption: @{ @"journal_mode": @"DELETE" }};
+
     NSPersistentStore *backupStore = [coordinator migratePersistentStore:coordinator.persistentStores.firstObject
                                                                    toURL:backupFileLocation
-                                                                 options:nil
+                                                                 options:storeOptions
                                                                 withType:NSSQLiteStoreType
                                                                    error:&backupError];
 
