@@ -51,9 +51,6 @@ const NSInteger HITimeMachineBackupPathExcluded = -2;
     BOOL backupsEnabled = [settings[@"AutoBackup"] boolValue];
     self.lastBackupDate = [settings[@"Destinations"][0][@"SnapshotDates"] lastObject];
 
-    // TODO: record last change date in the wallet file
-    NSDate *lastWalletChange = [NSDate distantPast];
-
     if ([self isExcludedFromBackup]) {
         self.status = HIBackupStatusFailure;
         self.error = BackupError(HITimeMachineBackupError, HITimeMachineBackupPathExcluded,
@@ -64,7 +61,7 @@ const NSInteger HITimeMachineBackupPathExcluded = -2;
     BOOL updatedRecently = self.lastBackupDate &&
         ([[NSDate date] timeIntervalSinceDate:self.lastBackupDate] < RecentBackupLimit);
 
-    BOOL afterLastWalletChange = [self.lastBackupDate isGreaterThan:lastWalletChange];
+    BOOL afterLastWalletChange = [self updatedAfterLastWalletChange];
 
     if (backupsEnabled && updatedRecently) {
         self.error = nil;

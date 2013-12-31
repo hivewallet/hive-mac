@@ -42,13 +42,17 @@
 - (void)initializeAdapters {
     NSDictionary *settings = [HIBackupAdapter backupSettings];
 
-    for (HIBackupAdapter *adapter in _adapters) {
+    for (HIBackupAdapter *adapter in self.adapters) {
         if (![settings objectForKey:adapter.name]) {
             adapter.enabled = [adapter isEnabledByDefault];
         }
     }
 
     [[NSUserDefaults standardUserDefaults] synchronize];
+}
+
+- (void)performBackups {
+    [self.adapters makeObjectsPerformSelector:@selector(performBackup)];
 }
 
 @end

@@ -8,6 +8,11 @@
 
 #import "HIBackupAdapter.h"
 
+extern NSString * const HIDropboxBackupError;
+extern const NSInteger HIDropboxBackupNotConfigured;
+extern const NSInteger HIDropboxBackupCouldntComplete;
+extern const NSInteger HIDropboxBackupNotRunning;
+
 @interface HIDropboxBackup : HIBackupAdapter
 
 @end

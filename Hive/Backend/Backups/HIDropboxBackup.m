@@ -6,11 +6,40 @@
 //  Copyright (c) 2013 Hive Developers. All rights reserved.
 //
 
+#import "HIDatabaseManager.h"
 #import "HIDropboxBackup.h"
 
 static NSString * const LocationKey = @"location";
+static NSString * const LastBackupKey = @"lastBackup";
+
+NSString * const HIDropboxBackupError = @"HIDropboxBackupError";
+const NSInteger HIDropboxBackupNotConfigured = -1;
+const NSInteger HIDropboxBackupCouldntComplete = -2;
+const NSInteger HIDropboxBackupNotRunning = -3;
+
+
+@interface HIDropboxBackup ()
+
+@property (nonatomic, copy) NSString *backupLocation;
+@property (nonatomic, copy) NSDate *lastRegisteredBackup;
+
+@end
+
 
 @implementation HIDropboxBackup
+
+- (id)init {
+    self = [super init];
+
+    if (self) {
+        self.status = HIBackupStatusWaiting;
+        self.error = nil;
+        self.lastBackupDate = self.lastRegisteredBackup;
+    }
+
+    return self;
+}
+
 
 #pragma mark - Superclass method overrides
 
@@ -39,12 +68,17 @@ static NSString * const LocationKey = @"location";
 }
 
 - (void)updateStatus {
-    // TODO
-
     if (!self.enabled) {
         self.status = HIBackupStatusDisabled;
-    } else {
-        self.status = HIBackupStatusUpToDate;
+        self.error = nil;
+    } else if (self.error.code == HIDropboxBackupNotRunning) {
+        // we've done the backup but we're waiting for Dropbox to be started
+        if ([self isDropboxRunning]) {
+            [self registerSuccessfulBackup];
+        }
+    } else if (self.status == HIBackupStatusDisabled) {
+        // backup was just switched on
+        [self performBackup];
     }
 }
 
@@ -62,6 +96,16 @@ static NSString * const LocationKey = @"location";
 - (void)setBackupLocation:(NSString *)location {
     NSMutableDictionary *adapterSettings = self.adapterSettings;
     [adapterSettings setObject:location forKey:LocationKey];
+    [self saveAdapterSettings:adapterSettings];
+}
+
+- (NSDate *)lastRegisteredBackup {
+    return self.adapterSettings[LastBackupKey];
+}
+
+- (void)setLastRegisteredBackup:(NSDate *)date {
+    NSMutableDictionary *adapterSettings = self.adapterSettings;
+    [adapterSettings setObject:date forKey:LastBackupKey];
     [self saveAdapterSettings:adapterSettings];
 }
 
@@ -85,7 +129,7 @@ static NSString * const LocationKey = @"location";
     NSOpenPanel *panel = [NSOpenPanel openPanel];
     panel.prompt = NSLocalizedString(@"Choose", @"Dropbox folder save panel confirmation button");
     panel.message = NSLocalizedString(@"Choose a directory inside Dropbox folder where the backup should be saved:", nil);
-    panel.directoryURL = [NSURL URLWithString:dropboxFolder];
+    panel.directoryURL = [NSURL fileURLWithPath:dropboxFolder];
     panel.canChooseDirectories = YES;
     panel.canCreateDirectories = YES;
     panel.canChooseFiles = NO;
@@ -112,9 +156,66 @@ static NSString * const LocationKey = @"location";
         return;
     }
 
-    [self setBackupLocation:selectedDirectory];
-
+    self.backupLocation = selectedDirectory;
     self.enabled = YES;
+}
+
+
+#pragma mark - Performing backup
+
+- (void)performBackup {
+    if (!self.enabled) {
+        self.status = HIBackupStatusDisabled;
+        self.error = nil;
+        return;
+    }
+
+    NSString *backupDirectory = self.backupLocation;
+
+    if (!backupDirectory) {
+        self.status = HIBackupStatusFailure;
+        self.error = BackupError(HIDropboxBackupError, HIDropboxBackupNotConfigured, @"Backup is not configured");
+        return;
+    }
+
+    BOOL isDirectory;
+    BOOL exists = [[NSFileManager defaultManager] fileExistsAtPath:backupDirectory isDirectory:&isDirectory];
+
+    if (!exists || !isDirectory) {
+        self.status = HIBackupStatusFailure;
+        self.error = BackupError(HIDropboxBackupError, HIDropboxBackupNotConfigured, @"Backup folder was deleted");
+        return;
+    }
+
+    NSError *error = [[HIDatabaseManager sharedManager] backupStoreToURL:[NSURL fileURLWithPath:self.backupLocation]];
+
+    if (error) {
+        [NSApp presentError:error];
+        self.status = HIBackupStatusFailure;
+        self.error = BackupError(HIDropboxBackupError, HIDropboxBackupCouldntComplete, error.localizedFailureReason);
+        return;
+    }
+
+    // TODO: backup the wallet
+
+    if ([self isDropboxRunning]) {
+        [self registerSuccessfulBackup];
+    } else {
+        // we'll keep checking in updateStatus
+        self.status = [self updatedAfterLastWalletChange] ? HIBackupStatusOutdated : HIBackupStatusFailure;
+        self.error = BackupError(HIDropboxBackupError, HIDropboxBackupNotRunning, @"Dropbox isn't running");
+    }
+}
+
+- (void)registerSuccessfulBackup {
+    self.status = HIBackupStatusUpToDate;
+    self.error = nil;
+    self.lastBackupDate = [NSDate date];
+    self.lastRegisteredBackup = self.lastBackupDate;
+}
+
+- (BOOL)isDropboxRunning {
+    return ([NSRunningApplication runningApplicationsWithBundleIdentifier:@"com.getdropbox.dropbox"].count > 0);
 }
 
 @end

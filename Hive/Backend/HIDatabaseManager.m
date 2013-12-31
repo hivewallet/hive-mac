@@ -11,6 +11,9 @@
 
 #define CheckError(error) if (error) { HILogError(@"%@", error); [NSApp presentError:(error)]; return nil; }
 
+static NSString * const StoreFileName = @"Hive.storedata";
+
+
 @interface HIDatabaseManager ()
 
 @property (strong, nonatomic) NSPersistentStoreCoordinator *persistentStoreCoordinator;
@@ -41,6 +44,10 @@
     }
 
     return _managedObjectModel;
+}
+
+- (NSURL *)persistentStoreURL {
+    return [[[NSApp delegate] applicationFilesDirectory] URLByAppendingPathComponent:StoreFileName];
 }
 
 - (NSPersistentStoreCoordinator *)persistentStoreCoordinator {
@@ -79,8 +86,7 @@
         CheckError(error);
     }
 
-    NSURL *url = [applicationFilesDirectory URLByAppendingPathComponent:@"Hive.storedata"];
-
+    NSURL *url = [self persistentStoreURL];
     NSPersistentStoreCoordinator *coordinator = [[NSPersistentStoreCoordinator alloc] initWithManagedObjectModel:mom];
 
     NSDictionary *storeOptions = @{NSMigratePersistentStoresAutomaticallyOption: @YES,
@@ -149,7 +155,8 @@
     NSURL *applicationFilesDirectory = [[NSApp delegate] applicationFilesDirectory];
 
     // convert old store to an sqlite store
-    NSURL *newUrl = [applicationFilesDirectory URLByAppendingPathComponent:@"Hive.storedata.new"];
+    NSString *newFileName = [StoreFileName stringByAppendingString:@".new"];
+    NSURL *newUrl = [applicationFilesDirectory URLByAppendingPathComponent:newFileName];
 
     if ([fileManager fileExistsAtPath:newUrl.path]) {
         [self deletePersistentStoreAtURL:newUrl error:&error];
@@ -164,7 +171,8 @@
     CheckError(error);
 
     // back up the old store
-    NSURL *backupUrl = [applicationFilesDirectory URLByAppendingPathComponent:@"Hive.storedata.old"];
+    NSString *oldFileName = [StoreFileName stringByAppendingString:@".old"];
+    NSURL *backupUrl = [applicationFilesDirectory URLByAppendingPathComponent:oldFileName];
 
     if ([fileManager fileExistsAtPath:backupUrl.path]) {
         [fileManager removeItemAtURL:backupUrl error:&error];
@@ -186,6 +194,49 @@
     CheckError(error);
 
     return movedSqliteStore;
+}
+
+- (NSError *)backupStoreToURL:(NSURL *)backupLocation {
+    HILogInfo(@"Backing up Core Data store to %@", backupLocation);
+    NSAssert(dispatch_get_current_queue() == dispatch_get_main_queue(), @"This method must be run on the main thread");
+
+    NSError *error = nil;
+
+    NSURL *standardLocation = [self persistentStoreURL];
+    NSURL *backupFileLocation = [backupLocation URLByAppendingPathComponent:StoreFileName];
+
+    NSPersistentStoreCoordinator *coordinator = self.persistentStoreCoordinator;
+    NSPersistentStore *backupStore = [coordinator migratePersistentStore:coordinator.persistentStores.firstObject
+                                                                   toURL:backupFileLocation
+                                                                 options:nil
+                                                                withType:NSSQLiteStoreType
+                                                                   error:&error];
+
+    if (error) {
+        HILogError(@"Error during store backup: %@", error);
+        return error;
+    }
+
+    [coordinator removePersistentStore:backupStore
+                                 error:&error];
+
+    if (error) {
+        HILogError(@"Error during store backup: %@", error);
+        return error;
+    }
+
+    [coordinator addPersistentStoreWithType:NSSQLiteStoreType
+                              configuration:nil
+                                        URL:standardLocation
+                                    options:nil
+                                      error:&error];
+
+    if (error) {
+        HILogError(@"Error during store backup: %@", error);
+        return error;
+    }
+
+    return nil;
 }
 
 - (NSManagedObjectContext *)managedObjectContext {

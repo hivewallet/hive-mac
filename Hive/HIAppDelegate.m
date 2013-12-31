@@ -98,7 +98,9 @@ void handleException(NSException *exception) {
                                                      forEventClass:kInternetEventClass
                                                         andEventID:kAEGetURL];
 
-    [[HIBackupManager sharedManager] initializeAdapters];
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [self initializeBackups];
+    });
 
     [self showBetaWarning];
     [self preinstallAppsIfNeeded];
@@ -160,6 +162,11 @@ void handleException(NSException *exception) {
 
         [DDLog queueLogMessage:log asynchronously:YES];
     }];
+}
+
+- (void)initializeBackups {
+    [[HIBackupManager sharedManager] initializeAdapters];
+    [[HIBackupManager sharedManager] performBackups];
 }
 
 - (void)showMainApplicationWindowForCrashManager:(id)crashManager {

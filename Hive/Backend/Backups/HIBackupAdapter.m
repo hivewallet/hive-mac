@@ -63,6 +63,10 @@ static NSString * const EnabledKey = @"enabled";
     // not required if needsToBeConfigured == NO
 }
 
+- (void)performBackup {
+    // do the actual backup now, unless it happens automatically
+}
+
 
 #pragma mark - Helpers and other properties
 
@@ -128,6 +132,15 @@ static NSString * const EnabledKey = @"enabled";
     [self didChangeValueForKey:@"enabled"];
 
     [self updateStatus];
+}
+
+- (NSDate *)lastWalletChange {
+    // TODO: record last change date in the wallet file
+    return [NSDate distantPast];
+}
+
+- (BOOL)updatedAfterLastWalletChange {
+    return [self.lastBackupDate isGreaterThan:[self lastWalletChange]];
 }
 
 @end
