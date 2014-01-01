@@ -5,9 +5,6 @@
 /* Class = "NSTextFieldCell"; title = "Received"; ObjectID = "22"; */
 "22.title" = "موصول";
 
-/* Class = "NSTextFieldCell"; title = "Date"; ObjectID = "41"; */
-"41.title" = "تاریخ";
-
 /* Class = "NSTextFieldCell"; title = "Looks like you haven't made any transactions yet. Send someone some Bitcoin!"; ObjectID = "54"; */
 "54.title" = "معلوم ھوتاھے آپ نے ابھی تک کسی سے کوئی لین دین نہیں کی . کسی کو کچھ Bitcoin بھیجیں!";
 

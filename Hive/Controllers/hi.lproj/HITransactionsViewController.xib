@@ -62,7 +62,7 @@
                                                     <textField verticalHuggingPriority="750" id="40">
                                                         <rect key="frame" x="236" y="42" width="49" height="17"/>
                                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES"/>
-                                                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="right" title="तारीख" id="41">
+                                                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="right" title="Date" id="41">
                                                             <font key="font" size="11" name="Helvetica"/>
                                                             <color key="textColor" red="0.70091861489999996" green="0.70099276300000002" blue="0.70085686449999995" alpha="1" colorSpace="calibratedRGB"/>
                                                             <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>

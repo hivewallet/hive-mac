@@ -5,9 +5,6 @@
 /* Class = "NSTextFieldCell"; title = "Received"; ObjectID = "22"; */
 "22.title" = "Получено";
 
-/* Class = "NSTextFieldCell"; title = "Date"; ObjectID = "41"; */
-"41.title" = "Дата";
-
 /* Class = "NSTextFieldCell"; title = "Looks like you haven't made any transactions yet. Send someone some Bitcoin!"; ObjectID = "54"; */
 "54.title" = "Похоже у Вас еще не было ни одной транзакции. Отправьте кому-нибудь пару Биткоинов!";
 
