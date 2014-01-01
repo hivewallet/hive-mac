@@ -98,6 +98,14 @@
                                                             <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                                         </textFieldCell>
                                                     </textField>
+                                                    <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="NZf-qf-8PB" userLabel="Share Button">
+                                                        <rect key="frame" x="257" y="7" width="28" height="27"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                                        <buttonCell key="cell" type="bevel" bezelStyle="regularSquare" image="NSShareTemplate" imagePosition="overlaps" alignment="center" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="4Fn-ay-Kmx">
+                                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                                            <font key="font" metaFont="system"/>
+                                                        </buttonCell>
+                                                    </button>
                                                 </subviews>
                                                 <constraints>
                                                     <constraint firstAttribute="centerY" secondItem="43" secondAttribute="centerY" id="6qm-MA-BhR"/>
@@ -108,11 +116,13 @@
                                                     <constraint firstAttribute="trailing" secondItem="mY4-hd-Z1f" secondAttribute="trailing" constant="12" id="Gz3-ue-goc"/>
                                                     <constraint firstItem="43" firstAttribute="leading" secondItem="46" secondAttribute="trailing" constant="5" id="JOy-DV-KmN"/>
                                                     <constraint firstAttribute="centerY" secondItem="21" secondAttribute="centerY" id="KNs-Ez-JuV"/>
+                                                    <constraint firstAttribute="bottom" secondItem="NZf-qf-8PB" secondAttribute="bottom" constant="10" id="MLs-Wi-Znl"/>
                                                     <constraint firstItem="46" firstAttribute="top" secondItem="20" secondAttribute="top" constant="1" id="VRG-oj-8Sg"/>
                                                     <constraint firstItem="40" firstAttribute="top" secondItem="20" secondAttribute="top" constant="3" id="ZR7-me-yfm"/>
                                                     <constraint firstItem="mY4-hd-Z1f" firstAttribute="leading" secondItem="21" secondAttribute="leading" id="fjw-Ci-gZg"/>
                                                     <constraint firstItem="46" firstAttribute="leading" secondItem="20" secondAttribute="leading" constant="1" id="nYk-NV-Np3"/>
                                                     <constraint firstAttribute="trailing" secondItem="40" secondAttribute="trailing" constant="12" id="o5Q-j9-yTJ"/>
+                                                    <constraint firstItem="40" firstAttribute="trailing" secondItem="NZf-qf-8PB" secondAttribute="trailing" id="q70-zN-Lkn"/>
                                                     <constraint firstAttribute="bottom" secondItem="21" secondAttribute="bottom" constant="23" id="rT7-A1-I3i"/>
                                                     <constraint firstAttribute="trailing" secondItem="21" secondAttribute="trailing" constant="12" id="w1Q-hc-0Yt"/>
                                                 </constraints>
@@ -213,6 +223,7 @@
         </customView>
     </objects>
     <resources>
+        <image name="NSShareTemplate" width="18" height="16"/>
         <image name="icon-gray-btc" width="63" height="64"/>
     </resources>
 </document>
