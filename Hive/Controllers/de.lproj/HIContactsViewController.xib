@@ -202,7 +202,6 @@
                 <constraint firstAttribute="centerX" secondItem="128" secondAttribute="centerX" constant="0.5" id="8BE-bj-4Nx"/>
                 <constraint firstItem="124" firstAttribute="top" secondItem="122" secondAttribute="bottom" constant="19" id="9h4-0o-avX"/>
                 <constraint firstAttribute="bottom" secondItem="128" secondAttribute="bottom" constant="20" id="Csf-yO-ULX"/>
-                <constraint firstItem="122" firstAttribute="leading" secondItem="121" secondAttribute="leading" constant="71" id="K06-Cl-Asq"/>
                 <constraint firstAttribute="centerX" secondItem="122" secondAttribute="centerX" id="PVi-PF-Qcu"/>
                 <constraint firstAttribute="bottom" secondItem="124" secondAttribute="bottom" constant="209" id="XHn-Q0-sld"/>
                 <constraint firstAttribute="centerX" secondItem="143" secondAttribute="centerX" constant="0.5" id="b17-7L-lc1"/>
