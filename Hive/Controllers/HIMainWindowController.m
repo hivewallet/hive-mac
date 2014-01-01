@@ -25,12 +25,13 @@
 static const CGFloat TitleBarHeight = 35.0;
 static const NSTimeInterval SlideAnimationDuration = 0.3;
 
-
 @interface HIMainWindowController () {
     NSView *_titleView;
     HIViewController *_currentViewController;
     HIViewController *_currentModalViewController;
 }
+
+@property (nonatomic, strong, readonly) INAppStoreWindow *appStoreWindow;
 
 @end
 
@@ -44,9 +45,13 @@ static const NSTimeInterval SlideAnimationDuration = 0.3;
     [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
+- (INAppStoreWindow *)appStoreWindow {
+    return (INAppStoreWindow *)self.window;
+}
+
 - (void)windowDidLoad {
     [super windowDidLoad];
-    ((INAppStoreWindow *)self.window).titleBarHeight = TitleBarHeight;
+    self.appStoreWindow.titleBarHeight = TitleBarHeight;
 
     NSArray *panels = @[
                         [HIProfileViewController new],
@@ -92,10 +97,10 @@ static const NSTimeInterval SlideAnimationDuration = 0.3;
     } else {
         _titleView = selectedController.titleBarView;
         NSRect f = _titleView.frame;
-        f.size.width = ((INAppStoreWindow *)self.window).titleBarView.bounds.size.width;
-        f.size.height = ((INAppStoreWindow *)self.window).titleBarView.bounds.size.height;
+        f.size.width = self.appStoreWindow.titleBarView.bounds.size.width;
+        f.size.height = self.appStoreWindow.titleBarView.bounds.size.height;
         _titleView.frame = f;
-        [((INAppStoreWindow *)self.window).titleBarView addSubview:_titleView];
+        [self.appStoreWindow.titleBarView addSubview:_titleView];
         [self.contentView addSubview:selectedController.view];
         [selectedController viewWillAppear];
     }
@@ -110,11 +115,11 @@ static const NSTimeInterval SlideAnimationDuration = 0.3;
     [newController viewWillAppear];
     NSView *newTitleView = newController.titleBarView;
     NSRect f = newTitleView.frame;
-    f.size.width = ((INAppStoreWindow *)self.window).titleBarView.bounds.size.width;
-    f.size.height = ((INAppStoreWindow *)self.window).titleBarView.bounds.size.height;
+    f.size.width = self.appStoreWindow.titleBarView.bounds.size.width;
+    f.size.height = self.appStoreWindow.titleBarView.bounds.size.height;
     newTitleView.frame = f;
     newTitleView.alphaValue = 0.0;
-    [((INAppStoreWindow *)self.window).titleBarView addSubview:newTitleView];
+    [self.appStoreWindow.titleBarView addSubview:newTitleView];
 
     newController.view.layer.shadowColor = [[NSColor blackColor] hiNativeColor];
     newController.view.layer.shadowOffset = CGSizeMake(50.0, 0.0);
