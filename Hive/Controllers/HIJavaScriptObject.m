@@ -124,6 +124,8 @@
     if (![argument isKindOfClass:class]) {
         NSString *exception = [NSString stringWithFormat:@"%@ did not match expected type %@", name, class];
         [WebScriptObject throwException:exception];
+        // Exceptions are swallowed by WebKit, so also log it.
+        HILogError(@"%@:\n%@", exception, [[NSThread callStackSymbols] subarrayWithRange:NSMakeRange(0, 3)]);
         @throw [NSException exceptionWithName:@"IllegalArgumentException"
                                        reason:exception
                                      userInfo:nil];
