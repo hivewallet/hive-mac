@@ -6,6 +6,8 @@
 //  Copyright (c) 2013 Hive Developers. All rights reserved.
 //
 
+#import <BitcoinJKit/HILogger.h>
+
 #import "HIAppDelegate.h"
 #import "HIApplicationRuntimeViewController.h"
 #import "HIAppRuntimeBridge.h"
@@ -18,9 +20,23 @@
 
 @end
 
+@interface WebView (HIItsThere)
+
+- (void)setScriptDebugDelegate:(id)scriptDebugDelegate;
+
+@end
+
+@interface WebScriptCallFrame
+
+@property (nonatomic, copy, readonly) NSString *functionName;
+@property (nonatomic, copy, readonly) id exception;
+
+@end
+
 @interface HIApplicationRuntimeViewController () {
     HIAppRuntimeBridge *_bridge;
     NSURL *_baseURL;
+    NSMutableDictionary *_sourceFiles;
 }
 
 @end
@@ -32,6 +48,7 @@
 
     if (self) {
         // Initialization code here.
+        _sourceFiles = [NSMutableDictionary new];
     }
     
     return self;
@@ -44,6 +61,11 @@
 
     _bridge = [[HIAppRuntimeBridge alloc] initWithApplication:self.application frame:self.webView.mainFrame];
     _bridge.controller = self;
+
+    WebView *webView = self.webView;
+    if ([webView respondsToSelector:@selector(setScriptDebugDelegate:)]) {
+        [webView setScriptDebugDelegate:self];
+    }
 
     // set custom user agent
     NSString *hiveVersion = [[NSBundle mainBundle] infoDictionary][@"CFBundleShortVersionString"];
@@ -134,6 +156,51 @@ decisionListener:(id<WebPolicyDecisionListener>)listener {
 - (void)dealloc {
     id window = [self.webView windowScriptObject];
     [window removeObjectForKey:@"bitcoin"];
+}
+
+#pragma mark - ScriptDebugDelegate
+
+- (void)webView:(WebView *)webView
+ didParseSource:(NSString *)source
+ baseLineNumber:(unsigned)lineNumber
+        fromURL:(NSURL *)url
+       sourceId:(int)sid
+    forWebFrame:(WebFrame *)webFrame {
+
+    _sourceFiles[@(sid)] = url.absoluteString.lastPathComponent;
+}
+
+- (void)webView:(WebView *)webView
+    failedToParseSource:(NSString *)source
+ baseLineNumber:(unsigned)lineNumber
+        fromURL:(NSURL *)url
+      withError:(NSError *)error
+    forWebFrame:(WebFrame *)webFrame {
+
+    NSString *fileName = [NSString stringWithFormat:@"%@:%@", self.title, source];
+
+    HILoggerLog(fileName.UTF8String, "", lineNumber, HILoggerLevelError, @"Parse error: %@", source);
+}
+
+
+- (void)webView:(WebView *)webView
+exceptionWasRaised:(WebScriptCallFrame *)frame
+       sourceId:(int)sid
+           line:(int)lineNumber
+    forWebFrame:(WebFrame *)webFrame {
+
+    // http://gf3.ca/read/exception-introspection
+    [webFrame.windowObject setValue:frame.exception forKey:@"__GC_frame_exception"];
+    NSString *exceptionRef = [webFrame.windowObject evaluateWebScript:@"__GC_frame_exception.constructor.name"];
+    NSString *stackTrace = [webFrame.windowObject evaluateWebScript:@"__GC_frame_exception.stack"];
+    [webFrame.windowObject setValue:nil forKey:@"__GC_frame_exception"];
+
+    NSString *fileName = [NSString stringWithFormat:@"%@:%@", self.title, _sourceFiles[@(sid)]];
+    NSString *formattedStrackTrace =
+        [[stackTrace componentsSeparatedByString:@"\n"] componentsJoinedByString:@"\n\tat "];
+
+    HILoggerLog(fileName.UTF8String, (frame.functionName ?: @"").UTF8String, lineNumber, HILoggerLevelError,
+        @"%@\n%@", exceptionRef, formattedStrackTrace);
 }
 
 @end
