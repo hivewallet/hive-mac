@@ -43,6 +43,10 @@ static const NSInteger kHIAppRuntimeBridgeParsingError = -1000;
 
     if (!selectorMap) {
         selectorMap = @{
+                        @"log:": @"log",
+                        @"error:": @"error",
+                        @"warn:": @"warn",
+                        @"info:": @"info",
                         @"sendMoneyToAddress:amount:callback:": @"sendMoney",
                         @"transactionWithHash:callback:": @"getTransaction",
                         @"getUserInformationWithCallback:": @"getUserInfo",
@@ -106,8 +110,27 @@ static const NSInteger kHIAppRuntimeBridgeParsingError = -1000;
     [self removeAllExchangeRateListeners];
 }
 
-
 #pragma mark - JS API methods
+
+- (void)log:(NSString *)message {
+    [self logMessage:message withLevel:HILoggerLevelDebug];
+}
+
+- (void)error:(NSString *)message {
+    [self logMessage:message withLevel:HILoggerLevelError];
+}
+
+- (void)warn:(NSString *)message {
+    [self logMessage:message withLevel:HILoggerLevelWarn];
+}
+
+- (void)info:(NSString *)message {
+    [self logMessage:message withLevel:HILoggerLevelInfo];
+}
+
+- (void)logMessage:(NSString *)message withLevel:(enum HILoggerLevel)withLevel {
+    HILoggerLog([NSString stringWithFormat:@"App:%@", _application.name].UTF8String, "", 0, withLevel, @"%@", message);
+}
 
 - (void)sendMoneyToAddress:(NSString *)hash amount:(NSNumber *)amount callback:(WebScriptObject *)callback {
 
