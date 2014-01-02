@@ -152,7 +152,7 @@ const NSInteger HIDropboxBackupNotRunning = -3;
                              informativeTextWithFormat:NSLocalizedString(@"You must install Dropbox first "
                                                                          @"(see www.dropbox.com).",
                                                                          @"Dropbox no backup folder alert details")];
-        [alert beginSheetModalForWindow:window completionHandler:nil];
+        [alert beginSheetModalForWindow:window modalDelegate:nil didEndSelector:nil contextInfo:NULL];
         return;
     }
 
@@ -187,7 +187,7 @@ const NSInteger HIDropboxBackupNotRunning = -3;
                                                                          @"inside your Dropbox folder.",
                                                                          @"Dropbox invalid folder alert details")];
 
-        [alert beginSheetModalForWindow:window completionHandler:nil];
+        [alert beginSheetModalForWindow:window modalDelegate:nil didEndSelector:nil contextInfo:NULL];
         return;
     }
 
