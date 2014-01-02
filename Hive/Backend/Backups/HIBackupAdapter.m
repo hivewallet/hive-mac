@@ -8,11 +8,20 @@
 
 #import "HIBackupAdapter.h"
 
-static NSString * const BackupSettingsKey = @"BackupAdapters";
+static NSString *BackupSettingsKey;
 static NSString * const EnabledKey = @"enabled";
 
 
 @implementation HIBackupAdapter
+
++ (void)initialize {
+    if (DEBUG_OPTION_ENABLED(TESTING_NETWORK)) {
+        BackupSettingsKey = @"BackupAdaptersTest";
+    } else {
+        BackupSettingsKey = @"BackupAdapters";
+    }
+}
+
 
 #pragma mark - Abstract methods
 
