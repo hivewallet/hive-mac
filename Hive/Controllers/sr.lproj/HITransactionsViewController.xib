@@ -185,7 +185,7 @@
                 <constraint firstItem="5" firstAttribute="top" secondItem="1" secondAttribute="top" id="t1R-01-bqz"/>
             </constraints>
         </customView>
-        <arrayController mode="entity" entityName="HITransaction" editable="NO" automaticallyPreparesContent="YES" id="3"/>
+        <arrayController mode="entity" entityName="HITransaction" editable="NO" id="3"/>
         <customView wantsLayer="YES" id="50">
             <rect key="frame" x="0.0" y="0.0" width="323" height="510"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

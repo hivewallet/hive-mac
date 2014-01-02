@@ -67,6 +67,7 @@
     if (_contact) {
         self.arrayController.fetchPredicate = [NSPredicate predicateWithFormat:@"contact = %@", _contact];
     }
+    [self.arrayController prepareContent];
 
     [self.noTransactionsView setFrame:self.view.bounds];
     [self.noTransactionsView setHidden:YES];
