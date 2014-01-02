@@ -39,8 +39,9 @@
 
 - (void)updateFeeLabel {
     if (self.bitcoinFormat && self.fee) {
-        self.feeLabel.stringValue = [[HIBitcoinFormatService sharedService] stringForBitcoin:self.fee
-                                                                                  withFormat:self.bitcoinFormat];
+        NSString *amount = [[HIBitcoinFormatService sharedService] stringForBitcoin:self.fee
+                                                                         withFormat:self.bitcoinFormat];
+        self.feeLabel.stringValue = [NSString stringWithFormat:@"%@ %@", amount, self.bitcoinFormat];
     }
 }
 
