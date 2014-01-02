@@ -177,20 +177,18 @@ NSString * const HISendBitcoinsWindowSuccessKey = @"success";
 #pragma mark - text fields
 
 - (void)updateBitcoinFormat:(NSNotification *)notification {
-    // We don't want to change the actual amount if the currency is changed from somewhere else.
-    satoshi_t oldValue = self.amountFieldValue;
-    NSString *newFormat = [HIBitcoinFormatService sharedService].preferredFormat;
-    if (![newFormat isEqual:self.selectedBitcoinFormat]) {
-        self.selectedBitcoinFormat = newFormat;
-        self.amountFieldValue = oldValue;
-    }
+    self.selectedBitcoinFormat = [[HIBitcoinFormatService sharedService] preferredFormat];
 }
 
 - (void)setSelectedBitcoinFormat:(NSString *)selectedBitcoinFormat {
-    _selectedBitcoinFormat = [selectedBitcoinFormat copy];
-    self.bitcoinFormatService.preferredFormat = _selectedBitcoinFormat;
-    [self formatAmountField];
-    self.feeDetailsViewController.bitcoinFormat = self.selectedBitcoinFormat;
+    if (![selectedBitcoinFormat isEqual:_selectedBitcoinFormat]) {
+        satoshi_t oldValue = self.amountFieldValue;
+        _selectedBitcoinFormat = [selectedBitcoinFormat copy];
+        self.amountFieldValue = oldValue;
+
+        self.bitcoinFormatService.preferredFormat = selectedBitcoinFormat;
+        self.feeDetailsViewController.bitcoinFormat = selectedBitcoinFormat;
+    }
 }
 
 - (void)setAmountFieldValue:(satoshi_t)amount {
