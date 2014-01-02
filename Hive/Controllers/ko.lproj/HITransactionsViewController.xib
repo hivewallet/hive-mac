@@ -69,7 +69,7 @@
                                                         <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" id="44"/>
                                                     </imageView>
                                                     <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="21" userLabel="Label">
-                                                        <rect key="frame" x="89" y="23" width="196" height="17"/>
+                                                        <rect key="frame" x="89" y="23" width="59" height="17"/>
                                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                                         <textFieldCell key="cell" lineBreakMode="truncatingTail" sendsActionOnEndEditing="YES" title="받았습니다" usesSingleLineMode="YES" id="22">
                                                             <font key="font" size="13" name="Helvetica"/>
@@ -78,7 +78,7 @@
                                                         </textFieldCell>
                                                     </textField>
                                                     <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="mY4-hd-Z1f" userLabel="Pending Label">
-                                                        <rect key="frame" x="89" y="10" width="196" height="14"/>
+                                                        <rect key="frame" x="89" y="10" width="55" height="14"/>
                                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                                         <textFieldCell key="cell" lineBreakMode="truncatingTail" sendsActionOnEndEditing="YES" title="PENDING" usesSingleLineMode="YES" id="oXJ-Jx-H6s">
                                                             <font key="font" size="11" name="Helvetica-Bold"/>
@@ -121,18 +121,20 @@
                                                     <constraint firstItem="40" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="46" secondAttribute="trailing" constant="8" symbolic="YES" id="CYc-4i-Fh7"/>
                                                     <constraint firstAttribute="bottom" secondItem="46" secondAttribute="bottom" constant="1" id="F0J-vu-TJv"/>
                                                     <constraint firstItem="21" firstAttribute="leading" secondItem="43" secondAttribute="trailing" constant="7" id="FBP-uS-rBm"/>
-                                                    <constraint firstAttribute="trailing" secondItem="mY4-hd-Z1f" secondAttribute="trailing" constant="12" id="Gz3-ue-goc"/>
+                                                    <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="mY4-hd-Z1f" secondAttribute="trailing" constant="12" id="Gz3-ue-goc"/>
                                                     <constraint firstItem="43" firstAttribute="leading" secondItem="46" secondAttribute="trailing" constant="5" id="JOy-DV-KmN"/>
                                                     <constraint firstAttribute="centerY" secondItem="21" secondAttribute="centerY" id="KNs-Ez-JuV"/>
                                                     <constraint firstAttribute="bottom" secondItem="NZf-qf-8PB" secondAttribute="bottom" constant="10" id="MLs-Wi-Znl"/>
                                                     <constraint firstItem="46" firstAttribute="top" secondItem="20" secondAttribute="top" constant="1" id="VRG-oj-8Sg"/>
+                                                    <constraint firstItem="NZf-qf-8PB" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="mY4-hd-Z1f" secondAttribute="trailing" constant="8" symbolic="YES" id="WmK-Oo-gWS"/>
                                                     <constraint firstItem="40" firstAttribute="top" secondItem="20" secondAttribute="top" constant="3" id="ZR7-me-yfm"/>
                                                     <constraint firstItem="mY4-hd-Z1f" firstAttribute="leading" secondItem="21" secondAttribute="leading" id="fjw-Ci-gZg"/>
+                                                    <constraint firstItem="NZf-qf-8PB" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="21" secondAttribute="trailing" constant="8" symbolic="YES" id="fxl-I8-gUl"/>
                                                     <constraint firstItem="46" firstAttribute="leading" secondItem="20" secondAttribute="leading" constant="1" id="nYk-NV-Np3"/>
                                                     <constraint firstAttribute="trailing" secondItem="40" secondAttribute="trailing" constant="12" id="o5Q-j9-yTJ"/>
                                                     <constraint firstItem="40" firstAttribute="trailing" secondItem="NZf-qf-8PB" secondAttribute="trailing" id="q70-zN-Lkn"/>
                                                     <constraint firstAttribute="bottom" secondItem="21" secondAttribute="bottom" constant="23" id="rT7-A1-I3i"/>
-                                                    <constraint firstAttribute="trailing" secondItem="21" secondAttribute="trailing" constant="12" id="w1Q-hc-0Yt"/>
+                                                    <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="21" secondAttribute="trailing" constant="12" id="w1Q-hc-0Yt"/>
                                                 </constraints>
                                                 <connections>
                                                     <outlet property="dateLabel" destination="40" id="42"/>
