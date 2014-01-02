@@ -132,12 +132,20 @@ static const NSTimeInterval IDLE_RESET_DELAY = 30.0;
     if ([self arePasswordsEqual]) {
         [self clearValidationProblems];
     } else if (self.repeatedPasswordField.stringValue.length > 0) {
-        self.repeatedPasswordField.backgroundColor = [[NSColor redColor] colorWithAlphaComponent:0.25];
+        [self setRepeatedPasswordBackgroundColor:[[NSColor redColor] colorWithAlphaComponent:0.25]];
     }
 }
 
 - (void)clearValidationProblems {
-    self.repeatedPasswordField.backgroundColor = [NSColor clearColor];
+    [self setRepeatedPasswordBackgroundColor:[NSColor clearColor]];
+}
+
+- (void)setRepeatedPasswordBackgroundColor:(NSColor *)color {
+    self.repeatedPasswordField.backgroundColor = color;
+
+    // stupid Cocoa, y u no update the color
+    [self.repeatedPasswordField setEditable:NO];
+    [self.repeatedPasswordField setEditable:YES];
 }
 
 - (void)updateIdleResetDelay {
