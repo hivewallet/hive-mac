@@ -202,12 +202,12 @@
     static NSAttributedString *string = nil;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
-        NSString *html = NSLocalizedString(@"I just sent some Bitcoin using <a href='http://hivewallet.com'>Hive</a>",
-                                           @"Share transaction template text");
-
-        string = [[NSAttributedString alloc] initWithHTML:[html dataUsingEncoding:NSUTF8StringEncoding]
-                                                  options:@{NSTextEncodingNameDocumentOption:@"UTF-8"}
-                                       documentAttributes:NULL];
+        NSString *raw = NSLocalizedString(@"I just sent some Bitcoin using Hive", @"Share transaction template text");
+        NSMutableAttributedString *mutableString = [[NSMutableAttributedString alloc] initWithString:raw];
+        [mutableString addAttribute:NSLinkAttributeName
+                              value:[NSURL URLWithString:@"http://hivewallet.com"]
+                              range:[raw rangeOfString:@"Hive"]];
+        string = mutableString;
     });
     return string;
 }
