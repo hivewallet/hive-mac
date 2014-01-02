@@ -54,8 +54,8 @@
                     <color key="borderColor" white="0.75" alpha="1" colorSpace="calibratedWhite"/>
                     <color key="fillColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                 </box>
-                <popUpButton translatesAutoresizingMaskIntoConstraints="NO" id="qOj-X5-bn0" customClass="HILabelPopUpButton">
-                    <rect key="frame" x="90" y="390" width="63" height="4"/>
+                <popUpButton placeholderIntrinsicWidth="63" placeholderIntrinsicHeight="21" translatesAutoresizingMaskIntoConstraints="NO" id="qOj-X5-bn0" customClass="HILabelPopUpButton">
+                    <rect key="frame" x="90" y="390" width="63" height="21"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="63" id="vnY-ge-9y3"/>
@@ -91,8 +91,8 @@
                     <color key="borderColor" white="0.75" alpha="1" colorSpace="calibratedWhite"/>
                     <color key="fillColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                 </box>
-                <popUpButton translatesAutoresizingMaskIntoConstraints="NO" id="Oga-wU-PlF" customClass="HILabelPopUpButton">
-                    <rect key="frame" x="88" y="349" width="68" height="4"/>
+                <popUpButton placeholderIntrinsicWidth="63" placeholderIntrinsicHeight="21" translatesAutoresizingMaskIntoConstraints="NO" id="Oga-wU-PlF" customClass="HILabelPopUpButton">
+                    <rect key="frame" x="90" y="352" width="63" height="21"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <popUpButtonCell key="cell" type="bevel" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" imageScaling="proportionallyDown" inset="2" id="6nQ-ap-d7s">
                         <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
