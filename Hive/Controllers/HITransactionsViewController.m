@@ -199,16 +199,17 @@
         NSLocalizedString(@"from", @"Direction label in transactions list when user is the receiver") :
         NSLocalizedString(@"to", @"Direction label in transactions list when user is the sender");
 
-    // TODO: dynamic truncation and styling for hashes
-    NSString *contactPart;
-    if (transaction.contact) {
-        contactPart = transaction.contact.firstname;
-    } else {
-        contactPart = [HIAddress truncateAddress:transaction.senderHash];
-    }
+    NSString *contactPart = transaction.contact ? transaction.contact.firstname : transaction.senderHash;
 
     NSString *text = [NSString stringWithFormat:@"%@ %@ %@", amountPart, directionPart, contactPart];
-    NSMutableAttributedString *summary = [[NSMutableAttributedString alloc] initWithString:text];
+
+    // The attribute in IB does not work for attributed strings.
+    NSMutableParagraphStyle *truncatingStyle = [[NSParagraphStyle defaultParagraphStyle] mutableCopy];
+    truncatingStyle.lineBreakMode = NSLineBreakByTruncatingTail;
+
+    NSMutableAttributedString *summary =
+        [[NSMutableAttributedString alloc] initWithString:text
+                                               attributes:@{NSParagraphStyleAttributeName: truncatingStyle}];
 
     [summary addAttribute:NSFontAttributeName
                     value:_amountLabelFont
