@@ -103,7 +103,7 @@ static NSString * const StoreFileName = @"Hive.storedata";
         NSPersistentStore *xmlStore = [coordinator addPersistentStoreWithType:NSXMLStoreType
                                                                 configuration:nil
                                                                           URL:url
-                                                                      options:nil
+                                                                      options:storeOptions
                                                                         error:&error];
 
         if (xmlStore) {
@@ -147,6 +147,9 @@ static NSString * const StoreFileName = @"Hive.storedata";
                                  inCoordinator:(NSPersistentStoreCoordinator *)coordinator {
     HILogInfo(@"Migrating XML store to SQLite");
 
+    NSDictionary *storeOptions = @{NSMigratePersistentStoresAutomaticallyOption: @YES,
+                                   NSInferMappingModelAutomaticallyOption: @YES};
+
     NSFileManager *fileManager = [NSFileManager defaultManager];
     NSError *error = nil;
     NSURL *url = xmlStore.URL;
@@ -163,7 +166,7 @@ static NSString * const StoreFileName = @"Hive.storedata";
 
     NSPersistentStore *sqliteStore = [coordinator migratePersistentStore:xmlStore
                                                                    toURL:newUrl
-                                                                 options:nil
+                                                                 options:storeOptions
                                                                 withType:NSSQLiteStoreType
                                                                    error:&error];
     CheckError(error);
@@ -183,7 +186,7 @@ static NSString * const StoreFileName = @"Hive.storedata";
     // move the new store to the old place
     NSPersistentStore *movedSqliteStore = [coordinator migratePersistentStore:sqliteStore
                                                                         toURL:url
-                                                                      options:nil
+                                                                      options:storeOptions
                                                                      withType:NSSQLiteStoreType
                                                                         error:&error];
     CheckError(error);
@@ -206,7 +209,11 @@ static NSString * const StoreFileName = @"Hive.storedata";
     NSPersistentStoreCoordinator *coordinator = self.persistentStoreCoordinator;
 
     // prevent creating additional journal files (sha/wal)
-    NSDictionary *storeOptions = @{ NSSQLitePragmasOption: @{ @"journal_mode": @"DELETE" }};
+    NSDictionary *storeOptions = @{
+                                   NSMigratePersistentStoresAutomaticallyOption: @YES,
+                                   NSInferMappingModelAutomaticallyOption: @YES,
+                                   NSSQLitePragmasOption: @{ @"journal_mode": @"DELETE" }
+                                 };
 
     NSPersistentStore *backupStore = [coordinator migratePersistentStore:coordinator.persistentStores.firstObject
                                                                    toURL:backupFileLocation
