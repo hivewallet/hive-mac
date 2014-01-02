@@ -107,8 +107,17 @@
                                                         </buttonCell>
                                                         <connections>
                                                             <action selector="shareButtonPressed:" target="20" id="SuS-L6-has"/>
-                                                            <binding destination="-2" name="hidden" keyPath="sharingSupported" id="p3Z-Vm-rqS">
+                                                            <binding destination="20" name="hidden" keyPath="mouseInside" id="Mxj-hE-JIE">
                                                                 <dictionary key="options">
+                                                                    <string key="NSValueTransformerName">NSNegateBoolean</string>
+                                                                </dictionary>
+                                                            </binding>
+                                                            <binding destination="-2" name="hidden2" keyPath="sharingSupported" previousBinding="Mxj-hE-JIE" id="W0v-wU-ouo">
+                                                                <dictionary key="options">
+                                                                    <integer key="NSMultipleValuesPlaceholder" value="-1"/>
+                                                                    <integer key="NSNotApplicablePlaceholder" value="-1"/>
+                                                                    <integer key="NSNoSelectionPlaceholder" value="-1"/>
+                                                                    <integer key="NSNullPlaceholder" value="-1"/>
                                                                     <string key="NSValueTransformerName">NSNegateBoolean</string>
                                                                 </dictionary>
                                                             </binding>
