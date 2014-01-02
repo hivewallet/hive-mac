@@ -13,11 +13,26 @@
 /* Applications view title */
 "Apps" = "Apps";
 
+/* Backup status: backup can't or won't be completed */
+"Backup error" = "Backup error";
+
+/* No comment provided by engineer. */
+"Backup hasn't been done yet" = "Backup hasn't been done yet";
+
+/* Backup status: backup done but not updated recently */
+"Backup problem" = "Backup problem";
+
 /* Cancel button title */
 "Cancel" = "Cancel";
 
 /* Dead transaction label */
 "CANCELLED" = "CANCELLED";
+
+/* Dropbox folder save panel confirmation button */
+"Choose" = "Choose";
+
+/* No comment provided by engineer. */
+"Choose a directory inside Dropbox folder where the backup should be saved:" = "Choose a directory inside Dropbox folder where the backup should be saved:";
 
 /* No comment provided by engineer. */
 "click to copy" = "click to copy";
@@ -43,11 +58,14 @@
 /* Disable backup button title */
 "Disable" = "Disable";
 
-/* Disabled backup adapter */
+/* Backup status: adapter disabled */
 "Disabled" = "Disabled";
 
 /* Remove contact alert dialog body */
 "Do you really want to remove %@ %@ from your contact list?" = "Do you really want to remove %1$@ %2$@ from your contact list?";
+
+/* Dropbox no backup folder alert title */
+"Dropbox folder not found" = "Dropbox folder not found";
 
 /* No comment provided by engineer. */
 "Edit contact" = "Edit contact";
@@ -58,8 +76,11 @@
 /* Email field placeholder */
 "email" = "email";
 
-/* Enable backup button title */
+/* Enable backup button title (no configuration required) */
 "Enable" = "Enable";
+
+/* Enable backup button title (requires configuration) */
+"Enable..." = "Enable...";
 
 /* Sending zero bitcoin alert title */
 "Enter an amount greater than zero." = "Enter an amount greater than zero.";
@@ -76,11 +97,17 @@
 /* Direction label in transactions list when user is the receiver */
 "from" = "from";
 
+/* Share transaction template text */
+"I just sent some Bitcoin using <a href='http//grabhive.com'>Hive</a>" = "I just sent some Bitcoin using <a href='http//grabhive.com'>Hive</a>";
+
 /* Install app popup title */
 "Install Hive App" = "Install Hive App";
 
 /* Address caption field placeholder */
 "Label" = "Label";
+
+/* On what date was the last backup done */
+"Last backup on %@" = "Last backup on %@";
 
 /* Lastname field placeholder */
 "Lastname" = "Lastname";
@@ -99,6 +126,9 @@
 
 /* Empty address alert title */
 "No address entered." = "No address entered.";
+
+/* Backup is outdated, last backup was on that date */
+"No backup since %@" = "No backup since %@";
 
 /* Transaction failed alert message */
 "No bitcoin have been taken from your wallet." = "No bitcoin have been taken from your wallet.";
@@ -134,6 +164,9 @@
 /* Remove contact alert dialog title */
 "Remove contact" = "Remove contact";
 
+/* Dropbox invalid folder alert title */
+"Selected directory is outside Dropbox folder" = "Selected directory is outside Dropbox folder";
+
 /* Send button next to passphrase */
 "Send" = "Send";
 
@@ -152,8 +185,11 @@
 /* Transactions view title */
 "Transactions" = "Transactions";
 
-/* Backup adapter up to date */
+/* Backup status: backup up to date */
 "Up to date" = "Up to date";
+
+/* Backup status: backup scheduled or in progress */
+"Waiting for backup" = "Waiting for backup";
 
 /* Sending zero bitcoin alert message */
 "Why would you want to send someone 0 BTC?" = "Why would you want to send someone 0 BTC?";
@@ -169,6 +205,12 @@
 
 /* Amount exceeds balance alert message */
 "You cannot send more money than you own." = "You cannot send more money than you own.";
+
+/* Dropbox no backup folder alert details */
+"You must install Dropbox first (see www.dropbox.com)." = "You must install Dropbox first (see www.dropbox.com).";
+
+/* Dropbox invalid folder alert details */
+"You need to choose or create a directory inside your Dropbox folder." = "You need to choose or create a directory inside your Dropbox folder.";
 
 /* Contact name empty alert message */
 "You need to give the contact a name before you can add it to the list." = "You need to give the contact a name before you can add it to the list.";
