@@ -17,11 +17,9 @@
     static HIApplicationsManager *_sharedManager = nil;
     static dispatch_once_t oncePredicate;
 
-    if (!_sharedManager) {
-        dispatch_once(&oncePredicate, ^{
-            _sharedManager = [[self alloc] init];
-        });
-    }
+    dispatch_once(&oncePredicate, ^{
+        _sharedManager = [[self alloc] init];
+    });
 
     return _sharedManager;
 }

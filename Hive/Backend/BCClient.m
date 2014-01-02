@@ -37,11 +37,9 @@ NSString * const BCClientTorDirectory = @"Tor.network";
     static BCClient *sharedClient = nil;
     static dispatch_once_t oncePredicate;
 
-    if (!sharedClient) {
-        dispatch_once(&oncePredicate, ^{
-            sharedClient = [[self alloc] initWithBaseURL:[NSURL URLWithString:kBCClientBaseURLString]];
-        });
-    }
+    dispatch_once(&oncePredicate, ^{
+        sharedClient = [[self alloc] initWithBaseURL:[NSURL URLWithString:kBCClientBaseURLString]];
+    });
 
     return sharedClient;
 }
