@@ -139,6 +139,7 @@
     HITransactionCellView *cell = [tableView makeViewWithIdentifier:tableColumn.identifier owner:self];
     HITransaction *transaction = self.arrayController.arrangedObjects[row];
 
+    cell.shareText = [self createShareTextForTransaction:transaction];
     cell.textField.attributedStringValue = [self summaryTextForTransaction:transaction];
     cell.dateLabel.stringValue = [_transactionDateFormatter stringFromDate:transaction.date];
 
@@ -175,6 +176,15 @@
     }
 
     return cell;
+}
+
+- (NSAttributedString *)createShareTextForTransaction:(HITransaction *)transaction {
+    NSString *html = NSLocalizedString(@"I just sent some Bitcoin using <a href='http//grabhive.com'>Hive</a>",
+                                       @"Share transaction template text");
+
+    return [[NSAttributedString alloc] initWithHTML:[html dataUsingEncoding:NSUTF8StringEncoding]
+                                            options:@{NSTextEncodingNameDocumentOption:@"UTF-8"}
+                                 documentAttributes:NULL];
 }
 
 - (NSAttributedString *)summaryTextForTransaction:(HITransaction *)transaction {

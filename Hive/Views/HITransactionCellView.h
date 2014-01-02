@@ -18,4 +18,6 @@
 @property (strong, nonatomic) IBOutlet NSImageView *directionMark;
 @property (strong, nonatomic) IBOutlet NSTextField *pendingLabel;
 
+@property (nonatomic, copy) NSAttributedString *shareText;
+
 @end

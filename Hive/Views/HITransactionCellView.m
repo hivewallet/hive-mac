@@ -10,4 +10,9 @@
 
 @implementation HITransactionCellView
 
+- (IBAction)shareButtonPressed:(NSButton *)sender {
+    NSSharingServicePicker *sharingServicePicker = [[NSSharingServicePicker alloc] initWithItems:@[self.shareText]];
+    [sharingServicePicker showRelativeToRect:sender.bounds ofView:sender preferredEdge:CGRectMaxXEdge];
+}
+
 @end
