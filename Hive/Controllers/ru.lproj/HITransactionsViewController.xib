@@ -107,6 +107,11 @@
                                                         </buttonCell>
                                                         <connections>
                                                             <action selector="shareButtonPressed:" target="20" id="SuS-L6-has"/>
+                                                            <binding destination="-2" name="hidden" keyPath="sharingSupported" id="p3Z-Vm-rqS">
+                                                                <dictionary key="options">
+                                                                    <string key="NSValueTransformerName">NSNegateBoolean</string>
+                                                                </dictionary>
+                                                            </binding>
                                                         </connections>
                                                     </button>
                                                 </subviews>

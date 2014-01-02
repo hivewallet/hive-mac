@@ -139,7 +139,7 @@
     HITransactionCellView *cell = [tableView makeViewWithIdentifier:tableColumn.identifier owner:self];
     HITransaction *transaction = self.arrayController.arrangedObjects[row];
 
-    cell.shareText = [self createShareTextForTransaction:transaction];
+    cell.shareText = self.sharingSupported ? [self createShareTextForTransaction:transaction] : nil;
     cell.textField.attributedStringValue = [self summaryTextForTransaction:transaction];
     cell.dateLabel.stringValue = [_transactionDateFormatter stringFromDate:transaction.date];
 
@@ -176,6 +176,10 @@
     }
 
     return cell;
+}
+
+- (BOOL)sharingSupported {
+    return NSClassFromString(@"NSSharingServicePicker") != nil;
 }
 
 - (NSAttributedString *)createShareTextForTransaction:(HITransaction *)transaction {
