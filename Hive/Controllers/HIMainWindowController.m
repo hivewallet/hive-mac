@@ -68,6 +68,23 @@ static const NSTimeInterval SlideAnimationDuration = 0.3;
                                              selector:@selector(sendWindowDidClose:)
                                                  name:HISendBitcoinsWindowDidClose
                                                object:nil];
+
+    // After everything is set up and visible, start pre-loading the other panels for smooth animation.
+    [self performSelector:@selector(preloadViews:)
+               withObject:panels
+               afterDelay:0];
+}
+
+- (void)preloadViews:(NSArray *)panels {
+    for (NSViewController *panel in panels) {
+        if (!panel.view.superview) {
+            panel.view.autoresizingMask = NSViewWidthSizable | NSViewHeightSizable;
+            panel.view.frame = _contentView.bounds;
+            [self.contentView addSubview:panel.view
+                              positioned:NSWindowBelow
+                              relativeTo:_contentView.subviews.lastObject];
+        }
+    }
 }
 
 - (void)sendWindowDidClose:(NSNotification *)notification {
