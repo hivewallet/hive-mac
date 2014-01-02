@@ -140,24 +140,34 @@
    viewForTableColumn:(NSTableColumn *)tableColumn
                   row:(NSInteger)row {
 
+    // cache some objects for optimization
+    static dispatch_once_t onceToken;
+    static BOOL sharingSupported;
+    static NSImage *plusImage, *minusImage, *btcImage;
+    static NSColor *pendingColor, *cancelledColor;
+
+    dispatch_once(&onceToken, ^{
+        sharingSupported = self.sharingSupported;
+        plusImage = [NSImage imageNamed:@"icon-transactions-plus"];
+        minusImage = [NSImage imageNamed:@"icon-transactions-minus"];
+        btcImage = [NSImage imageNamed:@"icon-transactions-btc-symbol"];
+        pendingColor = [NSColor colorWithCalibratedWhite:0.6 alpha:1.0];
+        cancelledColor = [NSColor redColor];
+    });
+
     HITransactionCellView *cell = [tableView makeViewWithIdentifier:tableColumn.identifier owner:self];
     HITransaction *transaction = self.arrayController.arrangedObjects[row];
 
-    cell.shareText = self.sharingSupported ? [self createShareTextForTransaction:transaction] : nil;
+    cell.shareText = sharingSupported ? [self createShareTextForTransaction:transaction] : nil;
     cell.textField.attributedStringValue = [self summaryTextForTransaction:transaction];
     cell.dateLabel.stringValue = [_transactionDateFormatter stringFromDate:transaction.date];
-
-    if (transaction.direction == HITransactionDirectionIncoming) {
-        cell.directionMark.image = [NSImage imageNamed:@"icon-transactions-plus"];
-    } else {
-        cell.directionMark.image = [NSImage imageNamed:@"icon-transactions-minus"];
-    }
+    cell.directionMark.image = (transaction.direction == HITransactionDirectionIncoming) ? plusImage : minusImage;
 
     if (transaction.contact && transaction.contact.avatarImage) {
         cell.imageView.image = transaction.contact.avatarImage;
         cell.imageView.imageScaling = NSImageScaleProportionallyUpOrDown;
     } else {
-        cell.imageView.image = [NSImage imageNamed:@"icon-transactions-btc-symbol"];
+        cell.imageView.image = btcImage;
         cell.imageView.imageScaling = NSImageScaleProportionallyDown;
     }
 
@@ -169,13 +179,13 @@
         case HITransactionStatusDead:
             [cell.pendingLabel setHidden:NO];
             cell.pendingLabel.stringValue = NSLocalizedString(@"CANCELLED", @"Dead transaction label");
-            cell.pendingLabel.textColor = [NSColor redColor];
+            cell.pendingLabel.textColor = cancelledColor;
             break;
 
         default:
             [cell.pendingLabel setHidden:NO];
             cell.pendingLabel.stringValue = NSLocalizedString(@"PENDING", @"Pending transaction label");
-            cell.pendingLabel.textColor = [NSColor colorWithCalibratedWhite:0.6 alpha:1.0];
+            cell.pendingLabel.textColor = pendingColor;
             break;
     }
 
