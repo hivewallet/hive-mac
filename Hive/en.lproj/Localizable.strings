@@ -37,6 +37,9 @@
 /* No comment provided by engineer. */
 "click to copy" = "click to copy";
 
+/* Confirm button next to passphrase */
+"Confirm" = "Confirm";
+
 /* Contact name empty alert title */
 "Contact can't be saved." = "Contact can't be saved.";
 
@@ -166,9 +169,6 @@
 
 /* Dropbox invalid folder alert title */
 "Selected directory is outside Dropbox folder" = "Selected directory is outside Dropbox folder";
-
-/* Send button next to passphrase */
-"Send" = "Send";
 
 /* App load error description */
 "The application data file has been removed or corrupted." = "The application data file has been removed or corrupted.";
