@@ -98,7 +98,7 @@
 "from" = "from";
 
 /* Share transaction template text */
-"I just sent some Bitcoin using <a href='http//grabhive.com'>Hive</a>" = "I just sent some Bitcoin using <a href='http//grabhive.com'>Hive</a>";
+"I just sent some Bitcoin using <a href='http://hivewallet.com'>Hive</a>" = "I just sent some Bitcoin using <a href='http://hivewallet.com'>Hive</a>";
 
 /* Install app popup title */
 "Install Hive App" = "Install Hive App";

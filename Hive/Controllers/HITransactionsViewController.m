@@ -202,7 +202,7 @@
     static NSAttributedString *string = nil;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
-        NSString *html = NSLocalizedString(@"I just sent some Bitcoin using <a href='http//grabhive.com'>Hive</a>",
+        NSString *html = NSLocalizedString(@"I just sent some Bitcoin using <a href='http://hivewallet.com'>Hive</a>",
                                            @"Share transaction template text");
 
         string = [[NSAttributedString alloc] initWithHTML:[html dataUsingEncoding:NSUTF8StringEncoding]
