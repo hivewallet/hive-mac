@@ -99,10 +99,14 @@
 }
 
 - (void)viewWillAppear {
-    for (HITransaction *transaction in self.arrayController.arrangedObjects) {
-        if (!transaction.read) {
-            transaction.read = YES;
-        }
+    [self markAllTransactionsAsRead];
+}
+
+- (void)markAllTransactionsAsRead {
+    NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:HITransactionEntity];
+    request.predicate = [NSPredicate predicateWithFormat:@"read = NO"];
+    for (HITransaction *transaction in [DBM executeFetchRequest:request error:NULL]) {
+        transaction.read = YES;
     }
 
     [DBM save:nil];
