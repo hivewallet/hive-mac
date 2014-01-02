@@ -37,6 +37,7 @@
 
 - (void)insertItemWithTitle:(NSString *)title atIndex:(NSInteger)index {
     [super insertItemWithTitle:title atIndex:index];
+    [self adjustPopUpButtonFont];
 }
 
 - (void)adjustPopUpButtonFont {
