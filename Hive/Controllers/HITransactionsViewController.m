@@ -197,12 +197,18 @@
 }
 
 - (NSAttributedString *)createShareTextForTransaction:(HITransaction *)transaction {
-    NSString *html = NSLocalizedString(@"I just sent some Bitcoin using <a href='http//grabhive.com'>Hive</a>",
-                                       @"Share transaction template text");
+    // TODO: Actually add something transaction specific?
+    static NSAttributedString *string = nil;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        NSString *html = NSLocalizedString(@"I just sent some Bitcoin using <a href='http//grabhive.com'>Hive</a>",
+                                           @"Share transaction template text");
 
-    return [[NSAttributedString alloc] initWithHTML:[html dataUsingEncoding:NSUTF8StringEncoding]
-                                            options:@{NSTextEncodingNameDocumentOption:@"UTF-8"}
-                                 documentAttributes:NULL];
+        string = [[NSAttributedString alloc] initWithHTML:[html dataUsingEncoding:NSUTF8StringEncoding]
+                                                  options:@{NSTextEncodingNameDocumentOption:@"UTF-8"}
+                                       documentAttributes:NULL];
+    });
+    return string;
 }
 
 - (NSAttributedString *)summaryTextForTransaction:(HITransaction *)transaction {
