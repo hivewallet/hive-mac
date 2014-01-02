@@ -28,6 +28,7 @@ NSString * const HISendBitcoinsWindowSuccessKey = @"success";
     HIContactAutocompleteWindowController *_autocompleteController;
     NSString *_hashAddress;
     satoshi_t _amount;
+    NSPopover *_passwordPopover;
 }
 
 @property (assign) satoshi_t amountFieldValue;
@@ -373,6 +374,7 @@ NSString * const HISendBitcoinsWindowSuccessKey = @"success";
 - (void)sendBitcoin:(uint64)satoshi toTarget:(NSString *)target password:(HIPasswordHolder *)password {
 
     NSError *error = nil;
+
     [[BCClient sharedClient] sendBitcoins:satoshi
                                    toHash:target
                                  password:password
@@ -385,6 +387,7 @@ NSString * const HISendBitcoinsWindowSuccessKey = @"success";
             [self.sendButton hideSpinner];
         }
     }];
+
     if (error) {
         if (error.code == kHIBitcoinManagerWrongPassword) {
             [self.window hiShake];
@@ -393,6 +396,7 @@ NSString * const HISendBitcoinsWindowSuccessKey = @"success";
         }
     } else {
         [self.sendButton showSpinner];
+        [self hidePasswordPopover];
     }
 }
 
@@ -538,9 +542,10 @@ NSString * const HISendBitcoinsWindowSuccessKey = @"success";
 }
 
 - (void)showPasswordPopover:(NSButton *)sender forSendingBitcoin:(uint64)bitcoin toTarget:(NSString *)target {
-    NSPopover *passwordPopover = [NSPopover new];
-    passwordPopover.behavior = NSPopoverBehaviorTransient;
-    passwordPopover.delegate = self;
+    _passwordPopover = [NSPopover new];
+    _passwordPopover.behavior = NSPopoverBehaviorTransient;
+    _passwordPopover.delegate = self;
+
     if (!self.passwordInputViewController) {
         self.passwordInputViewController = [HIPasswordInputViewController new];
         self.passwordInputViewController.prompt =
@@ -548,20 +553,28 @@ NSString * const HISendBitcoinsWindowSuccessKey = @"success";
         self.passwordInputViewController.submitLabel = NSLocalizedString(@"Send", @"Send button next to passphrase");
         __weak __typeof__ (self) weakSelf = self;
         self.passwordInputViewController.onSubmit = ^(HIPasswordHolder *passwordHolder) {
-            // TODO: Pass password to BitcoinKit
             [weakSelf sendBitcoin:bitcoin toTarget:target password:passwordHolder];
         };
     }
-    passwordPopover.contentViewController = self.passwordInputViewController;
-    [passwordPopover showRelativeToRect:sender.bounds
-                                 ofView:sender
-                          preferredEdge:NSMaxYEdge];
+
+    _passwordPopover.contentViewController = self.passwordInputViewController;
+    [_passwordPopover showRelativeToRect:sender.bounds
+                                  ofView:sender
+                           preferredEdge:NSMaxYEdge];
 }
+
+- (void)hidePasswordPopover {
+    [_passwordPopover close];
+}
+
 
 #pragma mark - NSPopoverDelegate
 
 - (void)popoverDidClose:(NSNotification *)notification {
-    [self.passwordInputViewController resetInput];
+    if (notification.object == _passwordPopover) {
+        [self.passwordInputViewController resetInput];
+        _passwordPopover = nil;
+    }
 }
 
 @end
