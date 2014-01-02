@@ -17,15 +17,20 @@
 #import "NSColor+Hive.h"
 #import "HIBitcoinFormatService.h"
 
-@interface HITransactionsViewController () {
+@interface HITransactionsViewController ()
+
+@property (strong, nonatomic) IBOutlet NSView *noTransactionsView;
+@property (strong, nonatomic) IBOutlet NSScrollView *scrollView;
+@property (strong) IBOutlet NSArrayController *arrayController;
+@property (strong) IBOutlet NSTableView *tableView;
+
+@end
+
+@implementation HITransactionsViewController {
     HIContact *_contact;
     NSDateFormatter *_transactionDateFormatter;
     NSFont *_amountLabelFont;
 }
-
-@end
-
-@implementation HITransactionsViewController
 
 - (id)init {
     self = [super initWithNibName:@"HITransactionsViewController" bundle:nil];
@@ -134,6 +139,7 @@
     HITransactionCellView *cell = [tableView makeViewWithIdentifier:tableColumn.identifier owner:self];
     HITransaction *transaction = self.arrayController.arrangedObjects[row];
 
+    cell.shareText = self.sharingSupported ? [self createShareTextForTransaction:transaction] : nil;
     cell.textField.attributedStringValue = [self summaryTextForTransaction:transaction];
     cell.dateLabel.stringValue = [_transactionDateFormatter stringFromDate:transaction.date];
 
@@ -172,6 +178,19 @@
     return cell;
 }
 
+- (BOOL)sharingSupported {
+    return NSClassFromString(@"NSSharingServicePicker") != nil;
+}
+
+- (NSAttributedString *)createShareTextForTransaction:(HITransaction *)transaction {
+    NSString *html = NSLocalizedString(@"I just sent some Bitcoin using <a href='http//grabhive.com'>Hive</a>",
+                                       @"Share transaction template text");
+
+    return [[NSAttributedString alloc] initWithHTML:[html dataUsingEncoding:NSUTF8StringEncoding]
+                                            options:@{NSTextEncodingNameDocumentOption:@"UTF-8"}
+                                 documentAttributes:NULL];
+}
+
 - (NSAttributedString *)summaryTextForTransaction:(HITransaction *)transaction {
     NSString *amountPart =
         [[HIBitcoinFormatService sharedService] stringWithDesignatorForBitcoin:transaction.absoluteAmount];
@@ -180,16 +199,17 @@
         NSLocalizedString(@"from", @"Direction label in transactions list when user is the receiver") :
         NSLocalizedString(@"to", @"Direction label in transactions list when user is the sender");
 
-    // TODO: dynamic truncation and styling for hashes
-    NSString *contactPart;
-    if (transaction.contact) {
-        contactPart = transaction.contact.firstname;
-    } else {
-        contactPart = [HIAddress truncateAddress:transaction.senderHash];
-    }
+    NSString *contactPart = transaction.contact ? transaction.contact.firstname : transaction.senderHash;
 
     NSString *text = [NSString stringWithFormat:@"%@ %@ %@", amountPart, directionPart, contactPart];
-    NSMutableAttributedString *summary = [[NSMutableAttributedString alloc] initWithString:text];
+
+    // The attribute in IB does not work for attributed strings.
+    NSMutableParagraphStyle *truncatingStyle = [[NSParagraphStyle defaultParagraphStyle] mutableCopy];
+    truncatingStyle.lineBreakMode = NSLineBreakByTruncatingTail;
+
+    NSMutableAttributedString *summary =
+        [[NSMutableAttributedString alloc] initWithString:text
+                                               attributes:@{NSParagraphStyleAttributeName: truncatingStyle}];
 
     [summary addAttribute:NSFontAttributeName
                     value:_amountLabelFont

@@ -14,11 +14,6 @@
 
 @interface HITransactionsViewController : HIViewController
 
-@property (strong, nonatomic) IBOutlet NSView *noTransactionsView;
-@property (strong, nonatomic) IBOutlet NSScrollView *scrollView;
-@property (strong) IBOutlet NSArrayController *arrayController;
-@property (strong) IBOutlet NSTableView *tableView;
-
 - (id)initWithContact:(HIContact *)contact;
 
 @end

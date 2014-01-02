@@ -5,9 +5,6 @@
 /* Class = "NSTextFieldCell"; title = "Received"; ObjectID = "22"; */
 "22.title" = "Received";
 
-/* Class = "NSTextFieldCell"; title = "Date"; ObjectID = "41"; */
-"41.title" = "Date";
-
 /* Class = "NSTextFieldCell"; title = "Looks like you haven't made any transactions yet. Send someone some Bitcoin!"; ObjectID = "54"; */
 "54.title" = "Looks like you haven't made any transactions yet. Send someone some Bitcoin!";
 
