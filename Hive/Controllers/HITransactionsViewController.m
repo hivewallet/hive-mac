@@ -17,15 +17,20 @@
 #import "NSColor+Hive.h"
 #import "HIBitcoinFormatService.h"
 
-@interface HITransactionsViewController () {
+@interface HITransactionsViewController ()
+
+@property (strong, nonatomic) IBOutlet NSView *noTransactionsView;
+@property (strong, nonatomic) IBOutlet NSScrollView *scrollView;
+@property (strong) IBOutlet NSArrayController *arrayController;
+@property (strong) IBOutlet NSTableView *tableView;
+
+@end
+
+@implementation HITransactionsViewController {
     HIContact *_contact;
     NSDateFormatter *_transactionDateFormatter;
     NSFont *_amountLabelFont;
 }
-
-@end
-
-@implementation HITransactionsViewController
 
 - (id)init {
     self = [super initWithNibName:@"HITransactionsViewController" bundle:nil];
