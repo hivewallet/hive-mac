@@ -54,13 +54,13 @@
                     <color key="borderColor" white="0.75" alpha="1" colorSpace="calibratedWhite"/>
                     <color key="fillColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                 </box>
-                <popUpButton verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="qOj-X5-bn0">
-                    <rect key="frame" x="88" y="387" width="68" height="26"/>
+                <popUpButton translatesAutoresizingMaskIntoConstraints="NO" id="qOj-X5-bn0">
+                    <rect key="frame" x="90" y="390" width="63" height="4"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="63" id="vnY-ge-9y3"/>
                     </constraints>
-                    <popUpButtonCell key="cell" type="push" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="60C-is-Qdt">
+                    <popUpButtonCell key="cell" type="bevel" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" imageScaling="proportionallyDown" inset="2" id="60C-is-Qdt">
                         <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
                         <font key="font" metaFont="menu"/>
                         <menu key="menu" title="OtherViews" id="ldN-fb-2LB"/>
@@ -91,10 +91,10 @@
                     <color key="borderColor" white="0.75" alpha="1" colorSpace="calibratedWhite"/>
                     <color key="fillColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                 </box>
-                <popUpButton verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Oga-wU-PlF">
-                    <rect key="frame" x="88" y="349" width="68" height="26"/>
+                <popUpButton translatesAutoresizingMaskIntoConstraints="NO" id="Oga-wU-PlF">
+                    <rect key="frame" x="88" y="349" width="68" height="4"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                    <popUpButtonCell key="cell" type="push" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="6nQ-ap-d7s">
+                    <popUpButtonCell key="cell" type="bevel" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" imageScaling="proportionallyDown" inset="2" id="6nQ-ap-d7s">
                         <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
                         <font key="font" metaFont="menu"/>
                         <menu key="menu" title="OtherViews" id="Rwt-9J-8Ww"/>
