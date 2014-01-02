@@ -198,8 +198,8 @@ static const NSTimeInterval HIExchangeRateAutomaticUpdateInterval = 60.0 * 60.0;
 }
 
 - (BOOL)shouldUpdateAutomatically {
-    return [[NSApplication sharedApplication] respondsToSelector:@selector(occlusionState)]
-        && [NSApplication sharedApplication].occlusionState & NSApplicationOcclusionStateVisible;
+    return ![[NSApplication sharedApplication] respondsToSelector:@selector(occlusionState)]
+        || ([NSApplication sharedApplication].occlusionState & NSApplicationOcclusionStateVisible);
 }
 
 - (void)registerAppNapNotifications {
