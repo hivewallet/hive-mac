@@ -188,9 +188,12 @@
             <rect key="frame" x="0.0" y="0.0" width="323" height="510"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="53">
-                    <rect key="frame" x="69" y="242" width="185" height="80"/>
+                <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="53">
+                    <rect key="frame" x="60" y="246" width="204" height="80"/>
                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="200" id="zPe-fV-kAD"/>
+                    </constraints>
                     <shadow key="shadow">
                         <size key="offset" width="0.0" height="1"/>
                         <color key="color" red="1" green="0.99997437" blue="0.99999129769999995" alpha="1" colorSpace="calibratedRGB"/>
@@ -201,8 +204,8 @@
                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                     </textFieldCell>
                 </textField>
-                <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="52">
-                    <rect key="frame" x="111" y="196" width="100" height="29"/>
+                <button translatesAutoresizingMaskIntoConstraints="NO" id="52">
+                    <rect key="frame" x="110" y="200" width="102" height="29"/>
                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <buttonCell key="cell" type="bevel" title="汇钱" bezelStyle="regularSquare" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="55" customClass="HIDoneButtonCell">
                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
@@ -212,12 +215,12 @@
                         <action selector="openSendBitcoinsWindow:" target="-1" id="67"/>
                     </connections>
                 </button>
-                <customView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="51">
+                <customView translatesAutoresizingMaskIntoConstraints="NO" id="51">
                     <rect key="frame" x="61" y="13" width="200" height="67"/>
                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <subviews>
-                        <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="56">
-                            <rect key="frame" x="2" y="15" width="196" height="36"/>
+                        <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="56">
+                            <rect key="frame" x="-2" y="15" width="204" height="36"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <shadow key="shadow">
                                 <size key="offset" width="0.0" height="1"/>
@@ -230,13 +233,31 @@
                             </textFieldCell>
                         </textField>
                     </subviews>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="200" id="0bF-Me-lhK"/>
+                        <constraint firstItem="56" firstAttribute="top" secondItem="51" secondAttribute="top" constant="16" id="3hu-Cb-0Ko"/>
+                        <constraint firstAttribute="height" constant="67" id="DkP-fT-6vB"/>
+                        <constraint firstAttribute="bottom" secondItem="56" secondAttribute="bottom" constant="15" id="R2x-Hb-hhv"/>
+                        <constraint firstItem="56" firstAttribute="leading" secondItem="51" secondAttribute="leading" id="kmS-bp-UDi"/>
+                        <constraint firstAttribute="trailing" secondItem="56" secondAttribute="trailing" id="stf-dh-Rdr"/>
+                    </constraints>
                 </customView>
-                <imageView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="68">
-                    <rect key="frame" x="127" y="352" width="68" height="68"/>
+                <imageView translatesAutoresizingMaskIntoConstraints="NO" id="68">
+                    <rect key="frame" x="130" y="356" width="63" height="64"/>
                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="icon-gray-btc" id="69"/>
                 </imageView>
             </subviews>
+            <constraints>
+                <constraint firstItem="68" firstAttribute="top" secondItem="50" secondAttribute="top" constant="90" id="2Lz-Lz-8Jx"/>
+                <constraint firstAttribute="centerX" secondItem="51" secondAttribute="centerX" id="4Su-aF-cUR"/>
+                <constraint firstAttribute="centerX" secondItem="52" secondAttribute="centerX" id="74U-ji-Ppo"/>
+                <constraint firstAttribute="centerX" secondItem="53" secondAttribute="centerX" id="78B-uO-cKV"/>
+                <constraint firstAttribute="centerX" secondItem="68" secondAttribute="centerX" id="PgA-0q-m7O"/>
+                <constraint firstItem="52" firstAttribute="top" secondItem="53" secondAttribute="bottom" constant="19" id="mdK-uG-X7E"/>
+                <constraint firstItem="53" firstAttribute="top" secondItem="68" secondAttribute="bottom" constant="30" id="onT-07-2WQ"/>
+                <constraint firstAttribute="bottom" secondItem="51" secondAttribute="bottom" constant="13" id="wc6-yK-DSK"/>
+            </constraints>
         </customView>
     </objects>
     <resources>
