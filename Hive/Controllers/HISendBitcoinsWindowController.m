@@ -116,21 +116,8 @@ NSString * const HISendBitcoinsWindowSuccessKey = @"success";
 - (void)setupCurrencyList {
     [self.bitcoinCurrencyPopupButton addItemsWithTitles:self.bitcoinFormatService.availableFormats];
     [self.bitcoinCurrencyPopupButton selectItemWithTitle:self.bitcoinFormatService.preferredFormat];
-    [self adjustPopUpButtonFont:self.bitcoinCurrencyPopupButton];
     [self.convertedCurrencyPopupButton addItemsWithTitles:self.exchangeRateService.availableCurrencies];
     [self.convertedCurrencyPopupButton selectItemWithTitle:_selectedCurrency];
-    [self adjustPopUpButtonFont:self.convertedCurrencyPopupButton];
-}
-
-- (void)adjustPopUpButtonFont:(NSPopUpButton *)button {
-    NSDictionary *attributes = @{
-        NSForegroundColorAttributeName: [NSColor colorWithCalibratedWhite:.42 alpha:1.0],
-        NSFontAttributeName: [NSFont controlContentFontOfSize:12],
-    };
-    for (NSMenuItem *item in button.itemArray) {
-        item.attributedTitle = [[NSAttributedString alloc] initWithString:item.title
-                                                               attributes:attributes];
-    }
 }
 
 - (void)windowWillClose:(NSNotification *)notification {
