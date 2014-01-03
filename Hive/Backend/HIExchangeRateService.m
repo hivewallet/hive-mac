@@ -198,17 +198,21 @@ static const NSTimeInterval HIExchangeRateAutomaticUpdateInterval = 60.0 * 60.0;
 }
 
 - (BOOL)shouldUpdateAutomatically {
-    return ![[NSApplication sharedApplication] respondsToSelector:@selector(occlusionState)]
-        || ([NSApplication sharedApplication].occlusionState & NSApplicationOcclusionStateVisible);
+    #pragma deploymate push "ignored-api-availability"
+    return ![NSApp respondsToSelector:@selector(occlusionState)]
+        || ([NSApp occlusionState] & NSApplicationOcclusionStateVisible);
+    #pragma deploymate pop
 }
 
 - (void)registerAppNapNotifications {
+    #pragma deploymate push "ignored-api-availability"
     if (floor(NSAppKitVersionNumber) > NSAppKitVersionNumber10_8) {
         [[NSNotificationCenter defaultCenter] addObserver:self
                                                  selector:@selector(didChangeAppNapState:)
                                                      name:NSApplicationDidChangeOcclusionStateNotification
                                                    object:nil];
     }
+    #pragma deploymate pop
 }
 
 #pragma mark - formatting

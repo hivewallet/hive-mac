@@ -19,8 +19,10 @@
 @implementation HITransactionCellView
 
 - (IBAction)shareButtonPressed:(NSButton *)sender {
+    #pragma deploymate push "ignored-api-availability"
     NSSharingServicePicker *sharingServicePicker = [[NSSharingServicePicker alloc] initWithItems:@[self.shareText]];
     [sharingServicePicker showRelativeToRect:sender.bounds ofView:sender preferredEdge:CGRectMaxXEdge];
+    #pragma deploymate pop
 }
 
 #pragma mark - mouse handling

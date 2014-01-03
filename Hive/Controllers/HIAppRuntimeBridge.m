@@ -243,12 +243,13 @@ static const NSInteger kHIAppRuntimeBridgeParsingError = -1000;
     [self callCallbackMethod:callback withArguments:&jsonValue count:1];
 }
 
-- (void)makeProxiedRequestToURL:(NSString *)url options:(WebScriptObject *)options {
+- (void)makeProxiedRequestToURL:(NSString *)address options:(WebScriptObject *)options {
 
-    ValidateArgument(NSString, url);
+    ValidateArgument(NSString, address);
     ValidateOptionalArgument(WebScriptObject, options);
 
-    NSString *hostname = [[NSURL URLWithString:url] host];
+    NSURL *url = [NSURL URLWithString:address];
+    NSString *hostname = url.host;
     NSArray *allowedHosts = _applicationManifest[@"accessedHosts"];
 
     if (![allowedHosts containsObject:hostname]) {
@@ -339,11 +340,11 @@ static const NSInteger kHIAppRuntimeBridgeParsingError = -1000;
 
 #pragma mark - Proxied request & response handling
 
-- (NSMutableURLRequest *)requestWithURL:(NSString *)URL
+- (NSMutableURLRequest *)requestWithURL:(NSURL *)URL
                                  method:(NSString *)method
                                    data:(id)data
                                 headers:(NSDictionary *)headers {
-    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:URL]];
+    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:URL];
     [request setHTTPMethod:method];
     [request setHTTPShouldHandleCookies:NO];
 
@@ -357,8 +358,9 @@ static const NSInteger kHIAppRuntimeBridgeParsingError = -1000;
         }
 
         if ([@[@"GET", @"HEAD", @"DELETE"] containsObject:method]) {
-            NSString *separator = ([URL rangeOfString:@"?"].location == NSNotFound) ? @"?" : @"&";
-            NSString *updatedURL = [URL stringByAppendingFormat:@"%@%@", separator, paramString];
+            NSString *address = URL.absoluteString;
+            NSString *separator = ([address rangeOfString:@"?"].location == NSNotFound) ? @"?" : @"&";
+            NSString *updatedURL = [address stringByAppendingFormat:@"%@%@", separator, paramString];
             [request setURL:[NSURL URLWithString:updatedURL]];
         } else {
             [request setValue:@"application/x-www-form-urlencoded; charset=UTF-8" forHTTPHeaderField:@"Content-Type"];

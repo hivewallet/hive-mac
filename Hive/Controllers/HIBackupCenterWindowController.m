@@ -204,9 +204,11 @@ static const NSTimeInterval UpdateTimerInterval = 5.0;
                                                   userInfo:nil
                                                    repeats:YES];
 
+    #pragma deploymate push "ignored-api-availability"
     if ([_updateTimer respondsToSelector:@selector(setTolerance:)]) {
         _updateTimer.tolerance = 1.0;
     }
+    #pragma deploymate pop
 
     [self updateStatus];
 }
@@ -218,7 +220,9 @@ static const NSTimeInterval UpdateTimerInterval = 5.0;
 
 // mavericks fuck yeah
 - (void)windowDidChangeOcclusionState:(NSNotification *)notification {
+    #pragma deploymate push "ignored-api-availability"
     BOOL visible = (self.window.occlusionState & NSWindowOcclusionStateVisible);
+    #pragma deploymate pop
 
     if (visible && !_updateTimer) {
         [self startTimer];
