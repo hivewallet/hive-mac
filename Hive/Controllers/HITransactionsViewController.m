@@ -213,31 +213,42 @@
 }
 
 - (NSAttributedString *)summaryTextForTransaction:(HITransaction *)transaction {
-    NSString *amountPart =
-        [[HIBitcoinFormatService sharedService] stringWithDesignatorForBitcoin:transaction.absoluteAmount];
+    NSString *text;
 
-    NSString *directionPart = (transaction.direction == HITransactionDirectionIncoming) ?
-        NSLocalizedString(@"from", @"Direction label in transactions list when user is the receiver") :
-        NSLocalizedString(@"to", @"Direction label in transactions list when user is the sender");
-
-    NSString *contactPart = transaction.contact ? transaction.contact.firstname : transaction.senderHash;
-
-    NSString *text = [NSString stringWithFormat:@"%@ %@ %@", amountPart, directionPart, contactPart];
+    // not using standard NSLocalizedString variables on purpose because we need to mark the fragments with bold
+    if (transaction.direction == HITransactionDirectionIncoming) {
+        if (transaction.contact) {
+            text = NSLocalizedString(@"Received &a from &c", @"Received amount of BTC from contact");
+        } else {
+            text = NSLocalizedString(@"Received &a", @"Received amount of BTC from unknown source");
+        }
+    } else {
+        text = NSLocalizedString(@"Sent &a to &c", @"Sent amount of BTC to a contact/address");
+    }
 
     // The attribute in IB does not work for attributed strings.
     NSMutableParagraphStyle *truncatingStyle = [[NSParagraphStyle defaultParagraphStyle] mutableCopy];
     truncatingStyle.lineBreakMode = NSLineBreakByTruncatingTail;
 
-    NSMutableAttributedString *summary =
-        [[NSMutableAttributedString alloc] initWithString:text
-                                               attributes:@{NSParagraphStyleAttributeName: truncatingStyle}];
+    NSDictionary *attributes = @{NSParagraphStyleAttributeName: truncatingStyle};
+    NSDictionary *boldAttributes = @{NSFontAttributeName: _amountLabelFont};
 
-    [summary addAttribute:NSFontAttributeName
-                    value:_amountLabelFont
-                    range:NSMakeRange(0, amountPart.length)];
-    [summary addAttribute:NSFontAttributeName
-                    value:_amountLabelFont
-                    range:NSMakeRange(amountPart.length + directionPart.length + 2, contactPart.length)];
+    NSMutableAttributedString *summary = [[NSMutableAttributedString alloc] initWithString:text attributes:attributes];
+
+    NSRange amountRange = [summary.string rangeOfString:@"&a"];
+    if (amountRange.location != NSNotFound) {
+        satoshi_t satoshi = transaction.absoluteAmount;
+        NSString *value = [[HIBitcoinFormatService sharedService] stringWithDesignatorForBitcoin:satoshi];
+        NSAttributedString *fragment = [[NSAttributedString alloc] initWithString:value attributes:boldAttributes];
+        [summary replaceCharactersInRange:amountRange withAttributedString:fragment];
+    }
+
+    NSRange contactRange = [summary.string rangeOfString:@"&c"];
+    if (contactRange.location != NSNotFound) {
+        NSString *value = transaction.contact.firstname ?: transaction.senderHash;
+        NSAttributedString *fragment = [[NSAttributedString alloc] initWithString:value attributes:boldAttributes];
+        [summary replaceCharactersInRange:contactRange withAttributedString:fragment];
+    }
 
     return summary;
 }

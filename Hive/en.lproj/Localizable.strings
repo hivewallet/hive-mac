@@ -97,11 +97,8 @@
 /* Firstname field placeholder */
 "Firstname" = "Firstname";
 
-/* Direction label in transactions list when user is the receiver */
-"from" = "from";
-
 /* Share transaction template text */
-"I just sent some Bitcoin using <a href='http://hivewallet.com'>Hive</a>" = "I just sent some Bitcoin using <a href='http://hivewallet.com'>Hive</a>";
+"I just sent some Bitcoin using Hive" = "I just sent some Bitcoin using Hive";
 
 /* Install app popup title */
 "Install Hive App" = "Install Hive App";
@@ -164,20 +161,26 @@
 /* Quit without saves error question info */
 "Quitting now will lose any changes you have made since the last successful save" = "Quitting now will lose any changes you have made since the last successful save";
 
+/* Received amount of BTC from unknown source */
+"Received &a" = "Received &a";
+
+/* Received amount of BTC from contact */
+"Received &a from &c" = "Received &a from &c";
+
 /* Remove contact alert dialog title */
 "Remove contact" = "Remove contact";
 
 /* Dropbox invalid folder alert title */
 "Selected directory is outside Dropbox folder" = "Selected directory is outside Dropbox folder";
 
+/* Sent amount of BTC to a contact/address */
+"Sent &a to &c" = "Sent &a to &c";
+
 /* App load error description */
 "The application data file has been removed or corrupted." = "The application data file has been removed or corrupted.";
 
 /* Invalid address alert title */
 "This isn't a valid Bitcoin address." = "This isn't a valid Bitcoin address.";
-
-/* Direction label in transactions list when user is the sender */
-"to" = "to";
 
 /* Transaction failed alert title */
 "Transaction could not be completed." = "Transaction could not be completed.";
