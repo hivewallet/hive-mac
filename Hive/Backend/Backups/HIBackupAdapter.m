@@ -6,6 +6,7 @@
 //  Copyright (c) 2013 Hive Developers. All rights reserved.
 //
 
+#import "BCClient.h"
 #import "HIBackupAdapter.h"
 
 static NSString *BackupSettingsKey;
@@ -144,8 +145,7 @@ static NSString * const EnabledKey = @"enabled";
 }
 
 - (NSDate *)lastWalletChange {
-    // TODO: record last change date in the wallet file
-    return [NSDate distantPast];
+    return [[BCClient sharedClient] lastWalletChangeDate] ?: [NSDate distantPast];
 }
 
 - (BOOL)updatedAfterLastWalletChange {

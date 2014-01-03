@@ -313,6 +313,10 @@ NSString * const BCClientTorDirectory = @"Tor.network";
     return [HIBitcoinManager defaultManager].isRunning;
 }
 
+- (NSDate *)lastWalletChangeDate {
+    return [[HIBitcoinManager defaultManager] lastWalletChangeDate];
+}
+
 - (void)setCheckInterval:(NSUInteger)checkInterval {
     if (checkInterval == 0) {
         return;
