@@ -205,6 +205,18 @@ static NSString * const StoreFileName = @"Hive.storedata";
 
     NSURL *standardLocation = [self persistentStoreURL];
     NSURL *backupFileLocation = [backupLocation URLByAppendingPathComponent:StoreFileName];
+    NSFileManager *fileManager = [NSFileManager defaultManager];
+
+    if ([fileManager fileExistsAtPath:backupFileLocation.path]) {
+        // apparently migrating onto an existing file will concatenate new store with the old one...
+        [fileManager removeItemAtURL:backupFileLocation error:&backupError];
+
+        if (backupError) {
+            HILogError(@"Error during store backup: %@", backupError);
+            *error = backupError;
+            return;
+        }
+    }
 
     NSPersistentStoreCoordinator *coordinator = self.persistentStoreCoordinator;
 
