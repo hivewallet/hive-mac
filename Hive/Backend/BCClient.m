@@ -20,6 +20,7 @@
 static NSString * const kBCClientBaseURLString = @"https://grabhive.com/";
 NSString * const BCClientBitcoinjDirectory = @"BitcoinJ.network";
 NSString * const BCClientTorDirectory = @"Tor.network";
+NSString * const BCClientPasswordChangedNotification = @"BCClientPasswordChangedNotification";
 
 @interface BCClient () {
     NSManagedObjectContext *_transactionUpdateContext;
@@ -150,6 +151,10 @@ NSString * const BCClientTorDirectory = @"Tor.network";
     [[HIBitcoinManager defaultManager] changeWalletPassword:fromPassword.data
                                                  toPassword:toPassword.data
                                                       error:error];
+
+    if (!(error && *error)) {
+        [[NSNotificationCenter defaultCenter] postNotificationName:BCClientPasswordChangedNotification object:self];
+    }
 }
 
 - (void)torStarted:(NSNotification *)notification {
@@ -462,6 +467,7 @@ NSString * const BCClientTorDirectory = @"Tor.network";
 
 - (void)backupWalletToDirectory:(NSURL *)backupURL error:(NSError **)error {
     NSURL *backupFileURL = [backupURL URLByAppendingPathComponent:@"bitcoinkit.wallet"];
+    HILogInfo(@"Backing up wallet file to %@", backupFileURL);
     return [[HIBitcoinManager defaultManager] exportWalletTo:backupFileURL error:error];
 }
 

@@ -6,6 +6,7 @@
 //  Copyright (c) 2013 Hive Developers. All rights reserved.
 //
 
+#import "BCClient.h"
 #import "HIBackupAdapter.h"
 #import "HIBackupManager.h"
 #import "HIDropboxBackup.h"
@@ -32,9 +33,18 @@
                       [HIDropboxBackup new],
                       [HITimeMachineBackup new],
                     ];
+
+        [[NSNotificationCenter defaultCenter] addObserver:self
+                                                 selector:@selector(onPasswordChange)
+                                                     name:BCClientPasswordChangedNotification
+                                                   object:nil];
     }
 
     return self;
+}
+
+- (void)dealloc {
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
 - (void)initializeAdapters {
@@ -51,6 +61,10 @@
 
 - (void)performBackups {
     [self.adapters makeObjectsPerformSelector:@selector(performBackup)];
+}
+
+- (void)onPasswordChange {
+    [self performBackups];
 }
 
 @end
