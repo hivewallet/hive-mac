@@ -38,6 +38,11 @@
                                                  selector:@selector(onPasswordChange)
                                                      name:BCClientPasswordChangedNotification
                                                    object:nil];
+
+        [[[NSWorkspace sharedWorkspace] notificationCenter] addObserver:self
+                                                               selector:@selector(onWakeUp)
+                                                                   name:NSWorkspaceDidWakeNotification
+                                                                 object:nil];
     }
 
     return self;
@@ -45,6 +50,7 @@
 
 - (void)dealloc {
     [[NSNotificationCenter defaultCenter] removeObserver:self];
+    [[[NSWorkspace sharedWorkspace] notificationCenter] removeObserver:self];
 }
 
 - (void)initializeAdapters {
@@ -64,6 +70,10 @@
 }
 
 - (void)onPasswordChange {
+    [self performBackups];
+}
+
+- (void)onWakeUp {
     [self performBackups];
 }
 
