@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="4510" systemVersion="12F45" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none">
+    <dependencies>
+        <deployment version="1070" defaultVersion="1070" identifier="macosx"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="4510"/>
+    </dependencies>
+    <objects>
+        <customObject id="-2" userLabel="File's Owner" customClass="HINewContactViewController">
+            <connections>
+                <outlet property="addAddressButton" destination="72" id="104"/>
+                <outlet property="avatarView" destination="3" id="16"/>
+                <outlet property="emailField" destination="76" id="90"/>
+                <outlet property="firstnameField" destination="21" id="27"/>
+                <outlet property="footerView" destination="66" id="94"/>
+                <outlet property="lastnameField" destination="23" id="28"/>
+                <outlet property="removeContactButton" destination="96" id="102"/>
+                <outlet property="scrollContent" destination="64" id="88"/>
+                <outlet property="scrollView" destination="84" id="92"/>
+                <outlet property="view" destination="1" id="2"/>
+                <outlet property="walletsView" destination="67" id="89"/>
+            </connections>
+        </customObject>
+        <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
+        <customObject id="-3" userLabel="Application"/>
+        <customView id="64" customClass="HIFlippedView">
+            <rect key="frame" x="0.0" y="0.0" width="283" height="252"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <customView id="93">
+                    <rect key="frame" x="0.0" y="0.0" width="283" height="252"/>
+                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                    <subviews>
+                        <textField verticalHuggingPriority="750" id="65">
+                            <rect key="frame" x="29" y="215" width="234" height="17"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                            <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Bitcoin addresses" id="81">
+                                <font key="font" size="13" name="Helvetica-Bold"/>
+                                <color key="textColor" red="0.57254901960000004" green="0.57254901960000004" blue="0.57254901960000004" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                            </textFieldCell>
+                        </textField>
+                        <customView id="66">
+                            <rect key="frame" x="0.0" y="0.0" width="283" height="194"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            <subviews>
+                                <button wantsLayer="YES" id="72">
+                                    <rect key="frame" x="20" y="158" width="243" height="30"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                    <shadow key="shadow" blurRadius="1">
+                                        <size key="offset" width="0.0" height="1"/>
+                                        <color key="color" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                    </shadow>
+                                    <buttonCell key="cell" type="square" title="Add address" bezelStyle="shadowlessSquare" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="80" customClass="HIButtonCell">
+                                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                        <font key="font" metaFont="system"/>
+                                    </buttonCell>
+                                    <connections>
+                                        <action selector="addAddressClicked:" target="-2" id="95"/>
+                                    </connections>
+                                </button>
+                                <button wantsLayer="YES" id="96">
+                                    <rect key="frame" x="20" y="20" width="243" height="30"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                    <shadow key="shadow" blurRadius="1">
+                                        <size key="offset" width="0.0" height="1"/>
+                                        <color key="color" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                    </shadow>
+                                    <buttonCell key="cell" type="square" title="Remove contact" bezelStyle="shadowlessSquare" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="97" customClass="HIDeleteButtonCell">
+                                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                        <font key="font" metaFont="system"/>
+                                    </buttonCell>
+                                    <connections>
+                                        <action selector="removeContactClicked:" target="-2" id="103"/>
+                                    </connections>
+                                </button>
+                                <customView wantsLayer="YES" focusRingType="none" id="73" customClass="HIBox">
+                                    <rect key="frame" x="20" y="70" width="243" height="42"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                    <subviews>
+                                        <textField verticalHuggingPriority="750" id="77">
+                                            <rect key="frame" x="11" y="13" width="42" height="17"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                            <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Email:" id="78">
+                                                <font key="font" metaFont="system"/>
+                                                <color key="textColor" red="0.75686274509999996" green="0.75686274509999996" blue="0.72549019609999998" alpha="1" colorSpace="calibratedRGB"/>
+                                                <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                            </textFieldCell>
+                                        </textField>
+                                        <textField focusRingType="none" verticalHuggingPriority="750" id="76" customClass="HITextField">
+                                            <rect key="frame" x="58" y="8" width="41" height="22"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                            <textFieldCell key="cell" lineBreakMode="truncatingTail" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" focusRingType="none" placeholderString="" id="79" customClass="HITextFieldCell">
+                                                <font key="font" size="14" name="Helvetica"/>
+                                                <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                                <color key="backgroundColor" red="0.6705882353" green="0.6705882353" blue="0.6705882353" alpha="0.0" colorSpace="calibratedRGB"/>
+                                            </textFieldCell>
+                                        </textField>
+                                    </subviews>
+                                </customView>
+                                <textField verticalHuggingPriority="750" id="74">
+                                    <rect key="frame" x="28" y="119" width="234" height="17"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Contact information" id="75">
+                                        <font key="font" size="13" name="Helvetica-Bold"/>
+                                        <color key="textColor" red="0.57254901960000004" green="0.57254901960000004" blue="0.57254901960000004" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                    </textFieldCell>
+                                </textField>
+                            </subviews>
+                        </customView>
+                        <customView id="67" customClass="HIBox">
+                            <rect key="frame" x="21" y="206" width="241" height="1"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                        </customView>
+                    </subviews>
+                </customView>
+            </subviews>
+        </customView>
+        <customView wantsLayer="YES" id="1">
+            <rect key="frame" x="0.0" y="0.0" width="275" height="375"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+            <subviews>
+                <imageView wantsLayer="YES" id="3" customClass="HIEditableImageView">
+                    <rect key="frame" x="0.0" y="311" width="65" height="65"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <imageCell key="cell" selectable="YES" editable="YES" enabled="NO" alignment="left" imageScaling="proportionallyDown" image="avatar-empty" id="4"/>
+                    <connections>
+                        <action selector="avatarChanged:" target="-2" id="113"/>
+                    </connections>
+                </imageView>
+                <customView id="11" customClass="HISeparatorView">
+                    <rect key="frame" x="0.0" y="310" width="275" height="1"/>
+                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                    <shadow key="shadow" blurRadius="1">
+                        <size key="offset" width="0.0" height="-1"/>
+                        <color key="color" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </shadow>
+                </customView>
+                <customView id="12" customClass="HISeparatorView">
+                    <rect key="frame" x="16" y="52" width="243" height="1"/>
+                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                    <shadow key="shadow" blurRadius="1">
+                        <size key="offset" width="0.0" height="-1"/>
+                        <color key="color" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </shadow>
+                </customView>
+                <button wantsLayer="YES" id="13">
+                    <rect key="frame" x="186" y="13" width="75" height="25"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
+                    <shadow key="shadow" blurRadius="1">
+                        <size key="offset" width="0.0" height="1"/>
+                        <color key="color" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                    </shadow>
+                    <buttonCell key="cell" type="bevel" title="Done" bezelStyle="regularSquare" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="14" customClass="HIDoneButtonCell">
+                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                        <font key="font" metaFont="system"/>
+                    </buttonCell>
+                    <connections>
+                        <action selector="doneClicked:" target="-2" id="36"/>
+                    </connections>
+                </button>
+                <textField focusRingType="none" verticalHuggingPriority="750" id="21" customClass="HITextField">
+                    <rect key="frame" x="70" y="330" width="81" height="22"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <textFieldCell key="cell" lineBreakMode="truncatingTail" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" focusRingType="none" placeholderString="" id="22" customClass="HITextFieldCell">
+                        <font key="font" size="16" name="Helvetica-Bold"/>
+                        <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" red="0.6705882353" green="0.6705882353" blue="0.6705882353" alpha="0.0" colorSpace="calibratedRGB"/>
+                    </textFieldCell>
+                    <connections>
+                        <outlet property="nextKeyView" destination="23" id="25"/>
+                    </connections>
+                </textField>
+                <textField focusRingType="none" verticalHuggingPriority="750" id="23" customClass="HITextField">
+                    <rect key="frame" x="155" y="330" width="80" height="22"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <textFieldCell key="cell" lineBreakMode="truncatingTail" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" focusRingType="none" placeholderString="" id="24" customClass="HITextFieldCell">
+                        <font key="font" size="16" name="Helvetica-Bold"/>
+                        <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" red="0.6705882353" green="0.6705882353" blue="0.6705882353" alpha="0.0" colorSpace="calibratedRGB"/>
+                    </textFieldCell>
+                    <connections>
+                        <outlet property="nextKeyView" destination="21" id="26"/>
+                    </connections>
+                </textField>
+                <scrollView focusRingType="none" borderType="none" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" usesPredominantAxisScrolling="NO" horizontalScrollElasticity="none" id="84">
+                    <rect key="frame" x="0.0" y="53" width="275" height="256"/>
+                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                    <clipView key="contentView" drawsBackground="NO" copiesOnScroll="NO" id="jig-CP-vci">
+                        <rect key="frame" x="0.0" y="0.0" width="275" height="256"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view id="85">
+                                <rect key="frame" x="0.0" y="0.0" width="15" height="0.0"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
+                    </clipView>
+                    <scroller key="horizontalScroller" hidden="YES" verticalHuggingPriority="750" id="86">
+                        <rect key="frame" x="-100" y="-100" width="275" height="16"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </scroller>
+                    <scroller key="verticalScroller" verticalHuggingPriority="750" doubleValue="1" id="87">
+                        <rect key="frame" x="259" y="0.0" width="16" height="256"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </scroller>
+                </scrollView>
+                <textField verticalHuggingPriority="750" id="106">
+                    <rect key="frame" x="0.0" y="311" width="65" height="16"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="edit" drawsBackground="YES" id="107">
+                        <font key="font" size="12" name="Helvetica"/>
+                        <color key="textColor" red="0.99987602229999994" green="0.99998402600000003" blue="0.99978637699999995" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="0.26450267430000002" green="0.2645250261" blue="0.2644736171" alpha="0.66000000000000003" colorSpace="calibratedRGB"/>
+                    </textFieldCell>
+                </textField>
+            </subviews>
+        </customView>
+    </objects>
+    <resources>
+        <image name="avatar-empty" width="72" height="72"/>
+    </resources>
+</document>

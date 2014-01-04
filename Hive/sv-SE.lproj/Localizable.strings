@@ -1,0 +1,220 @@
+/* Address field placeholder */
+"Address" = "Address";
+
+/* Amount exceeds balance alert title */
+"Amount exceeds balance." = "Belopp överskrider tillgångar.";
+
+/* Anonymous username for profile page */
+"Anonymous" = "Anonym";
+
+/* App load error title */
+"Application can't be loaded" = "Programmet kan inte laddas";
+
+/* Applications view title */
+"Apps" = "Apps";
+
+/* Backup status: backup can't or won't be completed */
+"Backup error" = "Fel i säkerhetskopiering";
+
+/* No comment provided by engineer. */
+"Backup hasn't been done yet" = "Säkerhetskopieringen har inte blivit färdig än";
+
+/* Backup status: backup done but not updated recently */
+"Backup problem" = "Problem med säkerhetskopiering";
+
+/* Cancel button title */
+"Cancel" = "Avbryt";
+
+/* Dead transaction label */
+"CANCELLED" = "AVBRUTEN";
+
+/* Dropbox folder save panel confirmation button */
+"Choose" = "Välj";
+
+/* No comment provided by engineer. */
+"Choose a directory inside Dropbox folder where the backup should be saved:" = "Välj en katalog i din dropbox-plats där säkerhetskopian ska lagras:";
+
+/* No comment provided by engineer. */
+"click to copy" = "klicka för att kopiera";
+
+/* Confirm button next to passphrase */
+"Confirm" = "Bekräfta";
+
+/* Contact name empty alert title */
+"Contact can't be saved." = "Kontakt kan inte sparas.";
+
+/* Contacts view title */
+"Contacts" = "Kontakter";
+
+/* No comment provided by engineer. */
+"copied!" = "kopierad!";
+
+/* initialization error */
+"Could not read wallet file. It might be damaged." = "Kan inte läsa plånboskfilen. Filen kan vara skadad.";
+
+/* Quit without saves error question message */
+"Could not save changes while quitting. Quit anyway?" = "Gick inte att spara ändringar vid avslutning. Vill du ändå avsluta?";
+
+/* initialization error */
+"Could not write wallet file. Another instance of Hive might still be running." = "Gick inte att skriva till plånboksfilen. En en annan instans av Hive kanske fortfarande körs.";
+
+/* Disable backup button title */
+"Disable" = "Inaktivera";
+
+/* Backup status: adapter disabled */
+"Disabled" = "Inaktiverad";
+
+/* Remove contact alert dialog body */
+"Do you really want to remove %@ %@ from your contact list?" = "Är du säker på att du vill ta bort %1$@ %2$@ från dina kontakter?";
+
+/* Dropbox no backup folder alert title */
+"Dropbox folder not found" = "Dropbox-katalog hittas inte";
+
+/* No comment provided by engineer. */
+"Edit contact" = "Ändra kontakt";
+
+/* No comment provided by engineer. */
+"Edit profile" = "Ändra profil";
+
+/* Email field placeholder */
+"email" = "e-post";
+
+/* Enable backup button title (no configuration required) */
+"Enable" = "Aktivera";
+
+/* Enable backup button title (requires configuration) */
+"Enable..." = "Aktivera...";
+
+/* Sending zero bitcoin alert title */
+"Enter an amount greater than zero." = "Ange ett belopp större än noll.";
+
+/* Passphrase prompt for sending */
+"Enter your passphrase to complete the transaction:" = "Ange ditt lösenord för att genomföra transaktionen:";
+
+/* Initialization error title */
+"Error" = "Fel";
+
+/* Firstname field placeholder */
+"Firstname" = "Förnamn";
+
+/* Share transaction template text */
+"I just sent some Bitcoin using Hive" = "Jag överförde några Bitcoins genom att använda mig av Hive";
+
+/* Install app popup title */
+"Install Hive App" = "Installerar Hive";
+
+/* Address caption field placeholder */
+"Label" = "Etikett";
+
+/* On what date was the last backup done */
+"Last backup on %@" = "Senaste säkerhetskopieringen var %@";
+
+/* Lastname field placeholder */
+"Lastname" = "Efernamn";
+
+/* Main address caption */
+"main" = "Huvudadress";
+
+/* Main address caption string for profiles */
+"Main address" = "Huvudadress";
+
+/* New contact view controller title */
+"New contact" = "Ny kontakt";
+
+/* No comment provided by engineer. */
+"No" = "Nej";
+
+/* Empty address alert title */
+"No address entered." = "Ingen adress ifylld";
+
+/* Backup is outdated, last backup was on that date */
+"No backup since %@" = "Ingen säkerhetskopia sedan %@";
+
+/* Transaction failed alert message */
+"No bitcoin have been taken from your wallet." = "Inga bitcoins har blivit tagna från din plånbok.";
+
+/* OK Button title
+   OK button title */
+"OK" = "OK";
+
+/* Autocomplete dropdown prompt */
+"or choose from the list" = "eller välj från listan";
+
+/* part of the balance amount that isn't available */
+"pending" = "pågående";
+
+/* Pending transaction label */
+"PENDING" = "PÅGÅENDE";
+
+/* Invalid address alert message */
+"Please check if you have entered the address correctly." = "Vänligen, kontrollera att du har fyllt i adressen korrekt.";
+
+/* Empty address alert message */
+"Please enter a valid Bitcoin address or select one from the dropdown list." = "Vänligen, fyll i en korrekt Bitcoin-adress eller välj från rullgardinslistan.";
+
+/* Profile view title string */
+"Profile" = "Profil";
+
+/* Quit anyway button title */
+"Quit anyway" = "Avsluta ändå";
+
+/* Quit without saves error question info */
+"Quitting now will lose any changes you have made since the last successful save" = "Alla ändringar efter senast lyckad lagring kommer att förloas om du avslutar nu";
+
+/* Received amount of BTC from unknown source */
+"Received &a" = "Mottaget &a";
+
+/* Received amount of BTC from contact */
+"Received &a from &c" = "Mottaget &a från &c";
+
+/* Remove contact alert dialog title */
+"Remove contact" = "Ta bort kontakt";
+
+/* Dropbox invalid folder alert title */
+"Selected directory is outside Dropbox folder" = "Välj en katalog som är utanför Dropbox-plats";
+
+/* Sent amount of BTC to a contact/address */
+"Sent &a to &c" = "Skickat &a till &c";
+
+/* App load error description */
+"The application data file has been removed or corrupted." = "Programmets datafil har blivit borttagen eller skadats.";
+
+/* Invalid address alert title */
+"This isn't a valid Bitcoin address." = "Detta är inte en giltig Bitcoin-adress.";
+
+/* Transaction failed alert title */
+"Transaction could not be completed." = "Transaktion kunde inte genomföras.";
+
+/* Transactions view title */
+"Transactions" = "Transaktion";
+
+/* Backup status: backup up to date */
+"Up to date" = "Aktuell";
+
+/* Backup status: backup scheduled or in progress */
+"Waiting for backup" = "Väntar på säkerhetskopierng";
+
+/* Sending zero bitcoin alert message */
+"Why would you want to send someone 0 BTC?" = "Varför skulle du vilja skicka någon 0 BTC?";
+
+/* Install app popup confirmation */
+"Would you like to install \"%@\" application?" = "Vill du installera appen \"%@\"?";
+
+/* No comment provided by engineer. */
+"Yes" = "Ja";
+
+/* Install app popup confirmation when app exists */
+"You already have \"%@\" application. Would you like to overwrite it?" = "Du har appen \"%@\". Vill du skriva över den nuvarande?";
+
+/* Amount exceeds balance alert message */
+"You cannot send more money than you own." = "Du kan inte skcika mer pengar än vad du äger.";
+
+/* Dropbox no backup folder alert details */
+"You must install Dropbox first (see www.dropbox.com)." = "Du måste installera dropbox först (se www.dropbox.com).";
+
+/* Dropbox invalid folder alert details */
+"You need to choose or create a directory inside your Dropbox folder." = "Du måste välja eller skapa en katalog i  din Dropbox-plats.";
+
+/* Contact name empty alert message */
+"You need to give the contact a name before you can add it to the list." = "Du måste ge kontakten ett namn innan du kan lägga till i listan";
+
