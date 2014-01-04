@@ -117,6 +117,7 @@ const NSInteger HITimeMachineBackupPathExcluded = -2;
     task.standardOutput = [NSPipe pipe];
 
     [task launch];
+    [task waitUntilExit];
 
     NSData *outputData = [[task.standardOutput fileHandleForReading] readDataToEndOfFile];
     NSString *output = [[NSString alloc] initWithData:outputData encoding:NSUTF8StringEncoding];
