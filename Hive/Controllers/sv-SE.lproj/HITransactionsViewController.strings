@@ -3,19 +3,19 @@
 "13.title" = "Text Cell";
 
 /* Class = "NSTextFieldCell"; title = "Received"; ObjectID = "22"; */
-"22.title" = "Received";
+"22.title" = "Mottaget";
 
 /* Class = "NSTextFieldCell"; title = "Date"; ObjectID = "41"; */
-"41.title" = "Date";
+"41.title" = "Datum";
 
 /* Class = "NSTextFieldCell"; title = "Looks like you haven't made any transactions yet. Send someone some Bitcoin!"; ObjectID = "54"; */
-"54.title" = "Looks like you haven't made any transactions yet. Send someone some Bitcoin!";
+"54.title" = "Det ser ut som du inte gjort några transaktioner än. Skicka några Bitcoin till någon!";
 
 /* Class = "NSButtonCell"; title = "Send Bitcoin"; ObjectID = "55"; */
-"55.title" = "Send Bitcoin";
+"55.title" = "Skicka Bitcoin";
 
 /* Class = "NSTextFieldCell"; title = "You can then use the Send button to send someone money."; ObjectID = "63"; */
-"63.title" = "You can then use the Send button to send someone money.";
+"63.title" = "Du kan sedan använda Skicka-knappen för att skicka någon pengar.";
 
 /* Class = "NSTextFieldCell"; title = "PENDING"; ObjectID = "oXJ-Jx-H6s"; */
-"oXJ-Jx-H6s.title" = "PENDING";
+"oXJ-Jx-H6s.title" = "Pågående";

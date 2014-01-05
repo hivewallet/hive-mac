@@ -1,5 +1,5 @@
 /* Address field placeholder */
-"Address" = "Address";
+"Address" = "Adress";
 
 /* Amount exceeds balance alert title */
 "Amount exceeds balance." = "Belopp överskrider tillgångar.";
