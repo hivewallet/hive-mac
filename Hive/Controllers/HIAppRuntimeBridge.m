@@ -234,6 +234,7 @@ static const NSInteger kHIAppRuntimeBridgeParsingError = -1000;
                            @"decimalSeparator": [HIBitcoinFormatService sharedService].decimalSeparator,
                            @"locale": preferredLanguages[0],
                            @"preferredCurrency": [[HIExchangeRateService sharedService] preferredCurrency],
+                           @"preferredBitcoinFormat": [[HIBitcoinFormatService sharedService] preferredFormat],
                            @"buildNumber": bundleInfo[@"CFBundleVersion"],
                            @"version": bundleInfo[@"CFBundleShortVersionString"],
                          };
