@@ -29,6 +29,7 @@ static const NSInteger kHIAppRuntimeBridgeParsingError = -1000;
     HIApplication *_application;
     NSDictionary *_applicationManifest;
     HISecureAppStorage *_secureStorage;
+    NSString *_preferredBitcoinFormat;
 }
 
 @end
@@ -55,6 +56,8 @@ static const NSInteger kHIAppRuntimeBridgeParsingError = -1000;
                         @"addExchangeRateListener:": @"addExchangeRateListener",
                         @"removeExchangeRateListener:": @"removeExchangeRateListener",
                         @"updateExchangeRateForCurrency:": @"updateExchangeRate",
+                        @"userStringForSatoshi:": @"userStringForSatoshi",
+                        @"satoshiFromUserString:": @"satoshiFromUserString",
                         };
     }
 
@@ -101,6 +104,9 @@ static const NSInteger kHIAppRuntimeBridgeParsingError = -1000;
 
         _exchangeRateListeners = [NSMutableSet new];
         _secureStorage = [[HISecureAppStorage alloc] initWithApplication:application frame:self.frame];
+
+        // We currently do not send live updates to apps, so remember this.
+        _preferredBitcoinFormat = [[HIBitcoinFormatService sharedService] preferredFormat];
     }
 
     return self;
@@ -234,7 +240,7 @@ static const NSInteger kHIAppRuntimeBridgeParsingError = -1000;
                            @"decimalSeparator": [HIBitcoinFormatService sharedService].decimalSeparator,
                            @"locale": preferredLanguages[0],
                            @"preferredCurrency": [[HIExchangeRateService sharedService] preferredCurrency],
-                           @"preferredBitcoinFormat": [[HIBitcoinFormatService sharedService] preferredFormat],
+                           @"preferredBitcoinFormat": _preferredBitcoinFormat,
                            @"buildNumber": bundleInfo[@"CFBundleVersion"],
                            @"version": bundleInfo[@"CFBundleShortVersionString"],
                          };
@@ -338,6 +344,21 @@ static const NSInteger kHIAppRuntimeBridgeParsingError = -1000;
     }
 }
 
+#pragma mark - parse & format
+
+- (NSString *)userStringForSatoshi:(NSDecimalNumber *)satoshiValue {
+    satoshi_t satoshi = [satoshiValue unsignedLongLongValue];
+    return [[HIBitcoinFormatService sharedService] stringForBitcoin:satoshi
+                                                         withFormat:_preferredBitcoinFormat];
+}
+
+- (NSNumber *)satoshiFromUserString:(NSString *)string {
+    NSError *error = nil;
+    satoshi_t satoshi = [[HIBitcoinFormatService sharedService] parseString:string
+                                                                 withFormat:_preferredBitcoinFormat
+                                                                      error:&error];
+    return error ? nil : @(satoshi);
+}
 
 #pragma mark - Proxied request & response handling
 
