@@ -64,6 +64,10 @@ const NSInteger HIDropboxBackupNotRunning = -3;
     return NO;
 }
 
+- (BOOL)requiresEncryption {
+    return YES;
+}
+
 - (BOOL)needsToBeConfigured {
     return YES;
 }

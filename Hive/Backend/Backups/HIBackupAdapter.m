@@ -56,6 +56,13 @@ static NSString * const EnabledKey = @"enabled";
     return NO;
 }
 
+/* Tells if the wallet needs to be encrypted before you turn this on (this is temporary because soon encryption
+   will be required anyway). */
+- (BOOL)requiresEncryption {
+    [self doesNotRecognizeSelector:_cmd];
+    return NO;
+}
+
 /* Check if backup status has changed, and update self.status, self.error and self.lastBackupDate if needed */
 - (void)updateStatus {
     [self doesNotRecognizeSelector:_cmd];

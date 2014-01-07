@@ -6,6 +6,7 @@
 //  Copyright (c) 2013 Hive Developers. All rights reserved.
 //
 
+#import "BCClient.h"
 #import "HIBackupCenterWindowController.h"
 #import "HIBackupActionsCellView.h"
 #import "HIBackupAdapter.h"
@@ -171,12 +172,28 @@ static const NSTimeInterval UpdateTimerInterval = 5.0;
     NSInteger row = [sender tag];
     HIBackupAdapter *adapter = _backupManager.adapters[row];
 
-    if (adapter) {
-        if (!adapter.enabled && adapter.needsToBeConfigured) {
-            [adapter configureInWindow:self.window];
-        } else {
-            adapter.enabled = !adapter.enabled;
-        }
+    if (!adapter) {
+        return;
+    }
+
+    if (adapter.requiresEncryption && ![[BCClient sharedClient] isWalletPasswordProtected]) {
+        NSAlert *alert =
+            [NSAlert alertWithMessageText:NSLocalizedString(@"You need to set a wallet password first (see Wallet menu)",
+                                                            @"Backup requires password alert title")
+                            defaultButton:NSLocalizedString(@"OK", @"OK button title")
+                          alternateButton:nil
+                              otherButton:nil
+                informativeTextWithFormat:NSLocalizedString(@"It's dangerous to upload unencrypted wallets.",
+                                                            @"Backup requires password alert details")];
+
+        [alert beginSheetModalForWindow:self.window modalDelegate:nil didEndSelector:nil contextInfo:NULL];
+        return;
+    }
+
+    if (!adapter.enabled && adapter.needsToBeConfigured) {
+        [adapter configureInWindow:self.window];
+    } else {
+        adapter.enabled = !adapter.enabled;
     }
 }
 

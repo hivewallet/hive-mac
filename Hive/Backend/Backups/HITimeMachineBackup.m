@@ -35,6 +35,11 @@ const NSInteger HITimeMachineBackupPathExcluded = -2;
     return YES;
 }
 
+- (BOOL)requiresEncryption {
+    // even if you disable the adapter, the backups are still being done...
+    return NO;
+}
+
 - (BOOL)needsToBeConfigured {
     return NO;
 }
