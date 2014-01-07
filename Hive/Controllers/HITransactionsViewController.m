@@ -40,7 +40,10 @@
         self.iconName = @"timeline";
 
         _transactionDateFormatter = [NSDateFormatter new];
-        _transactionDateFormatter.dateFormat = @"LLL d";
+        _transactionDateFormatter.dateFormat = [NSDateFormatter dateFormatFromTemplate:@"LLL d"
+                                                                               options:0
+                                                                                locale:[NSLocale  currentLocale]];
+
 
         _amountLabelFont = [NSFont fontWithName:@"Helvetica Bold" size:13.0];
     }
