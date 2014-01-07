@@ -83,6 +83,7 @@ static const NSTimeInterval SlideAnimationDuration = 0.3;
             [self.contentView addSubview:panel.view
                               positioned:NSWindowBelow
                               relativeTo:_contentView.subviews.lastObject];
+            [panel.view removeFromSuperview];
         }
     }
 }
