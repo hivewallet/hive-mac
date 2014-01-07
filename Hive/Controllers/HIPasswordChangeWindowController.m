@@ -45,6 +45,12 @@ static const NSTimeInterval IDLE_RESET_DELAY = 30.0;
 }
 
 - (IBAction)submit:(id)sender {
+    if (![self arePasswordsEqual]) {
+        [self updateValidation];
+        [self.repeatedPasswordField becomeFirstResponder];
+        return;
+    }
+
     @autoreleasepool {
         HIPasswordHolder *passwordHolder =
             self.passwordField.stringValue.length > 0
@@ -93,12 +99,10 @@ static const NSTimeInterval IDLE_RESET_DELAY = 30.0;
             [self.updatedPasswordField becomeFirstResponder];
         } else if (control == self.updatedPasswordField) {
             [self.repeatedPasswordField becomeFirstResponder];
-        } else if (self.submitButtonEnabled) {
-            [self submit:control];
         } else {
-            [self updateValidation];
-            [self.repeatedPasswordField becomeFirstResponder];
+            [self submit:control];
         }
+
         return YES;
     } else {
         return NO;
@@ -107,16 +111,16 @@ static const NSTimeInterval IDLE_RESET_DELAY = 30.0;
 
 - (void)controlTextDidChange:(NSNotification *)notification {
     // TODO: Do we impose password complexity rules?
-    BOOL passwordsEqual = [self arePasswordsEqual];
 
     self.submitButtonEnabled = (!self.passwordField.isEnabled || self.passwordField.stringValue.length > 0)
-        && self.updatedPasswordField.stringValue.length > 0 && passwordsEqual;
+        && self.updatedPasswordField.stringValue.length > 0;
 
     if (self.repeatedPasswordField != notification.object) {
         [self updateValidation];
-    } else if (passwordsEqual) {
+    } else if ([self arePasswordsEqual]) {
         [self clearValidationProblems];
     }
+
     [self updateIdleResetDelay];
 }
 
