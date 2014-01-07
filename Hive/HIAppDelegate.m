@@ -63,6 +63,13 @@ void handleException(NSException *exception) {
 #ifndef DEBUG
     PFMoveToApplicationsFolderIfNecessary();
 #endif
+
+    // this needs to be set up *before* applicationDidFinishLaunching,
+    // otherwise links that cause the app to be launched when it's not running will not be handled
+    [[NSAppleEventManager sharedAppleEventManager] setEventHandler:self
+                                                       andSelector:@selector(handleURLEvent:withReplyEvent:)
+                                                     forEventClass:kInternetEventClass
+                                                        andEventID:kAEGetURL];
 }
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
@@ -92,11 +99,6 @@ void handleException(NSException *exception) {
                                              selector:@selector(popupWindowWillClose:)
                                                  name:NSWindowWillCloseNotification
                                                object:nil];
-
-    [[NSAppleEventManager sharedAppleEventManager] setEventHandler:self
-                                                       andSelector:@selector(handleURLEvent:withReplyEvent:)
-                                                     forEventClass:kInternetEventClass
-                                                        andEventID:kAEGetURL];
 
     dispatch_async(dispatch_get_main_queue(), ^{
         [self initializeBackups];
@@ -271,20 +273,26 @@ void handleException(NSException *exception) {
 // handler for bitcoin:xxx URLs
 - (void)handleURLEvent:(NSAppleEventDescriptor *)event withReplyEvent:(NSAppleEventDescriptor *)reply {
     NSString *URLString = [[event paramDescriptorForKeyword:keyDirectObject] stringValue];
+    HILogDebug(@"Opening bitcoin URL %@", URLString);
+
     HIBitcoinURL *bitcoinURL = [[HIBitcoinURL alloc] initWithURLString:URLString];
+    HILogDebug(@"Parsed URL as %@", bitcoinURL);
 
     if (bitcoinURL.valid) {
-        HISendBitcoinsWindowController *window = [self sendBitcoinsWindow];
+        // run this asynchronously, in case the app is still launching and UI is not fully set up yet
+        dispatch_async(dispatch_get_main_queue(), ^{
+            HISendBitcoinsWindowController *window = [self sendBitcoinsWindow];
 
-        if (bitcoinURL.address) {
-            [window setHashAddress:bitcoinURL.address];
-        }
+            if (bitcoinURL.address) {
+                [window setHashAddress:bitcoinURL.address];
+            }
 
-        if (bitcoinURL.amount) {
-            [window setLockedAmount:bitcoinURL.amount];
-        }
+            if (bitcoinURL.amount) {
+                [window setLockedAmount:bitcoinURL.amount];
+            }
 
-        [window showWindow:self];
+            [window showWindow:self];
+        });
     }
 }
 

@@ -77,4 +77,9 @@ static NSString * const BitcoinURLPrefix = @"bitcoin:";
     return parameters;
 }
 
+- (NSString *)description {
+    return [NSString stringWithFormat:@"<BitcoinURL: %p, valid = %d, address = %@, amount = %lld, parameters = %@>",
+            self, _valid, _address, _amount, _parameters];
+}
+
 @end
