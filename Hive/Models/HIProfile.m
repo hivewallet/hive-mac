@@ -16,13 +16,33 @@
 
 @implementation HIProfile
 
++ (void)initialize {
+    HIProfile *profile = [[HIProfile alloc] init];
+
+    if (![profile profileData]) {
+        // try to figure out user's name based on account data
+        NSString *fullName = NSFullUserName() ?: NSUserName();
+
+        if (fullName) {
+            NSRange space = [fullName rangeOfString:@" "];
+
+            if (space.location != NSNotFound) {
+                profile.firstname = [fullName substringToIndex:space.location];
+                profile.lastname = [fullName substringFromIndex:(space.location + 1)];
+            } else {
+                profile.firstname = fullName;
+            }
+        }
+    }
+}
+
 - (NSDictionary *)profileData {
     return [[NSUserDefaults standardUserDefaults] objectForKey:@"Profile"];
 }
 
 - (void)updateField:(NSString *)key withValue:(id)value {
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    NSMutableDictionary *data = [[defaults objectForKey:@"Profile"] mutableCopy];
+    NSMutableDictionary *data = [[defaults objectForKey:@"Profile"] mutableCopy] ?: [NSMutableDictionary new];
 
     if (value) {
         data[key] = value;

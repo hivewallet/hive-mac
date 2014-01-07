@@ -87,7 +87,6 @@ void handleException(NSException *exception) {
      @"Currency": @1,
      @"FirstRun": @YES,
      @"LastBalance": @0,
-     @"Profile": @{},
      @"WebKitDeveloperExtras": @YES
     }];
 
