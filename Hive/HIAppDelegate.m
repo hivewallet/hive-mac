@@ -245,11 +245,13 @@ void handleException(NSException *exception) {
 }
 
 - (void)rebuildTransactionListIfNeeded {
-    NSString *lastVersion = [[NSUserDefaults standardUserDefaults] objectForKey:LastVersionKey];
-    NSString *versionAfterUpdate = @"2013121701";
+    // we should be able to remove this in a few versions, this only happens if you run older versions of Hive
+    NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:HITransactionEntity];
+    request.predicate = [NSPredicate predicateWithFormat:@"date > %@", [NSDate date]];
+    NSUInteger count = [DBM countForFetchRequest:request error:NULL];
 
-    if ([lastVersion isLessThan:versionAfterUpdate]) {
-        HILogInfo(@"Rebuilding transaction list to match latest schema (%@ < %@)", lastVersion, versionAfterUpdate);
+    if (count > 0) {
+        HILogInfo(@"Found some transactions with invalid date, rebuilding transaction list");
 
         [[BCClient sharedClient] clearTransactionsList];
         [[BCClient sharedClient] rebuildTransactionsList];
