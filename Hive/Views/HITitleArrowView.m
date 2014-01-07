@@ -21,8 +21,6 @@
     self = [super initWithFrame:frame];
 
     if (self) {
-        self.autoresizingMask = NSViewMaxXMargin | NSViewHeightSizable;
-
         _strokeColor = [NSColor colorWithCalibratedWhite:0.0 alpha:0.75];
 
         self.layer.shadowColor = [[NSColor whiteColor] hiNativeColor];
