@@ -192,7 +192,6 @@ void handleException(NSException *exception) {
 }
 
 - (void)showInitializationError:(NSError *)error {
-    // TODO: Look at error code (e.g. kHIBitcoinManagerUnreadableWallet) and offer specific solution.
     NSString *message = nil;
 
     if (error.code == kHIBitcoinManagerUnreadableWallet) {
