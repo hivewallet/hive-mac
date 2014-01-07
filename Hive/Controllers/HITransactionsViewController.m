@@ -28,7 +28,7 @@
 
 @implementation HITransactionsViewController {
     HIContact *_contact;
-    NSDateFormatter *_transactionDateFormatter;
+    NSDateFormatter *_transactionDateFormatter, *_fullTransactionDateFormatter;
     NSFont *_amountLabelFont;
 }
 
@@ -40,10 +40,14 @@
         self.iconName = @"timeline";
 
         _transactionDateFormatter = [NSDateFormatter new];
-        _transactionDateFormatter.dateFormat = [NSDateFormatter dateFormatFromTemplate:@"LLL d"
+        _transactionDateFormatter.dateFormat = [NSDateFormatter dateFormatFromTemplate:@"LLL d jj:mm a"
                                                                                options:0
                                                                                 locale:[NSLocale  currentLocale]];
 
+        _fullTransactionDateFormatter = [NSDateFormatter new];
+        _fullTransactionDateFormatter.dateFormat = [NSDateFormatter dateFormatFromTemplate:@"LLL d YYYY jj:mm a"
+                                                                                   options:0
+                                                                                    locale:[NSLocale  currentLocale]];
 
         _amountLabelFont = [NSFont fontWithName:@"Helvetica Bold" size:13.0];
     }
@@ -164,7 +168,7 @@
 
     cell.shareText = sharingSupported ? [self createShareTextForTransaction:transaction] : nil;
     cell.textField.attributedStringValue = [self summaryTextForTransaction:transaction];
-    cell.dateLabel.stringValue = [_transactionDateFormatter stringFromDate:transaction.date];
+    cell.dateLabel.stringValue = [self dateTextForTransaction:transaction];
     cell.directionMark.image = (transaction.direction == HITransactionDirectionIncoming) ? plusImage : minusImage;
 
     if (transaction.contact && transaction.contact.avatarImage) {
@@ -254,6 +258,18 @@
     }
 
     return summary;
+}
+
+- (NSString *)dateTextForTransaction:(HITransaction *)transaction {
+    NSCalendar *calendar = [NSCalendar currentCalendar];
+    NSInteger currentYear = [calendar component:NSCalendarUnitYear fromDate:[NSDate date]];
+    NSInteger transactionYear = [calendar component:NSCalendarUnitYear fromDate:transaction.date];
+
+    if (currentYear == transactionYear) {
+        return [_transactionDateFormatter stringFromDate:transaction.date];
+    } else {
+        return [_fullTransactionDateFormatter stringFromDate:transaction.date];
+    }
 }
 
 - (void)tableViewSelectionDidChange:(NSNotification *)notification {
