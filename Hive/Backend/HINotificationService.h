@@ -4,6 +4,7 @@
 @property (nonatomic, assign) BOOL enabled;
 
 @property (nonatomic, copy) void (^onTransactionClicked)();
+@property (nonatomic, copy) void (^onBackupErrorClicked)();
 
 + (HINotificationService *)sharedService;
 

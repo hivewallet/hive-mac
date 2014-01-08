@@ -194,6 +194,9 @@ void handleException(NSException *exception) {
     [HINotificationService sharedService].onTransactionClicked = ^{
         [weakSelf showWindowWithPanel:[HITransactionsViewController class]];
     };
+    [HINotificationService sharedService].onBackupErrorClicked = ^{
+        [weakSelf showBackupCenter:nil];
+    };
     [HINotificationService sharedService].enabled = YES;
 
     NSSetUncaughtExceptionHandler(&handleException);
