@@ -222,7 +222,7 @@
 - (NSAttributedString *)summaryTextForTransaction:(HITransaction *)transaction {
     NSString *text;
 
-    // not using standard NSLocalizedString variables on purpose because we need to mark the fragments with bold
+    // not using standard localized string variables on purpose because we need to mark the fragments with bold
     if (transaction.direction == HITransactionDirectionIncoming) {
         if (transaction.contact) {
             text = NSLocalizedString(@"Received &a from &c", @"Received amount of BTC from contact");

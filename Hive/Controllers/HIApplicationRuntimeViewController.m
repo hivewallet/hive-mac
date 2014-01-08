@@ -131,7 +131,7 @@
         NSRunAlertPanel(NSLocalizedString(@"Application can't be loaded", @"App load error title"),
                         NSLocalizedString(@"The application data file has been removed or corrupted.",
                                           @"App load error description"),
-                        NSLocalizedString(@"OK", @"OK Button title"),
+                        NSLocalizedString(@"OK", @"OK button title"),
                         nil, nil);
     }
 }

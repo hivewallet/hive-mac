@@ -505,7 +505,7 @@ NSString * const HISendBitcoinsWindowSuccessKey = @"success";
 
     NSString *title = [NSString stringWithFormat:
                        NSLocalizedString(@"Are you sure you want to send %@ (%@) to %@?",
-                                         @"Large amount warning title"),
+                                         @"Large amount warning title (btc, fiat amount and address)"),
                        formattedBitcoinAmount, formattedFiatAmount, self.nameLabel.stringValue];
 
     [alert setMessageText:title];

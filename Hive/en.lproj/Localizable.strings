@@ -13,6 +13,9 @@
 /* Applications view title */
 "Apps" = "Apps";
 
+/* Large amount warning title (btc, fiat amount and address) */
+"Are you sure you want to send %@ (%@) to %@?" = "Are you sure you want to send %1$@ (%2$@) to %3$@?";
+
 /* Backup status: backup can't or won't be completed */
 "Backup error" = "Backup error";
 
@@ -64,11 +67,14 @@
 /* Backup status: adapter disabled */
 "Disabled" = "Disabled";
 
-/* Remove contact alert dialog body */
-"Do you really want to remove %@ %@ from your contact list?" = "Do you really want to remove %1$@ %2$@ from your contact list?";
+/* Remove contact alert dialog title */
+"Do you really want to remove %@ from your contact list?" = "Do you really want to remove %@ from your contact list?";
+
+/* Install app popup title */
+"Do you want to add \"%@\" to Hive?" = "Do you want to add \"%@\" to Hive?";
 
 /* Dropbox no backup folder alert title */
-"Dropbox folder not found" = "Dropbox folder not found";
+"Dropbox folder not found." = "Dropbox folder not found.";
 
 /* No comment provided by engineer. */
 "Edit contact" = "Edit contact";
@@ -91,17 +97,20 @@
 /* Passphrase prompt for sending */
 "Enter your passphrase to complete the transaction:" = "Enter your passphrase to complete the transaction:";
 
-/* Initialization error title */
-"Error" = "Error";
-
 /* Firstname field placeholder */
 "Firstname" = "Firstname";
+
+/* Initialization error title */
+"Hive cannot be started." = "Hive cannot be started.";
 
 /* Share transaction template text */
 "I just sent some Bitcoin using Hive" = "I just sent some Bitcoin using Hive";
 
-/* Install app popup title */
-"Install Hive App" = "Install Hive App";
+/* Install app button title */
+"Install" = "Install";
+
+/* Backup requires password alert details */
+"It's dangerous to upload unencrypted wallets." = "It's dangerous to upload unencrypted wallets.";
 
 /* Address caption field placeholder */
 "Label" = "Label";
@@ -121,9 +130,6 @@
 /* New contact view controller title */
 "New contact" = "New contact";
 
-/* No comment provided by engineer. */
-"No" = "No";
-
 /* Empty address alert title */
 "No address entered." = "No address entered.";
 
@@ -133,15 +139,11 @@
 /* Transaction failed alert message */
 "No bitcoin have been taken from your wallet." = "No bitcoin have been taken from your wallet.";
 
-/* OK Button title
-   OK button title */
+/* OK button title */
 "OK" = "OK";
 
 /* Autocomplete dropdown prompt */
 "or choose from the list" = "or choose from the list";
-
-/* part of the balance amount that isn't available */
-"pending" = "pending";
 
 /* Pending transaction label */
 "PENDING" = "PENDING";
@@ -167,20 +169,38 @@
 /* Received amount of BTC from contact */
 "Received &a from &c" = "Received &a from &c";
 
-/* Remove contact alert dialog title */
-"Remove contact" = "Remove contact";
+/* Install app button title when app exists */
+"Reinstall" = "Reinstall";
+
+/* No comment provided by engineer. */
+"Remove" = "Remove";
 
 /* Dropbox invalid folder alert title */
-"Selected directory is outside Dropbox folder" = "Selected directory is outside Dropbox folder";
+"Selected directory is outside Dropbox folder." = "Selected directory is outside Dropbox folder.";
+
+/* Send button title */
+"Send" = "Send";
 
 /* Sent amount of BTC to a contact/address */
 "Sent &a to &c" = "Sent &a to &c";
 
+/* Amount exceeds available balance alert title */
+"Some funds are temporarily unavailable." = "Some funds are temporarily unavailable.";
+
 /* App load error description */
 "The application data file has been removed or corrupted." = "The application data file has been removed or corrupted.";
 
+/* Install app popup warning message when app exists */
+"The existing app file will be replaced by the new version. This will not affect any app settings or saved data." = "The existing app file will be replaced by the new version. This will not affect any app settings or saved data.";
+
+/* Large amount warning message */
+"This is more than what you usually send." = "This is more than what you usually send.";
+
 /* Invalid address alert title */
 "This isn't a valid Bitcoin address." = "This isn't a valid Bitcoin address.";
+
+/* Amount exceeds available balance alert message */
+"To send this transaction, you'll need to wait for your pending transactions to be confirmed first (this shouldn't take more than a few minutes)." = "To send this transaction, you'll need to wait for your pending transactions to be confirmed first (this shouldn't take more than a few minutes).";
 
 /* Transaction failed alert title */
 "Transaction could not be completed." = "Transaction could not be completed.";
@@ -194,20 +214,20 @@
 /* Backup status: backup scheduled or in progress */
 "Waiting for backup" = "Waiting for backup";
 
+/* Install app popup warning message */
+"We cannot guarantee the safety of all apps - please be careful if you download Hive apps from third party sites." = "We cannot guarantee the safety of all apps - please be careful if you download Hive apps from third party sites.";
+
+/* Button to show info about pending funds */
+"What does this mean?" = "What does this mean?";
+
 /* Sending zero bitcoin alert message */
 "Why would you want to send someone 0 BTC?" = "Why would you want to send someone 0 BTC?";
 
-/* Install app popup confirmation */
-"Would you like to install \"%@\" application?" = "Would you like to install \"%@\" application?";
-
-/* No comment provided by engineer. */
-"Yes" = "Yes";
-
-/* Install app popup confirmation when app exists */
-"You already have \"%@\" application. Would you like to overwrite it?" = "You already have \"%@\" application. Would you like to overwrite it?";
-
 /* Amount exceeds balance alert message */
 "You cannot send more money than you own." = "You cannot send more money than you own.";
+
+/* Install app popup title when app exists */
+"You have already added \"%@\" to Hive. Would you like to overwrite it?" = "You have already added \"%@\" to Hive. Would you like to overwrite it?";
 
 /* Dropbox no backup folder alert details */
 "You must install Dropbox first (see www.dropbox.com)." = "You must install Dropbox first (see www.dropbox.com).";
@@ -217,4 +237,10 @@
 
 /* Contact name empty alert message */
 "You need to give the contact a name before you can add it to the list." = "You need to give the contact a name before you can add it to the list.";
+
+/* Backup requires password alert title */
+"You need to set a wallet password first (see Wallet menu)." = "You need to set a wallet password first (see Wallet menu).";
+
+/* Remove contact alert dialog body */
+"You won't be able to undo this operation." = "You won't be able to undo this operation.";
 
