@@ -34,8 +34,8 @@
 /* Quit without saves error question message */
 "Could not save changes while quitting. Quit anyway?" = "Wijzigingen konden niet worden opgeslagen. Toch stoppen?";
 
-/* Remove contact alert dialog body */
-"Do you really want to remove %@ %@ from your contact list?" = "Wilt u %1$@ %2$@ echt verwijderen uit uw contactenlijst?";
+/* Remove contact alert dialog title */
+"Do you really want to remove %@ from your contact list?" = "Wilt u %@ echt verwijderen uit uw contactenlijst?";
 
 /* No comment provided by engineer. */
 "Edit contact" = "Wijzig contact";

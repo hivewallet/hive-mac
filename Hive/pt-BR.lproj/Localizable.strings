@@ -34,8 +34,8 @@
 /* Quit without saves error question message */
 "Could not save changes while quitting. Quit anyway?" = "Não foi possível salvar as alterações durante o fechamento. Deseja fechar mesmo assim?";
 
-/* Remove contact alert dialog body */
-"Do you really want to remove %@ %@ from your contact list?" = "Você realmente deseja remover %1$@ %2$@ da sua lista de contatos?";
+/* Remove contact alert dialog title */
+"Do you really want to remove %@ from your contact list?" = "Você realmente deseja remover %@ da sua lista de contatos?";
 
 /* No comment provided by engineer. */
 "Edit contact" = "Editar contato";

@@ -34,8 +34,8 @@
 /* Quit without saves error question message */
 "Could not save changes while quitting. Quit anyway?" = "プログラムを止めるには変更を保存出来なかった。それでも閉じる？";
 
-/* Remove contact alert dialog body */
-"Do you really want to remove %@ %@ from your contact list?" = "本当に %1$@ %2$@ をコンタクトリストから外す？";
+/* Remove contact alert dialog title */
+"Do you really want to remove %@ from your contact list?" = "本当に %@ をコンタクトリストから外す？";
 
 /* No comment provided by engineer. */
 "Edit contact" = "コンタクトを変更";

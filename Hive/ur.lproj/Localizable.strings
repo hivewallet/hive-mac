@@ -34,8 +34,8 @@
 /* Quit without saves error question message */
 "Could not save changes while quitting. Quit anyway?" = "مکمل بند کرنے سے تبدیلیاں محفوظ نہیں ھونگی. بہر حال بند کریں؟";
 
-/* Remove contact alert dialog body */
-"Do you really want to remove %@ %@ from your contact list?" = "کیا آپ واقعی @$2% @$1% کواپنی رابطہ فہرست میں سے خارج کرنا چاہتے ہیں ؟";
+/* Remove contact alert dialog title */
+"Do you really want to remove %@ from your contact list?" = "کیا آپ واقعی %@ کواپنی رابطہ فہرست میں سے خارج کرنا چاہتے ہیں ؟";
 
 /* No comment provided by engineer. */
 "Edit contact" = "رابطہ میں ترمیم کریں";

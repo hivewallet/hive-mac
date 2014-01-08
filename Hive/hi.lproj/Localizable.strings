@@ -34,8 +34,8 @@
 /* Quit without saves error question message */
 "Could not save changes while quitting. Quit anyway?" = "सेव चेन्ज नही हुआ है बंद से .कैसे भी बंद करे?";
 
-/* Remove contact alert dialog body */
-"Do you really want to remove %@ %@ from your contact list?" = "तुम सच %1$@ %2$@ आपकी संपर्क सूची से% को दूर करना चाहते हैं?";
+/* Remove contact alert dialog title */
+"Do you really want to remove %@ from your contact list?" = "तुम सच %@ आपकी संपर्क सूची से% को दूर करना चाहते हैं?";
 
 /* No comment provided by engineer. */
 "Edit contact" = "एडिट कोंटेक्ट";

@@ -34,8 +34,8 @@
 /* Quit without saves error question message */
 "Could not save changes while quitting. Quit anyway?" = "لا يمكن حفظ التغييرات أثناء الأغلاق. هل تود المتابعة ؟";
 
-/* Remove contact alert dialog body */
-"Do you really want to remove %@ %@ from your contact list?" = "هل ترغب فى ازالة %1$@ %2$@ من جعات الاتصال الخاصة بك";
+/* Remove contact alert dialog title */
+"Do you really want to remove %@ from your contact list?" = "هل ترغب فى ازالة %@ من جعات الاتصال الخاصة بك";
 
 /* No comment provided by engineer. */
 "Edit contact" = "تعديل جهة الاتصال";

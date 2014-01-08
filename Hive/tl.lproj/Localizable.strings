@@ -34,8 +34,8 @@
 /* Quit without saves error question message */
 "Could not save changes while quitting. Quit anyway?" = "Hinde mai-save ang mga binago habang nag-quit. Ituloy ang pag - quit?";
 
-/* Remove contact alert dialog body */
-"Do you really want to remove %@ %@ from your contact list?" = "Gusto mo ba talaga tanggalin %1$@ %2$@ sa iyong listahan ng mga contacts?";
+/* Remove contact alert dialog title */
+"Do you really want to remove %@ from your contact list?" = "Gusto mo ba talaga tanggalin %@ sa iyong listahan ng mga contacts?";
 
 /* No comment provided by engineer. */
 "Edit contact" = "Baguhin ang contact";

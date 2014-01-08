@@ -34,8 +34,8 @@
 /* Quit without saves error question message */
 "Could not save changes while quitting. Quit anyway?" ="나가는 동안 변경된 부분을 저장할 수 없었습니다. 그래도 나가시겠습니까?";
 
-/* Remove contact alert dialog body */
-"Do you really want to remove %@ %@ from your contact list?" = "정말로 %1$@ %2$@ 을(를) 연락처에서 삭제하시겠습니까?";
+/* Remove contact alert dialog title */
+"Do you really want to remove %@ from your contact list?" = "정말로 %@ 을(를) 연락처에서 삭제하시겠습니까?";
 
 /* No comment provided by engineer. */
 "Edit contact" = "연락처 수정";

@@ -1,4 +1,4 @@
-﻿/* App load error description */
+/* App load error description */
 "A network error has occurred or the application data file has been removed or corrupted." = "Προέκυψε κάποιο σφάλμα δικτύου ή τα δεδομένα της εφαρμογής έχουν διαγραφεί / καταστραφεί.";
 
 /* Address field placeholder */
@@ -34,8 +34,8 @@
 /* Quit without saves error question message */
 "Could not save changes while quitting. Quit anyway?" = "Αδύνατη η αποθήκευση των αλλαγών κατά την έξοδο. Είστε σίγουροι;";
 
-/* Remove contact alert dialog body */
-"Do you really want to remove %@ %@ from your contact list?" = "Είστε σίγουροι πως θέλετε ν' αφαιρέσετε τον/ην %1$@ %2$@ από τη λίστα επαφών σας;";
+/* Remove contact alert dialog title */
+"Do you really want to remove %@ from your contact list?" = "Είστε σίγουροι πως θέλετε ν' αφαιρέσετε τον/ην %@ από τη λίστα επαφών σας;";
 
 /* No comment provided by engineer. */
 "Edit contact" = "Επεξεργασία επαφής";

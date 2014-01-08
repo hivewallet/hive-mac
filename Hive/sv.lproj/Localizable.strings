@@ -64,11 +64,11 @@
 /* Backup status: adapter disabled */
 "Disabled" = "Inaktiverad";
 
-/* Remove contact alert dialog body */
-"Do you really want to remove %@ %@ from your contact list?" = "Är du säker på att du vill ta bort %1$@ %2$@ från dina kontakter?";
+/* Remove contact alert dialog title */
+"Do you really want to remove %@ from your contact list?" = "Är du säker på att du vill ta bort %@ från dina kontakter?";
 
 /* Dropbox no backup folder alert title */
-"Dropbox folder not found" = "Dropbox-katalog hittas inte";
+"Dropbox folder not found." = "Dropbox-katalog hittas inte.";
 
 /* No comment provided by engineer. */
 "Edit contact" = "Ändra kontakt";
@@ -171,7 +171,7 @@
 "Remove contact" = "Ta bort kontakt";
 
 /* Dropbox invalid folder alert title */
-"Selected directory is outside Dropbox folder" = "Välj en katalog som är utanför Dropbox-plats";
+"Selected directory is outside Dropbox folder." = "Välj en katalog som är utanför Dropbox-plats.";
 
 /* Sent amount of BTC to a contact/address */
 "Sent &a to &c" = "Skickat &a till &c";

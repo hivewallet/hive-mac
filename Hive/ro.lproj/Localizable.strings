@@ -34,8 +34,8 @@
 /* Quit without saves error question message */
 "Could not save changes while quitting. Quit anyway?" = "Schimbările nu pot fi salvate în timpul închiderii. închideți oricum?";
 
-/* Remove contact alert dialog body */
-"Do you really want to remove %@ %@ from your contact list?" = "Sigur doriți să ștergeți %1$@ %2$@ din lista de contacte?";
+/* Remove contact alert dialog title */
+"Do you really want to remove %@ from your contact list?" = "Sigur doriți să ștergeți %@ din lista de contacte?";
 
 /* No comment provided by engineer. */
 "Edit contact" = "Editare contact";

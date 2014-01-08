@@ -34,8 +34,8 @@
 /* Quit without saves error question message */
 "Could not save changes while quitting. Quit anyway?" = "退出时无法保存被更改的项目。真的要退出吗？";
 
-/* Remove contact alert dialog body */
-"Do you really want to remove %@ %@ from your contact list?" = "您要从联系簿中把 %1$@ %2$@ 删除掉吗？";
+/* Remove contact alert dialog title */
+"Do you really want to remove %@ from your contact list?" = "您要从联系簿中把 %@ 删除掉吗？";
 
 /* No comment provided by engineer. */
 "Edit contact" = "更改联系";

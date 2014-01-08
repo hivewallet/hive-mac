@@ -34,8 +34,8 @@
 /* Quit without saves error question message */
 "Could not save changes while quitting. Quit anyway?" = "Ændringerne blev ikke arkiveret ved afslutningen. Afslut alligevel?";
 
-/* Remove contact alert dialog body */
-"Do you really want to remove %@ %@ from your contact list?" = "Er du sikker på at du ønsker at fjerne %1$@ %2$@ fra din kontaktliste?";
+/* Remove contact alert dialog title */
+"Do you really want to remove %@ from your contact list?" = "Er du sikker på at du ønsker at fjerne %@ fra din kontaktliste?";
 
 /* No comment provided by engineer. */
 "Edit contact" = "Rediger";

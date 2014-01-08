@@ -34,8 +34,8 @@
 /* Quit without saves error question message */
 "Could not save changes while quitting. Quit anyway?" = "Izmene nisu uspešno sačuvane prilikom izlaženja. Izaći svejedno?";
 
-/* Remove contact alert dialog body */
-"Do you really want to remove %@ %@ from your contact list?" = "Da li zaista želite da uklonite %1$@ %2$@ iz vaše liste kontakata?";
+/* Remove contact alert dialog title */
+"Do you really want to remove %@ from your contact list?" = "Da li zaista želite da uklonite %@ iz vaše liste kontakata?";
 
 /* No comment provided by engineer. */
 "Edit contact" = "Izmenite kontakt";
