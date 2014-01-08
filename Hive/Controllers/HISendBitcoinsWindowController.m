@@ -358,6 +358,9 @@ NSString * const HISendBitcoinsWindowSuccessKey = @"success";
     else if (![[HIBitcoinManager defaultManager] isAddressValid:target]) {
         [self showInvalidAddressAlert];
     }
+    else if ([[HIBitcoinManager defaultManager].walletAddress isEqual:target]) {
+        [self showOwnAddressAlert];
+    }
     else if (![HITransaction isAmountWithinExpectedRange:satoshi]) {
         [self showLargeAmountAlertForAmount:satoshi toTarget:target button:sender];
     }
@@ -490,6 +493,14 @@ NSString * const HISendBitcoinsWindowSuccessKey = @"success";
 
                      message:NSLocalizedString(@"Please check if you have entered the address correctly.",
                                                @"Invalid address alert message")];
+}
+
+- (void)showOwnAddressAlert {
+    [self showAlertWithTitle:NSLocalizedString(@"This is your wallet address.",
+                                               @"Own address alert title")
+
+                     message:NSLocalizedString(@"Please enter a different address.",
+                                               @"Own address alert message")];
 }
 
 - (void)showLargeAmountAlertForAmount:(satoshi_t)satoshi toTarget:(NSString *)target button:(id)sender {
