@@ -367,7 +367,8 @@ NSString * const BCClientPasswordChangedNotification = @"BCClientPasswordChanged
     HITransaction *transaction;
     NSArray *response = [_transactionUpdateContext executeFetchRequest:request error:NULL];
 
-    if (response.count > 0) {
+    BOOL alreadyExists = response.count > 0;
+    if (alreadyExists) {
         transaction = response[0];
     } else {
         transaction = [NSEntityDescription insertNewObjectForEntityForName:HITransactionEntity
@@ -413,8 +414,10 @@ NSString * const BCClientPasswordChangedNotification = @"BCClientPasswordChanged
         transaction.status = HITransactionStatusUnknown;
     }
 
-    for (id<BCTransactionObserver> observer in self.transactionObservers) {
-        [observer transactionUpdated:transaction];
+    if (!alreadyExists) {
+        for (id<BCTransactionObserver> observer in self.transactionObservers) {
+            [observer transactionAdded:transaction];
+        }
     }
 }
 

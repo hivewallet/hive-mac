@@ -1,0 +1,67 @@
+#import "HINotificationService.h"
+
+#import "BCClient.h"
+#import "HITransaction.h"
+
+@interface HINotificationService () <NSUserNotificationCenterDelegate, BCTransactionObserver>
+@end
+
+@implementation HINotificationService
+
++ (HINotificationService *)sharedService {
+    static HINotificationService *sharedService = nil;
+    static dispatch_once_t oncePredicate;
+
+    dispatch_once(&oncePredicate, ^{
+        sharedService = [[self class] new];
+    });
+
+    return sharedService;
+}
+
+- (BOOL)notificationsAvailable {
+    return NSClassFromString(@"NSUserNotificationCenter") != nil;
+}
+
+- (void)setEnabled:(BOOL)enabled {
+    enabled = enabled && self.notificationsAvailable;
+    if (!_enabled && enabled) {
+        [NSUserNotificationCenter defaultUserNotificationCenter].delegate = self;
+        [[BCClient sharedClient] addTransactionObserver:self];
+    } else if (_enabled && !enabled) {
+        [[BCClient sharedClient] removeTransactionObserver:self];
+    }
+    _enabled = enabled;
+}
+
+- (void)postNotification:(NSString *)notificationText {
+    NSUserNotification *notification = [NSUserNotification new];
+    notification.title = notificationText;
+
+    [[NSUserNotificationCenter defaultUserNotificationCenter] deliverNotification:notification];
+}
+
+#pragma mark - NSUserNotificationCenterDelegate
+
+- (BOOL)userNotificationCenter:(NSUserNotificationCenter *)center
+     shouldPresentNotification:(NSUserNotification *)notification {
+    // So we receive notifications even if in the foreground.
+    return YES;
+}
+
+#pragma mark - BCTransactionObserver
+
+- (void)transactionAdded:(HITransaction *)transaction {
+    if (!transaction.read && transaction.direction == HITransactionDirectionIncoming) {
+        [self postReceivedNotification];
+    }
+}
+
+#pragma mark - Notifications
+
+- (void)postReceivedNotification {
+    NSString *message = NSLocalizedString(@"You received Bitcoin", @"Notification of incoming transaction");
+    [self postNotification:message];
+}
+
+@end

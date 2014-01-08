@@ -31,6 +31,7 @@
 #import "HITransaction.h"
 #import "HIPasswordChangeWindowController.h"
 #import "PFMoveApplication.h"
+#import "HINotificationService.h"
 
 static NSString * const LastVersionKey = @"LastHiveVersion";
 static NSString * const WarningDisplayedKey = @"WarningDisplayed";
@@ -187,6 +188,8 @@ void handleException(NSException *exception) {
         _mainWindowController = [[HIMainWindowController alloc] initWithWindowNibName:@"HIMainWindowController"];
         [_mainWindowController showWindow:self];
     }
+
+    [HINotificationService sharedService].enabled = YES;
 
     NSSetUncaughtExceptionHandler(&handleException);
 }
