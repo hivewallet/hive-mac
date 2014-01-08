@@ -13,11 +13,12 @@
 #import "HIBitcoinFormatService.h"
 #import "HIButtonWithSpinner.h"
 #import "HIContactAutocompleteWindowController.h"
-#import "NSDecimalNumber+HISatoshiConversion.h"
 #import "HIExchangeRateService.h"
 #import "HIFeeDetailsViewController.h"
+#import "HILinkTextField.h"
 #import "HISendBitcoinsWindowController.h"
 #import "HIPasswordInputViewController.h"
+#import "NSDecimalNumber+HISatoshiConversion.h"
 #import "NSWindow+HIShake.h"
 
 NSString * const HISendBitcoinsWindowDidClose = @"HISendBitcoinsWindowDidClose";
@@ -344,31 +345,53 @@ NSString * const HISendBitcoinsWindowSuccessKey = @"success";
     if (satoshi == 0) {
         [self showAlertWithTitle:NSLocalizedString(@"Enter an amount greater than zero.",
                                                    @"Sending zero bitcoin alert title")
+
                          message:NSLocalizedString(@"Why would you want to send someone 0 BTC?",
                                                    @"Sending zero bitcoin alert message")];
+
     } else if (satoshi > [[BCClient sharedClient] estimatedBalance]) {
         [self showAlertWithTitle:NSLocalizedString(@"Amount exceeds balance.",
                                                    @"Amount exceeds balance alert title")
+
                          message:NSLocalizedString(@"You cannot send more money than you own.",
                                                    @"Amount exceeds balance alert message")];
+
     } else if (satoshi > [[BCClient sharedClient] availableBalance]) {
-        [self showAlertWithTitle:NSLocalizedString(@"Some funds are temporarily unavailable.",
-                                                   @"Amount exceeds available balance alert title")
-                         message:NSLocalizedString(@"To send this transaction, you'll need to wait for your pending "
-                                                   @"transactions to be confirmed first (this shouldn't take more "
-                                                   @"than a few minutes).",
-                                                   @"Amount exceeds available balance alert message")];
+        NSAlert *alert = [[NSAlert alloc] init];
+
+        [alert setMessageText:NSLocalizedString(@"Some funds are temporarily unavailable.",
+                                                @"Amount exceeds available balance alert title")];
+
+        [alert setInformativeText:NSLocalizedString(@"To send this transaction, you'll need to wait for your pending "
+                                                    @"transactions to be confirmed first (this shouldn't take more "
+                                                    @"than a few minutes).",
+                                                    @"Amount exceeds available balance alert message")];
+
+        [alert addButtonWithTitle:NSLocalizedString(@"OK", @"OK button title")];
+
+        HILinkTextField *link = [[HILinkTextField alloc] initWithFrame:NSMakeRect(0, 0, 300, 15)];
+        link.stringValue = NSLocalizedString(@"What does this mean?", @"Button to show info about pending funds");
+        link.href = @"https://github.com/hivewallet/hive-osx/wiki/Sending-Bitcoin-from-a-pending-transaction";
+        link.font = [NSFont systemFontOfSize:11.0];
+        [alert setAccessoryView:link];
+
+        [alert beginSheetModalForWindow:self.window modalDelegate:nil didEndSelector:nil contextInfo:NULL];
+
     } else if (target.length == 0) {
         [self showAlertWithTitle:NSLocalizedString(@"No address entered.",
                                                    @"Empty address alert title")
+
                          message:NSLocalizedString(@"Please enter a valid Bitcoin address or select one "
                                                    @"from the dropdown list.",
                                                    @"Empty address alert message")];
+
     } else if (![[HIBitcoinManager defaultManager] isAddressValid:target]) {
         [self showAlertWithTitle:NSLocalizedString(@"This isn't a valid Bitcoin address.",
                                                    @"Invalid address alert title")
+
                          message:NSLocalizedString(@"Please check if you have entered the address correctly.",
                                                    @"Invalid address alert message")];
+
     } else {
         if ([self isPasswordRequired]) {
             [self showPasswordPopover:sender forSendingBitcoin:satoshi toTarget:target];
