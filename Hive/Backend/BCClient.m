@@ -404,6 +404,7 @@ NSString * const BCClientPasswordChangedNotification = @"BCClientPasswordChanged
 
     NSString *confidence = data[@"confidence"];
 
+    HITransactionStatus previousStatus = transaction.status;
     if ([confidence isEqual:@"building"]) {
         transaction.status = HITransactionStatusBuilding;
     } else if ([confidence isEqual:@"dead"]) {
@@ -414,7 +415,13 @@ NSString * const BCClientPasswordChangedNotification = @"BCClientPasswordChanged
         transaction.status = HITransactionStatusUnknown;
     }
 
-    if (!alreadyExists) {
+    if (alreadyExists) {
+        if (previousStatus != HITransactionStatusBuilding && transaction.status == HITransactionStatusBuilding) {
+            for (id<BCTransactionObserver> observer in self.transactionObservers) {
+                [observer transactionConfirmed:transaction];
+            }
+        }
+    } else {
         for (id<BCTransactionObserver> observer in self.transactionObservers) {
             [observer transactionAdded:transaction];
         }

@@ -57,10 +57,21 @@
     }
 }
 
+- (void)transactionConfirmed:(HITransaction *)transaction{
+    if (!transaction.read && transaction.direction == HITransactionDirectionOutgoing) {
+        [self postSendConfirmedNotification];
+    }
+}
+
 #pragma mark - Notifications
 
 - (void)postReceivedNotification {
     NSString *message = NSLocalizedString(@"You received Bitcoin", @"Notification of incoming transaction");
+    [self postNotification:message];
+}
+
+- (void)postSendConfirmedNotification {
+    NSString *message = NSLocalizedString(@"Transaction confirmed", @"Notification of confirmed send transaction");
     [self postNotification:message];
 }
 

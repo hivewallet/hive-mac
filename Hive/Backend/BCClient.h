@@ -75,5 +75,6 @@ extern NSString * const BCClientPasswordChangedNotification;
 @protocol BCTransactionObserver<NSObject>
 
 - (void)transactionAdded:(HITransaction *)transaction;
+- (void)transactionConfirmed:(HITransaction *)transaction;
 
 @end
