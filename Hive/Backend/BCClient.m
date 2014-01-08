@@ -29,6 +29,7 @@ NSString * const BCClientPasswordChangedNotification = @"BCClientPasswordChanged
 
 @property (nonatomic) uint64 availableBalance;
 @property (nonatomic) uint64 estimatedBalance;
+@property (nonatomic, strong, readonly) NSMutableSet *transactionObservers;
 
 @end
 
@@ -90,6 +91,8 @@ NSString * const BCClientPasswordChangedNotification = @"BCClientPasswordChanged
                 [[NSApp delegate] showExceptionWindowWithException:exception];
             });
         };
+
+        _transactionObservers = [NSMutableSet new];
 
         if (DEBUG_OPTION_ENABLED(TESTING_NETWORK)) {
             bitcoin.testingNetwork = YES;
@@ -364,7 +367,8 @@ NSString * const BCClientPasswordChangedNotification = @"BCClientPasswordChanged
     HITransaction *transaction;
     NSArray *response = [_transactionUpdateContext executeFetchRequest:request error:NULL];
 
-    if (response.count > 0) {
+    BOOL alreadyExists = response.count > 0;
+    if (alreadyExists) {
         transaction = response[0];
     } else {
         transaction = [NSEntityDescription insertNewObjectForEntityForName:HITransactionEntity
@@ -400,6 +404,7 @@ NSString * const BCClientPasswordChangedNotification = @"BCClientPasswordChanged
 
     NSString *confidence = data[@"confidence"];
 
+    HITransactionStatus previousStatus = transaction.status;
     if ([confidence isEqual:@"building"]) {
         transaction.status = HITransactionStatusBuilding;
     } else if ([confidence isEqual:@"dead"]) {
@@ -408,6 +413,18 @@ NSString * const BCClientPasswordChangedNotification = @"BCClientPasswordChanged
         transaction.status = HITransactionStatusPending;
     } else {
         transaction.status = HITransactionStatusUnknown;
+    }
+
+    if (alreadyExists) {
+        if (previousStatus != HITransactionStatusBuilding && transaction.status == HITransactionStatusBuilding) {
+            for (id<BCTransactionObserver> observer in self.transactionObservers) {
+                [observer transactionConfirmed:transaction];
+            }
+        }
+    } else {
+        for (id<BCTransactionObserver> observer in self.transactionObservers) {
+            [observer transactionAdded:transaction];
+        }
     }
 }
 
@@ -466,6 +483,14 @@ NSString * const BCClientPasswordChangedNotification = @"BCClientPasswordChanged
 
 - (satoshi_t)feeWhenSendingBitcoin:(uint64)amount {
     return amount > 0 ? [[HIBitcoinManager defaultManager] calculateTransactionFeeForSendingCoins:amount] : 0;
+}
+
+- (void)addTransactionObserver:(id <BCTransactionObserver>)observer {
+    [self.transactionObservers addObject:observer];
+}
+
+- (void)removeTransactionObserver:(id <BCTransactionObserver>)observer {
+    [self.transactionObservers removeObject:observer];
 }
 
 - (void)backupWalletToDirectory:(NSURL *)backupURL error:(NSError **)error {
