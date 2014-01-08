@@ -49,6 +49,14 @@
     return YES;
 }
 
+- (void)userNotificationCenter:(NSUserNotificationCenter *)center
+       didActivateNotification:(NSUserNotification *)notification {
+
+    if (self.onTransactionClicked) {
+        self.onTransactionClicked();
+    }
+}
+
 #pragma mark - BCTransactionObserver
 
 - (void)transactionAdded:(HITransaction *)transaction {

@@ -32,6 +32,7 @@
 #import "HIPasswordChangeWindowController.h"
 #import "PFMoveApplication.h"
 #import "HINotificationService.h"
+#import "HITransactionsViewController.h"
 
 static NSString * const LastVersionKey = @"LastHiveVersion";
 static NSString * const WarningDisplayedKey = @"WarningDisplayed";
@@ -184,11 +185,15 @@ void handleException(NSException *exception) {
     if (error) {
         HILogError(@"BitcoinManager start error: %@", error);
         [self showInitializationError:error];
-    } else {
-        _mainWindowController = [[HIMainWindowController alloc] initWithWindowNibName:@"HIMainWindowController"];
-        [_mainWindowController showWindow:self];
     }
 
+    _mainWindowController = [[HIMainWindowController alloc] initWithWindowNibName:@"HIMainWindowController"];
+    [_mainWindowController showWindow:self];
+
+    __weak __typeof__ (self) weakSelf = self;
+    [HINotificationService sharedService].onTransactionClicked = ^{
+        [weakSelf showWindowWithPanel:[HITransactionsViewController class]];
+    };
     [HINotificationService sharedService].enabled = YES;
 
     NSSetUncaughtExceptionHandler(&handleException);
@@ -218,6 +223,11 @@ void handleException(NSException *exception) {
     }
 
     exit(1);
+}
+
+- (void)showWindowWithPanel:(Class)panelClass {
+    [_mainWindowController showWindow:nil];
+    [_mainWindowController switchToPanel:panelClass];
 }
 
 - (void)showBetaWarning {

@@ -190,6 +190,17 @@ static const NSTimeInterval SlideAnimationDuration = 0.3;
     [_currentViewController viewWillDisappear];
 }
 
+#pragma mark - Switching panels
+
+- (void)switchToPanel:(Class)panelClass {
+    int index = 0;
+    for (HINavigationController *panel in self.sidebarController.viewControllers) {
+        if ([panel.rootViewController isKindOfClass:panelClass]) {
+            [self.sidebarController selectControllerAtIndex:index];
+        }
+        index++;
+    }
+}
 
 #pragma mark - Modality methods
 
