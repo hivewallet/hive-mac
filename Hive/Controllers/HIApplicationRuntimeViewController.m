@@ -114,7 +114,7 @@
     NSAlert *alert = [[NSAlert alloc] init];
     [alert setMessageText:self.application.name];
     [alert setInformativeText:message];
-    [alert addButtonWithTitle:@"Ok"];
+    [alert addButtonWithTitle:NSLocalizedString(@"OK", @"OK button title")];
     
     [alert runModal];
 }

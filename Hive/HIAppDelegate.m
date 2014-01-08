@@ -224,7 +224,8 @@ void handleException(NSException *exception) {
         NSRunAlertPanel(@"Warning",
                         @"This version is for testing and development purposes only! "
                         @"Please do not move any money into it that you cannot afford to lose.",
-                        @"OK", nil, nil);
+                        NSLocalizedString(@"OK", @"OK button title"),
+                        nil, nil);
 
         [defaults setObject:@(YES) forKey:WarningDisplayedKey];
     }
