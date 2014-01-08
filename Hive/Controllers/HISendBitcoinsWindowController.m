@@ -48,6 +48,8 @@ NSString * const HISendBitcoinsWindowSuccessKey = @"success";
 
 @implementation HISendBitcoinsWindowController
 
+#pragma mark - Init & cleanup
+
 - (id)init {
     self = [super initWithWindowNibName:@"HISendBitcoinsWindowController"];
 
@@ -79,12 +81,6 @@ NSString * const HISendBitcoinsWindowSuccessKey = @"success";
 
     return self;
 }
-
-- (void)dealloc {
-    [_exchangeRateService removeExchangeRateObserver:self];
-    [[NSNotificationCenter defaultCenter] removeObserver:self];
-}
-
 
 - (void)windowDidLoad {
     [super windowDidLoad];
@@ -127,6 +123,14 @@ NSString * const HISendBitcoinsWindowSuccessKey = @"success";
     _autocompleteController = nil;
 }
 
+- (void)dealloc {
+    [_exchangeRateService removeExchangeRateObserver:self];
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+}
+
+
+#pragma mark - Configuration
+
 - (void)setHashAddress:(NSString *)hash {
     [self clearContact];
 
@@ -168,16 +172,8 @@ NSString * const HISendBitcoinsWindowSuccessKey = @"success";
     [self.window makeFirstResponder:nil];
 }
 
-- (HIContactAutocompleteWindowController *)autocompleteController {
-    if (!_autocompleteController) {
-        _autocompleteController = [[HIContactAutocompleteWindowController alloc] init];
-        _autocompleteController.delegate = self;
-    }
 
-    return _autocompleteController;
-}
-
-#pragma mark - text fields
+#pragma mark - Text fields
 
 - (void)updateBitcoinFormat:(NSNotification *)notification {
     self.selectedBitcoinFormat = [[HIBitcoinFormatService sharedService] preferredFormat];
@@ -241,7 +237,8 @@ NSString * const HISendBitcoinsWindowSuccessKey = @"success";
     }
 }
 
-#pragma mark - conversion
+
+#pragma mark - Currency conversion
 
 - (void)setSelectedCurrency:(NSString *)selectedCurrency {
     _selectedCurrency = [selectedCurrency copy];
@@ -268,6 +265,7 @@ NSString * const HISendBitcoinsWindowSuccessKey = @"success";
     self.selectedCurrency = self.convertedCurrencyPopupButton.selectedItem.title;
 }
 
+
 #pragma mark - HIExchangeRateObserver
 
 - (void)exchangeRateUpdatedTo:(NSDecimalNumber *)exchangeRate
@@ -279,18 +277,20 @@ NSString * const HISendBitcoinsWindowSuccessKey = @"success";
     }
 }
 
-#pragma mark - fees
+
+#pragma mark - Fees
 
 - (void)updateFee {
     satoshi_t fee = self.currentFee;
     NSString *feeString = [self.bitcoinFormatService stringForBitcoin:fee withFormat:self.selectedBitcoinFormat];
     feeString = [@"+" stringByAppendingString:feeString];
+
     NSDictionary *attributes = @{
         NSForegroundColorAttributeName: [NSColor colorWithCalibratedWhite:.3 alpha:1.0],
         NSFontAttributeName: [NSFont systemFontOfSize:11],
     };
-    self.feeButton.attributedTitle = [[NSAttributedString alloc] initWithString:feeString
-                                                                     attributes:attributes];
+
+    self.feeButton.attributedTitle = [[NSAttributedString alloc] initWithString:feeString attributes:attributes];
     self.feeButton.hidden = fee == 0;
     self.feeDetailsViewController.fee = self.currentFee;
 }
@@ -302,18 +302,19 @@ NSString * const HISendBitcoinsWindowSuccessKey = @"success";
 - (IBAction)showFeePopover:(NSButton *)sender {
     NSPopover *feePopover = [NSPopover new];
     feePopover.behavior = NSPopoverBehaviorTransient;
+
     if (!self.feeDetailsViewController) {
         self.feeDetailsViewController = [HIFeeDetailsViewController new];
         self.feeDetailsViewController.fee = self.currentFee;
         self.feeDetailsViewController.bitcoinFormat = self.selectedBitcoinFormat;
     }
+
     feePopover.contentViewController = self.feeDetailsViewController;
     [feePopover showRelativeToRect:sender.bounds
                             ofView:sender
                      preferredEdge:NSMaxXEdge];
 }
 
-#pragma mark -
 
 #pragma mark - Handling button clicks
 
@@ -340,90 +341,27 @@ NSString * const HISendBitcoinsWindowSuccessKey = @"success";
 
 - (void)sendClicked:(id)sender {
     uint64 satoshi = self.amountFieldValue;
-
     NSString *target = _hashAddress ?: self.nameLabel.stringValue;
 
     if (satoshi == 0) {
-        [self showAlertWithTitle:NSLocalizedString(@"Enter an amount greater than zero.",
-                                                   @"Sending zero bitcoin alert title")
-
-                         message:NSLocalizedString(@"Why would you want to send someone 0 BTC?",
-                                                   @"Sending zero bitcoin alert message")];
-
-    } else if (satoshi > [[BCClient sharedClient] estimatedBalance]) {
-        [self showAlertWithTitle:NSLocalizedString(@"Amount exceeds balance.",
-                                                   @"Amount exceeds balance alert title")
-
-                         message:NSLocalizedString(@"You cannot send more money than you own.",
-                                                   @"Amount exceeds balance alert message")];
-
-    } else if (satoshi > [[BCClient sharedClient] availableBalance]) {
-        NSAlert *alert = [[NSAlert alloc] init];
-
-        [alert setMessageText:NSLocalizedString(@"Some funds are temporarily unavailable.",
-                                                @"Amount exceeds available balance alert title")];
-
-        [alert setInformativeText:NSLocalizedString(@"To send this transaction, you'll need to wait for your pending "
-                                                    @"transactions to be confirmed first (this shouldn't take more "
-                                                    @"than a few minutes).",
-                                                    @"Amount exceeds available balance alert message")];
-
-        [alert addButtonWithTitle:NSLocalizedString(@"OK", @"OK button title")];
-
-        HILinkTextField *link = [[HILinkTextField alloc] initWithFrame:NSMakeRect(0, 0, 300, 15)];
-        link.stringValue = NSLocalizedString(@"What does this mean?", @"Button to show info about pending funds");
-        link.href = @"https://github.com/hivewallet/hive-osx/wiki/Sending-Bitcoin-from-a-pending-transaction";
-        link.font = [NSFont systemFontOfSize:11.0];
-        [alert setAccessoryView:link];
-
-        [alert beginSheetModalForWindow:self.window modalDelegate:nil didEndSelector:nil contextInfo:NULL];
-
-    } else if (target.length == 0) {
-        [self showAlertWithTitle:NSLocalizedString(@"No address entered.",
-                                                   @"Empty address alert title")
-
-                         message:NSLocalizedString(@"Please enter a valid Bitcoin address or select one "
-                                                   @"from the dropdown list.",
-                                                   @"Empty address alert message")];
-
-    } else if (![[HIBitcoinManager defaultManager] isAddressValid:target]) {
-        [self showAlertWithTitle:NSLocalizedString(@"This isn't a valid Bitcoin address.",
-                                                   @"Invalid address alert title")
-
-                         message:NSLocalizedString(@"Please check if you have entered the address correctly.",
-                                                   @"Invalid address alert message")];
-
-    } else if (![HITransaction isAmountWithinExpectedRange:satoshi]) {
-        NSAlert *alert = [[NSAlert alloc] init];
-
-        NSString *formattedBitcoinAmount = [NSString stringWithFormat:@"%@ %@",
-                                            self.amountField.stringValue,
-                                            self.selectedBitcoinFormat];
-
-        NSString *formattedFiatAmount = [NSString stringWithFormat:@"%@ %@",
-                                         self.convertedAmountField.stringValue,
-                                         self.selectedCurrency];
-
-        NSString *title = [NSString stringWithFormat:
-                           NSLocalizedString(@"Are you sure you want to send %@ (%@) to %@?",
-                                             @"Large amount warning title"),
-                           formattedBitcoinAmount, formattedFiatAmount, self.nameLabel.stringValue];
-
-        [alert setMessageText:title];
-        [alert setInformativeText:NSLocalizedString(@"This is more than what you usually send.",
-                                                    @"Large amount warning message")];
-
-        [alert addButtonWithTitle:NSLocalizedString(@"Send", @"Send button title")];
-        [alert addButtonWithTitle:NSLocalizedString(@"Cancel", @"Cancel button title")];
-
-        NSDictionary *context = @{@"amount": @(satoshi), @"target": target, @"button": sender};
-
-        [alert beginSheetModalForWindow:self.window
-                          modalDelegate:self
-                         didEndSelector:@selector(largeAmountAlertWasClosed:result:context:)
-                            contextInfo:((void *) CFBridgingRetain(context))];
-
-    } else {
+        [self showZeroAmountAlert];
+    }
+    else if (satoshi > [[BCClient sharedClient] estimatedBalance]) {
+        [self showInsufficientFundsAlert];
+    }
+    else if (satoshi > [[BCClient sharedClient] availableBalance]) {
+        [self showBlockedFundsAlert];
+    }
+    else if (target.length == 0) {
+        [self showNoAddressAlert];
+    }
+    else if (![[HIBitcoinManager defaultManager] isAddressValid:target]) {
+        [self showInvalidAddressAlert];
+    }
+    else if (![HITransaction isAmountWithinExpectedRange:satoshi]) {
+        [self showLargeAmountAlertForAmount:satoshi toTarget:target button:sender];
+    }
+    else {
         [self processSendingBitcoin:satoshi toTarget:target button:sender];
     }
 }
@@ -474,13 +412,6 @@ NSString * const HISendBitcoinsWindowSuccessKey = @"success";
     }
 }
 
-- (void)showTransactionErrorAlert {
-    [self showAlertWithTitle:NSLocalizedString(@"Transaction could not be completed.",
-                                               @"Transaction failed alert title")
-                     message:NSLocalizedString(@"No bitcoin have been taken from your wallet.",
-                                               @"Transaction failed alert message")];
-}
-
 - (void)closeAndNotifyWithSuccess:(BOOL)success transactionId:(NSString *)transactionId {
     [self.sendButton hideSpinner];
 
@@ -495,6 +426,103 @@ NSString * const HISendBitcoinsWindowSuccessKey = @"success";
                                                       userInfo:@{HISendBitcoinsWindowSuccessKey: @(success)}];
 }
 
+
+#pragma mark - Warning and error alerts
+
+- (void)showTransactionErrorAlert {
+    [self showAlertWithTitle:NSLocalizedString(@"Transaction could not be completed.",
+                                               @"Transaction failed alert title")
+
+                     message:NSLocalizedString(@"No bitcoin have been taken from your wallet.",
+                                               @"Transaction failed alert message")];
+}
+
+- (void)showZeroAmountAlert {
+    [self showAlertWithTitle:NSLocalizedString(@"Enter an amount greater than zero.",
+                                               @"Sending zero bitcoin alert title")
+
+                     message:NSLocalizedString(@"Why would you want to send someone 0 BTC?",
+                                               @"Sending zero bitcoin alert message")];
+}
+
+- (void)showInsufficientFundsAlert {
+    [self showAlertWithTitle:NSLocalizedString(@"Amount exceeds balance.",
+                                               @"Amount exceeds balance alert title")
+
+                     message:NSLocalizedString(@"You cannot send more money than you own.",
+                                               @"Amount exceeds balance alert message")];
+}
+
+- (void)showBlockedFundsAlert {
+    NSAlert *alert = [[NSAlert alloc] init];
+
+    [alert setMessageText:NSLocalizedString(@"Some funds are temporarily unavailable.",
+                                            @"Amount exceeds available balance alert title")];
+
+    [alert setInformativeText:NSLocalizedString(@"To send this transaction, you'll need to wait for your pending "
+                                                @"transactions to be confirmed first (this shouldn't take more "
+                                                @"than a few minutes).",
+                                                @"Amount exceeds available balance alert message")];
+
+    [alert addButtonWithTitle:NSLocalizedString(@"OK", @"OK button title")];
+
+    HILinkTextField *link = [[HILinkTextField alloc] initWithFrame:NSMakeRect(0, 0, 300, 15)];
+    link.stringValue = NSLocalizedString(@"What does this mean?", @"Button to show info about pending funds");
+    link.href = @"https://github.com/hivewallet/hive-osx/wiki/Sending-Bitcoin-from-a-pending-transaction";
+    link.font = [NSFont systemFontOfSize:11.0];
+    [alert setAccessoryView:link];
+
+    [alert beginSheetModalForWindow:self.window modalDelegate:nil didEndSelector:nil contextInfo:NULL];
+}
+
+- (void)showNoAddressAlert {
+    [self showAlertWithTitle:NSLocalizedString(@"No address entered.",
+                                               @"Empty address alert title")
+
+                     message:NSLocalizedString(@"Please enter a valid Bitcoin address or select one "
+                                               @"from the dropdown list.",
+                                               @"Empty address alert message")];
+}
+
+- (void)showInvalidAddressAlert {
+    [self showAlertWithTitle:NSLocalizedString(@"This isn't a valid Bitcoin address.",
+                                               @"Invalid address alert title")
+
+                     message:NSLocalizedString(@"Please check if you have entered the address correctly.",
+                                               @"Invalid address alert message")];
+}
+
+- (void)showLargeAmountAlertForAmount:(satoshi_t)satoshi toTarget:(NSString *)target button:(id)sender {
+    NSAlert *alert = [[NSAlert alloc] init];
+
+    NSString *formattedBitcoinAmount = [NSString stringWithFormat:@"%@ %@",
+                                        self.amountField.stringValue,
+                                        self.selectedBitcoinFormat];
+
+    NSString *formattedFiatAmount = [NSString stringWithFormat:@"%@ %@",
+                                     self.convertedAmountField.stringValue,
+                                     self.selectedCurrency];
+
+    NSString *title = [NSString stringWithFormat:
+                       NSLocalizedString(@"Are you sure you want to send %@ (%@) to %@?",
+                                         @"Large amount warning title"),
+                       formattedBitcoinAmount, formattedFiatAmount, self.nameLabel.stringValue];
+
+    [alert setMessageText:title];
+    [alert setInformativeText:NSLocalizedString(@"This is more than what you usually send.",
+                                                @"Large amount warning message")];
+
+    [alert addButtonWithTitle:NSLocalizedString(@"Send", @"Send button title")];
+    [alert addButtonWithTitle:NSLocalizedString(@"Cancel", @"Cancel button title")];
+
+    NSDictionary *context = @{@"amount": @(satoshi), @"target": target, @"button": sender};
+
+    [alert beginSheetModalForWindow:self.window
+                      modalDelegate:self
+                     didEndSelector:@selector(largeAmountAlertWasClosed:result:context:)
+                        contextInfo:((void *) CFBridgingRetain(context))];
+}
+
 - (void)showAlertWithTitle:(NSString *)title message:(NSString *)message {
     NSAlert *alert = [[NSAlert alloc] init];
 
@@ -502,11 +530,9 @@ NSString * const HISendBitcoinsWindowSuccessKey = @"success";
     [alert setInformativeText:message];
     [alert addButtonWithTitle:NSLocalizedString(@"OK", @"OK button title")];
 
-    [alert beginSheetModalForWindow:self.window
-                      modalDelegate:nil
-                     didEndSelector:nil
-                        contextInfo:NULL];
+    [alert beginSheetModalForWindow:self.window modalDelegate:nil didEndSelector:nil contextInfo:NULL];
 }
+
 
 #pragma mark - NSTextField delegate
 
@@ -534,6 +560,15 @@ NSString * const HISendBitcoinsWindowSuccessKey = @"success";
 
 
 #pragma mark - Autocomplete
+
+- (HIContactAutocompleteWindowController *)autocompleteController {
+    if (!_autocompleteController) {
+        _autocompleteController = [[HIContactAutocompleteWindowController alloc] init];
+        _autocompleteController.delegate = self;
+    }
+
+    return _autocompleteController;
+}
 
 - (BOOL)control:(NSControl *)control textView:(NSTextView *)textView doCommandBySelector:(SEL)selector {
     if (selector == @selector(moveUp:)) {
@@ -609,7 +644,8 @@ NSString * const HISendBitcoinsWindowSuccessKey = @"success";
     [self hideAutocompleteWindow];
 }
 
-#pragma mark - passwords
+
+#pragma mark - Passwords
 
 - (BOOL)isPasswordRequired {
     return [BCClient sharedClient].isWalletPasswordProtected;
