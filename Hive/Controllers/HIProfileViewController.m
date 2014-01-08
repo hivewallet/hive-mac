@@ -25,7 +25,6 @@
 @property (copy) NSDecimalNumber *exchangeRate;
 @property (copy, nonatomic) NSString *selectedCurrency;
 @property (copy, nonatomic) NSString *selectedBitcoinFormat;
-@property (assign, nonatomic) satoshi_t availableBalance;
 @property (assign, nonatomic) satoshi_t estimatedBalance;
 
 @property (strong) IBOutlet NSImageView *photoView;
@@ -50,10 +49,6 @@
         _infoPanel = [[HIContactInfoViewController alloc] initWithParent:self];
 
         [[BCClient sharedClient] addObserver:self
-                                  forKeyPath:@"availableBalance"
-                                     options:NSKeyValueObservingOptionInitial
-                                     context:NULL];
-        [[BCClient sharedClient] addObserver:self
                                   forKeyPath:@"estimatedBalance"
                                      options:NSKeyValueObservingOptionInitial
                                      context:NULL];
@@ -75,7 +70,6 @@
 }
 
 - (void)dealloc {
-    [[BCClient sharedClient] removeObserver:self forKeyPath:@"availableBalance"];
     [[BCClient sharedClient] removeObserver:self forKeyPath:@"estimatedBalance"];
     [[NSNotificationCenter defaultCenter] removeObserver:self];
     [_exchangeRateService removeExchangeRateObserver:self];
@@ -122,7 +116,6 @@
 }
 
 - (void)updateBalance {
-    self.availableBalance = [[BCClient sharedClient] availableBalance];
     self.estimatedBalance = [[BCClient sharedClient] estimatedBalance];
 
     [self updateBalanceLabel];
@@ -130,18 +123,7 @@
 }
 
 - (void)updateBalanceLabel {
-    satoshi_t pending = self.estimatedBalance - self.availableBalance;
-
-    if (pending > 0ll) {
-        self.balanceLabel.stringValue =
-            [NSString stringWithFormat:@"%@ (+%@ %@)",
-                                       [self.bitcoinFormatService stringForBitcoin:self.availableBalance],
-                                       [self.bitcoinFormatService stringForBitcoin:pending],
-                                       NSLocalizedString(@"pending",
-                                       @"part of the balance amount that isn't available")];
-    } else {
-        self.balanceLabel.stringValue = [self.bitcoinFormatService stringForBitcoin:self.availableBalance];
-    }
+    self.balanceLabel.stringValue = [self.bitcoinFormatService stringForBitcoin:self.estimatedBalance];
 }
 
 - (void)observeValueForKeyPath:(NSString *)keyPath
@@ -149,7 +131,7 @@
                         change:(NSDictionary *)change
                        context:(void *)context {
     if (object == [BCClient sharedClient]) {
-        if ([keyPath isEqual:@"availableBalance"] || [keyPath isEqual:@"estimatedBalance"]) {
+        if ([keyPath isEqual:@"estimatedBalance"]) {
             dispatch_async(dispatch_get_main_queue(), ^{
                 [self updateBalance];
             });
@@ -186,9 +168,9 @@
 
 - (void)updateConvertedBalanceLabel {
     if (self.exchangeRate) {
-        NSDecimalNumber *convertedBalance = [self convertedAmountForBitcoinAmount:self.availableBalance];
-        self.convertedBalanceLabel.stringValue =
-            [_exchangeRateService formatValue:convertedBalance inCurrency:self.selectedCurrency];
+        NSDecimalNumber *convertedBalance = [self convertedAmountForBitcoinAmount:self.estimatedBalance];
+        self.convertedBalanceLabel.stringValue = [_exchangeRateService formatValue:convertedBalance
+                                                                        inCurrency:self.selectedCurrency];
     } else {
         self.convertedBalanceLabel.stringValue = @"?";
     }
