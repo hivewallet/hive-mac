@@ -31,7 +31,11 @@ NSString * const HIContactEntity = @"HIContact";
 }
 
 - (NSString *)name {
-    return [NSString stringWithFormat:@"%@ %@", self.firstname ?: @"", self.lastname ?: @""];
+    if (self.firstname && self.lastname) {
+        return [NSString stringWithFormat:@"%@ %@", self.firstname, self.lastname];
+    } else {
+        return self.firstname ?: self.lastname ?: @"";
+    }
 }
 
 - (NSImage *)avatarImage {
