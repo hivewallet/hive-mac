@@ -22,7 +22,7 @@ extern NSString * const BCClientPasswordChangedNotification;
 @interface BCClient : AFHTTPClient
 
 @property (nonatomic, readonly, getter = unreadTransactions) NSUInteger unreadTransactions;
-@property (nonatomic, readonly) uint64 balance;
+@property (nonatomic, readonly) uint64 availableBalance;
 @property (nonatomic, readonly) uint64 pendingBalance;
 @property (nonatomic, readonly) NSDate *lastWalletChangeDate;
 @property (nonatomic, strong) NSString *walletHash;

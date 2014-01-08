@@ -27,7 +27,7 @@ NSString * const BCClientPasswordChangedNotification = @"BCClientPasswordChanged
     NSDateFormatter *_dateFormatter;
 }
 
-@property (nonatomic) uint64 balance;
+@property (nonatomic) uint64 availableBalance;
 @property (nonatomic) uint64 pendingBalance;
 
 @end
@@ -96,7 +96,7 @@ NSString * const BCClientPasswordChangedNotification = @"BCClientPasswordChanged
         }
 
         [bitcoin addObserver:self
-                  forKeyPath:@"balance"
+                  forKeyPath:@"availableBalance"
                      options:NSKeyValueObservingOptionInitial | NSKeyValueObservingOptionNew
                      context:NULL];
         [bitcoin addObserver:self
@@ -124,7 +124,8 @@ NSString * const BCClientPasswordChangedNotification = @"BCClientPasswordChanged
     *error = nil;
 
     if ([[HIBitcoinManager defaultManager] start:error]) {
-        self.balance = [[[NSUserDefaults standardUserDefaults] objectForKey:@"LastBalance"] unsignedLongLongValue];
+        NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+        self.availableBalance = [[defaults objectForKey:@"LastBalance"] unsignedLongLongValue];
         self.pendingBalance = 0;
 
         [self updateNotifications];
@@ -266,16 +267,16 @@ NSString * const BCClientPasswordChangedNotification = @"BCClientPasswordChanged
                         change:(NSDictionary *)change
                        context:(void *)context {
     if (object == [HIBitcoinManager defaultManager]) {
-        if ([keyPath isEqual:@"balance"]) {
+        if ([keyPath isEqual:@"availableBalance"]) {
             dispatch_async(dispatch_get_main_queue(), ^{
-                self.balance = [object balance];
-                self.pendingBalance = [object estimatedBalance] - [object balance];
+                self.availableBalance = [object availableBalance];
+                self.pendingBalance = [object estimatedBalance] - [object availableBalance];
 
-                [[NSUserDefaults standardUserDefaults] setObject:@(self.balance) forKey:@"LastBalance"];
+                [[NSUserDefaults standardUserDefaults] setObject:@(self.availableBalance) forKey:@"LastBalance"];
             });
         } else if ([keyPath isEqual:@"estimatedBalance"]) {
             dispatch_async(dispatch_get_main_queue(), ^{
-                self.pendingBalance = [object estimatedBalance] - [object balance];
+                self.pendingBalance = [object estimatedBalance] - [object availableBalance];
             });
         }
     }
@@ -294,7 +295,7 @@ NSString * const BCClientPasswordChangedNotification = @"BCClientPasswordChanged
         HIBitcoinManager *manager = [HIBitcoinManager defaultManager];
 
         [manager removeObserver:self forKeyPath:@"connections"];
-        [manager removeObserver:self forKeyPath:@"balance"];
+        [manager removeObserver:self forKeyPath:@"availableBalance"];
         [manager removeObserver:self forKeyPath:@"estimatedBalance"];
         [manager removeObserver:self forKeyPath:@"syncProgress"];
     }
@@ -418,16 +419,17 @@ NSString * const BCClientPasswordChangedNotification = @"BCClientPasswordChanged
 
     HILogInfo(@"Sending %lld satoshi to %@ (%@ password)", amount, hash, password ? @"with" : @"no");
 
-    if (amount > self.balance) {
-        HILogWarn(@"Not enough balance: only %lld satoshi available", self.balance);
+    if (amount > self.availableBalance) {
+        HILogWarn(@"Not enough balance: only %lld satoshi available", self.availableBalance);
         completion(NO, nil);
     } else {
         HIBitcoinManager *bitcoin = [HIBitcoinManager defaultManager];
 
         // Sanity check first
-        if (amount <= 0 || [bitcoin balance] < amount || ![bitcoin isAddressValid:hash]) {
-            if (amount <= 0 || amount > bitcoin.balance) {
-                HILogError(@"Sanity check failed: only %lld satoshi available, amount = %lld", self.balance, amount);
+        if (amount <= 0 || bitcoin.availableBalance < amount || ![bitcoin isAddressValid:hash]) {
+            if (amount <= 0 || amount > bitcoin.availableBalance) {
+                HILogError(@"Sanity check failed: only %lld satoshi available, amount = %lld",
+                           self.availableBalance, amount);
             }
 
             if (![bitcoin isAddressValid:hash]) {

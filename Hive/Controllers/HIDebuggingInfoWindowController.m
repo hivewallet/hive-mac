@@ -29,7 +29,7 @@
     [info appendFormat:@"## Basic info\n\n"];
     [info appendFormat:@"Data generated at: %@\n", [NSDate date]];
     [info appendFormat:@"Wallet address: %@\n", bitcoin.walletAddress];
-    [info appendFormat:@"Wallet balance: %lld\n", bitcoin.balance];
+    [info appendFormat:@"Available balance: %lld\n", bitcoin.availableBalance];
     [info appendFormat:@"Estimated balance: %lld\n", bitcoin.estimatedBalance];
 
     NSFetchRequest *transactionRequest = [NSFetchRequest fetchRequestWithEntityName:HITransactionEntity];

@@ -346,7 +346,7 @@ NSString * const HISendBitcoinsWindowSuccessKey = @"success";
                                                    @"Sending zero bitcoin alert title")
                          message:NSLocalizedString(@"Why would you want to send someone 0 BTC?",
                                                    @"Sending zero bitcoin alert message")];
-    } else if (satoshi > [BCClient sharedClient].balance) {
+    } else if (satoshi > [[BCClient sharedClient] availableBalance]) {
         [self showAlertWithTitle:NSLocalizedString(@"Amount exceeds balance.",
                                                    @"Amount exceeds balance alert title")
                          message:NSLocalizedString(@"You cannot send more money than you own.",
