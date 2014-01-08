@@ -346,11 +346,18 @@ NSString * const HISendBitcoinsWindowSuccessKey = @"success";
                                                    @"Sending zero bitcoin alert title")
                          message:NSLocalizedString(@"Why would you want to send someone 0 BTC?",
                                                    @"Sending zero bitcoin alert message")];
-    } else if (satoshi > [[BCClient sharedClient] availableBalance]) {
+    } else if (satoshi > [[BCClient sharedClient] estimatedBalance]) {
         [self showAlertWithTitle:NSLocalizedString(@"Amount exceeds balance.",
                                                    @"Amount exceeds balance alert title")
                          message:NSLocalizedString(@"You cannot send more money than you own.",
                                                    @"Amount exceeds balance alert message")];
+    } else if (satoshi > [[BCClient sharedClient] availableBalance]) {
+        [self showAlertWithTitle:NSLocalizedString(@"Some funds are temporarily unavailable.",
+                                                   @"Amount exceeds available balance alert title")
+                         message:NSLocalizedString(@"To send this transaction, you'll need to wait for your pending "
+                                                   @"transactions to be confirmed first (this shouldn't take more "
+                                                   @"than a few minutes).",
+                                                   @"Amount exceeds available balance alert message")];
     } else if (target.length == 0) {
         [self showAlertWithTitle:NSLocalizedString(@"No address entered.",
                                                    @"Empty address alert title")
