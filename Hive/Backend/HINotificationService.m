@@ -1,6 +1,7 @@
 #import "HINotificationService.h"
 
 #import "BCClient.h"
+#import "HIBitcoinFormatService.h"
 #import "HITransaction.h"
 
 @interface HINotificationService () <NSUserNotificationCenterDelegate, BCTransactionObserver>
@@ -34,9 +35,12 @@
     _enabled = enabled;
 }
 
-- (void)postNotification:(NSString *)notificationText {
+- (void)postNotification:(NSString *)notificationText
+                    text:(NSString *)text {
+
     NSUserNotification *notification = [NSUserNotification new];
     notification.title = notificationText;
+    notification.informativeText = text;
 
     [[NSUserNotificationCenter defaultUserNotificationCenter] deliverNotification:notification];
 }
@@ -61,7 +65,7 @@
 
 - (void)transactionAdded:(HITransaction *)transaction {
     if (!transaction.read && transaction.direction == HITransactionDirectionIncoming) {
-        [self postReceivedNotification];
+        [self postReceivedNotification:transaction.amount];
     }
 }
 
@@ -73,14 +77,15 @@
 
 #pragma mark - Notifications
 
-- (void)postReceivedNotification {
+- (void)postReceivedNotification:(satoshi_t)satoshi {
     NSString *message = NSLocalizedString(@"You received Bitcoin", @"Notification of incoming transaction");
-    [self postNotification:message];
+    NSString *text = [[HIBitcoinFormatService sharedService] stringWithDesignatorForBitcoin:satoshi];
+    [self postNotification:message text:text];
 }
 
 - (void)postSendConfirmedNotification {
     NSString *message = NSLocalizedString(@"Transaction confirmed", @"Notification of confirmed send transaction");
-    [self postNotification:message];
+    [self postNotification:message text:nil];
 }
 
 @end
