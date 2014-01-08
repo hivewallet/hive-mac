@@ -18,6 +18,7 @@
 #import "HILinkTextField.h"
 #import "HISendBitcoinsWindowController.h"
 #import "HIPasswordInputViewController.h"
+#import "HITransaction.h"
 #import "NSDecimalNumber+HISatoshiConversion.h"
 #import "NSWindow+HIShake.h"
 
@@ -392,17 +393,60 @@ NSString * const HISendBitcoinsWindowSuccessKey = @"success";
                          message:NSLocalizedString(@"Please check if you have entered the address correctly.",
                                                    @"Invalid address alert message")];
 
+    } else if (![HITransaction isAmountWithinExpectedRange:satoshi]) {
+        NSAlert *alert = [[NSAlert alloc] init];
+
+        NSString *formattedBitcoinAmount = [NSString stringWithFormat:@"%@ %@",
+                                            self.amountField.stringValue,
+                                            self.selectedBitcoinFormat];
+
+        NSString *formattedFiatAmount = [NSString stringWithFormat:@"%@ %@",
+                                         self.convertedAmountField.stringValue,
+                                         self.selectedCurrency];
+
+        NSString *title = [NSString stringWithFormat:
+                           NSLocalizedString(@"Are you sure you want to send %@ (%@) to %@?",
+                                             @"Large amount warning title"),
+                           formattedBitcoinAmount, formattedFiatAmount, self.nameLabel.stringValue];
+
+        [alert setMessageText:title];
+        [alert setInformativeText:NSLocalizedString(@"This is more than what you usually send.",
+                                                    @"Large amount warning message")];
+
+        [alert addButtonWithTitle:NSLocalizedString(@"Send", @"Send button title")];
+        [alert addButtonWithTitle:NSLocalizedString(@"Cancel", @"Cancel button title")];
+
+        NSDictionary *context = @{@"amount": @(satoshi), @"target": target, @"button": sender};
+
+        [alert beginSheetModalForWindow:self.window
+                          modalDelegate:self
+                         didEndSelector:@selector(largeAmountAlertWasClosed:result:context:)
+                            contextInfo:((void *) CFBridgingRetain(context))];
+
     } else {
-        if ([self isPasswordRequired]) {
-            [self showPasswordPopover:sender forSendingBitcoin:satoshi toTarget:target];
-        } else {
-            [self sendBitcoin:satoshi toTarget:target password:nil];
-        }
+        [self processSendingBitcoin:satoshi toTarget:target button:sender];
+    }
+}
+
+- (void)processSendingBitcoin:(uint64)satoshi toTarget:(NSString *)target button:(id)sender {
+    if ([self isPasswordRequired]) {
+        [self showPasswordPopover:sender forSendingBitcoin:satoshi toTarget:target];
+    } else {
+        [self sendBitcoin:satoshi toTarget:target password:nil];
+    }
+}
+
+- (void)largeAmountAlertWasClosed:(NSAlert *)alert result:(NSInteger)result context:(void *)context {
+    NSDictionary *data = CFBridgingRelease(context);
+
+    if (result == NSAlertFirstButtonReturn) {
+        [self processSendingBitcoin:[data[@"amount"] longLongValue]
+                           toTarget:data[@"target"]
+                             button:data[@"button"]];
     }
 }
 
 - (void)sendBitcoin:(uint64)satoshi toTarget:(NSString *)target password:(HIPasswordHolder *)password {
-
     NSError *error = nil;
 
     [[BCClient sharedClient] sendBitcoins:satoshi

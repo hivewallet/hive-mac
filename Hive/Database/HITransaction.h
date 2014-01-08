@@ -66,4 +66,6 @@ extern NSString * const HITransactionEntity;
 // same as amount, but it's always positive
 @property (nonatomic, readonly, getter = absoluteAmount) uint64_t absoluteAmount;
 
++ (BOOL)isAmountWithinExpectedRange:(satoshi_t)amount;
+
 @end
