@@ -82,10 +82,12 @@
     NSString *first = self.firstname;
     NSString *last = self.lastname;
 
-    if (first && last) {
+    if (first.length > 0 && last.length > 0) {
         return [NSString stringWithFormat:@"%@ %@", self.firstname, self.lastname];
-    } else if (first || last) {
-        return self.firstname ?: self.lastname;
+    } else if (first.length > 0) {
+        return self.firstname;
+    } else if (last.length > 0) {
+        return self.lastname;
     } else {
         return NSLocalizedString(@"Anonymous", @"Anonymous username for profile page");
     }

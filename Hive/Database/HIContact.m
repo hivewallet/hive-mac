@@ -31,10 +31,14 @@ NSString * const HIContactEntity = @"HIContact";
 }
 
 - (NSString *)name {
-    if (self.firstname && self.lastname) {
+    if (self.firstname.length > 0 && self.lastname.length > 0) {
         return [NSString stringWithFormat:@"%@ %@", self.firstname, self.lastname];
+    } else if (self.firstname.length > 0) {
+        return self.firstname;
+    } else if (self.lastname.length > 0) {
+        return self.lastname;
     } else {
-        return self.firstname ?: self.lastname ?: @"";
+        return @"";
     }
 }
 
