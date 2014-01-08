@@ -29,6 +29,7 @@ static const NSInteger kHIAppRuntimeBridgeParsingError = -1000;
     HIApplication *_application;
     NSDictionary *_applicationManifest;
     HISecureAppStorage *_secureStorage;
+    NSString *_preferredCurrency;
     NSString *_preferredBitcoinFormat;
 }
 
@@ -58,6 +59,8 @@ static const NSInteger kHIAppRuntimeBridgeParsingError = -1000;
                         @"updateExchangeRateForCurrency:": @"updateExchangeRate",
                         @"userStringForSatoshi:": @"userStringForSatoshi",
                         @"satoshiFromUserString:": @"satoshiFromUserString",
+                        @"userStringForValue:currency:": @"userStringForCurrencyValue",
+                        @"valueFromUserString:": @"valueFromUserString",
                         };
     }
 
@@ -106,6 +109,7 @@ static const NSInteger kHIAppRuntimeBridgeParsingError = -1000;
         _secureStorage = [[HISecureAppStorage alloc] initWithApplication:application frame:self.frame];
 
         // We currently do not send live updates to apps, so remember this.
+        _preferredCurrency = [[HIExchangeRateService sharedService] preferredCurrency];
         _preferredBitcoinFormat = [[HIBitcoinFormatService sharedService] preferredFormat];
     }
 
@@ -239,7 +243,7 @@ static const NSInteger kHIAppRuntimeBridgeParsingError = -1000;
     NSDictionary *data = @{
                            @"decimalSeparator": [HIBitcoinFormatService sharedService].decimalSeparator,
                            @"locale": preferredLanguages[0],
-                           @"preferredCurrency": [[HIExchangeRateService sharedService] preferredCurrency],
+                           @"preferredCurrency": _preferredCurrency,
                            @"preferredBitcoinFormat": _preferredBitcoinFormat,
                            @"buildNumber": bundleInfo[@"CFBundleVersion"],
                            @"version": bundleInfo[@"CFBundleShortVersionString"],
@@ -358,6 +362,19 @@ static const NSInteger kHIAppRuntimeBridgeParsingError = -1000;
                                                                  withFormat:_preferredBitcoinFormat
                                                                       error:&error];
     return error ? nil : @(satoshi);
+}
+
+- (NSString *)userStringForValue:(NSDecimalNumber *)value
+                        currency:(NSString *)currency {
+    HIExchangeRateService *service = [HIExchangeRateService sharedService];
+    return [service formatValue:value
+                     inCurrency:[service.availableCurrencies containsObject:currency] ? currency : _preferredCurrency];
+}
+
+- (NSDecimalNumber *)valueFromUserString:(NSString *)string {
+    NSDecimalNumber *number = [NSDecimalNumber decimalNumberWithString:string
+                                                                locale:[NSLocale currentLocale]];
+    return number == [NSDecimalNumber notANumber] ? nil : number;
 }
 
 #pragma mark - Proxied request & response handling
