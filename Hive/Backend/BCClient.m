@@ -28,7 +28,7 @@ NSString * const BCClientPasswordChangedNotification = @"BCClientPasswordChanged
 }
 
 @property (nonatomic) uint64 availableBalance;
-@property (nonatomic) uint64 pendingBalance;
+@property (nonatomic) uint64 estimatedBalance;
 
 @end
 
@@ -126,7 +126,7 @@ NSString * const BCClientPasswordChangedNotification = @"BCClientPasswordChanged
     if ([[HIBitcoinManager defaultManager] start:error]) {
         NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
         self.availableBalance = [[defaults objectForKey:@"LastBalance"] unsignedLongLongValue];
-        self.pendingBalance = 0;
+        self.estimatedBalance = [[defaults objectForKey:@"LastEstimatedBalance"] unsignedLongLongValue];
 
         [self updateNotifications];
     }
@@ -267,16 +267,17 @@ NSString * const BCClientPasswordChangedNotification = @"BCClientPasswordChanged
                         change:(NSDictionary *)change
                        context:(void *)context {
     if (object == [HIBitcoinManager defaultManager]) {
+        NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+
         if ([keyPath isEqual:@"availableBalance"]) {
             dispatch_async(dispatch_get_main_queue(), ^{
                 self.availableBalance = [object availableBalance];
-                self.pendingBalance = [object estimatedBalance] - [object availableBalance];
-
-                [[NSUserDefaults standardUserDefaults] setObject:@(self.availableBalance) forKey:@"LastBalance"];
+                [defaults setObject:@(self.availableBalance) forKey:@"LastBalance"];
             });
         } else if ([keyPath isEqual:@"estimatedBalance"]) {
             dispatch_async(dispatch_get_main_queue(), ^{
-                self.pendingBalance = [object estimatedBalance] - [object availableBalance];
+                self.estimatedBalance = [object estimatedBalance];
+                [defaults setObject:@(self.estimatedBalance) forKey:@"LastEstimatedBalance"];
             });
         }
     }
