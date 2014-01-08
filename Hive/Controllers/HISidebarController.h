@@ -31,8 +31,6 @@ extern const NSInteger SidebarButtonHeight;
 
 @interface HISidebarController : NSObject
 
-@property (strong, nonatomic) IBOutlet NSView *view;
-@property (nonatomic) NSUInteger selectedTabIndex;
 @property (assign, nonatomic) IBOutlet id<HISidebarControllerDelegate> delegate;
 
 - (void)addViewController:(HIViewController *)controller;

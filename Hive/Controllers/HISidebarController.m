@@ -17,9 +17,12 @@ static const NSInteger SidebarButtonTagStart = 1000;
 static const NSInteger SidebarIndexNotSelected = -1;
 
 @interface HISidebarController () {
-    NSMutableArray *barButtons;
-    NSMutableArray *viewControllers;
+    NSMutableArray *_barButtons;
+    NSMutableArray *_viewControllers;
 }
+
+@property (strong, nonatomic) IBOutlet NSView *view;
+@property (assign, nonatomic) NSUInteger selectedTabIndex;
 
 @end
 
@@ -28,25 +31,25 @@ static const NSInteger SidebarIndexNotSelected = -1;
 - (void)awakeFromNib {
     self.selectedTabIndex = SidebarIndexNotSelected;
 
-    barButtons = [[NSMutableArray alloc] init];
-    viewControllers = [[NSMutableArray alloc] init];
+    _barButtons = [[NSMutableArray alloc] init];
+    _viewControllers = [[NSMutableArray alloc] init];
 }
 
 - (void)addViewController:(HIViewController *)controller {
-    [viewControllers addObject:controller];
+    [_viewControllers addObject:controller];
 
     NSButton *button = [self tabBarButtonForController:controller];
-    [barButtons addObject:button];
+    [_barButtons addObject:button];
     [self.view addSubview:button];
 
-    if (barButtons.count == 1) {
+    if (_barButtons.count == 1) {
         [self selectControllerAtIndex:0];
     }
 }
 
 - (NSButton *)tabBarButtonForController:(HIViewController *)controller {
-    NSInteger position = barButtons.count;
-    CGFloat positionY = self.view.bounds.size.height - (barButtons.count + 1) * SidebarButtonHeight;
+    NSInteger position = _barButtons.count;
+    CGFloat positionY = self.view.bounds.size.height - (_barButtons.count + 1) * SidebarButtonHeight;
     NSRect frame = NSMakeRect(0, positionY, SidebarButtonWidth, SidebarButtonHeight);
 
     NSButton *button = [[HISidebarButton alloc] initWithFrame: frame];
@@ -67,7 +70,7 @@ static const NSInteger SidebarIndexNotSelected = -1;
 }
 
 - (void)selectControllerAtIndex:(NSInteger)index {
-    [barButtons[index] setState:NSOnState];
+    [_barButtons[index] setState:NSOnState];
 
     NSInteger previousIndex = self.selectedTabIndex;
     self.selectedTabIndex = index;
@@ -75,10 +78,10 @@ static const NSInteger SidebarIndexNotSelected = -1;
     BOOL clickedAgain = (previousIndex == index);
 
     if (previousIndex != SidebarIndexNotSelected && !clickedAgain) {
-        [barButtons[previousIndex] setState:NSOffState];
+        [_barButtons[previousIndex] setState:NSOffState];
     }
 
-    HIViewController *selectedController = viewControllers[index];
+    HIViewController *selectedController = _viewControllers[index];
     [self.delegate sidebarDidSelectController:selectedController again:clickedAgain];
 }
 
