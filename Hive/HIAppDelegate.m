@@ -204,7 +204,8 @@ void handleException(NSException *exception) {
     HILogError(@"Aborting launch because of initialization error: %@", error);
 
     if (message) {
-        [[NSAlert alertWithMessageText:NSLocalizedString(@"Error", @"Initialization error title")
+        [[NSAlert alertWithMessageText:NSLocalizedString(@"Hive cannot be started.",
+                                                         @"Initialization error title")
                          defaultButton:NSLocalizedString(@"OK", @"OK button title")
                        alternateButton:nil
                            otherButton:nil
@@ -381,21 +382,29 @@ void handleException(NSException *exception) {
         NSDictionary *manifest = [manager applicationMetadata:applicationURL];
 
         NSAlert *alert = [[NSAlert alloc] init];
-        [alert setMessageText:NSLocalizedString(@"Install Hive App", @"Install app popup title")];
         [alert addButtonWithTitle:NSLocalizedString(@"Yes", nil)];
         [alert addButtonWithTitle:NSLocalizedString(@"No", nil)];
 
-        NSString *text;
+        NSString *title, *info;
 
         if ([manager hasApplicationOfId:manifest[@"id"]]) {
-            text = NSLocalizedString(@"You already have \"%@\" application. Would you like to overwrite it?",
-                                     @"Install app popup confirmation when app exists");
+            title = NSLocalizedString(@"You have already added \"%@\" to Hive. Would you like to overwrite it?",
+                                      @"Install app popup title when app exists");
+
+            info = NSLocalizedString(@"The existing app file will be replaced by the new version. "
+                                     @"This will not affect any app settings or saved data.",
+                                     @"Install app popup warning message when app exists");
         } else {
-            text = NSLocalizedString(@"Would you like to install \"%@\" application?",
-                                     @"Install app popup confirmation");
+            title = NSLocalizedString(@"Do you want to add \"%@\" app to Hive?",
+                                      @"Install app popup title");
+
+            info = NSLocalizedString(@"We cannot guarantee the safety of all apps - please be careful "
+                                     @"if you download Hive apps from third party sites.",
+                                     @"Install app popup warning message");
         }
 
-        [alert setInformativeText:[NSString stringWithFormat:text, manifest[@"name"]]];
+        [alert setMessageText:[NSString stringWithFormat:title, manifest[@"name"]]];
+        [alert setInformativeText:info];
 
         if ([alert runModal] == NSAlertFirstButtonReturn) {
             [manager installApplication:applicationURL];

@@ -385,14 +385,14 @@ static NSString * const Separator = @"Separator";
 - (IBAction)removeContactClicked:(NSButton *)sender {
     NSAlert *alert = [[NSAlert alloc] init];
 
-    NSString *info = [NSString stringWithFormat:
-                      NSLocalizedString(@"Do you really want to remove %@ %@ from your contact list?",
-                                        @"Remove contact alert dialog body"),
-                      _contact.firstname,
-                      _contact.lastname];
+    NSString *title = [NSString stringWithFormat:
+                       NSLocalizedString(@"Do you really want to remove %@ from your contact list?",
+                                         @"Remove contact alert dialog title"),
+                       _contact.name];
 
-    [alert setMessageText:NSLocalizedString(@"Remove contact", @"Remove contact alert dialog title")];
-    [alert setInformativeText:info];
+    [alert setMessageText:title];
+    [alert setInformativeText:NSLocalizedString(@"You won't be able to undo this operation.",
+                                                @"Remove contact alert dialog body")];
     [alert addButtonWithTitle:NSLocalizedString(@"No", nil)];
     [alert addButtonWithTitle:NSLocalizedString(@"Yes", nil)];
     

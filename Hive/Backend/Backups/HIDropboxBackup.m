@@ -149,7 +149,7 @@ const NSInteger HIDropboxBackupNotRunning = -3;
     if (!exists || !isDirectory) {
         HILogWarn(@"Dropbox folder not found (path=%@, exists=%d, isDirectory=%d)", dropboxFolder, exists, isDirectory);
 
-        NSAlert *alert = [NSAlert alertWithMessageText:NSLocalizedString(@"Dropbox folder not found",
+        NSAlert *alert = [NSAlert alertWithMessageText:NSLocalizedString(@"Dropbox folder not found.",
                                                                          @"Dropbox no backup folder alert title")
                                          defaultButton:NSLocalizedString(@"OK", @"OK button title")
                                        alternateButton:nil
@@ -183,14 +183,15 @@ const NSInteger HIDropboxBackupNotRunning = -3;
     if (dropboxFolder && ![selectedDirectory hasPrefix:dropboxFolder]) {
         HILogWarn(@"Selected directory outside Dropbox folder (%@ vs. %@)", selectedDirectory, dropboxFolder);
 
-        NSAlert *alert = [NSAlert alertWithMessageText:NSLocalizedString(@"Selected directory is outside Dropbox folder",
-                                                                         @"Dropbox invalid folder alert title")
-                                         defaultButton:NSLocalizedString(@"OK", @"OK button title")
-                                       alternateButton:nil
-                                           otherButton:nil
-                             informativeTextWithFormat:NSLocalizedString(@"You need to choose or create a directory "
-                                                                         @"inside your Dropbox folder.",
-                                                                         @"Dropbox invalid folder alert details")];
+        NSAlert *alert =
+            [NSAlert alertWithMessageText:NSLocalizedString(@"Selected directory is outside Dropbox folder.",
+                                                            @"Dropbox invalid folder alert title")
+                            defaultButton:NSLocalizedString(@"OK", @"OK button title")
+                          alternateButton:nil
+                              otherButton:nil
+                informativeTextWithFormat:NSLocalizedString(@"You need to choose or create a directory "
+                                                            @"inside your Dropbox folder.",
+                                                            @"Dropbox invalid folder alert details")];
 
         [alert beginSheetModalForWindow:window modalDelegate:nil didEndSelector:nil contextInfo:NULL];
         return;

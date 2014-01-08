@@ -178,7 +178,8 @@ static const NSTimeInterval UpdateTimerInterval = 5.0;
 
     if (adapter.requiresEncryption && ![[BCClient sharedClient] isWalletPasswordProtected]) {
         NSAlert *alert =
-            [NSAlert alertWithMessageText:NSLocalizedString(@"You need to set a wallet password first (see Wallet menu)",
+            [NSAlert alertWithMessageText:NSLocalizedString(@"You need to set a wallet password first "
+                                                            @"(see Wallet menu).",
                                                             @"Backup requires password alert title")
                             defaultButton:NSLocalizedString(@"OK", @"OK button title")
                           alternateButton:nil
