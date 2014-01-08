@@ -395,7 +395,7 @@ void handleException(NSException *exception) {
 
             confirm = NSLocalizedString(@"Reinstall", @"Install app button title when app exists");
         } else {
-            title = NSLocalizedString(@"Do you want to add \"%@\" app to Hive?",
+            title = NSLocalizedString(@"Do you want to add \"%@\" to Hive?",
                                       @"Install app popup title");
 
             info = NSLocalizedString(@"We cannot guarantee the safety of all apps - please be careful "
