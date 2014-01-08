@@ -8,8 +8,11 @@
 
 #import "AFHTTPClient.h"
 
+@protocol BCTransactionObserver;
+
 @class HIContact;
 @class HIPasswordHolder;
+@class HITransaction;
 
 extern NSString * const BCClientBitcoinjDirectory;
 extern NSString * const BCClientTorDirectory;
@@ -62,6 +65,15 @@ extern NSString * const BCClientPasswordChangedNotification;
 - (void)rebuildTransactionsList;
 - (void)clearTransactionsList;
 
+- (void)addTransactionObserver:(id<BCTransactionObserver>)observer;
+- (void)removeTransactionObserver:(id<BCTransactionObserver>)observer;
+
 - (void)backupWalletToDirectory:(NSURL *)backupURL error:(NSError **)error;
+
+@end
+
+@protocol BCTransactionObserver<NSObject>
+
+- (void)transactionUpdated:(HITransaction *)transaction;
 
 @end

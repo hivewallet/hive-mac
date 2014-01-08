@@ -29,6 +29,7 @@ NSString * const BCClientPasswordChangedNotification = @"BCClientPasswordChanged
 
 @property (nonatomic) uint64 availableBalance;
 @property (nonatomic) uint64 estimatedBalance;
+@property (nonatomic, strong, readonly) NSMutableSet *transactionObservers;
 
 @end
 
@@ -90,6 +91,8 @@ NSString * const BCClientPasswordChangedNotification = @"BCClientPasswordChanged
                 [[NSApp delegate] showExceptionWindowWithException:exception];
             });
         };
+
+        _transactionObservers = [NSMutableSet new];
 
         if (DEBUG_OPTION_ENABLED(TESTING_NETWORK)) {
             bitcoin.testingNetwork = YES;
@@ -409,6 +412,10 @@ NSString * const BCClientPasswordChangedNotification = @"BCClientPasswordChanged
     } else {
         transaction.status = HITransactionStatusUnknown;
     }
+
+    for (id<BCTransactionObserver> observer in self.transactionObservers) {
+        [observer transactionUpdated:transaction];
+    }
 }
 
 
@@ -466,6 +473,14 @@ NSString * const BCClientPasswordChangedNotification = @"BCClientPasswordChanged
 
 - (satoshi_t)feeWhenSendingBitcoin:(uint64)amount {
     return amount > 0 ? [[HIBitcoinManager defaultManager] calculateTransactionFeeForSendingCoins:amount] : 0;
+}
+
+- (void)addTransactionObserver:(id <BCTransactionObserver>)observer {
+    [self.transactionObservers addObject:observer];
+}
+
+- (void)removeTransactionObserver:(id <BCTransactionObserver>)observer {
+    [self.transactionObservers removeObject:observer];
 }
 
 - (void)backupWalletToDirectory:(NSURL *)backupURL error:(NSError **)error {
