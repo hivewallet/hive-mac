@@ -2,6 +2,22 @@
 
 @implementation HILinkTextField
 
+- (id)initWithFrame:(NSRect)frameRect {
+    self = [super initWithFrame:frameRect];
+
+    if (self) {
+        [self awakeFromNib];
+    }
+
+    return self;
+}
+
+- (void)awakeFromNib {
+    [self setEditable:NO];
+    [self setBordered:NO];
+    [self setDrawsBackground:NO];
+}
+
 - (void)setStringValue:(NSString *)aString {
     [super setStringValue:aString];
     [self updateLink];
@@ -12,7 +28,16 @@
     [self updateLink];
 }
 
+- (void)setFont:(NSFont *)font {
+    [super setFont:font];
+    [self updateLink];
+}
+
 - (void)updateLink {
+    if (!_href) {
+        return;
+    }
+
     NSMutableAttributedString *string = [[NSMutableAttributedString alloc] initWithString:self.stringValue];
     NSRange range = NSMakeRange(0, string.length);
     [string addAttribute:NSLinkAttributeName value:_href range:range];
