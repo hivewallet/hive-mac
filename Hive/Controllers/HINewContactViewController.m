@@ -393,12 +393,13 @@ static NSString * const Separator = @"Separator";
     [alert setMessageText:title];
     [alert setInformativeText:NSLocalizedString(@"You won't be able to undo this operation.",
                                                 @"Remove contact alert dialog body")];
-    [alert addButtonWithTitle:NSLocalizedString(@"No", nil)];
-    [alert addButtonWithTitle:NSLocalizedString(@"Yes", nil)];
-    
+
+    [alert addButtonWithTitle:NSLocalizedString(@"Remove", nil)];
+    [alert addButtonWithTitle:NSLocalizedString(@"Cancel", nil)];
+
     NSUInteger result = [alert runModal];
 
-    if (result == NSAlertSecondButtonReturn) {
+    if (result == NSAlertFirstButtonReturn) {
         [DBM deleteObject:_contact];
         [self.navigationController popToRootViewControllerAnimated:YES];
         [DBM save:NULL];
