@@ -17,7 +17,7 @@
 #import "NSColor+Hive.h"
 #import "HIBitcoinFormatService.h"
 
-@interface HITransactionsViewController ()
+@interface HITransactionsViewController () <BCTransactionObserver>
 
 @property (strong, nonatomic) IBOutlet NSView *noTransactionsView;
 @property (strong, nonatomic) IBOutlet NSScrollView *scrollView;
@@ -86,6 +86,8 @@
                               options:NSKeyValueObservingOptionInitial
                               context:NULL];
 
+    [[BCClient sharedClient] addTransactionObserver:self];
+
     [[NSNotificationCenter defaultCenter] addObserver:self
                                              selector:@selector(updateBitcoinFormat:)
                                                  name:HIPreferredFormatChangeNotification
@@ -95,6 +97,7 @@
 - (void)dealloc {
     [self.arrayController removeObserver:self forKeyPath:@"arrangedObjects.@count"];
     [[NSNotificationCenter defaultCenter] removeObserver:self];
+    [[BCClient sharedClient] removeTransactionObserver:self];
 }
 
 - (void)observeValueForKeyPath:(NSString *)keyPath
@@ -132,11 +135,29 @@
     [self.scrollView setHidden:!shouldShowTransactions];
 }
 
-#pragma mark - bitcoin format
+
+#pragma mark - Bitcoin format
 
 - (void)updateBitcoinFormat:(NSNotification *)notification {
     [self.tableView reloadData];
 }
+
+
+#pragma mark - BCTransactionObserver
+
+- (void)transactionConfirmed:(HITransaction *)transaction {
+    NSArray *list = self.arrayController.arrangedObjects;
+    NSInteger position = [list indexOfObjectPassingTest:^BOOL(id obj, NSUInteger idx, BOOL *stop) {
+        return [[obj id] isEqual:transaction.id];
+    }];
+
+    if (position != NSNotFound) {
+        [list[position] setStatus:transaction.status];
+        [self.tableView reloadDataForRowIndexes:[NSIndexSet indexSetWithIndex:position]
+                                  columnIndexes:[NSIndexSet indexSetWithIndex:0]];
+    }
+}
+
 
 #pragma mark - NSTableViewDelegate
 
