@@ -57,8 +57,20 @@
                                                 <rect key="frame" x="0.0" y="0.0" width="431" height="50"/>
                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                 <subviews>
-                                                    <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="204">
-                                                        <rect key="frame" x="69" y="18" width="279" height="17"/>
+                                                    <imageView translatesAutoresizingMaskIntoConstraints="NO" id="210" userLabel="Avatar">
+                                                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="50" id="VrY-Vy-gPR"/>
+                                                            <constraint firstAttribute="width" constant="50" id="iAY-CA-h1R"/>
+                                                        </constraints>
+                                                        <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyUpOrDown" id="211"/>
+                                                        <connections>
+                                                            <binding destination="168" name="value" keyPath="objectValue.avatarImage" id="217"/>
+                                                        </connections>
+                                                    </imageView>
+                                                    <textField horizontalHuggingPriority="249" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="204">
+                                                        <rect key="frame" x="69" y="18" width="329" height="17"/>
                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                                         <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Nimi" id="205">
                                                             <font key="font" metaFont="systemBold"/>
@@ -69,20 +81,28 @@
                                                             <binding destination="168" name="value" keyPath="objectValue.name" id="216"/>
                                                         </connections>
                                                     </textField>
-                                                    <imageView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="208">
+                                                    <imageView translatesAutoresizingMaskIntoConstraints="NO" id="208" userLabel="Triangle">
                                                         <rect key="frame" x="404" y="15" width="21" height="21"/>
                                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="21" id="1Mp-Qj-P6d"/>
+                                                            <constraint firstAttribute="width" constant="21" id="OUL-lt-M8y"/>
+                                                        </constraints>
                                                         <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="icon-next" id="209"/>
                                                     </imageView>
-                                                    <imageView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="210">
-                                                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
-                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                                        <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyUpOrDown" id="211"/>
-                                                        <connections>
-                                                            <binding destination="168" name="value" keyPath="objectValue.avatarImage" id="217"/>
-                                                        </connections>
-                                                    </imageView>
                                                 </subviews>
+                                                <constraints>
+                                                    <constraint firstAttribute="bottom" secondItem="210" secondAttribute="bottom" id="7gr-3I-sM2"/>
+                                                    <constraint firstItem="208" firstAttribute="leading" secondItem="204" secondAttribute="trailing" constant="8" symbolic="YES" id="9yR-ae-CEW"/>
+                                                    <constraint firstAttribute="bottom" secondItem="204" secondAttribute="bottom" constant="18" id="A7l-nN-Eqn"/>
+                                                    <constraint firstAttribute="trailing" secondItem="208" secondAttribute="trailing" constant="6" id="Ajw-Tg-P6n"/>
+                                                    <constraint firstItem="204" firstAttribute="leading" secondItem="210" secondAttribute="trailing" constant="21" id="J3s-nd-i4f"/>
+                                                    <constraint firstAttribute="bottom" secondItem="208" secondAttribute="bottom" constant="15" id="JXs-tz-Rd1"/>
+                                                    <constraint firstItem="210" firstAttribute="top" secondItem="168" secondAttribute="top" id="NgT-ly-beX"/>
+                                                    <constraint firstItem="208" firstAttribute="top" secondItem="168" secondAttribute="top" constant="14" id="iWg-UO-rVN"/>
+                                                    <constraint firstItem="204" firstAttribute="top" secondItem="168" secondAttribute="top" constant="15" id="ldc-uA-OAa"/>
+                                                    <constraint firstItem="210" firstAttribute="leading" secondItem="168" secondAttribute="leading" id="t5u-sR-evR"/>
+                                                </constraints>
                                                 <connections>
                                                     <outlet property="imageView" destination="210" id="214"/>
                                                     <outlet property="textField" destination="204" id="213"/>
