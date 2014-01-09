@@ -27,12 +27,12 @@
 #import "HIErrorWindowController.h"
 #import "HILogFormatter.h"
 #import "HIMainWindowController.h"
+#import "HINotificationService.h"
+#import "HIPasswordChangeWindowController.h"
 #import "HISendBitcoinsWindowController.h"
 #import "HITransaction.h"
-#import "HIPasswordChangeWindowController.h"
-#import "PFMoveApplication.h"
-#import "HINotificationService.h"
 #import "HITransactionsViewController.h"
+#import "PFMoveApplication.h"
 
 static NSString * const LastVersionKey = @"LastHiveVersion";
 static NSString * const WarningDisplayedKey = @"WarningDisplayed";
@@ -55,11 +55,7 @@ static int ddLogLevel = LOG_LEVEL_VERBOSE;
 
 @implementation HIAppDelegate
 
-void handleException(NSException *exception) {
-    HILogError(@"Exception caught: %@", exception);
-
-    [[NSApp delegate] showExceptionWindowWithException:exception];
-}
+#pragma mark - Initialization phase one
 
 - (void)applicationWillFinishLaunching:(NSNotification *)notification {
 #ifndef DEBUG
@@ -79,11 +75,7 @@ void handleException(NSException *exception) {
 
     HILogInfo(@"Starting Hive v. %@...", [[NSBundle mainBundle] infoDictionary][@"CFBundleVersion"]);
 
-    BITHockeyManager *hockeyapp = [BITHockeyManager sharedHockeyManager];
-    [hockeyapp configureWithIdentifier:@"e47f0624d130a873ecae31509e4d1124"
-                           companyName:@""
-                              delegate:self];
-    [hockeyapp startManager];
+    [self configureHockeyApp];
 
     [[NSUserDefaults standardUserDefaults] registerDefaults:@{
      @"Currency": @1,
@@ -134,103 +126,20 @@ void handleException(NSException *exception) {
     [DDLog addLogger:fileLogger withLogLevel:LOG_LEVEL_VERBOSE];
 
     // configure BitcoinKit logger to use CocoaLumberjack system
-    [[HILogger sharedLogger] setLogHandler:^(const char *fileName, const char *functionName, int lineNumber,
-                                             HILoggerLevel level, NSString *message) {
-        int flag;
+    [[HILogger sharedLogger] setLogHandler:logHandler];
+}
 
-        switch (level) {
-            case HILoggerLevelInfo:
-                flag = LOG_FLAG_INFO;
-                break;
-            case HILoggerLevelWarn:
-                flag = LOG_FLAG_WARN;
-                break;
-            case HILoggerLevelError:
-                flag = LOG_FLAG_ERROR;
-                break;
-            default:
-                flag = LOG_FLAG_DEBUG;
-                break;
-        }
-
-        DDLogMessage *log = [[DDLogMessage alloc] initWithLogMsg:message
-                                                           level:ddLogLevel
-                                                            flag:flag
-                                                         context:0
-                                                            file:fileName
-                                                        function:functionName
-                                                            line:lineNumber
-                                                             tag:nil
-                                                         options:DDLogMessageCopyFile | DDLogMessageCopyFunction];
-
-        [DDLog queueLogMessage:log asynchronously:YES];
-    }];
+- (void)configureHockeyApp {
+    BITHockeyManager *hockeyapp = [BITHockeyManager sharedHockeyManager];
+    [hockeyapp configureWithIdentifier:@"e47f0624d130a873ecae31509e4d1124"
+                           companyName:@""
+                              delegate:self];
+    [hockeyapp startManager];
 }
 
 - (void)initializeBackups {
     [[HIBackupManager sharedManager] initializeAdapters];
     [[HIBackupManager sharedManager] performBackups];
-}
-
-- (void)showMainApplicationWindowForCrashManager:(id)crashManager {
-    NSError *error = nil;
-    [[BCClient sharedClient] start:&error];
-
-    if (error.code == kHIBitcoinManagerNoWallet) {
-        error = nil;
-        // TODO: Ask for a password and create protected wallet.
-        [[BCClient sharedClient] createWallet:&error];
-    }
-
-    if (error) {
-        HILogError(@"BitcoinManager start error: %@", error);
-        [self showInitializationError:error];
-    }
-
-    _mainWindowController = [[HIMainWindowController alloc] initWithWindowNibName:@"HIMainWindowController"];
-    [_mainWindowController showWindow:self];
-
-    __weak __typeof__ (self) weakSelf = self;
-    [HINotificationService sharedService].onTransactionClicked = ^{
-        [weakSelf showWindowWithPanel:[HITransactionsViewController class]];
-    };
-    [HINotificationService sharedService].onBackupErrorClicked = ^{
-        [weakSelf showBackupCenter:nil];
-    };
-    [HINotificationService sharedService].enabled = YES;
-
-    NSSetUncaughtExceptionHandler(&handleException);
-}
-
-- (void)showInitializationError:(NSError *)error {
-    NSString *message = nil;
-
-    if (error.code == kHIBitcoinManagerUnreadableWallet) {
-        message = NSLocalizedString(@"Could not read wallet file. It might be damaged.", @"initialization error");
-    } else if (error.code == kHIBitcoinManagerBlockStoreError) {
-        message = NSLocalizedString(@"Could not write wallet file. Another instance of Hive might still be running.",
-                                    @"initialization error");
-    }
-
-    HILogError(@"Aborting launch because of initialization error: %@", error);
-
-    if (message) {
-        [[NSAlert alertWithMessageText:NSLocalizedString(@"Hive cannot be started.",
-                                                         @"Initialization error title")
-                         defaultButton:NSLocalizedString(@"OK", @"OK button title")
-                       alternateButton:nil
-                           otherButton:nil
-             informativeTextWithFormat:@"%@", message] runModal];
-    } else {
-        [[NSAlert alertWithError:error] runModal];
-    }
-
-    exit(1);
-}
-
-- (void)showWindowWithPanel:(Class)panelClass {
-    [_mainWindowController showWindow:nil];
-    [_mainWindowController switchToPanel:panelClass];
 }
 
 - (void)showBetaWarning {
@@ -275,7 +184,6 @@ void handleException(NSException *exception) {
     }
 }
 
-// Returns the directory the application uses to store the Core Data store file.
 - (NSURL *)applicationFilesDirectory {
     NSFileManager *fileManager = [NSFileManager defaultManager];
     NSArray *matchingURLs = [fileManager URLsForDirectory:NSApplicationSupportDirectory inDomains:NSUserDomainMask];
@@ -287,6 +195,76 @@ void handleException(NSException *exception) {
         return [appSupportURL URLByAppendingPathComponent:@"Hive"];
     }
 }
+
+
+#pragma mark - Initialization phase two (BCClient and main window)
+
+- (void)showMainApplicationWindowForCrashManager:(id)crashManager {
+    NSError *error = nil;
+    [[BCClient sharedClient] start:&error];
+
+    if (error.code == kHIBitcoinManagerNoWallet) {
+        error = nil;
+        // TODO: Ask for a password and create protected wallet.
+        [[BCClient sharedClient] createWallet:&error];
+    }
+
+    if (error) {
+        HILogError(@"BitcoinManager start error: %@", error);
+        [self showInitializationError:error];
+    }
+
+    _mainWindowController = [[HIMainWindowController alloc] initWithWindowNibName:@"HIMainWindowController"];
+    [_mainWindowController showWindow:self];
+
+    [self configureNotifications];
+
+    NSSetUncaughtExceptionHandler(&handleException);
+}
+
+- (void)configureNotifications {
+    __weak __typeof__ (self) weakSelf = self;
+    HINotificationService *notificationService = [HINotificationService sharedService];
+
+    notificationService.onTransactionClicked = ^{
+        [weakSelf showWindowWithPanel:[HITransactionsViewController class]];
+    };
+
+    notificationService.onBackupErrorClicked = ^{
+        [weakSelf showBackupCenter:nil];
+    };
+
+    notificationService.enabled = YES;
+}
+
+- (void)showInitializationError:(NSError *)error {
+    NSString *message = nil;
+
+    if (error.code == kHIBitcoinManagerUnreadableWallet) {
+        message = NSLocalizedString(@"Could not read wallet file. It might be damaged.", @"initialization error");
+    } else if (error.code == kHIBitcoinManagerBlockStoreError) {
+        message = NSLocalizedString(@"Could not write wallet file. Another instance of Hive might still be running.",
+                                    @"initialization error");
+    }
+
+    HILogError(@"Aborting launch because of initialization error: %@", error);
+
+    if (message) {
+        [[NSAlert alertWithMessageText:NSLocalizedString(@"Hive cannot be started.",
+                                                         @"Initialization error title")
+                         defaultButton:NSLocalizedString(@"OK", @"OK button title")
+                       alternateButton:nil
+                           otherButton:nil
+             informativeTextWithFormat:@"%@", message] runModal];
+    } else {
+        [[NSAlert alertWithError:error] runModal];
+    }
+
+    exit(1);
+}
+
+
+#pragma mark - App lifecycle and external actions
 
 // handler for bitcoin:xxx URLs
 - (void)handleURLEvent:(NSAppleEventDescriptor *)event withReplyEvent:(NSAppleEventDescriptor *)reply {
@@ -437,6 +415,51 @@ void handleException(NSException *exception) {
 }
 
 
+#pragma mark - Logs
+
+static void (^logHandler)(const char*, const char*, int, HILoggerLevel, NSString*) =
+    ^(const char *fileName, const char *functionName, int lineNumber, HILoggerLevel level, NSString *message) {
+
+    int flag;
+
+    switch (level) {
+        case HILoggerLevelInfo:
+            flag = LOG_FLAG_INFO;
+            break;
+        case HILoggerLevelWarn:
+            flag = LOG_FLAG_WARN;
+            break;
+        case HILoggerLevelError:
+            flag = LOG_FLAG_ERROR;
+            break;
+        default:
+            flag = LOG_FLAG_DEBUG;
+            break;
+    }
+
+    DDLogMessage *log = [[DDLogMessage alloc] initWithLogMsg:message
+                                                       level:ddLogLevel
+                                                        flag:flag
+                                                     context:0
+                                                        file:fileName
+                                                    function:functionName
+                                                        line:lineNumber
+                                                         tag:nil
+                                                     options:DDLogMessageCopyFile | DDLogMessageCopyFunction];
+
+    [DDLog queueLogMessage:log asynchronously:YES];
+};
+
+
+#pragma mark - Exceptions handling
+
+void handleException(NSException *exception) {
+    HILogError(@"Exception caught: %@", exception);
+
+    [[NSApp delegate] showExceptionWindowWithException:exception];
+}
+
+
 #pragma mark - Handling menu actions
 
 - (IBAction)openSendBitcoinsWindow:(id)sender {
@@ -464,7 +487,12 @@ void handleException(NSException *exception) {
 }
 
 
-#pragma mark - Popup window handling
+#pragma mark - Window handling
+
+- (void)showWindowWithPanel:(Class)panelClass {
+    [_mainWindowController showWindow:nil];
+    [_mainWindowController switchToPanel:panelClass];
+}
 
 - (void)showExceptionWindowWithException:(NSException *)exception {
     HIErrorWindowController *window = [[HIErrorWindowController alloc] initWithException:exception];
