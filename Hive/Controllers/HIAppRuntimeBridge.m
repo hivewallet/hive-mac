@@ -350,7 +350,7 @@ static const NSInteger kHIAppRuntimeBridgeParsingError = -1000;
 
 #pragma mark - parse & format
 
-- (NSString *)userStringForSatoshi:(NSDecimalNumber *)satoshiValue {
+- (NSString *)userStringForSatoshi:(NSNumber *)satoshiValue {
     satoshi_t satoshi = [satoshiValue unsignedLongLongValue];
     return [[HIBitcoinFormatService sharedService] stringForBitcoin:satoshi
                                                          withFormat:_preferredBitcoinFormat];
@@ -364,7 +364,7 @@ static const NSInteger kHIAppRuntimeBridgeParsingError = -1000;
     return error ? nil : @(satoshi);
 }
 
-- (NSString *)userStringForValue:(NSDecimalNumber *)value
+- (NSString *)userStringForValue:(NSNumber *)value
                         currency:(NSString *)currency {
     HIExchangeRateService *service = [HIExchangeRateService sharedService];
     return [service formatValue:value

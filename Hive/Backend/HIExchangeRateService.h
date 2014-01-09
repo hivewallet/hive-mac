@@ -16,7 +16,7 @@
 
 - (void)updateExchangeRateForCurrency:(NSString *)currency;
 
-- (NSString *)formatValue:(NSDecimalNumber *)value
+- (NSString *)formatValue:(NSNumber *)value
                inCurrency:(NSString *)currency;
 
 @end

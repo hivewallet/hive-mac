@@ -9,10 +9,10 @@
 static int KVO_CONTEXT;
 static NSString *const HINotificationTypeKey = @"HINotificationTypeKey";
 
-typedef enum HINotificationType {
+typedef NS_ENUM(NSInteger, HINotificationType) {
     HINotificationTypeTransaction,
     HINotificationTypeBackup,
-} HINotificationType;
+};
 
 @interface HINotificationService () <NSUserNotificationCenterDelegate, BCTransactionObserver>
 @end
@@ -107,7 +107,7 @@ typedef enum HINotificationType {
 }
 
 - (void)transactionChangedStatus:(HITransaction *)transaction {
-    if (!transaction.read && transaction.direction == HITransactionDirectionOutgoing
+    if (transaction.direction == HITransactionDirectionOutgoing
         && transaction.status == HITransactionStatusBuilding) {
         [self postSendConfirmedNotification];
     }

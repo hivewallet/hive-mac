@@ -197,6 +197,7 @@ static const NSTimeInterval SlideAnimationDuration = 0.3;
     for (HINavigationController *panel in self.sidebarController.viewControllers) {
         if ([panel.rootViewController isKindOfClass:panelClass]) {
             [self.sidebarController selectControllerAtIndex:index];
+            break;
         }
         index++;
     }

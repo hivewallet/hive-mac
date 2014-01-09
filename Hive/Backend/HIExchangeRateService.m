@@ -217,7 +217,7 @@ static const NSTimeInterval HIExchangeRateAutomaticUpdateInterval = 60.0 * 60.0;
 
 #pragma mark - formatting
 
-- (NSString *)formatValue:(NSDecimalNumber *)value inCurrency:(NSString *)currency {
+- (NSString *)formatValue:(NSNumber *)value inCurrency:(NSString *)currency {
     NSNumberFormatter *currencyNumberFormatter = [NSNumberFormatter new];
     currencyNumberFormatter.format = @"#,##0.00";
     int digits = [self.currencyDigits[currency] intValue];
