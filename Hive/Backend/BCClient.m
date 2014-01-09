@@ -361,6 +361,9 @@ NSString * const BCClientPasswordChangedNotification = @"BCClientPasswordChanged
 }
 
 - (void)parseTransaction:(NSDictionary *)data {
+    NSAssert(data != nil, @"Transaction data shouldn't be null");
+    NSAssert(data[@"txid"] != nil, @"Transaction id shouldn't be null");
+
     NSFetchRequest *request = [[NSFetchRequest alloc] initWithEntityName:HITransactionEntity];
     request.predicate = [NSPredicate predicateWithFormat:@"id == %@", data[@"txid"]];
 
@@ -412,17 +415,14 @@ NSString * const BCClientPasswordChangedNotification = @"BCClientPasswordChanged
 
     if (alreadyExists) {
         if (previousStatus != HITransactionStatusBuilding && transaction.status == HITransactionStatusBuilding) {
-            for (id<BCTransactionObserver> observer in self.transactionObservers) {
-                [observer transactionConfirmed:transaction];
-            }
+            [self notifyObserversWithSelector:@selector(transactionConfirmed:) transaction:transaction];
         }
     } else {
-        for (id<BCTransactionObserver> observer in self.transactionObservers) {
-            [observer transactionAdded:transaction];
-        }
+        [self notifyObserversWithSelector:@selector(transactionAdded:) transaction:transaction];
     }
-}
 
+    HILogDebug(@"Transaction %@ is now %@ (%d)", transaction.id, confidence, transaction.status);
+}
 
 - (void)sendBitcoins:(uint64)amount
               toHash:(NSString *)hash
@@ -486,6 +486,17 @@ NSString * const BCClientPasswordChangedNotification = @"BCClientPasswordChanged
 
 - (void)removeTransactionObserver:(id <BCTransactionObserver>)observer {
     [self.transactionObservers removeObject:observer];
+}
+
+- (void)notifyObserversWithSelector:(SEL)selector transaction:(HITransaction *)transaction {
+    for (id<BCTransactionObserver> observer in self.transactionObservers) {
+        #pragma clang diagnostic push
+        #pragma clang diagnostic ignored "-Warc-performSelector-leaks"
+        if ([observer respondsToSelector:selector]) {
+            [observer performSelector:selector withObject:transaction];
+        }
+        #pragma clang diagnostic pop
+    }
 }
 
 - (void)backupWalletToDirectory:(NSURL *)backupURL error:(NSError **)error {
