@@ -106,8 +106,9 @@ typedef enum HINotificationType {
     }
 }
 
-- (void)transactionConfirmed:(HITransaction *)transaction{
-    if (!transaction.read && transaction.direction == HITransactionDirectionOutgoing) {
+- (void)transactionChangedStatus:(HITransaction *)transaction {
+    if (!transaction.read && transaction.direction == HITransactionDirectionOutgoing
+        && transaction.status == HITransactionStatusBuilding) {
         [self postSendConfirmedNotification];
     }
 }

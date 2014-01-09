@@ -145,7 +145,7 @@
 
 #pragma mark - BCTransactionObserver
 
-- (void)transactionConfirmed:(HITransaction *)transaction {
+- (void)transactionChangedStatus:(HITransaction *)transaction {
     NSArray *list = self.arrayController.arrangedObjects;
     NSInteger position = [list indexOfObjectPassingTest:^BOOL(id obj, NSUInteger idx, BOOL *stop) {
         return [[obj id] isEqual:transaction.id];

@@ -414,8 +414,8 @@ NSString * const BCClientPasswordChangedNotification = @"BCClientPasswordChanged
     }
 
     if (alreadyExists) {
-        if (previousStatus != HITransactionStatusBuilding && transaction.status == HITransactionStatusBuilding) {
-            [self notifyObserversWithSelector:@selector(transactionConfirmed:) transaction:transaction];
+        if (transaction.status != previousStatus) {
+            [self notifyObserversWithSelector:@selector(transactionChangedStatus:) transaction:transaction];
         }
     } else {
         [self notifyObserversWithSelector:@selector(transactionAdded:) transaction:transaction];
