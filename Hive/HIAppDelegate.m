@@ -17,6 +17,7 @@
 #import "BCClient.h"
 #import "HIAppDelegate.h"
 #import "HIApplicationsManager.h"
+#import "HIApplicationsViewController.h"
 #import "HIApplicationURLProtocol.h"
 #import "HIBackupCenterWindowController.h"
 #import "HIBackupManager.h"
@@ -406,6 +407,7 @@ static int ddLogLevel = LOG_LEVEL_VERBOSE;
 
         if ([alert runModal] == NSAlertFirstButtonReturn) {
             [manager installApplication:applicationURL];
+            [self showWindowWithPanel:[HIApplicationsViewController class]];
         }
 
         return YES;
