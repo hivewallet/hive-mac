@@ -1553,14 +1553,14 @@
 				586059B3180419F500FD9C2A /* BCClient.m */,
 				5860D3FD180455B900BD852C /* HIApplicationsManager.h */,
 				5860D3FE180455B900BD852C /* HIApplicationsManager.m */,
+				1AA105D345F413155D76B5B8 /* HIBitcoinFormatService.h */,
+				1AA100CAE5EF0CB61AF126DB /* HIBitcoinFormatService.m */,
 				585A8B2318576F020096888C /* HIDatabaseManager.h */,
 				585A8B2418576F020096888C /* HIDatabaseManager.m */,
 				1AA10C583F128C0BCD84C878 /* HIExchangeRateService.h */,
 				1AA1032408E917EE5B7752AC /* HIExchangeRateService.m */,
-				1AA100CAE5EF0CB61AF126DB /* HIBitcoinFormatService.m */,
-				1AA105D345F413155D76B5B8 /* HIBitcoinFormatService.h */,
-				1AA1022DA4CD99B7CB61C335 /* HINotificationService.m */,
 				1AA10ABE84E126AEFF538618 /* HINotificationService.h */,
+				1AA1022DA4CD99B7CB61C335 /* HINotificationService.m */,
 			);
 			path = Backend;
 			sourceTree = "<group>";
@@ -1616,8 +1616,8 @@
 				D958A8B717E8547A00CED98C /* HIFlippedView.m */,
 				D9F0B9F617EC654C0050A0A2 /* HIImageCell.h */,
 				D9F0B9F717EC654C0050A0A2 /* HIImageCell.m */,
-				1AA1099A1809B28C291572E7 /* HILabelPopUpButton.m */,
 				1AA109349A0DB4DF39E55FA4 /* HILabelPopUpButton.h */,
+				1AA1099A1809B28C291572E7 /* HILabelPopUpButton.m */,
 				1AA10497F9EEF9DF75030891 /* HILinkTextField.h */,
 				1AA100BCED704B381898FF89 /* HILinkTextField.m */,
 				588EFB2C17D8D2970085F6E6 /* HIProfileTabView.h */,
@@ -1808,16 +1808,16 @@
 			children = (
 				586059B518041A1300FD9C2A /* NSColor+Hive.h */,
 				586059B618041A1300FD9C2A /* NSColor+Hive.m */,
+				1AA10BD2B747098DE4F5E6E8 /* NSDecimalNumber+HISatoshiConversion.h */,
+				1AA104995C1BAF25C99780F1 /* NSDecimalNumber+HISatoshiConversion.m */,
 				586059B718041A1300FD9C2A /* NSImage+NPEffects.h */,
 				586059B818041A1300FD9C2A /* NSImage+NPEffects.m */,
 				586059B918041A1300FD9C2A /* NSView+Snapshot.h */,
 				586059BA18041A1300FD9C2A /* NSView+Snapshot.m */,
+				1AA1021B2F3F04674129E978 /* NSWindow+HIShake.h */,
+				1AA10B9F1D9322FFF21821DA /* NSWindow+HIShake.m */,
 				586059BB18041A1300FD9C2A /* SUCodeSigningVerifier+DisableCodeSigningCheck.h */,
 				586059BC18041A1300FD9C2A /* SUCodeSigningVerifier+DisableCodeSigningCheck.m */,
-				1AA10B9F1D9322FFF21821DA /* NSWindow+HIShake.m */,
-				1AA1021B2F3F04674129E978 /* NSWindow+HIShake.h */,
-				1AA104995C1BAF25C99780F1 /* NSDecimalNumber+HISatoshiConversion.m */,
-				1AA10BD2B747098DE4F5E6E8 /* NSDecimalNumber+HISatoshiConversion.h */,
 			);
 			path = Categories;
 			sourceTree = "<group>";
