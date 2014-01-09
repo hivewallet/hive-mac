@@ -167,7 +167,9 @@ decisionListener:(id<WebPolicyDecisionListener>)listener {
        sourceId:(int)sid
     forWebFrame:(WebFrame *)webFrame {
 
-    _sourceFiles[@(sid)] = url.absoluteString.lastPathComponent;
+    if (url.absoluteString.lastPathComponent) {
+        _sourceFiles[@(sid)] = url.absoluteString.lastPathComponent;
+    }
 }
 
 - (void)webView:(WebView *)webView
