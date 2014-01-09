@@ -207,7 +207,7 @@ NSString * const BCClientPasswordChangedNotification = @"BCClientPasswordChanged
 
     [_transactionUpdateContext performBlock:^{
         for (NSDictionary *transaction in transactions) {
-            [self parseTransaction:transaction notify:YES];
+            [self parseTransaction:transaction];
         }
 
         NSError *error = nil;
@@ -240,7 +240,7 @@ NSString * const BCClientPasswordChangedNotification = @"BCClientPasswordChanged
         }
 
         [_transactionUpdateContext performBlock:^{
-            [self parseTransaction:transaction notify:YES];
+            [self parseTransaction:transaction];
 
             NSError *error = nil;
             [_transactionUpdateContext save:&error];
@@ -360,7 +360,7 @@ NSString * const BCClientPasswordChangedNotification = @"BCClientPasswordChanged
     return [[HIBitcoinManager defaultManager] transactionForHash:hash];
 }
 
-- (void)parseTransaction:(NSDictionary *)data notify:(BOOL)notify {
+- (void)parseTransaction:(NSDictionary *)data {
     NSFetchRequest *request = [[NSFetchRequest alloc] initWithEntityName:HITransactionEntity];
     request.predicate = [NSPredicate predicateWithFormat:@"id == %@", data[@"txid"]];
 
@@ -378,11 +378,6 @@ NSString * const BCClientPasswordChangedNotification = @"BCClientPasswordChanged
         transaction.date = data[@"time"];
         transaction.amount = [data[@"amount"] longLongValue];
         transaction.request = (![data[@"details"][0][@"category"] isEqual:@"send"]);
-
-        if (!notify) {
-            transaction.read = YES;
-        }
-
         transaction.senderHash = data[@"details"][0][@"address"];
 
         if (transaction.senderHash) {
