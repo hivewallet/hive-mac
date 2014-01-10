@@ -19,6 +19,8 @@ typedef NS_ENUM(NSInteger, HINotificationType) {
 
 @implementation HINotificationService
 
+#pragma deploymate push "ignored-api-availability"
+
 + (HINotificationService *)sharedService {
     static HINotificationService *sharedService = nil;
     static dispatch_once_t oncePredicate;
@@ -148,5 +150,7 @@ typedef NS_ENUM(NSInteger, HINotificationType) {
     NSString *message = NSLocalizedString(@"Backup failed", @"Notification of failed backup");
     [self postNotification:message text:nil notificationType:HINotificationTypeBackup];
 }
+
+#pragma deploymate pop
 
 @end
