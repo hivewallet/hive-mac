@@ -18,6 +18,10 @@
 
 @implementation HITransactionCellView
 
+- (void)awakeFromNib {
+    [self.shareButton sendActionOn:NSLeftMouseDownMask];
+}
+
 - (IBAction)shareButtonPressed:(NSButton *)sender {
     #pragma deploymate push "ignored-api-availability"
     NSSharingServicePicker *sharingServicePicker = [[NSSharingServicePicker alloc] initWithItems:@[self.shareText]];

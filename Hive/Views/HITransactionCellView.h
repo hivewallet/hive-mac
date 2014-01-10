@@ -17,6 +17,7 @@
 @property (strong, nonatomic) IBOutlet NSTextField *dateLabel;
 @property (strong, nonatomic) IBOutlet NSImageView *directionMark;
 @property (strong, nonatomic) IBOutlet NSTextField *pendingLabel;
+@property (strong, nonatomic) IBOutlet NSButton *shareButton;
 
 @property (nonatomic, copy) NSAttributedString *shareText;
 

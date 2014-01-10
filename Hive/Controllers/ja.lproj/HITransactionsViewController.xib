@@ -148,6 +148,7 @@
                                                     <outlet property="directionMark" destination="43" id="45"/>
                                                     <outlet property="imageView" destination="46" id="48"/>
                                                     <outlet property="pendingLabel" destination="mY4-hd-Z1f" id="C0g-Z6-TDZ"/>
+                                                    <outlet property="shareButton" destination="NZf-qf-8PB" id="c2U-6H-q94"/>
                                                     <outlet property="textField" destination="21" id="23"/>
                                                 </connections>
                                             </tableCellView>
