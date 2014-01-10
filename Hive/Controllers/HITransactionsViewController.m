@@ -283,8 +283,8 @@
 
 - (NSString *)dateTextForTransaction:(HITransaction *)transaction {
     NSCalendar *calendar = [NSCalendar currentCalendar];
-    NSInteger currentYear = [calendar component:NSCalendarUnitYear fromDate:[NSDate date]];
-    NSInteger transactionYear = [calendar component:NSCalendarUnitYear fromDate:transaction.date];
+    NSInteger currentYear = [[calendar components:NSYearCalendarUnit fromDate:[NSDate date]] year];
+    NSInteger transactionYear = [[calendar components:NSYearCalendarUnit fromDate:transaction.date] year];
 
     if (currentYear == transactionYear) {
         return [_transactionDateFormatter stringFromDate:transaction.date];
