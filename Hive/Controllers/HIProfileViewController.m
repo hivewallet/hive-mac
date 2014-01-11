@@ -160,7 +160,6 @@
 }
 
 - (void)fetchExchangeRate {
-    // TODO: There should be a timer updating the exchange rate in case the window is open too long.
     self.exchangeRate = nil;
     [self updateConvertedBalanceLabel];
     [self.exchangeRateService updateExchangeRateForCurrency:self.selectedCurrency];
