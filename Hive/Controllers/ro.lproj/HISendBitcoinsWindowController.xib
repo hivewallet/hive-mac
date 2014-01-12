@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="4514" systemVersion="13B42" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="4514" systemVersion="13C32" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
         <deployment defaultVersion="1070" identifier="macosx"/>
         <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="4514"/>
@@ -28,7 +28,7 @@
             <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
             <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
             <rect key="contentRect" x="196" y="240" width="435" height="234"/>
-            <rect key="screenRect" x="0.0" y="0.0" width="1920" height="1058"/>
+            <rect key="screenRect" x="0.0" y="0.0" width="1680" height="1028"/>
             <value key="minSize" type="size" width="403" height="238"/>
             <value key="maxSize" type="size" width="1000" height="238"/>
             <view key="contentView" wantsLayer="YES" id="2">
@@ -101,10 +101,9 @@ Gw
                                     <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageAlignment="right" imageScaling="proportionallyDown" id="18"/>
                                 </imageView>
                                 <textField focusRingType="none" verticalHuggingPriority="750" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" translatesAutoresizingMaskIntoConstraints="NO" id="19">
-                                    <rect key="frame" x="98" y="115" width="268" height="18"/>
+                                    <rect key="frame" x="98" y="115" width="264" height="18"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                     <constraints>
-                                        <constraint firstAttribute="width" priority="413" constant="264" id="HHk-PC-VkB"/>
                                         <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="240" id="K3U-Ag-cCK"/>
                                     </constraints>
                                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" focusRingType="none" title="John Whatshisface" placeholderString="Tastați pentru a căuta..." id="20">
@@ -273,7 +272,7 @@ Gw
                             <constraint firstItem="36" firstAttribute="top" secondItem="23" secondAttribute="bottom" constant="12" id="nki-u1-GMp"/>
                             <constraint firstItem="19" firstAttribute="leading" secondItem="21" secondAttribute="leading" id="sc1-MY-6J3"/>
                             <constraint firstItem="19" firstAttribute="top" secondItem="11" secondAttribute="top" constant="18" id="ttp-a8-W68"/>
-                            <constraint firstItem="51" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="19" secondAttribute="trailing" constant="-4" id="w3B-kL-td1"/>
+                            <constraint firstItem="51" firstAttribute="leading" secondItem="19" secondAttribute="trailing" id="w3B-kL-td1"/>
                             <constraint firstItem="ZPL-GE-Omh" firstAttribute="top" secondItem="l47-zx-4mb" secondAttribute="top" id="w4T-Za-4Te"/>
                             <constraint firstItem="fQu-xK-vvV" firstAttribute="leading" secondItem="36" secondAttribute="trailing" constant="8" id="xoD-0j-rmU"/>
                             <constraint firstItem="u5l-cR-nXn" firstAttribute="leading" secondItem="ZPL-GE-Omh" secondAttribute="leading" id="z0b-1c-BUf"/>
