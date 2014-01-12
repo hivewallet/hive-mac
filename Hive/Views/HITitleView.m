@@ -8,6 +8,7 @@
 
 #import <QuartzCore/QuartzCore.h>
 
+#import "HIDraggableButton.h"
 #import "HISidebarController.h"
 #import "HITitleArrowView.h"
 #import "HITitleView.h"
@@ -66,7 +67,7 @@ static NSString const *ConstraintKey = @"constraint";
 - (void)shiftTopViewLeftAnimated:(BOOL)animated {
 
     NSMutableDictionary *stackItem = _stack[_stack.count - 1];
-    NSButton *button = stackItem[ButtonKey];
+    HIDraggableButton *button = stackItem[ButtonKey];
 
     [self removeConstraint:stackItem[ConstraintKey]];
     double startX = button.frame.origin.x;
@@ -78,6 +79,7 @@ static NSString const *ConstraintKey = @"constraint";
     // Make this button shrink sooner than the main title.
     [button setContentCompressionResistancePriority:NSLayoutPriorityDefaultLow
                                      forOrientation:NSLayoutConstraintOrientationHorizontal];
+    button.draggable = NO;
 
     [self setStyleForButton:button title:stackItem[TitleKey] small:YES animated:animated];
 }
@@ -142,7 +144,7 @@ static NSString const *ConstraintKey = @"constraint";
 }
 
 - (NSButton *)createButtonWithTitle:(NSString *)title {
-    NSButton *titleButton = [NSButton new];
+    NSButton *titleButton = [HIDraggableButton new];
     titleButton.layer.borderWidth = 1.0;
     titleButton.wantsLayer = YES;
     titleButton.translatesAutoresizingMaskIntoConstraints = NO;
@@ -189,7 +191,7 @@ static NSString const *ConstraintKey = @"constraint";
 - (void)centerTopViewAnimated:(BOOL)animated {
 
     NSMutableDictionary *stackItem = _stack[_stack.count - 1];
-    NSButton *button = stackItem[ButtonKey];
+    HIDraggableButton *button = stackItem[ButtonKey];
     NSString *title = stackItem[TitleKey];
 
     CGSize newSize = [self setStyleForButton:button title:title small:NO animated:animated];
@@ -210,6 +212,7 @@ static NSString const *ConstraintKey = @"constraint";
     // Make this button not shrink (when possible)
     [button setContentCompressionResistancePriority:NSLayoutPriorityDefaultHigh
                                      forOrientation:NSLayoutConstraintOrientationHorizontal];
+    button.draggable = YES;
 }
 
 - (void)popToTitleAtPosition:(NSInteger)position {

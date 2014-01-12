@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		05D9F526F5294257A0422835 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1EFBACBE45EB458A8ED83785 /* libPods.a */; };
 		1AA1008D9D0E0DC1B7F4E36D /* HILinkTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AA100BCED704B381898FF89 /* HILinkTextField.m */; };
+		1AA100A06AF3D94CDB6D1867 /* HIDraggableButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AA10ED2A6A54B40FB3067FD /* HIDraggableButton.m */; };
 		1AA101EED53C9E95085C6DE3 /* HIProfileViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1AA10EA4B4E51F7D0E32DC6D /* HIProfileViewController.xib */; };
 		1AA1031B9A110C6B939AB603 /* HIBitcoinFormatService.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AA100CAE5EF0CB61AF126DB /* HIBitcoinFormatService.m */; };
 		1AA105A7496BDE6BA5E2FA84 /* NSDecimalNumber+HISatoshiConversion.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AA104995C1BAF25C99780F1 /* NSDecimalNumber+HISatoshiConversion.m */; };
@@ -258,10 +259,12 @@
 		1AA109349A0DB4DF39E55FA4 /* HILabelPopUpButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HILabelPopUpButton.h; sourceTree = "<group>"; };
 		1AA1095B1D4E2BF3C14C3FC2 /* ar */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = ar; path = ar.lproj/HIProfileViewController.xib; sourceTree = "<group>"; };
 		1AA1099A1809B28C291572E7 /* HILabelPopUpButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HILabelPopUpButton.m; sourceTree = "<group>"; };
+		1AA10A32478D47E8D26B9653 /* HIDraggableButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HIDraggableButton.h; sourceTree = "<group>"; };
 		1AA10ABE84E126AEFF538618 /* HINotificationService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HINotificationService.h; sourceTree = "<group>"; };
 		1AA10B9F1D9322FFF21821DA /* NSWindow+HIShake.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSWindow+HIShake.m"; sourceTree = "<group>"; };
 		1AA10BD2B747098DE4F5E6E8 /* NSDecimalNumber+HISatoshiConversion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDecimalNumber+HISatoshiConversion.h"; sourceTree = "<group>"; };
 		1AA10C583F128C0BCD84C878 /* HIExchangeRateService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HIExchangeRateService.h; sourceTree = "<group>"; };
+		1AA10ED2A6A54B40FB3067FD /* HIDraggableButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HIDraggableButton.m; sourceTree = "<group>"; };
 		1AA10F3E7660E657A58361D9 /* HIProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HIProfileViewController.h; sourceTree = "<group>"; };
 		1EFBACBE45EB458A8ED83785 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		24178E2D1861005100A73D4E /* HIPasswordChangeWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HIPasswordChangeWindowController.h; sourceTree = "<group>"; };
@@ -1610,6 +1613,8 @@
 				D99C9A5417E8F59200899CAB /* HIDeleteButtonCell.m */,
 				D9716B6B17D88F8800888F4E /* HIDoneButtonCell.h */,
 				D9716B6C17D88F8800888F4E /* HIDoneButtonCell.m */,
+				1AA10A32478D47E8D26B9653 /* HIDraggableButton.h */,
+				1AA10ED2A6A54B40FB3067FD /* HIDraggableButton.m */,
 				589064B5180596B80082BE5C /* HIEditableImageView.h */,
 				589064B6180596B80082BE5C /* HIEditableImageView.m */,
 				D958A8B617E8547A00CED98C /* HIFlippedView.h */,
@@ -2226,6 +2231,7 @@
 				1AA105A7496BDE6BA5E2FA84 /* NSDecimalNumber+HISatoshiConversion.m in Sources */,
 				1AA1076874E6E840D30050E5 /* HILabelPopUpButton.m in Sources */,
 				1AA10A3DE7069E497A59CF0C /* HINotificationService.m in Sources */,
+				1AA100A06AF3D94CDB6D1867 /* HIDraggableButton.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
