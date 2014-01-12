@@ -106,7 +106,7 @@ Gw
                                     <constraints>
                                         <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="240" id="K3U-Ag-cCK"/>
                                     </constraints>
-                                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" focusRingType="none" title="John Whatshisface" placeholderString="Πληκτρολογείστε για αναζήτηση..." id="20">
+                                    <textFieldCell key="cell" lineBreakMode="truncatingMiddle" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" focusRingType="none" title="John Whatshisface" placeholderString="Πληκτρολογείστε για αναζήτηση..." id="20">
                                         <font key="font" size="14" name="LucidaGrande-Bold"/>
                                         <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
