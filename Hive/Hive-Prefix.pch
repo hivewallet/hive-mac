@@ -13,6 +13,7 @@
     #define RGB(r,g,b) [NSColor colorWithCalibratedRed:((CGFloat)r/255.0) green:((CGFloat)g/255.0) blue:((CGFloat)b/255.0) alpha:1.0]
 
     #import <BitcoinJKit/HILogger.h>
+    #import <AutoLayoutMacros/AutoLayoutMacrosShort.h>
 #endif
 
 #ifdef DEBUG

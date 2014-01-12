@@ -6,6 +6,7 @@ pod 'NXOAuth2Client'
 pod 'FXKeychain'
 pod 'CocoaLumberjack'
 pod 'LetsMove'
+pod 'AutoLayoutMacros'
 
 target :test, :exclusive => true do
   link_with 'HiveTests'

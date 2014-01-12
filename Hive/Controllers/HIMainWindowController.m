@@ -132,10 +132,7 @@ static const NSTimeInterval SlideAnimationDuration = 0.3;
     [_contentView addSubview:newController.view];
     [newController viewWillAppear];
     NSView *newTitleView = newController.titleBarView;
-    NSRect f = newTitleView.frame;
-    f.size.width = self.appStoreWindow.titleBarView.bounds.size.width;
-    f.size.height = self.appStoreWindow.titleBarView.bounds.size.height;
-    newTitleView.frame = f;
+    newTitleView.frame = self.appStoreWindow.titleBarView.bounds;
     newTitleView.alphaValue = 0.0;
     [self.appStoreWindow.titleBarView addSubview:newTitleView];
 
