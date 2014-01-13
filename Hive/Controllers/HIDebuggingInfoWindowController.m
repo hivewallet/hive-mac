@@ -7,6 +7,7 @@
 //
 
 #import <BitcoinJKit/BitcoinJKit.h>
+#import "HIBitcoinFormatService.h"
 #import "HIDatabaseManager.h"
 #import "HIDebuggingInfoWindowController.h"
 #import "HITransaction.h"
@@ -25,12 +26,20 @@
 - (void)updateInfo {
     NSMutableString *info = [[NSMutableString alloc] init];
     HIBitcoinManager *bitcoin = [HIBitcoinManager defaultManager];
+    HIBitcoinFormatService *formatService = [HIBitcoinFormatService sharedService];
 
     [info appendFormat:@"## Basic info\n\n"];
     [info appendFormat:@"Data generated at: %@\n", [NSDate date]];
     [info appendFormat:@"Wallet address: %@\n", bitcoin.walletAddress];
-    [info appendFormat:@"Available balance: %lld\n", bitcoin.availableBalance];
-    [info appendFormat:@"Estimated balance: %lld\n", bitcoin.estimatedBalance];
+
+    [info appendFormat:@"Available balance: %lld (%@)\n",
+     bitcoin.availableBalance,
+     [formatService stringWithDesignatorForBitcoin:bitcoin.availableBalance]];
+    [info appendFormat:@"Estimated balance: %lld (%@)\n",
+     bitcoin.estimatedBalance,
+     [formatService stringWithDesignatorForBitcoin:bitcoin.estimatedBalance]];
+
+    [info appendFormat:@"Sync progress: %.1f%%\n", bitcoin.syncProgress];
 
     NSFetchRequest *transactionRequest = [NSFetchRequest fetchRequestWithEntityName:HITransactionEntity];
     transactionRequest.returnsObjectsAsFaults = NO;
