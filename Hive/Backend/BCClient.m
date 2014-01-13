@@ -207,7 +207,7 @@ NSString * const BCClientPasswordChangedNotification = @"BCClientPasswordChanged
 
     [_transactionUpdateContext performBlock:^{
         for (NSDictionary *transaction in transactions) {
-            [self parseTransaction:transaction];
+            [self parseTransaction:transaction sendNotifications:NO];
         }
 
         NSError *error = nil;
@@ -240,7 +240,7 @@ NSString * const BCClientPasswordChangedNotification = @"BCClientPasswordChanged
         }
 
         [_transactionUpdateContext performBlock:^{
-            [self parseTransaction:transaction];
+            [self parseTransaction:transaction sendNotifications:YES];
 
             NSError *error = nil;
             [_transactionUpdateContext save:&error];
@@ -360,7 +360,7 @@ NSString * const BCClientPasswordChangedNotification = @"BCClientPasswordChanged
     return [[HIBitcoinManager defaultManager] transactionForHash:hash];
 }
 
-- (void)parseTransaction:(NSDictionary *)data {
+- (void)parseTransaction:(NSDictionary *)data sendNotifications:(BOOL)sendNotifications {
     NSAssert(data != nil, @"Transaction data shouldn't be null");
     NSAssert(data[@"txid"] != nil, @"Transaction id shouldn't be null");
 
@@ -413,12 +413,14 @@ NSString * const BCClientPasswordChangedNotification = @"BCClientPasswordChanged
         transaction.status = HITransactionStatusUnknown;
     }
 
-    if (alreadyExists) {
-        if (transaction.status != previousStatus) {
-            [self notifyObserversWithSelector:@selector(transactionChangedStatus:) transaction:transaction];
+    if (sendNotifications) {
+        if (alreadyExists) {
+            if (transaction.status != previousStatus) {
+                [self notifyObserversWithSelector:@selector(transactionChangedStatus:) transaction:transaction];
+            }
+        } else {
+            [self notifyObserversWithSelector:@selector(transactionAdded:) transaction:transaction];
         }
-    } else {
-        [self notifyObserversWithSelector:@selector(transactionAdded:) transaction:transaction];
     }
 
     HILogDebug(@"Transaction %@ is now %@ (%d)", transaction.id, confidence, transaction.status);
