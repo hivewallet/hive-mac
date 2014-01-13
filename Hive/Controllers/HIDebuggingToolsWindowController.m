@@ -6,14 +6,33 @@
 //  Copyright (c) 2013 Hive Developers. All rights reserved.
 //
 
+#import <BitcoinJKit/BitcoinJKit.h>
 #import "BCClient.h"
 #import "HIApplicationsManager.h"
 #import "HIDebuggingToolsWindowController.h"
+
+@interface HIDebuggingToolsWindowController ()
+
+@property (nonatomic, strong) IBOutlet NSTextField *progressLabel;
+@property (nonatomic, strong) IBOutlet NSProgressIndicator *progressBar;
+
+@end
 
 @implementation HIDebuggingToolsWindowController
 
 - (id)init {
     return [super initWithWindowNibName:@"HIDebuggingToolsWindowController"];
+}
+
+- (void)awakeFromNib {
+    [[HIBitcoinManager defaultManager] addObserver:self
+                                        forKeyPath:@"syncProgress"
+                                           options:NSKeyValueObservingOptionInitial
+                                           context:NULL];
+}
+
+- (void)dealloc {
+    [[HIBitcoinManager defaultManager] removeObserver:self forKeyPath:@"syncProgress"];
 }
 
 - (IBAction)rebuildTransactionListClicked:(id)sender {
@@ -76,6 +95,14 @@
 
 - (void)reinstallBundledApps {
     [[HIApplicationsManager sharedManager] preinstallApps];
+}
+
+- (void)observeValueForKeyPath:(NSString *)path ofObject:(id)object change:(NSDictionary *)change context:(void *)ctx {
+    if (object == [HIBitcoinManager defaultManager]) {
+        float progress = [[HIBitcoinManager defaultManager] syncProgress];
+        self.progressLabel.stringValue = [NSString stringWithFormat:@"%.1f%%", progress];
+        self.progressBar.doubleValue = progress;
+    }
 }
 
 @end
