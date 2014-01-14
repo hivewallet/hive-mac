@@ -491,14 +491,16 @@ NSString * const BCClientPasswordChangedNotification = @"BCClientPasswordChanged
 }
 
 - (void)notifyObserversWithSelector:(SEL)selector transaction:(HITransaction *)transaction {
-    for (id<BCTransactionObserver> observer in self.transactionObservers) {
-        #pragma clang diagnostic push
-        #pragma clang diagnostic ignored "-Warc-performSelector-leaks"
-        if ([observer respondsToSelector:selector]) {
-            [observer performSelector:selector withObject:transaction];
+    dispatch_async(dispatch_get_main_queue(), ^{
+        for (id<BCTransactionObserver> observer in self.transactionObservers) {
+            #pragma clang diagnostic push
+            #pragma clang diagnostic ignored "-Warc-performSelector-leaks"
+            if ([observer respondsToSelector:selector]) {
+                [observer performSelector:selector withObject:transaction];
+            }
+            #pragma clang diagnostic pop
         }
-        #pragma clang diagnostic pop
-    }
+    });
 }
 
 - (void)backupWalletToDirectory:(NSURL *)backupURL error:(NSError **)error {
