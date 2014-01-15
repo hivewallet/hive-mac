@@ -108,10 +108,11 @@ typedef NS_ENUM(NSInteger, HINotificationType) {
     }
 }
 
-- (void)transactionChangedStatus:(HITransaction *)transaction {
-    if (transaction.direction == HITransactionDirectionOutgoing
-        && transaction.status == HITransactionStatusBuilding) {
+- (void)transactionChangedStatus:(HITransaction *)tx {
+    if (tx.direction == HITransactionDirectionOutgoing && tx.status == HITransactionStatusBuilding) {
         [self postSendConfirmedNotification];
+    } else if (tx.status == HITransactionStatusDead) {
+        [self showCancelledTransactionAlertForTransaction:tx];
     }
 }
 
@@ -149,6 +150,37 @@ typedef NS_ENUM(NSInteger, HINotificationType) {
 - (void)postBackupErrorNotification {
     NSString *message = NSLocalizedString(@"Backup failed", @"Notification of failed backup");
     [self postNotification:message text:nil notificationType:HINotificationTypeBackup];
+}
+
+- (void)showCancelledTransactionAlertForTransaction:(HITransaction *)transaction {
+    // this should never happen, and if it happens then something went seriously wrong,
+    // so let's make sure the user sees this
+
+    NSDateFormatter *formatter = [NSDateFormatter new];
+    formatter.dateFormat = [NSDateFormatter dateFormatFromTemplate:@"LLL d jj:mm a"
+                                                           options:0
+                                                            locale:[NSLocale  currentLocale]];
+
+    NSString *formattedDate = [formatter stringFromDate:transaction.date];
+
+    NSString *title = NSLocalizedString(@"Transaction from %@ was cancelled.",
+                                        @"Transaction was cancelled alert title");
+
+    NSString *message = NSLocalizedString(@"This can happen because of bugs in the wallet code "
+                                          @"or because the transaction was rejected by the network.",
+                                          @"Transaction was cancelled alert details");
+
+    NSAlert *alert = [NSAlert alertWithMessageText:[NSString stringWithFormat:title, formattedDate]
+                                     defaultButton:NSLocalizedString(@"OK", @"OK button title")
+                                   alternateButton:nil
+                                       otherButton:nil
+                         informativeTextWithFormat:@"%@", message];
+
+    [alert setAlertStyle:NSCriticalAlertStyle];
+
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [alert runModal];
+    });
 }
 
 #pragma deploymate pop
