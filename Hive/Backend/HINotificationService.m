@@ -143,7 +143,7 @@ typedef NS_ENUM(NSInteger, HINotificationType) {
 }
 
 - (void)postSendConfirmedNotification {
-    NSString *message = NSLocalizedString(@"Transaction confirmed", @"Notification of confirmed send transaction");
+    NSString *message = NSLocalizedString(@"Transaction completed", @"Notification of confirmed send transaction");
     [self postNotification:message text:nil notificationType:HINotificationTypeTransaction];
 }
 
