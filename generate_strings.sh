@@ -15,3 +15,5 @@ for file in `find Hive -name '*.xib' -and -path '*/en.lproj/*'`; do
   iconv -f UTF-16 -t UTF-8 $strings_file > $strings_file.8
   mv $strings_file.8 $strings_file
 done
+
+ruby update_strings.rb
