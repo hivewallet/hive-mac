@@ -585,14 +585,16 @@ NSString * const HISendBitcoinsWindowSuccessKey = @"success";
 }
 
 - (BOOL)control:(NSControl *)control textView:(NSTextView *)textView doCommandBySelector:(SEL)selector {
-    if (selector == @selector(moveUp:)) {
+    if (control == self.nameLabel && selector == @selector(moveUp:)) {
         [self showAutocompleteWindow];
         [self.autocompleteController moveSelectionUp];
-    } else if (selector == @selector(moveDown:)) {
+    } else if (control == self.nameLabel && selector == @selector(moveDown:)) {
         [self showAutocompleteWindow];
         [self.autocompleteController moveSelectionDown];
-    } else if (selector == @selector(insertNewline:)) {
+    } else if (control == self.nameLabel && selector == @selector(insertNewline:)) {
         [self.autocompleteController confirmSelection];
+        [self.window makeFirstResponder:self.amountField];
+    } else if (control != self.nameLabel && selector == @selector(insertNewline:)) {
         [self.window makeFirstResponder:nil];
     } else if (selector == @selector(cancelOperation:)) {
         if (self.autocompleteController.window.isVisible) {
