@@ -1,7 +1,4 @@
 
-/* Class = "NSTextFieldCell"; title = "Text Cell"; ObjectID = "10"; */
-"10.title" = "Celulă Text";
-
 /* Class = "NSTextFieldCell"; title = "Looks like you don't have any contacts yet! Add your first one and start sending money!"; ObjectID = "123"; */
 "123.title" = "Se pare că nu aveți niciun contact! Adăugați primul contact și începeți să trimiteți bani!";
 
@@ -10,6 +7,3 @@
 
 /* Class = "NSTextFieldCell"; title = "You can then use the ✚ button on top to add more contacts."; ObjectID = "129"; */
 "129.title" = "Apoi puteți folosi \U2795 buton deasupra să adăugați mai multe contacte.";
-
-/* Class = "NSTextFieldCell"; title = "Label"; ObjectID = "205"; */
-"205.title" = "Etichetă";

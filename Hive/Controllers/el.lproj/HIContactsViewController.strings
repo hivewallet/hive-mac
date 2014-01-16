@@ -1,7 +1,4 @@
 
-/* Class = "NSTextFieldCell"; title = "Text Cell"; ObjectID = "10"; */
-"10.title" = "Κελί κειμένου";
-
 /* Class = "NSTextFieldCell"; title = "Looks like you don't have any contacts yet! Add your first one and start sending money!"; ObjectID = "123"; */
 "123.title" = "Απ' ότι φαίνεται δεν έχετε καταχωρημένες επαφές! Προσθέστε την πρώτη σας και ξεκινήστε να στέλνετε χρήματα!";
 
@@ -10,6 +7,3 @@
 
 /* Class = "NSTextFieldCell"; title = "You can then use the ✚ button on top to add more contacts."; ObjectID = "129"; */
 "129.title" = "Μπορείτε μετά να χρησιμοποιήσετε το \U2795 κουμπί στην κορυφή για να προσθέσετε κι άλλες επαφές.";
-
-/* Class = "NSTextFieldCell"; title = "Label"; ObjectID = "205"; */
-"205.title" = "Ετικέτα";

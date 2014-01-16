@@ -1,16 +1,21 @@
 #!/usr/bin/env ruby
 
 BASE_DIRECTORIES = ['Hive', 'Hive/Controllers']
+IGNORED_LABELS = [
+  "Box", "John Appleseed", "John Whatshisface", "Label", "Multiline Label", "OtherViews", "Text Cell", "Window",
+]
 
 
 class StringsFile
   attr_reader :data
 
-  def initialize(file)
+  def initialize(file, options = {})
     @data = {}
 
     File.read(file).scan(%r{/\* ([^*]+) \*/\n"(.+)" = "(.+)";\n+}) do |info, original, translated|
-      @data[original] = { translated: translated, info: info }
+      unless options[:remove_ignored] && IGNORED_LABELS.include?(translated)
+        @data[original] = { translated: translated, info: info }
+      end
     end
   end
 
@@ -47,7 +52,8 @@ BASE_DIRECTORIES.each do |base|
     filename = File.basename(file)
     puts "Updating translations of #{filename}..."
 
-    original_data = StringsFile.new(file)
+    original_data = StringsFile.new(file, remove_ignored: (base.include?('Controllers')))
+    File.write(file, original_data)
 
     Dir.glob("#{base}/*.lproj").each do |dir|
       next if File.basename(dir) == 'en.lproj'

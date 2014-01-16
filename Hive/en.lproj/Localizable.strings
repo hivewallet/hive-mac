@@ -1,3 +1,4 @@
+
 /* Address field placeholder */
 "Address" = "Address";
 
@@ -243,4 +244,3 @@
 
 /* Remove contact alert dialog body */
 "You won't be able to undo this operation." = "You won't be able to undo this operation.";
-

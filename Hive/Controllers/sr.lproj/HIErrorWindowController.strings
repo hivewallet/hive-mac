@@ -5,9 +5,6 @@
 /* Class = "NSTextFieldCell"; placeholderString = "email@domain.com"; ObjectID = "0m5-Xd-7pp"; */
 "0m5-Xd-7pp.placeholderString" = "email@domain.com";
 
-/* Class = "NSTextFieldCell"; placeholderString = "John Appleseed"; ObjectID = "By4-mz-4pa"; */
-"By4-mz-4pa.placeholderString" = "John Appleseed";
-
 /* Class = "NSTextFieldCell"; title = "What were you doing when the error occurred?"; ObjectID = "CoM-ma-aHq"; */
 "CoM-ma-aHq.title" = "Шта сте радили када се грешка догодила?";
 
@@ -16,9 +13,6 @@
 
 /* Class = "NSTextFieldCell"; title = "Oh no, something went wrong!"; ObjectID = "Mpx-rH-nUM"; */
 "Mpx-rH-nUM.title" = "Ох не, нешто је пошло наопако!";
-
-/* Class = "NSBox"; title = "Box"; ObjectID = "W3G-l5-uNF"; */
-"W3G-l5-uNF.title" = "Поље";
 
 /* Class = "NSTextFieldCell"; title = "Email (optional)"; ObjectID = "qVP-Mf-lLP"; */
 "qVP-Mf-lLP.title" = "Е-маил (опционо)";

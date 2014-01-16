@@ -1,7 +1,4 @@
 
-/* Class = "NSTextFieldCell"; title = "Text Cell"; ObjectID = "10"; */
-"10.title" = "Campo de Texto";
-
 /* Class = "NSTextFieldCell"; title = "Looks like you don't have any contacts yet! Add your first one and start sending money!"; ObjectID = "123"; */
 "123.title" = "Ainda não tem contactos! Adicione o primeiro contacto e comece a enviar dinheiro!";
 
@@ -10,6 +7,3 @@
 
 /* Class = "NSTextFieldCell"; title = "You can then use the ✚ button on top to add more contacts."; ObjectID = "129"; */
 "129.title" = "Pode usar o \U2795 botão acima para adicionar contactos.";
-
-/* Class = "NSTextFieldCell"; title = "Label"; ObjectID = "205"; */
-"205.title" = "Etiqueta";

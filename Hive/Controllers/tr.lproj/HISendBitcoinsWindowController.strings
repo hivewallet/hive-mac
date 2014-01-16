@@ -14,14 +14,8 @@
 /* Class = "NSTextFieldCell"; placeholderString = "Type to search..."; ObjectID = "20"; */
 "20.placeholderString" = "Aramak için yazýn.";
 
-/* Class = "NSTextFieldCell"; title = "John Whatshisface"; ObjectID = "20"; */
-"20.title" = "John Whatshisface";
-
 /* Class = "NSTextFieldCell"; title = "Main address"; ObjectID = "22"; */
 "22.title" = "Main address";
-
-/* Class = "NSBox"; title = "Box"; ObjectID = "23"; */
-"23.title" = "Box";
 
 /* Class = "NSTextFieldCell"; title = "0.0"; ObjectID = "37"; */
 "37.title" = "0.0";
@@ -31,12 +25,3 @@
 
 /* Class = "NSButtonCell"; title = "+0.00001"; ObjectID = "PvI-F7-VRv"; */
 "PvI-F7-VRv.title" = "+0.00001";
-
-/* Class = "NSBox"; title = "Box"; ObjectID = "Uma-46-IZW"; */
-"Uma-46-IZW.title" = "Box";
-
-/* Class = "NSMenu"; title = "OtherViews"; ObjectID = "WcM-4W-vgC"; */
-"WcM-4W-vgC.title" = "OtherViews";
-
-/* Class = "NSMenu"; title = "OtherViews"; ObjectID = "p6H-gm-BnX"; */
-"p6H-gm-BnX.title" = "OtherViews";

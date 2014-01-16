@@ -1,12 +1,3 @@
 
-/* Class = "NSWindow"; title = "Window"; ObjectID = "1"; */
-"1.title" = "窗户";
-
-/* Class = "NSTextFieldCell"; title = "Text Cell"; ObjectID = "13"; */
-"13.title" = "文本框";
-
-/* Class = "NSTextFieldCell"; title = "John Whatshisface"; ObjectID = "22"; */
-"22.title" = "王小明";
-
 /* Class = "NSTextFieldCell"; title = "Main address"; ObjectID = "34"; */
 "34.title" = "主要地址";
