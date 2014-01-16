@@ -104,13 +104,13 @@ typedef NS_ENUM(NSInteger, HINotificationType) {
 
 - (void)transactionAdded:(HITransaction *)transaction {
     if (!transaction.read && transaction.direction == HITransactionDirectionIncoming) {
-        [self postReceivedNotification:transaction.amount];
+        [self postReceivedNotification:transaction];
     }
 }
 
 - (void)transactionChangedStatus:(HITransaction *)tx {
     if (tx.direction == HITransactionDirectionOutgoing && tx.status == HITransactionStatusBuilding) {
-        [self postSendConfirmedNotification];
+        [self postSendConfirmedNotification:tx];
     } else if (tx.status == HITransactionStatusDead) {
         [self showCancelledTransactionAlertForTransaction:tx];
     }
@@ -126,7 +126,7 @@ typedef NS_ENUM(NSInteger, HINotificationType) {
     if (context == &KVO_CONTEXT) {
         HIBackupAdapter *adapter = object;
         if (adapter.error) {
-            [self postBackupErrorNotification];
+            [self postBackupErrorNotification:adapter.error];
         }
     } else {
         [super observeValueForKeyPath:keyPath ofObject:object change:change context:context];
@@ -136,20 +136,29 @@ typedef NS_ENUM(NSInteger, HINotificationType) {
 
 #pragma mark - Notifications
 
-- (void)postReceivedNotification:(satoshi_t)satoshi {
-    NSString *message = NSLocalizedString(@"You received Bitcoin", @"Notification of incoming transaction");
-    NSString *text = [[HIBitcoinFormatService sharedService] stringWithDesignatorForBitcoin:satoshi];
-    [self postNotification:message text:text notificationType:HINotificationTypeTransaction];
+- (void)postReceivedNotification:(HITransaction *)transaction {
+    NSString *btc = [[HIBitcoinFormatService sharedService] stringWithDesignatorForBitcoin:transaction.absoluteAmount];
+
+    [self postNotification:NSLocalizedString(@"You've received Bitcoin", @"Notification of incoming transaction")
+                      text:btc
+          notificationType:HINotificationTypeTransaction];
 }
 
-- (void)postSendConfirmedNotification {
-    NSString *message = NSLocalizedString(@"Transaction completed", @"Notification of confirmed send transaction");
-    [self postNotification:message text:nil notificationType:HINotificationTypeTransaction];
+- (void)postSendConfirmedNotification:(HITransaction *)transaction {
+    NSString *btc = [[HIBitcoinFormatService sharedService] stringWithDesignatorForBitcoin:transaction.absoluteAmount];
+    NSString *text = [NSString stringWithFormat:
+                      NSLocalizedString(@"You have sent %@.", @"Notification of confirmed send transaction details"),
+                      btc];
+
+    [self postNotification:NSLocalizedString(@"Transaction completed", @"Notification of confirmed send transaction")
+                      text:text
+          notificationType:HINotificationTypeTransaction];
 }
 
-- (void)postBackupErrorNotification {
-    NSString *message = NSLocalizedString(@"Backup failed", @"Notification of failed backup");
-    [self postNotification:message text:nil notificationType:HINotificationTypeBackup];
+- (void)postBackupErrorNotification:(NSError *)error {
+    [self postNotification:NSLocalizedString(@"Backup failed", @"Notification of failed backup")
+                      text:error.localizedFailureReason
+          notificationType:HINotificationTypeBackup];
 }
 
 - (void)showCancelledTransactionAlertForTransaction:(HITransaction *)transaction {
