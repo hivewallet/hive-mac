@@ -77,7 +77,7 @@
 "No address entered." = "주소가 입력되지 않았습니다";
 
 /* Transaction failed alert message */
-"No bitcoin have been taken from your wallet." = "Bitcoin 전송이 실패하였습니다.";
+"No Bitcoin have been taken from your wallet." = "Bitcoin 전송이 실패하였습니다.";
 
 /* OK Button title
    OK button title */

@@ -80,7 +80,7 @@
 "No address entered." = "Адреса није уписана.";
 
 /* Transaction failed alert message */
-"No bitcoin have been taken from your wallet." = "Ни један биткоин није узет из вашег новчаника.";
+"No Bitcoin have been taken from your wallet." = "Ни један биткоин није узет из вашег новчаника.";
 
 /* OK Button title
    OK button title */

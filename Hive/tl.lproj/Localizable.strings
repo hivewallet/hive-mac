@@ -77,7 +77,7 @@
 "No address entered." = "Walang nilagay na address.";
 
 /* Transaction failed alert message */
-"No bitcoin have been taken from your wallet." = "Walang bitcoin na ibinawas sa iyong wallet.";
+"No Bitcoin have been taken from your wallet." = "Walang Bitcoin na ibinawas sa iyong wallet.";
 
 /* OK Button title
    OK button title */

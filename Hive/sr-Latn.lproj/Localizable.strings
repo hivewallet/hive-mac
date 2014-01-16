@@ -80,7 +80,7 @@
 "No address entered." = "Adresa nije upisana.";
 
 /* Transaction failed alert message */
-"No bitcoin have been taken from your wallet." = "Ni jedan bitkoin nije uzet iz vašeg novčanika.";
+"No Bitcoin have been taken from your wallet." = "Ni jedan bitkoin nije uzet iz vašeg novčanika.";
 
 /* OK Button title
    OK button title */

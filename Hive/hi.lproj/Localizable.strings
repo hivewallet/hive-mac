@@ -80,7 +80,7 @@
 "No address entered." = "एडरेस दर्ज नहीं किया.";
 
 /* Transaction failed alert message */
-"No bitcoin have been taken from your wallet." = "आप के वॅालेट से कोई बिटकॅाइन नही लिया है";
+"No Bitcoin have been taken from your wallet." = "आप के वॅालेट से कोई बिटकॅाइन नही लिया है";
 
 /* OK Button title
    OK button title */

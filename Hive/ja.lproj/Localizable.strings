@@ -80,7 +80,7 @@
 "No address entered." = "アドレスを入力していない.";
 
 /* Transaction failed alert message */
-"No bitcoin have been taken from your wallet." = "ビットコインの出発は失敗.";
+"No Bitcoin have been taken from your wallet." = "ビットコインの出発は失敗.";
 
 /* OK Button title
     OK button title */

@@ -77,7 +77,7 @@
 "No address entered." = "Keine Adresse eingegeben.";
 
 /* Transaction failed alert message */
-"No bitcoin have been taken from your wallet." = "Aus ihrer Brieftasche wurde kein Bitcoin entfernt.";
+"No Bitcoin have been taken from your wallet." = "Aus ihrer Brieftasche wurde kein Bitcoin entfernt.";
 
 /* OK Button title
    OK button title */

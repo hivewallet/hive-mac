@@ -77,7 +77,7 @@
 "No address entered." = "Адрес не может быть пустым.";
 
 /* Transaction failed alert message */
-"No bitcoin have been taken from your wallet." = "Биткоины не были списаны с вашего кошелька.";
+"No Bitcoin have been taken from your wallet." = "Биткоины не были списаны с вашего кошелька.";
 
 /* OK Button title
    OK button title */

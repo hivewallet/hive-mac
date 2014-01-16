@@ -131,7 +131,7 @@
 "No backup since %@" = "Ingen säkerhetskopia sedan %@";
 
 /* Transaction failed alert message */
-"No bitcoin have been taken from your wallet." = "Inga bitcoins har blivit tagna från din plånbok.";
+"No Bitcoin have been taken from your wallet." = "Inga Bitcoins har blivit tagna från din plånbok.";
 
 /* OK Button title
    OK button title */

@@ -77,7 +77,7 @@
 "No address entered." = "地址没被填上。";
 
 /* Transaction failed alert message */
-"No bitcoin have been taken from your wallet." = "没有从帐户中取出比特币。";
+"No Bitcoin have been taken from your wallet." = "没有从帐户中取出比特币。";
 
 /* OK Button title
    OK button title */

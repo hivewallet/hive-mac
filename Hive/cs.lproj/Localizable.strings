@@ -80,7 +80,7 @@
 "No address entered." = "Nezadali jste adresu.";
 
 /* Transaction failed alert message */
-"No bitcoin have been taken from your wallet." = "Z peněženky nebyl vydán žádný Bitcoin.";
+"No Bitcoin have been taken from your wallet." = "Z peněženky nebyl vydán žádný Bitcoin.";
 
 /* OK Button title
    OK button title */

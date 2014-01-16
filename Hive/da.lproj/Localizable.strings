@@ -80,7 +80,7 @@
 "No address entered." = "Ingen adresse angivet.";
 
 /* Transaction failed alert message */
-"No bitcoin have been taken from your wallet." = "Ingen Bitcoins er blevet overført fra din Bitcoin-wallet.";
+"No Bitcoin have been taken from your wallet." = "Ingen Bitcoins er blevet overført fra din Bitcoin-wallet.";
 
 /* OK Button title
    OK button title */

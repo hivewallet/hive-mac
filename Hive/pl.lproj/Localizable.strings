@@ -1,4 +1,4 @@
-﻿/* App load error description */
+/* App load error description */
 "A network error has occurred or the application data file has been removed or corrupted." = "Wystąpił problem z siecią, albo pliki aplikacji zostały usunięte lub uszkodzone.";
 
 /* Address field placeholder */
@@ -80,7 +80,7 @@
 "No address entered." = "Nie podano żadnego adresu.";
 
 /* Transaction failed alert message */
-"No bitcoin have been taken from your wallet." = "Bitcoiny nie zostały pobrane z twojego portfela.";
+"No Bitcoin have been taken from your wallet." = "Bitcoiny nie zostały pobrane z twojego portfela.";
 
 /* OK Button title
    OK button title */

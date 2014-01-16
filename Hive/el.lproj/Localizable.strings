@@ -80,7 +80,7 @@
 "No address entered." = "Δε δόθηκε διεύθυνση.";
 
 /* Transaction failed alert message */
-"No bitcoin have been taken from your wallet." = "Δεν αφαιρέθηκαν bitcoins από το πορτοφόλι σας.";
+"No Bitcoin have been taken from your wallet." = "Δεν αφαιρέθηκαν Bitcoins από το πορτοφόλι σας.";
 
 /* OK Button title
    OK button title */

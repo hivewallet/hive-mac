@@ -77,7 +77,7 @@
 "No address entered." = "Geen adres ingevoerd.";
 
 /* Transaction failed alert message */
-"No bitcoin have been taken from your wallet." = "Er zijn geen bitcoin uit uw portemonnee gehaald.";
+"No Bitcoin have been taken from your wallet." = "Er zijn geen Bitcoin uit uw portemonnee gehaald.";
 
 /* OK Button title
    OK button title */

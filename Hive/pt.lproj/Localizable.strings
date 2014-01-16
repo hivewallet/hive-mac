@@ -80,7 +80,7 @@
 "No address entered." = "Nenhum endereço introduzido.";
 
 /* Transaction failed alert message */
-"No bitcoin have been taken from your wallet." = "Não foi retirado da sua carteira nenhum bitcoin.";
+"No Bitcoin have been taken from your wallet." = "Não foi retirado da sua carteira nenhum Bitcoin.";
 
 /* OK Button title
    OK button title */

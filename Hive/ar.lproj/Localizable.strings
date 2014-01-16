@@ -80,7 +80,7 @@
 "No address entered." = "العنوان فارغ.";
 
 /* Transaction failed alert message */
-"No bitcoin have been taken from your wallet." = "لا يوجد بتكوين خرج من المحفظة.";
+"No Bitcoin have been taken from your wallet." = "لا يوجد بتكوين خرج من المحفظة.";
 
 /* OK Button title
    OK button title */

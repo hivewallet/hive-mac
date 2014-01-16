@@ -137,7 +137,7 @@
 "No backup since %@" = "No backup since %@";
 
 /* Transaction failed alert message */
-"No bitcoin have been taken from your wallet." = "No bitcoin have been taken from your wallet.";
+"No Bitcoin have been taken from your wallet." = "No Bitcoin have been taken from your wallet.";
 
 /* OK button title */
 "OK" = "OK";

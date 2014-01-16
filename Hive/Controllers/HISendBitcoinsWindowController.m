@@ -436,7 +436,7 @@ NSString * const HISendBitcoinsWindowSuccessKey = @"success";
     [self showAlertWithTitle:NSLocalizedString(@"Transaction could not be completed.",
                                                @"Transaction failed alert title")
 
-                     message:NSLocalizedString(@"No bitcoin have been taken from your wallet.",
+                     message:NSLocalizedString(@"No Bitcoin have been taken from your wallet.",
                                                @"Transaction failed alert message")];
 }
 

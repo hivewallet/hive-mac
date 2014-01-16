@@ -80,7 +80,7 @@
 "No address entered." = "Adresa nu a fost introdusă.";
 
 /* Transaction failed alert message */
-"No bitcoin have been taken from your wallet." = "Nu a fost retras niciun bitcoin din portofel.";
+"No Bitcoin have been taken from your wallet." = "Nu a fost retras niciun Bitcoin din portofel.";
 
 /* OK Button title
    OK button title */

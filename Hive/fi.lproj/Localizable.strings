@@ -80,7 +80,7 @@
 "No address entered." = "Osoitetta ei ilmoitettu.";
 
 /* Transaction failed alert message */
-"No bitcoin have been taken from your wallet." = "Bitcoineja ei otettu lompakostasi.";
+"No Bitcoin have been taken from your wallet." = "Bitcoineja ei otettu lompakostasi.";
 
 /* OK Button title
  OK button title */
