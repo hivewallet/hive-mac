@@ -150,7 +150,7 @@
 "or choose from the list" = "lub wybierz z listy";
 
 /* Pending transaction label */
-"PENDING" = "WYSYŁANA";
+"PENDING" = "W TRAKCIE REALIZACJI";
 
 /* Invalid address alert message */
 "Please check if you have entered the address correctly." = "Sprawdź czy wprowadzony adres jest poprawny.";
