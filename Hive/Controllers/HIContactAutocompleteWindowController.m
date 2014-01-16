@@ -178,6 +178,7 @@ static const CGFloat MaxAutocompleteHeight = 300.0;
                        context:(void *)context {
     if (object == self.arrayController) {
         [self resizeWindowToContentHeight];
+        [self moveSelectionDown];
     }
 }
 

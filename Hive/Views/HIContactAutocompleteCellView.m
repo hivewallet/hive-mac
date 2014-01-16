@@ -10,4 +10,14 @@
 
 @implementation HIContactAutocompleteCellView
 
+- (void)setBackgroundStyle:(NSBackgroundStyle)backgroundStyle {
+    if (backgroundStyle == NSBackgroundStyleDark) {
+        self.addressLabel.textColor = [NSColor colorWithCalibratedWhite:0.75 alpha:1.0];
+    } else {
+        self.addressLabel.textColor = [NSColor colorWithCalibratedWhite:0.435 alpha:1.0];
+    }
+
+    [super setBackgroundStyle:backgroundStyle];
+}
+
 @end
