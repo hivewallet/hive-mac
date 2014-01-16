@@ -20,6 +20,9 @@
 /* Backup status: backup can't or won't be completed */
 "Backup error" = "Backup error";
 
+/* Notification of failed backup */
+"Backup failed" = "Backup failed";
+
 /* No comment provided by engineer. */
 "Backup hasn't been done yet" = "Backup hasn't been done yet";
 
@@ -152,6 +155,9 @@
 /* Invalid address alert message */
 "Please check if you have entered the address correctly." = "アドレスを正しく入力したかを再確認してください.";
 
+/* Own address alert message */
+"Please enter a different address." = "Please enter a different address.";
+
 /* Empty address alert message */
 "Please enter a valid Bitcoin address or select one from the dropdown list." = "アドレスを入力かリストから選んで下さい.";
 
@@ -194,8 +200,14 @@
 /* Install app popup warning message when app exists */
 "The existing app file will be replaced by the new version. This will not affect any app settings or saved data." = "The existing app file will be replaced by the new version. This will not affect any app settings or saved data.";
 
+/* Transaction was cancelled alert details */
+"This can happen because of bugs in the wallet code or because the transaction was rejected by the network." = "This can happen because of bugs in the wallet code or because the transaction was rejected by the network.";
+
 /* Large amount warning message */
 "This is more than what you usually send." = "This is more than what you usually send.";
+
+/* Own address alert title */
+"This is your wallet address." = "This is your wallet address.";
 
 /* Invalid address alert title */
 "This isn't a valid Bitcoin address." = "アドレスは正しくない.";
@@ -203,8 +215,14 @@
 /* Amount exceeds available balance alert message */
 "To send this transaction, you'll need to wait for your pending transactions to be confirmed first (this shouldn't take more than a few minutes)." = "To send this transaction, you'll need to wait for your pending transactions to be confirmed first (this shouldn't take more than a few minutes).";
 
+/* Notification of confirmed send transaction */
+"Transaction completed" = "Transaction completed";
+
 /* Transaction failed alert title */
 "Transaction could not be completed." = "送受は出来なかった.";
+
+/* Transaction was cancelled alert title */
+"Transaction from %@ was cancelled." = "Transaction from %@ was cancelled.";
 
 /* Transactions view title */
 "Transactions" = "送受";
@@ -230,6 +248,9 @@
 /* Install app popup title when app exists */
 "You have already added \"%@\" to Hive. Would you like to overwrite it?" = "You have already added \"%@\" to Hive. Would you like to overwrite it?";
 
+/* Notification of confirmed send transaction details */
+"You have sent %@." = "You have sent %@.";
+
 /* Dropbox no backup folder alert details */
 "You must install Dropbox first (see www.dropbox.com)." = "You must install Dropbox first (see www.dropbox.com).";
 
@@ -244,3 +265,6 @@
 
 /* Remove contact alert dialog body */
 "You won't be able to undo this operation." = "You won't be able to undo this operation.";
+
+/* Notification of incoming transaction */
+"You've received Bitcoin" = "You've received Bitcoin";
