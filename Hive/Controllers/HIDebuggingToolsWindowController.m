@@ -16,6 +16,11 @@
 @property (nonatomic, strong) IBOutlet NSTextField *progressLabel;
 @property (nonatomic, strong) IBOutlet NSProgressIndicator *progressBar;
 
+- (IBAction)rebuildApplicationListClicked:(id)sender;
+- (IBAction)rebuildTransactionListClicked:(id)sender;
+- (IBAction)rebuildWalletClicked:(id)sender;
+- (IBAction)reinstallBundledAppsClicked:(id)sender;
+
 @end
 
 @implementation HIDebuggingToolsWindowController
@@ -74,6 +79,20 @@
                         contextInfo:@selector(reinstallBundledApps)];
 }
 
+- (IBAction)rebuildWalletClicked:(id)sender {
+    NSAlert *alert = [NSAlert alertWithMessageText:@"Are you sure?"
+                                     defaultButton:@"Rebuild wallet"
+                                   alternateButton:@"Cancel"
+                                       otherButton:nil
+                         informativeTextWithFormat:@"Your wallet data will be rebuilt now. "
+                                                   @"This will take some time to complete."];
+
+    [alert beginSheetModalForWindow:self.window
+                      modalDelegate:self
+                     didEndSelector:@selector(alertClosed:withReturnCode:context:)
+                        contextInfo:@selector(rebuildWallet)];
+}
+
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Warc-performSelector-leaks"
 - (void)alertClosed:(NSAlert *)alert withReturnCode:(NSInteger)code context:(void *)context {
@@ -95,6 +114,17 @@
 
 - (void)reinstallBundledApps {
     [[HIApplicationsManager sharedManager] preinstallApps];
+}
+
+- (void)rebuildWallet {
+    NSError *error = nil;
+
+    [[HIBitcoinManager defaultManager] resetBlockchain:&error];
+
+    if (error) {
+        NSAlert *alert = [NSAlert alertWithError:error];
+        [alert beginSheetModalForWindow:self.window modalDelegate:nil didEndSelector:nil contextInfo:NULL];
+    }
 }
 
 - (void)observeValueForKeyPath:(NSString *)path ofObject:(id)object change:(NSDictionary *)change context:(void *)ctx {
