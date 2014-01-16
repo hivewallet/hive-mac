@@ -35,10 +35,6 @@ class StringsFile
     @data = rebuilt_data
   end
 
-  def empty?
-    @data.empty?
-  end
-
   def to_s
     @data.map { |key, data|
       %(\n/* #{data[:info]} */\n"#{key}" = "#{data[:translated]}";\n)
@@ -64,11 +60,7 @@ BASE_DIRECTORIES.each do |base|
         translated_data = StringsFile.new(translated_file)
         translated_data.update_from(original_data)
 
-        if translated_data.empty?
-          File.unlink(translated_file)
-        else
-          File.write(translated_file, translated_data)
-        end
+        File.write(translated_file, translated_data)
       end
     end
   end
