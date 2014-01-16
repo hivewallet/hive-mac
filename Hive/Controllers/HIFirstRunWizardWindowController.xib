@@ -16,22 +16,39 @@
         <window title="Window" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" releasedWhenClosed="NO" wantsToBeColor="NO" animationBehavior="default" id="1">
             <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
             <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
-            <rect key="contentRect" x="196" y="240" width="480" height="270"/>
+            <rect key="contentRect" x="196" y="240" width="850" height="650"/>
             <rect key="screenRect" x="0.0" y="0.0" width="1680" height="1028"/>
             <view key="contentView" id="2">
-                <rect key="frame" x="0.0" y="0.0" width="480" height="270"/>
-                <autoresizingMask key="autoresizingMask"/>
+                <rect key="frame" x="0.0" y="0.0" width="850" height="650"/>
+                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                 <subviews>
-                    <customView translatesAutoresizingMaskIntoConstraints="NO" id="8ea-Mi-gTH" userLabel="Content">
-                        <rect key="frame" x="0.0" y="0.0" width="480" height="270"/>
+                    <imageView horizontalHuggingPriority="1000" verticalHuggingPriority="1000" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" translatesAutoresizingMaskIntoConstraints="NO" id="Gal-TR-z2z">
+                        <rect key="frame" x="0.0" y="0.0" width="850" height="650"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="650" id="UGh-0t-jiR"/>
+                            <constraint firstAttribute="width" constant="850" id="uZ4-HK-MH4"/>
+                        </constraints>
+                        <imageCell key="cell" refusesFirstResponder="YES" alignment="left" image="wizard-background" id="AaU-yY-NE3"/>
+                    </imageView>
+                    <customView translatesAutoresizingMaskIntoConstraints="NO" id="8ea-Mi-gTH" userLabel="Content" customClass="HIClearView">
+                        <rect key="frame" x="0.0" y="0.0" width="850" height="650"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     </customView>
                 </subviews>
                 <constraints>
                     <constraint firstAttribute="trailing" secondItem="8ea-Mi-gTH" secondAttribute="trailing" id="3gs-WR-ece"/>
+                    <constraint firstAttribute="trailing" secondItem="8ea-Mi-gTH" secondAttribute="trailing" id="5aG-5p-9Rp"/>
                     <constraint firstItem="8ea-Mi-gTH" firstAttribute="top" secondItem="2" secondAttribute="top" id="9SV-pI-MsA"/>
+                    <constraint firstItem="Gal-TR-z2z" firstAttribute="leading" secondItem="2" secondAttribute="leading" id="KAg-Q0-HMa"/>
+                    <constraint firstItem="Gal-TR-z2z" firstAttribute="top" secondItem="2" secondAttribute="top" id="Mxm-6A-oMT"/>
+                    <constraint firstAttribute="bottom" secondItem="8ea-Mi-gTH" secondAttribute="bottom" id="O5K-WS-QrR"/>
+                    <constraint firstAttribute="trailing" secondItem="Gal-TR-z2z" secondAttribute="trailing" id="RvZ-9N-fbU"/>
+                    <constraint firstItem="8ea-Mi-gTH" firstAttribute="top" secondItem="2" secondAttribute="top" id="XBk-8f-9FX"/>
+                    <constraint firstAttribute="bottom" secondItem="Gal-TR-z2z" secondAttribute="bottom" id="e99-rN-1F8"/>
                     <constraint firstItem="8ea-Mi-gTH" firstAttribute="leading" secondItem="2" secondAttribute="leading" id="idT-UA-syl"/>
                     <constraint firstAttribute="bottom" secondItem="8ea-Mi-gTH" secondAttribute="bottom" id="tDd-kL-zgd"/>
+                    <constraint firstItem="8ea-Mi-gTH" firstAttribute="leading" secondItem="2" secondAttribute="leading" id="wf2-wT-Xxr"/>
                 </constraints>
             </view>
             <connections>
@@ -39,4 +56,7 @@
             </connections>
         </window>
     </objects>
+    <resources>
+        <image name="wizard-background" width="850" height="650"/>
+    </resources>
 </document>

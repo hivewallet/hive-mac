@@ -12,6 +12,7 @@
 		1AA100A06AF3D94CDB6D1867 /* HIDraggableButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AA10ED2A6A54B40FB3067FD /* HIDraggableButton.m */; };
 		1AA101EED53C9E95085C6DE3 /* HIProfileViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1AA10EA4B4E51F7D0E32DC6D /* HIProfileViewController.xib */; };
 		1AA1031B9A110C6B939AB603 /* HIBitcoinFormatService.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AA100CAE5EF0CB61AF126DB /* HIBitcoinFormatService.m */; };
+		1AA103351868D3A1E24F70FA /* HIClearView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AA109D1C9CD1E776FBE62A3 /* HIClearView.m */; };
 		1AA10491B94E46EAEE6DD347 /* HIWizardWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AA10BBE6F3C3F05768B604D /* HIWizardWindowController.m */; };
 		1AA105A7496BDE6BA5E2FA84 /* NSDecimalNumber+HISatoshiConversion.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AA104995C1BAF25C99780F1 /* NSDecimalNumber+HISatoshiConversion.m */; };
 		1AA1076874E6E840D30050E5 /* HILabelPopUpButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AA1099A1809B28C291572E7 /* HILabelPopUpButton.m */; };
@@ -26,6 +27,7 @@
 		24300BDA18830ACA00FDEF2F /* HIFirstRunWizardWindowController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 24300BD818830ACA00FDEF2F /* HIFirstRunWizardWindowController.xib */; };
 		24300BE318830C4700FDEF2F /* HIWizardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 24300BE118830C4700FDEF2F /* HIWizardViewController.m */; };
 		24300BE418830C4700FDEF2F /* HIWizardViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 24300BE218830C4700FDEF2F /* HIWizardViewController.xib */; };
+		24300BFC188892CD00FDEF2F /* wizard-background.png in Resources */ = {isa = PBXBuildFile; fileRef = 24300BFB188892CD00FDEF2F /* wizard-background.png */; };
 		244303BA1856712000AD59B8 /* HIPasswordInputViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 244303B81856712000AD59B8 /* HIPasswordInputViewController.m */; };
 		2478B8D3184A80A400BA2C35 /* HIFeeDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2478B8D1184A80A400BA2C35 /* HIFeeDetailsViewController.m */; };
 		2478B8D5184A88E700BA2C35 /* HIFeeDetailsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2478B8D7184A88E700BA2C35 /* HIFeeDetailsViewController.xib */; };
@@ -265,12 +267,14 @@
 		1AA109349A0DB4DF39E55FA4 /* HILabelPopUpButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HILabelPopUpButton.h; sourceTree = "<group>"; };
 		1AA1095B1D4E2BF3C14C3FC2 /* ar */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = ar; path = ar.lproj/HIProfileViewController.xib; sourceTree = "<group>"; };
 		1AA1099A1809B28C291572E7 /* HILabelPopUpButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HILabelPopUpButton.m; sourceTree = "<group>"; };
+		1AA109D1C9CD1E776FBE62A3 /* HIClearView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HIClearView.m; sourceTree = "<group>"; };
 		1AA10A32478D47E8D26B9653 /* HIDraggableButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HIDraggableButton.h; sourceTree = "<group>"; };
 		1AA10ABE84E126AEFF538618 /* HINotificationService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HINotificationService.h; sourceTree = "<group>"; };
 		1AA10B9F1D9322FFF21821DA /* NSWindow+HIShake.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSWindow+HIShake.m"; sourceTree = "<group>"; };
 		1AA10BBE6F3C3F05768B604D /* HIWizardWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HIWizardWindowController.m; sourceTree = "<group>"; };
 		1AA10BD2B747098DE4F5E6E8 /* NSDecimalNumber+HISatoshiConversion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDecimalNumber+HISatoshiConversion.h"; sourceTree = "<group>"; };
 		1AA10C583F128C0BCD84C878 /* HIExchangeRateService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HIExchangeRateService.h; sourceTree = "<group>"; };
+		1AA10D2D55A74CDB4505CC33 /* HIClearView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HIClearView.h; sourceTree = "<group>"; };
 		1AA10ED2A6A54B40FB3067FD /* HIDraggableButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HIDraggableButton.m; sourceTree = "<group>"; };
 		1AA10F3E7660E657A58361D9 /* HIProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HIProfileViewController.h; sourceTree = "<group>"; };
 		1AA10FF5AC215B56078E2A1F /* HIWizardWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HIWizardWindowController.h; sourceTree = "<group>"; };
@@ -283,6 +287,7 @@
 		24300BE018830C4700FDEF2F /* HIWizardViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HIWizardViewController.h; sourceTree = "<group>"; };
 		24300BE118830C4700FDEF2F /* HIWizardViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HIWizardViewController.m; sourceTree = "<group>"; };
 		24300BE218830C4700FDEF2F /* HIWizardViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HIWizardViewController.xib; sourceTree = "<group>"; };
+		24300BFB188892CD00FDEF2F /* wizard-background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "wizard-background.png"; sourceTree = "<group>"; };
 		244303B71856712000AD59B8 /* HIPasswordInputViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HIPasswordInputViewController.h; sourceTree = "<group>"; };
 		244303B81856712000AD59B8 /* HIPasswordInputViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HIPasswordInputViewController.m; sourceTree = "<group>"; };
 		245CBB101842ADF800619953 /* cs */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = cs; path = cs.lproj/HIProfileViewController.strings; sourceTree = "<group>"; };
@@ -1735,6 +1740,8 @@
 				D9716B7117D8B42E00888F4E /* HIButtonCell.m */,
 				58A03B0B17D9DC4100ADD5E5 /* HIButtonWithSpinner.h */,
 				58A03B0C17D9DC4100ADD5E5 /* HIButtonWithSpinner.m */,
+				1AA10D2D55A74CDB4505CC33 /* HIClearView.h */,
+				1AA109D1C9CD1E776FBE62A3 /* HIClearView.m */,
 				5802106117ECCAAA0039BA4B /* HIContactAutocompleteCellView.h */,
 				5802106217ECCAAA0039BA4B /* HIContactAutocompleteCellView.m */,
 				D94815E717D4BCEF006A0312 /* HIContactRowView.h */,
@@ -1872,6 +1879,7 @@
 		D9A592131767C49F00502635 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				24300BFB188892CD00FDEF2F /* wizard-background.png */,
 				58605A2118041D0A00FD9C2A /* avatar-empty.pdf */,
 				58605A2218041D0A00FD9C2A /* bg-sidebar.pdf */,
 				58605A2318041D0A00FD9C2A /* button__inset.pdf */,
@@ -2178,6 +2186,7 @@
 				5889538F1888A68100243190 /* HIBackupCenterWindowController.xib in Resources */,
 				58605A4C18041D0A00FD9C2A /* icon-nav-bar-back.pdf in Resources */,
 				58A37ADF180D998700CFCDE3 /* HITransactionsViewController.strings in Resources */,
+				24300BFC188892CD00FDEF2F /* wizard-background.png in Resources */,
 				588E356618212BFB006A6A25 /* HIErrorWindowController.xib in Resources */,
 				588E34F2182013E9006A6A25 /* HIDebuggingInfoWindowController.strings in Resources */,
 				58605A4D18041D0A00FD9C2A /* icon-next__active.pdf in Resources */,
@@ -2370,6 +2379,7 @@
 				1AA10A3DE7069E497A59CF0C /* HINotificationService.m in Sources */,
 				1AA100A06AF3D94CDB6D1867 /* HIDraggableButton.m in Sources */,
 				1AA10491B94E46EAEE6DD347 /* HIWizardWindowController.m in Sources */,
+				1AA103351868D3A1E24F70FA /* HIClearView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
