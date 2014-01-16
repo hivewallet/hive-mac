@@ -26,6 +26,7 @@
 #import "HIDebuggingInfoWindowController.h"
 #import "HIDebuggingToolsWindowController.h"
 #import "HIErrorWindowController.h"
+#import "HIFirstRunWizardWindowController.h"
 #import "HILogFormatter.h"
 #import "HIMainWindowController.h"
 #import "HINotificationService.h"
@@ -33,6 +34,7 @@
 #import "HISendBitcoinsWindowController.h"
 #import "HITransaction.h"
 #import "HITransactionsViewController.h"
+#import "HIWizardWindowController.h"
 #import "PFMoveApplication.h"
 
 static NSString * const LastVersionKey = @"LastHiveVersion";
@@ -50,6 +52,8 @@ static int ddLogLevel = LOG_LEVEL_VERBOSE;
     HIMainWindowController *_mainWindowController;
     NSMutableArray *_popupWindows;
 }
+
+@property (nonatomic, strong) HIWizardWindowController *wizard;
 
 @end
 
@@ -215,12 +219,29 @@ static int ddLogLevel = LOG_LEVEL_VERBOSE;
         [self showInitializationError:error];
     }
 
-    _mainWindowController = [[HIMainWindowController alloc] initWithWindowNibName:@"HIMainWindowController"];
-    [_mainWindowController showWindow:self];
+    if ([self mustShowSetUpWizard]) {
+        [self showSetUpWizard];
+    } else {
+        [self showAppWindow];
+    }
 
     [self configureNotifications];
 
     NSSetUncaughtExceptionHandler(&handleException);
+}
+
+- (void)showAppWindow {
+    _mainWindowController = [[HIMainWindowController alloc] initWithWindowNibName:@"HIMainWindowController"];
+    [_mainWindowController showWindow:self];
+}
+
+- (BOOL)mustShowSetUpWizard {
+    return [[NSUserDefaults standardUserDefaults] boolForKey:@"FirstRun"];
+}
+
+- (void)showSetUpWizard {
+    self.wizard = [HIFirstRunWizardWindowController new];
+    [self.wizard showWindow:self];
 }
 
 - (void)configureNotifications {
