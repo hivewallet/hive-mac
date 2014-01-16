@@ -99,7 +99,7 @@
 "Enter an amount greater than zero." = "请输入大于零的数量。";
 
 /* Passphrase prompt for sending */
-"Enter your passphrase to complete the transaction:" = "Enter your passphrase to complete the transaction:";
+"Enter your passphrase to confirm the transaction:" = "Enter your passphrase to confirm the transaction:";
 
 /* Firstname field placeholder */
 "Firstname" = "名";

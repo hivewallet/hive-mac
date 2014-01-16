@@ -99,7 +99,7 @@
 "Enter an amount greater than zero." = "Ange ett belopp större än noll.";
 
 /* Passphrase prompt for sending */
-"Enter your passphrase to complete the transaction:" = "Ange ditt lösenord för att genomföra transaktionen:";
+"Enter your passphrase to confirm the transaction:" = "Ange ditt lösenord för att genomföra transaktionen:";
 
 /* Firstname field placeholder */
 "Firstname" = "Förnamn";
