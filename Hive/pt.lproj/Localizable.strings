@@ -1,5 +1,3 @@
-/* App load error description */
-"A network error has occurred or the application data file has been removed or corrupted." = "Ocorreu um erro na rede ou o arquivo de dados da aplicação foi removido ou corrompido.";
 
 /* Address field placeholder */
 "Address" = "Endereço";
@@ -16,11 +14,35 @@
 /* Applications view title */
 "Apps" = "Aplicações";
 
+/* Large amount warning title (btc, fiat amount and address) */
+"Are you sure you want to send %@ (%@) to %@?" = "Are you sure you want to send %1$@ (%2$@) to %3$@?";
+
+/* Backup status: backup can't or won't be completed */
+"Backup error" = "Backup error";
+
+/* No comment provided by engineer. */
+"Backup hasn't been done yet" = "Backup hasn't been done yet";
+
+/* Backup status: backup done but not updated recently */
+"Backup problem" = "Backup problem";
+
 /* Cancel button title */
 "Cancel" = "Cancelar";
 
+/* Dead transaction label */
+"CANCELLED" = "CANCELLED";
+
+/* Dropbox folder save panel confirmation button */
+"Choose" = "Choose";
+
+/* No comment provided by engineer. */
+"Choose a directory inside Dropbox folder where the backup should be saved:" = "Choose a directory inside Dropbox folder where the backup should be saved:";
+
 /* No comment provided by engineer. */
 "click to copy" = "clique para copiar";
+
+/* Confirm button next to passphrase */
+"Confirm" = "Confirm";
 
 /* Contact name empty alert title */
 "Contact can't be saved." = "O contacto não pode ser guardado.";
@@ -31,11 +53,29 @@
 /* No comment provided by engineer. */
 "copied!" = "copiado!";
 
+/* initialization error */
+"Could not read wallet file. It might be damaged." = "Could not read wallet file. It might be damaged.";
+
 /* Quit without saves error question message */
 "Could not save changes while quitting. Quit anyway?" = "As alterações não podem ser guardadas. Sair mesmo assim?";
 
+/* initialization error */
+"Could not write wallet file. Another instance of Hive might still be running." = "Could not write wallet file. Another instance of Hive might still be running.";
+
+/* Disable backup button title */
+"Disable" = "Disable";
+
+/* Backup status: adapter disabled */
+"Disabled" = "Disabled";
+
 /* Remove contact alert dialog title */
 "Do you really want to remove %@ from your contact list?" = "Deseja remover %@ da sua lista de contactos?";
+
+/* Install app popup title */
+"Do you want to add \"%@\" to Hive?" = "Do you want to add \"%@\" to Hive?";
+
+/* Dropbox no backup folder alert title */
+"Dropbox folder not found." = "Dropbox folder not found.";
 
 /* No comment provided by engineer. */
 "Edit contact" = "Editar contacto";
@@ -46,20 +86,38 @@
 /* Email field placeholder */
 "email" = "email";
 
+/* Enable backup button title (no configuration required) */
+"Enable" = "Enable";
+
+/* Enable backup button title (requires configuration) */
+"Enable..." = "Enable...";
+
 /* Sending zero bitcoin alert title */
 "Enter an amount greater than zero." = "Introduza um valor maior do que zero.";
+
+/* Passphrase prompt for sending */
+"Enter your passphrase to complete the transaction:" = "Enter your passphrase to complete the transaction:";
 
 /* Firstname field placeholder */
 "Firstname" = "Nome";
 
-/* Direction label in transactions list when user is the receiver */
-"from" = "de";
+/* Initialization error title */
+"Hive cannot be started." = "Hive cannot be started.";
 
-/* Install app popup title */
-"Install Hive App" = "Instalar a aplicação Hive";
+/* Share transaction template text */
+"I just sent some Bitcoin using Hive" = "I just sent some Bitcoin using Hive";
+
+/* Install app button title */
+"Install" = "Install";
+
+/* Backup requires password alert details */
+"It's dangerous to upload unencrypted wallets." = "It's dangerous to upload unencrypted wallets.";
 
 /* Address caption field placeholder */
 "Label" = "Etiqueta";
+
+/* On what date was the last backup done */
+"Last backup on %@" = "Last backup on %@";
 
 /* Lastname field placeholder */
 "Lastname" = "Sobrenome";
@@ -73,21 +131,23 @@
 /* New contact view controller title */
 "New contact" = "Novo contacto";
 
-/* No comment provided by engineer. */
-"No" = "Não";
-
 /* Empty address alert title */
 "No address entered." = "Nenhum endereço introduzido.";
+
+/* Backup is outdated, last backup was on that date */
+"No backup since %@" = "No backup since %@";
 
 /* Transaction failed alert message */
 "No Bitcoin have been taken from your wallet." = "Não foi retirado da sua carteira nenhum Bitcoin.";
 
-/* OK Button title
-   OK button title */
+/* OK button title */
 "OK" = "OK";
 
 /* Autocomplete dropdown prompt */
 "or choose from the list" = "ou escolha da lista";
+
+/* Pending transaction label */
+"PENDING" = "PENDING";
 
 /* Invalid address alert message */
 "Please check if you have entered the address correctly." = "Por favor confirme se o endereço está correcto.";
@@ -104,14 +164,44 @@
 /* Quit without saves error question info */
 "Quitting now will lose any changes you have made since the last successful save" = "Se sair perderá todas as alterações efectuadas desde a última vez";
 
-/* Remove contact alert dialog title */
-"Remove contact" = "Eliminar contacto";
+/* Received amount of BTC from unknown source */
+"Received &a" = "Received &a";
+
+/* Received amount of BTC from contact */
+"Received &a from &c" = "Received &a from &c";
+
+/* Install app button title when app exists */
+"Reinstall" = "Reinstall";
+
+/* No comment provided by engineer. */
+"Remove" = "Remove";
+
+/* Dropbox invalid folder alert title */
+"Selected directory is outside Dropbox folder." = "Selected directory is outside Dropbox folder.";
+
+/* Send button title */
+"Send" = "Send";
+
+/* Sent amount of BTC to a contact/address */
+"Sent &a to &c" = "Sent &a to &c";
+
+/* Amount exceeds available balance alert title */
+"Some funds are temporarily unavailable." = "Some funds are temporarily unavailable.";
+
+/* App load error description */
+"The application data file has been removed or corrupted." = "The application data file has been removed or corrupted.";
+
+/* Install app popup warning message when app exists */
+"The existing app file will be replaced by the new version. This will not affect any app settings or saved data." = "The existing app file will be replaced by the new version. This will not affect any app settings or saved data.";
+
+/* Large amount warning message */
+"This is more than what you usually send." = "This is more than what you usually send.";
 
 /* Invalid address alert title */
 "This isn't a valid Bitcoin address." = "Não é um endereço Bitcoin válido.";
 
-/* Direction label in transactions list when user is the sender */
-"to" = "para";
+/* Amount exceeds available balance alert message */
+"To send this transaction, you'll need to wait for your pending transactions to be confirmed first (this shouldn't take more than a few minutes)." = "To send this transaction, you'll need to wait for your pending transactions to be confirmed first (this shouldn't take more than a few minutes).";
 
 /* Transaction failed alert title */
 "Transaction could not be completed." = "A transacção não pode ser concluída.";
@@ -119,20 +209,38 @@
 /* Transactions view title */
 "Transactions" = "Transacções";
 
+/* Backup status: backup up to date */
+"Up to date" = "Up to date";
+
+/* Backup status: backup scheduled or in progress */
+"Waiting for backup" = "Waiting for backup";
+
+/* Install app popup warning message */
+"We cannot guarantee the safety of all apps - please be careful if you download Hive apps from third party sites." = "We cannot guarantee the safety of all apps - please be careful if you download Hive apps from third party sites.";
+
+/* Button to show info about pending funds */
+"What does this mean?" = "What does this mean?";
+
 /* Sending zero bitcoin alert message */
 "Why would you want to send someone 0 BTC?" = "Qual a razão para enviar 0 BTC?";
-
-/* Install app popup confirmation */
-"Would you like to install \"%@\" application?" = "Gostaria de instalar a aplicação \"%@\" ?";
-
-/* No comment provided by engineer. */
-"Yes" = "Sim";
-
-/* Install app popup confirmation when app exists */
-"You already have \"%@\" application. Would you like to overwrite it?" = "Já tem a aplicação \"%@\" . Gostaria de voltar a instalar?";
 
 /* Amount exceeds balance alert message */
 "You cannot send more money than you own." = "Não é possível enviar mais do que o saldo actual.";
 
+/* Install app popup title when app exists */
+"You have already added \"%@\" to Hive. Would you like to overwrite it?" = "You have already added \"%@\" to Hive. Would you like to overwrite it?";
+
+/* Dropbox no backup folder alert details */
+"You must install Dropbox first (see www.dropbox.com)." = "You must install Dropbox first (see www.dropbox.com).";
+
+/* Dropbox invalid folder alert details */
+"You need to choose or create a directory inside your Dropbox folder." = "You need to choose or create a directory inside your Dropbox folder.";
+
 /* Contact name empty alert message */
 "You need to give the contact a name before you can add it to the list." = "É necessário adicionar um nome no contacto antes de adicioná-lo à lista.";
+
+/* Backup requires password alert title */
+"You need to set a wallet password first (see Wallet menu)." = "You need to set a wallet password first (see Wallet menu).";
+
+/* Remove contact alert dialog body */
+"You won't be able to undo this operation." = "You won't be able to undo this operation.";

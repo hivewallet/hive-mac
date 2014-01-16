@@ -1,3 +1,4 @@
+
 /* Class = "NSTextFieldCell"; title = "John Whatshisface"; ObjectID = "22"; */
 "22.title" = "John Whatshisface";
 
@@ -18,3 +19,6 @@
 
 /* Class = "NSBox"; title = "Box"; ObjectID = "Zcf-4u-dGc"; */
 "Zcf-4u-dGc.title" = "Polje";
+
+/* Class = "NSMenu"; title = "OtherViews"; ObjectID = "ldN-fb-2LB"; */
+"ldN-fb-2LB.title" = "OtherViews";

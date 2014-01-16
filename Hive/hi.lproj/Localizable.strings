@@ -1,5 +1,3 @@
-/* App load error description */
-"A network error has occurred or the application data file has been removed or corrupted." = "नेटवर्क त्रुटि (खराब)हो गई है या अप्लीकेशन डेटा फ़ाइल हटा लिया गया है । या खराब हो गया है.";
 
 /* Address field placeholder */
 "Address" = "ऐडरेस";
@@ -16,11 +14,35 @@
 /* Applications view title */
 "Apps" = "अनुप्रयोगों";
 
+/* Large amount warning title (btc, fiat amount and address) */
+"Are you sure you want to send %@ (%@) to %@?" = "Are you sure you want to send %1$@ (%2$@) to %3$@?";
+
+/* Backup status: backup can't or won't be completed */
+"Backup error" = "Backup error";
+
+/* No comment provided by engineer. */
+"Backup hasn't been done yet" = "Backup hasn't been done yet";
+
+/* Backup status: backup done but not updated recently */
+"Backup problem" = "Backup problem";
+
 /* Cancel button title */
 "Cancel" = "अप्लीकेशन";
 
+/* Dead transaction label */
+"CANCELLED" = "CANCELLED";
+
+/* Dropbox folder save panel confirmation button */
+"Choose" = "Choose";
+
+/* No comment provided by engineer. */
+"Choose a directory inside Dropbox folder where the backup should be saved:" = "Choose a directory inside Dropbox folder where the backup should be saved:";
+
 /* No comment provided by engineer. */
 "click to copy" = "कॅापी के लिए क्लिक करें";
+
+/* Confirm button next to passphrase */
+"Confirm" = "Confirm";
 
 /* Contact name empty alert title */
 "Contact can't be saved." = "कोंटेक्ट सेव नहीं किया जा सकता है.";
@@ -31,11 +53,29 @@
 /* No comment provided by engineer. */
 "copied!" = "कॉपी बन गया";
 
+/* initialization error */
+"Could not read wallet file. It might be damaged." = "Could not read wallet file. It might be damaged.";
+
 /* Quit without saves error question message */
 "Could not save changes while quitting. Quit anyway?" = "सेव चेन्ज नही हुआ है बंद से .कैसे भी बंद करे?";
 
+/* initialization error */
+"Could not write wallet file. Another instance of Hive might still be running." = "Could not write wallet file. Another instance of Hive might still be running.";
+
+/* Disable backup button title */
+"Disable" = "Disable";
+
+/* Backup status: adapter disabled */
+"Disabled" = "Disabled";
+
 /* Remove contact alert dialog title */
 "Do you really want to remove %@ from your contact list?" = "तुम सच %@ आपकी संपर्क सूची से% को दूर करना चाहते हैं?";
+
+/* Install app popup title */
+"Do you want to add \"%@\" to Hive?" = "Do you want to add \"%@\" to Hive?";
+
+/* Dropbox no backup folder alert title */
+"Dropbox folder not found." = "Dropbox folder not found.";
 
 /* No comment provided by engineer. */
 "Edit contact" = "एडिट कोंटेक्ट";
@@ -46,20 +86,38 @@
 /* Email field placeholder */
 "email" = "ईमेल";
 
+/* Enable backup button title (no configuration required) */
+"Enable" = "Enable";
+
+/* Enable backup button title (requires configuration) */
+"Enable..." = "Enable...";
+
 /* Sending zero bitcoin alert title */
 "Enter an amount greater than zero." = "शून्य से अधिक राशि दर्ज करें.";
+
+/* Passphrase prompt for sending */
+"Enter your passphrase to complete the transaction:" = "Enter your passphrase to complete the transaction:";
 
 /* Firstname field placeholder */
 "Firstname" = "फस्ट नेम";
 
-/* Direction label in transactions list when user is the receiver */
-"from" = "from";
+/* Initialization error title */
+"Hive cannot be started." = "Hive cannot be started.";
 
-/* Install app popup title */
-"Install Hive App" = "इंस्टोल Hive अप्लीकेशन";
+/* Share transaction template text */
+"I just sent some Bitcoin using Hive" = "I just sent some Bitcoin using Hive";
+
+/* Install app button title */
+"Install" = "Install";
+
+/* Backup requires password alert details */
+"It's dangerous to upload unencrypted wallets." = "It's dangerous to upload unencrypted wallets.";
 
 /* Address caption field placeholder */
 "Label" = "Label";
+
+/* On what date was the last backup done */
+"Last backup on %@" = "Last backup on %@";
 
 /* Lastname field placeholder */
 "Lastname" = "लास्ट नेम";
@@ -73,21 +131,23 @@
 /* New contact view controller title */
 "New contact" = "नया कोंटेक्ट";
 
-/* No comment provided by engineer. */
-"No" = "नही";
-
 /* Empty address alert title */
 "No address entered." = "एडरेस दर्ज नहीं किया.";
+
+/* Backup is outdated, last backup was on that date */
+"No backup since %@" = "No backup since %@";
 
 /* Transaction failed alert message */
 "No Bitcoin have been taken from your wallet." = "आप के वॅालेट से कोई बिटकॅाइन नही लिया है";
 
-/* OK Button title
-   OK button title */
+/* OK button title */
 "OK" = "ठीक है";
 
 /* Autocomplete dropdown prompt */
 "or choose from the list" = "या सूची में से चुने";
+
+/* Pending transaction label */
+"PENDING" = "PENDING";
 
 /* Invalid address alert message */
 "Please check if you have entered the address correctly." = "कृपया जांच करें कि क्या आप ने सही पता दर्ज किया है.";
@@ -104,14 +164,44 @@
 /* Quit without saves error question info */
 "Quitting now will lose any changes you have made since the last successful save" = "अभी बंद करने से वह चेन्ज सेव नहीं होगा जो पिछले चेन्ज सेव करने के बाद किया होगा है";
 
-/* Remove contact alert dialog title */
-"Remove contact" = "कोंटेक्ट हटाये";
+/* Received amount of BTC from unknown source */
+"Received &a" = "Received &a";
+
+/* Received amount of BTC from contact */
+"Received &a from &c" = "Received &a from &c";
+
+/* Install app button title when app exists */
+"Reinstall" = "Reinstall";
+
+/* No comment provided by engineer. */
+"Remove" = "Remove";
+
+/* Dropbox invalid folder alert title */
+"Selected directory is outside Dropbox folder." = "Selected directory is outside Dropbox folder.";
+
+/* Send button title */
+"Send" = "Send";
+
+/* Sent amount of BTC to a contact/address */
+"Sent &a to &c" = "Sent &a to &c";
+
+/* Amount exceeds available balance alert title */
+"Some funds are temporarily unavailable." = "Some funds are temporarily unavailable.";
+
+/* App load error description */
+"The application data file has been removed or corrupted." = "The application data file has been removed or corrupted.";
+
+/* Install app popup warning message when app exists */
+"The existing app file will be replaced by the new version. This will not affect any app settings or saved data." = "The existing app file will be replaced by the new version. This will not affect any app settings or saved data.";
+
+/* Large amount warning message */
+"This is more than what you usually send." = "This is more than what you usually send.";
 
 /* Invalid address alert title */
 "This isn't a valid Bitcoin address." = "यह एक सही बिट कॅाइन एडरेस नहीं है";
 
-/* Direction label in transactions list when user is the sender */
-"to" = "to";
+/* Amount exceeds available balance alert message */
+"To send this transaction, you'll need to wait for your pending transactions to be confirmed first (this shouldn't take more than a few minutes)." = "To send this transaction, you'll need to wait for your pending transactions to be confirmed first (this shouldn't take more than a few minutes).";
 
 /* Transaction failed alert title */
 "Transaction could not be completed." = "लेन - देन पूरा नहीं किया जा सकता है.";
@@ -119,21 +209,38 @@
 /* Transactions view title */
 "Transactions" = "लेन - देन";
 
+/* Backup status: backup up to date */
+"Up to date" = "Up to date";
+
+/* Backup status: backup scheduled or in progress */
+"Waiting for backup" = "Waiting for backup";
+
+/* Install app popup warning message */
+"We cannot guarantee the safety of all apps - please be careful if you download Hive apps from third party sites." = "We cannot guarantee the safety of all apps - please be careful if you download Hive apps from third party sites.";
+
+/* Button to show info about pending funds */
+"What does this mean?" = "What does this mean?";
+
 /* Sending zero bitcoin alert message */
 "Why would you want to send someone 0 BTC?" = "क्यों आप किसी को 0 बिट कॅाइन भेजना चाहते हो?";
-
-/* Install app popup confirmation */
-"Would you like to install \"%@\" application?" = "क्या आप \"%@\" अप्लीकेशन इंस्टोल करना चाहोगे?";
-
-/* No comment provided by engineer. */
-"Yes" = "हाँ";
-
-/* Install app popup confirmation when app exists */
-"You already have \"%@\" application. Would you like to overwrite it?" = "आपके पास पहले से हीअप्लीकेसन \"%@\" मौजूद है. क्या आप इसे फिर से शामिल करना चाहोगे?";
 
 /* Amount exceeds balance alert message */
 "You cannot send more money than you own." = "आप अपने खाते में मौजूद राशि से अधिक राशि नहीं भेज सकते हैं";
 
+/* Install app popup title when app exists */
+"You have already added \"%@\" to Hive. Would you like to overwrite it?" = "You have already added \"%@\" to Hive. Would you like to overwrite it?";
+
+/* Dropbox no backup folder alert details */
+"You must install Dropbox first (see www.dropbox.com)." = "You must install Dropbox first (see www.dropbox.com).";
+
+/* Dropbox invalid folder alert details */
+"You need to choose or create a directory inside your Dropbox folder." = "You need to choose or create a directory inside your Dropbox folder.";
+
 /* Contact name empty alert message */
 "You need to give the contact a name before you can add it to the list." = "कृपया संपर्क सूची में जोड़ने से पहले कोई नाम दे";
 
+/* Backup requires password alert title */
+"You need to set a wallet password first (see Wallet menu)." = "You need to set a wallet password first (see Wallet menu).";
+
+/* Remove contact alert dialog body */
+"You won't be able to undo this operation." = "You won't be able to undo this operation.";

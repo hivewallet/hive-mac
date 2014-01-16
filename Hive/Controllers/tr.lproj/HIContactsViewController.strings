@@ -8,7 +8,7 @@
 /* Class = "NSButtonCell"; title = "Add contact"; ObjectID = "125"; */
 "125.title" = "Bağlantı ekle";
 
-/* Class = "NSTextFieldCell"; title = "You can then use the \U2795 button on top to add more contacts."; ObjectID = "129"; */
+/* Class = "NSTextFieldCell"; title = "You can then use the ✚ button on top to add more contacts."; ObjectID = "129"; */
 "129.title" = "Böylece \U2795 buton daha fazla bağlantı eklemek için yukarı.";
 
 /* Class = "NSTextFieldCell"; title = "Label"; ObjectID = "205"; */

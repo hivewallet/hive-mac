@@ -1,9 +1,12 @@
-﻿
+
 /* Class = "NSTextFieldCell"; title = "Text Cell"; ObjectID = "13"; */
 "13.title" = "Κελί κειμένου";
 
 /* Class = "NSTextFieldCell"; title = "Received"; ObjectID = "22"; */
 "22.title" = "Ληφθέντα";
+
+/* Class = "NSTextFieldCell"; title = "Date"; ObjectID = "41"; */
+"41.title" = "Date";
 
 /* Class = "NSTextFieldCell"; title = "Looks like you haven't made any transactions yet. Send someone some Bitcoin!"; ObjectID = "54"; */
 "54.title" = "Απ' ότι φαίνεται δεν έχετε κάνει ακόμα καμία συναλλαγή. Στείλτε σε κάποιον μερικά bitcoins!";
@@ -13,3 +16,6 @@
 
 /* Class = "NSTextFieldCell"; title = "You can then use the Send button to send someone money."; ObjectID = "63"; */
 "63.title" = "Μπορείτε μετά να χρησιμοποιήσετε το κουμπί Αποστολή για να στείλετε σε κάποιον χρήματα.";
+
+/* Class = "NSTextFieldCell"; title = "PENDING"; ObjectID = "oXJ-Jx-H6s"; */
+"oXJ-Jx-H6s.title" = "PENDING";

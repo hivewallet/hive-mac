@@ -80,11 +80,35 @@
 /* Class = "NSMenuItem"; title = "Close"; ObjectID = "864"; */
 "864.title" = "Luk";
 
-/* Class = "NSMenuItem"; title = "Send Bitcoins..."; ObjectID = "866"; */
+/* Class = "NSMenuItem"; title = "Send Bitcoin..."; ObjectID = "866"; */
 "866.title" = "Send Bitcoins…";
 
 /* Class = "NSMenuItem"; title = "Check for Updates..."; ObjectID = "870"; */
 "870.title" = "Søg efter opdateringer…";
 
-/* Class = "NSMenuItem"; title = "Open CoinMap..."; ObjectID = "872"; */
+/* Class = "NSMenuItem"; title = "Change Password…"; ObjectID = "1HB-Qg-iyg"; */
+"1HB-Qg-iyg.title" = "Change Password…";
+
+/* Class = "NSMenuItem"; title = "Open CoinMap..."; ObjectID = "ASP-Ns-ktD"; */
 "ASP-Ns-ktD.title" = "Åbn CoinMap…";
+
+/* Class = "NSMenuItem"; title = "Wallet"; ObjectID = "GX7-xG-GKH"; */
+"GX7-xG-GKH.title" = "Wallet";
+
+/* Class = "NSMenuItem"; title = "Debugging tools..."; ObjectID = "Ue9-mi-gbe"; */
+"Ue9-mi-gbe.title" = "Debugging tools...";
+
+/* Class = "NSMenuItem"; title = "Backup Center..."; ObjectID = "V0L-sM-c8h"; */
+"V0L-sM-c8h.title" = "Backup Center...";
+
+/* Class = "NSMenu"; title = "Tools"; ObjectID = "cCx-Ak-fii"; */
+"cCx-Ak-fii.title" = "Tools";
+
+/* Class = "NSMenuItem"; title = "Tools"; ObjectID = "eBU-ec-85y"; */
+"eBU-ec-85y.title" = "Tools";
+
+/* Class = "NSMenu"; title = "Wallet"; ObjectID = "jrd-Ul-XjV"; */
+"jrd-Ul-XjV.title" = "Wallet";
+
+/* Class = "NSMenuItem"; title = "Debugging info..."; ObjectID = "lLT-53-p4m"; */
+"lLT-53-p4m.title" = "Debugging info...";

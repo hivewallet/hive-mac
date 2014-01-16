@@ -8,7 +8,7 @@
 /* Class = "NSButtonCell"; title = "Add contact"; ObjectID = "125"; */
 "125.title" = "Добавить контакт";
 
-/* Class = "NSTextFieldCell"; title = "You can then use the \U2795 button on top to add more contacts."; ObjectID = "129"; */
+/* Class = "NSTextFieldCell"; title = "You can then use the ✚ button on top to add more contacts."; ObjectID = "129"; */
 "129.title" = "Затем Вы можете использовать \U2795 кнопку сверху, чтобы добавить еще контакты";
 
 /* Class = "NSTextFieldCell"; title = "Label"; ObjectID = "205"; */

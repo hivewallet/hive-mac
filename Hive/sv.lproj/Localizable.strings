@@ -1,3 +1,4 @@
+
 /* Address field placeholder */
 "Address" = "Adress";
 
@@ -12,6 +13,9 @@
 
 /* Applications view title */
 "Apps" = "Apps";
+
+/* Large amount warning title (btc, fiat amount and address) */
+"Are you sure you want to send %@ (%@) to %@?" = "Are you sure you want to send %1$@ (%2$@) to %3$@?";
 
 /* Backup status: backup can't or won't be completed */
 "Backup error" = "Fel i säkerhetskopiering";
@@ -67,6 +71,9 @@
 /* Remove contact alert dialog title */
 "Do you really want to remove %@ from your contact list?" = "Är du säker på att du vill ta bort %@ från dina kontakter?";
 
+/* Install app popup title */
+"Do you want to add \"%@\" to Hive?" = "Do you want to add \"%@\" to Hive?";
+
 /* Dropbox no backup folder alert title */
 "Dropbox folder not found." = "Dropbox-katalog hittas inte.";
 
@@ -91,17 +98,20 @@
 /* Passphrase prompt for sending */
 "Enter your passphrase to complete the transaction:" = "Ange ditt lösenord för att genomföra transaktionen:";
 
-/* Initialization error title */
-"Error" = "Fel";
-
 /* Firstname field placeholder */
 "Firstname" = "Förnamn";
+
+/* Initialization error title */
+"Hive cannot be started." = "Hive cannot be started.";
 
 /* Share transaction template text */
 "I just sent some Bitcoin using Hive" = "Jag överförde några Bitcoins genom att använda mig av Hive";
 
-/* Install app popup title */
-"Install Hive App" = "Installerar Hive";
+/* Install app button title */
+"Install" = "Install";
+
+/* Backup requires password alert details */
+"It's dangerous to upload unencrypted wallets." = "It's dangerous to upload unencrypted wallets.";
 
 /* Address caption field placeholder */
 "Label" = "Etikett";
@@ -121,9 +131,6 @@
 /* New contact view controller title */
 "New contact" = "Ny kontakt";
 
-/* No comment provided by engineer. */
-"No" = "Nej";
-
 /* Empty address alert title */
 "No address entered." = "Ingen adress ifylld";
 
@@ -133,15 +140,11 @@
 /* Transaction failed alert message */
 "No Bitcoin have been taken from your wallet." = "Inga Bitcoins har blivit tagna från din plånbok.";
 
-/* OK Button title
-   OK button title */
+/* OK button title */
 "OK" = "OK";
 
 /* Autocomplete dropdown prompt */
 "or choose from the list" = "eller välj från listan";
-
-/* part of the balance amount that isn't available */
-"pending" = "pågående";
 
 /* Pending transaction label */
 "PENDING" = "PÅGÅENDE";
@@ -167,20 +170,38 @@
 /* Received amount of BTC from contact */
 "Received &a from &c" = "Mottaget &a från &c";
 
-/* Remove contact alert dialog title */
-"Remove contact" = "Ta bort kontakt";
+/* Install app button title when app exists */
+"Reinstall" = "Reinstall";
+
+/* No comment provided by engineer. */
+"Remove" = "Remove";
 
 /* Dropbox invalid folder alert title */
 "Selected directory is outside Dropbox folder." = "Välj en katalog som är utanför Dropbox-plats.";
 
+/* Send button title */
+"Send" = "Send";
+
 /* Sent amount of BTC to a contact/address */
 "Sent &a to &c" = "Skickat &a till &c";
+
+/* Amount exceeds available balance alert title */
+"Some funds are temporarily unavailable." = "Some funds are temporarily unavailable.";
 
 /* App load error description */
 "The application data file has been removed or corrupted." = "Programmets datafil har blivit borttagen eller skadats.";
 
+/* Install app popup warning message when app exists */
+"The existing app file will be replaced by the new version. This will not affect any app settings or saved data." = "The existing app file will be replaced by the new version. This will not affect any app settings or saved data.";
+
+/* Large amount warning message */
+"This is more than what you usually send." = "This is more than what you usually send.";
+
 /* Invalid address alert title */
 "This isn't a valid Bitcoin address." = "Detta är inte en giltig Bitcoin-adress.";
+
+/* Amount exceeds available balance alert message */
+"To send this transaction, you'll need to wait for your pending transactions to be confirmed first (this shouldn't take more than a few minutes)." = "To send this transaction, you'll need to wait for your pending transactions to be confirmed first (this shouldn't take more than a few minutes).";
 
 /* Transaction failed alert title */
 "Transaction could not be completed." = "Transaktion kunde inte genomföras.";
@@ -194,20 +215,20 @@
 /* Backup status: backup scheduled or in progress */
 "Waiting for backup" = "Väntar på säkerhetskopierng";
 
+/* Install app popup warning message */
+"We cannot guarantee the safety of all apps - please be careful if you download Hive apps from third party sites." = "We cannot guarantee the safety of all apps - please be careful if you download Hive apps from third party sites.";
+
+/* Button to show info about pending funds */
+"What does this mean?" = "What does this mean?";
+
 /* Sending zero bitcoin alert message */
 "Why would you want to send someone 0 BTC?" = "Varför skulle du vilja skicka någon 0 BTC?";
 
-/* Install app popup confirmation */
-"Would you like to install \"%@\" application?" = "Vill du installera appen \"%@\"?";
-
-/* No comment provided by engineer. */
-"Yes" = "Ja";
-
-/* Install app popup confirmation when app exists */
-"You already have \"%@\" application. Would you like to overwrite it?" = "Du har appen \"%@\". Vill du skriva över den nuvarande?";
-
 /* Amount exceeds balance alert message */
 "You cannot send more money than you own." = "Du kan inte skcika mer pengar än vad du äger.";
+
+/* Install app popup title when app exists */
+"You have already added \"%@\" to Hive. Would you like to overwrite it?" = "You have already added \"%@\" to Hive. Would you like to overwrite it?";
 
 /* Dropbox no backup folder alert details */
 "You must install Dropbox first (see www.dropbox.com)." = "Du måste installera dropbox först (se www.dropbox.com).";
@@ -218,3 +239,8 @@
 /* Contact name empty alert message */
 "You need to give the contact a name before you can add it to the list." = "Du måste ge kontakten ett namn innan du kan lägga till i listan";
 
+/* Backup requires password alert title */
+"You need to set a wallet password first (see Wallet menu)." = "You need to set a wallet password first (see Wallet menu).";
+
+/* Remove contact alert dialog body */
+"You won't be able to undo this operation." = "You won't be able to undo this operation.";

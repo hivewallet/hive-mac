@@ -1,3 +1,4 @@
+
 /* Class = "NSTextFieldCell"; title = "Text Cell"; ObjectID = "10"; */
 "10.title" = "Поље за текст";
 
@@ -7,7 +8,7 @@
 /* Class = "NSButtonCell"; title = "Add contact"; ObjectID = "125"; */
 "125.title" = "Додајте контакт";
 
-/* Class = "NSTextFieldCell"; title = "You can then use the \U2795 button on top to add more contacts."; ObjectID = "129"; */
+/* Class = "NSTextFieldCell"; title = "You can then use the ✚ button on top to add more contacts."; ObjectID = "129"; */
 "129.title" = "Након тога можете користити \U2795 дугме на врху како би додали још контаката.";
 
 /* Class = "NSTextFieldCell"; title = "Label"; ObjectID = "205"; */
