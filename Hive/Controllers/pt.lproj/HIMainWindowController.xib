@@ -38,7 +38,7 @@
                             <button focusRingType="none" id="44">
                                 <rect key="frame" x="6" y="6" width="60" height="29"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                                <buttonCell key="cell" type="bevel" title="Enviar" bezelStyle="regularSquare" imagePosition="overlaps" alignment="center" state="on" borderStyle="border" focusRingType="none" imageScaling="proportionallyDown" inset="2" id="45" customClass="HIDoneButtonCell">
+                                <buttonCell key="cell" type="bevel" title="Send" bezelStyle="regularSquare" imagePosition="overlaps" alignment="center" state="on" borderStyle="border" focusRingType="none" imageScaling="proportionallyDown" inset="2" id="45" customClass="HIDoneButtonCell">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="system"/>
                                 </buttonCell>

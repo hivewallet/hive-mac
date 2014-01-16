@@ -66,7 +66,7 @@
                 <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" id="56">
                     <rect key="frame" x="-3" y="0.0" width="84" height="34"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                    <textFieldCell key="cell" controlSize="mini" truncatesLastVisibleLine="YES" sendsActionOnEndEditing="YES" alignment="center" title="Oznaka za više redova" id="57">
+                    <textFieldCell key="cell" controlSize="mini" truncatesLastVisibleLine="YES" sendsActionOnEndEditing="YES" alignment="center" title="Multiline Label" id="57">
                         <font key="font" size="12" name="Helvetica"/>
                         <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
