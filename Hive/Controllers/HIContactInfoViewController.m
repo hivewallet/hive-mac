@@ -52,9 +52,9 @@ static const NSInteger AddressFieldTag = 2;
     vc.contact = _contact;
 
     if ([_contact isKindOfClass:[HIContact class]]) {
-        vc.title = NSLocalizedString(@"Edit contact", nil);
+        vc.title = NSLocalizedString(@"Edit contact", @"Page title when editing contact's info");
     } else {
-        vc.title = NSLocalizedString(@"Edit profile", nil);
+        vc.title = NSLocalizedString(@"Edit profile", @"Page title when editing your own profile info");
     }
 
     [_parent.navigationController pushViewController:vc animated:YES];

@@ -453,10 +453,10 @@ NSString * const HISendBitcoinsWindowSuccessKey = @"success";
 
 - (void)showInsufficientFundsAlert {
     [self showAlertWithTitle:NSLocalizedString(@"Amount exceeds balance.",
-                                               @"Amount exceeds balance alert title")
+                                               @"Title of an alert when trying to send more than you have")
 
                      message:NSLocalizedString(@"You cannot send more money than you own.",
-                                               @"Amount exceeds balance alert message")];
+                                               @"Details of an alert when trying to send more than you have")];
 }
 
 - (void)showBlockedFundsAlert {
@@ -500,10 +500,10 @@ NSString * const HISendBitcoinsWindowSuccessKey = @"success";
 
 - (void)showOwnAddressAlert {
     [self showAlertWithTitle:NSLocalizedString(@"This is your wallet address.",
-                                               @"Own address alert title")
+                                               @"Warning title when trying to send to your own address")
 
                      message:NSLocalizedString(@"Please enter a different address.",
-                                               @"Own address alert message")];
+                                               @"Warning details when trying to send to your own address")];
 }
 
 - (void)showLargeAmountAlertForAmount:(satoshi_t)satoshi toTarget:(NSString *)target button:(id)sender {
@@ -519,12 +519,12 @@ NSString * const HISendBitcoinsWindowSuccessKey = @"success";
 
     NSString *title = [NSString stringWithFormat:
                        NSLocalizedString(@"Are you sure you want to send %@ (%@) to %@?",
-                                         @"Large amount warning title (btc, fiat amount and address)"),
+                                         @"Warning when trying to a large BTC amount (btc, fiat amount and address)"),
                        formattedBitcoinAmount, formattedFiatAmount, self.nameLabel.stringValue];
 
     [alert setMessageText:title];
     [alert setInformativeText:NSLocalizedString(@"This is more than what you usually send.",
-                                                @"Large amount warning message")];
+                                                @"Warning details when trying to send a large BTC amount")];
 
     [alert addButtonWithTitle:NSLocalizedString(@"Send", @"Send button title")];
     [alert addButtonWithTitle:NSLocalizedString(@"Cancel", @"Cancel button title")];

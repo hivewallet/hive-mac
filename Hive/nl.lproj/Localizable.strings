@@ -2,7 +2,7 @@
 /* Address field placeholder */
 "Address" = "Adres";
 
-/* Amount exceeds balance alert title */
+/* Title of an alert when trying to send more than you have */
 "Amount exceeds balance." = "Bedrag is hoger dan de balans";
 
 /* Anonymous username for profile page */
@@ -14,7 +14,7 @@
 /* Applications view title */
 "Apps" = "Apps";
 
-/* Large amount warning title (btc, fiat amount and address) */
+/* Warning when trying to a large BTC amount (btc, fiat amount and address) */
 "Are you sure you want to send %@ (%@) to %@?" = "Are you sure you want to send %1$@ (%2$@) to %3$@?";
 
 /* Backup status: backup can't or won't be completed */
@@ -80,10 +80,10 @@
 /* Dropbox no backup folder alert title */
 "Dropbox folder not found." = "Dropbox folder not found.";
 
-/* No comment provided by engineer. */
+/* Page title when editing contact's info */
 "Edit contact" = "Wijzig contact";
 
-/* No comment provided by engineer. */
+/* Page title when editing your own profile info */
 "Edit profile" = "Wijzig profiel";
 
 /* Email field placeholder */
@@ -155,7 +155,7 @@
 /* Invalid address alert message */
 "Please check if you have entered the address correctly." = "Controleer of u het adres juist heeft ingevoerd";
 
-/* Own address alert message */
+/* Warning details when trying to send to your own address */
 "Please enter a different address." = "Please enter a different address.";
 
 /* Empty address alert message */
@@ -200,13 +200,13 @@
 /* Install app popup warning message when app exists */
 "The existing app file will be replaced by the new version. This will not affect any app settings or saved data." = "The existing app file will be replaced by the new version. This will not affect any app settings or saved data.";
 
-/* Transaction was cancelled alert details */
+/* Alert details when transaction was cancelled */
 "This can happen because of bugs in the wallet code or because the transaction was rejected by the network." = "This can happen because of bugs in the wallet code or because the transaction was rejected by the network.";
 
-/* Large amount warning message */
+/* Warning details when trying to send a large BTC amount */
 "This is more than what you usually send." = "This is more than what you usually send.";
 
-/* Own address alert title */
+/* Warning title when trying to send to your own address */
 "This is your wallet address." = "This is your wallet address.";
 
 /* Invalid address alert title */
@@ -215,13 +215,13 @@
 /* Amount exceeds available balance alert message */
 "To send this transaction, you'll need to wait for your pending transactions to be confirmed first (this shouldn't take more than a few minutes)." = "To send this transaction, you'll need to wait for your pending transactions to be confirmed first (this shouldn't take more than a few minutes).";
 
-/* Notification of confirmed send transaction */
+/* Notification of confirmed sent transaction */
 "Transaction completed" = "Transaction completed";
 
 /* Transaction failed alert title */
 "Transaction could not be completed." = "Transactie kon niet worden voltooid.";
 
-/* Transaction was cancelled alert title */
+/* Alert when transaction was cancelled (with transaction date) */
 "Transaction from %@ was cancelled." = "Transaction from %@ was cancelled.";
 
 /* Transactions view title */
@@ -242,13 +242,13 @@
 /* Sending zero bitcoin alert message */
 "Why would you want to send someone 0 BTC?" = "Waarom wilt u iemand 0 BTC sturen?";
 
-/* Amount exceeds balance alert message */
+/* Details of an alert when trying to send more than you have */
 "You cannot send more money than you own." = "U kunt niet meer geld verzenden dan dat u daadwerkelijk heeft.";
 
 /* Install app popup title when app exists */
 "You have already added \"%@\" to Hive. Would you like to overwrite it?" = "You have already added \"%@\" to Hive. Would you like to overwrite it?";
 
-/* Notification of confirmed send transaction details */
+/* Notification of confirmed sent transaction (with BTC amount) */
 "You have sent %@." = "You have sent %@.";
 
 /* Dropbox no backup folder alert details */

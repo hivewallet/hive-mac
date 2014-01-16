@@ -147,10 +147,11 @@ typedef NS_ENUM(NSInteger, HINotificationType) {
 - (void)postSendConfirmedNotification:(HITransaction *)transaction {
     NSString *btc = [[HIBitcoinFormatService sharedService] stringWithDesignatorForBitcoin:transaction.absoluteAmount];
     NSString *text = [NSString stringWithFormat:
-                      NSLocalizedString(@"You have sent %@.", @"Notification of confirmed send transaction details"),
+                      NSLocalizedString(@"You have sent %@.",
+                                        @"Notification of confirmed sent transaction (with BTC amount)"),
                       btc];
 
-    [self postNotification:NSLocalizedString(@"Transaction completed", @"Notification of confirmed send transaction")
+    [self postNotification:NSLocalizedString(@"Transaction completed", @"Notification of confirmed sent transaction")
                       text:text
           notificationType:HINotificationTypeTransaction];
 }
@@ -173,11 +174,11 @@ typedef NS_ENUM(NSInteger, HINotificationType) {
     NSString *formattedDate = [formatter stringFromDate:transaction.date];
 
     NSString *title = NSLocalizedString(@"Transaction from %@ was cancelled.",
-                                        @"Transaction was cancelled alert title");
+                                        @"Alert when transaction was cancelled (with transaction date)");
 
     NSString *message = NSLocalizedString(@"This can happen because of bugs in the wallet code "
                                           @"or because the transaction was rejected by the network.",
-                                          @"Transaction was cancelled alert details");
+                                          @"Alert details when transaction was cancelled");
 
     NSAlert *alert = [NSAlert alertWithMessageText:[NSString stringWithFormat:title, formattedDate]
                                      defaultButton:NSLocalizedString(@"OK", @"OK button title")
