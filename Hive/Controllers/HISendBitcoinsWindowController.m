@@ -340,16 +340,19 @@ NSString * const HISendBitcoinsWindowSuccessKey = @"success";
 }
 
 - (void)sendClicked:(id)sender {
-    uint64 satoshi = self.amountFieldValue;
+    satoshi_t satoshi = self.amountFieldValue;
+    satoshi_t satoshiWithFee = satoshi + self.currentFee;
+
+
     NSString *target = _hashAddress ?: self.nameLabel.stringValue;
 
     if (satoshi == 0) {
         [self showZeroAmountAlert];
     }
-    else if (satoshi > [[BCClient sharedClient] estimatedBalance]) {
+    else if (satoshiWithFee > [[BCClient sharedClient] estimatedBalance]) {
         [self showInsufficientFundsAlert];
     }
-    else if (satoshi > [[BCClient sharedClient] availableBalance]) {
+    else if (satoshiWithFee > [[BCClient sharedClient] availableBalance]) {
         [self showBlockedFundsAlert];
     }
     else if (target.length == 0) {
