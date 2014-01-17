@@ -24,19 +24,19 @@
 "Backup failed" = "Błąd wykonywania kopii zapasowej";
 
 /* Backup error message */
-"Backup folder was deleted" = "Backup folder was deleted";
+"Backup folder was deleted" = "Folder kopii został usunięty";
 
 /* No comment provided by engineer. */
 "Backup hasn't been done yet" = "Nie wykonano jeszcze żadnej kopii";
 
 /* Backup error message */
-"Backup is not configured" = "Backup is not configured";
+"Backup is not configured" = "Kopia nie została skonfigurowana";
 
 /* Backup status: backup done but not updated recently */
 "Backup problem" = "Problem z wykonywaniem kopii";
 
 /* Backup error message */
-"Can't create a directory to store the wallet backup" = "Can't create a directory to store the wallet backup";
+"Can't create a directory to store the wallet backup" = "Nie można założyć katalogu na kopię zapasową";
 
 /* Cancel button title */
 "Cancel" = "Anuluj";
@@ -78,7 +78,7 @@
 "Disable" = "Wyłącz";
 
 /* Backup status: adapter disabled */
-"Disabled" = "Wyłączony";
+"Disabled" = "Wyłączona";
 
 /* Remove contact alert dialog title */
 "Do you really want to remove %@ from your contact list?" = "Na pewno chcesz usunąć %@ z listy kontaktów?";
@@ -87,13 +87,13 @@
 "Do you want to add \"%@\" to Hive?" = "Czy chcesz dodać aplikację \"%@\" do Hive?";
 
 /* Backup error message */
-"Dropbox folder not found" = "Dropbox folder not found";
+"Dropbox folder not found" = "Nie znaleziono folderu Dropbox";
 
 /* Dropbox no backup folder alert title */
 "Dropbox folder not found." = "Nie znaleziono folderu Dropbox.";
 
 /* Backup error message */
-"Dropbox isn't running" = "Dropbox isn't running";
+"Dropbox isn't running" = "Aplikacja Dropbox nie jest uruchomiona";
 
 /* Page title when editing contact's info */
 "Edit contact" = "Edytuj kontakt";
@@ -123,7 +123,7 @@
 "Hive cannot be started." = "Nie można uruchomić Hive.";
 
 /* Backup error message */
-"Hive directory is excluded from Time Machine backup" = "Hive directory is excluded from Time Machine backup";
+"Hive directory is excluded from Time Machine backup" = "Katalog Hive jest wyłączony z kopii zapasowej Time Machine";
 
 /* Share transaction template text */
 "I just sent some Bitcoin using Hive" = "Wysłałem właśnie Bitcoiny przy pomocy portfela Hive";
@@ -231,7 +231,7 @@
 "This isn't a valid Bitcoin address." = "Podany adres Bitcoin jest nieprawidłowy.";
 
 /* Backup error message */
-"Time Machine is disabled in System Preferences" = "Time Machine is disabled in System Preferences";
+"Time Machine is disabled in System Preferences" = "Time Machine jest wyłączone w Preferencjach Systemowych";
 
 /* Amount exceeds available balance alert message */
 "To send this transaction, you'll need to wait for your pending transactions to be confirmed first (this shouldn't take more than a few minutes)." = "Aby wysłać tą transakcję, musisz poczekać aż poprzednie transakcje zostaną potwierdzone (to nie powinno zająć więcej niż kilka minut).";

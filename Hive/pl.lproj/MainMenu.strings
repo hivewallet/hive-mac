@@ -87,7 +87,7 @@
 "870.title" = "Sprawdź uaktualnienia...";
 
 /* Class = "NSMenuItem"; title = "Change Password…"; ObjectID = "1HB-Qg-iyg"; */
-"1HB-Qg-iyg.title" = "Zmień Hasło…";
+"1HB-Qg-iyg.title" = "Zmień hasło…";
 
 /* Class = "NSMenuItem"; title = "Open CoinMap..."; ObjectID = "ASP-Ns-ktD"; */
 "ASP-Ns-ktD.title" = "Otwórz CoinMap...";
