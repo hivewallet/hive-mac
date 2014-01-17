@@ -23,11 +23,20 @@
 /* Notification of failed backup */
 "Backup failed" = "Backup failed";
 
+/* Backup error message */
+"Backup folder was deleted" = "Backup folder was deleted";
+
 /* No comment provided by engineer. */
 "Backup hasn't been done yet" = "Backup hasn't been done yet";
 
+/* Backup error message */
+"Backup is not configured" = "Backup is not configured";
+
 /* Backup status: backup done but not updated recently */
 "Backup problem" = "Backup problem";
+
+/* Backup error message */
+"Can't create a directory to store the wallet backup" = "Can't create a directory to store the wallet backup";
 
 /* Cancel button title */
 "Cancel" = "취소";
@@ -77,8 +86,14 @@
 /* Install app popup title */
 "Do you want to add \"%@\" to Hive?" = "Do you want to add \"%@\" to Hive?";
 
+/* Backup error message */
+"Dropbox folder not found" = "Dropbox folder not found";
+
 /* Dropbox no backup folder alert title */
 "Dropbox folder not found." = "Dropbox folder not found.";
+
+/* Backup error message */
+"Dropbox isn't running" = "Dropbox isn't running";
 
 /* Page title when editing contact's info */
 "Edit contact" = "연락처 수정";
@@ -106,6 +121,9 @@
 
 /* Initialization error title */
 "Hive cannot be started." = "Hive cannot be started.";
+
+/* Backup error message */
+"Hive directory is excluded from Time Machine backup" = "Hive directory is excluded from Time Machine backup";
 
 /* Share transaction template text */
 "I just sent some Bitcoin using Hive" = "I just sent some Bitcoin using Hive";
@@ -211,6 +229,9 @@
 
 /* Invalid address alert title */
 "This isn't a valid Bitcoin address." = "유호한 Bitcoin 주소가 아닙니다";
+
+/* Backup error message */
+"Time Machine is disabled in System Preferences" = "Time Machine is disabled in System Preferences";
 
 /* Amount exceeds available balance alert message */
 "To send this transaction, you'll need to wait for your pending transactions to be confirmed first (this shouldn't take more than a few minutes)." = "To send this transaction, you'll need to wait for your pending transactions to be confirmed first (this shouldn't take more than a few minutes).";

@@ -217,7 +217,8 @@ const NSInteger HIDropboxBackupNotRunning = -3;
         HILogWarn(@"Backup not configured (no backup location)");
 
         self.status = HIBackupStatusFailure;
-        self.error = BackupError(HIDropboxBackupError, HIDropboxBackupNotConfigured, @"Backup is not configured");
+        self.error = BackupError(HIDropboxBackupError, HIDropboxBackupNotConfigured,
+                                 NSLocalizedString(@"Backup is not configured", @"Backup error message"));
         return;
     }
 
@@ -227,7 +228,8 @@ const NSInteger HIDropboxBackupNotRunning = -3;
         HILogWarn(@"Backup not configured (no Dropbox folder)");
 
         self.status = HIBackupStatusFailure;
-        self.error = BackupError(HIDropboxBackupError, HIDropboxBackupNotConfigured, @"Dropbox folder not found");
+        self.error = BackupError(HIDropboxBackupError, HIDropboxBackupNotConfigured,
+                                 NSLocalizedString(@"Dropbox folder not found", @"Backup error message"));
         return;
     }
 
@@ -239,7 +241,8 @@ const NSInteger HIDropboxBackupNotRunning = -3;
                   backupLocation, exists, isDirectory);
 
         self.status = HIBackupStatusFailure;
-        self.error = BackupError(HIDropboxBackupError, HIDropboxBackupNotConfigured, @"Backup folder was deleted");
+        self.error = BackupError(HIDropboxBackupError, HIDropboxBackupNotConfigured,
+                                 NSLocalizedString(@"Backup folder was deleted", @"Backup error message"));
         return;
     }
 
@@ -258,7 +261,8 @@ const NSInteger HIDropboxBackupNotRunning = -3;
 
         // we'll keep checking in updateStatus
         self.status = [self updatedAfterLastWalletChange] ? HIBackupStatusOutdated : HIBackupStatusFailure;
-        self.error = BackupError(HIDropboxBackupError, HIDropboxBackupNotRunning, @"Dropbox isn't running");
+        self.error = BackupError(HIDropboxBackupError, HIDropboxBackupNotRunning,
+                                 NSLocalizedString(@"Dropbox isn't running", @"Backup error message"));
     }
 }
 
@@ -304,7 +308,8 @@ const NSInteger HIDropboxBackupNotRunning = -3;
     } else if (!isDirectory) {
         self.status = HIBackupStatusFailure;
         self.error = BackupError(HIDropboxBackupError, HIDropboxBackupCouldntComplete,
-                                 @"Can't create a directory to store the wallet backup");
+                                 NSLocalizedString(@"Can't create a directory to store the wallet backup",
+                                                   @"Backup error message"));
 
         HILogError(@"Couldn't create backup directory: %@ is a file", bitcoinjDirectory);
         [NSApp presentError:self.error];

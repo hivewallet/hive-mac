@@ -11,7 +11,7 @@
 #define BackupError(domain, errorCode, reason) [NSError errorWithDomain:domain \
                                                                    code:errorCode \
                                                                userInfo:@{NSLocalizedFailureReasonErrorKey: \
-                                                                          NSLocalizedString(reason, nil)}];
+                                                                          (reason)}];
 
 typedef NS_ENUM(NSUInteger, HIBackupAdapterStatus) {
     // adapter is disabled - user doesn't want to use it

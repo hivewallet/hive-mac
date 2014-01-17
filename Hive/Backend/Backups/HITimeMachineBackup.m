@@ -59,7 +59,8 @@ const NSInteger HITimeMachineBackupPathExcluded = -2;
     if ([self isExcludedFromBackup]) {
         self.status = HIBackupStatusFailure;
         self.error = BackupError(HITimeMachineBackupError, HITimeMachineBackupPathExcluded,
-                                 @"Hive directory is excluded from Time Machine backup");
+                                 NSLocalizedString(@"Hive directory is excluded from Time Machine backup",
+                                                   @"Backup error message"));
         return;
     }
 
@@ -90,7 +91,8 @@ const NSInteger HITimeMachineBackupPathExcluded = -2;
         }
     } else { // !backupsEnabled
         self.error = BackupError(HITimeMachineBackupError, HITimeMachineBackupDisabled,
-                                 @"Time Machine is disabled in System Preferences");
+                                 NSLocalizedString(@"Time Machine is disabled in System Preferences",
+                                                   @"Backup error message"));
 
         if (afterLastWalletChange) {
             // we have a backup, but we won't have another
