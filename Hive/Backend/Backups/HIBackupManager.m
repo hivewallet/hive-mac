@@ -66,6 +66,7 @@
 }
 
 - (void)performBackups {
+    [self.adapters makeObjectsPerformSelector:@selector(updateStatus)];
     [self.adapters makeObjectsPerformSelector:@selector(performBackup)];
 }
 
