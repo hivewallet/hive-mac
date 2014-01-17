@@ -41,7 +41,6 @@
 		583B1DD118620BA800817EF8 /* HILogFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = 583B1DD018620BA800817EF8 /* HILogFormatter.m */; };
 		583B1DE41864A32900817EF8 /* HISecureAppStorage.m in Sources */ = {isa = PBXBuildFile; fileRef = 583B1DE31864A32900817EF8 /* HISecureAppStorage.m */; };
 		583B1DED186860EC00817EF8 /* HIBackupCenterWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 583B1DEB186860EC00817EF8 /* HIBackupCenterWindowController.m */; };
-		583B1DEE186860EC00817EF8 /* HIBackupCenterWindowController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 583B1DEC186860EC00817EF8 /* HIBackupCenterWindowController.xib */; };
 		583B1DF818686C3800817EF8 /* HIBackupAdapter.m in Sources */ = {isa = PBXBuildFile; fileRef = 583B1DF718686C3800817EF8 /* HIBackupAdapter.m */; };
 		583B1DFB18686C4700817EF8 /* HITimeMachineBackup.m in Sources */ = {isa = PBXBuildFile; fileRef = 583B1DFA18686C4700817EF8 /* HITimeMachineBackup.m */; };
 		583B1DFE18686C8400817EF8 /* HIDropboxBackup.m in Sources */ = {isa = PBXBuildFile; fileRef = 583B1DFD18686C8400817EF8 /* HIDropboxBackup.m */; };
@@ -117,6 +116,8 @@
 		5884A03717F56D86004A31FA /* Sparkle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5884A03617F56D86004A31FA /* Sparkle.framework */; };
 		5884A03C17F578EB004A31FA /* Sparkle.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 5884A03617F56D86004A31FA /* Sparkle.framework */; };
 		5884A03E17F57AE9004A31FA /* dsa_pub.pem in Resources */ = {isa = PBXBuildFile; fileRef = 5884A03D17F57AE9004A31FA /* dsa_pub.pem */; };
+		5889538F1888A68100243190 /* HIBackupCenterWindowController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 588953911888A68100243190 /* HIBackupCenterWindowController.xib */; };
+		588953AF188920D000243190 /* HIBackupCenterWindowController.strings in Resources */ = {isa = PBXBuildFile; fileRef = 588953B1188920D000243190 /* HIBackupCenterWindowController.strings */; };
 		588E33B71817E6AE006A6A25 /* HIBitcoinURL.m in Sources */ = {isa = PBXBuildFile; fileRef = 588E33B61817E6AE006A6A25 /* HIBitcoinURL.m */; };
 		588E34B7181E9F7B006A6A25 /* localbitcoins.hiveapp in Resources */ = {isa = PBXBuildFile; fileRef = 588E34B6181E9F7B006A6A25 /* localbitcoins.hiveapp */; };
 		588E34D9181FF32B006A6A25 /* HIDebuggingInfoWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 588E34D7181FF32B006A6A25 /* HIDebuggingInfoWindowController.m */; };
@@ -464,7 +465,6 @@
 		583B1DE31864A32900817EF8 /* HISecureAppStorage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HISecureAppStorage.m; sourceTree = "<group>"; };
 		583B1DEA186860EC00817EF8 /* HIBackupCenterWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HIBackupCenterWindowController.h; sourceTree = "<group>"; };
 		583B1DEB186860EC00817EF8 /* HIBackupCenterWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HIBackupCenterWindowController.m; sourceTree = "<group>"; };
-		583B1DEC186860EC00817EF8 /* HIBackupCenterWindowController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HIBackupCenterWindowController.xib; sourceTree = "<group>"; };
 		583B1DF618686C3800817EF8 /* HIBackupAdapter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HIBackupAdapter.h; sourceTree = "<group>"; };
 		583B1DF718686C3800817EF8 /* HIBackupAdapter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HIBackupAdapter.m; sourceTree = "<group>"; };
 		583B1DF918686C4700817EF8 /* HITimeMachineBackup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HITimeMachineBackup.h; sourceTree = "<group>"; };
@@ -615,6 +615,58 @@
 		5884A00417F1B5FE004A31FA /* Tor.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Tor.xcodeproj; path = Tor.framework/Tor.xcodeproj; sourceTree = "<group>"; };
 		5884A03617F56D86004A31FA /* Sparkle.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Sparkle.framework; sourceTree = "<group>"; };
 		5884A03D17F57AE9004A31FA /* dsa_pub.pem */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = dsa_pub.pem; sourceTree = "<group>"; };
+		588953901888A68100243190 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/HIBackupCenterWindowController.xib; sourceTree = "<group>"; };
+		588953941888A68B00243190 /* pl */ = {isa = PBXFileReference; lastKnownFileType = file; name = pl; path = pl.lproj/HIBackupCenterWindowController.xib; sourceTree = "<group>"; };
+		588953951888A68B00243190 /* it */ = {isa = PBXFileReference; lastKnownFileType = file; name = it; path = it.lproj/HIBackupCenterWindowController.xib; sourceTree = "<group>"; };
+		588953961888A68C00243190 /* fr */ = {isa = PBXFileReference; lastKnownFileType = file; name = fr; path = fr.lproj/HIBackupCenterWindowController.xib; sourceTree = "<group>"; };
+		588953971888A68D00243190 /* fi */ = {isa = PBXFileReference; lastKnownFileType = file; name = fi; path = fi.lproj/HIBackupCenterWindowController.xib; sourceTree = "<group>"; };
+		588953981888A68D00243190 /* da */ = {isa = PBXFileReference; lastKnownFileType = file; name = da; path = da.lproj/HIBackupCenterWindowController.xib; sourceTree = "<group>"; };
+		588953991888A68E00243190 /* de */ = {isa = PBXFileReference; lastKnownFileType = file; name = de; path = de.lproj/HIBackupCenterWindowController.xib; sourceTree = "<group>"; };
+		5889539A1888A68F00243190 /* ar */ = {isa = PBXFileReference; lastKnownFileType = file; name = ar; path = ar.lproj/HIBackupCenterWindowController.xib; sourceTree = "<group>"; };
+		5889539B1888A69000243190 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = file; name = "zh-Hans"; path = "zh-Hans.lproj/HIBackupCenterWindowController.xib"; sourceTree = "<group>"; };
+		5889539C1888A69200243190 /* ru */ = {isa = PBXFileReference; lastKnownFileType = file; name = ru; path = ru.lproj/HIBackupCenterWindowController.xib; sourceTree = "<group>"; };
+		5889539D1888A69300243190 /* nl */ = {isa = PBXFileReference; lastKnownFileType = file; name = nl; path = nl.lproj/HIBackupCenterWindowController.xib; sourceTree = "<group>"; };
+		5889539E1888A69300243190 /* fil */ = {isa = PBXFileReference; lastKnownFileType = file; name = fil; path = fil.lproj/HIBackupCenterWindowController.xib; sourceTree = "<group>"; };
+		5889539F1888A69700243190 /* ur */ = {isa = PBXFileReference; lastKnownFileType = file; name = ur; path = ur.lproj/HIBackupCenterWindowController.xib; sourceTree = "<group>"; };
+		588953A01888A69800243190 /* hi */ = {isa = PBXFileReference; lastKnownFileType = file; name = hi; path = hi.lproj/HIBackupCenterWindowController.xib; sourceTree = "<group>"; };
+		588953A11888A69900243190 /* ko */ = {isa = PBXFileReference; lastKnownFileType = file; name = ko; path = ko.lproj/HIBackupCenterWindowController.xib; sourceTree = "<group>"; };
+		588953A21888A69900243190 /* es */ = {isa = PBXFileReference; lastKnownFileType = file; name = es; path = es.lproj/HIBackupCenterWindowController.xib; sourceTree = "<group>"; };
+		588953A31888A69B00243190 /* cs */ = {isa = PBXFileReference; lastKnownFileType = file; name = cs; path = cs.lproj/HIBackupCenterWindowController.xib; sourceTree = "<group>"; };
+		588953A41888A69B00243190 /* el */ = {isa = PBXFileReference; lastKnownFileType = file; name = el; path = el.lproj/HIBackupCenterWindowController.xib; sourceTree = "<group>"; };
+		588953A51888A69C00243190 /* tr */ = {isa = PBXFileReference; lastKnownFileType = file; name = tr; path = tr.lproj/HIBackupCenterWindowController.xib; sourceTree = "<group>"; };
+		588953A61888A69D00243190 /* pt */ = {isa = PBXFileReference; lastKnownFileType = file; name = pt; path = pt.lproj/HIBackupCenterWindowController.xib; sourceTree = "<group>"; };
+		588953A71888A69E00243190 /* ro */ = {isa = PBXFileReference; lastKnownFileType = file; name = ro; path = ro.lproj/HIBackupCenterWindowController.xib; sourceTree = "<group>"; };
+		588953A81888A69E00243190 /* pt-BR */ = {isa = PBXFileReference; lastKnownFileType = file; name = "pt-BR"; path = "pt-BR.lproj/HIBackupCenterWindowController.xib"; sourceTree = "<group>"; };
+		588953A91888A69F00243190 /* ja */ = {isa = PBXFileReference; lastKnownFileType = file; name = ja; path = ja.lproj/HIBackupCenterWindowController.xib; sourceTree = "<group>"; };
+		588953AA1888A6A000243190 /* sr */ = {isa = PBXFileReference; lastKnownFileType = file; name = sr; path = sr.lproj/HIBackupCenterWindowController.xib; sourceTree = "<group>"; };
+		588953AB1888A6A300243190 /* sr-Latn */ = {isa = PBXFileReference; lastKnownFileType = file; name = "sr-Latn"; path = "sr-Latn.lproj/HIBackupCenterWindowController.xib"; sourceTree = "<group>"; };
+		588953AC1888A6A300243190 /* sv */ = {isa = PBXFileReference; lastKnownFileType = file; name = sv; path = sv.lproj/HIBackupCenterWindowController.xib; sourceTree = "<group>"; };
+		588953B0188920D000243190 /* en */ = {isa = PBXFileReference; lastKnownFileType = file; name = en; path = en.lproj/HIBackupCenterWindowController.strings; sourceTree = "<group>"; };
+		588953B2188920D700243190 /* pl */ = {isa = PBXFileReference; lastKnownFileType = file; name = pl; path = pl.lproj/HIBackupCenterWindowController.strings; sourceTree = "<group>"; };
+		588953B3188920D800243190 /* it */ = {isa = PBXFileReference; lastKnownFileType = file; name = it; path = it.lproj/HIBackupCenterWindowController.strings; sourceTree = "<group>"; };
+		588953B4188920D900243190 /* fr */ = {isa = PBXFileReference; lastKnownFileType = file; name = fr; path = fr.lproj/HIBackupCenterWindowController.strings; sourceTree = "<group>"; };
+		588953B5188920DA00243190 /* fi */ = {isa = PBXFileReference; lastKnownFileType = file; name = fi; path = fi.lproj/HIBackupCenterWindowController.strings; sourceTree = "<group>"; };
+		588953B6188920DA00243190 /* da */ = {isa = PBXFileReference; lastKnownFileType = file; name = da; path = da.lproj/HIBackupCenterWindowController.strings; sourceTree = "<group>"; };
+		588953B7188920DB00243190 /* de */ = {isa = PBXFileReference; lastKnownFileType = file; name = de; path = de.lproj/HIBackupCenterWindowController.strings; sourceTree = "<group>"; };
+		588953B8188920DC00243190 /* nl */ = {isa = PBXFileReference; lastKnownFileType = file; name = nl; path = nl.lproj/HIBackupCenterWindowController.strings; sourceTree = "<group>"; };
+		588953B9188920DD00243190 /* ru */ = {isa = PBXFileReference; lastKnownFileType = file; name = ru; path = ru.lproj/HIBackupCenterWindowController.strings; sourceTree = "<group>"; };
+		588953BA188920DE00243190 /* fil */ = {isa = PBXFileReference; lastKnownFileType = file; name = fil; path = fil.lproj/HIBackupCenterWindowController.strings; sourceTree = "<group>"; };
+		588953BB188920DE00243190 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = file; name = "zh-Hans"; path = "zh-Hans.lproj/HIBackupCenterWindowController.strings"; sourceTree = "<group>"; };
+		588953BC188920DF00243190 /* ar */ = {isa = PBXFileReference; lastKnownFileType = file; name = ar; path = ar.lproj/HIBackupCenterWindowController.strings; sourceTree = "<group>"; };
+		588953BD188920DF00243190 /* ur */ = {isa = PBXFileReference; lastKnownFileType = file; name = ur; path = ur.lproj/HIBackupCenterWindowController.strings; sourceTree = "<group>"; };
+		588953BE188920E100243190 /* hi */ = {isa = PBXFileReference; lastKnownFileType = file; name = hi; path = hi.lproj/HIBackupCenterWindowController.strings; sourceTree = "<group>"; };
+		588953BF188920E200243190 /* ko */ = {isa = PBXFileReference; lastKnownFileType = file; name = ko; path = ko.lproj/HIBackupCenterWindowController.strings; sourceTree = "<group>"; };
+		588953C0188920E300243190 /* es */ = {isa = PBXFileReference; lastKnownFileType = file; name = es; path = es.lproj/HIBackupCenterWindowController.strings; sourceTree = "<group>"; };
+		588953C1188920E400243190 /* cs */ = {isa = PBXFileReference; lastKnownFileType = file; name = cs; path = cs.lproj/HIBackupCenterWindowController.strings; sourceTree = "<group>"; };
+		588953C2188920E500243190 /* el */ = {isa = PBXFileReference; lastKnownFileType = file; name = el; path = el.lproj/HIBackupCenterWindowController.strings; sourceTree = "<group>"; };
+		588953C3188920E500243190 /* tr */ = {isa = PBXFileReference; lastKnownFileType = file; name = tr; path = tr.lproj/HIBackupCenterWindowController.strings; sourceTree = "<group>"; };
+		588953C4188920E600243190 /* pt */ = {isa = PBXFileReference; lastKnownFileType = file; name = pt; path = pt.lproj/HIBackupCenterWindowController.strings; sourceTree = "<group>"; };
+		588953C5188920E800243190 /* ro */ = {isa = PBXFileReference; lastKnownFileType = file; name = ro; path = ro.lproj/HIBackupCenterWindowController.strings; sourceTree = "<group>"; };
+		588953C6188920E800243190 /* pt-BR */ = {isa = PBXFileReference; lastKnownFileType = file; name = "pt-BR"; path = "pt-BR.lproj/HIBackupCenterWindowController.strings"; sourceTree = "<group>"; };
+		588953C7188920E900243190 /* ja */ = {isa = PBXFileReference; lastKnownFileType = file; name = ja; path = ja.lproj/HIBackupCenterWindowController.strings; sourceTree = "<group>"; };
+		588953C8188920E900243190 /* sr */ = {isa = PBXFileReference; lastKnownFileType = file; name = sr; path = sr.lproj/HIBackupCenterWindowController.strings; sourceTree = "<group>"; };
+		588953C9188920EA00243190 /* sr-Latn */ = {isa = PBXFileReference; lastKnownFileType = file; name = "sr-Latn"; path = "sr-Latn.lproj/HIBackupCenterWindowController.strings"; sourceTree = "<group>"; };
+		588953CA188920EC00243190 /* sv */ = {isa = PBXFileReference; lastKnownFileType = file; name = sv; path = sv.lproj/HIBackupCenterWindowController.strings; sourceTree = "<group>"; };
 		588E33B51817E6AE006A6A25 /* HIBitcoinURL.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HIBitcoinURL.h; sourceTree = "<group>"; };
 		588E33B61817E6AE006A6A25 /* HIBitcoinURL.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HIBitcoinURL.m; sourceTree = "<group>"; };
 		588E33BF181810AD006A6A25 /* ru */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = ru; path = ru.lproj/HIApplicationsViewController.xib; sourceTree = "<group>"; };
@@ -1343,7 +1395,8 @@
 			children = (
 				583B1DEA186860EC00817EF8 /* HIBackupCenterWindowController.h */,
 				583B1DEB186860EC00817EF8 /* HIBackupCenterWindowController.m */,
-				583B1DEC186860EC00817EF8 /* HIBackupCenterWindowController.xib */,
+				588953B1188920D000243190 /* HIBackupCenterWindowController.strings */,
+				588953911888A68100243190 /* HIBackupCenterWindowController.xib */,
 			);
 			name = HIBackupCenterWindowController;
 			sourceTree = "<group>";
@@ -1984,13 +2037,14 @@
 				58605A4918041D0A00FD9C2A /* icon-gray-btc.pdf in Resources */,
 				58605A4A18041D0A00FD9C2A /* icon-group__active.pdf in Resources */,
 				58605A4B18041D0A00FD9C2A /* icon-group__inactive.pdf in Resources */,
-				583B1DEE186860EC00817EF8 /* HIBackupCenterWindowController.xib in Resources */,
+				5889538F1888A68100243190 /* HIBackupCenterWindowController.xib in Resources */,
 				58605A4C18041D0A00FD9C2A /* icon-nav-bar-back.pdf in Resources */,
 				58A37ADF180D998700CFCDE3 /* HITransactionsViewController.strings in Resources */,
 				588E356618212BFB006A6A25 /* HIErrorWindowController.xib in Resources */,
 				588E34F2182013E9006A6A25 /* HIDebuggingInfoWindowController.strings in Resources */,
 				58605A4D18041D0A00FD9C2A /* icon-next__active.pdf in Resources */,
 				58605A4E18041D0A00FD9C2A /* icon-next.pdf in Resources */,
+				588953AF188920D000243190 /* HIBackupCenterWindowController.strings in Resources */,
 				58605A4F18041D0A00FD9C2A /* icon-plus.pdf in Resources */,
 				58A37AD5180D996E00CFCDE3 /* HIContactInfoViewController.strings in Resources */,
 				58605A5018041D0A00FD9C2A /* icon-sadface.pdf in Resources */,
@@ -2331,6 +2385,72 @@
 				24EAAFC6186E1BBD00E1D2D3 /* en */,
 			);
 			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		588953911888A68100243190 /* HIBackupCenterWindowController.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				588953901888A68100243190 /* en */,
+				588953941888A68B00243190 /* pl */,
+				588953951888A68B00243190 /* it */,
+				588953961888A68C00243190 /* fr */,
+				588953971888A68D00243190 /* fi */,
+				588953981888A68D00243190 /* da */,
+				588953991888A68E00243190 /* de */,
+				5889539A1888A68F00243190 /* ar */,
+				5889539B1888A69000243190 /* zh-Hans */,
+				5889539C1888A69200243190 /* ru */,
+				5889539D1888A69300243190 /* nl */,
+				5889539E1888A69300243190 /* fil */,
+				5889539F1888A69700243190 /* ur */,
+				588953A01888A69800243190 /* hi */,
+				588953A11888A69900243190 /* ko */,
+				588953A21888A69900243190 /* es */,
+				588953A31888A69B00243190 /* cs */,
+				588953A41888A69B00243190 /* el */,
+				588953A51888A69C00243190 /* tr */,
+				588953A61888A69D00243190 /* pt */,
+				588953A71888A69E00243190 /* ro */,
+				588953A81888A69E00243190 /* pt-BR */,
+				588953A91888A69F00243190 /* ja */,
+				588953AA1888A6A000243190 /* sr */,
+				588953AB1888A6A300243190 /* sr-Latn */,
+				588953AC1888A6A300243190 /* sv */,
+			);
+			name = HIBackupCenterWindowController.xib;
+			sourceTree = "<group>";
+		};
+		588953B1188920D000243190 /* HIBackupCenterWindowController.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				588953B0188920D000243190 /* en */,
+				588953B2188920D700243190 /* pl */,
+				588953B3188920D800243190 /* it */,
+				588953B4188920D900243190 /* fr */,
+				588953B5188920DA00243190 /* fi */,
+				588953B6188920DA00243190 /* da */,
+				588953B7188920DB00243190 /* de */,
+				588953B8188920DC00243190 /* nl */,
+				588953B9188920DD00243190 /* ru */,
+				588953BA188920DE00243190 /* fil */,
+				588953BB188920DE00243190 /* zh-Hans */,
+				588953BC188920DF00243190 /* ar */,
+				588953BD188920DF00243190 /* ur */,
+				588953BE188920E100243190 /* hi */,
+				588953BF188920E200243190 /* ko */,
+				588953C0188920E300243190 /* es */,
+				588953C1188920E400243190 /* cs */,
+				588953C2188920E500243190 /* el */,
+				588953C3188920E500243190 /* tr */,
+				588953C4188920E600243190 /* pt */,
+				588953C5188920E800243190 /* ro */,
+				588953C6188920E800243190 /* pt-BR */,
+				588953C7188920E900243190 /* ja */,
+				588953C8188920E900243190 /* sr */,
+				588953C9188920EA00243190 /* sr-Latn */,
+				588953CA188920EC00243190 /* sv */,
+			);
+			name = HIBackupCenterWindowController.strings;
 			sourceTree = "<group>";
 		};
 		588E34DD181FF8A7006A6A25 /* HIDebuggingInfoWindowController.xib */ = {
