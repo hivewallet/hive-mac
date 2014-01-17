@@ -17,7 +17,7 @@
             <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
             <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
             <rect key="contentRect" x="196" y="240" width="850" height="650"/>
-            <rect key="screenRect" x="0.0" y="0.0" width="1680" height="1028"/>
+            <rect key="screenRect" x="0.0" y="0.0" width="1920" height="1058"/>
             <view key="contentView" id="2">
                 <rect key="frame" x="0.0" y="0.0" width="850" height="650"/>
                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -35,11 +35,19 @@
                         <rect key="frame" x="0.0" y="0.0" width="850" height="650"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     </customView>
+                    <customView placeholderIntrinsicWidth="400" placeholderIntrinsicHeight="60" translatesAutoresizingMaskIntoConstraints="NO" id="cUd-nc-jXc" userLabel="Breadcrumbs" customClass="HIBreadcrumbsView">
+                        <rect key="frame" x="225" y="580" width="400" height="60"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="60" id="0Vx-uS-fmq"/>
+                        </constraints>
+                    </customView>
                 </subviews>
                 <constraints>
                     <constraint firstAttribute="trailing" secondItem="8ea-Mi-gTH" secondAttribute="trailing" id="3gs-WR-ece"/>
                     <constraint firstAttribute="trailing" secondItem="8ea-Mi-gTH" secondAttribute="trailing" id="5aG-5p-9Rp"/>
                     <constraint firstItem="8ea-Mi-gTH" firstAttribute="top" secondItem="2" secondAttribute="top" id="9SV-pI-MsA"/>
+                    <constraint firstAttribute="centerX" secondItem="cUd-nc-jXc" secondAttribute="centerX" id="Hnt-R7-fsV"/>
                     <constraint firstItem="Gal-TR-z2z" firstAttribute="leading" secondItem="2" secondAttribute="leading" id="KAg-Q0-HMa"/>
                     <constraint firstItem="Gal-TR-z2z" firstAttribute="top" secondItem="2" secondAttribute="top" id="Mxm-6A-oMT"/>
                     <constraint firstAttribute="bottom" secondItem="8ea-Mi-gTH" secondAttribute="bottom" id="O5K-WS-QrR"/>
@@ -49,6 +57,7 @@
                     <constraint firstItem="8ea-Mi-gTH" firstAttribute="leading" secondItem="2" secondAttribute="leading" id="idT-UA-syl"/>
                     <constraint firstAttribute="bottom" secondItem="8ea-Mi-gTH" secondAttribute="bottom" id="tDd-kL-zgd"/>
                     <constraint firstItem="8ea-Mi-gTH" firstAttribute="leading" secondItem="2" secondAttribute="leading" id="wf2-wT-Xxr"/>
+                    <constraint firstItem="cUd-nc-jXc" firstAttribute="top" secondItem="2" secondAttribute="top" constant="10" id="x5o-fJ-LoA"/>
                 </constraints>
             </view>
             <connections>

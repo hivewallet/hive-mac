@@ -17,6 +17,7 @@
 		1AA105A7496BDE6BA5E2FA84 /* NSDecimalNumber+HISatoshiConversion.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AA104995C1BAF25C99780F1 /* NSDecimalNumber+HISatoshiConversion.m */; };
 		1AA1076874E6E840D30050E5 /* HILabelPopUpButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AA1099A1809B28C291572E7 /* HILabelPopUpButton.m */; };
 		1AA1079715A3C2B9CD4CC308 /* NSWindow+HIShake.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AA10B9F1D9322FFF21821DA /* NSWindow+HIShake.m */; };
+		1AA108B5C3F24841E6C62EF9 /* HIBreadcrumbsView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AA10AA07C166902BE59EB57 /* HIBreadcrumbsView.m */; };
 		1AA10A016757DBB9BE7808C5 /* HIExchangeRateService.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AA1032408E917EE5B7752AC /* HIExchangeRateService.m */; };
 		1AA10A3DE7069E497A59CF0C /* HINotificationService.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AA1022DA4CD99B7CB61C335 /* HINotificationService.m */; };
 		1AA10AB8CB13510790BD9A6D /* HIPasswordHolder.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AA10711079E121245A12DED /* HIPasswordHolder.m */; };
@@ -269,11 +270,13 @@
 		1AA1099A1809B28C291572E7 /* HILabelPopUpButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HILabelPopUpButton.m; sourceTree = "<group>"; };
 		1AA109D1C9CD1E776FBE62A3 /* HIClearView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HIClearView.m; sourceTree = "<group>"; };
 		1AA10A32478D47E8D26B9653 /* HIDraggableButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HIDraggableButton.h; sourceTree = "<group>"; };
+		1AA10AA07C166902BE59EB57 /* HIBreadcrumbsView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HIBreadcrumbsView.m; sourceTree = "<group>"; };
 		1AA10ABE84E126AEFF538618 /* HINotificationService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HINotificationService.h; sourceTree = "<group>"; };
 		1AA10B9F1D9322FFF21821DA /* NSWindow+HIShake.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSWindow+HIShake.m"; sourceTree = "<group>"; };
 		1AA10BBE6F3C3F05768B604D /* HIWizardWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HIWizardWindowController.m; sourceTree = "<group>"; };
 		1AA10BD2B747098DE4F5E6E8 /* NSDecimalNumber+HISatoshiConversion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDecimalNumber+HISatoshiConversion.h"; sourceTree = "<group>"; };
 		1AA10C583F128C0BCD84C878 /* HIExchangeRateService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HIExchangeRateService.h; sourceTree = "<group>"; };
+		1AA10CE6F8A52D59745DEF88 /* HIBreadcrumbsView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HIBreadcrumbsView.h; sourceTree = "<group>"; };
 		1AA10D2D55A74CDB4505CC33 /* HIClearView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HIClearView.h; sourceTree = "<group>"; };
 		1AA10ED2A6A54B40FB3067FD /* HIDraggableButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HIDraggableButton.m; sourceTree = "<group>"; };
 		1AA10F3E7660E657A58361D9 /* HIProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HIProfileViewController.h; sourceTree = "<group>"; };
@@ -1782,6 +1785,8 @@
 				D94815B317D492A0006A0312 /* HITitleView.m */,
 				581EFBCA17DA441A00E2738D /* HITransactionCellView.h */,
 				581EFBCB17DA441B00E2738D /* HITransactionCellView.m */,
+				1AA10AA07C166902BE59EB57 /* HIBreadcrumbsView.m */,
+				1AA10CE6F8A52D59745DEF88 /* HIBreadcrumbsView.h */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -2380,6 +2385,7 @@
 				1AA100A06AF3D94CDB6D1867 /* HIDraggableButton.m in Sources */,
 				1AA10491B94E46EAEE6DD347 /* HIWizardWindowController.m in Sources */,
 				1AA103351868D3A1E24F70FA /* HIClearView.m in Sources */,
+				1AA108B5C3F24841E6C62EF9 /* HIBreadcrumbsView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
