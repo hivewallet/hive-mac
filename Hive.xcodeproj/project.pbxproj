@@ -21,7 +21,6 @@
 		1AA10B3C94C377F4EF024D41 /* HIProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AA1013FB9712D7B30A91BFB /* HIProfileViewController.m */; };
 		1AA10ECC39D33A1362882EB2 /* HIProfileViewController.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1AA108BDEC523213EF9B8309 /* HIProfileViewController.strings */; };
 		24178E301861005100A73D4E /* HIPasswordChangeWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 24178E2E1861005100A73D4E /* HIPasswordChangeWindowController.m */; };
-		24178E311861005100A73D4E /* HIPasswordChangeWindowController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 24178E2F1861005100A73D4E /* HIPasswordChangeWindowController.xib */; };
 		244303BA1856712000AD59B8 /* HIPasswordInputViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 244303B81856712000AD59B8 /* HIPasswordInputViewController.m */; };
 		244303BB1856712000AD59B8 /* HIPasswordInputViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 244303B91856712000AD59B8 /* HIPasswordInputViewController.xib */; };
 		2478B8D3184A80A400BA2C35 /* HIFeeDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2478B8D1184A80A400BA2C35 /* HIFeeDetailsViewController.m */; };
@@ -118,6 +117,8 @@
 		5884A03E17F57AE9004A31FA /* dsa_pub.pem in Resources */ = {isa = PBXBuildFile; fileRef = 5884A03D17F57AE9004A31FA /* dsa_pub.pem */; };
 		5889538F1888A68100243190 /* HIBackupCenterWindowController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 588953911888A68100243190 /* HIBackupCenterWindowController.xib */; };
 		588953AF188920D000243190 /* HIBackupCenterWindowController.strings in Resources */ = {isa = PBXBuildFile; fileRef = 588953B1188920D000243190 /* HIBackupCenterWindowController.strings */; };
+		588953CB1889219F00243190 /* HIPasswordChangeWindowController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 588953CD1889219F00243190 /* HIPasswordChangeWindowController.xib */; };
+		588953E9188921E300243190 /* HIPasswordChangeWindowController.strings in Resources */ = {isa = PBXBuildFile; fileRef = 588953EB188921E300243190 /* HIPasswordChangeWindowController.strings */; };
 		588E33B71817E6AE006A6A25 /* HIBitcoinURL.m in Sources */ = {isa = PBXBuildFile; fileRef = 588E33B61817E6AE006A6A25 /* HIBitcoinURL.m */; };
 		588E34B7181E9F7B006A6A25 /* localbitcoins.hiveapp in Resources */ = {isa = PBXBuildFile; fileRef = 588E34B6181E9F7B006A6A25 /* localbitcoins.hiveapp */; };
 		588E34D9181FF32B006A6A25 /* HIDebuggingInfoWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 588E34D7181FF32B006A6A25 /* HIDebuggingInfoWindowController.m */; };
@@ -268,7 +269,6 @@
 		1EFBACBE45EB458A8ED83785 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		24178E2D1861005100A73D4E /* HIPasswordChangeWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HIPasswordChangeWindowController.h; sourceTree = "<group>"; };
 		24178E2E1861005100A73D4E /* HIPasswordChangeWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HIPasswordChangeWindowController.m; sourceTree = "<group>"; };
-		24178E2F1861005100A73D4E /* HIPasswordChangeWindowController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HIPasswordChangeWindowController.xib; sourceTree = "<group>"; };
 		244303B71856712000AD59B8 /* HIPasswordInputViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HIPasswordInputViewController.h; sourceTree = "<group>"; };
 		244303B81856712000AD59B8 /* HIPasswordInputViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HIPasswordInputViewController.m; sourceTree = "<group>"; };
 		244303B91856712000AD59B8 /* HIPasswordInputViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HIPasswordInputViewController.xib; sourceTree = "<group>"; };
@@ -667,6 +667,58 @@
 		588953C8188920E900243190 /* sr */ = {isa = PBXFileReference; lastKnownFileType = file; name = sr; path = sr.lproj/HIBackupCenterWindowController.strings; sourceTree = "<group>"; };
 		588953C9188920EA00243190 /* sr-Latn */ = {isa = PBXFileReference; lastKnownFileType = file; name = "sr-Latn"; path = "sr-Latn.lproj/HIBackupCenterWindowController.strings"; sourceTree = "<group>"; };
 		588953CA188920EC00243190 /* sv */ = {isa = PBXFileReference; lastKnownFileType = file; name = sv; path = sv.lproj/HIBackupCenterWindowController.strings; sourceTree = "<group>"; };
+		588953CC1889219F00243190 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/HIPasswordChangeWindowController.xib; sourceTree = "<group>"; };
+		588953CE188921A300243190 /* pl */ = {isa = PBXFileReference; lastKnownFileType = file; name = pl; path = pl.lproj/HIPasswordChangeWindowController.xib; sourceTree = "<group>"; };
+		588953CF188921A400243190 /* it */ = {isa = PBXFileReference; lastKnownFileType = file; name = it; path = it.lproj/HIPasswordChangeWindowController.xib; sourceTree = "<group>"; };
+		588953D0188921A500243190 /* fr */ = {isa = PBXFileReference; lastKnownFileType = file; name = fr; path = fr.lproj/HIPasswordChangeWindowController.xib; sourceTree = "<group>"; };
+		588953D1188921A600243190 /* fi */ = {isa = PBXFileReference; lastKnownFileType = file; name = fi; path = fi.lproj/HIPasswordChangeWindowController.xib; sourceTree = "<group>"; };
+		588953D2188921A700243190 /* da */ = {isa = PBXFileReference; lastKnownFileType = file; name = da; path = da.lproj/HIPasswordChangeWindowController.xib; sourceTree = "<group>"; };
+		588953D3188921A700243190 /* de */ = {isa = PBXFileReference; lastKnownFileType = file; name = de; path = de.lproj/HIPasswordChangeWindowController.xib; sourceTree = "<group>"; };
+		588953D4188921A800243190 /* nl */ = {isa = PBXFileReference; lastKnownFileType = file; name = nl; path = nl.lproj/HIPasswordChangeWindowController.xib; sourceTree = "<group>"; };
+		588953D5188921AC00243190 /* ru */ = {isa = PBXFileReference; lastKnownFileType = file; name = ru; path = ru.lproj/HIPasswordChangeWindowController.xib; sourceTree = "<group>"; };
+		588953D6188921AC00243190 /* fil */ = {isa = PBXFileReference; lastKnownFileType = file; name = fil; path = fil.lproj/HIPasswordChangeWindowController.xib; sourceTree = "<group>"; };
+		588953D7188921AF00243190 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = file; name = "zh-Hans"; path = "zh-Hans.lproj/HIPasswordChangeWindowController.xib"; sourceTree = "<group>"; };
+		588953D8188921B100243190 /* ar */ = {isa = PBXFileReference; lastKnownFileType = file; name = ar; path = ar.lproj/HIPasswordChangeWindowController.xib; sourceTree = "<group>"; };
+		588953D9188921B100243190 /* ur */ = {isa = PBXFileReference; lastKnownFileType = file; name = ur; path = ur.lproj/HIPasswordChangeWindowController.xib; sourceTree = "<group>"; };
+		588953DA188921B200243190 /* hi */ = {isa = PBXFileReference; lastKnownFileType = file; name = hi; path = hi.lproj/HIPasswordChangeWindowController.xib; sourceTree = "<group>"; };
+		588953DB188921B300243190 /* ko */ = {isa = PBXFileReference; lastKnownFileType = file; name = ko; path = ko.lproj/HIPasswordChangeWindowController.xib; sourceTree = "<group>"; };
+		588953DC188921B600243190 /* es */ = {isa = PBXFileReference; lastKnownFileType = file; name = es; path = es.lproj/HIPasswordChangeWindowController.xib; sourceTree = "<group>"; };
+		588953DD188921B700243190 /* cs */ = {isa = PBXFileReference; lastKnownFileType = file; name = cs; path = cs.lproj/HIPasswordChangeWindowController.xib; sourceTree = "<group>"; };
+		588953DE188921B800243190 /* el */ = {isa = PBXFileReference; lastKnownFileType = file; name = el; path = el.lproj/HIPasswordChangeWindowController.xib; sourceTree = "<group>"; };
+		588953DF188921B900243190 /* tr */ = {isa = PBXFileReference; lastKnownFileType = file; name = tr; path = tr.lproj/HIPasswordChangeWindowController.xib; sourceTree = "<group>"; };
+		588953E0188921BA00243190 /* pt */ = {isa = PBXFileReference; lastKnownFileType = file; name = pt; path = pt.lproj/HIPasswordChangeWindowController.xib; sourceTree = "<group>"; };
+		588953E1188921BA00243190 /* ro */ = {isa = PBXFileReference; lastKnownFileType = file; name = ro; path = ro.lproj/HIPasswordChangeWindowController.xib; sourceTree = "<group>"; };
+		588953E2188921BD00243190 /* pt-BR */ = {isa = PBXFileReference; lastKnownFileType = file; name = "pt-BR"; path = "pt-BR.lproj/HIPasswordChangeWindowController.xib"; sourceTree = "<group>"; };
+		588953E3188921BE00243190 /* ja */ = {isa = PBXFileReference; lastKnownFileType = file; name = ja; path = ja.lproj/HIPasswordChangeWindowController.xib; sourceTree = "<group>"; };
+		588953E4188921BF00243190 /* sr */ = {isa = PBXFileReference; lastKnownFileType = file; name = sr; path = sr.lproj/HIPasswordChangeWindowController.xib; sourceTree = "<group>"; };
+		588953E5188921C000243190 /* sr-Latn */ = {isa = PBXFileReference; lastKnownFileType = file; name = "sr-Latn"; path = "sr-Latn.lproj/HIPasswordChangeWindowController.xib"; sourceTree = "<group>"; };
+		588953E6188921C100243190 /* sv */ = {isa = PBXFileReference; lastKnownFileType = file; name = sv; path = sv.lproj/HIPasswordChangeWindowController.xib; sourceTree = "<group>"; };
+		588953EA188921E300243190 /* en */ = {isa = PBXFileReference; lastKnownFileType = file; name = en; path = en.lproj/HIPasswordChangeWindowController.strings; sourceTree = "<group>"; };
+		588953EC188921EB00243190 /* pl */ = {isa = PBXFileReference; lastKnownFileType = file; name = pl; path = pl.lproj/HIPasswordChangeWindowController.strings; sourceTree = "<group>"; };
+		588953ED188921EC00243190 /* it */ = {isa = PBXFileReference; lastKnownFileType = file; name = it; path = it.lproj/HIPasswordChangeWindowController.strings; sourceTree = "<group>"; };
+		588953EE188921ED00243190 /* fr */ = {isa = PBXFileReference; lastKnownFileType = file; name = fr; path = fr.lproj/HIPasswordChangeWindowController.strings; sourceTree = "<group>"; };
+		588953EF188921EE00243190 /* fi */ = {isa = PBXFileReference; lastKnownFileType = file; name = fi; path = fi.lproj/HIPasswordChangeWindowController.strings; sourceTree = "<group>"; };
+		588953F0188921EF00243190 /* da */ = {isa = PBXFileReference; lastKnownFileType = file; name = da; path = da.lproj/HIPasswordChangeWindowController.strings; sourceTree = "<group>"; };
+		588953F1188921F000243190 /* de */ = {isa = PBXFileReference; lastKnownFileType = file; name = de; path = de.lproj/HIPasswordChangeWindowController.strings; sourceTree = "<group>"; };
+		588953F2188921F300243190 /* nl */ = {isa = PBXFileReference; lastKnownFileType = file; name = nl; path = nl.lproj/HIPasswordChangeWindowController.strings; sourceTree = "<group>"; };
+		588953F3188921F400243190 /* ru */ = {isa = PBXFileReference; lastKnownFileType = file; name = ru; path = ru.lproj/HIPasswordChangeWindowController.strings; sourceTree = "<group>"; };
+		588953F4188921F500243190 /* fil */ = {isa = PBXFileReference; lastKnownFileType = file; name = fil; path = fil.lproj/HIPasswordChangeWindowController.strings; sourceTree = "<group>"; };
+		588953F5188921F500243190 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = file; name = "zh-Hans"; path = "zh-Hans.lproj/HIPasswordChangeWindowController.strings"; sourceTree = "<group>"; };
+		588953F6188921F600243190 /* ar */ = {isa = PBXFileReference; lastKnownFileType = file; name = ar; path = ar.lproj/HIPasswordChangeWindowController.strings; sourceTree = "<group>"; };
+		588953F7188921F700243190 /* ur */ = {isa = PBXFileReference; lastKnownFileType = file; name = ur; path = ur.lproj/HIPasswordChangeWindowController.strings; sourceTree = "<group>"; };
+		588953F8188921F800243190 /* hi */ = {isa = PBXFileReference; lastKnownFileType = file; name = hi; path = hi.lproj/HIPasswordChangeWindowController.strings; sourceTree = "<group>"; };
+		588953F9188921F800243190 /* ko */ = {isa = PBXFileReference; lastKnownFileType = file; name = ko; path = ko.lproj/HIPasswordChangeWindowController.strings; sourceTree = "<group>"; };
+		588953FA188921F900243190 /* es */ = {isa = PBXFileReference; lastKnownFileType = file; name = es; path = es.lproj/HIPasswordChangeWindowController.strings; sourceTree = "<group>"; };
+		588953FB188921FA00243190 /* cs */ = {isa = PBXFileReference; lastKnownFileType = file; name = cs; path = cs.lproj/HIPasswordChangeWindowController.strings; sourceTree = "<group>"; };
+		588953FC188921FB00243190 /* el */ = {isa = PBXFileReference; lastKnownFileType = file; name = el; path = el.lproj/HIPasswordChangeWindowController.strings; sourceTree = "<group>"; };
+		588953FD188921FC00243190 /* tr */ = {isa = PBXFileReference; lastKnownFileType = file; name = tr; path = tr.lproj/HIPasswordChangeWindowController.strings; sourceTree = "<group>"; };
+		588953FE188921FD00243190 /* pt */ = {isa = PBXFileReference; lastKnownFileType = file; name = pt; path = pt.lproj/HIPasswordChangeWindowController.strings; sourceTree = "<group>"; };
+		588953FF188921FF00243190 /* ro */ = {isa = PBXFileReference; lastKnownFileType = file; name = ro; path = ro.lproj/HIPasswordChangeWindowController.strings; sourceTree = "<group>"; };
+		588954001889220000243190 /* pt-BR */ = {isa = PBXFileReference; lastKnownFileType = file; name = "pt-BR"; path = "pt-BR.lproj/HIPasswordChangeWindowController.strings"; sourceTree = "<group>"; };
+		588954011889220000243190 /* ja */ = {isa = PBXFileReference; lastKnownFileType = file; name = ja; path = ja.lproj/HIPasswordChangeWindowController.strings; sourceTree = "<group>"; };
+		588954021889220100243190 /* sr */ = {isa = PBXFileReference; lastKnownFileType = file; name = sr; path = sr.lproj/HIPasswordChangeWindowController.strings; sourceTree = "<group>"; };
+		588954031889220200243190 /* sr-Latn */ = {isa = PBXFileReference; lastKnownFileType = file; name = "sr-Latn"; path = "sr-Latn.lproj/HIPasswordChangeWindowController.strings"; sourceTree = "<group>"; };
+		588954041889220400243190 /* sv */ = {isa = PBXFileReference; lastKnownFileType = file; name = sv; path = sv.lproj/HIPasswordChangeWindowController.strings; sourceTree = "<group>"; };
 		588E33B51817E6AE006A6A25 /* HIBitcoinURL.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HIBitcoinURL.h; sourceTree = "<group>"; };
 		588E33B61817E6AE006A6A25 /* HIBitcoinURL.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HIBitcoinURL.m; sourceTree = "<group>"; };
 		588E33BF181810AD006A6A25 /* ru */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = ru; path = ru.lproj/HIApplicationsViewController.xib; sourceTree = "<group>"; };
@@ -1305,7 +1357,8 @@
 			children = (
 				24178E2D1861005100A73D4E /* HIPasswordChangeWindowController.h */,
 				24178E2E1861005100A73D4E /* HIPasswordChangeWindowController.m */,
-				24178E2F1861005100A73D4E /* HIPasswordChangeWindowController.xib */,
+				588953EB188921E300243190 /* HIPasswordChangeWindowController.strings */,
+				588953CD1889219F00243190 /* HIPasswordChangeWindowController.xib */,
 			);
 			name = HIPasswordChangeWindowController;
 			sourceTree = "<group>";
@@ -1991,6 +2044,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				588953E9188921E300243190 /* HIPasswordChangeWindowController.strings in Resources */,
 				58A37AE2180D99A100CFCDE3 /* HIMainWindowController.strings in Resources */,
 				58A37AD0180D995F00CFCDE3 /* HINewContactViewController.strings in Resources */,
 				D9A591DE1767B4A800502635 /* MainMenu.xib in Resources */,
@@ -2021,7 +2075,7 @@
 				58A37A9E180D7AFC00CFCDE3 /* HIMainWindowController.xib in Resources */,
 				58605A4018041D0A00FD9C2A /* avatar-empty.pdf in Resources */,
 				582C7DA6185219A000126C10 /* HIDebuggingToolsWindowController.xib in Resources */,
-				24178E311861005100A73D4E /* HIPasswordChangeWindowController.xib in Resources */,
+				588953CB1889219F00243190 /* HIPasswordChangeWindowController.xib in Resources */,
 				58605A4118041D0A00FD9C2A /* bg-sidebar.pdf in Resources */,
 				58A37ACD180D995000CFCDE3 /* HIContactsViewController.strings in Resources */,
 				58605A4218041D0A00FD9C2A /* button__inset.pdf in Resources */,
@@ -2451,6 +2505,72 @@
 				588953CA188920EC00243190 /* sv */,
 			);
 			name = HIBackupCenterWindowController.strings;
+			sourceTree = "<group>";
+		};
+		588953CD1889219F00243190 /* HIPasswordChangeWindowController.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				588953CC1889219F00243190 /* en */,
+				588953CE188921A300243190 /* pl */,
+				588953CF188921A400243190 /* it */,
+				588953D0188921A500243190 /* fr */,
+				588953D1188921A600243190 /* fi */,
+				588953D2188921A700243190 /* da */,
+				588953D3188921A700243190 /* de */,
+				588953D4188921A800243190 /* nl */,
+				588953D5188921AC00243190 /* ru */,
+				588953D6188921AC00243190 /* fil */,
+				588953D7188921AF00243190 /* zh-Hans */,
+				588953D8188921B100243190 /* ar */,
+				588953D9188921B100243190 /* ur */,
+				588953DA188921B200243190 /* hi */,
+				588953DB188921B300243190 /* ko */,
+				588953DC188921B600243190 /* es */,
+				588953DD188921B700243190 /* cs */,
+				588953DE188921B800243190 /* el */,
+				588953DF188921B900243190 /* tr */,
+				588953E0188921BA00243190 /* pt */,
+				588953E1188921BA00243190 /* ro */,
+				588953E2188921BD00243190 /* pt-BR */,
+				588953E3188921BE00243190 /* ja */,
+				588953E4188921BF00243190 /* sr */,
+				588953E5188921C000243190 /* sr-Latn */,
+				588953E6188921C100243190 /* sv */,
+			);
+			name = HIPasswordChangeWindowController.xib;
+			sourceTree = "<group>";
+		};
+		588953EB188921E300243190 /* HIPasswordChangeWindowController.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				588953EA188921E300243190 /* en */,
+				588953EC188921EB00243190 /* pl */,
+				588953ED188921EC00243190 /* it */,
+				588953EE188921ED00243190 /* fr */,
+				588953EF188921EE00243190 /* fi */,
+				588953F0188921EF00243190 /* da */,
+				588953F1188921F000243190 /* de */,
+				588953F2188921F300243190 /* nl */,
+				588953F3188921F400243190 /* ru */,
+				588953F4188921F500243190 /* fil */,
+				588953F5188921F500243190 /* zh-Hans */,
+				588953F6188921F600243190 /* ar */,
+				588953F7188921F700243190 /* ur */,
+				588953F8188921F800243190 /* hi */,
+				588953F9188921F800243190 /* ko */,
+				588953FA188921F900243190 /* es */,
+				588953FB188921FA00243190 /* cs */,
+				588953FC188921FB00243190 /* el */,
+				588953FD188921FC00243190 /* tr */,
+				588953FE188921FD00243190 /* pt */,
+				588953FF188921FF00243190 /* ro */,
+				588954001889220000243190 /* pt-BR */,
+				588954011889220000243190 /* ja */,
+				588954021889220100243190 /* sr */,
+				588954031889220200243190 /* sr-Latn */,
+				588954041889220400243190 /* sv */,
+			);
+			name = HIPasswordChangeWindowController.strings;
 			sourceTree = "<group>";
 		};
 		588E34DD181FF8A7006A6A25 /* HIDebuggingInfoWindowController.xib */ = {
