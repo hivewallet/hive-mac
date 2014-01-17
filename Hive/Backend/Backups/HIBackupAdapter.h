@@ -34,6 +34,7 @@ typedef NS_ENUM(NSUInteger, HIBackupAdapterStatus) {
 
 @property (readonly) NSString *name;
 @property (readonly) NSString *displayedName;
+@property (readonly) NSString *errorMessage;
 @property (readonly) NSImage *icon;
 @property (readonly) CGFloat iconSize;
 @property (readonly) BOOL needsToBeConfigured;

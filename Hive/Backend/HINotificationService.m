@@ -50,14 +50,14 @@ typedef NS_ENUM(NSInteger, HINotificationType) {
     [NSUserNotificationCenter defaultUserNotificationCenter].delegate = self;
     [[BCClient sharedClient] addTransactionObserver:self];
     for (HIBackupAdapter *adapter in [HIBackupManager sharedManager].adapters) {
-        [adapter addObserver:self forKeyPath:@"error" options:0 context:&KVO_CONTEXT];
+        [adapter addObserver:self forKeyPath:@"errorMessage" options:0 context:&KVO_CONTEXT];
     }
 }
 
 - (void)disable {
     [[BCClient sharedClient] removeTransactionObserver:self];
     for (HIBackupAdapter *adapter in [HIBackupManager sharedManager].adapters) {
-        [adapter removeObserver:self forKeyPath:@"error" context:&KVO_CONTEXT];
+        [adapter removeObserver:self forKeyPath:@"errorMessage" context:&KVO_CONTEXT];
     }
 }
 
@@ -125,8 +125,8 @@ typedef NS_ENUM(NSInteger, HINotificationType) {
 
     if (context == &KVO_CONTEXT) {
         HIBackupAdapter *adapter = object;
-        if (adapter.error) {
-            [self postBackupErrorNotification:adapter.error];
+        if (adapter.errorMessage) {
+            [self postBackupErrorNotification:adapter.errorMessage];
         }
     } else {
         [super observeValueForKeyPath:keyPath ofObject:object change:change context:context];
@@ -156,9 +156,9 @@ typedef NS_ENUM(NSInteger, HINotificationType) {
           notificationType:HINotificationTypeTransaction];
 }
 
-- (void)postBackupErrorNotification:(NSError *)error {
+- (void)postBackupErrorNotification:(NSString *)errorMessage {
     [self postNotification:NSLocalizedString(@"Backup failed", @"Notification of failed backup")
-                      text:error.localizedFailureReason
+                      text:errorMessage
           notificationType:HINotificationTypeBackup];
 }
 

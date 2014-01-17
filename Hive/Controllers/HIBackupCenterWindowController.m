@@ -126,7 +126,7 @@ static const NSTimeInterval UpdateTimerInterval = 5.0;
             cell.textField.stringValue = NSLocalizedString(@"Backup problem",
                                                            @"Backup status: backup done but not updated recently");
             cell.imageView.image = [NSImage imageNamed:NSImageNameStatusPartiallyAvailable];
-            cell.statusDetailsLabel.stringValue = [adapter.error localizedFailureReason] ?: lastBackupInfo;
+            cell.statusDetailsLabel.stringValue = adapter.errorMessage ?: lastBackupInfo;
             break;
 
         case HIBackupStatusWaiting:
@@ -140,7 +140,7 @@ static const NSTimeInterval UpdateTimerInterval = 5.0;
             cell.textField.stringValue = NSLocalizedString(@"Backup error",
                                                            @"Backup status: backup can't or won't be completed");
             cell.imageView.image = [NSImage imageNamed:NSImageNameStatusUnavailable];
-            cell.statusDetailsLabel.stringValue = [adapter.error localizedFailureReason] ?: lastBackupInfo;
+            cell.statusDetailsLabel.stringValue = adapter.errorMessage ?: lastBackupInfo;
             break;
 
         default:

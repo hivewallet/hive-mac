@@ -106,6 +106,14 @@ static NSString * const EnabledKey = @"enabled";
         [self willChangeValueForKey:@"error"];
         _error = error;
         [self didChangeValueForKey:@"error"];
+
+        NSString *newMessage = error.localizedFailureReason;
+
+        if ((_errorMessage || newMessage) && ![_errorMessage isEqual:newMessage]) {
+            [self willChangeValueForKey:@"errorMessage"];
+            _errorMessage = newMessage;
+            [self didChangeValueForKey:@"errorMessage"];
+        }
     }
 }
 
