@@ -8,6 +8,7 @@
 
 #import "HIFirstRunWizardWindowController.h"
 
+#import "HIWizardBackupViewController.h"
 #import "HIWizardWelcomeViewController.h"
 #import "HIWizardCompletedViewController.h"
 #import "HIWizardPasswordViewController.h"
@@ -20,6 +21,7 @@
         self.viewControllers = @[
             [HIWizardWelcomeViewController new],
             [HIWizardPasswordViewController new],
+            [HIWizardBackupViewController new],
             [HIWizardCompletedViewController new],
         ];
     }
