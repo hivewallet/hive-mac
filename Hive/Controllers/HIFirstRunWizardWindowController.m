@@ -9,6 +9,7 @@
 #import "HIFirstRunWizardWindowController.h"
 
 #import "HIWizardViewController.h"
+#import "HIWizardWelcomeViewController.h"
 
 @implementation HIFirstRunWizardWindowController
 
@@ -16,7 +17,7 @@
     self = [super initWithWindow:window];
     if (self) {
         self.viewControllers = @[
-            [HIWizardViewController new],
+            [HIWizardWelcomeViewController new],
             [HIWizardViewController new],
             [HIWizardViewController new],
         ];

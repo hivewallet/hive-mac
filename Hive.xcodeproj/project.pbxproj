@@ -29,6 +29,8 @@
 		24300BE318830C4700FDEF2F /* HIWizardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 24300BE118830C4700FDEF2F /* HIWizardViewController.m */; };
 		24300BE418830C4700FDEF2F /* HIWizardViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 24300BE218830C4700FDEF2F /* HIWizardViewController.xib */; };
 		24300BFC188892CD00FDEF2F /* wizard-background.png in Resources */ = {isa = PBXBuildFile; fileRef = 24300BFB188892CD00FDEF2F /* wizard-background.png */; };
+		24300C1E188C3F5900FDEF2F /* HIWizardWelcomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 24300C1C188C3F5900FDEF2F /* HIWizardWelcomeViewController.m */; };
+		24300C1F188C3F5900FDEF2F /* HIWizardWelcomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 24300C1D188C3F5900FDEF2F /* HIWizardWelcomeViewController.xib */; };
 		244303BA1856712000AD59B8 /* HIPasswordInputViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 244303B81856712000AD59B8 /* HIPasswordInputViewController.m */; };
 		2478B8D3184A80A400BA2C35 /* HIFeeDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2478B8D1184A80A400BA2C35 /* HIFeeDetailsViewController.m */; };
 		2478B8D5184A88E700BA2C35 /* HIFeeDetailsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2478B8D7184A88E700BA2C35 /* HIFeeDetailsViewController.xib */; };
@@ -291,6 +293,9 @@
 		24300BE118830C4700FDEF2F /* HIWizardViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HIWizardViewController.m; sourceTree = "<group>"; };
 		24300BE218830C4700FDEF2F /* HIWizardViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HIWizardViewController.xib; sourceTree = "<group>"; };
 		24300BFB188892CD00FDEF2F /* wizard-background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "wizard-background.png"; sourceTree = "<group>"; };
+		24300C1B188C3F5900FDEF2F /* HIWizardWelcomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HIWizardWelcomeViewController.h; sourceTree = "<group>"; };
+		24300C1C188C3F5900FDEF2F /* HIWizardWelcomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HIWizardWelcomeViewController.m; sourceTree = "<group>"; };
+		24300C1D188C3F5900FDEF2F /* HIWizardWelcomeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HIWizardWelcomeViewController.xib; sourceTree = "<group>"; };
 		244303B71856712000AD59B8 /* HIPasswordInputViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HIPasswordInputViewController.h; sourceTree = "<group>"; };
 		244303B81856712000AD59B8 /* HIPasswordInputViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HIPasswordInputViewController.m; sourceTree = "<group>"; };
 		245CBB101842ADF800619953 /* cs */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = cs; path = cs.lproj/HIProfileViewController.strings; sourceTree = "<group>"; };
@@ -1445,6 +1450,9 @@
 				24300BD618830ACA00FDEF2F /* HIFirstRunWizardWindowController.h */,
 				24300BD718830ACA00FDEF2F /* HIFirstRunWizardWindowController.m */,
 				24300BD818830ACA00FDEF2F /* HIFirstRunWizardWindowController.xib */,
+				24300C1B188C3F5900FDEF2F /* HIWizardWelcomeViewController.h */,
+				24300C1C188C3F5900FDEF2F /* HIWizardWelcomeViewController.m */,
+				24300C1D188C3F5900FDEF2F /* HIWizardWelcomeViewController.xib */,
 				1AA10BBE6F3C3F05768B604D /* HIWizardWindowController.m */,
 				1AA10FF5AC215B56078E2A1F /* HIWizardWindowController.h */,
 			);
@@ -2203,6 +2211,7 @@
 				58605A5118041D0A00FD9C2A /* icon-search.pdf in Resources */,
 				58605A5218041D0A00FD9C2A /* icon-tabbar-timeline__active.pdf in Resources */,
 				58605A5318041D0A00FD9C2A /* icon-tabbar-timeline__inactive.pdf in Resources */,
+				24300C1F188C3F5900FDEF2F /* HIWizardWelcomeViewController.xib in Resources */,
 				58605A5418041D0A00FD9C2A /* icon-tabbar-user__active.pdf in Resources */,
 				58605A5518041D0A00FD9C2A /* icon-tabbar-user__inactive.pdf in Resources */,
 				58605A5618041D0A00FD9C2A /* icon-timeline__active.pdf in Resources */,
@@ -2346,6 +2355,7 @@
 				583B1E011868784600817EF8 /* HIBackupManager.m in Sources */,
 				586059D018041A6D00FD9C2A /* HIAppRuntimeBridge.m in Sources */,
 				586059D418041A7A00FD9C2A /* HIContactsViewController.m in Sources */,
+				24300C1E188C3F5900FDEF2F /* HIWizardWelcomeViewController.m in Sources */,
 				24300BD918830ACA00FDEF2F /* HIFirstRunWizardWindowController.m in Sources */,
 				588F3E8518719A9000FF42EA /* HIBackupStatusCellView.m in Sources */,
 				586059D918041A8700FD9C2A /* HINewContactViewController.m in Sources */,
