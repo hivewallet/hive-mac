@@ -1,11 +1,15 @@
 #import "HIBreadcrumbsView.h"
+#import "HITitleArrowView.h"
 
-static const double SPACING = 30;
+static const double SPACING = 12;
+static const double ARROW_WIDTH = 8;
+static const double HEIGHT = 30;
 static const int FONT_SIZE = 14;
 
 @interface HIBreadcrumbsView ()
 
 @property (nonatomic, copy) NSArray *labels;
+@property (nonatomic, copy) NSArray *arrows;
 
 @end
 
@@ -16,7 +20,6 @@ static const int FONT_SIZE = 14;
     if (self) {
         // TODO
         self.titles = @[@"Welcome", @"Password", @"Backup"];
-
         [self setUpBreadcrumbs];
     }
     return self;
@@ -31,6 +34,15 @@ static const int FONT_SIZE = 14;
         [labels addObject:label];
     }
     self.labels = labels;
+
+    NSMutableArray *arrows = [NSMutableArray new];
+    NSUInteger numArrows = self.titles.count - 1;
+    for (int i = 0; i < numArrows; i++) {
+        HITitleArrowView *arrow = [self createArrow];
+        [self addSubview:arrow];
+        [arrows addObject:arrow];
+    }
+    self.arrows = arrows;
 
     [self invalidateIntrinsicContentSize];
     [self setNeedsUpdateConstraints:YES];
@@ -52,15 +64,23 @@ static const int FONT_SIZE = 14;
     return label;
 }
 
+- (HITitleArrowView *)createArrow {
+    HITitleArrowView *arrow = [HITitleArrowView new];
+    arrow.strokeColor = [NSColor whiteColor];
+    arrow.strokeWidth = 2.0;
+    arrow.translatesAutoresizingMaskIntoConstraints = NO;
+    return arrow;
+}
+
 - (NSSize)intrinsicContentSize {
-    double width = (self.labels.count - 1) * SPACING;
+    double width = self.arrows.count * (ARROW_WIDTH + 2 * SPACING);
     double height = 0;
     for (NSView *subview in self.labels) {
         NSSize size = subview.intrinsicContentSize;
         width += size.width;
         height = MIN(height, size.height);
     }
-    return CGSizeMake(width, 60);
+    return CGSizeMake(width, HEIGHT);
 }
 
 - (void)updateConstraints {
@@ -68,17 +88,33 @@ static const int FONT_SIZE = 14;
 
     [super updateConstraints];
 
-    NSView *last = nil;
-    for (NSView *label in self.labels) {
-        if (last) {
-            [self addConstraint:HSPACE(last, label, SPACING)];
-        } else {
-            [self addConstraint:INSET_LEFT(label, 0)];
+    if (self.labels.count > 0) {
+        NSView *firstLabel = self.labels.firstObject;
+        [self addConstraint:INSET_LEFT(firstLabel, 0)];
+
+        long n = self.arrows.count;
+        NSAssert(self.labels.count == self.arrows.count + 1, @"Breadcrumb views don't match");
+        for (long i = 0; i < n; i++) {
+            NSView *label = self.labels[i];
+            NSView *arrow = self.arrows[i];
+            NSView *nextLabel = self.labels[i + 1];
+
+            [arrow addConstraint:PIN_WIDTH(arrow, ARROW_WIDTH)];
+
+            [self addConstraints:@[
+                HSPACE(label, arrow, SPACING),
+                INSET_TOP(arrow, 0.0),
+                INSET_BOTTOM(arrow, 0.0),
+                HSPACE(arrow, nextLabel, SPACING)
+            ]];
         }
-        [self addConstraint:ALIGN_CENTER_Y(label, self)];
-        last = label;
+        for (NSView *label in self.labels) {
+            [self addConstraint:ALIGN_CENTER_Y(label, self)];
+        }
+
+        NSView *lastLabel = self.labels.lastObject;
+        [self addConstraint:INSET_RIGHT(lastLabel, 0)];
     }
-    [self addConstraint:INSET_RIGHT(last, 0)];
 }
 
 - (void)layoutSubtreeIfNeeded {

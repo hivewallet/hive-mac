@@ -14,4 +14,7 @@
 
 @interface HITitleArrowView : NSView
 
+@property (nonatomic, copy) NSColor *strokeColor;
+@property (nonatomic, assign) double strokeWidth;
+
 @end
