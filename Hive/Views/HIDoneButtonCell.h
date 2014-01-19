@@ -6,12 +6,11 @@
 //  Copyright (c) 2013 Hive Developers. All rights reserved.
 //
 
-#import <Cocoa/Cocoa.h>
+#import "HIGradientButtonCell.h"
 
 /*
  A button cell for a blue rounded button that executes or confirms an action (used in various places).
  */
 
-@interface HIDoneButtonCell : NSButtonCell
-
+@interface HIDoneButtonCell : HIGradientButtonCell
 @end

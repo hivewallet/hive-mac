@@ -10,7 +10,7 @@
 
 #import "HIDraggableButton.h"
 #import "HISidebarController.h"
-#import "HITitleArrowView.h"
+#import "HIRightPointingArrowView.h"
 #import "HITitleView.h"
 
 static const CGFloat TitleSlideDuration = 0.3;
@@ -90,7 +90,7 @@ static NSString const *ConstraintKey = @"constraint";
     NSMutableDictionary *stackItem = _stack[_stack.count - 1];
     NSButton *button = stackItem[ButtonKey];
 
-    NSView *arrowView = self.arrowView ?: [HITitleArrowView new];
+    NSView *arrowView = self.arrowView ?: [HIRightPointingArrowView new];
     arrowView.translatesAutoresizingMaskIntoConstraints = NO;
     [self addSubview:arrowView];
     [self addConstraints:@[

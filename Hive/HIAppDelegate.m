@@ -26,6 +26,7 @@
 #import "HIDebuggingInfoWindowController.h"
 #import "HIDebuggingToolsWindowController.h"
 #import "HIErrorWindowController.h"
+#import "HIFirstRunWizardWindowController.h"
 #import "HILogFormatter.h"
 #import "HIMainWindowController.h"
 #import "HINotificationService.h"
@@ -33,6 +34,7 @@
 #import "HISendBitcoinsWindowController.h"
 #import "HITransaction.h"
 #import "HITransactionsViewController.h"
+#import "HIWizardWindowController.h"
 #import "PFMoveApplication.h"
 
 static NSString * const LastVersionKey = @"LastHiveVersion";
@@ -50,6 +52,8 @@ static int ddLogLevel = LOG_LEVEL_VERBOSE;
     HIMainWindowController *_mainWindowController;
     NSMutableArray *_popupWindows;
 }
+
+@property (nonatomic, strong) HIWizardWindowController *wizard;
 
 @end
 
@@ -93,10 +97,6 @@ static int ddLogLevel = LOG_LEVEL_VERBOSE;
                                              selector:@selector(popupWindowWillClose:)
                                                  name:NSWindowWillCloseNotification
                                                object:nil];
-
-    dispatch_async(dispatch_get_main_queue(), ^{
-        [self initializeBackups];
-    });
 
     [self showBetaWarning];
     [self preinstallAppsIfNeeded];
@@ -205,22 +205,34 @@ static int ddLogLevel = LOG_LEVEL_VERBOSE;
     [[BCClient sharedClient] start:&error];
 
     if (error.code == kHIBitcoinManagerNoWallet) {
-        error = nil;
-        // TODO: Ask for a password and create protected wallet.
-        [[BCClient sharedClient] createWallet:&error];
-    }
-
-    if (error) {
+        [self showSetUpWizard];
+    } else if (error) {
         HILogError(@"BitcoinManager start error: %@", error);
         [self showInitializationError:error];
+    } else {
+        [self showAppWindow];
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [self initializeBackups];
+        });
     }
+
+    NSSetUncaughtExceptionHandler(&handleException);
+}
+
+- (void)showAppWindow {
+    [self configureNotifications];
 
     _mainWindowController = [[HIMainWindowController alloc] initWithWindowNibName:@"HIMainWindowController"];
     [_mainWindowController showWindow:self];
+}
 
-    [self configureNotifications];
-
-    NSSetUncaughtExceptionHandler(&handleException);
+- (void)showSetUpWizard {
+    self.wizard = [HIFirstRunWizardWindowController new];
+    __weak __typeof__ (self) weakSelf = self;
+    self.wizard.onCompletion = ^{
+        [weakSelf showAppWindow];
+    };
+    [self.wizard showWindow:self];
 }
 
 - (void)configureNotifications {
