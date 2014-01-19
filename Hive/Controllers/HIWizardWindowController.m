@@ -1,9 +1,11 @@
 #import "HIWizardViewController.h"
 #import "HIFirstRunWizardWindowController.h"
+#import "HIBreadcrumbsView.h"
 
 @interface HIWizardWindowController()<HIWizardViewControllerDelegate>
 
 @property (nonatomic, strong) IBOutlet NSView *wizardContentView;
+@property (nonatomic, strong) IBOutlet HIBreadcrumbsView *breadcrumbView;
 
 @property (nonatomic, assign) long index;
 
@@ -25,6 +27,7 @@
     [self.wizardContentView.subviews makeObjectsPerformSelector:@selector(removeFromSuperview)];
 
     self.index = self.index + 1;
+    self.breadcrumbView.activeIndex = self.index;
 
     HIWizardViewController *controller = self.viewControllers[self.index];
     NSAssert([controller isKindOfClass:[HIWizardViewController class]], nil);

@@ -7,6 +7,7 @@
     <objects>
         <customObject id="-2" userLabel="File's Owner" customClass="HIFirstRunWizardWindowController">
             <connections>
+                <outlet property="breadcrumbView" destination="cUd-nc-jXc" id="1f9-yA-ODS"/>
                 <outlet property="window" destination="1" id="3"/>
                 <outlet property="wizardContentView" destination="8ea-Mi-gTH" id="RWx-fD-4IK"/>
             </connections>

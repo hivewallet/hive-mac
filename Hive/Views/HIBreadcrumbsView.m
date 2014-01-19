@@ -1,6 +1,7 @@
 #import "HIBreadcrumbsView.h"
 
 static const double SPACING = 30;
+static const int FONT_SIZE = 14;
 
 @interface HIBreadcrumbsView ()
 
@@ -25,7 +26,7 @@ static const double SPACING = 30;
     NSMutableArray *labels = [NSMutableArray new];
     for (NSString *title in self.titles) {
         NSTextField *label = [self createLabel];
-        label.stringValue = title;
+        label.attributedStringValue = [self createLabelString:title selected:NO];
         [self addSubview:label];
         [labels addObject:label];
     }
@@ -33,6 +34,12 @@ static const double SPACING = 30;
 
     [self invalidateIntrinsicContentSize];
     [self setNeedsUpdateConstraints:YES];
+}
+
+- (NSAttributedString *)createLabelString:(NSString *)title selected:(BOOL)selected {
+    return [[NSAttributedString alloc] initWithString:title attributes:@{
+        NSFontAttributeName: selected ? [NSFont boldSystemFontOfSize:FONT_SIZE] : [NSFont systemFontOfSize:FONT_SIZE],
+    }];
 }
 
 - (NSTextField *)createLabel {
@@ -72,6 +79,25 @@ static const double SPACING = 30;
         last = label;
     }
     [self addConstraint:INSET_RIGHT(last, 0)];
+}
+
+- (void)layoutSubtreeIfNeeded {
+    [super layoutSubtreeIfNeeded];
+}
+
+- (void)viewDidMoveToSuperview {
+    [super viewDidMoveToSuperview];
+}
+
+- (void)setActiveIndex:(int)activeIndex {
+    [self updateLabelAtIndex:_activeIndex selected:NO];
+    _activeIndex = activeIndex;
+    [self updateLabelAtIndex:_activeIndex selected:YES];
+}
+
+- (void)updateLabelAtIndex:(int)index selected:(BOOL)selected {
+    NSTextField *label = self.labels[index];
+    label.attributedStringValue = [self createLabelString:self.titles[index] selected:selected];
 }
 
 @end
