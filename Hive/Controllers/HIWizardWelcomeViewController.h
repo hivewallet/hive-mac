@@ -9,4 +9,7 @@
 #import "HIWizardViewController.h"
 
 @interface HIWizardWelcomeViewController : HIWizardViewController
+
+
+
 @end

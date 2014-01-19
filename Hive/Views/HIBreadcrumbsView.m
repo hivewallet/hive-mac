@@ -20,14 +20,19 @@ static const int FONT_SIZE = 14;
     self = [super initWithFrame:frameRect];
     if (self) {
         _color = [NSColor colorWithCalibratedWhite:0.8 alpha:1.0];
-        // TODO
-        self.titles = @[@"Welcome", @"Password", @"Backup"];
-        [self setUpBreadcrumbs];
     }
     return self;
 }
 
-- (void)setUpBreadcrumbs {
+- (void)setTitles:(NSArray *)titles {
+    _titles = [titles copy];
+    [self updatedBreadcrumbs];
+}
+
+- (void)updatedBreadcrumbs {
+    [self.labels makeObjectsPerformSelector:@selector(removeFromSuperview)];
+    [self.arrows makeObjectsPerformSelector:@selector(removeFromSuperview)];
+
     NSMutableArray *labels = [NSMutableArray new];
     for (NSString *title in self.titles) {
         NSTextField *label = [self createLabel];

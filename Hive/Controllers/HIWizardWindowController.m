@@ -17,6 +17,11 @@
     return [self initWithWindowNibName:[self className]];
 }
 
+- (void)awakeFromNib {
+    [super awakeFromNib];
+    self.breadcrumbView.titles = [self.viewControllers valueForKey:@"title"];
+}
+
 - (IBAction)showWindow:(id)sender {
     [super showWindow:sender];
     self.index = -1;

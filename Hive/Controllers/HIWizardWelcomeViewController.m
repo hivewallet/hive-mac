@@ -9,4 +9,13 @@
 #import "HIWizardWelcomeViewController.h"
 
 @implementation HIWizardWelcomeViewController
+
+- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
+    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
+    if (self) {
+        self.title = NSLocalizedString(@"Welcome", @"Wizard welcome page title");
+    }
+    return self;
+}
+
 @end
