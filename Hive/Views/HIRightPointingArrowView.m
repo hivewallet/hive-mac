@@ -1,15 +1,15 @@
 //
-//  HITitleArrowView.m
+//  HIRightPointingArrowView.m
 //  Hive
 //
 //  Created by Jakub Suder on 12.09.2013.
 //  Copyright (c) 2013 Hive Developers. All rights reserved.
 //
 
-#import "HITitleArrowView.h"
+#import "HIRightPointingArrowView.h"
 #import "NSColor+Hive.h"
 
-@implementation HITitleArrowView
+@implementation HIRightPointingArrowView
 
 - (id)initWithFrame:(NSRect)frame {
     self = [super initWithFrame:frame];

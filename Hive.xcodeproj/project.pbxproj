@@ -162,7 +162,7 @@
 		58A37AE5180D99F200CFCDE3 /* MainMenu.strings in Resources */ = {isa = PBXBuildFile; fileRef = 58A37AE3180D99F200CFCDE3 /* MainMenu.strings */; };
 		58CFD95417CF914000A035FA /* HISidebarView.m in Sources */ = {isa = PBXBuildFile; fileRef = 58CFD95217CF914000A035FA /* HISidebarView.m */; };
 		58D4D61F18290079009CB7A5 /* patten_hive.hiveapp in Resources */ = {isa = PBXBuildFile; fileRef = 58D4D61E18290079009CB7A5 /* patten_hive.hiveapp */; };
-		58F02AEE17E1F5A400B65429 /* HITitleArrowView.m in Sources */ = {isa = PBXBuildFile; fileRef = 58F02AED17E1F5A400B65429 /* HITitleArrowView.m */; };
+		58F02AEE17E1F5A400B65429 /* HIRightPointingArrowView.m in Sources */ = {isa = PBXBuildFile; fileRef = 58F02AED17E1F5A400B65429 /* HIRightPointingArrowView.m */; };
 		58FB21EC1875809B00F87B9E /* get_dropbox_folder.sh in Resources */ = {isa = PBXBuildFile; fileRef = 58FB21EB1875809B00F87B9E /* get_dropbox_folder.sh */; };
 		D901F4F817B272E60071780D /* BitcoinJKit.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = D901F4F517B272CE0071780D /* BitcoinJKit.framework */; };
 		D901F4F917B273440071780D /* BitcoinJKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D901F4F517B272CE0071780D /* BitcoinJKit.framework */; };
@@ -1274,8 +1274,8 @@
 		58D4D658182A7627009CB7A5 /* tr */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = tr; path = tr.lproj/MainMenu.strings; sourceTree = "<group>"; };
 		58D4D659182A7627009CB7A5 /* tr */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = tr; path = tr.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		58D4D65B182A7627009CB7A5 /* tr */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = tr; path = tr.lproj/Localizable.strings; sourceTree = "<group>"; };
-		58F02AEC17E1F5A400B65429 /* HITitleArrowView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HITitleArrowView.h; sourceTree = "<group>"; };
-		58F02AED17E1F5A400B65429 /* HITitleArrowView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HITitleArrowView.m; sourceTree = "<group>"; };
+		58F02AEC17E1F5A400B65429 /* HIRightPointingArrowView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HIRightPointingArrowView.h; sourceTree = "<group>"; };
+		58F02AED17E1F5A400B65429 /* HIRightPointingArrowView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HIRightPointingArrowView.m; sourceTree = "<group>"; };
 		58F56BA01832909000C57640 /* pt */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = pt; path = pt.lproj/HIApplicationsViewController.xib; sourceTree = "<group>"; };
 		58F56BA11832909000C57640 /* pt */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = pt; path = pt.lproj/HIContactsViewController.strings; sourceTree = "<group>"; };
 		58F56BA21832909000C57640 /* pt */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = pt; path = pt.lproj/HIContactsViewController.xib; sourceTree = "<group>"; };
@@ -1779,8 +1779,8 @@
 				D94815F417D72AF8006A0312 /* HITextField.m */,
 				D938F00E17E6278B00566FFD /* HITextFieldCell.h */,
 				D938F00F17E6278B00566FFD /* HITextFieldCell.m */,
-				58F02AEC17E1F5A400B65429 /* HITitleArrowView.h */,
-				58F02AED17E1F5A400B65429 /* HITitleArrowView.m */,
+				58F02AEC17E1F5A400B65429 /* HIRightPointingArrowView.h */,
+				58F02AED17E1F5A400B65429 /* HIRightPointingArrowView.m */,
 				D94815B217D492A0006A0312 /* HITitleView.h */,
 				D94815B317D492A0006A0312 /* HITitleView.m */,
 				581EFBCA17DA441A00E2738D /* HITransactionCellView.h */,
@@ -2324,7 +2324,7 @@
 				583B1DF818686C3800817EF8 /* HIBackupAdapter.m in Sources */,
 				58A03B0D17D9DC4100ADD5E5 /* HIButtonWithSpinner.m in Sources */,
 				583B1DE41864A32900817EF8 /* HISecureAppStorage.m in Sources */,
-				58F02AEE17E1F5A400B65429 /* HITitleArrowView.m in Sources */,
+				58F02AEE17E1F5A400B65429 /* HIRightPointingArrowView.m in Sources */,
 				D938F01017E6278B00566FFD /* HITextFieldCell.m in Sources */,
 				D958A8B817E8547A00CED98C /* HIFlippedView.m in Sources */,
 				D99C9A5517E8F59200899CAB /* HIDeleteButtonCell.m in Sources */,

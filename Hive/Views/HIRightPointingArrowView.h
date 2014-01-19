@@ -1,5 +1,5 @@
 //
-//  HITitleArrowView.h
+//  HIRightPointingArrowView.h
 //  Hive
 //
 //  Created by Jakub Suder on 12.09.2013.
@@ -12,7 +12,7 @@
  A "right arrow" separator used in the breadcrumbs view in the window's title bar.
  */
 
-@interface HITitleArrowView : NSView
+@interface HIRightPointingArrowView : NSView
 
 @property (nonatomic, copy) NSColor *strokeColor;
 @property (nonatomic, assign) double strokeWidth;

@@ -1,5 +1,5 @@
 #import "HIBreadcrumbsView.h"
-#import "HITitleArrowView.h"
+#import "HIRightPointingArrowView.h"
 
 static const double SPACING = 12;
 static const double ARROW_WIDTH = 8;
@@ -38,7 +38,7 @@ static const int FONT_SIZE = 14;
     NSMutableArray *arrows = [NSMutableArray new];
     NSUInteger numArrows = self.titles.count - 1;
     for (int i = 0; i < numArrows; i++) {
-        HITitleArrowView *arrow = [self createArrow];
+        HIRightPointingArrowView *arrow = [self createArrow];
         [self addSubview:arrow];
         [arrows addObject:arrow];
     }
@@ -64,8 +64,8 @@ static const int FONT_SIZE = 14;
     return label;
 }
 
-- (HITitleArrowView *)createArrow {
-    HITitleArrowView *arrow = [HITitleArrowView new];
+- (HIRightPointingArrowView *)createArrow {
+    HIRightPointingArrowView *arrow = [HIRightPointingArrowView new];
     arrow.strokeColor = [NSColor whiteColor];
     arrow.strokeWidth = 2.0;
     arrow.translatesAutoresizingMaskIntoConstraints = NO;
