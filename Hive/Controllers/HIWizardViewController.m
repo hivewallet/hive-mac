@@ -13,4 +13,8 @@
     [self.wizardDelegate didCompleteWizardPage];
 }
 
+- (NSResponder *)initialFirstResponder {
+    return nil;
+}
+
 @end

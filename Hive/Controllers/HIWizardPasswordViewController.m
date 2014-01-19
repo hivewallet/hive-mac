@@ -32,6 +32,10 @@
     return self;
 }
 
+- (NSResponder *)initialFirstResponder {
+    return self.passwordField;
+}
+
 - (IBAction)nextButtonPressed:(id)sender {
     [self.passwordCreationInputHandler finishWithPasswordHolder:^(HIPasswordHolder *passwordHolder) {
         NSError *error = nil;

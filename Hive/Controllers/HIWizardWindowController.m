@@ -41,6 +41,10 @@
     controller.view.frame = self.wizardContentView.bounds;
     controller.view.autoresizingMask = NSViewWidthSizable | NSViewHeightSizable;
     [self.wizardContentView addSubview:controller.view];
+
+    if (controller.initialFirstResponder) {
+        [self.window makeFirstResponder:controller.initialFirstResponder];
+    }
 }
 
 #pragma mark - HIWizardViewControllerDelegate
