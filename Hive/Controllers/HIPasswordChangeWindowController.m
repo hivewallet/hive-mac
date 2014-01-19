@@ -7,6 +7,7 @@
 //
 
 #import "HIPasswordChangeWindowController.h"
+#import "HIPasswordCreationInputHandler.h"
 #import "HIPasswordHolder.h"
 #import "BCClient.h"
 #import "NSWindow+HIShake.h"
@@ -23,6 +24,7 @@ static const NSTimeInterval IDLE_RESET_DELAY = 30.0;
 @property(nonatomic, strong) IBOutlet NSSecureTextField *passwordField;
 @property(nonatomic, strong) IBOutlet NSSecureTextField *updatedPasswordField;
 @property(nonatomic, strong) IBOutlet NSSecureTextField *repeatedPasswordField;
+@property (nonatomic, strong) IBOutlet HIPasswordCreationInputHandler *passwordCreationInputHandler;
 
 @property (nonatomic, assign) BOOL submitButtonEnabled;
 
@@ -33,6 +35,11 @@ static const NSTimeInterval IDLE_RESET_DELAY = 30.0;
 - (id)init {
     return [self initWithWindowNibName:[self className]];
 }
+
+- (void)setPasswordCreationInputHandler:(HIPasswordCreationInputHandler *)passwordCreationInputHandler {
+    _passwordCreationInputHandler = passwordCreationInputHandler;
+}
+
 
 - (IBAction)showWindow:(id)sender {
     [super showWindow:sender];
@@ -45,18 +52,10 @@ static const NSTimeInterval IDLE_RESET_DELAY = 30.0;
 }
 
 - (IBAction)submit:(id)sender {
-    if (![self arePasswordsEqual]) {
-        [self updateValidation];
-        [self.repeatedPasswordField becomeFirstResponder];
-        return;
-    }
-
-    @autoreleasepool {
+    [self.passwordCreationInputHandler finishWithPasswordHolder:^(HIPasswordHolder *changedPasswordHolder) {
         HIPasswordHolder *passwordHolder =
             self.passwordField.stringValue.length > 0
                 ? [[HIPasswordHolder alloc] initWithString:self.passwordField.stringValue] : nil;
-        HIPasswordHolder *changedPasswordHolder =
-            [[HIPasswordHolder alloc] initWithString:self.updatedPasswordField.stringValue];
         @try {
             NSError *error = nil;
             [[BCClient sharedClient] changeWalletPassword:passwordHolder
@@ -74,15 +73,14 @@ static const NSTimeInterval IDLE_RESET_DELAY = 30.0;
             }
         } @finally {
             [passwordHolder clear];
-            [changedPasswordHolder clear];
         }
-    }
+
+    }];
 }
 
 - (void)resetInput {
     self.passwordField.stringValue = @"";
-    self.updatedPasswordField.stringValue = @"";
-    self.repeatedPasswordField.stringValue = @"";
+    [self.passwordCreationInputHandler resetInput];
     [self updateIdleResetDelay];
 }
 
@@ -110,46 +108,16 @@ static const NSTimeInterval IDLE_RESET_DELAY = 30.0;
 }
 
 - (void)controlTextDidChange:(NSNotification *)notification {
-    // TODO: Do we impose password complexity rules?
-
     self.submitButtonEnabled = (!self.passwordField.isEnabled || self.passwordField.stringValue.length > 0)
         && self.updatedPasswordField.stringValue.length > 0;
 
-    if (self.repeatedPasswordField != notification.object) {
-        [self updateValidation];
-    } else if ([self arePasswordsEqual]) {
-        [self clearValidationProblems];
-    }
+    [self.passwordCreationInputHandler textDidChangeInTextField:notification.object];
 
     [self updateIdleResetDelay];
 }
 
-- (BOOL)arePasswordsEqual {
-    return [self.updatedPasswordField.stringValue isEqualToString:self.repeatedPasswordField.stringValue];
-}
-
 - (void)controlTextDidEndEditing:(NSNotification *)obj {
-    [self updateValidation];
-}
-
-- (void)updateValidation {
-    if ([self arePasswordsEqual]) {
-        [self clearValidationProblems];
-    } else if (self.repeatedPasswordField.stringValue.length > 0) {
-        [self setRepeatedPasswordBackgroundColor:[[NSColor redColor] colorWithAlphaComponent:0.25]];
-    }
-}
-
-- (void)clearValidationProblems {
-    [self setRepeatedPasswordBackgroundColor:[NSColor clearColor]];
-}
-
-- (void)setRepeatedPasswordBackgroundColor:(NSColor *)color {
-    self.repeatedPasswordField.backgroundColor = color;
-
-    // stupid Cocoa, y u no update the color
-    [self.repeatedPasswordField setEditable:NO];
-    [self.repeatedPasswordField setEditable:YES];
+    [self.passwordCreationInputHandler editingDidEnd];
 }
 
 - (void)updateIdleResetDelay {

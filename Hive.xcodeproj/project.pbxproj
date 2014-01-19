@@ -16,6 +16,7 @@
 		1AA103351868D3A1E24F70FA /* HIClearView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AA109D1C9CD1E776FBE62A3 /* HIClearView.m */; };
 		1AA10491B94E46EAEE6DD347 /* HIWizardWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AA10BBE6F3C3F05768B604D /* HIWizardWindowController.m */; };
 		1AA105A7496BDE6BA5E2FA84 /* NSDecimalNumber+HISatoshiConversion.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AA104995C1BAF25C99780F1 /* NSDecimalNumber+HISatoshiConversion.m */; };
+		1AA106352AD821D71AC76DCA /* HIPasswordCreationInputHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AA1064121A6B2D8D1FF4F7D /* HIPasswordCreationInputHandler.m */; };
 		1AA1076874E6E840D30050E5 /* HILabelPopUpButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AA1099A1809B28C291572E7 /* HILabelPopUpButton.m */; };
 		1AA1079715A3C2B9CD4CC308 /* NSWindow+HIShake.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AA10B9F1D9322FFF21821DA /* NSWindow+HIShake.m */; };
 		1AA108B5C3F24841E6C62EF9 /* HIBreadcrumbsView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AA10AA07C166902BE59EB57 /* HIBreadcrumbsView.m */; };
@@ -260,6 +261,7 @@
 		10153A3CC4364D6799CB4A2D /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = SOURCE_ROOT; };
 		1AA100BCED704B381898FF89 /* HILinkTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HILinkTextField.m; sourceTree = "<group>"; };
 		1AA100CAE5EF0CB61AF126DB /* HIBitcoinFormatService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HIBitcoinFormatService.m; sourceTree = "<group>"; };
+		1AA1010B59273C4F0BB17084 /* HIPasswordCreationInputHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HIPasswordCreationInputHandler.h; sourceTree = "<group>"; };
 		1AA1013FB9712D7B30A91BFB /* HIProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HIProfileViewController.m; sourceTree = "<group>"; };
 		1AA1021B2F3F04674129E978 /* NSWindow+HIShake.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSWindow+HIShake.h"; sourceTree = "<group>"; };
 		1AA1022DA4CD99B7CB61C335 /* HINotificationService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HINotificationService.m; sourceTree = "<group>"; };
@@ -269,6 +271,7 @@
 		1AA105D02E607E309205E8EC /* ar */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/HIProfileViewController.strings; sourceTree = "<group>"; };
 		1AA105D345F413155D76B5B8 /* HIBitcoinFormatService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HIBitcoinFormatService.h; sourceTree = "<group>"; };
 		1AA106209DB5E8088D1290A0 /* HIWizardButtonCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HIWizardButtonCell.m; sourceTree = "<group>"; };
+		1AA1064121A6B2D8D1FF4F7D /* HIPasswordCreationInputHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HIPasswordCreationInputHandler.m; sourceTree = "<group>"; };
 		1AA10683D3C0D3D1757EE24E /* HIPerson.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HIPerson.h; sourceTree = "<group>"; };
 		1AA106F09BEB25F235D75A80 /* HIPasswordHolder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HIPasswordHolder.h; sourceTree = "<group>"; };
 		1AA10711079E121245A12DED /* HIPasswordHolder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HIPasswordHolder.m; sourceTree = "<group>"; };
@@ -1448,6 +1451,8 @@
 				24178E2E1861005100A73D4E /* HIPasswordChangeWindowController.m */,
 				588953EB188921E300243190 /* HIPasswordChangeWindowController.strings */,
 				588953CD1889219F00243190 /* HIPasswordChangeWindowController.xib */,
+				1AA1064121A6B2D8D1FF4F7D /* HIPasswordCreationInputHandler.m */,
+				1AA1010B59273C4F0BB17084 /* HIPasswordCreationInputHandler.h */,
 			);
 			name = HIPasswordChangeWindowController;
 			sourceTree = "<group>";
@@ -2426,6 +2431,7 @@
 				1AA108B5C3F24841E6C62EF9 /* HIBreadcrumbsView.m in Sources */,
 				1AA10DF868C849FB18F976B4 /* HIWizardButtonCell.m in Sources */,
 				1AA102413A9415398B3C6B35 /* HIGradientButtonCell.m in Sources */,
+				1AA106352AD821D71AC76DCA /* HIPasswordCreationInputHandler.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
