@@ -98,10 +98,6 @@ static int ddLogLevel = LOG_LEVEL_VERBOSE;
                                                  name:NSWindowWillCloseNotification
                                                object:nil];
 
-    dispatch_async(dispatch_get_main_queue(), ^{
-        [self initializeBackups];
-    });
-
     [self showBetaWarning];
     [self preinstallAppsIfNeeded];
     [self rebuildTransactionListIfNeeded];
@@ -209,34 +205,25 @@ static int ddLogLevel = LOG_LEVEL_VERBOSE;
     [[BCClient sharedClient] start:&error];
 
     if (error.code == kHIBitcoinManagerNoWallet) {
-        error = nil;
-        // TODO: Ask for a password and create protected wallet.
-        [[BCClient sharedClient] createWallet:&error];
-    }
-
-    if (error) {
+        [self showSetUpWizard];
+    } else if (error) {
         HILogError(@"BitcoinManager start error: %@", error);
         [self showInitializationError:error];
-    }
-
-    if ([self mustShowSetUpWizard]) {
-        [self showSetUpWizard];
     } else {
         [self showAppWindow];
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [self initializeBackups];
+        });
     }
-
-    [self configureNotifications];
 
     NSSetUncaughtExceptionHandler(&handleException);
 }
 
 - (void)showAppWindow {
+    [self configureNotifications];
+
     _mainWindowController = [[HIMainWindowController alloc] initWithWindowNibName:@"HIMainWindowController"];
     [_mainWindowController showWindow:self];
-}
-
-- (BOOL)mustShowSetUpWizard {
-    return [[NSUserDefaults standardUserDefaults] boolForKey:@"FirstRun"];
 }
 
 - (void)showSetUpWizard {

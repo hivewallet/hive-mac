@@ -34,8 +34,14 @@
 
 - (IBAction)nextButtonPressed:(id)sender {
     [self.passwordCreationInputHandler finishWithPasswordHolder:^(HIPasswordHolder *passwordHolder) {
-        // TODO: Create wallet
-        [self.wizardDelegate didCompleteWizardPage];
+        NSError *error = nil;
+        [[BCClient sharedClient] createWalletWithPassword:passwordHolder
+                                                    error:&error];
+        if (error) {
+            [[NSAlert alertWithError:error] runModal];
+        } else {
+            [self.wizardDelegate didCompleteWizardPage];
+        }
     }];
 }
 
