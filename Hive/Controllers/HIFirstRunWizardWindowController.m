@@ -10,6 +10,7 @@
 
 #import "HIWizardWelcomeViewController.h"
 #import "HIWizardCompletedViewController.h"
+#import "HIWizardPasswordViewController.h"
 
 @implementation HIFirstRunWizardWindowController
 
@@ -18,6 +19,7 @@
     if (self) {
         self.viewControllers = @[
             [HIWizardWelcomeViewController new],
+            [HIWizardPasswordViewController new],
             [HIWizardCompletedViewController new],
         ];
     }

@@ -36,6 +36,9 @@
 		24300C1F188C3F5900FDEF2F /* HIWizardWelcomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 24300C1D188C3F5900FDEF2F /* HIWizardWelcomeViewController.xib */; };
 		24300C58188C517700FDEF2F /* HIWizardCompletedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 24300C56188C517700FDEF2F /* HIWizardCompletedViewController.m */; };
 		24300C59188C517700FDEF2F /* HIWizardCompletedViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 24300C57188C517700FDEF2F /* HIWizardCompletedViewController.xib */; };
+		24300C65188C566000FDEF2F /* HIWizardPasswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 24300C63188C566000FDEF2F /* HIWizardPasswordViewController.m */; };
+		24300C66188C566000FDEF2F /* HIWizardPasswordViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 24300C64188C566000FDEF2F /* HIWizardPasswordViewController.xib */; };
+		24300C93188C7C7A00FDEF2F /* HIPaddedSecureTextFieldCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 24300C92188C7C7A00FDEF2F /* HIPaddedSecureTextFieldCell.m */; };
 		244303BA1856712000AD59B8 /* HIPasswordInputViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 244303B81856712000AD59B8 /* HIPasswordInputViewController.m */; };
 		2478B8D3184A80A400BA2C35 /* HIFeeDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2478B8D1184A80A400BA2C35 /* HIFeeDetailsViewController.m */; };
 		2478B8D5184A88E700BA2C35 /* HIFeeDetailsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2478B8D7184A88E700BA2C35 /* HIFeeDetailsViewController.xib */; };
@@ -310,6 +313,11 @@
 		24300C55188C517700FDEF2F /* HIWizardCompletedViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HIWizardCompletedViewController.h; sourceTree = "<group>"; };
 		24300C56188C517700FDEF2F /* HIWizardCompletedViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HIWizardCompletedViewController.m; sourceTree = "<group>"; };
 		24300C57188C517700FDEF2F /* HIWizardCompletedViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HIWizardCompletedViewController.xib; sourceTree = "<group>"; };
+		24300C62188C566000FDEF2F /* HIWizardPasswordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HIWizardPasswordViewController.h; sourceTree = "<group>"; };
+		24300C63188C566000FDEF2F /* HIWizardPasswordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HIWizardPasswordViewController.m; sourceTree = "<group>"; };
+		24300C64188C566000FDEF2F /* HIWizardPasswordViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HIWizardPasswordViewController.xib; sourceTree = "<group>"; };
+		24300C91188C7C7A00FDEF2F /* HIPaddedSecureTextFieldCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HIPaddedSecureTextFieldCell.h; sourceTree = "<group>"; };
+		24300C92188C7C7A00FDEF2F /* HIPaddedSecureTextFieldCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HIPaddedSecureTextFieldCell.m; sourceTree = "<group>"; };
 		244303B71856712000AD59B8 /* HIPasswordInputViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HIPasswordInputViewController.h; sourceTree = "<group>"; };
 		244303B81856712000AD59B8 /* HIPasswordInputViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HIPasswordInputViewController.m; sourceTree = "<group>"; };
 		245CBB101842ADF800619953 /* cs */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = cs; path = cs.lproj/HIProfileViewController.strings; sourceTree = "<group>"; };
@@ -1469,6 +1477,9 @@
 				24300C55188C517700FDEF2F /* HIWizardCompletedViewController.h */,
 				24300C56188C517700FDEF2F /* HIWizardCompletedViewController.m */,
 				24300C57188C517700FDEF2F /* HIWizardCompletedViewController.xib */,
+				24300C62188C566000FDEF2F /* HIWizardPasswordViewController.h */,
+				24300C63188C566000FDEF2F /* HIWizardPasswordViewController.m */,
+				24300C64188C566000FDEF2F /* HIWizardPasswordViewController.xib */,
 				24300C1B188C3F5900FDEF2F /* HIWizardWelcomeViewController.h */,
 				24300C1C188C3F5900FDEF2F /* HIWizardWelcomeViewController.m */,
 				24300C1D188C3F5900FDEF2F /* HIWizardWelcomeViewController.xib */,
@@ -1808,6 +1819,8 @@
 				D9F0B9F717EC654C0050A0A2 /* HIImageCell.m */,
 				1AA10497F9EEF9DF75030891 /* HILinkTextField.h */,
 				1AA100BCED704B381898FF89 /* HILinkTextField.m */,
+				24300C91188C7C7A00FDEF2F /* HIPaddedSecureTextFieldCell.h */,
+				24300C92188C7C7A00FDEF2F /* HIPaddedSecureTextFieldCell.m */,
 				588EFB2C17D8D2970085F6E6 /* HIProfileTabView.h */,
 				588EFB2D17D8D2970085F6E6 /* HIProfileTabView.m */,
 				D94815F017D4D9AF006A0312 /* HISeparatorView.h */,
@@ -2210,6 +2223,7 @@
 				58A37AB0180D7B1D00CFCDE3 /* HITransactionsViewController.xib in Resources */,
 				58A37A9E180D7AFC00CFCDE3 /* HIMainWindowController.xib in Resources */,
 				58605A4018041D0A00FD9C2A /* avatar-empty.pdf in Resources */,
+				24300C66188C566000FDEF2F /* HIWizardPasswordViewController.xib in Resources */,
 				582C7DA6185219A000126C10 /* HIDebuggingToolsWindowController.xib in Resources */,
 				588953CB1889219F00243190 /* HIPasswordChangeWindowController.xib in Resources */,
 				58605A4118041D0A00FD9C2A /* bg-sidebar.pdf in Resources */,
@@ -2429,9 +2443,11 @@
 				1AA10491B94E46EAEE6DD347 /* HIWizardWindowController.m in Sources */,
 				1AA103351868D3A1E24F70FA /* HIClearView.m in Sources */,
 				1AA108B5C3F24841E6C62EF9 /* HIBreadcrumbsView.m in Sources */,
+				24300C93188C7C7A00FDEF2F /* HIPaddedSecureTextFieldCell.m in Sources */,
 				1AA10DF868C849FB18F976B4 /* HIWizardButtonCell.m in Sources */,
 				1AA102413A9415398B3C6B35 /* HIGradientButtonCell.m in Sources */,
 				1AA106352AD821D71AC76DCA /* HIPasswordCreationInputHandler.m in Sources */,
+				24300C65188C566000FDEF2F /* HIWizardPasswordViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
