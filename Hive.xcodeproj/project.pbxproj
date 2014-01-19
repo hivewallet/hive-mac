@@ -1465,6 +1465,31 @@
 			name = Wizard;
 			sourceTree = "<group>";
 		};
+		24300C54188C50E300FDEF2F /* Buttons */ = {
+			isa = PBXGroup;
+			children = (
+				D9716B7017D8B42E00888F4E /* HIButtonCell.h */,
+				D9716B7117D8B42E00888F4E /* HIButtonCell.m */,
+				58A03B0B17D9DC4100ADD5E5 /* HIButtonWithSpinner.h */,
+				58A03B0C17D9DC4100ADD5E5 /* HIButtonWithSpinner.m */,
+				D99C9A5317E8F59200899CAB /* HIDeleteButtonCell.h */,
+				D99C9A5417E8F59200899CAB /* HIDeleteButtonCell.m */,
+				D9716B6B17D88F8800888F4E /* HIDoneButtonCell.h */,
+				D9716B6C17D88F8800888F4E /* HIDoneButtonCell.m */,
+				1AA10A32478D47E8D26B9653 /* HIDraggableButton.h */,
+				1AA10ED2A6A54B40FB3067FD /* HIDraggableButton.m */,
+				1AA10EB1DE996965F848889D /* HIGradientButtonCell.m */,
+				1AA10EF74F3C5F1303FD333E /* HIGradientButtonCell.h */,
+				1AA109349A0DB4DF39E55FA4 /* HILabelPopUpButton.h */,
+				1AA1099A1809B28C291572E7 /* HILabelPopUpButton.m */,
+				581711BC17D0A26D00DE775A /* HISidebarButton.h */,
+				581711BD17D0A26D00DE775A /* HISidebarButton.m */,
+				1AA106209DB5E8088D1290A0 /* HIWizardButtonCell.m */,
+				1AA10AD24CA867B468C6409C /* HIWizardButtonCell.h */,
+			);
+			name = Buttons;
+			sourceTree = "<group>";
+		};
 		244303B2185670DB00AD59B8 /* HIPasswordInputViewController */ = {
 			isa = PBXGroup;
 			children = (
@@ -1747,16 +1772,13 @@
 		D97E7FD2176BC03000D2350B /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				24300C54188C50E300FDEF2F /* Buttons */,
 				583B1E0B1868BAC000817EF8 /* HIBackupActionsCellView.h */,
 				583B1E0C1868BAC000817EF8 /* HIBackupActionsCellView.m */,
 				588F3E8318719A9000FF42EA /* HIBackupStatusCellView.h */,
 				588F3E8418719A9000FF42EA /* HIBackupStatusCellView.m */,
 				D9716B7517D8C40100888F4E /* HIBox.h */,
 				D9716B7617D8C40100888F4E /* HIBox.m */,
-				D9716B7017D8B42E00888F4E /* HIButtonCell.h */,
-				D9716B7117D8B42E00888F4E /* HIButtonCell.m */,
-				58A03B0B17D9DC4100ADD5E5 /* HIButtonWithSpinner.h */,
-				58A03B0C17D9DC4100ADD5E5 /* HIButtonWithSpinner.m */,
 				1AA10D2D55A74CDB4505CC33 /* HIClearView.h */,
 				1AA109D1C9CD1E776FBE62A3 /* HIClearView.m */,
 				5802106117ECCAAA0039BA4B /* HIContactAutocompleteCellView.h */,
@@ -1765,30 +1787,18 @@
 				D94815E817D4BCEF006A0312 /* HIContactRowView.m */,
 				D939FE9A17F076E80088F5D3 /* HICopyView.h */,
 				D939FE9B17F076E80088F5D3 /* HICopyView.m */,
-				D99C9A5317E8F59200899CAB /* HIDeleteButtonCell.h */,
-				D99C9A5417E8F59200899CAB /* HIDeleteButtonCell.m */,
-				D9716B6B17D88F8800888F4E /* HIDoneButtonCell.h */,
-				D9716B6C17D88F8800888F4E /* HIDoneButtonCell.m */,
-				1AA10A32478D47E8D26B9653 /* HIDraggableButton.h */,
-				1AA10ED2A6A54B40FB3067FD /* HIDraggableButton.m */,
 				589064B5180596B80082BE5C /* HIEditableImageView.h */,
 				589064B6180596B80082BE5C /* HIEditableImageView.m */,
 				D958A8B617E8547A00CED98C /* HIFlippedView.h */,
 				D958A8B717E8547A00CED98C /* HIFlippedView.m */,
-				1AA10EB1DE996965F848889D /* HIGradientButtonCell.m */,
-				1AA10EF74F3C5F1303FD333E /* HIGradientButtonCell.h */,
 				D9F0B9F617EC654C0050A0A2 /* HIImageCell.h */,
 				D9F0B9F717EC654C0050A0A2 /* HIImageCell.m */,
-				1AA109349A0DB4DF39E55FA4 /* HILabelPopUpButton.h */,
-				1AA1099A1809B28C291572E7 /* HILabelPopUpButton.m */,
 				1AA10497F9EEF9DF75030891 /* HILinkTextField.h */,
 				1AA100BCED704B381898FF89 /* HILinkTextField.m */,
 				588EFB2C17D8D2970085F6E6 /* HIProfileTabView.h */,
 				588EFB2D17D8D2970085F6E6 /* HIProfileTabView.m */,
 				D94815F017D4D9AF006A0312 /* HISeparatorView.h */,
 				D94815F117D4D9AF006A0312 /* HISeparatorView.m */,
-				581711BC17D0A26D00DE775A /* HISidebarButton.h */,
-				581711BD17D0A26D00DE775A /* HISidebarButton.m */,
 				58CFD95117CF914000A035FA /* HISidebarView.h */,
 				58CFD95217CF914000A035FA /* HISidebarView.m */,
 				D94815F317D72AF8006A0312 /* HITextField.h */,
@@ -1801,8 +1811,6 @@
 				D94815B317D492A0006A0312 /* HITitleView.m */,
 				581EFBCA17DA441A00E2738D /* HITransactionCellView.h */,
 				581EFBCB17DA441B00E2738D /* HITransactionCellView.m */,
-				1AA106209DB5E8088D1290A0 /* HIWizardButtonCell.m */,
-				1AA10AD24CA867B468C6409C /* HIWizardButtonCell.h */,
 				1AA10AA07C166902BE59EB57 /* HIBreadcrumbsView.m */,
 				1AA10CE6F8A52D59745DEF88 /* HIBreadcrumbsView.h */,
 			);
