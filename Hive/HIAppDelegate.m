@@ -241,6 +241,10 @@ static int ddLogLevel = LOG_LEVEL_VERBOSE;
 
 - (void)showSetUpWizard {
     self.wizard = [HIFirstRunWizardWindowController new];
+    __weak __typeof__ (self) weakSelf = self;
+    self.wizard.onCompletion = ^{
+        [weakSelf showAppWindow];
+    };
     [self.wizard showWindow:self];
 }
 

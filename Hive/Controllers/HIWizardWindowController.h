@@ -12,5 +12,6 @@
 @interface HIWizardWindowController : NSWindowController
 
 @property (nonatomic, copy) NSArray *viewControllers;
+@property (nonatomic, copy) void (^onCompletion)();
 
 @end

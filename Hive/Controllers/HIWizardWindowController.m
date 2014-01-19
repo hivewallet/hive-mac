@@ -46,7 +46,12 @@
 #pragma mark - HIWizardViewControllerDelegate
 
 - (void)didCompleteWizardPage {
-    [self showNextPage];
+    if (self.pagesLeft) {
+        [self showNextPage];
+    } else {
+        [self close];
+        self.onCompletion();
+    }
 }
 
 - (u_long)pagesLeft {
