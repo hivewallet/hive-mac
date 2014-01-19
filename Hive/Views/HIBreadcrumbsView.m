@@ -8,6 +8,7 @@ static const int FONT_SIZE = 14;
 
 @interface HIBreadcrumbsView ()
 
+@property (nonatomic, copy, readonly) NSColor *color;
 @property (nonatomic, copy) NSArray *labels;
 @property (nonatomic, copy) NSArray *arrows;
 
@@ -18,6 +19,7 @@ static const int FONT_SIZE = 14;
 - (id)initWithFrame:(NSRect)frameRect {
     self = [super initWithFrame:frameRect];
     if (self) {
+        _color = [NSColor colorWithCalibratedWhite:0.8 alpha:1.0];
         // TODO
         self.titles = @[@"Welcome", @"Password", @"Backup"];
         [self setUpBreadcrumbs];
@@ -56,7 +58,7 @@ static const int FONT_SIZE = 14;
 
 - (NSTextField *)createLabel {
     NSTextField *label = [NSTextField new];
-    label.textColor = [NSColor whiteColor];
+    label.textColor = self.color;
     label.translatesAutoresizingMaskIntoConstraints = NO;
     label.editable = NO;
     label.drawsBackground = NO;
@@ -66,7 +68,7 @@ static const int FONT_SIZE = 14;
 
 - (HIRightPointingArrowView *)createArrow {
     HIRightPointingArrowView *arrow = [HIRightPointingArrowView new];
-    arrow.strokeColor = [NSColor whiteColor];
+    arrow.strokeColor = self.color;
     arrow.strokeWidth = 2.0;
     arrow.translatesAutoresizingMaskIntoConstraints = NO;
     return arrow;
@@ -134,6 +136,7 @@ static const int FONT_SIZE = 14;
 - (void)updateLabelAtIndex:(int)index selected:(BOOL)selected {
     NSTextField *label = self.labels[index];
     label.attributedStringValue = [self createLabelString:self.titles[index] selected:selected];
+    label.textColor = selected ? [NSColor whiteColor] : self.color;
 }
 
 @end
