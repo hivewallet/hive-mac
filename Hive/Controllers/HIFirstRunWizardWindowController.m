@@ -8,8 +8,8 @@
 
 #import "HIFirstRunWizardWindowController.h"
 
-#import "HIWizardViewController.h"
 #import "HIWizardWelcomeViewController.h"
+#import "HIWizardCompletedViewController.h"
 
 @implementation HIFirstRunWizardWindowController
 
@@ -18,8 +18,7 @@
     if (self) {
         self.viewControllers = @[
             [HIWizardWelcomeViewController new],
-            [HIWizardViewController new],
-            [HIWizardViewController new],
+            [HIWizardCompletedViewController new],
         ];
     }
     return self;
