@@ -52,6 +52,7 @@
 - (void)clear {
     [self.mutableDataPassword resetBytesInRange:NSMakeRange(0, self.mutableDataPassword.length)];
     self.mutableDataPassword = nil;
+    self.dataPasswordSubset = nil;
 }
 
 @end
