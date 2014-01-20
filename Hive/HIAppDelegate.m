@@ -227,6 +227,7 @@ static int ddLogLevel = LOG_LEVEL_VERBOSE;
     self.wizard = [HIFirstRunWizardWindowController new];
     __weak __typeof__ (self) weakSelf = self;
     self.wizard.onCompletion = ^{
+        [[HIBackupManager sharedManager] performBackups];
         [weakSelf showAppWindow];
     };
     [self.wizard showWindow:self];
