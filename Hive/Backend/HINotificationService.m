@@ -112,6 +112,7 @@ typedef NS_ENUM(NSInteger, HINotificationType) {
     if (transaction.isOutgoing && transaction.status == HITransactionStatusBuilding) {
         [self postSendConfirmedNotification:transaction];
     } else if (transaction.status == HITransactionStatusDead) {
+        [self postCancelledTransactionNotificationForTransaction:transaction];
         [self showCancelledTransactionAlertForTransaction:transaction];
     }
 }
@@ -160,6 +161,12 @@ typedef NS_ENUM(NSInteger, HINotificationType) {
     [self postNotification:NSLocalizedString(@"Backup failed", @"Notification of failed backup")
                       text:errorMessage
           notificationType:HINotificationTypeBackup];
+}
+
+- (void)postCancelledTransactionNotificationForTransaction:(HITransaction *)transaction {
+    [self postNotification:NSLocalizedString(@"Transaction cancelled", @"Notification of cancelled transaction")
+                      text:nil
+          notificationType:HINotificationTypeTransaction];
 }
 
 - (void)showCancelledTransactionAlertForTransaction:(HITransaction *)transaction {
