@@ -17,6 +17,7 @@ NSString * const HITransactionEntity = @"HITransaction";
 
 @dynamic id;
 @dynamic amount;
+@dynamic fee;
 @dynamic senderName;
 @dynamic senderHash;
 @dynamic status;
@@ -73,7 +74,7 @@ NSString * const HITransactionEntity = @"HITransaction";
 }
 
 - (uint64_t)absoluteAmount {
-    return llabs(self.amount);
+    return llabs(self.amount) - (self.isOutgoing ? self.fee : 0);
 }
 
 @end

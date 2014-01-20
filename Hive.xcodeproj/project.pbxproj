@@ -532,6 +532,7 @@
 		583B1E0218687CF400817EF8 /* dropbox-glyph-blue.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "dropbox-glyph-blue.pdf"; sourceTree = "<group>"; };
 		583B1E0B1868BAC000817EF8 /* HIBackupActionsCellView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HIBackupActionsCellView.h; sourceTree = "<group>"; };
 		583B1E0C1868BAC000817EF8 /* HIBackupActionsCellView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HIBackupActionsCellView.m; sourceTree = "<group>"; };
+		58571253188D8E7A0094F884 /* 2014012001.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = file; path = 2014012001.xcdatamodel; sourceTree = "<group>"; };
 		585A8B2318576F020096888C /* HIDatabaseManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HIDatabaseManager.h; sourceTree = "<group>"; };
 		585A8B2418576F020096888C /* HIDatabaseManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HIDatabaseManager.m; sourceTree = "<group>"; };
 		585FFF211815374B005BCF73 /* nl */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = nl; path = nl.lproj/HIApplicationsViewController.xib; sourceTree = "<group>"; };
@@ -3807,9 +3808,10 @@
 			isa = XCVersionGroup;
 			children = (
 				58357A3B186068A70077B717 /* 2013121701.xcdatamodel */,
+				58571253188D8E7A0094F884 /* 2014012001.xcdatamodel */,
 				D962AF021769FEF9009F882A /* Hive.xcdatamodel */,
 			);
-			currentVersion = 58357A3B186068A70077B717 /* 2013121701.xcdatamodel */;
+			currentVersion = 58571253188D8E7A0094F884 /* 2014012001.xcdatamodel */;
 			path = Hive.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;

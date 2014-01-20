@@ -43,6 +43,9 @@ extern NSString * const HITransactionEntity;
 // BTC amount, in satoshis; for outgoing transactions the amount is negative
 @property (nonatomic) int64_t amount;
 
+// fee amount, in satoshis; for incoming transactions it might return 0
+@property (nonatomic) int64_t fee;
+
 // BTC address of the sender
 @property (nonatomic, retain) NSString *senderHash;
 

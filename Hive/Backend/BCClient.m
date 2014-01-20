@@ -380,6 +380,7 @@ NSString * const BCClientPasswordChangedNotification = @"BCClientPasswordChanged
         transaction.id = data[@"txid"];
         transaction.date = data[@"time"];
         transaction.amount = [data[@"amount"] longLongValue];
+        transaction.fee = [data[@"fee"] longLongValue];
         transaction.request = (![data[@"details"][0][@"category"] isEqual:@"send"]);
         transaction.senderHash = data[@"details"][0][@"address"];
 
