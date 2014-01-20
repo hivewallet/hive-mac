@@ -3,7 +3,7 @@
 "123.title" = "Mukhang wala ka pang kahit anong contact! Maglagay ng iyong unang contact at umpisahan na ang pagpapadala ng pera!";
 
 /* Class = "NSButtonCell"; title = "Add contact"; ObjectID = "125"; */
-"125.title" = "Mag-dagdag ng contact";
+"125.title" = "Magdagdag ng contact";
 
 /* Class = "NSTextFieldCell"; title = "You can then use the ✚ button on top to add more contacts."; ObjectID = "129"; */
-"129.title" = "Maari mong gamitin ang \U2795 button sa itaas para mag-dagdag ng contacts.";
+"129.title" = "Maari mong gamitin ang \U2795 button sa itaas upang magdagdag ng mga contact.";

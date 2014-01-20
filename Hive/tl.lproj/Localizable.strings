@@ -12,7 +12,7 @@
 "Application can't be loaded" = "Hindi mai-load ang application.";
 
 /* Applications view title */
-"Apps" = "Apps";
+"Apps" = "Mga App";
 
 /* Warning when trying to a large BTC amount (btc, fiat amount and address) */
 "Are you sure you want to send %@ (%@) to %@?" = "Are you sure you want to send %1$@ (%2$@) to %3$@?";
@@ -63,7 +63,7 @@
 "Contact can't be saved." = "Hindi mai-save ang contact.";
 
 /* Contacts view title */
-"Contacts" = "Contacts";
+"Contacts" = "Mga Contact";
 
 /* No comment provided by engineer. */
 "copied!" = "nakopya na!";
