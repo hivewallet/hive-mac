@@ -227,17 +227,22 @@
 
 - (NSAttributedString *)createShareTextForTransaction:(HITransaction *)transaction {
     // TODO: Actually add something transaction specific?
-    static NSAttributedString *string = nil;
+    static NSAttributedString *sentString = nil, *receivedString = nil;
     static dispatch_once_t onceToken;
+
     dispatch_once(&onceToken, ^{
-        NSString *raw = NSLocalizedString(@"I just sent some Bitcoin using Hive", @"Share transaction template text");
-        NSMutableAttributedString *mutableString = [[NSMutableAttributedString alloc] initWithString:raw];
-        [mutableString addAttribute:NSLinkAttributeName
-                              value:[NSURL URLWithString:@"http://hivewallet.com"]
-                              range:[raw rangeOfString:@"Hive"]];
-        string = mutableString;
+        NSString *link = @" http://hivewallet.com";
+
+        NSString *text = NSLocalizedString(@"I've just sent some Bitcoin using Hive",
+                                           @"Share sent transaction text");
+        sentString = [[NSAttributedString alloc] initWithString:[text stringByAppendingString:link]];
+
+        text = NSLocalizedString(@"I've just received some Bitcoin using Hive",
+                                 @"Share sent transaction text");
+        receivedString = [[NSAttributedString alloc] initWithString:[text stringByAppendingString:link]];
     });
-    return string;
+
+    return (transaction.direction == HITransactionDirectionIncoming) ? receivedString : sentString;
 }
 
 - (NSAttributedString *)summaryTextForTransaction:(HITransaction *)transaction {
