@@ -12,12 +12,12 @@
         </customObject>
         <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
         <customObject id="-3" userLabel="Application"/>
-        <menu title="AMainMenu" systemMenu="main" id="29">
+        <menu title="Unmenuprincipal" systemMenu="main" id="29">
             <items>
                 <menuItem title="Hive" id="56">
                     <menu key="submenu" title="Hive" systemMenu="apple" id="57">
                         <items>
-                            <menuItem title="A propos de Hive" id="58">
+                            <menuItem title="À propos de Hive" id="58">
                                 <modifierMask key="keyEquivalentModifierMask"/>
                                 <connections>
                                     <action selector="orderFrontStandardAboutPanel:" target="-2" id="142"/>
@@ -31,7 +31,7 @@
                                     <action selector="openPreferences:" target="-1" id="754"/>
                                 </connections>
                             </menuItem>
-                            <menuItem title="Rechercher les mises à jours disponibles..." id="870">
+                            <menuItem title="Vérifier les mises à jours..." id="870">
                                 <modifierMask key="keyEquivalentModifierMask"/>
                                 <connections>
                                     <action selector="checkForUpdates:" target="869" id="871"/>
@@ -73,16 +73,16 @@
                         </items>
                     </menu>
                 </menuItem>
-                <menuItem title="Wallet" id="GX7-xG-GKH">
-                    <menu key="submenu" title="Wallet" id="jrd-Ul-XjV">
+                <menuItem title="Portefeuille" id="GX7-xG-GKH">
+                    <menu key="submenu" title="Portefeuille" id="jrd-Ul-XjV">
                         <items>
-                            <menuItem title="Envoyer des Bitcoins..." keyEquivalent="S" id="866">
+                            <menuItem title="Envoyer des bitcoins..." keyEquivalent="S" id="866">
                                 <connections>
                                     <action selector="openSendBitcoinsWindow:" target="-1" id="868"/>
                                 </connections>
                             </menuItem>
                             <menuItem isSeparatorItem="YES" id="CGD-5y-ezT"/>
-                            <menuItem title="Change Password…" id="1HB-Qg-iyg">
+                            <menuItem title="Changer le mot de passe…" id="1HB-Qg-iyg">
                                 <modifierMask key="keyEquivalentModifierMask"/>
                                 <connections>
                                     <action selector="changeWalletPassword:" target="494" id="n4h-c8-Hjn"/>
@@ -107,7 +107,7 @@
                                     <action selector="undo:" target="-1" id="848"/>
                                 </connections>
                             </menuItem>
-                            <menuItem title="Aller vers l'avant" keyEquivalent="Z" id="805">
+                            <menuItem title="Rétablir" keyEquivalent="Z" id="805">
                                 <modifierMask key="keyEquivalentModifierMask" shift="YES" command="YES"/>
                             </menuItem>
                             <menuItem isSeparatorItem="YES" id="806">
@@ -141,11 +141,11 @@
                         </items>
                     </menu>
                 </menuItem>
-                <menuItem title="Tools" id="eBU-ec-85y">
+                <menuItem title="Outils" id="eBU-ec-85y">
                     <modifierMask key="keyEquivalentModifierMask"/>
-                    <menu key="submenu" title="Tools" id="cCx-Ak-fii">
+                    <menu key="submenu" title="Outils" id="cCx-Ak-fii">
                         <items>
-                            <menuItem title="Backup Center..." id="V0L-sM-c8h">
+                            <menuItem title="Centre de sauvegardes..." id="V0L-sM-c8h">
                                 <modifierMask key="keyEquivalentModifierMask"/>
                                 <connections>
                                     <action selector="showBackupCenter:" target="-1" id="w3X-q3-iCI"/>
@@ -157,12 +157,12 @@
                                     <action selector="openCoinMapSite:" target="494" id="Ozv-6D-Aab"/>
                                 </connections>
                             </menuItem>
-                            <menuItem title="Debugging info..." keyEquivalent="D" id="lLT-53-p4m">
+                            <menuItem title="Infos de débogage..." keyEquivalent="D" id="lLT-53-p4m">
                                 <connections>
                                     <action selector="showDebuggingInfo:" target="-1" id="Exc-Ye-jOL"/>
                                 </connections>
                             </menuItem>
-                            <menuItem title="Debugging tools..." id="Ue9-mi-gbe">
+                            <menuItem title="Outils de débogage..." id="Ue9-mi-gbe">
                                 <modifierMask key="keyEquivalentModifierMask"/>
                                 <connections>
                                     <action selector="showDebuggingTools:" target="-1" id="s18-1s-iwD"/>
@@ -192,7 +192,7 @@
                                     <action selector="performClose:" target="-1" id="865"/>
                                 </connections>
                             </menuItem>
-                            <menuItem title="Zoom" id="858">
+                            <menuItem title="Agrandir" id="858">
                                 <connections>
                                     <action selector="performZoom:" target="-1" id="862"/>
                                 </connections>
@@ -213,7 +213,7 @@
         <customObject id="494" customClass="HIAppDelegate"/>
         <customObject id="420" customClass="NSFontManager"/>
         <customObject id="869" customClass="SUUpdater"/>
-        <menuItem title="Elément" id="800">
+        <menuItem title="Élément" id="800">
             <modifierMask key="keyEquivalentModifierMask"/>
         </menuItem>
     </objects>
