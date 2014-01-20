@@ -63,6 +63,9 @@ extern NSString * const HITransactionEntity;
 // HITransactionDirectionIncoming or HITransactionDirectionOutgoing
 @property (nonatomic, readonly, getter = direction) HITransactionDirection direction;
 
+@property (nonatomic, readonly) BOOL isIncoming;
+@property (nonatomic, readonly) BOOL isOutgoing;
+
 // same as amount, but it's always positive
 @property (nonatomic, readonly, getter = absoluteAmount) uint64_t absoluteAmount;
 

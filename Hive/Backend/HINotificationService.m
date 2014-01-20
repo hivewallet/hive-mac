@@ -103,16 +103,16 @@ typedef NS_ENUM(NSInteger, HINotificationType) {
 #pragma mark - BCTransactionObserver
 
 - (void)transactionAdded:(HITransaction *)transaction {
-    if (!transaction.read && transaction.direction == HITransactionDirectionIncoming) {
+    if (!transaction.read && transaction.isIncoming) {
         [self postReceivedNotification:transaction];
     }
 }
 
-- (void)transactionChangedStatus:(HITransaction *)tx {
-    if (tx.direction == HITransactionDirectionOutgoing && tx.status == HITransactionStatusBuilding) {
-        [self postSendConfirmedNotification:tx];
-    } else if (tx.status == HITransactionStatusDead) {
-        [self showCancelledTransactionAlertForTransaction:tx];
+- (void)transactionChangedStatus:(HITransaction *)transaction {
+    if (transaction.isOutgoing && transaction.status == HITransactionStatusBuilding) {
+        [self postSendConfirmedNotification:transaction];
+    } else if (transaction.status == HITransactionStatusDead) {
+        [self showCancelledTransactionAlertForTransaction:transaction];
     }
 }
 

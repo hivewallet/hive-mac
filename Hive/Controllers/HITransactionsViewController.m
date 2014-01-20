@@ -190,7 +190,7 @@
     cell.shareText = sharingSupported ? [self createShareTextForTransaction:transaction] : nil;
     cell.textField.attributedStringValue = [self summaryTextForTransaction:transaction];
     cell.dateLabel.stringValue = [self dateTextForTransaction:transaction];
-    cell.directionMark.image = (transaction.direction == HITransactionDirectionIncoming) ? plusImage : minusImage;
+    cell.directionMark.image = transaction.isIncoming ? plusImage : minusImage;
 
     if (transaction.contact && transaction.contact.avatarImage) {
         cell.imageView.image = transaction.contact.avatarImage;
@@ -242,14 +242,14 @@
         receivedString = [[NSAttributedString alloc] initWithString:[text stringByAppendingString:link]];
     });
 
-    return (transaction.direction == HITransactionDirectionIncoming) ? receivedString : sentString;
+    return (transaction.isIncoming ? receivedString : sentString);
 }
 
 - (NSAttributedString *)summaryTextForTransaction:(HITransaction *)transaction {
     NSString *text;
 
     // not using standard localized string variables on purpose because we need to mark the fragments with bold
-    if (transaction.direction == HITransactionDirectionIncoming) {
+    if (transaction.isIncoming) {
         if (transaction.contact) {
             text = NSLocalizedString(@"Received &a from &c", @"Received amount of BTC from contact");
         } else {

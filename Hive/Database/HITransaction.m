@@ -64,6 +64,14 @@ NSString * const HITransactionEntity = @"HITransaction";
     return (self.amount >= 0) ? HITransactionDirectionIncoming : HITransactionDirectionOutgoing;
 }
 
+- (BOOL)isIncoming {
+    return (self.direction == HITransactionDirectionIncoming);
+}
+
+- (BOOL)isOutgoing {
+    return (self.direction == HITransactionDirectionOutgoing);
+}
+
 - (uint64_t)absoluteAmount {
     return llabs(self.amount);
 }
