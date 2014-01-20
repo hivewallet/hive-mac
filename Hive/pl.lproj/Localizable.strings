@@ -17,6 +17,9 @@
 /* Warning when trying to a large BTC amount (btc, fiat amount and address) */
 "Are you sure you want to send %@ (%@) to %@?" = "Czy jesteś pewny, że chcesz wysłać %1$@ (%2$@) do %3$@?";
 
+/* Wizard backup page title */
+"Backup" = "Backup";
+
 /* Backup status: backup can't or won't be completed */
 "Backup error" = "Błąd wykonywania kopii";
 
@@ -125,8 +128,11 @@
 /* Backup error message */
 "Hive directory is excluded from Time Machine backup" = "Katalog Hive jest wyłączony z kopii zapasowej Time Machine";
 
-/* Share transaction template text */
-"I just sent some Bitcoin using Hive" = "Wysłałem właśnie Bitcoiny przy pomocy portfela Hive";
+/* Share sent transaction text */
+"I've just received some Bitcoin using Hive" = "Odebrałem właśnie Bitcoiny przy pomocy portfela Hive";
+
+/* Share sent transaction text */
+"I've just sent some Bitcoin using Hive" = "Wysłałem właśnie Bitcoiny przy pomocy portfela Hive";
 
 /* Install app button title */
 "Install" = "Zainstaluj";
@@ -167,6 +173,9 @@
 /* Autocomplete dropdown prompt */
 "or choose from the list" = "lub wybierz z listy";
 
+/* Wizard password page title */
+"Password" = "Password";
+
 /* Pending transaction label */
 "PENDING" = "W TRAKCIE REALIZACJI";
 
@@ -187,6 +196,9 @@
 
 /* Quit without saves error question info */
 "Quitting now will lose any changes you have made since the last successful save" = "Jeśli wybierzesz opcję Zakończ, utracisz zmiany od ostatniego zapisu";
+
+/* Wizard completed page title */
+"Ready" = "Ready";
 
 /* Received amount of BTC from unknown source */
 "Received &a" = "Otrzymano &a";
@@ -256,6 +268,9 @@
 
 /* Install app popup warning message */
 "We cannot guarantee the safety of all apps - please be careful if you download Hive apps from third party sites." = "Nie możemy zagwarantować bezpieczeństwa wszystkich aplikacji - zachowaj ostrożność jeśli ściągasz aplikacje ze stron innych producentów.";
+
+/* Wizard welcome page title */
+"Welcome" = "Welcome";
 
 /* Button to show info about pending funds */
 "What does this mean?" = "Co to znaczy?";
