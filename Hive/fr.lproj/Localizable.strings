@@ -1,63 +1,62 @@
-
 /* Address field placeholder */
 "Address" = "Adresse";
 
 /* Title of an alert when trying to send more than you have */
-"Amount exceeds balance." = "Le montant excède les fonds disponibles";
+"Amount exceeds balance." = "Le montant excède le solde";
 
 /* Anonymous username for profile page */
 "Anonymous" = "Anonyme";
 
 /* App load error title */
-"Application can't be loaded" = "L'application n'a pu démarrer";
+"Application can't be loaded" = "L'application n'a pas pu être chargée";
 
 /* Applications view title */
-"Apps" = "Apps";
+"Apps" = "Applis";
 
 /* Warning when trying to a large BTC amount (btc, fiat amount and address) */
-"Are you sure you want to send %@ (%@) to %@?" = "Are you sure you want to send %1$@ (%2$@) to %3$@?";
+"Are you sure you want to send %@ (%@) to %@?" = "Êtes-vous sûr de vouloir envoyer %1$@ (%2$@) à %3$@ ?";
 
 /* Wizard backup page title */
-"Backup" = "Backup";
+"Backup" = "Sauvegarde";
 
 /* Backup status: backup can't or won't be completed */
-"Backup error" = "Backup error";
+"Backup error" = "Erreur lors de la sauvegarde";
 
 /* Notification of failed backup */
-"Backup failed" = "Backup failed";
+"Backup failed" = "Échec lors de la sauvegarde";
 
 /* Backup error message */
-"Backup folder was deleted" = "Backup folder was deleted";
+"Backup folder was deleted" = "Le dossier de sauvegarde a été supprimé";
 
 /* No comment provided by engineer. */
-"Backup hasn't been done yet" = "Backup hasn't been done yet";
+"Backup hasn't been done yet" = "La sauvegarde n'a pas encore été faite";
 
 /* Backup error message */
-"Backup is not configured" = "Backup is not configured";
+"Backup is not configured" = "La sauvegarde n'est pas configurée";
 
 /* Backup status: backup done but not updated recently */
-"Backup problem" = "Backup problem";
+"Backup problem" = "Problème de sauvegarde";
 
 /* Backup error message */
-"Can't create a directory to store the wallet backup" = "Can't create a directory to store the wallet backup";
+"Can't create a directory to store the wallet backup" = "Impossible de créer un dossier pour stocker la sauvegarde du portefeuille";
 
 /* Cancel button title */
 "Cancel" = "Annuler";
 
 /* Dead transaction label */
-"CANCELLED" = "CANCELLED";
+"CANCELLED" = "ANNULÉE";
 
 /* Dropbox folder save panel confirmation button */
-"Choose" = "Choose";
+"Choose" = "Choisir";
 
 /* No comment provided by engineer. */
-"Choose a directory inside Dropbox folder where the backup should be saved:" = "Choose a directory inside Dropbox folder where the backup should be saved:";
+"Choose a directory inside Dropbox folder where the backup should be saved:" = "Choisir un répertoire dans le dossier Dropbox où la sauvegarde devrait être enregistrée :";
 
 /* No comment provided by engineer. */
 "click to copy" = "cliquer pour copier";
 
 /* Confirm button next to passphrase */
-"Confirm" = "Confirm";
+"Confirm" = "Confirmer";
 
 /* Contact name empty alert title */
 "Contact can't be saved." = "Le contact ne peut être enregistré.";
@@ -69,82 +68,82 @@
 "copied!" = "copié !";
 
 /* initialization error */
-"Could not read wallet file. It might be damaged." = "Could not read wallet file. It might be damaged.";
+"Could not read wallet file. It might be damaged." = "Impossible de lire le fichier du portefeuille. Il est peut-être endommagé.";
 
 /* Quit without saves error question message */
 "Could not save changes while quitting. Quit anyway?" = "Les modifications n'ont pu être enregistrées. Quitter quand même ?";
 
 /* initialization error */
-"Could not write wallet file. Another instance of Hive might still be running." = "Could not write wallet file. Another instance of Hive might still be running.";
+"Could not write wallet file. Another instance of Hive might still be running." = "Impossible d'enregistrer le fichier de portefeuille. Une autre instance de Hive être peut-être en cours.";
 
 /* Disable backup button title */
-"Disable" = "Disable";
+"Disable" = "Désactiver";
 
 /* Backup status: adapter disabled */
-"Disabled" = "Disabled";
+"Disabled" = "Désactivé";
 
 /* Remove contact alert dialog title */
 "Do you really want to remove %@ from your contact list?" = "Souhaitez-vous réellement retirer %@ de votre liste de contacts ?";
 
 /* Install app popup title */
-"Do you want to add \"%@\" to Hive?" = "Do you want to add \"%@\" to Hive?";
+"Do you want to add \"%@\" to Hive?" = "Voulez-vous ajouter \"%@\" à Hive ?";
 
 /* Backup error message */
-"Dropbox folder not found" = "Dropbox folder not found";
+"Dropbox folder not found" = "Dossier Dropbox introuvable";
 
 /* Dropbox no backup folder alert title */
-"Dropbox folder not found." = "Dropbox folder not found.";
+"Dropbox folder not found." = "Dossier Dropbox introuvable.";
 
 /* Backup error message */
-"Dropbox isn't running" = "Dropbox isn't running";
+"Dropbox isn't running" = "Dropbox n'est pas lancé";
 
 /* Page title when editing contact's info */
 "Edit contact" = "Modifier le contact";
 
 /* Page title when editing your own profile info */
-"Edit profile" = "Modifier profil";
+"Edit profile" = "Modifier le profil";
 
 /* Email field placeholder */
-"email" = "email";
+"email" = "courriel";
 
 /* Enable backup button title (no configuration required) */
-"Enable" = "Enable";
+"Enable" = "Activer";
 
 /* Enable backup button title (requires configuration) */
-"Enable..." = "Enable...";
+"Enable..." = "Activer...";
 
 /* Sending zero bitcoin alert title */
-"Enter an amount greater than zero." = "Entrez un montant supérieur à zéro.";
+"Enter an amount greater than zero." = "Saisir un montant supérieur à zéro.";
 
 /* Passphrase prompt for sending */
-"Enter your passphrase to confirm the transaction:" = "Enter your passphrase to confirm the transaction:";
+"Enter your passphrase to confirm the transaction:" = "Saisir votre phrase de passe pour confirmer la transaction :";
 
 /* Firstname field placeholder */
 "Firstname" = "Prénom";
 
 /* Initialization error title */
-"Hive cannot be started." = "Hive cannot be started.";
+"Hive cannot be started." = "Hive n'a pas pu être démarrée.";
 
 /* Backup error message */
-"Hive directory is excluded from Time Machine backup" = "Hive directory is excluded from Time Machine backup";
+"Hive directory is excluded from Time Machine backup" = "le répertoire de Hive est exclus des sauvegardes de Time Machine";
 
 /* Share sent transaction text */
-"I've just received some Bitcoin using Hive" = "I've just received some Bitcoin using Hive";
+"I've just received some Bitcoin using Hive" = "Je viens de recevoir des bitcoins en utilisant Hive";
 
 /* Share sent transaction text */
-"I've just sent some Bitcoin using Hive" = "I've just sent some Bitcoin using Hive";
+"I've just sent some Bitcoin using Hive" = "Je viens d'envoyer des bitcoins en utilisant Hive";
 
 /* Install app button title */
-"Install" = "Install";
+"Install" = "Installer";
 
 /* Backup requires password alert details */
-"It's dangerous to upload unencrypted wallets." = "It's dangerous to upload unencrypted wallets.";
+"It's dangerous to upload unencrypted wallets." = "Il est dangereux de téléverser des portefeuilles non chiffrés.";
 
 /* Address caption field placeholder */
-"Label" = "Note";
+"Label" = "Étiquette";
 
 /* On what date was the last backup done */
-"Last backup on %@" = "Last backup on %@";
+"Last backup on %@" = "Dernière sauvegarde le %@";
 
 /* Lastname field placeholder */
 "Lastname" = "Nom de famille";
@@ -159,10 +158,10 @@
 "New contact" = "Nouveau contact";
 
 /* Empty address alert title */
-"No address entered." = "Aucune adresse indiquée.";
+"No address entered." = "Aucune adresse saisie.";
 
 /* Backup is outdated, last backup was on that date */
-"No backup since %@" = "No backup since %@";
+"No backup since %@" = "Aucune sauvegarde depuis %@";
 
 /* Transaction failed alert message */
 "No Bitcoin have been taken from your wallet." = "Aucun Bitcoin n'a été retiré de votre portefeuille.";
@@ -174,133 +173,133 @@
 "or choose from the list" = "ou choisissez dans la liste";
 
 /* Wizard password page title */
-"Password" = "Password";
+"Password" = "Mot de passe";
 
 /* Pending transaction label */
-"PENDING" = "PENDING";
+"PENDING" = "EN ATTENTE";
 
 /* Invalid address alert message */
-"Please check if you have entered the address correctly." = "Merci de vérifier que vous avez correctement entré l'adresse.";
+"Please check if you have entered the address correctly." = "Veuillez vérifier d'avoir saisi l'adresse correctement.";
 
 /* Warning details when trying to send to your own address */
-"Please enter a different address." = "Please enter a different address.";
+"Please enter a different address." = "Veuillez saisir une adresse différente.";
 
 /* Empty address alert message */
-"Please enter a valid Bitcoin address or select one from the dropdown list." = "Merci d'indiquer une adresse Bitcoin valide ou de choisir dans la liste.";
+"Please enter a valid Bitcoin address or select one from the dropdown list." = "Veuillez saisir une adresse Bitcoin valide ou en choisir une dans la liste déroulante.";
 
 /* Profile view title string */
-"Profile" = "Profile";
+"Profile" = "Profil";
 
 /* Quit anyway button title */
 "Quit anyway" = "Quitter quand même";
 
 /* Quit without saves error question info */
-"Quitting now will lose any changes you have made since the last successful save" = "Quitter maintenant vous fera perdre toute modification depuis le dernier enregistrement";
+"Quitting now will lose any changes you have made since the last successful save" = "Quitter maintenant perdra toute modification depuis le dernier enregistrement réussi";
 
 /* Wizard completed page title */
-"Ready" = "Ready";
+"Ready" = "Prêt";
 
 /* Received amount of BTC from unknown source */
-"Received &a" = "Received &a";
+"Received &a" = "&a reçu";
 
 /* Received amount of BTC from contact */
-"Received &a from &c" = "Received &a from &c";
+"Received &a from &c" = "&a reçu de &c";
 
 /* Install app button title when app exists */
-"Reinstall" = "Reinstall";
+"Reinstall" = "Réinstaller";
 
 /* No comment provided by engineer. */
-"Remove" = "Remove";
+"Remove" = "Enlever";
 
 /* Dropbox invalid folder alert title */
-"Selected directory is outside Dropbox folder." = "Selected directory is outside Dropbox folder.";
+"Selected directory is outside Dropbox folder." = "Le répertoire choisi est en dehors du dossier Dropbox.";
 
 /* Send button title */
-"Send" = "Send";
+"Send" = "Envoyer";
 
 /* Sent amount of BTC to a contact/address */
-"Sent &a to &c" = "Sent &a to &c";
+"Sent &a to &c" = "&a envoyé à &c";
 
 /* Amount exceeds available balance alert title */
-"Some funds are temporarily unavailable." = "Some funds are temporarily unavailable.";
+"Some funds are temporarily unavailable." = "Certains fonds sont temporairement non disponibles.";
 
 /* App load error description */
-"The application data file has been removed or corrupted." = "The application data file has been removed or corrupted.";
+"The application data file has been removed or corrupted." = "Le fichier de données de l'application a été enlevé ou est corrompu.";
 
 /* Install app popup warning message when app exists */
-"The existing app file will be replaced by the new version. This will not affect any app settings or saved data." = "The existing app file will be replaced by the new version. This will not affect any app settings or saved data.";
+"The existing app file will be replaced by the new version. This will not affect any app settings or saved data." = "Le fichier de données existant sera remplacé par la nouvelle version. Ceci n'affectera pas aucun paramètre de l'appli ni aucune donnée enregistrée.";
 
 /* Alert details when transaction was cancelled */
-"This can happen because of bugs in the wallet code or because the transaction was rejected by the network." = "This can happen because of bugs in the wallet code or because the transaction was rejected by the network.";
+"This can happen because of bugs in the wallet code or because the transaction was rejected by the network." = "Ceci peut arriver à cause de bogues dans le code du portefeuille ou parce que la transaction a été rejetée par le réseau.";
 
 /* Warning details when trying to send a large BTC amount */
-"This is more than what you usually send." = "This is more than what you usually send.";
+"This is more than what you usually send." = "Vous n'envoyez pas tant habituellement.";
 
 /* Warning title when trying to send to your own address */
-"This is your wallet address." = "This is your wallet address.";
+"This is your wallet address." = "Ceci est l'adresse de votre portefeuille.";
 
 /* Invalid address alert title */
-"This isn't a valid Bitcoin address." = "Cette adresse bitcoin est invalide";
+"This isn't a valid Bitcoin address." = "Cette adresse Bitcoin est invalide";
 
 /* Backup error message */
-"Time Machine is disabled in System Preferences" = "Time Machine is disabled in System Preferences";
+"Time Machine is disabled in System Preferences" = "Time Machine est désactivé dans les Préférences système";
 
 /* Amount exceeds available balance alert message */
-"To send this transaction, you'll need to wait for your pending transactions to be confirmed first (this shouldn't take more than a few minutes)." = "To send this transaction, you'll need to wait for your pending transactions to be confirmed first (this shouldn't take more than a few minutes).";
+"To send this transaction, you'll need to wait for your pending transactions to be confirmed first (this shouldn't take more than a few minutes)." = "Pour envoyer cette transaction il vous faudra d'abord attendre que celles en attente soient confirmées (ceci ne devrait prendre que quelques minutes).";
 
 /* Notification of confirmed sent transaction */
-"Transaction completed" = "Transaction completed";
+"Transaction completed" = "Transaction terminée";
 
 /* Transaction failed alert title */
-"Transaction could not be completed." = "La transaction n'a pu être effectuée";
+"Transaction could not be completed." = "La transaction n'a pas pu être terminée";
 
 /* Alert when transaction was cancelled (with transaction date) */
-"Transaction from %@ was cancelled." = "Transaction from %@ was cancelled.";
+"Transaction from %@ was cancelled." = "La transaction du %@ a été annulée.";
 
 /* Transactions view title */
 "Transactions" = "Transactions";
 
 /* Backup status: backup up to date */
-"Up to date" = "Up to date";
+"Up to date" = "À jour";
 
 /* Backup status: backup scheduled or in progress */
-"Waiting for backup" = "Waiting for backup";
+"Waiting for backup" = "En attente de la sauvegarde";
 
 /* Install app popup warning message */
-"We cannot guarantee the safety of all apps - please be careful if you download Hive apps from third party sites." = "We cannot guarantee the safety of all apps - please be careful if you download Hive apps from third party sites.";
+"We cannot guarantee the safety of all apps - please be careful if you download Hive apps from third party sites." = "Nous ne pouvons garantir la sécurité de toutes nos applis - veuillez faire attention si vous téléchargez des applis Hive depuis des sites tiers.";
 
 /* Wizard welcome page title */
-"Welcome" = "Welcome";
+"Welcome" = "Bienvenue";
 
 /* Button to show info about pending funds */
-"What does this mean?" = "What does this mean?";
+"What does this mean?" = "Qu'est-ce que ceci signifie ?";
 
 /* Sending zero bitcoin alert message */
-"Why would you want to send someone 0 BTC?" = "Pourquoi voudiez-vous envoyer 0 BTC à quelqu'un ?";
+"Why would you want to send someone 0 BTC?" = "Pourquoi voudriez-vous envoyer 0 BTC à quelqu'un ?";
 
 /* Details of an alert when trying to send more than you have */
 "You cannot send more money than you own." = "Vous ne pouvez pas envoyer plus d'argent que vous n'en avez.";
 
 /* Install app popup title when app exists */
-"You have already added \"%@\" to Hive. Would you like to overwrite it?" = "You have already added \"%@\" to Hive. Would you like to overwrite it?";
+"You have already added \"%@\" to Hive. Would you like to overwrite it?" = "Vous avez déjà ajouté \"%@\" à Hive. Voudriez-vous l'écraser ?";
 
 /* Notification of confirmed sent transaction (with BTC amount) */
-"You have sent %@." = "You have sent %@.";
+"You have sent %@." = "Vous avez envoyé %@.";
 
 /* Dropbox no backup folder alert details */
-"You must install Dropbox first (see www.dropbox.com)." = "You must install Dropbox first (see www.dropbox.com).";
+"You must install Dropbox first (see www.dropbox.com)." = "Vous devez d'abord installer Dropbox (voir www.dropbox.com).";
 
 /* Dropbox invalid folder alert details */
-"You need to choose or create a directory inside your Dropbox folder." = "You need to choose or create a directory inside your Dropbox folder.";
+"You need to choose or create a directory inside your Dropbox folder." = "Vous devez choisir ou créer un répertoire dans votre dossier Dropbox.";
 
 /* Contact name empty alert message */
 "You need to give the contact a name before you can add it to the list." = "Vous devez donner un nom au contact avant de pouvoir l'ajouter à la liste";
 
 /* Backup requires password alert title */
-"You need to set a wallet password first (see Wallet menu)." = "You need to set a wallet password first (see Wallet menu).";
+"You need to set a wallet password first (see Wallet menu)." = "Vous devez d'abord mettre en place un mot de passe de portefeuille (voir le menu Portefeuille).";
 
 /* Remove contact alert dialog body */
-"You won't be able to undo this operation." = "You won't be able to undo this operation.";
+"You won't be able to undo this operation." = "Vous ne pourrez pas annuler cette opération.";
 
 /* Notification of incoming transaction */
-"You've received Bitcoin" = "You've received Bitcoin";
+"You've received Bitcoin" = "Vous avez reçu des bitcoins";
