@@ -83,9 +83,6 @@ static int ddLogLevel = LOG_LEVEL_VERBOSE;
     [self configureHockeyApp];
 
     [[NSUserDefaults standardUserDefaults] registerDefaults:@{
-     @"Currency": @1,
-     @"FirstRun": @YES,
-     @"LastBalance": @0,
      @"WebKitDeveloperExtras": @YES
     }];
 
