@@ -12,6 +12,13 @@
 #import "HIDropboxBackup.h"
 #import "HITimeMachineBackup.h"
 
+@interface HIBackupManager ()
+
+@property (nonatomic, assign) BOOL initialized;
+
+@end
+
+
 @implementation HIBackupManager
 
 + (HIBackupManager *)sharedManager {
@@ -54,15 +61,19 @@
 }
 
 - (void)initializeAdapters {
-    NSDictionary *settings = [HIBackupAdapter backupSettings];
+    if (!self.initialized) {
+        NSDictionary *settings = [HIBackupAdapter backupSettings];
 
-    for (HIBackupAdapter *adapter in self.adapters) {
-        if (![settings objectForKey:adapter.name]) {
-            adapter.enabled = [adapter isEnabledByDefault];
+        for (HIBackupAdapter *adapter in self.adapters) {
+            if (![settings objectForKey:adapter.name]) {
+                adapter.enabled = [adapter isEnabledByDefault];
+            }
         }
-    }
 
-    [[NSUserDefaults standardUserDefaults] synchronize];
+        [[NSUserDefaults standardUserDefaults] synchronize];
+
+        self.initialized = YES;
+    }
 }
 
 - (void)performBackups {

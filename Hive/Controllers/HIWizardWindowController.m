@@ -50,7 +50,7 @@
 #pragma mark - HIWizardViewControllerDelegate
 
 - (void)didCompleteWizardPage {
-    if (self.pagesLeft) {
+    if (self.hasMorePages) {
         [self showNextPage];
     } else {
         [self close];
@@ -58,7 +58,7 @@
     }
 }
 
-- (u_long)pagesLeft {
+- (BOOL)hasMorePages {
     return self.index < self.viewControllers.count - 1;
 }
 

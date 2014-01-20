@@ -9,7 +9,6 @@
 @protocol HIWizardViewControllerDelegate<NSObject>
 
 - (void)didCompleteWizardPage;
-- (u_long)pagesLeft;
 
 @end
 

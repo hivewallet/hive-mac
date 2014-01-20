@@ -32,6 +32,7 @@
 }
 
 - (HIBackupAdapter *)backupAdapterAtIndex:(int)index {
+    [[HIBackupManager sharedManager] initializeAdapters];
     return [HIBackupManager sharedManager].adapters[index];
 }
 
@@ -60,16 +61,18 @@
 }
 
 - (IBAction)enable1:(id)sender {
-    HIBackupAdapter *adapter = [self backupAdapterAtIndex:0];
-    if (!adapter.enabled && adapter.needsToBeConfigured) {
-        [adapter configureInWindow:self.view.window];
-    }
+    [self enableAdapter:[self backupAdapterAtIndex:0]];
 }
 
 - (IBAction)enable2:(id)sender {
-    HIBackupAdapter *adapter = [self backupAdapterAtIndex:1];
-    if (!adapter.enabled && adapter.needsToBeConfigured) {
+    [self enableAdapter:[self backupAdapterAtIndex:1]];
+}
+
+- (void)enableAdapter:(HIBackupAdapter *)adapter {
+    if (adapter.needsToBeConfigured) {
         [adapter configureInWindow:self.view.window];
+    } else {
+        adapter.enabled = YES;
     }
 }
 

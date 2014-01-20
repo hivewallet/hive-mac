@@ -9,7 +9,7 @@
 @property (nonatomic, strong) IBOutlet NSTextField *repeatedPasswordField;
 
 - (void)resetInput;
-- (void)textDidChangeInTextField:(NSTextField *)textFiled;
+- (void)textDidChangeInTextField:(NSTextField *)textField;
 - (void)editingDidEnd;
 - (void)finishWithPasswordHolder:(void (^)(HIPasswordHolder *passwordHolder))block;
 

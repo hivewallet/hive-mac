@@ -26,10 +26,10 @@ static const int FONT_SIZE = 14;
 
 - (void)setTitles:(NSArray *)titles {
     _titles = [titles copy];
-    [self updatedBreadcrumbs];
+    [self updateBreadcrumbs];
 }
 
-- (void)updatedBreadcrumbs {
+- (void)updateBreadcrumbs {
     [self.labels makeObjectsPerformSelector:@selector(removeFromSuperview)];
     [self.arrows makeObjectsPerformSelector:@selector(removeFromSuperview)];
 
@@ -81,13 +81,13 @@ static const int FONT_SIZE = 14;
 
 - (NSSize)intrinsicContentSize {
     double width = self.arrows.count * (ARROW_WIDTH + 2 * SPACING);
-    double height = 0;
+    double height = HEIGHT;
     for (NSView *subview in self.labels) {
         NSSize size = subview.intrinsicContentSize;
         width += size.width;
-        height = MIN(height, size.height);
+        height = MAX(height, size.height);
     }
-    return CGSizeMake(width, HEIGHT);
+    return CGSizeMake(width, height);
 }
 
 - (void)updateConstraints {
@@ -122,14 +122,6 @@ static const int FONT_SIZE = 14;
         NSView *lastLabel = self.labels.lastObject;
         [self addConstraint:INSET_RIGHT(lastLabel, 0)];
     }
-}
-
-- (void)layoutSubtreeIfNeeded {
-    [super layoutSubtreeIfNeeded];
-}
-
-- (void)viewDidMoveToSuperview {
-    [super viewDidMoveToSuperview];
 }
 
 - (void)setActiveIndex:(int)activeIndex {

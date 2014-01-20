@@ -12,8 +12,8 @@
     return [self.passwordField.stringValue isEqualToString:self.repeatedPasswordField.stringValue];
 }
 
-- (void)textDidChangeInTextField:(NSTextField *)textFiled {
-    if (self.repeatedPasswordField != textFiled) {
+- (void)textDidChangeInTextField:(NSTextField *)textField {
+    if (textField != self.repeatedPasswordField) {
         [self editingDidEnd];
     } else {
         [self clearValidationProblemsIfPasswordsAreEqual];

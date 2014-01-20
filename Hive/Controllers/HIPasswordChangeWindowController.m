@@ -36,11 +36,6 @@ static const NSTimeInterval IDLE_RESET_DELAY = 30.0;
     return [self initWithWindowNibName:[self className]];
 }
 
-- (void)setPasswordCreationInputHandler:(HIPasswordCreationInputHandler *)passwordCreationInputHandler {
-    _passwordCreationInputHandler = passwordCreationInputHandler;
-}
-
-
 - (IBAction)showWindow:(id)sender {
     [super showWindow:sender];
 
