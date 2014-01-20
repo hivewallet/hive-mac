@@ -90,6 +90,13 @@
                             </menuItem>
                         </items>
                     </menu>
+                    <connections>
+                        <binding destination="494" name="hidden" keyPath="fullMenuEnabled" id="SqK-nd-3WU">
+                            <dictionary key="options">
+                                <string key="NSValueTransformerName">NSNegateBoolean</string>
+                            </dictionary>
+                        </binding>
+                    </connections>
                 </menuItem>
                 <menuItem title="Bearbeiten" id="801">
                     <modifierMask key="keyEquivalentModifierMask"/>
@@ -163,6 +170,13 @@
                             </menuItem>
                         </items>
                     </menu>
+                    <connections>
+                        <binding destination="494" name="hidden" keyPath="fullMenuEnabled" id="sZl-rV-GaA">
+                            <dictionary key="options">
+                                <string key="NSValueTransformerName">NSNegateBoolean</string>
+                            </dictionary>
+                        </binding>
+                    </connections>
                 </menuItem>
                 <menuItem title="Fenster" id="854">
                     <modifierMask key="keyEquivalentModifierMask"/>
