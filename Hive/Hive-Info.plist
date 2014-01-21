@@ -14,7 +14,7 @@
 			<key>CFBundleTypeIconFile</key>
 			<string>3</string>
 			<key>CFBundleTypeName</key>
-			<string>Hive Doc</string>
+			<string>Hive App</string>
 			<key>CFBundleTypeRole</key>
 			<string>Viewer</string>
 		</dict>
