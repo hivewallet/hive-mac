@@ -26,9 +26,9 @@
                     <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyUpOrDown" image="Icon" id="YoY-sh-puc"/>
                 </imageView>
                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="mdk-zD-vWi">
-                    <rect key="frame" x="236" y="235" width="379" height="51"/>
+                    <rect key="frame" x="243" y="235" width="365" height="51"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Welcome to Hive!" id="I10-iV-C0e">
+                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Welcome to Hive" id="I10-iV-C0e">
                         <font key="font" metaFont="systemBold" size="42"/>
                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
@@ -45,13 +45,13 @@
                         <action selector="nextButtonPressed:" target="-2" id="dES-jo-C6H"/>
                     </connections>
                 </button>
-                <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0Gn-sQ-ZVg">
-                    <rect key="frame" x="123" y="151" width="604" height="76"/>
+                <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="0Gn-sQ-ZVg">
+                    <rect key="frame" x="123" y="208" width="604" height="19"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="600" id="Jn9-t9-FWD"/>
                     </constraints>
-                    <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="center" title="You're going to need a wallet. A wallet is like a set of keys – keys to your money!" id="AHC-MY-HDw">
+                    <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="center" title="A wallet is like a set of keys that unlock your money. Let's create one now." id="AHC-MY-HDw">
                         <font key="font" metaFont="system" size="16"/>
                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
