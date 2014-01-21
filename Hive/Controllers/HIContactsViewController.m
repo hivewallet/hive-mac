@@ -92,10 +92,6 @@
 
 #pragma mark - NSTableViewDelegate
 
-- (NSView *)tableView:(NSTableView *)tableView viewForTableColumn:(NSTableColumn *)tableColumn row:(NSInteger)row {
-    return nil;
-}
-
 - (NSTableRowView *)tableView:(NSTableView *)tableView rowViewForRow:(NSInteger)row {
     return [HIContactRowView new];
 }
