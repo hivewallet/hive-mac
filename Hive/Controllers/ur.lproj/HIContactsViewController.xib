@@ -165,6 +165,7 @@
                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="181" id="nb2-46-PIE"/>
+                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="80" id="qEi-r4-MPs"/>
                     </constraints>
                     <shadow key="shadow">
                         <size key="offset" width="0.0" height="1"/>
