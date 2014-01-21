@@ -68,6 +68,7 @@
 		583B1E0D1868BAC000817EF8 /* HIBackupActionsCellView.m in Sources */ = {isa = PBXBuildFile; fileRef = 583B1E0C1868BAC000817EF8 /* HIBackupActionsCellView.m */; };
 		58571260188F28A70094F884 /* bitstamptrader.hiveapp in Resources */ = {isa = PBXBuildFile; fileRef = 5857125E188F28A70094F884 /* bitstamptrader.hiveapp */; };
 		58571261188F28A70094F884 /* mobile-recharge.hiveapp in Resources */ = {isa = PBXBuildFile; fileRef = 5857125F188F28A70094F884 /* mobile-recharge.hiveapp */; };
+		5857126F188F3C480094F884 /* bitpremier.hiveapp in Resources */ = {isa = PBXBuildFile; fileRef = 5857126E188F3C480094F884 /* bitpremier.hiveapp */; };
 		585A8B2518576F020096888C /* HIDatabaseManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 585A8B2418576F020096888C /* HIDatabaseManager.m */; };
 		585FFF4418159803005BCF73 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 585FFF4318159803005BCF73 /* Credits.rtf */; };
 		586059B0180419DF00FD9C2A /* minefield.hiveapp in Resources */ = {isa = PBXBuildFile; fileRef = 586059AD180419DF00FD9C2A /* minefield.hiveapp */; };
@@ -536,6 +537,7 @@
 		58571253188D8E7A0094F884 /* 2014012001.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = 2014012001.xcdatamodel; sourceTree = "<group>"; };
 		5857125E188F28A70094F884 /* bitstamptrader.hiveapp */ = {isa = PBXFileReference; lastKnownFileType = file; path = bitstamptrader.hiveapp; sourceTree = "<group>"; };
 		5857125F188F28A70094F884 /* mobile-recharge.hiveapp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "mobile-recharge.hiveapp"; sourceTree = "<group>"; };
+		5857126E188F3C480094F884 /* bitpremier.hiveapp */ = {isa = PBXFileReference; lastKnownFileType = file; path = bitpremier.hiveapp; sourceTree = "<group>"; };
 		585A8B2318576F020096888C /* HIDatabaseManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HIDatabaseManager.h; sourceTree = "<group>"; };
 		585A8B2418576F020096888C /* HIDatabaseManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HIDatabaseManager.m; sourceTree = "<group>"; };
 		585FFF211815374B005BCF73 /* nl */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = nl; path = nl.lproj/HIApplicationsViewController.xib; sourceTree = "<group>"; };
@@ -1717,6 +1719,7 @@
 		D907A4E317F58F91009B3185 /* Applications */ = {
 			isa = PBXGroup;
 			children = (
+				5857126E188F3C480094F884 /* bitpremier.hiveapp */,
 				5857125E188F28A70094F884 /* bitstamptrader.hiveapp */,
 				588E34B6181E9F7B006A6A25 /* localbitcoins.hiveapp */,
 				586059AD180419DF00FD9C2A /* minefield.hiveapp */,
@@ -2256,6 +2259,7 @@
 				58A37ADC180D997C00CFCDE3 /* HISendBitcoinsWindowController.strings in Resources */,
 				58605A4718041D0A00FD9C2A /* icon-dropdown-close.pdf in Resources */,
 				582C7DAB185273D400126C10 /* HIApplicationRuntimeViewController.xib in Resources */,
+				5857126F188F3C480094F884 /* bitpremier.hiveapp in Resources */,
 				58605A4818041D0A00FD9C2A /* icon-dropdown-open.pdf in Resources */,
 				58605A4918041D0A00FD9C2A /* icon-gray-btc.pdf in Resources */,
 				58605A4A18041D0A00FD9C2A /* icon-group__active.pdf in Resources */,
