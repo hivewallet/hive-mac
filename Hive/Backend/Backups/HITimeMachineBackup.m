@@ -40,6 +40,10 @@ const NSInteger HITimeMachineBackupPathExcluded = -2;
     return NO;
 }
 
+- (BOOL)canBeConfigured {
+    return NO;
+}
+
 - (BOOL)needsToBeConfigured {
     return NO;
 }

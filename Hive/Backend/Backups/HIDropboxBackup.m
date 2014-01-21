@@ -68,8 +68,12 @@ const NSInteger HIDropboxBackupNotRunning = -3;
     return YES;
 }
 
-- (BOOL)needsToBeConfigured {
+- (BOOL)canBeConfigured {
     return YES;
+}
+
+- (BOOL)needsToBeConfigured {
+    return NO;
 }
 
 - (void)updateStatus {
@@ -114,6 +118,12 @@ const NSInteger HIDropboxBackupNotRunning = -3;
 
         return nil;
     }
+}
+
+- (NSString *)defaultBackupFolder {
+    NSString *prefix = [[[BCClient sharedClient] walletHash] substringToIndex:5];
+    NSString *subdirectory = [@"Hive-" stringByAppendingString:prefix];
+    return [[self dropboxFolder] stringByAppendingPathComponent:subdirectory];
 }
 
 - (NSString *)backupLocation {
@@ -211,17 +221,6 @@ const NSInteger HIDropboxBackupNotRunning = -3;
         return;
     }
 
-    NSURL *backupLocation = [NSURL fileURLWithPath:self.backupLocation];
-
-    if (!backupLocation) {
-        HILogWarn(@"Backup not configured (no backup location)");
-
-        self.status = HIBackupStatusFailure;
-        self.error = BackupError(HIDropboxBackupError, HIDropboxBackupNotConfigured,
-                                 NSLocalizedString(@"Backup is not configured", @"Backup error message"));
-        return;
-    }
-
     NSString *dropboxFolder = [self dropboxFolder];
 
     if (!dropboxFolder) {
@@ -233,16 +232,48 @@ const NSInteger HIDropboxBackupNotRunning = -3;
         return;
     }
 
-    BOOL isDirectory;
-    BOOL exists = [[NSFileManager defaultManager] fileExistsAtPath:backupLocation.path isDirectory:&isDirectory];
+    if (!self.backupLocation) {
+        self.backupLocation = [self defaultBackupFolder];
+    }
 
-    if (!exists || !isDirectory) {
-        HILogWarn(@"Backup not configured (backup folder missing; path=%@, exists=%d, isDirectory=%d)",
-                  backupLocation, exists, isDirectory);
+    NSURL *backupLocation = self.backupLocation ? [NSURL fileURLWithPath:self.backupLocation] : nil;
+
+    if (!backupLocation) {
+        HILogWarn(@"Backup not configured (no backup location)");
 
         self.status = HIBackupStatusFailure;
         self.error = BackupError(HIDropboxBackupError, HIDropboxBackupNotConfigured,
-                                 NSLocalizedString(@"Backup folder was deleted", @"Backup error message"));
+                                 NSLocalizedString(@"Backup is not configured", @"Backup error message"));
+        return;
+    }
+
+    BOOL isDirectory;
+    BOOL exists = [[NSFileManager defaultManager] fileExistsAtPath:backupLocation.path isDirectory:&isDirectory];
+
+    if (!exists) {
+        NSError *error = nil;
+
+        [[NSFileManager defaultManager] createDirectoryAtPath:backupLocation.path
+                                  withIntermediateDirectories:YES
+                                                   attributes:nil
+                                                        error:&error];
+
+        if (error) {
+            HILogWarn(@"Backup not configured properly (backup folder can't be created at %@: %@)",
+                      backupLocation, error);
+
+            self.status = HIBackupStatusFailure;
+            self.error = BackupError(HIDropboxBackupError, HIDropboxBackupNotConfigured,
+                                     NSLocalizedString(@"Backup folder can't be created", @"Backup error message"));
+            return;
+        }
+    } else if (!isDirectory) {
+        HILogWarn(@"Backup not configured properly (backup folder can't be created at %@, something exists there)",
+                  backupLocation);
+
+        self.status = HIBackupStatusFailure;
+        self.error = BackupError(HIDropboxBackupError, HIDropboxBackupNotConfigured,
+                                 NSLocalizedString(@"Backup folder can't be created", @"Backup error message"));
         return;
     }
 

@@ -50,7 +50,13 @@ static NSString * const EnabledKey = @"enabled";
     return NO;
 }
 
-/* Tells if the adapter needs to be configured (e.g. by setting the backup path) before it can be enabled */
+/* Tells if the adapter can be configured (e.g. by setting the backup path) before it can be enabled */
+- (BOOL)canBeConfigured {
+    [self doesNotRecognizeSelector:_cmd];
+    return NO;
+}
+
+/* Tells if the adapter *needs* to be configured before it can be enabled */
 - (BOOL)needsToBeConfigured {
     [self doesNotRecognizeSelector:_cmd];
     return NO;
@@ -77,7 +83,7 @@ static NSString * const EnabledKey = @"enabled";
 }
 
 - (void)configureInWindow:(NSWindow *)window {
-    // not required if needsToBeConfigured == NO
+    // not required if canBeConfigured == NO
 }
 
 - (void)performBackup {
