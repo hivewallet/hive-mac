@@ -84,13 +84,13 @@
     assertThat(string, equalTo(@"60"));
 }
 
-- (void)testFormatStringWithComma {
+- (void)testFormatStringUsingDifferentLocale {
     _service.locale = [[NSLocale alloc] initWithLocaleIdentifier:@"de_DE"];
     NSString *format = @"BTC";
 
-    NSString *string = [self.service stringForBitcoin:60000000 withFormat:format];
+    NSString *string = [self.service stringForBitcoin:100060000000 withFormat:format];
 
-    assertThat(string, equalTo(@"0,60"));
+    assertThat(string, equalTo(@"1.000,60"));
 }
 
 #pragma mark - parsing
@@ -135,15 +135,26 @@
     assertThat(@(amount), equalToUnsignedLongLong(60));
 }
 
-- (void)testParseStringWithComma {
+- (void)testParseStringUsingDifferentLocale {
     _service.locale = [[NSLocale alloc] initWithLocaleIdentifier:@"de_DE"];
     NSString *format = @"BTC";
 
-    satoshi_t amount = [self.service parseString:@"0,6"
+    satoshi_t amount = [self.service parseString:@"1.000,6"
                                       withFormat:format
                                            error:NULL];
 
-    assertThat(@(amount), equalToUnsignedLongLong(60000000));
+    assertThat(@(amount), equalToUnsignedLongLong(100060000000));
+}
+
+- (void)testParseStringUsingSpaceAsThousandsSeparator {
+    _service.locale = [[NSLocale alloc] initWithLocaleIdentifier:@"sv_SE"];
+    NSString *format = @"BTC";
+
+    satoshi_t amount = [self.service parseString:@"1 000,6"
+                                      withFormat:format
+                                           error:NULL];
+
+    assertThat(@(amount), equalToUnsignedLongLong(100060000000));
 }
 
 - (void)testParsingIllegalStringWithError {
