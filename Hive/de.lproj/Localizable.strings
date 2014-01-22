@@ -90,7 +90,7 @@
 "Dropbox folder not found" = "Dropbox-Ordner nicht gefunden";
 
 /* Dropbox no backup folder alert title */
-"Dropbox folder not found." = "Dropbox-ORdner nicht gefunden.";
+"Dropbox folder not found." = "Dropbox-Ordner nicht gefunden.";
 
 /* Backup error message */
 "Dropbox isn't running" = "Die Dropbox-App läuft derzeit nicht";
