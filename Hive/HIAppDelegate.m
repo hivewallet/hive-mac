@@ -203,6 +203,7 @@ static int ddLogLevel = LOG_LEVEL_VERBOSE;
         [self showInitializationError:error];
     } else {
         [self showAppWindow];
+        [self nagUnprotectedUsers];
         dispatch_async(dispatch_get_main_queue(), ^{
             [self initializeBackups];
         });
@@ -270,6 +271,31 @@ static int ddLogLevel = LOG_LEVEL_VERBOSE;
     exit(1);
 }
 
+#pragma mark - nag unprotected users
+
+- (void)nagUnprotectedUsers {
+    if (![[BCClient sharedClient] isWalletPasswordProtected]) {
+        NSAlert *alert = [NSAlert new];
+        alert.messageText = @"Your wallet does not have a password!";
+        alert.alertStyle = NSWarningAlertStyle;
+        alert.informativeText = @"You should select a password as soon as possible!";
+        [alert addButtonWithTitle:@"Select password now"];
+        [alert addButtonWithTitle:@"Later"];
+        [alert beginSheetModalForWindow:_mainWindowController.window
+                          modalDelegate:self
+                         didEndSelector:@selector(alertDidEnd:returnCode:contextInfo:)
+                            contextInfo:nil];
+    }
+}
+
+- (void)alertDidEnd:(NSAlert *)alert
+         returnCode:(NSInteger)returnCode
+        contextInfo:(void *)contextInfo {
+
+    if (returnCode == NSAlertFirstButtonReturn) {
+        [self changeWalletPassword:nil];
+    }
+}
 
 #pragma mark - App lifecycle and external actions
 
