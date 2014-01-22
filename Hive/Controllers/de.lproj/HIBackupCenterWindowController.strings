@@ -1,24 +1,24 @@
 
 /* Class = "NSWindow"; title = "Backup Center"; ObjectID = "1"; */
-"1.title" = "Backup Center";
+"1.title" = "Backups";
 
 /* Class = "NSTextFieldCell"; title = "Status details"; ObjectID = "1f9-7o-UKm"; */
-"1f9-7o-UKm.title" = "Status details";
+"1f9-7o-UKm.title" = "Status-Details";
 
 /* Class = "NSTableColumn"; headerCell.title = "Actions"; ObjectID = "5e5-Co-YVU"; */
-"5e5-Co-YVU.headerCell.title" = "Actions";
+"5e5-Co-YVU.headerCell.title" = "Aktionen";
 
 /* Class = "NSTextFieldCell"; title = "Status"; ObjectID = "CNI-B2-pea"; */
 "CNI-B2-pea.title" = "Status";
 
 /* Class = "NSButtonCell"; title = "Enable"; ObjectID = "brF-Bb-pc1"; */
-"brF-Bb-pc1.title" = "Enable";
+"brF-Bb-pc1.title" = "Aktivieren";
 
 /* Class = "NSTableColumn"; headerCell.title = "Backup type"; ObjectID = "gS6-M0-vFe"; */
-"gS6-M0-vFe.headerCell.title" = "Backup type";
+"gS6-M0-vFe.headerCell.title" = "Backup-Ort";
 
 /* Class = "NSTableColumn"; headerCell.title = "Status"; ObjectID = "ggB-aI-7mE"; */
 "ggB-aI-7mE.headerCell.title" = "Status";
 
 /* Class = "NSTextFieldCell"; title = "Backup type"; ObjectID = "mMS-Su-94P"; */
-"mMS-Su-94P.title" = "Backup type";
+"mMS-Su-94P.title" = "Backup-Ort";
