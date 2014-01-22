@@ -346,7 +346,7 @@ static int ddLogLevel = LOG_LEVEL_VERBOSE;
     NSError *error = nil;
 
     if (![DBM commitEditing]) {
-        HILogError(@"%@:%@ unable to commit editing before saving", self.class, NSStringFromSelector(_cmd));
+        HILogError(@"Unable to commit editing before saving");
     }
 
     if (![DBM save:&error]) {
@@ -366,7 +366,7 @@ static int ddLogLevel = LOG_LEVEL_VERBOSE;
     }
 
     if (![DBM commitEditing]) {
-        HILogError(@"%@:%@ unable to commit editing to terminate", self.class, NSStringFromSelector(_cmd));
+        HILogError(@"Unable to commit editing to terminate");
         return NSTerminateCancel;
     }
 

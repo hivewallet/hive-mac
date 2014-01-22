@@ -61,7 +61,7 @@ static NSString * const StoreFileName = @"Hive.storedata";
     NSManagedObjectModel *mom = self.managedObjectModel;
 
     if (!mom) {
-        HILogError(@"%@:%@ No model to generate a store from", self.class, NSStringFromSelector(_cmd));
+        HILogError(@"No model to generate a store from");
         return nil;
     }
 

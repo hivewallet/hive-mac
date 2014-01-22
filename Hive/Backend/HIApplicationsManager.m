@@ -58,7 +58,7 @@
     HILogInfo(@"Removing all apps");
 
     if (error) {
-        HILogError(@"%@: Error loading apps: %@", NSStringFromSelector(_cmd), error);
+        HILogError(@"Error loading apps: %@", error);
         return;
     }
 
@@ -69,7 +69,7 @@
     [DBM save:&error];
 
     if (error) {
-        HILogError(@"%@: Error deleting apps: %@", NSStringFromSelector(_cmd), error);
+        HILogError(@"Error deleting apps: %@", error);
         return;
     }
 }
