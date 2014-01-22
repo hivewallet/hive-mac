@@ -73,7 +73,7 @@ const NSInteger HIDropboxBackupNotRunning = -3;
 }
 
 - (BOOL)needsToBeConfigured {
-    return NO;
+    return ![self dropboxFolderExists];
 }
 
 - (void)updateStatus {
@@ -113,10 +113,30 @@ const NSInteger HIDropboxBackupNotRunning = -3;
         NSData *errorData = [[task.standardError fileHandleForReading] readDataToEndOfFile];
         NSString *errorText = [[NSString alloc] initWithData:errorData encoding:NSUTF8StringEncoding];
 
-        HILogError(@"get_dropbox_folder failed: output = '%@', error = '%@', return code = %d",
+        HILogWarn(@"get_dropbox_folder failed: output = '%@', error = '%@', return code = %d",
                    output, errorText, task.terminationStatus);
 
         return nil;
+    }
+}
+
+- (BOOL)dropboxFolderExists {
+    BOOL isDirectory;
+    BOOL exists = NO;
+
+    NSString *dropboxFolder = [self dropboxFolder];
+
+    if (dropboxFolder) {
+        exists = [[NSFileManager defaultManager] fileExistsAtPath:dropboxFolder isDirectory:&isDirectory];
+    }
+
+    if (!exists || !isDirectory) {
+        HILogWarn(@"Dropbox folder not found (path=%@, exists=%d, isDirectory=%d)",
+                  dropboxFolder, exists, isDirectory);
+
+        return NO;
+    } else {
+        return YES;
     }
 }
 
@@ -147,18 +167,7 @@ const NSInteger HIDropboxBackupNotRunning = -3;
 }
 
 - (void)configureInWindow:(NSWindow *)window {
-    BOOL isDirectory;
-    BOOL exists = NO;
-
-    NSString *dropboxFolder = [self dropboxFolder];
-
-    if (dropboxFolder) {
-        exists = [[NSFileManager defaultManager] fileExistsAtPath:dropboxFolder isDirectory:&isDirectory];
-    }
-
-    if (!exists || !isDirectory) {
-        HILogWarn(@"Dropbox folder not found (path=%@, exists=%d, isDirectory=%d)", dropboxFolder, exists, isDirectory);
-
+    if (![self dropboxFolderExists]) {
         NSAlert *alert = [NSAlert alertWithMessageText:NSLocalizedString(@"Dropbox folder not found.",
                                                                          @"Dropbox no backup folder alert title")
                                          defaultButton:NSLocalizedString(@"OK", @"OK button title")
@@ -175,7 +184,7 @@ const NSInteger HIDropboxBackupNotRunning = -3;
     panel.prompt = NSLocalizedString(@"Choose", @"Dropbox folder save panel confirmation button");
     panel.message = NSLocalizedString(@"Choose a directory inside Dropbox folder where the backup should be saved:",
                                       nil);
-    panel.directoryURL = [NSURL fileURLWithPath:dropboxFolder];
+    panel.directoryURL = [NSURL fileURLWithPath:[self dropboxFolder]];
     panel.canChooseDirectories = YES;
     panel.canCreateDirectories = YES;
     panel.canChooseFiles = NO;
@@ -221,9 +230,7 @@ const NSInteger HIDropboxBackupNotRunning = -3;
         return;
     }
 
-    NSString *dropboxFolder = [self dropboxFolder];
-
-    if (!dropboxFolder) {
+    if (![self dropboxFolderExists]) {
         HILogWarn(@"Backup not configured (no Dropbox folder)");
 
         self.status = HIBackupStatusFailure;
