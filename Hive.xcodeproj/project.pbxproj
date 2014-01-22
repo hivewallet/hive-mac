@@ -34,7 +34,6 @@
 		24300BE418830C4700FDEF2F /* HIWizardViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 24300BE218830C4700FDEF2F /* HIWizardViewController.xib */; };
 		24300BFC188892CD00FDEF2F /* wizard-background.png in Resources */ = {isa = PBXBuildFile; fileRef = 24300BFB188892CD00FDEF2F /* wizard-background.png */; };
 		24300C1E188C3F5900FDEF2F /* HIWizardWelcomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 24300C1C188C3F5900FDEF2F /* HIWizardWelcomeViewController.m */; };
-		24300C1F188C3F5900FDEF2F /* HIWizardWelcomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 24300C1D188C3F5900FDEF2F /* HIWizardWelcomeViewController.xib */; };
 		24300C58188C517700FDEF2F /* HIWizardCompletedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 24300C56188C517700FDEF2F /* HIWizardCompletedViewController.m */; };
 		24300C65188C566000FDEF2F /* HIWizardPasswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 24300C63188C566000FDEF2F /* HIWizardPasswordViewController.m */; };
 		24300C93188C7C7A00FDEF2F /* HIPaddedSecureTextFieldCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 24300C92188C7C7A00FDEF2F /* HIPaddedSecureTextFieldCell.m */; };
@@ -72,6 +71,8 @@
 		585712D618902D180094F884 /* HIWizardCompletedViewController.strings in Resources */ = {isa = PBXBuildFile; fileRef = 585712D818902D180094F884 /* HIWizardCompletedViewController.strings */; };
 		585712F418902E1E0094F884 /* HIWizardPasswordViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 585712F618902E1E0094F884 /* HIWizardPasswordViewController.xib */; };
 		5857131418902E630094F884 /* HIWizardPasswordViewController.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5857131618902E630094F884 /* HIWizardPasswordViewController.strings */; };
+		5857133218902F650094F884 /* HIWizardWelcomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5857133418902F650094F884 /* HIWizardWelcomeViewController.xib */; };
+		585713521890321A0094F884 /* HIWizardWelcomeViewController.strings in Resources */ = {isa = PBXBuildFile; fileRef = 585713541890321A0094F884 /* HIWizardWelcomeViewController.strings */; };
 		585A8B2518576F020096888C /* HIDatabaseManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 585A8B2418576F020096888C /* HIDatabaseManager.m */; };
 		585FFF4418159803005BCF73 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 585FFF4318159803005BCF73 /* Credits.rtf */; };
 		586059B0180419DF00FD9C2A /* minefield.hiveapp in Resources */ = {isa = PBXBuildFile; fileRef = 586059AD180419DF00FD9C2A /* minefield.hiveapp */; };
@@ -319,7 +320,6 @@
 		24300BFB188892CD00FDEF2F /* wizard-background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "wizard-background.png"; sourceTree = "<group>"; };
 		24300C1B188C3F5900FDEF2F /* HIWizardWelcomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HIWizardWelcomeViewController.h; sourceTree = "<group>"; };
 		24300C1C188C3F5900FDEF2F /* HIWizardWelcomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HIWizardWelcomeViewController.m; sourceTree = "<group>"; };
-		24300C1D188C3F5900FDEF2F /* HIWizardWelcomeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HIWizardWelcomeViewController.xib; sourceTree = "<group>"; };
 		24300C55188C517700FDEF2F /* HIWizardCompletedViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HIWizardCompletedViewController.h; sourceTree = "<group>"; };
 		24300C56188C517700FDEF2F /* HIWizardCompletedViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HIWizardCompletedViewController.m; sourceTree = "<group>"; };
 		24300C62188C566000FDEF2F /* HIWizardPasswordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HIWizardPasswordViewController.h; sourceTree = "<group>"; };
@@ -694,6 +694,58 @@
 		5857132D18902E730094F884 /* sr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = sr; path = sr.lproj/HIWizardPasswordViewController.strings; sourceTree = "<group>"; };
 		5857132E18902E760094F884 /* sr-Latn */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "sr-Latn"; path = "sr-Latn.lproj/HIWizardPasswordViewController.strings"; sourceTree = "<group>"; };
 		5857132F18902E760094F884 /* sv */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = sv; path = sv.lproj/HIWizardPasswordViewController.strings; sourceTree = "<group>"; };
+		5857133318902F650094F884 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/HIWizardWelcomeViewController.xib; sourceTree = "<group>"; };
+		5857133718902F690094F884 /* pl */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = pl; path = pl.lproj/HIWizardWelcomeViewController.xib; sourceTree = "<group>"; };
+		5857133818902F6A0094F884 /* it */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = it; path = it.lproj/HIWizardWelcomeViewController.xib; sourceTree = "<group>"; };
+		5857133918902F6B0094F884 /* fr */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = fr; path = fr.lproj/HIWizardWelcomeViewController.xib; sourceTree = "<group>"; };
+		5857133A18902F6F0094F884 /* fi */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = fi; path = fi.lproj/HIWizardWelcomeViewController.xib; sourceTree = "<group>"; };
+		5857133B18902F700094F884 /* da */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = da; path = da.lproj/HIWizardWelcomeViewController.xib; sourceTree = "<group>"; };
+		5857133C18902F710094F884 /* de */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = de; path = de.lproj/HIWizardWelcomeViewController.xib; sourceTree = "<group>"; };
+		5857133D18902F720094F884 /* nl */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = nl; path = nl.lproj/HIWizardWelcomeViewController.xib; sourceTree = "<group>"; };
+		5857133E18902F730094F884 /* ru */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = ru; path = ru.lproj/HIWizardWelcomeViewController.xib; sourceTree = "<group>"; };
+		5857133F18902F750094F884 /* fil */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = fil; path = fil.lproj/HIWizardWelcomeViewController.xib; sourceTree = "<group>"; };
+		5857134018902F760094F884 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = "zh-Hans"; path = "zh-Hans.lproj/HIWizardWelcomeViewController.xib"; sourceTree = "<group>"; };
+		5857134118902F770094F884 /* ar */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = ar; path = ar.lproj/HIWizardWelcomeViewController.xib; sourceTree = "<group>"; };
+		5857134218902F780094F884 /* ur */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = ur; path = ur.lproj/HIWizardWelcomeViewController.xib; sourceTree = "<group>"; };
+		5857134318902F7E0094F884 /* hi */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = hi; path = hi.lproj/HIWizardWelcomeViewController.xib; sourceTree = "<group>"; };
+		5857134418902F7F0094F884 /* ko */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = ko; path = ko.lproj/HIWizardWelcomeViewController.xib; sourceTree = "<group>"; };
+		5857134518902F810094F884 /* es */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = es; path = es.lproj/HIWizardWelcomeViewController.xib; sourceTree = "<group>"; };
+		5857134618902F820094F884 /* cs */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = cs; path = cs.lproj/HIWizardWelcomeViewController.xib; sourceTree = "<group>"; };
+		5857134718902F840094F884 /* el */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = el; path = el.lproj/HIWizardWelcomeViewController.xib; sourceTree = "<group>"; };
+		5857134818902F850094F884 /* tr */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = tr; path = tr.lproj/HIWizardWelcomeViewController.xib; sourceTree = "<group>"; };
+		5857134918902F870094F884 /* pt */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = pt; path = pt.lproj/HIWizardWelcomeViewController.xib; sourceTree = "<group>"; };
+		5857134A189031E00094F884 /* ro */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = ro; path = ro.lproj/HIWizardWelcomeViewController.xib; sourceTree = "<group>"; };
+		5857134B189031E10094F884 /* pt-BR */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = "pt-BR"; path = "pt-BR.lproj/HIWizardWelcomeViewController.xib"; sourceTree = "<group>"; };
+		5857134C189031E20094F884 /* ja */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = ja; path = ja.lproj/HIWizardWelcomeViewController.xib; sourceTree = "<group>"; };
+		5857134D189031E40094F884 /* sr */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = sr; path = sr.lproj/HIWizardWelcomeViewController.xib; sourceTree = "<group>"; };
+		5857134E189031E50094F884 /* sr-Latn */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = "sr-Latn"; path = "sr-Latn.lproj/HIWizardWelcomeViewController.xib"; sourceTree = "<group>"; };
+		5857134F189031E60094F884 /* sv */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = sv; path = sv.lproj/HIWizardWelcomeViewController.xib; sourceTree = "<group>"; };
+		585713531890321A0094F884 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/HIWizardWelcomeViewController.strings; sourceTree = "<group>"; };
+		58571355189032200094F884 /* pl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = pl; path = pl.lproj/HIWizardWelcomeViewController.strings; sourceTree = "<group>"; };
+		58571356189032200094F884 /* it */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = it; path = it.lproj/HIWizardWelcomeViewController.strings; sourceTree = "<group>"; };
+		58571357189032250094F884 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/HIWizardWelcomeViewController.strings; sourceTree = "<group>"; };
+		58571358189032260094F884 /* fi */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fi; path = fi.lproj/HIWizardWelcomeViewController.strings; sourceTree = "<group>"; };
+		58571359189032270094F884 /* da */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = da; path = da.lproj/HIWizardWelcomeViewController.strings; sourceTree = "<group>"; };
+		5857135A189032280094F884 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/HIWizardWelcomeViewController.strings; sourceTree = "<group>"; };
+		5857135B189032290094F884 /* nl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = nl; path = nl.lproj/HIWizardWelcomeViewController.strings; sourceTree = "<group>"; };
+		5857135C189032290094F884 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/HIWizardWelcomeViewController.strings; sourceTree = "<group>"; };
+		5857135D1890322A0094F884 /* fil */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fil; path = fil.lproj/HIWizardWelcomeViewController.strings; sourceTree = "<group>"; };
+		5857135E1890322B0094F884 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/HIWizardWelcomeViewController.strings"; sourceTree = "<group>"; };
+		5857135F1890322C0094F884 /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/HIWizardWelcomeViewController.strings; sourceTree = "<group>"; };
+		585713601890322D0094F884 /* ur */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ur; path = ur.lproj/HIWizardWelcomeViewController.strings; sourceTree = "<group>"; };
+		585713611890322D0094F884 /* hi */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = hi; path = hi.lproj/HIWizardWelcomeViewController.strings; sourceTree = "<group>"; };
+		585713621890322E0094F884 /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = ko.lproj/HIWizardWelcomeViewController.strings; sourceTree = "<group>"; };
+		585713631890322F0094F884 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/HIWizardWelcomeViewController.strings; sourceTree = "<group>"; };
+		58571364189032310094F884 /* cs */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = cs; path = cs.lproj/HIWizardWelcomeViewController.strings; sourceTree = "<group>"; };
+		58571365189032310094F884 /* el */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = el; path = el.lproj/HIWizardWelcomeViewController.strings; sourceTree = "<group>"; };
+		58571366189032320094F884 /* tr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = tr; path = tr.lproj/HIWizardWelcomeViewController.strings; sourceTree = "<group>"; };
+		58571367189032320094F884 /* pt */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = pt; path = pt.lproj/HIWizardWelcomeViewController.strings; sourceTree = "<group>"; };
+		58571368189032330094F884 /* ro */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ro; path = ro.lproj/HIWizardWelcomeViewController.strings; sourceTree = "<group>"; };
+		58571369189032340094F884 /* pt-BR */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-BR"; path = "pt-BR.lproj/HIWizardWelcomeViewController.strings"; sourceTree = "<group>"; };
+		5857136A189032350094F884 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/HIWizardWelcomeViewController.strings; sourceTree = "<group>"; };
+		5857136B189032380094F884 /* sr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = sr; path = sr.lproj/HIWizardWelcomeViewController.strings; sourceTree = "<group>"; };
+		5857136C189032390094F884 /* sr-Latn */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "sr-Latn"; path = "sr-Latn.lproj/HIWizardWelcomeViewController.strings"; sourceTree = "<group>"; };
+		5857136D1890323A0094F884 /* sv */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = sv; path = sv.lproj/HIWizardWelcomeViewController.strings; sourceTree = "<group>"; };
 		585A8B2318576F020096888C /* HIDatabaseManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HIDatabaseManager.h; sourceTree = "<group>"; };
 		585A8B2418576F020096888C /* HIDatabaseManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HIDatabaseManager.m; sourceTree = "<group>"; };
 		585FFF211815374B005BCF73 /* nl */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = nl; path = nl.lproj/HIApplicationsViewController.xib; sourceTree = "<group>"; };
@@ -1657,7 +1709,8 @@
 				24300BE218830C4700FDEF2F /* HIWizardViewController.xib */,
 				24300C1B188C3F5900FDEF2F /* HIWizardWelcomeViewController.h */,
 				24300C1C188C3F5900FDEF2F /* HIWizardWelcomeViewController.m */,
-				24300C1D188C3F5900FDEF2F /* HIWizardWelcomeViewController.xib */,
+				585713541890321A0094F884 /* HIWizardWelcomeViewController.strings */,
+				5857133418902F650094F884 /* HIWizardWelcomeViewController.xib */,
 				1AA10FF5AC215B56078E2A1F /* HIWizardWindowController.h */,
 				1AA10BBE6F3C3F05768B604D /* HIWizardWindowController.m */,
 			);
@@ -2432,6 +2485,7 @@
 				588E34F2182013E9006A6A25 /* HIDebuggingInfoWindowController.strings in Resources */,
 				58605A4D18041D0A00FD9C2A /* icon-next__active.pdf in Resources */,
 				5857131418902E630094F884 /* HIWizardPasswordViewController.strings in Resources */,
+				585713521890321A0094F884 /* HIWizardWelcomeViewController.strings in Resources */,
 				58571261188F28A70094F884 /* mobile-recharge.hiveapp in Resources */,
 				58605A4E18041D0A00FD9C2A /* icon-next.pdf in Resources */,
 				588953AF188920D000243190 /* HIBackupCenterWindowController.strings in Resources */,
@@ -2441,7 +2495,7 @@
 				58605A5118041D0A00FD9C2A /* icon-search.pdf in Resources */,
 				58605A5218041D0A00FD9C2A /* icon-tabbar-timeline__active.pdf in Resources */,
 				58605A5318041D0A00FD9C2A /* icon-tabbar-timeline__inactive.pdf in Resources */,
-				24300C1F188C3F5900FDEF2F /* HIWizardWelcomeViewController.xib in Resources */,
+				5857133218902F650094F884 /* HIWizardWelcomeViewController.xib in Resources */,
 				58605A5418041D0A00FD9C2A /* icon-tabbar-user__active.pdf in Resources */,
 				58605A5518041D0A00FD9C2A /* icon-tabbar-user__inactive.pdf in Resources */,
 				58605A5618041D0A00FD9C2A /* icon-timeline__active.pdf in Resources */,
@@ -2990,6 +3044,72 @@
 				5857132F18902E760094F884 /* sv */,
 			);
 			name = HIWizardPasswordViewController.strings;
+			sourceTree = "<group>";
+		};
+		5857133418902F650094F884 /* HIWizardWelcomeViewController.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5857133318902F650094F884 /* en */,
+				5857133718902F690094F884 /* pl */,
+				5857133818902F6A0094F884 /* it */,
+				5857133918902F6B0094F884 /* fr */,
+				5857133A18902F6F0094F884 /* fi */,
+				5857133B18902F700094F884 /* da */,
+				5857133C18902F710094F884 /* de */,
+				5857133D18902F720094F884 /* nl */,
+				5857133E18902F730094F884 /* ru */,
+				5857133F18902F750094F884 /* fil */,
+				5857134018902F760094F884 /* zh-Hans */,
+				5857134118902F770094F884 /* ar */,
+				5857134218902F780094F884 /* ur */,
+				5857134318902F7E0094F884 /* hi */,
+				5857134418902F7F0094F884 /* ko */,
+				5857134518902F810094F884 /* es */,
+				5857134618902F820094F884 /* cs */,
+				5857134718902F840094F884 /* el */,
+				5857134818902F850094F884 /* tr */,
+				5857134918902F870094F884 /* pt */,
+				5857134A189031E00094F884 /* ro */,
+				5857134B189031E10094F884 /* pt-BR */,
+				5857134C189031E20094F884 /* ja */,
+				5857134D189031E40094F884 /* sr */,
+				5857134E189031E50094F884 /* sr-Latn */,
+				5857134F189031E60094F884 /* sv */,
+			);
+			name = HIWizardWelcomeViewController.xib;
+			sourceTree = "<group>";
+		};
+		585713541890321A0094F884 /* HIWizardWelcomeViewController.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				585713531890321A0094F884 /* en */,
+				58571355189032200094F884 /* pl */,
+				58571356189032200094F884 /* it */,
+				58571357189032250094F884 /* fr */,
+				58571358189032260094F884 /* fi */,
+				58571359189032270094F884 /* da */,
+				5857135A189032280094F884 /* de */,
+				5857135B189032290094F884 /* nl */,
+				5857135C189032290094F884 /* ru */,
+				5857135D1890322A0094F884 /* fil */,
+				5857135E1890322B0094F884 /* zh-Hans */,
+				5857135F1890322C0094F884 /* ar */,
+				585713601890322D0094F884 /* ur */,
+				585713611890322D0094F884 /* hi */,
+				585713621890322E0094F884 /* ko */,
+				585713631890322F0094F884 /* es */,
+				58571364189032310094F884 /* cs */,
+				58571365189032310094F884 /* el */,
+				58571366189032320094F884 /* tr */,
+				58571367189032320094F884 /* pt */,
+				58571368189032330094F884 /* ro */,
+				58571369189032340094F884 /* pt-BR */,
+				5857136A189032350094F884 /* ja */,
+				5857136B189032380094F884 /* sr */,
+				5857136C189032390094F884 /* sr-Latn */,
+				5857136D1890323A0094F884 /* sv */,
+			);
+			name = HIWizardWelcomeViewController.strings;
 			sourceTree = "<group>";
 		};
 		588953911888A68100243190 /* HIBackupCenterWindowController.xib */ = {
