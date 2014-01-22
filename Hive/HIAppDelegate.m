@@ -96,7 +96,6 @@ static int ddLogLevel = LOG_LEVEL_VERBOSE;
                                                  name:NSWindowWillCloseNotification
                                                object:nil];
 
-    [self showBetaWarning];
     [self preinstallAppsIfNeeded];
     [self rebuildTransactionListIfNeeded];
     [self updateLastVersionKey];
@@ -139,20 +138,6 @@ static int ddLogLevel = LOG_LEVEL_VERBOSE;
 - (void)initializeBackups {
     [[HIBackupManager sharedManager] initializeAdapters];
     [[HIBackupManager sharedManager] performBackups];
-}
-
-- (void)showBetaWarning {
-    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-
-    if (![defaults objectForKey:WarningDisplayedKey]) {
-        NSRunAlertPanel(@"Warning",
-                        @"This version is for testing and development purposes only! "
-                        @"Please do not move any money into it that you cannot afford to lose.",
-                        NSLocalizedString(@"OK", @"OK button title"),
-                        nil, nil);
-
-        [defaults setObject:@(YES) forKey:WarningDisplayedKey];
-    }
 }
 
 - (void)preinstallAppsIfNeeded {
