@@ -26,9 +26,6 @@
 /* Notification of failed backup */
 "Backup failed" = "Backup failed";
 
-/* Backup error message */
-"Backup folder was deleted" = "Backup folder was deleted";
-
 /* No comment provided by engineer. */
 "Backup hasn't been done yet" = "Backup hasn't been done yet";
 
@@ -197,9 +194,6 @@
 /* Quit without saves error question info */
 "Quitting now will lose any changes you have made since the last successful save" = "Αν εγκαταλείψετε τώρα, θα χαθούν οι αλλαγές που έγιναν έως την προηγούμενη επιτυχημένη αποθήκευση";
 
-/* Wizard completed page title */
-"Ready" = "Ready";
-
 /* Received amount of BTC from unknown source */
 "Received &a" = "Received &a";
 
@@ -224,6 +218,9 @@
 /* Amount exceeds available balance alert title */
 "Some funds are temporarily unavailable." = "Some funds are temporarily unavailable.";
 
+/* Wizard completed page title */
+"Start!" = "Start!";
+
 /* App load error description */
 "The application data file has been removed or corrupted." = "The application data file has been removed or corrupted.";
 
@@ -247,6 +244,9 @@
 
 /* Amount exceeds available balance alert message */
 "To send this transaction, you'll need to wait for your pending transactions to be confirmed first (this shouldn't take more than a few minutes)." = "To send this transaction, you'll need to wait for your pending transactions to be confirmed first (this shouldn't take more than a few minutes).";
+
+/* Notification of cancelled transaction */
+"Transaction cancelled" = "Transaction cancelled";
 
 /* Notification of confirmed sent transaction */
 "Transaction completed" = "Transaction completed";

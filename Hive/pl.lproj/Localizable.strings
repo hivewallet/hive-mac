@@ -26,9 +26,6 @@
 /* Notification of failed backup */
 "Backup failed" = "Błąd wykonywania kopii zapasowej";
 
-/* Backup error message */
-"Backup folder was deleted" = "Folder kopii został usunięty";
-
 /* No comment provided by engineer. */
 "Backup hasn't been done yet" = "Nie wykonano jeszcze żadnej kopii";
 
@@ -197,9 +194,6 @@
 /* Quit without saves error question info */
 "Quitting now will lose any changes you have made since the last successful save" = "Jeśli wybierzesz opcję Zakończ, utracisz zmiany od ostatniego zapisu";
 
-/* Wizard completed page title */
-"Ready" = "Ready";
-
 /* Received amount of BTC from unknown source */
 "Received &a" = "Otrzymano &a";
 
@@ -224,6 +218,9 @@
 /* Amount exceeds available balance alert title */
 "Some funds are temporarily unavailable." = "Część środków jest chwilowo niedostępna.";
 
+/* Wizard completed page title */
+"Start!" = "Start!";
+
 /* App load error description */
 "The application data file has been removed or corrupted." = "Plik z danymi aplikacji został usunięty lub uszkodzony.";
 
@@ -247,6 +244,9 @@
 
 /* Amount exceeds available balance alert message */
 "To send this transaction, you'll need to wait for your pending transactions to be confirmed first (this shouldn't take more than a few minutes)." = "Aby wysłać tą transakcję, musisz poczekać aż poprzednie transakcje zostaną potwierdzone (to nie powinno zająć więcej niż kilka minut).";
+
+/* Notification of cancelled transaction */
+"Transaction cancelled" = "Transaction cancelled";
 
 /* Notification of confirmed sent transaction */
 "Transaction completed" = "Transakcja została wysłana";
