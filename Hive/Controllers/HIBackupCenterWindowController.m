@@ -58,6 +58,9 @@ static const NSTimeInterval UpdateTimerInterval = 5.0;
         [adapter removeObserver:self forKeyPath:@"error"];
         [adapter removeObserver:self forKeyPath:@"lastBackupDate"];
     }
+
+    _tableView.delegate = nil;
+    _tableView.dataSource = nil;
 }
 
 - (void)awakeFromNib {
