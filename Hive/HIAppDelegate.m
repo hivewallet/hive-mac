@@ -193,6 +193,10 @@ static int ddLogLevel = LOG_LEVEL_VERBOSE;
 #pragma mark - Initialization phase two (BCClient and main window)
 
 - (void)showMainApplicationWindowForCrashManager:(id)crashManager {
+    if (!DBM) {
+        exit(1);
+    }
+
     NSError *error = nil;
     [[BCClient sharedClient] start:&error];
 

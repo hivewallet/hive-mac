@@ -269,13 +269,7 @@ static NSString * const StoreFileName = @"Hive.storedata";
     NSPersistentStoreCoordinator *coordinator = self.persistentStoreCoordinator;
 
     if (!coordinator) {
-        NSDictionary *dict = @{
-                               NSLocalizedDescriptionKey: @"Failed to initialize the store",
-                               NSLocalizedFailureReasonErrorKey: @"There was an error building up the data file."
-                             };
-
-        NSError *error = [NSError errorWithDomain:@"YOUR_ERROR_DOMAIN" code:9999 userInfo:dict];
-        [NSApp presentError:error];
+        HILogError(@"No persistent store coordinator, can't create managed object context.");
         return nil;
     }
 
