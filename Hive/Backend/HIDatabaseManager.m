@@ -17,7 +17,8 @@
     }
 
 static NSString * const StoreFileName = @"Hive.storedata";
-
+static NSString * const HIDatabaseManagerErrorDomain = @"HIDatabaseManagerErrorDomain";
+static NSInteger HIDatabaseManagerFileExistsAtLocationError = 1000;
 
 @interface HIDatabaseManager ()
 
@@ -83,8 +84,9 @@ static NSString * const StoreFileName = @"Hive.storedata";
                                         @"Expected a folder to store application data, found a file (%@).",
                                         applicationFilesDirectory.path];
 
-        NSDictionary *dict = @{NSLocalizedDescriptionKey: failureDescription};
-        error = [NSError errorWithDomain:@"net.novaproject.DatabaseError" code:101 userInfo:dict];
+        error = [NSError errorWithDomain:HIDatabaseManagerErrorDomain
+                                    code:HIDatabaseManagerFileExistsAtLocationError
+                                userInfo:@{NSLocalizedDescriptionKey: failureDescription}];
 
         CheckError(error);
     }
