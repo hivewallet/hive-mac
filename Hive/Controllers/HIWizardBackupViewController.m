@@ -36,6 +36,8 @@
     return [HIBackupManager sharedManager].adapters[index];
 }
 
+// TODO make this more DRY
+
 - (NSImage *)icon1 {
     return [self backupAdapterAtIndex:0].icon;
 }
@@ -61,11 +63,15 @@
 }
 
 - (IBAction)enable1:(id)sender {
+    [self willChangeValueForKey:@"enabled1"];
     [self enableAdapter:[self backupAdapterAtIndex:0]];
+    [self didChangeValueForKey:@"enabled1"];
 }
 
 - (IBAction)enable2:(id)sender {
+    [self willChangeValueForKey:@"enabled2"];
     [self enableAdapter:[self backupAdapterAtIndex:1]];
+    [self didChangeValueForKey:@"enabled2"];
 }
 
 - (void)enableAdapter:(HIBackupAdapter *)adapter {
