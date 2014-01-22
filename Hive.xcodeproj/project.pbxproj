@@ -1481,26 +1481,26 @@
 		24300BD318830AA800FDEF2F /* Wizard */ = {
 			isa = PBXGroup;
 			children = (
-				24300BE018830C4700FDEF2F /* HIWizardViewController.h */,
-				24300BE118830C4700FDEF2F /* HIWizardViewController.m */,
-				24300BE218830C4700FDEF2F /* HIWizardViewController.xib */,
 				24300BD618830ACA00FDEF2F /* HIFirstRunWizardWindowController.h */,
 				24300BD718830ACA00FDEF2F /* HIFirstRunWizardWindowController.m */,
 				24300BD818830ACA00FDEF2F /* HIFirstRunWizardWindowController.xib */,
+				24300C9C188C858900FDEF2F /* HIWizardBackupViewController.h */,
+				24300C9D188C858900FDEF2F /* HIWizardBackupViewController.m */,
+				24300C9E188C858900FDEF2F /* HIWizardBackupViewController.xib */,
 				24300C55188C517700FDEF2F /* HIWizardCompletedViewController.h */,
 				24300C56188C517700FDEF2F /* HIWizardCompletedViewController.m */,
 				24300C57188C517700FDEF2F /* HIWizardCompletedViewController.xib */,
 				24300C62188C566000FDEF2F /* HIWizardPasswordViewController.h */,
 				24300C63188C566000FDEF2F /* HIWizardPasswordViewController.m */,
 				24300C64188C566000FDEF2F /* HIWizardPasswordViewController.xib */,
+				24300BE018830C4700FDEF2F /* HIWizardViewController.h */,
+				24300BE118830C4700FDEF2F /* HIWizardViewController.m */,
+				24300BE218830C4700FDEF2F /* HIWizardViewController.xib */,
 				24300C1B188C3F5900FDEF2F /* HIWizardWelcomeViewController.h */,
 				24300C1C188C3F5900FDEF2F /* HIWizardWelcomeViewController.m */,
 				24300C1D188C3F5900FDEF2F /* HIWizardWelcomeViewController.xib */,
-				1AA10BBE6F3C3F05768B604D /* HIWizardWindowController.m */,
 				1AA10FF5AC215B56078E2A1F /* HIWizardWindowController.h */,
-				24300C9C188C858900FDEF2F /* HIWizardBackupViewController.h */,
-				24300C9D188C858900FDEF2F /* HIWizardBackupViewController.m */,
-				24300C9E188C858900FDEF2F /* HIWizardBackupViewController.xib */,
+				1AA10BBE6F3C3F05768B604D /* HIWizardWindowController.m */,
 			);
 			name = Wizard;
 			sourceTree = "<group>";
