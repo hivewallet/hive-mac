@@ -1,0 +1,225 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="4514" systemVersion="13B42" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
+    <dependencies>
+        <deployment version="1070" defaultVersion="1070" identifier="macosx"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="4514"/>
+    </dependencies>
+    <objects>
+        <customObject id="-2" userLabel="File's Owner" customClass="HIWizardBackupViewController">
+            <connections>
+                <outlet property="view" destination="1" id="2"/>
+            </connections>
+        </customObject>
+        <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
+        <customObject id="-3" userLabel="Application"/>
+        <customView id="1">
+            <rect key="frame" x="0.0" y="0.0" width="850" height="650"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+            <subviews>
+                <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="J19-Tc-gPi">
+                    <rect key="frame" x="375" y="470" width="100" height="100"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="100" id="h3f-ZZ-8Lg"/>
+                        <constraint firstAttribute="height" constant="100" id="oEG-Hc-T4Z"/>
+                    </constraints>
+                    <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyUpOrDown" image="Icon" id="YoY-sh-puc"/>
+                </imageView>
+                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="mdk-zD-vWi">
+                    <rect key="frame" x="231" y="379" width="388" height="51"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Configure backup" id="I10-iV-C0e">
+                        <font key="font" metaFont="systemBold" size="42"/>
+                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
+                <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="gDC-Cm-H3d">
+                    <rect key="frame" x="392" y="59" width="67" height="23"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <buttonCell key="cell" type="smallSquare" title="Next Step" bezelStyle="smallSquare" imagePosition="overlaps" alignment="center" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="j0E-b4-dgh" customClass="HIWizardButtonCell">
+                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                        <font key="font" metaFont="system"/>
+                    </buttonCell>
+                    <connections>
+                        <action selector="nextButtonPressed:" target="-2" id="dES-jo-C6H"/>
+                    </connections>
+                </button>
+                <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="7tM-tg-fXa">
+                    <rect key="frame" x="700" y="241" width="48" height="23"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <buttonCell key="cell" type="smallSquare" title="Enable" bezelStyle="smallSquare" imagePosition="overlaps" alignment="center" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="f0R-BI-Nz4" customClass="HIWizardSmallButtonCell">
+                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                        <font key="font" metaFont="system"/>
+                    </buttonCell>
+                    <connections>
+                        <action selector="enable1:" target="-2" id="jR5-70-I6z"/>
+                        <binding destination="-2" name="hidden" keyPath="enabled1" id="9ZK-xe-GYg"/>
+                    </connections>
+                </button>
+                <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="REW-5C-7nv">
+                    <rect key="frame" x="700" y="180" width="48" height="23"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <buttonCell key="cell" type="smallSquare" title="Enable" bezelStyle="smallSquare" imagePosition="overlaps" alignment="center" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="lG8-G7-noh" customClass="HIWizardSmallButtonCell">
+                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                        <font key="font" metaFont="system"/>
+                    </buttonCell>
+                    <connections>
+                        <action selector="enable2:" target="-2" id="ace-Xl-vwl"/>
+                        <binding destination="-2" name="hidden" keyPath="enabled2" id="e9p-xP-VZJ"/>
+                    </connections>
+                </button>
+                <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="0Gn-sQ-ZVg">
+                    <rect key="frame" x="123" y="314" width="604" height="57"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="600" id="Jn9-t9-FWD"/>
+                    </constraints>
+                    <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="center" id="AHC-MY-HDw">
+                        <font key="font" metaFont="system" size="16"/>
+                        <string key="title">Backing up your wallet file is also an important safety measure to protect your money. Let's make a backup copy of your wallet now. If you ever lose your computer, Hive can retrieve it from these sources.</string>
+                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
+                <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="J7o-F8-7f2">
+                    <rect key="frame" x="174" y="228" width="48" height="48"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="42" id="dAz-ic-wy2"/>
+                        <constraint firstAttribute="height" constant="42" id="haT-oQ-OfY"/>
+                    </constraints>
+                    <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" imageFrameStyle="grayBezel" id="g8D-Wb-PMk"/>
+                    <connections>
+                        <binding destination="-2" name="value" keyPath="icon1" id="Ng6-xr-hub"/>
+                    </connections>
+                </imageView>
+                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="a95-bf-yFn">
+                    <rect key="frame" x="232" y="243" width="101" height="19"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="&lt;backup 1>" id="R62-02-u5f">
+                        <font key="font" metaFont="system" size="16"/>
+                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                    <connections>
+                        <binding destination="-2" name="value" keyPath="name1" id="wzB-yo-a1l"/>
+                    </connections>
+                </textField>
+                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="KYW-eP-TpU">
+                    <rect key="frame" x="232" y="182" width="101" height="19"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="&lt;backup 2>" id="Nax-LU-ZGP">
+                        <font key="font" metaFont="system" size="16"/>
+                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                    <connections>
+                        <binding destination="-2" name="value" keyPath="name2" id="VaS-kd-CE9"/>
+                    </connections>
+                </textField>
+                <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="VrC-gm-QNl">
+                    <rect key="frame" x="174" y="167" width="48" height="48"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="42" id="KFo-Js-WTn"/>
+                        <constraint firstAttribute="height" constant="42" id="j01-q7-YGo"/>
+                    </constraints>
+                    <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" imageFrameStyle="grayBezel" id="8oa-4a-z8g"/>
+                    <connections>
+                        <binding destination="-2" name="value" keyPath="icon2" id="wB3-8P-XIJ"/>
+                    </connections>
+                </imageView>
+                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Vfw-zr-Iz9">
+                    <rect key="frame" x="548" y="243" width="83" height="19"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="✓ enabled" id="OI0-bL-7Zs">
+                        <font key="font" metaFont="system" size="16"/>
+                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                    <connections>
+                        <binding destination="-2" name="hidden" keyPath="enabled1" id="SNV-sa-gO0">
+                            <dictionary key="options">
+                                <string key="NSValueTransformerName">NSNegateBoolean</string>
+                            </dictionary>
+                        </binding>
+                    </connections>
+                </textField>
+                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="kvT-RL-uZq">
+                    <rect key="frame" x="548" y="241" width="85" height="20"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="✘ disabled" id="M9O-91-CDX">
+                        <font key="font" size="16" name="ZapfDingbatsITC"/>
+                        <color key="textColor" red="0.86645009566326525" green="0.54672967535343253" blue="0.47391934301160576" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                    <connections>
+                        <binding destination="-2" name="hidden" keyPath="enabled1" id="LWY-gp-o1s"/>
+                    </connections>
+                </textField>
+                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="faS-RI-DlM">
+                    <rect key="frame" x="548" y="180" width="85" height="20"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="✘ disabled" id="NSS-6s-Nas">
+                        <font key="font" size="16" name="ZapfDingbatsITC"/>
+                        <color key="textColor" red="0.86645009569999998" green="0.54672967539999995" blue="0.47391934299999999" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                    <connections>
+                        <binding destination="-2" name="hidden" keyPath="enabled2" id="KX9-sm-ngV"/>
+                    </connections>
+                </textField>
+                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="5f4-M2-QLk">
+                    <rect key="frame" x="548" y="182" width="83" height="19"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="✓ enabled" id="KqD-DN-1Yk">
+                        <font key="font" metaFont="system" size="16"/>
+                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                    <connections>
+                        <binding destination="-2" name="hidden" keyPath="enabled2" id="8l5-ea-qJ2">
+                            <dictionary key="options">
+                                <string key="NSValueTransformerName">NSNegateBoolean</string>
+                            </dictionary>
+                        </binding>
+                    </connections>
+                </textField>
+            </subviews>
+            <constraints>
+                <constraint firstItem="7tM-tg-fXa" firstAttribute="baseline" secondItem="a95-bf-yFn" secondAttribute="baseline" id="2fE-00-Vam"/>
+                <constraint firstAttribute="centerX" secondItem="mdk-zD-vWi" secondAttribute="centerX" id="2kL-8E-36b"/>
+                <constraint firstItem="kvT-RL-uZq" firstAttribute="baseline" secondItem="Vfw-zr-Iz9" secondAttribute="baseline" id="3SJ-Tm-9jh"/>
+                <constraint firstItem="VrC-gm-QNl" firstAttribute="top" secondItem="J7o-F8-7f2" secondAttribute="bottom" constant="19" id="4zV-bs-8FG"/>
+                <constraint firstItem="J7o-F8-7f2" firstAttribute="top" secondItem="0Gn-sQ-ZVg" secondAttribute="bottom" constant="41" id="4zn-Uu-Zjj"/>
+                <constraint firstItem="J19-Tc-gPi" firstAttribute="top" secondItem="1" secondAttribute="top" constant="80" id="88u-ix-KK1"/>
+                <constraint firstItem="a95-bf-yFn" firstAttribute="baseline" secondItem="Vfw-zr-Iz9" secondAttribute="baseline" id="9Nd-a4-80X"/>
+                <constraint firstItem="kvT-RL-uZq" firstAttribute="leading" secondItem="Vfw-zr-Iz9" secondAttribute="leading" id="Gw3-yu-tNL"/>
+                <constraint firstItem="5f4-M2-QLk" firstAttribute="leading" secondItem="faS-RI-DlM" secondAttribute="leading" id="KSS-ew-I9j"/>
+                <constraint firstItem="J7o-F8-7f2" firstAttribute="leading" secondItem="1" secondAttribute="leading" constant="177" id="KzO-e7-cod"/>
+                <constraint firstItem="7tM-tg-fXa" firstAttribute="leading" secondItem="REW-5C-7nv" secondAttribute="leading" id="QEr-VH-hlH"/>
+                <constraint firstItem="REW-5C-7nv" firstAttribute="baseline" secondItem="KYW-eP-TpU" secondAttribute="baseline" id="T3N-82-bdg"/>
+                <constraint firstItem="KYW-eP-TpU" firstAttribute="leading" secondItem="VrC-gm-QNl" secondAttribute="trailing" constant="15" id="TTY-JH-MgY"/>
+                <constraint firstAttribute="centerX" secondItem="gDC-Cm-H3d" secondAttribute="centerX" id="WGS-IL-M2j"/>
+                <constraint firstAttribute="centerX" secondItem="0Gn-sQ-ZVg" secondAttribute="centerX" id="WnZ-Wm-UYh"/>
+                <constraint firstItem="mdk-zD-vWi" firstAttribute="top" secondItem="J19-Tc-gPi" secondAttribute="bottom" constant="40" id="ZEk-gO-Ry9"/>
+                <constraint firstItem="7tM-tg-fXa" firstAttribute="leading" secondItem="1" secondAttribute="leading" constant="700" id="aY5-Io-wE2"/>
+                <constraint firstAttribute="bottom" secondItem="gDC-Cm-H3d" secondAttribute="bottom" constant="60" id="bNu-ow-W56"/>
+                <constraint firstItem="J7o-F8-7f2" firstAttribute="centerY" secondItem="a95-bf-yFn" secondAttribute="centerY" constant="0.5" id="cse-rl-u5L"/>
+                <constraint firstItem="J7o-F8-7f2" firstAttribute="trailing" secondItem="VrC-gm-QNl" secondAttribute="trailing" id="ggb-yE-1BP"/>
+                <constraint firstItem="Vfw-zr-Iz9" firstAttribute="leading" secondItem="1" secondAttribute="leading" constant="550" id="hJx-1S-CDR"/>
+                <constraint firstItem="5f4-M2-QLk" firstAttribute="baseline" secondItem="faS-RI-DlM" secondAttribute="baseline" id="hbd-ch-egu"/>
+                <constraint firstItem="5f4-M2-QLk" firstAttribute="baseline" secondItem="KYW-eP-TpU" secondAttribute="baseline" id="oQB-Q6-Hpa"/>
+                <constraint firstItem="a95-bf-yFn" firstAttribute="leading" secondItem="J7o-F8-7f2" secondAttribute="trailing" constant="15" id="oxp-ru-y6q"/>
+                <constraint firstItem="0Gn-sQ-ZVg" firstAttribute="top" secondItem="mdk-zD-vWi" secondAttribute="bottom" constant="8" id="ss7-rd-uia"/>
+                <constraint firstItem="5f4-M2-QLk" firstAttribute="leading" secondItem="Vfw-zr-Iz9" secondAttribute="leading" id="tvL-oC-iBZ"/>
+                <constraint firstItem="VrC-gm-QNl" firstAttribute="centerY" secondItem="KYW-eP-TpU" secondAttribute="centerY" constant="0.5" id="xbZ-Iu-4AL"/>
+                <constraint firstAttribute="centerX" secondItem="J19-Tc-gPi" secondAttribute="centerX" id="yCa-GG-u1A"/>
+            </constraints>
+        </customView>
+    </objects>
+    <resources>
+        <image name="Icon" width="512" height="512"/>
+    </resources>
+</document>
