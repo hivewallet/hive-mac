@@ -18,25 +18,25 @@
 "Are you sure you want to send %@ (%@) to %@?" = "Are you sure you want to send %1$@ (%2$@) to %3$@?";
 
 /* Wizard backup page title */
-"Backup" = "Backup";
+"Backup" = "Säkerhetskopiering";
 
 /* Backup status: backup can't or won't be completed */
 "Backup error" = "Fel i säkerhetskopiering";
 
 /* Notification of failed backup */
-"Backup failed" = "Backup failed";
+"Backup failed" = "Säkerhetskopiering misslyckades";
 
 /* No comment provided by engineer. */
 "Backup hasn't been done yet" = "Säkerhetskopieringen har inte blivit färdig än";
 
 /* Backup error message */
-"Backup is not configured" = "Backup is not configured";
+"Backup is not configured" = "Säkerhetskopiering är inte konfigurerad";
 
 /* Backup status: backup done but not updated recently */
 "Backup problem" = "Problem med säkerhetskopiering";
 
 /* Backup error message */
-"Can't create a directory to store the wallet backup" = "Can't create a directory to store the wallet backup";
+"Can't create a directory to store the wallet backup" = "Går inte att skapa en mapp för att lagra plånbokens säkerhetskopia";
 
 /* Cancel button title */
 "Cancel" = "Avbryt";
@@ -84,10 +84,10 @@
 "Do you really want to remove %@ from your contact list?" = "Är du säker på att du vill ta bort %@ från dina kontakter?";
 
 /* Install app popup title */
-"Do you want to add \"%@\" to Hive?" = "Do you want to add \"%@\" to Hive?";
+"Do you want to add \"%@\" to Hive?" = "Vill du lägga till \"%@\" i Hive?";
 
 /* Backup error message */
-"Dropbox folder not found" = "Dropbox folder not found";
+"Dropbox folder not found" = "Dropbox-katalog hittades inte";
 
 /* Dropbox no backup folder alert title */
 "Dropbox folder not found." = "Dropbox-katalog hittas inte.";
@@ -123,7 +123,7 @@
 "Hive cannot be started." = "Hive cannot be started.";
 
 /* Backup error message */
-"Hive directory is excluded from Time Machine backup" = "Hive directory is excluded from Time Machine backup";
+"Hive directory is excluded from Time Machine backup" = "Hive-katalog är exkluderad från Time Machines säkerhetskopia";
 
 /* Share sent transaction text */
 "I've just received some Bitcoin using Hive" = "I've just received some Bitcoin using Hive";
@@ -132,10 +132,10 @@
 "I've just sent some Bitcoin using Hive" = "I've just sent some Bitcoin using Hive";
 
 /* Install app button title */
-"Install" = "Install";
+"Install" = "Installera";
 
 /* Backup requires password alert details */
-"It's dangerous to upload unencrypted wallets." = "It's dangerous to upload unencrypted wallets.";
+"It's dangerous to upload unencrypted wallets." = "Det är väldigt osäkert att ladda upp okrypterade plånböcker.";
 
 /* Address caption field placeholder */
 "Label" = "Etikett";
@@ -180,7 +180,7 @@
 "Please check if you have entered the address correctly." = "Vänligen, kontrollera att du har fyllt i adressen korrekt.";
 
 /* Warning details when trying to send to your own address */
-"Please enter a different address." = "Please enter a different address.";
+"Please enter a different address." = "Vänligen, fyll i en annan adress.";
 
 /* Empty address alert message */
 "Please enter a valid Bitcoin address or select one from the dropdown list." = "Vänligen, fyll i en korrekt Bitcoin-adress eller välj från rullgardinslistan.";
@@ -201,10 +201,10 @@
 "Received &a from &c" = "Mottaget &a från &c";
 
 /* Install app button title when app exists */
-"Reinstall" = "Reinstall";
+"Reinstall" = "Ominstalera";
 
 /* No comment provided by engineer. */
-"Remove" = "Remove";
+"Remove" = "Ta bort";
 
 /* Dropbox invalid folder alert title */
 "Selected directory is outside Dropbox folder." = "Välj en katalog som är utanför Dropbox-plats.";
@@ -216,7 +216,7 @@
 "Sent &a to &c" = "Skickat &a till &c";
 
 /* Amount exceeds available balance alert title */
-"Some funds are temporarily unavailable." = "Some funds are temporarily unavailable.";
+"Some funds are temporarily unavailable." = "Endel tillgångar är tillfälligt inte tillgängliga.";
 
 /* Wizard completed page title */
 "Start!" = "Start!";
@@ -225,37 +225,37 @@
 "The application data file has been removed or corrupted." = "Programmets datafil har blivit borttagen eller skadats.";
 
 /* Install app popup warning message when app exists */
-"The existing app file will be replaced by the new version. This will not affect any app settings or saved data." = "The existing app file will be replaced by the new version. This will not affect any app settings or saved data.";
+"The existing app file will be replaced by the new version. This will not affect any app settings or saved data." = "Nuvarande app-fil kommer att bli ersatt med en ny version. Detta kommer inte påverka några inställningar eller sparade uppgifter..";
 
 /* Alert details when transaction was cancelled */
-"This can happen because of bugs in the wallet code or because the transaction was rejected by the network." = "This can happen because of bugs in the wallet code or because the transaction was rejected by the network.";
+"This can happen because of bugs in the wallet code or because the transaction was rejected by the network." = "Detta kan hända på grund av en bugg i plånbokskoden eller att en transaktion blev avvisad av nätverket.";
 
 /* Warning details when trying to send a large BTC amount */
-"This is more than what you usually send." = "This is more than what you usually send.";
+"This is more than what you usually send." = "Detta är större summa än vad du brukar skicka.";
 
 /* Warning title when trying to send to your own address */
-"This is your wallet address." = "This is your wallet address.";
+"This is your wallet address." = "Detta är din egna plånboksadress.";
 
 /* Invalid address alert title */
 "This isn't a valid Bitcoin address." = "Detta är inte en giltig Bitcoin-adress.";
 
 /* Backup error message */
-"Time Machine is disabled in System Preferences" = "Time Machine is disabled in System Preferences";
+"Time Machine is disabled in System Preferences" = "Time Machine är avvaktiverad Systeminställningar";
 
 /* Amount exceeds available balance alert message */
-"To send this transaction, you'll need to wait for your pending transactions to be confirmed first (this shouldn't take more than a few minutes)." = "To send this transaction, you'll need to wait for your pending transactions to be confirmed first (this shouldn't take more than a few minutes).";
+"To send this transaction, you'll need to wait for your pending transactions to be confirmed first (this shouldn't take more than a few minutes)." = "För att skicka denna transaktion, måste du vänta att dina avvaktande transaktioner blir bekräftade först (Det bör inte ta mer än några minuter).";
 
 /* Notification of cancelled transaction */
-"Transaction cancelled" = "Transaction cancelled";
+"Transaction cancelled" = "Transaktion avbryten";
 
 /* Notification of confirmed sent transaction */
-"Transaction completed" = "Transaction completed";
+"Transaction completed" = "Transaktion slutförd";
 
 /* Transaction failed alert title */
 "Transaction could not be completed." = "Transaktion kunde inte genomföras.";
 
 /* Alert when transaction was cancelled (with transaction date) */
-"Transaction from %@ was cancelled." = "Transaction from %@ was cancelled.";
+"Transaction from %@ was cancelled." = "Transaction från %@ blev avbryten.";
 
 /* Transactions view title */
 "Transactions" = "Transaktion";
@@ -267,13 +267,13 @@
 "Waiting for backup" = "Väntar på säkerhetskopierng";
 
 /* Install app popup warning message */
-"We cannot guarantee the safety of all apps - please be careful if you download Hive apps from third party sites." = "We cannot guarantee the safety of all apps - please be careful if you download Hive apps from third party sites.";
+"We cannot guarantee the safety of all apps - please be careful if you download Hive apps from third party sites." = "Vi kan inte garantera säkerheten för alla appar - var försiktigt om du laddar hem Hive-appar från tredjepartssidor.";
 
 /* Wizard welcome page title */
-"Welcome" = "Welcome";
+"Welcome" = "Välkommen";
 
 /* Button to show info about pending funds */
-"What does this mean?" = "What does this mean?";
+"What does this mean?" = Vad betyder detta?";
 
 /* Sending zero bitcoin alert message */
 "Why would you want to send someone 0 BTC?" = "Varför skulle du vilja skicka någon 0 BTC?";
@@ -282,10 +282,10 @@
 "You cannot send more money than you own." = "Du kan inte skcika mer pengar än vad du äger.";
 
 /* Install app popup title when app exists */
-"You have already added \"%@\" to Hive. Would you like to overwrite it?" = "You have already added \"%@\" to Hive. Would you like to overwrite it?";
+"You have already added \"%@\" to Hive. Would you like to overwrite it?" = "Du har redan lagt till \"%@\" till Hive. Vill du skriva upp det?";
 
 /* Notification of confirmed sent transaction (with BTC amount) */
-"You have sent %@." = "You have sent %@.";
+"You have sent %@." = "Du har skickat %@.";
 
 /* Dropbox no backup folder alert details */
 "You must install Dropbox first (see www.dropbox.com)." = "Du måste installera dropbox först (se www.dropbox.com).";
@@ -297,10 +297,10 @@
 "You need to give the contact a name before you can add it to the list." = "Du måste ge kontakten ett namn innan du kan lägga till i listan";
 
 /* Backup requires password alert title */
-"You need to set a wallet password first (see Wallet menu)." = "You need to set a wallet password first (see Wallet menu).";
+"You need to set a wallet password first (see Wallet menu)." = "Duy måste ange ett plånbokslösenord först (se Plånboksmenyn).";
 
 /* Remove contact alert dialog body */
-"You won't be able to undo this operation." = "You won't be able to undo this operation.";
+"You won't be able to undo this operation." = "Du kommer inte kunna ångra denna åtgärd.";
 
 /* Notification of incoming transaction */
-"You've received Bitcoin" = "You've received Bitcoin";
+"You've received Bitcoin" = "Du mottog Bitcoins";
