@@ -261,16 +261,21 @@ static int ddLogLevel = LOG_LEVEL_VERBOSE;
 
     HILogError(@"Aborting launch because of initialization error: %@", error);
 
+    NSAlert *alert;
+
     if (message) {
-        [[NSAlert alertWithMessageText:NSLocalizedString(@"Hive cannot be started.",
-                                                         @"Initialization error title")
-                         defaultButton:NSLocalizedString(@"OK", @"OK button title")
-                       alternateButton:nil
-                           otherButton:nil
-             informativeTextWithFormat:@"%@", message] runModal];
+        alert = [NSAlert alertWithMessageText:NSLocalizedString(@"Hive cannot be started.",
+                                                                @"Initialization error title")
+                                defaultButton:NSLocalizedString(@"OK", @"OK button title")
+                              alternateButton:nil
+                                  otherButton:nil
+                    informativeTextWithFormat:@"%@", message];
     } else {
-        [[NSAlert alertWithError:error] runModal];
+        alert = [NSAlert alertWithError:error];
     }
+
+    [alert setAlertStyle:NSCriticalAlertStyle];
+    [alert runModal];
 
     exit(1);
 }

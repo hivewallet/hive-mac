@@ -304,6 +304,7 @@ static NSString * const StoreFileName = @"Hive.storedata";
                                    alternateButton:nil
                                        otherButton:nil
                          informativeTextWithFormat:@"%@", explanation];
+    [alert setAlertStyle:NSCriticalAlertStyle];
     [alert runModal];
 }
 
