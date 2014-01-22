@@ -9,7 +9,12 @@
 #import "BCClient.h"
 #import "HIDatabaseManager.h"
 
-#define CheckError(error) if (error) { HILogError(@"%@", error); [NSApp presentError:(error)]; return nil; }
+#define CheckError(error)               \
+    if (error) {                        \
+        HILogError(@"%@", error);       \
+        [self presentError:(error)];    \
+        return nil;                     \
+    }
 
 static NSString * const StoreFileName = @"Hive.storedata";
 
@@ -99,12 +104,14 @@ static NSString * const StoreFileName = @"Hive.storedata";
     if (!sqliteStore) {
         HILogWarn(@"Can't open SQLite store: %@", error);
 
+        NSError *xmlError = nil;
+
         // see if it isn't the old xml version
         NSPersistentStore *xmlStore = [coordinator addPersistentStoreWithType:NSXMLStoreType
                                                                 configuration:nil
                                                                           URL:url
                                                                       options:storeOptions
-                                                                        error:&error];
+                                                                        error:&xmlError];
 
         if (xmlStore) {
             NSPersistentStore *sqliteStore = [self migrateXMLStoreToSqlite:xmlStore inCoordinator:coordinator];
@@ -277,6 +284,27 @@ static NSString * const StoreFileName = @"Hive.storedata";
     _managedObjectContext.persistentStoreCoordinator = coordinator;
 
     return _managedObjectContext;
+}
+
+- (void)presentError:(NSError *)error {
+    NSString *explanation = error.localizedDescription;
+
+    if ([error.domain isEqual:NSCocoaErrorDomain]) {
+        switch (error.code) {
+            case NSMigrationMissingSourceModelError:
+                explanation = NSLocalizedString(@"The database was saved by a newer version of Hive - "
+                                                @"please download the latest version from http://hivewallet.com.",
+                                                @"Error message when database is incompatible with this version");
+        }
+    }
+
+    NSAlert *alert = [NSAlert alertWithMessageText:NSLocalizedString(@"Hive database file cannot be opened.",
+                                                                     @"Database error alert title")
+                                     defaultButton:NSLocalizedString(@"OK", @"OK button title")
+                                   alternateButton:nil
+                                       otherButton:nil
+                         informativeTextWithFormat:@"%@", explanation];
+    [alert runModal];
 }
 
 @end
