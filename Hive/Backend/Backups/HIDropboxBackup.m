@@ -271,7 +271,8 @@ const NSInteger HIDropboxBackupNotRunning = -3;
 
             self.status = HIBackupStatusFailure;
             self.error = BackupError(HIDropboxBackupError, HIDropboxBackupNotConfigured,
-                                     NSLocalizedString(@"Backup folder can't be created", @"Backup error message"));
+                                     NSLocalizedString(@"Can't create a directory to store the wallet backup",
+                                                       @"Backup error message"));
             return;
         }
     } else if (!isDirectory) {
@@ -280,7 +281,8 @@ const NSInteger HIDropboxBackupNotRunning = -3;
 
         self.status = HIBackupStatusFailure;
         self.error = BackupError(HIDropboxBackupError, HIDropboxBackupNotConfigured,
-                                 NSLocalizedString(@"Backup folder can't be created", @"Backup error message"));
+                                 NSLocalizedString(@"Can't create a directory to store the wallet backup",
+                                                   @"Backup error message"));
         return;
     }
 
