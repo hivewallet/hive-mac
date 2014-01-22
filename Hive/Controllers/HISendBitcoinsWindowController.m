@@ -13,6 +13,7 @@
 #import "HIBitcoinFormatService.h"
 #import "HIButtonWithSpinner.h"
 #import "HIContactAutocompleteWindowController.h"
+#import "HICurrencyFormatService.h"
 #import "HIExchangeRateService.h"
 #import "HIFeeDetailsViewController.h"
 #import "HILinkTextField.h"
@@ -207,7 +208,7 @@ NSString * const HISendBitcoinsWindowSuccessKey = @"success";
 }
 
 - (void)setConvertedAmountFieldValue:(NSDecimalNumber *)amount {
-    NSString *string = [self.exchangeRateService formatValue:amount inCurrency:self.selectedCurrency];
+    NSString *string = [[HICurrencyFormatService sharedService] formatValue:amount inCurrency:self.selectedCurrency];
     [self.convertedAmountField setStringValue:string];
 }
 

@@ -157,6 +157,27 @@
     assertThat(@(amount), equalToUnsignedLongLong(100060000000));
 }
 
+- (void)testParseStringWithThousandsSeparator {
+    NSString *format = @"satoshi";
+
+    satoshi_t amount = [self.service parseString:@"6,000"
+                                      withFormat:format
+                                           error:NULL];
+
+    assertThat(@(amount), equalToUnsignedLongLong(6000));
+}
+
+- (void)testParseStringWithSpaceAsThousandsSeparator {
+    _service.locale = [[NSLocale alloc] initWithLocaleIdentifier:@"sv_SE"];
+    NSString *format = @"satoshi";
+
+    satoshi_t amount = [self.service parseString:@"6 000"
+                                      withFormat:format
+                                           error:NULL];
+
+    assertThat(@(amount), equalToUnsignedLongLong(6000));
+}
+
 - (void)testParsingIllegalStringWithError {
     NSString *format = @"BTC";
     NSError *error;

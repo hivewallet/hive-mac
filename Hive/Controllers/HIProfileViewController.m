@@ -9,6 +9,7 @@
 #import "BCClient.h"
 #import "HIBitcoinFormatService.h"
 #import "HIContactInfoViewController.h"
+#import "HICurrencyFormatService.h"
 #import "NSDecimalNumber+HISatoshiConversion.h"
 #import "HIExchangeRateService.h"
 #import "HIProfile.h"
@@ -168,8 +169,9 @@
 - (void)updateConvertedBalanceLabel {
     if (self.exchangeRate) {
         NSDecimalNumber *convertedBalance = [self convertedAmountForBitcoinAmount:self.estimatedBalance];
-        self.convertedBalanceLabel.stringValue = [_exchangeRateService formatValue:convertedBalance
-                                                                        inCurrency:self.selectedCurrency];
+        self.convertedBalanceLabel.stringValue =
+            [[HICurrencyFormatService sharedService] formatValue:convertedBalance
+                                                    inCurrency:self.selectedCurrency];
     } else {
         self.convertedBalanceLabel.stringValue = @"?";
     }

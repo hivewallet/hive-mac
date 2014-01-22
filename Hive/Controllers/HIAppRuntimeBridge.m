@@ -11,6 +11,7 @@
 #import "HIApplicationRuntimeViewController.h"
 #import "HIAppRuntimeBridge.h"
 #import "HIBitcoinFormatService.h"
+#import "HICurrencyFormatService.h"
 #import "HIExchangeRateService.h"
 #import "HIProfile.h"
 #import "HISecureAppStorage.h"
@@ -366,15 +367,14 @@ static const NSInteger kHIAppRuntimeBridgeParsingError = -1000;
 
 - (NSString *)userStringForValue:(NSNumber *)value
                         currency:(NSString *)currency {
-    HIExchangeRateService *service = [HIExchangeRateService sharedService];
+    HICurrencyFormatService *service = [HICurrencyFormatService sharedService];
     return [service formatValue:value
-                     inCurrency:[service.availableCurrencies containsObject:currency] ? currency : _preferredCurrency];
+                     inCurrency:currency];
 }
 
-- (NSDecimalNumber *)valueFromUserString:(NSString *)string {
-    NSDecimalNumber *number = [NSDecimalNumber decimalNumberWithString:string
-                                                                locale:[NSLocale currentLocale]];
-    return number == [NSDecimalNumber notANumber] ? nil : number;
+- (NSNumber *)valueFromUserString:(NSString *)string {
+    HICurrencyFormatService *service = [HICurrencyFormatService sharedService];
+    return [service parseString:string error:NULL];
 }
 
 #pragma mark - Proxied request & response handling
