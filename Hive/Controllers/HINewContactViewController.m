@@ -397,14 +397,18 @@ static NSString * const Separator = @"Separator";
     [alert addButtonWithTitle:NSLocalizedString(@"Remove", nil)];
     [alert addButtonWithTitle:NSLocalizedString(@"Cancel", nil)];
 
-    NSUInteger result = [alert runModal];
+    [alert beginSheetModalForWindow:self.view.window
+                      modalDelegate:self
+                     didEndSelector:@selector(removeContactAlertDidEnd:result:context:)
+                        contextInfo:NULL];
+}
 
+- (void)removeContactAlertDidEnd:(NSAlert *)alert result:(NSInteger)result context:(void *)context {
     if (result == NSAlertFirstButtonReturn) {
         [DBM deleteObject:_contact];
         [self.navigationController popToRootViewControllerAnimated:YES];
         [DBM save:NULL];
     }
-
 }
 
 @end
