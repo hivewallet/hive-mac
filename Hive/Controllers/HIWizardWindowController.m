@@ -24,7 +24,10 @@
 
 - (IBAction)showWindow:(id)sender {
     [super showWindow:sender];
+
     self.index = -1;
+
+    [self.window center];
     [self showNextPage];
 }
 
