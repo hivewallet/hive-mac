@@ -75,9 +75,9 @@
                     <constraints>
                         <constraint firstAttribute="width" constant="600" id="Jn9-t9-FWD"/>
                     </constraints>
-                    <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="center" id="AHC-MY-HDw">
+                    <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="center" id="rIc-eX-ajY">
                         <font key="font" metaFont="system" size="16"/>
-                        <string key="title">Backing up your wallet file is also an important safety measure to protect your money. Let's make a backup copy of your wallet now. If you ever lose your computer, Hive can retrieve it from these sources.</string>
+                        <string key="title">Backing up your wallet file is also an important safety measure to protect your money. Let's make a backup copy of your wallet now. If you ever lose your computer, Hive can retrieve your wallet from these sources.</string>
                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                     </textFieldCell>

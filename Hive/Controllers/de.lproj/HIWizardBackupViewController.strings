@@ -1,7 +1,4 @@
 
-/* Class = "NSTextFieldCell"; title = "Backing up your wallet file is also an important safety measure to protect your money. Let's make a backup copy of your wallet now. If you ever lose your computer, Hive can retrieve your wallet from these sources."; ObjectID = "AHC-MY-HDw"; */
-"AHC-MY-HDw.title" = "Ein Backup Ihrer Geldbörse ist ein weitere wichtige Funktion, um Ihr Geld zu schützen. Lassen Sie uns jetzt ein Backup Ihrer Geldbörse anlegen. Falls Sie jemals Ihren Computer verlieren, kann Hive Ihr Geld wiederherstellen.";
-
 /* Class = "NSTextFieldCell"; title = "Configure backup"; ObjectID = "I10-iV-C0e"; */
 "I10-iV-C0e.title" = "Backup konfigurieren";
 
@@ -31,3 +28,6 @@
 
 /* Class = "NSButtonCell"; title = "Enable"; ObjectID = "lG8-G7-noh"; */
 "lG8-G7-noh.title" = "Aktivieren";
+
+/* Class = "NSTextFieldCell"; title = "Backing up your wallet file is also an important safety measure to protect your money. Let's make a backup copy of your wallet now. If you ever lose your computer, Hive can retrieve your wallet from these sources."; ObjectID = "rIc-eX-ajY"; */
+"rIc-eX-ajY.title" = "Ein Backup Ihrer Geldbörse ist ein weitere wichtige Funktion, um Ihr Geld zu schützen. Lassen Sie uns jetzt ein Backup Ihrer Geldbörse anlegen. Falls Sie jemals Ihren Computer verlieren, kann Hive Ihr Geld wiederherstellen.";
