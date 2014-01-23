@@ -1,4 +1,3 @@
-
 /* Class = "NSTextFieldCell"; title = "Received"; ObjectID = "22"; */
 "22.title" = "Reçu";
 
@@ -12,7 +11,7 @@
 "55.title" = "Envoyer des bitcoins";
 
 /* Class = "NSTextFieldCell"; title = "You can then use the Send button to send someone money."; ObjectID = "63"; */
-"63.title" = "Vous pouvez utiliser le bouton envoyer pour envooyer de l'argent à quelqu'un.";
+"63.title" = "Vous pouvez ensuite utiliser le bouton envoyer pour envoyer de l'argent à quelqu'un.";
 
 /* Class = "NSTextFieldCell"; title = "PENDING"; ObjectID = "oXJ-Jx-H6s"; */
-"oXJ-Jx-H6s.title" = "PENDING";
+"oXJ-Jx-H6s.title" = "EN ATTENTE";
