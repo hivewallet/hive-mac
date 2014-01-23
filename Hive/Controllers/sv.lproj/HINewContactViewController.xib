@@ -208,7 +208,7 @@
                 <textField verticalHuggingPriority="750" id="106">
                     <rect key="frame" x="0.0" y="311" width="65" height="16"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="edit" drawsBackground="YES" id="107">
+                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="Ändra" drawsBackground="YES" id="107">
                         <font key="font" size="12" name="Helvetica"/>
                         <color key="textColor" red="0.99987602229999994" green="0.99998402600000003" blue="0.99978637699999995" alpha="1" colorSpace="calibratedRGB"/>
                         <color key="backgroundColor" red="0.26450267430000002" green="0.2645250261" blue="0.2644736171" alpha="0.66000000000000003" colorSpace="calibratedRGB"/>
