@@ -29,7 +29,7 @@
 "Backup hasn't been done yet" = "Il Backup non è ancora stato effettuato";
 
 /* Backup error message */
-"Backup is not configured" = "Backup is not configured";
+"Backup is not configured" = "Backup non configurato";
 
 /* Backup status: backup done but not updated recently */
 "Backup problem" = "Problema nel Backup";
