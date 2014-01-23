@@ -1,33 +1,33 @@
 
 /* Class = "NSTextFieldCell"; title = "Configure backup"; ObjectID = "I10-iV-C0e"; */
-"I10-iV-C0e.title" = "Configure backup";
+"I10-iV-C0e.title" = "Настроить резервирование";
 
 /* Class = "NSTextFieldCell"; title = "✓ enabled"; ObjectID = "KqD-DN-1Yk"; */
-"KqD-DN-1Yk.title" = "✓ enabled";
+"KqD-DN-1Yk.title" = "✓ включено";
 
 /* Class = "NSTextFieldCell"; title = "✘ disabled"; ObjectID = "M9O-91-CDX"; */
-"M9O-91-CDX.title" = "✘ disabled";
+"M9O-91-CDX.title" = "✘ отключено";
 
 /* Class = "NSTextFieldCell"; title = "✘ disabled"; ObjectID = "NSS-6s-Nas"; */
-"NSS-6s-Nas.title" = "✘ disabled";
+"NSS-6s-Nas.title" = "✘ отключено";
 
 /* Class = "NSTextFieldCell"; title = "<backup 2>"; ObjectID = "Nax-LU-ZGP"; */
-"Nax-LU-ZGP.title" = "<backup 2>";
+"Nax-LU-ZGP.title" = "<резерв. копия 2>";
 
 /* Class = "NSTextFieldCell"; title = "✓ enabled"; ObjectID = "OI0-bL-7Zs"; */
-"OI0-bL-7Zs.title" = "✓ enabled";
+"OI0-bL-7Zs.title" = "✓ включено";
 
 /* Class = "NSTextFieldCell"; title = "<backup 1>"; ObjectID = "R62-02-u5f"; */
-"R62-02-u5f.title" = "<backup 1>";
+"R62-02-u5f.title" = "<резерв. копия 1>";
 
 /* Class = "NSButtonCell"; title = "Enable"; ObjectID = "f0R-BI-Nz4"; */
-"f0R-BI-Nz4.title" = "Enable";
+"f0R-BI-Nz4.title" = "Велючить";
 
 /* Class = "NSButtonCell"; title = "Next Step"; ObjectID = "j0E-b4-dgh"; */
-"j0E-b4-dgh.title" = "Next Step";
+"j0E-b4-dgh.title" = "Следующий шаг";
 
 /* Class = "NSButtonCell"; title = "Enable"; ObjectID = "lG8-G7-noh"; */
-"lG8-G7-noh.title" = "Enable";
+"lG8-G7-noh.title" = "Включить";
 
 /* Class = "NSTextFieldCell"; title = "Backing up your wallet file is also an important safety measure to protect your money. Let's make a backup copy of your wallet now. If you ever lose your computer, Hive can retrieve your wallet from these sources."; ObjectID = "rIc-eX-ajY"; */
-"rIc-eX-ajY.title" = "Backing up your wallet file is also an important safety measure to protect your money. Let's make a backup copy of your wallet now. If you ever lose your computer, Hive can retrieve your wallet from these sources.";
+"rIc-eX-ajY.title" = "Резервное копирование Вашего файла кошелька также является важным средством для защиты Ваших денег. Давайте создадим резервную копию Вашего кошелька прямо сейчас. Если вы когда-либо лишитесь вашего компьютера, Hive сможет восстановить Ваш кошелек из этиъ источников.";
