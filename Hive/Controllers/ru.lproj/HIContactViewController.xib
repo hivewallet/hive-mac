@@ -56,7 +56,7 @@
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                 </customView>
                 <customView id="40">
-                    <rect key="frame" x="0.0" y="-5" width="350" height="335"/>
+                    <rect key="frame" x="0.0" y="0.0" width="350" height="330"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                 </customView>
             </subviews>
