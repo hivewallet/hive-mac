@@ -30,17 +30,17 @@
                         <rect key="frame" x="20" y="313" width="550" height="70"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                         <clipView key="contentView" id="kSl-kq-EgW">
-                            <rect key="frame" x="1" y="1" width="548" height="68"/>
+                            <rect key="frame" x="1" y="1" width="533" height="68"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             <subviews>
                                 <textView importsGraphics="NO" findStyle="panel" continuousSpellChecking="YES" allowsUndo="YES" usesRuler="YES" usesFontPanel="YES" verticallyResizable="YES" allowsNonContiguousLayout="YES" quoteSubstitution="YES" dashSubstitution="YES" smartInsertDelete="YES" id="tZn-ka-AjK">
-                                    <rect key="frame" x="0.0" y="0.0" width="548" height="68"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="533" height="68"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                    <size key="minSize" width="548" height="68"/>
+                                    <size key="minSize" width="533" height="68"/>
                                     <size key="maxSize" width="646" height="10000000"/>
                                     <color key="insertionPointColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                                    <size key="minSize" width="548" height="68"/>
+                                    <size key="minSize" width="533" height="68"/>
                                     <size key="maxSize" width="646" height="10000000"/>
                                 </textView>
                             </subviews>
@@ -82,17 +82,17 @@
                         <rect key="frame" x="20" y="61" width="550" height="151"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <clipView key="contentView" id="GCA-16-0ih">
-                            <rect key="frame" x="1" y="1" width="548" height="149"/>
+                            <rect key="frame" x="1" y="1" width="533" height="149"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             <subviews>
                                 <textView editable="NO" importsGraphics="NO" findStyle="panel" continuousSpellChecking="YES" allowsUndo="YES" usesRuler="YES" usesFontPanel="YES" verticallyResizable="YES" allowsNonContiguousLayout="YES" quoteSubstitution="YES" dashSubstitution="YES" smartInsertDelete="YES" id="df3-Si-0aS">
-                                    <rect key="frame" x="0.0" y="0.0" width="548" height="149"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="533" height="149"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                    <size key="minSize" width="548" height="149"/>
+                                    <size key="minSize" width="533" height="149"/>
                                     <size key="maxSize" width="646" height="10000000"/>
                                     <color key="insertionPointColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                                    <size key="minSize" width="548" height="149"/>
+                                    <size key="minSize" width="533" height="149"/>
                                     <size key="maxSize" width="646" height="10000000"/>
                                 </textView>
                             </subviews>
