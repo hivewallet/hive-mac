@@ -197,6 +197,8 @@ static int ddLogLevel = LOG_LEVEL_VERBOSE;
         exit(1);
     }
 
+    [self configureNotifications];
+
     NSError *error = nil;
     [[BCClient sharedClient] start:&error];
 
@@ -218,7 +220,6 @@ static int ddLogLevel = LOG_LEVEL_VERBOSE;
 
 - (void)showAppWindow {
     self.fullMenuEnabled = YES;
-    [self configureNotifications];
 
     _mainWindowController = [[HIMainWindowController alloc] initWithWindowNibName:@"HIMainWindowController"];
     [_mainWindowController showWindow:self];
@@ -227,10 +228,11 @@ static int ddLogLevel = LOG_LEVEL_VERBOSE;
 - (void)showSetUpWizard {
     self.wizard = [HIFirstRunWizardWindowController new];
     __weak __typeof__ (self) weakSelf = self;
+
     self.wizard.onCompletion = ^{
-        [[HIBackupManager sharedManager] performBackups];
         [weakSelf showAppWindow];
     };
+
     [self.wizard showWindow:self];
 }
 

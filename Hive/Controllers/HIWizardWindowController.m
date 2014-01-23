@@ -41,6 +41,8 @@
     NSAssert([controller isKindOfClass:[HIWizardViewController class]], nil);
     controller.wizardDelegate = self;
 
+    [controller viewWillAppear];
+
     controller.view.frame = self.wizardContentView.bounds;
     controller.view.autoresizingMask = NSViewWidthSizable | NSViewHeightSizable;
     [self.wizardContentView addSubview:controller.view];
