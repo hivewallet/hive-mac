@@ -199,7 +199,7 @@ DQ
                     <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="orC-Xa-BWE">
                         <rect key="frame" x="17" y="391" width="556" height="17"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Describe what you were doing when the error occurred (preferably in English):" id="F9w-28-7kX">
+                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Describe what you were doing when the error occurred:" id="F9w-28-7kX">
                             <font key="font" metaFont="system"/>
                             <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                             <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
