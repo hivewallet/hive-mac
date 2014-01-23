@@ -24,7 +24,7 @@
                         <constraint firstAttribute="width" relation="lessThanOrEqual" constant="300" id="P1B-Bo-bR7"/>
                         <constraint firstAttribute="width" constant="300" id="zAE-zM-ReJ"/>
                     </constraints>
-                    <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="left" title="The fees you pay help keep the Bitcoin network running!" id="JVe-5I-zWC">
+                    <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="left" title="Les frais que vous payez aide au fonctionnement du réseau Bitcoin !" id="JVe-5I-zWC">
                         <font key="font" metaFont="systemBold"/>
                         <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
@@ -33,7 +33,7 @@
                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="xy6-Kl-WYB">
                     <rect key="frame" x="18" y="20" width="154" height="17"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Current transaction fee:" id="exO-xB-xYk">
+                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Frais de la transaction actuelle:" id="exO-xB-xYk">
                         <font key="font" metaFont="system"/>
                         <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
@@ -42,7 +42,7 @@
                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="NZ9-po-xJV">
                     <rect key="frame" x="178" y="20" width="74" height="17"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="0.0000001" id="l6i-QL-kg8">
+                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="0,0000001" id="l6i-QL-kg8">
                         <font key="font" metaFont="system"/>
                         <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
@@ -51,7 +51,7 @@
                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="LZt-vQ-tVt" customClass="HILinkTextField">
                     <rect key="frame" x="18" y="45" width="89" height="17"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Learn more…" id="kHH-z3-bVk">
+                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="En apprendre plus…" id="kHH-z3-bVk">
                         <font key="font" metaFont="system"/>
                         <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>

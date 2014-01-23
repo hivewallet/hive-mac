@@ -80,7 +80,7 @@
                                         <textField verticalHuggingPriority="750" id="77">
                                             <rect key="frame" x="11" y="13" width="42" height="17"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                            <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Email:" id="78">
+                                            <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Courriel :" id="78">
                                                 <font key="font" metaFont="system"/>
                                                 <color key="textColor" red="0.75686274509999996" green="0.75686274509999996" blue="0.72549019609999998" alpha="1" colorSpace="calibratedRGB"/>
                                                 <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
