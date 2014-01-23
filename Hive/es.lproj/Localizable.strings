@@ -15,7 +15,7 @@
 "Apps" = "Apps";
 
 /* Warning when trying to a large BTC amount (btc, fiat amount and address) */
-"Are you sure you want to send %@ (%@) to %@?" = "¿Seguro que quieres enviar %1$@ (%2$@) to %3$@?";
+"Are you sure you want to send %@ (%@) to %@?" = "¿Seguro que quieres enviar %1$@ (%2$@) a %3$@?";
 
 /* Wizard backup page title */
 "Backup" = "Backup";
