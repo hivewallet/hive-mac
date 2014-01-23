@@ -66,7 +66,7 @@
 "copied!" = "¡copiado!";
 
 /* initialization error */
-"Could not read wallet file. It might be damaged." = "Could not read wallet file. It might be damaged.";
+"Could not read wallet file. It might be damaged." = "No se ha podido leer el archivo de la cartera. Puede estar dañado.";
 
 /* Quit without saves error question message */
 "Could not save changes while quitting. Quit anyway?" = "No se pueden guardar los cambios mientras se está cerrando. ¿Cerrar de todas formas?";
@@ -123,7 +123,7 @@
 "Hive cannot be started." = "Hive no puede iniciarse.";
 
 /* Database error alert title */
-"Hive database file cannot be opened." = "Hive database file cannot be opened.";
+"Hive database file cannot be opened." = "La base de datos de Hive no puede abrirse.";
 
 /* Backup error message */
 "Hive directory is excluded from Time Machine backup" = "La carpeta de Hive está excluida del backup de Time Machine";
@@ -228,7 +228,7 @@
 "The application data file has been removed or corrupted." = "El archivo de datos de la aplicación ha sido eliminado o corrompido.";
 
 /* Error message when database is incompatible with this version */
-"The database was saved by a newer version of Hive - please download the latest version from http://hivewallet.com." = "The database was saved by a newer version of Hive - please download the latest version from http://hivewallet.com.";
+"The database was saved by a newer version of Hive - please download the latest version from http://hivewallet.com." = "La base de datos fue guardada por una versión más nueva de Hive, por favor descarga la última versión desde http://hivewallet.com.";
 
 /* Install app popup warning message when app exists */
 "The existing app file will be replaced by the new version. This will not affect any app settings or saved data." = "El archivo existente de la app será reemplazado por la nueva versión. Esto no afectará a ninguna opción de app o datos guardados.";
