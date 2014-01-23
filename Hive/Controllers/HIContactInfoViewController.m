@@ -72,7 +72,11 @@ static const NSInteger AddressFieldTag = 2;
 
     [self.profileEmailField setValueAndRecalc:((_contact.email.length > 0) ? _contact.email : @"")];
 
-    [self.editButton sizeToFit];
+    // TODO: I cannot into AutoLayout, but let's switch to that later
+    NSSize editLabelSize = self.editButton.intrinsicContentSize;
+    NSRect editButtonFrame = self.editButton.frame;
+    self.editButton.frame = NSMakeRect(editButtonFrame.origin.x, editButtonFrame.origin.y,
+                                       editLabelSize.width + 35, editButtonFrame.size.height);
 
     // configure box size
     NSRect f = self.addressBoxView.frame;
