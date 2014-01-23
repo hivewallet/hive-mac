@@ -32,7 +32,7 @@ const NSInteger HITimeMachineBackupPathExcluded = -2;
 }
 
 - (BOOL)isEnabledByDefault {
-    return YES;
+    return NO;
 }
 
 - (BOOL)requiresEncryption {
