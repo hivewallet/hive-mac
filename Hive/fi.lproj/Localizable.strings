@@ -300,7 +300,7 @@
 "You need to choose or create a directory inside your Dropbox folder." = "You need to choose or create a directory inside your Dropbox folder.";
 
 /* Contact name empty alert message */
-"You need to give the contact a name before you can add it to the list." = "Sinun täytyy antaa  yhteystiedolle nimi ennen kuin voit lisätä sen luetteloon.";
+"You need to give the contact a name before you can add it to the list." = "Sinun täytyy antaa yhteystiedolle nimi ennen kuin voit lisätä sen luetteloon.";
 
 /* Backup requires password alert title */
 "You need to set a wallet password first (see Wallet menu)." = "You need to set a wallet password first (see Wallet menu).";
