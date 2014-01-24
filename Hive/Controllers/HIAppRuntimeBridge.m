@@ -369,7 +369,7 @@ static const NSInteger kHIAppRuntimeBridgeParsingError = -1000;
                         currency:(NSString *)currency {
     HICurrencyFormatService *service = [HICurrencyFormatService sharedService];
     return [service formatValue:value
-                     inCurrency:currency];
+                     inCurrency:IsNullOrUndefined(currency) ? _preferredCurrency : currency];
 }
 
 - (NSNumber *)valueFromUserString:(NSString *)string {
