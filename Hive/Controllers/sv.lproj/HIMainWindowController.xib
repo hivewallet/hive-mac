@@ -8,6 +8,7 @@
         <customObject id="-2" userLabel="File's Owner" customClass="HIMainWindowController">
             <connections>
                 <outlet property="contentView" destination="36" id="38"/>
+                <outlet property="sendButton" destination="44" id="nqI-bw-r6i"/>
                 <outlet property="sidebarController" destination="39" id="40"/>
                 <outlet property="window" destination="3" id="10"/>
             </connections>

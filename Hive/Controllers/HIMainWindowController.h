@@ -18,6 +18,7 @@
 @interface HIMainWindowController : NSWindowController <HISidebarControllerDelegate>
 
 @property (strong) IBOutlet NSView *contentView;
+@property (strong) IBOutlet NSButton *sendButton;
 @property (strong) IBOutlet HISidebarController *sidebarController;
 
 - (void)switchToPanel:(Class)panelClass;

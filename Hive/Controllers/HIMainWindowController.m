@@ -75,6 +75,14 @@ static const NSTimeInterval SlideAnimationDuration = 0.3;
                afterDelay:0];
 }
 
+- (void)awakeFromNib {
+    // quick fix for send button in some languages (e.g. Russian)
+    if (self.sendButton.intrinsicContentSize.width > SidebarButtonWidth) {
+        self.sendButton.frame = NSInsetRect(self.sendButton.frame, -2.0, 0.0);
+        self.sendButton.font = [NSFont boldSystemFontOfSize:11.0];
+    }
+}
+
 - (void)preloadViews:(NSArray *)panels {
     for (NSViewController *panel in panels) {
         if (!panel.view.superview) {
