@@ -94,15 +94,17 @@ static NSString const *ConstraintKey = @"constraint";
     arrowView.translatesAutoresizingMaskIntoConstraints = NO;
     [self addSubview:arrowView];
     [self addConstraints:@[
-        INSET_TOP(arrowView, 0.0),
-        INSET_BOTTOM(arrowView, 0.0),
+        INSET_TOP(arrowView, ArrowViewPadding),
+        INSET_BOTTOM(arrowView, ArrowViewPadding),
         PIN_WIDTH(arrowView, ArrowViewWidth),
         HSPACE(button, arrowView, ArrowViewLeftMargin),
     ]];
 
     if (animated) {
         arrowView.alphaValue = 0;
-        arrowView.animator.alphaValue = 1;
+        arrowView.animator.alphaValue = SmallLabelAlpha;
+    } else {
+        arrowView.alphaValue = SmallLabelAlpha;
     }
 
     self.arrowView = arrowView;
