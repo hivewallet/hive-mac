@@ -144,7 +144,7 @@
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
             <subviews>
                 <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="83">
-                    <rect key="frame" x="6" y="8" width="21" height="17"/>
+                    <rect key="frame" x="0.0" y="3" width="27" height="27"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <buttonCell key="cell" type="bevel" bezelStyle="rounded" image="icon-plus" imagePosition="only" alignment="center" imageScaling="proportionallyDown" inset="2" id="84">
                         <behavior key="behavior" pushIn="YES" changeContents="YES" lightByContents="YES"/>
