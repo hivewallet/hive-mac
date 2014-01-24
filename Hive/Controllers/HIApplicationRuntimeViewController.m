@@ -120,6 +120,18 @@
                         contextInfo:NULL];
 }
 
+- (BOOL)webView:(WebView *)wv runJavaScriptConfirmPanelWithMessage:(NSString *)msg initiatedByFrame:(WebFrame *)frame {
+    NSAlert *alert = [NSAlert alertWithMessageText:self.application.name
+                                     defaultButton:NSLocalizedString(@"OK", @"OK button title")
+                                   alternateButton:NSLocalizedString(@"Cancel", @"Cancel button title")
+                                       otherButton:nil
+                         informativeTextWithFormat:@"%@", msg];
+
+    NSInteger result = [alert runModal];
+
+    return (result == NSAlertDefaultReturn);
+}
+
 - (void)webView:(WebView *)sender
                    resource:(id)identifier
     didFailLoadingWithError:(NSError *)error
