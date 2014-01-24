@@ -123,7 +123,7 @@
 "Hive cannot be started." = "Hive kan inte köras.";
 
 /* Database error alert title */
-"Hive database file cannot be opened." = "Hive database file cannot be opened.";
+"Hive database file cannot be opened." = "Hives databasfil kan inte öppnas.";
 
 /* Backup error message */
 "Hive directory is excluded from Time Machine backup" = "Hive-katalog är exkluderad från Time Machines säkerhetskopia";
@@ -228,7 +228,7 @@
 "The application data file has been removed or corrupted." = "Programmets datafil har blivit borttagen eller skadats.";
 
 /* Error message when database is incompatible with this version */
-"The database was saved by a newer version of Hive - please download the latest version from http://hivewallet.com." = "The database was saved by a newer version of Hive - please download the latest version from http://hivewallet.com.";
+"The database was saved by a newer version of Hive - please download the latest version from http://hivewallet.com." = "Databasen sparades med en nyare version av Hive - Vänligen ladda hem senaste versionen av Hive från http://hivewallet.com.";
 
 /* Install app popup warning message when app exists */
 "The existing app file will be replaced by the new version. This will not affect any app settings or saved data." = "Nuvarande app-fil kommer att bli ersatt med en ny version. Detta kommer inte påverka några inställningar eller sparade uppgifter..";
