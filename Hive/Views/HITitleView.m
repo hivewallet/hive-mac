@@ -28,6 +28,7 @@ static NSString const *ConstraintKey = @"constraint";
 }
 
 @property (nonatomic, strong) NSView *arrowView;
+@property (nonatomic, strong) NSLayoutConstraint *arrowSpacingConstraint;
 
 @end
 
@@ -87,9 +88,6 @@ static NSString const *ConstraintKey = @"constraint";
 - (void)addArrowViewAnimated:(BOOL)animated {
     [self.arrowView removeFromSuperview];
 
-    NSMutableDictionary *stackItem = _stack[_stack.count - 1];
-    NSButton *button = stackItem[ButtonKey];
-
     NSView *arrowView = self.arrowView ?: [HIRightPointingArrowView new];
     arrowView.translatesAutoresizingMaskIntoConstraints = NO;
     [self addSubview:arrowView];
@@ -97,7 +95,6 @@ static NSString const *ConstraintKey = @"constraint";
         INSET_TOP(arrowView, ArrowViewPadding),
         INSET_BOTTOM(arrowView, ArrowViewPadding),
         PIN_WIDTH(arrowView, ArrowViewWidth),
-        HSPACE(button, arrowView, ArrowViewLeftMargin),
     ]];
 
     if (animated) {
@@ -108,12 +105,33 @@ static NSString const *ConstraintKey = @"constraint";
     }
 
     self.arrowView = arrowView;
+
+    [self positionArrowViewNextToButtonAtIndex:_stack.count - 1];
+}
+
+- (void)positionArrowViewNextToButtonAtIndex:(NSUInteger)index {
+    [self removeConstraint:self.arrowSpacingConstraint];
+    NSMutableDictionary *stackItem = _stack[index];
+    NSButton *button = stackItem[ButtonKey];
+    self.arrowSpacingConstraint = HSPACE(button, self.arrowView, ArrowViewLeftMargin);
+    [self addConstraint:self.arrowSpacingConstraint];
 }
 
 - (void)hideLeftView:(BOOL)animated {
     NSMutableDictionary *stackItem = _stack[_stack.count - 2];
     NSButton *button = stackItem[ButtonKey];
     (animated ? button.animator : button).alphaValue = 0.0;
+}
+
+- (void)unhideLeftViewAnimated:(BOOL)animated {
+    NSMutableDictionary *stackItem = _stack[_stack.count - 2];
+    NSButton *button = stackItem[ButtonKey];
+    (animated ? button.animator : button).alphaValue = SmallLabelAlpha;
+}
+
+- (void)hideArrowViewAnimated:(BOOL)animated {
+    self.arrowView.alphaValue = SmallLabelAlpha;
+    (animated ? self.arrowView.animator : self.arrowView).alphaValue = 0;
 }
 
 - (void)addCenteredViewWithTitle:(NSString *)title animated:(BOOL)animated {
@@ -224,19 +242,26 @@ static NSString const *ConstraintKey = @"constraint";
         [_stack.lastObject[ButtonKey] removeFromSuperview];
         [_stack removeLastObject];
     }
+    BOOL isLastView = position == 0;
 
     [NSAnimationContext runAnimationGroup:^(NSAnimationContext *context) {
         context.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseInEaseOut];
         context.duration = TitleSlideDuration;
 
-        self.arrowView.alphaValue = 1;
-        self.arrowView.animator.alphaValue = 0;
+        if (isLastView) {
+            [self hideArrowViewAnimated:YES];
+        } else {
+            [self unhideLeftViewAnimated:YES];
+            [self positionArrowViewNextToButtonAtIndex:_stack.count - 2];
+        }
 
         [self centerTopViewAnimated:YES];
 
     } completionHandler:^{
         [self centerTopViewAnimated:NO];
-        [self.arrowView removeFromSuperview];
+        if (isLastView) {
+            [self.arrowView removeFromSuperview];
+        }
     }];
 }
 
