@@ -82,6 +82,9 @@
 
     self.view.layer.backgroundColor = [[NSColor hiWindowBackgroundColor] hiNativeColor];
 
+    self.photoView.layer.borderWidth = 1.0;
+    self.photoView.layer.borderColor = [[NSColor colorWithCalibratedWhite:0.88 alpha:1.0] hiNativeColor];
+
     [self setupCurrencyLists];
     [self updateBalance];
     [self refreshData];
