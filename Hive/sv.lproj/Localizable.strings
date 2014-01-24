@@ -279,7 +279,11 @@
 "Welcome" = "Välkommen";
 
 /* Button to show info about pending funds */
+<<<<<<< HEAD
+"What does this mean?" = Vad betyder detta?";
+=======
 "What does this mean?" = "Vad betyder detta?";
+>>>>>>> 912f2049002e54af54916d390ddfa54b4c82e109
 
 /* Sending zero bitcoin alert message */
 "Why would you want to send someone 0 BTC?" = "Varför skulle du vilja skicka någon 0 BTC?";
