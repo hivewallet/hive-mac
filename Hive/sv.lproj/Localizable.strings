@@ -15,7 +15,7 @@
 "Apps" = "Apps";
 
 /* Warning when trying to a large BTC amount (btc, fiat amount and address) */
-"Are you sure you want to send %@ (%@) to %@?" = "Are you sure you want to send %1$@ (%2$@) to %3$@?";
+"Are you sure you want to send %@ (%@) to %@?" = "Är du säker på att du vill skicka  %1$@ (%2$@) till %3$@?";
 
 /* Wizard backup page title */
 "Backup" = "Säkerhetskopiering";
@@ -93,7 +93,7 @@
 "Dropbox folder not found." = "Dropbox-katalog hittas inte.";
 
 /* Backup error message */
-"Dropbox isn't running" = "Dropbox isn't running";
+"Dropbox isn't running" = "Dropbox körs inte";
 
 /* Page title when editing contact's info */
 "Edit contact" = "Ändra kontakt";
@@ -120,7 +120,7 @@
 "Firstname" = "Förnamn";
 
 /* Initialization error title */
-"Hive cannot be started." = "Hive cannot be started.";
+"Hive cannot be started." = "Hive kan inte köras.";
 
 /* Database error alert title */
 "Hive database file cannot be opened." = "Hive database file cannot be opened.";
@@ -129,10 +129,10 @@
 "Hive directory is excluded from Time Machine backup" = "Hive-katalog är exkluderad från Time Machines säkerhetskopia";
 
 /* Share sent transaction text */
-"I've just received some Bitcoin using Hive" = "I've just received some Bitcoin using Hive";
+"I've just received some Bitcoin using Hive" = "Jag mottog precis Bitcoins med Hive";
 
 /* Share sent transaction text */
-"I've just sent some Bitcoin using Hive" = "I've just sent some Bitcoin using Hive";
+"I've just sent some Bitcoin using Hive" = "Jag skickade precis Bitcoins med Hive";
 
 /* Install app button title */
 "Install" = "Installera";
