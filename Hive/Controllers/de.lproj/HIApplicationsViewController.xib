@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="4514" systemVersion="13C32" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none">
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="4514" systemVersion="13B42" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none">
     <dependencies>
         <deployment version="1070" defaultVersion="1070" identifier="macosx"/>
         <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="4514"/>
@@ -34,13 +34,14 @@
                             <collectionView selectable="YES" id="48">
                                 <rect key="frame" x="0.0" y="0.0" width="276" height="308"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                <color key="primaryBackgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                <color key="primaryBackgroundColor" red="0.94" green="0.94" blue="0.94" alpha="1" colorSpace="calibratedRGB"/>
                                 <connections>
                                     <binding destination="35" name="content" keyPath="arrangedObjects" id="66"/>
                                     <outlet property="itemPrototype" destination="51" id="53"/>
                                 </connections>
                             </collectionView>
                         </subviews>
+                        <color key="backgroundColor" red="0.94" green="0.94" blue="0.94" alpha="1" colorSpace="calibratedRGB"/>
                     </clipView>
                     <scroller key="horizontalScroller" hidden="YES" verticalHuggingPriority="750" horizontal="YES" id="49">
                         <rect key="frame" x="1" y="144" width="233" height="15"/>

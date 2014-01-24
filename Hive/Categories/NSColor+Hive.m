@@ -11,7 +11,7 @@
 @implementation NSColor (Hive)
 
 + (NSColor *)hiWindowBackgroundColor {
-    return [NSColor colorWithCalibratedWhite:0.9 alpha:1.0];
+    return [NSColor colorWithCalibratedWhite:0.94 alpha:1.0];
 }
 
 - (CGColorRef)hiNativeColor {
