@@ -27,8 +27,12 @@ fi
 for file in $(find Hive "${QUERY[@]}"); do
   strings_file=`echo $file | sed 's/\.xib/.strings/'`
   original_file=`echo $file | sed -E 's/([[:alpha:]]|\-)+\.lproj/en.lproj/'`
-  if [ -f "$strings_file" ] && [ "$file" != "$original_file" ]; then
+  if [ "$file" != "$original_file" ]; then
     echo "Updating $file..."
-    ibtool --strings-file $strings_file --write $file $original_file
+    if [ -f "$strings_file" ]; then
+        ibtool --strings-file $strings_file --write $file $original_file
+    else
+        ibtool --write $file $original_file
+    fi
   fi
 done
