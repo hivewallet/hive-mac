@@ -12,6 +12,13 @@
 #import "HIContactRowView.h"
 #import "HIDatabaseManager.h"
 #import "HINavigationController.h"
+#import "NSColor+Hive.h"
+
+@interface HIApplicationsViewController ()
+
+- (IBAction)getMoreAppsClicked:(id)sender;
+
+@end
 
 @implementation HIApplicationsViewController
 
@@ -41,6 +48,7 @@
                                options:NSKeyValueObservingOptionNew | NSKeyValueObservingOptionInitial
                                context:nil];
 
+    self.view.layer.backgroundColor = [self.collectionView.backgroundColors.firstObject hiNativeColor];
 }
 
 - (void)dealloc {
@@ -65,6 +73,11 @@
             [self.navigationController pushViewController:sub animated:YES];
         }
     }
+}
+
+- (IBAction)getMoreAppsClicked:(id)sender {
+    [[NSWorkspace sharedWorkspace] openURL:
+     [NSURL URLWithString:@"https://github.com/hivewallet/hive-osx/wiki/App-Registry"]];
 }
 
 @end

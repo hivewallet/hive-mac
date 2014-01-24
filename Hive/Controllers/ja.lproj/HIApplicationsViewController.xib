@@ -21,27 +21,27 @@
             </connections>
         </arrayController>
         <customView wantsLayer="YES" id="1">
-            <rect key="frame" x="0.0" y="0.0" width="276" height="308"/>
+            <rect key="frame" x="0.0" y="0.0" width="276" height="236"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
             <subviews>
                 <scrollView borderType="none" autohidesScrollers="YES" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" usesPredominantAxisScrolling="NO" id="47">
-                    <rect key="frame" x="0.0" y="0.0" width="276" height="308"/>
+                    <rect key="frame" x="0.0" y="30" width="276" height="206"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                     <clipView key="contentView" copiesOnScroll="NO" id="V6D-WS-gUl">
-                        <rect key="frame" x="0.0" y="0.0" width="276" height="308"/>
+                        <rect key="frame" x="0.0" y="0.0" width="276" height="206"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView selectable="YES" id="48">
-                                <rect key="frame" x="0.0" y="0.0" width="276" height="308"/>
+                                <rect key="frame" x="0.0" y="0.0" width="276" height="206"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                <color key="primaryBackgroundColor" red="0.94" green="0.94" blue="0.94" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="primaryBackgroundColor" red="0.93999999999999995" green="0.93999999999999995" blue="0.93999999999999995" alpha="1" colorSpace="calibratedRGB"/>
                                 <connections>
                                     <binding destination="35" name="content" keyPath="arrangedObjects" id="66"/>
                                     <outlet property="itemPrototype" destination="51" id="53"/>
                                 </connections>
                             </collectionView>
                         </subviews>
-                        <color key="backgroundColor" red="0.94" green="0.94" blue="0.94" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="0.93999999999999995" green="0.93999999999999995" blue="0.93999999999999995" alpha="1" colorSpace="calibratedRGB"/>
                     </clipView>
                     <scroller key="horizontalScroller" hidden="YES" verticalHuggingPriority="750" horizontal="YES" id="49">
                         <rect key="frame" x="1" y="144" width="233" height="15"/>
@@ -52,6 +52,21 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </scroller>
                 </scrollView>
+                <button alphaValue="0.5" id="d32-rm-mgd">
+                    <rect key="frame" x="0.0" y="0.0" width="276" height="30"/>
+                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                    <shadow key="shadow">
+                        <size key="offset" width="1" height="-1"/>
+                        <color key="color" red="1" green="0.9999350905418396" blue="0.99997484683990479" alpha="1" colorSpace="calibratedRGB"/>
+                    </shadow>
+                    <buttonCell key="cell" type="smallSquare" title="Get more apps..." bezelStyle="smallSquare" imagePosition="overlaps" alignment="center" state="on" imageScaling="proportionallyDown" inset="2" id="VZ8-P4-rue">
+                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                        <font key="font" size="12" name="Helvetica"/>
+                    </buttonCell>
+                    <connections>
+                        <action selector="getMoreAppsClicked:" target="-2" id="RBQ-bs-c50"/>
+                    </connections>
+                </button>
             </subviews>
         </customView>
         <userDefaultsController representsSharedInstance="YES" id="37"/>
