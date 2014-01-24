@@ -15,7 +15,7 @@
 "Apps" = "Приложения";
 
 /* Warning when trying to a large BTC amount (btc, fiat amount and address) */
-"Are you sure you want to send %@ (%@) to %@?" = "Are you sure you want to send %1$@ (%2$@) to %3$@?";
+"Are you sure you want to send %@ (%@) to %@?" = "Вы уверены, что хотите отправить %1$@ (%2$@) на %3$@?";
 
 /* Wizard backup page title */
 "Backup" = "Резервное копирование";
@@ -135,7 +135,7 @@
 "I've just sent some Bitcoin using Hive" = "Я только что отпрвил Биткоины используя хайв";
 
 /* Install app button title */
-"Install" = "Install";
+"Install" = "Установить";
 
 /* Backup requires password alert details */
 "It's dangerous to upload unencrypted wallets." = "Это опасно загружать незашифрованные кошельки.";
