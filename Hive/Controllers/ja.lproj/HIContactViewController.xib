@@ -23,12 +23,12 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <imageView id="3">
-                    <rect key="frame" x="0.0" y="381" width="75" height="75"/>
+                    <rect key="frame" x="0.0" y="378" width="78" height="78"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyUpOrDown" id="4"/>
                 </imageView>
                 <textField verticalHuggingPriority="750" id="21">
-                    <rect key="frame" x="88" y="425" width="236" height="17"/>
+                    <rect key="frame" x="91" y="425" width="236" height="17"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="John Whatshisface" id="22">
                         <font key="font" metaFont="systemBold"/>
@@ -37,7 +37,7 @@
                     </textFieldCell>
                 </textField>
                 <button id="23">
-                    <rect key="frame" x="85" y="386" width="251" height="29"/>
+                    <rect key="frame" x="88" y="386" width="250" height="29"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                     <shadow key="shadow" blurRadius="1">
                         <size key="offset" width="0.0" height="1"/>
