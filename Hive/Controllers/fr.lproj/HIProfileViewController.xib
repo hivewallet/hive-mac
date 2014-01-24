@@ -79,10 +79,10 @@
                     </textFieldCell>
                 </textField>
                 <box autoresizesSubviews="NO" title="Box" boxType="custom" borderType="line" translatesAutoresizingMaskIntoConstraints="NO" id="Zcf-4u-dGc" userLabel="Separator 2">
-                    <rect key="frame" x="75" y="380" width="275" height="1"/>
+                    <rect key="frame" x="90" y="380" width="245" height="1"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                     <view key="contentView">
-                        <rect key="frame" x="1" y="1" width="273" height="0.0"/>
+                        <rect key="frame" x="1" y="1" width="243" height="0.0"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                     </view>
                     <constraints>
@@ -113,10 +113,10 @@
                     </textFieldCell>
                 </textField>
                 <box autoresizesSubviews="NO" title="Box" boxType="custom" borderType="line" translatesAutoresizingMaskIntoConstraints="NO" id="5Bs-DP-BDu" userLabel="Separator 3">
-                    <rect key="frame" x="0.0" y="343" width="350" height="1"/>
+                    <rect key="frame" x="15" y="343" width="320" height="1"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                     <view key="contentView">
-                        <rect key="frame" x="1" y="1" width="348" height="0.0"/>
+                        <rect key="frame" x="1" y="1" width="318" height="0.0"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                     </view>
                     <constraints>
@@ -131,7 +131,7 @@
                 </customView>
             </subviews>
             <constraints>
-                <constraint firstItem="2tC-mD-mf4" firstAttribute="trailing" secondItem="Zcf-4u-dGc" secondAttribute="trailing" constant="-15" id="65Y-TK-Jgr"/>
+                <constraint firstItem="2tC-mD-mf4" firstAttribute="trailing" secondItem="Zcf-4u-dGc" secondAttribute="trailing" id="65Y-TK-Jgr"/>
                 <constraint firstItem="2tC-mD-mf4" firstAttribute="top" secondItem="21" secondAttribute="bottom" constant="8" id="6UE-Y3-6y9"/>
                 <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="ZMe-rr-2nF" secondAttribute="trailing" constant="20" symbolic="YES" id="90a-AF-zgr"/>
                 <constraint firstItem="3" firstAttribute="top" secondItem="1" secondAttribute="top" id="A91-Kw-kfP"/>
@@ -139,15 +139,15 @@
                 <constraint firstItem="Zcf-4u-dGc" firstAttribute="top" secondItem="75" secondAttribute="bottom" constant="11" id="Bqz-kd-0PI"/>
                 <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="75" secondAttribute="trailing" constant="20" symbolic="YES" id="FLw-XB-yvh"/>
                 <constraint firstAttribute="trailing" secondItem="2tC-mD-mf4" secondAttribute="trailing" constant="15" id="JFg-E5-jSS"/>
+                <constraint firstItem="Zcf-4u-dGc" firstAttribute="trailing" secondItem="5Bs-DP-BDu" secondAttribute="trailing" id="L2l-y0-ZD2"/>
                 <constraint firstItem="21" firstAttribute="top" secondItem="1" secondAttribute="top" constant="14" id="LxU-9R-YVm"/>
                 <constraint firstItem="qOj-X5-bn0" firstAttribute="leading" secondItem="21" secondAttribute="leading" constant="-10" id="PAM-Z4-F7O"/>
                 <constraint firstItem="2tC-mD-mf4" firstAttribute="leading" secondItem="3" secondAttribute="trailing" constant="15" id="Pbi-N9-7mk"/>
                 <constraint firstAttribute="trailing" secondItem="40" secondAttribute="trailing" id="Stz-aQ-bvK"/>
-                <constraint firstItem="2tC-mD-mf4" firstAttribute="leading" secondItem="Zcf-4u-dGc" secondAttribute="leading" constant="15" id="Tdh-DR-AAb"/>
+                <constraint firstItem="2tC-mD-mf4" firstAttribute="leading" secondItem="Zcf-4u-dGc" secondAttribute="leading" id="Tdh-DR-AAb"/>
                 <constraint firstAttribute="bottom" secondItem="40" secondAttribute="bottom" id="VbB-Gj-ao8"/>
-                <constraint firstAttribute="trailing" secondItem="5Bs-DP-BDu" secondAttribute="trailing" id="X1j-Mb-sCM"/>
                 <constraint firstItem="75" firstAttribute="leading" secondItem="qOj-X5-bn0" secondAttribute="trailing" constant="8" id="YAa-EK-jd7"/>
-                <constraint firstItem="5Bs-DP-BDu" firstAttribute="leading" secondItem="1" secondAttribute="leading" id="YN1-wK-g1f"/>
+                <constraint firstItem="5Bs-DP-BDu" firstAttribute="leading" secondItem="1" secondAttribute="leading" constant="15" id="YN1-wK-g1f"/>
                 <constraint firstItem="qOj-X5-bn0" firstAttribute="width" secondItem="Oga-wU-PlF" secondAttribute="width" id="YdD-i3-bVn"/>
                 <constraint firstItem="3" firstAttribute="leading" secondItem="1" secondAttribute="leading" id="jVQ-r7-Xm2"/>
                 <constraint firstItem="75" firstAttribute="centerY" secondItem="qOj-X5-bn0" secondAttribute="centerY" id="jwk-Hj-AHR"/>
