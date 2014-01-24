@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="4514" systemVersion="12F45" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none">
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="4514" systemVersion="13B42" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none">
     <dependencies>
         <deployment version="1070" defaultVersion="1070" identifier="macosx"/>
         <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="4514"/>
@@ -205,13 +205,13 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </scroller>
                 </scrollView>
-                <textField verticalHuggingPriority="750" id="106">
+                <textField wantsLayer="YES" verticalHuggingPriority="750" alphaValue="0.70000000000000007" id="106">
                     <rect key="frame" x="0.0" y="311" width="65" height="16"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="editovat" drawsBackground="YES" id="107">
                         <font key="font" size="12" name="Helvetica"/>
                         <color key="textColor" red="0.99987602229999994" green="0.99998402600000003" blue="0.99978637699999995" alpha="1" colorSpace="calibratedRGB"/>
-                        <color key="backgroundColor" red="0.26450267430000002" green="0.2645250261" blue="0.2644736171" alpha="0.66000000000000003" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="0.059837084263563156" green="0.059839386492967606" blue="0.059831220656633377" alpha="1" colorSpace="calibratedRGB"/>
                     </textFieldCell>
                 </textField>
             </subviews>
