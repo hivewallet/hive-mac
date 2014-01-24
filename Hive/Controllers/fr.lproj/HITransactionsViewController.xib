@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="4514" systemVersion="13C32" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="4514" systemVersion="13B42" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
         <deployment defaultVersion="1070" identifier="macosx"/>
         <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="4514"/>
@@ -80,7 +80,7 @@
                                                     <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="mY4-hd-Z1f" userLabel="Pending Label">
                                                         <rect key="frame" x="89" y="10" width="170" height="14"/>
                                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
-                                                        <textFieldCell key="cell" lineBreakMode="truncatingTail" sendsActionOnEndEditing="YES" title="PENDING" usesSingleLineMode="YES" id="oXJ-Jx-H6s">
+                                                        <textFieldCell key="cell" lineBreakMode="truncatingTail" sendsActionOnEndEditing="YES" title="EN ATTENTE" usesSingleLineMode="YES" id="oXJ-Jx-H6s">
                                                             <font key="font" size="11" name="Helvetica-Bold"/>
                                                             <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                                                             <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
@@ -228,7 +228,7 @@
                                 <size key="offset" width="0.0" height="1"/>
                                 <color key="color" red="1" green="0.99988943340000003" blue="0.99995732309999996" alpha="1" colorSpace="calibratedRGB"/>
                             </shadow>
-                            <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="center" title="Vous pouvez utiliser le bouton envoyer pour envooyer de l'argent à quelqu'un." id="63">
+                            <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="center" title="Vous pouvez ensuite utiliser le bouton envoyer pour envoyer de l'argent à quelqu'un." id="63">
                                 <font key="font" size="13" name="Helvetica"/>
                                 <color key="textColor" red="0.32231375579999999" green="0.3222793639" blue="0.32230004670000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>

@@ -1,9 +1,8 @@
-
 /* Class = "NSTextFieldCell"; title = "Received"; ObjectID = "22"; */
 "22.title" = "Ricevuti";
 
 /* Class = "NSTextFieldCell"; title = "Date"; ObjectID = "41"; */
-"41.title" = "Date";
+"41.title" = "Data";
 
 /* Class = "NSTextFieldCell"; title = "Looks like you haven't made any transactions yet. Send someone some Bitcoin!"; ObjectID = "54"; */
 "54.title" = "Sembra che tu non abbia ancora effettuato nessuna transazione. Invia Bitcoin a qualcuno!";
@@ -15,4 +14,4 @@
 "63.title" = "Puoi utilizzare il pulsante Invia per inviare soldi a qualcuno.";
 
 /* Class = "NSTextFieldCell"; title = "PENDING"; ObjectID = "oXJ-Jx-H6s"; */
-"oXJ-Jx-H6s.title" = "PENDING";
+"oXJ-Jx-H6s.title" = "NON CONFERMATA";

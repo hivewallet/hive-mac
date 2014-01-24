@@ -18,7 +18,7 @@
 "Are you sure you want to send %@ (%@) to %@?" = "Czy jesteś pewny, że chcesz wysłać %1$@ (%2$@) do %3$@?";
 
 /* Wizard backup page title */
-"Backup" = "Backup";
+"Backup" = "Kopia zapasowa";
 
 /* Backup status: backup can't or won't be completed */
 "Backup error" = "Błąd wykonywania kopii";
@@ -122,6 +122,9 @@
 /* Initialization error title */
 "Hive cannot be started." = "Nie można uruchomić Hive.";
 
+/* Database error alert title */
+"Hive database file cannot be opened." = "Nie można otworzyć pliku z bazą danych Hive.";
+
 /* Backup error message */
 "Hive directory is excluded from Time Machine backup" = "Katalog Hive jest wyłączony z kopii zapasowej Time Machine";
 
@@ -171,10 +174,10 @@
 "or choose from the list" = "lub wybierz z listy";
 
 /* Wizard password page title */
-"Password" = "Password";
+"Password" = "Hasło";
 
 /* Pending transaction label */
-"PENDING" = "W TRAKCIE REALIZACJI";
+"PENDING" = "W REALIZACJI";
 
 /* Invalid address alert message */
 "Please check if you have entered the address correctly." = "Sprawdź czy wprowadzony adres jest poprawny.";
@@ -224,6 +227,9 @@
 /* App load error description */
 "The application data file has been removed or corrupted." = "Plik z danymi aplikacji został usunięty lub uszkodzony.";
 
+/* Error message when database is incompatible with this version */
+"The database was saved by a newer version of Hive - please download the latest version from http://hivewallet.com." = "Dane zostały zapisane przez nowszą wersję Hive - ściągnij najnowszą wersję z http://hivewallet.com.";
+
 /* Install app popup warning message when app exists */
 "The existing app file will be replaced by the new version. This will not affect any app settings or saved data." = "Poprzednia wersja aplikacji zostanie zastąpiona nową. Dane i ustawienia zapisane przez aplikację nie zostaną zmienione.";
 
@@ -246,7 +252,7 @@
 "To send this transaction, you'll need to wait for your pending transactions to be confirmed first (this shouldn't take more than a few minutes)." = "Aby wysłać tą transakcję, musisz poczekać aż poprzednie transakcje zostaną potwierdzone (to nie powinno zająć więcej niż kilka minut).";
 
 /* Notification of cancelled transaction */
-"Transaction cancelled" = "Transaction cancelled";
+"Transaction cancelled" = "Transakcja została anulowana";
 
 /* Notification of confirmed sent transaction */
 "Transaction completed" = "Transakcja została wysłana";
@@ -270,7 +276,7 @@
 "We cannot guarantee the safety of all apps - please be careful if you download Hive apps from third party sites." = "Nie możemy zagwarantować bezpieczeństwa wszystkich aplikacji - zachowaj ostrożność jeśli ściągasz aplikacje ze stron innych producentów.";
 
 /* Wizard welcome page title */
-"Welcome" = "Welcome";
+"Welcome" = "Witaj";
 
 /* Button to show info about pending funds */
 "What does this mean?" = "Co to znaczy?";

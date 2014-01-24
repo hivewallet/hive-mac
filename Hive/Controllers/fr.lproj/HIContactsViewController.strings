@@ -1,4 +1,3 @@
-
 /* Class = "NSTextFieldCell"; title = "Looks like you don't have any contacts yet! Add your first one and start sending money!"; ObjectID = "123"; */
 "123.title" = "Il semble que vous n'ayez encore aucun contact ! Ajoutez votre premier contact et commencez à envoyer de l'argent !";
 
@@ -6,4 +5,4 @@
 "125.title" = "Ajouter un contact";
 
 /* Class = "NSTextFieldCell"; title = "You can then use the ✚ button on top to add more contacts."; ObjectID = "129"; */
-"129.title" = "You can then use the \U2795 button Label";
+"129.title" = "Vous pouvez ensuite ajouter le bouton ✚ en haut pour ajouter d'autres contacts.";

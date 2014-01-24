@@ -1,9 +1,9 @@
 
 /* Class = "NSTextFieldCell"; title = "A wallet is like a set of keys that unlock your money. Let's create one now."; ObjectID = "AHC-MY-HDw"; */
-"AHC-MY-HDw.title" = "A wallet is like a set of keys that unlock your money. Let's create one now.";
+"AHC-MY-HDw.title" = "Кошелек это как набор ключей, которые дают доступ к Вашим деньгам. Давайте создадим один прямо сейчас.";
 
 /* Class = "NSTextFieldCell"; title = "Welcome to Hive"; ObjectID = "I10-iV-C0e"; */
-"I10-iV-C0e.title" = "Welcome to Hive";
+"I10-iV-C0e.title" = "Добро пожаловать в Hive";
 
 /* Class = "NSButtonCell"; title = "Create a new wallet"; ObjectID = "j0E-b4-dgh"; */
-"j0E-b4-dgh.title" = "Create a new wallet";
+"j0E-b4-dgh.title" = "Создать новый кошелек";

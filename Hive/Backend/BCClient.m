@@ -184,7 +184,7 @@ NSString * const BCClientPasswordChangedNotification = @"BCClientPasswordChanged
     HILogInfo(@"Clearing transaction list");
 
     if (error) {
-        HILogError(@"%@: Error loading transactions: %@", NSStringFromSelector(_cmd), error);
+        HILogError(@"Error loading transactions: %@", error);
         return;
     }
 
@@ -195,7 +195,7 @@ NSString * const BCClientPasswordChangedNotification = @"BCClientPasswordChanged
     [DBM save:&error];
 
     if (error) {
-        HILogError(@"%@: Error deleting transactions: %@", NSStringFromSelector(_cmd), error);
+        HILogError(@"Error deleting transactions: %@", error);
         return;
     }
 }

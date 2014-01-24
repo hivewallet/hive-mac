@@ -24,7 +24,10 @@
 
 - (IBAction)showWindow:(id)sender {
     [super showWindow:sender];
+
     self.index = -1;
+
+    [self.window center];
     [self showNextPage];
 }
 
@@ -37,6 +40,8 @@
     HIWizardViewController *controller = self.viewControllers[self.index];
     NSAssert([controller isKindOfClass:[HIWizardViewController class]], nil);
     controller.wizardDelegate = self;
+
+    [controller viewWillAppear];
 
     controller.view.frame = self.wizardContentView.bounds;
     controller.view.autoresizingMask = NSViewWidthSizable | NSViewHeightSizable;

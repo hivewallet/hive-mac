@@ -5,11 +5,11 @@
 /* Class = "NSTextFieldCell"; placeholderString = "email@domain.com"; ObjectID = "0m5-Xd-7pp"; */
 "0m5-Xd-7pp.placeholderString" = "email@domain.com";
 
-/* Class = "NSTextFieldCell"; title = "What were you doing when the error occurred?"; ObjectID = "CoM-ma-aHq"; */
-"CoM-ma-aHq.title" = "What were you doing when the error occurred?";
-
 /* Class = "NSTextFieldCell"; title = "Please send us a report to help us fix the problem."; ObjectID = "Cob-tq-o5r"; */
 "Cob-tq-o5r.title" = "Please send us a report to help us fix the problem.";
+
+/* Class = "NSTextFieldCell"; title = "Describe what you were doing when the error occurred:"; ObjectID = "F9w-28-7kX"; */
+"F9w-28-7kX.title" = "Describe what you were doing when the error occurred (preferably in English):";
 
 /* Class = "NSTextFieldCell"; title = "Oh no, something went wrong!"; ObjectID = "Mpx-rH-nUM"; */
 "Mpx-rH-nUM.title" = "あら、何かが正しく行かなかったみたい";

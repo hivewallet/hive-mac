@@ -25,14 +25,23 @@
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
+
     if (self) {
         self.title = NSLocalizedString(@"Backup", @"Wizard backup page title");
     }
+
     return self;
 }
 
-- (HIBackupAdapter *)backupAdapterAtIndex:(int)index {
+- (void)viewWillAppear {
     [[HIBackupManager sharedManager] initializeAdapters];
+
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [[HIBackupManager sharedManager] performBackups];
+    });
+}
+
+- (HIBackupAdapter *)backupAdapterAtIndex:(int)index {
     return [HIBackupManager sharedManager].adapters[index];
 }
 
@@ -80,6 +89,8 @@
     } else {
         adapter.enabled = YES;
     }
+
+    [adapter performBackup];
 }
 
 @end

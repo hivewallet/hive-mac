@@ -17,4 +17,7 @@
     return nil;
 }
 
+- (void)viewWillAppear {
+}
+
 @end

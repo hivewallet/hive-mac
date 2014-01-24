@@ -1,4 +1,3 @@
-
 /* Class = "NSWindow"; title = "Send Bitcoin"; ObjectID = "1"; */
 "1.title" = "Envoyer des bitcoins";
 
@@ -9,7 +8,7 @@
 "10.title" = "Envoyer";
 
 /* Class = "NSTextFieldCell"; title = "To:"; ObjectID = "14"; */
-"14.title" = "A:";
+"14.title" = "À:";
 
 /* Class = "NSTextFieldCell"; placeholderString = "Type to search..."; ObjectID = "20"; */
 "20.placeholderString" = "Taper pour rechercher...";
@@ -18,10 +17,10 @@
 "22.title" = "Adresse principale";
 
 /* Class = "NSTextFieldCell"; title = "0.0"; ObjectID = "37"; */
-"37.title" = "0.0";
+"37.title" = "0,0";
 
 /* Class = "NSTextFieldCell"; title = "0.0"; ObjectID = "DX5-Li-q9R"; */
-"DX5-Li-q9R.title" = "0.0";
+"DX5-Li-q9R.title" = "0,0";
 
 /* Class = "NSButtonCell"; title = "+0.00001"; ObjectID = "PvI-F7-VRv"; */
-"PvI-F7-VRv.title" = "+0.00001";
+"PvI-F7-VRv.title" = "+0,00001";

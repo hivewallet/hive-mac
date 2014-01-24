@@ -47,6 +47,9 @@
 
 - (void)dealloc {
     [self.arrayController removeObserver:self forKeyPath:@"arrangedObjects.@count"];
+
+    _tableView.delegate = nil;
+    _tableView.dataSource = nil;
 }
 
 - (void)observeValueForKeyPath:(NSString *)keyPath

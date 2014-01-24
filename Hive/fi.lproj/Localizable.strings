@@ -122,6 +122,9 @@
 /* Initialization error title */
 "Hive cannot be started." = "Hive cannot be started.";
 
+/* Database error alert title */
+"Hive database file cannot be opened." = "Hive database file cannot be opened.";
+
 /* Backup error message */
 "Hive directory is excluded from Time Machine backup" = "Hive directory is excluded from Time Machine backup";
 
@@ -224,6 +227,9 @@
 /* App load error description */
 "The application data file has been removed or corrupted." = "The application data file has been removed or corrupted.";
 
+/* Error message when database is incompatible with this version */
+"The database was saved by a newer version of Hive - please download the latest version from http://hivewallet.com." = "The database was saved by a newer version of Hive - please download the latest version from http://hivewallet.com.";
+
 /* Install app popup warning message when app exists */
 "The existing app file will be replaced by the new version. This will not affect any app settings or saved data." = "The existing app file will be replaced by the new version. This will not affect any app settings or saved data.";
 
@@ -294,7 +300,7 @@
 "You need to choose or create a directory inside your Dropbox folder." = "You need to choose or create a directory inside your Dropbox folder.";
 
 /* Contact name empty alert message */
-"You need to give the contact a name before you can add it to the list." = "Sinun täytyy antaa  yhteystiedolle nimi ennen kuin voit lisätä sen luetteloon.";
+"You need to give the contact a name before you can add it to the list." = "Sinun täytyy antaa yhteystiedolle nimi ennen kuin voit lisätä sen luetteloon.";
 
 /* Backup requires password alert title */
 "You need to set a wallet password first (see Wallet menu)." = "You need to set a wallet password first (see Wallet menu).";

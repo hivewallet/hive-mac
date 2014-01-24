@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="4514" systemVersion="13C32" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none">
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="4514" systemVersion="13B42" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none">
     <dependencies>
         <deployment version="1070" defaultVersion="1070" identifier="macosx"/>
         <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="4514"/>
@@ -73,8 +73,8 @@
                         </items>
                     </menu>
                 </menuItem>
-                <menuItem title="Wallet" id="GX7-xG-GKH">
-                    <menu key="submenu" title="Wallet" id="jrd-Ul-XjV">
+                <menuItem title="Portafoglio" id="GX7-xG-GKH">
+                    <menu key="submenu" title="Portafoglio" id="jrd-Ul-XjV">
                         <items>
                             <menuItem title="Invia Bitcoins..." keyEquivalent="S" id="866">
                                 <connections>
@@ -82,7 +82,7 @@
                                 </connections>
                             </menuItem>
                             <menuItem isSeparatorItem="YES" id="CGD-5y-ezT"/>
-                            <menuItem title="Change Password…" id="1HB-Qg-iyg">
+                            <menuItem title="Cambia Password…" id="1HB-Qg-iyg">
                                 <modifierMask key="keyEquivalentModifierMask"/>
                                 <connections>
                                     <action selector="changeWalletPassword:" target="494" id="n4h-c8-Hjn"/>
@@ -141,11 +141,11 @@
                         </items>
                     </menu>
                 </menuItem>
-                <menuItem title="Tools" id="eBU-ec-85y">
+                <menuItem title="Strumenti" id="eBU-ec-85y">
                     <modifierMask key="keyEquivalentModifierMask"/>
-                    <menu key="submenu" title="Tools" id="cCx-Ak-fii">
+                    <menu key="submenu" title="Strumenti" id="cCx-Ak-fii">
                         <items>
-                            <menuItem title="Backup Center..." id="V0L-sM-c8h">
+                            <menuItem title="Centro Backup..." id="V0L-sM-c8h">
                                 <modifierMask key="keyEquivalentModifierMask"/>
                                 <connections>
                                     <action selector="showBackupCenter:" target="-1" id="w3X-q3-iCI"/>
@@ -157,12 +157,12 @@
                                     <action selector="openCoinMapSite:" target="494" id="Ozv-6D-Aab"/>
                                 </connections>
                             </menuItem>
-                            <menuItem title="Debugging info..." keyEquivalent="D" id="lLT-53-p4m">
+                            <menuItem title="Info sul Debug..." keyEquivalent="D" id="lLT-53-p4m">
                                 <connections>
                                     <action selector="showDebuggingInfo:" target="-1" id="Exc-Ye-jOL"/>
                                 </connections>
                             </menuItem>
-                            <menuItem title="Debugging tools..." id="Ue9-mi-gbe">
+                            <menuItem title="Strumento di Debug..." id="Ue9-mi-gbe">
                                 <modifierMask key="keyEquivalentModifierMask"/>
                                 <connections>
                                     <action selector="showDebuggingTools:" target="-1" id="s18-1s-iwD"/>

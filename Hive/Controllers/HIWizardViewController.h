@@ -17,4 +17,6 @@
 @property (nonatomic, strong) id<HIWizardViewControllerDelegate> wizardDelegate;
 @property (nonatomic, strong, readonly) NSResponder *initialFirstResponder;
 
+- (void)viewWillAppear;
+
 @end

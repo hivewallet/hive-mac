@@ -122,6 +122,9 @@
 /* Initialization error title */
 "Hive cannot be started." = "Hive kan inte köras.";
 
+/* Database error alert title */
+"Hive database file cannot be opened." = "Hive database file cannot be opened.";
+
 /* Backup error message */
 "Hive directory is excluded from Time Machine backup" = "Hive-katalog är exkluderad från Time Machines säkerhetskopia";
 
@@ -224,6 +227,9 @@
 /* App load error description */
 "The application data file has been removed or corrupted." = "Programmets datafil har blivit borttagen eller skadats.";
 
+/* Error message when database is incompatible with this version */
+"The database was saved by a newer version of Hive - please download the latest version from http://hivewallet.com." = "The database was saved by a newer version of Hive - please download the latest version from http://hivewallet.com.";
+
 /* Install app popup warning message when app exists */
 "The existing app file will be replaced by the new version. This will not affect any app settings or saved data." = "Nuvarande app-fil kommer att bli ersatt med en ny version. Detta kommer inte påverka några inställningar eller sparade uppgifter..";
 
@@ -273,7 +279,11 @@
 "Welcome" = "Välkommen";
 
 /* Button to show info about pending funds */
+<<<<<<< HEAD
 "What does this mean?" = Vad betyder detta?";
+=======
+"What does this mean?" = "Vad betyder detta?";
+>>>>>>> 912f2049002e54af54916d390ddfa54b4c82e109
 
 /* Sending zero bitcoin alert message */
 "Why would you want to send someone 0 BTC?" = "Varför skulle du vilja skicka någon 0 BTC?";
@@ -291,7 +301,7 @@
 "You must install Dropbox first (see www.dropbox.com)." = "Du måste installera dropbox först (se www.dropbox.com).";
 
 /* Dropbox invalid folder alert details */
-"You need to choose or create a directory inside your Dropbox folder." = "Du måste välja eller skapa en katalog i  din Dropbox-plats.";
+"You need to choose or create a directory inside your Dropbox folder." = "Du måste välja eller skapa en katalog i din Dropbox-plats.";
 
 /* Contact name empty alert message */
 "You need to give the contact a name before you can add it to the list." = "Du måste ge kontakten ett namn innan du kan lägga till i listan";

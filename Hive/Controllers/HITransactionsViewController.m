@@ -98,6 +98,9 @@
     [self.arrayController removeObserver:self forKeyPath:@"arrangedObjects.@count"];
     [[NSNotificationCenter defaultCenter] removeObserver:self];
     [[BCClient sharedClient] removeTransactionObserver:self];
+
+    _tableView.delegate = nil;
+    _tableView.dataSource = nil;
 }
 
 - (void)observeValueForKeyPath:(NSString *)keyPath

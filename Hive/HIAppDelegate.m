@@ -193,6 +193,12 @@ static int ddLogLevel = LOG_LEVEL_VERBOSE;
 #pragma mark - Initialization phase two (BCClient and main window)
 
 - (void)showMainApplicationWindowForCrashManager:(id)crashManager {
+    if (!DBM) {
+        exit(1);
+    }
+
+    [self configureNotifications];
+
     NSError *error = nil;
     [[BCClient sharedClient] start:&error];
 
@@ -203,6 +209,7 @@ static int ddLogLevel = LOG_LEVEL_VERBOSE;
         [self showInitializationError:error];
     } else {
         [self showAppWindow];
+        [self nagUnprotectedUsers];
         dispatch_async(dispatch_get_main_queue(), ^{
             [self initializeBackups];
         });
@@ -213,7 +220,6 @@ static int ddLogLevel = LOG_LEVEL_VERBOSE;
 
 - (void)showAppWindow {
     self.fullMenuEnabled = YES;
-    [self configureNotifications];
 
     _mainWindowController = [[HIMainWindowController alloc] initWithWindowNibName:@"HIMainWindowController"];
     [_mainWindowController showWindow:self];
@@ -222,10 +228,11 @@ static int ddLogLevel = LOG_LEVEL_VERBOSE;
 - (void)showSetUpWizard {
     self.wizard = [HIFirstRunWizardWindowController new];
     __weak __typeof__ (self) weakSelf = self;
+
     self.wizard.onCompletion = ^{
-        [[HIBackupManager sharedManager] performBackups];
         [weakSelf showAppWindow];
     };
+
     [self.wizard showWindow:self];
 }
 
@@ -256,20 +263,50 @@ static int ddLogLevel = LOG_LEVEL_VERBOSE;
 
     HILogError(@"Aborting launch because of initialization error: %@", error);
 
+    NSAlert *alert;
+
     if (message) {
-        [[NSAlert alertWithMessageText:NSLocalizedString(@"Hive cannot be started.",
-                                                         @"Initialization error title")
-                         defaultButton:NSLocalizedString(@"OK", @"OK button title")
-                       alternateButton:nil
-                           otherButton:nil
-             informativeTextWithFormat:@"%@", message] runModal];
+        alert = [NSAlert alertWithMessageText:NSLocalizedString(@"Hive cannot be started.",
+                                                                @"Initialization error title")
+                                defaultButton:NSLocalizedString(@"OK", @"OK button title")
+                              alternateButton:nil
+                                  otherButton:nil
+                    informativeTextWithFormat:@"%@", message];
     } else {
-        [[NSAlert alertWithError:error] runModal];
+        alert = [NSAlert alertWithError:error];
     }
+
+    [alert setAlertStyle:NSCriticalAlertStyle];
+    [alert runModal];
 
     exit(1);
 }
 
+#pragma mark - nag unprotected users
+
+- (void)nagUnprotectedUsers {
+    if (![[BCClient sharedClient] isWalletPasswordProtected]) {
+        NSAlert *alert = [NSAlert new];
+        alert.messageText = @"Your wallet does not have a password!";
+        alert.alertStyle = NSWarningAlertStyle;
+        alert.informativeText = @"You should select a password as soon as possible!";
+        [alert addButtonWithTitle:@"Select password now"];
+        [alert addButtonWithTitle:@"Later"];
+        [alert beginSheetModalForWindow:_mainWindowController.window
+                          modalDelegate:self
+                         didEndSelector:@selector(alertDidEnd:returnCode:contextInfo:)
+                            contextInfo:nil];
+    }
+}
+
+- (void)alertDidEnd:(NSAlert *)alert
+         returnCode:(NSInteger)returnCode
+        contextInfo:(void *)contextInfo {
+
+    if (returnCode == NSAlertFirstButtonReturn) {
+        [self changeWalletPassword:nil];
+    }
+}
 
 #pragma mark - App lifecycle and external actions
 
@@ -311,7 +348,7 @@ static int ddLogLevel = LOG_LEVEL_VERBOSE;
     NSError *error = nil;
 
     if (![DBM commitEditing]) {
-        HILogError(@"%@:%@ unable to commit editing before saving", self.class, NSStringFromSelector(_cmd));
+        HILogError(@"Unable to commit editing before saving");
     }
 
     if (![DBM save:&error]) {
@@ -331,7 +368,7 @@ static int ddLogLevel = LOG_LEVEL_VERBOSE;
     }
 
     if (![DBM commitEditing]) {
-        HILogError(@"%@:%@ unable to commit editing to terminate", self.class, NSStringFromSelector(_cmd));
+        HILogError(@"Unable to commit editing to terminate");
         return NSTerminateCancel;
     }
 

@@ -122,6 +122,9 @@
 /* Initialization error title */
 "Hive cannot be started." = "Hive n'a pas pu être démarrée.";
 
+/* Database error alert title */
+"Hive database file cannot be opened." = "Hive database file cannot be opened.";
+
 /* Backup error message */
 "Hive directory is excluded from Time Machine backup" = "le répertoire de Hive est exclus des sauvegardes de Time Machine";
 
@@ -223,6 +226,9 @@
 
 /* App load error description */
 "The application data file has been removed or corrupted." = "Le fichier de données de l'application a été enlevé ou est corrompu.";
+
+/* Error message when database is incompatible with this version */
+"The database was saved by a newer version of Hive - please download the latest version from http://hivewallet.com." = "The database was saved by a newer version of Hive - please download the latest version from http://hivewallet.com.";
 
 /* Install app popup warning message when app exists */
 "The existing app file will be replaced by the new version. This will not affect any app settings or saved data." = "Le fichier de données existant sera remplacé par la nouvelle version. Ceci n'affectera pas aucun paramètre de l'appli ni aucune donnée enregistrée.";

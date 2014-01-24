@@ -108,15 +108,16 @@
 
 #pragma mark - Delegate for WebView
 
-- (void)webView:(WebView *)sender
-    runJavaScriptAlertPanelWithMessage:(NSString *)message
-                      initiatedByFrame:(WebFrame *)frame {
+- (void)webView:(WebView *)wv runJavaScriptAlertPanelWithMessage:(NSString *)msg initiatedByFrame:(WebFrame *)frame {
     NSAlert *alert = [[NSAlert alloc] init];
     [alert setMessageText:self.application.name];
-    [alert setInformativeText:message];
+    [alert setInformativeText:msg];
     [alert addButtonWithTitle:NSLocalizedString(@"OK", @"OK button title")];
     
-    [alert runModal];
+    [alert beginSheetModalForWindow:self.view.window
+                      modalDelegate:nil
+                     didEndSelector:nil
+                        contextInfo:NULL];
 }
 
 - (void)webView:(WebView *)sender
