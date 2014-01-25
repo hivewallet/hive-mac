@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="4514" systemVersion="12F45" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none">
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="4514" systemVersion="13B42" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none">
     <dependencies>
         <deployment defaultVersion="1070" identifier="macosx"/>
         <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="4514"/>
@@ -55,7 +55,7 @@
                     <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="hey-Jk-5AG">
                         <rect key="frame" x="17" y="529" width="616" height="73"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
-                        <textFieldCell key="cell" sendsActionOnEndEditing="YES" title="ウオーレットの問題がある時、下のエリアの内容を送るのを認める場合があります。あなたのプライベートキーが含まないので、送ってもビットコインは安全的に守られています." id="o5O-SS-J37">
+                        <textFieldCell key="cell" sendsActionOnEndEditing="YES" title="ウオーレットの問題がある時、下のエリアの内容を送るのを認める場合があります。あなたのプライベートキーが含まれていないので、送ってもビットコインは安全的に守られています." id="o5O-SS-J37">
                             <font key="font" metaFont="system"/>
                             <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                             <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
@@ -64,7 +64,7 @@
                     <button verticalHuggingPriority="750" id="7D6-dq-xT9">
                         <rect key="frame" x="506" y="13" width="130" height="32"/>
                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
-                        <buttonCell key="cell" type="push" title="Save to file..." bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="1AY-mJ-Thd">
+                        <buttonCell key="cell" type="push" title="ファイルに保存する..." bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="1AY-mJ-Thd">
                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                             <font key="font" metaFont="system"/>
                         </buttonCell>
