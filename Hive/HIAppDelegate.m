@@ -357,7 +357,8 @@ static int ddLogLevel = LOG_LEVEL_VERBOSE;
 }
 
 - (void)applicationWillTerminate:(NSNotification *)notification {
-//    [[BCClient sharedClient] shutdown];
+    HILogInfo(@"Quitting Hive...");
+    [[BCClient sharedClient] shutdown];
 }
 
 - (NSApplicationTerminateReply)applicationShouldTerminate:(NSApplication *)sender {
