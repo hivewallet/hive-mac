@@ -107,7 +107,7 @@ static NSString *const KEY_WALLET_HASH = @"walletHash";
     // build the address subview
     NSRect addressFieldFrame = NSMakeRect(10, 7, self.box.bounds.size.width - 20, 21);
     NSTextField *addressField = [[NSTextField alloc] initWithFrame:addressFieldFrame];
-    [addressField.cell setLineBreakMode:NSLineBreakByTruncatingTail];
+    [addressField.cell setLineBreakMode:NSLineBreakByTruncatingMiddle];
     [addressField.cell setSelectable:YES];
     [addressField setEditable:NO];
     [addressField setSelectable:NO];
