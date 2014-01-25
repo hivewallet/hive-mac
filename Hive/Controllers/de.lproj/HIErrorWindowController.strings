@@ -9,7 +9,7 @@
 "Cob-tq-o5r.title" = "Bitte helfen Sie uns das Problem zu beheben, indem Sie uns einen Fehlerbericht schicken.";
 
 /* Class = "NSTextFieldCell"; title = "Describe what you were doing when the error occurred:"; ObjectID = "F9w-28-7kX"; */
-"F9w-28-7kX.title" = "Describe what you were doing when the error occurred (preferably in English):";
+"F9w-28-7kX.title" = "Beschreiben Sie, was Sie zuletzt getan haben, bevor der Fehler auftrat. (Wenn möglich, schreiben Sie bitte auf Englisch):";
 
 /* Class = "NSTextFieldCell"; title = "Oh no, something went wrong!"; ObjectID = "Mpx-rH-nUM"; */
 "Mpx-rH-nUM.title" = "Oh nein, etwas ist schief gelaufen!";
@@ -24,7 +24,7 @@
 "tR0-Dg-y0x.title" = "Abbrechen";
 
 /* Class = "NSTextFieldCell"; title = "Error details:"; ObjectID = "uLK-ff-isg"; */
-"uLK-ff-isg.title" = "Error details:";
+"uLK-ff-isg.title" = "Fehler-Details:";
 
 /* Class = "NSTextFieldCell"; title = "An unexpected error has occurred in Hive."; ObjectID = "xF4-pJ-cQU"; */
 "xF4-pJ-cQU.title" = "Ein unerwartetes Problem ist in Hive aufgetreten.";
