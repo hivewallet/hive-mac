@@ -1,4 +1,3 @@
-
 /* Address field placeholder */
 "Address" = "アドレス";
 
@@ -15,46 +14,46 @@
 "Apps" = "アプリ";
 
 /* Warning when trying to a large BTC amount (btc, fiat amount and address) */
-"Are you sure you want to send %@ (%@) to %@?" = "Are you sure you want to send %1$@ (%2$@) to %3$@?";
+"Are you sure you want to send %@ (%@) to %@?" = "再確認：本当に　%3$@　に %1$@ (%2$@) を送る?";
 
 /* Wizard backup page title */
-"Backup" = "Backup";
+"Backup" = "バックアップ";
 
 /* Backup status: backup can't or won't be completed */
-"Backup error" = "Backup error";
+"Backup error" = "バックアップ エラー";
 
 /* Notification of failed backup */
-"Backup failed" = "Backup failed";
+"Backup failed" = "バックアップ　失敗";
 
 /* No comment provided by engineer. */
-"Backup hasn't been done yet" = "Backup hasn't been done yet";
+"Backup hasn't been done yet" = "バックアップはまだ完成されていない";
 
 /* Backup error message */
-"Backup is not configured" = "Backup is not configured";
+"Backup is not configured" = "バックアップはまだ設定されていない";
 
 /* Backup status: backup done but not updated recently */
-"Backup problem" = "Backup problem";
+"Backup problem" = "バックアップ問題";
 
 /* Backup error message */
-"Can't create a directory to store the wallet backup" = "Can't create a directory to store the wallet backup";
+"Can't create a directory to store the wallet backup" = "ウオレットを保存するためにディレクトリを作成出来ない";
 
 /* Cancel button title */
 "Cancel" = "キャンセル";
 
 /* Dead transaction label */
-"CANCELLED" = "CANCELLED";
+"CANCELLED" = "キャンセルされた";
 
 /* Dropbox folder save panel confirmation button */
-"Choose" = "Choose";
+"Choose" = "選ぶ";
 
 /* No comment provided by engineer. */
-"Choose a directory inside Dropbox folder where the backup should be saved:" = "Choose a directory inside Dropbox folder where the backup should be saved:";
+"Choose a directory inside Dropbox folder where the backup should be saved:" = "ドロップボックスフォルダーからバックアップの保存するディレクトリを選んで下さい:";
 
 /* No comment provided by engineer. */
 "click to copy" = "コピーするためにクリックして下さい";
 
 /* Confirm button next to passphrase */
-"Confirm" = "Confirm";
+"Confirm" = "確認";
 
 /* Contact name empty alert title */
 "Contact can't be saved." = "コンタクトの保存が出来なかった.";
@@ -66,34 +65,34 @@
 "copied!" = "コピーした!";
 
 /* initialization error */
-"Could not read wallet file. It might be damaged." = "Could not read wallet file. It might be damaged.";
+"Could not read wallet file. It might be damaged." = "ウオレットのファイルは読めなかった。もしかして故障している.";
 
 /* Quit without saves error question message */
-"Could not save changes while quitting. Quit anyway?" = "プログラムを止めるには変更を保存出来なかった。それでも閉じる？";
+"Could not save changes while quitting. Quit anyway?" = "プログラムを止める時は変更を保存出来なかった。それでも閉じる？";
 
 /* initialization error */
-"Could not write wallet file. Another instance of Hive might still be running." = "Could not write wallet file. Another instance of Hive might still be running.";
+"Could not write wallet file. Another instance of Hive might still be running." = "ウオレットファイルを書けなかった。もしかしてハイブの他のアプリを同時に使用中。";
 
 /* Disable backup button title */
-"Disable" = "Disable";
+"Disable" = "無効にする";
 
 /* Backup status: adapter disabled */
-"Disabled" = "Disabled";
+"Disabled" = "無効された";
 
 /* Remove contact alert dialog title */
 "Do you really want to remove %@ from your contact list?" = "本当に %@ をコンタクトリストから外す？";
 
 /* Install app popup title */
-"Do you want to add \"%@\" to Hive?" = "Do you want to add \"%@\" to Hive?";
+"Do you want to add \"%@\" to Hive?" = " \"%@\" をハイブに参加する";
 
 /* Backup error message */
-"Dropbox folder not found" = "Dropbox folder not found";
+"Dropbox folder not found" = "ドロップボックスフォルダー見つけれなかった";
 
 /* Dropbox no backup folder alert title */
-"Dropbox folder not found." = "Dropbox folder not found.";
+"Dropbox folder not found." = "ドロップボックスフォルダー見つけれなかった";
 
 /* Backup error message */
-"Dropbox isn't running" = "Dropbox isn't running";
+"Dropbox isn't running" = "ドロップボックスフォルダーは今実行していない";
 
 /* Page title when editing contact's info */
 "Edit contact" = "コンタクトを変更";
@@ -105,46 +104,46 @@
 "email" = "メール";
 
 /* Enable backup button title (no configuration required) */
-"Enable" = "Enable";
+"Enable" = "有効にする";
 
 /* Enable backup button title (requires configuration) */
-"Enable..." = "Enable...";
+"Enable..." = "...を有効にする";
 
 /* Sending zero bitcoin alert title */
 "Enter an amount greater than zero." = "ゼロ以上のコイン額を入力してください.";
 
 /* Passphrase prompt for sending */
-"Enter your passphrase to confirm the transaction:" = "Enter your passphrase to confirm the transaction:";
+"Enter your passphrase to confirm the transaction:" = "送受を確認する為パッス文章を入力ください:";
 
 /* Firstname field placeholder */
 "Firstname" = "名";
 
 /* Initialization error title */
-"Hive cannot be started." = "Hive cannot be started.";
+"Hive cannot be started." = "ハイブをスタートできない";
 
 /* Database error alert title */
-"Hive database file cannot be opened." = "Hive database file cannot be opened.";
+"Hive database file cannot be opened." = "ハイブのデータベースのファイルを開けない";
 
 /* Backup error message */
-"Hive directory is excluded from Time Machine backup" = "Hive directory is excluded from Time Machine backup";
+"Hive directory is excluded from Time Machine backup" = "タイムマシンのバックアップからハイブのディレクトリは外してある";
 
 /* Share sent transaction text */
-"I've just received some Bitcoin using Hive" = "I've just received some Bitcoin using Hive";
+"I've just received some Bitcoin using Hive" = "ハイブを利用して、ビットコインを受けたもん";
 
 /* Share sent transaction text */
-"I've just sent some Bitcoin using Hive" = "I've just sent some Bitcoin using Hive";
+"I've just sent some Bitcoin using Hive" = "ハイブを利用して、ビットコインを送ったもん";
 
 /* Install app button title */
-"Install" = "Install";
+"Install" = "インストール";
 
 /* Backup requires password alert details */
-"It's dangerous to upload unencrypted wallets." = "It's dangerous to upload unencrypted wallets.";
+"It's dangerous to upload unencrypted wallets." = "暗号化されていないウオレットをアップロードするのは危険だよ";
 
 /* Address caption field placeholder */
 "Label" = "ラベル";
 
 /* On what date was the last backup done */
-"Last backup on %@" = "Last backup on %@";
+"Last backup on %@" = " 最新のバックアップは　%@　にだった";
 
 /* Lastname field placeholder */
 "Lastname" = "姓";
@@ -162,7 +161,7 @@
 "No address entered." = "アドレスを入力していない.";
 
 /* Backup is outdated, last backup was on that date */
-"No backup since %@" = "No backup since %@";
+"No backup since %@" = " %@は最新のバックアップだった";
 
 /* Transaction failed alert message */
 "No Bitcoin have been taken from your wallet." = "ビットコインの出発は失敗.";
@@ -174,16 +173,16 @@
 "or choose from the list" = "またはリストから選ぶ";
 
 /* Wizard password page title */
-"Password" = "Password";
+"Password" = "パッスワード";
 
 /* Pending transaction label */
-"PENDING" = "PENDING";
+"PENDING" = "未確認";
 
 /* Invalid address alert message */
 "Please check if you have entered the address correctly." = "アドレスを正しく入力したかを再確認してください.";
 
 /* Warning details when trying to send to your own address */
-"Please enter a different address." = "Please enter a different address.";
+"Please enter a different address." = "他人のアドレスを入力して下さい";
 
 /* Empty address alert message */
 "Please enter a valid Bitcoin address or select one from the dropdown list." = "アドレスを入力かリストから選んで下さい.";
@@ -198,88 +197,88 @@
 "Quitting now will lose any changes you have made since the last successful save" = "今を閉じる場合、最新の保存以来の変更が保存しない";
 
 /* Received amount of BTC from unknown source */
-"Received &a" = "Received &a";
+"Received &a" = " &a が届いた";
 
 /* Received amount of BTC from contact */
-"Received &a from &c" = "Received &a from &c";
+"Received &a from &c" = " &c から　&a　をもらった ";
 
 /* Install app button title when app exists */
-"Reinstall" = "Reinstall";
+"Reinstall" = "再インストール";
 
 /* No comment provided by engineer. */
-"Remove" = "Remove";
+"Remove" = "外す";
 
 /* Dropbox invalid folder alert title */
-"Selected directory is outside Dropbox folder." = "Selected directory is outside Dropbox folder.";
+"Selected directory is outside Dropbox folder." = "選んだディレクトリはドロップボックス以外にある";
 
 /* Send button title */
-"Send" = "Send";
+"Send" = "送る";
 
 /* Sent amount of BTC to a contact/address */
-"Sent &a to &c" = "Sent &a to &c";
+"Sent &a to &c" = " &c　に　&a　を送る　";
 
 /* Amount exceeds available balance alert title */
-"Some funds are temporarily unavailable." = "Some funds are temporarily unavailable.";
+"Some funds are temporarily unavailable." = "只今はこのコイン額程使えない";
 
 /* Wizard completed page title */
-"Start!" = "Start!";
+"Start!" = "スタート!";
 
 /* App load error description */
-"The application data file has been removed or corrupted." = "The application data file has been removed or corrupted.";
+"The application data file has been removed or corrupted." = "アプリケーションのデータファイルは削除されたか破損している";
 
 /* Error message when database is incompatible with this version */
-"The database was saved by a newer version of Hive - please download the latest version from http://hivewallet.com." = "The database was saved by a newer version of Hive - please download the latest version from http://hivewallet.com.";
+"The database was saved by a newer version of Hive - please download the latest version from http://hivewallet.com." = "このデータベースはハイブの新しいバージョンを利用する- http://hivewallet.com　で最新バージョンをダウンロードして下さい.";
 
 /* Install app popup warning message when app exists */
-"The existing app file will be replaced by the new version. This will not affect any app settings or saved data." = "The existing app file will be replaced by the new version. This will not affect any app settings or saved data.";
+"The existing app file will be replaced by the new version. This will not affect any app settings or saved data." = "アプリのファイルは新しいバージョンにする。 設定と保存したデータはそのまま問題ないです。";
 
 /* Alert details when transaction was cancelled */
-"This can happen because of bugs in the wallet code or because the transaction was rejected by the network." = "This can happen because of bugs in the wallet code or because the transaction was rejected by the network.";
+"This can happen because of bugs in the wallet code or because the transaction was rejected by the network." = "ウオレットのコードの問題の為かネットワークは送受を拒絶した。";
 
 /* Warning details when trying to send a large BTC amount */
-"This is more than what you usually send." = "This is more than what you usually send.";
+"This is more than what you usually send." = "いつもより高いコイン額だが、大丈夫ですか。";
 
 /* Warning title when trying to send to your own address */
-"This is your wallet address." = "This is your wallet address.";
+"This is your wallet address." = "あなたのウオレットのアドレスですよ。";
 
 /* Invalid address alert title */
 "This isn't a valid Bitcoin address." = "アドレスは正しくない.";
 
 /* Backup error message */
-"Time Machine is disabled in System Preferences" = "Time Machine is disabled in System Preferences";
+"Time Machine is disabled in System Preferences" = "システム環境設定でタイムマシンは無効にした。";
 
 /* Amount exceeds available balance alert message */
-"To send this transaction, you'll need to wait for your pending transactions to be confirmed first (this shouldn't take more than a few minutes)." = "To send this transaction, you'll need to wait for your pending transactions to be confirmed first (this shouldn't take more than a few minutes).";
+"To send this transaction, you'll need to wait for your pending transactions to be confirmed first (this shouldn't take more than a few minutes)." = "コインを送れる前に最初ちゃんと自分のウオレットに届くのを待ちください (後わずか何分で届くはず).";
 
 /* Notification of cancelled transaction */
-"Transaction cancelled" = "Transaction cancelled";
+"Transaction cancelled" = "送受はキャンセルされた";
 
 /* Notification of confirmed sent transaction */
-"Transaction completed" = "Transaction completed";
+"Transaction completed" = "送受は完了";
 
 /* Transaction failed alert title */
 "Transaction could not be completed." = "送受は出来なかった.";
 
 /* Alert when transaction was cancelled (with transaction date) */
-"Transaction from %@ was cancelled." = "Transaction from %@ was cancelled.";
+"Transaction from %@ was cancelled." = "%@　からの送受はキャンセルされた.";
 
 /* Transactions view title */
 "Transactions" = "送受";
 
 /* Backup status: backup up to date */
-"Up to date" = "Up to date";
+"Up to date" = "最新";
 
 /* Backup status: backup scheduled or in progress */
-"Waiting for backup" = "Waiting for backup";
+"Waiting for backup" = "バックアップを待ち中";
 
 /* Install app popup warning message */
-"We cannot guarantee the safety of all apps - please be careful if you download Hive apps from third party sites." = "We cannot guarantee the safety of all apps - please be careful if you download Hive apps from third party sites.";
+"We cannot guarantee the safety of all apps - please be careful if you download Hive apps from third party sites." = "我々は全てのアプリの安全性は保障できない - ハイブのオッフィシャルサイト以外からのダウンロードに注意ですね.";
 
 /* Wizard welcome page title */
-"Welcome" = "Welcome";
+"Welcome" = "いっらしゃい！";
 
 /* Button to show info about pending funds */
-"What does this mean?" = "What does this mean?";
+"What does this mean?" = "詳しく";
 
 /* Sending zero bitcoin alert message */
 "Why would you want to send someone 0 BTC?" = "ほら！ゼロコインを送る意味がないでしょう！";
@@ -288,25 +287,25 @@
 "You cannot send more money than you own." = "持っていない金を送るのが不可能でござる.";
 
 /* Install app popup title when app exists */
-"You have already added \"%@\" to Hive. Would you like to overwrite it?" = "You have already added \"%@\" to Hive. Would you like to overwrite it?";
+"You have already added \"%@\" to Hive. Would you like to overwrite it?" = "もう　\"%@\" はインストールされている。もう一度再インストールしたい?";
 
 /* Notification of confirmed sent transaction (with BTC amount) */
-"You have sent %@." = "You have sent %@.";
+"You have sent %@." = " %@　をおくりました";
 
 /* Dropbox no backup folder alert details */
-"You must install Dropbox first (see www.dropbox.com)." = "You must install Dropbox first (see www.dropbox.com).";
+"You must install Dropbox first (see www.dropbox.com)." = "ドロップボックスをインストールする必要 ( www.dropbox.com　でご覧ください).";
 
 /* Dropbox invalid folder alert details */
-"You need to choose or create a directory inside your Dropbox folder." = "You need to choose or create a directory inside your Dropbox folder.";
+"You need to choose or create a directory inside your Dropbox folder." = "ドロップボックスの中のフォルダーから選ぶか作るが必要";
 
 /* Contact name empty alert message */
 "You need to give the contact a name before you can add it to the list." = "リストに参加する前に名前を付ける必要がある.";
 
 /* Backup requires password alert title */
-"You need to set a wallet password first (see Wallet menu)." = "You need to set a wallet password first (see Wallet menu).";
+"You need to set a wallet password first (see Wallet menu)." = "最初ウオレットのパッスワードを設定しないといけない (ウオレットメニューから).";
 
 /* Remove contact alert dialog body */
-"You won't be able to undo this operation." = "You won't be able to undo this operation.";
+"You won't be able to undo this operation." = "取り消しは出来ないが続けたいですか。";
 
 /* Notification of incoming transaction */
-"You've received Bitcoin" = "You've received Bitcoin";
+"You've received Bitcoin" = "ビットコインが到着した";

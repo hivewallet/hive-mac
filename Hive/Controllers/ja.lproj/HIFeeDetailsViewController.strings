@@ -1,12 +1,11 @@
-
 /* Class = "NSTextFieldCell"; title = "The fees you pay help keep the Bitcoin network running!"; ObjectID = "JVe-5I-zWC"; */
-"JVe-5I-zWC.title" = "The fees you pay help keep the Bitcoin network running!";
+"JVe-5I-zWC.title" = "送料はネトワークを支える為だけです。";
 
 /* Class = "NSTextFieldCell"; title = "Current transaction fee:"; ObjectID = "exO-xB-xYk"; */
-"exO-xB-xYk.title" = "Current transaction fee:";
+"exO-xB-xYk.title" = "今の送料は:";
 
 /* Class = "NSTextFieldCell"; title = "Learn more…"; ObjectID = "kHH-z3-bVk"; */
-"kHH-z3-bVk.title" = "Learn more…";
+"kHH-z3-bVk.title" = "もっと知りたい…";
 
 /* Class = "NSTextFieldCell"; title = "0.0000001"; ObjectID = "l6i-QL-kg8"; */
 "l6i-QL-kg8.title" = "0.0000001";

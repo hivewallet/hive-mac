@@ -1,4 +1,3 @@
-
 /* Class = "NSWindow"; title = "Error"; ObjectID = "1"; */
 "1.title" = "エラー";
 
@@ -6,28 +5,28 @@
 "0m5-Xd-7pp.placeholderString" = "email@domain.com";
 
 /* Class = "NSTextFieldCell"; title = "Please send us a report to help us fix the problem."; ObjectID = "Cob-tq-o5r"; */
-"Cob-tq-o5r.title" = "Please send us a report to help us fix the problem.";
+"Cob-tq-o5r.title" = "この問題を解決する為にレポートを送って下さい";
 
 /* Class = "NSTextFieldCell"; title = "Describe what you were doing when the error occurred:"; ObjectID = "F9w-28-7kX"; */
-"F9w-28-7kX.title" = "Describe what you were doing when the error occurred (preferably in English):";
+"F9w-28-7kX.title" = "どんな時に何をやって問題が起きたかを教えて下さい (出来れば英語で):";
 
 /* Class = "NSTextFieldCell"; title = "Oh no, something went wrong!"; ObjectID = "Mpx-rH-nUM"; */
 "Mpx-rH-nUM.title" = "あら、何かが正しく行かなかったみたい";
 
 /* Class = "NSTextFieldCell"; title = "Email (optional)"; ObjectID = "qVP-Mf-lLP"; */
-"qVP-Mf-lLP.title" = "Email (optional)";
+"qVP-Mf-lLP.title" = "電子メールアドレス(随意)";
 
 /* Class = "NSButtonCell"; title = "Send"; ObjectID = "tDm-yy-jVS"; */
-"tDm-yy-jVS.title" = "Send";
+"tDm-yy-jVS.title" = "送る";
 
 /* Class = "NSButtonCell"; title = "Cancel"; ObjectID = "tR0-Dg-y0x"; */
-"tR0-Dg-y0x.title" = "Cancel";
+"tR0-Dg-y0x.title" = "キャンセル";
 
 /* Class = "NSTextFieldCell"; title = "Error details:"; ObjectID = "uLK-ff-isg"; */
-"uLK-ff-isg.title" = "Error details:";
+"uLK-ff-isg.title" = "エラーの内容:";
 
 /* Class = "NSTextFieldCell"; title = "An unexpected error has occurred in Hive."; ObjectID = "xF4-pJ-cQU"; */
 "xF4-pJ-cQU.title" = "ハイブは不明なエラーを発生しました";
 
 /* Class = "NSTextFieldCell"; title = "Name (optional)"; ObjectID = "yDj-TF-cJK"; */
-"yDj-TF-cJK.title" = "Name (optional)";
+"yDj-TF-cJK.title" = "名前 (随意)";
