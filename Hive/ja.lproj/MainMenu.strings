@@ -1,4 +1,3 @@
-
 /* Class = "NSMenu"; title = "AMainMenu"; ObjectID = "29"; */
 "29.title" = "メインメニュー";
 
@@ -87,28 +86,28 @@
 "870.title" = "最新のアップデートを確認する…";
 
 /* Class = "NSMenuItem"; title = "Change Password…"; ObjectID = "1HB-Qg-iyg"; */
-"1HB-Qg-iyg.title" = "Change Password…";
+"1HB-Qg-iyg.title" = "パスワードを変更…";
 
 /* Class = "NSMenuItem"; title = "Open CoinMap..."; ObjectID = "ASP-Ns-ktD"; */
 "ASP-Ns-ktD.title" = "コインマップを開く…";
 
 /* Class = "NSMenuItem"; title = "Wallet"; ObjectID = "GX7-xG-GKH"; */
-"GX7-xG-GKH.title" = "Wallet";
+"GX7-xG-GKH.title" = "ウオレット";
 
 /* Class = "NSMenuItem"; title = "Debugging tools..."; ObjectID = "Ue9-mi-gbe"; */
-"Ue9-mi-gbe.title" = "Debugging tools...";
+"Ue9-mi-gbe.title" = "デバッグのツール...";
 
 /* Class = "NSMenuItem"; title = "Backup Center..."; ObjectID = "V0L-sM-c8h"; */
-"V0L-sM-c8h.title" = "Backup Center...";
+"V0L-sM-c8h.title" = "バックアップセンター...";
 
 /* Class = "NSMenu"; title = "Tools"; ObjectID = "cCx-Ak-fii"; */
-"cCx-Ak-fii.title" = "Tools";
+"cCx-Ak-fii.title" = "ツール";
 
 /* Class = "NSMenuItem"; title = "Tools"; ObjectID = "eBU-ec-85y"; */
-"eBU-ec-85y.title" = "Tools";
+"eBU-ec-85y.title" = "ツール";
 
 /* Class = "NSMenu"; title = "Wallet"; ObjectID = "jrd-Ul-XjV"; */
-"jrd-Ul-XjV.title" = "Wallet";
+"jrd-Ul-XjV.title" = "ウオレット";
 
 /* Class = "NSMenuItem"; title = "Debugging info..."; ObjectID = "lLT-53-p4m"; */
 "lLT-53-p4m.title" = "デバッグの内容...";
