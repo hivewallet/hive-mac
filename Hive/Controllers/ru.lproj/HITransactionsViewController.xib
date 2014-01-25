@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="4514" systemVersion="13B42" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="4514" systemVersion="13C44" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
         <deployment defaultVersion="1070" identifier="macosx"/>
         <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="4514"/>
@@ -185,7 +185,7 @@
             </constraints>
         </customView>
         <arrayController mode="entity" entityName="HITransaction" editable="NO" id="3"/>
-        <customView wantsLayer="YES" id="50">
+        <customView wantsLayer="YES" id="50" customClass="HIEmptyTransactionsView">
             <rect key="frame" x="0.0" y="0.0" width="323" height="510"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
@@ -206,17 +206,6 @@
                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                     </textFieldCell>
                 </textField>
-                <button translatesAutoresizingMaskIntoConstraints="NO" id="52">
-                    <rect key="frame" x="110" y="200" width="102" height="29"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
-                    <buttonCell key="cell" type="bevel" title="Отправить Биткоины" bezelStyle="regularSquare" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="55" customClass="HIDoneButtonCell">
-                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                        <font key="font" metaFont="system"/>
-                    </buttonCell>
-                    <connections>
-                        <action selector="openSendBitcoinsWindow:" target="-1" id="67"/>
-                    </connections>
-                </button>
                 <customView translatesAutoresizingMaskIntoConstraints="NO" id="51">
                     <rect key="frame" x="61" y="13" width="200" height="67"/>
                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -249,17 +238,26 @@
                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="icon-gray-btc" id="69"/>
                 </imageView>
+                <customView placeholderIntrinsicWidth="infinite" placeholderIntrinsicHeight="60" translatesAutoresizingMaskIntoConstraints="NO" id="1zA-19-rkA" customClass="HIAddressesBox">
+                    <rect key="frame" x="40" y="176" width="243" height="60"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                </customView>
             </subviews>
             <constraints>
                 <constraint firstItem="68" firstAttribute="top" secondItem="50" secondAttribute="top" constant="90" id="2Lz-Lz-8Jx"/>
+                <constraint firstItem="1zA-19-rkA" firstAttribute="leading" secondItem="50" secondAttribute="leading" constant="40" id="4SV-Ga-FBo"/>
                 <constraint firstAttribute="centerX" secondItem="51" secondAttribute="centerX" id="4Su-aF-cUR"/>
-                <constraint firstAttribute="centerX" secondItem="52" secondAttribute="centerX" id="74U-ji-Ppo"/>
                 <constraint firstAttribute="centerX" secondItem="53" secondAttribute="centerX" id="78B-uO-cKV"/>
                 <constraint firstAttribute="centerX" secondItem="68" secondAttribute="centerX" id="PgA-0q-m7O"/>
-                <constraint firstItem="52" firstAttribute="top" secondItem="53" secondAttribute="bottom" constant="19" id="mdK-uG-X7E"/>
+                <constraint firstAttribute="trailing" secondItem="1zA-19-rkA" secondAttribute="trailing" constant="40" id="evQ-DO-GY4"/>
+                <constraint firstItem="1zA-19-rkA" firstAttribute="top" secondItem="53" secondAttribute="bottom" constant="10" id="iVk-Mb-DB1"/>
+                <constraint firstItem="51" firstAttribute="top" relation="greaterThanOrEqual" secondItem="1zA-19-rkA" secondAttribute="bottom" constant="10" id="lOP-Me-7Zx"/>
                 <constraint firstItem="53" firstAttribute="top" secondItem="68" secondAttribute="bottom" constant="30" id="onT-07-2WQ"/>
                 <constraint firstAttribute="bottom" secondItem="51" secondAttribute="bottom" constant="13" id="wc6-yK-DSK"/>
             </constraints>
+            <connections>
+                <outlet property="addressesBox" destination="1zA-19-rkA" id="StN-6i-m5e"/>
+            </connections>
         </customView>
     </objects>
     <resources>
