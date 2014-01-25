@@ -274,6 +274,8 @@ static const NSInteger kHIAppRuntimeBridgeParsingError = -1000;
     NSString *HTTPMethod = [self webScriptObject:options valueForProperty:@"type"] ?: @"GET";
     NSString *dataType = [self webScriptObject:options valueForProperty:@"dataType"];
 
+    HILogInfo(@"Request to %@ (%@)", url, [HTTPMethod uppercaseString]);
+
     WebScriptObject *successCallback = [self webScriptObject:options valueForProperty:@"success"];
     WebScriptObject *errorCallback = [self webScriptObject:options valueForProperty:@"error"];
     WebScriptObject *completeCallback = [self webScriptObject:options valueForProperty:@"complete"];
