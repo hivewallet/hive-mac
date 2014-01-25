@@ -2,6 +2,8 @@
 
 Hive is a user-friendly Bitcoin wallet app for OSX.
 
+![](http://i.imgur.com/p5VoeND.png)
+
 
 ## Requirements
 
