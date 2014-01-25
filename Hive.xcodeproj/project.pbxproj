@@ -184,6 +184,7 @@
 		58CFD95417CF914000A035FA /* HISidebarView.m in Sources */ = {isa = PBXBuildFile; fileRef = 58CFD95217CF914000A035FA /* HISidebarView.m */; };
 		58D4D61F18290079009CB7A5 /* patten_hive.hiveapp in Resources */ = {isa = PBXBuildFile; fileRef = 58D4D61E18290079009CB7A5 /* patten_hive.hiveapp */; };
 		58E336171892C02E004D60C3 /* HIApplicationsViewController.strings in Resources */ = {isa = PBXBuildFile; fileRef = 58E336191892C02E004D60C3 /* HIApplicationsViewController.strings */; };
+		58E3363A18934DCB004D60C3 /* coinbase.hiveapp in Resources */ = {isa = PBXBuildFile; fileRef = 58E3363918934DCB004D60C3 /* coinbase.hiveapp */; };
 		58F02AEE17E1F5A400B65429 /* HIRightPointingArrowView.m in Sources */ = {isa = PBXBuildFile; fileRef = 58F02AED17E1F5A400B65429 /* HIRightPointingArrowView.m */; };
 		58FB21EC1875809B00F87B9E /* get_dropbox_folder.sh in Resources */ = {isa = PBXBuildFile; fileRef = 58FB21EB1875809B00F87B9E /* get_dropbox_folder.sh */; };
 		D901F4F817B272E60071780D /* BitcoinJKit.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = D901F4F517B272CE0071780D /* BitcoinJKit.framework */; };
@@ -1554,6 +1555,7 @@
 		58E336301892C046004D60C3 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/HIApplicationsViewController.strings; sourceTree = "<group>"; };
 		58E336311892C046004D60C3 /* pt-BR */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-BR"; path = "pt-BR.lproj/HIApplicationsViewController.strings"; sourceTree = "<group>"; };
 		58E336321892C047004D60C3 /* ro */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ro; path = ro.lproj/HIApplicationsViewController.strings; sourceTree = "<group>"; };
+		58E3363918934DCB004D60C3 /* coinbase.hiveapp */ = {isa = PBXFileReference; lastKnownFileType = file; path = coinbase.hiveapp; sourceTree = "<group>"; };
 		58F02AEC17E1F5A400B65429 /* HIRightPointingArrowView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HIRightPointingArrowView.h; sourceTree = "<group>"; };
 		58F02AED17E1F5A400B65429 /* HIRightPointingArrowView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HIRightPointingArrowView.m; sourceTree = "<group>"; };
 		58F56BA01832909000C57640 /* pt */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = pt; path = pt.lproj/HIApplicationsViewController.xib; sourceTree = "<group>"; };
@@ -1966,6 +1968,7 @@
 			children = (
 				5857126E188F3C480094F884 /* bitpremier.hiveapp */,
 				5857125E188F28A70094F884 /* bitstamptrader.hiveapp */,
+				58E3363918934DCB004D60C3 /* coinbase.hiveapp */,
 				588E34B6181E9F7B006A6A25 /* localbitcoins.hiveapp */,
 				586059AD180419DF00FD9C2A /* minefield.hiveapp */,
 				5857125F188F28A70094F884 /* mobile-recharge.hiveapp */,
@@ -2512,6 +2515,7 @@
 				5857126F188F3C480094F884 /* bitpremier.hiveapp in Resources */,
 				58605A4818041D0A00FD9C2A /* icon-dropdown-open.pdf in Resources */,
 				58605A4918041D0A00FD9C2A /* icon-gray-btc.pdf in Resources */,
+				58E3363A18934DCB004D60C3 /* coinbase.hiveapp in Resources */,
 				58605A4A18041D0A00FD9C2A /* icon-group__active.pdf in Resources */,
 				58605A4B18041D0A00FD9C2A /* icon-group__inactive.pdf in Resources */,
 				5889538F1888A68100243190 /* HIBackupCenterWindowController.xib in Resources */,
