@@ -28,6 +28,7 @@
 		1AA10B3C94C377F4EF024D41 /* HIProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AA1013FB9712D7B30A91BFB /* HIProfileViewController.m */; };
 		1AA10DECEE3B99EDD1C14B81 /* HICurrencyFormatServiceTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AA107B12E9AB06FCF455005 /* HICurrencyFormatServiceTests.m */; };
 		1AA10DF868C849FB18F976B4 /* HIWizardButtonCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AA106209DB5E8088D1290A0 /* HIWizardButtonCell.m */; };
+		1AA10E305C91DC42C81D0DC3 /* HIAddressesBox.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AA107FF085E51B83E5F751D /* HIAddressesBox.m */; };
 		1AA10ECC39D33A1362882EB2 /* HIProfileViewController.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1AA108BDEC523213EF9B8309 /* HIProfileViewController.strings */; };
 		1AA10FF5281477AC42B0B952 /* HIWizardSmallButtonCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AA101A350D2350E6AF62F4C /* HIWizardSmallButtonCell.m */; };
 		24178E301861005100A73D4E /* HIPasswordChangeWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 24178E2E1861005100A73D4E /* HIPasswordChangeWindowController.m */; };
@@ -298,7 +299,9 @@
 		1AA10683D3C0D3D1757EE24E /* HIPerson.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HIPerson.h; sourceTree = "<group>"; };
 		1AA106F09BEB25F235D75A80 /* HIPasswordHolder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HIPasswordHolder.h; sourceTree = "<group>"; };
 		1AA10711079E121245A12DED /* HIPasswordHolder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HIPasswordHolder.m; sourceTree = "<group>"; };
+		1AA10789485D85E021441CEF /* HIAddressesBox.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HIAddressesBox.h; sourceTree = "<group>"; };
 		1AA107B12E9AB06FCF455005 /* HICurrencyFormatServiceTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HICurrencyFormatServiceTests.m; sourceTree = "<group>"; };
+		1AA107FF085E51B83E5F751D /* HIAddressesBox.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HIAddressesBox.m; sourceTree = "<group>"; };
 		1AA109349A0DB4DF39E55FA4 /* HILabelPopUpButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HILabelPopUpButton.h; sourceTree = "<group>"; };
 		1AA1095B1D4E2BF3C14C3FC2 /* ar */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = ar; path = ar.lproj/HIProfileViewController.xib; sourceTree = "<group>"; };
 		1AA1099A1809B28C291572E7 /* HILabelPopUpButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HILabelPopUpButton.m; sourceTree = "<group>"; };
@@ -2076,6 +2079,8 @@
 			isa = PBXGroup;
 			children = (
 				24300C54188C50E300FDEF2F /* Buttons */,
+				1AA107FF085E51B83E5F751D /* HIAddressesBox.m */,
+				1AA10789485D85E021441CEF /* HIAddressesBox.h */,
 				583B1E0B1868BAC000817EF8 /* HIBackupActionsCellView.h */,
 				583B1E0C1868BAC000817EF8 /* HIBackupActionsCellView.m */,
 				588F3E8318719A9000FF42EA /* HIBackupStatusCellView.h */,
@@ -2744,6 +2749,7 @@
 				1AA10FF5281477AC42B0B952 /* HIWizardSmallButtonCell.m in Sources */,
 				1AA103708F688652981245D2 /* HICurrencyFormatService.m in Sources */,
 				1AA1028C64880CACCA3AE5CA /* HIDirectoryDataService.m in Sources */,
+				1AA10E305C91DC42C81D0DC3 /* HIAddressesBox.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
