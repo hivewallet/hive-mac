@@ -5,6 +5,23 @@ IGNORED_LABELS = [
   "Box", "John Appleseed", "John Whatshisface", "Label", "Multiline Label", "OtherViews", "Text Cell", "Window",
 ]
 
+print_untranslated = false
+language = nil
+
+i = 0
+while i < ARGV.length
+  arg = ARGV[i]
+
+  case arg
+  when '-u'
+    print_untranslated = true
+  when '-l'
+    i += 1
+    language = ARGV[i]
+  end
+
+  i += 1
+end
 
 class StringsFile
   attr_reader :data
@@ -19,8 +36,10 @@ class StringsFile
     end
   end
 
-  def update_from(source)
+  def update_from(source, options = {})
     rebuilt_data = {}
+
+    should_print = options[:print_untranslated]
 
     source.data.keys.each do |key|
       old_data = @data[key]
@@ -30,6 +49,8 @@ class StringsFile
         translated: (old_data ? old_data[:translated] : new_data[:translated]),
         info: new_data[:info]
       }
+
+      puts %("#{new_data[:translated]}") if should_print && rebuilt_data[key][:translated] == new_data[:translated]
     end
 
     @data = rebuilt_data
@@ -51,14 +72,16 @@ BASE_DIRECTORIES.each do |base|
     original_data = StringsFile.new(file, remove_ignored: (base.include?('Controllers')))
     File.write(file, original_data)
 
-    Dir.glob("#{base}/*.lproj").each do |dir|
+    language_dirs = language ? "#{language}.lproj" : "*.lproj"
+
+    Dir.glob("#{base}/#{language_dirs}").each do |dir|
       next if File.basename(dir) == 'en.lproj'
 
       translated_file = "#{dir}/#{filename}"
 
       if File.exist?(translated_file)
         translated_data = StringsFile.new(translated_file)
-        translated_data.update_from(original_data)
+        translated_data.update_from(original_data, print_untranslated: print_untranslated)
 
         File.write(translated_file, translated_data)
       end
