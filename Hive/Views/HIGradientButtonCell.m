@@ -70,8 +70,9 @@ static const float PADDING_Y = 0.0;
     }
 
     NSSize size = [self.title sizeWithAttributes:attrs];
+    CGFloat strokeOffset = self.hasShadow ? 1.0 : 0.0;
     NSRect drawRect = NSMakeRect(frame.origin.x + (frame.size.width - size.width) / 2.0,
-        frame.origin.y + 1 + (frame.size.height - size.height) / 2.0, size.width, size.height);
+        frame.origin.y + strokeOffset + (frame.size.height - size.height) / 2.0, size.width, size.height);
     [self.title drawAtPoint:drawRect.origin withAttributes:attrs];
 
     return drawRect;
