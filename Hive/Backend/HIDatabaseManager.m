@@ -67,6 +67,7 @@ static NSInteger HIDatabaseManagerFileExistsAtLocationError = 1000;
     }
 
     NSURL *applicationFilesDirectory = [[NSApp delegate] applicationFilesDirectory];
+    HILogDebug(@"Using application support directory: %@", applicationFilesDirectory);
     NSFileManager *fileManager = [NSFileManager defaultManager];
     NSError *error = nil;
     BOOL isDirectory;

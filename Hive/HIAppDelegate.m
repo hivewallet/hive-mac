@@ -183,7 +183,16 @@ static int ddLogLevel = LOG_LEVEL_VERBOSE;
     NSURL *appSupportURL = [matchingURLs lastObject];
 
     if (DEBUG_OPTION_ENABLED(TESTING_NETWORK)) {
-        return [appSupportURL URLByAppendingPathComponent:@"HiveTest"];
+        if (DEBUG_OPTION_ENABLED(TEMP_DIRECTORY)) {
+            // We never want to combine the temp directory with a real-world wallet.
+            return [fileManager URLForDirectory:NSItemReplacementDirectory
+                                       inDomain:NSUserDomainMask
+                              appropriateForURL:[appSupportURL URLByAppendingPathComponent:@"Hive"]
+                                         create:YES
+                                          error:NULL];
+        } else {
+            return [appSupportURL URLByAppendingPathComponent:@"HiveTest"];
+        }
     } else {
         return [appSupportURL URLByAppendingPathComponent:@"Hive"];
     }
