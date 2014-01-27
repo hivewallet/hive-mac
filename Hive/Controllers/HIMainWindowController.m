@@ -77,7 +77,7 @@ static const NSTimeInterval SlideAnimationDuration = 0.3;
 
 - (void)awakeFromNib {
     // quick fix for send button in some languages (e.g. Russian)
-    if (self.sendButton.intrinsicContentSize.width > SidebarButtonWidth) {
+    if (self.sendButton.intrinsicContentSize.width > self.sendButton.frame.size.width) {
         self.sendButton.frame = NSInsetRect(self.sendButton.frame, -2.0, 0.0);
         self.sendButton.font = [NSFont boldSystemFontOfSize:11.0];
     }
