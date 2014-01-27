@@ -3,7 +3,7 @@
 "1.title" = "Debugging Info";
 
 /* Class = "NSButtonCell"; title = "Save to file..."; ObjectID = "1AY-mJ-Thd"; */
-"1AY-mJ-Thd.title" = "Save to file...";
+"1AY-mJ-Thd.title" = "Tallenna kansioon...";
 
 /* Class = "NSTextFieldCell"; title = "If you have problems with your wallet, we may ask you to send us the contents of the text area below. Please note that the data does NOT include your private keys and will not allow us to spend your Bitcoin!"; ObjectID = "o5O-SS-J37"; */
-"o5O-SS-J37.title" = "If you have problems with your wallet, we may ask you to send us the contents of the text area below. Please note that the data does NOT include your private keys and will not allow us to spend your Bitcoin!";
+"o5O-SS-J37.title" = "Jos sinulla on ongelmia lompakkosi kanssa, saatamme pyytää sinua lähettämään meille alapuolella olevat tiedot. Huomaa, että nämä tiedot EIVÄT sisällä sinun henkilökohtaisia avaimiasi eikä anna meidän käyttää Bitcoinejasi!";

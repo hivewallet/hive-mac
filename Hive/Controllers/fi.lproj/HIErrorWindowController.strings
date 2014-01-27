@@ -6,10 +6,10 @@
 "0m5-Xd-7pp.placeholderString" = "email@domain.com";
 
 /* Class = "NSTextFieldCell"; title = "Please send us a report to help us fix the problem."; ObjectID = "Cob-tq-o5r"; */
-"Cob-tq-o5r.title" = "Please send us a report to help us fix the problem.";
+"Cob-tq-o5r.title" = "Lähetäthän meille virheraportin, jotta voimme korjata ongelman.";
 
 /* Class = "NSTextFieldCell"; title = "Describe what you were doing when the error occurred:"; ObjectID = "F9w-28-7kX"; */
-"F9w-28-7kX.title" = "Describe what you were doing when the error occurred (preferably in English):";
+"F9w-28-7kX.title" = "Kuvaile, mitä olit tekemässä, kun virhe tapahtui (mieluiten englanniksi):";
 
 /* Class = "NSTextFieldCell"; title = "Oh no, something went wrong!"; ObjectID = "Mpx-rH-nUM"; */
 "Mpx-rH-nUM.title" = "Voi ei, jokin meni väärin!";
@@ -18,16 +18,16 @@
 "qVP-Mf-lLP.title" = "Email (optional)";
 
 /* Class = "NSButtonCell"; title = "Send"; ObjectID = "tDm-yy-jVS"; */
-"tDm-yy-jVS.title" = "Send";
+"tDm-yy-jVS.title" = "Lähetä";
 
 /* Class = "NSButtonCell"; title = "Cancel"; ObjectID = "tR0-Dg-y0x"; */
-"tR0-Dg-y0x.title" = "Cancel";
+"tR0-Dg-y0x.title" = "Peruuta";
 
 /* Class = "NSTextFieldCell"; title = "Error details:"; ObjectID = "uLK-ff-isg"; */
-"uLK-ff-isg.title" = "Error details:";
+"uLK-ff-isg.title" = "Virhetiedot:";
 
 /* Class = "NSTextFieldCell"; title = "An unexpected error has occurred in Hive."; ObjectID = "xF4-pJ-cQU"; */
 "xF4-pJ-cQU.title" = "Hivessa tapahtui odottamaton virhe.";
 
 /* Class = "NSTextFieldCell"; title = "Name (optional)"; ObjectID = "yDj-TF-cJK"; */
-"yDj-TF-cJK.title" = "Name (optional)";
+"yDj-TF-cJK.title" = "Nimi (valinnainen)";
