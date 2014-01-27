@@ -9,19 +9,19 @@
 "57.title" = "Hive";
 
 /* Class = "NSMenuItem"; title = "About Hive"; ObjectID = "58"; */
-"58.title" = "About Hive";
+"58.title" = "Tungkol sa Hive";
 
 /* Class = "NSMenuItem"; title = "Preferences…"; ObjectID = "129"; */
 "129.title" = "Preferences…";
 
 /* Class = "NSMenu"; title = "Services"; ObjectID = "130"; */
-"130.title" = "Services";
+"130.title" = "Mga Serbisyo";
 
 /* Class = "NSMenuItem"; title = "Services"; ObjectID = "131"; */
-"131.title" = "Services";
+"131.title" = "mga Serbisyo";
 
 /* Class = "NSMenuItem"; title = "Hide Hive"; ObjectID = "134"; */
-"134.title" = "Hide Hive";
+"134.title" = "Itago ang Hive";
 
 /* Class = "NSMenuItem"; title = "Quit Hive"; ObjectID = "136"; */
 "136.title" = "Quit Hive";
@@ -30,16 +30,16 @@
 "145.title" = "Hide Others";
 
 /* Class = "NSMenuItem"; title = "Show All"; ObjectID = "150"; */
-"150.title" = "Show All";
+"150.title" = "Ipakita lahat";
 
 /* Class = "NSMenuItem"; title = "Item"; ObjectID = "800"; */
 "800.title" = "Item";
 
 /* Class = "NSMenuItem"; title = "Edit"; ObjectID = "801"; */
-"801.title" = "Edit";
+"801.title" = "I-edit";
 
 /* Class = "NSMenu"; title = "Edit"; ObjectID = "802"; */
-"802.title" = "Edit";
+"802.title" = "I-edit";
 
 /* Class = "NSMenuItem"; title = "Undo"; ObjectID = "804"; */
 "804.title" = "Undo";
@@ -48,19 +48,19 @@
 "805.title" = "Redo";
 
 /* Class = "NSMenuItem"; title = "Cut"; ObjectID = "807"; */
-"807.title" = "Cut";
+"807.title" = "i-cut";
 
 /* Class = "NSMenuItem"; title = "Copy"; ObjectID = "808"; */
-"808.title" = "Copy";
+"808.title" = "Kopyahin";
 
 /* Class = "NSMenuItem"; title = "Paste"; ObjectID = "809"; */
-"809.title" = "Paste";
+"809.title" = "I-paste";
 
 /* Class = "NSMenuItem"; title = "Delete"; ObjectID = "811"; */
-"811.title" = "Delete";
+"811.title" = "I-delete";
 
 /* Class = "NSMenuItem"; title = "Select All"; ObjectID = "812"; */
-"812.title" = "Select All";
+"812.title" = "Piliin lahat";
 
 /* Class = "NSMenuItem"; title = "Window"; ObjectID = "854"; */
 "854.title" = "Window";
@@ -69,10 +69,10 @@
 "855.title" = "Window";
 
 /* Class = "NSMenuItem"; title = "Minimize"; ObjectID = "857"; */
-"857.title" = "Minimize";
+"857.title" = "I-minimize";
 
 /* Class = "NSMenuItem"; title = "Zoom"; ObjectID = "858"; */
-"858.title" = "Zoom";
+"858.title" = "I-zoom";
 
 /* Class = "NSMenuItem"; title = "Bring All to Front"; ObjectID = "860"; */
 "860.title" = "Bring All to Front";
@@ -81,13 +81,13 @@
 "864.title" = "Close";
 
 /* Class = "NSMenuItem"; title = "Send Bitcoin..."; ObjectID = "866"; */
-"866.title" = "Send Bitcoins...";
+"866.title" = "Magpadala ng Bitcoin...";
 
 /* Class = "NSMenuItem"; title = "Check for Updates..."; ObjectID = "870"; */
-"870.title" = "Check for Updates...";
+"870.title" = "Mag-check ng Updates...";
 
 /* Class = "NSMenuItem"; title = "Change Password…"; ObjectID = "1HB-Qg-iyg"; */
-"1HB-Qg-iyg.title" = "Change Password…";
+"1HB-Qg-iyg.title" = "Palitan ang Password…";
 
 /* Class = "NSMenuItem"; title = "Open CoinMap..."; ObjectID = "ASP-Ns-ktD"; */
 "ASP-Ns-ktD.title" = "Open CoinMap...";
@@ -102,10 +102,10 @@
 "V0L-sM-c8h.title" = "Backup Center...";
 
 /* Class = "NSMenu"; title = "Tools"; ObjectID = "cCx-Ak-fii"; */
-"cCx-Ak-fii.title" = "Tools";
+"cCx-Ak-fii.title" = "mga Tool";
 
 /* Class = "NSMenuItem"; title = "Tools"; ObjectID = "eBU-ec-85y"; */
-"eBU-ec-85y.title" = "Tools";
+"eBU-ec-85y.title" = "mga Tool";
 
 /* Class = "NSMenu"; title = "Wallet"; ObjectID = "jrd-Ul-XjV"; */
 "jrd-Ul-XjV.title" = "Wallet";
