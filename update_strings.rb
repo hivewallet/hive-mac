@@ -29,7 +29,7 @@ class StringsFile
   def initialize(file, options = {})
     @data = {}
 
-    File.read(file).scan(%r{/\* ([^*]+) \*/\n"(.+)" = "(.+)";\n+}) do |info, original, translated|
+    File.read(file).scan(%r{/\* ([^*]+) \*/[\n\r]+"(.+)" = "(.+)";?[\n\r]+}) do |info, original, translated|
       unless options[:remove_ignored] && IGNORED_LABELS.include?(translated)
         @data[original] = { translated: translated, info: info }
       end
