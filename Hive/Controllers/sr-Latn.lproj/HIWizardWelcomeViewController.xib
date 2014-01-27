@@ -28,7 +28,7 @@
                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="mdk-zD-vWi">
                     <rect key="frame" x="243" y="235" width="365" height="51"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Welcome to Hive" id="I10-iV-C0e">
+                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Dobrodošli u Hive" id="I10-iV-C0e">
                         <font key="font" metaFont="systemBold" size="42"/>
                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
@@ -37,7 +37,7 @@
                 <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="gDC-Cm-H3d">
                     <rect key="frame" x="361" y="59" width="129" height="23"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                    <buttonCell key="cell" type="smallSquare" title="Create a new wallet" bezelStyle="smallSquare" imagePosition="overlaps" alignment="center" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="j0E-b4-dgh" customClass="HIWizardButtonCell">
+                    <buttonCell key="cell" type="smallSquare" title="Napravite nov novčanik" bezelStyle="smallSquare" imagePosition="overlaps" alignment="center" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="j0E-b4-dgh" customClass="HIWizardButtonCell">
                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                         <font key="font" metaFont="system"/>
                     </buttonCell>
@@ -51,7 +51,7 @@
                     <constraints>
                         <constraint firstAttribute="width" constant="600" id="Jn9-t9-FWD"/>
                     </constraints>
-                    <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="center" title="A wallet is like a set of keys that unlock your money. Let's create one now." id="AHC-MY-HDw">
+                    <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="center" title="Novčanik je kao skup ključeva koji otključava vaš novac. Napravimo jedan sada." id="AHC-MY-HDw">
                         <font key="font" metaFont="system" size="16"/>
                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>

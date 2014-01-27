@@ -12,7 +12,7 @@
 "58.title" = "О Hive-у";
 
 /* Class = "NSMenuItem"; title = "Preferences…"; ObjectID = "129"; */
-"129.title" = "Подешавања…";
+"129.title" = "Подешавања...";
 
 /* Class = "NSMenu"; title = "Services"; ObjectID = "130"; */
 "130.title" = "Сервиси";
@@ -87,19 +87,19 @@
 "870.title" = "Проверите за ажурирање...";
 
 /* Class = "NSMenuItem"; title = "Change Password…"; ObjectID = "1HB-Qg-iyg"; */
-"1HB-Qg-iyg.title" = "Change Password…";
+"1HB-Qg-iyg.title" = "Промените лозинку...";
 
 /* Class = "NSMenuItem"; title = "Open CoinMap..."; ObjectID = "ASP-Ns-ktD"; */
-"ASP-Ns-ktD.title" = "Отворите КоинМапу...";
+"ASP-Ns-ktD.title" = "Отворите CoinMap...";
 
 /* Class = "NSMenuItem"; title = "Wallet"; ObjectID = "GX7-xG-GKH"; */
-"GX7-xG-GKH.title" = "Wallet";
+"GX7-xG-GKH.title" = "Новчаник";
 
 /* Class = "NSMenuItem"; title = "Debugging tools..."; ObjectID = "Ue9-mi-gbe"; */
 "Ue9-mi-gbe.title" = "Алати за отклањање грешака...";
 
 /* Class = "NSMenuItem"; title = "Backup Center..."; ObjectID = "V0L-sM-c8h"; */
-"V0L-sM-c8h.title" = "Backup Center...";
+"V0L-sM-c8h.title" = "Центар за резервне копије...";
 
 /* Class = "NSMenu"; title = "Tools"; ObjectID = "cCx-Ak-fii"; */
 "cCx-Ak-fii.title" = "Алати";
@@ -108,7 +108,7 @@
 "eBU-ec-85y.title" = "Алати";
 
 /* Class = "NSMenu"; title = "Wallet"; ObjectID = "jrd-Ul-XjV"; */
-"jrd-Ul-XjV.title" = "Wallet";
+"jrd-Ul-XjV.title" = "Новчаник";
 
 /* Class = "NSMenuItem"; title = "Debugging info..."; ObjectID = "lLT-53-p4m"; */
 "lLT-53-p4m.title" = "Информације за отклањање грешака...";

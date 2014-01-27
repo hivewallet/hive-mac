@@ -3,10 +3,10 @@
 "22.title" = "Примљено";
 
 /* Class = "NSTextFieldCell"; title = "Date"; ObjectID = "41"; */
-"41.title" = "Date";
+"41.title" = "Датум";
 
 /* Class = "NSTextFieldCell"; title = "Looks like you haven't made any transactions yet. Send someone some Bitcoin!"; ObjectID = "54"; */
-"54.title" = "Изгледа да још увек нисте обавили ни једну трансакцију. Пошаљите некоме нешто биткоина!";
+"54.title" = "Изгледа да још увек нисте обавили ниједну трансакцију. Пошаљите некоме нешто биткоина!";
 
 /* Class = "NSButtonCell"; title = "Send Bitcoin"; ObjectID = "55"; */
 "55.title" = "Пошаљите биткоин";
@@ -15,4 +15,4 @@
 "63.title" = "Након тога можете користити Пошаљите дугме да некоме пошаљете новац.";
 
 /* Class = "NSTextFieldCell"; title = "PENDING"; ObjectID = "oXJ-Jx-H6s"; */
-"oXJ-Jx-H6s.title" = "PENDING";
+"oXJ-Jx-H6s.title" = "НА ИЗВРШЕЊУ";

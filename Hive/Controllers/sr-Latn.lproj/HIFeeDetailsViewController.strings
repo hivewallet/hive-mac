@@ -1,12 +1,12 @@
 
 /* Class = "NSTextFieldCell"; title = "The fees you pay help keep the Bitcoin network running!"; ObjectID = "JVe-5I-zWC"; */
-"JVe-5I-zWC.title" = "The fees you pay help keep the Bitcoin network running!";
+"JVe-5I-zWC.title" = "Provizije koje plaćate pomažu da bitkoin mreža funkcioniše!";
 
 /* Class = "NSTextFieldCell"; title = "Current transaction fee:"; ObjectID = "exO-xB-xYk"; */
-"exO-xB-xYk.title" = "Current transaction fee:";
+"exO-xB-xYk.title" = "Trenutna provizija na transakciju:";
 
 /* Class = "NSTextFieldCell"; title = "Learn more…"; ObjectID = "kHH-z3-bVk"; */
-"kHH-z3-bVk.title" = "Learn more…";
+"kHH-z3-bVk.title" = "Saznajte više...";
 
 /* Class = "NSTextFieldCell"; title = "0.0000001"; ObjectID = "l6i-QL-kg8"; */
 "l6i-QL-kg8.title" = "0.0000001";

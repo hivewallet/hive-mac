@@ -110,7 +110,7 @@
                     <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="e09-2q-61N">
                         <rect key="frame" x="98" y="449" width="394" height="17"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
-                        <textFieldCell key="cell" lineBreakMode="truncatingTail" sendsActionOnEndEditing="YES" alignment="center" title="Молимо вас да нам пошаљете извештај како би нам помогли да решимо проблем." id="Cob-tq-o5r">
+                        <textFieldCell key="cell" lineBreakMode="truncatingTail" sendsActionOnEndEditing="YES" alignment="center" title="Молимо вас да нам пошаљете извештај како бисте нам помогли да решимо проблем." id="Cob-tq-o5r">
                             <font key="font" metaFont="system"/>
                             <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                             <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
@@ -199,7 +199,7 @@ DQ
                     <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="orC-Xa-BWE">
                         <rect key="frame" x="17" y="391" width="556" height="17"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Describe what you were doing when the error occurred (preferably in English):" id="F9w-28-7kX">
+                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Опишите нам шта сте радили када се грешка догодила (по могућству на енглеском):" id="F9w-28-7kX">
                             <font key="font" metaFont="system"/>
                             <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                             <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>

@@ -15,49 +15,49 @@
 "Apps" = "Апликације";
 
 /* Warning when trying to a large BTC amount (btc, fiat amount and address) */
-"Are you sure you want to send %@ (%@) to %@?" = "Are you sure you want to send %1$@ (%2$@) to %3$@?";
+"Are you sure you want to send %@ (%@) to %@?" = "Да ли сте сигурни да желите да %3$@ пошаљете износ од %1$@ (%2$@)?";
 
 /* Wizard backup page title */
-"Backup" = "Backup";
+"Backup" = "Резервна копија";
 
 /* Backup status: backup can't or won't be completed */
-"Backup error" = "Backup error";
+"Backup error" = "Грешка приликом прављења резервне копије";
 
 /* Notification of failed backup */
-"Backup failed" = "Backup failed";
+"Backup failed" = "Прављење резервне копије није успело";
 
 /* No comment provided by engineer. */
-"Backup hasn't been done yet" = "Backup hasn't been done yet";
+"Backup hasn't been done yet" = "Резервна копија још увек није завршена";
 
 /* Backup error message */
-"Backup is not configured" = "Backup is not configured";
+"Backup is not configured" = "Резервна копија није конфигурисана";
 
 /* Backup status: backup done but not updated recently */
-"Backup problem" = "Backup problem";
+"Backup problem" = "Problem sa rezervnom kopijom";
 
 /* Backup error message */
-"Can't create a directory to store the wallet backup" = "Can't create a directory to store the wallet backup";
+"Can't create a directory to store the wallet backup" = "Директоријум где треба да се сачува резервна копија новчаника не може бити направљен";
 
 /* Cancel button title */
-"Cancel" = "Одустани";
+"Cancel" = "Откажите";
 
 /* Dead transaction label */
-"CANCELLED" = "CANCELLED";
+"CANCELLED" = "Отказано";
 
 /* Dropbox folder save panel confirmation button */
-"Choose" = "Choose";
+"Choose" = "Изаберите";
 
 /* No comment provided by engineer. */
-"Choose a directory inside Dropbox folder where the backup should be saved:" = "Choose a directory inside Dropbox folder where the backup should be saved:";
+"Choose a directory inside Dropbox folder where the backup should be saved:" = "Изаберите директоријум унутар Dropbox фолдера где резервна копија треба да буде сачувана:";
 
 /* No comment provided by engineer. */
 "click to copy" = "кликните за копирање";
 
 /* Confirm button next to passphrase */
-"Confirm" = "Confirm";
+"Confirm" = "Потврдите";
 
 /* Contact name empty alert title */
-"Contact can't be saved." = "Контакти не могу да се сачувају.";
+"Contact can't be saved." = "Контакти не могу бити сачувани.";
 
 /* Contacts view title */
 "Contacts" = "Контакти";
@@ -66,34 +66,34 @@
 "copied!" = "ископирано!";
 
 /* initialization error */
-"Could not read wallet file. It might be damaged." = "Could not read wallet file. It might be damaged.";
+"Could not read wallet file. It might be damaged." = "Фајл новчаника не може бити прочитан. Можда је оштећен.";
 
 /* Quit without saves error question message */
 "Could not save changes while quitting. Quit anyway?" = "Измене нису успешно сачуване приликом излажења. Изаћи свеједно?";
 
 /* initialization error */
-"Could not write wallet file. Another instance of Hive might still be running." = "Could not write wallet file. Another instance of Hive might still be running.";
+"Could not write wallet file. Another instance of Hive might still be running." = "Фајл новчаника не може бити записан. Друга инстанца Hive-а је можда још увек активирана.";
 
 /* Disable backup button title */
-"Disable" = "Disable";
+"Disable" = "Onesposobite";
 
 /* Backup status: adapter disabled */
-"Disabled" = "Disabled";
+"Disabled" = "Onesposobljeno";
 
 /* Remove contact alert dialog title */
 "Do you really want to remove %@ from your contact list?" = "Да ли заиста желите да уклоните %@ из ваше листе контаката?";
 
 /* Install app popup title */
-"Do you want to add \"%@\" to Hive?" = "Do you want to add \"%@\" to Hive?";
+"Do you want to add \"%@\" to Hive?" = "Да ли желите да додате \"%@\" у Hive?";
 
 /* Backup error message */
-"Dropbox folder not found" = "Dropbox folder not found";
+"Dropbox folder not found" = "Dropbox фолдер није пронађен";
 
 /* Dropbox no backup folder alert title */
-"Dropbox folder not found." = "Dropbox folder not found.";
+"Dropbox folder not found." = "Dropbox фолдер није пронађен.";
 
 /* Backup error message */
-"Dropbox isn't running" = "Dropbox isn't running";
+"Dropbox isn't running" = "Dropbox није укључен.";
 
 /* Page title when editing contact's info */
 "Edit contact" = "Измените контакт";
@@ -105,46 +105,46 @@
 "email" = "е-маил";
 
 /* Enable backup button title (no configuration required) */
-"Enable" = "Enable";
+"Enable" = "Оспособите";
 
 /* Enable backup button title (requires configuration) */
-"Enable..." = "Enable...";
+"Enable..." = "Оспособите...";
 
 /* Sending zero bitcoin alert title */
 "Enter an amount greater than zero." = "Унесите износ већи од нуле.";
 
 /* Passphrase prompt for sending */
-"Enter your passphrase to confirm the transaction:" = "Enter your passphrase to confirm the transaction:";
+"Enter your passphrase to confirm the transaction:" = "Унесите своју лозинку како би потврдили трансакцију:";
 
 /* Firstname field placeholder */
 "Firstname" = "Име";
 
 /* Initialization error title */
-"Hive cannot be started." = "Hive cannot be started.";
+"Hive cannot be started." = "Hive не може бити покренут.";
 
 /* Database error alert title */
-"Hive database file cannot be opened." = "Hive database file cannot be opened.";
+"Hive database file cannot be opened." = "Фајл Hive базе података не може бити отворен.";
 
 /* Backup error message */
-"Hive directory is excluded from Time Machine backup" = "Hive directory is excluded from Time Machine backup";
+"Hive directory is excluded from Time Machine backup" = "Hive директоријум је искључен из Time Machine резервне копије";
 
 /* Share sent transaction text */
-"I've just received some Bitcoin using Hive" = "I've just received some Bitcoin using Hive";
+"I've just received some Bitcoin using Hive" = "Управо сам примио биткоин користећи Hive";
 
 /* Share sent transaction text */
-"I've just sent some Bitcoin using Hive" = "I've just sent some Bitcoin using Hive";
+"I've just sent some Bitcoin using Hive" = "Управо сам послао биткоин користећi Hive";
 
 /* Install app button title */
-"Install" = "Install";
+"Install" = "Инсталирајте";
 
 /* Backup requires password alert details */
-"It's dangerous to upload unencrypted wallets." = "It's dangerous to upload unencrypted wallets.";
+"It's dangerous to upload unencrypted wallets." = "Опасно је слати неенкриптоване новчанике на Интернет.";
 
 /* Address caption field placeholder */
 "Label" = "Ознака";
 
 /* On what date was the last backup done */
-"Last backup on %@" = "Last backup on %@";
+"Last backup on %@" = "Последња резервна копија на %@";
 
 /* Lastname field placeholder */
 "Lastname" = "Презиме";
@@ -162,10 +162,10 @@
 "No address entered." = "Адреса није уписана.";
 
 /* Backup is outdated, last backup was on that date */
-"No backup since %@" = "No backup since %@";
+"No backup since %@" = "Без резервне копије од %@";
 
 /* Transaction failed alert message */
-"No Bitcoin have been taken from your wallet." = "Ни један биткоин није узет из вашег новчаника.";
+"No Bitcoin have been taken from your wallet." = "Ниједан биткоин није узет из вашег новчаника.";
 
 /* OK button title */
 "OK" = "Ок";
@@ -174,16 +174,16 @@
 "or choose from the list" = "или изаберите са листе";
 
 /* Wizard password page title */
-"Password" = "Password";
+"Password" = "Лозинка";
 
 /* Pending transaction label */
-"PENDING" = "PENDING";
+"PENDING" = "НА ИЗВРШЕЊУ";
 
 /* Invalid address alert message */
 "Please check if you have entered the address correctly." = "Молимо вас проверите да ли сте исправно унели адресу.";
 
 /* Warning details when trying to send to your own address */
-"Please enter a different address." = "Please enter a different address.";
+"Please enter a different address." = "Молимо вас унесите другу адресу.";
 
 /* Empty address alert message */
 "Please enter a valid Bitcoin address or select one from the dropdown list." = "Молимо вас унесите исправну биткоин адресу или изаберите једну са падајуће листе.";
@@ -198,88 +198,88 @@
 "Quitting now will lose any changes you have made since the last successful save" = "Излажење сада би узроковало губитак свих измена које сте направили од претходног успешног чувања.";
 
 /* Received amount of BTC from unknown source */
-"Received &a" = "Received &a";
+"Received &a" = "Примљено &a";
 
 /* Received amount of BTC from contact */
-"Received &a from &c" = "Received &a from &c";
+"Received &a from &c" = "Примљено &a од &c";
 
 /* Install app button title when app exists */
-"Reinstall" = "Reinstall";
+"Reinstall" = "Реинсталирајте";
 
 /* No comment provided by engineer. */
-"Remove" = "Remove";
+"Remove" = "Склоните";
 
 /* Dropbox invalid folder alert title */
-"Selected directory is outside Dropbox folder." = "Selected directory is outside Dropbox folder.";
+"Selected directory is outside Dropbox folder." = "Изабрани директоријум је изван Dropbox фолдера.";
 
 /* Send button title */
-"Send" = "Send";
+"Send" = "Пошаљите";
 
 /* Sent amount of BTC to a contact/address */
-"Sent &a to &c" = "Sent &a to &c";
+"Sent &a to &c" = "Послато &a ка &c";
 
 /* Amount exceeds available balance alert title */
-"Some funds are temporarily unavailable." = "Some funds are temporarily unavailable.";
+"Some funds are temporarily unavailable." = "Један део средстава је привремено недоступан.";
 
 /* Wizard completed page title */
-"Start!" = "Start!";
+"Start!" = "Покрените!";
 
 /* App load error description */
 "The application data file has been removed or corrupted." = "Фајл са подацима из апликације је уклоњен или оштећен.";
 
 /* Error message when database is incompatible with this version */
-"The database was saved by a newer version of Hive - please download the latest version from http://hivewallet.com." = "The database was saved by a newer version of Hive - please download the latest version from http://hivewallet.com.";
+"The database was saved by a newer version of Hive - please download the latest version from http://hivewallet.com." = "База података је сачувана од стране новије Hive верзије - молимо вас преузмите најновију верзију са http://hivewallet.com.";
 
 /* Install app popup warning message when app exists */
-"The existing app file will be replaced by the new version. This will not affect any app settings or saved data." = "The existing app file will be replaced by the new version. This will not affect any app settings or saved data.";
+"The existing app file will be replaced by the new version. This will not affect any app settings or saved data." = "Постојећа апликација ће бити замењена новијом верзијом. То неће утицати на подешавања и сачуване податке.";
 
 /* Alert details when transaction was cancelled */
-"This can happen because of bugs in the wallet code or because the transaction was rejected by the network." = "This can happen because of bugs in the wallet code or because the transaction was rejected by the network.";
+"This can happen because of bugs in the wallet code or because the transaction was rejected by the network." = "Ово може да се деси услед грешака у коду новчаника, или зато што је трансакција одбачена од стране мреже.";
 
 /* Warning details when trying to send a large BTC amount */
-"This is more than what you usually send." = "This is more than what you usually send.";
+"This is more than what you usually send." = "Износ је већи од оног који обично шаљете.";
 
 /* Warning title when trying to send to your own address */
-"This is your wallet address." = "This is your wallet address.";
+"This is your wallet address." = "Ово је адреса из вашег новчаника.";
 
 /* Invalid address alert title */
 "This isn't a valid Bitcoin address." = "Ово није исправна биткоин адреса.";
 
 /* Backup error message */
-"Time Machine is disabled in System Preferences" = "Time Machine is disabled in System Preferences";
+"Time Machine is disabled in System Preferences" = "Time Machine је онеспособљен у системским подешавањима.";
 
 /* Amount exceeds available balance alert message */
-"To send this transaction, you'll need to wait for your pending transactions to be confirmed first (this shouldn't take more than a few minutes)." = "To send this transaction, you'll need to wait for your pending transactions to be confirmed first (this shouldn't take more than a few minutes).";
+"To send this transaction, you'll need to wait for your pending transactions to be confirmed first (this shouldn't take more than a few minutes)." = "Како би послали ову трансакцију морате сачекати да ваше трансакције на извршењу буду потврђене (то не би требало да траје дуже од неколико минута).";
 
 /* Notification of cancelled transaction */
-"Transaction cancelled" = "Transaction cancelled";
+"Transaction cancelled" = "Трансакција је отказана";
 
 /* Notification of confirmed sent transaction */
-"Transaction completed" = "Transaction completed";
+"Transaction completed" = "Трансакција је извршена";
 
 /* Transaction failed alert title */
 "Transaction could not be completed." = "Трансакција не може бити извршена.";
 
 /* Alert when transaction was cancelled (with transaction date) */
-"Transaction from %@ was cancelled." = "Transaction from %@ was cancelled.";
+"Transaction from %@ was cancelled." = "Трансакција од %@ је отказана.";
 
 /* Transactions view title */
 "Transactions" = "Трансакције";
 
 /* Backup status: backup up to date */
-"Up to date" = "Up to date";
+"Up to date" = "Усклађено";
 
 /* Backup status: backup scheduled or in progress */
-"Waiting for backup" = "Waiting for backup";
+"Waiting for backup" = "Чека се прављење помоћне копије";
 
 /* Install app popup warning message */
-"We cannot guarantee the safety of all apps - please be careful if you download Hive apps from third party sites." = "We cannot guarantee the safety of all apps - please be careful if you download Hive apps from third party sites.";
+"We cannot guarantee the safety of all apps - please be careful if you download Hive apps from third party sites." = "Ми не можемо гарантовати безбедност свих апликација - молимо вас будите пажљиви уколико преузимате Hive апликације од трећих страна.";
 
 /* Wizard welcome page title */
-"Welcome" = "Welcome";
+"Welcome" = "Добродошли";
 
 /* Button to show info about pending funds */
-"What does this mean?" = "What does this mean?";
+"What does this mean?" = "Шта ово значи?";
 
 /* Sending zero bitcoin alert message */
 "Why would you want to send someone 0 BTC?" = "Зашто бисте желели некоме да пошаљете 0 БТЦ?";
@@ -288,25 +288,25 @@
 "You cannot send more money than you own." = "Не можете послати више новца него што имате.";
 
 /* Install app popup title when app exists */
-"You have already added \"%@\" to Hive. Would you like to overwrite it?" = "You have already added \"%@\" to Hive. Would you like to overwrite it?";
+"You have already added \"%@\" to Hive. Would you like to overwrite it?" = "Већ сте додали \"%@\" на Хиве. Да ли желите да запишете преко тога?";
 
 /* Notification of confirmed sent transaction (with BTC amount) */
-"You have sent %@." = "You have sent %@.";
+"You have sent %@." = "Послали сте %@.";
 
 /* Dropbox no backup folder alert details */
-"You must install Dropbox first (see www.dropbox.com)." = "You must install Dropbox first (see www.dropbox.com).";
+"You must install Dropbox first (see www.dropbox.com)." = "Прво морате инсталирати Dropbox (погледати www.dropbox.com).";
 
 /* Dropbox invalid folder alert details */
-"You need to choose or create a directory inside your Dropbox folder." = "You need to choose or create a directory inside your Dropbox folder.";
+"You need to choose or create a directory inside your Dropbox folder." = "Морате да изаберете или направите директоријум унутар вашег Dropbox фолдера.";
 
 /* Contact name empty alert message */
 "You need to give the contact a name before you can add it to the list." = "Морате навести име контакта пре него што га додате на листу.";
 
 /* Backup requires password alert title */
-"You need to set a wallet password first (see Wallet menu)." = "You need to set a wallet password first (see Wallet menu).";
+"You need to set a wallet password first (see Wallet menu)." = "Прво морате подесити лозинку новчаника (погледати мени новчаника).";
 
 /* Remove contact alert dialog body */
-"You won't be able to undo this operation." = "You won't be able to undo this operation.";
+"You won't be able to undo this operation." = "Нећете моћи да поништите ову операцију.";
 
 /* Notification of incoming transaction */
-"You've received Bitcoin" = "You've received Bitcoin";
+"You've received Bitcoin" = "Примили сте биткоин";
