@@ -1069,26 +1069,26 @@
 		588E33D0181810AE006A6A25 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/MainMenu.strings; sourceTree = "<group>"; };
 		588E33D1181810AE006A6A25 /* ru */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = ru; path = ru.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		588E33D3181810AE006A6A25 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
-		588E33D718182107006A6A25 /* tl */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = tl; path = tl.lproj/HIApplicationsViewController.xib; sourceTree = "<group>"; };
-		588E33D818182107006A6A25 /* tl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = tl; path = tl.lproj/HIContactsViewController.strings; sourceTree = "<group>"; };
-		588E33D918182107006A6A25 /* tl */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = tl; path = tl.lproj/HIContactsViewController.xib; sourceTree = "<group>"; };
-		588E33DA18182107006A6A25 /* tl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = tl; path = tl.lproj/HIMainWindowController.strings; sourceTree = "<group>"; };
-		588E33DB18182107006A6A25 /* tl */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = tl; path = tl.lproj/HIMainWindowController.xib; sourceTree = "<group>"; };
-		588E33DC18182107006A6A25 /* tl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = tl; path = tl.lproj/HINewContactViewController.strings; sourceTree = "<group>"; };
-		588E33DD18182107006A6A25 /* tl */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = tl; path = tl.lproj/HINewContactViewController.xib; sourceTree = "<group>"; };
-		588E33DE18182107006A6A25 /* tl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = tl; path = tl.lproj/HIContactInfoViewController.strings; sourceTree = "<group>"; };
-		588E33DF18182107006A6A25 /* tl */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = tl; path = tl.lproj/HIContactInfoViewController.xib; sourceTree = "<group>"; };
-		588E33E018182107006A6A25 /* tl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = tl; path = tl.lproj/HIContactViewController.strings; sourceTree = "<group>"; };
-		588E33E118182107006A6A25 /* tl */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = tl; path = tl.lproj/HIContactViewController.xib; sourceTree = "<group>"; };
-		588E33E218182108006A6A25 /* tl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = tl; path = tl.lproj/HIContactAutocompleteWindowController.strings; sourceTree = "<group>"; };
-		588E33E318182108006A6A25 /* tl */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = tl; path = tl.lproj/HIContactAutocompleteWindowController.xib; sourceTree = "<group>"; };
-		588E33E418182108006A6A25 /* tl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = tl; path = tl.lproj/HISendBitcoinsWindowController.strings; sourceTree = "<group>"; };
-		588E33E518182108006A6A25 /* tl */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = tl; path = tl.lproj/HISendBitcoinsWindowController.xib; sourceTree = "<group>"; };
-		588E33E618182108006A6A25 /* tl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = tl; path = tl.lproj/HITransactionsViewController.strings; sourceTree = "<group>"; };
-		588E33E718182108006A6A25 /* tl */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = tl; path = tl.lproj/HITransactionsViewController.xib; sourceTree = "<group>"; };
-		588E33E818182108006A6A25 /* tl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = tl; path = tl.lproj/MainMenu.strings; sourceTree = "<group>"; };
-		588E33E918182108006A6A25 /* tl */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = tl; path = tl.lproj/MainMenu.xib; sourceTree = "<group>"; };
-		588E33EB18182108006A6A25 /* tl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = tl; path = tl.lproj/Localizable.strings; sourceTree = "<group>"; };
+		588E33D718182107006A6A25 /* fil */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = fil; path = fil.lproj/HIApplicationsViewController.xib; sourceTree = "<group>"; };
+		588E33D818182107006A6A25 /* fil */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fil; path = fil.lproj/HIContactsViewController.strings; sourceTree = "<group>"; };
+		588E33D918182107006A6A25 /* fil */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = fil; path = fil.lproj/HIContactsViewController.xib; sourceTree = "<group>"; };
+		588E33DA18182107006A6A25 /* fil */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fil; path = fil.lproj/HIMainWindowController.strings; sourceTree = "<group>"; };
+		588E33DB18182107006A6A25 /* fil */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = fil; path = fil.lproj/HIMainWindowController.xib; sourceTree = "<group>"; };
+		588E33DC18182107006A6A25 /* fil */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fil; path = fil.lproj/HINewContactViewController.strings; sourceTree = "<group>"; };
+		588E33DD18182107006A6A25 /* fil */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = fil; path = fil.lproj/HINewContactViewController.xib; sourceTree = "<group>"; };
+		588E33DE18182107006A6A25 /* fil */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fil; path = fil.lproj/HIContactInfoViewController.strings; sourceTree = "<group>"; };
+		588E33DF18182107006A6A25 /* fil */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = fil; path = fil.lproj/HIContactInfoViewController.xib; sourceTree = "<group>"; };
+		588E33E018182107006A6A25 /* fil */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fil; path = fil.lproj/HIContactViewController.strings; sourceTree = "<group>"; };
+		588E33E118182107006A6A25 /* fil */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = fil; path = fil.lproj/HIContactViewController.xib; sourceTree = "<group>"; };
+		588E33E218182108006A6A25 /* fil */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fil; path = fil.lproj/HIContactAutocompleteWindowController.strings; sourceTree = "<group>"; };
+		588E33E318182108006A6A25 /* fil */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = fil; path = fil.lproj/HIContactAutocompleteWindowController.xib; sourceTree = "<group>"; };
+		588E33E418182108006A6A25 /* fil */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fil; path = fil.lproj/HISendBitcoinsWindowController.strings; sourceTree = "<group>"; };
+		588E33E518182108006A6A25 /* fil */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = fil; path = fil.lproj/HISendBitcoinsWindowController.xib; sourceTree = "<group>"; };
+		588E33E618182108006A6A25 /* fil */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fil; path = fil.lproj/HITransactionsViewController.strings; sourceTree = "<group>"; };
+		588E33E718182108006A6A25 /* fil */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = fil; path = fil.lproj/HITransactionsViewController.xib; sourceTree = "<group>"; };
+		588E33E818182108006A6A25 /* fil */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fil; path = fil.lproj/MainMenu.strings; sourceTree = "<group>"; };
+		588E33E918182108006A6A25 /* fil */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = fil; path = fil.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		588E33EB18182108006A6A25 /* fil */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fil; path = fil.lproj/Localizable.strings; sourceTree = "<group>"; };
 		588E33FD181E693B006A6A25 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = "zh-Hans"; path = "zh-Hans.lproj/HIApplicationsViewController.xib"; sourceTree = "<group>"; };
 		588E33FE181E693B006A6A25 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/HIContactsViewController.strings"; sourceTree = "<group>"; };
 		588E33FF181E693B006A6A25 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = "zh-Hans"; path = "zh-Hans.lproj/HIContactsViewController.xib"; sourceTree = "<group>"; };
@@ -2398,7 +2398,7 @@
 				pt,
 				ro,
 				"pt-BR",
-				tl,
+				fil,
 				ja,
 				sr,
 				"sr-Latn",
@@ -3497,7 +3497,7 @@
 				5832C53C180ECF46002A673F /* de */,
 				585FFF361815374C005BCF73 /* nl */,
 				588E33D3181810AE006A6A25 /* ru */,
-				588E33EB18182108006A6A25 /* tl */,
+				588E33EB18182108006A6A25 /* fil */,
 				588E3411181E693C006A6A25 /* zh-Hans */,
 				588E343A181E6D8C006A6A25 /* ar */,
 				588E3452181E6DA2006A6A25 /* ur */,
@@ -3530,7 +3530,7 @@
 				5832C527180ECF45002A673F /* de */,
 				585FFF211815374B005BCF73 /* nl */,
 				588E33BF181810AD006A6A25 /* ru */,
-				588E33D718182107006A6A25 /* tl */,
+				588E33D718182107006A6A25 /* fil */,
 				588E33FD181E693B006A6A25 /* zh-Hans */,
 				588E3426181E6D8B006A6A25 /* ar */,
 				588E343E181E6DA1006A6A25 /* ur */,
@@ -3563,7 +3563,7 @@
 				5832C529180ECF45002A673F /* de */,
 				585FFF231815374B005BCF73 /* nl */,
 				588E33C1181810AD006A6A25 /* ru */,
-				588E33D918182107006A6A25 /* tl */,
+				588E33D918182107006A6A25 /* fil */,
 				588E33FF181E693B006A6A25 /* zh-Hans */,
 				588E3428181E6D8B006A6A25 /* ar */,
 				588E3440181E6DA1006A6A25 /* ur */,
@@ -3596,7 +3596,7 @@
 				5832C52B180ECF45002A673F /* de */,
 				585FFF251815374C005BCF73 /* nl */,
 				588E33C3181810AD006A6A25 /* ru */,
-				588E33DB18182107006A6A25 /* tl */,
+				588E33DB18182107006A6A25 /* fil */,
 				588E3401181E693B006A6A25 /* zh-Hans */,
 				588E342A181E6D8B006A6A25 /* ar */,
 				588E3442181E6DA1006A6A25 /* ur */,
@@ -3629,7 +3629,7 @@
 				5832C52D180ECF45002A673F /* de */,
 				585FFF271815374C005BCF73 /* nl */,
 				588E33C5181810AD006A6A25 /* ru */,
-				588E33DD18182107006A6A25 /* tl */,
+				588E33DD18182107006A6A25 /* fil */,
 				588E3403181E693B006A6A25 /* zh-Hans */,
 				588E342C181E6D8C006A6A25 /* ar */,
 				588E3444181E6DA1006A6A25 /* ur */,
@@ -3662,7 +3662,7 @@
 				5832C52F180ECF45002A673F /* de */,
 				585FFF291815374C005BCF73 /* nl */,
 				588E33C7181810AD006A6A25 /* ru */,
-				588E33DF18182107006A6A25 /* tl */,
+				588E33DF18182107006A6A25 /* fil */,
 				588E3405181E693C006A6A25 /* zh-Hans */,
 				588E342E181E6D8C006A6A25 /* ar */,
 				588E3446181E6DA2006A6A25 /* ur */,
@@ -3695,7 +3695,7 @@
 				5832C531180ECF46002A673F /* de */,
 				585FFF2B1815374C005BCF73 /* nl */,
 				588E33C9181810AD006A6A25 /* ru */,
-				588E33E118182107006A6A25 /* tl */,
+				588E33E118182107006A6A25 /* fil */,
 				588E3407181E693C006A6A25 /* zh-Hans */,
 				588E3430181E6D8C006A6A25 /* ar */,
 				588E3448181E6DA2006A6A25 /* ur */,
@@ -3728,7 +3728,7 @@
 				5832C533180ECF46002A673F /* de */,
 				585FFF2D1815374C005BCF73 /* nl */,
 				588E33CB181810AD006A6A25 /* ru */,
-				588E33E318182108006A6A25 /* tl */,
+				588E33E318182108006A6A25 /* fil */,
 				588E3409181E693C006A6A25 /* zh-Hans */,
 				588E3432181E6D8C006A6A25 /* ar */,
 				588E344A181E6DA2006A6A25 /* ur */,
@@ -3761,7 +3761,7 @@
 				5832C535180ECF46002A673F /* de */,
 				585FFF2F1815374C005BCF73 /* nl */,
 				588E33CD181810AD006A6A25 /* ru */,
-				588E33E518182108006A6A25 /* tl */,
+				588E33E518182108006A6A25 /* fil */,
 				588E340B181E693C006A6A25 /* zh-Hans */,
 				588E3434181E6D8C006A6A25 /* ar */,
 				588E344C181E6DA2006A6A25 /* ur */,
@@ -3794,7 +3794,7 @@
 				5832C537180ECF46002A673F /* de */,
 				585FFF311815374C005BCF73 /* nl */,
 				588E33CF181810AE006A6A25 /* ru */,
-				588E33E718182108006A6A25 /* tl */,
+				588E33E718182108006A6A25 /* fil */,
 				588E340D181E693C006A6A25 /* zh-Hans */,
 				588E3436181E6D8C006A6A25 /* ar */,
 				588E344E181E6DA2006A6A25 /* ur */,
@@ -3827,7 +3827,7 @@
 				5832C528180ECF45002A673F /* de */,
 				585FFF221815374B005BCF73 /* nl */,
 				588E33C0181810AD006A6A25 /* ru */,
-				588E33D818182107006A6A25 /* tl */,
+				588E33D818182107006A6A25 /* fil */,
 				588E33FE181E693B006A6A25 /* zh-Hans */,
 				588E3427181E6D8B006A6A25 /* ar */,
 				588E343F181E6DA1006A6A25 /* ur */,
@@ -3860,7 +3860,7 @@
 				5832C52C180ECF45002A673F /* de */,
 				585FFF261815374C005BCF73 /* nl */,
 				588E33C4181810AD006A6A25 /* ru */,
-				588E33DC18182107006A6A25 /* tl */,
+				588E33DC18182107006A6A25 /* fil */,
 				588E3402181E693B006A6A25 /* zh-Hans */,
 				588E342B181E6D8B006A6A25 /* ar */,
 				588E3443181E6DA1006A6A25 /* ur */,
@@ -3893,7 +3893,7 @@
 				5832C52E180ECF45002A673F /* de */,
 				585FFF281815374C005BCF73 /* nl */,
 				588E33C6181810AD006A6A25 /* ru */,
-				588E33DE18182107006A6A25 /* tl */,
+				588E33DE18182107006A6A25 /* fil */,
 				588E3404181E693C006A6A25 /* zh-Hans */,
 				588E342D181E6D8C006A6A25 /* ar */,
 				588E3445181E6DA1006A6A25 /* ur */,
@@ -3926,7 +3926,7 @@
 				5832C530180ECF45002A673F /* de */,
 				585FFF2A1815374C005BCF73 /* nl */,
 				588E33C8181810AD006A6A25 /* ru */,
-				588E33E018182107006A6A25 /* tl */,
+				588E33E018182107006A6A25 /* fil */,
 				588E3406181E693C006A6A25 /* zh-Hans */,
 				588E342F181E6D8C006A6A25 /* ar */,
 				588E3447181E6DA2006A6A25 /* ur */,
@@ -3959,7 +3959,7 @@
 				5832C532180ECF46002A673F /* de */,
 				585FFF2C1815374C005BCF73 /* nl */,
 				588E33CA181810AD006A6A25 /* ru */,
-				588E33E218182108006A6A25 /* tl */,
+				588E33E218182108006A6A25 /* fil */,
 				588E3408181E693C006A6A25 /* zh-Hans */,
 				588E3431181E6D8C006A6A25 /* ar */,
 				588E3449181E6DA2006A6A25 /* ur */,
@@ -3992,7 +3992,7 @@
 				5832C534180ECF46002A673F /* de */,
 				585FFF2E1815374C005BCF73 /* nl */,
 				588E33CC181810AD006A6A25 /* ru */,
-				588E33E418182108006A6A25 /* tl */,
+				588E33E418182108006A6A25 /* fil */,
 				588E340A181E693C006A6A25 /* zh-Hans */,
 				588E3433181E6D8C006A6A25 /* ar */,
 				588E344B181E6DA2006A6A25 /* ur */,
@@ -4025,7 +4025,7 @@
 				5832C536180ECF46002A673F /* de */,
 				585FFF301815374C005BCF73 /* nl */,
 				588E33CE181810AD006A6A25 /* ru */,
-				588E33E618182108006A6A25 /* tl */,
+				588E33E618182108006A6A25 /* fil */,
 				588E340C181E693C006A6A25 /* zh-Hans */,
 				588E3435181E6D8C006A6A25 /* ar */,
 				588E344D181E6DA2006A6A25 /* ur */,
@@ -4058,7 +4058,7 @@
 				5832C52A180ECF45002A673F /* de */,
 				585FFF241815374C005BCF73 /* nl */,
 				588E33C2181810AD006A6A25 /* ru */,
-				588E33DA18182107006A6A25 /* tl */,
+				588E33DA18182107006A6A25 /* fil */,
 				588E3400181E693B006A6A25 /* zh-Hans */,
 				588E3429181E6D8B006A6A25 /* ar */,
 				588E3441181E6DA1006A6A25 /* ur */,
@@ -4091,7 +4091,7 @@
 				5832C538180ECF46002A673F /* de */,
 				585FFF321815374C005BCF73 /* nl */,
 				588E33D0181810AE006A6A25 /* ru */,
-				588E33E818182108006A6A25 /* tl */,
+				588E33E818182108006A6A25 /* fil */,
 				588E340E181E693C006A6A25 /* zh-Hans */,
 				588E3437181E6D8C006A6A25 /* ar */,
 				588E344F181E6DA2006A6A25 /* ur */,
@@ -4157,7 +4157,7 @@
 				5832C539180ECF46002A673F /* de */,
 				585FFF331815374C005BCF73 /* nl */,
 				588E33D1181810AE006A6A25 /* ru */,
-				588E33E918182108006A6A25 /* tl */,
+				588E33E918182108006A6A25 /* fil */,
 				588E340F181E693C006A6A25 /* zh-Hans */,
 				588E3438181E6D8C006A6A25 /* ar */,
 				588E3450181E6DA2006A6A25 /* ur */,
