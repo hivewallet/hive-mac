@@ -265,7 +265,8 @@ static const NSInteger kHIAppRuntimeBridgeParsingError = -1000;
     NSArray *allowedHosts = _applicationManifest[@"accessedHosts"];
 
     if (![allowedHosts containsObject:hostname]) {
-        NSString *message = [NSString stringWithFormat:@"application is not allowed to connect to host %@", hostname];
+        NSString *message = [NSString stringWithFormat:@"application is not allowed to connect to host %@,"
+            @" because it is not whitelisted in \"accessedHosts\"", hostname];
         [WebScriptObject throwException:message];
         HILogWarn(@"%@: %@", _application.name, message);
         return;
