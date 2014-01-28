@@ -87,13 +87,13 @@
 "870.title" = "Έλεγχος για ενημερώσεις...";
 
 /* Class = "NSMenuItem"; title = "Change Password…"; ObjectID = "1HB-Qg-iyg"; */
-"1HB-Qg-iyg.title" = "Change Password…";
+"1HB-Qg-iyg.title" = "Αλλαγή κωδικού…";
 
 /* Class = "NSMenuItem"; title = "Open CoinMap..."; ObjectID = "ASP-Ns-ktD"; */
 "ASP-Ns-ktD.title" = "Άνοιγμα CoinMap...";
 
 /* Class = "NSMenuItem"; title = "Wallet"; ObjectID = "GX7-xG-GKH"; */
-"GX7-xG-GKH.title" = "Wallet";
+"GX7-xG-GKH.title" = "Πορτοφόλι";
 
 /* Class = "NSMenuItem"; title = "Debugging tools..."; ObjectID = "Ue9-mi-gbe"; */
 "Ue9-mi-gbe.title" = "Εργαλεία αποσφαλμάτωσης...";
