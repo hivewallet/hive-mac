@@ -12,7 +12,7 @@
 "58.title" = "Tungkol sa Hive";
 
 /* Class = "NSMenuItem"; title = "Preferences…"; ObjectID = "129"; */
-"129.title" = "Preferences…";
+"129.title" = "Mga Preference…";
 
 /* Class = "NSMenu"; title = "Services"; ObjectID = "130"; */
 "130.title" = "Mga Serbisyo";
@@ -24,10 +24,10 @@
 "134.title" = "Itago ang Hive";
 
 /* Class = "NSMenuItem"; title = "Quit Hive"; ObjectID = "136"; */
-"136.title" = "Quit Hive";
+"136.title" = "I-quit ang Hive";
 
 /* Class = "NSMenuItem"; title = "Hide Others"; ObjectID = "145"; */
-"145.title" = "Hide Others";
+"145.title" = "Itago ang iba";
 
 /* Class = "NSMenuItem"; title = "Show All"; ObjectID = "150"; */
 "150.title" = "Ipakita lahat";
@@ -42,10 +42,10 @@
 "802.title" = "I-edit";
 
 /* Class = "NSMenuItem"; title = "Undo"; ObjectID = "804"; */
-"804.title" = "Undo";
+"804.title" = "I-undo";
 
 /* Class = "NSMenuItem"; title = "Redo"; ObjectID = "805"; */
-"805.title" = "Redo";
+"805.title" = "I-redo";
 
 /* Class = "NSMenuItem"; title = "Cut"; ObjectID = "807"; */
 "807.title" = "i-cut";
@@ -75,37 +75,37 @@
 "858.title" = "I-zoom";
 
 /* Class = "NSMenuItem"; title = "Bring All to Front"; ObjectID = "860"; */
-"860.title" = "Bring All to Front";
+"860.title" = "Dalhin lahat sa harapan";
 
 /* Class = "NSMenuItem"; title = "Close"; ObjectID = "864"; */
-"864.title" = "Close";
+"864.title" = "I-sara";
 
 /* Class = "NSMenuItem"; title = "Send Bitcoin..."; ObjectID = "866"; */
 "866.title" = "Magpadala ng Bitcoin...";
 
 /* Class = "NSMenuItem"; title = "Check for Updates..."; ObjectID = "870"; */
-"870.title" = "Mag-check ng Updates...";
+"870.title" = "Mag-check ng mga Update...";
 
 /* Class = "NSMenuItem"; title = "Change Password…"; ObjectID = "1HB-Qg-iyg"; */
 "1HB-Qg-iyg.title" = "Palitan ang Password…";
 
 /* Class = "NSMenuItem"; title = "Open CoinMap..."; ObjectID = "ASP-Ns-ktD"; */
-"ASP-Ns-ktD.title" = "Open CoinMap...";
+"ASP-Ns-ktD.title" = "Buksan ang CoinMap...";
 
 /* Class = "NSMenuItem"; title = "Wallet"; ObjectID = "GX7-xG-GKH"; */
 "GX7-xG-GKH.title" = "Wallet";
 
 /* Class = "NSMenuItem"; title = "Debugging tools..."; ObjectID = "Ue9-mi-gbe"; */
-"Ue9-mi-gbe.title" = "Debugging tools...";
+"Ue9-mi-gbe.title" = "Mga Debugging tool...";
 
 /* Class = "NSMenuItem"; title = "Backup Center..."; ObjectID = "V0L-sM-c8h"; */
 "V0L-sM-c8h.title" = "Backup Center...";
 
 /* Class = "NSMenu"; title = "Tools"; ObjectID = "cCx-Ak-fii"; */
-"cCx-Ak-fii.title" = "mga Tool";
+"cCx-Ak-fii.title" = "Mga Tool";
 
 /* Class = "NSMenuItem"; title = "Tools"; ObjectID = "eBU-ec-85y"; */
-"eBU-ec-85y.title" = "mga Tool";
+"eBU-ec-85y.title" = "Mga Tool";
 
 /* Class = "NSMenu"; title = "Wallet"; ObjectID = "jrd-Ul-XjV"; */
 "jrd-Ul-XjV.title" = "Wallet";

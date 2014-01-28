@@ -26,12 +26,12 @@
                             <menuItem isSeparatorItem="YES" id="236">
                                 <modifierMask key="keyEquivalentModifierMask" command="YES"/>
                             </menuItem>
-                            <menuItem title="Preferences…" keyEquivalent="," id="129">
+                            <menuItem title="Mga Preference…" keyEquivalent="," id="129">
                                 <connections>
                                     <action selector="openPreferences:" target="-1" id="754"/>
                                 </connections>
                             </menuItem>
-                            <menuItem title="Mag-check ng Updates..." id="870">
+                            <menuItem title="Mag-check ng mga Update..." id="870">
                                 <modifierMask key="keyEquivalentModifierMask"/>
                                 <connections>
                                     <action selector="checkForUpdates:" target="869" id="871"/>
@@ -51,7 +51,7 @@
                                     <action selector="hide:" target="-1" id="367"/>
                                 </connections>
                             </menuItem>
-                            <menuItem title="Hide Others" keyEquivalent="h" id="145">
+                            <menuItem title="Itago ang iba" keyEquivalent="h" id="145">
                                 <modifierMask key="keyEquivalentModifierMask" option="YES" command="YES"/>
                                 <connections>
                                     <action selector="hideOtherApplications:" target="-1" id="368"/>
@@ -65,7 +65,7 @@
                             <menuItem isSeparatorItem="YES" id="149">
                                 <modifierMask key="keyEquivalentModifierMask" command="YES"/>
                             </menuItem>
-                            <menuItem title="Quit Hive" keyEquivalent="q" id="136">
+                            <menuItem title="I-quit ang Hive" keyEquivalent="q" id="136">
                                 <connections>
                                     <action selector="terminate:" target="-3" id="449"/>
                                 </connections>
@@ -102,12 +102,12 @@
                     <modifierMask key="keyEquivalentModifierMask"/>
                     <menu key="submenu" title="I-edit" id="802">
                         <items>
-                            <menuItem title="Undo" keyEquivalent="z" id="804">
+                            <menuItem title="I-undo" keyEquivalent="z" id="804">
                                 <connections>
                                     <action selector="undo:" target="-1" id="848"/>
                                 </connections>
                             </menuItem>
-                            <menuItem title="Redo" keyEquivalent="Z" id="805">
+                            <menuItem title="I-redo" keyEquivalent="Z" id="805">
                                 <modifierMask key="keyEquivalentModifierMask" shift="YES" command="YES"/>
                             </menuItem>
                             <menuItem isSeparatorItem="YES" id="806">
@@ -141,9 +141,9 @@
                         </items>
                     </menu>
                 </menuItem>
-                <menuItem title="mga Tool" id="eBU-ec-85y">
+                <menuItem title="Mga Tool" id="eBU-ec-85y">
                     <modifierMask key="keyEquivalentModifierMask"/>
-                    <menu key="submenu" title="mga Tool" id="cCx-Ak-fii">
+                    <menu key="submenu" title="Mga Tool" id="cCx-Ak-fii">
                         <items>
                             <menuItem title="Backup Center..." id="V0L-sM-c8h">
                                 <modifierMask key="keyEquivalentModifierMask"/>
@@ -151,7 +151,7 @@
                                     <action selector="showBackupCenter:" target="-1" id="w3X-q3-iCI"/>
                                 </connections>
                             </menuItem>
-                            <menuItem title="Open CoinMap..." id="ASP-Ns-ktD">
+                            <menuItem title="Buksan ang CoinMap..." id="ASP-Ns-ktD">
                                 <modifierMask key="keyEquivalentModifierMask"/>
                                 <connections>
                                     <action selector="openCoinMapSite:" target="494" id="Ozv-6D-Aab"/>
@@ -162,7 +162,7 @@
                                     <action selector="showDebuggingInfo:" target="-1" id="Exc-Ye-jOL"/>
                                 </connections>
                             </menuItem>
-                            <menuItem title="Debugging tools..." id="Ue9-mi-gbe">
+                            <menuItem title="Mga Debugging tool..." id="Ue9-mi-gbe">
                                 <modifierMask key="keyEquivalentModifierMask"/>
                                 <connections>
                                     <action selector="showDebuggingTools:" target="-1" id="s18-1s-iwD"/>
@@ -187,7 +187,7 @@
                                     <action selector="performMiniaturize:" target="-1" id="861"/>
                                 </connections>
                             </menuItem>
-                            <menuItem title="Close" keyEquivalent="w" id="864">
+                            <menuItem title="I-sara" keyEquivalent="w" id="864">
                                 <connections>
                                     <action selector="performClose:" target="-1" id="865"/>
                                 </connections>
@@ -200,7 +200,7 @@
                             <menuItem isSeparatorItem="YES" id="859">
                                 <modifierMask key="keyEquivalentModifierMask" command="YES"/>
                             </menuItem>
-                            <menuItem title="Bring All to Front" id="860">
+                            <menuItem title="Dalhin lahat sa harapan" id="860">
                                 <connections>
                                     <action selector="arrangeInFront:" target="-1" id="863"/>
                                 </connections>
