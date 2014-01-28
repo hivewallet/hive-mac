@@ -45,3 +45,16 @@ Hive is currently set up to use the main blockchain. If you prefer to use the te
 ## Contributing
 
 Patches and pull requests are very welcome. If you want to send us any code, read the [Coding guidelines](https://github.com/grabhive/hive-osx/wiki/Code-style-guidelines) first.
+
+Hive code is dual-licensed: we've released it under GPL v2 (see below), however we reserve a right to relicense it under a different license in future (including a commercial one), since we might want to e.g. put it on Mac or iOS App Store, or use it for other purposes with which GPL is incompatible. Because of that, we ask that you specify a more permissive license for your code when you submit a patch to us (e.g. MIT, WTFPL or public domain).
+
+
+## License
+
+Hive is released under GNU General Public License, version 2 or later.
+
+This program is free software; you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation; either version 2 of the License, or (at your option) any later version.
+
+This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License along with this program; if not, write to the Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.
