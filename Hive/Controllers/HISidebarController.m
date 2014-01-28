@@ -49,7 +49,7 @@ static const NSInteger SidebarIndexNotSelected = -1;
 
 - (NSButton *)tabBarButtonForController:(HIViewController *)controller {
     NSInteger position = _barButtons.count;
-    CGFloat positionY = self.view.bounds.size.height - (_barButtons.count + 1) * SidebarButtonHeight;
+    CGFloat positionY = self.view.bounds.size.height - (position + 1) * SidebarButtonHeight;
     NSRect frame = NSMakeRect(0, positionY, SidebarButtonWidth, SidebarButtonHeight);
 
     NSButton *button = [[HISidebarButton alloc] initWithFrame: frame];
@@ -61,6 +61,8 @@ static const NSInteger SidebarIndexNotSelected = -1;
     button.target = self;
     button.action = @selector(tabBarClicked:);
     button.autoresizingMask = NSViewMinYMargin;
+    button.keyEquivalentModifierMask = NSCommandKeyMask;
+    button.keyEquivalent = [NSString stringWithFormat:@"%ld", position + 1];
     return button;
 }
 
