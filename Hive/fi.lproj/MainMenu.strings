@@ -9,7 +9,7 @@
 "57.title" = "Hive";
 
 /* Class = "NSMenuItem"; title = "About Hive"; ObjectID = "58"; */
-"58.title" = "About Hive";
+"58.title" = "Tietoja Hivesta";
 
 /* Class = "NSMenuItem"; title = "Preferences…"; ObjectID = "129"; */
 "129.title" = "Asetukset…";
@@ -63,10 +63,10 @@
 "812.title" = "Valitse kaikki";
 
 /* Class = "NSMenuItem"; title = "Window"; ObjectID = "854"; */
-"854.title" = "Window";
+"854.title" = "Ikkuna";
 
 /* Class = "NSMenu"; title = "Window"; ObjectID = "855"; */
-"855.title" = "Window";
+"855.title" = "Ikkuna";
 
 /* Class = "NSMenuItem"; title = "Minimize"; ObjectID = "857"; */
 "857.title" = "Pienennä";
@@ -96,19 +96,19 @@
 "GX7-xG-GKH.title" = "Lompakko";
 
 /* Class = "NSMenuItem"; title = "Debugging tools..."; ObjectID = "Ue9-mi-gbe"; */
-"Ue9-mi-gbe.title" = "Debugging tools...";
+"Ue9-mi-gbe.title" = "Testaustyökalut...";
 
 /* Class = "NSMenuItem"; title = "Backup Center..."; ObjectID = "V0L-sM-c8h"; */
 "V0L-sM-c8h.title" = "Varmuuskopiokeskus...";
 
 /* Class = "NSMenu"; title = "Tools"; ObjectID = "cCx-Ak-fii"; */
-"cCx-Ak-fii.title" = "Tools";
+"cCx-Ak-fii.title" = "Työkalut";
 
 /* Class = "NSMenuItem"; title = "Tools"; ObjectID = "eBU-ec-85y"; */
-"eBU-ec-85y.title" = "Tools";
+"eBU-ec-85y.title" = "Työkalut";
 
 /* Class = "NSMenu"; title = "Wallet"; ObjectID = "jrd-Ul-XjV"; */
 "jrd-Ul-XjV.title" = "Lompakko";
 
 /* Class = "NSMenuItem"; title = "Debugging info..."; ObjectID = "lLT-53-p4m"; */
-"lLT-53-p4m.title" = "Debugging info...";
+"lLT-53-p4m.title" = "Testaustyökalut...";

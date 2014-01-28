@@ -17,7 +17,7 @@
                 <menuItem title="Hive" id="56">
                     <menu key="submenu" title="Hive" systemMenu="apple" id="57">
                         <items>
-                            <menuItem title="About Hive" id="58">
+                            <menuItem title="Tietoja Hivesta" id="58">
                                 <modifierMask key="keyEquivalentModifierMask"/>
                                 <connections>
                                     <action selector="orderFrontStandardAboutPanel:" target="-2" id="142"/>
@@ -141,9 +141,9 @@
                         </items>
                     </menu>
                 </menuItem>
-                <menuItem title="Tools" id="eBU-ec-85y">
+                <menuItem title="Työkalut" id="eBU-ec-85y">
                     <modifierMask key="keyEquivalentModifierMask"/>
-                    <menu key="submenu" title="Tools" id="cCx-Ak-fii">
+                    <menu key="submenu" title="Työkalut" id="cCx-Ak-fii">
                         <items>
                             <menuItem title="Varmuuskopiokeskus..." id="V0L-sM-c8h">
                                 <modifierMask key="keyEquivalentModifierMask"/>
@@ -157,12 +157,12 @@
                                     <action selector="openCoinMapSite:" target="494" id="Ozv-6D-Aab"/>
                                 </connections>
                             </menuItem>
-                            <menuItem title="Debugging info..." keyEquivalent="D" id="lLT-53-p4m">
+                            <menuItem title="Testaustyökalut..." keyEquivalent="D" id="lLT-53-p4m">
                                 <connections>
                                     <action selector="showDebuggingInfo:" target="-1" id="Exc-Ye-jOL"/>
                                 </connections>
                             </menuItem>
-                            <menuItem title="Debugging tools..." id="Ue9-mi-gbe">
+                            <menuItem title="Testaustyökalut..." id="Ue9-mi-gbe">
                                 <modifierMask key="keyEquivalentModifierMask"/>
                                 <connections>
                                     <action selector="showDebuggingTools:" target="-1" id="s18-1s-iwD"/>
@@ -178,9 +178,9 @@
                         </binding>
                     </connections>
                 </menuItem>
-                <menuItem title="Window" id="854">
+                <menuItem title="Ikkuna" id="854">
                     <modifierMask key="keyEquivalentModifierMask"/>
-                    <menu key="submenu" title="Window" id="855">
+                    <menu key="submenu" title="Ikkuna" id="855">
                         <items>
                             <menuItem title="Pienennä" keyEquivalent="m" id="857">
                                 <connections>
