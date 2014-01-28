@@ -3,7 +3,7 @@
 "AHC-MY-HDw.title" = "Klikkaa vain painiketta alapuolella ja saat selville, kuinka helppoa ja hauskaa raha voi olla!";
 
 /* Class = "NSTextFieldCell"; title = "You're ready to go!"; ObjectID = "I10-iV-C0e"; */
-"I10-iV-C0e.title" = "You're ready to go!";
+"I10-iV-C0e.title" = "Olet nyt valmis!";
 
 /* Class = "NSButtonCell"; title = "Start Hive"; ObjectID = "j0E-b4-dgh"; */
 "j0E-b4-dgh.title" = "Käynnistä Hive";
