@@ -25,3 +25,6 @@
 
 /* Class = "NSButtonCell"; title = "+0.00001"; ObjectID = "PvI-F7-VRv"; */
 "PvI-F7-VRv.title" = "+0.00001";
+
+/* Class = "NSTextFieldCell"; title = "Currency exchange rates are provided by BitcoinAverage markets ticker. Bitcoin prices can change quickly, so other apps or sites might show different exchange rates."; ObjectID = "dxM-9E-wwb"; */
+"dxM-9E-wwb.title" = "Currency exchange rates are provided by BitcoinAverage markets ticker. Bitcoin prices can change quickly, so other apps or sites might show different exchange rates.";

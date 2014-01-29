@@ -44,6 +44,7 @@ NSString * const HISendBitcoinsWindowSuccessKey = @"success";
 @property (strong, readonly) HIContactAutocompleteWindowController *autocompleteController;
 @property (strong) HIFeeDetailsViewController *feeDetailsViewController;
 @property (strong) HIPasswordInputViewController *passwordInputViewController;
+@property (strong) NSViewController *currencyRateInfoViewController;
 
 @end
 
@@ -264,6 +265,43 @@ NSString * const HISendBitcoinsWindowSuccessKey = @"success";
 
 - (IBAction)currencyChanged:(id)sender {
     self.selectedCurrency = self.convertedCurrencyPopupButton.selectedItem.title;
+}
+
+- (IBAction)currencyRateInfoButtonClicked:(id)sender {
+    NSPopover *infoPopover = [NSPopover new];
+    infoPopover.behavior = NSPopoverBehaviorTransient;
+
+    if (!self.currencyRateInfoViewController) {
+        self.currencyRateInfoViewController = [[NSViewController alloc] init];
+        self.currencyRateInfoViewController.view = self.currencyRateInfoView;
+
+        NSTextField *label = self.currencyRateInfoView.subviews[0];
+        NSString *text = label.stringValue;
+
+        NSDictionary *linkAttributes = @{
+                                         NSLinkAttributeName: @"https://bitcoinaverage.com/markets.htm",
+                                         NSFontAttributeName: label.font,
+                                         NSForegroundColorAttributeName: [NSColor blueColor],
+                                         NSUnderlineStyleAttributeName: @(NSSingleUnderlineStyle)
+                                       };
+
+        NSDictionary *textAttributes = @{
+                                         NSFontAttributeName: label.font
+                                       };
+
+        NSMutableAttributedString *richText = [[NSMutableAttributedString alloc] initWithString:text];
+        [richText setAttributes:textAttributes range:NSMakeRange(0, text.length)];
+        [richText setAttributes:linkAttributes range:[text rangeOfString:@"BitcoinAverage"]];
+
+        [label setAllowsEditingTextAttributes:YES];
+        [label setAttributedStringValue:richText];
+    }
+
+    infoPopover.contentViewController = self.currencyRateInfoViewController;
+
+    [infoPopover showRelativeToRect:[sender bounds]
+                             ofView:sender
+                      preferredEdge:NSMaxXEdge];
 }
 
 
