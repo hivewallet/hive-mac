@@ -7,8 +7,9 @@
 //
 
 #import <Cocoa/Cocoa.h>
+#import "HIKeyObservingWindow.h"
 
 @interface HIBackupCenterWindowController : NSWindowController
-    <NSTableViewDataSource, NSTableViewDelegate, NSWindowDelegate>
+    <NSTableViewDataSource, NSTableViewDelegate, NSWindowDelegate, HIKeyObservingWindowDelegate>
 
 @end

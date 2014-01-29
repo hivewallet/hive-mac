@@ -64,6 +64,7 @@
 		583B1E011868784600817EF8 /* HIBackupManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 583B1E001868784600817EF8 /* HIBackupManager.m */; };
 		583B1E0318687CF400817EF8 /* dropbox-glyph-blue.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 583B1E0218687CF400817EF8 /* dropbox-glyph-blue.pdf */; };
 		583B1E0D1868BAC000817EF8 /* HIBackupActionsCellView.m in Sources */ = {isa = PBXBuildFile; fileRef = 583B1E0C1868BAC000817EF8 /* HIBackupActionsCellView.m */; };
+		5850D231189922C6001736D2 /* HIKeyObservingWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = 5850D230189922C6001736D2 /* HIKeyObservingWindow.m */; };
 		58571260188F28A70094F884 /* bitstamptrader.hiveapp in Resources */ = {isa = PBXBuildFile; fileRef = 5857125E188F28A70094F884 /* bitstamptrader.hiveapp */; };
 		58571261188F28A70094F884 /* mobile-recharge.hiveapp in Resources */ = {isa = PBXBuildFile; fileRef = 5857125F188F28A70094F884 /* mobile-recharge.hiveapp */; };
 		5857126F188F3C480094F884 /* bitpremier.hiveapp in Resources */ = {isa = PBXBuildFile; fileRef = 5857126E188F3C480094F884 /* bitpremier.hiveapp */; };
@@ -541,6 +542,8 @@
 		583B1E0218687CF400817EF8 /* dropbox-glyph-blue.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "dropbox-glyph-blue.pdf"; sourceTree = "<group>"; };
 		583B1E0B1868BAC000817EF8 /* HIBackupActionsCellView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HIBackupActionsCellView.h; sourceTree = "<group>"; };
 		583B1E0C1868BAC000817EF8 /* HIBackupActionsCellView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HIBackupActionsCellView.m; sourceTree = "<group>"; };
+		5850D22F189922C6001736D2 /* HIKeyObservingWindow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HIKeyObservingWindow.h; sourceTree = "<group>"; };
+		5850D230189922C6001736D2 /* HIKeyObservingWindow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HIKeyObservingWindow.m; sourceTree = "<group>"; };
 		58571253188D8E7A0094F884 /* 2014012001.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = 2014012001.xcdatamodel; sourceTree = "<group>"; };
 		5857125E188F28A70094F884 /* bitstamptrader.hiveapp */ = {isa = PBXFileReference; lastKnownFileType = file; path = bitstamptrader.hiveapp; sourceTree = "<group>"; };
 		5857125F188F28A70094F884 /* mobile-recharge.hiveapp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "mobile-recharge.hiveapp"; sourceTree = "<group>"; };
@@ -2074,6 +2077,8 @@
 				588F3E8418719A9000FF42EA /* HIBackupStatusCellView.m */,
 				D9716B7517D8C40100888F4E /* HIBox.h */,
 				D9716B7617D8C40100888F4E /* HIBox.m */,
+				1AA10CE6F8A52D59745DEF88 /* HIBreadcrumbsView.h */,
+				1AA10AA07C166902BE59EB57 /* HIBreadcrumbsView.m */,
 				1AA10D2D55A74CDB4505CC33 /* HIClearView.h */,
 				1AA109D1C9CD1E776FBE62A3 /* HIClearView.m */,
 				5802106117ECCAAA0039BA4B /* HIContactAutocompleteCellView.h */,
@@ -2088,12 +2093,16 @@
 				D958A8B717E8547A00CED98C /* HIFlippedView.m */,
 				D9F0B9F617EC654C0050A0A2 /* HIImageCell.h */,
 				D9F0B9F717EC654C0050A0A2 /* HIImageCell.m */,
+				5850D22F189922C6001736D2 /* HIKeyObservingWindow.h */,
+				5850D230189922C6001736D2 /* HIKeyObservingWindow.m */,
 				1AA10497F9EEF9DF75030891 /* HILinkTextField.h */,
 				1AA100BCED704B381898FF89 /* HILinkTextField.m */,
 				24300C91188C7C7A00FDEF2F /* HIPaddedSecureTextFieldCell.h */,
 				24300C92188C7C7A00FDEF2F /* HIPaddedSecureTextFieldCell.m */,
 				588EFB2C17D8D2970085F6E6 /* HIProfileTabView.h */,
 				588EFB2D17D8D2970085F6E6 /* HIProfileTabView.m */,
+				58F02AEC17E1F5A400B65429 /* HIRightPointingArrowView.h */,
+				58F02AED17E1F5A400B65429 /* HIRightPointingArrowView.m */,
 				D94815F017D4D9AF006A0312 /* HISeparatorView.h */,
 				D94815F117D4D9AF006A0312 /* HISeparatorView.m */,
 				58CFD95117CF914000A035FA /* HISidebarView.h */,
@@ -2102,14 +2111,10 @@
 				D94815F417D72AF8006A0312 /* HITextField.m */,
 				D938F00E17E6278B00566FFD /* HITextFieldCell.h */,
 				D938F00F17E6278B00566FFD /* HITextFieldCell.m */,
-				58F02AEC17E1F5A400B65429 /* HIRightPointingArrowView.h */,
-				58F02AED17E1F5A400B65429 /* HIRightPointingArrowView.m */,
 				D94815B217D492A0006A0312 /* HITitleView.h */,
 				D94815B317D492A0006A0312 /* HITitleView.m */,
 				581EFBCA17DA441A00E2738D /* HITransactionCellView.h */,
 				581EFBCB17DA441B00E2738D /* HITransactionCellView.m */,
-				1AA10AA07C166902BE59EB57 /* HIBreadcrumbsView.m */,
-				1AA10CE6F8A52D59745DEF88 /* HIBreadcrumbsView.h */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -2661,6 +2666,7 @@
 				58A03B0D17D9DC4100ADD5E5 /* HIButtonWithSpinner.m in Sources */,
 				583B1DE41864A32900817EF8 /* HISecureAppStorage.m in Sources */,
 				58F02AEE17E1F5A400B65429 /* HIRightPointingArrowView.m in Sources */,
+				5850D231189922C6001736D2 /* HIKeyObservingWindow.m in Sources */,
 				D938F01017E6278B00566FFD /* HITextFieldCell.m in Sources */,
 				D958A8B817E8547A00CED98C /* HIFlippedView.m in Sources */,
 				D99C9A5517E8F59200899CAB /* HIDeleteButtonCell.m in Sources */,

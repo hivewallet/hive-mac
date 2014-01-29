@@ -20,6 +20,7 @@ static const NSTimeInterval UpdateTimerInterval = 5.0;
     HIBackupManager *_backupManager;
     NSTimer *_updateTimer;
     NSDateFormatter *_lastBackupDateFormatter;
+    BOOL enableConfiguration;
 }
 
 @property (nonatomic, strong) IBOutlet NSTableView *tableView;
@@ -158,13 +159,17 @@ static const NSTimeInterval UpdateTimerInterval = 5.0;
 
     if (adapter.enabled) {
         [enableButton setTitle:NSLocalizedString(@"Disable", @"Disable backup button title")];
-    } else if (adapter.needsToBeConfigured) {
+    } else if ([self adapterShouldBeConfigured:adapter]) {
         [enableButton setTitle:NSLocalizedString(@"Enable...", @"Enable backup button title (requires configuration)")];
     } else {
         [enableButton setTitle:NSLocalizedString(@"Enable", @"Enable backup button title (no configuration required)")];
     }
 
     [enableButton setTag:row];
+}
+
+- (BOOL)adapterShouldBeConfigured:(HIBackupAdapter *)adapter {
+    return adapter.needsToBeConfigured || (adapter.canBeConfigured && enableConfiguration);
 }
 
 - (void)tableViewSelectionDidChange:(NSNotification *)notification {
@@ -196,11 +201,26 @@ static const NSTimeInterval UpdateTimerInterval = 5.0;
         return;
     }
 
-    if (!adapter.enabled && adapter.needsToBeConfigured) {
+    if (!adapter.enabled && [self adapterShouldBeConfigured:adapter]) {
         [adapter configureInWindow:self.window];
     } else {
         adapter.enabled = !adapter.enabled;
     }
+}
+
+- (void)keyFlagsChanged:(NSUInteger)flags inWindow:(NSWindow *)window {
+    enableConfiguration = (flags & NSAlternateKeyMask) > 0;
+
+    for (NSInteger i = 0; i < _backupManager.adapters.count; i++) {
+        HIBackupActionsCellView *cell = [self.tableView viewAtColumn:2 row:i makeIfNecessary:YES];
+        HIBackupAdapter *adapter = _backupManager.adapters[i];
+
+        [self updateActionsCell:cell forAdapter:adapter inRow:i];
+    }
+}
+
+- (void)windowDidBecomeKey:(NSNotification *)notification {
+    [self keyFlagsChanged:[NSEvent modifierFlags] inWindow:self.window];
 }
 
 - (void)observeValueForKeyPath:(NSString *)keyPath
