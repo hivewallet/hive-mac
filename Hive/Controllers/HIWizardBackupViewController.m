@@ -6,9 +6,9 @@
 //  Copyright (c) 2014 Hive Developers. All rights reserved.
 //
 
-#import "HIWizardBackupViewController.h"
-#import "HIBackupManager.h"
 #import "HIBackupAdapter.h"
+#import "HIBackupManager.h"
+#import "HIWizardBackupViewController.h"
 
 @interface HIWizardBackupViewController ()
 
@@ -21,16 +21,28 @@
 
 @end
 
-@implementation HIWizardBackupViewController
+@implementation HIWizardBackupViewController {
+    BOOL enableConfiguration;
+}
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
 
     if (self) {
         self.title = NSLocalizedString(@"Backup", @"Wizard backup page title");
+
+        for (HIBackupAdapter *adapter in [[HIBackupManager sharedManager] adapters]) {
+            [adapter addObserver:self forKeyPath:@"enabled" options:0 context:NULL];
+        }
     }
 
     return self;
+}
+
+- (void)dealloc {
+    for (HIBackupAdapter *adapter in [[HIBackupManager sharedManager] adapters]) {
+        [adapter removeObserver:self forKeyPath:@"enabled"];
+    }
 }
 
 - (void)viewWillAppear {
@@ -71,26 +83,71 @@
     return [self backupAdapterAtIndex:1].enabled;
 }
 
+- (NSString *)title1 {
+    return [self titleForAdapter:[self backupAdapterAtIndex:0]];
+}
+
+- (NSString *)title2 {
+    return [self titleForAdapter:[self backupAdapterAtIndex:1]];
+}
+
+- (NSString *)titleForAdapter:(HIBackupAdapter *)adapter {
+    if (adapter.enabled) {
+        return NSLocalizedString(@"Disable", @"Disable backup button title");
+    } else if ([self adapterShouldBeConfigured:adapter]) {
+        return NSLocalizedString(@"Enable...", @"Enable backup button title (requires configuration)");
+    } else {
+        return NSLocalizedString(@"Enable", @"Enable backup button title (no configuration required)");
+    }
+}
+
+- (BOOL)adapterShouldBeConfigured:(HIBackupAdapter *)adapter {
+    return adapter.needsToBeConfigured || (adapter.canBeConfigured && enableConfiguration);
+}
+
 - (IBAction)enable1:(id)sender {
-    [self willChangeValueForKey:@"enabled1"];
     [self enableAdapter:[self backupAdapterAtIndex:0]];
-    [self didChangeValueForKey:@"enabled1"];
 }
 
 - (IBAction)enable2:(id)sender {
-    [self willChangeValueForKey:@"enabled2"];
     [self enableAdapter:[self backupAdapterAtIndex:1]];
-    [self didChangeValueForKey:@"enabled2"];
 }
 
 - (void)enableAdapter:(HIBackupAdapter *)adapter {
-    if (adapter.needsToBeConfigured) {
+    if (!adapter.enabled && [self adapterShouldBeConfigured:adapter]) {
         [adapter configureInWindow:self.view.window];
     } else {
-        adapter.enabled = YES;
+        adapter.enabled = !adapter.enabled;
     }
 
     [adapter performBackup];
+}
+
+- (void)keyFlagsChanged:(NSUInteger)flags inWindow:(NSWindow *)window {
+    BOOL wasEnabled = enableConfiguration;
+    enableConfiguration = (flags & NSAlternateKeyMask) > 0;
+
+    if (enableConfiguration != wasEnabled) {
+        [self updateButtonTitles];
+    }
+}
+
+- (void)updateButtonTitles {
+    [self willChangeValueForKey:@"title1"];
+    [self didChangeValueForKey:@"title1"];
+    [self willChangeValueForKey:@"title2"];
+    [self didChangeValueForKey:@"title2"];
+}
+
+- (void)observeValueForKeyPath:(NSString *)path ofObject:(id)object change:(NSDictionary *)change context:(void *)ctx {
+    if ([object isKindOfClass:HIBackupAdapter.class]) {
+        [self updateButtonTitles];
+
+        [self willChangeValueForKey:@"enabled1"];
+        [self didChangeValueForKey:@"enabled1"];
+        [self willChangeValueForKey:@"enabled2"];
+        [self didChangeValueForKey:@"enabled2"];
+    }
 }
 
 @end

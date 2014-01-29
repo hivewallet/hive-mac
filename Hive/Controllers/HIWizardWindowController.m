@@ -1,12 +1,13 @@
-#import "HIWizardViewController.h"
-#import "HIFirstRunWizardWindowController.h"
 #import "HIBreadcrumbsView.h"
+#import "HIFirstRunWizardWindowController.h"
+#import "HIWizardViewController.h"
 
 @interface HIWizardWindowController()<HIWizardViewControllerDelegate>
 
 @property (nonatomic, strong) IBOutlet NSView *wizardContentView;
 @property (nonatomic, strong) IBOutlet HIBreadcrumbsView *breadcrumbView;
 
+@property (nonatomic, strong) HIWizardViewController *currentViewController;
 @property (nonatomic, assign) long index;
 
 @end
@@ -36,19 +37,19 @@
 
     self.index = self.index + 1;
     self.breadcrumbView.activeIndex = self.index;
+    self.currentViewController = self.viewControllers[self.index];
 
-    HIWizardViewController *controller = self.viewControllers[self.index];
-    NSAssert([controller isKindOfClass:[HIWizardViewController class]], nil);
-    controller.wizardDelegate = self;
+    NSAssert([self.currentViewController isKindOfClass:[HIWizardViewController class]], nil);
+    self.currentViewController.wizardDelegate = self;
 
-    [controller viewWillAppear];
+    [self.currentViewController viewWillAppear];
 
-    controller.view.frame = self.wizardContentView.bounds;
-    controller.view.autoresizingMask = NSViewWidthSizable | NSViewHeightSizable;
-    [self.wizardContentView addSubview:controller.view];
+    self.currentViewController.view.frame = self.wizardContentView.bounds;
+    self.currentViewController.view.autoresizingMask = NSViewWidthSizable | NSViewHeightSizable;
+    [self.wizardContentView addSubview:self.currentViewController.view];
 
-    if (controller.initialFirstResponder) {
-        [self.window makeFirstResponder:controller.initialFirstResponder];
+    if (self.currentViewController.initialFirstResponder) {
+        [self.window makeFirstResponder:self.currentViewController.initialFirstResponder];
     }
 }
 

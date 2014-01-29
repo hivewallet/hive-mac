@@ -6,10 +6,11 @@
 //  Copyright (c) 2014 Hive Developers. All rights reserved.
 //
 
+#import "HIKeyObservingWindow.h"
 #import "HIWizardViewController.h"
 
 /*
  First-run wizard page for setting up backups.
  */
-@interface HIWizardBackupViewController : HIWizardViewController
+@interface HIWizardBackupViewController : HIWizardViewController <HIKeyObservingWindowDelegate>
 @end

@@ -54,7 +54,7 @@
                     </buttonCell>
                     <connections>
                         <action selector="enable1:" target="-2" id="jR5-70-I6z"/>
-                        <binding destination="-2" name="hidden" keyPath="enabled1" id="9ZK-xe-GYg"/>
+                        <binding destination="-2" name="title" keyPath="title1" id="u0M-fU-cOt"/>
                     </connections>
                 </button>
                 <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="REW-5C-7nv">
@@ -66,7 +66,7 @@
                     </buttonCell>
                     <connections>
                         <action selector="enable2:" target="-2" id="ace-Xl-vwl"/>
-                        <binding destination="-2" name="hidden" keyPath="enabled2" id="e9p-xP-VZJ"/>
+                        <binding destination="-2" name="title" keyPath="title2" id="iXP-VI-sgl"/>
                     </connections>
                 </button>
                 <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="0Gn-sQ-ZVg">

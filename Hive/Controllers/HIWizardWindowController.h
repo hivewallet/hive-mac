@@ -6,12 +6,16 @@
 //  Copyright (c) 2014 Hive Developers. All rights reserved.
 //
 
+@class HIWizardViewController;
+
 /*
  General multi-page wizard.
  */
+
 @interface HIWizardWindowController : NSWindowController
 
 @property (nonatomic, copy) NSArray *viewControllers;
 @property (nonatomic, copy) void (^onCompletion)();
+@property (readonly) HIWizardViewController *currentViewController;
 
 @end

@@ -28,4 +28,14 @@
     return self;
 }
 
+- (void)keyFlagsChanged:(NSUInteger)flags inWindow:(NSWindow *)window {
+    if ([self.currentViewController conformsToProtocol:@protocol(HIKeyObservingWindowDelegate)]) {
+        [(id<HIKeyObservingWindowDelegate>) self.currentViewController keyFlagsChanged:flags inWindow:window];
+    }
+}
+
+- (void)windowDidBecomeKey:(NSNotification *)notification {
+    [self keyFlagsChanged:[NSEvent modifierFlags] inWindow:self.window];
+}
+
 @end
