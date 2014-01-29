@@ -14,6 +14,9 @@
 /* Applications view title */
 "Apps" = "Aplikacje";
 
+/* Cancel editing alert title */
+"Are you sure you want to leave this page?" = "Are you sure you want to leave this page?";
+
 /* Warning when trying to a large BTC amount (btc, fiat amount and address) */
 "Are you sure you want to send %@ (%@) to %@?" = "Czy jesteś pewny, że chcesz wysłać %1$@ (%2$@) do %3$@?";
 
@@ -80,6 +83,9 @@
 /* Backup status: adapter disabled */
 "Disabled" = "Wyłączona";
 
+/* Confirm leaving a form without saving data */
+"Discard Changes" = "Discard Changes";
+
 /* Remove contact alert dialog title */
 "Do you really want to remove %@ from your contact list?" = "Na pewno chcesz usunąć %@ z listy kontaktów?";
 
@@ -139,6 +145,9 @@
 
 /* Backup requires password alert details */
 "It's dangerous to upload unencrypted wallets." = "Udostępnianie komukolwiek niezaszyfrowanego portfela jest niebezpieczne.";
+
+/* Don't leave a form without saving data */
+"Keep Editing" = "Keep Editing";
 
 /* Address caption field placeholder */
 "Label" = "Nazwa";
@@ -310,3 +319,6 @@
 
 /* Notification of incoming transaction */
 "You've received Bitcoin" = "Otrzymałeś Bitcoiny";
+
+/* Cancel editing alert message */
+"Your changes won't be saved." = "Your changes won't be saved.";

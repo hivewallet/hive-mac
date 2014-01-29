@@ -28,5 +28,6 @@
 - (void)viewWillDisappear;
 - (void)viewWasSelectedFromTabBar;
 - (void)viewWasSelectedFromTabBarAgain;
+- (void)requestPopFromStackWithAction:(void (^)())action;
 
 @end

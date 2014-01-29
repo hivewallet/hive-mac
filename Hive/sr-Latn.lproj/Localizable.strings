@@ -14,6 +14,9 @@
 /* Applications view title */
 "Apps" = "Aplikacije";
 
+/* Cancel editing alert title */
+"Are you sure you want to leave this page?" = "Are you sure you want to leave this page?";
+
 /* Warning when trying to a large BTC amount (btc, fiat amount and address) */
 "Are you sure you want to send %@ (%@) to %@?" = "Da li ste sigurni da želite da %3$@ pošaljete iznos od %1$@ (%2$@)?";
 
@@ -80,6 +83,9 @@
 /* Backup status: adapter disabled */
 "Disabled" = "Onesposobljeno";
 
+/* Confirm leaving a form without saving data */
+"Discard Changes" = "Discard Changes";
+
 /* Remove contact alert dialog title */
 "Do you really want to remove %@ from your contact list?" = "Da li zaista želite da uklonite %@ iz vaše liste kontakata?";
 
@@ -139,6 +145,9 @@
 
 /* Backup requires password alert details */
 "It's dangerous to upload unencrypted wallets." = "Opasno je slati neenkriptovane novčanike na Internet.";
+
+/* Don't leave a form without saving data */
+"Keep Editing" = "Keep Editing";
 
 /* Address caption field placeholder */
 "Label" = "Oznaka";
@@ -310,3 +319,6 @@
 
 /* Notification of incoming transaction */
 "You've received Bitcoin" = "Primili ste bitkoin";
+
+/* Cancel editing alert message */
+"Your changes won't be saved." = "Your changes won't be saved.";

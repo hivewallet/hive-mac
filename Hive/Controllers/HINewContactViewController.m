@@ -27,6 +27,7 @@ static NSString * const Separator = @"Separator";
 @interface HINewContactViewController () {
     BOOL _nameInTwoLines;
     BOOL _avatarChanged;
+    BOOL _edited;
     NSMutableArray *_placeholders;
 }
 
@@ -89,6 +90,10 @@ static NSString * const Separator = @"Separator";
     [self.lastnameField.cell setPlaceholderString:NSLocalizedString(@"Lastname", @"Lastname field placeholder")];
     [self.emailField.cell setPlaceholderString:NSLocalizedString(@"email", @"Email field placeholder")];
 
+    [self trackChangesIn:self.firstnameField];
+    [self trackChangesIn:self.lastnameField];
+    [self trackChangesIn:self.emailField];
+
     // rebind nextKeyView connections
     self.lastnameField.nextKeyView = self.emailField;
     self.emailField.nextKeyView = self.firstnameField;
@@ -134,6 +139,13 @@ static NSString * const Separator = @"Separator";
                                              selector:@selector(recalculateNames:)
                                                  name:kHITextFieldContentChanged
                                                object:nil];
+}
+
+- (void)trackChangesIn:(NSTextField *)field {
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(textFieldChanged:)
+                                                 name:NSControlTextDidChangeNotification
+                                               object:field];
 }
 
 - (void)dealloc {
@@ -221,6 +233,9 @@ static NSString * const Separator = @"Separator";
     addressField.nextKeyView = nameField;
     nameField.nextKeyView = self.emailField;
 
+    [self trackChangesIn:addressField];
+    [self trackChangesIn:nameField];
+
     [_placeholders addObject:parts];
 
     [self.view.window makeFirstResponder:addressField];
@@ -261,10 +276,13 @@ static NSString * const Separator = @"Separator";
 }
 
 - (IBAction)addAddressClicked:(NSButton *)sender {
+    _edited = YES;
     [self addAddressPlaceholderWithAddress:nil];
 }
 
 - (void)removeAddressClicked:(NSButton *)button {
+    _edited = YES;
+
     NSRect frame;
     NSUInteger index = button.tag;
 
@@ -310,12 +328,19 @@ static NSString * const Separator = @"Separator";
     }
 }
 
+- (void)textFieldChanged:(NSNotification *)notification {
+    _edited = YES;
+}
+
 - (void)avatarChanged:(id)sender {
+    _edited = YES;
     _avatarChanged = YES;
 }
 
 - (IBAction)cancelClicked:(id)sender {
-    [self.navigationController popViewController:YES];
+    [self requestPopFromStackWithAction:^{
+        [self.navigationController popViewController:YES];
+    }];
 }
 
 - (IBAction)doneClicked:(NSButton *)sender {
@@ -412,6 +437,37 @@ static NSString * const Separator = @"Separator";
         [DBM deleteObject:_contact];
         [self.navigationController popToRootViewControllerAnimated:YES];
         [DBM save:NULL];
+    }
+}
+
+- (void)requestPopFromStackWithAction:(void (^)())action {
+    if (_edited) {
+        NSAlert *alert = [[NSAlert alloc] init];
+
+        [alert setMessageText:NSLocalizedString(@"Are you sure you want to leave this page?",
+                                                @"Cancel editing alert title")];
+        [alert setInformativeText:NSLocalizedString(@"Your changes won't be saved.",
+                                                    @"Cancel editing alert message")];
+
+        [alert addButtonWithTitle:NSLocalizedString(@"Discard Changes",
+                                                    @"Confirm leaving a form without saving data")];
+        [alert addButtonWithTitle:NSLocalizedString(@"Keep Editing",
+                                                    @"Don't leave a form without saving data")];
+
+        [alert beginSheetModalForWindow:self.view.window
+                          modalDelegate:self
+                         didEndSelector:@selector(discardChangesAlertDidEnd:result:context:)
+                            contextInfo:(void *)CFBridgingRetain(action)];
+    } else {
+        action();
+    }
+}
+
+- (void)discardChangesAlertDidEnd:(NSAlert *)alert result:(NSInteger)result context:(void *)context {
+    void (^action)() = (void (^)()) CFBridgingRelease(context);
+
+    if (result == NSAlertFirstButtonReturn) {
+        action();
     }
 }
 

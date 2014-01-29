@@ -14,6 +14,9 @@
 /* Applications view title */
 "Apps" = "Mga App";
 
+/* Cancel editing alert title */
+"Are you sure you want to leave this page?" = "Are you sure you want to leave this page?";
+
 /* Warning when trying to a large BTC amount (btc, fiat amount and address) */
 "Are you sure you want to send %@ (%@) to %@?" = "Sigurado ka bang nais mong ipadala ang %1$@ (%2$@) sa %3$@?";
 
@@ -80,6 +83,9 @@
 /* Backup status: adapter disabled */
 "Disabled" = "na-disable";
 
+/* Confirm leaving a form without saving data */
+"Discard Changes" = "Discard Changes";
+
 /* Remove contact alert dialog title */
 "Do you really want to remove %@ from your contact list?" = "Gusto mo ba talaga tanggalin %@ sa iyong listahan ng mga contacts?";
 
@@ -139,6 +145,9 @@
 
 /* Backup requires password alert details */
 "It's dangerous to upload unencrypted wallets." = "It's dangerous to upload unencrypted wallets.";
+
+/* Don't leave a form without saving data */
+"Keep Editing" = "Keep Editing";
 
 /* Address caption field placeholder */
 "Label" = "Label";
@@ -310,3 +319,6 @@
 
 /* Notification of incoming transaction */
 "You've received Bitcoin" = "Ikaw ay nakatanggap ng Bitcoin";
+
+/* Cancel editing alert message */
+"Your changes won't be saved." = "Your changes won't be saved.";

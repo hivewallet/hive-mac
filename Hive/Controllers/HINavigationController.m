@@ -237,7 +237,9 @@ static CGFloat ViewSlideDuration = 0.3;
 }
 
 - (void)requestedPop:(HITitleView *)titleView {
-    [self popViewController:YES];
+    [self.topViewController requestPopFromStackWithAction:^{
+        [self popViewController:YES];
+    }];
 }
 
 - (void)popViewController:(BOOL)animated {
@@ -261,7 +263,13 @@ static CGFloat ViewSlideDuration = 0.3;
 }
 
 - (void)viewWasSelectedFromTabBarAgain {
-    [self popToRootViewControllerAnimated:YES];
+    if (self.viewControllers.count < 2) {
+        return;
+    }
+
+    [self.topViewController requestPopFromStackWithAction:^{
+        [self popToRootViewControllerAnimated:YES];
+    }];
 }
 
 - (void)observeValueForKeyPath:(NSString *)keyPath

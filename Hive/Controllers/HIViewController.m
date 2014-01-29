@@ -62,4 +62,8 @@
 - (void)viewWasSelectedFromTabBar {}
 - (void)viewWasSelectedFromTabBarAgain {}
 
+- (void)requestPopFromStackWithAction:(void (^)())action {
+    action();
+}
+
 @end
