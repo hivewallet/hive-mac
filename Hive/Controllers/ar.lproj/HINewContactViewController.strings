@@ -1,6 +1,6 @@
 
-/* Class = "NSButtonCell"; title = "Done"; ObjectID = "14"; */
-"14.title" = "تم";
+/* Class = "NSButtonCell"; title = "Save"; ObjectID = "14"; */
+"14.title" = "Save";
 
 /* Class = "NSTextFieldCell"; title = "Contact information"; ObjectID = "75"; */
 "75.title" = "معلومات الاتصال";
@@ -19,3 +19,6 @@
 
 /* Class = "NSTextFieldCell"; title = "edit"; ObjectID = "107"; */
 "107.title" = "تعديل";
+
+/* Class = "NSButtonCell"; title = "Cancel"; ObjectID = "WNT-Ju-zbY"; */
+"WNT-Ju-zbY.title" = "الغاء";

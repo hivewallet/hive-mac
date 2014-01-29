@@ -151,7 +151,7 @@
                         <size key="offset" width="0.0" height="1"/>
                         <color key="color" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                     </shadow>
-                    <buttonCell key="cell" type="bevel" title="Ολοκληρώθηκε" bezelStyle="regularSquare" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="14" customClass="HIDoneButtonCell">
+                    <buttonCell key="cell" type="bevel" title="Save" bezelStyle="regularSquare" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="14" customClass="HIDoneButtonCell">
                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                         <font key="font" metaFont="system"/>
                     </buttonCell>
@@ -214,6 +214,24 @@
                         <color key="backgroundColor" red="0.059837084263563156" green="0.059839386492967606" blue="0.059831220656633377" alpha="1" colorSpace="calibratedRGB"/>
                     </textFieldCell>
                 </textField>
+                <button wantsLayer="YES" id="28x-TV-DvI">
+                    <rect key="frame" x="13" y="12" width="75" height="25"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <shadow key="shadow" blurRadius="1">
+                        <size key="offset" width="0.0" height="1"/>
+                        <color key="color" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                    </shadow>
+                    <buttonCell key="cell" type="square" title="Ακύρωση" bezelStyle="shadowlessSquare" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="WNT-Ju-zbY" customClass="HIButtonCell">
+                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                        <font key="font" metaFont="system"/>
+                        <string key="keyEquivalent" base64-UTF8="YES">
+Gw
+</string>
+                    </buttonCell>
+                    <connections>
+                        <action selector="cancelClicked:" target="-2" id="PNv-15-R2B"/>
+                    </connections>
+                </button>
             </subviews>
         </customView>
     </objects>

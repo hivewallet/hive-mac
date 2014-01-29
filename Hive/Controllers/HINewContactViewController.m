@@ -314,6 +314,10 @@ static NSString * const Separator = @"Separator";
     _avatarChanged = YES;
 }
 
+- (IBAction)cancelClicked:(id)sender {
+    [self.navigationController popViewController:YES];
+}
+
 - (IBAction)doneClicked:(NSButton *)sender {
     NSString *firstName = self.firstnameField.enteredValue;
     NSString *lastName = self.lastnameField.enteredValue;

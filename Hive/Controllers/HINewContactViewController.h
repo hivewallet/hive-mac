@@ -32,6 +32,7 @@
 
 @property (strong) IBOutlet NSImageView *avatarView;
 
+- (IBAction)cancelClicked:(NSButton *)sender;
 - (IBAction)doneClicked:(NSButton *)sender;
 - (IBAction)removeContactClicked:(NSButton *)sender;
 - (IBAction)addAddressClicked:(NSButton *)sender;
