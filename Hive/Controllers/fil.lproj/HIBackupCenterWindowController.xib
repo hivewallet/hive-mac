@@ -110,7 +110,7 @@
                                                         <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="shn-gI-JD4">
                                                             <rect key="frame" x="27" y="4" width="282" height="17"/>
                                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
-                                                            <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Status details" id="1f9-7o-UKm">
+                                                            <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Mga status detail" id="1f9-7o-UKm">
                                                                 <font key="font" size="10" name="LucidaGrande"/>
                                                                 <color key="textColor" white="0.3256678427419355" alpha="1" colorSpace="calibratedWhite"/>
                                                                 <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
@@ -126,7 +126,7 @@
                                             </prototypeCellViews>
                                         </tableColumn>
                                         <tableColumn identifier="Actions" width="120" minWidth="10" maxWidth="3.4028234663852886e+38" id="5e5-Co-YVU">
-                                            <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border" alignment="left" title="Actions">
+                                            <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border" alignment="left" title="Mga action">
                                                 <font key="font" metaFont="smallSystem"/>
                                                 <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
                                                 <color key="backgroundColor" name="headerColor" catalog="System" colorSpace="catalog"/>
@@ -145,7 +145,7 @@
                                                         <button verticalHuggingPriority="750" id="WsG-jX-84n">
                                                             <rect key="frame" x="3" y="19" width="100" height="23"/>
                                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                                            <buttonCell key="cell" type="smallSquare" title="Enable" bezelStyle="smallSquare" imagePosition="overlaps" alignment="center" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="brF-Bb-pc1">
+                                                            <buttonCell key="cell" type="smallSquare" title="I-enable" bezelStyle="smallSquare" imagePosition="overlaps" alignment="center" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="brF-Bb-pc1">
                                                                 <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                                                 <font key="font" metaFont="system"/>
                                                             </buttonCell>

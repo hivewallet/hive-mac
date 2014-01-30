@@ -57,7 +57,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                         <textFieldCell key="cell" sendsActionOnEndEditing="YES" id="o5O-SS-J37">
                             <font key="font" metaFont="system"/>
-                            <string key="title">If you have problems with your wallet, we may ask you to send us the contents of the text area below. Please note that the data does NOT include your private keys and will not allow us to spend your Bitcoin!</string>
+                            <string key="title">Kung ikaw ay nakakaranas ng problema sa iyong wallet, maari lamang na ipadala ang laman ng text area sa ilalim. Nais naming ipaalam na HINDI kasama ang iyong mag private key sa datos at hindi kami papayagan na gastusin ang iyong Bitcoin!</string>
                             <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                             <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                         </textFieldCell>
@@ -65,7 +65,7 @@
                     <button verticalHuggingPriority="750" id="7D6-dq-xT9">
                         <rect key="frame" x="506" y="13" width="130" height="32"/>
                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
-                        <buttonCell key="cell" type="push" title="Save to file..." bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="1AY-mJ-Thd">
+                        <buttonCell key="cell" type="push" title="I-save sa file..." bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="1AY-mJ-Thd">
                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                             <font key="font" metaFont="system"/>
                         </buttonCell>

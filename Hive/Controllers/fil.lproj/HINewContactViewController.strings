@@ -12,13 +12,13 @@
 "80.title" = "Magdagdag ng address";
 
 /* Class = "NSTextFieldCell"; title = "Bitcoin addresses"; ObjectID = "81"; */
-"81.title" = "Bitcoin addresses";
+"81.title" = "Mga Bitcoin address";
 
 /* Class = "NSButtonCell"; title = "Remove contact"; ObjectID = "97"; */
 "97.title" = "Tanggalin ang contact";
 
 /* Class = "NSTextFieldCell"; title = "edit"; ObjectID = "107"; */
-"107.title" = "edit";
+"107.title" = "i-edit";
 
 /* Class = "NSButtonCell"; title = "Cancel"; ObjectID = "WNT-Ju-zbY"; */
 "WNT-Ju-zbY.title" = "I-kansela";

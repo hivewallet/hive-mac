@@ -1,6 +1,6 @@
 
 /* Class = "NSButtonCell"; title = "Edit"; ObjectID = "50"; */
-"50.title" = "Edit";
+"50.title" = "I-edit";
 
 /* Class = "NSTextFieldCell"; title = "Contact information"; ObjectID = "62"; */
 "62.title" = "Contact information";
@@ -9,4 +9,4 @@
 "65.title" = "Email:";
 
 /* Class = "NSTextFieldCell"; title = "Bitcoin addresses"; ObjectID = "68"; */
-"68.title" = "Bitcoin addresses";
+"68.title" = "Mga Bitcoin address";

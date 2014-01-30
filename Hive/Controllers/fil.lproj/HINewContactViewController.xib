@@ -33,7 +33,7 @@
                         <textField verticalHuggingPriority="750" id="65">
                             <rect key="frame" x="29" y="215" width="234" height="17"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                            <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Bitcoin addresses" id="81">
+                            <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Mga Bitcoin address" id="81">
                                 <font key="font" size="13" name="Helvetica-Bold"/>
                                 <color key="textColor" red="0.57254901960000004" green="0.57254901960000004" blue="0.57254901960000004" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
@@ -208,7 +208,7 @@
                 <textField wantsLayer="YES" verticalHuggingPriority="750" alphaValue="0.70000000000000007" id="106">
                     <rect key="frame" x="0.0" y="311" width="65" height="16"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="edit" drawsBackground="YES" id="107">
+                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="i-edit" drawsBackground="YES" id="107">
                         <font key="font" size="12" name="Helvetica"/>
                         <color key="textColor" red="0.99987602229999994" green="0.99998402600000003" blue="0.99978637699999995" alpha="1" colorSpace="calibratedRGB"/>
                         <color key="backgroundColor" red="0.059837084263563156" green="0.059839386492967606" blue="0.059831220656633377" alpha="1" colorSpace="calibratedRGB"/>
