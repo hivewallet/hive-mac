@@ -18,7 +18,7 @@
 "Are you sure you want to leave this page?" = "Are you sure you want to leave this page?";
 
 /* Warning when trying to a large BTC amount (btc, fiat amount and address) */
-"Are you sure you want to send %@ (%@) to %@?" = "Är du säker på att du vill skicka  %1$@ (%2$@) till %3$@?";
+"Are you sure you want to send %@ (%@) to %@?" = "Är du säker på att du vill skicka %1$@ (%2$@) till %3$@?";
 
 /* Wizard backup page title */
 "Backup" = "Säkerhetskopiering";

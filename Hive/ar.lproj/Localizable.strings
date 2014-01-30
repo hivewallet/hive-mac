@@ -195,7 +195,7 @@
 "Please enter a different address." = "Please enter a different address.";
 
 /* Empty address alert message */
-"Please enter a valid Bitcoin address or select one from the dropdown list." = "فضلا أدخل عنوان  بتكوين صحيح  او أختار من القائمة.";
+"Please enter a valid Bitcoin address or select one from the dropdown list." = "فضلا أدخل عنوان بتكوين صحيح او أختار من القائمة.";
 
 /* Profile view title string */
 "Profile" = "الملف الشخصي";
