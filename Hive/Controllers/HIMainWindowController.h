@@ -22,7 +22,5 @@
 @property (strong) IBOutlet HISidebarController *sidebarController;
 
 - (void)switchToPanel:(Class)panelClass;
-- (void)presentModalViewController:(HIViewController *)controller animated:(BOOL)animated;
-- (void)dismissModalViewControllerAnimated:(BOOL)animated;
 
 @end

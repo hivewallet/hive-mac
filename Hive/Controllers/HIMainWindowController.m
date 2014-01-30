@@ -208,14 +208,4 @@ static const NSTimeInterval SlideAnimationDuration = 0.3;
     }
 }
 
-#pragma mark - Modality methods
-
-- (void)presentModalViewController:(HIViewController *)controller animated:(BOOL)animated {
-   
-}
-
-- (void)dismissModalViewControllerAnimated:(BOOL)animated {
-
-}
-
 @end
