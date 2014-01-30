@@ -4,12 +4,12 @@ require 'json'
 require 'open-uri'
 require 'time'
 
-if ARGV.length < 3
-  puts "Usage: #{$PROGRAM_NAME} <version> <local_zip_file> <private_key_file>"
+if ARGV.length < 4
+  puts "Usage: #{$PROGRAM_NAME} <version> <build> <local_zip_file> <private_key_file>"
   exit 1
 end
 
-version, local_zip_file, private_key_file = ARGV
+version, build, local_zip_file, private_key_file = ARGV
 
 local_zip_file = File.expand_path(local_zip_file)
 file_size = File.size(local_zip_file)
@@ -36,7 +36,7 @@ zip_url = "https://github.com/hivewallet/hive-osx/releases/download/#{version}/#
 
 puts %(
 <item>
-    <title>Hive 0.9 build #{version}</title>
+    <title>Hive #{version}</title>
     <description>
         <![CDATA[
             <style type="text/css">
@@ -55,8 +55,8 @@ puts %(
     <pubDate>#{date}</pubDate>
     <enclosure
     url="#{zip_url}"
-    sparkle:version="#{version}"
-    sparkle:shortVersionString="0.9"
+    sparkle:version="#{build}"
+    sparkle:shortVersionString="#{version}"
     length="#{file_size}"
     type="application/octet-stream"
     sparkle:dsaSignature="#{signature}" />
