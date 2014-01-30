@@ -107,29 +107,7 @@ static NSInteger HIDatabaseManagerFileExistsAtLocationError = 1000;
     if (!sqliteStore) {
         HILogWarn(@"Can't open SQLite store: %@", error);
 
-        NSError *xmlError = nil;
-
-        // see if it isn't the old xml version
-        NSPersistentStore *xmlStore = [coordinator addPersistentStoreWithType:NSXMLStoreType
-                                                                configuration:nil
-                                                                          URL:url
-                                                                      options:storeOptions
-                                                                        error:&xmlError];
-
-        if (xmlStore) {
-            NSPersistentStore *sqliteStore = [self migrateXMLStoreToSqlite:xmlStore inCoordinator:coordinator];
-
-            if (sqliteStore) {
-                // xml store had problems with saving all transactions so rebuild the list in case some were lost
-                dispatch_async(dispatch_get_main_queue(), ^{
-                    [[BCClient sharedClient] rebuildTransactionsList];
-                });
-            } else {
-                return nil;
-            }
-        } else {
-            CheckError(error);
-        }
+        CheckError(error);
     }
 
     _persistentStoreCoordinator = coordinator;
@@ -151,60 +129,6 @@ static NSInteger HIDatabaseManagerFileExistsAtLocationError = 1000;
             }
         }
     }
-}
-
-- (NSPersistentStore *)migrateXMLStoreToSqlite:(NSPersistentStore *)xmlStore
-                                 inCoordinator:(NSPersistentStoreCoordinator *)coordinator {
-    HILogInfo(@"Migrating XML store to SQLite");
-
-    NSDictionary *storeOptions = @{NSMigratePersistentStoresAutomaticallyOption: @YES,
-                                   NSInferMappingModelAutomaticallyOption: @YES};
-
-    NSFileManager *fileManager = [NSFileManager defaultManager];
-    NSError *error = nil;
-    NSURL *url = xmlStore.URL;
-    NSURL *applicationFilesDirectory = [[NSApp delegate] applicationFilesDirectory];
-
-    // convert old store to an sqlite store
-    NSString *newFileName = [StoreFileName stringByAppendingString:@".new"];
-    NSURL *newUrl = [applicationFilesDirectory URLByAppendingPathComponent:newFileName];
-
-    if ([fileManager fileExistsAtPath:newUrl.path]) {
-        [self deletePersistentStoreAtURL:newUrl error:&error];
-        CheckError(error);
-    }
-
-    NSPersistentStore *sqliteStore = [coordinator migratePersistentStore:xmlStore
-                                                                   toURL:newUrl
-                                                                 options:storeOptions
-                                                                withType:NSSQLiteStoreType
-                                                                   error:&error];
-    CheckError(error);
-
-    // back up the old store
-    NSString *oldFileName = [StoreFileName stringByAppendingString:@".old"];
-    NSURL *backupUrl = [applicationFilesDirectory URLByAppendingPathComponent:oldFileName];
-
-    if ([fileManager fileExistsAtPath:backupUrl.path]) {
-        [fileManager removeItemAtURL:backupUrl error:&error];
-        CheckError(error);
-    }
-
-    [fileManager moveItemAtURL:url toURL:backupUrl error:&error];
-    CheckError(error);
-
-    // move the new store to the old place
-    NSPersistentStore *movedSqliteStore = [coordinator migratePersistentStore:sqliteStore
-                                                                        toURL:url
-                                                                      options:storeOptions
-                                                                     withType:NSSQLiteStoreType
-                                                                        error:&error];
-    CheckError(error);
-
-    [self deletePersistentStoreAtURL:newUrl error:&error];
-    CheckError(error);
-
-    return movedSqliteStore;
 }
 
 - (void)backupStoreToDirectory:(NSURL *)backupLocation error:(NSError **)error {
