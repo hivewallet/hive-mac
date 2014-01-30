@@ -39,7 +39,13 @@ puts %(
     <title>Hive 0.9 build #{version}</title>
     <description>
         <![CDATA[
-            <p>What's changed:</p>
+            <style type="text/css">
+              h2 { font-family: Helvetica; font-weight: bold; font-size: 10pt; }
+              ul { font-family: Helvetica; font-size: 10pt; }
+              li { margin: 5px 0px; }
+            </style>
+
+            <h2>What's changed:</h2>
 
             <ul>
               #{release_notes}
