@@ -30,7 +30,7 @@
                             <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" columnReordering="NO" columnSelection="YES" columnResizing="NO" multipleSelection="NO" autosaveColumns="NO" rowSizeStyle="automatic" viewBased="YES" id="6">
                                 <rect key="frame" x="0.0" y="0.0" width="297" height="82"/>
                                 <autoresizingMask key="autoresizingMask"/>
-                                <color key="backgroundColor" red="0.94" green="0.94" blue="0.94" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.93999999999999995" green="0.93999999999999995" blue="0.93999999999999995" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="gridColor" name="gridColor" catalog="System" colorSpace="catalog"/>
                                 <tableColumns>
                                     <tableColumn width="297" minWidth="40" maxWidth="1000" id="10">
@@ -69,7 +69,7 @@
                                                         <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" id="44"/>
                                                     </imageView>
                                                     <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="21" userLabel="Label">
-                                                        <rect key="frame" x="89" y="23" width="172" height="17"/>
+                                                        <rect key="frame" x="89" y="23" width="198" height="17"/>
                                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                                         <textFieldCell key="cell" lineBreakMode="truncatingTail" sendsActionOnEndEditing="YES" title="Received" usesSingleLineMode="YES" id="22">
                                                             <font key="font" size="13" name="Helvetica"/>
@@ -99,7 +99,7 @@
                                                         </textFieldCell>
                                                     </textField>
                                                     <button horizontalHuggingPriority="1000" verticalHuggingPriority="1000" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" translatesAutoresizingMaskIntoConstraints="NO" id="NZf-qf-8PB" userLabel="Share Button">
-                                                        <rect key="frame" x="267" y="10" width="18" height="16"/>
+                                                        <rect key="frame" x="267" y="6" width="18" height="16"/>
                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                                         <buttonCell key="cell" type="bevel" bezelStyle="regularSquare" image="NSShareTemplate" imagePosition="overlaps" alignment="center" state="on" imageScaling="proportionallyDown" inset="2" id="4Fn-ay-Kmx">
                                                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
@@ -114,10 +114,10 @@
                                                             </binding>
                                                             <binding destination="-2" name="hidden2" keyPath="sharingSupported" previousBinding="Mxj-hE-JIE" id="W0v-wU-ouo">
                                                                 <dictionary key="options">
-                                                                    <integer key="NSNullPlaceholder" value="-1"/>
+                                                                    <integer key="NSMultipleValuesPlaceholder" value="-1"/>
                                                                     <integer key="NSNotApplicablePlaceholder" value="-1"/>
                                                                     <integer key="NSNoSelectionPlaceholder" value="-1"/>
-                                                                    <integer key="NSMultipleValuesPlaceholder" value="-1"/>
+                                                                    <integer key="NSNullPlaceholder" value="-1"/>
                                                                     <string key="NSValueTransformerName">NSNegateBoolean</string>
                                                                 </dictionary>
                                                             </binding>
@@ -132,12 +132,12 @@
                                                     <constraint firstItem="21" firstAttribute="leading" secondItem="43" secondAttribute="trailing" constant="7" id="FBP-uS-rBm"/>
                                                     <constraint firstItem="43" firstAttribute="leading" secondItem="46" secondAttribute="trailing" constant="5" id="JOy-DV-KmN"/>
                                                     <constraint firstAttribute="centerY" secondItem="21" secondAttribute="centerY" id="KNs-Ez-JuV"/>
-                                                    <constraint firstAttribute="bottom" secondItem="NZf-qf-8PB" secondAttribute="bottom" constant="10" id="MLs-Wi-Znl"/>
+                                                    <constraint firstAttribute="bottom" secondItem="NZf-qf-8PB" secondAttribute="bottom" constant="6" id="MLs-Wi-Znl"/>
                                                     <constraint firstItem="46" firstAttribute="top" secondItem="20" secondAttribute="top" constant="1" id="VRG-oj-8Sg"/>
                                                     <constraint firstItem="NZf-qf-8PB" firstAttribute="leading" secondItem="mY4-hd-Z1f" secondAttribute="trailing" constant="8" symbolic="YES" id="WmK-Oo-gWS"/>
                                                     <constraint firstItem="40" firstAttribute="top" secondItem="20" secondAttribute="top" constant="3" id="ZR7-me-yfm"/>
                                                     <constraint firstItem="mY4-hd-Z1f" firstAttribute="leading" secondItem="21" secondAttribute="leading" id="fjw-Ci-gZg"/>
-                                                    <constraint firstItem="NZf-qf-8PB" firstAttribute="leading" secondItem="21" secondAttribute="trailing" constant="8" symbolic="YES" id="fxl-I8-gUl"/>
+                                                    <constraint firstAttribute="trailing" secondItem="21" secondAttribute="trailing" constant="12" id="kab-Zs-pkI"/>
                                                     <constraint firstItem="46" firstAttribute="leading" secondItem="20" secondAttribute="leading" constant="1" id="nYk-NV-Np3"/>
                                                     <constraint firstAttribute="trailing" secondItem="40" secondAttribute="trailing" constant="12" id="o5Q-j9-yTJ"/>
                                                     <constraint firstItem="40" firstAttribute="trailing" secondItem="NZf-qf-8PB" secondAttribute="trailing" id="q70-zN-Lkn"/>
@@ -165,7 +165,7 @@
                                 </connections>
                             </tableView>
                         </subviews>
-                        <color key="backgroundColor" red="0.94" green="0.94" blue="0.94" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="0.93999999999999995" green="0.93999999999999995" blue="0.93999999999999995" alpha="1" colorSpace="calibratedRGB"/>
                     </clipView>
                     <scroller key="horizontalScroller" hidden="YES" verticalHuggingPriority="750" horizontal="YES" id="7">
                         <rect key="frame" x="1" y="-15" width="0.0" height="16"/>
