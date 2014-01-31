@@ -225,7 +225,7 @@
 "Send" = "Αποστολή";
 
 /* Sent amount of BTC to a contact/address */
-"Sent &a to &c" = "Αποστάληκαν &a to &c";
+"Sent &a to &c" = "Αποστάληκαν &a προς &c";
 
 /* Amount exceeds available balance alert title */
 "Some funds are temporarily unavailable." = "Μερικά ποσά είναι προσωρινά μη διαθέσιμα.";
