@@ -52,7 +52,7 @@ static const NSTimeInterval UpdateTimerInterval = 5.0;
 }
 
 - (void)dealloc {
-    [self stopTimer];
+    NSAssert([_updateTimer isValid], @"Retain cycle not broken");
 
     for (HIBackupAdapter *adapter in _backupManager.adapters) {
         [adapter removeObserver:self forKeyPath:@"status"];
@@ -66,6 +66,10 @@ static const NSTimeInterval UpdateTimerInterval = 5.0;
 
 - (void)awakeFromNib {
     self.tableView.rowHeight = TableRowHeight;
+}
+
+- (void)windowWillClose:(NSNotification *)notification {
+    [self stopTimer];
 }
 
 - (NSInteger)numberOfRowsInTableView:(NSTableView *)tableView {

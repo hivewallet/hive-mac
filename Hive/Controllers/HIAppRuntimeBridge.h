@@ -21,6 +21,8 @@
 
 @property (strong) HIApplicationRuntimeViewController *controller;
 
++ (BOOL)isApiLevelInApplicationSupported:(HIApplication *)application;
+
 - (id)initWithApplication:(HIApplication *)application frame:(WebFrame *)frame;
 
 - (void)killCallbacks;
