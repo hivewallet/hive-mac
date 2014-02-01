@@ -38,6 +38,7 @@ static const NSInteger kHIAppRuntimeBridgeParsingError = -1000;
     HIApplication *_application;
     NSDictionary *_applicationManifest;
     HISecureAppStorage *_secureStorage;
+    NSArray *_availableCurrencies;
     NSString *_preferredCurrency;
     NSString *_preferredBitcoinFormat;
 }
@@ -136,6 +137,7 @@ static const NSInteger kHIAppRuntimeBridgeParsingError = -1000;
         _exchangeRateListeners = [NSMutableSet new];
         _secureStorage = [[HISecureAppStorage alloc] initWithApplication:application frame:self.frame];
 
+        _availableCurrencies = [[HIExchangeRateService sharedService] availableCurrencies];
         // We currently do not send live updates to apps, so remember this.
         _preferredCurrency = [[HIExchangeRateService sharedService] preferredCurrency];
         _preferredBitcoinFormat = [[HIBitcoinFormatService sharedService] preferredFormat];
@@ -271,6 +273,7 @@ static const NSInteger kHIAppRuntimeBridgeParsingError = -1000;
     NSDictionary *data = @{
                            @"decimalSeparator": [HIBitcoinFormatService sharedService].decimalSeparator,
                            @"locale": preferredLanguages[0],
+                           @"availableCurrencies": _availableCurrencies,
                            @"preferredCurrency": _preferredCurrency,
                            @"preferredBitcoinFormat": _preferredBitcoinFormat,
                            @"buildNumber": bundleInfo[@"CFBundleVersion"],
