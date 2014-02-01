@@ -78,7 +78,6 @@ static NSString *const HIFormatPreferenceKey = @"BitcoinFormat";
     NSNumberFormatter *formatter = [NSNumberFormatter new];
     formatter.locale = _locale;
     formatter.generatesDecimalNumbers = YES;
-    formatter.minimum = @0;
     formatter.numberStyle = NSNumberFormatterDecimalStyle;
     formatter.minimumIntegerDigits = 1;
     if ([format isEqualToString:@"BTC"]) {

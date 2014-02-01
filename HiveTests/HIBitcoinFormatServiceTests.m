@@ -93,6 +93,14 @@
     assertThat(string, equalTo(@"1.000,60"));
 }
 
+- (void)testFormatNegativeValue {
+    NSString *format = @"BTC";
+
+    NSString *string = [self.service stringForBitcoin:-60000000 withFormat:format];
+
+    assertThat(string, equalTo(@"-0.60"));
+}
+
 #pragma mark - parsing
 
 - (void)testParseBtcString {
@@ -102,7 +110,7 @@
                                       withFormat:format
                                            error:NULL];
 
-    assertThat(@(amount), equalToUnsignedLongLong(60000000));
+    assertThat(@(amount), equalToLongLong(60000000));
 }
 
 - (void)testParseMBtcString {
@@ -112,7 +120,7 @@
                                       withFormat:format
                                            error:NULL];
 
-    assertThat(@(amount), equalToUnsignedLongLong(60000));
+    assertThat(@(amount), equalToLongLong(60000));
 }
 
 - (void)testParseUBtcString {
@@ -122,7 +130,7 @@
                                       withFormat:format
                                            error:NULL];
 
-    assertThat(@(amount), equalToUnsignedLongLong(60));
+    assertThat(@(amount), equalToLongLong(60));
 }
 
 - (void)testParseUSatoshiString {
@@ -132,7 +140,7 @@
                                       withFormat:format
                                            error:NULL];
 
-    assertThat(@(amount), equalToUnsignedLongLong(60));
+    assertThat(@(amount), equalToLongLong(60));
 }
 
 - (void)testParseStringUsingDifferentLocale {
@@ -143,7 +151,7 @@
                                       withFormat:format
                                            error:NULL];
 
-    assertThat(@(amount), equalToUnsignedLongLong(100060000000));
+    assertThat(@(amount), equalToLongLong(100060000000));
 }
 
 - (void)testParseStringUsingSpaceAsThousandsSeparator {
@@ -154,7 +162,7 @@
                                       withFormat:format
                                            error:NULL];
 
-    assertThat(@(amount), equalToUnsignedLongLong(100060000000));
+    assertThat(@(amount), equalToLongLong(100060000000));
 }
 
 - (void)testParseStringWithThousandsSeparator {
@@ -164,7 +172,7 @@
                                       withFormat:format
                                            error:NULL];
 
-    assertThat(@(amount), equalToUnsignedLongLong(6000));
+    assertThat(@(amount), equalToLongLong(6000));
 }
 
 - (void)testParseStringWithSpaceAsThousandsSeparator {
@@ -175,7 +183,18 @@
                                       withFormat:format
                                            error:NULL];
 
-    assertThat(@(amount), equalToUnsignedLongLong(6000));
+    assertThat(@(amount), equalToLongLong(6000));
+}
+
+- (void)testParseNegativeBtcString {
+    NSString *format = @"BTC";
+
+    NSError *error = nil;
+    satoshi_t amount = [self.service parseString:@"-0.6"
+                                      withFormat:format
+                                           error:&error];
+
+    assertThat(@(amount), equalToLongLong(-60000000));
 }
 
 - (void)testParsingIllegalStringWithError {
@@ -186,7 +205,7 @@
                                       withFormat:format
                                            error:&error];
 
-    assertThat(@(amount), equalToUnsignedLongLong(0));
+    assertThat(@(amount), equalToLongLong(0));
     assertThat(error, notNilValue());
 }
 
@@ -197,7 +216,7 @@
                                       withFormat:format
                                            error:NULL];
 
-    assertThat(@(amount), equalToUnsignedLongLong(0));
+    assertThat(@(amount), equalToLongLong(0));
 }
 
 #pragma mark - notification

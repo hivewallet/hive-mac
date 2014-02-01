@@ -24,4 +24,4 @@
 #endif
 
 /* Type to store Bitcoin values in. */
-typedef uint64 satoshi_t;
+typedef int64_t satoshi_t;

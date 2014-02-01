@@ -3,9 +3,9 @@
 @implementation NSDecimalNumber(HISatoshiConversion)
 
 + (NSDecimalNumber *)hiDecimalNumberWithSatoshi:(satoshi_t)satoshi {
-    return [NSDecimalNumber decimalNumberWithMantissa:satoshi
+    return [NSDecimalNumber decimalNumberWithMantissa:ABS(satoshi)
                                              exponent:-8
-                                           isNegative:NO];
+                                           isNegative:satoshi < 0];
 }
 
 - (satoshi_t)hiSatoshi {
