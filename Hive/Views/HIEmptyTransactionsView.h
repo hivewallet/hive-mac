@@ -1,0 +1,5 @@
+@interface HIEmptyTransactionsView : NSView
+
+
+
+@end

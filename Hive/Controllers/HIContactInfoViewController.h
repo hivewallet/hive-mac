@@ -12,6 +12,7 @@
 @class HITextField;
 @class HIViewController;
 @protocol HIPerson;
+@class HIAddressesBox;
 
 /*
  Manages the contact info panel shown in the left tab of the contact view and in the user's profile view.
@@ -19,7 +20,7 @@
 
 @interface HIContactInfoViewController : NSViewController
 
-@property (weak) IBOutlet HIBox *addressBoxView;
+@property (weak) IBOutlet HIAddressesBox *addressBoxView;
 @property (weak) IBOutlet HITextField *profileEmailField;
 @property (weak) IBOutlet NSScrollView *profileScrollView;
 @property (weak) IBOutlet NSView *profileScrollContent;
