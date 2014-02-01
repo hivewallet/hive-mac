@@ -48,6 +48,8 @@
 		2478B8D3184A80A400BA2C35 /* HIFeeDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2478B8D1184A80A400BA2C35 /* HIFeeDetailsViewController.m */; };
 		2478B8D5184A88E700BA2C35 /* HIFeeDetailsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2478B8D7184A88E700BA2C35 /* HIFeeDetailsViewController.xib */; };
 		2478B8F2184A89EA00BA2C35 /* HIFeeDetailsViewController.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2478B8F0184A89EA00BA2C35 /* HIFeeDetailsViewController.strings */; };
+		24E2C7C0189D93E6008E17CC /* HICameraWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 24E2C7BE189D93E6008E17CC /* HICameraWindowController.m */; };
+		24E2C7C1189D93E6008E17CC /* HICameraWindowController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 24E2C7BF189D93E6008E17CC /* HICameraWindowController.xib */; };
 		24EAAFC1186E1BBD00E1D2D3 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 24EAAFC0186E1BBD00E1D2D3 /* XCTest.framework */; };
 		24EAAFC7186E1BBD00E1D2D3 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 24EAAFC5186E1BBD00E1D2D3 /* InfoPlist.strings */; };
 		24EAAFC9186E1BBD00E1D2D3 /* HIBitcoinFormatServiceTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 24EAAFC8186E1BBD00E1D2D3 /* HIBitcoinFormatServiceTests.m */; };
@@ -444,6 +446,9 @@
 		2478B908184A8A0200BA2C35 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/HIFeeDetailsViewController.strings; sourceTree = "<group>"; };
 		2478B909184A8A0200BA2C35 /* sr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = sr; path = sr.lproj/HIFeeDetailsViewController.strings; sourceTree = "<group>"; };
 		2478B90A184A8A0300BA2C35 /* sr-Latn */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "sr-Latn"; path = "sr-Latn.lproj/HIFeeDetailsViewController.strings"; sourceTree = "<group>"; };
+		24E2C7BD189D93E6008E17CC /* HICameraWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HICameraWindowController.h; sourceTree = "<group>"; };
+		24E2C7BE189D93E6008E17CC /* HICameraWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HICameraWindowController.m; sourceTree = "<group>"; };
+		24E2C7BF189D93E6008E17CC /* HICameraWindowController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HICameraWindowController.xib; sourceTree = "<group>"; };
 		24EAAFBF186E1BBD00E1D2D3 /* HiveTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HiveTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		24EAAFC0186E1BBD00E1D2D3 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		24EAAFC4186E1BBD00E1D2D3 /* HiveTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "HiveTests-Info.plist"; sourceTree = "<group>"; };
@@ -1817,6 +1822,16 @@
 			name = HIFeeDetailsViewController;
 			sourceTree = "<group>";
 		};
+		24E2C7C4189D93EB008E17CC /* HICameraWindowController */ = {
+			isa = PBXGroup;
+			children = (
+				24E2C7BD189D93E6008E17CC /* HICameraWindowController.h */,
+				24E2C7BE189D93E6008E17CC /* HICameraWindowController.m */,
+				24E2C7BF189D93E6008E17CC /* HICameraWindowController.xib */,
+			);
+			name = HICameraWindowController;
+			sourceTree = "<group>";
+		};
 		24EAAFC2186E1BBD00E1D2D3 /* HiveTests */ = {
 			isa = PBXGroup;
 			children = (
@@ -2274,6 +2289,7 @@
 			children = (
 				D95929D617742ABB008B4F43 /* HIApplicationsViewController */,
 				583B1DE7186860C600817EF8 /* HIBackupCenterWindowController */,
+				24E2C7C4189D93EB008E17CC /* HICameraWindowController */,
 				D948158417CE1BD4006A0312 /* HIContactsViewController */,
 				581711D917D0FD8F00DE775A /* HIContactViewController */,
 				588E34D0181FF28C006A6A25 /* HIDebuggingInfoWindowController */,
@@ -2577,6 +2593,7 @@
 				585712D618902D180094F884 /* HIWizardCompletedViewController.strings in Resources */,
 				58605A5D18041D0A00FD9C2A /* icon-your-profile__active.pdf in Resources */,
 				58D4D61F18290079009CB7A5 /* patten_hive.hiveapp in Resources */,
+				24E2C7C1189D93E6008E17CC /* HICameraWindowController.xib in Resources */,
 				58605A5E18041D0A00FD9C2A /* icon-your-profile__inactive.pdf in Resources */,
 				589064AE1805742C0082BE5C /* seansoutpost.hiveapp in Resources */,
 				1AA10ECC39D33A1362882EB2 /* HIProfileViewController.strings in Resources */,
@@ -2689,6 +2706,7 @@
 				5850D231189922C6001736D2 /* HIKeyObservingWindow.m in Sources */,
 				D938F01017E6278B00566FFD /* HITextFieldCell.m in Sources */,
 				D958A8B817E8547A00CED98C /* HIFlippedView.m in Sources */,
+				24E2C7C0189D93E6008E17CC /* HICameraWindowController.m in Sources */,
 				D99C9A5517E8F59200899CAB /* HIDeleteButtonCell.m in Sources */,
 				D9F0B9F817EC654C0050A0A2 /* HIImageCell.m in Sources */,
 				5802106317ECCAAA0039BA4B /* HIContactAutocompleteCellView.m in Sources */,

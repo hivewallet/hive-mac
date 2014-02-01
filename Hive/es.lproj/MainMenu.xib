@@ -168,6 +168,12 @@
                                     <action selector="showDebuggingTools:" target="-1" id="s18-1s-iwD"/>
                                 </connections>
                             </menuItem>
+                            <menuItem title="Scan Barcode…" id="vdw-IK-snJ">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                                <connections>
+                                    <action selector="scanBarcode:" target="494" id="ktw-J8-B7s"/>
+                                </connections>
+                            </menuItem>
                         </items>
                     </menu>
                     <connections>

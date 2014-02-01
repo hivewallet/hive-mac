@@ -22,6 +22,7 @@
 #import "HIBackupCenterWindowController.h"
 #import "HIBackupManager.h"
 #import "HIBitcoinURL.h"
+#import "HICameraWindowController.h"
 #import "HIDatabaseManager.h"
 #import "HIDebuggingInfoWindowController.h"
 #import "HIDebuggingToolsWindowController.h"
@@ -550,6 +551,10 @@ void handleException(NSException *exception) {
 
 - (IBAction)showBackupCenter:(id)sender {
     [self openPopupWindowWithClass:[HIBackupCenterWindowController class]];
+}
+
+- (IBAction)scanBarcode:(id)sender {
+    [self openPopupWindowWithClass:[HICameraWindowController class]];
 }
 
 - (IBAction)sendFeedback:(id)sender {

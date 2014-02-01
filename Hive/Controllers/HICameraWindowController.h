@@ -1,0 +1,3 @@
+@interface HICameraWindowController : NSWindowController
+
+@end
