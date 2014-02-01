@@ -9,7 +9,7 @@
 #import "HIApplication.h"
 #import "HIApplicationsManager.h"
 #import "HIDatabaseManager.h"
-#import "NPZip.h"
+#import "HIDirectoryDataService.h"
 
 @implementation HIApplicationsManager
 
@@ -25,20 +25,8 @@
 }
 
 - (NSDictionary *)applicationMetadata:(NSURL *)applicationPath {
-    BOOL isDirectory;
-    BOOL exists = [[NSFileManager defaultManager] fileExistsAtPath:applicationPath.path isDirectory:&isDirectory];
-
-    NSData *data;
-
-    if (exists) {
-        if (isDirectory) {
-            data = [NSData dataWithContentsOfURL:[applicationPath URLByAppendingPathComponent:@"manifest.json"]];
-        } else {
-            NPZip *zipFile = [NPZip archiveWithFile:applicationPath.path];
-            data = [zipFile dataForEntryNamed:@"manifest.json"];
-        }
-    }
-
+    NSData *data = [[HIDirectoryDataService sharedService] dataForPath:@"manifest.json"
+                                                           inDirectory:applicationPath];
     return data ? [NSJSONSerialization JSONObjectWithData:data options:0 error:NULL] : nil;
 }
 

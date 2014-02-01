@@ -8,10 +8,7 @@
 
 #import "HIApplicationsManager.h"
 #import "HIApplicationURLProtocol.h"
-#import "NPZip.h"
-
-static NPZip *zipFile = nil;
-
+#import "HIDirectoryDataService.h"
 
 @implementation HIApplicationURLProtocol
 
@@ -23,24 +20,7 @@ static NPZip *zipFile = nil;
     return request;
 }
 
-- (BOOL)isURLZipped:(NSURL *)URL {
-    NSString *appName = [URL.host substringToIndex:(URL.host.length - 8)];
-    NSURL *applicationsDirectory = [[HIApplicationsManager sharedManager] applicationsDirectory];
-    NSURL *applicationURL = [applicationsDirectory URLByAppendingPathComponent:appName];
-
-    BOOL dir;
-    if ([[NSFileManager defaultManager] fileExistsAtPath:applicationURL.path isDirectory:&dir]) {
-        if (!dir) {
-            return YES;
-        }
-    }
-    
-    return NO;
-}
-
 - (void)startLoading {
-    NSData *contentData;
-
     NSArray *pathComponents = self.request.URL.pathComponents;
     NSString *appName = [self.request.URL.host substringToIndex:(self.request.URL.host.length - 8)];
     NSArray *localPathComponents = [pathComponents subarrayWithRange:NSMakeRange(1, pathComponents.count - 1)];
@@ -49,15 +29,9 @@ static NPZip *zipFile = nil;
     NSURL *applicationsDirectory = [[HIApplicationsManager sharedManager] applicationsDirectory];
     NSURL *applicationURL = [applicationsDirectory URLByAppendingPathComponent:appName];
 
-    if ([self isURLZipped:self.request.URL]) {
-        if (!zipFile || ![zipFile.name isEqual:appName]) {
-            zipFile = [NPZip archiveWithFile:applicationURL.path];
-        }
 
-        contentData = [zipFile dataForEntryNamed:localPath];
-    } else {
-        contentData = [NSData dataWithContentsOfURL:[applicationURL URLByAppendingPathComponent:localPath]];
-    }
+    NSData *contentData = [[HIDirectoryDataService sharedService] dataForPath:localPath
+                                                                  inDirectory:applicationURL];
 
     if (!contentData) {
         [self.client URLProtocol:self

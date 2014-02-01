@@ -6,9 +6,9 @@
 //  Copyright (c) 2013 Hive Developers. All rights reserved.
 //
 
-#import "BCClient.h"
 #import "HIApplication.h"
-#import "NPZip.h"
+
+#import "HIDirectoryDataService.h"
 
 NSString * const HIApplicationEntity = @"HIApplication";
 
@@ -20,40 +20,22 @@ NSString * const HIApplicationEntity = @"HIApplication";
 @dynamic name;
 
 - (NSDictionary *)manifest {
-    BOOL isDirectory;
-    BOOL exists = [[NSFileManager defaultManager] fileExistsAtPath:self.path.path isDirectory:&isDirectory];
-    NSData *data;
-
-    if (exists) {
-        if (isDirectory) {
-            data = [NSData dataWithContentsOfURL:[self.path URLByAppendingPathComponent:@"manifest.json"]];
-        } else {
-            NPZip *zip = [NPZip archiveWithFile:self.path.path];
-            data = [zip dataForEntryNamed:@"manifest.json"];
-        }
-    }
-
+    NSData *data = [[HIDirectoryDataService sharedService] dataForPath:@"manifest.json"
+                                                           inDirectory:self.path];
     return data ? [NSJSONSerialization JSONObjectWithData:data options:0 error:NULL] : nil;
 }
 
 - (NSImage *)icon {
-    NSImage *icon = [NSImage imageNamed:@"icon-apps__inactive.pdf"];
-
-    BOOL isDirectory;
-    BOOL exists = [[NSFileManager defaultManager] fileExistsAtPath:self.path.path isDirectory:&isDirectory];
-
     NSDictionary *manifest = self.manifest;
-
-    if (exists && manifest[@"icon"]) {
-        if (isDirectory) {
-            icon = [[NSImage alloc] initWithContentsOfURL:[self.path URLByAppendingPathComponent:manifest[@"icon"]]];
-        } else {
-            NPZip *zip = [NPZip archiveWithFile:self.path.path];
-            icon = [[NSImage alloc] initWithData:[zip dataForEntryNamed:manifest[@"icon"]]];
+    NSString *icon = manifest[@"icon"];
+    if (icon) {
+        NSData *data = [[HIDirectoryDataService sharedService] dataForPath:icon
+                                                               inDirectory:self.path];
+        if (data) {
+            return [[NSImage alloc] initWithData:data];
         }
     }
-
-    return icon;
+    return [NSImage imageNamed:@"icon-apps__inactive.pdf"];
 }
 
 - (void)refreshIcon {
