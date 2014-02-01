@@ -7,6 +7,7 @@ pod 'FXKeychain'
 pod 'CocoaLumberjack'
 pod 'LetsMove'
 pod 'AutoLayoutMacros'
+pod 'ZXingObjC'
 
 target :test, :exclusive => true do
   link_with 'HiveTests'
