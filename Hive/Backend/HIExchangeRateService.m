@@ -6,12 +6,14 @@
 
 static NSString *const HIConversionPreferenceKey = @"ConversionCurrency";
 static const NSTimeInterval HIExchangeRateAutomaticUpdateInterval = 60.0 * 60.0;
+static const NSTimeInterval HIExchangeRateMinimumUpdateInterval = 60.0;
 
 @interface HIExchangeRateService ()
 
 @property (nonatomic, strong) AFHTTPClient *client;
 @property (nonatomic, strong) NSMutableSet *observers;
 @property (nonatomic, strong, readonly) NSMutableDictionary *exchangeRates;
+@property (nonatomic, copy) NSDate *lastUpdate;
 
 @end
 
@@ -36,6 +38,7 @@ static const NSTimeInterval HIExchangeRateAutomaticUpdateInterval = 60.0 * 60.0;
         _client = [BCClient sharedClient];
         _observers = [NSMutableSet new];
         _exchangeRates = [NSMutableDictionary new];
+        _lastUpdate = [NSDate dateWithTimeIntervalSince1970:0];
 
         [self registerAppNapNotifications];
     }
@@ -89,6 +92,11 @@ static const NSTimeInterval HIExchangeRateAutomaticUpdateInterval = 60.0 * 60.0;
 }
 
 - (void)updateExchangeRateForCurrency:(NSString *)currency {
+    if (![self isExchangeRateUpdateNeeded]) {
+        [self notifyOfExchangeRates];
+        return;
+    }
+
     // Currency is not used, because we can fetch all rates at once.
     // We keep the parameter, so we don't have to change the API when changing providers.
     NSURL *URL = [NSURL URLWithString:@"https://api.bitcoinaverage.com/ticker/all"];
@@ -102,6 +110,7 @@ static const NSTimeInterval HIExchangeRateAutomaticUpdateInterval = 60.0 * 60.0;
 
         if (response && !error) {
             [self updateExchangeRatesFromResponse:response];
+            self.lastUpdate = [NSDate date];
         } else {
             HILogWarn(@"Invalid response from exchange rate API for %@: %@", currency, error);
             [self.exchangeRates removeAllObjects];
@@ -119,6 +128,10 @@ static const NSTimeInterval HIExchangeRateAutomaticUpdateInterval = 60.0 * 60.0;
     }];
 
     [self.client.operationQueue addOperation:exchangeRateOperation];
+}
+
+- (BOOL)isExchangeRateUpdateNeeded {
+    return -[self.lastUpdate timeIntervalSinceNow] > HIExchangeRateMinimumUpdateInterval;
 }
 
 - (void)updateExchangeRatesFromResponse:(NSDictionary *)response {
