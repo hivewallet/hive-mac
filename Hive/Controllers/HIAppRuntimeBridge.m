@@ -16,6 +16,12 @@
 #import "HIProfile.h"
 #import "HISecureAppStorage.h"
 
+// API version
+// MINOR version must be incremented when new API features are added
+// MAJOR version must be incremented when existing API features are changed incompatibly.
+static const NSUInteger API_LEVEL_MAJOR = 0;
+static const NSUInteger API_LEVEL_MINOR = 1;
+
 static NSString * const kHIAppRuntimeBridgeErrorDomain = @"HIAppRuntimeBridgeErrorDomain";
 static const NSInteger kHIAppRuntimeBridgeParsingError = -1000;
 
@@ -26,6 +32,8 @@ static const NSInteger kHIAppRuntimeBridgeParsingError = -1000;
     NSInteger _uBTCInSatoshi;
     NSString *_IncomingTransactionType;
     NSString *_OutgoingTransactionType;
+    NSUInteger _activeApiLevelMajor;
+    NSUInteger _activeApiLevelMinor;
     NSMutableSet *_exchangeRateListeners;
     HIApplication *_application;
     NSDictionary *_applicationManifest;
@@ -79,6 +87,8 @@ static const NSInteger kHIAppRuntimeBridgeParsingError = -1000;
                    @"_IncomingTransactionType": @"TX_TYPE_INCOMING",
                    @"_OutgoingTransactionType": @"TX_TYPE_OUTGOING",
                    @"_secureStorage": @"secureStorage",
+                   @"_activeApiLevelMajor": @"apiLevelMajor",
+                   @"_activeApiLevelMinor": @"apiLevelMinor",
                    };
     }
 
@@ -105,6 +115,9 @@ static const NSInteger kHIAppRuntimeBridgeParsingError = -1000;
 
         _IncomingTransactionType = @"incoming";
         _OutgoingTransactionType = @"outgoing";
+
+        _activeApiLevelMajor = API_LEVEL_MAJOR;
+        _activeApiLevelMinor = API_LEVEL_MINOR;
 
         _exchangeRateListeners = [NSMutableSet new];
         _secureStorage = [[HISecureAppStorage alloc] initWithApplication:application frame:self.frame];
