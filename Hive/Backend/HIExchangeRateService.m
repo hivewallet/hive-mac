@@ -1,5 +1,6 @@
 #import <AFNetworking/AFHTTPClient.h>
 #import <AFNetworking/AFHTTPRequestOperation.h>
+#import <BitcoinJKit/HILogger.h>
 #import "BCClient.h"
 #import "HIExchangeRateService.h"
 
@@ -10,6 +11,7 @@ static const NSTimeInterval HIExchangeRateAutomaticUpdateInterval = 60.0 * 60.0;
 
 @property (nonatomic, strong) AFHTTPClient *client;
 @property (nonatomic, strong) NSMutableSet *observers;
+@property (nonatomic, strong, readonly) NSMutableDictionary *exchangeRates;
 
 @end
 
@@ -33,6 +35,7 @@ static const NSTimeInterval HIExchangeRateAutomaticUpdateInterval = 60.0 * 60.0;
     if (self) {
         _client = [BCClient sharedClient];
         _observers = [NSMutableSet new];
+        _exchangeRates = [NSMutableDictionary new];
 
         [self registerAppNapNotifications];
     }
@@ -86,8 +89,9 @@ static const NSTimeInterval HIExchangeRateAutomaticUpdateInterval = 60.0 * 60.0;
 }
 
 - (void)updateExchangeRateForCurrency:(NSString *)currency {
-    NSURL *URL =
-        [NSURL URLWithString:[NSString stringWithFormat:@"https://api.bitcoinaverage.com/ticker/%@", currency]];
+    // Currency is not used, because we can fetch all rates at once.
+    // We keep the parameter, so we don't have to change the API when changing providers.
+    NSURL *URL = [NSURL URLWithString:@"https://api.bitcoinaverage.com/ticker/all"];
 
     AFHTTPRequestOperation *exchangeRateOperation =
         [self.client HTTPRequestOperationWithRequest:[NSURLRequest requestWithURL:URL]
@@ -96,32 +100,53 @@ static const NSTimeInterval HIExchangeRateAutomaticUpdateInterval = 60.0 * 60.0;
         NSError *error = nil;
         NSDictionary *response = [NSJSONSerialization JSONObjectWithData:responseData options:0 error:&error];
 
-        NSDecimalNumber *exchangeRate = nil;
         if (response && !error) {
-            NSString *string = [response[@"last"] description];
-            exchangeRate = [NSDecimalNumber decimalNumberWithString:string
-                                                             locale:@{NSLocaleDecimalSeparator: @"."}];
-
-            HILogInfo(@"Got response from exchange rate API for %@: %@", currency, string);
-
-            if (exchangeRate == [NSDecimalNumber notANumber]) {
-                exchangeRate = nil;
-            }
+            [self updateExchangeRatesFromResponse:response];
         } else {
             HILogWarn(@"Invalid response from exchange rate API for %@: %@", currency, error);
+            [self.exchangeRates removeAllObjects];
         }
 
-        [self notifyOfExchangeRate:exchangeRate forCurrency:currency];
+        [self notifyOfExchangeRates];
 
         [self scheduleAutomaticUpdate];
 
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-        HILogWarn(@"Couldn't get response from exchange rate API for %@: %@", currency, error);
+        HILogWarn(@"Couldn't get response from exchange rate API: %@", error);
 
-        [self notifyOfExchangeRate:nil forCurrency:currency];
+        [self.exchangeRates removeAllObjects];
+        [self notifyOfExchangeRates];
     }];
 
     [self.client.operationQueue addOperation:exchangeRateOperation];
+}
+
+- (void)updateExchangeRatesFromResponse:(NSDictionary *)response {
+    for (NSString *currency in self.availableCurrencies) {
+        [self updateExchangeRatesForCurrency:currency fromResponse:response];
+    }
+}
+
+- (void)updateExchangeRatesForCurrency:(NSString *)currency fromResponse:(NSDictionary *)response {
+    NSString *string = [response[currency][@"last"] description];
+    NSDecimalNumber *exchangeRate = [NSDecimalNumber decimalNumberWithString:string
+                                                                      locale:@{NSLocaleDecimalSeparator: @"."}];
+
+    HILogInfo(@"Got response from exchange rate API for %@: %@", currency, string);
+
+    if (exchangeRate && exchangeRate != [NSDecimalNumber notANumber]) {
+        self.exchangeRates[currency] = exchangeRate;
+    } else {
+        [self.exchangeRates removeObjectForKey:currency];
+    }
+
+}
+
+- (void)notifyOfExchangeRates {
+    for (NSString *currency in self.availableCurrencies) {
+        [self notifyOfExchangeRate:self.exchangeRates[currency]
+                       forCurrency:currency];
+    }
 }
 
 - (void)notifyOfExchangeRate:(NSDecimalNumber *)exchangeRate
