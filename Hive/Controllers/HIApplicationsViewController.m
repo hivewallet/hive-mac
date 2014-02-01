@@ -12,7 +12,9 @@
 #import "HIContactRowView.h"
 #import "HIDatabaseManager.h"
 #import "HINavigationController.h"
+#import "NSWindow+HIShake.h"
 #import "NSColor+Hive.h"
+#import "HIAppRuntimeBridge.h"
 
 @interface HIApplicationsViewController ()
 
@@ -64,15 +66,31 @@
             NSUInteger index = self.collectionView.selectionIndexes.lastIndex;
             HIApplication *app = (HIApplication *) [_arrayController arrangedObjects][index];
 
+            if ([HIAppRuntimeBridge isApiLevelInApplicationSupported:app]) {
+                HIApplicationRuntimeViewController *sub = [HIApplicationRuntimeViewController new];
+                sub.application = app;
+                [self.navigationController pushViewController:sub animated:YES];
+            } else {
+                [self.view.window hiShake];
+                [self showApiVersionAlert];
+            }
+
             dispatch_async(dispatch_get_main_queue(), ^{
                 [self.collectionView setSelectionIndexes:[NSIndexSet indexSet]];
             });
 
-            HIApplicationRuntimeViewController *sub = [HIApplicationRuntimeViewController new];
-            sub.application = app;
-            [self.navigationController pushViewController:sub animated:YES];
         }
     }
+}
+
+- (void)showApiVersionAlert {
+    NSAlert *alert = [NSAlert new];
+    alert.messageText = NSLocalizedString(@"App requires a newer version of Hive",
+                                          @"Message when trying to start an app that requires a newer API level.");
+    alert.informativeText = NSLocalizedString(@"To use the app, please update to the latest version of Hive.",
+                                              @"Message when trying to start an app that requires a newer API level.");
+
+    [alert runModal];
 }
 
 - (IBAction)getMoreAppsClicked:(id)sender {

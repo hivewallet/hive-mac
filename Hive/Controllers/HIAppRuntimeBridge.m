@@ -47,6 +47,16 @@ static const NSInteger kHIAppRuntimeBridgeParsingError = -1000;
 
 @implementation HIAppRuntimeBridge
 
+#pragma mark - version checking
+
++ (BOOL)isApiLevelInApplicationSupported:(HIApplication *)application {
+    NSDictionary *manifest = application.manifest;
+    NSUInteger apiLevelMajor = [manifest[@"apiLevelMajor"] unsignedIntegerValue];
+    NSUInteger apiLevelMinor = [manifest[@"apiLevelMinor"] unsignedIntegerValue];
+
+    return API_LEVEL_MAJOR == apiLevelMajor && API_LEVEL_MINOR >= apiLevelMinor;
+}
+
 #pragma mark - Method & property mapping
 
 + (NSDictionary *)selectorMap {
@@ -99,6 +109,10 @@ static const NSInteger kHIAppRuntimeBridgeParsingError = -1000;
 #pragma mark - init & cleanup
 
 - (id)initWithApplication:(HIApplication *)application frame:(WebFrame *)frame {
+
+    NSAssert([[self class] isApiLevelInApplicationSupported:application],
+             @"Application should not have been loaded");
+
     self = [super init];
 
     if (self) {
