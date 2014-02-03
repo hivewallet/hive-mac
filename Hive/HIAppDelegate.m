@@ -219,12 +219,22 @@ static int ddLogLevel = LOG_LEVEL_VERBOSE;
     } else {
         [self showAppWindow];
         [self nagUnprotectedUsers];
+
         dispatch_async(dispatch_get_main_queue(), ^{
+            [self setAsDefaultHandler];
             [self initializeBackups];
         });
     }
 
     NSSetUncaughtExceptionHandler(&handleException);
+}
+
+- (void)setAsDefaultHandler {
+    CFStringRef bundleID = (__bridge CFStringRef) [[NSBundle mainBundle] bundleIdentifier];
+    CFStringRef UTI = UTTypeCreatePreferredIdentifierForTag(kUTTagClassFilenameExtension, CFSTR("hiveapp"), NULL);
+
+    LSSetDefaultHandlerForURLScheme(CFSTR("bitcoin"), bundleID);
+    LSSetDefaultRoleHandlerForContentType(UTI, kLSRolesAll, bundleID);
 }
 
 - (void)showAppWindow {
