@@ -61,18 +61,7 @@ static const NSInteger AddressFieldTag = 2;
 
     [self.profileEmailField setValueAndRecalc:((_contact.email.length > 0) ? _contact.email : @"")];
 
-    // TODO: I cannot into AutoLayout, but let's switch to that later
-    NSSize editLabelSize = self.editButton.intrinsicContentSize;
-    NSRect editButtonFrame = self.editButton.frame;
-    self.editButton.frame = NSMakeRect(editButtonFrame.origin.x, editButtonFrame.origin.y,
-                                       editLabelSize.width + 35, editButtonFrame.size.height);
-
     self.addressBoxView.addresses = _contact.addresses.allObjects;
-    // configure box size
-    NSRect f = self.addressBoxView.frame;
-    f.size.height = self.addressBoxView.intrinsicContentSize.height;
-    f.origin.y = 116;
-    self.addressBoxView.frame = f;
     self.addressBoxView.observingWallet = [_contact isKindOfClass:[HIProfile class]];
 }
 

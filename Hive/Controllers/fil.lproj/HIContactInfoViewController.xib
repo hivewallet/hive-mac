@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="4514" systemVersion="13C44" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none">
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="4514" systemVersion="13C48" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
         <deployment version="1070" defaultVersion="1070" identifier="macosx"/>
         <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="4514"/>
@@ -21,14 +21,14 @@
             <rect key="frame" x="0.0" y="0.0" width="350" height="335"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <scrollView borderType="none" autohidesScrollers="YES" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" hasVerticalScroller="NO" usesPredominantAxisScrolling="NO" id="42">
+                <scrollView borderType="none" autohidesScrollers="YES" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" hasVerticalScroller="NO" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="42">
                     <rect key="frame" x="3" y="41" width="344" height="294"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                     <clipView key="contentView" drawsBackground="NO" copiesOnScroll="NO" id="BWd-Jd-FFj">
                         <rect key="frame" x="0.0" y="0.0" width="344" height="294"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view id="43">
+                            <view fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="43">
                                 <rect key="frame" x="0.0" y="0.0" width="344" height="294"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             </view>
@@ -43,16 +43,19 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </scroller>
                 </scrollView>
-                <customView wantsLayer="YES" id="48" customClass="HISeparatorView">
+                <customView wantsLayer="YES" translatesAutoresizingMaskIntoConstraints="NO" id="48" customClass="HISeparatorView">
                     <rect key="frame" x="8" y="41" width="334" height="1"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="1" id="xls-Po-YYh"/>
+                    </constraints>
                     <shadow key="shadow" blurRadius="1">
                         <size key="offset" width="0.0" height="-1"/>
                         <color key="color" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </shadow>
                 </customView>
-                <button wantsLayer="YES" id="49">
-                    <rect key="frame" x="8" y="8" width="75" height="25"/>
+                <button wantsLayer="YES" translatesAutoresizingMaskIntoConstraints="NO" id="49">
+                    <rect key="frame" x="8" y="8" width="34" height="25"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <shadow key="shadow" blurRadius="1">
                         <size key="offset" width="0.0" height="1"/>
@@ -67,70 +70,91 @@
                     </connections>
                 </button>
             </subviews>
+            <constraints>
+                <constraint firstItem="48" firstAttribute="leading" secondItem="47" secondAttribute="leading" constant="8" id="3Qf-K9-iKy"/>
+                <constraint firstAttribute="trailing" secondItem="42" secondAttribute="trailing" constant="3" id="517-Tq-DP2"/>
+                <constraint firstItem="49" firstAttribute="top" secondItem="48" secondAttribute="bottom" constant="8" id="CMK-G1-v0Y"/>
+                <constraint firstItem="42" firstAttribute="top" secondItem="47" secondAttribute="top" id="J6Z-0o-dIA"/>
+                <constraint firstItem="42" firstAttribute="leading" secondItem="47" secondAttribute="leading" constant="3" id="afJ-4B-ue8"/>
+                <constraint firstAttribute="trailing" secondItem="48" secondAttribute="trailing" constant="8" id="bKB-V6-sOJ"/>
+                <constraint firstItem="48" firstAttribute="top" secondItem="42" secondAttribute="bottom" constant="-1" id="kSf-Gv-cJy"/>
+                <constraint firstAttribute="bottom" secondItem="49" secondAttribute="bottom" constant="8" id="liU-8j-ci8"/>
+                <constraint firstItem="49" firstAttribute="leading" secondItem="47" secondAttribute="leading" constant="8" id="mgz-Xg-eME"/>
+            </constraints>
         </customView>
         <customView id="54" userLabel="Profile Scroll Content View" customClass="HIFlippedView">
-            <rect key="frame" x="0.0" y="0.0" width="251" height="161"/>
+            <rect key="frame" x="0.0" y="0.0" width="251" height="220"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
             <subviews>
-                <customView id="55">
-                    <rect key="frame" x="0.0" y="0.0" width="251" height="161"/>
-                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="56">
+                    <rect key="frame" x="28" y="183" width="195" height="17"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Mga Bitcoin address" id="68">
+                        <font key="font" size="13" name="Helvetica-Bold"/>
+                        <color key="textColor" red="0.57254901960000004" green="0.57254901960000004" blue="0.57254901960000004" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
+                <customView horizontalCompressionResistancePriority="1000" placeholderIntrinsicWidth="infinite" placeholderIntrinsicHeight="60" translatesAutoresizingMaskIntoConstraints="NO" id="58" userLabel="Bitcoin Addresses Box" customClass="HIAddressesBox">
+                    <rect key="frame" x="20" y="115" width="211" height="60"/>
+                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                </customView>
+                <customView wantsLayer="YES" focusRingType="none" placeholderIntrinsicWidth="211" placeholderIntrinsicHeight="42" translatesAutoresizingMaskIntoConstraints="NO" id="60" userLabel="Contact Info Box" customClass="HIBox">
+                    <rect key="frame" x="20" y="18" width="211" height="42"/>
+                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                     <subviews>
-                        <textField verticalHuggingPriority="750" id="56">
-                            <rect key="frame" x="28" y="124" width="195" height="17"/>
+                        <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="64">
+                            <rect key="frame" x="11" y="13" width="42" height="17"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                            <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Mga Bitcoin address" id="68">
-                                <font key="font" size="13" name="Helvetica-Bold"/>
-                                <color key="textColor" red="0.57254901960000004" green="0.57254901960000004" blue="0.57254901960000004" alpha="1" colorSpace="calibratedRGB"/>
+                            <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Email:" id="65">
+                                <font key="font" metaFont="system"/>
+                                <color key="textColor" red="0.75686274509999996" green="0.75686274509999996" blue="0.72549019609999998" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                             </textFieldCell>
                         </textField>
-                        <customView id="58" userLabel="Bitcoin Addresses Box" customClass="HIAddressesBox">
-                            <rect key="frame" x="20" y="115" width="211" height="1"/>
-                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
-                        </customView>
-                        <customView id="57">
-                            <rect key="frame" x="0.0" y="12" width="251" height="87"/>
-                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                            <subviews>
-                                <customView wantsLayer="YES" focusRingType="none" id="60" userLabel="Contact Info Box" customClass="HIBox">
-                                    <rect key="frame" x="20" y="6" width="211" height="42"/>
-                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
-                                    <subviews>
-                                        <textField verticalHuggingPriority="750" id="64">
-                                            <rect key="frame" x="11" y="13" width="42" height="17"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                            <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Email:" id="65">
-                                                <font key="font" metaFont="system"/>
-                                                <color key="textColor" red="0.75686274509999996" green="0.75686274509999996" blue="0.72549019609999998" alpha="1" colorSpace="calibratedRGB"/>
-                                                <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
-                                            </textFieldCell>
-                                        </textField>
-                                        <textField focusRingType="none" verticalHuggingPriority="750" id="63" customClass="HITextField">
-                                            <rect key="frame" x="58" y="10" width="41" height="22"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                            <textFieldCell key="cell" lineBreakMode="truncatingTail" selectable="YES" sendsActionOnEndEditing="YES" state="on" focusRingType="none" placeholderString="" id="66" customClass="HITextFieldCell">
-                                                <font key="font" size="14" name="Helvetica"/>
-                                                <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
-                                                <color key="backgroundColor" red="0.6705882353" green="0.6705882353" blue="0.6705882353" alpha="0.0" colorSpace="calibratedRGB"/>
-                                            </textFieldCell>
-                                        </textField>
-                                    </subviews>
-                                </customView>
-                                <textField verticalHuggingPriority="750" id="61">
-                                    <rect key="frame" x="28" y="55" width="195" height="17"/>
-                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Contact information" id="62">
-                                        <font key="font" size="13" name="Helvetica-Bold"/>
-                                        <color key="textColor" red="0.57254901960000004" green="0.57254901960000004" blue="0.57254901960000004" alpha="1" colorSpace="calibratedRGB"/>
-                                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
-                                    </textFieldCell>
-                                </textField>
-                            </subviews>
-                        </customView>
+                        <textField focusRingType="none" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="63" customClass="HITextField">
+                            <rect key="frame" x="58" y="12" width="54" height="18"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                            <textFieldCell key="cell" lineBreakMode="truncatingTail" selectable="YES" sendsActionOnEndEditing="YES" state="on" focusRingType="none" title="&lt;email>" placeholderString="" id="66" customClass="HITextFieldCell">
+                                <font key="font" size="14" name="Helvetica"/>
+                                <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                <color key="backgroundColor" red="0.6705882353" green="0.6705882353" blue="0.6705882353" alpha="0.0" colorSpace="calibratedRGB"/>
+                            </textFieldCell>
+                        </textField>
                     </subviews>
+                    <constraints>
+                        <constraint firstItem="64" firstAttribute="leading" secondItem="60" secondAttribute="leading" constant="13" id="61M-ey-1Od"/>
+                        <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="63" secondAttribute="trailing" constant="13" id="8x1-Ns-QMa"/>
+                        <constraint firstAttribute="centerY" secondItem="64" secondAttribute="centerY" constant="0.5" id="BAh-EU-fyK"/>
+                        <constraint firstItem="64" firstAttribute="centerY" secondItem="63" secondAttribute="centerY" constant="-0.5" id="utw-yB-x53"/>
+                        <constraint firstItem="63" firstAttribute="leading" secondItem="64" secondAttribute="trailing" constant="9" id="wDb-1a-dbg"/>
+                    </constraints>
                 </customView>
+                <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="61">
+                    <rect key="frame" x="28" y="67" width="195" height="17"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Contact information" id="62">
+                        <font key="font" size="13" name="Helvetica-Bold"/>
+                        <color key="textColor" red="0.57254901960000004" green="0.57254901960000004" blue="0.57254901960000004" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
             </subviews>
+            <constraints>
+                <constraint firstItem="58" firstAttribute="top" secondItem="56" secondAttribute="bottom" constant="8" id="0Km-4t-jvF"/>
+                <constraint firstItem="58" firstAttribute="leading" secondItem="54" secondAttribute="leading" constant="20" id="57G-Rv-L34"/>
+                <constraint firstAttribute="trailing" secondItem="61" secondAttribute="trailing" constant="30" id="9uM-Gx-GaH"/>
+                <constraint firstItem="61" firstAttribute="top" secondItem="58" secondAttribute="bottom" constant="31" id="CdG-mi-xfN"/>
+                <constraint firstItem="60" firstAttribute="top" secondItem="61" secondAttribute="bottom" constant="7" id="Fxx-Pn-Ovu"/>
+                <constraint firstItem="60" firstAttribute="leading" secondItem="54" secondAttribute="leading" constant="20" id="IZV-yQ-LoU"/>
+                <constraint firstAttribute="bottom" secondItem="60" secondAttribute="bottom" constant="18" id="P5K-WK-TiV"/>
+                <constraint firstItem="56" firstAttribute="leading" secondItem="54" secondAttribute="leading" constant="30" id="PHH-aQ-euZ"/>
+                <constraint firstItem="56" firstAttribute="top" secondItem="54" secondAttribute="top" constant="20" id="Trh-0d-S6G"/>
+                <constraint firstItem="61" firstAttribute="leading" secondItem="54" secondAttribute="leading" constant="30" id="ZNp-XW-TGN"/>
+                <constraint firstAttribute="trailing" secondItem="56" secondAttribute="trailing" constant="30" id="vk3-EY-uoY"/>
+                <constraint firstAttribute="trailing" secondItem="58" secondAttribute="trailing" constant="20" id="wku-XU-99E"/>
+                <constraint firstAttribute="trailing" secondItem="60" secondAttribute="trailing" constant="20" id="z4h-1v-U0V"/>
+            </constraints>
         </customView>
     </objects>
 </document>

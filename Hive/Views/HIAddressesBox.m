@@ -24,8 +24,14 @@ static NSString *const KEY_WALLET_HASH = @"walletHash";
     self = [super initWithFrame:frameRect];
     if (self) {
         _box = [[HIBox alloc] initWithFrame:self.bounds];
+        _box.translatesAutoresizingMaskIntoConstraints = NO;
         [self addSubview:_box];
-        _box.autoresizingMask = NSViewWidthSizable | NSViewHeightSizable;
+        [self addConstraints:@[
+            INSET_TOP(_box, 0.0),
+            INSET_LEFT(_box, 0.0),
+            INSET_BOTTOM(_box, 0.0),
+            INSET_RIGHT(_box, 0.0),
+        ]];
         _contentViews = [NSMutableArray new];
         [self updateAddresses];
     }
@@ -67,10 +73,12 @@ static NSString *const KEY_WALLET_HASH = @"walletHash";
     for (NSView *view in self.contentViews) {
         [self addSubview:view];
     }
+
+    [self invalidateIntrinsicContentSize];
 }
 
 - (NSView *)addressSeparatorViewAtIndex:(NSInteger)index {
-    NSRect frame = NSMakeRect(1, 60 * index, self.box.bounds.size.width - 2, 1);
+    NSRect frame = NSMakeRect(1, 60 * index, self.bounds.size.width - 2, 1);
     NSView *separator = [[NSView alloc] initWithFrame:frame];
 
     separator.wantsLayer = YES;
@@ -82,13 +90,13 @@ static NSString *const KEY_WALLET_HASH = @"walletHash";
 
 - (HICopyView *)copyViewAtIndex:(NSInteger)index forAddress:(HIAddress *)address {
     // build the copy view
-    NSRect copyViewFrame = NSMakeRect(0, index * 60, self.box.bounds.size.width, 60);
+    NSRect copyViewFrame = NSMakeRect(0, index * 60, self.bounds.size.width, 60);
     HICopyView *copyView = [[HICopyView alloc] initWithFrame:copyViewFrame];
     copyView.autoresizingMask = NSViewWidthSizable;
     copyView.contentToCopy = address.address;
 
     // build the name subview
-    NSRect nameFieldFrame = NSMakeRect(10, 30, self.box.bounds.size.width - 20, 21);
+    NSRect nameFieldFrame = NSMakeRect(10, 30, self.bounds.size.width - 20, 21);
     NSTextField *nameField = [[NSTextField alloc] initWithFrame:nameFieldFrame];
     [nameField.cell setLineBreakMode:NSLineBreakByTruncatingTail];
     [nameField setAutoresizingMask:(NSViewMinYMargin | NSViewWidthSizable)];
@@ -105,7 +113,7 @@ static NSString *const KEY_WALLET_HASH = @"walletHash";
     }
 
     // build the address subview
-    NSRect addressFieldFrame = NSMakeRect(10, 7, self.box.bounds.size.width - 20, 21);
+    NSRect addressFieldFrame = NSMakeRect(10, 7, self.bounds.size.width - 20, 21);
     NSTextField *addressField = [[NSTextField alloc] initWithFrame:addressFieldFrame];
     [addressField.cell setLineBreakMode:NSLineBreakByTruncatingMiddle];
     [addressField.cell setSelectable:YES];
@@ -136,7 +144,7 @@ static NSString *const KEY_WALLET_HASH = @"walletHash";
 }
 
 - (NSSize)intrinsicContentSize {
-    return CGSizeMake(-1, 60 * self.addresses.count);
+    return CGSizeMake(NSViewNoInstrinsicMetric, 60 * self.addresses.count);
 }
 
 #pragma mark - KVO

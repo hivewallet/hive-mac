@@ -9,6 +9,9 @@
 #import "HIButtonCell.h"
 #import "NSColor+Hive.h"
 
+static const float PADDING_X = 12.0;
+static const float PADDING_Y = 0.0;
+
 @implementation HIButtonCell
 
 - (void)drawBezelWithFrame:(NSRect)frame inView:(NSView *)controlView {
@@ -64,6 +67,13 @@
     [self.title drawAtPoint:drawRect.origin withAttributes:attrs];
     
     return drawRect;
+}
+
+- (NSSize)cellSize {
+    NSSize size = [super cellSize];
+    size.width += 2 * PADDING_X;
+    size.height += 2 * PADDING_Y;
+    return size;
 }
 
 @end
