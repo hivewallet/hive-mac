@@ -1,0 +1,130 @@
+[main]
+host = https://www.transifex.com
+lang_map = zh_CN: zh-Hans
+
+[hive-osx.Localizable]
+file_filter = Hive/<lang>.lproj/Localizable.strings
+source_file = Hive/en.lproj/Localizable.strings
+source_lang = en
+type = STRINGS
+
+[hive-osx.MainMenu]
+file_filter = Hive/<lang>.lproj/MainMenu.strings
+source_file = Hive/en.lproj/MainMenu.strings
+source_lang = en
+type = STRINGS
+
+[hive-osx.HIApplicationsViewController]
+file_filter = Hive/Controllers/<lang>.lproj/HIApplicationsViewController.strings
+source_file = Hive/Controllers/en.lproj/HIApplicationsViewController.strings
+source_lang = en
+type = STRINGS
+
+[hive-osx.HIBackupCenterWindowController]
+file_filter = Hive/Controllers/<lang>.lproj/HIBackupCenterWindowController.strings
+source_file = Hive/Controllers/en.lproj/HIBackupCenterWindowController.strings
+source_lang = en
+type = STRINGS
+
+[hive-osx.HIContactAutocompleteWindowController]
+file_filter = Hive/Controllers/<lang>.lproj/HIContactAutocompleteWindowController.strings
+source_file = Hive/Controllers/en.lproj/HIContactAutocompleteWindowController.strings
+source_lang = en
+type = STRINGS
+
+[hive-osx.HIContactInfoViewController]
+file_filter = Hive/Controllers/<lang>.lproj/HIContactInfoViewController.strings
+source_file = Hive/Controllers/en.lproj/HIContactInfoViewController.strings
+source_lang = en
+type = STRINGS
+
+[hive-osx.HIContactViewController]
+file_filter = Hive/Controllers/<lang>.lproj/HIContactViewController.strings
+source_file = Hive/Controllers/en.lproj/HIContactViewController.strings
+source_lang = en
+type = STRINGS
+
+[hive-osx.HIContactsViewController]
+file_filter = Hive/Controllers/<lang>.lproj/HIContactsViewController.strings
+source_file = Hive/Controllers/en.lproj/HIContactsViewController.strings
+source_lang = en
+type = STRINGS
+
+[hive-osx.HIDebuggingInfoWindowController]
+file_filter = Hive/Controllers/<lang>.lproj/HIDebuggingInfoWindowController.strings
+source_file = Hive/Controllers/en.lproj/HIDebuggingInfoWindowController.strings
+source_lang = en
+type = STRINGS
+
+[hive-osx.HIErrorWindowController]
+file_filter = Hive/Controllers/<lang>.lproj/HIErrorWindowController.strings
+source_file = Hive/Controllers/en.lproj/HIErrorWindowController.strings
+source_lang = en
+type = STRINGS
+
+[hive-osx.HIFeeDetailsViewController]
+file_filter = Hive/Controllers/<lang>.lproj/HIFeeDetailsViewController.strings
+source_file = Hive/Controllers/en.lproj/HIFeeDetailsViewController.strings
+source_lang = en
+type = STRINGS
+
+[hive-osx.HIMainWindowController]
+file_filter = Hive/Controllers/<lang>.lproj/HIMainWindowController.strings
+source_file = Hive/Controllers/en.lproj/HIMainWindowController.strings
+source_lang = en
+type = STRINGS
+
+[hive-osx.HINewContactViewController]
+file_filter = Hive/Controllers/<lang>.lproj/HINewContactViewController.strings
+source_file = Hive/Controllers/en.lproj/HINewContactViewController.strings
+source_lang = en
+type = STRINGS
+
+[hive-osx.HIPasswordChangeWindowController]
+file_filter = Hive/Controllers/<lang>.lproj/HIPasswordChangeWindowController.strings
+source_file = Hive/Controllers/en.lproj/HIPasswordChangeWindowController.strings
+source_lang = en
+type = STRINGS
+
+[hive-osx.HIPasswordInputViewController]
+file_filter = Hive/Controllers/<lang>.lproj/HIPasswordInputViewController.strings
+source_file = Hive/Controllers/en.lproj/HIPasswordInputViewController.strings
+source_lang = en
+type = STRINGS
+
+[hive-osx.HISendBitcoinsWindowController]
+file_filter = Hive/Controllers/<lang>.lproj/HISendBitcoinsWindowController.strings
+source_file = Hive/Controllers/en.lproj/HISendBitcoinsWindowController.strings
+source_lang = en
+type = STRINGS
+
+[hive-osx.HITransactionsViewController]
+file_filter = Hive/Controllers/<lang>.lproj/HITransactionsViewController.strings
+source_file = Hive/Controllers/en.lproj/HITransactionsViewController.strings
+source_lang = en
+type = STRINGS
+
+[hive-osx.HIWizardBackupViewController]
+file_filter = Hive/Controllers/<lang>.lproj/HIWizardBackupViewController.strings
+source_file = Hive/Controllers/en.lproj/HIWizardBackupViewController.strings
+source_lang = en
+type = STRINGS
+
+[hive-osx.HIWizardCompletedViewController]
+file_filter = Hive/Controllers/<lang>.lproj/HIWizardCompletedViewController.strings
+source_file = Hive/Controllers/en.lproj/HIWizardCompletedViewController.strings
+source_lang = en
+type = STRINGS
+
+[hive-osx.HIWizardPasswordViewController]
+file_filter = Hive/Controllers/<lang>.lproj/HIWizardPasswordViewController.strings
+source_file = Hive/Controllers/en.lproj/HIWizardPasswordViewController.strings
+source_lang = en
+type = STRINGS
+
+[hive-osx.HIWizardWelcomeViewController]
+file_filter = Hive/Controllers/<lang>.lproj/HIWizardWelcomeViewController.strings
+source_file = Hive/Controllers/en.lproj/HIWizardWelcomeViewController.strings
+source_lang = en
+type = STRINGS
+
