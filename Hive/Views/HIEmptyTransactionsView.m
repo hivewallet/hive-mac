@@ -16,6 +16,7 @@
     [super awakeFromNib];
 
     self.addressesBox.addresses = [HIProfile new].addresses.allObjects;
+    self.addressesBox.observingWallet = YES;
 }
 
 @end
