@@ -11,14 +11,8 @@
 /* Class = "NSTextFieldCell"; title = "✘ disabled"; ObjectID = "NSS-6s-Nas"; */
 "NSS-6s-Nas.title" = "✘ wyłączona";
 
-/* Class = "NSTextFieldCell"; title = "<backup 2>"; ObjectID = "Nax-LU-ZGP"; */
-"Nax-LU-ZGP.title" = "<backup 2>";
-
 /* Class = "NSTextFieldCell"; title = "✓ enabled"; ObjectID = "OI0-bL-7Zs"; */
 "OI0-bL-7Zs.title" = "✓ włączona";
-
-/* Class = "NSTextFieldCell"; title = "<backup 1>"; ObjectID = "R62-02-u5f"; */
-"R62-02-u5f.title" = "<backup 1>";
 
 /* Class = "NSButtonCell"; title = "Enable"; ObjectID = "f0R-BI-Nz4"; */
 "f0R-BI-Nz4.title" = "Włącz";

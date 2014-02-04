@@ -213,8 +213,5 @@
         <customObject id="494" customClass="HIAppDelegate"/>
         <customObject id="420" customClass="NSFontManager"/>
         <customObject id="869" customClass="SUUpdater"/>
-        <menuItem title="Είδος" id="800">
-            <modifierMask key="keyEquivalentModifierMask"/>
-        </menuItem>
     </objects>
 </document>

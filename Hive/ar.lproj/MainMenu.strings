@@ -32,9 +32,6 @@
 /* Class = "NSMenuItem"; title = "Show All"; ObjectID = "150"; */
 "150.title" = "أظهار الكل";
 
-/* Class = "NSMenuItem"; title = "Item"; ObjectID = "800"; */
-"800.title" = "عنصر";
-
 /* Class = "NSMenuItem"; title = "Edit"; ObjectID = "801"; */
 "801.title" = "تعديل";
 

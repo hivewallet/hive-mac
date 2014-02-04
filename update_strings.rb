@@ -30,10 +30,14 @@ class StringsFile
     @data = {}
 
     File.read(file).scan(%r{/\* ([^*]+) \*/[\n\r]+"(.+)" = "(.+)";?[\n\r]+}) do |info, original, translated|
-      unless options[:remove_ignored] && IGNORED_LABELS.include?(translated)
+      unless options[:remove_ignored] && should_be_ignored?(translated)
         @data[original] = { translated: translated, info: info }
       end
     end
+  end
+
+  def should_be_ignored?(string)
+    IGNORED_LABELS.include?(string) || string !~ /[[:alpha:]]/ || string =~ /^<.*>$/
   end
 
   def update_from(source, options = {})
