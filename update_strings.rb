@@ -5,6 +5,7 @@ IGNORED_LABELS = [
   "Box", "John Appleseed", "John Whatshisface", "Label", "Multiline Label", "OtherViews", "Text Cell", "Window",
 ]
 
+delete_untranslated = false
 print_untranslated = false
 language = nil
 
@@ -13,6 +14,8 @@ while i < ARGV.length
   arg = ARGV[i]
 
   case arg
+  when '-d'
+    delete_untranslated = true
   when '-u'
     print_untranslated = true
   when '-l'
@@ -44,10 +47,13 @@ class StringsFile
     rebuilt_data = {}
 
     should_print = options[:print_untranslated]
+    should_delete = options[:delete_untranslated]
 
     source.data.keys.each do |key|
       old_data = @data[key]
       new_data = source.data[key]
+
+      next if should_delete && (old_data.nil? || old_data[:translated] == new_data[:translated])
 
       rebuilt_data[key] = {
         translated: (old_data ? old_data[:translated] : new_data[:translated]),
@@ -58,6 +64,10 @@ class StringsFile
     end
 
     @data = rebuilt_data
+  end
+
+  def empty?
+    @data.empty?
   end
 
   def to_s
@@ -85,9 +95,18 @@ BASE_DIRECTORIES.each do |base|
 
       if File.exist?(translated_file)
         translated_data = StringsFile.new(translated_file)
-        translated_data.update_from(original_data, print_untranslated: print_untranslated)
+        translated_data.update_from(original_data,
+          print_untranslated: print_untranslated,
+          delete_untranslated: delete_untranslated
+        )
 
-        File.write(translated_file, translated_data)
+        if delete_untranslated && translated_data.empty?
+          File.unlink(translated_file)
+        else
+          File.write(translated_file, translated_data)
+        end
+      elsif !delete_untranslated
+        File.write(translated_file, original_data)
       end
     end
   end
