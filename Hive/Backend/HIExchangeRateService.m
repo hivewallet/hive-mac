@@ -130,7 +130,7 @@ static const NSTimeInterval HIExchangeRateMinimumUpdateInterval = 60.0;
 }
 
 - (BOOL)isExchangeRateUpdateNeeded {
-    return -[self.lastUpdate timeIntervalSinceNow] > HIExchangeRateMinimumUpdateInterval;
+    return [[NSDate date] timeIntervalSinceDate:self.lastUpdate] > HIExchangeRateMinimumUpdateInterval;
 }
 
 - (void)updateExchangeRatesFromResponse:(NSDictionary *)response {
