@@ -3,10 +3,12 @@
     <dependencies>
         <deployment defaultVersion="1070" identifier="macosx"/>
         <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="4514"/>
+        <plugIn identifier="com.apple.QTKitIBPlugin" version="3338"/>
     </dependencies>
     <objects>
         <customObject id="-2" userLabel="File's Owner" customClass="HICameraWindowController">
             <connections>
+                <outlet property="captureView" destination="1dd-Wb-fPW" id="gu6-LM-XG1"/>
                 <outlet property="window" destination="1" id="3"/>
             </connections>
         </customObject>
@@ -15,11 +17,40 @@
         <window title="Window" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" releasedWhenClosed="NO" wantsToBeColor="NO" animationBehavior="default" id="1">
             <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
             <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
-            <rect key="contentRect" x="196" y="240" width="480" height="270"/>
-            <rect key="screenRect" x="0.0" y="0.0" width="1680" height="1028"/>
+            <rect key="contentRect" x="196" y="240" width="533" height="300"/>
+            <rect key="screenRect" x="0.0" y="0.0" width="1920" height="1058"/>
             <view key="contentView" id="2">
-                <rect key="frame" x="0.0" y="0.0" width="480" height="270"/>
+                <rect key="frame" x="0.0" y="0.0" width="533" height="300"/>
                 <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <qtCaptureView toolTip="I'm a QTCaptureView eh?" focusRingType="none" translatesAutoresizingMaskIntoConstraints="NO" id="1dd-Wb-fPW">
+                        <rect key="frame" x="0.0" y="0.0" width="533" height="300"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="300" id="Bjv-na-FQp"/>
+                            <constraint firstAttribute="width" constant="533" id="IaB-hw-bmR"/>
+                        </constraints>
+                        <color key="fillColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                        <connections>
+                            <outlet property="delegate" destination="-2" id="G8I-mo-agZ"/>
+                        </connections>
+                    </qtCaptureView>
+                    <progressIndicator horizontalHuggingPriority="750" verticalHuggingPriority="750" maxValue="100" displayedWhenStopped="NO" bezeled="NO" indeterminate="YES" style="spinning" translatesAutoresizingMaskIntoConstraints="NO" id="HIL-Yr-DaC">
+                        <rect key="frame" x="251" y="134" width="32" height="32"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                        <connections>
+                            <binding destination="-2" name="animate" keyPath="waiting" id="xfe-DQ-FlD"/>
+                        </connections>
+                    </progressIndicator>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="1dd-Wb-fPW" firstAttribute="leading" secondItem="2" secondAttribute="leading" id="2s0-SJ-Pha"/>
+                    <constraint firstAttribute="bottom" secondItem="1dd-Wb-fPW" secondAttribute="bottom" id="383-Ul-of6"/>
+                    <constraint firstAttribute="centerY" secondItem="HIL-Yr-DaC" secondAttribute="centerY" id="IFE-F8-Xtm"/>
+                    <constraint firstAttribute="centerX" secondItem="HIL-Yr-DaC" secondAttribute="centerX" id="Lcz-HM-ZTU"/>
+                    <constraint firstAttribute="trailing" secondItem="1dd-Wb-fPW" secondAttribute="trailing" id="Nih-Qs-cvX"/>
+                    <constraint firstItem="1dd-Wb-fPW" firstAttribute="top" secondItem="2" secondAttribute="top" id="U2T-7s-NTQ"/>
+                </constraints>
             </view>
             <connections>
                 <outlet property="delegate" destination="-2" id="4"/>

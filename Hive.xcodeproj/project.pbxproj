@@ -48,6 +48,7 @@
 		2478B8D3184A80A400BA2C35 /* HIFeeDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2478B8D1184A80A400BA2C35 /* HIFeeDetailsViewController.m */; };
 		2478B8D5184A88E700BA2C35 /* HIFeeDetailsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2478B8D7184A88E700BA2C35 /* HIFeeDetailsViewController.xib */; };
 		2478B8F2184A89EA00BA2C35 /* HIFeeDetailsViewController.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2478B8F0184A89EA00BA2C35 /* HIFeeDetailsViewController.strings */; };
+		24E1291418A2B03F0064C075 /* QTKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 24E1291318A2B03F0064C075 /* QTKit.framework */; };
 		24E2C7C0189D93E6008E17CC /* HICameraWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 24E2C7BE189D93E6008E17CC /* HICameraWindowController.m */; };
 		24E2C7C1189D93E6008E17CC /* HICameraWindowController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 24E2C7BF189D93E6008E17CC /* HICameraWindowController.xib */; };
 		24EAAFC1186E1BBD00E1D2D3 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 24EAAFC0186E1BBD00E1D2D3 /* XCTest.framework */; };
@@ -446,6 +447,7 @@
 		2478B908184A8A0200BA2C35 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/HIFeeDetailsViewController.strings; sourceTree = "<group>"; };
 		2478B909184A8A0200BA2C35 /* sr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = sr; path = sr.lproj/HIFeeDetailsViewController.strings; sourceTree = "<group>"; };
 		2478B90A184A8A0300BA2C35 /* sr-Latn */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "sr-Latn"; path = "sr-Latn.lproj/HIFeeDetailsViewController.strings"; sourceTree = "<group>"; };
+		24E1291318A2B03F0064C075 /* QTKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QTKit.framework; path = System/Library/Frameworks/QTKit.framework; sourceTree = SDKROOT; };
 		24E2C7BD189D93E6008E17CC /* HICameraWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HICameraWindowController.h; sourceTree = "<group>"; };
 		24E2C7BE189D93E6008E17CC /* HICameraWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HICameraWindowController.m; sourceTree = "<group>"; };
 		24E2C7BF189D93E6008E17CC /* HICameraWindowController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HICameraWindowController.xib; sourceTree = "<group>"; };
@@ -1699,6 +1701,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				24E1291418A2B03F0064C075 /* QTKit.framework in Frameworks */,
 				5884A00F17F1B63D004A31FA /* Tor.framework in Frameworks */,
 				D91FE827179887C5001B37D8 /* libz.dylib in Frameworks */,
 				D901F4F917B273440071780D /* BitcoinJKit.framework in Frameworks */,
@@ -2178,6 +2181,7 @@
 		D9A591C61767B4A800502635 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				24E1291318A2B03F0064C075 /* QTKit.framework */,
 				1EFBACBE45EB458A8ED83785 /* libPods.a */,
 				D91FE826179887C4001B37D8 /* libz.dylib */,
 				D9A591C71767B4A800502635 /* Cocoa.framework */,
