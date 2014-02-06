@@ -6,7 +6,7 @@
 "62.title" = "Coordonnées";
 
 /* Class = "NSTextFieldCell"; title = "Email:"; ObjectID = "65"; */
-"65.title" = "Courriel:";
+"65.title" = "Courriel :";
 
 /* Class = "NSTextFieldCell"; title = "Bitcoin addresses"; ObjectID = "68"; */
-"68.title" = "Addresses Bitcoin";
+"68.title" = "Adresses Bitcoin";

@@ -1,6 +1,6 @@
 
 /* Class = "NSButtonCell"; title = "Save"; ObjectID = "14"; */
-"14.title" = "Save";
+"14.title" = "Enregistrer";
 
 /* Class = "NSTextFieldCell"; title = "Contact information"; ObjectID = "75"; */
 "75.title" = "Coordonnées";
@@ -15,7 +15,7 @@
 "81.title" = "Adresses Bitcoin";
 
 /* Class = "NSButtonCell"; title = "Remove contact"; ObjectID = "97"; */
-"97.title" = "Supprimer le contact";
+"97.title" = "Enlever le contact";
 
 /* Class = "NSTextFieldCell"; title = "edit"; ObjectID = "107"; */
 "107.title" = "modifier";

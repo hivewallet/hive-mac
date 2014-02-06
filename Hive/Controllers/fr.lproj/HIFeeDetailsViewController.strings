@@ -3,7 +3,7 @@
 "JVe-5I-zWC.title" = "Les frais que vous payez aide au fonctionnement du réseau Bitcoin !";
 
 /* Class = "NSTextFieldCell"; title = "Current transaction fee:"; ObjectID = "exO-xB-xYk"; */
-"exO-xB-xYk.title" = "Frais de la transaction actuelle:";
+"exO-xB-xYk.title" = "Frais de la transaction actuelle :";
 
 /* Class = "NSTextFieldCell"; title = "Learn more…"; ObjectID = "kHH-z3-bVk"; */
 "kHH-z3-bVk.title" = "En apprendre plus…";

@@ -69,7 +69,7 @@
 "857.title" = "Minimiser";
 
 /* Class = "NSMenuItem"; title = "Zoom"; ObjectID = "858"; */
-"858.title" = "Agrandir";
+"858.title" = "Zoom";
 
 /* Class = "NSMenuItem"; title = "Bring All to Front"; ObjectID = "860"; */
 "860.title" = "Tout ramener vers l'avant";

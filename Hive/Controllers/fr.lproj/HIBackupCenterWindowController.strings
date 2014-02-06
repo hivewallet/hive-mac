@@ -12,7 +12,7 @@
 "CNI-B2-pea.title" = "État";
 
 /* Class = "NSButtonCell"; title = "Enable"; ObjectID = "brF-Bb-pc1"; */
-"brF-Bb-pc1.title" = "Activé";
+"brF-Bb-pc1.title" = "Activer";
 
 /* Class = "NSTableColumn"; headerCell.title = "Backup type"; ObjectID = "gS6-M0-vFe"; */
 "gS6-M0-vFe.headerCell.title" = "Type de sauvegarde";

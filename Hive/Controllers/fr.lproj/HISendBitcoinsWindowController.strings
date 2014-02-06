@@ -9,7 +9,7 @@
 "10.title" = "Envoyer";
 
 /* Class = "NSTextFieldCell"; title = "To:"; ObjectID = "14"; */
-"14.title" = "À:";
+"14.title" = "À :";
 
 /* Class = "NSTextFieldCell"; placeholderString = "Type to search..."; ObjectID = "20"; */
 "20.placeholderString" = "Taper pour rechercher...";
@@ -18,4 +18,4 @@
 "22.title" = "Adresse principale";
 
 /* Class = "NSTextFieldCell"; title = "Currency exchange rates are provided by BitcoinAverage markets ticker. Bitcoin prices can change quickly, so other apps or sites might show different exchange rates."; ObjectID = "dxM-9E-wwb"; */
-"dxM-9E-wwb.title" = "Currency exchange rates are provided by BitcoinAverage markets ticker. Bitcoin prices can change quickly, so other apps or sites might show different exchange rates.";
+"dxM-9E-wwb.title" = "Les taux de change sont fournis par le téléscripteur des marchés de BitcoinAverage. Les prix du bitcoin peuvent changer rapidement, et ainsi d'autres applis ou sites peuvent afficher des taux de change différents";

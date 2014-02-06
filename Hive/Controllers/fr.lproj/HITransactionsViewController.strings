@@ -6,7 +6,7 @@
 "41.title" = "Date";
 
 /* Class = "NSTextFieldCell"; title = "Looks like you haven't made any transactions yet. Send someone some Bitcoin!"; ObjectID = "54"; */
-"54.title" = "Il semblerait que vous n'ayez effectué aucune transaction. Envoyez quelques bitcoins à quelqu'un !";
+"54.title" = "Il semblerait que vous n'ayez effectué aucune transaction. Envoyez une fraction de  bitcoin à quelqu'un !";
 
 /* Class = "NSButtonCell"; title = "Send Bitcoin"; ObjectID = "55"; */
 "55.title" = "Envoyer des bitcoins";
