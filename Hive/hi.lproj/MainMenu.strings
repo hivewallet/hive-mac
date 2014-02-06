@@ -42,7 +42,7 @@
 "804.title" = "इनकार करें";
 
 /* Class = "NSMenuItem"; title = "Redo"; ObjectID = "805"; */
-"805.title" = " दोबारा करें";
+"805.title" = "दोबारा करें";
 
 /* Class = "NSMenuItem"; title = "Cut"; ObjectID = "807"; */
 "807.title" = "कट करें";

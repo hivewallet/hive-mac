@@ -9,7 +9,7 @@
 "54.title" = "معلوم ھوتاھے آپ نے ابھی تک کسی سے کوئی لین دین نہیں کی . کسی کو کچھ Bitcoin بھیجیں!";
 
 /* Class = "NSButtonCell"; title = "Send Bitcoin"; ObjectID = "55"; */
-"55.title" = "Bitcoin بھیجیں ";
+"55.title" = "Bitcoin بھیجیں";
 
 /* Class = "NSTextFieldCell"; title = "You can then use the Send button to send someone money."; ObjectID = "63"; */
 "63.title" = "اس کے بعد کسی کو رقم بھیجنے کے لیے بھیجنے والے بٹن کواستعمال کرسکتےھیں";

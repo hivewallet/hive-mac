@@ -129,7 +129,7 @@
 "Hive cannot be started." = "Hive n'a pas pu être démarré.";
 
 /* Database error alert title */
-"Hive database file cannot be opened." = "Impossible d'ouvrir le fichier de base de données de Hive. ";
+"Hive database file cannot be opened." = "Impossible d'ouvrir le fichier de base de données de Hive.";
 
 /* Backup error message */
 "Hive directory is excluded from Time Machine backup" = "Le répertoire de Hive est exclus des sauvegardes de Time Machine";

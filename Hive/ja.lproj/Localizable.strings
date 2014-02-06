@@ -90,7 +90,7 @@
 "Do you really want to remove %@ from your contact list?" = "本当に %@ をコンタクトリストから外す？";
 
 /* Install app popup title */
-"Do you want to add \"%@\" to Hive?" = " \"%@\" をハイブに参加する";
+"Do you want to add \"%@\" to Hive?" = "\"%@\" をハイブに参加する";
 
 /* Backup error message */
 "Dropbox folder not found" = "ドロップボックスフォルダー見つけれなかった";
@@ -153,7 +153,7 @@
 "Label" = "ラベル";
 
 /* On what date was the last backup done */
-"Last backup on %@" = " 最新のバックアップは　%@　にだった";
+"Last backup on %@" = "最新のバックアップは　%@　にだった";
 
 /* Lastname field placeholder */
 "Lastname" = "姓";
@@ -171,7 +171,7 @@
 "No address entered." = "アドレスを入力していない.";
 
 /* Backup is outdated, last backup was on that date */
-"No backup since %@" = " %@は最新のバックアップだった";
+"No backup since %@" = "%@は最新のバックアップだった";
 
 /* Transaction failed alert message */
 "No Bitcoin have been taken from your wallet." = "ビットコインの出発は失敗.";
@@ -207,10 +207,10 @@
 "Quitting now will lose any changes you have made since the last successful save" = "今を閉じる場合、最新の保存以来の変更が保存しない";
 
 /* Received amount of BTC from unknown source */
-"Received &a" = " &a が届いた";
+"Received &a" = "&a が届いた";
 
 /* Received amount of BTC from contact */
-"Received &a from &c" = " &c から　&a　をもらった ";
+"Received &a from &c" = "&c から　&a　をもらった";
 
 /* Install app button title when app exists */
 "Reinstall" = "再インストール";
@@ -225,7 +225,7 @@
 "Send" = "送る";
 
 /* Sent amount of BTC to a contact/address */
-"Sent &a to &c" = " &c　に　&a　を送る　";
+"Sent &a to &c" = "&c　に　&a　を送る　";
 
 /* Amount exceeds available balance alert title */
 "Some funds are temporarily unavailable." = "只今はこのコイン額程使えない";
@@ -300,7 +300,7 @@
 "You have already added \"%@\" to Hive. Would you like to overwrite it?" = "もう　\"%@\" はインストールされている。もう一度再インストールしたい?";
 
 /* Notification of confirmed sent transaction (with BTC amount) */
-"You have sent %@." = " %@　をおくりました";
+"You have sent %@." = "%@　をおくりました";
 
 /* Dropbox no backup folder alert details */
 "You must install Dropbox first (see www.dropbox.com)." = "ドロップボックスをインストールする必要 ( www.dropbox.com　でご覧ください).";

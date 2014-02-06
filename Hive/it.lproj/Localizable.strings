@@ -297,7 +297,7 @@
 "You cannot send more money than you own." = "Non puoi inviare più soldi di quelli che hai.";
 
 /* Install app popup title when app exists */
-"You have already added \"%@\" to Hive. Would you like to overwrite it?" = " Hai già aggiunto \"%@\" ad Hive. Vuoi sostituirlo?";
+"You have already added \"%@\" to Hive. Would you like to overwrite it?" = "Hai già aggiunto \"%@\" ad Hive. Vuoi sostituirlo?";
 
 /* Notification of confirmed sent transaction (with BTC amount) */
 "You have sent %@." = "Hai inviato %@.";

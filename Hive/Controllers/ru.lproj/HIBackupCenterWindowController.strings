@@ -15,7 +15,7 @@
 "brF-Bb-pc1.title" = "Включить";
 
 /* Class = "NSTableColumn"; headerCell.title = "Backup type"; ObjectID = "gS6-M0-vFe"; */
-"gS6-M0-vFe.headerCell.title" = "Тип резервной копии ";
+"gS6-M0-vFe.headerCell.title" = "Тип резервной копии";
 
 /* Class = "NSTableColumn"; headerCell.title = "Status"; ObjectID = "ggB-aI-7mE"; */
 "ggB-aI-7mE.headerCell.title" = "Статус";
