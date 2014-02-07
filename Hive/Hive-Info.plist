@@ -64,7 +64,7 @@ Released under GNU GPL license version 2 or later.</string>
 	<key>SUEnableAutomaticChecks</key>
 	<true/>
 	<key>SUFeedURL</key>
-	<string>http://grabhive.com/hive-osx-appcast.xml</string>
+	<string>https://hivewallet.com/hive-osx-appcast.xml</string>
 	<key>SUPublicDSAKeyFile</key>
 	<string>dsa_pub.pem</string>
 </dict>
