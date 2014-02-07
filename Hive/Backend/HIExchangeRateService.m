@@ -57,8 +57,8 @@ static const NSTimeInterval HIExchangeRateMinimumUpdateInterval = 60.0;
     dispatch_once(&onceToken, ^ {
         availableCurrencies =
             @[
-              @"AUD", @"BRL", @"CAD", @"CHF", @"CNY", @"CZK", @"EUR", @"GBP", @"ILS", @"JPY",
-              @"NOK", @"NZD", @"PLN", @"RUB", @"SEK", @"SGD", @"USD", @"ZAR",
+              @"AUD", @"BRL", @"CAD", @"CHF", @"CNY", @"EUR", @"GBP", @"ILS", @"JPY",
+              @"NOK", @"NZD", @"PLN", @"RUB", @"SEK", @"SGD", @"TRY", @"USD", @"ZAR",
             ];
     });
     return availableCurrencies;
@@ -140,6 +140,11 @@ static const NSTimeInterval HIExchangeRateMinimumUpdateInterval = 60.0;
 }
 
 - (void)updateExchangeRatesForCurrency:(NSString *)currency fromResponse:(NSDictionary *)response {
+    if (!response[currency]) {
+        HILogWarn(@"No currency info returned for %@", currency);
+        return;
+    }
+
     NSString *string = [response[currency][@"last"] description];
     NSDecimalNumber *exchangeRate = [NSDecimalNumber decimalNumberWithString:string
                                                                       locale:@{NSLocaleDecimalSeparator: @"."}];
