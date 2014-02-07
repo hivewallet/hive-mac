@@ -107,7 +107,7 @@
                                     <action selector="undo:" target="-1" id="848"/>
                                 </connections>
                             </menuItem>
-                            <menuItem title=" दोबारा करें" keyEquivalent="Z" id="805">
+                            <menuItem title="दोबारा करें" keyEquivalent="Z" id="805">
                                 <modifierMask key="keyEquivalentModifierMask" shift="YES" command="YES"/>
                             </menuItem>
                             <menuItem isSeparatorItem="YES" id="806">

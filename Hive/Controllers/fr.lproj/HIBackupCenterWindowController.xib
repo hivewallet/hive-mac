@@ -145,7 +145,7 @@
                                                         <button verticalHuggingPriority="750" id="WsG-jX-84n">
                                                             <rect key="frame" x="3" y="19" width="100" height="23"/>
                                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                                            <buttonCell key="cell" type="smallSquare" title="Activé" bezelStyle="smallSquare" imagePosition="overlaps" alignment="center" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="brF-Bb-pc1">
+                                                            <buttonCell key="cell" type="smallSquare" title="Activer" bezelStyle="smallSquare" imagePosition="overlaps" alignment="center" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="brF-Bb-pc1">
                                                                 <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                                                 <font key="font" metaFont="system"/>
                                                             </buttonCell>

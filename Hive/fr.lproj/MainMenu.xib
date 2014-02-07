@@ -192,7 +192,7 @@
                                     <action selector="performClose:" target="-1" id="865"/>
                                 </connections>
                             </menuItem>
-                            <menuItem title="Agrandir" id="858">
+                            <menuItem title="Zoom" id="858">
                                 <connections>
                                     <action selector="performZoom:" target="-1" id="862"/>
                                 </connections>
