@@ -1,6 +1,5 @@
 #import <AFNetworking/AFHTTPClient.h>
 #import <AFNetworking/AFHTTPRequestOperation.h>
-#import <BitcoinJKit/HILogger.h>
 #import "BCClient.h"
 #import "HIExchangeRateService.h"
 
@@ -145,8 +144,6 @@ static const NSTimeInterval HIExchangeRateMinimumUpdateInterval = 60.0;
     NSDecimalNumber *exchangeRate = [NSDecimalNumber decimalNumberWithString:string
                                                                       locale:@{NSLocaleDecimalSeparator: @"."}];
 
-    HILogInfo(@"Got response from exchange rate API for %@: %@", currency, string);
-
     if (exchangeRate && exchangeRate != [NSDecimalNumber notANumber]) {
         self.exchangeRates[currency] = exchangeRate;
     } else {
@@ -193,12 +190,10 @@ static const NSTimeInterval HIExchangeRateMinimumUpdateInterval = 60.0;
 - (void)didChangeAppNapState:(NSNotification *)notification {
     BOOL visible = [self shouldUpdateAutomatically];
     if (visible) {
-        HILogDebug(@"Hive became visible");
         if (self.observers.count > 0) {
             [self performAutomaticUpdate];
         }
     } else {
-        HILogDebug(@"Hive became invisible");
         [self cancelAutomaticUpdate];
     }
 }

@@ -6,8 +6,6 @@
 //  Copyright (c) 2013 Hive Developers. All rights reserved.
 //
 
-#import <BitcoinJKit/HILogger.h>
-
 #import "HIAppDelegate.h"
 #import "HIApplicationRuntimeViewController.h"
 #import "HIAppRuntimeBridge.h"
