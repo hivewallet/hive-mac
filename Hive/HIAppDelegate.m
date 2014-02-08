@@ -32,6 +32,7 @@
 #import "HINotificationService.h"
 #import "HIPasswordChangeWindowController.h"
 #import "HISendBitcoinsWindowController.h"
+#import "HISendFeedbackService.h"
 #import "HITransaction.h"
 #import "HITransactionsViewController.h"
 #import "HIWizardWindowController.h"
@@ -551,6 +552,9 @@ void handleException(NSException *exception) {
     [self openPopupWindowWithClass:[HIBackupCenterWindowController class]];
 }
 
+- (IBAction)sendFeedback:(id)sender {
+    [[HISendFeedbackService sharedService] sendSupportEmail];
+}
 
 #pragma mark - Window handling
 
