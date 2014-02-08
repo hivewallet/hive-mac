@@ -11,6 +11,7 @@
 @property (nonatomic, strong) IBOutlet QTCaptureView *captureView;
 
 @property (nonatomic, assign) BOOL waiting;
+@property (nonatomic, assign) BOOL scanning;
 @property (nonatomic, strong) QTCaptureSession *captureSession;
 
 @end
@@ -82,11 +83,19 @@
 #pragma mark - barcode
 
 - (void)processImage:(CIImage *)image {
-    NSString *scannedBarcode = [self scanBarcodeInImage:image];
-    if (scannedBarcode) {
-        if ([[HIBitcoinUrlService sharedService] handleBitcoinUrlString:scannedBarcode]) {
-            [self.window performClose:nil];
-        }
+    if (!self.scanning) {
+        self.scanning = YES;
+        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+            NSString *scannedBarcode = [self scanBarcodeInImage:image];
+            dispatch_async(dispatch_get_main_queue(), ^{
+                self.scanning = NO;
+                if (scannedBarcode) {
+                    if ([[HIBitcoinUrlService sharedService] handleBitcoinUrlString:scannedBarcode]) {
+                        [self.window performClose:nil];
+                    }
+                }
+            });
+        });
     }
 }
 
