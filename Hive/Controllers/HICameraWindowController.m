@@ -1,6 +1,10 @@
 #import "HICameraWindowController.h"
 
+#import "HIBitcoinUrlService.h"
+#import "ZXLuminanceSource.h"
+
 #import <QTKit/QTkit.h>
+#import <ZXingObjC/ZXingObjC.h>
 
 @interface HICameraWindowController ()<NSWindowDelegate>
 
@@ -71,7 +75,32 @@
 
 - (CIImage *)view:(QTMovieView *)view willDisplayImage:(CIImage *)image {
     self.waiting = NO;
+    [self processImage:image];
     return [image imageByApplyingTransform:CGAffineTransformMakeScale(-1, 1)];
+}
+
+#pragma mark - barcode
+
+- (void)processImage:(CIImage *)image {
+    NSString *scannedBarcode = [self scanBarcodeInImage:image];
+    if (scannedBarcode) {
+        if ([[HIBitcoinUrlService sharedService] handleBitcoinUrlString:scannedBarcode]) {
+            [self.window performClose:nil];
+        }
+    }
+}
+
+- (NSString *)scanBarcodeInImage:(CIImage *)image {
+
+    NSBitmapImageRep *rep = [[NSBitmapImageRep alloc] initWithCIImage:image];
+    CGImageRef imageToDecode = rep.CGImage;
+
+    ZXLuminanceSource *source = [[ZXCGImageLuminanceSource alloc] initWithCGImage:imageToDecode];
+    ZXBinaryBitmap *bitmap = [ZXBinaryBitmap binaryBitmapWithBinarizer:[ZXHybridBinarizer binarizerWithSource:source]];
+
+    ZXMultiFormatReader *reader = [ZXMultiFormatReader reader];
+    ZXResult *result = [reader decode:bitmap error:NULL];
+    return result.text;
 }
 
 @end
