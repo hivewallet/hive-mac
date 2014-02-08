@@ -18,7 +18,7 @@
             <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
             <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
             <rect key="contentRect" x="196" y="240" width="533" height="300"/>
-            <rect key="screenRect" x="0.0" y="0.0" width="1920" height="1058"/>
+            <rect key="screenRect" x="0.0" y="0.0" width="1680" height="1028"/>
             <view key="contentView" id="2">
                 <rect key="frame" x="0.0" y="0.0" width="533" height="300"/>
                 <autoresizingMask key="autoresizingMask"/>
@@ -35,9 +35,19 @@
                             <outlet property="delegate" destination="-2" id="G8I-mo-agZ"/>
                         </connections>
                     </qtCaptureView>
-                    <progressIndicator horizontalHuggingPriority="750" verticalHuggingPriority="750" maxValue="100" displayedWhenStopped="NO" bezeled="NO" indeterminate="YES" style="spinning" translatesAutoresizingMaskIntoConstraints="NO" id="HIL-Yr-DaC">
+                    <progressIndicator wantsLayer="YES" horizontalHuggingPriority="750" verticalHuggingPriority="750" maxValue="100" displayedWhenStopped="NO" bezeled="NO" indeterminate="YES" style="spinning" translatesAutoresizingMaskIntoConstraints="NO" id="HIL-Yr-DaC">
                         <rect key="frame" x="251" y="134" width="32" height="32"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                        <contentFilters>
+                            <ciFilter name="CIColorControls">
+                                <configuration>
+                                    <real key="inputBrightness" value="1"/>
+                                    <real key="inputContrast" value="1"/>
+                                    <null key="inputImage"/>
+                                    <real key="inputSaturation" value="1"/>
+                                </configuration>
+                            </ciFilter>
+                        </contentFilters>
                         <connections>
                             <binding destination="-2" name="animate" keyPath="waiting" id="xfe-DQ-FlD"/>
                         </connections>
