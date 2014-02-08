@@ -1,0 +1,45 @@
+#import "HIBitcoinUrlService.h"
+
+#import "HIBitcoinURL.h"
+#import "HISendBitcoinsWindowController.h"
+
+@implementation HIBitcoinUrlService
+
++ (HIBitcoinUrlService *)sharedService {
+    static HIBitcoinUrlService *sharedService = nil;
+    static dispatch_once_t oncePredicate;
+
+    if (!sharedService) {
+        dispatch_once(&oncePredicate, ^{
+            sharedService = [[self class] new];
+        });
+    }
+
+    return sharedService;
+}
+
+- (BOOL)handleBitcoinUrlString:(NSString *)bitcoinUrlString {
+    HILogDebug(@"Opening bitcoin URL %@", bitcoinUrlString);
+
+    HIBitcoinURL *bitcoinURL = [[HIBitcoinURL alloc] initWithURLString:bitcoinUrlString];
+    HILogDebug(@"Parsed URL as %@", bitcoinURL);
+
+    if (bitcoinURL.valid) {
+        HIAppDelegate *appDelegate = [NSApplication sharedApplication].delegate;
+        HISendBitcoinsWindowController *window = [appDelegate sendBitcoinsWindow];
+
+        if (bitcoinURL.address) {
+            [window setHashAddress:bitcoinURL.address];
+        }
+
+        if (bitcoinURL.amount) {
+            [window setLockedAmount:bitcoinURL.amount];
+        }
+
+        [window showWindow:self];
+    }
+
+    return bitcoinURL.valid;
+}
+
+@end

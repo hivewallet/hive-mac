@@ -21,7 +21,7 @@
 #import "HIApplicationURLProtocol.h"
 #import "HIBackupCenterWindowController.h"
 #import "HIBackupManager.h"
-#import "HIBitcoinURL.h"
+#import "HIBitcoinUrlService.h"
 #import "HICameraWindowController.h"
 #import "HIDatabaseManager.h"
 #import "HIDebuggingInfoWindowController.h"
@@ -334,27 +334,10 @@ static int ddLogLevel = LOG_LEVEL_VERBOSE;
 // handler for bitcoin:xxx URLs
 - (void)handleURLEvent:(NSAppleEventDescriptor *)event withReplyEvent:(NSAppleEventDescriptor *)reply {
     NSString *URLString = [[event paramDescriptorForKeyword:keyDirectObject] stringValue];
-    HILogDebug(@"Opening bitcoin URL %@", URLString);
-
-    HIBitcoinURL *bitcoinURL = [[HIBitcoinURL alloc] initWithURLString:URLString];
-    HILogDebug(@"Parsed URL as %@", bitcoinURL);
-
-    if (bitcoinURL.valid) {
-        // run this asynchronously, in case the app is still launching and UI is not fully set up yet
-        dispatch_async(dispatch_get_main_queue(), ^{
-            HISendBitcoinsWindowController *window = [self sendBitcoinsWindow];
-
-            if (bitcoinURL.address) {
-                [window setHashAddress:bitcoinURL.address];
-            }
-
-            if (bitcoinURL.amount) {
-                [window setLockedAmount:bitcoinURL.amount];
-            }
-
-            [window showWindow:self];
-        });
-    }
+    // run this asynchronously, in case the app is still launching and UI is not fully set up yet
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [[HIBitcoinUrlService sharedService] handleBitcoinUrlString:URLString];
+    });
 }
 
 // Returns the NSUndoManager for the application.
