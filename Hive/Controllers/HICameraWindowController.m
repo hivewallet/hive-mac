@@ -112,8 +112,13 @@ static const NSTimeInterval SCAN_INTERVAL = .25;
     ZXLuminanceSource *source = [[ZXCGImageLuminanceSource alloc] initWithCGImage:imageToDecode];
     ZXBinaryBitmap *bitmap = [ZXBinaryBitmap binaryBitmapWithBinarizer:[ZXHybridBinarizer binarizerWithSource:source]];
 
+    ZXDecodeHints *hints = [ZXDecodeHints hints];
+    [hints addPossibleFormat:kBarcodeFormatQRCode];
+
     ZXMultiFormatReader *reader = [ZXMultiFormatReader reader];
-    ZXResult *result = [reader decode:bitmap error:NULL];
+    ZXResult *result = [reader decode:bitmap
+                                hints:hints
+                                error:NULL];
     return result.text;
 }
 
