@@ -6,6 +6,8 @@
 #import <QTKit/QTkit.h>
 #import <ZXingObjC/ZXingObjC.h>
 
+static const NSTimeInterval SCAN_INTERVAL = .25;
+
 @interface HICameraWindowController ()<NSWindowDelegate>
 
 @property (nonatomic, strong) IBOutlet QTCaptureView *captureView;
@@ -13,6 +15,7 @@
 @property (nonatomic, assign) BOOL waiting;
 @property (nonatomic, assign) BOOL scanning;
 @property (nonatomic, strong) QTCaptureSession *captureSession;
+@property (nonatomic, copy) NSDate *lastScanDate;
 
 @end
 
@@ -32,6 +35,7 @@
         }
 
         _waiting = YES;
+        _lastScanDate = [NSDate dateWithTimeIntervalSince1970:0];
     }
 
     return self;
@@ -83,7 +87,8 @@
 #pragma mark - barcode
 
 - (void)processImage:(CIImage *)image {
-    if (!self.scanning) {
+    if (!self.scanning && [[NSDate new] timeIntervalSinceDate:self.lastScanDate] > SCAN_INTERVAL) {
+        self.lastScanDate = [NSDate new];
         self.scanning = YES;
         dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
             NSString *scannedBarcode = [self scanBarcodeInImage:image];
