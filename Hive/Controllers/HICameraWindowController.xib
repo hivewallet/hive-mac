@@ -17,14 +17,14 @@
         <window title="Window" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" releasedWhenClosed="NO" wantsToBeColor="NO" animationBehavior="default" id="1">
             <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
             <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
-            <rect key="contentRect" x="196" y="240" width="533" height="300"/>
+            <rect key="contentRect" x="196" y="240" width="533" height="360"/>
             <rect key="screenRect" x="0.0" y="0.0" width="1680" height="1028"/>
             <view key="contentView" id="2">
-                <rect key="frame" x="0.0" y="0.0" width="533" height="300"/>
+                <rect key="frame" x="0.0" y="0.0" width="533" height="360"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <qtCaptureView toolTip="I'm a QTCaptureView eh?" focusRingType="none" translatesAutoresizingMaskIntoConstraints="NO" id="1dd-Wb-fPW">
-                        <rect key="frame" x="0.0" y="0.0" width="533" height="300"/>
+                        <rect key="frame" x="0.0" y="60" width="533" height="300"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="300" id="Bjv-na-FQp"/>
@@ -36,7 +36,7 @@
                         </connections>
                     </qtCaptureView>
                     <progressIndicator wantsLayer="YES" horizontalHuggingPriority="750" verticalHuggingPriority="750" maxValue="100" displayedWhenStopped="NO" bezeled="NO" indeterminate="YES" style="spinning" translatesAutoresizingMaskIntoConstraints="NO" id="HIL-Yr-DaC">
-                        <rect key="frame" x="251" y="134" width="32" height="32"/>
+                        <rect key="frame" x="251" y="194" width="32" height="32"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                         <contentFilters>
                             <ciFilter name="CIColorControls">
@@ -52,14 +52,25 @@
                             <binding destination="-2" name="animate" keyPath="waiting" id="xfe-DQ-FlD"/>
                         </connections>
                     </progressIndicator>
+                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="6va-P5-GTf">
+                        <rect key="frame" x="107" y="20" width="320" height="20"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Hold up a Bitcoin QR code to the camera!" id="r6F-kg-ECk">
+                            <font key="font" size="16" name="Helvetica-Bold"/>
+                            <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                        </textFieldCell>
+                    </textField>
                 </subviews>
                 <constraints>
+                    <constraint firstAttribute="centerX" secondItem="6va-P5-GTf" secondAttribute="centerX" id="1L8-Eb-0WM"/>
                     <constraint firstItem="1dd-Wb-fPW" firstAttribute="leading" secondItem="2" secondAttribute="leading" id="2s0-SJ-Pha"/>
-                    <constraint firstAttribute="bottom" secondItem="1dd-Wb-fPW" secondAttribute="bottom" id="383-Ul-of6"/>
-                    <constraint firstAttribute="centerY" secondItem="HIL-Yr-DaC" secondAttribute="centerY" id="IFE-F8-Xtm"/>
                     <constraint firstAttribute="centerX" secondItem="HIL-Yr-DaC" secondAttribute="centerX" id="Lcz-HM-ZTU"/>
+                    <constraint firstAttribute="bottom" secondItem="6va-P5-GTf" secondAttribute="bottom" constant="20" id="Ljs-a1-q0b"/>
                     <constraint firstAttribute="trailing" secondItem="1dd-Wb-fPW" secondAttribute="trailing" id="Nih-Qs-cvX"/>
                     <constraint firstItem="1dd-Wb-fPW" firstAttribute="top" secondItem="2" secondAttribute="top" id="U2T-7s-NTQ"/>
+                    <constraint firstItem="HIL-Yr-DaC" firstAttribute="centerY" secondItem="1dd-Wb-fPW" secondAttribute="centerY" id="d1z-K6-mAI"/>
+                    <constraint firstItem="6va-P5-GTf" firstAttribute="top" secondItem="1dd-Wb-fPW" secondAttribute="bottom" constant="20" id="dnM-Tg-gTd"/>
                 </constraints>
             </view>
             <connections>
