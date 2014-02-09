@@ -1,3 +1,6 @@
+/*
+ Service for handling bitcoin: URLs.
+ */
 @interface HIBitcoinUrlService : NSObject
 
 + (HIBitcoinUrlService *)sharedService;
