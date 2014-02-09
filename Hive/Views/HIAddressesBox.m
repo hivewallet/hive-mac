@@ -14,6 +14,8 @@ static NSString *const KEY_WALLET_HASH = @"walletHash";
 
 @property (nonatomic, strong, readonly) HIBox *box;
 @property (nonatomic, copy, readonly) NSMutableArray *contentViews;
+@property (nonatomic, strong, readonly) NSButton *barcodeButton;
+@property (nonatomic, strong) NSTrackingArea *trackingArea;
 
 @end
 
@@ -34,12 +36,27 @@ static NSString *const KEY_WALLET_HASH = @"walletHash";
         ]];
         _contentViews = [NSMutableArray new];
         [self updateAddresses];
+        [self setUpBarcodeButton];
     }
 
     return self;
 }
 
+- (void)setUpBarcodeButton {
+    _barcodeButton = [NSButton new];
+    _barcodeButton.bezelStyle = NSSmallSquareBezelStyle;
+    _barcodeButton.translatesAutoresizingMaskIntoConstraints = NO;
+    _barcodeButton.image = [NSImage imageNamed:@"icon-qr.pdf"];
+
+    [self addSubview:_barcodeButton];
+    [_barcodeButton addConstraint:PIN_WIDTH(_barcodeButton, 20)];
+    [_barcodeButton addConstraint:PIN_HEIGHT(_barcodeButton, 20)];
+    [self addConstraint:INSET_BOTTOM(_barcodeButton, 10)];
+    [self addConstraint:INSET_RIGHT(_barcodeButton, 10)];
+}
+
 - (void)dealloc {
+    [self removeTrackingArea:self.trackingArea];
     if (_observingWallet) {
         [[BCClient sharedClient] removeObserver:self forKeyPath:KEY_WALLET_HASH];
     }
@@ -71,7 +88,7 @@ static NSString *const KEY_WALLET_HASH = @"walletHash";
     }
 
     for (NSView *view in self.contentViews) {
-        [self addSubview:view];
+        [self addSubview:view positioned:NSWindowBelow relativeTo:self.barcodeButton];
     }
 
     [self invalidateIntrinsicContentSize];
@@ -179,6 +196,38 @@ static NSString *const KEY_WALLET_HASH = @"walletHash";
     } else {
         [super observeValueForKeyPath:keyPath ofObject:object change:change context:context];
     }
+}
+
+#pragma mark - mouse handling
+
+- (void)updateTrackingAreas {
+    [super updateTrackingAreas];
+    [self removeTrackingArea:self.trackingArea];
+
+    self.trackingArea = [[NSTrackingArea alloc] initWithRect:self.bounds
+                                                     options:NSTrackingMouseEnteredAndExited | NSTrackingActiveAlways
+                                                       owner:self
+                                                    userInfo:nil];
+    [self addTrackingArea:self.trackingArea];
+
+    NSPoint mouseLocation = [self.window mouseLocationOutsideOfEventStream];
+    self.mouseInside = NSPointInRect([self convertPoint:mouseLocation fromView:nil], self.bounds);
+
+    [super updateTrackingAreas];
+}
+
+- (void)mouseEntered:(NSEvent *)theEvent {
+    [super mouseEntered:theEvent];
+    self.mouseInside = YES;
+}
+
+- (void)mouseExited:(NSEvent *)theEvent {
+    self.mouseInside = NO;
+    [super mouseExited:theEvent];
+}
+
+- (void)setMouseInside:(BOOL)mouseInside {
+    self.barcodeButton.hidden = !self.showsBarcode || !mouseInside;
 }
 
 @end
