@@ -63,6 +63,7 @@ static const NSInteger AddressFieldTag = 2;
 
     self.addressBoxView.addresses = _contact.addresses.allObjects;
     self.addressBoxView.observingWallet = [_contact isKindOfClass:[HIProfile class]];
+    self.addressBoxView.showsBarcode = [_contact isKindOfClass:[HIProfile class]];
 }
 
 - (void)configureScrollView {
