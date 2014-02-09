@@ -2,11 +2,13 @@
 
 #import "HIBox.h"
 #import "HIAddress.h"
+#import "HIBarcodeWindowController.h"
 #import "HICopyView.h"
 #import "BCClient.h"
 #import "NSColor+Hive.h"
 
 static const NSInteger AddressFieldTag = 2;
+static const double BARCODE_ZOOM_SIZE = 400;
 
 static NSString *const KEY_WALLET_HASH = @"walletHash";
 
@@ -16,6 +18,7 @@ static NSString *const KEY_WALLET_HASH = @"walletHash";
 @property (nonatomic, copy, readonly) NSMutableArray *contentViews;
 @property (nonatomic, strong, readonly) NSButton *barcodeButton;
 @property (nonatomic, strong) NSTrackingArea *trackingArea;
+@property (nonatomic, strong) HIBarcodeWindowController *barcodeWindowController;
 
 @end
 
@@ -47,6 +50,8 @@ static NSString *const KEY_WALLET_HASH = @"walletHash";
     _barcodeButton.bezelStyle = NSSmallSquareBezelStyle;
     _barcodeButton.translatesAutoresizingMaskIntoConstraints = NO;
     _barcodeButton.image = [NSImage imageNamed:@"icon-qr.pdf"];
+    _barcodeButton.target = self;
+    _barcodeButton.action = @selector(showBarcodeWindow:);
 
     [self addSubview:_barcodeButton];
     [_barcodeButton addConstraint:PIN_WIDTH(_barcodeButton, 20)];
@@ -228,6 +233,29 @@ static NSString *const KEY_WALLET_HASH = @"walletHash";
 
 - (void)setMouseInside:(BOOL)mouseInside {
     self.barcodeButton.hidden = !self.showsBarcode || !mouseInside;
+}
+
+#pragma mark - barcode window
+
+- (void)showBarcodeWindow:(NSButton *)sender {
+    self.barcodeWindowController = [HIBarcodeWindowController new];
+    self.barcodeWindowController.barcodeString =
+        [@"bitcoin:" stringByAppendingString:[[BCClient sharedClient] walletHash]];
+
+    [self zoomBarcodeWindowFromButton:sender];
+
+}
+
+- (void)zoomBarcodeWindowFromButton:(NSButton *)sender {
+    CGRect frame = [self.window convertRectToScreen:[sender convertRect:sender.bounds toView:self.window.contentView]];
+    [self.barcodeWindowController.window setFrame:frame
+                                          display:YES
+                                          animate:NO];
+    [self.barcodeWindowController showWindow:nil];
+
+    [self.barcodeWindowController.window setFrame:CGRectInset(frame, -BARCODE_ZOOM_SIZE * .5, -BARCODE_ZOOM_SIZE * .5)
+                                          display:YES
+                                          animate:YES];
 }
 
 @end
