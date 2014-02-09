@@ -10,10 +10,13 @@
 
 #import <ZXingObjC/ZXingObjC.h>
 
+static const NSTimeInterval CURSOR_HIDE_IDLE_DELAY = 1.0;
+
 @interface HIBarcodeWindowController ()<NSWindowDelegate>
 
 @property (nonatomic, strong) IBOutlet NSImageView *imageView;
 @property (nonatomic, strong) NSTrackingArea *trackingArea;
+@property (nonatomic, strong) NSTimer *mouseIdleTimer;
 
 @end
 
@@ -78,18 +81,40 @@
                                                        owner:self
                                                     userInfo:nil];
     [self.window.contentView addTrackingArea:self.trackingArea];
+
+    [NSCursor setHiddenUntilMouseMoves:YES];
+}
+
+- (void)windowWillClose:(NSNotification *)notification {
+    [self.mouseIdleTimer invalidate];
+    [NSCursor setHiddenUntilMouseMoves:NO];
 }
 
 #pragma mark - mouse
 
+- (void)mouseMoved:(NSEvent *)theEvent {
+    [super mouseMoved:theEvent];
+    [self.mouseIdleTimer invalidate];
+    self.mouseIdleTimer = [NSTimer scheduledTimerWithTimeInterval:CURSOR_HIDE_IDLE_DELAY
+                                                           target:self
+                                                         selector:@selector(hideCursor)
+                                                         userInfo:nil
+                                                          repeats:NO];
+}
+
 - (void)mouseExited:(NSEvent *)theEvent {
     [super mouseExited:theEvent];
+    [self.mouseIdleTimer invalidate];
     [self.window close];
 }
 
 - (void)mouseDown:(NSEvent *)theEvent {
     [super mouseDown:theEvent];
     [self.window close];
+}
+
+- (void)hideCursor {
+    [NSCursor setHiddenUntilMouseMoves:YES];
 }
 
 @end
