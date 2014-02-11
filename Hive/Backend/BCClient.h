@@ -70,6 +70,8 @@ extern NSString * const BCClientPasswordChangedNotification;
 
 - (void)backupWalletToDirectory:(NSURL *)backupURL error:(NSError **)error;
 
+- (BOOL)hasPendingTransactions;
+
 @end
 
 @protocol BCTransactionObserver<NSObject>

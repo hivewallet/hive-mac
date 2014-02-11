@@ -398,13 +398,9 @@ static int ddLogLevel = LOG_LEVEL_VERBOSE;
         return NSTerminateCancel;
     }
 
-    if (![DBM hasChanges]) {
-        return NSTerminateNow;
-    }
-
     NSError *error = nil;
 
-    if (![DBM save:&error]) {
+    if ([DBM hasChanges] && ![DBM save:&error]) {
         // Customize this code block to include application-specific recovery steps.
         BOOL result = [sender presentError:error];
         if (result) {
@@ -428,6 +424,29 @@ static int ddLogLevel = LOG_LEVEL_VERBOSE;
         NSInteger answer = [alert runModal];
 
         if (answer == NSAlertAlternateReturn) {
+            return NSTerminateCancel;
+        }
+    }
+
+    if ([[HIBitcoinManager defaultManager] isSyncing] && [[BCClient sharedClient] hasPendingTransactions]) {
+        NSString *title = NSLocalizedString(@"Hive is currently syncing with the Bitcoin network. "
+                                            @"Are you sure you want to quit?",
+                                            @"Sync in progress alert title");
+
+        NSString *message = NSLocalizedString(@"Your pending transactions won't be confirmed "
+                                              @"until the sync is complete.",
+                                              @"Sync in progress alert details");
+
+        NSString *quitButton = NSLocalizedString(@"Quit anyway", @"Quit anyway button title");
+        NSString *cancelButton = NSLocalizedString(@"Cancel", @"Cancel button title");
+
+        NSAlert *alert = [NSAlert alertWithMessageText:title
+                                         defaultButton:quitButton
+                                       alternateButton:cancelButton
+                                           otherButton:nil
+                             informativeTextWithFormat:@"%@", message];
+
+        if ([alert runModal] != NSAlertDefaultReturn) {
             return NSTerminateCancel;
         }
     }

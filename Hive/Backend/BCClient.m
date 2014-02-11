@@ -343,6 +343,14 @@ NSString * const BCClientPasswordChangedNotification = @"BCClientPasswordChanged
     return [_transactionUpdateContext countForFetchRequest:req error:NULL];
 }
 
+- (BOOL)hasPendingTransactions {
+    NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:HITransactionEntity];
+    request.predicate = [NSPredicate predicateWithFormat:@"status == %d", HITransactionStatusPending];
+
+    NSUInteger count = [_transactionUpdateContext countForFetchRequest:request error:NULL];
+    return (count > 0);
+}
+
 - (void)updateNotifications {
     [self willChangeValueForKey:@"unreadTransactions"];
     
