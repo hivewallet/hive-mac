@@ -243,7 +243,8 @@ static int ddLogLevel = LOG_LEVEL_VERBOSE;
     NSString *title = NSLocalizedString(@"Bitcoin network data file could not be opened.",
                                         @"Chain file unreadable error title");
     NSString *message = NSLocalizedString(@"Hive will now delete the file and synchronize with the "
-                                          @"Bitcoin network again.",
+                                          @"Bitcoin network again. Please leave Hive open for the next several "
+                                          @"minutes, and try not to send any transactions right now.",
                                           @"Chain file unreadable error explanation");
 
     NSAlert *alert = [NSAlert alertWithMessageText:title
