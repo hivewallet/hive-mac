@@ -7,6 +7,7 @@
 //
 
 #import <BitcoinJKit/HIBitcoinErrorCodes.h>
+#import <BitcoinJKit/HIBitcoinManager.h>
 #import <CocoaLumberjack/DDLog.h>
 #import <CocoaLumberjack/DDASLLogger.h>
 #import <CocoaLumberjack/DDFileLogger.h>
@@ -209,12 +210,21 @@ static int ddLogLevel = LOG_LEVEL_VERBOSE;
     }
 
     [self configureNotifications];
+    [self startBitcoinClientWithPreviousError:nil];
 
+    NSSetUncaughtExceptionHandler(&handleException);
+}
+
+- (void)startBitcoinClientWithPreviousError:(NSError *)previousError {
     NSError *error = nil;
     [[BCClient sharedClient] start:&error];
 
     if (error.code == kHIBitcoinManagerNoWallet) {
         [self showSetUpWizard];
+    } else if (error.code == kHIBitcoinManagerBlockStoreReadError && !previousError) {
+        [self showUnreadableChainFileError];
+        [[HIBitcoinManager defaultManager] deleteBlockchainDataFile:nil];
+        [self startBitcoinClientWithPreviousError:error];
     } else if (error) {
         HILogError(@"BitcoinManager start error: %@", error);
         [self showInitializationError:error];
@@ -227,8 +237,22 @@ static int ddLogLevel = LOG_LEVEL_VERBOSE;
             [self initializeBackups];
         });
     }
+}
 
-    NSSetUncaughtExceptionHandler(&handleException);
+- (void)showUnreadableChainFileError {
+    NSString *title = NSLocalizedString(@"Bitcoin network data file could not be opened.",
+                                        @"Chain file unreadable error title");
+    NSString *message = NSLocalizedString(@"Hive will now delete the file and synchronize with the "
+                                          @"Bitcoin network again.",
+                                          @"Chain file unreadable error explanation");
+
+    NSAlert *alert = [NSAlert alertWithMessageText:title
+                                     defaultButton:NSLocalizedString(@"OK", @"OK button title")
+                                   alternateButton:nil
+                                       otherButton:nil
+                         informativeTextWithFormat:@"%@", message];
+
+    [alert runModal];
 }
 
 - (void)setAsDefaultHandler {
@@ -277,25 +301,22 @@ static int ddLogLevel = LOG_LEVEL_VERBOSE;
 
     if (error.code == kHIBitcoinManagerUnreadableWallet) {
         message = NSLocalizedString(@"Could not read wallet file. It might be damaged.", @"initialization error");
-    } else if (error.code == kHIBitcoinManagerBlockStoreError) {
-        message = NSLocalizedString(@"Could not write wallet file. Another instance of Hive might still be running.",
+    } else if (error.code == kHIBitcoinManagerBlockStoreLockError) {
+        message = NSLocalizedString(@"Bitcoin network data file could not be opened. "
+                                    @"Another instance of Hive might still be running.",
                                     @"initialization error");
+    } else {
+        message = [error localizedFailureReason];
     }
 
     HILogError(@"Aborting launch because of initialization error: %@", error);
 
-    NSAlert *alert;
-
-    if (message) {
-        alert = [NSAlert alertWithMessageText:NSLocalizedString(@"Hive cannot be started.",
-                                                                @"Initialization error title")
-                                defaultButton:NSLocalizedString(@"OK", @"OK button title")
-                              alternateButton:nil
-                                  otherButton:nil
-                    informativeTextWithFormat:@"%@", message];
-    } else {
-        alert = [NSAlert alertWithError:error];
-    }
+    NSAlert *alert = [NSAlert alertWithMessageText:NSLocalizedString(@"Hive cannot be started.",
+                                                                     @"Initialization error title")
+                                     defaultButton:NSLocalizedString(@"OK", @"OK button title")
+                                   alternateButton:nil
+                                       otherButton:nil
+                         informativeTextWithFormat:@"%@", message];
 
     [alert setAlertStyle:NSCriticalAlertStyle];
     [alert runModal];
