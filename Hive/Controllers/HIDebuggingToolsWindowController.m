@@ -93,15 +93,18 @@
                         contextInfo:@selector(rebuildWallet)];
 }
 
-#pragma clang diagnostic push
-#pragma clang diagnostic ignored "-Warc-performSelector-leaks"
 - (void)alertClosed:(NSAlert *)alert withReturnCode:(NSInteger)code context:(void *)context {
     if (code == NSAlertDefaultReturn) {
         SEL selector = (SEL) context;
-        [self performSelector:selector withObject:nil];
+
+        dispatch_async(dispatch_get_main_queue(), ^{
+            #pragma clang diagnostic push
+            #pragma clang diagnostic ignored "-Warc-performSelector-leaks"
+            [self performSelector:selector withObject:nil];
+            #pragma clang diagnostic pop
+        });
     }
 }
-#pragma clang diagnostic pop
 
 - (void)rebuildTransactionList {
     [[BCClient sharedClient] clearTransactionsList];
@@ -118,13 +121,22 @@
 
 - (void)rebuildWallet {
     NSError *error = nil;
+    NSAlert *alert;
 
     [[HIBitcoinManager defaultManager] resetBlockchain:&error];
 
     if (error) {
-        NSAlert *alert = [NSAlert alertWithError:error];
-        [alert beginSheetModalForWindow:self.window modalDelegate:nil didEndSelector:nil contextInfo:NULL];
+        alert = [NSAlert alertWithError:error];
+    } else {
+        alert = [NSAlert alertWithMessageText:@"Wallet is now being rebuilt."
+                                defaultButton:@"OK"
+                              alternateButton:nil
+                                  otherButton:nil
+                    informativeTextWithFormat:@"It's not recommended to send any transactions "
+                                              @"until the sync is complete."];
     }
+
+    [alert beginSheetModalForWindow:self.window modalDelegate:nil didEndSelector:nil contextInfo:NULL];
 }
 
 - (void)observeValueForKeyPath:(NSString *)path ofObject:(id)object change:(NSDictionary *)change context:(void *)ctx {
