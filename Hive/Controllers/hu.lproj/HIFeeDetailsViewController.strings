@@ -1,0 +1,9 @@
+
+/* Class = "NSTextFieldCell"; title = "The fees you pay help keep the Bitcoin network running!"; ObjectID = "JVe-5I-zWC"; */
+"JVe-5I-zWC.title" = "Azért fizetsz illetéket hogy a Bitcoin hálózat működjön!";
+
+/* Class = "NSTextFieldCell"; title = "Current transaction fee:"; ObjectID = "exO-xB-xYk"; */
+"exO-xB-xYk.title" = "Jelenlegi illeték:";
+
+/* Class = "NSTextFieldCell"; title = "Learn more…"; ObjectID = "kHH-z3-bVk"; */
+"kHH-z3-bVk.title" = "Tudj meg többet...";

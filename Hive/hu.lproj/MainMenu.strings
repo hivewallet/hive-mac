@@ -1,0 +1,111 @@
+
+/* Class = "NSMenu"; title = "AMainMenu"; ObjectID = "29"; */
+"29.title" = "AFőMenü";
+
+/* Class = "NSMenuItem"; title = "Hive"; ObjectID = "56"; */
+"56.title" = "Hive";
+
+/* Class = "NSMenu"; title = "Hive"; ObjectID = "57"; */
+"57.title" = "Hive";
+
+/* Class = "NSMenuItem"; title = "About Hive"; ObjectID = "58"; */
+"58.title" = "A Hive-ról";
+
+/* Class = "NSMenuItem"; title = "Preferences…"; ObjectID = "129"; */
+"129.title" = "Beállítások";
+
+/* Class = "NSMenu"; title = "Services"; ObjectID = "130"; */
+"130.title" = "Szolgáltatások";
+
+/* Class = "NSMenuItem"; title = "Services"; ObjectID = "131"; */
+"131.title" = "Szolgáltatások";
+
+/* Class = "NSMenuItem"; title = "Hide Hive"; ObjectID = "134"; */
+"134.title" = "Hive elrejtése";
+
+/* Class = "NSMenuItem"; title = "Quit Hive"; ObjectID = "136"; */
+"136.title" = "Kilépés a Hiveból";
+
+/* Class = "NSMenuItem"; title = "Hide Others"; ObjectID = "145"; */
+"145.title" = "Hive másai";
+
+/* Class = "NSMenuItem"; title = "Show All"; ObjectID = "150"; */
+"150.title" = "Mindet mutat";
+
+/* Class = "NSMenuItem"; title = "Edit"; ObjectID = "801"; */
+"801.title" = "Szerkesztés";
+
+/* Class = "NSMenu"; title = "Edit"; ObjectID = "802"; */
+"802.title" = "Szerkesztés";
+
+/* Class = "NSMenuItem"; title = "Undo"; ObjectID = "804"; */
+"804.title" = "Mégse";
+
+/* Class = "NSMenuItem"; title = "Redo"; ObjectID = "805"; */
+"805.title" = "Mégis";
+
+/* Class = "NSMenuItem"; title = "Cut"; ObjectID = "807"; */
+"807.title" = "Kivágás";
+
+/* Class = "NSMenuItem"; title = "Copy"; ObjectID = "808"; */
+"808.title" = "Másolás";
+
+/* Class = "NSMenuItem"; title = "Paste"; ObjectID = "809"; */
+"809.title" = "Beillesztés";
+
+/* Class = "NSMenuItem"; title = "Delete"; ObjectID = "811"; */
+"811.title" = "Töröl";
+
+/* Class = "NSMenuItem"; title = "Select All"; ObjectID = "812"; */
+"812.title" = "Mind kiválasztása";
+
+/* Class = "NSMenuItem"; title = "Window"; ObjectID = "854"; */
+"854.title" = "Ablak";
+
+/* Class = "NSMenu"; title = "Window"; ObjectID = "855"; */
+"855.title" = "Ablak";
+
+/* Class = "NSMenuItem"; title = "Minimize"; ObjectID = "857"; */
+"857.title" = "Lekicsinyít";
+
+/* Class = "NSMenuItem"; title = "Zoom"; ObjectID = "858"; */
+"858.title" = "Nagyítás";
+
+/* Class = "NSMenuItem"; title = "Bring All to Front"; ObjectID = "860"; */
+"860.title" = "Mindent előrehoz";
+
+/* Class = "NSMenuItem"; title = "Close"; ObjectID = "864"; */
+"864.title" = "Bezár";
+
+/* Class = "NSMenuItem"; title = "Send Bitcoin..."; ObjectID = "866"; */
+"866.title" = "Bitcoin küldése...";
+
+/* Class = "NSMenuItem"; title = "Check for Updates..."; ObjectID = "870"; */
+"870.title" = "Frissítések keresése";
+
+/* Class = "NSMenuItem"; title = "Change Password…"; ObjectID = "1HB-Qg-iyg"; */
+"1HB-Qg-iyg.title" = "Jelszó megváltoztatása...";
+
+/* Class = "NSMenuItem"; title = "Open CoinMap..."; ObjectID = "ASP-Ns-ktD"; */
+"ASP-Ns-ktD.title" = "PénzTérkép megnyitása...";
+
+/* Class = "NSMenuItem"; title = "Wallet"; ObjectID = "GX7-xG-GKH"; */
+"GX7-xG-GKH.title" = "Tárca";
+
+/* Class = "NSMenuItem"; title = "Debugging tools..."; ObjectID = "Ue9-mi-gbe"; */
+"Ue9-mi-gbe.title" = "Hibakeresési információ...";
+
+/* Class = "NSMenuItem"; title = "Backup Center..."; ObjectID = "V0L-sM-c8h"; */
+"V0L-sM-c8h.title" = "Mentési központ...";
+
+/* Class = "NSMenu"; title = "Tools"; ObjectID = "cCx-Ak-fii"; */
+"cCx-Ak-fii.title" = "Eszközök";
+
+/* Class = "NSMenuItem"; title = "Tools"; ObjectID = "eBU-ec-85y"; */
+"eBU-ec-85y.title" = "Eszközök";
+
+/* Class = "NSMenu"; title = "Wallet"; ObjectID = "jrd-Ul-XjV"; */
+"jrd-Ul-XjV.title" = "Tárca";
+
+/* Class = "NSMenuItem"; title = "Debugging info..."; ObjectID = "lLT-53-p4m"; */
+"lLT-53-p4m.title" = "Hibakeresési információ...";

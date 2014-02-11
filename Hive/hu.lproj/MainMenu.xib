@@ -1,0 +1,236 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="4514" systemVersion="13B42" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none">
+    <dependencies>
+        <deployment version="1070" defaultVersion="1070" identifier="macosx"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="4514"/>
+    </dependencies>
+    <objects>
+        <customObject id="-2" userLabel="File's Owner" customClass="NSApplication">
+            <connections>
+                <outlet property="delegate" destination="494" id="495"/>
+            </connections>
+        </customObject>
+        <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
+        <customObject id="-3" userLabel="Application"/>
+        <menu title="AFőMenü" systemMenu="main" id="29">
+            <items>
+                <menuItem title="Hive" id="56">
+                    <menu key="submenu" title="Hive" systemMenu="apple" id="57">
+                        <items>
+                            <menuItem title="A Hive-ról" id="58">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                                <connections>
+                                    <action selector="orderFrontStandardAboutPanel:" target="-2" id="142"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem isSeparatorItem="YES" id="236">
+                                <modifierMask key="keyEquivalentModifierMask" command="YES"/>
+                            </menuItem>
+                            <menuItem title="Beállítások" keyEquivalent="," id="129">
+                                <connections>
+                                    <action selector="openPreferences:" target="-1" id="754"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="Frissítések keresése" id="870">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                                <connections>
+                                    <action selector="checkForUpdates:" target="869" id="871"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem isSeparatorItem="YES" id="143">
+                                <modifierMask key="keyEquivalentModifierMask" command="YES"/>
+                            </menuItem>
+                            <menuItem title="Szolgáltatások" id="131">
+                                <menu key="submenu" title="Szolgáltatások" systemMenu="services" id="130"/>
+                            </menuItem>
+                            <menuItem isSeparatorItem="YES" id="144">
+                                <modifierMask key="keyEquivalentModifierMask" command="YES"/>
+                            </menuItem>
+                            <menuItem title="Hive elrejtése" keyEquivalent="h" id="134">
+                                <connections>
+                                    <action selector="hide:" target="-1" id="367"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="Hive másai" keyEquivalent="h" id="145">
+                                <modifierMask key="keyEquivalentModifierMask" option="YES" command="YES"/>
+                                <connections>
+                                    <action selector="hideOtherApplications:" target="-1" id="368"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="Mindet mutat" id="150">
+                                <connections>
+                                    <action selector="unhideAllApplications:" target="-1" id="370"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem isSeparatorItem="YES" id="149">
+                                <modifierMask key="keyEquivalentModifierMask" command="YES"/>
+                            </menuItem>
+                            <menuItem title="Kilépés a Hiveból" keyEquivalent="q" id="136">
+                                <connections>
+                                    <action selector="terminate:" target="-3" id="449"/>
+                                </connections>
+                            </menuItem>
+                        </items>
+                    </menu>
+                </menuItem>
+                <menuItem title="Tárca" id="GX7-xG-GKH">
+                    <menu key="submenu" title="Tárca" id="jrd-Ul-XjV">
+                        <items>
+                            <menuItem title="Bitcoin küldése..." keyEquivalent="S" id="866">
+                                <connections>
+                                    <action selector="openSendBitcoinsWindow:" target="-1" id="868"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem isSeparatorItem="YES" id="CGD-5y-ezT"/>
+                            <menuItem title="Jelszó megváltoztatása..." id="1HB-Qg-iyg">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                                <connections>
+                                    <action selector="changeWalletPassword:" target="494" id="n4h-c8-Hjn"/>
+                                </connections>
+                            </menuItem>
+                        </items>
+                    </menu>
+                    <connections>
+                        <binding destination="494" name="hidden" keyPath="fullMenuEnabled" id="SqK-nd-3WU">
+                            <dictionary key="options">
+                                <string key="NSValueTransformerName">NSNegateBoolean</string>
+                            </dictionary>
+                        </binding>
+                    </connections>
+                </menuItem>
+                <menuItem title="Szerkesztés" id="801">
+                    <modifierMask key="keyEquivalentModifierMask"/>
+                    <menu key="submenu" title="Szerkesztés" id="802">
+                        <items>
+                            <menuItem title="Mégse" keyEquivalent="z" id="804">
+                                <connections>
+                                    <action selector="undo:" target="-1" id="848"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="Mégis" keyEquivalent="Z" id="805">
+                                <modifierMask key="keyEquivalentModifierMask" shift="YES" command="YES"/>
+                            </menuItem>
+                            <menuItem isSeparatorItem="YES" id="806">
+                                <modifierMask key="keyEquivalentModifierMask" command="YES"/>
+                            </menuItem>
+                            <menuItem title="Kivágás" keyEquivalent="x" id="807">
+                                <connections>
+                                    <action selector="cut:" target="-1" id="849"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="Másolás" keyEquivalent="c" id="808">
+                                <connections>
+                                    <action selector="copy:" target="-1" id="850"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="Beillesztés" keyEquivalent="v" id="809">
+                                <connections>
+                                    <action selector="paste:" target="-1" id="851"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="Töröl" id="811">
+                                <connections>
+                                    <action selector="delete:" target="-1" id="852"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="Mind kiválasztása" keyEquivalent="a" id="812">
+                                <connections>
+                                    <action selector="selectAll:" target="-1" id="853"/>
+                                </connections>
+                            </menuItem>
+                        </items>
+                    </menu>
+                </menuItem>
+                <menuItem title="Eszközök" id="eBU-ec-85y">
+                    <modifierMask key="keyEquivalentModifierMask"/>
+                    <menu key="submenu" title="Eszközök" id="cCx-Ak-fii">
+                        <items>
+                            <menuItem title="Mentési központ..." id="V0L-sM-c8h">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                                <connections>
+                                    <action selector="showBackupCenter:" target="-1" id="w3X-q3-iCI"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="PénzTérkép megnyitása..." id="ASP-Ns-ktD">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                                <connections>
+                                    <action selector="openCoinMapSite:" target="494" id="Ozv-6D-Aab"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="Hibakeresési információ..." keyEquivalent="D" id="lLT-53-p4m">
+                                <connections>
+                                    <action selector="showDebuggingInfo:" target="-1" id="Exc-Ye-jOL"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="Hibakeresési információ..." id="Ue9-mi-gbe">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                                <connections>
+                                    <action selector="showDebuggingTools:" target="-1" id="s18-1s-iwD"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="Scan Barcode…" id="vdw-IK-snJ">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                                <connections>
+                                    <action selector="scanBarcode:" target="494" id="ktw-J8-B7s"/>
+                                </connections>
+                            </menuItem>
+                        </items>
+                    </menu>
+                    <connections>
+                        <binding destination="494" name="hidden" keyPath="fullMenuEnabled" id="sZl-rV-GaA">
+                            <dictionary key="options">
+                                <string key="NSValueTransformerName">NSNegateBoolean</string>
+                            </dictionary>
+                        </binding>
+                    </connections>
+                </menuItem>
+                <menuItem title="Ablak" id="854">
+                    <modifierMask key="keyEquivalentModifierMask"/>
+                    <menu key="submenu" title="Ablak" id="855">
+                        <items>
+                            <menuItem title="Lekicsinyít" keyEquivalent="m" id="857">
+                                <connections>
+                                    <action selector="performMiniaturize:" target="-1" id="861"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="Bezár" keyEquivalent="w" id="864">
+                                <connections>
+                                    <action selector="performClose:" target="-1" id="865"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="Nagyítás" id="858">
+                                <connections>
+                                    <action selector="performZoom:" target="-1" id="862"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem isSeparatorItem="YES" id="859">
+                                <modifierMask key="keyEquivalentModifierMask" command="YES"/>
+                            </menuItem>
+                            <menuItem title="Mindent előrehoz" id="860">
+                                <connections>
+                                    <action selector="arrangeInFront:" target="-1" id="863"/>
+                                </connections>
+                            </menuItem>
+                        </items>
+                    </menu>
+                </menuItem>
+                <menuItem title="Help" id="ZUU-kM-x8u" userLabel="Menu Item - Help">
+                    <modifierMask key="keyEquivalentModifierMask"/>
+                    <menu key="submenu" title="Help" id="K2u-T2-G1a">
+                        <items>
+                            <menuItem title="Send Feedback…" id="GsI-lc-HhD">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                                <connections>
+                                    <action selector="sendFeedback:" target="494" id="CqW-xg-URA"/>
+                                </connections>
+                            </menuItem>
+                        </items>
+                    </menu>
+                </menuItem>
+            </items>
+        </menu>
+        <customObject id="494" customClass="HIAppDelegate"/>
+        <customObject id="420" customClass="NSFontManager"/>
+        <customObject id="869" customClass="SUUpdater"/>
+    </objects>
+</document>

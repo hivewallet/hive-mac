@@ -1,0 +1,324 @@
+
+/* Address field placeholder */
+"Address" = "Cím";
+
+/* Title of an alert when trying to send more than you have */
+"Amount exceeds balance." = "Ez a mennyiség túllépi a kereted.";
+
+/* Anonymous username for profile page */
+"Anonymous" = "Névtelen";
+
+/* App load error title */
+"Application can't be loaded" = "Az alkalmazást nem lehet betölteni";
+
+/* Applications view title */
+"Apps" = "Alkalmazások";
+
+/* Cancel editing alert title */
+"Are you sure you want to leave this page?" = "Biztos hogy elhagyod ezt a lapot?";
+
+/* Warning when trying to a large BTC amount (btc, fiat amount and address) */
+"Are you sure you want to send %@ (%@) to %@?" = "Biztos hogy ennyit akarsz küldeni %1$@ (%2$@) to %3$@?";
+
+/* Wizard backup page title */
+"Backup" = "Tárca mentése";
+
+/* Backup status: backup can't or won't be completed */
+"Backup error" = "Mentési hiba";
+
+/* Notification of failed backup */
+"Backup failed" = "A mentés sikertelen";
+
+/* No comment provided by engineer. */
+"Backup hasn't been done yet" = "A mentés nincs kész";
+
+/* Backup error message */
+"Backup is not configured" = "A mentés nincs konfigurálva";
+
+/* Backup status: backup done but not updated recently */
+"Backup problem" = "Mentési hiba";
+
+/* Backup error message */
+"Can't create a directory to store the wallet backup" = "Nem lehet mappát létrehozni a mentésnek";
+
+/* Cancel button title */
+"Cancel" = "Mégse";
+
+/* Dead transaction label */
+"CANCELLED" = "MÉGSÉZVE";
+
+/* Dropbox folder save panel confirmation button */
+"Choose" = "Válassz";
+
+/* No comment provided by engineer. */
+"Choose a directory inside Dropbox folder where the backup should be saved:" = "Válasz mappát a Dropboxodban ahová a mentést fogod rakni";
+
+/* No comment provided by engineer. */
+"click to copy" = "kattints a másoláshoz";
+
+/* Confirm button next to passphrase */
+"Confirm" = "Megerősítés";
+
+/* Contact name empty alert title */
+"Contact can't be saved." = "A kapcsolatot nem lehet menteni";
+
+/* Contacts view title */
+"Contacts" = "Kapcsolatok";
+
+/* No comment provided by engineer. */
+"copied!" = "másolva!";
+
+/* initialization error */
+"Could not read wallet file. It might be damaged." = "A tárcát nem lehet olvasni. Lehet hogy megsérült";
+
+/* Quit without saves error question message */
+"Could not save changes while quitting. Quit anyway?" = "A változtatásokat kilépés közben nem lehet menteni. Mindenképp kilép?";
+
+/* initialization error */
+"Could not write wallet file. Another instance of Hive might still be running." = "Nem lehet írni a tárcát. Egy másik Hive lehet hogy fut.";
+
+/* Disable backup button title */
+"Disable" = "Kikapcsolás";
+
+/* Backup status: adapter disabled */
+"Disabled" = "Tiltás";
+
+/* Confirm leaving a form without saving data */
+"Discard Changes" = "Változtatások visszavonása";
+
+/* Remove contact alert dialog title */
+"Do you really want to remove %@ from your contact list?" = "Biztos hogy törlöd %@ a kapcsolataid közül?";
+
+/* Install app popup title */
+"Do you want to add \"%@\" to Hive?" = "Biztos hogy hozzá akarod adni \"%@\" a Hivehoz?";
+
+/* Backup error message */
+"Dropbox folder not found" = "Ez a a dropbox mappa nem létezik";
+
+/* Dropbox no backup folder alert title */
+"Dropbox folder not found." = "Ez a a dropbox mappa nem létezik.";
+
+/* Backup error message */
+"Dropbox isn't running" = "A Dropbox nem fut";
+
+/* Page title when editing contact's info */
+"Edit contact" = "Kapcsolat szerkesztése";
+
+/* Page title when editing your own profile info */
+"Edit profile" = "Profil szerkesztése";
+
+/* Email field placeholder */
+"email" = "e-mail";
+
+/* Enable backup button title (no configuration required) */
+"Enable" = "Bekapcsolás";
+
+/* Enable backup button title (requires configuration) */
+"Enable..." = "Bekapcsolás...";
+
+/* Sending zero bitcoin alert title */
+"Enter an amount greater than zero." = "Olyan számot írjál be ami nagyobb mint nulla.";
+
+/* Passphrase prompt for sending */
+"Enter your passphrase to confirm the transaction:" = "Add meg a jelszóda a küldéshez";
+
+/* Firstname field placeholder */
+"Firstname" = "Vezetéknév";
+
+/* Initialization error title */
+"Hive cannot be started." = "A Hiveot nem lehet elindítani";
+
+/* Database error alert title */
+"Hive database file cannot be opened." = "A Hive adatbázisát nem lehet megnyitni.";
+
+/* Backup error message */
+"Hive directory is excluded from Time Machine backup" = "A Hive mappája ki van véve a mentésből";
+
+/* Share sent transaction text */
+"I've just received some Bitcoin using Hive" = "Most fogadtam BItcoint a Hive használatával";
+
+/* Share sent transaction text */
+"I've just sent some Bitcoin using Hive" = "Most küldtem egy kis Bitcoint a Hive használatával";
+
+/* Install app button title */
+"Install" = "Telepít";
+
+/* Backup requires password alert details */
+"It's dangerous to upload unencrypted wallets." = "Titkosítás nélkül veszélyes feltölteni a tárcát";
+
+/* Don't leave a form without saving data */
+"Keep Editing" = "Folytassuk a szerkesztést";
+
+/* Address caption field placeholder */
+"Label" = "Cím";
+
+/* On what date was the last backup done */
+"Last backup on %@" = "Utolsó mentés %@-kor volt";
+
+/* Lastname field placeholder */
+"Lastname" = "Keresztnév";
+
+/* Main address caption */
+"main" = "fő";
+
+/* Main address caption string for profiles */
+"Main address" = "Fő cím";
+
+/* New contact view controller title */
+"New contact" = "Új kapcsolat";
+
+/* Empty address alert title */
+"No address entered." = "Nem írtál be címet";
+
+/* Backup is outdated, last backup was on that date */
+"No backup since %@" = "Nem volt mentés %@ óta";
+
+/* Transaction failed alert message */
+"No Bitcoin have been taken from your wallet." = "Semmilyen Bitcoin sem hiányzik a tárcádból";
+
+/* OK button title */
+"OK" = "OK";
+
+/* Autocomplete dropdown prompt */
+"or choose from the list" = "vagy válasz a listáról";
+
+/* Wizard password page title */
+"Password" = "Jelszó";
+
+/* Pending transaction label */
+"PENDING" = "VÁRAKOZÓ";
+
+/* Invalid address alert message */
+"Please check if you have entered the address correctly." = "Nézd meg hogy a cím helyes-e";
+
+/* Warning details when trying to send to your own address */
+"Please enter a different address." = "Válassz másik címet-";
+
+/* Empty address alert message */
+"Please enter a valid Bitcoin address or select one from the dropdown list." = "Válasz egy valós címet vagy válasz a listáról.";
+
+/* Profile view title string */
+"Profile" = "Profil";
+
+/* Quit anyway button title */
+"Quit anyway" = "Kilépés mindenképp";
+
+/* Quit without saves error question info */
+"Quitting now will lose any changes you have made since the last successful save" = "Ha most kilépsz akkor mindent elvesztesz amit az utolsó mentés óta tettél";
+
+/* Received amount of BTC from unknown source */
+"Received &a" = "Fogadba &a";
+
+/* Received amount of BTC from contact */
+"Received &a from &c" = "Fogadva &a &c-től";
+
+/* Install app button title when app exists */
+"Reinstall" = "Ujratelepít";
+
+/* No comment provided by engineer. */
+"Remove" = "Töröl";
+
+/* Dropbox invalid folder alert title */
+"Selected directory is outside Dropbox folder." = "A kiválasztott mappa Dropboxon kívül van.";
+
+/* Send button title */
+"Send" = "Küldés";
+
+/* Sent amount of BTC to a contact/address */
+"Sent &a to &c" = "Elküldve &a &c-nek";
+
+/* Amount exceeds available balance alert title */
+"Some funds are temporarily unavailable." = "Néhány Bitcoin még elérhetetlen.";
+
+/* Wizard completed page title */
+"Start!" = "Kezdés!";
+
+/* App load error description */
+"The application data file has been removed or corrupted." = "Az alkalmazás adatai eltűntek van elérhetetlenek.";
+
+/* Error message when database is incompatible with this version */
+"The database was saved by a newer version of Hive - please download the latest version from http://hivewallet.com." = "Az adatbázis egy újabb verzióval lett elmentve - kérlek töltsd le a http://hivewallet.com-ról.";
+
+/* Install app popup warning message when app exists */
+"The existing app file will be replaced by the new version. This will not affect any app settings or saved data." = "Az előző verzió egy újabbal lesz lecserélve. Ez nem befolyásolja a beállításaidat és adataidat.";
+
+/* Alert details when transaction was cancelled */
+"This can happen because of bugs in the wallet code or because the transaction was rejected by the network." = "Ez azért történhetett mert baj van a tárca kódjában vagy a tranzakciót a hálózat visszautasította.";
+
+/* Warning details when trying to send a large BTC amount */
+"This is more than what you usually send." = "Ez több mint az átlagos küldési méret.";
+
+/* Warning title when trying to send to your own address */
+"This is your wallet address." = "Ez a te tárca címed.";
+
+/* Invalid address alert title */
+"This isn't a valid Bitcoin address." = "Ez nem egy valós Bitcoin cím.";
+
+/* Backup error message */
+"Time Machine is disabled in System Preferences" = "A Time Machine  ki van kapcsolva a rendszerben.";
+
+/* Amount exceeds available balance alert message */
+"To send this transaction, you'll need to wait for your pending transactions to be confirmed first (this shouldn't take more than a few minutes)." = "Hogy ezt elküld várnod kell a megerősítetlen tranzakciókra (megerősítésekre ez kb. 1-2 perc).";
+
+/* Notification of cancelled transaction */
+"Transaction cancelled" = "Tranzakció lemégsézve";
+
+/* Notification of confirmed sent transaction */
+"Transaction completed" = "Tranzakció kész";
+
+/* Transaction failed alert title */
+"Transaction could not be completed." = "Tranzakciót nem lehet véghezvinni.";
+
+/* Alert when transaction was cancelled (with transaction date) */
+"Transaction from %@ was cancelled." = "A tranzakció %@-tól meg lett szakítva.";
+
+/* Transactions view title */
+"Transactions" = "Tranzakciók";
+
+/* Backup status: backup up to date */
+"Up to date" = "Nem kell frissíteni";
+
+/* Backup status: backup scheduled or in progress */
+"Waiting for backup" = "Várakozás mentésre";
+
+/* Install app popup warning message */
+"We cannot guarantee the safety of all apps - please be careful if you download Hive apps from third party sites." = "Mi nem garantáljuk hogy minden 3. féltől származó Hive kiegészítő biztonságos.";
+
+/* Wizard welcome page title */
+"Welcome" = "Hello";
+
+/* Button to show info about pending funds */
+"What does this mean?" = "Ez mit jelent?";
+
+/* Sending zero bitcoin alert message */
+"Why would you want to send someone 0 BTC?" = "Miért akarsz valakinek 0 BTC-t küldeni?";
+
+/* Details of an alert when trying to send more than you have */
+"You cannot send more money than you own." = "Csak annyi pénzt küldhetsz amennyid van.";
+
+/* Install app popup title when app exists */
+"You have already added \"%@\" to Hive. Would you like to overwrite it?" = "Már hozzáadtad \"%@\"-t a Hivehoz. Felül akarod írni?";
+
+/* Notification of confirmed sent transaction (with BTC amount) */
+"You have sent %@." = "Elküldtél %@-t.";
+
+/* Dropbox no backup folder alert details */
+"You must install Dropbox first (see www.dropbox.com)." = "Először telepítsd fel a DropBoxot (lásd www.dropbox.com).";
+
+/* Dropbox invalid folder alert details */
+"You need to choose or create a directory inside your Dropbox folder." = "Ki kell választanod vagy létre kell hoznod egy mappát a Dropboxodon belül?";
+
+/* Contact name empty alert message */
+"You need to give the contact a name before you can add it to the list." = "Meg kell adnod egy neved mielőtt hozzáadod a listához.";
+
+/* Backup requires password alert title */
+"You need to set a wallet password first (see Wallet menu)." = "Először adj a Tárcádhoz egy jelszót (lást Tárca menü)";
+
+/* Remove contact alert dialog body */
+"You won't be able to undo this operation." = "Ezt nem lehet visszavonni.";
+
+/* Notification of incoming transaction */
+"You've received Bitcoin" = "Bitcoint kaptál";
+
+/* Cancel editing alert message */
+"Your changes won't be saved." = "A változtatások nem lettek elmentve";

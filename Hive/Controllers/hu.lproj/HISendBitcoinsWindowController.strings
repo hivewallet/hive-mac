@@ -1,0 +1,21 @@
+
+/* Class = "NSWindow"; title = "Send Bitcoin"; ObjectID = "1"; */
+"1.title" = "Bitcoin küldése";
+
+/* Class = "NSButtonCell"; title = "Cancel"; ObjectID = "6"; */
+"6.title" = "Mégse";
+
+/* Class = "NSButtonCell"; title = "Send"; ObjectID = "10"; */
+"10.title" = "Küld";
+
+/* Class = "NSTextFieldCell"; title = "To:"; ObjectID = "14"; */
+"14.title" = "Neki:";
+
+/* Class = "NSTextFieldCell"; placeholderString = "Type to search..."; ObjectID = "20"; */
+"20.placeholderString" = "Írd be a kereséshez...";
+
+/* Class = "NSTextFieldCell"; title = "Main address"; ObjectID = "22"; */
+"22.title" = "Fő cím";
+
+/* Class = "NSTextFieldCell"; title = "Currency exchange rates are provided by BitcoinAverage markets ticker. Bitcoin prices can change quickly, so other apps or sites might show different exchange rates."; ObjectID = "dxM-9E-wwb"; */
+"dxM-9E-wwb.title" = "A Bitcoin átváltási értéket a BitcoinAverage oldal szolgáltatja. Az árak gyorsan mozognak ezért az alkalmazás és egyéb átváltó oldalak közt lehetnek eltérések";

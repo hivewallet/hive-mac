@@ -573,6 +573,49 @@
 		583B1E0C1868BAC000817EF8 /* HIBackupActionsCellView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HIBackupActionsCellView.m; sourceTree = "<group>"; };
 		5850D22F189922C6001736D2 /* HIKeyObservingWindow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HIKeyObservingWindow.h; sourceTree = "<group>"; };
 		5850D230189922C6001736D2 /* HIKeyObservingWindow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HIKeyObservingWindow.m; sourceTree = "<group>"; };
+		58543D8918AA532D002A224A /* hu */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = hu; path = hu.lproj/HINewContactViewController.xib; sourceTree = "<group>"; };
+		58543D8A18AA532D002A224A /* hu */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = hu; path = hu.lproj/HIPasswordChangeWindowController.strings; sourceTree = "<group>"; };
+		58543D8B18AA532D002A224A /* hu */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = hu; path = hu.lproj/HIPasswordChangeWindowController.xib; sourceTree = "<group>"; };
+		58543D8C18AA532D002A224A /* hu */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = hu; path = hu.lproj/HIPasswordInputViewController.strings; sourceTree = "<group>"; };
+		58543D8D18AA532D002A224A /* hu */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = hu; path = hu.lproj/HIPasswordInputViewController.xib; sourceTree = "<group>"; };
+		58543D8E18AA532D002A224A /* hu */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = hu; path = hu.lproj/HIProfileViewController.strings; sourceTree = "<group>"; };
+		58543D8F18AA532D002A224A /* hu */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = hu; path = hu.lproj/HIProfileViewController.xib; sourceTree = "<group>"; };
+		58543D9018AA532D002A224A /* hu */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = hu; path = hu.lproj/HIContactAutocompleteWindowController.strings; sourceTree = "<group>"; };
+		58543D9118AA532D002A224A /* hu */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = hu; path = hu.lproj/HIContactAutocompleteWindowController.xib; sourceTree = "<group>"; };
+		58543D9218AA532D002A224A /* hu */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = hu; path = hu.lproj/HISendBitcoinsWindowController.strings; sourceTree = "<group>"; };
+		58543D9318AA532D002A224A /* hu */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = hu; path = hu.lproj/HISendBitcoinsWindowController.xib; sourceTree = "<group>"; };
+		58543D9418AA532D002A224A /* hu */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = hu; path = hu.lproj/HITransactionsViewController.strings; sourceTree = "<group>"; };
+		58543D9518AA532E002A224A /* hu */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = hu; path = hu.lproj/HITransactionsViewController.xib; sourceTree = "<group>"; };
+		58543D9618AA532E002A224A /* hu */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = hu; path = hu.lproj/HIWizardBackupViewController.strings; sourceTree = "<group>"; };
+		58543D9718AA532E002A224A /* hu */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = hu; path = hu.lproj/HIWizardBackupViewController.xib; sourceTree = "<group>"; };
+		58543D9818AA532E002A224A /* hu */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = hu; path = hu.lproj/HIWizardCompletedViewController.strings; sourceTree = "<group>"; };
+		58543D9918AA532E002A224A /* hu */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = hu; path = hu.lproj/HIWizardCompletedViewController.xib; sourceTree = "<group>"; };
+		58543D9A18AA532E002A224A /* hu */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = hu; path = hu.lproj/HIWizardPasswordViewController.strings; sourceTree = "<group>"; };
+		58543D9B18AA532E002A224A /* hu */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = hu; path = hu.lproj/HIWizardPasswordViewController.xib; sourceTree = "<group>"; };
+		58543D9C18AA532E002A224A /* hu */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = hu; path = hu.lproj/HIWizardWelcomeViewController.strings; sourceTree = "<group>"; };
+		58543D9D18AA532E002A224A /* hu */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = hu; path = hu.lproj/HIWizardWelcomeViewController.xib; sourceTree = "<group>"; };
+		58543D9E18AA532E002A224A /* hu */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = hu; path = hu.lproj/HIApplicationsViewController.strings; sourceTree = "<group>"; };
+		58543D9F18AA532E002A224A /* hu */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = hu; path = hu.lproj/HIApplicationsViewController.xib; sourceTree = "<group>"; };
+		58543DA018AA532E002A224A /* hu */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = hu; path = hu.lproj/HIBackupCenterWindowController.strings; sourceTree = "<group>"; };
+		58543DA118AA532F002A224A /* hu */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = hu; path = hu.lproj/HIBackupCenterWindowController.xib; sourceTree = "<group>"; };
+		58543DA218AA532F002A224A /* hu */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = hu; path = hu.lproj/HIContactsViewController.strings; sourceTree = "<group>"; };
+		58543DA318AA532F002A224A /* hu */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = hu; path = hu.lproj/HIContactsViewController.xib; sourceTree = "<group>"; };
+		58543DA418AA532F002A224A /* hu */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = hu; path = hu.lproj/HIContactInfoViewController.strings; sourceTree = "<group>"; };
+		58543DA518AA532F002A224A /* hu */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = hu; path = hu.lproj/HIContactInfoViewController.xib; sourceTree = "<group>"; };
+		58543DA618AA532F002A224A /* hu */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = hu; path = hu.lproj/HIContactViewController.strings; sourceTree = "<group>"; };
+		58543DA718AA532F002A224A /* hu */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = hu; path = hu.lproj/HIContactViewController.xib; sourceTree = "<group>"; };
+		58543DA818AA532F002A224A /* hu */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = hu; path = hu.lproj/HIDebuggingInfoWindowController.strings; sourceTree = "<group>"; };
+		58543DA918AA532F002A224A /* hu */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = hu; path = hu.lproj/HIDebuggingInfoWindowController.xib; sourceTree = "<group>"; };
+		58543DAA18AA532F002A224A /* hu */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = hu; path = hu.lproj/HIErrorWindowController.strings; sourceTree = "<group>"; };
+		58543DAB18AA532F002A224A /* hu */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = hu; path = hu.lproj/HIErrorWindowController.xib; sourceTree = "<group>"; };
+		58543DAC18AA532F002A224A /* hu */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = hu; path = hu.lproj/HIFeeDetailsViewController.strings; sourceTree = "<group>"; };
+		58543DAD18AA5330002A224A /* hu */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = hu; path = hu.lproj/HIFeeDetailsViewController.xib; sourceTree = "<group>"; };
+		58543DAE18AA5330002A224A /* hu */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = hu; path = hu.lproj/HIMainWindowController.strings; sourceTree = "<group>"; };
+		58543DAF18AA5330002A224A /* hu */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = hu; path = hu.lproj/HIMainWindowController.xib; sourceTree = "<group>"; };
+		58543DB018AA5330002A224A /* hu */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = hu; path = hu.lproj/HINewContactViewController.strings; sourceTree = "<group>"; };
+		58543DB118AA5330002A224A /* hu */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = hu; path = hu.lproj/MainMenu.strings; sourceTree = "<group>"; };
+		58543DB218AA5330002A224A /* hu */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = hu; path = hu.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		58543DB318AA5330002A224A /* hu */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = hu; path = hu.lproj/Localizable.strings; sourceTree = "<group>"; };
 		58571253188D8E7A0094F884 /* 2014012001.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = 2014012001.xcdatamodel; sourceTree = "<group>"; };
 		5857125E188F28A70094F884 /* bitstamptrader.hiveapp */ = {isa = PBXFileReference; lastKnownFileType = file; path = bitstamptrader.hiveapp; sourceTree = "<group>"; };
 		5857125F188F28A70094F884 /* mobile-recharge.hiveapp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "mobile-recharge.hiveapp"; sourceTree = "<group>"; };
@@ -2472,6 +2515,7 @@
 				sr,
 				"sr-Latn",
 				sv,
+				hu,
 			);
 			mainGroup = D9A591BB1767B4A800502635;
 			productRefGroup = D9A591C51767B4A800502635 /* Products */;
@@ -2860,6 +2904,7 @@
 				58003E3818492B2D00CD19FE /* sr */,
 				58003E5818492B4C00CD19FE /* sr-Latn */,
 				9A823D2618781AE30040C85C /* sv */,
+				58543D8E18AA532D002A224A /* hu */,
 			);
 			name = HIProfileViewController.strings;
 			sourceTree = "<group>";
@@ -2893,6 +2938,7 @@
 				58003E3918492B2D00CD19FE /* sr */,
 				58003E5918492B4C00CD19FE /* sr-Latn */,
 				9A823D2718781AE30040C85C /* sv */,
+				58543D8F18AA532D002A224A /* hu */,
 			);
 			name = HIProfileViewController.xib;
 			sourceTree = "<group>";
@@ -2926,6 +2972,7 @@
 				2478B8EE184A890C00BA2C35 /* sr */,
 				2478B8EF184A890D00BA2C35 /* sr-Latn */,
 				9A823D2118781AE20040C85C /* sv */,
+				58543DAD18AA5330002A224A /* hu */,
 			);
 			name = HIFeeDetailsViewController.xib;
 			sourceTree = "<group>";
@@ -2959,6 +3006,7 @@
 				2478B909184A8A0200BA2C35 /* sr */,
 				2478B90A184A8A0300BA2C35 /* sr-Latn */,
 				9A823D2018781AE20040C85C /* sv */,
+				58543DAC18AA532F002A224A /* hu */,
 			);
 			name = HIFeeDetailsViewController.strings;
 			sourceTree = "<group>";
@@ -3000,6 +3048,7 @@
 				58571291189026B20094F884 /* sr */,
 				58571292189026B50094F884 /* sr-Latn */,
 				58571293189026B60094F884 /* sv */,
+				58543D9718AA532E002A224A /* hu */,
 			);
 			name = HIWizardBackupViewController.xib;
 			sourceTree = "<group>";
@@ -3033,6 +3082,7 @@
 				585712AF189029980094F884 /* sr */,
 				585712B01890299A0094F884 /* sr-Latn */,
 				585712B11890299B0094F884 /* sv */,
+				58543D9618AA532E002A224A /* hu */,
 			);
 			name = HIWizardBackupViewController.strings;
 			sourceTree = "<group>";
@@ -3066,6 +3116,7 @@
 				585712D118902CF80094F884 /* sr */,
 				585712D218902CF90094F884 /* sr-Latn */,
 				585712D318902CFA0094F884 /* sv */,
+				58543D9918AA532E002A224A /* hu */,
 			);
 			name = HIWizardCompletedViewController.xib;
 			sourceTree = "<group>";
@@ -3099,6 +3150,7 @@
 				585712EF18902D290094F884 /* sr */,
 				585712F018902D2C0094F884 /* sr-Latn */,
 				585712F118902D2D0094F884 /* sv */,
+				58543D9818AA532E002A224A /* hu */,
 			);
 			name = HIWizardCompletedViewController.strings;
 			sourceTree = "<group>";
@@ -3132,6 +3184,7 @@
 				5857130F18902E440094F884 /* pt */,
 				5857131018902E450094F884 /* tr */,
 				5857131118902E460094F884 /* el */,
+				58543D9B18AA532E002A224A /* hu */,
 			);
 			name = HIWizardPasswordViewController.xib;
 			sourceTree = "<group>";
@@ -3165,6 +3218,7 @@
 				5857132D18902E730094F884 /* sr */,
 				5857132E18902E760094F884 /* sr-Latn */,
 				5857132F18902E760094F884 /* sv */,
+				58543D9A18AA532E002A224A /* hu */,
 			);
 			name = HIWizardPasswordViewController.strings;
 			sourceTree = "<group>";
@@ -3198,6 +3252,7 @@
 				5857134D189031E40094F884 /* sr */,
 				5857134E189031E50094F884 /* sr-Latn */,
 				5857134F189031E60094F884 /* sv */,
+				58543D9D18AA532E002A224A /* hu */,
 			);
 			name = HIWizardWelcomeViewController.xib;
 			sourceTree = "<group>";
@@ -3231,6 +3286,7 @@
 				5857136B189032380094F884 /* sr */,
 				5857136C189032390094F884 /* sr-Latn */,
 				5857136D1890323A0094F884 /* sv */,
+				58543D9C18AA532E002A224A /* hu */,
 			);
 			name = HIWizardWelcomeViewController.strings;
 			sourceTree = "<group>";
@@ -3264,6 +3320,7 @@
 				588953AA1888A6A000243190 /* sr */,
 				588953AB1888A6A300243190 /* sr-Latn */,
 				588953AC1888A6A300243190 /* sv */,
+				58543DA118AA532F002A224A /* hu */,
 			);
 			name = HIBackupCenterWindowController.xib;
 			sourceTree = "<group>";
@@ -3297,6 +3354,7 @@
 				588953C8188920E900243190 /* sr */,
 				588953C9188920EA00243190 /* sr-Latn */,
 				588953CA188920EC00243190 /* sv */,
+				58543DA018AA532E002A224A /* hu */,
 			);
 			name = HIBackupCenterWindowController.strings;
 			sourceTree = "<group>";
@@ -3330,6 +3388,7 @@
 				588953E4188921BF00243190 /* sr */,
 				588953E5188921C000243190 /* sr-Latn */,
 				588953E6188921C100243190 /* sv */,
+				58543D8B18AA532D002A224A /* hu */,
 			);
 			name = HIPasswordChangeWindowController.xib;
 			sourceTree = "<group>";
@@ -3363,6 +3422,7 @@
 				588954021889220100243190 /* sr */,
 				588954031889220200243190 /* sr-Latn */,
 				588954041889220400243190 /* sv */,
+				58543D8A18AA532D002A224A /* hu */,
 			);
 			name = HIPasswordChangeWindowController.strings;
 			sourceTree = "<group>";
@@ -3396,6 +3456,7 @@
 				5889541E1889251900243190 /* fr */,
 				5889541F1889251900243190 /* it */,
 				588954201889251A00243190 /* pl */,
+				58543D8D18AA532D002A224A /* hu */,
 			);
 			name = HIPasswordInputViewController.xib;
 			sourceTree = "<group>";
@@ -3429,6 +3490,7 @@
 				5889543C1889255D00243190 /* sr */,
 				5889543D1889255E00243190 /* sr-Latn */,
 				5889543E1889255E00243190 /* sv */,
+				58543D8C18AA532D002A224A /* hu */,
 			);
 			name = HIPasswordInputViewController.strings;
 			sourceTree = "<group>";
@@ -3462,6 +3524,7 @@
 				58003E2F18492B2B00CD19FE /* sr */,
 				58003E4F18492B4A00CD19FE /* sr-Latn */,
 				9A823D1D18781AE20040C85C /* sv */,
+				58543DA918AA532F002A224A /* hu */,
 			);
 			name = HIDebuggingInfoWindowController.xib;
 			sourceTree = "<group>";
@@ -3495,6 +3558,7 @@
 				58003E2E18492B2B00CD19FE /* sr */,
 				58003E4E18492B4A00CD19FE /* sr-Latn */,
 				9A823D1C18781AE10040C85C /* sv */,
+				58543DA818AA532F002A224A /* hu */,
 			);
 			name = HIDebuggingInfoWindowController.strings;
 			sourceTree = "<group>";
@@ -3528,6 +3592,7 @@
 				58003E3218492B2C00CD19FE /* sr */,
 				58003E5218492B4A00CD19FE /* sr-Latn */,
 				9A823D1E18781AE20040C85C /* sv */,
+				58543DAA18AA532F002A224A /* hu */,
 			);
 			name = HIErrorWindowController.strings;
 			sourceTree = "<group>";
@@ -3561,6 +3626,7 @@
 				58003E3318492B2C00CD19FE /* sr */,
 				58003E5318492B4B00CD19FE /* sr-Latn */,
 				9A823D1F18781AE20040C85C /* sv */,
+				58543DAB18AA532F002A224A /* hu */,
 			);
 			name = HIErrorWindowController.xib;
 			sourceTree = "<group>";
@@ -3594,6 +3660,7 @@
 				58003E4318492B2F00CD19FE /* sr */,
 				58003E6318492B4E00CD19FE /* sr-Latn */,
 				9A823D3118781AE50040C85C /* sv */,
+				58543DB318AA5330002A224A /* hu */,
 			);
 			name = Localizable.strings;
 			sourceTree = "<group>";
@@ -3627,6 +3694,7 @@
 				58003E2718492B2A00CD19FE /* sr */,
 				58003E4718492B4800CD19FE /* sr-Latn */,
 				9A823D1518781AE10040C85C /* sv */,
+				58543D9F18AA532E002A224A /* hu */,
 			);
 			name = HIApplicationsViewController.xib;
 			sourceTree = "<group>";
@@ -3660,6 +3728,7 @@
 				58003E2918492B2A00CD19FE /* sr */,
 				58003E4918492B4800CD19FE /* sr-Latn */,
 				9A823D1718781AE10040C85C /* sv */,
+				58543DA318AA532F002A224A /* hu */,
 			);
 			name = HIContactsViewController.xib;
 			sourceTree = "<group>";
@@ -3693,6 +3762,7 @@
 				58003E3518492B2D00CD19FE /* sr */,
 				58003E5518492B4B00CD19FE /* sr-Latn */,
 				9A823D2318781AE20040C85C /* sv */,
+				58543DAF18AA5330002A224A /* hu */,
 			);
 			name = HIMainWindowController.xib;
 			sourceTree = "<group>";
@@ -3726,6 +3796,7 @@
 				58003E3718492B2D00CD19FE /* sr */,
 				58003E5718492B4C00CD19FE /* sr-Latn */,
 				9A823D2518781AE30040C85C /* sv */,
+				58543D8918AA532D002A224A /* hu */,
 			);
 			name = HINewContactViewController.xib;
 			sourceTree = "<group>";
@@ -3759,6 +3830,7 @@
 				58003E2B18492B2A00CD19FE /* sr */,
 				58003E4B18492B4900CD19FE /* sr-Latn */,
 				9A823D1918781AE10040C85C /* sv */,
+				58543DA518AA532F002A224A /* hu */,
 			);
 			name = HIContactInfoViewController.xib;
 			sourceTree = "<group>";
@@ -3792,6 +3864,7 @@
 				58003E2D18492B2B00CD19FE /* sr */,
 				58003E4D18492B4900CD19FE /* sr-Latn */,
 				9A823D1B18781AE10040C85C /* sv */,
+				58543DA718AA532F002A224A /* hu */,
 			);
 			name = HIContactViewController.xib;
 			sourceTree = "<group>";
@@ -3825,6 +3898,7 @@
 				58003E3B18492B2E00CD19FE /* sr */,
 				58003E5B18492B4D00CD19FE /* sr-Latn */,
 				9A823D2918781AE30040C85C /* sv */,
+				58543D9118AA532D002A224A /* hu */,
 			);
 			name = HIContactAutocompleteWindowController.xib;
 			sourceTree = "<group>";
@@ -3858,6 +3932,7 @@
 				58003E3D18492B2E00CD19FE /* sr */,
 				58003E5D18492B4D00CD19FE /* sr-Latn */,
 				9A823D2B18781AE40040C85C /* sv */,
+				58543D9318AA532D002A224A /* hu */,
 			);
 			name = HISendBitcoinsWindowController.xib;
 			sourceTree = "<group>";
@@ -3891,6 +3966,7 @@
 				58003E3F18492B2E00CD19FE /* sr */,
 				58003E5F18492B4D00CD19FE /* sr-Latn */,
 				9A823D2D18781AE40040C85C /* sv */,
+				58543D9518AA532E002A224A /* hu */,
 			);
 			name = HITransactionsViewController.xib;
 			sourceTree = "<group>";
@@ -3924,6 +4000,7 @@
 				58003E2818492B2A00CD19FE /* sr */,
 				58003E4818492B4800CD19FE /* sr-Latn */,
 				9A823D1618781AE10040C85C /* sv */,
+				58543DA218AA532F002A224A /* hu */,
 			);
 			name = HIContactsViewController.strings;
 			sourceTree = "<group>";
@@ -3957,6 +4034,7 @@
 				58003E3618492B2D00CD19FE /* sr */,
 				58003E5618492B4B00CD19FE /* sr-Latn */,
 				9A823D2418781AE20040C85C /* sv */,
+				58543DB018AA5330002A224A /* hu */,
 			);
 			name = HINewContactViewController.strings;
 			sourceTree = "<group>";
@@ -3990,6 +4068,7 @@
 				58003E2A18492B2A00CD19FE /* sr */,
 				58003E4A18492B4900CD19FE /* sr-Latn */,
 				9A823D1818781AE10040C85C /* sv */,
+				58543DA418AA532F002A224A /* hu */,
 			);
 			name = HIContactInfoViewController.strings;
 			sourceTree = "<group>";
@@ -4023,6 +4102,7 @@
 				58003E2C18492B2B00CD19FE /* sr */,
 				58003E4C18492B4900CD19FE /* sr-Latn */,
 				9A823D1A18781AE10040C85C /* sv */,
+				58543DA618AA532F002A224A /* hu */,
 			);
 			name = HIContactViewController.strings;
 			sourceTree = "<group>";
@@ -4056,6 +4136,7 @@
 				58003E3A18492B2D00CD19FE /* sr */,
 				58003E5A18492B4C00CD19FE /* sr-Latn */,
 				9A823D2818781AE30040C85C /* sv */,
+				58543D9018AA532D002A224A /* hu */,
 			);
 			name = HIContactAutocompleteWindowController.strings;
 			sourceTree = "<group>";
@@ -4089,6 +4170,7 @@
 				58003E3C18492B2E00CD19FE /* sr */,
 				58003E5C18492B4D00CD19FE /* sr-Latn */,
 				9A823D2A18781AE30040C85C /* sv */,
+				58543D9218AA532D002A224A /* hu */,
 			);
 			name = HISendBitcoinsWindowController.strings;
 			sourceTree = "<group>";
@@ -4122,6 +4204,7 @@
 				58003E3E18492B2E00CD19FE /* sr */,
 				58003E5E18492B4D00CD19FE /* sr-Latn */,
 				9A823D2C18781AE40040C85C /* sv */,
+				58543D9418AA532D002A224A /* hu */,
 			);
 			name = HITransactionsViewController.strings;
 			sourceTree = "<group>";
@@ -4155,6 +4238,7 @@
 				58003E3418492B2C00CD19FE /* sr */,
 				58003E5418492B4B00CD19FE /* sr-Latn */,
 				9A823D2218781AE20040C85C /* sv */,
+				58543DAE18AA5330002A224A /* hu */,
 			);
 			name = HIMainWindowController.strings;
 			sourceTree = "<group>";
@@ -4188,6 +4272,7 @@
 				58003E4018492B2E00CD19FE /* sr */,
 				58003E6018492B4E00CD19FE /* sr-Latn */,
 				9A823D2E18781AE40040C85C /* sv */,
+				58543DB118AA5330002A224A /* hu */,
 			);
 			name = MainMenu.strings;
 			sourceTree = "<group>";
@@ -4221,6 +4306,7 @@
 				58E336301892C046004D60C3 /* ja */,
 				58E336311892C046004D60C3 /* pt-BR */,
 				58E336321892C047004D60C3 /* ro */,
+				58543D9E18AA532E002A224A /* hu */,
 			);
 			name = HIApplicationsViewController.strings;
 			sourceTree = "<group>";
@@ -4254,6 +4340,7 @@
 				58003E4118492B2F00CD19FE /* sr */,
 				58003E6118492B4E00CD19FE /* sr-Latn */,
 				9A823D2F18781AE40040C85C /* sv */,
+				58543DB218AA5330002A224A /* hu */,
 			);
 			name = MainMenu.xib;
 			sourceTree = "<group>";
