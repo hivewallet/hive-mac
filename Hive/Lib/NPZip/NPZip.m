@@ -224,8 +224,7 @@ static uint32_t NPReadUInt32(FILE *fp) {
         stream.next_out = unpacked_buff;
         stream.total_out = 0;
         
-        int res = Z_OK;
-        res = inflate(&stream, Z_SYNC_FLUSH);
+        inflate(&stream, Z_SYNC_FLUSH);
         if (stream.total_out > 0) {
             [dat appendBytes:unpacked_buff length:stream.total_out];
         }

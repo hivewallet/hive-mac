@@ -17,7 +17,6 @@
 
     CGPathRef animationPath = [self createAnimationPath];
     shakeAnimation.path = animationPath;
-    CGPathRelease(animationPath);
 
     return shakeAnimation;
 }
@@ -33,7 +32,8 @@
         CGPathAddLineToPoint(animationPath, NULL, origin.x + offset, origin.y);
     }
     CGPathCloseSubpath(animationPath);
-    return animationPath;
+
+    return (__bridge CGPathRef) CFBridgingRelease(animationPath);
 }
 
 @end

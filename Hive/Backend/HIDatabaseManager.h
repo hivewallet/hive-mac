@@ -18,6 +18,6 @@
 
 @property (readonly, nonatomic) NSManagedObjectContext *managedObjectContext;
 
-- (void)backupStoreToDirectory:(NSURL *)backupLocation error:(NSError **)error;
+- (BOOL)backupStoreToDirectory:(NSURL *)backupLocation error:(NSError **)error;
 
 @end

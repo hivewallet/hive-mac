@@ -114,7 +114,7 @@ static NSInteger HIDatabaseManagerFileExistsAtLocationError = 1000;
     return _persistentStoreCoordinator;
 }
 
-- (void)deletePersistentStoreAtURL:(NSURL *)URL error:(NSError **)error {
+- (BOOL)deletePersistentStoreAtURL:(NSURL *)URL error:(NSError **)error {
     NSFileManager *fileManager = [NSFileManager defaultManager];
 
     for (NSString *suffix in @[@"", @"-journal", @"-wal", @"-shm"]) {
@@ -125,13 +125,15 @@ static NSInteger HIDatabaseManagerFileExistsAtLocationError = 1000;
 
             if (error && *error) {
                 HILogError(@"Can't delete persistent store at %@: %@", path, *error);
-                return;
+                return NO;
             }
         }
     }
+
+    return YES;
 }
 
-- (void)backupStoreToDirectory:(NSURL *)backupLocation error:(NSError **)error {
+- (BOOL)backupStoreToDirectory:(NSURL *)backupLocation error:(NSError **)error {
     HILogInfo(@"Backing up Core Data store to %@", backupLocation);
     NSAssert(dispatch_get_current_queue() == dispatch_get_main_queue(), @"This method must be run on the main thread");
 
@@ -148,7 +150,7 @@ static NSInteger HIDatabaseManagerFileExistsAtLocationError = 1000;
         if (backupError) {
             HILogError(@"Error during store backup: %@", backupError);
             *error = backupError;
-            return;
+            return NO;
         }
     }
 
@@ -164,7 +166,7 @@ static NSInteger HIDatabaseManagerFileExistsAtLocationError = 1000;
     if (backupError) {
         HILogError(@"Error during store backup: %@", backupError);
         *error = backupError;
-        return;
+        return NO;
     }
 
     // prevent creating additional journal files (sha/wal)
@@ -179,8 +181,10 @@ static NSInteger HIDatabaseManagerFileExistsAtLocationError = 1000;
     if (backupError) {
         HILogError(@"Error during store backup: %@", backupError);
         *error = backupError;
-        return;
+        return NO;
     }
+
+    return YES;
 }
 
 - (NSManagedObjectContext *)managedObjectContext {

@@ -46,16 +46,25 @@ static const NSTimeInterval SCAN_INTERVAL = .25;
     self.captureView.captureSession = self.captureSession;
 }
 
-- (void)startCapture:(NSError **)error {
+- (BOOL)startCapture:(NSError **)error {
     self.captureSession = [QTCaptureSession new];
     QTCaptureDevice *videoDevice = [QTCaptureDevice defaultInputDeviceWithMediaType:QTMediaTypeVideo];
+
     if ([videoDevice open:error]) {
         QTCaptureDeviceInput *deviceInput = [[QTCaptureDeviceInput alloc] initWithDevice:videoDevice];
+
         if ([self.captureSession addInput:deviceInput error:error]) {
             [self.captureSession startRunning];
-            *error = nil;
+
+            if (error) {
+                *error = nil;
+            }
+
+            return YES;
         }
     }
+
+    return NO;
 }
 
 #pragma mark - NSWindowControllerDelegate

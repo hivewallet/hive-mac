@@ -121,7 +121,7 @@ const NSInteger HIDropboxBackupNotRunning = -3;
 }
 
 - (BOOL)dropboxFolderExists {
-    BOOL isDirectory;
+    BOOL isDirectory = NO;
     BOOL exists = NO;
 
     NSString *dropboxFolder = [self dropboxFolder];

@@ -262,6 +262,8 @@ static int ddLogLevel = LOG_LEVEL_VERBOSE;
 
     LSSetDefaultHandlerForURLScheme(CFSTR("bitcoin"), bundleID);
     LSSetDefaultRoleHandlerForContentType(UTI, kLSRolesAll, bundleID);
+
+    CFRelease(UTI);
 }
 
 - (void)showAppWindow {
