@@ -1803,8 +1803,8 @@
 				24178E2E1861005100A73D4E /* HIPasswordChangeWindowController.m */,
 				588953EB188921E300243190 /* HIPasswordChangeWindowController.strings */,
 				588953CD1889219F00243190 /* HIPasswordChangeWindowController.xib */,
-				1AA1064121A6B2D8D1FF4F7D /* HIPasswordCreationInputHandler.m */,
 				1AA1010B59273C4F0BB17084 /* HIPasswordCreationInputHandler.h */,
+				1AA1064121A6B2D8D1FF4F7D /* HIPasswordCreationInputHandler.m */,
 			);
 			name = HIPasswordChangeWindowController;
 			sourceTree = "<group>";
@@ -1853,16 +1853,16 @@
 				D9716B6C17D88F8800888F4E /* HIDoneButtonCell.m */,
 				1AA10A32478D47E8D26B9653 /* HIDraggableButton.h */,
 				1AA10ED2A6A54B40FB3067FD /* HIDraggableButton.m */,
-				1AA10EB1DE996965F848889D /* HIGradientButtonCell.m */,
 				1AA10EF74F3C5F1303FD333E /* HIGradientButtonCell.h */,
+				1AA10EB1DE996965F848889D /* HIGradientButtonCell.m */,
 				1AA109349A0DB4DF39E55FA4 /* HILabelPopUpButton.h */,
 				1AA1099A1809B28C291572E7 /* HILabelPopUpButton.m */,
 				581711BC17D0A26D00DE775A /* HISidebarButton.h */,
 				581711BD17D0A26D00DE775A /* HISidebarButton.m */,
-				1AA106209DB5E8088D1290A0 /* HIWizardButtonCell.m */,
 				1AA10AD24CA867B468C6409C /* HIWizardButtonCell.h */,
-				1AA101A350D2350E6AF62F4C /* HIWizardSmallButtonCell.m */,
+				1AA106209DB5E8088D1290A0 /* HIWizardButtonCell.m */,
 				1AA10575B3B61D51B1DBF1C9 /* HIWizardSmallButtonCell.h */,
+				1AA101A350D2350E6AF62F4C /* HIWizardSmallButtonCell.m */,
 			);
 			name = Buttons;
 			sourceTree = "<group>";
@@ -2131,20 +2131,20 @@
 				5860D3FE180455B900BD852C /* HIApplicationsManager.m */,
 				1AA105D345F413155D76B5B8 /* HIBitcoinFormatService.h */,
 				1AA100CAE5EF0CB61AF126DB /* HIBitcoinFormatService.m */,
+				1AA107211BD084775E0C7199 /* HIBitcoinUrlService.h */,
+				1AA109C51D4A1A22BB28F6BF /* HIBitcoinUrlService.m */,
+				1AA102DC4B21868564928E39 /* HICurrencyFormatService.h */,
+				1AA1067F6D5A72CF17997A19 /* HICurrencyFormatService.m */,
 				585A8B2318576F020096888C /* HIDatabaseManager.h */,
 				585A8B2418576F020096888C /* HIDatabaseManager.m */,
+				1AA1023A121C8842E7B7CE4A /* HIDirectoryDataService.h */,
+				1AA10B46D06417F03AD71274 /* HIDirectoryDataService.m */,
 				1AA10C583F128C0BCD84C878 /* HIExchangeRateService.h */,
 				1AA1032408E917EE5B7752AC /* HIExchangeRateService.m */,
 				1AA10ABE84E126AEFF538618 /* HINotificationService.h */,
 				1AA1022DA4CD99B7CB61C335 /* HINotificationService.m */,
-				1AA1067F6D5A72CF17997A19 /* HICurrencyFormatService.m */,
-				1AA102DC4B21868564928E39 /* HICurrencyFormatService.h */,
-				1AA10B46D06417F03AD71274 /* HIDirectoryDataService.m */,
-				1AA1023A121C8842E7B7CE4A /* HIDirectoryDataService.h */,
-				1AA1087CF3AB1F831B230294 /* HISendFeedbackService.m */,
 				1AA10BFBA89C0A555ACF047A /* HISendFeedbackService.h */,
-				1AA109C51D4A1A22BB28F6BF /* HIBitcoinUrlService.m */,
-				1AA107211BD084775E0C7199 /* HIBitcoinUrlService.h */,
+				1AA1087CF3AB1F831B230294 /* HISendFeedbackService.m */,
 			);
 			path = Backend;
 			sourceTree = "<group>";
@@ -2175,8 +2175,8 @@
 			isa = PBXGroup;
 			children = (
 				24300C54188C50E300FDEF2F /* Buttons */,
-				1AA107FF085E51B83E5F751D /* HIAddressesBox.m */,
 				1AA10789485D85E021441CEF /* HIAddressesBox.h */,
+				1AA107FF085E51B83E5F751D /* HIAddressesBox.m */,
 				583B1E0B1868BAC000817EF8 /* HIBackupActionsCellView.h */,
 				583B1E0C1868BAC000817EF8 /* HIBackupActionsCellView.m */,
 				588F3E8318719A9000FF42EA /* HIBackupStatusCellView.h */,
@@ -2195,8 +2195,8 @@
 				D939FE9B17F076E80088F5D3 /* HICopyView.m */,
 				589064B5180596B80082BE5C /* HIEditableImageView.h */,
 				589064B6180596B80082BE5C /* HIEditableImageView.m */,
-				1AA10B56EFB8D052C7EEFF9E /* HIEmptyTransactionsView.m */,
 				1AA1015DB961D5421DA89E41 /* HIEmptyTransactionsView.h */,
+				1AA10B56EFB8D052C7EEFF9E /* HIEmptyTransactionsView.m */,
 				D958A8B617E8547A00CED98C /* HIFlippedView.h */,
 				D958A8B717E8547A00CED98C /* HIFlippedView.m */,
 				D9F0B9F617EC654C0050A0A2 /* HIImageCell.h */,
