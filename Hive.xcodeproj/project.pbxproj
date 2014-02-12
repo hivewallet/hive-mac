@@ -174,6 +174,7 @@
 		589064AE1805742C0082BE5C /* seansoutpost.hiveapp in Resources */ = {isa = PBXBuildFile; fileRef = 589064AD1805742C0082BE5C /* seansoutpost.hiveapp */; };
 		589064B7180596B80082BE5C /* HIEditableImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 589064B6180596B80082BE5C /* HIEditableImageView.m */; };
 		58A03B0D17D9DC4100ADD5E5 /* HIButtonWithSpinner.m in Sources */ = {isa = PBXBuildFile; fileRef = 58A03B0C17D9DC4100ADD5E5 /* HIButtonWithSpinner.m */; };
+		58A0A49618ABC75E00A5A084 /* HITemporaryContact.m in Sources */ = {isa = PBXBuildFile; fileRef = 58A0A49518ABC75E00A5A084 /* HITemporaryContact.m */; };
 		58A37A8A180D747C00CFCDE3 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 58A37A8C180D747C00CFCDE3 /* Localizable.strings */; };
 		58A37A98180D7AF000CFCDE3 /* HIApplicationsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 58A37A9A180D7AF000CFCDE3 /* HIApplicationsViewController.xib */; };
 		58A37A9B180D7AF600CFCDE3 /* HIContactsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 58A37A9D180D7AF600CFCDE3 /* HIContactsViewController.xib */; };
@@ -1434,6 +1435,8 @@
 		589C6154183A70B900EE523F /* pt-BR */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-BR"; path = "pt-BR.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		58A03B0B17D9DC4100ADD5E5 /* HIButtonWithSpinner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HIButtonWithSpinner.h; sourceTree = "<group>"; };
 		58A03B0C17D9DC4100ADD5E5 /* HIButtonWithSpinner.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HIButtonWithSpinner.m; sourceTree = "<group>"; };
+		58A0A49418ABC75E00A5A084 /* HITemporaryContact.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HITemporaryContact.h; sourceTree = "<group>"; };
+		58A0A49518ABC75E00A5A084 /* HITemporaryContact.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HITemporaryContact.m; sourceTree = "<group>"; };
 		58A37A8B180D747C00CFCDE3 /* en */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		58A37A99180D7AF000CFCDE3 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/HIApplicationsViewController.xib; sourceTree = "<group>"; };
 		58A37A9C180D7AF600CFCDE3 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/HIContactsViewController.xib; sourceTree = "<group>"; };
@@ -1926,6 +1929,8 @@
 				1AA10683D3C0D3D1757EE24E /* HIPerson.h */,
 				5804C32417FC88BA003B7891 /* HIProfile.h */,
 				5804C32517FC88BA003B7891 /* HIProfile.m */,
+				58A0A49418ABC75E00A5A084 /* HITemporaryContact.h */,
+				58A0A49518ABC75E00A5A084 /* HITemporaryContact.m */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -2800,6 +2805,7 @@
 				583B1DED186860EC00817EF8 /* HIBackupCenterWindowController.m in Sources */,
 				586059CF18041A6D00FD9C2A /* HIApplicationURLProtocol.m in Sources */,
 				583B1E011868784600817EF8 /* HIBackupManager.m in Sources */,
+				58A0A49618ABC75E00A5A084 /* HITemporaryContact.m in Sources */,
 				586059D018041A6D00FD9C2A /* HIAppRuntimeBridge.m in Sources */,
 				586059D418041A7A00FD9C2A /* HIContactsViewController.m in Sources */,
 				24300C1E188C3F5900FDEF2F /* HIWizardWelcomeViewController.m in Sources */,

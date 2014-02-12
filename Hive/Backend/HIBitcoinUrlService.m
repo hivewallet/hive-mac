@@ -2,6 +2,7 @@
 
 #import "HIBitcoinURL.h"
 #import "HISendBitcoinsWindowController.h"
+#import "HITemporaryContact.h"
 
 @implementation HIBitcoinUrlService
 
@@ -29,7 +30,13 @@
         HISendBitcoinsWindowController *window = [appDelegate sendBitcoinsWindow];
 
         if (bitcoinURL.address) {
-            [window setHashAddress:bitcoinURL.address];
+            if (bitcoinURL.label) {
+                HITemporaryContact *contact = [[HITemporaryContact alloc] initWithName:bitcoinURL.label
+                                                                               address:bitcoinURL.address];
+                [window selectContact:contact address:contact.addresses.anyObject];
+            } else {
+                [window setHashAddress:bitcoinURL.address];
+            }
         }
 
         if (bitcoinURL.amount) {

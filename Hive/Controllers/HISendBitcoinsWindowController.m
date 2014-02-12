@@ -19,6 +19,7 @@
 #import "HILinkTextField.h"
 #import "HISendBitcoinsWindowController.h"
 #import "HIPasswordInputViewController.h"
+#import "HIPerson.h"
 #import "HITransaction.h"
 #import "NSDecimalNumber+HISatoshiConversion.h"
 #import "NSWindow+HIShake.h"
@@ -163,7 +164,7 @@ NSString * const HISendBitcoinsWindowSuccessKey = @"success";
     self.photoView.image = [NSImage imageNamed:@"avatar-empty"];
 }
 
-- (void)selectContact:(HIContact *)contact address:(HIAddress *)address {
+- (void)selectContact:(id<HIPerson>)contact address:(HIAddress *)address {
     _contact = contact;
     _hashAddress = address.address;
 
