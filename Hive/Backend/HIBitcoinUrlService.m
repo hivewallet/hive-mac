@@ -34,8 +34,9 @@
                 HITemporaryContact *contact = [[HITemporaryContact alloc] initWithName:bitcoinURL.label
                                                                                address:bitcoinURL.address];
                 [window selectContact:contact address:contact.addresses.anyObject];
+                [window lockAddress];
             } else {
-                [window setHashAddress:bitcoinURL.address];
+                [window setLockedAddress:bitcoinURL.address];
             }
         }
 

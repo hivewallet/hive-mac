@@ -31,6 +31,7 @@ NSString * const HISendBitcoinsWindowSuccessKey = @"success";
     HIContact *_contact;
     HIContactAutocompleteWindowController *_autocompleteController;
     NSString *_hashAddress;
+    BOOL _lockedAddress;
     satoshi_t _amount;
     NSPopover *_passwordPopover;
 }
@@ -100,6 +101,10 @@ NSString * const HISendBitcoinsWindowSuccessKey = @"success";
         self.addressLabel.stringValue = NSLocalizedString(@"or choose from the list", @"Autocomplete dropdown prompt");
     }
 
+    if (_lockedAddress) {
+        [self lockAddress];
+    }
+
     self.photoView.layer.cornerRadius = 5.0;
     self.photoView.layer.masksToBounds = YES;
 
@@ -135,10 +140,26 @@ NSString * const HISendBitcoinsWindowSuccessKey = @"success";
 #pragma mark - Configuration
 
 - (void)setHashAddress:(NSString *)hash {
-    [self clearContact];
+    if ([self isWindowLoaded]) {
+        [self clearContact];
+        self.nameLabel.stringValue = hash;
+    }
 
     _hashAddress = hash;
-    self.nameLabel.stringValue = _hashAddress;
+}
+
+- (void)lockAddress {
+    _lockedAddress = YES;
+
+    if ([self isWindowLoaded]) {
+        [self.nameLabel setEditable:NO];
+        [self.dropdownButton setHidden:YES];
+    }
+}
+
+- (void)setLockedAddress:(NSString *)hash {
+    [self setHashAddress:hash];
+    [self lockAddress];
 }
 
 - (void)setLockedAmount:(satoshi_t)amount {

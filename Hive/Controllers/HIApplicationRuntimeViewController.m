@@ -89,7 +89,7 @@
                   completion:(HITransactionCompletionCallback)completion {
     HIAppDelegate *delegate = (HIAppDelegate *) [NSApp delegate];
     HISendBitcoinsWindowController *sc = [delegate sendBitcoinsWindow];
-    [sc setHashAddress:hash];
+    [sc setLockedAddress:hash];
     [sc setSendCompletion:completion];
 
     if (amount) {
