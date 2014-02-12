@@ -152,41 +152,29 @@ static NSInteger HIDatabaseManagerFileExistsAtLocationError = 1000;
         }
     }
 
-    NSPersistentStoreCoordinator *coordinator = self.persistentStoreCoordinator;
+    NSPersistentStoreCoordinator *coordinator =
+        [[NSPersistentStoreCoordinator alloc] initWithManagedObjectModel:self.managedObjectModel];
+
+    NSPersistentStore *sourceStore = [coordinator addPersistentStoreWithType:NSSQLiteStoreType
+                                                               configuration:nil
+                                                                         URL:standardLocation
+                                                                     options:nil
+                                                                       error:&backupError];
+
+    if (backupError) {
+        HILogError(@"Error during store backup: %@", backupError);
+        *error = backupError;
+        return;
+    }
 
     // prevent creating additional journal files (sha/wal)
-    NSDictionary *storeOptions = @{
-                                   NSMigratePersistentStoresAutomaticallyOption: @YES,
-                                   NSInferMappingModelAutomaticallyOption: @YES,
-                                   NSSQLitePragmasOption: @{ @"journal_mode": @"DELETE" }
-                                 };
+    NSDictionary *storeOptions = @{ NSSQLitePragmasOption: @{ @"journal_mode": @"DELETE" }};
 
-    NSPersistentStore *backupStore = [coordinator migratePersistentStore:coordinator.persistentStores.firstObject
-                                                                   toURL:backupFileLocation
-                                                                 options:storeOptions
-                                                                withType:NSSQLiteStoreType
-                                                                   error:&backupError];
-
-    if (backupError) {
-        HILogError(@"Error during store backup: %@", backupError);
-        *error = backupError;
-        return;
-    }
-
-    [coordinator removePersistentStore:backupStore
-                                 error:&backupError];
-
-    if (backupError) {
-        HILogError(@"Error during store backup: %@", backupError);
-        *error = backupError;
-        return;
-    }
-
-    [coordinator addPersistentStoreWithType:NSSQLiteStoreType
-                              configuration:nil
-                                        URL:standardLocation
-                                    options:nil
-                                      error:&backupError];
+    [coordinator migratePersistentStore:sourceStore
+                                  toURL:backupFileLocation
+                                options:storeOptions
+                               withType:NSSQLiteStoreType
+                                  error:&backupError];
 
     if (backupError) {
         HILogError(@"Error during store backup: %@", backupError);
