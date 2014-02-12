@@ -132,7 +132,7 @@ static int ddLogLevel = LOG_LEVEL_VERBOSE;
 
 - (void)configureHockeyApp {
     BITHockeyManager *hockeyapp = [BITHockeyManager sharedHockeyManager];
-    [hockeyapp configureWithIdentifier:@"e47f0624d130a873ecae31509e4d1124"
+    [hockeyapp configureWithIdentifier:@"f5b8dab305a1fe6973043674446c7312"
                            companyName:@""
                               delegate:self];
     [hockeyapp startManager];
