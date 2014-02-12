@@ -52,7 +52,7 @@ static const NSTimeInterval UpdateTimerInterval = 5.0;
 }
 
 - (void)dealloc {
-    NSAssert([_updateTimer isValid], @"Retain cycle not broken");
+    NSAssert(![_updateTimer isValid], @"Retain cycle not broken");
 
     for (HIBackupAdapter *adapter in _backupManager.adapters) {
         [adapter removeObserver:self forKeyPath:@"status"];
