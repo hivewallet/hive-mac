@@ -129,10 +129,10 @@ NSString * const HISendBitcoinsWindowSuccessKey = @"success";
 
 - (void)windowWillClose:(NSNotification *)notification {
     _autocompleteController = nil;
+    [_exchangeRateService removeExchangeRateObserver:self];
 }
 
 - (void)dealloc {
-    [_exchangeRateService removeExchangeRateObserver:self];
     [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
