@@ -8,6 +8,8 @@
 
 static int KVO_CONTEXT;
 static NSString *const HINotificationTypeKey = @"HINotificationTypeKey";
+static NSString *const LastBackupsCheckKey = @"LastBackupsCheckKey";
+static NSTimeInterval BackupsEnabledNotificationInterval = 7 * 86400;
 
 typedef NS_ENUM(NSInteger, HINotificationType) {
     HINotificationTypeTransaction,
@@ -49,16 +51,40 @@ typedef NS_ENUM(NSInteger, HINotificationType) {
 - (void)enable {
     [NSUserNotificationCenter defaultUserNotificationCenter].delegate = self;
     [[BCClient sharedClient] addTransactionObserver:self];
+
     for (HIBackupAdapter *adapter in [HIBackupManager sharedManager].adapters) {
         [adapter addObserver:self forKeyPath:@"errorMessage" options:0 context:&KVO_CONTEXT];
+    }
+
+    if ([self shouldCheckIfBackupsEnabled]) {
+        [self checkIfBackupsEnabled];
     }
 }
 
 - (void)disable {
     [[BCClient sharedClient] removeTransactionObserver:self];
+
     for (HIBackupAdapter *adapter in [HIBackupManager sharedManager].adapters) {
         [adapter removeObserver:self forKeyPath:@"errorMessage" context:&KVO_CONTEXT];
     }
+}
+
+- (BOOL)shouldCheckIfBackupsEnabled {
+    NSDate *lastCheck = [[NSUserDefaults standardUserDefaults] objectForKey:LastBackupsCheckKey];
+
+    return (!lastCheck || [[NSDate date] timeIntervalSinceDate:lastCheck] >= BackupsEnabledNotificationInterval);
+}
+
+- (void)checkIfBackupsEnabled {
+    [[NSUserDefaults standardUserDefaults] setObject:[NSDate date] forKey:LastBackupsCheckKey];
+
+    for (HIBackupAdapter *adapter in [[HIBackupManager sharedManager] adapters]) {
+        if (adapter.enabled) {
+            return;
+        }
+    }
+
+    [self postNoBackupsEnabledNotification];
 }
 
 - (void)postNotification:(NSString *)notificationText
@@ -160,6 +186,15 @@ typedef NS_ENUM(NSInteger, HINotificationType) {
 - (void)postBackupErrorNotification:(NSString *)errorMessage {
     [self postNotification:NSLocalizedString(@"Backup failed", @"Notification of failed backup")
                       text:errorMessage
+          notificationType:HINotificationTypeBackup];
+}
+
+- (void)postNoBackupsEnabledNotification {
+    [self postNotification:NSLocalizedString(@"No backups configured",
+                                             @"No backups enabled notification title")
+                      text:NSLocalizedString(@"To protect your bitcoins, it's recommended "
+                                             @"that you enable at least one type of backup.",
+                                             @"No backups enabled notification details")
           notificationType:HINotificationTypeBackup];
 }
 
