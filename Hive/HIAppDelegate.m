@@ -87,7 +87,8 @@ static int ddLogLevel = LOG_LEVEL_VERBOSE;
     [self configureHockeyApp];
 
     [[NSUserDefaults standardUserDefaults] registerDefaults:@{
-     @"WebKitDeveloperExtras": @YES
+      // enable WebKit inspector in apps
+      @"WebKitDeveloperExtras": @YES,
     }];
 
     [NSURLProtocol registerClass:[HIApplicationURLProtocol class]];
@@ -364,73 +365,12 @@ static int ddLogLevel = LOG_LEVEL_VERBOSE;
     });
 }
 
-// Returns the NSUndoManager for the application.
-// In this case, the manager returned is that of the managed object context for the application.
-- (NSUndoManager *)windowWillReturnUndoManager:(NSWindow *)window {
-    return [DBM undoManager];
-}
-
-// Performs the save action for the application, which is to send the save: message to the application's
-// managed object context. Any encountered errors are presented to the user.
-- (IBAction)saveAction:(id)sender {
-    NSError *error = nil;
-
-    if (![DBM commitEditing]) {
-        HILogError(@"Unable to commit editing before saving");
-    }
-
-    if (![DBM save:&error]) {
-        [NSApp presentError:error];
-    }
-}
-
 - (void)applicationWillTerminate:(NSNotification *)notification {
     HILogInfo(@"Quitting Hive...");
     [[BCClient sharedClient] shutdown];
 }
 
 - (NSApplicationTerminateReply)applicationShouldTerminate:(NSApplication *)sender {
-    // Save changes in the application's managed object context before the application terminates.
-
-    if (!DBM) {
-        return NSTerminateNow;
-    }
-
-    if (![DBM commitEditing]) {
-        HILogError(@"Unable to commit editing to terminate");
-        return NSTerminateCancel;
-    }
-
-    NSError *error = nil;
-
-    if ([DBM hasChanges] && ![DBM save:&error]) {
-        // Customize this code block to include application-specific recovery steps.
-        BOOL result = [sender presentError:error];
-        if (result) {
-            return NSTerminateCancel;
-        }
-
-        NSString *question = NSLocalizedString(@"Could not save changes while quitting. Quit anyway?",
-                                               @"Quit without saves error question message");
-        NSString *info = NSLocalizedString(@"Quitting now will lose any changes you have made "
-                                           @"since the last successful save",
-                                           @"Quit without saves error question info");
-        NSString *quitButton = NSLocalizedString(@"Quit anyway", @"Quit anyway button title");
-        NSString *cancelButton = NSLocalizedString(@"Cancel", @"Cancel button title");
-
-        NSAlert *alert = [[NSAlert alloc] init];
-        [alert setMessageText:question];
-        [alert setInformativeText:info];
-        [alert addButtonWithTitle:quitButton];
-        [alert addButtonWithTitle:cancelButton];
-
-        NSInteger answer = [alert runModal];
-
-        if (answer == NSAlertAlternateReturn) {
-            return NSTerminateCancel;
-        }
-    }
-
     if ([[HIBitcoinManager defaultManager] isSyncing] && [[BCClient sharedClient] hasPendingTransactions]) {
         NSString *title = NSLocalizedString(@"Hive is currently syncing with the Bitcoin network. "
                                             @"Are you sure you want to quit?",
@@ -457,9 +397,10 @@ static int ddLogLevel = LOG_LEVEL_VERBOSE;
     return NSTerminateNow;
 }
 
-- (BOOL)applicationOpenUntitledFile:(NSApplication *)theApplication {
+- (BOOL)applicationShouldHandleReopen:(NSApplication *)sender hasVisibleWindows:(BOOL)flag {
+    // reopen main window after clicking on the dock icon
     [_mainWindowController showWindow:nil];
-    return  NO;
+    return NO;
 }
 
 - (BOOL)application:(NSApplication *)sender openFile:(NSString *)filename {
@@ -586,6 +527,7 @@ void handleException(NSException *exception) {
 - (IBAction)sendFeedback:(id)sender {
     [[HISendFeedbackService sharedService] sendSupportEmail];
 }
+
 
 #pragma mark - Window handling
 
