@@ -153,7 +153,7 @@ typedef NS_ENUM(NSInteger, HINotificationType) {
     if (context == &KVO_CONTEXT) {
         HIBackupAdapter *adapter = object;
         if (adapter.errorMessage) {
-            [self postBackupErrorNotification:adapter.errorMessage];
+            [self postBackupErrorNotificationForAdapter:adapter];
         }
     } else {
         [super observeValueForKeyPath:keyPath ofObject:object change:change context:context];
@@ -183,9 +183,11 @@ typedef NS_ENUM(NSInteger, HINotificationType) {
           notificationType:HINotificationTypeTransaction];
 }
 
-- (void)postBackupErrorNotification:(NSString *)errorMessage {
-    [self postNotification:NSLocalizedString(@"Backup failed", @"Notification of failed backup")
-                      text:errorMessage
+- (void)postBackupErrorNotificationForAdapter:(HIBackupAdapter *)adapter {
+    NSString *title = adapter.status == HIBackupStatusFailure ? HIBackupStatusTextFailure : HIBackupStatusTextOutdated;
+
+    [self postNotification:title
+                      text:adapter.errorMessage
           notificationType:HINotificationTypeBackup];
 }
 
