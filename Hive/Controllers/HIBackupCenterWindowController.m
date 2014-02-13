@@ -98,36 +98,31 @@ static const NSTimeInterval UpdateTimerInterval = 5.0;
 - (void)updateStatusCell:(HIBackupStatusCellView *)cell forAdapter:(HIBackupAdapter *)adapter inRow:(NSInteger)row {
     switch (adapter.status) {
         case HIBackupStatusDisabled:
-            cell.textField.stringValue = NSLocalizedString(@"Disabled",
-                                                           @"Backup status: adapter disabled");
+            cell.textField.stringValue = HIBackupStatusTextDisabled;
             cell.imageView.image = [NSImage imageNamed:NSImageNameStatusNone];
             cell.statusDetailsLabel.stringValue = @"";
             break;
 
         case HIBackupStatusUpToDate:
-            cell.textField.stringValue = NSLocalizedString(@"Up to date",
-                                                           @"Backup status: backup up to date");
+            cell.textField.stringValue = HIBackupStatusTextUpToDate;
             cell.imageView.image = [NSImage imageNamed:NSImageNameStatusAvailable];
             cell.statusDetailsLabel.stringValue = adapter.lastBackupInfo;
             break;
 
         case HIBackupStatusOutdated:
-            cell.textField.stringValue = NSLocalizedString(@"Backup problem",
-                                                           @"Backup status: backup done but not updated recently");
+            cell.textField.stringValue = HIBackupStatusTextOutdated;
             cell.imageView.image = [NSImage imageNamed:NSImageNameStatusPartiallyAvailable];
             cell.statusDetailsLabel.stringValue = adapter.errorMessage ?: adapter.lastBackupInfo;
             break;
 
         case HIBackupStatusWaiting:
-            cell.textField.stringValue = NSLocalizedString(@"Waiting for backup",
-                                                           @"Backup status: backup scheduled or in progress");
+            cell.textField.stringValue = HIBackupStatusTextWaiting;
             cell.imageView.image = [NSImage imageNamed:NSImageNameStatusPartiallyAvailable];
             cell.statusDetailsLabel.stringValue = @"";
             break;
 
         case HIBackupStatusFailure:
-            cell.textField.stringValue = NSLocalizedString(@"Backup error",
-                                                           @"Backup status: backup can't or won't be completed");
+            cell.textField.stringValue = HIBackupStatusTextFailure;
             cell.imageView.image = [NSImage imageNamed:NSImageNameStatusUnavailable];
             cell.statusDetailsLabel.stringValue = adapter.errorMessage ?: adapter.lastBackupInfo;
             break;

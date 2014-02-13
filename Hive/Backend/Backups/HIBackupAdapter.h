@@ -30,6 +30,13 @@ typedef NS_ENUM(NSUInteger, HIBackupAdapterStatus) {
     HIBackupStatusFailure,
 };
 
+extern NSString *HIBackupStatusTextDisabled;
+extern NSString *HIBackupStatusTextUpToDate;
+extern NSString *HIBackupStatusTextWaiting;
+extern NSString *HIBackupStatusTextOutdated;
+extern NSString *HIBackupStatusTextFailure;
+
+
 @interface HIBackupAdapter : NSObject
 
 @property (readonly) NSString *name;

@@ -13,6 +13,12 @@ static NSString *BackupSettingsKey;
 static NSString * const EnabledKey = @"enabled";
 static NSDateFormatter *lastBackupDateFormatter;
 
+NSString *HIBackupStatusTextDisabled;
+NSString *HIBackupStatusTextUpToDate;
+NSString *HIBackupStatusTextWaiting;
+NSString *HIBackupStatusTextOutdated;
+NSString *HIBackupStatusTextFailure;
+
 
 @implementation HIBackupAdapter
 
@@ -26,6 +32,21 @@ static NSDateFormatter *lastBackupDateFormatter;
     lastBackupDateFormatter = [[NSDateFormatter alloc] init];
     lastBackupDateFormatter.dateStyle = NSDateFormatterLongStyle;
     lastBackupDateFormatter.timeStyle = NSDateFormatterNoStyle;
+
+    HIBackupStatusTextDisabled = NSLocalizedString(@"Disabled",
+                                                   @"Backup status: adapter disabled");
+
+    HIBackupStatusTextUpToDate = NSLocalizedString(@"Up to date",
+                                                   @"Backup status: backup up to date");
+
+    HIBackupStatusTextOutdated = NSLocalizedString(@"Backup problem",
+                                                   @"Backup status: backup done but not updated recently");
+
+    HIBackupStatusTextWaiting = NSLocalizedString(@"Waiting for backup",
+                                                  @"Backup status: backup scheduled or in progress");
+
+    HIBackupStatusTextFailure = NSLocalizedString(@"Backup error",
+                                                  @"Backup status: backup can't or won't be completed");
 }
 
 
