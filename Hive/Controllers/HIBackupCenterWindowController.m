@@ -223,7 +223,7 @@ static const NSTimeInterval UpdateTimerInterval = 5.0;
 - (void)startTimer {
     _updateTimer = [NSTimer scheduledTimerWithTimeInterval:UpdateTimerInterval
                                                     target:self
-                                                  selector:@selector(updateStatusIfEnabled)
+                                                  selector:@selector(updateStatus)
                                                   userInfo:nil
                                                    repeats:YES];
 
