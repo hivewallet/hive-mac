@@ -175,6 +175,7 @@
 		589064B7180596B80082BE5C /* HIEditableImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 589064B6180596B80082BE5C /* HIEditableImageView.m */; };
 		58A03B0D17D9DC4100ADD5E5 /* HIButtonWithSpinner.m in Sources */ = {isa = PBXBuildFile; fileRef = 58A03B0C17D9DC4100ADD5E5 /* HIButtonWithSpinner.m */; };
 		58A0A49618ABC75E00A5A084 /* HITemporaryContact.m in Sources */ = {isa = PBXBuildFile; fileRef = 58A0A49518ABC75E00A5A084 /* HITemporaryContact.m */; };
+		58A0A49F18AD37E600A5A084 /* HILocalBackup.m in Sources */ = {isa = PBXBuildFile; fileRef = 58A0A49E18AD37E600A5A084 /* HILocalBackup.m */; };
 		58A37A8A180D747C00CFCDE3 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 58A37A8C180D747C00CFCDE3 /* Localizable.strings */; };
 		58A37A98180D7AF000CFCDE3 /* HIApplicationsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 58A37A9A180D7AF000CFCDE3 /* HIApplicationsViewController.xib */; };
 		58A37A9B180D7AF600CFCDE3 /* HIContactsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 58A37A9D180D7AF600CFCDE3 /* HIContactsViewController.xib */; };
@@ -1437,6 +1438,8 @@
 		58A03B0C17D9DC4100ADD5E5 /* HIButtonWithSpinner.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HIButtonWithSpinner.m; sourceTree = "<group>"; };
 		58A0A49418ABC75E00A5A084 /* HITemporaryContact.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HITemporaryContact.h; sourceTree = "<group>"; };
 		58A0A49518ABC75E00A5A084 /* HITemporaryContact.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HITemporaryContact.m; sourceTree = "<group>"; };
+		58A0A49D18AD37E600A5A084 /* HILocalBackup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HILocalBackup.h; sourceTree = "<group>"; };
+		58A0A49E18AD37E600A5A084 /* HILocalBackup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HILocalBackup.m; sourceTree = "<group>"; };
 		58A37A8B180D747C00CFCDE3 /* en */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		58A37A99180D7AF000CFCDE3 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/HIApplicationsViewController.xib; sourceTree = "<group>"; };
 		58A37A9C180D7AF600CFCDE3 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/HIContactsViewController.xib; sourceTree = "<group>"; };
@@ -1981,6 +1984,8 @@
 				583B1E001868784600817EF8 /* HIBackupManager.m */,
 				583B1DFC18686C8400817EF8 /* HIDropboxBackup.h */,
 				583B1DFD18686C8400817EF8 /* HIDropboxBackup.m */,
+				58A0A49D18AD37E600A5A084 /* HILocalBackup.h */,
+				58A0A49E18AD37E600A5A084 /* HILocalBackup.m */,
 				583B1DF918686C4700817EF8 /* HITimeMachineBackup.h */,
 				583B1DFA18686C4700817EF8 /* HITimeMachineBackup.m */,
 			);
@@ -2829,6 +2834,7 @@
 				58605A0118041AD600FD9C2A /* HISidebarController.m in Sources */,
 				58605A0218041AD600FD9C2A /* HIViewController.m in Sources */,
 				588E354F18212BB8006A6A25 /* HIErrorWindowController.m in Sources */,
+				58A0A49F18AD37E600A5A084 /* HILocalBackup.m in Sources */,
 				58605A6718041DFC00FD9C2A /* NPZip.m in Sources */,
 				586905961843DE5C0053D74F /* HIDebuggingToolsWindowController.m in Sources */,
 				583B1DFE18686C8400817EF8 /* HIDropboxBackup.m in Sources */,

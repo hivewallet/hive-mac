@@ -69,6 +69,7 @@ extern NSString * const BCClientPasswordChangedNotification;
 - (void)removeTransactionObserver:(id<BCTransactionObserver>)observer;
 
 - (void)backupWalletToDirectory:(NSURL *)backupURL error:(NSError **)error;
+- (NSURL *)bitcoinjDirectory;
 
 - (BOOL)hasPendingTransactions;
 
