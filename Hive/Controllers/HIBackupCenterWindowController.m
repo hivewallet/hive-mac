@@ -217,13 +217,13 @@ static const NSTimeInterval UpdateTimerInterval = 5.0;
 }
 
 - (void)updateStatus {
-    [_adapters makeObjectsPerformSelector:@selector(updateStatus)];
+    [_adapters makeObjectsPerformSelector:@selector(updateStatusIfEnabled)];
 }
 
 - (void)startTimer {
     _updateTimer = [NSTimer scheduledTimerWithTimeInterval:UpdateTimerInterval
                                                     target:self
-                                                  selector:@selector(updateStatus)
+                                                  selector:@selector(updateStatusIfEnabled)
                                                   userInfo:nil
                                                    repeats:YES];
 

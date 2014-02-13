@@ -54,13 +54,6 @@ const NSInteger HITimeMachineNoFreshBackup = -3;
 }
 
 - (void)updateStatus {
-    if (!self.enabled) {
-        self.status = HIBackupStatusDisabled;
-        self.error = nil;
-        self.lastBackupDate = nil;
-        return;
-    }
-
     NSDictionary *settings = [self timeMachineSettings];
     BOOL backupsEnabled = [settings[@"AutoBackup"] boolValue];
     self.lastBackupDate = [settings[@"Destinations"][0][@"SnapshotDates"] lastObject];

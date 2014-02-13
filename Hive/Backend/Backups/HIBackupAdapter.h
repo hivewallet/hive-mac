@@ -58,7 +58,9 @@ extern NSString *HIBackupStatusTextFailure;
 + (NSDictionary *)backupSettings;
 
 - (void)updateStatus;
+- (void)updateStatusIfEnabled;
 - (void)performBackup;
+- (void)performBackupIfEnabled;
 - (void)configureInWindow:(NSWindow *)window;
 
 - (NSMutableDictionary *)adapterSettings;

@@ -120,7 +120,7 @@
         adapter.enabled = !adapter.enabled;
     }
 
-    [adapter performBackup];
+    [adapter performBackupIfEnabled];
 }
 
 - (void)keyFlagsChanged:(NSUInteger)flags inWindow:(NSWindow *)window {

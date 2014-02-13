@@ -80,8 +80,8 @@
 }
 
 - (void)performBackups {
-    [self.allAdapters makeObjectsPerformSelector:@selector(updateStatus)];
-    [self.allAdapters makeObjectsPerformSelector:@selector(performBackup)];
+    [self.allAdapters makeObjectsPerformSelector:@selector(updateStatusIfEnabled)];
+    [self.allAdapters makeObjectsPerformSelector:@selector(performBackupIfEnabled)];
 }
 
 - (void)onPasswordChange {

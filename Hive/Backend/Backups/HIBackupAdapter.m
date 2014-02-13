@@ -208,7 +208,7 @@ NSString *HIBackupStatusTextFailure;
     [self didChangeValueForKey:@"status"];
     [self didChangeValueForKey:@"enabled"];
 
-    [self updateStatus];
+    [self updateStatusIfEnabled];
 }
 
 - (NSDate *)lastWalletChange {
@@ -217,6 +217,28 @@ NSString *HIBackupStatusTextFailure;
 
 - (BOOL)updatedAfterLastWalletChange {
     return [self.lastBackupDate isGreaterThan:[self lastWalletChange]];
+}
+
+- (void)performBackupIfEnabled {
+    if (self.enabled) {
+        [self performBackup];
+    } else {
+        [self markAsDisabled];
+    }
+}
+
+- (void)updateStatusIfEnabled {
+    if (self.enabled) {
+        [self updateStatus];
+    } else {
+        [self markAsDisabled];
+    }
+}
+
+- (void)markAsDisabled {
+    self.status = HIBackupStatusDisabled;
+    self.error = nil;
+    self.lastBackupDate = nil;
 }
 
 @end

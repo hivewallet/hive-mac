@@ -81,10 +81,7 @@ const NSInteger HIDropboxBackupNotRunning = -3;
 }
 
 - (void)updateStatus {
-    if (!self.enabled) {
-        self.status = HIBackupStatusDisabled;
-        self.error = nil;
-    } else if (self.error.code == HIDropboxBackupNotRunning) {
+    if (self.error.code == HIDropboxBackupNotRunning) {
         // we've done the backup but we're waiting for Dropbox to be started
         if ([self isDropboxRunning]) {
             [self registerSuccessfulBackup];
@@ -228,12 +225,6 @@ const NSInteger HIDropboxBackupNotRunning = -3;
 #pragma mark - Performing backup
 
 - (void)performBackup {
-    if (!self.enabled) {
-        self.status = HIBackupStatusDisabled;
-        self.error = nil;
-        return;
-    }
-
     if (![self dropboxFolderExists]) {
         HILogWarn(@"Backup not configured (no Dropbox folder)");
 
