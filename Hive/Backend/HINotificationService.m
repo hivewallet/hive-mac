@@ -52,7 +52,7 @@ typedef NS_ENUM(NSInteger, HINotificationType) {
     [NSUserNotificationCenter defaultUserNotificationCenter].delegate = self;
     [[BCClient sharedClient] addTransactionObserver:self];
 
-    for (HIBackupAdapter *adapter in [HIBackupManager sharedManager].adapters) {
+    for (HIBackupAdapter *adapter in [[HIBackupManager sharedManager] visibleAdapters]) {
         [adapter addObserver:self forKeyPath:@"errorMessage" options:0 context:&KVO_CONTEXT];
     }
 
@@ -64,7 +64,7 @@ typedef NS_ENUM(NSInteger, HINotificationType) {
 - (void)disable {
     [[BCClient sharedClient] removeTransactionObserver:self];
 
-    for (HIBackupAdapter *adapter in [HIBackupManager sharedManager].adapters) {
+    for (HIBackupAdapter *adapter in [[HIBackupManager sharedManager] visibleAdapters]) {
         [adapter removeObserver:self forKeyPath:@"errorMessage" context:&KVO_CONTEXT];
     }
 }
@@ -78,7 +78,7 @@ typedef NS_ENUM(NSInteger, HINotificationType) {
 - (void)checkIfBackupsEnabled {
     [[NSUserDefaults standardUserDefaults] setObject:[NSDate date] forKey:LastBackupsCheckKey];
 
-    for (HIBackupAdapter *adapter in [[HIBackupManager sharedManager] adapters]) {
+    for (HIBackupAdapter *adapter in [[HIBackupManager sharedManager] visibleAdapters]) {
         if (adapter.enabled) {
             return;
         }

@@ -95,6 +95,12 @@ NSString *HIBackupStatusTextFailure;
     return NO;
 }
 
+/* Tells if the wallet is shown in backup configuration UIs (wizard / backup center). */
+- (BOOL)isVisible {
+    [self doesNotRecognizeSelector:_cmd];
+    return NO;
+}
+
 /* Check if backup status has changed, and update self.status, self.error and self.lastBackupDate if needed */
 - (void)updateStatus {
     [self doesNotRecognizeSelector:_cmd];

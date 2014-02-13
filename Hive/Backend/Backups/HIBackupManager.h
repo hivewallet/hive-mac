@@ -10,7 +10,8 @@
 
 @interface HIBackupManager : NSObject
 
-@property (readonly) NSArray *adapters;
+@property (readonly) NSArray *allAdapters;
+@property (readonly) NSArray *visibleAdapters;
 
 + (HIBackupManager *)sharedManager;
 - (void)initializeAdapters;

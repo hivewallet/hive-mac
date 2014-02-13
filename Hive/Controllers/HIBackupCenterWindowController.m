@@ -17,7 +17,7 @@ static const CGFloat TableRowHeight = 60.0;
 static const NSTimeInterval UpdateTimerInterval = 5.0;
 
 @interface HIBackupCenterWindowController () {
-    HIBackupManager *_backupManager;
+    NSArray *_adapters;
     NSTimer *_updateTimer;
     BOOL enableConfiguration;
 }
@@ -32,9 +32,9 @@ static const NSTimeInterval UpdateTimerInterval = 5.0;
     self = [self initWithWindowNibName:self.className];
 
     if (self) {
-        _backupManager = [HIBackupManager sharedManager];
+        _adapters = [[HIBackupManager sharedManager] visibleAdapters];
 
-        for (HIBackupAdapter *adapter in _backupManager.adapters) {
+        for (HIBackupAdapter *adapter in _adapters) {
             [adapter addObserver:self forKeyPath:@"status" options:0 context:NULL];
             [adapter addObserver:self forKeyPath:@"error" options:0 context:NULL];
             [adapter addObserver:self forKeyPath:@"lastBackupDate" options:0 context:NULL];
@@ -49,7 +49,7 @@ static const NSTimeInterval UpdateTimerInterval = 5.0;
 - (void)dealloc {
     NSAssert(![_updateTimer isValid], @"Retain cycle not broken");
 
-    for (HIBackupAdapter *adapter in _backupManager.adapters) {
+    for (HIBackupAdapter *adapter in _adapters) {
         [adapter removeObserver:self forKeyPath:@"status"];
         [adapter removeObserver:self forKeyPath:@"error"];
         [adapter removeObserver:self forKeyPath:@"lastBackupDate"];
@@ -68,11 +68,11 @@ static const NSTimeInterval UpdateTimerInterval = 5.0;
 }
 
 - (NSInteger)numberOfRowsInTableView:(NSTableView *)tableView {
-    return _backupManager.adapters.count;
+    return _adapters.count;
 }
 
 - (NSView *)tableView:(NSTableView *)tableView viewForTableColumn:(NSTableColumn *)tableColumn row:(NSInteger)row {
-    HIBackupAdapter *adapter = _backupManager.adapters[row];
+    HIBackupAdapter *adapter = _adapters[row];
     NSTableCellView *cell = [tableView makeViewWithIdentifier:tableColumn.identifier owner:self];
 
     if ([tableColumn.identifier isEqual:@"Name"]) {
@@ -158,7 +158,7 @@ static const NSTimeInterval UpdateTimerInterval = 5.0;
 
 - (IBAction)enableButtonClicked:(id)sender {
     NSInteger row = [sender tag];
-    HIBackupAdapter *adapter = _backupManager.adapters[row];
+    HIBackupAdapter *adapter = _adapters[row];
 
     if (!adapter) {
         return;
@@ -191,9 +191,9 @@ static const NSTimeInterval UpdateTimerInterval = 5.0;
 - (void)keyFlagsChanged:(NSUInteger)flags inWindow:(NSWindow *)window {
     enableConfiguration = (flags & NSAlternateKeyMask) > 0;
 
-    for (NSInteger i = 0; i < _backupManager.adapters.count; i++) {
+    for (NSInteger i = 0; i < _adapters.count; i++) {
         HIBackupActionsCellView *cell = [self.tableView viewAtColumn:2 row:i makeIfNecessary:YES];
-        HIBackupAdapter *adapter = _backupManager.adapters[i];
+        HIBackupAdapter *adapter = _adapters[i];
 
         [self updateActionsCell:cell forAdapter:adapter inRow:i];
     }
@@ -208,7 +208,7 @@ static const NSTimeInterval UpdateTimerInterval = 5.0;
                         change:(NSDictionary *)change
                        context:(void *)context {
     HIBackupAdapter *adapter = object;
-    NSUInteger row = [_backupManager.adapters indexOfObject:adapter];
+    NSUInteger row = [_adapters indexOfObject:adapter];
 
     if (row != NSNotFound) {
         [self.tableView reloadDataForRowIndexes:[NSIndexSet indexSetWithIndex:row]
@@ -217,7 +217,7 @@ static const NSTimeInterval UpdateTimerInterval = 5.0;
 }
 
 - (void)updateStatus {
-    [_backupManager.adapters makeObjectsPerformSelector:@selector(updateStatus)];
+    [_adapters makeObjectsPerformSelector:@selector(updateStatus)];
 }
 
 - (void)startTimer {

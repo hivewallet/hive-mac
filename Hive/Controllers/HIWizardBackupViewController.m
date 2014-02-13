@@ -31,7 +31,7 @@
     if (self) {
         self.title = NSLocalizedString(@"Backup", @"Wizard backup page title");
 
-        for (HIBackupAdapter *adapter in [[HIBackupManager sharedManager] adapters]) {
+        for (HIBackupAdapter *adapter in [[HIBackupManager sharedManager] visibleAdapters]) {
             [adapter addObserver:self forKeyPath:@"enabled" options:0 context:NULL];
         }
     }
@@ -40,7 +40,7 @@
 }
 
 - (void)dealloc {
-    for (HIBackupAdapter *adapter in [[HIBackupManager sharedManager] adapters]) {
+    for (HIBackupAdapter *adapter in [[HIBackupManager sharedManager] visibleAdapters]) {
         [adapter removeObserver:self forKeyPath:@"enabled"];
     }
 }
@@ -54,7 +54,7 @@
 }
 
 - (HIBackupAdapter *)backupAdapterAtIndex:(int)index {
-    return [HIBackupManager sharedManager].adapters[index];
+    return [[HIBackupManager sharedManager] visibleAdapters][index];
 }
 
 // TODO make this more DRY

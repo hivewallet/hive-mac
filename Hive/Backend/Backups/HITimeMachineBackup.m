@@ -49,6 +49,10 @@ const NSInteger HITimeMachineNoFreshBackup = -3;
     return NO;
 }
 
+- (BOOL)isVisible {
+    return YES;
+}
+
 - (void)updateStatus {
     if (!self.enabled) {
         self.status = HIBackupStatusDisabled;

@@ -47,6 +47,7 @@ extern NSString *HIBackupStatusTextFailure;
 @property (readonly) BOOL canBeConfigured;
 @property (readonly) BOOL needsToBeConfigured;
 @property (readonly) BOOL requiresEncryption;
+@property (readonly) BOOL isVisible;
 @property (readonly, getter = isEnabledByDefault) BOOL enabledByDefault;
 
 @property (nonatomic) HIBackupAdapterStatus status;

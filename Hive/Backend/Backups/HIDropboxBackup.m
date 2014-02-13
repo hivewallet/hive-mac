@@ -76,6 +76,10 @@ const NSInteger HIDropboxBackupNotRunning = -3;
     return ![self dropboxFolderExists];
 }
 
+- (BOOL)isVisible {
+    return YES;
+}
+
 - (void)updateStatus {
     if (!self.enabled) {
         self.status = HIBackupStatusDisabled;

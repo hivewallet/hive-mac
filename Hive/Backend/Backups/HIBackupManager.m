@@ -36,10 +36,13 @@
     self = [super init];
 
     if (self) {
-        _adapters = @[
-                      [HIDropboxBackup new],
-                      [HITimeMachineBackup new],
-                    ];
+        _allAdapters = @[
+                         [HIDropboxBackup new],
+                         [HITimeMachineBackup new],
+                       ];
+
+        _visibleAdapters = [_allAdapters filteredArrayUsingPredicate:
+                            [NSPredicate predicateWithFormat:@"isVisible = YES"]];
 
         [[NSNotificationCenter defaultCenter] addObserver:self
                                                  selector:@selector(onPasswordChange)
@@ -64,7 +67,7 @@
     if (!self.initialized) {
         NSDictionary *settings = [HIBackupAdapter backupSettings];
 
-        for (HIBackupAdapter *adapter in self.adapters) {
+        for (HIBackupAdapter *adapter in self.allAdapters) {
             if (![settings objectForKey:adapter.name]) {
                 adapter.enabled = [adapter isEnabledByDefault];
             }
@@ -77,8 +80,8 @@
 }
 
 - (void)performBackups {
-    [self.adapters makeObjectsPerformSelector:@selector(updateStatus)];
-    [self.adapters makeObjectsPerformSelector:@selector(performBackup)];
+    [self.allAdapters makeObjectsPerformSelector:@selector(updateStatus)];
+    [self.allAdapters makeObjectsPerformSelector:@selector(performBackup)];
 }
 
 - (void)onPasswordChange {
