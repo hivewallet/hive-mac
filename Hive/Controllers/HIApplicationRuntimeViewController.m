@@ -12,12 +12,6 @@
 #import "HIMainWindowController.h"
 #import "HISendBitcoinsWindowController.h"
 
-@interface WebPreferences (ItsThere)
-
-- (void)setWebSecurityEnabled:(BOOL)yesNo;
-
-@end
-
 @interface WebView (HIItsThere)
 
 - (void)setScriptDebugDelegate:(id)scriptDebugDelegate;
@@ -60,20 +54,13 @@
     _bridge = [[HIAppRuntimeBridge alloc] initWithApplication:self.application frame:self.webView.mainFrame];
     _bridge.controller = self;
 
-    WebView *webView = self.webView;
-    if ([webView respondsToSelector:@selector(setScriptDebugDelegate:)]) {
-        [webView setScriptDebugDelegate:self];
+    if ([self.webView respondsToSelector:@selector(setScriptDebugDelegate:)]) {
+        [self.webView setScriptDebugDelegate:self];
     }
 
     // set custom user agent
     NSString *hiveVersion = [[NSBundle mainBundle] infoDictionary][@"CFBundleShortVersionString"];
     self.webView.applicationNameForUserAgent = [NSString stringWithFormat:@"Hive/%@", hiveVersion];
-
-    // disable cross-site security check
-    NSString *noSecurityPreferencesId = @"noSecurity";
-    WebPreferences *prefs = [[WebPreferences alloc] initWithIdentifier:noSecurityPreferencesId];
-    [prefs setWebSecurityEnabled:NO];
-    [self.webView setPreferencesIdentifier:noSecurityPreferencesId];
 
     // load the app
     _baseURL = [NSURL URLWithString:[NSString stringWithFormat:@"http://%@.hiveapp/index.html", self.application.id]];
