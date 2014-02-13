@@ -13,6 +13,7 @@ static const NSTimeInterval RecentBackupLimit = 86400 * 30; // 30 days
 NSString * const HITimeMachineBackupError = @"HITimeMachineBackupError";
 const NSInteger HITimeMachineBackupDisabled = -1;
 const NSInteger HITimeMachineBackupPathExcluded = -2;
+const NSInteger HITimeMachineNoFreshBackup = -3;
 
 
 @implementation HITimeMachineBackup
@@ -83,26 +84,20 @@ const NSInteger HITimeMachineBackupPathExcluded = -2;
             // we don't have a backup, but we should have one soon
             self.status = HIBackupStatusWaiting;
         }
-    } else if (backupsEnabled) { // && !updatedRecently
-        self.error = nil;
-
-        if (afterLastWalletChange) {
-            // we have a backup, but we probably won't have another
-            self.status = HIBackupStatusOutdated;
+    } else {
+        if (backupsEnabled) {
+            self.error = BackupError(HITimeMachineBackupError, HITimeMachineNoFreshBackup, self.lastBackupInfo);
         } else {
-            // we don't have a backup and we probably won't have one
-            self.status = HIBackupStatusFailure;
+            self.error = BackupError(HITimeMachineBackupError, HITimeMachineBackupDisabled,
+                                     NSLocalizedString(@"Time Machine is disabled in System Preferences",
+                                                       @"Backup error message"));
         }
-    } else { // !backupsEnabled
-        self.error = BackupError(HITimeMachineBackupError, HITimeMachineBackupDisabled,
-                                 NSLocalizedString(@"Time Machine is disabled in System Preferences",
-                                                   @"Backup error message"));
 
         if (afterLastWalletChange) {
-            // we have a backup, but we won't have another
+            // we have a backup, but we (probably) won't have another
             self.status = HIBackupStatusOutdated;
         } else {
-            // we don't have a backup and we won't have one
+            // we don't have a backup and we (probably) won't have one
             self.status = HIBackupStatusFailure;
         }
     }
