@@ -11,6 +11,7 @@
 
 static NSString *BackupSettingsKey;
 static NSString * const EnabledKey = @"enabled";
+static NSDateFormatter *lastBackupDateFormatter;
 
 
 @implementation HIBackupAdapter
@@ -21,6 +22,10 @@ static NSString * const EnabledKey = @"enabled";
     } else {
         BackupSettingsKey = @"BackupAdapters";
     }
+
+    lastBackupDateFormatter = [[NSDateFormatter alloc] init];
+    lastBackupDateFormatter.dateStyle = NSDateFormatterLongStyle;
+    lastBackupDateFormatter.timeStyle = NSDateFormatterNoStyle;
 }
 
 
@@ -129,6 +134,20 @@ static NSString * const EnabledKey = @"enabled";
         [self willChangeValueForKey:@"lastBackupDate"];
         _lastBackupDate = lastBackupDate;
         [self didChangeValueForKey:@"lastBackupDate"];
+    }
+}
+
+- (NSString *)lastBackupInfo {
+    if (!self.lastBackupDate) {
+        return NSLocalizedString(@"Backup hasn't been done yet", nil);
+    } else if (self.status == HIBackupStatusFailure || self.status == HIBackupStatusOutdated) {
+        return [NSString stringWithFormat:NSLocalizedString(@"No backup since %@",
+                                                            @"Backup is outdated, last backup was on that date"),
+                [lastBackupDateFormatter stringFromDate:self.lastBackupDate]];
+    } else {
+        return [NSString stringWithFormat:NSLocalizedString(@"Last backup on %@",
+                                                            @"On what date was the last backup done"),
+                [lastBackupDateFormatter stringFromDate:self.lastBackupDate]];
     }
 }
 

@@ -56,6 +56,7 @@ typedef NS_ENUM(NSUInteger, HIBackupAdapterStatus) {
 - (NSMutableDictionary *)adapterSettings;
 - (void)saveAdapterSettings:(NSDictionary *)settings;
 
+- (NSString *)lastBackupInfo;
 - (NSDate *)lastWalletChange;
 - (BOOL)updatedAfterLastWalletChange;
 

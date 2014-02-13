@@ -19,7 +19,6 @@ static const NSTimeInterval UpdateTimerInterval = 5.0;
 @interface HIBackupCenterWindowController () {
     HIBackupManager *_backupManager;
     NSTimer *_updateTimer;
-    NSDateFormatter *_lastBackupDateFormatter;
     BOOL enableConfiguration;
 }
 
@@ -34,10 +33,6 @@ static const NSTimeInterval UpdateTimerInterval = 5.0;
 
     if (self) {
         _backupManager = [HIBackupManager sharedManager];
-
-        _lastBackupDateFormatter = [[NSDateFormatter alloc] init];
-        _lastBackupDateFormatter.dateStyle = NSDateFormatterLongStyle;
-        _lastBackupDateFormatter.timeStyle = NSDateFormatterNoStyle;
 
         for (HIBackupAdapter *adapter in _backupManager.adapters) {
             [adapter addObserver:self forKeyPath:@"status" options:0 context:NULL];
@@ -101,20 +96,6 @@ static const NSTimeInterval UpdateTimerInterval = 5.0;
 }
 
 - (void)updateStatusCell:(HIBackupStatusCellView *)cell forAdapter:(HIBackupAdapter *)adapter inRow:(NSInteger)row {
-    NSString *lastBackupInfo;
-
-    if (!adapter.lastBackupDate) {
-        lastBackupInfo = NSLocalizedString(@"Backup hasn't been done yet", nil);
-    } else if (adapter.status == HIBackupStatusFailure || adapter.status == HIBackupStatusOutdated) {
-        lastBackupInfo = [NSString stringWithFormat:NSLocalizedString(@"No backup since %@",
-                                                                      @"Backup is outdated, last backup was on that date"),
-                          [_lastBackupDateFormatter stringFromDate:adapter.lastBackupDate]];
-    } else {
-        lastBackupInfo = [NSString stringWithFormat:NSLocalizedString(@"Last backup on %@",
-                                                                      @"On what date was the last backup done"),
-                          [_lastBackupDateFormatter stringFromDate:adapter.lastBackupDate]];
-    }
-
     switch (adapter.status) {
         case HIBackupStatusDisabled:
             cell.textField.stringValue = NSLocalizedString(@"Disabled",
@@ -127,14 +108,14 @@ static const NSTimeInterval UpdateTimerInterval = 5.0;
             cell.textField.stringValue = NSLocalizedString(@"Up to date",
                                                            @"Backup status: backup up to date");
             cell.imageView.image = [NSImage imageNamed:NSImageNameStatusAvailable];
-            cell.statusDetailsLabel.stringValue = lastBackupInfo;
+            cell.statusDetailsLabel.stringValue = adapter.lastBackupInfo;
             break;
 
         case HIBackupStatusOutdated:
             cell.textField.stringValue = NSLocalizedString(@"Backup problem",
                                                            @"Backup status: backup done but not updated recently");
             cell.imageView.image = [NSImage imageNamed:NSImageNameStatusPartiallyAvailable];
-            cell.statusDetailsLabel.stringValue = adapter.errorMessage ?: lastBackupInfo;
+            cell.statusDetailsLabel.stringValue = adapter.errorMessage ?: adapter.lastBackupInfo;
             break;
 
         case HIBackupStatusWaiting:
@@ -148,7 +129,7 @@ static const NSTimeInterval UpdateTimerInterval = 5.0;
             cell.textField.stringValue = NSLocalizedString(@"Backup error",
                                                            @"Backup status: backup can't or won't be completed");
             cell.imageView.image = [NSImage imageNamed:NSImageNameStatusUnavailable];
-            cell.statusDetailsLabel.stringValue = adapter.errorMessage ?: lastBackupInfo;
+            cell.statusDetailsLabel.stringValue = adapter.errorMessage ?: adapter.lastBackupInfo;
             break;
 
         default:
