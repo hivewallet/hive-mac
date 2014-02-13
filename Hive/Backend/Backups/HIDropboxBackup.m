@@ -308,7 +308,6 @@ const NSInteger HIDropboxBackupNotRunning = -3;
     [[HIDatabaseManager sharedManager] backupStoreToDirectory:backupLocation error:&error];
 
     if (error) {
-        [NSApp presentError:error];
         self.status = HIBackupStatusFailure;
         self.error = BackupError(HIDropboxBackupError, HIDropboxBackupCouldntComplete, error.localizedFailureReason);
         return NO;
@@ -334,7 +333,6 @@ const NSInteger HIDropboxBackupNotRunning = -3;
 
         if (error) {
             HILogError(@"Couldn't create backup directory: %@", error);
-            [NSApp presentError:error];
 
             self.status = HIBackupStatusFailure;
             self.error = BackupError(HIDropboxBackupError, HIDropboxBackupCouldntComplete, error.localizedFailureReason);
@@ -355,7 +353,6 @@ const NSInteger HIDropboxBackupNotRunning = -3;
     [[BCClient sharedClient] backupWalletToDirectory:bitcoinjDirectory error:&error];
 
     if (error) {
-        [NSApp presentError:error];
         self.status = HIBackupStatusFailure;
         self.error = BackupError(HIDropboxBackupError, HIDropboxBackupCouldntComplete, error.localizedFailureReason);
         return NO;
