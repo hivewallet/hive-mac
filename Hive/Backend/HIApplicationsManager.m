@@ -6,6 +6,7 @@
 //  Copyright (c) 2013 Hive Developers. All rights reserved.
 //
 
+#import <AFNetworking/AFHTTPRequestOperation.h>
 #import "HIAppDelegate.h"
 #import "HIApplication.h"
 #import "HIApplicationsManager.h"
@@ -135,7 +136,7 @@
     [DBM save:NULL];
 }
 
-- (void)requestLocalAppInstallation:(NSURL *)applicationURL {
+- (void)requestLocalAppInstallation:(NSURL *)applicationURL showAppsPage:(BOOL)showAppsPage {
     NSDictionary *manifest = [self applicationMetadata:applicationURL];
     NSString *title, *info, *confirm;
 
@@ -167,7 +168,36 @@
 
     if ([alert runModal] == NSAlertDefaultReturn) {
         [self installApplication:applicationURL];
-        [[NSApp delegate] showWindowWithPanel:[HIApplicationsViewController class]];
+
+        if (showAppsPage) {
+            [[NSApp delegate] showWindowWithPanel:[HIApplicationsViewController class]];
+        }
+    }
+}
+
+- (void)requestRemoteAppInstallation:(NSURL *)remoteURL {
+    HILogInfo(@"Downloading remote app from %@", remoteURL);
+    NSURLRequest *request = [NSURLRequest requestWithURL:remoteURL];
+    AFHTTPRequestOperation *download = [[AFHTTPRequestOperation alloc] initWithRequest:request];
+
+    NSString *temporaryFile = [NSTemporaryDirectory() stringByAppendingPathComponent:remoteURL.lastPathComponent];
+    [download setOutputStream:[NSOutputStream outputStreamToFileAtPath:temporaryFile append:NO]];
+
+    [download setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject) {
+        HILogInfo(@"App downloaded to: %@", temporaryFile);
+        [self requestLocalAppInstallation:[NSURL fileURLWithPath:temporaryFile] showAppsPage:NO];
+        [self cleanupTemporaryFileAtPath:temporaryFile];
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        HILogWarn(@"Couldn't download remote app: %@", error);
+        [self cleanupTemporaryFileAtPath:temporaryFile];
+    }];
+
+    [download start];
+}
+
+- (void)cleanupTemporaryFileAtPath:(NSString *)path {
+    if ([[NSFileManager defaultManager] fileExistsAtPath:path]) {
+        [[NSFileManager defaultManager] removeItemAtPath:path error:nil];
     }
 }
 

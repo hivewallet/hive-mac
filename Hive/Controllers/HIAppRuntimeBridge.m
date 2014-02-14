@@ -9,6 +9,7 @@
 #import <AFNetworking/AFNetworking.h>
 #import "BCClient.h"
 #import "HIApplicationRuntimeViewController.h"
+#import "HIApplicationsManager.h"
 #import "HIAppRuntimeBridge.h"
 #import "HIBitcoinFormatService.h"
 #import "HICurrencyFormatService.h"
@@ -74,6 +75,7 @@ static const NSInteger kHIAppRuntimeBridgeParsingError = -1000;
                         @"getUserInformationWithCallback:": @"getUserInfo",
                         @"getSystemInfoWithCallback:": @"getSystemInfo",
                         @"makeProxiedRequestToURL:options:": @"makeRequest",
+                        @"installAppFromURL:": @"installApp",
                         @"addExchangeRateListener:": @"addExchangeRateListener",
                         @"removeExchangeRateListener:": @"removeExchangeRateListener",
                         @"updateExchangeRateForCurrency:": @"updateExchangeRate",
@@ -81,7 +83,7 @@ static const NSInteger kHIAppRuntimeBridgeParsingError = -1000;
                         @"satoshiFromUserString:": @"satoshiFromUserString",
                         @"userStringForValue:currency:": @"userStringForCurrencyValue",
                         @"valueFromUserString:": @"valueFromUserString",
-                        };
+                      };
     }
 
     return selectorMap;
@@ -503,6 +505,13 @@ static const NSInteger kHIAppRuntimeBridgeParsingError = -1000;
 
     [self callCallbackMethod:errorCallback withArguments:arguments count:3];
     [self callCallbackMethod:completeCallback withArguments:arguments count:3];
+}
+
+
+#pragma mark - App installation
+
+- (void)installAppFromURL:(NSString *)applicationURL {
+    [[HIApplicationsManager sharedManager] requestRemoteAppInstallation:[NSURL URLWithString:applicationURL]];
 }
 
 @end
