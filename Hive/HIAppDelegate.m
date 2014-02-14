@@ -406,42 +406,7 @@ static int ddLogLevel = LOG_LEVEL_VERBOSE;
 - (BOOL)application:(NSApplication *)sender openFile:(NSString *)filename {
     if ([filename.pathExtension isEqual:@"hiveapp"]) {
         HIApplicationsManager *manager = [HIApplicationsManager sharedManager];
-        NSURL *applicationURL = [NSURL fileURLWithPath:filename];
-        NSDictionary *manifest = [manager applicationMetadata:applicationURL];
-
-        NSAlert *alert = [[NSAlert alloc] init];
-        NSString *title, *info, *confirm;
-
-        if ([manager hasApplicationOfId:manifest[@"id"]]) {
-            title = NSLocalizedString(@"You have already added \"%@\" to Hive. Would you like to overwrite it?",
-                                      @"Install app popup title when app exists");
-
-            info = NSLocalizedString(@"The existing app file will be replaced by the new version. "
-                                     @"This will not affect any app settings or saved data.",
-                                     @"Install app popup warning message when app exists");
-
-            confirm = NSLocalizedString(@"Reinstall", @"Install app button title when app exists");
-        } else {
-            title = NSLocalizedString(@"Do you want to add \"%@\" to Hive?",
-                                      @"Install app popup title");
-
-            info = NSLocalizedString(@"We cannot guarantee the safety of all apps - please be careful "
-                                     @"if you download Hive apps from third party sites.",
-                                     @"Install app popup warning message");
-
-            confirm = NSLocalizedString(@"Install", @"Install app button title");
-        }
-
-        [alert setMessageText:[NSString stringWithFormat:title, manifest[@"name"]]];
-        [alert setInformativeText:info];
-        [alert addButtonWithTitle:confirm];
-        [alert addButtonWithTitle:NSLocalizedString(@"Cancel", nil)];
-
-        if ([alert runModal] == NSAlertFirstButtonReturn) {
-            [manager installApplication:applicationURL];
-            [self showWindowWithPanel:[HIApplicationsViewController class]];
-        }
-
+        [manager requestLocalAppInstallation:[NSURL fileURLWithPath:filename]];
         return YES;
     }
 

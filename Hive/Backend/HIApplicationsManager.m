@@ -6,8 +6,10 @@
 //  Copyright (c) 2013 Hive Developers. All rights reserved.
 //
 
+#import "HIAppDelegate.h"
 #import "HIApplication.h"
 #import "HIApplicationsManager.h"
+#import "HIApplicationsViewController.h"
 #import "HIDatabaseManager.h"
 #import "HIDirectoryDataService.h"
 
@@ -131,6 +133,42 @@
     [app refreshIcon];
 
     [DBM save:NULL];
+}
+
+- (void)requestLocalAppInstallation:(NSURL *)applicationURL {
+    NSDictionary *manifest = [self applicationMetadata:applicationURL];
+    NSString *title, *info, *confirm;
+
+    if ([self hasApplicationOfId:manifest[@"id"]]) {
+        title = NSLocalizedString(@"You have already added \"%@\" to Hive. Would you like to overwrite it?",
+                                  @"Install app popup title when app exists");
+
+        info = NSLocalizedString(@"The existing app file will be replaced by the new version. "
+                                 @"This will not affect any app settings or saved data.",
+                                 @"Install app popup warning message when app exists");
+
+        confirm = NSLocalizedString(@"Reinstall", @"Install app button title when app exists");
+    } else {
+        title = NSLocalizedString(@"Do you want to add \"%@\" to Hive?",
+                                  @"Install app popup title");
+
+        info = NSLocalizedString(@"We cannot guarantee the safety of all apps - please be careful "
+                                 @"if you download Hive apps from third party sites.",
+                                 @"Install app popup warning message");
+
+        confirm = NSLocalizedString(@"Install", @"Install app button title");
+    }
+
+    NSAlert *alert = [NSAlert alertWithMessageText:[NSString stringWithFormat:title, manifest[@"name"]]
+                                     defaultButton:confirm
+                                   alternateButton:NSLocalizedString(@"Cancel", nil)
+                                       otherButton:nil
+                         informativeTextWithFormat:@"%@", info];
+
+    if ([alert runModal] == NSAlertDefaultReturn) {
+        [self installApplication:applicationURL];
+        [[NSApp delegate] showWindowWithPanel:[HIApplicationsViewController class]];
+    }
 }
 
 - (NSURL *)applicationsDirectory {

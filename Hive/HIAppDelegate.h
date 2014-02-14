@@ -18,5 +18,6 @@
 - (HISendBitcoinsWindowController *)sendBitcoinsWindowForContact:(HIContact *)contact;
 - (HISendBitcoinsWindowController *)sendBitcoinsWindow;
 - (NSURL *)applicationFilesDirectory;
+- (void)showWindowWithPanel:(Class)panelClass;
 
 @end
