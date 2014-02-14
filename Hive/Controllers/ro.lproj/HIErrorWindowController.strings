@@ -3,10 +3,10 @@
 "1.title" = "Eroare";
 
 /* Class = "NSTextFieldCell"; placeholderString = "email@domain.com"; ObjectID = "0m5-Xd-7pp"; */
-"0m5-Xd-7pp.placeholderString" = "email@domain.com";
+"0m5-Xd-7pp.placeholderString" = "email@domeniu.com";
 
 /* Class = "NSTextFieldCell"; title = "Please send us a report to help us fix the problem."; ObjectID = "Cob-tq-o5r"; */
-"Cob-tq-o5r.title" = "Please send us a report to help us fix the problem.";
+"Cob-tq-o5r.title" = "Va rugăm să ne trimiteţi un raport pentru a ne ajuta să rezolvăm problema.";
 
 /* Class = "NSTextFieldCell"; title = "Describe what you were doing when the error occurred:"; ObjectID = "F9w-28-7kX"; */
 "F9w-28-7kX.title" = "Describe what you were doing when the error occurred (preferably in English):";
@@ -15,19 +15,19 @@
 "Mpx-rH-nUM.title" = "O nu, ceva nu a mers bine!";
 
 /* Class = "NSTextFieldCell"; title = "Your name (optional)"; ObjectID = "pya-AJ-MPI"; */
-"pya-AJ-MPI.title" = "Your name (optional)";
+"pya-AJ-MPI.title" = "Nume(opţional)";
 
 /* Class = "NSButtonCell"; title = "Send"; ObjectID = "tDm-yy-jVS"; */
-"tDm-yy-jVS.title" = "Send";
+"tDm-yy-jVS.title" = "Trimite";
 
 /* Class = "NSButtonCell"; title = "Cancel"; ObjectID = "tR0-Dg-y0x"; */
-"tR0-Dg-y0x.title" = "Cancel";
+"tR0-Dg-y0x.title" = "Revocare";
 
 /* Class = "NSTextFieldCell"; title = "Error details:"; ObjectID = "uLK-ff-isg"; */
-"uLK-ff-isg.title" = "Error details:";
+"uLK-ff-isg.title" = "Detaliile Erorii:";
 
 /* Class = "NSTextFieldCell"; title = "An unexpected error has occurred in Hive."; ObjectID = "xF4-pJ-cQU"; */
 "xF4-pJ-cQU.title" = "O eroare neașteptată s-a produs in Hive.";
 
 /* Class = "NSTextFieldCell"; title = "Your email (optional)"; ObjectID = "zup-Q6-bK7"; */
-"zup-Q6-bK7.title" = "Your email (optional)";
+"zup-Q6-bK7.title" = "Email(opţional)";

@@ -1,27 +1,27 @@
 
 /* Class = "NSTextFieldCell"; title = "Configure backup"; ObjectID = "I10-iV-C0e"; */
-"I10-iV-C0e.title" = "Configure backup";
+"I10-iV-C0e.title" = "Configuraţi backup-ul";
 
 /* Class = "NSTextFieldCell"; title = "✓ enabled"; ObjectID = "KqD-DN-1Yk"; */
-"KqD-DN-1Yk.title" = "✓ enabled";
+"KqD-DN-1Yk.title" = "✓ activat";
 
 /* Class = "NSTextFieldCell"; title = "✘ disabled"; ObjectID = "M9O-91-CDX"; */
-"M9O-91-CDX.title" = "✘ disabled";
+"M9O-91-CDX.title" = "✘ dezactivat";
 
 /* Class = "NSTextFieldCell"; title = "✘ disabled"; ObjectID = "NSS-6s-Nas"; */
-"NSS-6s-Nas.title" = "✘ disabled";
+"NSS-6s-Nas.title" = "✘ dezactivat";
 
 /* Class = "NSTextFieldCell"; title = "✓ enabled"; ObjectID = "OI0-bL-7Zs"; */
-"OI0-bL-7Zs.title" = "✓ enabled";
+"OI0-bL-7Zs.title" = "✓ activat";
 
 /* Class = "NSButtonCell"; title = "Enable"; ObjectID = "f0R-BI-Nz4"; */
-"f0R-BI-Nz4.title" = "Enable";
+"f0R-BI-Nz4.title" = "Activare";
 
 /* Class = "NSButtonCell"; title = "Next Step"; ObjectID = "j0E-b4-dgh"; */
-"j0E-b4-dgh.title" = "Next Step";
+"j0E-b4-dgh.title" = "Pasul Următor";
 
 /* Class = "NSButtonCell"; title = "Enable"; ObjectID = "lG8-G7-noh"; */
-"lG8-G7-noh.title" = "Enable";
+"lG8-G7-noh.title" = "Activare";
 
 /* Class = "NSTextFieldCell"; title = "Backing up your wallet file is also an important safety measure to protect your money. Let's make a backup copy of your wallet now. If you ever lose your computer, Hive can retrieve your wallet from these sources."; ObjectID = "rIc-eX-ajY"; */
-"rIc-eX-ajY.title" = "Backing up your wallet file is also an important safety measure to protect your money. Let's make a backup copy of your wallet now. If you ever lose your computer, Hive can retrieve your wallet from these sources.";
+"rIc-eX-ajY.title" = "A face un backup al portofelului este o importantă măsură de siguranţă pentru a vă proteja banii. Haideţi să facem o copie backup a portofelului chiar acum. Dacă pierdeţi vreodată accesul la acest calculator, Hive poate recupera portofelul din aceste surse.";

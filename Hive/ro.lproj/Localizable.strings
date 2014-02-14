@@ -12,52 +12,52 @@
 "Application can't be loaded" = "Aplicația nu poate fi încarcată";
 
 /* Applications view title */
-"Apps" = "Apps";
+"Apps" = "Aplicaţii";
 
 /* Cancel editing alert title */
-"Are you sure you want to leave this page?" = "Are you sure you want to leave this page?";
+"Are you sure you want to leave this page?" = "Sigur doriţi să părăsiţi această pagină?";
 
 /* Warning when trying to a large BTC amount (btc, fiat amount and address) */
-"Are you sure you want to send %@ (%@) to %@?" = "Are you sure you want to send %1$@ (%2$@) to %3$@?";
+"Are you sure you want to send %@ (%@) to %@?" = "Siguri doriţi să trimiteţi %1$@ (%2$@) to %3$@?";
 
 /* Wizard backup page title */
 "Backup" = "Backup";
 
 /* Backup status: backup can't or won't be completed */
-"Backup error" = "Backup error";
+"Backup error" = "Eroare Backup";
 
 /* Notification of failed backup */
-"Backup failed" = "Backup failed";
+"Backup failed" = "Backup eşuat";
 
 /* No comment provided by engineer. */
-"Backup hasn't been done yet" = "Backup hasn't been done yet";
+"Backup hasn't been done yet" = "Backup-ul încă nu s-a terminat";
 
 /* Backup error message */
-"Backup is not configured" = "Backup is not configured";
+"Backup is not configured" = "Backup-ul nu este configurat";
 
 /* Backup status: backup done but not updated recently */
-"Backup problem" = "Backup problem";
+"Backup problem" = "Problemă Backup";
 
 /* Backup error message */
-"Can't create a directory to store the wallet backup" = "Can't create a directory to store the wallet backup";
+"Can't create a directory to store the wallet backup" = "Nu poate fi creat un director în care să fie salvat backup-ul portofelului";
 
 /* Cancel button title */
 "Cancel" = "Revocare";
 
 /* Dead transaction label */
-"CANCELLED" = "CANCELLED";
+"CANCELLED" = "REVOCAT";
 
 /* Dropbox folder save panel confirmation button */
-"Choose" = "Choose";
+"Choose" = "Alegeţi";
 
 /* No comment provided by engineer. */
-"Choose a directory inside Dropbox folder where the backup should be saved:" = "Choose a directory inside Dropbox folder where the backup should be saved:";
+"Choose a directory inside Dropbox folder where the backup should be saved:" = "Alegeţi un director în cadrul directorului Dropbox în care să fie salvat backup-ul:";
 
 /* No comment provided by engineer. */
 "click to copy" = "click pentru copiere";
 
 /* Confirm button next to passphrase */
-"Confirm" = "Confirm";
+"Confirm" = "Confirmare";
 
 /* Contact name empty alert title */
 "Contact can't be saved." = "Contactul nu poate fi salvat.";
@@ -69,37 +69,37 @@
 "copied!" = "copiat!";
 
 /* initialization error */
-"Could not read wallet file. It might be damaged." = "Could not read wallet file. It might be damaged.";
+"Could not read wallet file. It might be damaged." = "Nu se poate crea fişierul portofel. S-ar putea să fie compromis.";
 
 /* Quit without saves error question message */
 "Could not save changes while quitting. Quit anyway?" = "Schimbările nu pot fi salvate în timpul închiderii. închideți oricum?";
 
 /* initialization error */
-"Could not write wallet file. Another instance of Hive might still be running." = "Could not write wallet file. Another instance of Hive might still be running.";
+"Could not write wallet file. Another instance of Hive might still be running." = "Nu se poate scrie fişierul portofel. O altă instanţă a Hive ar putea rula în acelaşi timp.";
 
 /* Disable backup button title */
-"Disable" = "Disable";
+"Disable" = "Dezactivaţi";
 
 /* Backup status: adapter disabled */
-"Disabled" = "Disabled";
+"Disabled" = "Dezactivat";
 
 /* Confirm leaving a form without saving data */
-"Discard Changes" = "Discard Changes";
+"Discard Changes" = "Abandonaţi Schimbările";
 
 /* Remove contact alert dialog title */
 "Do you really want to remove %@ from your contact list?" = "Sigur doriți să ștergeți %@ din lista de contacte?";
 
 /* Install app popup title */
-"Do you want to add \"%@\" to Hive?" = "Do you want to add \"%@\" to Hive?";
+"Do you want to add \"%@\" to Hive?" = "Doriţi să adăugaţi la \"%@\" Hive?";
 
 /* Backup error message */
-"Dropbox folder not found" = "Dropbox folder not found";
+"Dropbox folder not found" = "Directorul Dropbox nu a putut fi găsit.";
 
 /* Dropbox no backup folder alert title */
-"Dropbox folder not found." = "Dropbox folder not found.";
+"Dropbox folder not found." = "Directorul Dropbox nu a putut fi găsit.";
 
 /* Backup error message */
-"Dropbox isn't running" = "Dropbox isn't running";
+"Dropbox isn't running" = "Dropbox nu rulează momentan";
 
 /* Page title when editing contact's info */
 "Edit contact" = "Editare contact";
@@ -111,49 +111,49 @@
 "email" = "email";
 
 /* Enable backup button title (no configuration required) */
-"Enable" = "Enable";
+"Enable" = "Activaţi";
 
 /* Enable backup button title (requires configuration) */
-"Enable..." = "Enable...";
+"Enable..." = "Activaţi...";
 
 /* Sending zero bitcoin alert title */
 "Enter an amount greater than zero." = "Introduceți o cantitate mai mare decât zero.";
 
 /* Passphrase prompt for sending */
-"Enter your passphrase to confirm the transaction:" = "Enter your passphrase to confirm the transaction:";
+"Enter your passphrase to confirm the transaction:" = "Introduceţi fraza de acces pentru a confirma tranzacţia:";
 
 /* Firstname field placeholder */
 "Firstname" = "Prenume";
 
 /* Initialization error title */
-"Hive cannot be started." = "Hive cannot be started.";
+"Hive cannot be started." = "Hive nu poate fi pornit.";
 
 /* Database error alert title */
-"Hive database file cannot be opened." = "Hive database file cannot be opened.";
+"Hive database file cannot be opened." = "Baza de date Hive nu poate fi deschisă.";
 
 /* Backup error message */
-"Hive directory is excluded from Time Machine backup" = "Hive directory is excluded from Time Machine backup";
+"Hive directory is excluded from Time Machine backup" = "Directorul Hive este exclus din backup-ul Maşinii Timpului.";
 
 /* Share sent transaction text */
-"I've just received some Bitcoin using Hive" = "I've just received some Bitcoin using Hive";
+"I've just received some Bitcoin using Hive" = "Tocmai am primit Bitcoin folosind Hive";
 
 /* Share sent transaction text */
-"I've just sent some Bitcoin using Hive" = "I've just sent some Bitcoin using Hive";
+"I've just sent some Bitcoin using Hive" = "Tocmai am trims Bitcoin folosind Hive";
 
 /* Install app button title */
-"Install" = "Install";
+"Install" = "Instalare";
 
 /* Backup requires password alert details */
-"It's dangerous to upload unencrypted wallets." = "It's dangerous to upload unencrypted wallets.";
+"It's dangerous to upload unencrypted wallets." = "Este periculos să se încarce portofele necriptate.";
 
 /* Don't leave a form without saving data */
-"Keep Editing" = "Keep Editing";
+"Keep Editing" = "Continuaţi să editaţi";
 
 /* Address caption field placeholder */
 "Label" = "Etichetă";
 
 /* On what date was the last backup done */
-"Last backup on %@" = "Last backup on %@";
+"Last backup on %@" = "Ultimul backup pe %@";
 
 /* Lastname field placeholder */
 "Lastname" = "Nume";
@@ -171,7 +171,7 @@
 "No address entered." = "Adresa nu a fost introdusă.";
 
 /* Backup is outdated, last backup was on that date */
-"No backup since %@" = "No backup since %@";
+"No backup since %@" = "Ultimul backup pe %@";
 
 /* Transaction failed alert message */
 "No Bitcoin have been taken from your wallet." = "Nu a fost retras niciun Bitcoin din portofel.";
@@ -183,16 +183,16 @@
 "or choose from the list" = "sau alegeți din listă";
 
 /* Wizard password page title */
-"Password" = "Password";
+"Password" = "Parolă";
 
 /* Pending transaction label */
-"PENDING" = "PENDING";
+"PENDING" = "IN AŞTEPTARE";
 
 /* Invalid address alert message */
 "Please check if you have entered the address correctly." = "Vă rugăm verificați daca ați introdus adresa corect.";
 
 /* Warning details when trying to send to your own address */
-"Please enter a different address." = "Please enter a different address.";
+"Please enter a different address." = "Introduceţi o adresa diferită.";
 
 /* Empty address alert message */
 "Please enter a valid Bitcoin address or select one from the dropdown list." = "Vă rugăm introduceți o adresă Bitcoin validă sau alegeți una din listă.";
@@ -207,88 +207,88 @@
 "Quitting now will lose any changes you have made since the last successful save" = "Dacă închideți acum veți pierde modificările făcute de la ultima salvare facută cu succes.";
 
 /* Received amount of BTC from unknown source */
-"Received &a" = "Received &a";
+"Received &a" = " Primit &a";
 
 /* Received amount of BTC from contact */
-"Received &a from &c" = "Received &a from &c";
+"Received &a from &c" = "Primit &a de la &c";
 
 /* Install app button title when app exists */
-"Reinstall" = "Reinstall";
+"Reinstall" = "Reinstalare";
 
 /* No comment provided by engineer. */
-"Remove" = "Remove";
+"Remove" = "Ştergere";
 
 /* Dropbox invalid folder alert title */
-"Selected directory is outside Dropbox folder." = "Selected directory is outside Dropbox folder.";
+"Selected directory is outside Dropbox folder." = "Directorul selectat se află în afara directorului Dropbox.";
 
 /* Send button title */
-"Send" = "Send";
+"Send" = "Trimite";
 
 /* Sent amount of BTC to a contact/address */
-"Sent &a to &c" = "Sent &a to &c";
+"Sent &a to &c" = "Trimis &a la &c";
 
 /* Amount exceeds available balance alert title */
-"Some funds are temporarily unavailable." = "Some funds are temporarily unavailable.";
+"Some funds are temporarily unavailable." = "Unele fonduri pot fi temporar inaccesibile.";
 
 /* Wizard completed page title */
 "Start!" = "Start!";
 
 /* App load error description */
-"The application data file has been removed or corrupted." = "The application data file has been removed or corrupted.";
+"The application data file has been removed or corrupted." = "Fişierul de date al aplicaţiei a fost îndepărtat sau corupt.";
 
 /* Error message when database is incompatible with this version */
-"The database was saved by a newer version of Hive - please download the latest version from http://hivewallet.com." = "The database was saved by a newer version of Hive - please download the latest version from http://hivewallet.com.";
+"The database was saved by a newer version of Hive - please download the latest version from http://hivewallet.com." = "Baza de date a fost salvată de o versiune mai nouă de Hive - va rugăm să descărcaţi ultima versiune de pe http://hivewallet.com";
 
 /* Install app popup warning message when app exists */
-"The existing app file will be replaced by the new version. This will not affect any app settings or saved data." = "The existing app file will be replaced by the new version. This will not affect any app settings or saved data.";
+"The existing app file will be replaced by the new version. This will not affect any app settings or saved data." = "Aplicaţia existentă va fi înlocuită de o versiune nouă. Acest lucru nu va afecta nici o setare a aplicaţiei sau a datelor salvate.";
 
 /* Alert details when transaction was cancelled */
-"This can happen because of bugs in the wallet code or because the transaction was rejected by the network." = "This can happen because of bugs in the wallet code or because the transaction was rejected by the network.";
+"This can happen because of bugs in the wallet code or because the transaction was rejected by the network." = "Acest lucru se poate întâmpla din cauza erorilor în codul portofelului sau pentru că tranzacţia a fost respinsă de reţea.";
 
 /* Warning details when trying to send a large BTC amount */
-"This is more than what you usually send." = "This is more than what you usually send.";
+"This is more than what you usually send." = "Suma aceasta este mai mare decât ce cheltuiţi de obicei.";
 
 /* Warning title when trying to send to your own address */
-"This is your wallet address." = "This is your wallet address.";
+"This is your wallet address." = "Aceasta este adresa portofelului dumneavoastră.";
 
 /* Invalid address alert title */
 "This isn't a valid Bitcoin address." = "Aceasta nu este o adresa Bitcoin validă.";
 
 /* Backup error message */
-"Time Machine is disabled in System Preferences" = "Time Machine is disabled in System Preferences";
+"Time Machine is disabled in System Preferences" = "Maşina Timpului este dezactivată în Preferinţe Sistem.";
 
 /* Amount exceeds available balance alert message */
-"To send this transaction, you'll need to wait for your pending transactions to be confirmed first (this shouldn't take more than a few minutes)." = "To send this transaction, you'll need to wait for your pending transactions to be confirmed first (this shouldn't take more than a few minutes).";
+"To send this transaction, you'll need to wait for your pending transactions to be confirmed first (this shouldn't take more than a few minutes)." = "Pentru a efectua această tranzacţie, va trebui să aşteptaţi ca tranzacţiile aflate în derulare să fie confirmate(nu ar trebui să dureze mai mult de câteva minute).";
 
 /* Notification of cancelled transaction */
-"Transaction cancelled" = "Transaction cancelled";
+"Transaction cancelled" = "Tranzacţie anulată";
 
 /* Notification of confirmed sent transaction */
-"Transaction completed" = "Transaction completed";
+"Transaction completed" = "Tranzacţie efectuată";
 
 /* Transaction failed alert title */
 "Transaction could not be completed." = "Tranzacția nu a putut fi efectuată.";
 
 /* Alert when transaction was cancelled (with transaction date) */
-"Transaction from %@ was cancelled." = "Transaction from %@ was cancelled.";
+"Transaction from %@ was cancelled." = "Tranzacţia de la %@ a fost anulată.";
 
 /* Transactions view title */
 "Transactions" = "Tranzacții";
 
 /* Backup status: backup up to date */
-"Up to date" = "Up to date";
+"Up to date" = "La zi";
 
 /* Backup status: backup scheduled or in progress */
-"Waiting for backup" = "Waiting for backup";
+"Waiting for backup" = "În aşteptarea backup-ului";
 
 /* Install app popup warning message */
-"We cannot guarantee the safety of all apps - please be careful if you download Hive apps from third party sites." = "We cannot guarantee the safety of all apps - please be careful if you download Hive apps from third party sites.";
+"We cannot guarantee the safety of all apps - please be careful if you download Hive apps from third party sites." = "Nu putem garanta siguranţa tuturor aplicaţiilor - acordaţi atenţie sporită dacă descărcaţi aplicaţii Hive de pe alte site-uri.";
 
 /* Wizard welcome page title */
-"Welcome" = "Welcome";
+"Welcome" = "Bine aţi venit";
 
 /* Button to show info about pending funds */
-"What does this mean?" = "What does this mean?";
+"What does this mean?" = "Ce înseamnă asta?";
 
 /* Sending zero bitcoin alert message */
 "Why would you want to send someone 0 BTC?" = "De ce ați dori să trimiteți cuiva 0 BTC?";
@@ -297,28 +297,28 @@
 "You cannot send more money than you own." = "Nu puteți trimite mai mulți bani decât aveți.";
 
 /* Install app popup title when app exists */
-"You have already added \"%@\" to Hive. Would you like to overwrite it?" = "You have already added \"%@\" to Hive. Would you like to overwrite it?";
+"You have already added \"%@\" to Hive. Would you like to overwrite it?" = "Deja aţi adăugat \"%@\" la Hive. Doriţi să suprascrieţi?";
 
 /* Notification of confirmed sent transaction (with BTC amount) */
-"You have sent %@." = "You have sent %@.";
+"You have sent %@." = "Aţi trimis %@.";
 
 /* Dropbox no backup folder alert details */
-"You must install Dropbox first (see www.dropbox.com)." = "You must install Dropbox first (see www.dropbox.com).";
+"You must install Dropbox first (see www.dropbox.com)." = "Dropbox trebuie instalat mai întâi(detalii pe www.dropbox.com).";
 
 /* Dropbox invalid folder alert details */
-"You need to choose or create a directory inside your Dropbox folder." = "You need to choose or create a directory inside your Dropbox folder.";
+"You need to choose or create a directory inside your Dropbox folder." = "Trebuie să selectaţi sau să creaţi un director în cadrul directorului dumneavoastră Dropbox.";
 
 /* Contact name empty alert message */
 "You need to give the contact a name before you can add it to the list." = "Trebuie să atribuiți un nume contactului înainte să-l adăugați in listă.";
 
 /* Backup requires password alert title */
-"You need to set a wallet password first (see Wallet menu)." = "You need to set a wallet password first (see Wallet menu).";
+"You need to set a wallet password first (see Wallet menu)." = "Trebuie mai întâi să parolaţi portofelul(vedeţi meniu Portofel).";
 
 /* Remove contact alert dialog body */
-"You won't be able to undo this operation." = "You won't be able to undo this operation.";
+"You won't be able to undo this operation." = "Nu veţi putea anula această operaţiune.";
 
 /* Notification of incoming transaction */
-"You've received Bitcoin" = "You've received Bitcoin";
+"You've received Bitcoin" = "Aţi primit Bitcoin";
 
 /* Cancel editing alert message */
-"Your changes won't be saved." = "Your changes won't be saved.";
+"Your changes won't be saved." = "Schimbările nu vor fi salvate.";

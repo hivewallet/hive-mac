@@ -3,7 +3,7 @@
 "22.title" = "Primit";
 
 /* Class = "NSTextFieldCell"; title = "Date"; ObjectID = "41"; */
-"41.title" = "Date";
+"41.title" = "Data";
 
 /* Class = "NSTextFieldCell"; title = "Looks like you haven't made any transactions yet. Send someone some Bitcoin!"; ObjectID = "54"; */
 "54.title" = "Se pare că nu ați făcut nici o tranzactie. Trimiteți Bitcoin cuiva!";
@@ -15,4 +15,4 @@
 "63.title" = "Puteți apoi folosi butonul Trimite pentru a trimite cuiva bani.";
 
 /* Class = "NSTextFieldCell"; title = "PENDING"; ObjectID = "oXJ-Jx-H6s"; */
-"oXJ-Jx-H6s.title" = "PENDING";
+"oXJ-Jx-H6s.title" = "ÎN AŞTEPTARE";
