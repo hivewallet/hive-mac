@@ -162,7 +162,6 @@
 		58895405188924FB00243190 /* HIPasswordInputViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 58895407188924FB00243190 /* HIPasswordInputViewController.xib */; };
 		588954231889254A00243190 /* HIPasswordInputViewController.strings in Resources */ = {isa = PBXBuildFile; fileRef = 588954251889254A00243190 /* HIPasswordInputViewController.strings */; };
 		588E33B71817E6AE006A6A25 /* HIBitcoinURL.m in Sources */ = {isa = PBXBuildFile; fileRef = 588E33B61817E6AE006A6A25 /* HIBitcoinURL.m */; };
-		588E34B7181E9F7B006A6A25 /* localbitcoins.hiveapp in Resources */ = {isa = PBXBuildFile; fileRef = 588E34B6181E9F7B006A6A25 /* localbitcoins.hiveapp */; };
 		588E34D9181FF32B006A6A25 /* HIDebuggingInfoWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 588E34D7181FF32B006A6A25 /* HIDebuggingInfoWindowController.m */; };
 		588E34DB181FF8A7006A6A25 /* HIDebuggingInfoWindowController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 588E34DD181FF8A7006A6A25 /* HIDebuggingInfoWindowController.xib */; };
 		588E34F2182013E9006A6A25 /* HIDebuggingInfoWindowController.strings in Resources */ = {isa = PBXBuildFile; fileRef = 588E34F4182013E9006A6A25 /* HIDebuggingInfoWindowController.strings */; };
@@ -1286,7 +1285,6 @@
 		588E34B2181E7B8E006A6A25 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/MainMenu.strings; sourceTree = "<group>"; };
 		588E34B3181E7B8E006A6A25 /* es */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = es; path = es.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		588E34B5181E7B8E006A6A25 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Localizable.strings; sourceTree = "<group>"; };
-		588E34B6181E9F7B006A6A25 /* localbitcoins.hiveapp */ = {isa = PBXFileReference; lastKnownFileType = file; path = localbitcoins.hiveapp; sourceTree = "<group>"; };
 		588E34BB181EBE05006A6A25 /* cs */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = cs; path = cs.lproj/HIApplicationsViewController.xib; sourceTree = "<group>"; };
 		588E34BC181EBE05006A6A25 /* cs */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = cs; path = cs.lproj/HIContactsViewController.strings; sourceTree = "<group>"; };
 		588E34BD181EBE05006A6A25 /* cs */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = cs; path = cs.lproj/HIContactsViewController.xib; sourceTree = "<group>"; };
@@ -2075,7 +2073,6 @@
 				5857126E188F3C480094F884 /* bitpremier.hiveapp */,
 				5857125E188F28A70094F884 /* bitstamptrader.hiveapp */,
 				58E3363918934DCB004D60C3 /* coinbase.hiveapp */,
-				588E34B6181E9F7B006A6A25 /* localbitcoins.hiveapp */,
 				586059AD180419DF00FD9C2A /* minefield.hiveapp */,
 				5857125F188F28A70094F884 /* mobile-recharge.hiveapp */,
 				58D4D61E18290079009CB7A5 /* patten_hive.hiveapp */,
@@ -2614,7 +2611,6 @@
 				58A37AAA180D7B1000CFCDE3 /* HIContactAutocompleteWindowController.xib in Resources */,
 				2478B8F2184A89EA00BA2C35 /* HIFeeDetailsViewController.strings in Resources */,
 				588E34DB181FF8A7006A6A25 /* HIDebuggingInfoWindowController.xib in Resources */,
-				588E34B7181E9F7B006A6A25 /* localbitcoins.hiveapp in Resources */,
 				58A37AAD180D7B1500CFCDE3 /* HISendBitcoinsWindowController.xib in Resources */,
 				58A37AB0180D7B1D00CFCDE3 /* HITransactionsViewController.xib in Resources */,
 				58A37A9E180D7AFC00CFCDE3 /* HIMainWindowController.xib in Resources */,
