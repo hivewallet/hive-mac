@@ -22,11 +22,9 @@ static const NSTimeInterval HIExchangeRateMinimumUpdateInterval = 60.0;
     static HIExchangeRateService *sharedService = nil;
     static dispatch_once_t oncePredicate;
 
-    if (!sharedService) {
-        dispatch_once(&oncePredicate, ^{
-            sharedService = [[self class] new];
-        });
-    }
+    dispatch_once(&oncePredicate, ^{
+        sharedService = [[self class] new];
+    });
 
     return sharedService;
 }

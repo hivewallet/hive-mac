@@ -8,11 +8,9 @@
     static HIDirectoryDataService *sharedService = nil;
     static dispatch_once_t oncePredicate;
 
-    if (!sharedService) {
-        dispatch_once(&oncePredicate, ^{
-            sharedService = [[self class] new];
-        });
-    }
+    dispatch_once(&oncePredicate, ^{
+        sharedService = [[self class] new];
+    });
 
     return sharedService;
 }

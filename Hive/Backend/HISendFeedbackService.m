@@ -6,11 +6,9 @@
     static HISendFeedbackService *sharedService = nil;
     static dispatch_once_t oncePredicate;
 
-    if (!sharedService) {
-        dispatch_once(&oncePredicate, ^{
+    dispatch_once(&oncePredicate, ^{
             sharedService = [[self class] new];
-        });
-    }
+    });
 
     return sharedService;
 }
