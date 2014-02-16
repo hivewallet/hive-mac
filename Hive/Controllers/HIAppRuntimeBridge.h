@@ -21,7 +21,7 @@
 
 @property (strong) HIApplicationRuntimeViewController *controller;
 
-+ (BOOL)isApiLevelInApplicationSupported:(HIApplication *)application;
++ (BOOL)isApiVersionInApplicationSupported:(HIApplication *)application;
 
 - (id)initWithApplication:(HIApplication *)application frame:(WebFrame *)frame;
 

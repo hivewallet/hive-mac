@@ -66,7 +66,7 @@
             NSUInteger index = self.collectionView.selectionIndexes.lastIndex;
             HIApplication *app = (HIApplication *) [_arrayController arrangedObjects][index];
 
-            if ([HIAppRuntimeBridge isApiLevelInApplicationSupported:app]) {
+            if ([HIAppRuntimeBridge isApiVersionInApplicationSupported:app]) {
                 HIApplicationRuntimeViewController *sub = [HIApplicationRuntimeViewController new];
                 sub.application = app;
                 [self.navigationController pushViewController:sub animated:YES];
