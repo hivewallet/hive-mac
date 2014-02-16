@@ -26,23 +26,29 @@ static const float PADDING_Y = 0.0;
        controlPoint1:NSMakePoint(frame.size.width- cornerRadius, 1)
        controlPoint2:NSMakePoint(frame.size.width- cornerRadius, 1)];
 
+    NSColor *strokeColor = RGB(35, 116, 238);
     if (self.isHighlighted) {
         [RGB(35, 116, 238) setFill];
         [p fill];
         [[NSColor colorWithCalibratedWhite:0 alpha:0.35] set];
         controlView.layer.shadowColor = [[NSColor whiteColor] hiNativeColor];
-    } else {
+    } else if (self.isEnabled) {
         NSGradient *g = [[NSGradient alloc] initWithColors:@[RGB(54,185,251), RGB(35, 116, 238)]];
         [g drawInBezierPath:p angle:90];
         [RGB(255, 255, 255) set];
         controlView.layer.shadowColor = [[NSColor blackColor] hiNativeColor];
+    } else {
+        strokeColor = RGB(184, 203, 230);
+        NSGradient *g = [[NSGradient alloc] initWithColors:@[RGB(204,238,255), RGB(190, 209, 238)]];
+        [g drawInBezierPath:p angle:90];
+        [RGB(255, 255, 255) set];
+        controlView.layer.shadowColor = [[NSColor grayColor] hiNativeColor];
     }
     if (self.hasShadow) {
         [sP stroke];
     }
 
-
-    [RGB(35, 116, 238) set];
+    [strokeColor set];
     [p stroke];
 
 
@@ -54,16 +60,22 @@ static const float PADDING_Y = 0.0;
     sh.shadowOffset = NSMakeSize(0, -1);
     sh.shadowBlurRadius = 1;
 
-    NSDictionary *attrs = @{
+    return @{
         NSFontAttributeName: self.font,
         NSForegroundColorAttributeName: [NSColor whiteColor],
         NSShadowAttributeName: sh
     };
-    return attrs;
+}
+
+- (NSDictionary *)disabledDrawingAttributes {
+    return @{
+        NSFontAttributeName: self.font,
+        NSForegroundColorAttributeName: [NSColor grayColor],
+    };
 }
 
 - (NSRect)drawTitle:(NSAttributedString *)title withFrame:(NSRect)frame inView:(NSView *)controlView {
-    NSDictionary *attrs = [self drawingAttributes];
+    NSDictionary *attrs = self.isEnabled ? [self drawingAttributes] : [self disabledDrawingAttributes];
 
     if ([controlView respondsToSelector:@selector(titleFrame)]) {
         frame = (NSRect) [(id)controlView titleFrame];
