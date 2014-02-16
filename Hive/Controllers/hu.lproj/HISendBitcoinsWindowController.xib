@@ -17,6 +17,7 @@
                 <outlet property="feeButton" destination="fQu-xK-vvV" id="aWn-ee-8jl"/>
                 <outlet property="nameLabel" destination="19" id="27"/>
                 <outlet property="photoView" destination="17" id="28"/>
+                <outlet property="qrCodeButton" destination="NBI-47-dFp" id="ZDh-sY-nIh"/>
                 <outlet property="sendButton" destination="9" id="43"/>
                 <outlet property="separator" destination="23" id="48"/>
                 <outlet property="window" destination="1" id="3"/>
@@ -29,7 +30,7 @@
             <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
             <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
             <rect key="contentRect" x="196" y="240" width="435" height="234"/>
-            <rect key="screenRect" x="0.0" y="0.0" width="1680" height="1028"/>
+            <rect key="screenRect" x="0.0" y="0.0" width="1920" height="1058"/>
             <value key="minSize" type="size" width="403" height="238"/>
             <value key="maxSize" type="size" width="1000" height="238"/>
             <view key="contentView" wantsLayer="YES" id="2">
@@ -250,11 +251,24 @@ Gw
                                         <action selector="currencyRateInfoButtonClicked:" target="-2" id="qcb-NR-mbs"/>
                                     </connections>
                                 </button>
+                                <button translatesAutoresizingMaskIntoConstraints="NO" id="NBI-47-dFp" userLabel="QR code button">
+                                    <rect key="frame" x="362" y="92" width="21" height="21"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="21" id="bWi-XS-pkd"/>
+                                        <constraint firstAttribute="height" constant="21" id="fYQ-Qo-50c"/>
+                                    </constraints>
+                                    <buttonCell key="cell" type="square" title="Scan QR Code" bezelStyle="shadowlessSquare" imagePosition="only" alignment="center" borderStyle="border" inset="2" id="Bmc-Df-KsC">
+                                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                        <font key="font" metaFont="system"/>
+                                    </buttonCell>
+                                </button>
                             </subviews>
                         </view>
                         <constraints>
                             <constraint firstItem="BS3-Hu-S5U" firstAttribute="top" secondItem="fQu-xK-vvV" secondAttribute="bottom" constant="21" id="2dz-qV-SmX"/>
                             <constraint firstAttribute="trailing" secondItem="fQu-xK-vvV" secondAttribute="trailing" constant="4" id="3sO-wC-bUx"/>
+                            <constraint firstItem="23" firstAttribute="top" secondItem="NBI-47-dFp" secondAttribute="bottom" constant="5" id="719-Vl-fHB"/>
                             <constraint firstAttribute="trailing" secondItem="Uma-46-IZW" secondAttribute="trailing" id="ALc-iV-4oe"/>
                             <constraint firstAttribute="trailing" secondItem="23" secondAttribute="trailing" id="ArZ-gD-OFX"/>
                             <constraint firstAttribute="bottom" secondItem="l47-zx-4mb" secondAttribute="bottom" constant="12" id="BOQ-Bu-fJ1"/>
@@ -265,6 +279,7 @@ Gw
                             <constraint firstItem="51" firstAttribute="top" secondItem="11" secondAttribute="top" constant="16" id="FBX-yN-WYf"/>
                             <constraint firstItem="36" firstAttribute="leading" secondItem="l47-zx-4mb" secondAttribute="leading" id="HLv-cn-PIg"/>
                             <constraint firstItem="23" firstAttribute="leading" secondItem="11" secondAttribute="leading" id="Q3f-pp-Wei"/>
+                            <constraint firstItem="51" firstAttribute="centerX" secondItem="NBI-47-dFp" secondAttribute="centerX" id="Qe7-EM-Fdm"/>
                             <constraint firstItem="u5l-cR-nXn" firstAttribute="top" secondItem="23" secondAttribute="bottom" constant="11" id="RlT-MD-jY6"/>
                             <constraint firstItem="u5l-cR-nXn" firstAttribute="leading" secondItem="13" secondAttribute="leading" id="SSt-wx-3g1"/>
                             <constraint firstItem="u5l-cR-nXn" firstAttribute="trailing" secondItem="ZPL-GE-Omh" secondAttribute="trailing" id="TaX-HF-bnb"/>

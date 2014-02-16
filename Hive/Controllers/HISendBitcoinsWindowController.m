@@ -24,6 +24,8 @@
 #import "NSDecimalNumber+HISatoshiConversion.h"
 #import "NSWindow+HIShake.h"
 
+#import <FontAwesomeIconFactory/NIKFontAwesomeIconFactory+OSX.h>
+
 NSString * const HISendBitcoinsWindowDidClose = @"HISendBitcoinsWindowDidClose";
 NSString * const HISendBitcoinsWindowSuccessKey = @"success";
 
@@ -110,6 +112,7 @@ NSString * const HISendBitcoinsWindowSuccessKey = @"success";
 
     self.wrapper.layer.cornerRadius = 5.0;
 
+    [self setUpQrCodeButton];
     [self setupCurrencyList];
 
     if (_amount) {
@@ -118,6 +121,14 @@ NSString * const HISendBitcoinsWindowSuccessKey = @"success";
         self.amountFieldValue = 0ll;
     }
     [self updateConvertedAmountFromAmount];
+}
+
+- (void)setUpQrCodeButton {
+    NIKFontAwesomeIconFactory *iconFactory = [NIKFontAwesomeIconFactory new];
+    iconFactory.padded = YES;
+    iconFactory.size = 14;
+    iconFactory.edgeInsets = NSEdgeInsetsMake(2, 0, 0, 0);
+    self.qrCodeButton.image = [iconFactory createImageForIcon:NIKFontAwesomeIconQrcode];
 }
 
 - (void)setupCurrencyList {
