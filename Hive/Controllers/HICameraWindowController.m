@@ -102,12 +102,13 @@ static const NSTimeInterval SCAN_INTERVAL = .25;
         dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
             NSString *scannedBarcode = [self scanBarcodeInImage:image];
             dispatch_async(dispatch_get_main_queue(), ^{
-                self.scanning = NO;
                 if (scannedBarcode) {
                     if ([[HIBitcoinUrlService sharedService] handleBitcoinUrlString:scannedBarcode]) {
+                        [self.captureSession stopRunning];
                         [self.window performClose:nil];
                     }
                 }
+                self.scanning = NO;
             });
         });
     }
