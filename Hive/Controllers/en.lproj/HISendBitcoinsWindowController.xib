@@ -75,6 +75,7 @@ Gw
                         </buttonCell>
                         <connections>
                             <action selector="sendClicked:" target="-2" id="31"/>
+                            <binding destination="-2" name="enabled" keyPath="sendButtonEnabled" id="Hbt-qs-jWd"/>
                         </connections>
                     </button>
                     <box autoresizesSubviews="NO" wantsLayer="YES" boxType="custom" borderType="line" titlePosition="noTitle" translatesAutoresizingMaskIntoConstraints="NO" id="11">

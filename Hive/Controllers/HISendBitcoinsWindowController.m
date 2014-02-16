@@ -51,6 +51,7 @@ NSString * const HISendBitcoinsWindowSuccessKey = @"success";
 @property (strong) HIFeeDetailsViewController *feeDetailsViewController;
 @property (strong) HIPasswordInputViewController *passwordInputViewController;
 @property (strong) NSViewController *currencyRateInfoViewController;
+@property (nonatomic, assign) BOOL sendButtonEnabled;
 
 @end
 
@@ -123,6 +124,8 @@ NSString * const HISendBitcoinsWindowSuccessKey = @"success";
         self.amountFieldValue = 0ll;
     }
     [self updateConvertedAmountFromAmount];
+
+    [self updateSendButtonEnabled];
 }
 
 - (void)setUpQrCodeButton {
@@ -138,6 +141,11 @@ NSString * const HISendBitcoinsWindowSuccessKey = @"success";
     [self.bitcoinCurrencyPopupButton selectItemWithTitle:self.bitcoinFormatService.preferredFormat];
     [self.convertedCurrencyPopupButton addItemsWithTitles:self.exchangeRateService.availableCurrencies];
     [self.convertedCurrencyPopupButton selectItemWithTitle:_selectedCurrency];
+}
+
+- (void)updateSendButtonEnabled {
+    NSString *hash = _hashAddress ?: self.nameLabel.stringValue;
+    self.sendButtonEnabled = self.amountFieldValue > 0 && hash.length > 0;
 }
 
 - (void)windowWillClose:(NSNotification *)notification {
@@ -422,10 +430,7 @@ NSString * const HISendBitcoinsWindowSuccessKey = @"success";
 
     NSString *target = _hashAddress ?: self.nameLabel.stringValue;
 
-    if (satoshi == 0) {
-        [self showZeroAmountAlert];
-    }
-    else if (satoshiWithFee > [[BCClient sharedClient] estimatedBalance]) {
+    if (satoshiWithFee > [[BCClient sharedClient] estimatedBalance]) {
         [self showInsufficientFundsAlert];
     }
     else if (satoshiWithFee > [[BCClient sharedClient] availableBalance]) {
@@ -517,14 +522,6 @@ NSString * const HISendBitcoinsWindowSuccessKey = @"success";
 
                      message:NSLocalizedString(@"No Bitcoin have been taken from your wallet.",
                                                @"Transaction failed alert message")];
-}
-
-- (void)showZeroAmountAlert {
-    [self showAlertWithTitle:NSLocalizedString(@"Enter an amount greater than zero.",
-                                               @"Sending zero bitcoin alert title")
-
-                     message:NSLocalizedString(@"Why would you want to send someone 0 BTC?",
-                                               @"Sending zero bitcoin alert message")];
 }
 
 - (void)showInsufficientFundsAlert {
@@ -630,12 +627,14 @@ NSString * const HISendBitcoinsWindowSuccessKey = @"success";
     if (notification.object == self.amountField) {
         [self updateConvertedAmountFromAmount];
         [self updateFee];
+        [self updateSendButtonEnabled];
     } else if (notification.object == self.convertedAmountField) {
         [self updateAmountFromConvertedAmount];
     } else {
         [self setBarcodeScanningEnabled:self.nameLabel.stringValue.length == 0];
         [self clearContact];
         [self startAutocompleteForCurrentQuery];
+        [self updateSendButtonEnabled];
     }
 }
 
@@ -735,6 +734,7 @@ NSString * const HISendBitcoinsWindowSuccessKey = @"success";
 - (void)addressSelectedInAutocomplete:(HIAddress *)address {
     [self selectContact:address.contact address:address];
     [self hideAutocompleteWindow];
+    [self updateSendButtonEnabled];
 }
 
 

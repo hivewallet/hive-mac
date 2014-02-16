@@ -116,9 +116,6 @@
 /* Enable backup button title (requires configuration) */
 "Enable..." = "Osposobite...";
 
-/* Sending zero bitcoin alert title */
-"Enter an amount greater than zero." = "Unesite iznos veći od nule.";
-
 /* Passphrase prompt for sending */
 "Enter your passphrase to confirm the transaction:" = "Unesite svoju lozinku kako bi potvrdili transakciju:";
 

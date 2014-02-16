@@ -116,9 +116,6 @@
 /* Enable backup button title (requires configuration) */
 "Enable..." = "...を有効にする";
 
-/* Sending zero bitcoin alert title */
-"Enter an amount greater than zero." = "ゼロ以上のコイン額を入力してください.";
-
 /* Passphrase prompt for sending */
 "Enter your passphrase to confirm the transaction:" = "送受を確認する為パッス文章を入力ください:";
 

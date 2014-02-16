@@ -116,9 +116,6 @@
 /* Enable backup button title (requires configuration) */
 "Enable..." = "Salli...";
 
-/* Sending zero bitcoin alert title */
-"Enter an amount greater than zero." = "Aseta summaksi suurempi kuin nolla.";
-
 /* Passphrase prompt for sending */
 "Enter your passphrase to confirm the transaction:" = "Syötä salasanasi vahvistaaksesi tapahtuman:";
 

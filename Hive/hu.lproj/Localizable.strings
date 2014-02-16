@@ -116,9 +116,6 @@
 /* Enable backup button title (requires configuration) */
 "Enable..." = "Bekapcsolás...";
 
-/* Sending zero bitcoin alert title */
-"Enter an amount greater than zero." = "Olyan számot írjál be ami nagyobb mint nulla.";
-
 /* Passphrase prompt for sending */
 "Enter your passphrase to confirm the transaction:" = "Add meg a jelszóda a küldéshez";
 

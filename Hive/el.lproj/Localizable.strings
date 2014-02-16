@@ -116,9 +116,6 @@
 /* Enable backup button title (requires configuration) */
 "Enable..." = "Ενεργοποίηση...";
 
-/* Sending zero bitcoin alert title */
-"Enter an amount greater than zero." = "Εισάγετε ένα ποσό μεγαλύτερο από μηδέν.";
-
 /* Passphrase prompt for sending */
 "Enter your passphrase to confirm the transaction:" = "Εισάγετε τον κωδικό σας για επιβεβαίωση της συναλλαγής:";
 

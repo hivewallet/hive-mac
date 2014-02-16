@@ -116,9 +116,6 @@
 /* Enable backup button title (requires configuration) */
 "Enable..." = "Activaţi...";
 
-/* Sending zero bitcoin alert title */
-"Enter an amount greater than zero." = "Introduceți o cantitate mai mare decât zero.";
-
 /* Passphrase prompt for sending */
 "Enter your passphrase to confirm the transaction:" = "Introduceţi fraza de acces pentru a confirma tranzacţia:";
 

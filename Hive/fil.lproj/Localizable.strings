@@ -116,9 +116,6 @@
 /* Enable backup button title (requires configuration) */
 "Enable..." = "I-enable...";
 
-/* Sending zero bitcoin alert title */
-"Enter an amount greater than zero." = "Maglagay ng halaga na mas malaki sa zero.";
-
 /* Passphrase prompt for sending */
 "Enter your passphrase to confirm the transaction:" = "I-enter any iyong passphrase upang maikumpirma ang transaction:";
 
