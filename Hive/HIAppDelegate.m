@@ -189,11 +189,16 @@ static int ddLogLevel = LOG_LEVEL_VERBOSE;
     if (DEBUG_OPTION_ENABLED(TESTING_NETWORK)) {
         if (DEBUG_OPTION_ENABLED(TEMP_DIRECTORY)) {
             // We never want to combine the temp directory with a real-world wallet.
-            return [fileManager URLForDirectory:NSItemReplacementDirectory
-                                       inDomain:NSUserDomainMask
-                              appropriateForURL:[appSupportURL URLByAppendingPathComponent:@"Hive"]
-                                         create:YES
-                                          error:NULL];
+            static NSURL *url = nil;
+            static dispatch_once_t onceToken;
+            dispatch_once(&onceToken, ^{
+                url = [fileManager URLForDirectory:NSItemReplacementDirectory
+                                          inDomain:NSUserDomainMask
+                                 appropriateForURL:[appSupportURL URLByAppendingPathComponent:@"Hive"]
+                                            create:YES
+                                             error:NULL];
+            });
+            return url;
         } else {
             return [appSupportURL URLByAppendingPathComponent:@"HiveTest"];
         }
