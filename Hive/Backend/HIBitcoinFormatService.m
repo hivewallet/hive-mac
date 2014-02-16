@@ -56,7 +56,7 @@ static NSString *const HIFormatPreferenceKey = @"BitcoinFormat";
     }
 }
 
-- (NSString *)stringWithDesignatorForBitcoin:(satoshi_t)satoshi {
+- (NSString *)stringWithUnitForBitcoin:(satoshi_t)satoshi {
     return [NSString stringWithFormat:@"%@ %@", [self stringForBitcoin:satoshi], self.preferredFormat];
 }
 

@@ -55,8 +55,8 @@
     return currencyDigits;
 }
 
-- (NSString *)formatValue:(NSNumber *)value
-               inCurrency:(NSString *)currency {
+- (NSString *)stringForValue:(NSNumber *)value
+                  inCurrency:(NSString *)currency {
 
     NSNumberFormatter *currencyNumberFormatter = [self createNumberFormatter];
     int digits = [self.currencyDigits[currency] intValue];

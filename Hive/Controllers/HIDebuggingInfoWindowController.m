@@ -33,11 +33,11 @@
     [info appendFormat:@"Wallet address: %@\n", bitcoin.walletAddress];
 
     [info appendFormat:@"Available balance: %lld (%@)\n",
-     bitcoin.availableBalance,
-     [formatService stringWithDesignatorForBitcoin:bitcoin.availableBalance]];
+                       bitcoin.availableBalance,
+                       [formatService stringWithUnitForBitcoin:bitcoin.availableBalance]];
     [info appendFormat:@"Estimated balance: %lld (%@)\n",
-     bitcoin.estimatedBalance,
-     [formatService stringWithDesignatorForBitcoin:bitcoin.estimatedBalance]];
+                       bitcoin.estimatedBalance,
+                       [formatService stringWithUnitForBitcoin:bitcoin.estimatedBalance]];
 
     [info appendFormat:@"Sync progress: %.1f%%\n", bitcoin.syncProgress];
 

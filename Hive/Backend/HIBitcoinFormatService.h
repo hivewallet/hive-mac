@@ -16,7 +16,7 @@ extern NSString *const HIPreferredFormatChangeNotification;
 /* Formats a bitcoin value in the user's preferred format including the format designator.
  e.g. 255 mBTC
  */
-- (NSString *)stringWithDesignatorForBitcoin:(satoshi_t)satoshi;
+- (NSString *)stringWithUnitForBitcoin:(satoshi_t)satoshi;
 
 /* Formats a bitcoin value in the user's preferred format.
  e.g. 255

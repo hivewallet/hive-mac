@@ -164,7 +164,7 @@ typedef NS_ENUM(NSInteger, HINotificationType) {
 #pragma mark - Notifications
 
 - (void)postReceivedNotification:(HITransaction *)transaction {
-    NSString *btc = [[HIBitcoinFormatService sharedService] stringWithDesignatorForBitcoin:transaction.absoluteAmount];
+    NSString *btc = [[HIBitcoinFormatService sharedService] stringWithUnitForBitcoin:transaction.absoluteAmount];
 
     [self postNotification:NSLocalizedString(@"You've received Bitcoin", @"Notification of incoming transaction")
                       text:btc
@@ -172,7 +172,7 @@ typedef NS_ENUM(NSInteger, HINotificationType) {
 }
 
 - (void)postSendConfirmedNotification:(HITransaction *)transaction {
-    NSString *btc = [[HIBitcoinFormatService sharedService] stringWithDesignatorForBitcoin:transaction.absoluteAmount];
+    NSString *btc = [[HIBitcoinFormatService sharedService] stringWithUnitForBitcoin:transaction.absoluteAmount];
     NSString *text = [NSString stringWithFormat:
                       NSLocalizedString(@"You have sent %@.",
                                         @"Notification of confirmed sent transaction (with BTC amount)"),

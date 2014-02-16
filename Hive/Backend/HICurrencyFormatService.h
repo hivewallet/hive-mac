@@ -5,8 +5,8 @@
 
 + (HICurrencyFormatService *)sharedService;
 
-- (NSString *)formatValue:(NSNumber *)value
-               inCurrency:(NSString *)currency;
+- (NSString *)stringForValue:(NSNumber *)value
+                  inCurrency:(NSString *)currency;
 
 - (NSDecimalNumber *)parseString:(NSString *)string
                            error:(NSError **)error;

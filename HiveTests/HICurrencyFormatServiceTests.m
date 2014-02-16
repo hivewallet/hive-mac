@@ -24,7 +24,7 @@
 #pragma mark - formatting
 
 - (void)testFormatValue {
-    NSString *string = [self.service formatValue:@1060.5 inCurrency:@"USD"];
+    NSString *string = [self.service stringForValue:@1060.5 inCurrency:@"USD"];
 
     assertThat(string, equalTo(@"1,060.50"));
 }
@@ -32,19 +32,19 @@
 - (void)testFormatValueUsingDifferentLocale {
     self.service.locale = [[NSLocale alloc] initWithLocaleIdentifier:@"de_DE"];
 
-    NSString *string = [self.service formatValue:@1060.5 inCurrency:@"USD"];
+    NSString *string = [self.service stringForValue:@1060.5 inCurrency:@"USD"];
 
     assertThat(string, equalTo(@"1.060,50"));
 }
 
 - (void)testFormatValueForStringWithThreeDecimalPlaces {
-    NSString *string = [self.service formatValue:@1060.5 inCurrency:@"TND"];
+    NSString *string = [self.service stringForValue:@1060.5 inCurrency:@"TND"];
 
     assertThat(string, equalTo(@"1,060.500"));
 }
 
 - (void)testRoundDecimalPlaces {
-    NSString *string = [self.service formatValue:@1.503 inCurrency:@"USD"];
+    NSString *string = [self.service stringForValue:@1.503 inCurrency:@"USD"];
 
     assertThat(string, equalTo(@"1.50"));
 }

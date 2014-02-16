@@ -274,7 +274,7 @@
     NSRange amountRange = [summary.string rangeOfString:@"&a"];
     if (amountRange.location != NSNotFound) {
         satoshi_t satoshi = transaction.absoluteAmount;
-        NSString *value = [[HIBitcoinFormatService sharedService] stringWithDesignatorForBitcoin:satoshi];
+        NSString *value = [[HIBitcoinFormatService sharedService] stringWithUnitForBitcoin:satoshi];
         NSAttributedString *fragment = [[NSAttributedString alloc] initWithString:value attributes:boldAttributes];
         [summary replaceCharactersInRange:amountRange withAttributedString:fragment];
     }

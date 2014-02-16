@@ -173,8 +173,8 @@
     if (self.exchangeRate) {
         NSDecimalNumber *convertedBalance = [self convertedAmountForBitcoinAmount:self.estimatedBalance];
         self.convertedBalanceLabel.stringValue =
-            [[HICurrencyFormatService sharedService] formatValue:convertedBalance
-                                                    inCurrency:self.selectedCurrency];
+            [[HICurrencyFormatService sharedService] stringForValue:convertedBalance
+                                                         inCurrency:self.selectedCurrency];
     } else {
         self.convertedBalanceLabel.stringValue = @"?";
     }

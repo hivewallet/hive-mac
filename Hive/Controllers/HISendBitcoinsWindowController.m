@@ -254,7 +254,7 @@ NSString * const HISendBitcoinsWindowSuccessKey = @"success";
 }
 
 - (void)setConvertedAmountFieldValue:(NSDecimalNumber *)amount {
-    NSString *string = [[HICurrencyFormatService sharedService] formatValue:amount inCurrency:self.selectedCurrency];
+    NSString *string = [[HICurrencyFormatService sharedService] stringForValue:amount inCurrency:self.selectedCurrency];
     [self.convertedAmountField setStringValue:string];
 }
 

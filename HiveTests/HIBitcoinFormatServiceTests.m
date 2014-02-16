@@ -39,7 +39,7 @@
 - (void)testPreferredFormatStringWithDesignator {
     self.service.preferredFormat = @"µBTC";
 
-    NSString *string = [self.service stringWithDesignatorForBitcoin:160];
+    NSString *string = [self.service stringWithUnitForBitcoin:160];
 
     assertThat(string, equalTo(@"1.6 µBTC"));
 }
