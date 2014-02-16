@@ -103,7 +103,7 @@ Gw
                                     <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageAlignment="right" imageScaling="proportionallyDown" id="18"/>
                                 </imageView>
                                 <textField focusRingType="none" verticalHuggingPriority="750" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" translatesAutoresizingMaskIntoConstraints="NO" id="19">
-                                    <rect key="frame" x="98" y="115" width="264" height="18"/>
+                                    <rect key="frame" x="98" y="115" width="269" height="18"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                     <constraints>
                                         <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="240" id="K3U-Ag-cCK"/>
@@ -118,7 +118,7 @@ Gw
                                     </connections>
                                 </textField>
                                 <button translatesAutoresizingMaskIntoConstraints="NO" id="51" userLabel="Pop up completions button">
-                                    <rect key="frame" x="360" y="111" width="24" height="24"/>
+                                    <rect key="frame" x="365" y="111" width="24" height="24"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES"/>
                                     <constraints>
                                         <constraint firstAttribute="width" constant="24" id="7H2-FH-EOC"/>
@@ -171,7 +171,7 @@ Gw
                                     </connections>
                                 </popUpButton>
                                 <textField focusRingType="none" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="36" userLabel="Bitcoin amount">
-                                    <rect key="frame" x="100" y="55" width="218" height="19"/>
+                                    <rect key="frame" x="100" y="55" width="225" height="19"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" focusRingType="none" title="0.0" drawsBackground="YES" id="37">
                                         <font key="font" size="15" name="LucidaGrande"/>
@@ -183,11 +183,10 @@ Gw
                                     </connections>
                                 </textField>
                                 <button translatesAutoresizingMaskIntoConstraints="NO" id="fQu-xK-vvV" userLabel="Fee">
-                                    <rect key="frame" x="324" y="49" width="74" height="26"/>
+                                    <rect key="frame" x="331" y="49" width="69" height="26"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="21" id="4BB-3B-AOJ"/>
-                                        <constraint firstAttribute="width" constant="70" id="elh-In-RlC"/>
                                     </constraints>
                                     <buttonCell key="cell" type="bevel" title="+0.00001" bezelStyle="regularSquare" alignment="center" refusesFirstResponder="YES" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="PvI-F7-VRv">
                                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
@@ -229,7 +228,7 @@ Gw
                                     </connections>
                                 </popUpButton>
                                 <textField focusRingType="none" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="l47-zx-4mb" userLabel="Currency amount">
-                                    <rect key="frame" x="100" y="11" width="262" height="19"/>
+                                    <rect key="frame" x="100" y="11" width="258" height="19"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" enabled="NO" sendsActionOnEndEditing="YES" state="on" focusRingType="none" title="0.0" drawsBackground="YES" id="DX5-Li-q9R">
                                         <font key="font" size="15" name="LucidaGrande"/>
@@ -241,7 +240,7 @@ Gw
                                     </connections>
                                 </textField>
                                 <button horizontalHuggingPriority="750" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="BS3-Hu-S5U">
-                                    <rect key="frame" x="370" y="10" width="22" height="22"/>
+                                    <rect key="frame" x="366" y="10" width="22" height="22"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                     <buttonCell key="cell" type="help" bezelStyle="helpButton" alignment="center" controlSize="small" refusesFirstResponder="YES" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="3nN-TU-6LA">
                                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
@@ -252,11 +251,11 @@ Gw
                                     </connections>
                                 </button>
                                 <button translatesAutoresizingMaskIntoConstraints="NO" id="NBI-47-dFp" userLabel="QR code button">
-                                    <rect key="frame" x="362" y="92" width="21" height="21"/>
+                                    <rect key="frame" x="367" y="92" width="20" height="20"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                     <constraints>
-                                        <constraint firstAttribute="width" constant="21" id="bWi-XS-pkd"/>
-                                        <constraint firstAttribute="height" constant="21" id="fYQ-Qo-50c"/>
+                                        <constraint firstAttribute="width" constant="20" id="bWi-XS-pkd"/>
+                                        <constraint firstAttribute="height" constant="20" id="fYQ-Qo-50c"/>
                                     </constraints>
                                     <buttonCell key="cell" type="square" title="Scan QR Code" bezelStyle="shadowlessSquare" imagePosition="only" alignment="center" borderStyle="border" inset="2" id="Bmc-Df-KsC">
                                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
@@ -267,7 +266,6 @@ Gw
                         </view>
                         <constraints>
                             <constraint firstItem="BS3-Hu-S5U" firstAttribute="top" secondItem="fQu-xK-vvV" secondAttribute="bottom" constant="21" id="2dz-qV-SmX"/>
-                            <constraint firstAttribute="trailing" secondItem="fQu-xK-vvV" secondAttribute="trailing" constant="4" id="3sO-wC-bUx"/>
                             <constraint firstItem="23" firstAttribute="top" secondItem="NBI-47-dFp" secondAttribute="bottom" constant="5" id="719-Vl-fHB"/>
                             <constraint firstAttribute="trailing" secondItem="Uma-46-IZW" secondAttribute="trailing" id="ALc-iV-4oe"/>
                             <constraint firstAttribute="trailing" secondItem="23" secondAttribute="trailing" id="ArZ-gD-OFX"/>
@@ -287,16 +285,17 @@ Gw
                             <constraint firstItem="Uma-46-IZW" firstAttribute="top" secondItem="u5l-cR-nXn" secondAttribute="bottom" constant="11" id="VhT-4B-XDA"/>
                             <constraint firstItem="Uma-46-IZW" firstAttribute="top" secondItem="36" secondAttribute="bottom" constant="12" id="Wn5-y6-gFK"/>
                             <constraint firstItem="fQu-xK-vvV" firstAttribute="baseline" secondItem="36" secondAttribute="baseline" id="XEx-v0-Rd0"/>
+                            <constraint firstItem="51" firstAttribute="centerX" secondItem="BS3-Hu-S5U" secondAttribute="centerX" id="XJw-1j-E6W"/>
                             <constraint firstAttribute="trailing" secondItem="21" secondAttribute="trailing" constant="16" id="Yxa-B6-ToW"/>
                             <constraint firstItem="Uma-46-IZW" firstAttribute="leading" secondItem="11" secondAttribute="leading" id="aaU-mS-fsS"/>
                             <constraint firstItem="23" firstAttribute="top" secondItem="51" secondAttribute="bottom" constant="24" id="apA-pR-iNk"/>
-                            <constraint firstAttribute="trailing" secondItem="51" secondAttribute="trailing" constant="16" id="bLf-dY-Lmq"/>
+                            <constraint firstAttribute="trailing" secondItem="51" secondAttribute="trailing" constant="11" id="bLf-dY-Lmq"/>
                             <constraint firstItem="23" firstAttribute="top" secondItem="21" secondAttribute="bottom" constant="6" id="dPt-Rk-FoT"/>
                             <constraint firstItem="23" firstAttribute="top" secondItem="13" secondAttribute="bottom" constant="27" id="dqN-zu-Oxg"/>
+                            <constraint firstItem="NBI-47-dFp" firstAttribute="trailing" secondItem="fQu-xK-vvV" secondAttribute="trailing" constant="-11" id="eZq-MA-kts"/>
                             <constraint firstItem="19" firstAttribute="leading" secondItem="17" secondAttribute="trailing" constant="10" id="frb-Ck-rTQ"/>
                             <constraint firstItem="36" firstAttribute="leading" secondItem="21" secondAttribute="leading" id="gz3-1w-7Fn"/>
                             <constraint firstItem="21" firstAttribute="top" secondItem="19" secondAttribute="bottom" constant="5" id="iw8-ME-LfN"/>
-                            <constraint firstAttribute="trailing" secondItem="BS3-Hu-S5U" secondAttribute="trailing" constant="10" id="m5g-3K-n2i"/>
                             <constraint firstItem="17" firstAttribute="leading" secondItem="13" secondAttribute="trailing" constant="8" id="mfi-ow-FaY"/>
                             <constraint firstItem="36" firstAttribute="top" secondItem="23" secondAttribute="bottom" constant="12" id="nki-u1-GMp"/>
                             <constraint firstItem="19" firstAttribute="leading" secondItem="21" secondAttribute="leading" id="sc1-MY-6J3"/>
