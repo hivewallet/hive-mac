@@ -21,6 +21,17 @@ static const NSTimeInterval SCAN_INTERVAL = .25;
 
 @implementation HICameraWindowController
 
++ (HICameraWindowController *)sharedCameraWindowController {
+    static HICameraWindowController *sharedWindowController = nil;
+    static dispatch_once_t oncePredicate;
+
+    dispatch_once(&oncePredicate, ^{
+        sharedWindowController = [HICameraWindowController new];
+    });
+
+    return sharedWindowController;
+}
+
 - (id)init {
     return [self initWithWindowNibName:[self className]];
 }
@@ -28,12 +39,6 @@ static const NSTimeInterval SCAN_INTERVAL = .25;
 - (id)initWithWindow:(NSWindow *)window {
     self = [super initWithWindow:window];
     if (self) {
-        NSError *error;
-        [self startCapture:&error];
-        if (error) {
-            [[NSAlert alertWithError:error] runModal];
-        }
-
         _waiting = YES;
         _lastScanDate = [NSDate dateWithTimeIntervalSince1970:0];
     }
@@ -41,9 +46,14 @@ static const NSTimeInterval SCAN_INTERVAL = .25;
     return self;
 }
 
-- (void)windowDidLoad {
-    [super windowDidLoad];
-    self.captureView.captureSession = self.captureSession;
+- (IBAction)showWindow:(id)sender {
+    [super showWindow:sender];
+
+    NSError *error;
+    [self startCapture:&error];
+    if (error) {
+        [[NSAlert alertWithError:error] runModal];
+    }
 }
 
 - (BOOL)startCapture:(NSError **)error {
@@ -59,6 +69,7 @@ static const NSTimeInterval SCAN_INTERVAL = .25;
             if (error) {
                 *error = nil;
             }
+            self.captureView.captureSession = self.captureSession;
 
             return YES;
         }

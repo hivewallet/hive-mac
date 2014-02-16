@@ -486,7 +486,7 @@ void handleException(NSException *exception) {
 }
 
 - (IBAction)scanBarcode:(id)sender {
-    [self openPopupWindowWithClass:[HICameraWindowController class]];
+    [[HICameraWindowController sharedCameraWindowController] showWindow:self];
 }
 
 - (IBAction)sendFeedback:(id)sender {

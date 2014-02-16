@@ -5,4 +5,6 @@
  */
 @interface HICameraWindowController : NSWindowController
 
++ (HICameraWindowController *)sharedCameraWindowController;
+
 @end
