@@ -21,6 +21,17 @@ static const NSTimeInterval SCAN_INTERVAL = .25;
 
 @implementation HICameraWindowController
 
++ (HICameraWindowController *)sharedCameraWindowController {
+    static HICameraWindowController *sharedWindowController = nil;
+    static dispatch_once_t oncePredicate;
+
+    dispatch_once(&oncePredicate, ^{
+        sharedWindowController = [HICameraWindowController new];
+    });
+
+    return sharedWindowController;
+}
+
 - (id)init {
     return [self initWithWindowNibName:[self className]];
 }
@@ -28,12 +39,6 @@ static const NSTimeInterval SCAN_INTERVAL = .25;
 - (id)initWithWindow:(NSWindow *)window {
     self = [super initWithWindow:window];
     if (self) {
-        NSError *error;
-        [self startCapture:&error];
-        if (error) {
-            [[NSAlert alertWithError:error] runModal];
-        }
-
         _waiting = YES;
         _lastScanDate = [NSDate dateWithTimeIntervalSince1970:0];
     }
@@ -41,9 +46,14 @@ static const NSTimeInterval SCAN_INTERVAL = .25;
     return self;
 }
 
-- (void)windowDidLoad {
-    [super windowDidLoad];
-    self.captureView.captureSession = self.captureSession;
+- (IBAction)showWindow:(id)sender {
+    [super showWindow:sender];
+
+    NSError *error;
+    [self startCapture:&error];
+    if (error) {
+        [[NSAlert alertWithError:error] runModal];
+    }
 }
 
 - (BOOL)startCapture:(NSError **)error {
@@ -59,6 +69,7 @@ static const NSTimeInterval SCAN_INTERVAL = .25;
             if (error) {
                 *error = nil;
             }
+            self.captureView.captureSession = self.captureSession;
 
             return YES;
         }
@@ -70,6 +81,7 @@ static const NSTimeInterval SCAN_INTERVAL = .25;
 #pragma mark - NSWindowControllerDelegate
 
 - (void)windowWillClose:(NSNotification *)notification {
+    self.delegate = nil;
     [self.captureSession stopRunning];
 }
 
@@ -103,10 +115,7 @@ static const NSTimeInterval SCAN_INTERVAL = .25;
             NSString *scannedBarcode = [self scanBarcodeInImage:image];
             dispatch_async(dispatch_get_main_queue(), ^{
                 if (scannedBarcode) {
-                    if ([[HIBitcoinUrlService sharedService] handleBitcoinUrlString:scannedBarcode]) {
-                        [self.captureSession stopRunning];
-                        [self.window performClose:nil];
-                    }
+                    [self finish:scannedBarcode];
                 }
                 self.scanning = NO;
             });
@@ -130,6 +139,20 @@ static const NSTimeInterval SCAN_INTERVAL = .25;
                                 hints:hints
                                 error:NULL];
     return result.text;
+}
+
+- (void)finish:(NSString *)scannedBarcode {
+    BOOL success;
+    id<HICameraWindowControllerDelegate> delegate = self.delegate;
+    if (delegate) {
+        success = [delegate cameraWindowController:self didScanBarcodeUrl:scannedBarcode];
+    } else {
+        success = [[HIBitcoinUrlService sharedService] handleBitcoinUrlString:scannedBarcode];
+    }
+    if (success) {
+        [self.captureSession stopRunning];
+        [self.window performClose:nil];
+    }
 }
 
 @end

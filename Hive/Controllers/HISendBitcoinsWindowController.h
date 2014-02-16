@@ -31,6 +31,7 @@ typedef void(^HITransactionCompletionCallback)(BOOL success, NSString *transacti
 @property (strong) IBOutlet NSTextField *addressLabel;
 @property (strong) IBOutlet NSTextField *amountField;
 @property (strong) IBOutlet NSTextField *convertedAmountField;
+@property (strong) IBOutlet NSButton *qrCodeButton;
 @property (strong) IBOutlet NSView *currencyRateInfoView;
 @property (strong) IBOutlet NSPopUpButton *convertedCurrencyPopupButton;
 @property (strong) IBOutlet NSPopUpButton *bitcoinCurrencyPopupButton;
