@@ -10,7 +10,9 @@
 #import "HISidebarController.h"
 #import "HIViewController.h"
 
-const NSInteger SidebarButtonWidth = 75;
+// This magic number must match the sidebar width in the XIB.
+// TODO: There should be a constraint so this is just a single value!
+const NSInteger SidebarButtonWidth = 72;
 const NSInteger SidebarButtonHeight = 52;
 
 static const NSInteger SidebarButtonTagStart = 1000;
