@@ -35,7 +35,7 @@
 }
 
 - (void)clearValidationProblems {
-    [self setRepeatedPasswordBackgroundColor:[NSColor clearColor]];
+    [self setRepeatedPasswordBackgroundColor:[NSColor whiteColor]];
 }
 
 - (void)setRepeatedPasswordBackgroundColor:(NSColor *)color {
