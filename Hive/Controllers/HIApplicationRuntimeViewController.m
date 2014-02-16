@@ -93,6 +93,10 @@
 
 #pragma mark - Delegate for WebView
 
+- (NSUInteger)webView:(WebView *)webView dragDestinationActionMaskForDraggingInfo:(id<NSDraggingInfo>)draggingInfo {
+    return WebDragDestinationActionNone;
+}
+
 - (void)webView:(WebView *)wv runJavaScriptAlertPanelWithMessage:(NSString *)msg initiatedByFrame:(WebFrame *)frame {
     NSAlert *alert = [[NSAlert alloc] init];
     [alert setMessageText:self.application.name];
