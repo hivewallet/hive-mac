@@ -81,6 +81,7 @@ static const NSTimeInterval SCAN_INTERVAL = .25;
 #pragma mark - NSWindowControllerDelegate
 
 - (void)windowWillClose:(NSNotification *)notification {
+    self.delegate = nil;
     [self.captureSession stopRunning];
 }
 
@@ -114,10 +115,7 @@ static const NSTimeInterval SCAN_INTERVAL = .25;
             NSString *scannedBarcode = [self scanBarcodeInImage:image];
             dispatch_async(dispatch_get_main_queue(), ^{
                 if (scannedBarcode) {
-                    if ([[HIBitcoinUrlService sharedService] handleBitcoinUrlString:scannedBarcode]) {
-                        [self.captureSession stopRunning];
-                        [self.window performClose:nil];
-                    }
+                    [self finish:scannedBarcode];
                 }
                 self.scanning = NO;
             });
@@ -141,6 +139,20 @@ static const NSTimeInterval SCAN_INTERVAL = .25;
                                 hints:hints
                                 error:NULL];
     return result.text;
+}
+
+- (void)finish:(NSString *)scannedBarcode {
+    BOOL success;
+    id<HICameraWindowControllerDelegate> delegate = self.delegate;
+    if (delegate) {
+        success = [delegate cameraWindowController:self didScanBarcodeUrl:scannedBarcode];
+    } else {
+        success = [[HIBitcoinUrlService sharedService] handleBitcoinUrlString:scannedBarcode];
+    }
+    if (success) {
+        [self.captureSession stopRunning];
+        [self.window performClose:nil];
+    }
 }
 
 @end

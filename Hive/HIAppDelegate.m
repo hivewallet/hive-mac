@@ -486,6 +486,7 @@ void handleException(NSException *exception) {
 }
 
 - (IBAction)scanBarcode:(id)sender {
+    [HICameraWindowController sharedCameraWindowController].delegate = nil;
     [[HICameraWindowController sharedCameraWindowController] showWindow:self];
 }
 

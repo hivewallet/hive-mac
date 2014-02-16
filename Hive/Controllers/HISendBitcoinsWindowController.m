@@ -23,13 +23,15 @@
 #import "HITransaction.h"
 #import "NSDecimalNumber+HISatoshiConversion.h"
 #import "NSWindow+HIShake.h"
+#import "HICameraWindowController.h"
+#import "HIBitcoinUrlService.h"
 
 #import <FontAwesomeIconFactory/NIKFontAwesomeIconFactory+OSX.h>
 
 NSString * const HISendBitcoinsWindowDidClose = @"HISendBitcoinsWindowDidClose";
 NSString * const HISendBitcoinsWindowSuccessKey = @"success";
 
-@interface HISendBitcoinsWindowController () <HIExchangeRateObserver, NSPopoverDelegate> {
+@interface HISendBitcoinsWindowController () <HIExchangeRateObserver, NSPopoverDelegate, HICameraWindowControllerDelegate> {
     HIContact *_contact;
     HIContactAutocompleteWindowController *_autocompleteController;
     NSString *_hashAddress;
@@ -141,6 +143,10 @@ NSString * const HISendBitcoinsWindowSuccessKey = @"success";
 - (void)windowWillClose:(NSNotification *)notification {
     _autocompleteController = nil;
     [_exchangeRateService removeExchangeRateObserver:self];
+    if ([HICameraWindowController sharedCameraWindowController].delegate == self) {
+        [HICameraWindowController sharedCameraWindowController].delegate = nil;
+        [[HICameraWindowController sharedCameraWindowController].window performClose:nil];
+    }
 }
 
 - (void)dealloc {
@@ -775,6 +781,21 @@ NSString * const HISendBitcoinsWindowSuccessKey = @"success";
         [self.passwordInputViewController resetInput];
         _passwordPopover = nil;
     }
+}
+
+#pragma mark - barcode
+
+- (IBAction)scanBarcode:(id)sender {
+    [HICameraWindowController sharedCameraWindowController].delegate = self;
+    [[HICameraWindowController sharedCameraWindowController] showWindow:nil];
+}
+
+#pragma mark - HICameraWindowControllerDelegate
+
+- (BOOL)cameraWindowController:(HICameraWindowController *)cameraWindowController
+             didScanBarcodeUrl:(NSString *)barcodeUrl {
+    return [[HIBitcoinUrlService sharedService] applyUrlString:barcodeUrl
+                                                  toSendWindow:self];
 }
 
 @end
