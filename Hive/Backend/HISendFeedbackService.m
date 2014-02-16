@@ -31,21 +31,15 @@
 
 - (NSString *)createSubject {
 
-    NSMutableString *text = [NSMutableString new];
     NSBundle *bundle = [NSBundle mainBundle];
+    NSArray *preferredLanguages =
+        [NSBundle preferredLocalizationsFromArray:[NSBundle mainBundle].localizations];
 
-    [text appendString:NSLocalizedString(@"Feedback", @"Subject for feedback emails")];
-    [text appendString:@" "];
-    [text appendString:[bundle objectForInfoDictionaryKey:@"CFBundleName"]];
-    [text appendString:@" "];
-    [text appendString:[bundle objectForInfoDictionaryKey:@"CFBundleShortVersionString"]];
-    [text appendString:@" ("];
-    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
-    NSArray *languages = [userDefaults objectForKey:@"AppleLanguages"];
-    [text appendString:languages[0]];
-    [text appendString:@")\n"];
-
-    return text;
+    return [NSString stringWithFormat:@"Feedback for %@ %@/%@ (%@)",
+                                      [bundle objectForInfoDictionaryKey:@"CFBundleName"],
+                                      [bundle objectForInfoDictionaryKey:@"CFBundleShortVersionString"],
+                                      [bundle objectForInfoDictionaryKey:@"CFBundleVersion"],
+                                      preferredLanguages[0]];
 }
 
 - (NSString *)createBody {
