@@ -490,6 +490,8 @@ NSString * const HISendBitcoinsWindowSuccessKey = @"success";
     if (error) {
         if (error.code == kHIBitcoinManagerWrongPassword) {
             [self.window hiShake];
+        } else if (error.code == kHIBitcoinManagerSendingDustError) {
+            [self showSendingDustAlert];
         } else {
             [self showTransactionErrorAlert];
         }
@@ -523,6 +525,15 @@ NSString * const HISendBitcoinsWindowSuccessKey = @"success";
                      message:NSLocalizedString(@"No Bitcoin have been taken from your wallet.",
                                                @"Transaction failed alert message")];
 }
+
+- (void)showSendingDustAlert {
+    [self showAlertWithTitle:NSLocalizedString(@"Transaction could not be completed.",
+                                               @"Transaction failed alert title")
+
+                     message:NSLocalizedString(@"This amount is too low to be sent through the network.",
+                                               @"Sending dust alert message")];
+}
+
 
 - (void)showInsufficientFundsAlert {
     [self showAlertWithTitle:NSLocalizedString(@"Amount exceeds balance.",
