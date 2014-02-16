@@ -80,7 +80,7 @@ static const NSTimeInterval SCAN_INTERVAL = .25;
 
     if (visible) {
         [self.captureSession startRunning];
-    } else if (!visible) {
+    } else {
         [self.captureSession stopRunning];
     }
 }
