@@ -143,10 +143,7 @@ NSString * const HISendBitcoinsWindowSuccessKey = @"success";
 - (void)windowWillClose:(NSNotification *)notification {
     _autocompleteController = nil;
     [_exchangeRateService removeExchangeRateObserver:self];
-    if ([HICameraWindowController sharedCameraWindowController].delegate == self) {
-        [HICameraWindowController sharedCameraWindowController].delegate = nil;
-        [[HICameraWindowController sharedCameraWindowController].window performClose:nil];
-    }
+    [self cleanUpCameraWindow];
 }
 
 - (void)dealloc {
@@ -209,6 +206,7 @@ NSString * const HISendBitcoinsWindowSuccessKey = @"success";
     self.nameLabel.stringValue = contact.name;
     self.addressLabel.stringValue = address.addressWithCaption ?: @"";
     self.photoView.image = _contact.avatarImage;
+    [self setBarcodeScanningEnabled:NO];
 
     [self.window makeFirstResponder:nil];
 }
@@ -635,6 +633,7 @@ NSString * const HISendBitcoinsWindowSuccessKey = @"success";
     } else if (notification.object == self.convertedAmountField) {
         [self updateAmountFromConvertedAmount];
     } else {
+        [self setBarcodeScanningEnabled:self.nameLabel.stringValue.length == 0];
         [self clearContact];
         [self startAutocompleteForCurrentQuery];
     }
@@ -788,6 +787,20 @@ NSString * const HISendBitcoinsWindowSuccessKey = @"success";
 - (IBAction)scanBarcode:(id)sender {
     [HICameraWindowController sharedCameraWindowController].delegate = self;
     [[HICameraWindowController sharedCameraWindowController] showWindow:nil];
+}
+
+- (void)setBarcodeScanningEnabled:(BOOL)enabled {
+    self.qrCodeButton.hidden = !enabled;
+    if (!enabled) {
+        [self cleanUpCameraWindow];
+    }
+}
+
+- (void)cleanUpCameraWindow {
+    if ([HICameraWindowController sharedCameraWindowController].delegate == self) {
+        [HICameraWindowController sharedCameraWindowController].delegate = nil;
+        [[HICameraWindowController sharedCameraWindowController].window performClose:nil];
+    }
 }
 
 #pragma mark - HICameraWindowControllerDelegate
