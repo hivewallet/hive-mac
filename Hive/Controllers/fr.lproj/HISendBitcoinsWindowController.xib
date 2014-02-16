@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="4514" systemVersion="13B42" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="4514" systemVersion="13C59" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
         <deployment defaultVersion="1070" identifier="macosx"/>
         <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="4514"/>
@@ -29,7 +29,7 @@
             <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
             <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
             <rect key="contentRect" x="196" y="240" width="435" height="234"/>
-            <rect key="screenRect" x="0.0" y="0.0" width="1440" height="878"/>
+            <rect key="screenRect" x="0.0" y="0.0" width="1680" height="1028"/>
             <value key="minSize" type="size" width="403" height="238"/>
             <value key="maxSize" type="size" width="1000" height="238"/>
             <view key="contentView" wantsLayer="YES" id="2">
@@ -131,10 +131,10 @@ Gw
                                         <action selector="dropdownButtonClicked:" target="-2" id="53"/>
                                     </connections>
                                 </button>
-                                <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="21">
-                                    <rect key="frame" x="98" y="93" width="69" height="17"/>
+                                <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="1" verticalCompressionResistancePriority="1" translatesAutoresizingMaskIntoConstraints="NO" id="21">
+                                    <rect key="frame" x="98" y="93" width="288" height="17"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
-                                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Adresse principale" id="22">
+                                    <textFieldCell key="cell" lineBreakMode="truncatingTail" sendsActionOnEndEditing="YES" title="Adresse principale" id="22">
                                         <font key="font" size="10" name="LucidaGrande"/>
                                         <color key="textColor" red="0.50653034450000001" green="0.50649648899999999" blue="0.50651627779999997" alpha="1" colorSpace="calibratedRGB"/>
                                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
@@ -272,6 +272,7 @@ Gw
                             <constraint firstItem="Uma-46-IZW" firstAttribute="top" secondItem="u5l-cR-nXn" secondAttribute="bottom" constant="11" id="VhT-4B-XDA"/>
                             <constraint firstItem="Uma-46-IZW" firstAttribute="top" secondItem="36" secondAttribute="bottom" constant="12" id="Wn5-y6-gFK"/>
                             <constraint firstItem="fQu-xK-vvV" firstAttribute="baseline" secondItem="36" secondAttribute="baseline" id="XEx-v0-Rd0"/>
+                            <constraint firstAttribute="trailing" secondItem="21" secondAttribute="trailing" constant="16" id="Yxa-B6-ToW"/>
                             <constraint firstItem="Uma-46-IZW" firstAttribute="leading" secondItem="11" secondAttribute="leading" id="aaU-mS-fsS"/>
                             <constraint firstItem="23" firstAttribute="top" secondItem="51" secondAttribute="bottom" constant="24" id="apA-pR-iNk"/>
                             <constraint firstAttribute="trailing" secondItem="51" secondAttribute="trailing" constant="16" id="bLf-dY-Lmq"/>

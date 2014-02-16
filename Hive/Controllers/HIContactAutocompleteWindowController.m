@@ -92,7 +92,7 @@ static const CGFloat MaxAutocompleteHeight = 300.0;
     HIAddress *address = self.arrayController.arrangedObjects[row];
 
     cell.textField.stringValue = address.contact.name;
-    cell.addressLabel.stringValue = address.addressSuffixWithCaption;
+    cell.addressLabel.stringValue = address.addressWithCaption;
     cell.imageView.image = address.contact.avatarImage;
 
     return cell;

@@ -20,21 +20,8 @@ NSString * const HIAddressEntity = @"HIAddress";
 @dynamic caption;
 @dynamic contact;
 
-+ (NSString *)truncateAddress:(NSString *)address {
-    if (address.length <= SuffixLength) {
-        return [address copy];
-    } else {
-        NSString *suffix = [address substringFromIndex:(address.length - SuffixLength)];
-        return [NSString stringWithFormat:@"…%@", suffix];
-    }
-}
-
-- (NSString*)addressSuffix {
-    return [HIAddress truncateAddress:self.address];
-}
-
-- (NSString *)addressSuffixWithCaption {
-    return [NSString stringWithFormat:@"%@ (%@)", self.caption, self.addressSuffix];
+- (NSString *)addressWithCaption {
+    return [NSString stringWithFormat:@"%@ (%@)", self.caption, self.address];
 }
 
 @end

@@ -190,7 +190,7 @@ NSString * const HISendBitcoinsWindowSuccessKey = @"success";
     _hashAddress = address.address;
 
     self.nameLabel.stringValue = contact.name;
-    self.addressLabel.stringValue = address.addressSuffixWithCaption ?: @"";
+    self.addressLabel.stringValue = address.addressWithCaption ?: @"";
     self.photoView.image = _contact.avatarImage;
 
     [self.window makeFirstResponder:nil];

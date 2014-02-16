@@ -55,7 +55,7 @@
 
 @implementation HITemporaryAddress
 
-- (NSString *)addressSuffixWithCaption {
+- (NSString *)addressWithCaption {
     return self.address;
 }
 

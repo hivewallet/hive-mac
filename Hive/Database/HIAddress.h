@@ -24,9 +24,6 @@ extern NSString * const HIAddressEntity;
 @property (nonatomic, retain) NSString * caption;
 @property (nonatomic, retain) HIContact *contact;
 
-@property (nonatomic, readonly) NSString *addressSuffix;
-@property (nonatomic, readonly) NSString *addressSuffixWithCaption;
-
-+ (NSString *)truncateAddress:(NSString *)address;
+@property (nonatomic, copy, readonly) NSString *addressWithCaption;
 
 @end
