@@ -49,6 +49,26 @@
     assertThat(string, equalTo(@"1.50"));
 }
 
+- (void)testFormatValueWithUnit {
+    NSString *string = [self.service stringWithUnitForValue:@1060.5 inCurrency:@"USD"];
+
+    assertThat(string, equalTo(@"$1,060.50"));
+}
+
+- (void)testFormatValueWithTrailingUnit {
+    self.service.locale = [[NSLocale alloc] initWithLocaleIdentifier:@"de_DE"];
+
+    NSString *string = [self.service stringWithUnitForValue:@1060.5 inCurrency:@"EUR"];
+
+    assertThat(string, equalTo(@"1.060,50\u00A0€"));
+}
+
+- (void)testFormatValueWithUnitThatDoesntMatchLocale {
+    NSString *string = [self.service stringWithUnitForValue:@1060.5 inCurrency:@"PLN"];
+
+    assertThat(string, equalTo(@"zł1,060.50"));
+}
+
 #pragma mark - parsing
 
 - (void)testParseString {
@@ -86,6 +106,26 @@
     NSNumber *amount = [self.service parseString:@"xx" error:NULL];
 
     assertThat(amount, nilValue());
+}
+
+- (void)testParseStringWithUnit {
+    NSNumber *amount = [self.service parseString:@"$1,000.6" error:NULL];
+
+    assertThat(amount, equalTo(@1000.6));
+}
+
+- (void)testParseStringWithTrailingUnit {
+    self.service.locale = [[NSLocale alloc] initWithLocaleIdentifier:@"de_DE"];
+
+    NSNumber *amount = [self.service parseString:@"1.000,6\u00A0€" error:NULL];
+
+    assertThat(amount, equalTo(@1000.6));
+}
+
+- (void)testParseStringWithUnitNotMatchingLocale {
+    NSNumber *amount = [self.service parseString:@"zł1,000.60" error:NULL];
+
+    assertThat(amount, equalTo(@1000.6));
 }
 
 @end

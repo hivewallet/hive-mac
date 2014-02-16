@@ -5,6 +5,9 @@
 
 + (HICurrencyFormatService *)sharedService;
 
+- (NSString *)stringWithUnitForValue:(NSNumber *)value
+                          inCurrency:(NSString *)currency;
+
 - (NSString *)stringForValue:(NSNumber *)value
                   inCurrency:(NSString *)currency;
 

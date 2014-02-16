@@ -22,6 +22,32 @@
     return self;
 }
 
+- (NSDictionary *)currencySymbols {
+    static NSDictionary *currencySymbols;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^ {
+        currencySymbols = @{
+            @"ALL": @"Lek", @"AFN": @"؋", @"ARS": @"$", @"AWG": @"ƒ",@"AUD": @"$", @"AZN": @"ман", @"BSD": @"$",
+            @"BBD": @"$", @"BYR": @"p.", @"BZD": @"BZ$", @"BMD": @"$", @"BOB": @"$b", @"BAM": @"KM", @"BWP": @"P",
+            @"BGN": @"лв", @"BRL": @"R$", @"BND": @"$", @"KHR": @"៛", @"CAD": @"$", @"KYD": @"$", @"CLP": @"$",
+            @"CNY": @"¥", @"COP": @"$", @"CRC": @"₡", @"HRK": @"kn", @"CUP": @"₱", @"CZK": @"Kč", @"DKK": @"kr",
+            @"DOP": @"RD$", @"XCD": @"$", @"EGP": @"£", @"SVC": @"$", @"EEK": @"kr", @"EUR": @"€", @"FKP": @"£",
+            @"FJD": @"$", @"GHC": @"¢", @"GIP": @"£", @"GTQ": @"Q", @"GGP": @"£", @"GYD": @"$", @"HNL": @"L",
+            @"HKD": @"$", @"HUF": @"Ft", @"ISK": @"kr", @"INR": @"", @"IDR": @"Rp", @"IRR": @"﷼", @"IMP": @"£",
+            @"ILS": @"₪", @"JMD": @"J$", @"JPY": @"¥", @"JEP": @"£", @"KZT": @"лв", @"KPW": @"₩", @"KRW": @"₩",
+            @"KGS": @"лв", @"LAK": @"₭", @"LVL": @"Ls", @"LBP": @"£", @"LRD": @"$", @"LTL": @"Lt", @"MKD": @"ден",
+            @"MYR": @"RM", @"MUR": @"₨", @"MXN": @"$", @"MNT": @"₮", @"MZN": @"MT", @"NAD": @"$", @"NPR": @"₨",
+            @"ANG": @"ƒ", @"NZD": @"$", @"NIO": @"C$", @"NGN": @"₦", @"KPW": @"₩", @"NOK": @"kr", @"OMR": @"﷼",
+            @"PKR": @"₨", @"PAB": @"B/.", @"PYG": @"Gs", @"PEN": @"S/.", @"PHP": @"₱", @"PLN": @"zł", @"QAR": @"﷼",
+            @"RON": @"lei", @"RUB": @"руб", @"SHP": @"£", @"SAR": @"﷼", @"RSD": @"Дин.", @"SCR": @"₨", @"SGD": @"$",
+            @"SBD": @"$", @"SOS": @"S", @"ZAR": @"R", @"KRW": @"₩", @"LKR": @"₨", @"SEK": @"kr", @"CHF": @"CHF",
+            @"SRD": @"$", @"SYP": @"£", @"TWD": @"NT$", @"THB": @"฿", @"TTD": @"TT$", @"TRY": @"₺", @"TRL": @"₤",
+            @"TVD": @"$", @"UAH": @"₴", @"GBP": @"£", @"USD": @"$", @"UYU": @"$U", @"UZS": @"лв", @"VEF": @"Bs",
+            @"VND": @"₫", @"YER": @"﷼", @"ZWD": @"Z$",
+        };
+    });
+    return currencySymbols;
+}
 
 - (NSDictionary *)currencyDigits {
     // the number of fraction digits for each currency
@@ -55,19 +81,40 @@
     return currencyDigits;
 }
 
+- (NSString *)stringWithUnitForValue:(NSNumber *)value
+                          inCurrency:(NSString *)currency {
+
+    NSNumberFormatter *currencyNumberFormatter = [self createNumberFormatter];
+    [self setFractionDigits:currency inCurrencyNumberFormatter:currencyNumberFormatter];
+    currencyNumberFormatter.currencyCode = currency;
+    currencyNumberFormatter.currencySymbol = self.currencySymbols[currency];
+    currencyNumberFormatter.numberStyle = NSNumberFormatterCurrencyStyle;
+    return [currencyNumberFormatter stringFromNumber:value];
+}
+
 - (NSString *)stringForValue:(NSNumber *)value
                   inCurrency:(NSString *)currency {
 
     NSNumberFormatter *currencyNumberFormatter = [self createNumberFormatter];
-    int digits = [self.currencyDigits[currency] intValue];
-    currencyNumberFormatter.minimumFractionDigits = digits;
-    currencyNumberFormatter.maximumFractionDigits = digits;
+    [self setFractionDigits:currency inCurrencyNumberFormatter:currencyNumberFormatter];
+    currencyNumberFormatter.currencyCode = nil;
+    currencyNumberFormatter.numberStyle = NSNumberFormatterDecimalStyle;
     return [currencyNumberFormatter stringFromNumber:value];
 }
 
 - (NSDecimalNumber *)parseString:(NSString *)string error:(NSError **)error {
+
+    NSCharacterSet *nonNumeric =
+        [[NSCharacterSet characterSetWithCharactersInString:@"-0123456789,."] invertedSet];
+    NSString *strippedString = [string stringByTrimmingCharactersInSet:nonNumeric];
+    if (strippedString.length > 0) {
+        string = strippedString;
+    }
+
     NSNumberFormatter *currencyNumberFormatter = [self createNumberFormatter];
     currencyNumberFormatter.generatesDecimalNumbers = YES;
+    currencyNumberFormatter.lenient = YES;
+    currencyNumberFormatter.numberStyle = NSNumberFormatterDecimalStyle;
     NSDecimalNumber *number = nil;
     if (error) {
         *error = nil;
@@ -82,11 +129,17 @@
     }
 }
 
+- (void)setFractionDigits:(NSString *)currency inCurrencyNumberFormatter:(NSNumberFormatter *)currencyNumberFormatter {
+    int digits = [self.currencyDigits[currency] intValue];
+    currencyNumberFormatter.minimumFractionDigits = digits;
+    currencyNumberFormatter.maximumFractionDigits = digits;
+}
+
 - (NSNumberFormatter *)createNumberFormatter {
     NSNumberFormatter *currencyNumberFormatter = [NSNumberFormatter new];
-    currencyNumberFormatter.formatterBehavior = NSNumberFormatterCurrencyStyle;
+    currencyNumberFormatter.formatterBehavior = NSNumberFormatterBehavior10_4;
     currencyNumberFormatter.locale = self.locale;
-    currencyNumberFormatter.format = @"#,##0.00";
+    currencyNumberFormatter.hasThousandSeparators = YES;
     return currencyNumberFormatter;
 }
 
