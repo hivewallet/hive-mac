@@ -126,6 +126,7 @@ NSString * const HISendBitcoinsWindowSuccessKey = @"success";
     [self updateConvertedAmountFromAmount];
 
     [self updateSendButtonEnabled];
+    [self updateInterfaceForExchangeRate];
 }
 
 - (void)setUpQrCodeButton {
@@ -355,10 +356,14 @@ NSString * const HISendBitcoinsWindowSuccessKey = @"success";
 - (void)exchangeRateUpdatedTo:(NSDecimalNumber *)exchangeRate
                   forCurrency:(NSString *)currency {
     if ([currency isEqual:_selectedCurrency]) {
-        self.convertedAmountField.enabled = YES;
         self.exchangeRate = exchangeRate;
-        [self updateConvertedAmountFromAmount];
+        [self updateInterfaceForExchangeRate];
     }
+}
+
+- (void)updateInterfaceForExchangeRate {
+    self.convertedAmountField.enabled = YES;
+    [self updateConvertedAmountFromAmount];
 }
 
 
