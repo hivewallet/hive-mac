@@ -8,6 +8,7 @@ pod 'CocoaLumberjack'
 pod 'LetsMove'
 pod 'AutoLayoutMacros'
 pod 'ZXingObjC'
+pod 'FontAwesomeIconFactory'
 
 target :test, :exclusive => true do
   link_with 'HiveTests'

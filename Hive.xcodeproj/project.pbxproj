@@ -49,7 +49,6 @@
 		2478B8D3184A80A400BA2C35 /* HIFeeDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2478B8D1184A80A400BA2C35 /* HIFeeDetailsViewController.m */; };
 		2478B8D5184A88E700BA2C35 /* HIFeeDetailsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2478B8D7184A88E700BA2C35 /* HIFeeDetailsViewController.xib */; };
 		2478B8F2184A89EA00BA2C35 /* HIFeeDetailsViewController.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2478B8F0184A89EA00BA2C35 /* HIFeeDetailsViewController.strings */; };
-		248631CD18A7A5F000A020A9 /* icon-qr.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 248631CC18A7A5F000A020A9 /* icon-qr.pdf */; };
 		248631D718A7AD1800A020A9 /* HIBarcodeWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 248631D518A7AD1800A020A9 /* HIBarcodeWindowController.m */; };
 		248631D818A7AD1800A020A9 /* HIBarcodeWindowController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 248631D618A7AD1800A020A9 /* HIBarcodeWindowController.xib */; };
 		24E1291418A2B03F0064C075 /* QTKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 24E1291318A2B03F0064C075 /* QTKit.framework */; };
@@ -454,7 +453,6 @@
 		2478B908184A8A0200BA2C35 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/HIFeeDetailsViewController.strings; sourceTree = "<group>"; };
 		2478B909184A8A0200BA2C35 /* sr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = sr; path = sr.lproj/HIFeeDetailsViewController.strings; sourceTree = "<group>"; };
 		2478B90A184A8A0300BA2C35 /* sr-Latn */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "sr-Latn"; path = "sr-Latn.lproj/HIFeeDetailsViewController.strings"; sourceTree = "<group>"; };
-		248631CC18A7A5F000A020A9 /* icon-qr.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "icon-qr.pdf"; sourceTree = "<group>"; };
 		248631D418A7AD1800A020A9 /* HIBarcodeWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HIBarcodeWindowController.h; sourceTree = "<group>"; };
 		248631D518A7AD1800A020A9 /* HIBarcodeWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HIBarcodeWindowController.m; sourceTree = "<group>"; };
 		248631D618A7AD1800A020A9 /* HIBarcodeWindowController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HIBarcodeWindowController.xib; sourceTree = "<group>"; };
@@ -2323,7 +2321,6 @@
 		D9A592131767C49F00502635 /* Images */ = {
 			isa = PBXGroup;
 			children = (
-				248631CC18A7A5F000A020A9 /* icon-qr.pdf */,
 				24300BFB188892CD00FDEF2F /* wizard-background.png */,
 				58605A2118041D0A00FD9C2A /* avatar-empty.pdf */,
 				58605A2218041D0A00FD9C2A /* bg-sidebar.pdf */,
@@ -2625,7 +2622,6 @@
 				58605A4418041D0A00FD9C2A /* icon-apps__inactive.pdf in Resources */,
 				585712781890267E0094F884 /* HIWizardBackupViewController.xib in Resources */,
 				58605A4518041D0A00FD9C2A /* icon-bitcoin.pdf in Resources */,
-				248631CD18A7A5F000A020A9 /* icon-qr.pdf in Resources */,
 				58605A4618041D0A00FD9C2A /* icon-delete.pdf in Resources */,
 				58A37ADB180D997C00CFCDE3 /* HIContactAutocompleteWindowController.strings in Resources */,
 				585712B618902CD70094F884 /* HIWizardCompletedViewController.xib in Resources */,

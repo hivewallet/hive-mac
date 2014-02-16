@@ -7,6 +7,8 @@
 #import "BCClient.h"
 #import "NSColor+Hive.h"
 
+#import <FontAwesomeIconFactory/NIKFontAwesomeIconFactory+OSX.h>
+
 static const NSInteger AddressFieldTag = 2;
 static const double BARCODE_ZOOM_SIZE = 400;
 
@@ -49,13 +51,15 @@ static NSString *const KEY_WALLET_HASH = @"walletHash";
     _barcodeButton = [NSButton new];
     _barcodeButton.bezelStyle = NSSmallSquareBezelStyle;
     _barcodeButton.translatesAutoresizingMaskIntoConstraints = NO;
-    _barcodeButton.image = [NSImage imageNamed:@"icon-qr.pdf"];
+    NIKFontAwesomeIconFactory *iconFactory = [NIKFontAwesomeIconFactory new];
+    iconFactory.size = 14;
+    _barcodeButton.image = [iconFactory createImageForIcon:NIKFontAwesomeIconQrcode];
     _barcodeButton.target = self;
     _barcodeButton.action = @selector(showBarcodeWindow:);
 
     [self addSubview:_barcodeButton];
-    [_barcodeButton addConstraint:PIN_WIDTH(_barcodeButton, 20)];
-    [_barcodeButton addConstraint:PIN_HEIGHT(_barcodeButton, 20)];
+    [_barcodeButton addConstraint:PIN_WIDTH(_barcodeButton, 21)];
+    [_barcodeButton addConstraint:PIN_HEIGHT(_barcodeButton, 21)];
     [self addConstraint:INSET_BOTTOM(_barcodeButton, 10)];
     [self addConstraint:INSET_RIGHT(_barcodeButton, 10)];
 }
