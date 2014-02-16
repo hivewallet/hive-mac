@@ -21,7 +21,11 @@ NSString * const HIAddressEntity = @"HIAddress";
 @dynamic contact;
 
 - (NSString *)addressWithCaption {
-    return [NSString stringWithFormat:@"%@ (%@)", self.caption, self.address];
+    if (self.caption.length > 0) {
+        return [NSString stringWithFormat:@"%@ (%@)", self.caption, self.address];
+    } else {
+        return self.address;
+    }
 }
 
 @end
