@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="4514" systemVersion="13C44" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="4514" systemVersion="13C59" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
         <deployment defaultVersion="1070" identifier="macosx"/>
         <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="4514"/>
@@ -114,10 +114,10 @@
                                                             </binding>
                                                             <binding destination="-2" name="hidden2" keyPath="sharingSupported" previousBinding="Mxj-hE-JIE" id="W0v-wU-ouo">
                                                                 <dictionary key="options">
-                                                                    <integer key="NSNullPlaceholder" value="-1"/>
+                                                                    <integer key="NSMultipleValuesPlaceholder" value="-1"/>
                                                                     <integer key="NSNotApplicablePlaceholder" value="-1"/>
                                                                     <integer key="NSNoSelectionPlaceholder" value="-1"/>
-                                                                    <integer key="NSMultipleValuesPlaceholder" value="-1"/>
+                                                                    <integer key="NSNullPlaceholder" value="-1"/>
                                                                     <string key="NSValueTransformerName">NSNegateBoolean</string>
                                                                 </dictionary>
                                                             </binding>
@@ -190,7 +190,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="53">
-                    <rect key="frame" x="60" y="246" width="204" height="80"/>
+                    <rect key="frame" x="60" y="241" width="204" height="80"/>
                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <constraints>
                         <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="80" id="Q8o-Z0-kU7"/>
@@ -206,54 +206,43 @@
                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                     </textFieldCell>
                 </textField>
-                <customView translatesAutoresizingMaskIntoConstraints="NO" id="51">
-                    <rect key="frame" x="61" y="13" width="200" height="67"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <subviews>
-                        <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="56">
-                            <rect key="frame" x="-2" y="15" width="204" height="36"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <shadow key="shadow">
-                                <size key="offset" width="0.0" height="1"/>
-                                <color key="color" red="1" green="0.99988943340000003" blue="0.99995732309999996" alpha="1" colorSpace="calibratedRGB"/>
-                            </shadow>
-                            <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="center" title="そして、送ると言うボタンを利用してコインを送ることが出来る." id="63">
-                                <font key="font" size="13" name="Helvetica"/>
-                                <color key="textColor" red="0.32231375579999999" green="0.3222793639" blue="0.32230004670000001" alpha="1" colorSpace="calibratedRGB"/>
-                                <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
-                            </textFieldCell>
-                        </textField>
-                    </subviews>
-                    <constraints>
-                        <constraint firstAttribute="width" constant="200" id="0bF-Me-lhK"/>
-                        <constraint firstItem="56" firstAttribute="top" secondItem="51" secondAttribute="top" constant="16" id="3hu-Cb-0Ko"/>
-                        <constraint firstAttribute="height" constant="67" id="DkP-fT-6vB"/>
-                        <constraint firstAttribute="bottom" secondItem="56" secondAttribute="bottom" constant="15" id="R2x-Hb-hhv"/>
-                        <constraint firstItem="56" firstAttribute="leading" secondItem="51" secondAttribute="leading" id="kmS-bp-UDi"/>
-                        <constraint firstAttribute="trailing" secondItem="56" secondAttribute="trailing" id="stf-dh-Rdr"/>
-                    </constraints>
-                </customView>
                 <imageView translatesAutoresizingMaskIntoConstraints="NO" id="68">
                     <rect key="frame" x="130" y="356" width="63" height="64"/>
                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="icon-gray-btc" id="69"/>
                 </imageView>
                 <customView placeholderIntrinsicWidth="infinite" placeholderIntrinsicHeight="60" translatesAutoresizingMaskIntoConstraints="NO" id="1zA-19-rkA" customClass="HIAddressesBox">
-                    <rect key="frame" x="40" y="176" width="243" height="60"/>
+                    <rect key="frame" x="40" y="141" width="243" height="60"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                 </customView>
+                <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="56">
+                    <rect key="frame" x="59" y="99" width="204" height="34"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="200" id="ZJW-xV-2nD"/>
+                    </constraints>
+                    <shadow key="shadow">
+                        <size key="offset" width="0.0" height="1"/>
+                        <color key="color" red="1" green="0.99988943340000003" blue="0.99995732309999996" alpha="1" colorSpace="calibratedRGB"/>
+                    </shadow>
+                    <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="center" title="そして、送ると言うボタンを利用してコインを送ることが出来る." id="63">
+                        <font key="font" size="13" name="Helvetica"/>
+                        <color key="textColor" red="0.32231375579999999" green="0.3222793639" blue="0.32230004670000001" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
             </subviews>
             <constraints>
                 <constraint firstItem="68" firstAttribute="top" secondItem="50" secondAttribute="top" constant="90" id="2Lz-Lz-8Jx"/>
                 <constraint firstItem="1zA-19-rkA" firstAttribute="leading" secondItem="50" secondAttribute="leading" constant="40" id="4SV-Ga-FBo"/>
-                <constraint firstAttribute="centerX" secondItem="51" secondAttribute="centerX" id="4Su-aF-cUR"/>
                 <constraint firstAttribute="centerX" secondItem="53" secondAttribute="centerX" id="78B-uO-cKV"/>
                 <constraint firstAttribute="centerX" secondItem="68" secondAttribute="centerX" id="PgA-0q-m7O"/>
                 <constraint firstAttribute="trailing" secondItem="1zA-19-rkA" secondAttribute="trailing" constant="40" id="evQ-DO-GY4"/>
-                <constraint firstItem="1zA-19-rkA" firstAttribute="top" secondItem="53" secondAttribute="bottom" constant="10" id="iVk-Mb-DB1"/>
-                <constraint firstItem="51" firstAttribute="top" relation="greaterThanOrEqual" secondItem="1zA-19-rkA" secondAttribute="bottom" constant="10" id="lOP-Me-7Zx"/>
-                <constraint firstItem="53" firstAttribute="top" secondItem="68" secondAttribute="bottom" constant="30" id="onT-07-2WQ"/>
-                <constraint firstAttribute="bottom" secondItem="51" secondAttribute="bottom" constant="13" id="wc6-yK-DSK"/>
+                <constraint firstItem="56" firstAttribute="top" secondItem="1zA-19-rkA" secondAttribute="bottom" constant="8" id="fd5-Uw-EsO"/>
+                <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="56" secondAttribute="bottom" constant="50" id="iRO-dK-7m7"/>
+                <constraint firstItem="1zA-19-rkA" firstAttribute="top" secondItem="53" secondAttribute="bottom" constant="40" id="iVk-Mb-DB1"/>
+                <constraint firstItem="53" firstAttribute="top" secondItem="68" secondAttribute="bottom" constant="35" id="onT-07-2WQ"/>
+                <constraint firstAttribute="centerX" secondItem="56" secondAttribute="centerX" constant="0.5" id="pf6-iw-mXO"/>
             </constraints>
             <connections>
                 <outlet property="addressesBox" destination="1zA-19-rkA" id="StN-6i-m5e"/>
