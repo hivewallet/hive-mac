@@ -8,6 +8,8 @@
 
 #import "HIBarcodeWindowController.h"
 
+#import "NSColor+Hive.h"
+
 #import <ZXingObjC/ZXingObjC.h>
 
 static const NSTimeInterval CURSOR_HIDE_IDLE_DELAY = 1.0;
@@ -35,6 +37,14 @@ static const NSTimeInterval CURSOR_HIDE_IDLE_DELAY = 1.0;
     }
     return self;
 }
+
+- (void)windowDidLoad {
+    [super windowDidLoad];
+
+    [self.window.contentView setWantsLayer:YES];
+    [self.window.contentView layer].backgroundColor = [NSColor whiteColor].hiNativeColor;
+}
+
 
 - (void)dealloc {
     [self.window.contentView removeTrackingArea: self.trackingArea];

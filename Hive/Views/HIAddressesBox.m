@@ -245,6 +245,7 @@ static NSString *const KEY_WALLET_HASH = @"walletHash";
     self.barcodeWindowController = [HIBarcodeWindowController new];
     self.barcodeWindowController.barcodeString =
         [@"bitcoin:" stringByAppendingString:[[BCClient sharedClient] walletHash]];
+    self.barcodeWindowController.label = [[BCClient sharedClient] walletHash];
 
     [self zoomBarcodeWindowFromButton:sender];
 

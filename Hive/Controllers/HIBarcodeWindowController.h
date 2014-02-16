@@ -12,5 +12,6 @@
 @interface HIBarcodeWindowController : NSWindowController
 
 @property (nonatomic, copy) NSString *barcodeString;
+@property (nonatomic, copy) NSString *label;
 
 @end
