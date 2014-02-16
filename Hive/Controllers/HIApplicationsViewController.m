@@ -90,7 +90,10 @@
     alert.informativeText = NSLocalizedString(@"To use the app, please update to the latest version of Hive.",
                                               @"Message when trying to start an app that requires a newer API level.");
 
-    [alert runModal];
+    [alert beginSheetModalForWindow:self.view.window
+                      modalDelegate:nil
+                     didEndSelector:0
+                        contextInfo:NULL];
 }
 
 - (IBAction)getMoreAppsClicked:(id)sender {
