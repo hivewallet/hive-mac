@@ -26,6 +26,7 @@
 @property (weak) IBOutlet NSScrollView *scrollView;
 @property (weak) IBOutlet NSView *footerView;
 @property (weak) IBOutlet NSButton *addAddressButton;
+@property (weak) IBOutlet NSButton *scanBarcodeButton;
 @property (weak) IBOutlet NSButton *removeContactButton;
 
 @property (strong) id<HIPerson> contact;

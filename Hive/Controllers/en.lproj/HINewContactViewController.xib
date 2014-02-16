@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="4514" systemVersion="13B42" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none">
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="4514" systemVersion="13C59" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none">
     <dependencies>
         <deployment version="1070" defaultVersion="1070" identifier="macosx"/>
         <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="4514"/>
@@ -14,6 +14,7 @@
                 <outlet property="footerView" destination="66" id="94"/>
                 <outlet property="lastnameField" destination="23" id="28"/>
                 <outlet property="removeContactButton" destination="96" id="102"/>
+                <outlet property="scanBarcodeButton" destination="ML8-dv-Qq6" id="2Sc-Lp-bt7"/>
                 <outlet property="scrollContent" destination="64" id="88"/>
                 <outlet property="scrollView" destination="84" id="92"/>
                 <outlet property="view" destination="1" id="2"/>
@@ -44,7 +45,7 @@
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                             <subviews>
                                 <button wantsLayer="YES" id="72">
-                                    <rect key="frame" x="20" y="158" width="243" height="30"/>
+                                    <rect key="frame" x="20" y="158" width="200" height="30"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                     <shadow key="shadow" blurRadius="1">
                                         <size key="offset" width="0.0" height="1"/>
@@ -56,6 +57,21 @@
                                     </buttonCell>
                                     <connections>
                                         <action selector="addAddressClicked:" target="-2" id="95"/>
+                                    </connections>
+                                </button>
+                                <button wantsLayer="YES" id="ML8-dv-Qq6">
+                                    <rect key="frame" x="230" y="158" width="30" height="30"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES"/>
+                                    <shadow key="shadow" blurRadius="1">
+                                        <size key="offset" width="0.0" height="1"/>
+                                        <color key="color" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                    </shadow>
+                                    <buttonCell key="cell" type="square" title="QR" bezelStyle="shadowlessSquare" alignment="center" borderStyle="border" inset="2" id="Fp7-Nh-Dhm" customClass="HIButtonCell">
+                                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                        <font key="font" metaFont="system"/>
+                                    </buttonCell>
+                                    <connections>
+                                        <action selector="scanBarcodeButtonPressed:" target="-2" id="5bz-Zz-E9y"/>
                                     </connections>
                                 </button>
                                 <button wantsLayer="YES" id="96">

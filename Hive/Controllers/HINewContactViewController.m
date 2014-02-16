@@ -7,12 +7,16 @@
 //
 
 #import "HIAddress.h"
+#import "HIBitcoinURL.h"
+#import "HICameraWindowController.h"
 #import "HIContact.h"
 #import "HIDatabaseManager.h"
 #import "HINavigationController.h"
 #import "HINewContactViewController.h"
 #import "HIProfile.h"
 #import "NSColor+Hive.h"
+
+#import <FontAwesomeIconFactory/NIKFontAwesomeIconFactory+OSX.h>
 
 static const CGFloat NameFieldsGap = 10.0;
 static const CGFloat NameFieldsLineSpacing = 10.0;
@@ -24,7 +28,7 @@ static NSString * const DeleteButton = @"DeleteButton";
 static NSString * const ContentsView = @"ContentsView";
 static NSString * const Separator = @"Separator";
 
-@interface HINewContactViewController () {
+@interface HINewContactViewController () <HICameraWindowControllerDelegate> {
     BOOL _nameInTwoLines;
     BOOL _avatarChanged;
     BOOL _edited;
@@ -48,6 +52,7 @@ static NSString * const Separator = @"Separator";
 - (void)loadView {
     [super loadView];
 
+    [self setUpQrCodeButton];
     _avatarView.layer.backgroundColor = [[NSColor whiteColor] hiNativeColor];
 
     // Hide some buttons if necessary
@@ -63,6 +68,7 @@ static NSString * const Separator = @"Separator";
 
     if (_contact && ![_contact canEditAddresses]) {
         [self.addAddressButton setHidden:YES];
+        [self.scanBarcodeButton setHidden:YES];
 
         for (NSView *subview in self.footerView.subviews) {
             NSRect frame = subview.frame;
@@ -141,6 +147,13 @@ static NSString * const Separator = @"Separator";
                                                object:nil];
 }
 
+- (void)setUpQrCodeButton {
+    NIKFontAwesomeIconFactory *iconFactory = [NIKFontAwesomeIconFactory new];
+    iconFactory.edgeInsets = NSEdgeInsetsMake(4, 0, 0, 0);
+    iconFactory.size = 28;
+    self.scanBarcodeButton.image = [iconFactory createImageForIcon:NIKFontAwesomeIconQrcode];
+}
+
 - (void)trackChangesIn:(NSTextField *)field {
     [[NSNotificationCenter defaultCenter] addObserver:self
                                              selector:@selector(textFieldChanged:)
@@ -153,6 +166,12 @@ static NSString * const Separator = @"Separator";
 }
 
 - (void)addAddressPlaceholderWithAddress:(HIAddress *)address {
+    [self addAddressPlaceholderWithHash:address.address
+                                   name:address.caption
+                               editable:address && ![address.contact canEditAddresses]];
+}
+
+- (void)addAddressPlaceholderWithHash:(NSString *)address name:(NSString *)name editable:(BOOL)editable {
     NSRect frame;
     NSUInteger index = _placeholders.count;
     NSMutableDictionary *parts = [[NSMutableDictionary alloc] init];
@@ -200,8 +219,8 @@ static NSString * const Separator = @"Separator";
     [fieldContentView addSubview:nameField];
     parts[NameField] = nameField;
 
-    [nameField setValueAndRecalc:(address.caption ?: @"")];
-    [addressField setValueAndRecalc:(address.address ?: @"")];
+    [nameField setValueAndRecalc:(name ?: @"")];
+    [addressField setValueAndRecalc:(address ?: @"")];
 
     [nameField awakeFromNib];
     [addressField awakeFromNib];
@@ -218,7 +237,7 @@ static NSString * const Separator = @"Separator";
     [self.walletsView addSubview:deleteButton];
     parts[DeleteButton] = deleteButton;
 
-    if (address && ![address.contact canEditAddresses]) {
+    if (editable) {
         [nameField setEditable:NO];
         [addressField setEditable:NO];
         [deleteButton setHidden:YES];
@@ -459,7 +478,7 @@ static NSString * const Separator = @"Separator";
                          didEndSelector:@selector(discardChangesAlertDidEnd:result:context:)
                             contextInfo:(void *)CFBridgingRetain(action)];
     } else {
-        action();
+        [self cleanUpWithAction:action];
     }
 }
 
@@ -467,8 +486,39 @@ static NSString * const Separator = @"Separator";
     void (^action)() = (void (^)()) CFBridgingRelease(context);
 
     if (result == NSAlertFirstButtonReturn) {
-        action();
+        [self cleanUpWithAction:action];
     }
+}
+
+- (void)cleanUpWithAction:(void (^)())action {
+    [self cleanUpCameraWindow];
+    action();
+}
+
+#pragma mark - barcode
+
+- (IBAction)scanBarcodeButtonPressed:(NSButton *)sender {
+    [HICameraWindowController sharedCameraWindowController].delegate = self;
+    [[HICameraWindowController sharedCameraWindowController] showWindow:nil];
+}
+
+- (void)cleanUpCameraWindow {
+    if ([HICameraWindowController sharedCameraWindowController].delegate == self) {
+        [HICameraWindowController sharedCameraWindowController].delegate = nil;
+        [[HICameraWindowController sharedCameraWindowController].window performClose:nil];
+    }
+}
+
+#pragma mark - HICameraWindowControllerDelegate
+
+- (BOOL)cameraWindowController:(HICameraWindowController *)cameraWindowController
+             didScanBarcodeUrl:(NSString *)barcodeUrl {
+    _edited = YES;
+    HIBitcoinURL *url = [[HIBitcoinURL alloc] initWithURLString:barcodeUrl];
+    if (url.valid) {
+        [self addAddressPlaceholderWithHash:url.address name:nil editable:YES];
+    }
+    return url.valid;
 }
 
 @end
