@@ -10,11 +10,11 @@
 #import "HIBitcoinFormatService.h"
 #import "HIContactInfoViewController.h"
 #import "HICurrencyFormatService.h"
-#import "NSDecimalNumber+HISatoshiConversion.h"
 #import "HIExchangeRateService.h"
 #import "HIProfile.h"
 #import "HIProfileViewController.h"
 #import "NSColor+Hive.h"
+#import "NSDecimalNumber+HISatoshiConversion.h"
 
 @interface HIProfileViewController () <HIExchangeRateObserver> {
     HIProfile *_profile;

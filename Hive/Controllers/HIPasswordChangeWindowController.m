@@ -6,10 +6,10 @@
 //  Copyright (c) 2013 Hive Developers. All rights reserved.
 //
 
+#import "BCClient.h"
 #import "HIPasswordChangeWindowController.h"
 #import "HIPasswordCreationInputHandler.h"
 #import "HIPasswordHolder.h"
-#import "BCClient.h"
 #import "NSWindow+HIShake.h"
 
 #import <BitcoinJKit/HIBitcoinErrorCodes.h>

@@ -7,8 +7,8 @@
 //
 
 #import "BCClient.h"
-#import "HIProfile.h"
 #import "HIAddress.h"
+#import "HIProfile.h"
 
 @implementation HIProfileAddress
 

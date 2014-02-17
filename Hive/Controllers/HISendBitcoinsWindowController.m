@@ -11,20 +11,20 @@
 #import "BCClient.h"
 #import "HIAddress.h"
 #import "HIBitcoinFormatService.h"
+#import "HIBitcoinUrlService.h"
 #import "HIButtonWithSpinner.h"
+#import "HICameraWindowController.h"
 #import "HIContactAutocompleteWindowController.h"
 #import "HICurrencyFormatService.h"
 #import "HIExchangeRateService.h"
 #import "HIFeeDetailsViewController.h"
 #import "HILinkTextField.h"
-#import "HISendBitcoinsWindowController.h"
 #import "HIPasswordInputViewController.h"
 #import "HIPerson.h"
+#import "HISendBitcoinsWindowController.h"
 #import "HITransaction.h"
 #import "NSDecimalNumber+HISatoshiConversion.h"
 #import "NSWindow+HIShake.h"
-#import "HICameraWindowController.h"
-#import "HIBitcoinUrlService.h"
 
 #import <FontAwesomeIconFactory/NIKFontAwesomeIconFactory+OSX.h>
 

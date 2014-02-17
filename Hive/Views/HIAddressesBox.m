@@ -1,10 +1,10 @@
 #import "HIAddressesBox.h"
 
-#import "HIBox.h"
+#import "BCClient.h"
 #import "HIAddress.h"
 #import "HIBarcodeWindowController.h"
+#import "HIBox.h"
 #import "HICopyView.h"
-#import "BCClient.h"
 #import "NSColor+Hive.h"
 
 #import <FontAwesomeIconFactory/NIKFontAwesomeIconFactory+OSX.h>

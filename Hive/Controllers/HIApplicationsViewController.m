@@ -9,12 +9,12 @@
 #import "HIApplication.h"
 #import "HIApplicationRuntimeViewController.h"
 #import "HIApplicationsViewController.h"
+#import "HIAppRuntimeBridge.h"
 #import "HIContactRowView.h"
 #import "HIDatabaseManager.h"
 #import "HINavigationController.h"
-#import "NSWindow+HIShake.h"
 #import "NSColor+Hive.h"
-#import "HIAppRuntimeBridge.h"
+#import "NSWindow+HIShake.h"
 
 @interface HIApplicationsViewController ()
 

@@ -7,9 +7,9 @@
 //
 
 #import "BCClient.h"
-#import "HIBackupCenterWindowController.h"
 #import "HIBackupActionsCellView.h"
 #import "HIBackupAdapter.h"
+#import "HIBackupCenterWindowController.h"
 #import "HIBackupManager.h"
 #import "HIBackupStatusCellView.h"
 

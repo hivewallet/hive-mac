@@ -8,16 +8,16 @@
 
 #import "BCClient.h"
 #import "HIAddress.h"
+#import "HIAddressesBox.h"
 #import "HIContact.h"
 #import "HIContactInfoViewController.h"
 #import "HICopyView.h"
 #import "HINavigationController.h"
 #import "HINewContactViewController.h"
+#import "HIPerson.h"
 #import "HIProfile.h"
 #import "HIViewController.h"
 #import "NSColor+Hive.h"
-#import "HIPerson.h"
-#import "HIAddressesBox.h"
 
 static const NSInteger AddressFieldTag = 2;
 

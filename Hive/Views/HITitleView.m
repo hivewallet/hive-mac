@@ -9,8 +9,8 @@
 #import <QuartzCore/QuartzCore.h>
 
 #import "HIDraggableButton.h"
-#import "HISidebarController.h"
 #import "HIRightPointingArrowView.h"
+#import "HISidebarController.h"
 #import "HITitleView.h"
 
 static const CGFloat TitleSlideDuration = 0.3;

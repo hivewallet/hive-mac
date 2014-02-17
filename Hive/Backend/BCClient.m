@@ -14,8 +14,8 @@
 #import "HIApplicationsManager.h"
 #import "HIContact.h"
 #import "HIDatabaseManager.h"
-#import "HITransaction.h"
 #import "HIPasswordHolder.h"
+#import "HITransaction.h"
 
 static NSString * const kBCClientBaseURLString = @"https://grabhive.com/";
 NSString * const BCClientBitcoinjDirectory = @"BitcoinJ.network";

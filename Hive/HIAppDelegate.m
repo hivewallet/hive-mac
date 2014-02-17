@@ -8,9 +8,9 @@
 
 #import <BitcoinJKit/HIBitcoinErrorCodes.h>
 #import <BitcoinJKit/HIBitcoinManager.h>
-#import <CocoaLumberjack/DDLog.h>
 #import <CocoaLumberjack/DDASLLogger.h>
 #import <CocoaLumberjack/DDFileLogger.h>
+#import <CocoaLumberjack/DDLog.h>
 #import <CocoaLumberjack/DDTTYLogger.h>
 #import <HockeySDK/HockeySDK.h>
 #import <WebKit/WebKit.h>

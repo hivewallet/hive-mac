@@ -9,9 +9,9 @@
 #import "HIFirstRunWizardWindowController.h"
 
 #import "HIWizardBackupViewController.h"
-#import "HIWizardWelcomeViewController.h"
 #import "HIWizardCompletedViewController.h"
 #import "HIWizardPasswordViewController.h"
+#import "HIWizardWelcomeViewController.h"
 
 @implementation HIFirstRunWizardWindowController
 

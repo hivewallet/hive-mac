@@ -8,6 +8,7 @@
 
 #import "BCClient.h"
 #import "HIAddress.h"
+#import "HIBitcoinFormatService.h"
 #import "HIContact.h"
 #import "HIContactRowView.h"
 #import "HIDatabaseManager.h"
@@ -15,7 +16,6 @@
 #import "HITransactionCellView.h"
 #import "HITransactionsViewController.h"
 #import "NSColor+Hive.h"
-#import "HIBitcoinFormatService.h"
 
 @interface HITransactionsViewController () <BCTransactionObserver>
 
