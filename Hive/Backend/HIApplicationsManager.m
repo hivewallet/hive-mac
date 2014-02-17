@@ -17,6 +17,7 @@
 
 NSString * const HIApplicationsManagerDomain = @"HIApplicationsManagerDomain";
 const NSInteger HIApplicationManagerInvalidAppFileError = -1;
+const NSInteger HIApplicationManagerInsecureConnectionError = -2;
 
 
 @implementation HIApplicationsManager
@@ -213,11 +214,34 @@ const NSInteger HIApplicationManagerInvalidAppFileError = -1;
 
 - (void)requestRemoteAppInstallation:(NSURL *)remoteURL onCompletion:(void (^)(BOOL, NSError *))completionBlock {
     HILogInfo(@"Downloading remote app from %@", remoteURL);
+
+    NSError *error = nil;
+    if (![self validateRemoteAppURL:remoteURL error:&error]) {
+        dispatch_async(dispatch_get_main_queue(), ^{
+            completionBlock(NO, error);
+        });
+
+        return;
+    }
+
     NSURLRequest *request = [NSURLRequest requestWithURL:remoteURL];
     AFHTTPRequestOperation *download = [[AFHTTPRequestOperation alloc] initWithRequest:request];
 
     NSString *temporaryFile = [NSTemporaryDirectory() stringByAppendingPathComponent:remoteURL.lastPathComponent];
     [download setOutputStream:[NSOutputStream outputStreamToFileAtPath:temporaryFile append:NO]];
+
+    [download setRedirectResponseBlock:
+     ^NSURLRequest *(NSURLConnection *connection, NSURLRequest *request, NSURLResponse *response) {
+         NSError *error = nil;
+
+         if ([self validateRemoteAppURL:request.URL error:&error]) {
+             return request;
+         } else {
+             [connection cancel];
+             completionBlock(NO, error);
+             return nil;
+         }
+     }];
 
     [download setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject) {
         HILogInfo(@"App downloaded to: %@", temporaryFile);
@@ -237,6 +261,23 @@ const NSInteger HIApplicationManagerInvalidAppFileError = -1;
     }];
 
     [download start];
+}
+
+- (BOOL)validateRemoteAppURL:(NSURL *)remoteURL error:(NSError **)error {
+    if (![remoteURL.scheme isEqual:@"https"]) {
+        HILogWarn(@"App request rejected because of insecure connection: %@", remoteURL);
+
+        if (error) {
+            NSString *message = @"Applications can only be downloaded from HTTPS URLs.";
+            *error = [NSError errorWithDomain:HIApplicationsManagerDomain
+                                         code:HIApplicationManagerInsecureConnectionError
+                                     userInfo:@{ NSLocalizedFailureReasonErrorKey: message }];
+        }
+
+        return NO;
+    }
+
+    return YES;
 }
 
 - (void)cleanupTemporaryFileAtPath:(NSString *)path {
