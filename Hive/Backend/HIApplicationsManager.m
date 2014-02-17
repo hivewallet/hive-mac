@@ -14,6 +14,11 @@
 #import "HIDatabaseManager.h"
 #import "HIDirectoryDataService.h"
 
+
+NSString * const HIApplicationsManagerDomain = @"HIApplicationsManagerDomain";
+const NSInteger HIApplicationManagerInvalidAppFileError = -1;
+
+
 @implementation HIApplicationsManager
 
 + (HIApplicationsManager *)sharedManager {
@@ -136,9 +141,36 @@
     [DBM save:NULL];
 }
 
-- (BOOL)requestLocalAppInstallation:(NSURL *)applicationURL showAppsPage:(BOOL)showAppsPage {
+- (BOOL)requestLocalAppInstallation:(NSURL *)applicationURL showAppsPage:(BOOL)showAppsPage error:(NSError **)error {
     NSDictionary *manifest = [self applicationMetadata:applicationURL];
     NSString *title, *info, *confirm;
+
+    if (!manifest[@"id"]) {
+        HILogWarn(@"App file at %@ is invalid (manifest: %@)", applicationURL, manifest);
+
+        NSString *title = [NSString stringWithFormat:
+                           NSLocalizedString(@"Hive application file \"%@\" could not be opened.",
+                                             @"Hiveapp file not readable error title"),
+                           applicationURL.lastPathComponent];
+
+        NSString *description = NSLocalizedString(@"The file is damaged or does not contain a Hive application.",
+                                                  @"Hiveapp file not readable error details");
+
+        NSAlert *alert = [NSAlert alertWithMessageText:title
+                                         defaultButton:NSLocalizedString(@"OK", @"OK button title")
+                                       alternateButton:nil
+                                           otherButton:nil
+                             informativeTextWithFormat:@"%@", description];
+        [alert runModal];
+
+        if (error) {
+            *error = [NSError errorWithDomain:HIApplicationsManagerDomain
+                                         code:HIApplicationManagerInvalidAppFileError
+                                     userInfo:@{NSLocalizedFailureReasonErrorKey: description}];
+        }
+
+        return NO;
+    }
 
     if ([self hasApplicationOfId:manifest[@"id"]]) {
         title = NSLocalizedString(@"You have already added \"%@\" to Hive. Would you like to overwrite it?",
@@ -189,10 +221,14 @@
 
     [download setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject) {
         HILogInfo(@"App downloaded to: %@", temporaryFile);
-        BOOL installed = [self requestLocalAppInstallation:[NSURL fileURLWithPath:temporaryFile] showAppsPage:NO];
+
+        NSError *error = nil;
+        BOOL installed = [self requestLocalAppInstallation:[NSURL fileURLWithPath:temporaryFile]
+                                              showAppsPage:NO
+                                                     error:&error];
         [self cleanupTemporaryFileAtPath:temporaryFile];
 
-        completionBlock(installed, nil);
+        completionBlock(installed, error);
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         HILogWarn(@"Couldn't download remote app: %@", error);
         [self cleanupTemporaryFileAtPath:temporaryFile];

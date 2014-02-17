@@ -411,7 +411,7 @@ static int ddLogLevel = LOG_LEVEL_VERBOSE;
 - (BOOL)application:(NSApplication *)sender openFile:(NSString *)filename {
     if ([filename.pathExtension isEqual:@"hiveapp"]) {
         HIApplicationsManager *manager = [HIApplicationsManager sharedManager];
-        [manager requestLocalAppInstallation:[NSURL fileURLWithPath:filename] showAppsPage:YES];
+        [manager requestLocalAppInstallation:[NSURL fileURLWithPath:filename] showAppsPage:YES error:nil];
         return YES;
     }
 
