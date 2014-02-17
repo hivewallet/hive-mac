@@ -518,6 +518,7 @@ static NSString * const Separator = @"Separator";
 
     if (url.valid) {
         [self addAddressPlaceholderWithHash:url.address name:nil editable:YES];
+        [self.view.window makeFirstResponder:_placeholders.lastObject[NameField]];
     }
 
     return url.valid;
