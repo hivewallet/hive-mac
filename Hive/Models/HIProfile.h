@@ -28,6 +28,7 @@
 
 - (BOOL)canBeRemoved;
 - (BOOL)canEditAddresses;
+- (BOOL)hasName;
 
 @end
 

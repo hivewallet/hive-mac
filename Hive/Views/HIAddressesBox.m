@@ -5,6 +5,7 @@
 #import "HIBarcodeWindowController.h"
 #import "HIBox.h"
 #import "HICopyView.h"
+#import "HIProfile.h"
 #import "NSColor+Hive.h"
 
 #import <FontAwesomeIconFactory/NIKFontAwesomeIconFactory+OSX.h>
@@ -242,13 +243,23 @@ static NSString *const KEY_WALLET_HASH = @"walletHash";
 #pragma mark - barcode window
 
 - (void)showBarcodeWindow:(NSButton *)sender {
+    NSString *address = [[BCClient sharedClient] walletHash];
+    HIProfile *profile = [[HIProfile alloc] init];
+    NSString *bitcoinURL;
+
+    if (profile.hasName) {
+        bitcoinURL = [NSString stringWithFormat:@"bitcoin:%@?label=%@",
+                      address,
+                      [profile.name stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]];
+    } else {
+        bitcoinURL = [NSString stringWithFormat:@"bitcoin:%@", address];
+    }
+
     self.barcodeWindowController = [HIBarcodeWindowController new];
-    self.barcodeWindowController.barcodeString =
-        [@"bitcoin:" stringByAppendingString:[[BCClient sharedClient] walletHash]];
-    self.barcodeWindowController.label = [[BCClient sharedClient] walletHash];
+    self.barcodeWindowController.barcodeString = bitcoinURL;
+    self.barcodeWindowController.label = address;
 
     [self zoomBarcodeWindowFromButton:sender];
-
 }
 
 - (void)zoomBarcodeWindowFromButton:(NSButton *)sender {

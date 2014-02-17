@@ -93,6 +93,10 @@
     }
 }
 
+- (BOOL)hasName {
+    return (self.firstname.length > 0 || self.lastname.length > 0);
+}
+
 - (NSSet *)addresses {
     HIProfileAddress *address = [[HIProfileAddress alloc] init];
     address.address = [[BCClient sharedClient] walletHash];
