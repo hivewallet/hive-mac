@@ -136,7 +136,7 @@
     [DBM save:NULL];
 }
 
-- (void)requestLocalAppInstallation:(NSURL *)applicationURL showAppsPage:(BOOL)showAppsPage {
+- (BOOL)requestLocalAppInstallation:(NSURL *)applicationURL showAppsPage:(BOOL)showAppsPage {
     NSDictionary *manifest = [self applicationMetadata:applicationURL];
     NSString *title, *info, *confirm;
 
@@ -172,10 +172,14 @@
         if (showAppsPage) {
             [[NSApp delegate] showWindowWithPanel:[HIApplicationsViewController class]];
         }
+
+        return YES;
+    } else {
+        return NO;
     }
 }
 
-- (void)requestRemoteAppInstallation:(NSURL *)remoteURL {
+- (void)requestRemoteAppInstallation:(NSURL *)remoteURL onCompletion:(void (^)(BOOL, NSError *))completionBlock {
     HILogInfo(@"Downloading remote app from %@", remoteURL);
     NSURLRequest *request = [NSURLRequest requestWithURL:remoteURL];
     AFHTTPRequestOperation *download = [[AFHTTPRequestOperation alloc] initWithRequest:request];
@@ -185,11 +189,15 @@
 
     [download setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject) {
         HILogInfo(@"App downloaded to: %@", temporaryFile);
-        [self requestLocalAppInstallation:[NSURL fileURLWithPath:temporaryFile] showAppsPage:NO];
+        BOOL installed = [self requestLocalAppInstallation:[NSURL fileURLWithPath:temporaryFile] showAppsPage:NO];
         [self cleanupTemporaryFileAtPath:temporaryFile];
+
+        completionBlock(installed, nil);
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         HILogWarn(@"Couldn't download remote app: %@", error);
         [self cleanupTemporaryFileAtPath:temporaryFile];
+
+        completionBlock(NO, error);
     }];
 
     [download start];

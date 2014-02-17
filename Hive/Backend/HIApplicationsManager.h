@@ -18,8 +18,8 @@
 
 - (NSURL *)applicationsDirectory;
 - (void)installApplication:(NSURL *)applicationURL;
-- (void)requestLocalAppInstallation:(NSURL *)applicationURL showAppsPage:(BOOL)showAppsPage;
-- (void)requestRemoteAppInstallation:(NSURL *)remoteURL;
+- (BOOL)requestLocalAppInstallation:(NSURL *)applicationURL showAppsPage:(BOOL)showAppsPage;
+- (void)requestRemoteAppInstallation:(NSURL *)remoteURL onCompletion:(void (^)(BOOL, NSError *))completionBlock;
 - (BOOL)hasApplicationOfId:(NSString *)applicationId;
 - (NSDictionary *)applicationMetadata:(NSURL *)applicationPath;
 - (void)preinstallApps;

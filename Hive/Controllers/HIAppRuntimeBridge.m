@@ -75,7 +75,7 @@ static const NSInteger kHIAppRuntimeBridgeParsingError = -1000;
                         @"getUserInformationWithCallback:": @"getUserInfo",
                         @"getSystemInfoWithCallback:": @"getSystemInfo",
                         @"makeProxiedRequestToURL:options:": @"makeRequest",
-                        @"installAppFromURL:": @"installApp",
+                        @"installAppFromURL:callback:": @"installApp",
                         @"addExchangeRateListener:": @"addExchangeRateListener",
                         @"removeExchangeRateListener:": @"removeExchangeRateListener",
                         @"updateExchangeRateForCurrency:": @"updateExchangeRate",
@@ -510,8 +510,26 @@ static const NSInteger kHIAppRuntimeBridgeParsingError = -1000;
 
 #pragma mark - App installation
 
-- (void)installAppFromURL:(NSString *)applicationURL {
-    [[HIApplicationsManager sharedManager] requestRemoteAppInstallation:[NSURL URLWithString:applicationURL]];
+- (void)installAppFromURL:(NSString *)applicationURL callback:(WebScriptObject *)callback {
+    ValidateOptionalArgument(WebScriptObject, callback);
+
+    void (^completionBlock)(BOOL, NSError *) = ^(BOOL installed, NSError *error) {
+        JSValueRef arguments[2];
+
+        if (error) {
+            NSDictionary *errorData = @{ @"message": (error.localizedFailureReason ?: error.localizedDescription) };
+            arguments[0] = [self valueObjectFromDictionary:errorData];
+        } else {
+            arguments[0] = JSValueMakeNull(self.context);
+        }
+
+        arguments[1] = JSValueMakeBoolean(self.context, installed);
+
+        [self callCallbackMethod:callback withArguments:arguments count:2];
+    };
+
+    [[HIApplicationsManager sharedManager] requestRemoteAppInstallation:[NSURL URLWithString:applicationURL]
+                                                           onCompletion:completionBlock];
 }
 
 @end
