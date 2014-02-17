@@ -13,10 +13,9 @@
 @implementation HIEmptyTransactionsView
 
 - (void)awakeFromNib {
-    [super awakeFromNib];
-
     self.addressesBox.addresses = [HIProfile new].addresses.allObjects;
     self.addressesBox.observingWallet = YES;
+    self.addressesBox.showsBarcode = YES;
 }
 
 @end
