@@ -168,7 +168,7 @@ static NSString * const Separator = @"Separator";
 - (void)addAddressPlaceholderWithAddress:(HIAddress *)address {
     [self addAddressPlaceholderWithHash:address.address
                                    name:address.caption
-                               editable:address && ![address.contact canEditAddresses]];
+                               editable:(!address || [address.contact canEditAddresses])];
 }
 
 - (void)addAddressPlaceholderWithHash:(NSString *)address name:(NSString *)name editable:(BOOL)editable {
@@ -237,7 +237,7 @@ static NSString * const Separator = @"Separator";
     [self.walletsView addSubview:deleteButton];
     parts[DeleteButton] = deleteButton;
 
-    if (editable) {
+    if (!editable) {
         [nameField setEditable:NO];
         [addressField setEditable:NO];
         [deleteButton setHidden:YES];
@@ -515,9 +515,11 @@ static NSString * const Separator = @"Separator";
              didScanBarcodeUrl:(NSString *)barcodeUrl {
     _edited = YES;
     HIBitcoinURL *url = [[HIBitcoinURL alloc] initWithURLString:barcodeUrl];
+
     if (url.valid) {
         [self addAddressPlaceholderWithHash:url.address name:nil editable:YES];
     }
+
     return url.valid;
 }
 
