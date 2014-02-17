@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="4514" systemVersion="13C59" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="4514" systemVersion="13B42" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
         <deployment defaultVersion="1070" identifier="macosx"/>
         <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="4514"/>
@@ -212,11 +212,11 @@
                     <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="icon-gray-btc" id="69"/>
                 </imageView>
                 <customView placeholderIntrinsicWidth="infinite" placeholderIntrinsicHeight="60" translatesAutoresizingMaskIntoConstraints="NO" id="1zA-19-rkA" customClass="HIAddressesBox">
-                    <rect key="frame" x="40" y="141" width="243" height="60"/>
+                    <rect key="frame" x="40" y="151" width="243" height="60"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                 </customView>
                 <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="56">
-                    <rect key="frame" x="59" y="99" width="204" height="34"/>
+                    <rect key="frame" x="59" y="87" width="204" height="34"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="200" id="ZJW-xV-2nD"/>
@@ -238,9 +238,9 @@
                 <constraint firstAttribute="centerX" secondItem="53" secondAttribute="centerX" id="78B-uO-cKV"/>
                 <constraint firstAttribute="centerX" secondItem="68" secondAttribute="centerX" id="PgA-0q-m7O"/>
                 <constraint firstAttribute="trailing" secondItem="1zA-19-rkA" secondAttribute="trailing" constant="40" id="evQ-DO-GY4"/>
-                <constraint firstItem="56" firstAttribute="top" secondItem="1zA-19-rkA" secondAttribute="bottom" constant="8" id="fd5-Uw-EsO"/>
+                <constraint firstItem="56" firstAttribute="top" secondItem="1zA-19-rkA" secondAttribute="bottom" constant="30" id="fd5-Uw-EsO"/>
                 <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="56" secondAttribute="bottom" constant="50" id="iRO-dK-7m7"/>
-                <constraint firstItem="1zA-19-rkA" firstAttribute="top" secondItem="53" secondAttribute="bottom" constant="40" id="iVk-Mb-DB1"/>
+                <constraint firstItem="1zA-19-rkA" firstAttribute="top" secondItem="53" secondAttribute="bottom" constant="30" id="iVk-Mb-DB1"/>
                 <constraint firstItem="53" firstAttribute="top" secondItem="68" secondAttribute="bottom" constant="35" id="onT-07-2WQ"/>
                 <constraint firstAttribute="centerX" secondItem="56" secondAttribute="centerX" constant="0.5" id="pf6-iw-mXO"/>
             </constraints>
