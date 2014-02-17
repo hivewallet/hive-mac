@@ -300,10 +300,14 @@ static NSString * const Separator = @"Separator";
 }
 
 - (void)removeAddressClicked:(NSButton *)button {
+    NSUInteger index = button.tag;
+    [self removeAddressPlaceholderAtIndex:index];
+}
+
+- (void)removeAddressPlaceholderAtIndex:(NSUInteger)index {
     _edited = YES;
 
     NSRect frame;
-    NSUInteger index = button.tag;
 
     frame = self.walletsView.frame;
     frame.size.height -= AddressCellHeight;
@@ -344,6 +348,15 @@ static NSString * const Separator = @"Separator";
         } else {
             [_placeholders[index - 1][NameField] setNextKeyView:self.emailField];
         }
+    }
+}
+
+- (void)removeLastPlaceholderIfEmpty {
+    NSDictionary *lastPlaceholder = _placeholders.lastObject;
+
+    if (lastPlaceholder && [[lastPlaceholder[NameField] stringValue] isEqual:@""]
+                        && [[lastPlaceholder[AddressField] stringValue] isEqual:@""]) {
+        [self removeAddressPlaceholderAtIndex:(_placeholders.count - 1)];
     }
 }
 
@@ -517,6 +530,7 @@ static NSString * const Separator = @"Separator";
     HIBitcoinURL *url = [[HIBitcoinURL alloc] initWithURLString:barcodeUrl];
 
     if (url.valid) {
+        [self removeLastPlaceholderIfEmpty];
         [self addAddressPlaceholderWithHash:url.address name:nil editable:YES];
         [self.view.window makeFirstResponder:_placeholders.lastObject[NameField]];
     }
