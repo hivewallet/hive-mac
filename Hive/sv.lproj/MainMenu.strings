@@ -92,11 +92,20 @@
 /* Class = "NSMenuItem"; title = "Wallet"; ObjectID = "GX7-xG-GKH"; */
 "GX7-xG-GKH.title" = "Plånbok";
 
+/* Class = "NSMenuItem"; title = "Send Feedback…"; ObjectID = "GsI-lc-HhD"; */
+"GsI-lc-HhD.title" = "Send Feedback…";
+
+/* Class = "NSMenu"; title = "Help"; ObjectID = "K2u-T2-G1a"; */
+"K2u-T2-G1a.title" = "Help";
+
 /* Class = "NSMenuItem"; title = "Debugging tools..."; ObjectID = "Ue9-mi-gbe"; */
 "Ue9-mi-gbe.title" = "Debugg-verktyg...";
 
 /* Class = "NSMenuItem"; title = "Backup Center..."; ObjectID = "V0L-sM-c8h"; */
 "V0L-sM-c8h.title" = "Backupcenter...";
+
+/* Class = "NSMenuItem"; title = "Help"; ObjectID = "ZUU-kM-x8u"; */
+"ZUU-kM-x8u.title" = "Help";
 
 /* Class = "NSMenu"; title = "Tools"; ObjectID = "cCx-Ak-fii"; */
 "cCx-Ak-fii.title" = "Verktyg";
@@ -109,3 +118,6 @@
 
 /* Class = "NSMenuItem"; title = "Debugging info..."; ObjectID = "lLT-53-p4m"; */
 "lLT-53-p4m.title" = "Debugg-info...";
+
+/* Class = "NSMenuItem"; title = "Scan a QR code…"; ObjectID = "vdw-IK-snJ"; */
+"vdw-IK-snJ.title" = "Scan a QR code…";

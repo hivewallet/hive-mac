@@ -1,4 +1,7 @@
 
+/* Body for feedback emails */
+"(Please write in English if possible.)" = "(Please write in English if possible.)";
+
 /* Address field placeholder */
 "Address" = "Adres";
 
@@ -7,6 +10,9 @@
 
 /* Anonymous username for profile page */
 "Anonymous" = "Anonimowy użytkownik";
+
+/* Message when trying to start an app that requires a newer API level. */
+"App requires a newer version of Hive." = "App requires a newer version of Hive.";
 
 /* App load error title */
 "Application can't be loaded" = "Nie można otworzyć aplikacji";
@@ -26,9 +32,6 @@
 /* Backup status: backup can't or won't be completed */
 "Backup error" = "Błąd wykonywania kopii";
 
-/* Notification of failed backup */
-"Backup failed" = "Błąd wykonywania kopii zapasowej";
-
 /* No comment provided by engineer. */
 "Backup hasn't been done yet" = "Nie wykonano jeszcze żadnej kopii";
 
@@ -37,6 +40,12 @@
 
 /* Backup status: backup done but not updated recently */
 "Backup problem" = "Problem z wykonywaniem kopii";
+
+/* initialization error */
+"Bitcoin network data file could not be opened - another instance of Hive might still be running." = "Bitcoin network data file could not be opened - another instance of Hive might still be running.";
+
+/* Chain file unreadable error title */
+"Bitcoin network data file could not be opened." = "Bitcoin network data file could not be opened.";
 
 /* Backup error message */
 "Can't create a directory to store the wallet backup" = "Nie można założyć katalogu na kopię zapasową";
@@ -70,12 +79,6 @@
 
 /* initialization error */
 "Could not read wallet file. It might be damaged." = "Nie można odczytać pliku z portfelem - plik może być uszkodzony.";
-
-/* Quit without saves error question message */
-"Could not save changes while quitting. Quit anyway?" = "Nie można zapisać zmian. Czy chcesz zakończyć mimo wszystko?";
-
-/* initialization error */
-"Could not write wallet file. Another instance of Hive might still be running." = "Nie można zapisać pliku z portfelem - możliwe, że w tle działa inna kopia Hive.";
 
 /* Disable backup button title */
 "Disable" = "Wyłącz";
@@ -122,6 +125,9 @@
 /* Firstname field placeholder */
 "Firstname" = "Imię";
 
+/* Hiveapp file not readable error title */
+"Hive application file \"%@\" could not be opened." = "Hive application file \"%@\" could not be opened.";
+
 /* Initialization error title */
 "Hive cannot be started." = "Nie można uruchomić Hive.";
 
@@ -130,6 +136,12 @@
 
 /* Backup error message */
 "Hive directory is excluded from Time Machine backup" = "Katalog Hive jest wyłączony z kopii zapasowej Time Machine";
+
+/* Sync in progress alert title */
+"Hive is currently syncing with the Bitcoin network. Are you sure you want to quit?" = "Hive is currently syncing with the Bitcoin network. Are you sure you want to quit?";
+
+/* Chain file unreadable error explanation */
+"Hive will now delete the file and synchronize with the Bitcoin network again. Please leave Hive open for the next several minutes, and try not to send any transactions right now." = "Hive will now delete the file and synchronize with the Bitcoin network again. Please leave Hive open for the next several minutes, and try not to send any transactions right now.";
 
 /* Share sent transaction text */
 "I've just received some Bitcoin using Hive" = "Odebrałem właśnie Bitcoiny przy pomocy portfela Hive";
@@ -170,6 +182,9 @@
 /* Backup is outdated, last backup was on that date */
 "No backup since %@" = "Nie wykonano żadnej kopii od %@";
 
+/* No backups enabled notification title */
+"No backups configured" = "No backups configured";
+
 /* Transaction failed alert message */
 "No Bitcoin have been taken from your wallet." = "Bitcoiny nie zostały pobrane z twojego portfela.";
 
@@ -199,9 +214,6 @@
 
 /* Quit anyway button title */
 "Quit anyway" = "Zakończ";
-
-/* Quit without saves error question info */
-"Quitting now will lose any changes you have made since the last successful save" = "Jeśli wybierzesz opcję Zakończ, utracisz zmiany od ostatniego zapisu";
 
 /* Received amount of BTC from unknown source */
 "Received &a" = "Otrzymano &a";
@@ -239,6 +251,12 @@
 /* Install app popup warning message when app exists */
 "The existing app file will be replaced by the new version. This will not affect any app settings or saved data." = "Poprzednia wersja aplikacji zostanie zastąpiona nową. Dane i ustawienia zapisane przez aplikację nie zostaną zmienione.";
 
+/* Hiveapp file not readable error details */
+"The file is damaged or does not contain a Hive application." = "The file is damaged or does not contain a Hive application.";
+
+/* Sending dust alert message */
+"This amount is too low to be sent through the network." = "This amount is too low to be sent through the network.";
+
 /* Alert details when transaction was cancelled */
 "This can happen because of bugs in the wallet code or because the transaction was rejected by the network." = "To może się zdarzyć w wyniku błędów w oprogramowaniu, lub jeśli transakcja została odrzucona przez sieć Bitcoin.";
 
@@ -254,8 +272,14 @@
 /* Backup error message */
 "Time Machine is disabled in System Preferences" = "Time Machine jest wyłączone w Preferencjach Systemowych";
 
+/* No backups enabled notification details */
+"To protect your bitcoins, it's recommended that you enable at least one type of backup." = "To protect your bitcoins, it's recommended that you enable at least one type of backup.";
+
 /* Amount exceeds available balance alert message */
 "To send this transaction, you'll need to wait for your pending transactions to be confirmed first (this shouldn't take more than a few minutes)." = "Aby wysłać tą transakcję, musisz poczekać aż poprzednie transakcje zostaną potwierdzone (to nie powinno zająć więcej niż kilka minut).";
+
+/* Message when trying to start an app that requires a newer API level. */
+"To use the app, please update to the latest version of Hive." = "To use the app, please update to the latest version of Hive.";
 
 /* Notification of cancelled transaction */
 "Transaction cancelled" = "Transakcja została anulowana";
@@ -287,9 +311,6 @@
 /* Button to show info about pending funds */
 "What does this mean?" = "Co to znaczy?";
 
-/* Sending zero bitcoin alert message */
-"Why would you want to send someone 0 BTC?" = "Po co chcesz wysyłać komuś 0 BTC?";
-
 /* Details of an alert when trying to send more than you have */
 "You cannot send more money than you own." = "Nie możesz wysłać więcej Bitcoinów niż masz na koncie.";
 
@@ -319,3 +340,6 @@
 
 /* Cancel editing alert message */
 "Your changes won't be saved." = "Wprowadzone zmiany nie zostaną zapisane.";
+
+/* Sync in progress alert details */
+"Your pending transactions won't be confirmed until the sync is complete." = "Your pending transactions won't be confirmed until the sync is complete.";

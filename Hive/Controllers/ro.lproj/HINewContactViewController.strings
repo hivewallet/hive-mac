@@ -20,5 +20,8 @@
 /* Class = "NSTextFieldCell"; title = "edit"; ObjectID = "107"; */
 "107.title" = "editare";
 
+/* Class = "NSButtonCell"; title = "QR"; ObjectID = "Fp7-Nh-Dhm"; */
+"Fp7-Nh-Dhm.title" = "QR";
+
 /* Class = "NSButtonCell"; title = "Cancel"; ObjectID = "WNT-Ju-zbY"; */
 "WNT-Ju-zbY.title" = "Revocare";

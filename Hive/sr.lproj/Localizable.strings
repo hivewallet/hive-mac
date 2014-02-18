@@ -1,4 +1,7 @@
 
+/* Body for feedback emails */
+"(Please write in English if possible.)" = "(Please write in English if possible.)";
+
 /* Address field placeholder */
 "Address" = "Адреса";
 
@@ -7,6 +10,9 @@
 
 /* Anonymous username for profile page */
 "Anonymous" = "Анониман";
+
+/* Message when trying to start an app that requires a newer API level. */
+"App requires a newer version of Hive." = "App requires a newer version of Hive.";
 
 /* App load error title */
 "Application can't be loaded" = "Апликација не може да се учита";
@@ -26,9 +32,6 @@
 /* Backup status: backup can't or won't be completed */
 "Backup error" = "Грешка приликом прављења резервне копије";
 
-/* Notification of failed backup */
-"Backup failed" = "Прављење резервне копије није успело";
-
 /* No comment provided by engineer. */
 "Backup hasn't been done yet" = "Резервна копија још увек није завршена";
 
@@ -37,6 +40,12 @@
 
 /* Backup status: backup done but not updated recently */
 "Backup problem" = "Problem sa rezervnom kopijom";
+
+/* initialization error */
+"Bitcoin network data file could not be opened - another instance of Hive might still be running." = "Bitcoin network data file could not be opened - another instance of Hive might still be running.";
+
+/* Chain file unreadable error title */
+"Bitcoin network data file could not be opened." = "Bitcoin network data file could not be opened.";
 
 /* Backup error message */
 "Can't create a directory to store the wallet backup" = "Директоријум где треба да се сачува резервна копија новчаника не може бити направљен";
@@ -70,12 +79,6 @@
 
 /* initialization error */
 "Could not read wallet file. It might be damaged." = "Фајл новчаника не може бити прочитан. Можда је оштећен.";
-
-/* Quit without saves error question message */
-"Could not save changes while quitting. Quit anyway?" = "Измене нису успешно сачуване приликом излажења. Изаћи свеједно?";
-
-/* initialization error */
-"Could not write wallet file. Another instance of Hive might still be running." = "Фајл новчаника не може бити записан. Друга инстанца Hive-а је можда још увек активирана.";
 
 /* Disable backup button title */
 "Disable" = "Onesposobite";
@@ -122,6 +125,9 @@
 /* Firstname field placeholder */
 "Firstname" = "Име";
 
+/* Hiveapp file not readable error title */
+"Hive application file \"%@\" could not be opened." = "Hive application file \"%@\" could not be opened.";
+
 /* Initialization error title */
 "Hive cannot be started." = "Hive не може бити покренут.";
 
@@ -130,6 +136,12 @@
 
 /* Backup error message */
 "Hive directory is excluded from Time Machine backup" = "Hive директоријум је искључен из Time Machine резервне копије";
+
+/* Sync in progress alert title */
+"Hive is currently syncing with the Bitcoin network. Are you sure you want to quit?" = "Hive is currently syncing with the Bitcoin network. Are you sure you want to quit?";
+
+/* Chain file unreadable error explanation */
+"Hive will now delete the file and synchronize with the Bitcoin network again. Please leave Hive open for the next several minutes, and try not to send any transactions right now." = "Hive will now delete the file and synchronize with the Bitcoin network again. Please leave Hive open for the next several minutes, and try not to send any transactions right now.";
 
 /* Share sent transaction text */
 "I've just received some Bitcoin using Hive" = "Управо сам примио биткоин користећи Hive";
@@ -170,6 +182,9 @@
 /* Backup is outdated, last backup was on that date */
 "No backup since %@" = "Без резервне копије од %@";
 
+/* No backups enabled notification title */
+"No backups configured" = "No backups configured";
+
 /* Transaction failed alert message */
 "No Bitcoin have been taken from your wallet." = "Ниједан биткоин није узет из вашег новчаника.";
 
@@ -199,9 +214,6 @@
 
 /* Quit anyway button title */
 "Quit anyway" = "Свеједно изађите";
-
-/* Quit without saves error question info */
-"Quitting now will lose any changes you have made since the last successful save" = "Излажење сада би узроковало губитак свих измена које сте направили од претходног успешног чувања.";
 
 /* Received amount of BTC from unknown source */
 "Received &a" = "Примљено &a";
@@ -239,6 +251,12 @@
 /* Install app popup warning message when app exists */
 "The existing app file will be replaced by the new version. This will not affect any app settings or saved data." = "Постојећа апликација ће бити замењена новијом верзијом. То неће утицати на подешавања и сачуване податке.";
 
+/* Hiveapp file not readable error details */
+"The file is damaged or does not contain a Hive application." = "The file is damaged or does not contain a Hive application.";
+
+/* Sending dust alert message */
+"This amount is too low to be sent through the network." = "This amount is too low to be sent through the network.";
+
 /* Alert details when transaction was cancelled */
 "This can happen because of bugs in the wallet code or because the transaction was rejected by the network." = "Ово може да се деси услед грешака у коду новчаника, или зато што је трансакција одбачена од стране мреже.";
 
@@ -254,8 +272,14 @@
 /* Backup error message */
 "Time Machine is disabled in System Preferences" = "Time Machine је онеспособљен у системским подешавањима.";
 
+/* No backups enabled notification details */
+"To protect your bitcoins, it's recommended that you enable at least one type of backup." = "To protect your bitcoins, it's recommended that you enable at least one type of backup.";
+
 /* Amount exceeds available balance alert message */
 "To send this transaction, you'll need to wait for your pending transactions to be confirmed first (this shouldn't take more than a few minutes)." = "Како би послали ову трансакцију морате сачекати да ваше трансакције на извршењу буду потврђене (то не би требало да траје дуже од неколико минута).";
+
+/* Message when trying to start an app that requires a newer API level. */
+"To use the app, please update to the latest version of Hive." = "To use the app, please update to the latest version of Hive.";
 
 /* Notification of cancelled transaction */
 "Transaction cancelled" = "Трансакција је отказана";
@@ -287,9 +311,6 @@
 /* Button to show info about pending funds */
 "What does this mean?" = "Шта ово значи?";
 
-/* Sending zero bitcoin alert message */
-"Why would you want to send someone 0 BTC?" = "Зашто бисте желели некоме да пошаљете 0 БТЦ?";
-
 /* Details of an alert when trying to send more than you have */
 "You cannot send more money than you own." = "Не можете послати више новца него што имате.";
 
@@ -319,3 +340,6 @@
 
 /* Cancel editing alert message */
 "Your changes won't be saved." = "Your changes won't be saved.";
+
+/* Sync in progress alert details */
+"Your pending transactions won't be confirmed until the sync is complete." = "Your pending transactions won't be confirmed until the sync is complete.";

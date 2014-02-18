@@ -5,14 +5,11 @@
 /* Class = "NSTextFieldCell"; title = "Date"; ObjectID = "41"; */
 "41.title" = "Datum";
 
-/* Class = "NSTextFieldCell"; title = "Looks like you haven't made any transactions yet. Send someone some Bitcoin!"; ObjectID = "54"; */
-"54.title" = "Izgleda da još uvek niste obavili nijednu transakciju. Pošaljite nekome nešto bitkoina!";
-
-/* Class = "NSButtonCell"; title = "Send Bitcoin"; ObjectID = "55"; */
-"55.title" = "Pošaljite bitkoin";
-
 /* Class = "NSTextFieldCell"; title = "You can then use the Send button to send someone money."; ObjectID = "63"; */
 "63.title" = "Nakon toga možete koristiti Pošaljite dugme da nekome pošaljete novac.";
+
+/* Class = "NSTextFieldCell"; title = "Looks like you haven't made any transactions yet. Send some Bitcoin to your Hive wallet address!"; ObjectID = "Tlv-45-Iq6"; */
+"Tlv-45-Iq6.title" = "Looks like you haven't made any transactions yet. Send some Bitcoin to your Hive wallet address!";
 
 /* Class = "NSTextFieldCell"; title = "PENDING"; ObjectID = "oXJ-Jx-H6s"; */
 "oXJ-Jx-H6s.title" = "NA IZVRŠENJU";

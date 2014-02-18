@@ -1,4 +1,7 @@
 
+/* Body for feedback emails */
+"(Please write in English if possible.)" = "(Please write in English if possible.)";
+
 /* Address field placeholder */
 "Address" = "Osoite";
 
@@ -7,6 +10,9 @@
 
 /* Anonymous username for profile page */
 "Anonymous" = "Nimetön";
+
+/* Message when trying to start an app that requires a newer API level. */
+"App requires a newer version of Hive." = "App requires a newer version of Hive.";
 
 /* App load error title */
 "Application can't be loaded" = "Ohjelmaa ei voida ladata";
@@ -26,9 +32,6 @@
 /* Backup status: backup can't or won't be completed */
 "Backup error" = "Varmuuskopiontivirhe";
 
-/* Notification of failed backup */
-"Backup failed" = "Varmuuskopiointi epäonnistui";
-
 /* No comment provided by engineer. */
 "Backup hasn't been done yet" = "Varmuuskopiointia ei ole vielä tehty";
 
@@ -37,6 +40,12 @@
 
 /* Backup status: backup done but not updated recently */
 "Backup problem" = "Varmuuskopiointiongelma";
+
+/* initialization error */
+"Bitcoin network data file could not be opened - another instance of Hive might still be running." = "Bitcoin network data file could not be opened - another instance of Hive might still be running.";
+
+/* Chain file unreadable error title */
+"Bitcoin network data file could not be opened." = "Bitcoin network data file could not be opened.";
 
 /* Backup error message */
 "Can't create a directory to store the wallet backup" = "Kansiota varmuuskopiota varten ei voitu luoda";
@@ -70,12 +79,6 @@
 
 /* initialization error */
 "Could not read wallet file. It might be damaged." = "Lompakkoa ei voitu lukea. Se voi olla vioittunut.";
-
-/* Quit without saves error question message */
-"Could not save changes while quitting. Quit anyway?" = "Muutoksia ei voitu tallentaa lopetettaessa. Lopetetaanko?";
-
-/* initialization error */
-"Could not write wallet file. Another instance of Hive might still be running." = "Lompakkokansiota ei voitu kirjoittaa. Hive voi olla käynnissä toisaalla.";
 
 /* Disable backup button title */
 "Disable" = "Pois päältä";
@@ -122,6 +125,9 @@
 /* Firstname field placeholder */
 "Firstname" = "Etunimi";
 
+/* Hiveapp file not readable error title */
+"Hive application file \"%@\" could not be opened." = "Hive application file \"%@\" could not be opened.";
+
 /* Initialization error title */
 "Hive cannot be started." = "Hivea ei voitu käynnistää.";
 
@@ -130,6 +136,12 @@
 
 /* Backup error message */
 "Hive directory is excluded from Time Machine backup" = "Hive kansio ei sisälly Time Machine varmuuskopioon";
+
+/* Sync in progress alert title */
+"Hive is currently syncing with the Bitcoin network. Are you sure you want to quit?" = "Hive is currently syncing with the Bitcoin network. Are you sure you want to quit?";
+
+/* Chain file unreadable error explanation */
+"Hive will now delete the file and synchronize with the Bitcoin network again. Please leave Hive open for the next several minutes, and try not to send any transactions right now." = "Hive will now delete the file and synchronize with the Bitcoin network again. Please leave Hive open for the next several minutes, and try not to send any transactions right now.";
 
 /* Share sent transaction text */
 "I've just received some Bitcoin using Hive" = "Olen juuri saanut Bitcoineja käyttäen Hivea";
@@ -170,6 +182,9 @@
 /* Backup is outdated, last backup was on that date */
 "No backup since %@" = "Ei varmuuskopiota %@ jälkeen";
 
+/* No backups enabled notification title */
+"No backups configured" = "No backups configured";
+
 /* Transaction failed alert message */
 "No Bitcoin have been taken from your wallet." = "Bitcoineja ei otettu lompakostasi.";
 
@@ -199,9 +214,6 @@
 
 /* Quit anyway button title */
 "Quit anyway" = "Lopeta siitä huolimatta";
-
-/* Quit without saves error question info */
-"Quitting now will lose any changes you have made since the last successful save" = "Jos lopetat nyt menetät muutokset, jotka olet tehnyt edellisen tallennuksen jälkeen";
 
 /* Received amount of BTC from unknown source */
 "Received &a" = "Vastaanotettu &a";
@@ -239,6 +251,12 @@
 /* Install app popup warning message when app exists */
 "The existing app file will be replaced by the new version. This will not affect any app settings or saved data." = "Olemassaoleva sovelluskansio korvataan uudella versiolla. Tämä ei vaikuta sovelluksen asetuksiin tai tallennettuihin tietoihin.";
 
+/* Hiveapp file not readable error details */
+"The file is damaged or does not contain a Hive application." = "The file is damaged or does not contain a Hive application.";
+
+/* Sending dust alert message */
+"This amount is too low to be sent through the network." = "This amount is too low to be sent through the network.";
+
 /* Alert details when transaction was cancelled */
 "This can happen because of bugs in the wallet code or because the transaction was rejected by the network." = "Tämä voi tapahtua johtuen lompakkokoodissa olevista bugeista tai verkosto on hylännyt transaktion.";
 
@@ -254,8 +272,14 @@
 /* Backup error message */
 "Time Machine is disabled in System Preferences" = "Time Machine on estetty kohteessa System Preferences";
 
+/* No backups enabled notification details */
+"To protect your bitcoins, it's recommended that you enable at least one type of backup." = "To protect your bitcoins, it's recommended that you enable at least one type of backup.";
+
 /* Amount exceeds available balance alert message */
 "To send this transaction, you'll need to wait for your pending transactions to be confirmed first (this shouldn't take more than a few minutes)." = "Lähettääksesi tämän transaktion sinun täytyy odottaa, että vahvistamaton transaktiosi vahvistetaan (tämän ei pitäisi kestää muutamaa minuuttia pitempään).";
+
+/* Message when trying to start an app that requires a newer API level. */
+"To use the app, please update to the latest version of Hive." = "To use the app, please update to the latest version of Hive.";
 
 /* Notification of cancelled transaction */
 "Transaction cancelled" = "Transaktio peruttu";
@@ -287,9 +311,6 @@
 /* Button to show info about pending funds */
 "What does this mean?" = "Mitä tämä tarkoittaa?";
 
-/* Sending zero bitcoin alert message */
-"Why would you want to send someone 0 BTC?" = "Miksi haluaisit lähettää jollekin 0 BTC?";
-
 /* Details of an alert when trying to send more than you have */
 "You cannot send more money than you own." = "Et voi lähettää enempää rahaa kuin sinulla on.";
 
@@ -319,3 +340,6 @@
 
 /* Cancel editing alert message */
 "Your changes won't be saved." = "Your changes won't be saved.";
+
+/* Sync in progress alert details */
+"Your pending transactions won't be confirmed until the sync is complete." = "Your pending transactions won't be confirmed until the sync is complete.";

@@ -1,4 +1,7 @@
 
+/* Body for feedback emails */
+"(Please write in English if possible.)" = "(Please write in English if possible.)";
+
 /* Address field placeholder */
 "Address" = "Adress";
 
@@ -7,6 +10,9 @@
 
 /* Anonymous username for profile page */
 "Anonymous" = "Anonym";
+
+/* Message when trying to start an app that requires a newer API level. */
+"App requires a newer version of Hive." = "App requires a newer version of Hive.";
 
 /* App load error title */
 "Application can't be loaded" = "Programmet kan inte laddas";
@@ -26,9 +32,6 @@
 /* Backup status: backup can't or won't be completed */
 "Backup error" = "Fel i säkerhetskopiering";
 
-/* Notification of failed backup */
-"Backup failed" = "Säkerhetskopiering misslyckades";
-
 /* No comment provided by engineer. */
 "Backup hasn't been done yet" = "Säkerhetskopieringen har inte blivit färdig än";
 
@@ -37,6 +40,12 @@
 
 /* Backup status: backup done but not updated recently */
 "Backup problem" = "Problem med säkerhetskopiering";
+
+/* initialization error */
+"Bitcoin network data file could not be opened - another instance of Hive might still be running." = "Bitcoin network data file could not be opened - another instance of Hive might still be running.";
+
+/* Chain file unreadable error title */
+"Bitcoin network data file could not be opened." = "Bitcoin network data file could not be opened.";
 
 /* Backup error message */
 "Can't create a directory to store the wallet backup" = "Går inte att skapa en mapp för att lagra plånbokens säkerhetskopia";
@@ -70,12 +79,6 @@
 
 /* initialization error */
 "Could not read wallet file. It might be damaged." = "Kan inte läsa plånboskfilen. Filen kan vara skadad.";
-
-/* Quit without saves error question message */
-"Could not save changes while quitting. Quit anyway?" = "Gick inte att spara ändringar vid avslutning. Vill du ändå avsluta?";
-
-/* initialization error */
-"Could not write wallet file. Another instance of Hive might still be running." = "Gick inte att skriva till plånboksfilen. En en annan instans av Hive kanske fortfarande körs.";
 
 /* Disable backup button title */
 "Disable" = "Inaktivera";
@@ -122,6 +125,9 @@
 /* Firstname field placeholder */
 "Firstname" = "Förnamn";
 
+/* Hiveapp file not readable error title */
+"Hive application file \"%@\" could not be opened." = "Hive application file \"%@\" could not be opened.";
+
 /* Initialization error title */
 "Hive cannot be started." = "Hive kan inte köras.";
 
@@ -130,6 +136,12 @@
 
 /* Backup error message */
 "Hive directory is excluded from Time Machine backup" = "Hive-katalog är exkluderad från Time Machines säkerhetskopia";
+
+/* Sync in progress alert title */
+"Hive is currently syncing with the Bitcoin network. Are you sure you want to quit?" = "Hive is currently syncing with the Bitcoin network. Are you sure you want to quit?";
+
+/* Chain file unreadable error explanation */
+"Hive will now delete the file and synchronize with the Bitcoin network again. Please leave Hive open for the next several minutes, and try not to send any transactions right now." = "Hive will now delete the file and synchronize with the Bitcoin network again. Please leave Hive open for the next several minutes, and try not to send any transactions right now.";
 
 /* Share sent transaction text */
 "I've just received some Bitcoin using Hive" = "Jag mottog precis Bitcoins med Hive";
@@ -170,6 +182,9 @@
 /* Backup is outdated, last backup was on that date */
 "No backup since %@" = "Ingen säkerhetskopia sedan %@";
 
+/* No backups enabled notification title */
+"No backups configured" = "No backups configured";
+
 /* Transaction failed alert message */
 "No Bitcoin have been taken from your wallet." = "Inga Bitcoins har blivit tagna från din plånbok.";
 
@@ -199,9 +214,6 @@
 
 /* Quit anyway button title */
 "Quit anyway" = "Avsluta ändå";
-
-/* Quit without saves error question info */
-"Quitting now will lose any changes you have made since the last successful save" = "Alla ändringar efter senast lyckad lagring kommer att förloas om du avslutar nu";
 
 /* Received amount of BTC from unknown source */
 "Received &a" = "Mottaget &a";
@@ -239,6 +251,12 @@
 /* Install app popup warning message when app exists */
 "The existing app file will be replaced by the new version. This will not affect any app settings or saved data." = "Nuvarande app-fil kommer att bli ersatt med en ny version. Detta kommer inte påverka några inställningar eller sparade uppgifter..";
 
+/* Hiveapp file not readable error details */
+"The file is damaged or does not contain a Hive application." = "The file is damaged or does not contain a Hive application.";
+
+/* Sending dust alert message */
+"This amount is too low to be sent through the network." = "This amount is too low to be sent through the network.";
+
 /* Alert details when transaction was cancelled */
 "This can happen because of bugs in the wallet code or because the transaction was rejected by the network." = "Detta kan hända på grund av en bugg i plånbokskoden eller att en transaktion blev avvisad av nätverket.";
 
@@ -254,8 +272,14 @@
 /* Backup error message */
 "Time Machine is disabled in System Preferences" = "Time Machine är avvaktiverad Systeminställningar";
 
+/* No backups enabled notification details */
+"To protect your bitcoins, it's recommended that you enable at least one type of backup." = "To protect your bitcoins, it's recommended that you enable at least one type of backup.";
+
 /* Amount exceeds available balance alert message */
 "To send this transaction, you'll need to wait for your pending transactions to be confirmed first (this shouldn't take more than a few minutes)." = "För att skicka denna transaktion, måste du vänta att dina avvaktande transaktioner blir bekräftade först (Det bör inte ta mer än några minuter).";
+
+/* Message when trying to start an app that requires a newer API level. */
+"To use the app, please update to the latest version of Hive." = "To use the app, please update to the latest version of Hive.";
 
 /* Notification of cancelled transaction */
 "Transaction cancelled" = "Transaktion avbryten";
@@ -287,9 +311,6 @@
 /* Button to show info about pending funds */
 "What does this mean?" = "Vad betyder detta?";
 
-/* Sending zero bitcoin alert message */
-"Why would you want to send someone 0 BTC?" = "Varför skulle du vilja skicka någon 0 BTC?";
-
 /* Details of an alert when trying to send more than you have */
 "You cannot send more money than you own." = "Du kan inte skcika mer pengar än vad du äger.";
 
@@ -319,3 +340,6 @@
 
 /* Cancel editing alert message */
 "Your changes won't be saved." = "Your changes won't be saved.";
+
+/* Sync in progress alert details */
+"Your pending transactions won't be confirmed until the sync is complete." = "Your pending transactions won't be confirmed until the sync is complete.";

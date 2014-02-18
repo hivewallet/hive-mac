@@ -5,14 +5,11 @@
 /* Class = "NSTextFieldCell"; title = "Date"; ObjectID = "41"; */
 "41.title" = "Date";
 
-/* Class = "NSTextFieldCell"; title = "Looks like you haven't made any transactions yet. Send someone some Bitcoin!"; ObjectID = "54"; */
-"54.title" = "लगता है आप ने अभी तक कोई लेनदेन नहीं किया है . किसी को कुछ बिटकॅाइन भेजें!";
-
-/* Class = "NSButtonCell"; title = "Send Bitcoin"; ObjectID = "55"; */
-"55.title" = "बिटकॅाइन भेजें";
-
 /* Class = "NSTextFieldCell"; title = "You can then use the Send button to send someone money."; ObjectID = "63"; */
 "63.title" = "तब आप पैसे भेजने के लिए सेंड बटन का उपयोग कर सकते है ।";
+
+/* Class = "NSTextFieldCell"; title = "Looks like you haven't made any transactions yet. Send some Bitcoin to your Hive wallet address!"; ObjectID = "Tlv-45-Iq6"; */
+"Tlv-45-Iq6.title" = "Looks like you haven't made any transactions yet. Send some Bitcoin to your Hive wallet address!";
 
 /* Class = "NSTextFieldCell"; title = "PENDING"; ObjectID = "oXJ-Jx-H6s"; */
 "oXJ-Jx-H6s.title" = "PENDING";
