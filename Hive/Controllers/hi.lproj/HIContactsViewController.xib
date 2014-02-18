@@ -171,7 +171,7 @@
                         <size key="offset" width="0.0" height="1"/>
                         <color key="color" red="1" green="0.99997437" blue="0.99999129769999995" alpha="1" colorSpace="calibratedRGB"/>
                     </shadow>
-                    <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="center" title="लगता है आप ने अभी तक कोई संपर्क नहीं जोडा  है पहले जोड़ें और पैसे भेजना शुरू करे" id="123">
+                    <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="center" title="लगता है आप ने अभी तक कोई संपर्क नहीं जोडा है पहले जोड़ें और पैसे भेजना शुरू करे" id="123">
                         <font key="font" size="16" name="Helvetica"/>
                         <color key="textColor" red="0.3291117549" green="0.32910189029999998" blue="0.32910749319999999" alpha="1" colorSpace="calibratedRGB"/>
                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
@@ -183,7 +183,7 @@
                     <constraints>
                         <constraint firstAttribute="height" constant="24" id="6Il-Zc-l24"/>
                     </constraints>
-                    <buttonCell key="cell" type="bevel" title="संपर्क सूची  जोड़े" bezelStyle="regularSquare" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="125" customClass="HIDoneButtonCell">
+                    <buttonCell key="cell" type="bevel" title="संपर्क सूची जोड़े" bezelStyle="regularSquare" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="125" customClass="HIDoneButtonCell">
                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                         <font key="font" metaFont="system"/>
                     </buttonCell>

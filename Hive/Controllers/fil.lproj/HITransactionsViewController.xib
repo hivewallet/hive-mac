@@ -92,7 +92,7 @@
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="14" id="rcX-Bd-5R9"/>
                                                         </constraints>
-                                                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="right" title="Date" id="41">
+                                                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="right" title="Petsa" id="41">
                                                             <font key="font" size="11" name="Helvetica"/>
                                                             <color key="textColor" red="0.6206430196762085" green="0.62070983648300171" blue="0.62056547403335571" alpha="1" colorSpace="calibratedRGB"/>
                                                             <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
