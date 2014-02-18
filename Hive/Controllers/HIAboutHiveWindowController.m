@@ -7,12 +7,14 @@
 //
 
 #import "HIAboutHiveWindowController.h"
+#import "HILicenseInfoPanelController.h"
 
 @interface HIAboutHiveWindowController ()
 
 @property (strong) IBOutlet NSTextView *creditsBox;
 @property (weak) IBOutlet NSTextField *versionField;
 @property (weak) IBOutlet NSTextField *copyrightField;
+@property (strong) HILicenseInfoPanelController *licenseInfoPanel;
 
 @end
 
@@ -40,6 +42,14 @@
     NSData *creditsFile = [NSData dataWithContentsOfFile:[bundle pathForResource:@"Credits" ofType:@"rtf"]];
     NSAttributedString *credits = [[NSAttributedString alloc] initWithRTF:creditsFile documentAttributes:nil];
     [self.creditsBox.textStorage setAttributedString:credits];
+}
+
+- (IBAction)showLicenseInfo:(id)sender {
+    if (!self.licenseInfoPanel) {
+        self.licenseInfoPanel = [HILicenseInfoPanelController new];
+    }
+
+    [self.licenseInfoPanel showWindow:sender];
 }
 
 @end

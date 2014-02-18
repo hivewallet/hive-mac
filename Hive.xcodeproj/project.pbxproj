@@ -68,6 +68,9 @@
 		5830769618B38DA20017084A /* HICameraWindowController.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5830769818B38DA20017084A /* HICameraWindowController.strings */; };
 		583076BF18B3C8220017084A /* HIAboutHiveWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 583076BD18B3C8220017084A /* HIAboutHiveWindowController.m */; };
 		583076C018B3C8220017084A /* HIAboutHiveWindowController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 583076BE18B3C8220017084A /* HIAboutHiveWindowController.xib */; };
+		583076C418B3CFDC0017084A /* HILicenseInfoPanelController.m in Sources */ = {isa = PBXBuildFile; fileRef = 583076C218B3CFDB0017084A /* HILicenseInfoPanelController.m */; };
+		583076C518B3CFDC0017084A /* HILicenseInfoPanelController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 583076C318B3CFDB0017084A /* HILicenseInfoPanelController.xib */; };
+		583076C718B3D1260017084A /* Licenses.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 583076C618B3D1260017084A /* Licenses.rtf */; };
 		583B1DD118620BA800817EF8 /* HILogFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = 583B1DD018620BA800817EF8 /* HILogFormatter.m */; };
 		583B1DE41864A32900817EF8 /* HISecureAppStorage.m in Sources */ = {isa = PBXBuildFile; fileRef = 583B1DE31864A32900817EF8 /* HISecureAppStorage.m */; };
 		583B1DED186860EC00817EF8 /* HIBackupCenterWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 583B1DEB186860EC00817EF8 /* HIBackupCenterWindowController.m */; };
@@ -591,6 +594,10 @@
 		583076BC18B3C8220017084A /* HIAboutHiveWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HIAboutHiveWindowController.h; sourceTree = "<group>"; };
 		583076BD18B3C8220017084A /* HIAboutHiveWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HIAboutHiveWindowController.m; sourceTree = "<group>"; };
 		583076BE18B3C8220017084A /* HIAboutHiveWindowController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HIAboutHiveWindowController.xib; sourceTree = "<group>"; };
+		583076C118B3CFDB0017084A /* HILicenseInfoPanelController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HILicenseInfoPanelController.h; sourceTree = "<group>"; };
+		583076C218B3CFDB0017084A /* HILicenseInfoPanelController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HILicenseInfoPanelController.m; sourceTree = "<group>"; };
+		583076C318B3CFDB0017084A /* HILicenseInfoPanelController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HILicenseInfoPanelController.xib; sourceTree = "<group>"; };
+		583076C618B3D1260017084A /* Licenses.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = Licenses.rtf; sourceTree = "<group>"; };
 		5832C527180ECF45002A673F /* de */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = de; path = de.lproj/HIApplicationsViewController.xib; sourceTree = "<group>"; };
 		5832C528180ECF45002A673F /* de */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/HIContactsViewController.strings; sourceTree = "<group>"; };
 		5832C529180ECF45002A673F /* de */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = de; path = de.lproj/HIContactsViewController.xib; sourceTree = "<group>"; };
@@ -2026,6 +2033,9 @@
 				583076BC18B3C8220017084A /* HIAboutHiveWindowController.h */,
 				583076BD18B3C8220017084A /* HIAboutHiveWindowController.m */,
 				583076BE18B3C8220017084A /* HIAboutHiveWindowController.xib */,
+				583076C118B3CFDB0017084A /* HILicenseInfoPanelController.h */,
+				583076C218B3CFDB0017084A /* HILicenseInfoPanelController.m */,
+				583076C318B3CFDB0017084A /* HILicenseInfoPanelController.xib */,
 			);
 			name = HIAboutHiveWindowController;
 			sourceTree = "<group>";
@@ -2381,6 +2391,7 @@
 				D9A591CF1767B4A800502635 /* Hive-Info.plist */,
 				D9A591D51767B4A800502635 /* Hive-Prefix.pch */,
 				D9F8454E1781C509004076F6 /* Icon.icns */,
+				583076C618B3D1260017084A /* Licenses.rtf */,
 				58A37A8C180D747C00CFCDE3 /* Localizable.strings */,
 				D9A591D31767B4A800502635 /* main.m */,
 				581818E117F1A8A800D00770 /* README.md */,
@@ -2669,7 +2680,9 @@
 				588954231889254A00243190 /* HIPasswordInputViewController.strings in Resources */,
 				58A37A98180D7AF000CFCDE3 /* HIApplicationsViewController.xib in Resources */,
 				58A37A9B180D7AF600CFCDE3 /* HIContactsViewController.xib in Resources */,
+				583076C718B3D1260017084A /* Licenses.rtf in Resources */,
 				58571260188F28A70094F884 /* bitstamptrader.hiveapp in Resources */,
+				583076C518B3CFDC0017084A /* HILicenseInfoPanelController.xib in Resources */,
 				58A37AA1180D7B0100CFCDE3 /* HINewContactViewController.xib in Resources */,
 				58A37AA4180D7B0700CFCDE3 /* HIContactInfoViewController.xib in Resources */,
 				58A37AE5180D99F200CFCDE3 /* MainMenu.strings in Resources */,
@@ -2872,6 +2885,7 @@
 				586059BF18041A1300FD9C2A /* NSView+Snapshot.m in Sources */,
 				586059C018041A1300FD9C2A /* SUCodeSigningVerifier+DisableCodeSigningCheck.m in Sources */,
 				586059CB18041A6D00FD9C2A /* HIApplicationRuntimeViewController.m in Sources */,
+				583076C418B3CFDC0017084A /* HILicenseInfoPanelController.m in Sources */,
 				586059CD18041A6D00FD9C2A /* HIApplicationsViewController.m in Sources */,
 				583B1DED186860EC00817EF8 /* HIBackupCenterWindowController.m in Sources */,
 				586059CF18041A6D00FD9C2A /* HIApplicationURLProtocol.m in Sources */,
