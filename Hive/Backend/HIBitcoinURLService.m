@@ -1,13 +1,13 @@
-#import "HIBitcoinUrlService.h"
+#import "HIBitcoinURLService.h"
 
 #import "HIBitcoinURL.h"
 #import "HISendBitcoinsWindowController.h"
 #import "HITemporaryContact.h"
 
-@implementation HIBitcoinUrlService
+@implementation HIBitcoinURLService
 
-+ (HIBitcoinUrlService *)sharedService {
-    static HIBitcoinUrlService *sharedService = nil;
++ (HIBitcoinURLService *)sharedService {
+    static HIBitcoinURLService *sharedService = nil;
     static dispatch_once_t oncePredicate;
 
     dispatch_once(&oncePredicate, ^{
@@ -17,37 +17,37 @@
     return sharedService;
 }
 
-- (BOOL)handleBitcoinUrlString:(NSString *)bitcoinUrlString {
-    HILogDebug(@"Opening bitcoin URL %@", bitcoinUrlString);
+- (BOOL)handleBitcoinURLString:(NSString *)bitcoinURLString {
+    HILogDebug(@"Opening bitcoin URL %@", bitcoinURLString);
 
-    HIBitcoinURL *bitcoinURL = [[HIBitcoinURL alloc] initWithURLString:bitcoinUrlString];
+    HIBitcoinURL *bitcoinURL = [[HIBitcoinURL alloc] initWithURLString:bitcoinURLString];
     HILogDebug(@"Parsed URL as %@", bitcoinURL);
 
     if (bitcoinURL.valid) {
         HIAppDelegate *appDelegate = [NSApplication sharedApplication].delegate;
         HISendBitcoinsWindowController *window = [appDelegate sendBitcoinsWindow];
-        [self applyUrl:bitcoinURL toSendWindow:window];
+        [self applyURL:bitcoinURL toSendWindow:window];
         [window showWindow:self];
     }
 
     return bitcoinURL.valid;
 }
 
-- (BOOL)applyUrlString:(NSString *)bitcoinUrlString toSendWindow:(HISendBitcoinsWindowController *)window {
-    HIBitcoinURL *bitcoinURL = [[HIBitcoinURL alloc] initWithURLString:bitcoinUrlString];
-    HILogDebug(@"Parsed URL as %@", bitcoinUrlString);
+- (BOOL)applyURLString:(NSString *)bitcoinURLString toSendWindow:(HISendBitcoinsWindowController *)window {
+    HIBitcoinURL *bitcoinURL = [[HIBitcoinURL alloc] initWithURLString:bitcoinURLString];
+    HILogDebug(@"Parsed URL as %@", bitcoinURLString);
 
     if (bitcoinURL.valid) {
-        [self applyUrl:bitcoinURL toSendWindow:window];
+        [self applyURL:bitcoinURL toSendWindow:window];
     }
 
     return bitcoinURL.valid;
 }
 
-- (void)applyUrl:(HIBitcoinURL *)bitcoinURL toSendWindow:(HISendBitcoinsWindowController *)window {
+- (void)applyURL:(HIBitcoinURL *)bitcoinURL toSendWindow:(HISendBitcoinsWindowController *)window {
     if (bitcoinURL.address) {
         if (bitcoinURL.label) {
-            id<HIPerson> contact = [self createContactForUrl:bitcoinURL];
+            id<HIPerson> contact = [self createContactForURL:bitcoinURL];
             [window selectContact:contact address:contact.addresses.anyObject];
             [window lockAddress];
         } else {
@@ -60,7 +60,7 @@
     }
 }
 
-- (id<HIPerson>)createContactForUrl:(HIBitcoinURL *)bitcoinURL {
+- (id<HIPerson>)createContactForURL:(HIBitcoinURL *)bitcoinURL {
     return [[HITemporaryContact alloc] initWithName:bitcoinURL.label address:bitcoinURL.address];
 }
 

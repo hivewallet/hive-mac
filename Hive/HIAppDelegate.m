@@ -22,7 +22,7 @@
 #import "HIApplicationURLProtocol.h"
 #import "HIBackupCenterWindowController.h"
 #import "HIBackupManager.h"
-#import "HIBitcoinUrlService.h"
+#import "HIBitcoinURLService.h"
 #import "HICameraWindowController.h"
 #import "HIDatabaseManager.h"
 #import "HIDebuggingInfoWindowController.h"
@@ -366,7 +366,7 @@ static int ddLogLevel = LOG_LEVEL_VERBOSE;
     NSString *URLString = [[event paramDescriptorForKeyword:keyDirectObject] stringValue];
     // run this asynchronously, in case the app is still launching and UI is not fully set up yet
     dispatch_async(dispatch_get_main_queue(), ^{
-        [[HIBitcoinUrlService sharedService] handleBitcoinUrlString:URLString];
+        [[HIBitcoinURLService sharedService] handleBitcoinURLString:URLString];
     });
 }
 

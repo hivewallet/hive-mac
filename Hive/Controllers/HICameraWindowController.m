@@ -1,6 +1,6 @@
 #import "HICameraWindowController.h"
 
-#import "HIBitcoinUrlService.h"
+#import "HIBitcoinURLService.h"
 #import "ZXLuminanceSource.h"
 
 #import <QTKit/QTkit.h>
@@ -147,7 +147,7 @@ static const NSTimeInterval SCAN_INTERVAL = .25;
     if (delegate) {
         success = [delegate cameraWindowController:self didScanQRCodeURL:scannedQRCode];
     } else {
-        success = [[HIBitcoinUrlService sharedService] handleBitcoinUrlString:scannedQRCode];
+        success = [[HIBitcoinURLService sharedService] handleBitcoinURLString:scannedQRCode];
     }
     if (success) {
         [self.captureSession stopRunning];

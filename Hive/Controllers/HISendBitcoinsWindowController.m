@@ -11,7 +11,7 @@
 #import "BCClient.h"
 #import "HIAddress.h"
 #import "HIBitcoinFormatService.h"
-#import "HIBitcoinUrlService.h"
+#import "HIBitcoinURLService.h"
 #import "HIButtonWithSpinner.h"
 #import "HICameraWindowController.h"
 #import "HIContactAutocompleteWindowController.h"
@@ -823,7 +823,7 @@ NSString * const HISendBitcoinsWindowSuccessKey = @"success";
 
 - (BOOL)cameraWindowController:(HICameraWindowController *)cameraWindowController
               didScanQRCodeURL:(NSString *)QRCodeURL {
-    return [[HIBitcoinUrlService sharedService] applyUrlString:QRCodeURL
+    return [[HIBitcoinURLService sharedService] applyURLString:QRCodeURL
                                                   toSendWindow:self];
 }
 

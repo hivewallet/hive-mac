@@ -15,15 +15,15 @@
 
 - (void)sendSupportEmail {
 
-    NSString *escapedTo = [self escapeForUrl:@"macsupport@hivewallet.com"];
-    NSString *escapedSubject = [self escapeForUrl:[self createSubject]];
-    NSString *escapedBody = [self escapeForUrl:[self createBody]];
+    NSString *escapedTo = [self escapeForURL:@"macsupport@hivewallet.com"];
+    NSString *escapedSubject = [self escapeForURL:[self createSubject]];
+    NSString *escapedBody = [self escapeForURL:[self createBody]];
 
     NSString *url = [NSString stringWithFormat:@"mailto:%@?subject=%@&body=%@", escapedTo, escapedSubject, escapedBody];
     [[NSWorkspace sharedWorkspace] openURL:[NSURL URLWithString:url]];
 }
 
-- (NSString *)escapeForUrl:(NSString *)body {
+- (NSString *)escapeForURL:(NSString *)body {
     return [body stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
 }
 
