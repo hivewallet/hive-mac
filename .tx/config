@@ -128,3 +128,9 @@ source_file = Hive/Controllers/en.lproj/HIWizardWelcomeViewController.strings
 source_lang = en
 type = STRINGS
 
+[hive-osx.HICameraWindowController]
+file_filter = Hive/Controllers/<lang>.lproj/HICameraWindowController.strings
+source_file = Hive/Controllers/en.lproj/HICameraWindowController.strings
+source_lang = en
+type = STRINGS
+
