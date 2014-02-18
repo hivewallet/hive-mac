@@ -189,18 +189,18 @@
             <rect key="frame" x="0.0" y="0.0" width="323" height="510"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="53">
+                <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="8f9-pc-9qT">
                     <rect key="frame" x="60" y="241" width="204" height="80"/>
                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <constraints>
-                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="80" id="Q8o-Z0-kU7"/>
-                        <constraint firstAttribute="width" constant="200" id="zPe-fV-kAD"/>
+                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="80" id="Btu-9E-9FJ"/>
+                        <constraint firstAttribute="width" constant="200" id="SjX-Eq-lUN"/>
                     </constraints>
                     <shadow key="shadow">
                         <size key="offset" width="0.0" height="1"/>
                         <color key="color" red="1" green="0.99997437" blue="0.99999129769999995" alpha="1" colorSpace="calibratedRGB"/>
                     </shadow>
-                    <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="center" title="يبدوا انك لم تقم بأى معاملات حتى الأن أرسل بعض البيتكوين الى شخص ما" id="54">
+                    <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="center" title="Looks like you haven't made any transactions yet. Send some Bitcoin to your Hive wallet address!" id="Tlv-45-Iq6">
                         <font key="font" size="15" name="Helvetica"/>
                         <color key="textColor" red="0.3291117549" green="0.32910189029999998" blue="0.32910749319999999" alpha="1" colorSpace="calibratedRGB"/>
                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
@@ -235,13 +235,13 @@
             <constraints>
                 <constraint firstItem="68" firstAttribute="top" secondItem="50" secondAttribute="top" constant="90" id="2Lz-Lz-8Jx"/>
                 <constraint firstItem="1zA-19-rkA" firstAttribute="leading" secondItem="50" secondAttribute="leading" constant="40" id="4SV-Ga-FBo"/>
-                <constraint firstAttribute="centerX" secondItem="53" secondAttribute="centerX" id="78B-uO-cKV"/>
+                <constraint firstItem="1zA-19-rkA" firstAttribute="top" secondItem="8f9-pc-9qT" secondAttribute="bottom" constant="30" id="4Y9-mR-9ZE"/>
                 <constraint firstAttribute="centerX" secondItem="68" secondAttribute="centerX" id="PgA-0q-m7O"/>
+                <constraint firstItem="8f9-pc-9qT" firstAttribute="top" secondItem="68" secondAttribute="bottom" constant="35" id="Psd-9b-5Cq"/>
+                <constraint firstAttribute="centerX" secondItem="8f9-pc-9qT" secondAttribute="centerX" id="VSP-vo-Vpz"/>
                 <constraint firstAttribute="trailing" secondItem="1zA-19-rkA" secondAttribute="trailing" constant="40" id="evQ-DO-GY4"/>
                 <constraint firstItem="56" firstAttribute="top" secondItem="1zA-19-rkA" secondAttribute="bottom" constant="30" id="fd5-Uw-EsO"/>
                 <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="56" secondAttribute="bottom" constant="50" id="iRO-dK-7m7"/>
-                <constraint firstItem="1zA-19-rkA" firstAttribute="top" secondItem="53" secondAttribute="bottom" constant="30" id="iVk-Mb-DB1"/>
-                <constraint firstItem="53" firstAttribute="top" secondItem="68" secondAttribute="bottom" constant="35" id="onT-07-2WQ"/>
                 <constraint firstAttribute="centerX" secondItem="56" secondAttribute="centerX" constant="0.5" id="pf6-iw-mXO"/>
             </constraints>
             <connections>
