@@ -100,9 +100,16 @@ static int ddLogLevel = LOG_LEVEL_VERBOSE;
                                                  name:NSWindowWillCloseNotification
                                                object:nil];
 
+    [self configureMenu];
     [self preinstallAppsIfNeeded];
     [self rebuildTransactionListIfNeeded];
     [self updateLastVersionKey];
+}
+
+- (void)configureMenu {
+    NSArray *mainMenuItems = [[NSApp mainMenu] itemArray];
+    NSMenu *helpMenu = [[mainMenuItems lastObject] submenu];
+    [NSApp setHelpMenu:helpMenu];
 }
 
 - (void)configureLoggers {
