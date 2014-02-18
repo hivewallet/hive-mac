@@ -16,6 +16,7 @@
 #import <WebKit/WebKit.h>
 
 #import "BCClient.h"
+#import "HIAboutHiveWindowController.h"
 #import "HIAppDelegate.h"
 #import "HIApplicationsManager.h"
 #import "HIApplicationsViewController.h"
@@ -495,6 +496,10 @@ void handleException(NSException *exception) {
 
 - (IBAction)showBackupCenter:(id)sender {
     [self openPopupWindowWithClass:[HIBackupCenterWindowController class]];
+}
+
+- (IBAction)showAboutWindow:(id)sender {
+    [self openPopupWindowWithClass:[HIAboutHiveWindowController class]];
 }
 
 - (IBAction)scanQRCode:(id)sender {

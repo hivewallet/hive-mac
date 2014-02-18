@@ -66,6 +66,8 @@
 		582C7DAB185273D400126C10 /* HIApplicationRuntimeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 582C7DAA185273D400126C10 /* HIApplicationRuntimeViewController.xib */; };
 		5830767718B38D4B0017084A /* HICameraWindowController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5830767918B38D4B0017084A /* HICameraWindowController.xib */; };
 		5830769618B38DA20017084A /* HICameraWindowController.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5830769818B38DA20017084A /* HICameraWindowController.strings */; };
+		583076BF18B3C8220017084A /* HIAboutHiveWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 583076BD18B3C8220017084A /* HIAboutHiveWindowController.m */; };
+		583076C018B3C8220017084A /* HIAboutHiveWindowController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 583076BE18B3C8220017084A /* HIAboutHiveWindowController.xib */; };
 		583B1DD118620BA800817EF8 /* HILogFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = 583B1DD018620BA800817EF8 /* HILogFormatter.m */; };
 		583B1DE41864A32900817EF8 /* HISecureAppStorage.m in Sources */ = {isa = PBXBuildFile; fileRef = 583B1DE31864A32900817EF8 /* HISecureAppStorage.m */; };
 		583B1DED186860EC00817EF8 /* HIBackupCenterWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 583B1DEB186860EC00817EF8 /* HIBackupCenterWindowController.m */; };
@@ -586,6 +588,9 @@
 		583076B018B38DB70017084A /* pt-BR */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-BR"; path = "pt-BR.lproj/HICameraWindowController.strings"; sourceTree = "<group>"; };
 		583076B118B38DB80017084A /* ro */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ro; path = ro.lproj/HICameraWindowController.strings; sourceTree = "<group>"; };
 		583076B218B38DB80017084A /* hu */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = hu; path = hu.lproj/HICameraWindowController.strings; sourceTree = "<group>"; };
+		583076BC18B3C8220017084A /* HIAboutHiveWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HIAboutHiveWindowController.h; sourceTree = "<group>"; };
+		583076BD18B3C8220017084A /* HIAboutHiveWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HIAboutHiveWindowController.m; sourceTree = "<group>"; };
+		583076BE18B3C8220017084A /* HIAboutHiveWindowController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HIAboutHiveWindowController.xib; sourceTree = "<group>"; };
 		5832C527180ECF45002A673F /* de */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = de; path = de.lproj/HIApplicationsViewController.xib; sourceTree = "<group>"; };
 		5832C528180ECF45002A673F /* de */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/HIContactsViewController.strings; sourceTree = "<group>"; };
 		5832C529180ECF45002A673F /* de */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = de; path = de.lproj/HIContactsViewController.xib; sourceTree = "<group>"; };
@@ -2015,6 +2020,16 @@
 			path = Formatters;
 			sourceTree = "<group>";
 		};
+		583076B918B3C7F40017084A /* HIAboutHiveWindowController */ = {
+			isa = PBXGroup;
+			children = (
+				583076BC18B3C8220017084A /* HIAboutHiveWindowController.h */,
+				583076BD18B3C8220017084A /* HIAboutHiveWindowController.m */,
+				583076BE18B3C8220017084A /* HIAboutHiveWindowController.xib */,
+			);
+			name = HIAboutHiveWindowController;
+			sourceTree = "<group>";
+		};
 		583B1DE7186860C600817EF8 /* HIBackupCenterWindowController */ = {
 			isa = PBXGroup;
 			children = (
@@ -2416,6 +2431,7 @@
 		D9A592181768442000502635 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				583076B918B3C7F40017084A /* HIAboutHiveWindowController */,
 				D95929D617742ABB008B4F43 /* HIApplicationsViewController */,
 				583B1DE7186860C600817EF8 /* HIBackupCenterWindowController */,
 				24E2C7C4189D93EB008E17CC /* HICameraWindowController */,
@@ -2728,6 +2744,7 @@
 				5830767718B38D4B0017084A /* HICameraWindowController.xib in Resources */,
 				58605A5E18041D0A00FD9C2A /* icon-your-profile__inactive.pdf in Resources */,
 				589064AE1805742C0082BE5C /* seansoutpost.hiveapp in Resources */,
+				583076C018B3C8220017084A /* HIAboutHiveWindowController.xib in Resources */,
 				1AA10ECC39D33A1362882EB2 /* HIProfileViewController.strings in Resources */,
 				1AA101EED53C9E95085C6DE3 /* HIProfileViewController.xib in Resources */,
 			);
@@ -2851,6 +2868,7 @@
 				586059B4180419F500FD9C2A /* BCClient.m in Sources */,
 				586059BD18041A1300FD9C2A /* NSColor+Hive.m in Sources */,
 				586059BE18041A1300FD9C2A /* NSImage+NPEffects.m in Sources */,
+				583076BF18B3C8220017084A /* HIAboutHiveWindowController.m in Sources */,
 				586059BF18041A1300FD9C2A /* NSView+Snapshot.m in Sources */,
 				586059C018041A1300FD9C2A /* SUCodeSigningVerifier+DisableCodeSigningCheck.m in Sources */,
 				586059CB18041A6D00FD9C2A /* HIApplicationRuntimeViewController.m in Sources */,
