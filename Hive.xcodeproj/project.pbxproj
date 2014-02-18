@@ -71,6 +71,7 @@
 		583076C418B3CFDC0017084A /* HILicenseInfoPanelController.m in Sources */ = {isa = PBXBuildFile; fileRef = 583076C218B3CFDB0017084A /* HILicenseInfoPanelController.m */; };
 		583076C518B3CFDC0017084A /* HILicenseInfoPanelController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 583076C318B3CFDB0017084A /* HILicenseInfoPanelController.xib */; };
 		583076C718B3D1260017084A /* Licenses.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 583076C618B3D1260017084A /* Licenses.rtf */; };
+		583076C918B3E8C00017084A /* app-store.hiveapp in Resources */ = {isa = PBXBuildFile; fileRef = 583076C818B3E8C00017084A /* app-store.hiveapp */; };
 		583B1DD118620BA800817EF8 /* HILogFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = 583B1DD018620BA800817EF8 /* HILogFormatter.m */; };
 		583B1DE41864A32900817EF8 /* HISecureAppStorage.m in Sources */ = {isa = PBXBuildFile; fileRef = 583B1DE31864A32900817EF8 /* HISecureAppStorage.m */; };
 		583B1DED186860EC00817EF8 /* HIBackupCenterWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 583B1DEB186860EC00817EF8 /* HIBackupCenterWindowController.m */; };
@@ -598,6 +599,7 @@
 		583076C218B3CFDB0017084A /* HILicenseInfoPanelController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HILicenseInfoPanelController.m; sourceTree = "<group>"; };
 		583076C318B3CFDB0017084A /* HILicenseInfoPanelController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HILicenseInfoPanelController.xib; sourceTree = "<group>"; };
 		583076C618B3D1260017084A /* Licenses.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = Licenses.rtf; sourceTree = "<group>"; };
+		583076C818B3E8C00017084A /* app-store.hiveapp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "app-store.hiveapp"; sourceTree = "<group>"; };
 		5832C527180ECF45002A673F /* de */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = de; path = de.lproj/HIApplicationsViewController.xib; sourceTree = "<group>"; };
 		5832C528180ECF45002A673F /* de */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/HIContactsViewController.strings; sourceTree = "<group>"; };
 		5832C529180ECF45002A673F /* de */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = de; path = de.lproj/HIContactsViewController.xib; sourceTree = "<group>"; };
@@ -2148,6 +2150,7 @@
 		D907A4E317F58F91009B3185 /* Applications */ = {
 			isa = PBXGroup;
 			children = (
+				583076C818B3E8C00017084A /* app-store.hiveapp */,
 				5857126E188F3C480094F884 /* bitpremier.hiveapp */,
 				5857125E188F28A70094F884 /* bitstamptrader.hiveapp */,
 				58E3363918934DCB004D60C3 /* coinbase.hiveapp */,
@@ -2744,6 +2747,7 @@
 				58605A5618041D0A00FD9C2A /* icon-timeline__active.pdf in Resources */,
 				24300BDA18830ACA00FDEF2F /* HIFirstRunWizardWindowController.xib in Resources */,
 				58895405188924FB00243190 /* HIPasswordInputViewController.xib in Resources */,
+				583076C918B3E8C00017084A /* app-store.hiveapp in Resources */,
 				58605A5718041D0A00FD9C2A /* icon-timeline__inactive.pdf in Resources */,
 				58605A5818041D0A00FD9C2A /* icon-transactions-arrow-left.pdf in Resources */,
 				58605A5918041D0A00FD9C2A /* icon-transactions-arrow-right.pdf in Resources */,
