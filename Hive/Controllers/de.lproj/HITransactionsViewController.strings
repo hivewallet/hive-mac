@@ -3,13 +3,13 @@
 "22.title" = "Erhalten";
 
 /* Class = "NSTextFieldCell"; title = "Date"; ObjectID = "41"; */
-"41.title" = "Date";
+"41.title" = "Datum";
 
 /* Class = "NSTextFieldCell"; title = "You can then use the Send button to send someone money."; ObjectID = "63"; */
 "63.title" = "Sie können den Senden-Knopf verwenden, um jemandem Geld zu senden.";
 
 /* Class = "NSTextFieldCell"; title = "Looks like you haven't made any transactions yet. Send some Bitcoin to your Hive wallet address!"; ObjectID = "Tlv-45-Iq6"; */
-"Tlv-45-Iq6.title" = "Looks like you haven't made any transactions yet. Send some Bitcoin to your Hive wallet address!";
+"Tlv-45-Iq6.title" = "Scheinbar haben Sie noch keine Transaktionen getätigt. Senden Sie einige Bitcoin an Ihr Hive wallet.";
 
 /* Class = "NSTextFieldCell"; title = "PENDING"; ObjectID = "oXJ-Jx-H6s"; */
 "oXJ-Jx-H6s.title" = "OFFEN";

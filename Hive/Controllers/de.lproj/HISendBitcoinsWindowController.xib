@@ -338,7 +338,7 @@ Gw
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <textFieldCell key="cell" selectable="YES" sendsActionOnEndEditing="YES" id="dxM-9E-wwb">
                         <font key="font" metaFont="system"/>
-                        <string key="title">Currency exchange rates are provided by BitcoinAverage markets ticker. Bitcoin prices can change quickly, so other apps or sites might show different exchange rates.</string>
+                        <string key="title">Wechselkurse basieren auf dem BitcoinAverage Ticket. Bitcoin Preise ändern sich sehr häufig, deshalb kann es passieren, dass andere Apps oder Dienste einen anderen Wechselkurs darstellen.</string>
                         <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                     </textFieldCell>

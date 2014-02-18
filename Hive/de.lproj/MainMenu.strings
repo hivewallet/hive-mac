@@ -93,10 +93,10 @@
 "GX7-xG-GKH.title" = "Wallet";
 
 /* Class = "NSMenuItem"; title = "Send Feedback…"; ObjectID = "GsI-lc-HhD"; */
-"GsI-lc-HhD.title" = "Send Feedback…";
+"GsI-lc-HhD.title" = "Feedback senden...";
 
 /* Class = "NSMenu"; title = "Help"; ObjectID = "K2u-T2-G1a"; */
-"K2u-T2-G1a.title" = "Help";
+"K2u-T2-G1a.title" = "Hilfe";
 
 /* Class = "NSMenuItem"; title = "Debugging tools..."; ObjectID = "Ue9-mi-gbe"; */
 "Ue9-mi-gbe.title" = "Debug-Tools...";
@@ -105,7 +105,7 @@
 "V0L-sM-c8h.title" = "Backups...";
 
 /* Class = "NSMenuItem"; title = "Help"; ObjectID = "ZUU-kM-x8u"; */
-"ZUU-kM-x8u.title" = "Help";
+"ZUU-kM-x8u.title" = "Hilfe";
 
 /* Class = "NSMenu"; title = "Tools"; ObjectID = "cCx-Ak-fii"; */
 "cCx-Ak-fii.title" = "Werkzeuge";
@@ -120,4 +120,4 @@
 "lLT-53-p4m.title" = "Debug-Info...";
 
 /* Class = "NSMenuItem"; title = "Scan a QR code…"; ObjectID = "vdw-IK-snJ"; */
-"vdw-IK-snJ.title" = "Scan a QR code…";
+"vdw-IK-snJ.title" = "QR Code scannen...";

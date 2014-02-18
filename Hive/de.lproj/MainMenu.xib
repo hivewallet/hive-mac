@@ -157,7 +157,7 @@
                                     <action selector="openCoinMapSite:" target="494" id="Ozv-6D-Aab"/>
                                 </connections>
                             </menuItem>
-                            <menuItem title="Scan a QR code…" id="vdw-IK-snJ">
+                            <menuItem title="QR Code scannen..." id="vdw-IK-snJ">
                                 <modifierMask key="keyEquivalentModifierMask"/>
                                 <connections>
                                     <action selector="scanQRCode:" target="494" id="mEt-Z8-Hrc"/>
@@ -214,11 +214,11 @@
                         </items>
                     </menu>
                 </menuItem>
-                <menuItem title="Help" id="ZUU-kM-x8u" userLabel="Menu Item - Help">
+                <menuItem title="Hilfe" id="ZUU-kM-x8u" userLabel="Menu Item - Help">
                     <modifierMask key="keyEquivalentModifierMask"/>
-                    <menu key="submenu" title="Help" id="K2u-T2-G1a">
+                    <menu key="submenu" title="Hilfe" id="K2u-T2-G1a">
                         <items>
-                            <menuItem title="Send Feedback…" id="GsI-lc-HhD">
+                            <menuItem title="Feedback senden..." id="GsI-lc-HhD">
                                 <modifierMask key="keyEquivalentModifierMask"/>
                                 <connections>
                                     <action selector="sendFeedback:" target="494" id="CqW-xg-URA"/>

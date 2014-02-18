@@ -3,7 +3,7 @@
 "1.title" = "Fehler";
 
 /* Class = "NSTextFieldCell"; placeholderString = "email@domain.com"; ObjectID = "0m5-Xd-7pp"; */
-"0m5-Xd-7pp.placeholderString" = "email@domain.com";
+"0m5-Xd-7pp.placeholderString" = "email@domain.de";
 
 /* Class = "NSTextFieldCell"; title = "Please send us a report to help us fix the problem."; ObjectID = "Cob-tq-o5r"; */
 "Cob-tq-o5r.title" = "Bitte helfen Sie uns das Problem zu beheben, indem Sie uns einen Fehlerbericht schicken.";
@@ -15,7 +15,7 @@
 "Mpx-rH-nUM.title" = "Oh nein, etwas ist schief gelaufen!";
 
 /* Class = "NSTextFieldCell"; title = "Your name (optional)"; ObjectID = "pya-AJ-MPI"; */
-"pya-AJ-MPI.title" = "Your name (optional)";
+"pya-AJ-MPI.title" = "Ihr Name (optional)";
 
 /* Class = "NSButtonCell"; title = "Send"; ObjectID = "tDm-yy-jVS"; */
 "tDm-yy-jVS.title" = "Senden";
@@ -30,4 +30,4 @@
 "xF4-pJ-cQU.title" = "Ein unerwartetes Problem ist in Hive aufgetreten.";
 
 /* Class = "NSTextFieldCell"; title = "Your email (optional)"; ObjectID = "zup-Q6-bK7"; */
-"zup-Q6-bK7.title" = "Your email (optional)";
+"zup-Q6-bK7.title" = "Ihre E-Mail (optional)";

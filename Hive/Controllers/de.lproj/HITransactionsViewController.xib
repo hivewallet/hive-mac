@@ -92,7 +92,7 @@
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="14" id="rcX-Bd-5R9"/>
                                                         </constraints>
-                                                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="right" title="Date" id="41">
+                                                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="right" title="Datum" id="41">
                                                             <font key="font" size="11" name="Helvetica"/>
                                                             <color key="textColor" red="0.6206430196762085" green="0.62070983648300171" blue="0.62056547403335571" alpha="1" colorSpace="calibratedRGB"/>
                                                             <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
@@ -200,7 +200,7 @@
                         <size key="offset" width="0.0" height="1"/>
                         <color key="color" red="1" green="0.99997437" blue="0.99999129769999995" alpha="1" colorSpace="calibratedRGB"/>
                     </shadow>
-                    <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="center" title="Looks like you haven't made any transactions yet. Send some Bitcoin to your Hive wallet address!" id="Tlv-45-Iq6">
+                    <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="center" title="Scheinbar haben Sie noch keine Transaktionen getätigt. Senden Sie einige Bitcoin an Ihr Hive wallet." id="Tlv-45-Iq6">
                         <font key="font" size="15" name="Helvetica"/>
                         <color key="textColor" red="0.3291117549" green="0.32910189029999998" blue="0.32910749319999999" alpha="1" colorSpace="calibratedRGB"/>
                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>

@@ -1,6 +1,6 @@
 
 /* Body for feedback emails */
-"(Please write in English if possible.)" = "(Please write in English if possible.)";
+"(Please write in English if possible.)" = "(Wenn möglich bitte in Englisch.)";
 
 /* Address field placeholder */
 "Address" = "Adresse";
@@ -12,7 +12,7 @@
 "Anonymous" = "Anonym";
 
 /* Message when trying to start an app that requires a newer API level. */
-"App requires a newer version of Hive." = "App requires a newer version of Hive.";
+"App requires a newer version of Hive." = "App benötigt eine neuere Version von Hive.";
 
 /* App load error title */
 "Application can't be loaded" = "Anwendung konnte nicht geladen werden";
@@ -21,7 +21,7 @@
 "Apps" = "Apps";
 
 /* Cancel editing alert title */
-"Are you sure you want to leave this page?" = "Are you sure you want to leave this page?";
+"Are you sure you want to leave this page?" = "Möchten Sie diese Seite wirklich verlassen?";
 
 /* Warning when trying to a large BTC amount (btc, fiat amount and address) */
 "Are you sure you want to send %@ (%@) to %@?" = "Sind Sie sicher, dass Sie %1$@ (%2$@) an %3$@ senden möchten?";
@@ -42,10 +42,10 @@
 "Backup problem" = "Problem beim Backup";
 
 /* initialization error */
-"Bitcoin network data file could not be opened - another instance of Hive might still be running." = "Bitcoin network data file could not be opened - another instance of Hive might still be running.";
+"Bitcoin network data file could not be opened - another instance of Hive might still be running." = "Bitcoin Netzwerk Datei konnte nicht geöffnet werden - Eine weitere Hive Instanz ist eventuell bereits geöffnet.";
 
 /* Chain file unreadable error title */
-"Bitcoin network data file could not be opened." = "Bitcoin network data file could not be opened.";
+"Bitcoin network data file could not be opened." = "Bitcoin Netzwerk Datei konnte nicht geöffnet werden.";
 
 /* Backup error message */
 "Can't create a directory to store the wallet backup" = "Das Verzeichnis für das Backup der Geldbörsen konnte nicht erstellt werden";
@@ -87,7 +87,7 @@
 "Disabled" = "deaktiviert";
 
 /* Confirm leaving a form without saving data */
-"Discard Changes" = "Discard Changes";
+"Discard Changes" = "Änderungen verwerfen";
 
 /* Remove contact alert dialog title */
 "Do you really want to remove %@ from your contact list?" = "Möchtest du %@ wirklich von deiner Liste löschen?";
@@ -126,7 +126,7 @@
 "Firstname" = "Vorname";
 
 /* Hiveapp file not readable error title */
-"Hive application file \"%@\" could not be opened." = "Hive application file \"%@\" could not be opened.";
+"Hive application file \"%@\" could not be opened." = "Hive Anwendungs-Datei \"%@\" konnte nicht geöffnet werden.";
 
 /* Initialization error title */
 "Hive cannot be started." = "Hive konnte nicht gestartet werden.";
@@ -138,10 +138,10 @@
 "Hive directory is excluded from Time Machine backup" = "Das Hive-Verzeichnis wurde vom Time-Machine-Backup ausgeschlossen";
 
 /* Sync in progress alert title */
-"Hive is currently syncing with the Bitcoin network. Are you sure you want to quit?" = "Hive is currently syncing with the Bitcoin network. Are you sure you want to quit?";
+"Hive is currently syncing with the Bitcoin network. Are you sure you want to quit?" = "Hive synchronisiert aktuell mit dem Bitcoin Netzwerk. Wollen Sie Hive wirklich beenden?";
 
 /* Chain file unreadable error explanation */
-"Hive will now delete the file and synchronize with the Bitcoin network again. Please leave Hive open for the next several minutes, and try not to send any transactions right now." = "Hive will now delete the file and synchronize with the Bitcoin network again. Please leave Hive open for the next several minutes, and try not to send any transactions right now.";
+"Hive will now delete the file and synchronize with the Bitcoin network again. Please leave Hive open for the next several minutes, and try not to send any transactions right now." = "Hive wird die Datei nun löschen und erneut mit dem Bitcoin Netzwerk synchronisieren. Bitte lassen Sie Hive für die nächsten Minuten geöffnet und versuchen Sie keine Transaktionen zu tätigen.";
 
 /* Share sent transaction text */
 "I've just received some Bitcoin using Hive" = "Sie haben soeben Bitcoin in Hive erhalten";
@@ -156,7 +156,7 @@
 "It's dangerous to upload unencrypted wallets." = "Unverschlüsselte Geldbörsen hochzuladen ist gefährlich.";
 
 /* Don't leave a form without saving data */
-"Keep Editing" = "Keep Editing";
+"Keep Editing" = "Bearbeitung fortführen";
 
 /* Address caption field placeholder */
 "Label" = "Bezeichnung";
@@ -183,7 +183,7 @@
 "No backup since %@" = "Kein Backup seit %@";
 
 /* No backups enabled notification title */
-"No backups configured" = "No backups configured";
+"No backups configured" = "Keine Backups konfiguriert";
 
 /* Transaction failed alert message */
 "No Bitcoin have been taken from your wallet." = "Aus ihrer Geldbörse wurde kein Bitcoin entfernt.";
@@ -252,10 +252,10 @@
 "The existing app file will be replaced by the new version. This will not affect any app settings or saved data." = "Die bestehende App wird durch die neue Version ersetzt. Dies hat keine Auswirkung auf die Einstellungen und gespeicherten Daten innerhalb der App.";
 
 /* Hiveapp file not readable error details */
-"The file is damaged or does not contain a Hive application." = "The file is damaged or does not contain a Hive application.";
+"The file is damaged or does not contain a Hive application." = "Die Datei ist beschädigt oder beinhaltet keine Hive Anwendung.";
 
 /* Sending dust alert message */
-"This amount is too low to be sent through the network." = "This amount is too low to be sent through the network.";
+"This amount is too low to be sent through the network." = "Der Betrag ist zu niedrig und kann nicht gesendet werden.";
 
 /* Alert details when transaction was cancelled */
 "This can happen because of bugs in the wallet code or because the transaction was rejected by the network." = "Dies kann durch Software-Fehler passieren oder weil die Transaktion vom Netzwork zurückgewiesen wurde.";
@@ -273,13 +273,13 @@
 "Time Machine is disabled in System Preferences" = "Time-Machine ist in den Systemeinstellungen deaktiviert";
 
 /* No backups enabled notification details */
-"To protect your bitcoins, it's recommended that you enable at least one type of backup." = "To protect your bitcoins, it's recommended that you enable at least one type of backup.";
+"To protect your bitcoins, it's recommended that you enable at least one type of backup." = "Es ist empfehlenswert minidestens ein Backup zu erstellen, um Ihre Bitcoins zu schützen.";
 
 /* Amount exceeds available balance alert message */
 "To send this transaction, you'll need to wait for your pending transactions to be confirmed first (this shouldn't take more than a few minutes)." = "Um diese Transaktion zu senden, müssen Sie warten, bis Ihre offenen Transaktionen bestätigt wurden. (Dies sollte wenige Minuten dauern.)";
 
 /* Message when trying to start an app that requires a newer API level. */
-"To use the app, please update to the latest version of Hive." = "To use the app, please update to the latest version of Hive.";
+"To use the app, please update to the latest version of Hive." = "Bitte aktualisieren Sie auf die letzt Version von Hive um diese App nutzen zu können.";
 
 /* Notification of cancelled transaction */
 "Transaction cancelled" = "Transaction abgebrochen";
@@ -339,7 +339,7 @@
 "You've received Bitcoin" = "Sie haben Bitcoin erhalten";
 
 /* Cancel editing alert message */
-"Your changes won't be saved." = "Your changes won't be saved.";
+"Your changes won't be saved." = "Ihre Änderungen werden nicht gespeichert.";
 
 /* Sync in progress alert details */
-"Your pending transactions won't be confirmed until the sync is complete." = "Your pending transactions won't be confirmed until the sync is complete.";
+"Your pending transactions won't be confirmed until the sync is complete." = "Ihre ausstehenden Transaktionen werden nicht bestätigt solange die Synchronisation nicht abgeschlossen ist.";
