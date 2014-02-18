@@ -8,10 +8,8 @@ PODS:
   - CocoaLumberjack/Extensions (1.7.0):
     - CocoaLumberjack/Core
   - FontAwesomeIconFactory (1.3)
-  - FXKeychain (1.4)
   - INAppStoreWindow (1.3)
   - LetsMove (1.9)
-  - NXOAuth2Client (1.2.4)
   - OCHamcrest (3.0.1)
   - ZXingObjC (2.2.3)
 
@@ -20,10 +18,8 @@ DEPENDENCIES:
   - AutoLayoutMacros
   - CocoaLumberjack
   - FontAwesomeIconFactory
-  - FXKeychain
   - INAppStoreWindow
   - LetsMove
-  - NXOAuth2Client
   - OCHamcrest (~> 3.0)
   - ZXingObjC
 
@@ -32,10 +28,8 @@ SPEC CHECKSUMS:
   AutoLayoutMacros: abdc5ab32081d1ea2a984426fe6fa595213d7e5b
   CocoaLumberjack: be87113f649942f020a37c061c58009b6ee5ff68
   FontAwesomeIconFactory: eb4101e952987a817b1f37b73f45cd59acb1a0bb
-  FXKeychain: 649efca683aa602c446620701a46780515d25610
   INAppStoreWindow: 265a8810a450c7d3279fc9f9686bbd563bb78dc5
   LetsMove: a9a34ea5794a765d3caa78497c503e0d231724c6
-  NXOAuth2Client: 4666d0d73ba7689181ef4597e1b1beda3978c724
   OCHamcrest: 782c52ae8c673e5d6060a65005cfd26d20d519ba
   ZXingObjC: 352024760388de6b6241d34844fac59f2a1a6c68
 
