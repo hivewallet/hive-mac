@@ -87,7 +87,8 @@ static const NSTimeInterval CURSOR_HIDE_IDLE_DELAY = 1.0;
 
     [self.window.contentView removeTrackingArea: self.trackingArea];
     self.trackingArea = [[NSTrackingArea alloc] initWithRect:[self.window.contentView bounds]
-                                                     options:NSTrackingMouseEnteredAndExited | NSTrackingActiveAlways
+                                                     options:NSTrackingMouseEnteredAndExited
+                                                         | NSTrackingActiveAlways | NSTrackingMouseMoved
                                                        owner:self
                                                     userInfo:nil];
     [self.window.contentView addTrackingArea:self.trackingArea];
