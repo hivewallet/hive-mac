@@ -23,7 +23,7 @@
                 <rect key="frame" x="0.0" y="0.0" width="533" height="360"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <qtCaptureView toolTip="I'm a QTCaptureView eh?" focusRingType="none" translatesAutoresizingMaskIntoConstraints="NO" id="1dd-Wb-fPW">
+                    <qtCaptureView focusRingType="none" translatesAutoresizingMaskIntoConstraints="NO" id="1dd-Wb-fPW">
                         <rect key="frame" x="0.0" y="60" width="533" height="300"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <constraints>
