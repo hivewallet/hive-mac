@@ -311,8 +311,8 @@ static int ddLogLevel = LOG_LEVEL_VERBOSE;
     if (error.code == kHIBitcoinManagerUnreadableWallet) {
         message = NSLocalizedString(@"Could not read wallet file. It might be damaged.", @"initialization error");
     } else if (error.code == kHIBitcoinManagerBlockStoreLockError) {
-        message = NSLocalizedString(@"Bitcoin network data file could not be opened. "
-                                    @"Another instance of Hive might still be running.",
+        message = NSLocalizedString(@"Bitcoin network data file could not be opened - "
+                                    @"another instance of Hive might still be running.",
                                     @"initialization error");
     } else {
         message = [error localizedFailureReason];

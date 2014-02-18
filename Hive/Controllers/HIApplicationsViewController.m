@@ -85,7 +85,7 @@
 
 - (void)showApiVersionAlert {
     NSAlert *alert = [NSAlert new];
-    alert.messageText = NSLocalizedString(@"App requires a newer version of Hive",
+    alert.messageText = NSLocalizedString(@"App requires a newer version of Hive.",
                                           @"Message when trying to start an app that requires a newer API level.");
     alert.informativeText = NSLocalizedString(@"To use the app, please update to the latest version of Hive.",
                                               @"Message when trying to start an app that requires a newer API level.");
