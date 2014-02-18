@@ -15,7 +15,7 @@
 - (void)awakeFromNib {
     self.addressesBox.addresses = [HIProfile new].addresses.allObjects;
     self.addressesBox.observingWallet = YES;
-    self.addressesBox.showsBarcode = YES;
+    self.addressesBox.showsQRCode = YES;
 }
 
 @end

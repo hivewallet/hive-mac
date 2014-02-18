@@ -490,7 +490,7 @@ void handleException(NSException *exception) {
     [self openPopupWindowWithClass:[HIBackupCenterWindowController class]];
 }
 
-- (IBAction)scanBarcode:(id)sender {
+- (IBAction)scanQRCode:(id)sender {
     [HICameraWindowController sharedCameraWindowController].delegate = nil;
     [[HICameraWindowController sharedCameraWindowController] showWindow:self];
 }

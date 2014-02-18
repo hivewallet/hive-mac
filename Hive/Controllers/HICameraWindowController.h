@@ -3,7 +3,7 @@
 @protocol HICameraWindowControllerDelegate<NSObject>
 
 - (BOOL)cameraWindowController:(HICameraWindowController *)cameraWindowController
-             didScanBarcodeUrl:(NSString *)barcodeUrl;
+              didScanQRCodeURL:(NSString *)QRCodeURL;
 
 @end
 

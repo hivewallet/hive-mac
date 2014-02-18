@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="4514" systemVersion="13C59" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none">
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="4514" systemVersion="13B42" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none">
     <dependencies>
         <deployment version="1070" defaultVersion="1070" identifier="macosx"/>
         <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="4514"/>
@@ -14,7 +14,7 @@
                 <outlet property="footerView" destination="66" id="94"/>
                 <outlet property="lastnameField" destination="23" id="28"/>
                 <outlet property="removeContactButton" destination="96" id="102"/>
-                <outlet property="scanBarcodeButton" destination="ML8-dv-Qq6" id="2Sc-Lp-bt7"/>
+                <outlet property="scanQRCodeButton" destination="ML8-dv-Qq6" id="LOq-aO-Ycg"/>
                 <outlet property="scrollContent" destination="64" id="88"/>
                 <outlet property="scrollView" destination="84" id="92"/>
                 <outlet property="view" destination="1" id="2"/>
@@ -71,7 +71,7 @@
                                         <font key="font" metaFont="system"/>
                                     </buttonCell>
                                     <connections>
-                                        <action selector="scanBarcodeButtonPressed:" target="-2" id="5bz-Zz-E9y"/>
+                                        <action selector="scanQRCodeButtonPressed:" target="-2" id="P6k-1r-pqe"/>
                                     </connections>
                                 </button>
                                 <button wantsLayer="YES" id="96">

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="4514" systemVersion="13C59" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="4514" systemVersion="13B42" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
         <deployment defaultVersion="1070" identifier="macosx"/>
         <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="4514"/>
@@ -7,6 +7,7 @@
     <objects>
         <customObject id="-2" userLabel="File's Owner" customClass="HISendBitcoinsWindowController">
             <connections>
+                <outlet property="QRCodeButton" destination="NBI-47-dFp" id="mVF-r3-mCD"/>
                 <outlet property="addressLabel" destination="21" id="26"/>
                 <outlet property="amountField" destination="36" id="40"/>
                 <outlet property="bitcoinCurrencyPopupButton" destination="u5l-cR-nXn" id="oLd-Li-Te1"/>
@@ -17,7 +18,6 @@
                 <outlet property="feeButton" destination="fQu-xK-vvV" id="aWn-ee-8jl"/>
                 <outlet property="nameLabel" destination="19" id="27"/>
                 <outlet property="photoView" destination="17" id="28"/>
-                <outlet property="qrCodeButton" destination="NBI-47-dFp" id="ZDh-sY-nIh"/>
                 <outlet property="sendButton" destination="9" id="43"/>
                 <outlet property="separator" destination="23" id="48"/>
                 <outlet property="window" destination="1" id="3"/>
@@ -75,6 +75,7 @@ Gw
                         </buttonCell>
                         <connections>
                             <action selector="sendClicked:" target="-2" id="31"/>
+                            <binding destination="-2" name="enabled" keyPath="sendButtonEnabled" id="Hbt-qs-jWd"/>
                         </connections>
                     </button>
                     <box autoresizesSubviews="NO" wantsLayer="YES" boxType="custom" borderType="line" titlePosition="noTitle" translatesAutoresizingMaskIntoConstraints="NO" id="11">
@@ -262,7 +263,7 @@ Gw
                                         <font key="font" metaFont="system"/>
                                     </buttonCell>
                                     <connections>
-                                        <action selector="scanBarcode:" target="-2" id="zQl-tf-1mc"/>
+                                        <action selector="scanQRCode:" target="-2" id="5lY-W6-2zB"/>
                                     </connections>
                                 </button>
                             </subviews>

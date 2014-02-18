@@ -1,12 +1,12 @@
 //
-//  HIBarcodeWindowController.m
+//  HIQRCodeWindowController.m
 //  Hive
 //
 //  Created by Nikolaj Schumacher on 2014-02-09.
 //  Copyright (c) 2014 Hive Developers. All rights reserved.
 //
 
-#import "HIBarcodeWindowController.h"
+#import "HIQRCodeWindowController.h"
 
 #import "NSColor+Hive.h"
 
@@ -14,7 +14,7 @@
 
 static const NSTimeInterval CURSOR_HIDE_IDLE_DELAY = 1.0;
 
-@interface HIBarcodeWindowController ()<NSWindowDelegate>
+@interface HIQRCodeWindowController ()<NSWindowDelegate>
 
 @property (nonatomic, strong) IBOutlet NSImageView *imageView;
 @property (nonatomic, strong) NSTrackingArea *trackingArea;
@@ -22,7 +22,7 @@ static const NSTimeInterval CURSOR_HIDE_IDLE_DELAY = 1.0;
 
 @end
 
-@implementation HIBarcodeWindowController
+@implementation HIQRCodeWindowController
 
 - (id)init {
     return [self initWithWindowNibName:[self className]];
@@ -50,18 +50,18 @@ static const NSTimeInterval CURSOR_HIDE_IDLE_DELAY = 1.0;
     [self.window.contentView removeTrackingArea: self.trackingArea];
 }
 
-- (void)setBarcodeString:(NSString *)barcodeString {
-    _barcodeString = [barcodeString copy];
-    [self updateBarcode];
+- (void)setQRCodeString:(NSString *)QRCodeString {
+    _QRCodeString = [QRCodeString copy];
+    [self updateQRCode];
 }
 
-- (void)updateBarcode {
-    if ([self isWindowLoaded] && self.barcodeString.length) {
+- (void)updateQRCode {
+    if ([self isWindowLoaded] && self.QRCodeString.length) {
         dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
             ZXMultiFormatWriter *writer = [ZXMultiFormatWriter writer];
             CGSize size = self.imageView.bounds.size;
             NSError *error = nil;
-            ZXBitMatrix *result = [writer encode:self.barcodeString
+            ZXBitMatrix *result = [writer encode:self.QRCodeString
                                           format:kBarcodeFormatQRCode
                                            width:size.width
                                           height:size.height
@@ -83,7 +83,7 @@ static const NSTimeInterval CURSOR_HIDE_IDLE_DELAY = 1.0;
 #pragma mark - NSWindowDelegate
 
 - (void)windowDidResize:(NSNotification *)notification {
-    [self updateBarcode];
+    [self updateQRCode];
 
     [self.window.contentView removeTrackingArea: self.trackingArea];
     self.trackingArea = [[NSTrackingArea alloc] initWithRect:[self.window.contentView bounds]

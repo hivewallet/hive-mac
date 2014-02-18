@@ -5,6 +5,6 @@
 
 @property (nonatomic, copy) NSArray *addresses;
 @property (nonatomic, assign) BOOL observingWallet;
-@property (nonatomic, assign) BOOL showsBarcode;
+@property (nonatomic, assign) BOOL showsQRCode;
 
 @end

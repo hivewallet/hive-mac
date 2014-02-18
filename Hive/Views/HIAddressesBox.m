@@ -2,16 +2,16 @@
 
 #import "BCClient.h"
 #import "HIAddress.h"
-#import "HIBarcodeWindowController.h"
 #import "HIBox.h"
 #import "HICopyView.h"
 #import "HIProfile.h"
+#import "HIQRCodeWindowController.h"
 #import "NSColor+Hive.h"
 
 #import <FontAwesomeIconFactory/NIKFontAwesomeIconFactory+OSX.h>
 
 static const NSInteger AddressFieldTag = 2;
-static const double BARCODE_ZOOM_SIZE = 400;
+static const double QR_CODE_ZOOM_SIZE = 400;
 
 static NSString *const KEY_WALLET_HASH = @"walletHash";
 
@@ -19,9 +19,9 @@ static NSString *const KEY_WALLET_HASH = @"walletHash";
 
 @property (nonatomic, strong, readonly) HIBox *box;
 @property (nonatomic, copy, readonly) NSMutableArray *contentViews;
-@property (nonatomic, strong, readonly) NSButton *barcodeButton;
+@property (nonatomic, strong, readonly) NSButton *QRCodeButton;
 @property (nonatomic, strong) NSTrackingArea *trackingArea;
-@property (nonatomic, strong) HIBarcodeWindowController *barcodeWindowController;
+@property (nonatomic, strong) HIQRCodeWindowController *QRCodeWindowController;
 
 @end
 
@@ -42,27 +42,27 @@ static NSString *const KEY_WALLET_HASH = @"walletHash";
         ]];
         _contentViews = [NSMutableArray new];
         [self updateAddresses];
-        [self setUpBarcodeButton];
+        [self setUpQRCodeButton];
     }
 
     return self;
 }
 
-- (void)setUpBarcodeButton {
-    _barcodeButton = [NSButton new];
-    _barcodeButton.bezelStyle = NSSmallSquareBezelStyle;
-    _barcodeButton.translatesAutoresizingMaskIntoConstraints = NO;
+- (void)setUpQRCodeButton {
+    _QRCodeButton = [NSButton new];
+    _QRCodeButton.bezelStyle = NSSmallSquareBezelStyle;
+    _QRCodeButton.translatesAutoresizingMaskIntoConstraints = NO;
     NIKFontAwesomeIconFactory *iconFactory = [NIKFontAwesomeIconFactory new];
     iconFactory.size = 14;
-    _barcodeButton.image = [iconFactory createImageForIcon:NIKFontAwesomeIconQrcode];
-    _barcodeButton.target = self;
-    _barcodeButton.action = @selector(showBarcodeWindow:);
+    _QRCodeButton.image = [iconFactory createImageForIcon:NIKFontAwesomeIconQrcode];
+    _QRCodeButton.target = self;
+    _QRCodeButton.action = @selector(showQRCodeWindow:);
 
-    [self addSubview:_barcodeButton];
-    [_barcodeButton addConstraint:PIN_WIDTH(_barcodeButton, 21)];
-    [_barcodeButton addConstraint:PIN_HEIGHT(_barcodeButton, 21)];
-    [self addConstraint:INSET_BOTTOM(_barcodeButton, 10)];
-    [self addConstraint:INSET_RIGHT(_barcodeButton, 10)];
+    [self addSubview:_QRCodeButton];
+    [_QRCodeButton addConstraint:PIN_WIDTH(_QRCodeButton, 21)];
+    [_QRCodeButton addConstraint:PIN_HEIGHT(_QRCodeButton, 21)];
+    [self addConstraint:INSET_BOTTOM(_QRCodeButton, 10)];
+    [self addConstraint:INSET_RIGHT(_QRCodeButton, 10)];
 }
 
 - (void)dealloc {
@@ -98,7 +98,7 @@ static NSString *const KEY_WALLET_HASH = @"walletHash";
     }
 
     for (NSView *view in self.contentViews) {
-        [self addSubview:view positioned:NSWindowBelow relativeTo:self.barcodeButton];
+        [self addSubview:view positioned:NSWindowBelow relativeTo:self.QRCodeButton];
     }
 
     [self invalidateIntrinsicContentSize];
@@ -237,12 +237,12 @@ static NSString *const KEY_WALLET_HASH = @"walletHash";
 }
 
 - (void)setMouseInside:(BOOL)mouseInside {
-    self.barcodeButton.hidden = !self.showsBarcode || !mouseInside;
+    self.QRCodeButton.hidden = !self.showsQRCode || !mouseInside;
 }
 
-#pragma mark - barcode window
+#pragma mark - QR code window
 
-- (void)showBarcodeWindow:(NSButton *)sender {
+- (void)showQRCodeWindow:(NSButton *)sender {
     NSString *address = [[BCClient sharedClient] walletHash];
     HIProfile *profile = [[HIProfile alloc] init];
     NSString *bitcoinURL;
@@ -255,23 +255,23 @@ static NSString *const KEY_WALLET_HASH = @"walletHash";
         bitcoinURL = [NSString stringWithFormat:@"bitcoin:%@", address];
     }
 
-    self.barcodeWindowController = [HIBarcodeWindowController new];
-    self.barcodeWindowController.barcodeString = bitcoinURL;
-    self.barcodeWindowController.label = address;
+    self.QRCodeWindowController = [HIQRCodeWindowController new];
+    self.QRCodeWindowController.QRCodeString = bitcoinURL;
+    self.QRCodeWindowController.label = address;
 
-    [self zoomBarcodeWindowFromButton:sender];
+    [self zoomQRCodeWindowFromButton:sender];
 }
 
-- (void)zoomBarcodeWindowFromButton:(NSButton *)sender {
+- (void)zoomQRCodeWindowFromButton:(NSButton *)sender {
     CGRect frame = [self.window convertRectToScreen:[sender convertRect:sender.bounds toView:self.window.contentView]];
-    [self.barcodeWindowController.window setFrame:frame
-                                          display:YES
-                                          animate:NO];
-    [self.barcodeWindowController showWindow:nil];
+    [self.QRCodeWindowController.window setFrame:frame
+                                         display:YES
+                                         animate:NO];
+    [self.QRCodeWindowController showWindow:nil];
 
-    [self.barcodeWindowController.window setFrame:CGRectInset(frame, -BARCODE_ZOOM_SIZE * .5, -BARCODE_ZOOM_SIZE * .5)
-                                          display:YES
-                                          animate:YES];
+    [self.QRCodeWindowController.window setFrame:CGRectInset(frame, -QR_CODE_ZOOM_SIZE * .5, -QR_CODE_ZOOM_SIZE * .5)
+                                         display:YES
+                                         animate:YES];
 }
 
 @end

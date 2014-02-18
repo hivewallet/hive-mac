@@ -157,6 +157,12 @@
                                     <action selector="openCoinMapSite:" target="494" id="Ozv-6D-Aab"/>
                                 </connections>
                             </menuItem>
+                            <menuItem title="Scan a QR code…" id="vdw-IK-snJ">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                                <connections>
+                                    <action selector="scanQRCode:" target="494" id="mEt-Z8-Hrc"/>
+                                </connections>
+                            </menuItem>
                             <menuItem title="Informații Debugging..." keyEquivalent="D" id="lLT-53-p4m">
                                 <connections>
                                     <action selector="showDebuggingInfo:" target="-1" id="Exc-Ye-jOL"/>
@@ -166,12 +172,6 @@
                                 <modifierMask key="keyEquivalentModifierMask"/>
                                 <connections>
                                     <action selector="showDebuggingTools:" target="-1" id="s18-1s-iwD"/>
-                                </connections>
-                            </menuItem>
-                            <menuItem title="Scan Barcode…" id="vdw-IK-snJ">
-                                <modifierMask key="keyEquivalentModifierMask"/>
-                                <connections>
-                                    <action selector="scanBarcode:" target="494" id="ktw-J8-B7s"/>
                                 </connections>
                             </menuItem>
                         </items>

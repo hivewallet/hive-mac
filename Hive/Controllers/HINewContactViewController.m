@@ -68,7 +68,7 @@ static NSString * const Separator = @"Separator";
 
     if (_contact && ![_contact canEditAddresses]) {
         [self.addAddressButton setHidden:YES];
-        [self.scanBarcodeButton setHidden:YES];
+        [self.scanQRCodeButton setHidden:YES];
 
         for (NSView *subview in self.footerView.subviews) {
             NSRect frame = subview.frame;
@@ -151,7 +151,7 @@ static NSString * const Separator = @"Separator";
     NIKFontAwesomeIconFactory *iconFactory = [NIKFontAwesomeIconFactory new];
     iconFactory.edgeInsets = NSEdgeInsetsMake(4, 0, 0, 0);
     iconFactory.size = 28;
-    self.scanBarcodeButton.image = [iconFactory createImageForIcon:NIKFontAwesomeIconQrcode];
+    self.scanQRCodeButton.image = [iconFactory createImageForIcon:NIKFontAwesomeIconQrcode];
 }
 
 - (void)trackChangesIn:(NSTextField *)field {
@@ -508,9 +508,9 @@ static NSString * const Separator = @"Separator";
     action();
 }
 
-#pragma mark - barcode
+#pragma mark - QR code
 
-- (IBAction)scanBarcodeButtonPressed:(NSButton *)sender {
+- (IBAction)scanQRCodeButtonPressed:(NSButton *)sender {
     [HICameraWindowController sharedCameraWindowController].delegate = self;
     [[HICameraWindowController sharedCameraWindowController] showWindow:nil];
 }
@@ -525,9 +525,9 @@ static NSString * const Separator = @"Separator";
 #pragma mark - HICameraWindowControllerDelegate
 
 - (BOOL)cameraWindowController:(HICameraWindowController *)cameraWindowController
-             didScanBarcodeUrl:(NSString *)barcodeUrl {
+              didScanQRCodeURL:(NSString *)QRCodeURL {
     _edited = YES;
-    HIBitcoinURL *url = [[HIBitcoinURL alloc] initWithURLString:barcodeUrl];
+    HIBitcoinURL *url = [[HIBitcoinURL alloc] initWithURLString:QRCodeURL];
 
     if (url.valid) {
         [self removeLastPlaceholderIfEmpty];

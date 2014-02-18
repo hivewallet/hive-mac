@@ -105,17 +105,17 @@ static const NSTimeInterval SCAN_INTERVAL = .25;
     return [image imageByApplyingTransform:CGAffineTransformMakeScale(-1, 1)];
 }
 
-#pragma mark - barcode
+#pragma mark - QR code
 
 - (void)processImage:(CIImage *)image {
     if (!self.scanning && [[NSDate new] timeIntervalSinceDate:self.lastScanDate] > SCAN_INTERVAL) {
         self.lastScanDate = [NSDate new];
         self.scanning = YES;
         dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-            NSString *scannedBarcode = [self scanBarcodeInImage:image];
+            NSString *scannedQRCode = [self scanQRCodeInImage:image];
             dispatch_async(dispatch_get_main_queue(), ^{
-                if (scannedBarcode) {
-                    [self finish:scannedBarcode];
+                if (scannedQRCode) {
+                    [self finishScanningWithCode:scannedQRCode];
                 }
                 self.scanning = NO;
             });
@@ -123,7 +123,7 @@ static const NSTimeInterval SCAN_INTERVAL = .25;
     }
 }
 
-- (NSString *)scanBarcodeInImage:(CIImage *)image {
+- (NSString *)scanQRCodeInImage:(CIImage *)image {
 
     NSBitmapImageRep *rep = [[NSBitmapImageRep alloc] initWithCIImage:image];
     CGImageRef imageToDecode = rep.CGImage;
@@ -141,13 +141,13 @@ static const NSTimeInterval SCAN_INTERVAL = .25;
     return result.text;
 }
 
-- (void)finish:(NSString *)scannedBarcode {
+- (void)finishScanningWithCode:(NSString *)scannedQRCode {
     BOOL success;
     id<HICameraWindowControllerDelegate> delegate = self.delegate;
     if (delegate) {
-        success = [delegate cameraWindowController:self didScanBarcodeUrl:scannedBarcode];
+        success = [delegate cameraWindowController:self didScanQRCodeURL:scannedQRCode];
     } else {
-        success = [[HIBitcoinUrlService sharedService] handleBitcoinUrlString:scannedBarcode];
+        success = [[HIBitcoinUrlService sharedService] handleBitcoinUrlString:scannedQRCode];
     }
     if (success) {
         [self.captureSession stopRunning];

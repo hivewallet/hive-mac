@@ -115,7 +115,7 @@ NSString * const HISendBitcoinsWindowSuccessKey = @"success";
 
     self.wrapper.layer.cornerRadius = 5.0;
 
-    [self setUpQrCodeButton];
+    [self setUpQRCodeButton];
     [self setupCurrencyList];
 
     if (_amount) {
@@ -129,12 +129,12 @@ NSString * const HISendBitcoinsWindowSuccessKey = @"success";
     [self updateInterfaceForExchangeRate];
 }
 
-- (void)setUpQrCodeButton {
+- (void)setUpQRCodeButton {
     NIKFontAwesomeIconFactory *iconFactory = [NIKFontAwesomeIconFactory new];
     iconFactory.padded = YES;
     iconFactory.size = 14;
     iconFactory.edgeInsets = NSEdgeInsetsMake(2, 0, 0, 0);
-    self.qrCodeButton.image = [iconFactory createImageForIcon:NIKFontAwesomeIconQrcode];
+    self.QRCodeButton.image = [iconFactory createImageForIcon:NIKFontAwesomeIconQrcode];
 }
 
 - (void)setupCurrencyList {
@@ -215,7 +215,7 @@ NSString * const HISendBitcoinsWindowSuccessKey = @"success";
     self.nameLabel.stringValue = contact.name;
     self.addressLabel.stringValue = address.addressWithCaption ?: @"";
     self.photoView.image = _contact.avatarImage;
-    [self setBarcodeScanningEnabled:NO];
+    [self setQRCodeScanningEnabled:NO];
 
     [self.window makeFirstResponder:nil];
 }
@@ -647,7 +647,7 @@ NSString * const HISendBitcoinsWindowSuccessKey = @"success";
     } else if (notification.object == self.convertedAmountField) {
         [self updateAmountFromConvertedAmount];
     } else {
-        [self setBarcodeScanningEnabled:self.nameLabel.stringValue.length == 0];
+        [self setQRCodeScanningEnabled:self.nameLabel.stringValue.length == 0];
         [self clearContact];
         [self startAutocompleteForCurrentQuery];
         [self updateSendButtonEnabled];
@@ -798,15 +798,15 @@ NSString * const HISendBitcoinsWindowSuccessKey = @"success";
     }
 }
 
-#pragma mark - barcode
+#pragma mark - QR code
 
-- (IBAction)scanBarcode:(id)sender {
+- (IBAction)scanQRCode:(id)sender {
     [HICameraWindowController sharedCameraWindowController].delegate = self;
     [[HICameraWindowController sharedCameraWindowController] showWindow:nil];
 }
 
-- (void)setBarcodeScanningEnabled:(BOOL)enabled {
-    self.qrCodeButton.hidden = !enabled;
+- (void)setQRCodeScanningEnabled:(BOOL)enabled {
+    self.QRCodeButton.hidden = !enabled;
     if (!enabled) {
         [self cleanUpCameraWindow];
     }
@@ -822,8 +822,8 @@ NSString * const HISendBitcoinsWindowSuccessKey = @"success";
 #pragma mark - HICameraWindowControllerDelegate
 
 - (BOOL)cameraWindowController:(HICameraWindowController *)cameraWindowController
-             didScanBarcodeUrl:(NSString *)barcodeUrl {
-    return [[HIBitcoinUrlService sharedService] applyUrlString:barcodeUrl
+              didScanQRCodeURL:(NSString *)QRCodeURL {
+    return [[HIBitcoinUrlService sharedService] applyUrlString:QRCodeURL
                                                   toSendWindow:self];
 }
 

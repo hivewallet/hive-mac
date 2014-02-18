@@ -1,5 +1,5 @@
 //
-//  HIBarcodeWindowController.h
+//  HIQRCodeWindowController.h
 //  Hive
 //
 //  Created by Nikolaj Schumacher on 2014-02-09.
@@ -9,9 +9,9 @@
 /*
  Pop-up window showing an enlarged QR code.
  */
-@interface HIBarcodeWindowController : NSWindowController
+@interface HIQRCodeWindowController : NSWindowController
 
-@property (nonatomic, copy) NSString *barcodeString;
+@property (nonatomic, copy) NSString *QRCodeString;
 @property (nonatomic, copy) NSString *label;
 
 @end
