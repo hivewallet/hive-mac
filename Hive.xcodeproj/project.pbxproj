@@ -53,7 +53,6 @@
 		248631D818A7AD1800A020A9 /* HIQRCodeWindowController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 248631D618A7AD1800A020A9 /* HIQRCodeWindowController.xib */; };
 		24E1291418A2B03F0064C075 /* QTKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 24E1291318A2B03F0064C075 /* QTKit.framework */; };
 		24E2C7C0189D93E6008E17CC /* HICameraWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 24E2C7BE189D93E6008E17CC /* HICameraWindowController.m */; };
-		24E2C7C1189D93E6008E17CC /* HICameraWindowController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 24E2C7BF189D93E6008E17CC /* HICameraWindowController.xib */; };
 		24EAAFC1186E1BBD00E1D2D3 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 24EAAFC0186E1BBD00E1D2D3 /* XCTest.framework */; };
 		24EAAFC7186E1BBD00E1D2D3 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 24EAAFC5186E1BBD00E1D2D3 /* InfoPlist.strings */; };
 		24EAAFC9186E1BBD00E1D2D3 /* HIBitcoinFormatServiceTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 24EAAFC8186E1BBD00E1D2D3 /* HIBitcoinFormatServiceTests.m */; };
@@ -65,6 +64,8 @@
 		582C7DA6185219A000126C10 /* HIDebuggingToolsWindowController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 582C7DA5185219A000126C10 /* HIDebuggingToolsWindowController.xib */; };
 		582C7DA918521A3500126C10 /* HIJavaScriptObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 582C7DA818521A3500126C10 /* HIJavaScriptObject.m */; };
 		582C7DAB185273D400126C10 /* HIApplicationRuntimeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 582C7DAA185273D400126C10 /* HIApplicationRuntimeViewController.xib */; };
+		5830767718B38D4B0017084A /* HICameraWindowController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5830767918B38D4B0017084A /* HICameraWindowController.xib */; };
+		5830769618B38DA20017084A /* HICameraWindowController.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5830769818B38DA20017084A /* HICameraWindowController.strings */; };
 		583B1DD118620BA800817EF8 /* HILogFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = 583B1DD018620BA800817EF8 /* HILogFormatter.m */; };
 		583B1DE41864A32900817EF8 /* HISecureAppStorage.m in Sources */ = {isa = PBXBuildFile; fileRef = 583B1DE31864A32900817EF8 /* HISecureAppStorage.m */; };
 		583B1DED186860EC00817EF8 /* HIBackupCenterWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 583B1DEB186860EC00817EF8 /* HIBackupCenterWindowController.m */; };
@@ -459,7 +460,6 @@
 		24E1291318A2B03F0064C075 /* QTKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QTKit.framework; path = System/Library/Frameworks/QTKit.framework; sourceTree = SDKROOT; };
 		24E2C7BD189D93E6008E17CC /* HICameraWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HICameraWindowController.h; sourceTree = "<group>"; };
 		24E2C7BE189D93E6008E17CC /* HICameraWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HICameraWindowController.m; sourceTree = "<group>"; };
-		24E2C7BF189D93E6008E17CC /* HICameraWindowController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HICameraWindowController.xib; sourceTree = "<group>"; };
 		24EAAFBF186E1BBD00E1D2D3 /* HiveTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HiveTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		24EAAFC0186E1BBD00E1D2D3 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		24EAAFC4186E1BBD00E1D2D3 /* HiveTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "HiveTests-Info.plist"; sourceTree = "<group>"; };
@@ -532,6 +532,60 @@
 		582C7DA718521A3500126C10 /* HIJavaScriptObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HIJavaScriptObject.h; sourceTree = "<group>"; };
 		582C7DA818521A3500126C10 /* HIJavaScriptObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HIJavaScriptObject.m; sourceTree = "<group>"; };
 		582C7DAA185273D400126C10 /* HIApplicationRuntimeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HIApplicationRuntimeViewController.xib; sourceTree = "<group>"; };
+		5830767818B38D4B0017084A /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/HICameraWindowController.xib; sourceTree = "<group>"; };
+		5830767A18B38D530017084A /* pl */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = pl; path = pl.lproj/HICameraWindowController.xib; sourceTree = "<group>"; };
+		5830767B18B38D540017084A /* it */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = it; path = it.lproj/HICameraWindowController.xib; sourceTree = "<group>"; };
+		5830767C18B38D550017084A /* fr */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = fr; path = fr.lproj/HICameraWindowController.xib; sourceTree = "<group>"; };
+		5830767D18B38D560017084A /* fi */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = fi; path = fi.lproj/HICameraWindowController.xib; sourceTree = "<group>"; };
+		5830767E18B38D580017084A /* da */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = da; path = da.lproj/HICameraWindowController.xib; sourceTree = "<group>"; };
+		5830767F18B38D590017084A /* de */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = de; path = de.lproj/HICameraWindowController.xib; sourceTree = "<group>"; };
+		5830768018B38D5A0017084A /* nl */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = nl; path = nl.lproj/HICameraWindowController.xib; sourceTree = "<group>"; };
+		5830768118B38D5B0017084A /* ru */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = ru; path = ru.lproj/HICameraWindowController.xib; sourceTree = "<group>"; };
+		5830768218B38D5C0017084A /* fil */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = fil; path = fil.lproj/HICameraWindowController.xib; sourceTree = "<group>"; };
+		5830768318B38D5D0017084A /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = "zh-Hans"; path = "zh-Hans.lproj/HICameraWindowController.xib"; sourceTree = "<group>"; };
+		5830768418B38D5E0017084A /* ar */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = ar; path = ar.lproj/HICameraWindowController.xib; sourceTree = "<group>"; };
+		5830768518B38D5F0017084A /* hi */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = hi; path = hi.lproj/HICameraWindowController.xib; sourceTree = "<group>"; };
+		5830768618B38D600017084A /* ur */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = ur; path = ur.lproj/HICameraWindowController.xib; sourceTree = "<group>"; };
+		5830768718B38D610017084A /* ko */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = ko; path = ko.lproj/HICameraWindowController.xib; sourceTree = "<group>"; };
+		5830768818B38D650017084A /* es */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = es; path = es.lproj/HICameraWindowController.xib; sourceTree = "<group>"; };
+		5830768918B38D660017084A /* cs */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = cs; path = cs.lproj/HICameraWindowController.xib; sourceTree = "<group>"; };
+		5830768A18B38D670017084A /* el */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = el; path = el.lproj/HICameraWindowController.xib; sourceTree = "<group>"; };
+		5830768B18B38D680017084A /* tr */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = tr; path = tr.lproj/HICameraWindowController.xib; sourceTree = "<group>"; };
+		5830768C18B38D690017084A /* pt */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = pt; path = pt.lproj/HICameraWindowController.xib; sourceTree = "<group>"; };
+		5830768D18B38D6B0017084A /* sv */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = sv; path = sv.lproj/HICameraWindowController.xib; sourceTree = "<group>"; };
+		5830768E18B38D6C0017084A /* sr-Latn */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = "sr-Latn"; path = "sr-Latn.lproj/HICameraWindowController.xib"; sourceTree = "<group>"; };
+		5830768F18B38D6D0017084A /* sr */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = sr; path = sr.lproj/HICameraWindowController.xib; sourceTree = "<group>"; };
+		5830769018B38D6E0017084A /* ja */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = ja; path = ja.lproj/HICameraWindowController.xib; sourceTree = "<group>"; };
+		5830769118B38D6F0017084A /* pt-BR */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = "pt-BR"; path = "pt-BR.lproj/HICameraWindowController.xib"; sourceTree = "<group>"; };
+		5830769218B38D700017084A /* ro */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = ro; path = ro.lproj/HICameraWindowController.xib; sourceTree = "<group>"; };
+		5830769318B38D710017084A /* hu */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = hu; path = hu.lproj/HICameraWindowController.xib; sourceTree = "<group>"; };
+		5830769718B38DA20017084A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/HICameraWindowController.strings; sourceTree = "<group>"; };
+		5830769918B38DA50017084A /* pl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = pl; path = pl.lproj/HICameraWindowController.strings; sourceTree = "<group>"; };
+		5830769A18B38DA60017084A /* it */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = it; path = it.lproj/HICameraWindowController.strings; sourceTree = "<group>"; };
+		5830769B18B38DA70017084A /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/HICameraWindowController.strings; sourceTree = "<group>"; };
+		5830769C18B38DA70017084A /* fi */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fi; path = fi.lproj/HICameraWindowController.strings; sourceTree = "<group>"; };
+		5830769D18B38DA80017084A /* da */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = da; path = da.lproj/HICameraWindowController.strings; sourceTree = "<group>"; };
+		5830769E18B38DA80017084A /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/HICameraWindowController.strings; sourceTree = "<group>"; };
+		5830769F18B38DA90017084A /* nl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = nl; path = nl.lproj/HICameraWindowController.strings; sourceTree = "<group>"; };
+		583076A018B38DAA0017084A /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/HICameraWindowController.strings; sourceTree = "<group>"; };
+		583076A118B38DAA0017084A /* fil */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fil; path = fil.lproj/HICameraWindowController.strings; sourceTree = "<group>"; };
+		583076A218B38DAB0017084A /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/HICameraWindowController.strings"; sourceTree = "<group>"; };
+		583076A318B38DAC0017084A /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/HICameraWindowController.strings; sourceTree = "<group>"; };
+		583076A418B38DAC0017084A /* hi */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = hi; path = hi.lproj/HICameraWindowController.strings; sourceTree = "<group>"; };
+		583076A518B38DAD0017084A /* ur */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ur; path = ur.lproj/HICameraWindowController.strings; sourceTree = "<group>"; };
+		583076A618B38DAE0017084A /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = ko.lproj/HICameraWindowController.strings; sourceTree = "<group>"; };
+		583076A718B38DAF0017084A /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/HICameraWindowController.strings; sourceTree = "<group>"; };
+		583076A818B38DAF0017084A /* cs */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = cs; path = cs.lproj/HICameraWindowController.strings; sourceTree = "<group>"; };
+		583076A918B38DB00017084A /* el */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = el; path = el.lproj/HICameraWindowController.strings; sourceTree = "<group>"; };
+		583076AA18B38DB30017084A /* tr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = tr; path = tr.lproj/HICameraWindowController.strings; sourceTree = "<group>"; };
+		583076AB18B38DB40017084A /* pt */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = pt; path = pt.lproj/HICameraWindowController.strings; sourceTree = "<group>"; };
+		583076AC18B38DB50017084A /* sv */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = sv; path = sv.lproj/HICameraWindowController.strings; sourceTree = "<group>"; };
+		583076AD18B38DB50017084A /* sr-Latn */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "sr-Latn"; path = "sr-Latn.lproj/HICameraWindowController.strings"; sourceTree = "<group>"; };
+		583076AE18B38DB60017084A /* sr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = sr; path = sr.lproj/HICameraWindowController.strings; sourceTree = "<group>"; };
+		583076AF18B38DB70017084A /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/HICameraWindowController.strings; sourceTree = "<group>"; };
+		583076B018B38DB70017084A /* pt-BR */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-BR"; path = "pt-BR.lproj/HICameraWindowController.strings"; sourceTree = "<group>"; };
+		583076B118B38DB80017084A /* ro */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ro; path = ro.lproj/HICameraWindowController.strings; sourceTree = "<group>"; };
+		583076B218B38DB80017084A /* hu */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = hu; path = hu.lproj/HICameraWindowController.strings; sourceTree = "<group>"; };
 		5832C527180ECF45002A673F /* de */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = de; path = de.lproj/HIApplicationsViewController.xib; sourceTree = "<group>"; };
 		5832C528180ECF45002A673F /* de */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/HIContactsViewController.strings; sourceTree = "<group>"; };
 		5832C529180ECF45002A673F /* de */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = de; path = de.lproj/HIContactsViewController.xib; sourceTree = "<group>"; };
@@ -1895,7 +1949,8 @@
 			children = (
 				24E2C7BD189D93E6008E17CC /* HICameraWindowController.h */,
 				24E2C7BE189D93E6008E17CC /* HICameraWindowController.m */,
-				24E2C7BF189D93E6008E17CC /* HICameraWindowController.xib */,
+				5830769818B38DA20017084A /* HICameraWindowController.strings */,
+				5830767918B38D4B0017084A /* HICameraWindowController.xib */,
 			);
 			name = HICameraWindowController;
 			sourceTree = "<group>";
@@ -2607,6 +2662,7 @@
 				585FFF4418159803005BCF73 /* Credits.rtf in Resources */,
 				58A37AAA180D7B1000CFCDE3 /* HIContactAutocompleteWindowController.xib in Resources */,
 				2478B8F2184A89EA00BA2C35 /* HIFeeDetailsViewController.strings in Resources */,
+				5830769618B38DA20017084A /* HICameraWindowController.strings in Resources */,
 				588E34DB181FF8A7006A6A25 /* HIDebuggingInfoWindowController.xib in Resources */,
 				58A37AAD180D7B1500CFCDE3 /* HISendBitcoinsWindowController.xib in Resources */,
 				58A37AB0180D7B1D00CFCDE3 /* HITransactionsViewController.xib in Resources */,
@@ -2669,7 +2725,7 @@
 				585712D618902D180094F884 /* HIWizardCompletedViewController.strings in Resources */,
 				58605A5D18041D0A00FD9C2A /* icon-your-profile__active.pdf in Resources */,
 				58D4D61F18290079009CB7A5 /* patten_hive.hiveapp in Resources */,
-				24E2C7C1189D93E6008E17CC /* HICameraWindowController.xib in Resources */,
+				5830767718B38D4B0017084A /* HICameraWindowController.xib in Resources */,
 				58605A5E18041D0A00FD9C2A /* icon-your-profile__inactive.pdf in Resources */,
 				589064AE1805742C0082BE5C /* seansoutpost.hiveapp in Resources */,
 				1AA10ECC39D33A1362882EB2 /* HIProfileViewController.strings in Resources */,
@@ -3021,6 +3077,74 @@
 				24EAAFC6186E1BBD00E1D2D3 /* en */,
 			);
 			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		5830767918B38D4B0017084A /* HICameraWindowController.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5830767818B38D4B0017084A /* en */,
+				5830767A18B38D530017084A /* pl */,
+				5830767B18B38D540017084A /* it */,
+				5830767C18B38D550017084A /* fr */,
+				5830767D18B38D560017084A /* fi */,
+				5830767E18B38D580017084A /* da */,
+				5830767F18B38D590017084A /* de */,
+				5830768018B38D5A0017084A /* nl */,
+				5830768118B38D5B0017084A /* ru */,
+				5830768218B38D5C0017084A /* fil */,
+				5830768318B38D5D0017084A /* zh-Hans */,
+				5830768418B38D5E0017084A /* ar */,
+				5830768518B38D5F0017084A /* hi */,
+				5830768618B38D600017084A /* ur */,
+				5830768718B38D610017084A /* ko */,
+				5830768818B38D650017084A /* es */,
+				5830768918B38D660017084A /* cs */,
+				5830768A18B38D670017084A /* el */,
+				5830768B18B38D680017084A /* tr */,
+				5830768C18B38D690017084A /* pt */,
+				5830768D18B38D6B0017084A /* sv */,
+				5830768E18B38D6C0017084A /* sr-Latn */,
+				5830768F18B38D6D0017084A /* sr */,
+				5830769018B38D6E0017084A /* ja */,
+				5830769118B38D6F0017084A /* pt-BR */,
+				5830769218B38D700017084A /* ro */,
+				5830769318B38D710017084A /* hu */,
+			);
+			name = HICameraWindowController.xib;
+			sourceTree = "<group>";
+		};
+		5830769818B38DA20017084A /* HICameraWindowController.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5830769718B38DA20017084A /* en */,
+				5830769918B38DA50017084A /* pl */,
+				5830769A18B38DA60017084A /* it */,
+				5830769B18B38DA70017084A /* fr */,
+				5830769C18B38DA70017084A /* fi */,
+				5830769D18B38DA80017084A /* da */,
+				5830769E18B38DA80017084A /* de */,
+				5830769F18B38DA90017084A /* nl */,
+				583076A018B38DAA0017084A /* ru */,
+				583076A118B38DAA0017084A /* fil */,
+				583076A218B38DAB0017084A /* zh-Hans */,
+				583076A318B38DAC0017084A /* ar */,
+				583076A418B38DAC0017084A /* hi */,
+				583076A518B38DAD0017084A /* ur */,
+				583076A618B38DAE0017084A /* ko */,
+				583076A718B38DAF0017084A /* es */,
+				583076A818B38DAF0017084A /* cs */,
+				583076A918B38DB00017084A /* el */,
+				583076AA18B38DB30017084A /* tr */,
+				583076AB18B38DB40017084A /* pt */,
+				583076AC18B38DB50017084A /* sv */,
+				583076AD18B38DB50017084A /* sr-Latn */,
+				583076AE18B38DB60017084A /* sr */,
+				583076AF18B38DB70017084A /* ja */,
+				583076B018B38DB70017084A /* pt-BR */,
+				583076B118B38DB80017084A /* ro */,
+				583076B218B38DB80017084A /* hu */,
+			);
+			name = HICameraWindowController.strings;
 			sourceTree = "<group>";
 		};
 		5857127A1890267E0094F884 /* HIWizardBackupViewController.xib */ = {
