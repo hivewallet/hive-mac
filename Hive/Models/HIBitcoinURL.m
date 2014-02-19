@@ -6,8 +6,8 @@
 //  Copyright (c) 2013 Hive Developers. All rights reserved.
 //
 
+#import <BitcoinJKit/HIBitcoinManager.h>
 #import "HIBitcoinURL.h"
-
 #import "NSDecimalNumber+HISatoshiConversion.h"
 
 static NSString * const BitcoinURLPrefix = @"bitcoin:";
@@ -20,16 +20,22 @@ static NSString * const BitcoinURLPrefix = @"bitcoin:";
     if (self) {
         _URLString = URL;
 
-        if (![URL hasPrefix:BitcoinURLPrefix]) {
+        if ([URL hasPrefix:BitcoinURLPrefix]) {
+            [self extractFields];
+            _valid = [self validate];
+        } else if ([self looksLikeBitcoinAddress:URL]) {
+            _address = [URL copy];
+            _valid = [[HIBitcoinManager defaultManager] isAddressValid:_address];
+        } else {
             return nil;
         }
-
-        [self extractFields];
-
-        _valid = [self validate];
     }
 
     return self;
+}
+
+- (BOOL)looksLikeBitcoinAddress:(NSString *)URL {
+    return [[URL stringByTrimmingCharactersInSet:[NSCharacterSet alphanumericCharacterSet]] isEqual:@""];
 }
 
 - (void)extractFields {
