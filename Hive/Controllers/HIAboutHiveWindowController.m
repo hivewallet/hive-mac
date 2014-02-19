@@ -25,10 +25,7 @@
     return self;
 }
 
-- (void)windowDidLoad {
-    [super windowDidLoad];
-    [self.window center];
-
+- (void)awakeFromNib {
     NSBundle *bundle = [NSBundle mainBundle];
     NSDictionary *info = [bundle infoDictionary];
     self.versionField.stringValue = [NSString stringWithFormat:@"Version %@ (%@)",
@@ -42,6 +39,8 @@
     NSData *creditsFile = [NSData dataWithContentsOfFile:[bundle pathForResource:@"Credits" ofType:@"rtf"]];
     NSAttributedString *credits = [[NSAttributedString alloc] initWithRTF:creditsFile documentAttributes:nil];
     [self.creditsBox.textStorage setAttributedString:credits];
+
+    [self.window center];
 }
 
 - (IBAction)showLicenseInfo:(id)sender {
