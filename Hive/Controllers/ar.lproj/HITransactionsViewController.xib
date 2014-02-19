@@ -114,10 +114,10 @@
                                                             </binding>
                                                             <binding destination="-2" name="hidden2" keyPath="sharingSupported" previousBinding="Mxj-hE-JIE" id="W0v-wU-ouo">
                                                                 <dictionary key="options">
-                                                                    <integer key="NSMultipleValuesPlaceholder" value="-1"/>
+                                                                    <integer key="NSNullPlaceholder" value="-1"/>
                                                                     <integer key="NSNotApplicablePlaceholder" value="-1"/>
                                                                     <integer key="NSNoSelectionPlaceholder" value="-1"/>
-                                                                    <integer key="NSNullPlaceholder" value="-1"/>
+                                                                    <integer key="NSMultipleValuesPlaceholder" value="-1"/>
                                                                     <string key="NSValueTransformerName">NSNegateBoolean</string>
                                                                 </dictionary>
                                                             </binding>
@@ -126,12 +126,12 @@
                                                 </subviews>
                                                 <constraints>
                                                     <constraint firstAttribute="centerY" secondItem="43" secondAttribute="centerY" id="6qm-MA-BhR"/>
+                                                    <constraint firstItem="21" firstAttribute="top" secondItem="40" secondAttribute="bottom" constant="5" id="8s6-jm-ms9"/>
                                                     <constraint firstItem="mY4-hd-Z1f" firstAttribute="top" secondItem="21" secondAttribute="bottom" constant="-1" id="9Sw-Bp-EBb"/>
                                                     <constraint firstItem="40" firstAttribute="leading" secondItem="46" secondAttribute="trailing" constant="8" symbolic="YES" id="CYc-4i-Fh7"/>
                                                     <constraint firstAttribute="bottom" secondItem="46" secondAttribute="bottom" constant="1" id="F0J-vu-TJv"/>
                                                     <constraint firstItem="21" firstAttribute="leading" secondItem="43" secondAttribute="trailing" constant="7" id="FBP-uS-rBm"/>
                                                     <constraint firstItem="43" firstAttribute="leading" secondItem="46" secondAttribute="trailing" constant="5" id="JOy-DV-KmN"/>
-                                                    <constraint firstAttribute="centerY" secondItem="21" secondAttribute="centerY" id="KNs-Ez-JuV"/>
                                                     <constraint firstAttribute="bottom" secondItem="NZf-qf-8PB" secondAttribute="bottom" constant="6" id="MLs-Wi-Znl"/>
                                                     <constraint firstItem="46" firstAttribute="top" secondItem="20" secondAttribute="top" constant="1" id="VRG-oj-8Sg"/>
                                                     <constraint firstItem="NZf-qf-8PB" firstAttribute="leading" secondItem="mY4-hd-Z1f" secondAttribute="trailing" constant="8" symbolic="YES" id="WmK-Oo-gWS"/>
