@@ -30,7 +30,9 @@
         }
     }
 
-    [self updateInfo];
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [self updateInfo];
+    });
 }
 
 - (void)updateInfo {
