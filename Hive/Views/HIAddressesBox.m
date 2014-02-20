@@ -267,9 +267,19 @@ static NSString *const KEY_WALLET_HASH = @"walletHash";
     [self.QRCodeWindowController.window setFrame:frame
                                          display:YES
                                          animate:NO];
+
     [self.QRCodeWindowController showWindow:nil];
 
-    [self.QRCodeWindowController.window setFrame:CGRectInset(frame, -QR_CODE_ZOOM_SIZE * .5, -QR_CODE_ZOOM_SIZE * .5)
+    NSScreen *screen = self.QRCodeWindowController.window.screen;
+    CGRect zoomedFrame = CGRectInset(frame, -QR_CODE_ZOOM_SIZE * .5, -QR_CODE_ZOOM_SIZE * .5);
+
+    // make sure the zoomed view doesn't go over the right edge
+    if (CGRectGetMaxX(zoomedFrame) > screen.frame.origin.x + screen.frame.size.width) {
+        CGFloat diff = CGRectGetMaxX(zoomedFrame) - (screen.frame.origin.x + screen.frame.size.width);
+        zoomedFrame = CGRectOffset(zoomedFrame, -diff, 0);
+    }
+
+    [self.QRCodeWindowController.window setFrame:zoomedFrame
                                          display:YES
                                          animate:YES];
 }
