@@ -20,6 +20,8 @@ static const float PADDING_Y = 0.0;
 
     NSBezierPath *p = [NSBezierPath bezierPathWithRoundedRect:frame xRadius:5 yRadius:5];
 
+    NSColor *strokeColor = RGB(128, 128, 128);
+
     if (self.isHighlighted) {
         NSBezierPath *sP = [NSBezierPath bezierPath];
         
@@ -43,22 +45,41 @@ static const float PADDING_Y = 0.0;
         NSGradient *g = [[NSGradient alloc] initWithColors:@[RGB(250,250,250), RGB(237, 237, 237)]];
         [g drawInBezierPath:p angle:90];
         controlView.layer.shadowColor = [[NSColor blackColor] hiNativeColor];
+
+        if (!self.isEnabled) {
+            strokeColor = RGB(184, 203, 230);
+        }
     }
 
-    p.lineWidth = 0.5;    
-    [RGB(128, 128, 128) set];
+    p.lineWidth = 0.5;
+    [strokeColor set];
     [p stroke];
 }
 
-- (NSRect)drawTitle:(NSAttributedString *)title withFrame:(NSRect)frame inView:(NSView *)controlView {
+- (NSDictionary *)drawingAttributes {
     NSShadow *sh = [[NSShadow alloc] init];
     sh.shadowColor = [NSColor whiteColor];
     sh.shadowOffset = NSMakeSize(0, -1);
     sh.shadowBlurRadius = 1;
-    
-    NSDictionary *attrs = @{NSFontAttributeName: [NSFont fontWithName:@"Helvetica" size:13], NSForegroundColorAttributeName: RGB(63, 63, 63), NSShadowAttributeName: sh};
-    NSSize size = [self.title sizeWithAttributes:attrs];
 
+    return @{
+      NSFontAttributeName: self.font,
+      NSForegroundColorAttributeName: RGB(63, 63, 63),
+      NSShadowAttributeName: sh
+    };
+}
+
+- (NSDictionary *)disabledDrawingAttributes {
+    return @{
+      NSFontAttributeName: self.font,
+      NSForegroundColorAttributeName: [NSColor grayColor],
+    };
+}
+
+- (NSRect)drawTitle:(NSAttributedString *)title withFrame:(NSRect)frame inView:(NSView *)controlView {
+    NSDictionary *attrs = self.isEnabled ? [self drawingAttributes] : [self disabledDrawingAttributes];
+
+    NSSize size = [self.title sizeWithAttributes:attrs];
 
     NSRect drawRect = NSMakeRect(frame.origin.x + (frame.size.width - size.width) / 2.0,
                                  frame.origin.y - 1 + (frame.size.height - size.height) / 2.0,
