@@ -8,9 +8,10 @@
 
 #import <Foundation/Foundation.h>
 
+@class HIApplication;
+
 extern NSString * const HIApplicationsManagerDomain;
 extern const NSInteger HIApplicationManagerInvalidAppFileError;
-
 
 /*
  Manages applications (HIApplication) in the database and on disk.
@@ -21,7 +22,7 @@ extern const NSInteger HIApplicationManagerInvalidAppFileError;
 + (HIApplicationsManager *)sharedManager;
 
 - (NSURL *)applicationsDirectory;
-- (void)installApplication:(NSURL *)applicationURL;
+- (HIApplication *)installApplication:(NSURL *)applicationURL;
 - (BOOL)requestLocalAppInstallation:(NSURL *)applicationURL showAppsPage:(BOOL)showAppsPage error:(NSError **)error;
 - (void)requestRemoteAppInstallation:(NSURL *)remoteURL onCompletion:(void (^)(BOOL, NSError *))completionBlock;
 - (BOOL)hasApplicationOfId:(NSString *)applicationId;

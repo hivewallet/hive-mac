@@ -108,7 +108,7 @@ const NSInteger HIApplicationManagerInsecureConnectionError = -2;
     }
 }
 
-- (void)installApplication:(NSURL *)applicationURL {
+- (HIApplication *)installApplication:(NSURL *)applicationURL {
     NSDictionary *manifest = [self applicationMetadata:applicationURL];
     HIApplication *app = nil;
 
@@ -138,6 +138,8 @@ const NSInteger HIApplicationManagerInsecureConnectionError = -2;
     [app refreshIcon];
 
     [DBM save:NULL];
+
+    return app;
 }
 
 - (BOOL)requestLocalAppInstallation:(NSURL *)applicationURL showAppsPage:(BOOL)showAppsPage error:(NSError **)error {

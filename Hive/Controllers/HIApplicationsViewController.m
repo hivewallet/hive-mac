@@ -8,6 +8,7 @@
 
 #import "HIApplication.h"
 #import "HIApplicationRuntimeViewController.h"
+#import "HIApplicationsManager.h"
 #import "HIApplicationsViewController.h"
 #import "HIAppRuntimeBridge.h"
 #import "HIContactRowView.h"
@@ -17,6 +18,7 @@
 #import "NSWindow+HIShake.h"
 
 static NSString * const AppStoreAppId = @"wei-lu.app-store";
+static NSString * const AppStoreAppFilename = @"app-store";
 
 @interface HIApplicationsViewController ()
 
@@ -109,8 +111,9 @@ static NSString * const AppStoreAppId = @"wei-lu.app-store";
         }
     }
 
-    [[NSWorkspace sharedWorkspace] openURL:
-     [NSURL URLWithString:@"https://github.com/hivewallet/hive-osx/wiki/App-Registry"]];
+    NSURL *appStoreURL = [[NSBundle mainBundle] URLForResource:@"app-store" withExtension:@"hiveapp"];
+    HIApplication *appStore = [[HIApplicationsManager sharedManager] installApplication:appStoreURL];
+    [self launchApplication:appStore];
 }
 
 @end
