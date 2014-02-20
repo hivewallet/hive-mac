@@ -79,8 +79,6 @@ const NSInteger HIApplicationManagerInsecureConnectionError = -2;
                                                                      options:NSDirectoryEnumerationSkipsHiddenFiles
                                                                        error:NULL];
 
-    HILogInfo(@"Adding %ld apps to the database", apps.count);
-
     for (NSURL *appURL in apps) {
         NSString *appName = [appURL lastPathComponent];
         NSDictionary *manifest = [self applicationMetadata:appURL];
@@ -111,8 +109,6 @@ const NSInteger HIApplicationManagerInsecureConnectionError = -2;
 }
 
 - (void)installApplication:(NSURL *)applicationURL {
-    HILogInfo(@"Installing app from %@", applicationURL);
-
     NSDictionary *manifest = [self applicationMetadata:applicationURL];
     HIApplication *app = nil;
 
@@ -129,6 +125,8 @@ const NSInteger HIApplicationManagerInsecureConnectionError = -2;
     NSURL *installedAppURL = [[self applicationsDirectory] URLByAppendingPathComponent:manifest[@"id"]];
 
     if (![installedAppURL isEqual:applicationURL]) {
+        HILogInfo(@"Installing app from %@", applicationURL);
+
         [[NSFileManager defaultManager] removeItemAtURL:installedAppURL error:NULL];
         [[NSFileManager defaultManager] copyItemAtURL:applicationURL toURL:installedAppURL error:NULL];
     }

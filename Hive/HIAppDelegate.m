@@ -180,6 +180,7 @@ static int ddLogLevel = LOG_LEVEL_VERBOSE;
 
     [self preinstallAppsIfNeeded];
     [self rebuildTransactionListIfNeeded];
+    [self rebuildAppsList];
     [self updateLastVersionKey];
     [self configureNotifications];
 
@@ -200,6 +201,10 @@ static int ddLogLevel = LOG_LEVEL_VERBOSE;
 - (void)updateLastVersionKey {
     NSString *currentVersion = [[NSBundle mainBundle] infoDictionary][@"CFBundleVersion"];
     [[NSUserDefaults standardUserDefaults] setObject:currentVersion forKey:LastVersionKey];
+}
+
+- (void)rebuildAppsList {
+    [[HIApplicationsManager sharedManager] rebuildAppsList];
 }
 
 - (void)rebuildTransactionListIfNeeded {
