@@ -11,6 +11,7 @@
                 <outlet property="addressLabel" destination="21" id="26"/>
                 <outlet property="amountField" destination="36" id="40"/>
                 <outlet property="bitcoinCurrencyPopupButton" destination="u5l-cR-nXn" id="oLd-Li-Te1"/>
+                <outlet property="cancelButton" destination="5" id="JSU-ZA-ezS"/>
                 <outlet property="convertedAmountField" destination="l47-zx-4mb" id="mgX-At-dSz"/>
                 <outlet property="convertedCurrencyPopupButton" destination="ZPL-GE-Omh" id="Sd0-4A-V3B"/>
                 <outlet property="currencyRateInfoView" destination="yvi-wx-iNB" id="lyp-Ih-ZFK"/>

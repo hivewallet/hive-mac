@@ -489,6 +489,7 @@ NSString * const HISendBitcoinsWindowSuccessKey = @"success";
         } else {
             [self showTransactionErrorAlert];
             [self.sendButton hideSpinner];
+            [self.cancelButton setEnabled:YES];
         }
     }];
 
@@ -502,13 +503,12 @@ NSString * const HISendBitcoinsWindowSuccessKey = @"success";
         }
     } else {
         [self.sendButton showSpinner];
+        [self.cancelButton setEnabled:NO];
         [self hidePasswordPopover];
     }
 }
 
 - (void)closeAndNotifyWithSuccess:(BOOL)success transactionId:(NSString *)transactionId {
-    [self.sendButton hideSpinner];
-
     if (_sendCompletion) {
         _sendCompletion(success, transactionId);
     }
