@@ -44,6 +44,7 @@
     self = [super initWithNibName:@"HIProfileViewController" bundle:nil];
 
     if (self) {
+        self.title = NSLocalizedString(@"Profile", @"Profile view title string");
         self.iconName = @"your-profile";
 
         _profile = [HIProfile new];
@@ -105,8 +106,6 @@
 }
 
 - (void)refreshData {
-    self.title = NSLocalizedString(@"Profile", @"Profile view title string");
-
     self.nameLabel.stringValue = _profile.name;
     self.photoView.image = _profile.avatarImage;
 
