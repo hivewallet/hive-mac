@@ -18,8 +18,18 @@
     return [self initWithWindowNibName:@"HIDebuggingInfoWindowController"];
 }
 
-- (void)showWindow:(id)sender {
-    [super showWindow:sender];
+- (void)awakeFromNib {
+    // hack for save button - TODO autolayout
+    for (NSView *view in [self.window.contentView subviews]) {
+        if ([view isKindOfClass:[NSButton class]]) {
+            NSRect frame = view.frame;
+            NSSize preferredSize = view.intrinsicContentSize;
+            frame.origin.x = frame.origin.x - (preferredSize.width - frame.size.width);
+            frame.size.width = preferredSize.width;
+            view.frame = frame;
+        }
+    }
+
     [self updateInfo];
 }
 
