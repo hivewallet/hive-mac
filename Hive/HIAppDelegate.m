@@ -102,9 +102,6 @@ static int ddLogLevel = LOG_LEVEL_VERBOSE;
                                                object:nil];
 
     [self configureMenu];
-    [self preinstallAppsIfNeeded];
-    [self rebuildTransactionListIfNeeded];
-    [self updateLastVersionKey];
 }
 
 - (void)configureMenu {
@@ -147,9 +144,48 @@ static int ddLogLevel = LOG_LEVEL_VERBOSE;
     [hockeyapp startManager];
 }
 
-- (void)initializeBackups {
-    [[HIBackupManager sharedManager] initializeAdapters];
-    [[HIBackupManager sharedManager] performBackups];
+- (NSURL *)applicationFilesDirectory {
+    NSFileManager *fileManager = [NSFileManager defaultManager];
+    NSArray *matchingURLs = [fileManager URLsForDirectory:NSApplicationSupportDirectory inDomains:NSUserDomainMask];
+    NSURL *appSupportURL = [matchingURLs lastObject];
+
+    if (DEBUG_OPTION_ENABLED(TESTING_NETWORK)) {
+        if (DEBUG_OPTION_ENABLED(TEMP_DIRECTORY)) {
+            // We never want to combine the temp directory with a real-world wallet.
+            static NSURL *url = nil;
+            static dispatch_once_t onceToken;
+            dispatch_once(&onceToken, ^{
+                url = [fileManager URLForDirectory:NSItemReplacementDirectory
+                                          inDomain:NSUserDomainMask
+                                 appropriateForURL:[appSupportURL URLByAppendingPathComponent:@"Hive"]
+                                            create:YES
+                                             error:NULL];
+            });
+            return url;
+        } else {
+            return [appSupportURL URLByAppendingPathComponent:@"HiveTest"];
+        }
+    } else {
+        return [appSupportURL URLByAppendingPathComponent:@"Hive"];
+    }
+}
+
+
+#pragma mark - Initialization phase two (BCClient and main window)
+
+- (void)showMainApplicationWindowForCrashManager:(id)crashManager {
+    if (!DBM) {
+        exit(1);
+    }
+
+    [self preinstallAppsIfNeeded];
+    [self rebuildTransactionListIfNeeded];
+    [self updateLastVersionKey];
+    [self configureNotifications];
+
+    [self startBitcoinClientWithPreviousError:nil];
+
+    NSSetUncaughtExceptionHandler(&handleException);
 }
 
 - (void)preinstallAppsIfNeeded {
@@ -189,44 +225,19 @@ static int ddLogLevel = LOG_LEVEL_VERBOSE;
     }
 }
 
-- (NSURL *)applicationFilesDirectory {
-    NSFileManager *fileManager = [NSFileManager defaultManager];
-    NSArray *matchingURLs = [fileManager URLsForDirectory:NSApplicationSupportDirectory inDomains:NSUserDomainMask];
-    NSURL *appSupportURL = [matchingURLs lastObject];
+- (void)configureNotifications {
+    __weak __typeof__ (self) weakSelf = self;
+    HINotificationService *notificationService = [HINotificationService sharedService];
 
-    if (DEBUG_OPTION_ENABLED(TESTING_NETWORK)) {
-        if (DEBUG_OPTION_ENABLED(TEMP_DIRECTORY)) {
-            // We never want to combine the temp directory with a real-world wallet.
-            static NSURL *url = nil;
-            static dispatch_once_t onceToken;
-            dispatch_once(&onceToken, ^{
-                url = [fileManager URLForDirectory:NSItemReplacementDirectory
-                                          inDomain:NSUserDomainMask
-                                 appropriateForURL:[appSupportURL URLByAppendingPathComponent:@"Hive"]
-                                            create:YES
-                                             error:NULL];
-            });
-            return url;
-        } else {
-            return [appSupportURL URLByAppendingPathComponent:@"HiveTest"];
-        }
-    } else {
-        return [appSupportURL URLByAppendingPathComponent:@"Hive"];
-    }
-}
+    notificationService.onTransactionClicked = ^{
+        [weakSelf showWindowWithPanel:[HITransactionsViewController class]];
+    };
 
+    notificationService.onBackupErrorClicked = ^{
+        [weakSelf showBackupCenter:nil];
+    };
 
-#pragma mark - Initialization phase two (BCClient and main window)
-
-- (void)showMainApplicationWindowForCrashManager:(id)crashManager {
-    if (!DBM) {
-        exit(1);
-    }
-
-    [self configureNotifications];
-    [self startBitcoinClientWithPreviousError:nil];
-
-    NSSetUncaughtExceptionHandler(&handleException);
+    notificationService.enabled = YES;
 }
 
 - (void)startBitcoinClientWithPreviousError:(NSError *)previousError {
@@ -253,6 +264,21 @@ static int ddLogLevel = LOG_LEVEL_VERBOSE;
     }
 }
 
+- (void)initializeBackups {
+    [[HIBackupManager sharedManager] initializeAdapters];
+    [[HIBackupManager sharedManager] performBackups];
+}
+
+- (void)setAsDefaultHandler {
+    CFStringRef bundleID = (__bridge CFStringRef) [[NSBundle mainBundle] bundleIdentifier];
+    CFStringRef UTI = UTTypeCreatePreferredIdentifierForTag(kUTTagClassFilenameExtension, CFSTR("hiveapp"), NULL);
+
+    LSSetDefaultHandlerForURLScheme(CFSTR("bitcoin"), bundleID);
+    LSSetDefaultRoleHandlerForContentType(UTI, kLSRolesAll, bundleID);
+
+    CFRelease(UTI);
+}
+
 - (void)showUnreadableChainFileError {
     NSString *title = NSLocalizedString(@"Bitcoin network data file could not be opened.",
                                         @"Chain file unreadable error title");
@@ -268,16 +294,6 @@ static int ddLogLevel = LOG_LEVEL_VERBOSE;
                          informativeTextWithFormat:@"%@", message];
 
     [alert runModal];
-}
-
-- (void)setAsDefaultHandler {
-    CFStringRef bundleID = (__bridge CFStringRef) [[NSBundle mainBundle] bundleIdentifier];
-    CFStringRef UTI = UTTypeCreatePreferredIdentifierForTag(kUTTagClassFilenameExtension, CFSTR("hiveapp"), NULL);
-
-    LSSetDefaultHandlerForURLScheme(CFSTR("bitcoin"), bundleID);
-    LSSetDefaultRoleHandlerForContentType(UTI, kLSRolesAll, bundleID);
-
-    CFRelease(UTI);
 }
 
 - (void)showAppWindow {
@@ -296,21 +312,6 @@ static int ddLogLevel = LOG_LEVEL_VERBOSE;
     };
 
     [self.wizard showWindow:self];
-}
-
-- (void)configureNotifications {
-    __weak __typeof__ (self) weakSelf = self;
-    HINotificationService *notificationService = [HINotificationService sharedService];
-
-    notificationService.onTransactionClicked = ^{
-        [weakSelf showWindowWithPanel:[HITransactionsViewController class]];
-    };
-
-    notificationService.onBackupErrorClicked = ^{
-        [weakSelf showBackupCenter:nil];
-    };
-
-    notificationService.enabled = YES;
 }
 
 - (void)showInitializationError:(NSError *)error {
@@ -341,6 +342,7 @@ static int ddLogLevel = LOG_LEVEL_VERBOSE;
     exit(1);
 }
 
+
 #pragma mark - nag unprotected users
 
 - (void)nagUnprotectedUsers {
@@ -366,6 +368,7 @@ static int ddLogLevel = LOG_LEVEL_VERBOSE;
         [self changeWalletPassword:nil];
     }
 }
+
 
 #pragma mark - App lifecycle and external actions
 
