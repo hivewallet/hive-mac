@@ -266,6 +266,7 @@
     NSMutableParagraphStyle *truncatingStyle = [[NSParagraphStyle defaultParagraphStyle] mutableCopy];
     truncatingStyle.lineBreakMode = NSLineBreakByTruncatingTail;
 
+    // paragraph style is determined for the whole line by the first fragment, so all fragments must specify it
     NSDictionary *attributes = @{NSParagraphStyleAttributeName: truncatingStyle};
     NSDictionary *boldAttributes = @{NSFontAttributeName: _amountLabelFont,
                                      NSParagraphStyleAttributeName: truncatingStyle};
