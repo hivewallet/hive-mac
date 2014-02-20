@@ -267,7 +267,8 @@
     truncatingStyle.lineBreakMode = NSLineBreakByTruncatingTail;
 
     NSDictionary *attributes = @{NSParagraphStyleAttributeName: truncatingStyle};
-    NSDictionary *boldAttributes = @{NSFontAttributeName: _amountLabelFont};
+    NSDictionary *boldAttributes = @{NSFontAttributeName: _amountLabelFont,
+                                     NSParagraphStyleAttributeName: truncatingStyle};
 
     NSMutableAttributedString *summary = [[NSMutableAttributedString alloc] initWithString:text attributes:attributes];
 
@@ -281,7 +282,21 @@
 
     NSRange contactRange = [summary.string rangeOfString:@"&c"];
     if (contactRange.location != NSNotFound) {
-        NSString *value = transaction.contact.firstname ?: transaction.senderHash;
+        NSString *value;
+
+        if (transaction.contact.firstname.length > 0) {
+            value = transaction.contact.firstname;
+        } else if (transaction.contact.lastname.length > 0) {
+            value = transaction.contact.lastname;
+        } else if (contactRange.location == summary.string.length - 2) {
+            value = transaction.senderHash;
+        } else {
+            // we can't tail-truncate if the address is not at the end, so we'll truncate it manually
+            value = [NSString stringWithFormat:@"%@…%@",
+                     [transaction.senderHash substringToIndex:8],
+                     [transaction.senderHash substringFromIndex:(transaction.senderHash.length - 8)]];
+        }
+
         NSAttributedString *fragment = [[NSAttributedString alloc] initWithString:value attributes:boldAttributes];
         [summary replaceCharactersInRange:contactRange withAttributedString:fragment];
     }
