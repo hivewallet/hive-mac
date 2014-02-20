@@ -205,6 +205,7 @@
 		58E336171892C02E004D60C3 /* HIApplicationsViewController.strings in Resources */ = {isa = PBXBuildFile; fileRef = 58E336191892C02E004D60C3 /* HIApplicationsViewController.strings */; };
 		58E3363A18934DCB004D60C3 /* coinbase.hiveapp in Resources */ = {isa = PBXBuildFile; fileRef = 58E3363918934DCB004D60C3 /* coinbase.hiveapp */; };
 		58F02AEE17E1F5A400B65429 /* HIRightPointingArrowView.m in Sources */ = {isa = PBXBuildFile; fileRef = 58F02AED17E1F5A400B65429 /* HIRightPointingArrowView.m */; };
+		58F496F118B67A1C0033B7E0 /* icon-unknown-app.png in Resources */ = {isa = PBXBuildFile; fileRef = 58F496F018B67A1C0033B7E0 /* icon-unknown-app.png */; };
 		58FB21EC1875809B00F87B9E /* get_dropbox_folder.sh in Resources */ = {isa = PBXBuildFile; fileRef = 58FB21EB1875809B00F87B9E /* get_dropbox_folder.sh */; };
 		D901F4F817B272E60071780D /* BitcoinJKit.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = D901F4F517B272CE0071780D /* BitcoinJKit.framework */; };
 		D901F4F917B273440071780D /* BitcoinJKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D901F4F517B272CE0071780D /* BitcoinJKit.framework */; };
@@ -1703,6 +1704,7 @@
 		58E3363918934DCB004D60C3 /* coinbase.hiveapp */ = {isa = PBXFileReference; lastKnownFileType = file; path = coinbase.hiveapp; sourceTree = "<group>"; };
 		58F02AEC17E1F5A400B65429 /* HIRightPointingArrowView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HIRightPointingArrowView.h; sourceTree = "<group>"; };
 		58F02AED17E1F5A400B65429 /* HIRightPointingArrowView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HIRightPointingArrowView.m; sourceTree = "<group>"; };
+		58F496F018B67A1C0033B7E0 /* icon-unknown-app.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-unknown-app.png"; sourceTree = "<group>"; };
 		58F56BA01832909000C57640 /* pt */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = pt; path = pt.lproj/HIApplicationsViewController.xib; sourceTree = "<group>"; };
 		58F56BA11832909000C57640 /* pt */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = pt; path = pt.lproj/HIContactsViewController.strings; sourceTree = "<group>"; };
 		58F56BA21832909000C57640 /* pt */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = pt; path = pt.lproj/HIContactsViewController.xib; sourceTree = "<group>"; };
@@ -2436,6 +2438,7 @@
 				58605A3B18041D0A00FD9C2A /* icon-transactions-btc-symbol.pdf */,
 				58605A3C18041D0A00FD9C2A /* icon-transactions-minus.pdf */,
 				58605A3D18041D0A00FD9C2A /* icon-transactions-plus.pdf */,
+				58F496F018B67A1C0033B7E0 /* icon-unknown-app.png */,
 				58605A3E18041D0A00FD9C2A /* icon-your-profile__active.pdf */,
 				58605A3F18041D0A00FD9C2A /* icon-your-profile__inactive.pdf */,
 			);
@@ -2710,6 +2713,7 @@
 				58605A4418041D0A00FD9C2A /* icon-apps__inactive.pdf in Resources */,
 				585712781890267E0094F884 /* HIWizardBackupViewController.xib in Resources */,
 				58605A4518041D0A00FD9C2A /* icon-bitcoin.pdf in Resources */,
+				58F496F118B67A1C0033B7E0 /* icon-unknown-app.png in Resources */,
 				58605A4618041D0A00FD9C2A /* icon-delete.pdf in Resources */,
 				58A37ADB180D997C00CFCDE3 /* HIContactAutocompleteWindowController.strings in Resources */,
 				585712B618902CD70094F884 /* HIWizardCompletedViewController.xib in Resources */,

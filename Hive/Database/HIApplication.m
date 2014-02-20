@@ -35,7 +35,7 @@ NSString * const HIApplicationEntity = @"HIApplication";
             return [[NSImage alloc] initWithData:data];
         }
     }
-    return [NSImage imageNamed:@"icon-apps__inactive.pdf"];
+    return [NSImage imageNamed:@"icon-unknown-app"];
 }
 
 - (void)refreshIcon {
