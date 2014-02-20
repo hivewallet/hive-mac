@@ -249,9 +249,10 @@ NSString * const HISendBitcoinsWindowSuccessKey = @"success";
 }
 
 - (satoshi_t)amountFieldValue {
-    return [self.bitcoinFormatService parseString:self.amountField.stringValue
-                                       withFormat:self.selectedBitcoinFormat
-                                            error:NULL];
+    satoshi_t value = [self.bitcoinFormatService parseString:self.amountField.stringValue
+                                                  withFormat:self.selectedBitcoinFormat
+                                                       error:NULL];
+    return MAX(value, 0);
 }
 
 - (void)setConvertedAmountFieldValue:(NSDecimalNumber *)amount {
@@ -267,7 +268,12 @@ NSString * const HISendBitcoinsWindowSuccessKey = @"success";
 - (NSDecimalNumber *)convertedAmountFieldValue {
     NSDecimalNumber *number = [NSDecimalNumber decimalNumberWithString:self.convertedAmountField.stringValue
                                                                 locale:[NSLocale currentLocale]];
-    return number == [NSDecimalNumber notANumber] ? [NSDecimalNumber zero] : number;
+    NSDecimalNumber *zero = [NSDecimalNumber zero];
+    if (number == [NSDecimalNumber notANumber] || [number isLessThanOrEqualTo:zero]) {
+        return zero;
+    } else {
+        return number;
+    }
 }
 
 - (void)updateConvertedAmountFromAmount {
