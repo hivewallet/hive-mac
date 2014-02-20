@@ -69,6 +69,12 @@
     assertThat(string, equalTo(@"zł1,060.50"));
 }
 
+- (void)testFormatNegativeValues {
+    NSString *string = [self.service stringWithUnitForValue:@-1060.5 inCurrency:@"USD"];
+
+    assertThat(string, equalTo(@"-1,060.50"));
+}
+
 #pragma mark - parsing
 
 - (void)testParseString {

@@ -89,6 +89,8 @@
     currencyNumberFormatter.currencyCode = currency;
     currencyNumberFormatter.currencySymbol = self.currencySymbols[currency];
     currencyNumberFormatter.numberStyle = NSNumberFormatterCurrencyStyle;
+    [currencyNumberFormatter setNegativePrefix:@"-"];
+    [currencyNumberFormatter setNegativeSuffix:@""];
     return [currencyNumberFormatter stringFromNumber:value];
 }
 
