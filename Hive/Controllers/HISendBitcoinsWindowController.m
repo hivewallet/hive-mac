@@ -344,6 +344,7 @@ NSString * const HISendBitcoinsWindowSuccessKey = @"success";
         NSMutableAttributedString *richText = [[NSMutableAttributedString alloc] initWithString:text];
         [richText setAttributes:textAttributes range:NSMakeRange(0, text.length)];
         [richText setAttributes:linkAttributes range:[text rangeOfString:@"BitcoinAverage"]];
+        [richText setAttributes:linkAttributes range:[text rangeOfString:@"Bitcoin Average"]];
 
         [label setAllowsEditingTextAttributes:YES];
         [label setAttributedStringValue:richText];
