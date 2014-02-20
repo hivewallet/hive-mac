@@ -16,6 +16,8 @@
 #import "NSColor+Hive.h"
 #import "NSWindow+HIShake.h"
 
+static NSString * const AppStoreAppId = @"wei-lu.app-store";
+
 @interface HIApplicationsViewController ()
 
 - (IBAction)getMoreAppsClicked:(id)sender;
@@ -66,20 +68,23 @@
             NSUInteger index = self.collectionView.selectionIndexes.lastIndex;
             HIApplication *app = (HIApplication *) [_arrayController arrangedObjects][index];
 
-            if ([HIAppRuntimeBridge isApiVersionInApplicationSupported:app]) {
-                HIApplicationRuntimeViewController *sub = [HIApplicationRuntimeViewController new];
-                sub.application = app;
-                [self.navigationController pushViewController:sub animated:YES];
-            } else {
-                [self.view.window hiShake];
-                [self showApiVersionAlert];
-            }
+            [self launchApplication:app];
 
             dispatch_async(dispatch_get_main_queue(), ^{
                 [self.collectionView setSelectionIndexes:[NSIndexSet indexSet]];
             });
-
         }
+    }
+}
+
+- (void)launchApplication:(HIApplication *)app {
+    if ([HIAppRuntimeBridge isApiVersionInApplicationSupported:app]) {
+        HIApplicationRuntimeViewController *sub = [HIApplicationRuntimeViewController new];
+        sub.application = app;
+        [self.navigationController pushViewController:sub animated:YES];
+    } else {
+        [self.view.window hiShake];
+        [self showApiVersionAlert];
     }
 }
 
@@ -97,6 +102,13 @@
 }
 
 - (IBAction)getMoreAppsClicked:(id)sender {
+    for (HIApplication *app in self.arrayController.arrangedObjects) {
+        if ([app.id isEqual:AppStoreAppId]) {
+            [self launchApplication:app];
+            return;
+        }
+    }
+
     [[NSWorkspace sharedWorkspace] openURL:
      [NSURL URLWithString:@"https://github.com/hivewallet/hive-osx/wiki/App-Registry"]];
 }
