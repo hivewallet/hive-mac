@@ -9,6 +9,7 @@
             <connections>
                 <outlet property="addAddressButton" destination="72" id="104"/>
                 <outlet property="avatarView" destination="3" id="16"/>
+                <outlet property="editAvatarLabel" destination="106" id="31s-cM-9zM"/>
                 <outlet property="emailField" destination="76" id="90"/>
                 <outlet property="firstnameField" destination="21" id="27"/>
                 <outlet property="footerView" destination="66" id="94"/>

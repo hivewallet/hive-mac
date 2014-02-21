@@ -114,6 +114,11 @@ static NSString * const Separator = @"Separator";
     emailFrame.origin.x = labelFrame.origin.x + labelFrame.size.width + 10.0;
     self.emailField.frame = emailFrame;
 
+    // quick fix for edit label in some languages (e.g. Greek, Hungarian)
+    if (self.editAvatarLabel.intrinsicContentSize.width > self.editAvatarLabel.frame.size.width) {
+        self.editAvatarLabel.font = [NSFont fontWithName:self.editAvatarLabel.font.fontName size:10.0];
+    }
+
     _placeholders = [[NSMutableArray alloc] init];
 
     // Now... if we have a contact here, we need to update

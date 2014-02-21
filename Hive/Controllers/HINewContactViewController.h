@@ -28,6 +28,7 @@
 @property (weak) IBOutlet NSButton *addAddressButton;
 @property (weak) IBOutlet NSButton *scanQRCodeButton;
 @property (weak) IBOutlet NSButton *removeContactButton;
+@property (weak) IBOutlet NSTextField *editAvatarLabel;
 
 @property (strong) id<HIPerson> contact;
 
