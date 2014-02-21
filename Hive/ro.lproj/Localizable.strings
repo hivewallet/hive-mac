@@ -1,6 +1,6 @@
 
 /* Body for feedback emails */
-"(Please write in English if possible.)" = "(Please write in English if possible.)";
+"(Please write in English if possible.)" = "(Vă rugăm scrieţi în Engleză dacă este posibil.)";
 
 /* Address field placeholder */
 "Address" = "Adresă";
@@ -12,7 +12,7 @@
 "Anonymous" = "Anonim";
 
 /* Message when trying to start an app that requires a newer API level. */
-"App requires a newer version of Hive." = "App requires a newer version of Hive.";
+"App requires a newer version of Hive." = "Aplicaţia necesită o versiune nouă de Hive.";
 
 /* App load error title */
 "Application can't be loaded" = "Aplicația nu poate fi încarcată";
@@ -42,10 +42,10 @@
 "Backup problem" = "Problemă Backup";
 
 /* initialization error */
-"Bitcoin network data file could not be opened - another instance of Hive might still be running." = "Bitcoin network data file could not be opened - another instance of Hive might still be running.";
+"Bitcoin network data file could not be opened - another instance of Hive might still be running." = "Fişierul de date al reţelei Bitcoin nu a putut fi deschis - o altă instanţă de Hive ar putea să fie deschisă.";
 
 /* Chain file unreadable error title */
-"Bitcoin network data file could not be opened." = "Bitcoin network data file could not be opened.";
+"Bitcoin network data file could not be opened." = "Fişierul cu date referitoare la reţeaua Bitcoin nu a putut fi deschis.";
 
 /* Backup error message */
 "Can't create a directory to store the wallet backup" = "Nu poate fi creat un director în care să fie salvat backup-ul portofelului";
@@ -126,7 +126,7 @@
 "Firstname" = "Prenume";
 
 /* Hiveapp file not readable error title */
-"Hive application file \"%@\" could not be opened." = "Hive application file \"%@\" could not be opened.";
+"Hive application file \"%@\" could not be opened." = "Fişierul aplicaţiei Hive \"%@\" nu a putut fi deschis.";
 
 /* Initialization error title */
 "Hive cannot be started." = "Hive nu poate fi pornit.";
@@ -138,10 +138,10 @@
 "Hive directory is excluded from Time Machine backup" = "Directorul Hive este exclus din backup-ul Maşinii Timpului.";
 
 /* Sync in progress alert title */
-"Hive is currently syncing with the Bitcoin network. Are you sure you want to quit?" = "Hive is currently syncing with the Bitcoin network. Are you sure you want to quit?";
+"Hive is currently syncing with the Bitcoin network. Are you sure you want to quit?" = "Hive momentan se sincronizează cu reţeaua Bitcoin. Sigur doriţi să anulaţi?";
 
 /* Chain file unreadable error explanation */
-"Hive will now delete the file and synchronize with the Bitcoin network again. Please leave Hive open for the next several minutes, and try not to send any transactions right now." = "Hive will now delete the file and synchronize with the Bitcoin network again. Please leave Hive open for the next several minutes, and try not to send any transactions right now.";
+"Hive will now delete the file and synchronize with the Bitcoin network again. Please leave Hive open for the next several minutes, and try not to send any transactions right now." = "Hive va şterge fişierul şi se va sincroniza cu reţeaua Bitcoin din nou. Va rugăm lăsaţi Hive deschis pentru următoarele câteva minute şi încercaţi să nu efectuaţi tranzacţii momentan.";
 
 /* Share sent transaction text */
 "I've just received some Bitcoin using Hive" = "Tocmai am primit Bitcoin folosind Hive";
@@ -183,7 +183,7 @@
 "No backup since %@" = "Ultimul backup pe %@";
 
 /* No backups enabled notification title */
-"No backups configured" = "No backups configured";
+"No backups configured" = "Niciun backup configurat";
 
 /* Transaction failed alert message */
 "No Bitcoin have been taken from your wallet." = "Nu a fost retras niciun Bitcoin din portofel.";
@@ -252,10 +252,10 @@
 "The existing app file will be replaced by the new version. This will not affect any app settings or saved data." = "Aplicaţia existentă va fi înlocuită de o versiune nouă. Acest lucru nu va afecta nici o setare a aplicaţiei sau a datelor salvate.";
 
 /* Hiveapp file not readable error details */
-"The file is damaged or does not contain a Hive application." = "The file is damaged or does not contain a Hive application.";
+"The file is damaged or does not contain a Hive application." = "Fişierul este corupt sau nu conţine o aplicaţie Hive.";
 
 /* Sending dust alert message */
-"This amount is too low to be sent through the network." = "This amount is too low to be sent through the network.";
+"This amount is too low to be sent through the network." = "Această sumă este prea mică pentru a fi trimisă prin reţea.";
 
 /* Alert details when transaction was cancelled */
 "This can happen because of bugs in the wallet code or because the transaction was rejected by the network." = "Acest lucru se poate întâmpla din cauza erorilor în codul portofelului sau pentru că tranzacţia a fost respinsă de reţea.";
@@ -273,13 +273,13 @@
 "Time Machine is disabled in System Preferences" = "Maşina Timpului este dezactivată în Preferinţe Sistem.";
 
 /* No backups enabled notification details */
-"To protect your bitcoins, it's recommended that you enable at least one type of backup." = "To protect your bitcoins, it's recommended that you enable at least one type of backup.";
+"To protect your bitcoins, it's recommended that you enable at least one type of backup." = "Pentru a vă proteja bitcoinii, este recomandat să activaţi măcar un tip de backup.";
 
 /* Amount exceeds available balance alert message */
 "To send this transaction, you'll need to wait for your pending transactions to be confirmed first (this shouldn't take more than a few minutes)." = "Pentru a efectua această tranzacţie, va trebui să aşteptaţi ca tranzacţiile aflate în derulare să fie confirmate(nu ar trebui să dureze mai mult de câteva minute).";
 
 /* Message when trying to start an app that requires a newer API level. */
-"To use the app, please update to the latest version of Hive." = "To use the app, please update to the latest version of Hive.";
+"To use the app, please update to the latest version of Hive." = "Pentru a folosi aplicaţia, va rugăm updataţi Hive la ultima versiune.";
 
 /* Notification of cancelled transaction */
 "Transaction cancelled" = "Tranzacţie anulată";
@@ -342,4 +342,4 @@
 "Your changes won't be saved." = "Schimbările nu vor fi salvate.";
 
 /* Sync in progress alert details */
-"Your pending transactions won't be confirmed until the sync is complete." = "Your pending transactions won't be confirmed until the sync is complete.";
+"Your pending transactions won't be confirmed until the sync is complete." = "Tranzacţia în aşteptare nu va fi confirmată până nu se termină sincronizarea.";
