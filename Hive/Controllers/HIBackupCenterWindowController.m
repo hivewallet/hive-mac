@@ -146,6 +146,10 @@ static const NSTimeInterval UpdateTimerInterval = 5.0;
     }
 
     [enableButton setTag:row];
+
+    NSRect frame = enableButton.frame;
+    frame.size.width = enableButton.intrinsicContentSize.width;
+    enableButton.frame = frame;
 }
 
 - (BOOL)adapterShouldBeConfigured:(HIBackupAdapter *)adapter {
