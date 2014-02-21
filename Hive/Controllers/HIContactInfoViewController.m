@@ -69,7 +69,7 @@ static const NSInteger AddressFieldTag = 2;
 - (void)configureScrollView {
     NSRect f = self.profileScrollContent.frame;
     f.size.width = self.profileScrollView.frame.size.width;
-    f.size.height = 161 + 60 * _contact.addresses.count;
+    f.size.height = 161 + self.addressBoxView.intrinsicContentSize.height;
     self.profileScrollContent.frame = f;
     [self.profileScrollView setDocumentView:self.profileScrollContent];
 }

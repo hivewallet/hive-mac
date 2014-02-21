@@ -171,7 +171,7 @@ static NSString *const KEY_WALLET_HASH = @"walletHash";
 }
 
 - (NSSize)intrinsicContentSize {
-    return CGSizeMake(NSViewNoInstrinsicMetric, 60 * self.addresses.count);
+    return CGSizeMake(NSViewNoInstrinsicMetric, MAX(15, 60 * self.addresses.count));
 }
 
 #pragma mark - KVO
