@@ -207,7 +207,7 @@
                         <size key="offset" width="0.0" height="1"/>
                         <color key="color" red="1" green="0.99988943340000003" blue="0.99995732309999996" alpha="1" colorSpace="calibratedRGB"/>
                     </shadow>
-                    <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="center" title="Nakon toga možete koristiti" id="129">
+                    <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="center" title="You can then use the ✚ button on top to add more contacts." id="129">
                         <font key="font" size="13" name="Helvetica"/>
                         <color key="textColor" red="0.32231375579999999" green="0.3222793639" blue="0.32230004670000001" alpha="1" colorSpace="calibratedRGB"/>
                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
