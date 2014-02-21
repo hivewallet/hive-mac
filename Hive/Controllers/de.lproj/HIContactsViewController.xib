@@ -161,11 +161,11 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="122">
-                    <rect key="frame" x="69" y="256" width="185" height="80"/>
+                    <rect key="frame" x="50" y="276" width="224" height="60"/>
                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <constraints>
-                        <constraint firstAttribute="width" constant="181" id="nb2-46-PIE"/>
-                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="80" id="qEi-r4-MPs"/>
+                        <constraint firstAttribute="width" constant="220" id="nb2-46-PIE"/>
+                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="60" id="qEi-r4-MPs"/>
                     </constraints>
                     <shadow key="shadow">
                         <size key="offset" width="0.0" height="1"/>
@@ -179,7 +179,7 @@
                     </textFieldCell>
                 </textField>
                 <button translatesAutoresizingMaskIntoConstraints="NO" id="124">
-                    <rect key="frame" x="111" y="210" width="100" height="29"/>
+                    <rect key="frame" x="111" y="230" width="100" height="29"/>
                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="24" id="6Il-Zc-l24"/>
