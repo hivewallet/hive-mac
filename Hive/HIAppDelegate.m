@@ -32,6 +32,7 @@
 #import "HIFirstRunWizardWindowController.h"
 #import "HILogFormatter.h"
 #import "HIMainWindowController.h"
+#import "HINetworkConnectionMonitor.h"
 #import "HINotificationService.h"
 #import "HIPasswordChangeWindowController.h"
 #import "HISendBitcoinsWindowController.h"
@@ -54,6 +55,7 @@ static int ddLogLevel = LOG_LEVEL_VERBOSE;
 
 @interface HIAppDelegate ()<BITHockeyManagerDelegate> {
     HIMainWindowController *_mainWindowController;
+    HINetworkConnectionMonitor *_networkMonitor;
     NSMutableArray *_popupWindows;
 }
 
@@ -265,6 +267,7 @@ static int ddLogLevel = LOG_LEVEL_VERBOSE;
         dispatch_async(dispatch_get_main_queue(), ^{
             [self setAsDefaultHandler];
             [self initializeBackups];
+            [self startNetworkMonitor];
         });
     }
 }
@@ -272,6 +275,10 @@ static int ddLogLevel = LOG_LEVEL_VERBOSE;
 - (void)initializeBackups {
     [[HIBackupManager sharedManager] initializeAdapters];
     [[HIBackupManager sharedManager] performBackups];
+}
+
+- (void)startNetworkMonitor {
+    _networkMonitor = [[HINetworkConnectionMonitor alloc] init];
 }
 
 - (void)setAsDefaultHandler {
