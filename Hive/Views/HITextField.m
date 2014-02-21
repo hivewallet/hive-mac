@@ -104,6 +104,11 @@ NSString * const kHITextFieldContentChanged = @"kHITextFieldContentChanged";
     [self recalcForString:value];
 }
 
+- (void)resizeWithOldSuperviewSize:(NSSize)oldSize {
+    [super resizeWithOldSuperviewSize:oldSize];
+    [self recalcForString:self.stringValue];
+}
+
 - (void)recalcForString:(NSString *)string {
     if (string.length == 0) {
         string = [self.cell placeholderString];
