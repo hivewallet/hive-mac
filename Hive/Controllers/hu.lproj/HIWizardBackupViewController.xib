@@ -77,7 +77,7 @@
                     </constraints>
                     <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="center" id="rIc-eX-ajY">
                         <font key="font" metaFont="system" size="16"/>
-                        <string key="title">A tárca biztonsági mentése fontos mert így megvédheted a pénzedet attól hogy elvesszen ha esetleg elveszne a számítógéped ,mert ha ez megtörténik  a mentésből majd visszaállíthatod. Ezért csinálj mentést róla most!</string>
+                        <string key="title">A tárca biztonsági mentése fontos mert így megvédheted a pénzedet attól hogy elvesszen ha esetleg elveszne a számítógéped, mert ha ez megtörténik a mentésből majd visszaállíthatod. Ezért csinálj mentést róla most!</string>
                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                     </textFieldCell>
@@ -149,7 +149,7 @@
                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="kvT-RL-uZq">
                     <rect key="frame" x="548" y="241" width="85" height="20"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="✘  tiltva" id="M9O-91-CDX">
+                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="✘ tiltva" id="M9O-91-CDX">
                         <font key="font" size="16" name="ZapfDingbatsITC"/>
                         <color key="textColor" red="0.86645009566326525" green="0.54672967535343253" blue="0.47391934301160576" alpha="1" colorSpace="calibratedRGB"/>
                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>

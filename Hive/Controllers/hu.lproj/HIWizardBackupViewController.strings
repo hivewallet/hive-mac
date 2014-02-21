@@ -6,7 +6,7 @@
 "KqD-DN-1Yk.title" = "✓ engedélyezve";
 
 /* Class = "NSTextFieldCell"; title = "✘ disabled"; ObjectID = "M9O-91-CDX"; */
-"M9O-91-CDX.title" = "✘  tiltva";
+"M9O-91-CDX.title" = "✘ tiltva";
 
 /* Class = "NSTextFieldCell"; title = "✘ disabled"; ObjectID = "NSS-6s-Nas"; */
 "NSS-6s-Nas.title" = "✘ tiltva";
@@ -24,4 +24,4 @@
 "lG8-G7-noh.title" = "Engedélyezés";
 
 /* Class = "NSTextFieldCell"; title = "Backing up your wallet file is also an important safety measure to protect your money. Let's make a backup copy of your wallet now. If you ever lose your computer, Hive can retrieve your wallet from these sources."; ObjectID = "rIc-eX-ajY"; */
-"rIc-eX-ajY.title" = "A tárca biztonsági mentése fontos mert így megvédheted a pénzedet attól hogy elvesszen ha esetleg elveszne a számítógéped ,mert ha ez megtörténik  a mentésből majd visszaállíthatod. Ezért csinálj mentést róla most!";
+"rIc-eX-ajY.title" = "A tárca biztonsági mentése fontos mert így megvédheted a pénzedet attól hogy elvesszen ha esetleg elveszne a számítógéped, mert ha ez megtörténik a mentésből majd visszaállíthatod. Ezért csinálj mentést róla most!";

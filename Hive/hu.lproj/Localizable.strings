@@ -270,7 +270,7 @@
 "This isn't a valid Bitcoin address." = "Ez nem egy valós Bitcoin cím.";
 
 /* Backup error message */
-"Time Machine is disabled in System Preferences" = "A Time Machine  ki van kapcsolva a rendszerben.";
+"Time Machine is disabled in System Preferences" = "A Time Machine ki van kapcsolva a rendszerben.";
 
 /* No backups enabled notification details */
 "To protect your bitcoins, it's recommended that you enable at least one type of backup." = "To protect your bitcoins, it's recommended that you enable at least one type of backup.";
