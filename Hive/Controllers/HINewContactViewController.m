@@ -104,6 +104,16 @@ static NSString * const Separator = @"Separator";
     self.lastnameField.nextKeyView = self.emailField;
     self.emailField.nextKeyView = self.firstnameField;
 
+    // resize email field label
+    NSView *label = self.emailField.superview.subviews.firstObject;
+    NSRect labelFrame = label.frame;
+    labelFrame.size.width = label.intrinsicContentSize.width;
+    label.frame = labelFrame;
+
+    NSRect emailFrame = self.emailField.frame;
+    emailFrame.origin.x = labelFrame.origin.x + labelFrame.size.width + 10.0;
+    self.emailField.frame = emailFrame;
+
     _placeholders = [[NSMutableArray alloc] init];
 
     // Now... if we have a contact here, we need to update
