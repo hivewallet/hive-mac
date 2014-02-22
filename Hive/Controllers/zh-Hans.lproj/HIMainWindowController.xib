@@ -8,6 +8,7 @@
         <customObject id="-2" userLabel="File's Owner" customClass="HIMainWindowController">
             <connections>
                 <outlet property="contentView" destination="36" id="38"/>
+                <outlet property="networkErrorView" destination="cbo-ZW-eve" id="pKX-sj-kip"/>
                 <outlet property="sendButton" destination="44" id="nqI-bw-r6i"/>
                 <outlet property="sidebarController" destination="39" id="40"/>
                 <outlet property="window" destination="3" id="10"/>
@@ -59,5 +60,20 @@
                 <outlet property="delegate" destination="-2" id="28"/>
             </connections>
         </window>
+        <customView id="cbo-ZW-eve" customClass="HIErrorBar">
+            <rect key="frame" x="0.0" y="0.0" width="308" height="35"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+            <subviews>
+                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="kiW-99-t6l">
+                    <rect key="frame" x="18" y="9" width="272" height="17"/>
+                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="Network connection error" id="2MH-gv-3gz">
+                        <font key="font" size="13" name="Helvetica-Bold"/>
+                        <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
+            </subviews>
+        </customView>
     </objects>
 </document>

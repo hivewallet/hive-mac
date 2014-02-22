@@ -4,3 +4,6 @@
 
 /* Class = "NSButtonCell"; title = "Send"; ObjectID = "45"; */
 "45.title" = "Отправить";
+
+/* Class = "NSTextFieldCell"; title = "Network connection error"; ObjectID = "2MH-gv-3gz"; */
+"2MH-gv-3gz.title" = "Network connection error";

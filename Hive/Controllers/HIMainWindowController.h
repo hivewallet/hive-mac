@@ -20,6 +20,7 @@
 @property (strong) IBOutlet NSView *contentView;
 @property (strong) IBOutlet NSButton *sendButton;
 @property (strong) IBOutlet HISidebarController *sidebarController;
+@property (strong) IBOutlet NSView *networkErrorView;
 
 - (void)switchToPanel:(Class)panelClass;
 

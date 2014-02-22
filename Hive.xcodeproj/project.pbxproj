@@ -178,6 +178,7 @@
 		588F3E8518719A9000FF42EA /* HIBackupStatusCellView.m in Sources */ = {isa = PBXBuildFile; fileRef = 588F3E8418719A9000FF42EA /* HIBackupStatusCellView.m */; };
 		589064AE1805742C0082BE5C /* seansoutpost.hiveapp in Resources */ = {isa = PBXBuildFile; fileRef = 589064AD1805742C0082BE5C /* seansoutpost.hiveapp */; };
 		589064B7180596B80082BE5C /* HIEditableImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 589064B6180596B80082BE5C /* HIEditableImageView.m */; };
+		589FAA2718B81A7600E2CAF3 /* HIErrorBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 589FAA2618B81A7600E2CAF3 /* HIErrorBar.m */; };
 		58A03B0D17D9DC4100ADD5E5 /* HIButtonWithSpinner.m in Sources */ = {isa = PBXBuildFile; fileRef = 58A03B0C17D9DC4100ADD5E5 /* HIButtonWithSpinner.m */; };
 		58A0A49618ABC75E00A5A084 /* HITemporaryContact.m in Sources */ = {isa = PBXBuildFile; fileRef = 58A0A49518ABC75E00A5A084 /* HITemporaryContact.m */; };
 		58A0A49F18AD37E600A5A084 /* HILocalBackup.m in Sources */ = {isa = PBXBuildFile; fileRef = 58A0A49E18AD37E600A5A084 /* HILocalBackup.m */; };
@@ -1500,6 +1501,8 @@
 		589C6151183A70B800EE523F /* pt-BR */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-BR"; path = "pt-BR.lproj/MainMenu.strings"; sourceTree = "<group>"; };
 		589C6152183A70B800EE523F /* pt-BR */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = "pt-BR"; path = "pt-BR.lproj/MainMenu.xib"; sourceTree = "<group>"; };
 		589C6154183A70B900EE523F /* pt-BR */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-BR"; path = "pt-BR.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		589FAA2518B81A7600E2CAF3 /* HIErrorBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HIErrorBar.h; sourceTree = "<group>"; };
+		589FAA2618B81A7600E2CAF3 /* HIErrorBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HIErrorBar.m; sourceTree = "<group>"; };
 		58A03B0B17D9DC4100ADD5E5 /* HIButtonWithSpinner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HIButtonWithSpinner.h; sourceTree = "<group>"; };
 		58A03B0C17D9DC4100ADD5E5 /* HIButtonWithSpinner.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HIButtonWithSpinner.m; sourceTree = "<group>"; };
 		58A0A49418ABC75E00A5A084 /* HITemporaryContact.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HITemporaryContact.h; sourceTree = "<group>"; };
@@ -2287,6 +2290,8 @@
 				589064B6180596B80082BE5C /* HIEditableImageView.m */,
 				1AA1015DB961D5421DA89E41 /* HIEmptyTransactionsView.h */,
 				1AA10B56EFB8D052C7EEFF9E /* HIEmptyTransactionsView.m */,
+				589FAA2518B81A7600E2CAF3 /* HIErrorBar.h */,
+				589FAA2618B81A7600E2CAF3 /* HIErrorBar.m */,
 				D958A8B617E8547A00CED98C /* HIFlippedView.h */,
 				D958A8B717E8547A00CED98C /* HIFlippedView.m */,
 				D9F0B9F617EC654C0050A0A2 /* HIImageCell.h */,
@@ -2892,6 +2897,7 @@
 				24300C9F188C858900FDEF2F /* HIWizardBackupViewController.m in Sources */,
 				5804C32617FC88BA003B7891 /* HIProfile.m in Sources */,
 				586059B4180419F500FD9C2A /* BCClient.m in Sources */,
+				589FAA2718B81A7600E2CAF3 /* HIErrorBar.m in Sources */,
 				586059BD18041A1300FD9C2A /* NSColor+Hive.m in Sources */,
 				586059BE18041A1300FD9C2A /* NSImage+NPEffects.m in Sources */,
 				583076BF18B3C8220017084A /* HIAboutHiveWindowController.m in Sources */,

@@ -13,6 +13,7 @@
 #import "HIContactViewController.h"
 #import "HIMainWindowController.h"
 #import "HINavigationController.h"
+#import "HINetworkConnectionMonitor.h"
 #import "HIProfile.h"
 #import "HIProfileViewController.h"
 #import "HISendBitcoinsWindowController.h"
@@ -67,6 +68,16 @@ static const NSTimeInterval SlideAnimationDuration = 0.3;
     [[NSNotificationCenter defaultCenter] addObserver:self
                                              selector:@selector(sendWindowDidClose:)
                                                  name:HISendBitcoinsWindowDidClose
+                                               object:nil];
+
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(onNetworkConnected)
+                                                 name:HINetworkConnectionMonitorConnected
+                                               object:nil];
+
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(onNetworkDisconnected)
+                                                 name:HINetworkConnectionMonitorDisconnected
                                                object:nil];
 
     // After everything is set up and visible, start pre-loading the other panels for smooth animation.
@@ -194,6 +205,62 @@ static const NSTimeInterval SlideAnimationDuration = 0.3;
     _titleView.alphaValue = 0.6;
     [_currentViewController viewWillDisappear];
 }
+
+
+#pragma mark - Network connection status
+
+- (void)onNetworkConnected {
+    if (self.networkErrorView.superview) {
+        [NSAnimationContext runAnimationGroup:^(NSAnimationContext *context) {
+            context.duration = SlideAnimationDuration;
+            context.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseInEaseOut];
+
+            CGFloat barHeight = self.networkErrorView.frame.size.height;
+            [self expandView:self.contentView.animator by:barHeight];
+            [self expandView:self.sidebarController.view.animator by:barHeight];
+            [self moveView:self.networkErrorView.animator by:barHeight];
+        } completionHandler:^{
+            [self.networkErrorView removeFromSuperview];
+        }];
+    }
+}
+
+- (void)onNetworkDisconnected {
+    if (!self.networkErrorView.superview) {
+        NSView *rootView = self.window.contentView;
+
+        NSRect errorViewFrame = self.networkErrorView.frame;
+        errorViewFrame.origin.x = 0;
+        errorViewFrame.origin.y = rootView.bounds.size.height;
+        errorViewFrame.size.width = rootView.bounds.size.width;
+        self.networkErrorView.frame = errorViewFrame;
+
+        [self.window.contentView addSubview:self.networkErrorView];
+
+        [NSAnimationContext runAnimationGroup:^(NSAnimationContext *context) {
+            context.duration = SlideAnimationDuration;
+            context.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseInEaseOut];
+
+            CGFloat barHeight = self.networkErrorView.frame.size.height;
+            [self expandView:self.contentView.animator by:-barHeight];
+            [self expandView:self.sidebarController.view.animator by:-barHeight];
+            [self moveView:self.networkErrorView.animator by:-barHeight];
+        } completionHandler:^{}];
+    }
+}
+
+- (void)expandView:(NSView *)view by:(CGFloat)diff {
+    NSRect frame = view.frame;
+    frame.size.height += diff;
+    view.frame = frame;
+}
+
+- (void)moveView:(NSView *)view by:(CGFloat)diff {
+    NSRect frame = view.frame;
+    frame.origin.y += diff;
+    view.frame = frame;
+}
+
 
 #pragma mark - Switching panels
 

@@ -23,7 +23,6 @@ static const NSInteger SidebarIndexNotSelected = -1;
     NSMutableArray *_viewControllers;
 }
 
-@property (strong, nonatomic) IBOutlet NSView *view;
 @property (assign, nonatomic) NSUInteger selectedTabIndex;
 
 @end
