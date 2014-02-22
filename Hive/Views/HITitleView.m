@@ -172,7 +172,6 @@ static NSString const *ConstraintKey = @"constraint";
     titleButton.buttonType = NSToggleButton;
     titleButton.target = self;
     titleButton.action = @selector(leftButtonClicked:);
-    titleButton.title = title;
     [self setStyleForButton:titleButton title:title small:NO animated:NO];
     return titleButton;
 }
@@ -275,7 +274,8 @@ static NSString const *ConstraintKey = @"constraint";
     NSAssert(0 <= position && position < _stack.count, @"Position does not exist");
 
     NSButton *button = _stack[position][ButtonKey];
-    button.title = newTitle;
+    BOOL isCenterButton = position == _stack.count - 1;
+    [self setStyleForButton:button title:newTitle small:!isCenterButton animated:NO];
     _stack[position][TitleKey] = button.title;
 }
 
