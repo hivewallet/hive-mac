@@ -72,7 +72,7 @@ static NSString const *ConstraintKey = @"constraint";
 
     [self removeConstraint:stackItem[ConstraintKey]];
     double startX = button.frame.origin.x;
-    NSLayoutConstraint *newConstraint = ALIGN_LEFT(button, self, startX);
+    NSLayoutConstraint *newConstraint = ALIGN_LEFT(button, self, startX, HIGH);
     [self addConstraint:newConstraint];
     (animated ? newConstraint.animator : newConstraint).constant = SidebarButtonWidth;
     stackItem[ConstraintKey] = newConstraint;
