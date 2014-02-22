@@ -9,6 +9,9 @@
             <connections>
                 <outlet property="copyrightField" destination="CEK-LH-SqD" id="zUr-Af-yXg"/>
                 <outlet property="creditsBox" destination="kAs-s3-3zJ" id="TJJ-Zo-nMU"/>
+                <outlet property="facebookButton" destination="rQH-54-ugC" id="GES-kX-dR7"/>
+                <outlet property="githubButton" destination="mxT-if-scf" id="bvp-1y-qCZ"/>
+                <outlet property="twitterButton" destination="rfv-rP-YVd" id="ACc-XH-fSG"/>
                 <outlet property="versionField" destination="1rS-yi-ilT" id="7Op-Np-p0q"/>
                 <outlet property="window" destination="1" id="3"/>
             </connections>
@@ -18,21 +21,21 @@
         <window title="About Hive" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" restorable="NO" oneShot="NO" releasedWhenClosed="NO" wantsToBeColor="NO" animationBehavior="default" id="1">
             <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
             <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
-            <rect key="contentRect" x="196" y="240" width="430" height="490"/>
+            <rect key="contentRect" x="196" y="240" width="430" height="545"/>
             <rect key="screenRect" x="0.0" y="0.0" width="1440" height="878"/>
-            <value key="minSize" type="size" width="430" height="490"/>
-            <value key="maxSize" type="size" width="430" height="490"/>
+            <value key="minSize" type="size" width="430" height="545"/>
+            <value key="maxSize" type="size" width="430" height="545"/>
             <view key="contentView" id="2">
-                <rect key="frame" x="0.0" y="0.0" width="430" height="490"/>
+                <rect key="frame" x="0.0" y="0.0" width="430" height="545"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" id="Nbn-fL-eQq">
-                        <rect key="frame" x="183" y="406" width="64" height="64"/>
+                        <rect key="frame" x="183" y="461" width="64" height="64"/>
                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
                         <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="Icon" id="z6O-dz-oaS"/>
                     </imageView>
                     <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="kn8-BP-34U">
-                        <rect key="frame" x="18" y="381" width="394" height="17"/>
+                        <rect key="frame" x="18" y="436" width="394" height="17"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                         <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="Hive" id="8Hw-Kz-cj8">
                             <font key="font" metaFont="systemBold" size="14"/>
@@ -41,7 +44,7 @@
                         </textFieldCell>
                     </textField>
                     <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="1rS-yi-ilT">
-                        <rect key="frame" x="18" y="356" width="394" height="17"/>
+                        <rect key="frame" x="18" y="411" width="394" height="17"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                         <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="Version" id="JBF-lq-sgE">
                             <font key="font" size="12" name="LucidaGrande"/>
@@ -68,7 +71,7 @@
                         </textFieldCell>
                     </textField>
                     <scrollView horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" usesPredominantAxisScrolling="NO" id="d41-2y-2N5">
-                        <rect key="frame" x="20" y="95" width="390" height="245"/>
+                        <rect key="frame" x="20" y="150" width="390" height="245"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <clipView key="contentView" id="pKV-Pq-PyS">
                             <rect key="frame" x="1" y="1" width="388" height="243"/>
@@ -98,13 +101,46 @@
                     </scrollView>
                     <button verticalHuggingPriority="750" id="BDC-rr-sU3">
                         <rect key="frame" x="150" y="19" width="130" height="17"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <buttonCell key="cell" type="inline" title="More license info..." bezelStyle="inline" imagePosition="overlaps" alignment="center" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="14O-yz-6ze">
                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                             <font key="font" metaFont="smallSystemBold"/>
                         </buttonCell>
                         <connections>
                             <action selector="showLicenseInfo:" target="-2" id="7Ms-9h-1f8"/>
+                        </connections>
+                    </button>
+                    <button id="rQH-54-ugC">
+                        <rect key="frame" x="199" y="99" width="32" height="32"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
+                        <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" imagePosition="overlaps" alignment="center" state="on" imageScaling="proportionallyDown" inset="2" id="Ql8-uW-IvM">
+                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                            <font key="font" metaFont="system"/>
+                        </buttonCell>
+                        <connections>
+                            <action selector="openFacebookProfile:" target="-2" id="bRl-3j-z1H"/>
+                        </connections>
+                    </button>
+                    <button id="mxT-if-scf">
+                        <rect key="frame" x="261" y="99" width="32" height="32"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
+                        <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" imagePosition="overlaps" alignment="center" state="on" imageScaling="proportionallyDown" inset="2" id="ewG-yI-tzf">
+                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                            <font key="font" metaFont="system"/>
+                        </buttonCell>
+                        <connections>
+                            <action selector="openGitHubProfile:" target="-2" id="QRJ-kI-th2"/>
+                        </connections>
+                    </button>
+                    <button id="rfv-rP-YVd">
+                        <rect key="frame" x="137" y="99" width="32" height="32"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
+                        <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" imagePosition="overlaps" alignment="center" state="on" imageScaling="proportionallyDown" inset="2" id="gYl-DB-KNe">
+                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                            <font key="font" metaFont="system"/>
+                        </buttonCell>
+                        <connections>
+                            <action selector="openTwitterProfile:" target="-2" id="R6K-vx-jEO"/>
                         </connections>
                     </button>
                 </subviews>

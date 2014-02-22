@@ -6,6 +6,7 @@
 //  Copyright (c) 2014 Hive Developers. All rights reserved.
 //
 
+#import <FontAwesomeIconFactory/NIKFontAwesomeIconFactory+OSX.h>
 #import "HIAboutHiveWindowController.h"
 #import "HILicenseInfoPanelController.h"
 
@@ -15,6 +16,9 @@
 @property (weak) IBOutlet NSTextField *versionField;
 @property (weak) IBOutlet NSTextField *copyrightField;
 @property (strong) HILicenseInfoPanelController *licenseInfoPanel;
+@property (weak) IBOutlet NSButton *twitterButton;
+@property (weak) IBOutlet NSButton *facebookButton;
+@property (weak) IBOutlet NSButton *githubButton;
 
 @end
 
@@ -40,6 +44,13 @@
     NSAttributedString *credits = [[NSAttributedString alloc] initWithRTF:creditsFile documentAttributes:nil];
     [self.creditsBox.textStorage setAttributedString:credits];
 
+    NIKFontAwesomeIconFactory *iconFactory = [[NIKFontAwesomeIconFactory alloc] init];
+    iconFactory.size = self.twitterButton.frame.size.width;
+
+    self.twitterButton.image = [iconFactory createImageForIcon:NIKFontAwesomeIconTwitter];
+    self.facebookButton.image = [iconFactory createImageForIcon:NIKFontAwesomeIconFacebookSquare];
+    self.githubButton.image = [iconFactory createImageForIcon:NIKFontAwesomeIconGithub];
+
     [self.window center];
 }
 
@@ -49,6 +60,18 @@
     }
 
     [self.licenseInfoPanel showWindow:sender];
+}
+
+- (IBAction)openTwitterProfile:(id)sender {
+    [[NSWorkspace sharedWorkspace] openURL:[NSURL URLWithString:@"http://twitter.com/hivewallet"]];
+}
+
+- (IBAction)openFacebookProfile:(id)sender {
+    [[NSWorkspace sharedWorkspace] openURL:[NSURL URLWithString:@"http://facebook.com/hivewallet"]];
+}
+
+- (IBAction)openGitHubProfile:(id)sender {
+    [[NSWorkspace sharedWorkspace] openURL:[NSURL URLWithString:@"http://github.com/hivewallet"]];
 }
 
 @end
