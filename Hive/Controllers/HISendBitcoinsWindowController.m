@@ -266,8 +266,8 @@ NSString * const HISendBitcoinsWindowSuccessKey = @"success";
 }
 
 - (NSDecimalNumber *)convertedAmountFieldValue {
-    NSDecimalNumber *number = [NSDecimalNumber decimalNumberWithString:self.convertedAmountField.stringValue
-                                                                locale:[NSLocale currentLocale]];
+    NSDecimalNumber *number = [[HICurrencyFormatService sharedService] parseString:self.convertedAmountField.stringValue
+                                                                             error:NULL];
     NSDecimalNumber *zero = [NSDecimalNumber zero];
     if (number == [NSDecimalNumber notANumber] || [number isLessThanOrEqualTo:zero]) {
         return zero;

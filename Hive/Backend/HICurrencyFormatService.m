@@ -106,17 +106,12 @@
 
 - (NSDecimalNumber *)parseString:(NSString *)string error:(NSError **)error {
 
-    NSCharacterSet *nonNumeric =
-        [[NSCharacterSet characterSetWithCharactersInString:@"-0123456789,."] invertedSet];
-    NSString *strippedString = [string stringByTrimmingCharactersInSet:nonNumeric];
-    if (strippedString.length > 0) {
-        string = strippedString;
-    }
+    string = [self cleanUpInputString:string];
 
     NSNumberFormatter *currencyNumberFormatter = [self createNumberFormatter];
     currencyNumberFormatter.generatesDecimalNumbers = YES;
     currencyNumberFormatter.lenient = YES;
-    currencyNumberFormatter.numberStyle = NSNumberFormatterDecimalStyle;
+    currencyNumberFormatter.numberStyle = NSNumberFormatterCurrencyStyle;
     NSDecimalNumber *number = nil;
     if (error) {
         *error = nil;
@@ -128,6 +123,17 @@
         return number;
     } else {
         return 0ll;
+    }
+}
+
+- (NSString *)cleanUpInputString:(NSString *)string {
+    NSCharacterSet *numeric = [NSCharacterSet characterSetWithCharactersInString:@"-0123456789"];
+    NSRange start = [string rangeOfCharacterFromSet:numeric];
+    NSRange end = [string rangeOfCharacterFromSet:numeric options:NSBackwardsSearch];
+    if (start.location == NSNotFound) {
+        return string;
+    } else {
+        return [string substringWithRange:NSMakeRange(start.location, end.location - start.location + 1)];
     }
 }
 
