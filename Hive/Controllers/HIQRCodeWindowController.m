@@ -50,6 +50,18 @@ static const NSTimeInterval CURSOR_HIDE_IDLE_DELAY = 1.0;
     [self.window.contentView removeTrackingArea: self.trackingArea];
 }
 
+#pragma mark - QR
+
++ (dispatch_queue_t)dispatchQueue {
+    static dispatch_queue_t queue;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        queue = dispatch_queue_create("com.hivewallet.HIQRCodeWindowController", DISPATCH_QUEUE_SERIAL);
+    });
+
+    return queue;
+}
+
 - (void)setQRCodeString:(NSString *)QRCodeString {
     _QRCodeString = [QRCodeString copy];
     [self updateQRCode];
@@ -57,7 +69,7 @@ static const NSTimeInterval CURSOR_HIDE_IDLE_DELAY = 1.0;
 
 - (void)updateQRCode {
     if ([self isWindowLoaded] && self.QRCodeString.length) {
-        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+        dispatch_async([[self class] dispatchQueue], ^{
             ZXMultiFormatWriter *writer = [ZXMultiFormatWriter writer];
             CGSize size = self.imageView.bounds.size;
             NSError *error = nil;
