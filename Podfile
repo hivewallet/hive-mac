@@ -10,6 +10,7 @@ pod 'ZXingObjC'
 
 target :test, :exclusive => true do
   link_with 'HiveTests'
+  pod 'Kiwi/XCTest'
   pod 'OCHamcrest', '~> 3.0'
 end
 

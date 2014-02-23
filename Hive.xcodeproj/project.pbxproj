@@ -29,7 +29,7 @@
 		1AA10AB8CB13510790BD9A6D /* HIPasswordHolder.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AA10711079E121245A12DED /* HIPasswordHolder.m */; };
 		1AA10B3C94C377F4EF024D41 /* HIProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AA1013FB9712D7B30A91BFB /* HIProfileViewController.m */; };
 		1AA10D8123CFE9FDA6CFFEA0 /* HISendFeedbackService.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AA1087CF3AB1F831B230294 /* HISendFeedbackService.m */; };
-		1AA10DECEE3B99EDD1C14B81 /* HICurrencyFormatServiceTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AA107B12E9AB06FCF455005 /* HICurrencyFormatServiceTests.m */; };
+		1AA10DECEE3B99EDD1C14B81 /* HICurrencyFormatServiceSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AA107B12E9AB06FCF455005 /* HICurrencyFormatServiceSpec.m */; };
 		1AA10DF868C849FB18F976B4 /* HIWizardButtonCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AA106209DB5E8088D1290A0 /* HIWizardButtonCell.m */; };
 		1AA10E305C91DC42C81D0DC3 /* HIAddressesBox.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AA107FF085E51B83E5F751D /* HIAddressesBox.m */; };
 		1AA10ECC39D33A1362882EB2 /* HIProfileViewController.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1AA108BDEC523213EF9B8309 /* HIProfileViewController.strings */; };
@@ -55,7 +55,7 @@
 		24E2C7C0189D93E6008E17CC /* HICameraWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 24E2C7BE189D93E6008E17CC /* HICameraWindowController.m */; };
 		24EAAFC1186E1BBD00E1D2D3 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 24EAAFC0186E1BBD00E1D2D3 /* XCTest.framework */; };
 		24EAAFC7186E1BBD00E1D2D3 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 24EAAFC5186E1BBD00E1D2D3 /* InfoPlist.strings */; };
-		24EAAFC9186E1BBD00E1D2D3 /* HIBitcoinFormatServiceTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 24EAAFC8186E1BBD00E1D2D3 /* HIBitcoinFormatServiceTests.m */; };
+		24EAAFC9186E1BBD00E1D2D3 /* HIBitcoinFormatServiceSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 24EAAFC8186E1BBD00E1D2D3 /* HIBitcoinFormatServiceSpec.m */; };
 		5802106017ECC4F50039BA4B /* HITransactionCellView.m in Sources */ = {isa = PBXBuildFile; fileRef = 581EFBCB17DA441B00E2738D /* HITransactionCellView.m */; };
 		5802106317ECCAAA0039BA4B /* HIContactAutocompleteCellView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5802106217ECCAAA0039BA4B /* HIContactAutocompleteCellView.m */; };
 		5804C32617FC88BA003B7891 /* HIProfile.m in Sources */ = {isa = PBXBuildFile; fileRef = 5804C32517FC88BA003B7891 /* HIProfile.m */; };
@@ -321,7 +321,7 @@
 		1AA10711079E121245A12DED /* HIPasswordHolder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HIPasswordHolder.m; sourceTree = "<group>"; };
 		1AA107211BD084775E0C7199 /* HIBitcoinURLService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HIBitcoinURLService.h; sourceTree = "<group>"; };
 		1AA10789485D85E021441CEF /* HIAddressesBox.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HIAddressesBox.h; sourceTree = "<group>"; };
-		1AA107B12E9AB06FCF455005 /* HICurrencyFormatServiceTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HICurrencyFormatServiceTests.m; sourceTree = "<group>"; };
+		1AA107B12E9AB06FCF455005 /* HICurrencyFormatServiceSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HICurrencyFormatServiceSpec.m; sourceTree = "<group>"; };
 		1AA107FF085E51B83E5F751D /* HIAddressesBox.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HIAddressesBox.m; sourceTree = "<group>"; };
 		1AA1087CF3AB1F831B230294 /* HISendFeedbackService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HISendFeedbackService.m; sourceTree = "<group>"; };
 		1AA109349A0DB4DF39E55FA4 /* HILabelPopUpButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HILabelPopUpButton.h; sourceTree = "<group>"; };
@@ -473,7 +473,7 @@
 		24EAAFC0186E1BBD00E1D2D3 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		24EAAFC4186E1BBD00E1D2D3 /* HiveTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "HiveTests-Info.plist"; sourceTree = "<group>"; };
 		24EAAFC6186E1BBD00E1D2D3 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		24EAAFC8186E1BBD00E1D2D3 /* HIBitcoinFormatServiceTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HIBitcoinFormatServiceTests.m; sourceTree = "<group>"; };
+		24EAAFC8186E1BBD00E1D2D3 /* HIBitcoinFormatServiceSpec.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HIBitcoinFormatServiceSpec.m; sourceTree = "<group>"; };
 		24EAAFCA186E1BBD00E1D2D3 /* HiveTests-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "HiveTests-Prefix.pch"; sourceTree = "<group>"; };
 		4D217EA4BBEC47F5A47AFC8E /* libPods-test.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-test.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		58003E2718492B2A00CD19FE /* sr */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = sr; path = sr.lproj/HIApplicationsViewController.xib; sourceTree = "<group>"; };
@@ -1980,9 +1980,9 @@
 		24EAAFC2186E1BBD00E1D2D3 /* HiveTests */ = {
 			isa = PBXGroup;
 			children = (
-				24EAAFC8186E1BBD00E1D2D3 /* HIBitcoinFormatServiceTests.m */,
+				24EAAFC8186E1BBD00E1D2D3 /* HIBitcoinFormatServiceSpec.m */,
 				24EAAFC3186E1BBD00E1D2D3 /* Supporting Files */,
-				1AA107B12E9AB06FCF455005 /* HICurrencyFormatServiceTests.m */,
+				1AA107B12E9AB06FCF455005 /* HICurrencyFormatServiceSpec.m */,
 			);
 			path = HiveTests;
 			sourceTree = "<group>";
@@ -2849,8 +2849,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				24EAAFC9186E1BBD00E1D2D3 /* HIBitcoinFormatServiceTests.m in Sources */,
-				1AA10DECEE3B99EDD1C14B81 /* HICurrencyFormatServiceTests.m in Sources */,
+				24EAAFC9186E1BBD00E1D2D3 /* HIBitcoinFormatServiceSpec.m in Sources */,
+				1AA10DECEE3B99EDD1C14B81 /* HICurrencyFormatServiceSpec.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
