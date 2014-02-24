@@ -110,7 +110,6 @@ static const NSTimeInterval HIExchangeRateMinimumUpdateInterval = 60.0;
             self.lastUpdate = [NSDate date];
         } else {
             HILogWarn(@"Invalid response from exchange rate API for %@: %@", currency, error);
-            [self.exchangeRates removeAllObjects];
         }
 
         [self notifyOfExchangeRates];
@@ -120,7 +119,6 @@ static const NSTimeInterval HIExchangeRateMinimumUpdateInterval = 60.0;
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         HILogWarn(@"Couldn't get response from exchange rate API: %@", error);
 
-        [self.exchangeRates removeAllObjects];
         [self notifyOfExchangeRates];
     }];
 
@@ -150,7 +148,7 @@ static const NSTimeInterval HIExchangeRateMinimumUpdateInterval = 60.0;
     if (exchangeRate && exchangeRate != [NSDecimalNumber notANumber]) {
         self.exchangeRates[currency] = exchangeRate;
     } else {
-        [self.exchangeRates removeObjectForKey:currency];
+        HILogWarn(@"Invalid exchange rate for %@: '%@'", currency, string);
     }
 
 }
