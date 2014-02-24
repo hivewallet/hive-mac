@@ -307,7 +307,7 @@ static const NSInteger kHIAppRuntimeBridgeParsingError = -1000;
     NSString *HTTPMethod = [self webScriptObject:options valueForProperty:@"type"] ?: @"GET";
     NSString *dataType = [self webScriptObject:options valueForProperty:@"dataType"];
 
-    HILogInfo(@"Request to %@ (%@)", url, [HTTPMethod uppercaseString]);
+    HILogInfo(@"Request to %@ (%@)", [self sanitizedURLForLogs:url], [HTTPMethod uppercaseString]);
 
     WebScriptObject *successCallback = [self webScriptObject:options valueForProperty:@"success"];
     WebScriptObject *errorCallback = [self webScriptObject:options valueForProperty:@"error"];
@@ -333,7 +333,8 @@ static const NSInteger kHIAppRuntimeBridgeParsingError = -1000;
                           errorCallback:errorCallback
                        completeCallback:completeCallback];
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-        HILogWarn(@"%@: Proxied request to %@ has failed: %@", _application.name, url, error);
+        HILogWarn(@"%@: Proxied request to %@ has failed: %@",
+                  _application.name, [self sanitizedURLForLogs:url], [error localizedFailureReason]);
 
         [self handleError:error
              forOperation:operation
@@ -342,6 +343,10 @@ static const NSInteger kHIAppRuntimeBridgeParsingError = -1000;
     }];
 
     [operation start];
+}
+
+- (NSString *)sanitizedURLForLogs:(NSURL *)url {
+    return [NSString stringWithFormat:@"%@://%@%@", url.scheme, url.host, url.path];
 }
 
 
