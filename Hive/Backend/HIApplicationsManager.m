@@ -47,6 +47,13 @@ const NSInteger HIApplicationManagerInsecureConnectionError = -2;
     return (count > 0);
 }
 
+- (HIApplication *)getApplicationById:(NSString *)applicationId {
+    NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:HIApplicationEntity];
+    request.predicate = [NSPredicate predicateWithFormat:@"id == %@", applicationId];
+
+    return [[DBM executeFetchRequest:request error:NULL] firstObject];
+}
+
 - (void)removeAllApps {
     NSError *error = nil;
     NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:HIApplicationEntity];

@@ -21,7 +21,7 @@
 // MINOR version must be incremented when new API features are added
 // MAJOR version must be incremented when existing API features are changed incompatibly.
 static const NSUInteger API_VERSION_MAJOR = 0;
-static const NSUInteger API_VERSION_MINOR = 1;
+static const NSUInteger API_VERSION_MINOR = 2;
 
 static NSString * const kHIAppRuntimeBridgeErrorDomain = @"HIAppRuntimeBridgeErrorDomain";
 static const NSInteger kHIAppRuntimeBridgeParsingError = -1000;
@@ -76,6 +76,7 @@ static const NSInteger kHIAppRuntimeBridgeParsingError = -1000;
                         @"getSystemInfoWithCallback:": @"getSystemInfo",
                         @"makeProxiedRequestToURL:options:": @"makeRequest",
                         @"installAppFromURL:callback:": @"installApp",
+                        @"applicationDataById:callback:": @"getApplication",
                         @"addExchangeRateListener:": @"addExchangeRateListener",
                         @"removeExchangeRateListener:": @"removeExchangeRateListener",
                         @"updateExchangeRateForCurrency:": @"updateExchangeRate",
@@ -244,6 +245,22 @@ static const NSInteger kHIAppRuntimeBridgeParsingError = -1000;
     JSValueRef jsonValue = [self valueObjectFromDictionary:transaction];
 
     [self callCallbackMethod:callback withArguments:&jsonValue count:1];
+}
+
+- (void)applicationDataById:(NSString *)applicationId callback:(WebScriptObject *)callback {
+    ValidateArgument(NSString, applicationId);
+    ValidateArgument(WebScriptObject, callback);
+
+    NSDictionary *manifest = [[[HIApplicationsManager sharedManager] getApplicationById:applicationId] manifest];
+    JSValueRef value;
+
+    if (manifest) {
+        value = [self valueObjectFromDictionary:manifest];
+    } else {
+        value = JSValueMakeNull(self.context);
+    }
+
+    [self callCallbackMethod:callback withArguments:&value count:1];
 }
 
 - (void)getUserInformationWithCallback:(WebScriptObject *)callback {
