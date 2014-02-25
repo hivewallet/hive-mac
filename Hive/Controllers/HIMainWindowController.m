@@ -29,7 +29,6 @@ static const NSTimeInterval SlideAnimationDuration = 0.3;
 @interface HIMainWindowController () {
     NSView *_titleView;
     HIViewController *_currentViewController;
-    HIViewController *_currentModalViewController;
 }
 
 @property (nonatomic, strong, readonly) INAppStoreWindow *appStoreWindow;
