@@ -495,6 +495,10 @@ void handleException(NSException *exception) {
     [self openPopupWindowWithClass:[HIPasswordChangeWindowController class]];
 }
 
+- (IBAction)lockWallet:(id)sender {
+    [_mainWindowController lockApplicationAnimated:YES];
+}
+
 - (IBAction)openCoinMapSite:(id)sender {
     [[NSWorkspace sharedWorkspace] openURL:[NSURL URLWithString:@"http://coinmap.org"]];
 }
