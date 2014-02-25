@@ -10,4 +10,8 @@
 
 @interface HILockScreenView : NSView
 
+@property (nonatomic, strong) IBOutlet NSImageView *lockIcon;
+@property (nonatomic, strong) IBOutlet NSTextField *passwordField;
+@property (nonatomic, strong) IBOutlet NSButton *submitButton;
+
 @end

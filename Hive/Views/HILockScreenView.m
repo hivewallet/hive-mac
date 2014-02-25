@@ -13,8 +13,6 @@
     NSColor *backgroundPattern;
 }
 
-@property (nonatomic, strong) IBOutlet NSImageView *lockIcon;
-
 @end
 
 @implementation HILockScreenView

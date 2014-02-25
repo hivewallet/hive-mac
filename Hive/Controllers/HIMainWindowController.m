@@ -115,6 +115,11 @@ NSString * const LockScreenEnabledDefaultsKey = @"LockScreenEnabled";
         }
     };
 
+    NSRect unlockFrame = self.overlayView.submitButton.frame;
+    unlockFrame.size.width = self.overlayView.submitButton.intrinsicContentSize.width + 10.0;
+    unlockFrame.origin.x = (self.overlayView.bounds.size.width - unlockFrame.size.width) / 2.0;
+    self.overlayView.submitButton.frame = unlockFrame;
+
     if ([[HIBitcoinManager defaultManager] isWalletEncrypted] && [self isLockScreenEnabled]) {
         [self lockApplicationAnimated:NO];
     } else {
@@ -164,7 +169,7 @@ NSString * const LockScreenEnabledDefaultsKey = @"LockScreenEnabled";
     [_titleView removeFromSuperview];
     _titleView = nil;
 
-    [self.window makeFirstResponder:self.passwordInputViewController.passwordField];
+    [self.window makeFirstResponder:self.overlayView.passwordField];
 
     [self.sidebarController setEnabled:NO];
     [self.sidebarController unselectCurrentController];

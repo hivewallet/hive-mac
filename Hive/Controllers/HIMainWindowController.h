@@ -8,6 +8,7 @@
 
 #import <Cocoa/Cocoa.h>
 #import <INAppStoreWindow/INAppStoreWindow.h>
+#import "HILockScreenView.h"
 #import "HIPasswordInputViewController.h"
 #import "HISidebarController.h"
 #import "HIViewController.h"
@@ -21,7 +22,7 @@ extern NSString * const LockScreenEnabledDefaultsKey;
 @interface HIMainWindowController : NSWindowController <HISidebarControllerDelegate>
 
 @property (strong) IBOutlet NSView *contentView;
-@property (strong) IBOutlet NSView *overlayView;
+@property (strong) IBOutlet HILockScreenView *overlayView;
 @property (strong) IBOutlet NSButton *sendButton;
 @property (strong) IBOutlet HIPasswordInputViewController *passwordInputViewController;
 @property (strong) IBOutlet HISidebarController *sidebarController;
