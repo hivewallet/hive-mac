@@ -86,6 +86,9 @@
 /* Class = "NSMenuItem"; title = "Change Password…"; ObjectID = "1HB-Qg-iyg"; */
 "1HB-Qg-iyg.title" = "Change Password…";
 
+/* Class = "NSMenuItem"; title = "Lock Wallet"; ObjectID = "AFM-Ev-d2A"; */
+"AFM-Ev-d2A.title" = "Lock Wallet";
+
 /* Class = "NSMenuItem"; title = "Open CoinMap..."; ObjectID = "ASP-Ns-ktD"; */
 "ASP-Ns-ktD.title" = "CoinMap खोलें";
 

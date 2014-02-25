@@ -7,3 +7,9 @@
 
 /* Class = "NSTextFieldCell"; title = "Network connection error"; ObjectID = "2MH-gv-3gz"; */
 "2MH-gv-3gz.title" = "Network connection error";
+
+/* Class = "NSButtonCell"; title = "Unlock"; ObjectID = "AEG-XJ-abS"; */
+"AEG-XJ-abS.title" = "Unlock";
+
+/* Class = "NSTextFieldCell"; title = "ENTER YOUR PASSWORD:"; ObjectID = "oW1-yx-he4"; */
+"oW1-yx-he4.title" = "ENTER YOUR PASSWORD:";
