@@ -88,8 +88,7 @@
                                     <action selector="changeWalletPassword:" target="494" id="n4h-c8-Hjn"/>
                                 </connections>
                             </menuItem>
-                            <menuItem title="Zablokuj portfel" id="AFM-Ev-d2A">
-                                <modifierMask key="keyEquivalentModifierMask"/>
+                            <menuItem title="Zablokuj portfel" keyEquivalent="l" id="AFM-Ev-d2A">
                                 <connections>
                                     <action selector="lockWallet:" target="-1" id="XWR-xx-Wx0"/>
                                 </connections>
