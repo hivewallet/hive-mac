@@ -87,8 +87,6 @@ static int ddLogLevel = LOG_LEVEL_VERBOSE;
 
     HILogInfo(@"Starting Hive v. %@...", [[NSBundle mainBundle] infoDictionary][@"CFBundleVersion"]);
 
-    [self configureHockeyApp];
-
     [[NSUserDefaults standardUserDefaults] registerDefaults:@{
       // enable WebKit inspector in apps
       @"WebKitDeveloperExtras": @YES,
@@ -104,6 +102,9 @@ static int ddLogLevel = LOG_LEVEL_VERBOSE;
                                                object:nil];
 
     [self configureMenu];
+
+    // this must be at the end
+    [self configureHockeyApp];
 }
 
 - (void)configureMenu {
