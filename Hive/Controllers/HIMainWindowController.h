@@ -8,6 +8,7 @@
 
 #import <Cocoa/Cocoa.h>
 #import <INAppStoreWindow/INAppStoreWindow.h>
+#import "HIPasswordInputViewController.h"
 #import "HISidebarController.h"
 #import "HIViewController.h"
 
@@ -18,10 +19,14 @@
 @interface HIMainWindowController : NSWindowController <HISidebarControllerDelegate>
 
 @property (strong) IBOutlet NSView *contentView;
+@property (strong) IBOutlet NSView *overlayView;
 @property (strong) IBOutlet NSButton *sendButton;
+@property (strong) IBOutlet HIPasswordInputViewController *passwordInputViewController;
 @property (strong) IBOutlet HISidebarController *sidebarController;
 @property (strong) IBOutlet NSView *networkErrorView;
 
 - (void)switchToPanel:(Class)panelClass;
+- (void)lockApplicationAnimated:(BOOL)animated;
+- (void)unlockApplicationAnimated:(BOOL)animated;
 
 @end

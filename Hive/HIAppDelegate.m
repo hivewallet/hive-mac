@@ -60,7 +60,6 @@ static int ddLogLevel = LOG_LEVEL_VERBOSE;
 }
 
 @property (nonatomic, strong) HIWizardWindowController *wizard;
-@property (nonatomic, assign, getter=isFullMenuEnabled) BOOL fullMenuEnabled;
 
 @end
 
@@ -310,8 +309,6 @@ static int ddLogLevel = LOG_LEVEL_VERBOSE;
 }
 
 - (void)showAppWindow {
-    self.fullMenuEnabled = YES;
-
     _mainWindowController = [[HIMainWindowController alloc] initWithWindowNibName:@"HIMainWindowController"];
     [_mainWindowController showWindow:self];
 }

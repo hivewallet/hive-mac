@@ -23,7 +23,7 @@ static const NSInteger SidebarIndexNotSelected = -1;
     NSMutableArray *_viewControllers;
 }
 
-@property (assign, nonatomic) NSUInteger selectedTabIndex;
+@property (assign, nonatomic) NSInteger selectedTabIndex;
 
 @end
 
@@ -36,16 +36,22 @@ static const NSInteger SidebarIndexNotSelected = -1;
     _viewControllers = [[NSMutableArray alloc] init];
 }
 
+- (void)setEnabled:(BOOL)enabled {
+    _enabled = enabled;
+
+    for (NSButton *button in _barButtons) {
+        [button setEnabled:enabled];
+    }
+
+    [self.sendButton setHidden:!enabled];
+}
+
 - (void)addViewController:(HIViewController *)controller {
     [_viewControllers addObject:controller];
 
     NSButton *button = [self tabBarButtonForController:controller];
     [_barButtons addObject:button];
     [self.view addSubview:button];
-
-    if (_barButtons.count == 1) {
-        [self selectControllerAtIndex:0];
-    }
 }
 
 - (NSButton *)tabBarButtonForController:(HIViewController *)controller {
@@ -56,12 +62,14 @@ static const NSInteger SidebarIndexNotSelected = -1;
     NSButton *button = [[HISidebarButton alloc] initWithFrame: frame];
     button.buttonType = NSToggleButton;
     button.bordered = NO;
+    button.enabled = self.enabled;
     button.tag = SidebarButtonTagStart + position;
     button.image = [self iconForController:controller active:NO];
     button.alternateImage = [self iconForController:controller active:YES];
     button.target = self;
     button.action = @selector(tabBarClicked:);
     button.autoresizingMask = NSViewMinYMargin;
+    button.refusesFirstResponder = YES;
     button.keyEquivalentModifierMask = NSCommandKeyMask;
     button.keyEquivalent = [NSString stringWithFormat:@"%ld", position + 1];
     return button;
@@ -70,6 +78,13 @@ static const NSInteger SidebarIndexNotSelected = -1;
 - (void)tabBarClicked:(NSButton *)tabButton {
     NSInteger position = tabButton.tag - SidebarButtonTagStart;
     [self selectControllerAtIndex:position];
+}
+
+- (void)unselectCurrentController {
+    if (self.selectedTabIndex != SidebarIndexNotSelected) {
+        [_barButtons[self.selectedTabIndex] setState:NSOffState];
+        self.selectedTabIndex = SidebarIndexNotSelected;
+    }
 }
 
 - (void)selectControllerAtIndex:(NSInteger)index {

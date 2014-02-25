@@ -17,8 +17,6 @@ static const NSTimeInterval IDLE_RESET_DELAY = 30.0;
 
 @interface HIPasswordInputViewController ()<NSTextFieldDelegate>
 
-@property (nonatomic, strong) IBOutlet NSSecureTextField *passwordField;
-
 @property (nonatomic, assign) BOOL submitButtonEnabled;
 
 @end

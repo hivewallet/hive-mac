@@ -9,6 +9,8 @@
             <connections>
                 <outlet property="contentView" destination="36" id="38"/>
                 <outlet property="networkErrorView" destination="cbo-ZW-eve" id="pKX-sj-kip"/>
+                <outlet property="overlayView" destination="N6A-Jl-eUO" id="TgJ-GE-Gm8"/>
+                <outlet property="passwordInputViewController" destination="81A-v1-c1A" id="N8c-RX-yUR"/>
                 <outlet property="sendButton" destination="44" id="nqI-bw-r6i"/>
                 <outlet property="sidebarController" destination="39" id="40"/>
                 <outlet property="window" destination="3" id="10"/>
@@ -19,6 +21,7 @@
         <customObject id="39" customClass="HISidebarController">
             <connections>
                 <outlet property="delegate" destination="-2" id="43"/>
+                <outlet property="sendButton" destination="44" id="RaD-bx-N4A"/>
                 <outlet property="view" destination="35" id="41"/>
             </connections>
         </customObject>
@@ -29,7 +32,7 @@
             <rect key="screenRect" x="0.0" y="0.0" width="1440" height="878"/>
             <value key="minSize" type="size" width="350" height="430"/>
             <value key="maxSize" type="size" width="600" height="1200"/>
-            <view key="contentView" id="4">
+            <view key="contentView" wantsLayer="YES" id="4">
                 <rect key="frame" x="0.0" y="0.0" width="350" height="500"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
@@ -75,5 +78,59 @@
                 </textField>
             </subviews>
         </customView>
+        <customView wantsLayer="YES" id="N6A-Jl-eUO" userLabel="Overlay View" customClass="HILockScreenView">
+            <rect key="frame" x="0.0" y="0.0" width="292" height="500"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" id="WwZ-gF-2Xu">
+                    <rect key="frame" x="122" y="285" width="48" height="48"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" id="hYX-5J-efD"/>
+                </imageView>
+                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="wEc-PD-35m">
+                    <rect key="frame" x="18" y="248" width="256" height="17"/>
+                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="ENTER YOUR PASSWORD:" id="oW1-yx-he4">
+                        <font key="font" metaFont="system"/>
+                        <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
+                <secureTextField verticalHuggingPriority="750" id="K81-E4-JIF">
+                    <rect key="frame" x="32" y="211" width="228" height="22"/>
+                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                    <secureTextFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" drawsBackground="YES" usesSingleLineMode="YES" id="FTp-v6-47W">
+                        <font key="font" metaFont="system"/>
+                        <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                        <allowedInputSourceLocales>
+                            <string>NSAllRomanInputSourcesLocaleIdentifier</string>
+                        </allowedInputSourceLocales>
+                    </secureTextFieldCell>
+                    <connections>
+                        <outlet property="delegate" destination="81A-v1-c1A" id="Xhq-PB-vW2"/>
+                    </connections>
+                </secureTextField>
+                <button id="RGj-ct-Dq5">
+                    <rect key="frame" x="104" y="169" width="84" height="29"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <buttonCell key="cell" type="bevel" title="Unlock" bezelStyle="regularSquare" imagePosition="overlaps" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="AEG-XJ-abS" customClass="HIDoneButtonCell">
+                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                        <font key="font" metaFont="system"/>
+                    </buttonCell>
+                    <connections>
+                        <action selector="submit:" target="81A-v1-c1A" id="Nk1-3c-hte"/>
+                    </connections>
+                </button>
+            </subviews>
+            <connections>
+                <outlet property="lockIcon" destination="WwZ-gF-2Xu" id="c6u-tn-9Nf"/>
+            </connections>
+        </customView>
+        <customObject id="81A-v1-c1A" customClass="HIPasswordInputViewController">
+            <connections>
+                <outlet property="passwordField" destination="K81-E4-JIF" id="vR6-Nd-fzM"/>
+            </connections>
+        </customObject>
     </objects>
 </document>

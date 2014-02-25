@@ -182,6 +182,9 @@
 		58A03B0D17D9DC4100ADD5E5 /* HIButtonWithSpinner.m in Sources */ = {isa = PBXBuildFile; fileRef = 58A03B0C17D9DC4100ADD5E5 /* HIButtonWithSpinner.m */; };
 		58A0A49618ABC75E00A5A084 /* HITemporaryContact.m in Sources */ = {isa = PBXBuildFile; fileRef = 58A0A49518ABC75E00A5A084 /* HITemporaryContact.m */; };
 		58A0A49F18AD37E600A5A084 /* HILocalBackup.m in Sources */ = {isa = PBXBuildFile; fileRef = 58A0A49E18AD37E600A5A084 /* HILocalBackup.m */; };
+		58A275DB18BBD30300C102B2 /* honey_im_subtle@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 58A275D918BBD30300C102B2 /* honey_im_subtle@2x.png */; };
+		58A275DC18BBD30300C102B2 /* honey_im_subtle.png in Resources */ = {isa = PBXBuildFile; fileRef = 58A275DA18BBD30300C102B2 /* honey_im_subtle.png */; };
+		58A275E118BBD56900C102B2 /* HILockScreenView.m in Sources */ = {isa = PBXBuildFile; fileRef = 58A275E018BBD56900C102B2 /* HILockScreenView.m */; };
 		58A37A8A180D747C00CFCDE3 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 58A37A8C180D747C00CFCDE3 /* Localizable.strings */; };
 		58A37A98180D7AF000CFCDE3 /* HIApplicationsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 58A37A9A180D7AF000CFCDE3 /* HIApplicationsViewController.xib */; };
 		58A37A9B180D7AF600CFCDE3 /* HIContactsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 58A37A9D180D7AF600CFCDE3 /* HIContactsViewController.xib */; };
@@ -1509,6 +1512,10 @@
 		58A0A49518ABC75E00A5A084 /* HITemporaryContact.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HITemporaryContact.m; sourceTree = "<group>"; };
 		58A0A49D18AD37E600A5A084 /* HILocalBackup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HILocalBackup.h; sourceTree = "<group>"; };
 		58A0A49E18AD37E600A5A084 /* HILocalBackup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HILocalBackup.m; sourceTree = "<group>"; };
+		58A275D918BBD30300C102B2 /* honey_im_subtle@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "honey_im_subtle@2x.png"; sourceTree = "<group>"; };
+		58A275DA18BBD30300C102B2 /* honey_im_subtle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = honey_im_subtle.png; sourceTree = "<group>"; };
+		58A275DF18BBD56900C102B2 /* HILockScreenView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HILockScreenView.h; sourceTree = "<group>"; };
+		58A275E018BBD56900C102B2 /* HILockScreenView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HILockScreenView.m; sourceTree = "<group>"; };
 		58A37A8B180D747C00CFCDE3 /* en */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		58A37A99180D7AF000CFCDE3 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/HIApplicationsViewController.xib; sourceTree = "<group>"; };
 		58A37A9C180D7AF600CFCDE3 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/HIContactsViewController.xib; sourceTree = "<group>"; };
@@ -2300,6 +2307,8 @@
 				5850D230189922C6001736D2 /* HIKeyObservingWindow.m */,
 				1AA10497F9EEF9DF75030891 /* HILinkTextField.h */,
 				1AA100BCED704B381898FF89 /* HILinkTextField.m */,
+				58A275DF18BBD56900C102B2 /* HILockScreenView.h */,
+				58A275E018BBD56900C102B2 /* HILockScreenView.m */,
 				24300C91188C7C7A00FDEF2F /* HIPaddedSecureTextFieldCell.h */,
 				24300C92188C7C7A00FDEF2F /* HIPaddedSecureTextFieldCell.m */,
 				588EFB2C17D8D2970085F6E6 /* HIProfileTabView.h */,
@@ -2417,11 +2426,12 @@
 		D9A592131767C49F00502635 /* Images */ = {
 			isa = PBXGroup;
 			children = (
-				24300BFB188892CD00FDEF2F /* wizard-background.png */,
 				58605A2118041D0A00FD9C2A /* avatar-empty.pdf */,
 				58605A2218041D0A00FD9C2A /* bg-sidebar.pdf */,
 				58605A2318041D0A00FD9C2A /* button__inset.pdf */,
 				583B1E0218687CF400817EF8 /* dropbox-glyph-blue.pdf */,
+				58A275D918BBD30300C102B2 /* honey_im_subtle@2x.png */,
+				58A275DA18BBD30300C102B2 /* honey_im_subtle.png */,
 				58605A2418041D0A00FD9C2A /* icon-apps__active.pdf */,
 				58605A2518041D0A00FD9C2A /* icon-apps__inactive.pdf */,
 				58605A2618041D0A00FD9C2A /* icon-bitcoin.pdf */,
@@ -2432,8 +2442,8 @@
 				58605A2B18041D0A00FD9C2A /* icon-group__active.pdf */,
 				58605A2C18041D0A00FD9C2A /* icon-group__inactive.pdf */,
 				58605A2D18041D0A00FD9C2A /* icon-nav-bar-back.pdf */,
-				58605A2E18041D0A00FD9C2A /* icon-next__active.pdf */,
 				58605A2F18041D0A00FD9C2A /* icon-next.pdf */,
+				58605A2E18041D0A00FD9C2A /* icon-next__active.pdf */,
 				58605A3018041D0A00FD9C2A /* icon-plus.pdf */,
 				58605A3118041D0A00FD9C2A /* icon-sadface.pdf */,
 				58605A3218041D0A00FD9C2A /* icon-search.pdf */,
@@ -2451,6 +2461,7 @@
 				58F496F018B67A1C0033B7E0 /* icon-unknown-app.png */,
 				58605A3E18041D0A00FD9C2A /* icon-your-profile__active.pdf */,
 				58605A3F18041D0A00FD9C2A /* icon-your-profile__inactive.pdf */,
+				24300BFB188892CD00FDEF2F /* wizard-background.png */,
 			);
 			path = Images;
 			sourceTree = "<group>";
@@ -2689,6 +2700,7 @@
 				2478B8D5184A88E700BA2C35 /* HIFeeDetailsViewController.xib in Resources */,
 				586059B0180419DF00FD9C2A /* minefield.hiveapp in Resources */,
 				588E355318212BDF006A6A25 /* HIErrorWindowController.strings in Resources */,
+				58A275DB18BBD30300C102B2 /* honey_im_subtle@2x.png in Resources */,
 				24300BE418830C4700FDEF2F /* HIWizardViewController.xib in Resources */,
 				586059B1180419DF00FD9C2A /* supporthive.hiveapp in Resources */,
 				58A37A8A180D747C00CFCDE3 /* Localizable.strings in Resources */,
@@ -2704,6 +2716,7 @@
 				58A37AE5180D99F200CFCDE3 /* MainMenu.strings in Resources */,
 				58A37AA7180D7B0B00CFCDE3 /* HIContactViewController.xib in Resources */,
 				58FB21EC1875809B00F87B9E /* get_dropbox_folder.sh in Resources */,
+				58A275DC18BBD30300C102B2 /* honey_im_subtle.png in Resources */,
 				585FFF4418159803005BCF73 /* Credits.rtf in Resources */,
 				58A37AAA180D7B1000CFCDE3 /* HIContactAutocompleteWindowController.xib in Resources */,
 				2478B8F2184A89EA00BA2C35 /* HIFeeDetailsViewController.strings in Resources */,
@@ -2962,6 +2975,7 @@
 				1AA106352AD821D71AC76DCA /* HIPasswordCreationInputHandler.m in Sources */,
 				24300C65188C566000FDEF2F /* HIWizardPasswordViewController.m in Sources */,
 				1AA10FF5281477AC42B0B952 /* HIWizardSmallButtonCell.m in Sources */,
+				58A275E118BBD56900C102B2 /* HILockScreenView.m in Sources */,
 				1AA103708F688652981245D2 /* HICurrencyFormatService.m in Sources */,
 				1AA1028C64880CACCA3AE5CA /* HIDirectoryDataService.m in Sources */,
 				1AA10E305C91DC42C81D0DC3 /* HIAddressesBox.m in Sources */,

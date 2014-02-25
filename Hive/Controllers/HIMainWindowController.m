@@ -6,6 +6,7 @@
 //  Copyright (c) 2013 Hive Developers. All rights reserved.
 //
 
+#import <BitcoinJKit/HIBitcoinManager.h>
 #import <QuartzCore/QuartzCore.h>
 #import "HIAppDelegate.h"
 #import "HIApplicationsViewController.h"
@@ -14,6 +15,7 @@
 #import "HIMainWindowController.h"
 #import "HINavigationController.h"
 #import "HINetworkConnectionMonitor.h"
+#import "HIPasswordHolder.h"
 #import "HIProfile.h"
 #import "HIProfileViewController.h"
 #import "HISendBitcoinsWindowController.h"
@@ -22,6 +24,7 @@
 #import "HIViewController.h"
 #import "NSColor+Hive.h"
 #import "NSImage+NPEffects.h"
+#import "NSWindow+HIShake.h"
 
 static const CGFloat TitleBarHeight = 35.0;
 static const NSTimeInterval SlideAnimationDuration = 0.3;
@@ -29,6 +32,7 @@ static const NSTimeInterval SlideAnimationDuration = 0.3;
 @interface HIMainWindowController () {
     NSView *_titleView;
     HIViewController *_currentViewController;
+    NSArray *_tabPanels;
 }
 
 @property (nonatomic, strong, readonly) INAppStoreWindow *appStoreWindow;
@@ -51,18 +55,6 @@ static const NSTimeInterval SlideAnimationDuration = 0.3;
 
 - (void)windowDidLoad {
     [super windowDidLoad];
-    self.appStoreWindow.titleBarHeight = TitleBarHeight;
-
-    NSArray *panels = @[
-                        [HIProfileViewController new],
-                        [HIApplicationsViewController new],
-                        [HIContactsViewController new],
-                        [HITransactionsViewController new],
-                      ];
-
-    for (HIViewController *panel in panels) {
-        [self.sidebarController addViewController:[[HINavigationController alloc] initWithRootViewController:panel]];
-    }
 
     [[NSNotificationCenter defaultCenter] addObserver:self
                                              selector:@selector(sendWindowDidClose:)
@@ -81,16 +73,108 @@ static const NSTimeInterval SlideAnimationDuration = 0.3;
 
     // After everything is set up and visible, start pre-loading the other panels for smooth animation.
     [self performSelector:@selector(preloadViews:)
-               withObject:panels
+               withObject:_tabPanels
                afterDelay:0];
 }
 
 - (void)awakeFromNib {
+    self.appStoreWindow.titleBarHeight = TitleBarHeight;
+
+    _tabPanels = @[
+                   [HIProfileViewController new],
+                   [HIApplicationsViewController new],
+                   [HIContactsViewController new],
+                   [HITransactionsViewController new],
+                 ];
+
+    for (HIViewController *panel in _tabPanels) {
+        [self.sidebarController addViewController:[[HINavigationController alloc] initWithRootViewController:panel]];
+    }
+
     // quick fix for send button in some languages (e.g. Russian)
     if (self.sendButton.intrinsicContentSize.width > self.sendButton.frame.size.width) {
         self.sendButton.frame = NSInsetRect(self.sendButton.frame, -2.0, 0.0);
         self.sendButton.font = [NSFont boldSystemFontOfSize:11.0];
     }
+
+    __unsafe_unretained typeof(self) mwc = self;
+    self.passwordInputViewController.onSubmit = ^(HIPasswordHolder *passwordHolder) {
+        if (passwordHolder.data.length > 0) {
+            if ([[HIBitcoinManager defaultManager] isPasswordCorrect:passwordHolder.data]) {
+                [mwc unlockApplicationAnimated:YES];
+            } else {
+                [mwc.window hiShake];
+            }
+        }
+    };
+
+    if ([[HIBitcoinManager defaultManager] isWalletEncrypted]) {
+        [self lockApplicationAnimated:NO];
+    } else {
+        [self unlockApplicationAnimated:NO];
+    }
+}
+
+- (void)lockApplicationAnimated:(BOOL)animated {
+    // set overlay to cover the whole right part of the window
+    [self.overlayView setFrame:self.contentView.frame];
+
+    if (animated) {
+        [self.overlayView setAlphaValue:0.0];
+        [self.window.contentView addSubview:self.overlayView];
+
+        [NSAnimationContext runAnimationGroup:^(NSAnimationContext *context) {
+            [self.overlayView.animator setAlphaValue:1.0];
+        } completionHandler:^{
+            // without this, the slide in animation doesn't work properly for some reason
+            NSRect frame = _currentViewController.view.frame;
+            frame.origin.x = 0 - frame.size.width / 3.0;
+            [_currentViewController.view setFrame:frame];
+
+            [_currentViewController.view removeFromSuperview];
+            _currentViewController = nil;
+        }];
+    } else {
+        [self.overlayView setAlphaValue:1.0];
+        [self.window.contentView addSubview:self.overlayView];
+
+        NSRect frame = _currentViewController.view.frame;
+        frame.origin.x = 0 - frame.size.width / 3.0;
+        [_currentViewController.view setFrame:frame];
+
+        [_currentViewController.view removeFromSuperview];
+        _currentViewController = nil;
+    }
+
+    [_titleView removeFromSuperview];
+    _titleView = nil;
+
+    [self.window makeFirstResponder:self.passwordInputViewController.passwordField];
+
+    [self.sidebarController setEnabled:NO];
+    [self.sidebarController unselectCurrentController];
+
+    [[NSApp delegate] setFullMenuEnabled:NO];
+}
+
+- (void)unlockApplicationAnimated:(BOOL)animated {
+    if (animated) {
+        [NSAnimationContext runAnimationGroup:^(NSAnimationContext *context) {
+            [self.overlayView.animator setAlphaValue:0.0];
+        } completionHandler:^{
+            [self.overlayView removeFromSuperview];
+        }];
+    } else {
+        [self.overlayView setAlphaValue:0.0];
+        [self.overlayView removeFromSuperview];
+    }
+
+    [self.sidebarController setEnabled:YES];
+    [self.sidebarController selectControllerAtIndex:0];
+
+    [self.window makeFirstResponder:nil];
+
+    [[NSApp delegate] setFullMenuEnabled:YES];
 }
 
 - (void)preloadViews:(NSArray *)panels {

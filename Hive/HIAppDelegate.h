@@ -20,4 +20,6 @@
 - (NSURL *)applicationFilesDirectory;
 - (void)showWindowWithPanel:(Class)panelClass;
 
+@property (nonatomic, assign, getter=isFullMenuEnabled) BOOL fullMenuEnabled;
+
 @end
