@@ -143,8 +143,16 @@ const NSInteger HIDropboxBackupNotRunning = -3;
 
 - (NSString *)defaultBackupFolder {
     NSString *prefix = [[[BCClient sharedClient] walletHash] substringToIndex:5];
-    NSString *subdirectory = [@"Hive-" stringByAppendingString:prefix];
-    return [[self dropboxFolder] stringByAppendingPathComponent:subdirectory];
+    NSString *hiveDirectoryName = [@"Hive-" stringByAppendingString:prefix];
+
+    NSString *appsFolder = [[self dropboxFolder] stringByAppendingPathComponent:@"Apps"];
+    BOOL isDirectory;
+
+    if ([[NSFileManager defaultManager] fileExistsAtPath:appsFolder isDirectory:&isDirectory] && isDirectory) {
+        return [appsFolder stringByAppendingPathComponent:hiveDirectoryName];
+    } else {
+        return [[self dropboxFolder] stringByAppendingPathComponent:hiveDirectoryName];
+    }
 }
 
 - (NSString *)backupLocation {
