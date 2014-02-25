@@ -57,6 +57,7 @@ static int ddLogLevel = LOG_LEVEL_VERBOSE;
     HIMainWindowController *_mainWindowController;
     HINetworkConnectionMonitor *_networkMonitor;
     NSMutableArray *_popupWindows;
+    dispatch_queue_t _externalEventQueue;
 }
 
 @property (nonatomic, strong) HIWizardWindowController *wizard;
@@ -72,6 +73,9 @@ static int ddLogLevel = LOG_LEVEL_VERBOSE;
 #ifndef DEBUG
     PFMoveToApplicationsFolderIfNecessary();
 #endif
+
+    _externalEventQueue = dispatch_queue_create("HIAppDelegate.externalEventQueue", DISPATCH_QUEUE_CONCURRENT);
+    self.applicationLocked = YES;
 
     // this needs to be set up *before* applicationDidFinishLaunching,
     // otherwise links that cause the app to be launched when it's not running will not be handled
@@ -385,13 +389,37 @@ static int ddLogLevel = LOG_LEVEL_VERBOSE;
 
 #pragma mark - App lifecycle and external actions
 
+- (void)setApplicationLocked:(BOOL)applicationLocked {
+    if (applicationLocked != _applicationLocked) {
+        _applicationLocked = applicationLocked;
+
+        if (applicationLocked) {
+            dispatch_suspend(_externalEventQueue);
+        } else {
+            dispatch_resume(_externalEventQueue);
+        }
+
+        self.fullMenuEnabled = !applicationLocked;
+    }
+}
+
+- (void)handleExternalEvent:(void (^)())block {
+    dispatch_async(_externalEventQueue, ^{
+        dispatch_async(dispatch_get_main_queue(), block);
+    });
+
+    if (self.applicationLocked) {
+        [_mainWindowController showWindow:nil];
+    }
+}
+
 // handler for bitcoin:xxx URLs
 - (void)handleURLEvent:(NSAppleEventDescriptor *)event withReplyEvent:(NSAppleEventDescriptor *)reply {
     NSString *URLString = [[event paramDescriptorForKeyword:keyDirectObject] stringValue];
-    // run this asynchronously, in case the app is still launching and UI is not fully set up yet
-    dispatch_async(dispatch_get_main_queue(), ^{
+
+    [self handleExternalEvent:^{
         [[HIBitcoinURLService sharedService] handleBitcoinURLString:URLString];
-    });
+    }];
 }
 
 - (void)applicationWillTerminate:(NSNotification *)notification {
@@ -434,8 +462,11 @@ static int ddLogLevel = LOG_LEVEL_VERBOSE;
 
 - (BOOL)application:(NSApplication *)sender openFile:(NSString *)filename {
     if ([filename.pathExtension isEqual:@"hiveapp"]) {
-        HIApplicationsManager *manager = [HIApplicationsManager sharedManager];
-        [manager requestLocalAppInstallation:[NSURL fileURLWithPath:filename] showAppsPage:YES error:nil];
+        [self handleExternalEvent:^{
+            HIApplicationsManager *manager = [HIApplicationsManager sharedManager];
+            [manager requestLocalAppInstallation:[NSURL fileURLWithPath:filename] showAppsPage:YES error:nil];
+        }];
+
         return YES;
     }
 

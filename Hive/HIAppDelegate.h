@@ -21,5 +21,6 @@
 - (void)showWindowWithPanel:(Class)panelClass;
 
 @property (nonatomic, assign, getter=isFullMenuEnabled) BOOL fullMenuEnabled;
+@property (nonatomic, assign, getter=isApplicationLocked) BOOL applicationLocked;
 
 @end

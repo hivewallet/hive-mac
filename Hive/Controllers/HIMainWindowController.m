@@ -169,7 +169,7 @@ NSString * const LockScreenEnabledDefaultsKey = @"LockScreenEnabled";
     [self.sidebarController setEnabled:NO];
     [self.sidebarController unselectCurrentController];
 
-    [[NSApp delegate] setFullMenuEnabled:NO];
+    [[NSApp delegate] setApplicationLocked:YES];
 }
 
 - (void)unlockApplicationAnimated:(BOOL)animated {
@@ -189,7 +189,7 @@ NSString * const LockScreenEnabledDefaultsKey = @"LockScreenEnabled";
 
     [self.window makeFirstResponder:nil];
 
-    [[NSApp delegate] setFullMenuEnabled:YES];
+    [[NSApp delegate] setApplicationLocked:NO];
 }
 
 - (void)preloadViews:(NSArray *)panels {
