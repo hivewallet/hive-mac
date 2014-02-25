@@ -47,6 +47,7 @@ static const NSTimeInterval SlideAnimationDuration = 0.3;
 
 - (void)dealloc {
     [[NSNotificationCenter defaultCenter] removeObserver:self];
+    [[[NSWorkspace sharedWorkspace] notificationCenter] removeObserver:self];
 }
 
 - (INAppStoreWindow *)appStoreWindow {
@@ -70,6 +71,11 @@ static const NSTimeInterval SlideAnimationDuration = 0.3;
                                              selector:@selector(onNetworkDisconnected)
                                                  name:HINetworkConnectionMonitorDisconnected
                                                object:nil];
+
+    [[[NSWorkspace sharedWorkspace] notificationCenter] addObserver:self
+                                                           selector:@selector(onSleep)
+                                                               name:NSWorkspaceWillSleepNotification
+                                                             object:nil];
 
     // After everything is set up and visible, start pre-loading the other panels for smooth animation.
     [self performSelector:@selector(preloadViews:)
@@ -113,6 +119,10 @@ static const NSTimeInterval SlideAnimationDuration = 0.3;
     } else {
         [self unlockApplicationAnimated:NO];
     }
+}
+
+- (void)onSleep {
+    [self lockApplicationAnimated:NO];
 }
 
 - (void)lockApplicationAnimated:(BOOL)animated {
