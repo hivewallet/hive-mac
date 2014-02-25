@@ -28,6 +28,7 @@
 
 static const CGFloat TitleBarHeight = 35.0;
 static const NSTimeInterval SlideAnimationDuration = 0.3;
+NSString * const LockScreenEnabledDefaultsKey = @"LockScreenEnabled";
 
 @interface HIMainWindowController () {
     NSView *_titleView;
@@ -114,11 +115,15 @@ static const NSTimeInterval SlideAnimationDuration = 0.3;
         }
     };
 
-    if ([[HIBitcoinManager defaultManager] isWalletEncrypted]) {
+    if ([[HIBitcoinManager defaultManager] isWalletEncrypted] && [self isLockScreenEnabled]) {
         [self lockApplicationAnimated:NO];
     } else {
         [self unlockApplicationAnimated:NO];
     }
+}
+
+- (BOOL)isLockScreenEnabled {
+    return [[NSUserDefaults standardUserDefaults] boolForKey:LockScreenEnabledDefaultsKey];
 }
 
 - (void)onSleep {

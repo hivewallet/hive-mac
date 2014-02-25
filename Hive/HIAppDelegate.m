@@ -89,6 +89,9 @@ static int ddLogLevel = LOG_LEVEL_VERBOSE;
     [[NSUserDefaults standardUserDefaults] registerDefaults:@{
       // enable WebKit inspector in apps
       @"WebKitDeveloperExtras": @YES,
+
+      // enable lock screen on startup, unless it's explicitly disabled
+      LockScreenEnabledDefaultsKey: @YES,
     }];
 
     [NSURLProtocol registerClass:[HIApplicationURLProtocol class]];

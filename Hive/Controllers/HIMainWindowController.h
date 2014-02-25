@@ -12,6 +12,8 @@
 #import "HISidebarController.h"
 #import "HIViewController.h"
 
+extern NSString * const LockScreenEnabledDefaultsKey;
+
 /*
  Manages the main Hive window, switching between tabs using sidebar buttons etc.
  */
