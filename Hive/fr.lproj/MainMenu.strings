@@ -87,7 +87,7 @@
 "1HB-Qg-iyg.title" = "Changer le mot de passe…";
 
 /* Class = "NSMenuItem"; title = "Lock Wallet"; ObjectID = "AFM-Ev-d2A"; */
-"AFM-Ev-d2A.title" = "Lock Wallet";
+"AFM-Ev-d2A.title" = "Verrouiller le porte-feuille";
 
 /* Class = "NSMenuItem"; title = "Open CoinMap..."; ObjectID = "ASP-Ns-ktD"; */
 "ASP-Ns-ktD.title" = "Ouvrir CoinMap...";

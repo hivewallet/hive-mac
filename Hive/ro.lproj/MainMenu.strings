@@ -87,7 +87,7 @@
 "1HB-Qg-iyg.title" = "Schimbaţi Parola";
 
 /* Class = "NSMenuItem"; title = "Lock Wallet"; ObjectID = "AFM-Ev-d2A"; */
-"AFM-Ev-d2A.title" = "Lock Wallet";
+"AFM-Ev-d2A.title" = "Blocare Portofel";
 
 /* Class = "NSMenuItem"; title = "Open CoinMap..."; ObjectID = "ASP-Ns-ktD"; */
 "ASP-Ns-ktD.title" = "Deschideți CoinMap...";
