@@ -18,6 +18,28 @@
     if (self.view && representedObject) {
         NSMenu *menu = [[NSMenu alloc] init];
 
+        HIApplication *application = (HIApplication *) representedObject;
+        NSDictionary *manifest = application.manifest;
+
+        NSString *homepage = manifest[@"homepage"];
+        if (homepage) {
+            NSMenuItem *homepageItem = [[NSMenuItem alloc] init];
+            homepageItem.target = self;
+            homepageItem.action = @selector(visitHomepageItemClicked);
+            homepageItem.title = NSLocalizedString(@"Visit application's site",
+                                                   @"Entry in application icon context menu");
+            [menu addItem:homepageItem];
+        }
+
+        NSString *email = manifest[@"contact"];
+        if (email) {
+            NSMenuItem *contactItem = [[NSMenuItem alloc] init];
+            contactItem.target = self;
+            contactItem.action = @selector(contactAuthorItemClicked);
+            contactItem.title = NSLocalizedString(@"Contact the author", @"Entry in application icon context menu");
+            [menu addItem:contactItem];
+        }
+
         NSMenuItem *deleteItem = [[NSMenuItem alloc] init];
         deleteItem.target = self;
         deleteItem.action = @selector(uninstallItemClicked);
@@ -26,6 +48,32 @@
 
         self.view.menu = menu;
     }
+}
+
+- (void)contactAuthorItemClicked {
+    HIApplication *application = (HIApplication *) self.representedObject;
+    NSDictionary *manifest = application.manifest;
+    NSString *email = manifest[@"contact"];
+    NSString *version = manifest[@"version"];
+    NSString *title = [NSString stringWithFormat:@"%@ %@ feedback", application.name, version];
+
+    NSString *mailto = [NSString stringWithFormat:@"mailto:%@?subject=%@",
+                        [email stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding],
+                        [title stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]];
+
+    [[NSWorkspace sharedWorkspace] openURL:[NSURL URLWithString:mailto]];
+}
+
+- (void)visitHomepageItemClicked {
+    HIApplication *application = (HIApplication *) self.representedObject;
+    NSDictionary *manifest = application.manifest;
+    NSString *homepage = manifest[@"homepage"];
+
+    if ([homepage rangeOfString:@"://"].location == NSNotFound) {
+        homepage = [@"http://" stringByAppendingString:homepage];
+    }
+
+    [[NSWorkspace sharedWorkspace] openURL:[NSURL URLWithString:homepage]];
 }
 
 - (void)uninstallItemClicked {
