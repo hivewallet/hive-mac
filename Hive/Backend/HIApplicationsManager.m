@@ -149,6 +149,24 @@ const NSInteger HIApplicationManagerInsecureConnectionError = -2;
     return app;
 }
 
+- (void)uninstallApplication:(HIApplication *)application {
+    NSError *error = nil;
+
+    NSURL *installedAppURL = [[self applicationsDirectory] URLByAppendingPathComponent:application.id];
+    [[NSFileManager defaultManager] removeItemAtURL:installedAppURL error:&error];
+    if (error) {
+        HILogWarn(@"Couldn't delete application %@: %@", application, error);
+        return;
+    }
+
+    [DBM deleteObject:application];
+    [DBM save:&error];
+    if (error) {
+        HILogWarn(@"Couldn't delete application %@: %@", application, error);
+        return;
+    }
+}
+
 - (BOOL)requestLocalAppInstallation:(NSURL *)applicationURL showAppsPage:(BOOL)showAppsPage error:(NSError **)error {
     NSDictionary *manifest = [self applicationMetadata:applicationURL];
     NSString *title, *info, *confirm;
@@ -268,6 +286,29 @@ const NSInteger HIApplicationManagerInsecureConnectionError = -2;
     }];
 
     [download start];
+}
+
+- (BOOL)requestApplicationRemoval:(HIApplication *)application {
+    NSString *title = NSLocalizedString(@"Do you want to remove \"%@\" from the application list?",
+                                        @"Uninstall app popup title");
+
+    NSString *info = NSLocalizedString(@"You can install it again through the App Store app later "
+                                       @"if you change your mind.",
+                                       @"Uninstall app popup message");
+
+    NSAlert *alert = [NSAlert alertWithMessageText:[NSString stringWithFormat:title, application.name]
+                                     defaultButton:NSLocalizedString(@"Uninstall", @"Uninstall app button title")
+                                   alternateButton:NSLocalizedString(@"Cancel", nil)
+                                       otherButton:nil
+                         informativeTextWithFormat:@"%@", info];
+
+    if ([alert runModal] == NSAlertDefaultReturn) {
+        [self uninstallApplication:application];
+
+        return YES;
+    } else {
+        return NO;
+    }
 }
 
 - (BOOL)validateRemoteAppURL:(NSURL *)remoteURL error:(NSError **)error {

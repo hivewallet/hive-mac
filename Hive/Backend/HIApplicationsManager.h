@@ -25,6 +25,7 @@ extern const NSInteger HIApplicationManagerInvalidAppFileError;
 - (HIApplication *)installApplication:(NSURL *)applicationURL;
 - (BOOL)requestLocalAppInstallation:(NSURL *)applicationURL showAppsPage:(BOOL)showAppsPage error:(NSError **)error;
 - (void)requestRemoteAppInstallation:(NSURL *)remoteURL onCompletion:(void (^)(BOOL, NSError *))completionBlock;
+- (BOOL)requestApplicationRemoval:(HIApplication *)application;
 - (BOOL)hasApplicationOfId:(NSString *)applicationId;
 - (HIApplication *)getApplicationById:(NSString *)applicationId;
 - (NSDictionary *)applicationMetadata:(NSURL *)applicationPath;
