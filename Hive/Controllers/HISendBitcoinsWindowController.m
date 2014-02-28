@@ -269,7 +269,7 @@ NSString * const HISendBitcoinsWindowSuccessKey = @"success";
     NSDecimalNumber *number = [[HICurrencyFormatService sharedService] parseString:self.convertedAmountField.stringValue
                                                                              error:NULL];
     NSDecimalNumber *zero = [NSDecimalNumber zero];
-    if (number == [NSDecimalNumber notANumber] || [number isLessThanOrEqualTo:zero]) {
+    if (!number || number == [NSDecimalNumber notANumber] || [number isLessThanOrEqualTo:zero]) {
         return zero;
     } else {
         return number;
