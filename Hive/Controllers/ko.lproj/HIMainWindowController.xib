@@ -28,12 +28,12 @@
         <window title="하이브" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" restorable="NO" releasedWhenClosed="NO" frameAutosaveName="HiveMainAppWindow" animationBehavior="default" id="3" customClass="INAppStoreWindow">
             <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
             <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
-            <rect key="contentRect" x="169" y="354" width="350" height="500"/>
+            <rect key="contentRect" x="169" y="354" width="352" height="500"/>
             <rect key="screenRect" x="0.0" y="0.0" width="1440" height="878"/>
             <value key="minSize" type="size" width="350" height="430"/>
             <value key="maxSize" type="size" width="600" height="1200"/>
             <view key="contentView" wantsLayer="YES" id="4">
-                <rect key="frame" x="0.0" y="0.0" width="350" height="500"/>
+                <rect key="frame" x="0.0" y="0.0" width="352" height="500"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <customView wantsLayer="YES" focusRingType="none" id="35" customClass="HISidebarView">
@@ -83,15 +83,17 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" id="WwZ-gF-2Xu">
-                    <rect key="frame" x="122" y="285" width="48" height="48"/>
+                    <rect key="frame" x="122" y="292" width="48" height="48"/>
                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" id="hYX-5J-efD"/>
                 </imageView>
                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="wEc-PD-35m">
-                    <rect key="frame" x="18" y="248" width="256" height="17"/>
+                    <rect key="frame" x="18" y="248" width="256" height="36"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
-                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="ENTER YOUR PASSWORD:" id="oW1-yx-he4">
+                    <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="center" id="oW1-yx-he4">
                         <font key="font" metaFont="system"/>
+                        <string key="title">Hive is locked.
+Enter your password to unlock:</string>
                         <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                     </textFieldCell>

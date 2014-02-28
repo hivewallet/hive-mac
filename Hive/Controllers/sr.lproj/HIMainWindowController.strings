@@ -11,5 +11,5 @@
 /* Class = "NSButtonCell"; title = "Unlock"; ObjectID = "AEG-XJ-abS"; */
 "AEG-XJ-abS.title" = "Unlock";
 
-/* Class = "NSTextFieldCell"; title = "ENTER YOUR PASSWORD:"; ObjectID = "oW1-yx-he4"; */
-"oW1-yx-he4.title" = "ENTER YOUR PASSWORD:";
+/* Class = "NSTextFieldCell"; title = "Hive is locked.\nEnter your password to unlock:"; ObjectID = "oW1-yx-he4"; */
+"oW1-yx-he4.title" = "Hive is locked.\nEnter your password to unlock:";
