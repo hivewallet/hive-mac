@@ -653,6 +653,8 @@ NSString * const HISendBitcoinsWindowSuccessKey = @"success";
         [self updateSendButtonEnabled];
     } else if (notification.object == self.convertedAmountField) {
         [self updateAmountFromConvertedAmount];
+        [self updateFee];
+        [self updateSendButtonEnabled];
     } else {
         [self setQRCodeScanningEnabled:self.nameLabel.stringValue.length == 0];
         [self clearContact];
