@@ -55,10 +55,6 @@ typedef NS_ENUM(NSInteger, HINotificationType) {
     for (HIBackupAdapter *adapter in [[HIBackupManager sharedManager] visibleAdapters]) {
         [adapter addObserver:self forKeyPath:@"errorMessage" options:0 context:&KVO_CONTEXT];
     }
-
-    if ([self shouldCheckIfBackupsEnabled]) {
-        [self checkIfBackupsEnabled];
-    }
 }
 
 - (void)disable {
