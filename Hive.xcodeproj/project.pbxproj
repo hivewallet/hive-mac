@@ -61,6 +61,7 @@
 		5804C32617FC88BA003B7891 /* HIProfile.m in Sources */ = {isa = PBXBuildFile; fileRef = 5804C32517FC88BA003B7891 /* HIProfile.m */; };
 		581711BE17D0A26D00DE775A /* HISidebarButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 581711BD17D0A26D00DE775A /* HISidebarButton.m */; };
 		581818E217F1A8A800D00770 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 581818E117F1A8A800D00770 /* README.md */; };
+		582372EC18C0C48500132894 /* mobile-recharge.hiveapp in Resources */ = {isa = PBXBuildFile; fileRef = 582372EB18C0C48500132894 /* mobile-recharge.hiveapp */; };
 		582C7DA6185219A000126C10 /* HIDebuggingToolsWindowController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 582C7DA5185219A000126C10 /* HIDebuggingToolsWindowController.xib */; };
 		582C7DA918521A3500126C10 /* HIJavaScriptObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 582C7DA818521A3500126C10 /* HIJavaScriptObject.m */; };
 		582C7DAB185273D400126C10 /* HIApplicationRuntimeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 582C7DAA185273D400126C10 /* HIApplicationRuntimeViewController.xib */; };
@@ -184,7 +185,6 @@
 		58A2760618BE81F100C102B2 /* com.hivewallet.bitstamptrader.hiveapp in Resources */ = {isa = PBXBuildFile; fileRef = 58A2760118BE81F100C102B2 /* com.hivewallet.bitstamptrader.hiveapp */; };
 		58A2760718BE81F100C102B2 /* com.hivewallet.seansoutpost.hiveapp in Resources */ = {isa = PBXBuildFile; fileRef = 58A2760218BE81F100C102B2 /* com.hivewallet.seansoutpost.hiveapp */; };
 		58A2760818BE81F100C102B2 /* com.hivewallet.supporthive.hiveapp in Resources */ = {isa = PBXBuildFile; fileRef = 58A2760318BE81F100C102B2 /* com.hivewallet.supporthive.hiveapp */; };
-		58A2760918BE81F100C102B2 /* com.spend-a-bit.mobile-recharge.hiveapp in Resources */ = {isa = PBXBuildFile; fileRef = 58A2760418BE81F100C102B2 /* com.spend-a-bit.mobile-recharge.hiveapp */; };
 		58A2760B18BE859200C102B2 /* com.hivewallet.minefield.hiveapp in Resources */ = {isa = PBXBuildFile; fileRef = 58A2760A18BE847500C102B2 /* com.hivewallet.minefield.hiveapp */; };
 		58A37A8A180D747C00CFCDE3 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 58A37A8C180D747C00CFCDE3 /* Localizable.strings */; };
 		58A37A98180D7AF000CFCDE3 /* HIApplicationsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 58A37A9A180D7AF000CFCDE3 /* HIApplicationsViewController.xib */; };
@@ -541,6 +541,7 @@
 		581818E117F1A8A800D00770 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = SOURCE_ROOT; };
 		581EFBCA17DA441A00E2738D /* HITransactionCellView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HITransactionCellView.h; sourceTree = "<group>"; };
 		581EFBCB17DA441B00E2738D /* HITransactionCellView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HITransactionCellView.m; sourceTree = "<group>"; };
+		582372EB18C0C48500132894 /* mobile-recharge.hiveapp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "mobile-recharge.hiveapp"; sourceTree = "<group>"; };
 		582C7DA5185219A000126C10 /* HIDebuggingToolsWindowController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HIDebuggingToolsWindowController.xib; sourceTree = "<group>"; };
 		582C7DA718521A3500126C10 /* HIJavaScriptObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HIJavaScriptObject.h; sourceTree = "<group>"; };
 		582C7DA818521A3500126C10 /* HIJavaScriptObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HIJavaScriptObject.m; sourceTree = "<group>"; };
@@ -1517,7 +1518,6 @@
 		58A2760118BE81F100C102B2 /* com.hivewallet.bitstamptrader.hiveapp */ = {isa = PBXFileReference; lastKnownFileType = file; path = com.hivewallet.bitstamptrader.hiveapp; sourceTree = "<group>"; };
 		58A2760218BE81F100C102B2 /* com.hivewallet.seansoutpost.hiveapp */ = {isa = PBXFileReference; lastKnownFileType = file; path = com.hivewallet.seansoutpost.hiveapp; sourceTree = "<group>"; };
 		58A2760318BE81F100C102B2 /* com.hivewallet.supporthive.hiveapp */ = {isa = PBXFileReference; lastKnownFileType = file; path = com.hivewallet.supporthive.hiveapp; sourceTree = "<group>"; };
-		58A2760418BE81F100C102B2 /* com.spend-a-bit.mobile-recharge.hiveapp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "com.spend-a-bit.mobile-recharge.hiveapp"; sourceTree = "<group>"; };
 		58A2760A18BE847500C102B2 /* com.hivewallet.minefield.hiveapp */ = {isa = PBXFileReference; lastKnownFileType = file; path = com.hivewallet.minefield.hiveapp; sourceTree = "<group>"; };
 		58A37A8B180D747C00CFCDE3 /* en */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		58A37A99180D7AF000CFCDE3 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/HIApplicationsViewController.xib; sourceTree = "<group>"; };
@@ -2175,7 +2175,7 @@
 				58A2760A18BE847500C102B2 /* com.hivewallet.minefield.hiveapp */,
 				58A2760218BE81F100C102B2 /* com.hivewallet.seansoutpost.hiveapp */,
 				58A2760318BE81F100C102B2 /* com.hivewallet.supporthive.hiveapp */,
-				58A2760418BE81F100C102B2 /* com.spend-a-bit.mobile-recharge.hiveapp */,
+				582372EB18C0C48500132894 /* mobile-recharge.hiveapp */,
 				58D4D61E18290079009CB7A5 /* patten_hive.hiveapp */,
 			);
 			path = Applications;
@@ -2714,7 +2714,6 @@
 				58A37A9B180D7AF600CFCDE3 /* HIContactsViewController.xib in Resources */,
 				583076C718B3D1260017084A /* Licenses.rtf in Resources */,
 				583076C518B3CFDC0017084A /* HILicenseInfoPanelController.xib in Resources */,
-				58A2760918BE81F100C102B2 /* com.spend-a-bit.mobile-recharge.hiveapp in Resources */,
 				58A37AA1180D7B0100CFCDE3 /* HINewContactViewController.xib in Resources */,
 				58A37AA4180D7B0700CFCDE3 /* HIContactInfoViewController.xib in Resources */,
 				58A37AE5180D99F200CFCDE3 /* MainMenu.strings in Resources */,
@@ -2764,6 +2763,7 @@
 				585713521890321A0094F884 /* HIWizardWelcomeViewController.strings in Resources */,
 				58605A4E18041D0A00FD9C2A /* icon-next.pdf in Resources */,
 				58A2760618BE81F100C102B2 /* com.hivewallet.bitstamptrader.hiveapp in Resources */,
+				582372EC18C0C48500132894 /* mobile-recharge.hiveapp in Resources */,
 				588953AF188920D000243190 /* HIBackupCenterWindowController.strings in Resources */,
 				58605A4F18041D0A00FD9C2A /* icon-plus.pdf in Resources */,
 				58A37AD5180D996E00CFCDE3 /* HIContactInfoViewController.strings in Resources */,
