@@ -71,6 +71,9 @@
 /* Contact name empty alert title */
 "Contact can't be saved." = "Nie można zapisać kontaktu.";
 
+/* Entry in application icon context menu */
+"Contact the author" = "Kontakt z autorem";
+
 /* Contacts view title */
 "Contacts" = "Kontakty";
 
@@ -94,6 +97,9 @@
 
 /* Install app popup title */
 "Do you want to add \"%@\" to Hive?" = "Czy chcesz dodać aplikację \"%@\" do Hive?";
+
+/* Uninstall app popup title */
+"Do you want to remove \"%@\" from the application list?" = "Czy chcesz usunąć \"%@\" z listy aplikacji?";
 
 /* Backup error message */
 "Dropbox folder not found" = "Nie znaleziono folderu Dropbox";
@@ -296,8 +302,17 @@
 /* Transactions view title */
 "Transactions" = "Transakcje";
 
+/* Uninstall app button title */
+"Uninstall" = "Odinstaluj";
+
+/* Entry in application icon context menu */
+"Uninstall application" = "Odinstaluj aplikację";
+
 /* Backup status: backup up to date */
 "Up to date" = "Aktualna kopia";
+
+/* Entry in application icon context menu */
+"Visit application's site" = "Otwórz stronę aplikacji";
 
 /* Backup status: backup scheduled or in progress */
 "Waiting for backup" = "Oczekiwanie na wykonanie kopii";
@@ -310,6 +325,9 @@
 
 /* Button to show info about pending funds */
 "What does this mean?" = "Co to znaczy?";
+
+/* Uninstall app popup message */
+"You can install it again through the App Store app later if you change your mind." = "Możesz ją zainstalować ponownie przez aplikację App Store, jeśli zmienisz zdanie.";
 
 /* Details of an alert when trying to send more than you have */
 "You cannot send more money than you own." = "Nie możesz wysłać więcej Bitcoinów niż masz na koncie.";

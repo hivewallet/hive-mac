@@ -71,6 +71,9 @@
 /* Contact name empty alert title */
 "Contact can't be saved." = "Контакт не может быть сохранен.";
 
+/* Entry in application icon context menu */
+"Contact the author" = "Contact the author";
+
 /* Contacts view title */
 "Contacts" = "Контакты";
 
@@ -94,6 +97,9 @@
 
 /* Install app popup title */
 "Do you want to add \"%@\" to Hive?" = "Вы хотите добавить \"%@\" в Hive?";
+
+/* Uninstall app popup title */
+"Do you want to remove \"%@\" from the application list?" = "Do you want to remove \"%@\" from the application list?";
 
 /* Backup error message */
 "Dropbox folder not found" = "Папка Dropbox не найдена";
@@ -296,8 +302,17 @@
 /* Transactions view title */
 "Transactions" = "Транзакции";
 
+/* Uninstall app button title */
+"Uninstall" = "Uninstall";
+
+/* Entry in application icon context menu */
+"Uninstall application" = "Uninstall application";
+
 /* Backup status: backup up to date */
 "Up to date" = "Актуален";
+
+/* Entry in application icon context menu */
+"Visit application's site" = "Visit application's site";
 
 /* Backup status: backup scheduled or in progress */
 "Waiting for backup" = "Ожидание резерв. копии";
@@ -310,6 +325,9 @@
 
 /* Button to show info about pending funds */
 "What does this mean?" = "Что это означает?";
+
+/* Uninstall app popup message */
+"You can install it again through the App Store app later if you change your mind." = "You can install it again through the App Store app later if you change your mind.";
 
 /* Details of an alert when trying to send more than you have */
 "You cannot send more money than you own." = "Невозможно отправить больше денег, чем у Вас есть.";

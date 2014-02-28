@@ -71,6 +71,9 @@
 /* Contact name empty alert title */
 "Contact can't be saved." = "O contacto não pode ser guardado.";
 
+/* Entry in application icon context menu */
+"Contact the author" = "Contact the author";
+
 /* Contacts view title */
 "Contacts" = "Contactos";
 
@@ -94,6 +97,9 @@
 
 /* Install app popup title */
 "Do you want to add \"%@\" to Hive?" = "Do you want to add \"%@\" to Hive?";
+
+/* Uninstall app popup title */
+"Do you want to remove \"%@\" from the application list?" = "Do you want to remove \"%@\" from the application list?";
 
 /* Backup error message */
 "Dropbox folder not found" = "Dropbox folder not found";
@@ -296,8 +302,17 @@
 /* Transactions view title */
 "Transactions" = "Transacções";
 
+/* Uninstall app button title */
+"Uninstall" = "Uninstall";
+
+/* Entry in application icon context menu */
+"Uninstall application" = "Uninstall application";
+
 /* Backup status: backup up to date */
 "Up to date" = "Up to date";
+
+/* Entry in application icon context menu */
+"Visit application's site" = "Visit application's site";
 
 /* Backup status: backup scheduled or in progress */
 "Waiting for backup" = "Waiting for backup";
@@ -310,6 +325,9 @@
 
 /* Button to show info about pending funds */
 "What does this mean?" = "What does this mean?";
+
+/* Uninstall app popup message */
+"You can install it again through the App Store app later if you change your mind." = "You can install it again through the App Store app later if you change your mind.";
 
 /* Details of an alert when trying to send more than you have */
 "You cannot send more money than you own." = "Não é possível enviar mais do que o saldo actual.";
