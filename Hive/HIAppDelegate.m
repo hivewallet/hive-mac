@@ -270,6 +270,7 @@ static int ddLogLevel = LOG_LEVEL_VERBOSE;
     } else {
         [self showAppWindow];
         [self nagUnprotectedUsers];
+        [[HINotificationService sharedService] checkIfBackupsEnabled];
 
         dispatch_async(dispatch_get_main_queue(), ^{
             [self setAsDefaultHandler];

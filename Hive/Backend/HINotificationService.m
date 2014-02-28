@@ -76,6 +76,10 @@ typedef NS_ENUM(NSInteger, HINotificationType) {
 }
 
 - (void)checkIfBackupsEnabled {
+    if (![self shouldCheckIfBackupsEnabled]) {
+        return;
+    }
+
     [[NSUserDefaults standardUserDefaults] setObject:[NSDate date] forKey:LastBackupsCheckKey];
 
     for (HIBackupAdapter *adapter in [[HIBackupManager sharedManager] visibleAdapters]) {

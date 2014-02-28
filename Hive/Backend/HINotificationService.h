@@ -15,4 +15,6 @@
 
 + (HINotificationService *)sharedService;
 
+- (void)checkIfBackupsEnabled;
+
 @end
