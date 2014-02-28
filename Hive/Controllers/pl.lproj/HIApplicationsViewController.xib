@@ -70,7 +70,7 @@
             </subviews>
         </customView>
         <userDefaultsController representsSharedInstance="YES" id="37"/>
-        <collectionViewItem id="51">
+        <collectionViewItem id="51" customClass="HIApplicationsViewItem">
             <connections>
                 <outlet property="view" destination="52" id="54"/>
             </connections>
