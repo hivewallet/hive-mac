@@ -1,6 +1,6 @@
 
 /* Body for feedback emails */
-"(Please write in English if possible.)" = "(Please write in English if possible.)";
+"(Please write in English if possible.)" = "(Ha lehet angolul írd)";
 
 /* Address field placeholder */
 "Address" = "Cím";
@@ -12,7 +12,7 @@
 "Anonymous" = "Névtelen";
 
 /* Message when trying to start an app that requires a newer API level. */
-"App requires a newer version of Hive." = "App requires a newer version of Hive.";
+"App requires a newer version of Hive." = "Ehhez az alkalmazáshoz egy újabb verziójú Hive szükséges.";
 
 /* App load error title */
 "Application can't be loaded" = "Az alkalmazást nem lehet betölteni";
@@ -42,10 +42,10 @@
 "Backup problem" = "Mentési hiba";
 
 /* initialization error */
-"Bitcoin network data file could not be opened - another instance of Hive might still be running." = "Bitcoin network data file could not be opened - another instance of Hive might still be running.";
+"Bitcoin network data file could not be opened - another instance of Hive might still be running." = "Nem lehet hozzáférni a Bitcoin adatfájlokhoz - lehet hogy egy másik Hive is fut.";
 
 /* Chain file unreadable error title */
-"Bitcoin network data file could not be opened." = "Bitcoin network data file could not be opened.";
+"Bitcoin network data file could not be opened." = "Nem lehet megnyitni az adatfájlokat.";
 
 /* Backup error message */
 "Can't create a directory to store the wallet backup" = "Nem lehet mappát létrehozni a mentésnek";
@@ -72,7 +72,7 @@
 "Contact can't be saved." = "A kapcsolatot nem lehet menteni";
 
 /* Entry in application icon context menu */
-"Contact the author" = "Contact the author";
+"Contact the author" = "Lépj kapcsolatba a készítővel";
 
 /* Contacts view title */
 "Contacts" = "Kapcsolatok";
@@ -99,7 +99,7 @@
 "Do you want to add \"%@\" to Hive?" = "Biztos hogy hozzá akarod adni \"%@\" a Hivehoz?";
 
 /* Uninstall app popup title */
-"Do you want to remove \"%@\" from the application list?" = "Do you want to remove \"%@\" from the application list?";
+"Do you want to remove \"%@\" from the application list?" = "Ki akarod törölni \"%@\"-t a kapcsolaid közül?";
 
 /* Backup error message */
 "Dropbox folder not found" = "Ez a a dropbox mappa nem létezik";
@@ -132,7 +132,7 @@
 "Firstname" = "Vezetéknév";
 
 /* Hiveapp file not readable error title */
-"Hive application file \"%@\" could not be opened." = "Hive application file \"%@\" could not be opened.";
+"Hive application file \"%@\" could not be opened." = "A Hive \"%@\" nevű fájlját nem lehet megnyitni.";
 
 /* Initialization error title */
 "Hive cannot be started." = "A Hiveot nem lehet elindítani";
@@ -144,10 +144,10 @@
 "Hive directory is excluded from Time Machine backup" = "A Hive mappája ki van véve a mentésből";
 
 /* Sync in progress alert title */
-"Hive is currently syncing with the Bitcoin network. Are you sure you want to quit?" = "Hive is currently syncing with the Bitcoin network. Are you sure you want to quit?";
+"Hive is currently syncing with the Bitcoin network. Are you sure you want to quit?" = "A Hive jelenleg a Bitcoin hálózattal szinkronizál. Biztos hogy kilépsz?";
 
 /* Chain file unreadable error explanation */
-"Hive will now delete the file and synchronize with the Bitcoin network again. Please leave Hive open for the next several minutes, and try not to send any transactions right now." = "Hive will now delete the file and synchronize with the Bitcoin network again. Please leave Hive open for the next several minutes, and try not to send any transactions right now.";
+"Hive will now delete the file and synchronize with the Bitcoin network again. Please leave Hive open for the next several minutes, and try not to send any transactions right now." = "A Hive most törli a fájlt és újra szikronizál a Bitcoin hálozattal. Ne próbálj meg pénzt küldeni néhány percig.";
 
 /* Share sent transaction text */
 "I've just received some Bitcoin using Hive" = "Most fogadtam BItcoint a Hive használatával";
@@ -189,7 +189,7 @@
 "No backup since %@" = "Nem volt mentés %@ óta";
 
 /* No backups enabled notification title */
-"No backups configured" = "No backups configured";
+"No backups configured" = "Nincsenek beállított mentések";
 
 /* Transaction failed alert message */
 "No Bitcoin have been taken from your wallet." = "Semmilyen Bitcoin sem hiányzik a tárcádból";
@@ -258,10 +258,10 @@
 "The existing app file will be replaced by the new version. This will not affect any app settings or saved data." = "Az előző verzió egy újabbal lesz lecserélve. Ez nem befolyásolja a beállításaidat és adataidat.";
 
 /* Hiveapp file not readable error details */
-"The file is damaged or does not contain a Hive application." = "The file is damaged or does not contain a Hive application.";
+"The file is damaged or does not contain a Hive application." = "A fájl sérült vagy nem Hive alkalmzás.";
 
 /* Sending dust alert message */
-"This amount is too low to be sent through the network." = "This amount is too low to be sent through the network.";
+"This amount is too low to be sent through the network." = "Ilyen kicsi mennyiséget nem lehet küldeni.";
 
 /* Alert details when transaction was cancelled */
 "This can happen because of bugs in the wallet code or because the transaction was rejected by the network." = "Ez azért történhetett mert baj van a tárca kódjában vagy a tranzakciót a hálózat visszautasította.";
@@ -279,13 +279,13 @@
 "Time Machine is disabled in System Preferences" = "A Time Machine ki van kapcsolva a rendszerben.";
 
 /* No backups enabled notification details */
-"To protect your bitcoins, it's recommended that you enable at least one type of backup." = "To protect your bitcoins, it's recommended that you enable at least one type of backup.";
+"To protect your bitcoins, it's recommended that you enable at least one type of backup." = "Hogy megvédd a Bitcoinjaidat állíts be legalább egy féle mentést.";
 
 /* Amount exceeds available balance alert message */
 "To send this transaction, you'll need to wait for your pending transactions to be confirmed first (this shouldn't take more than a few minutes)." = "Hogy ezt elküld várnod kell a megerősítetlen tranzakciókra (megerősítésekre ez kb. 1-2 perc).";
 
 /* Message when trying to start an app that requires a newer API level. */
-"To use the app, please update to the latest version of Hive." = "To use the app, please update to the latest version of Hive.";
+"To use the app, please update to the latest version of Hive." = "Hogy használhasd az alkalmazást kérlek frissítsd a Hive-ot.";
 
 /* Notification of cancelled transaction */
 "Transaction cancelled" = "Tranzakció lemégsézve";
@@ -303,16 +303,16 @@
 "Transactions" = "Tranzakciók";
 
 /* Uninstall app button title */
-"Uninstall" = "Uninstall";
+"Uninstall" = "Eltávolítás";
 
 /* Entry in application icon context menu */
-"Uninstall application" = "Uninstall application";
+"Uninstall application" = "Alkalmazás eltávolítása";
 
 /* Backup status: backup up to date */
 "Up to date" = "Nem kell frissíteni";
 
 /* Entry in application icon context menu */
-"Visit application's site" = "Visit application's site";
+"Visit application's site" = "Az alkalmazás oldalának elindítása";
 
 /* Backup status: backup scheduled or in progress */
 "Waiting for backup" = "Várakozás mentésre";
@@ -327,7 +327,7 @@
 "What does this mean?" = "Ez mit jelent?";
 
 /* Uninstall app popup message */
-"You can install it again through the App Store app later if you change your mind." = "You can install it again through the App Store app later if you change your mind.";
+"You can install it again through the App Store app later if you change your mind." = "Újra tudod telepíteni az Alkalmazás Bolton keresztül ha meggondolnád magad.";
 
 /* Details of an alert when trying to send more than you have */
 "You cannot send more money than you own." = "Csak annyi pénzt küldhetsz amennyid van.";
@@ -360,4 +360,4 @@
 "Your changes won't be saved." = "A változtatások nem lettek elmentve";
 
 /* Sync in progress alert details */
-"Your pending transactions won't be confirmed until the sync is complete." = "Your pending transactions won't be confirmed until the sync is complete.";
+"Your pending transactions won't be confirmed until the sync is complete." = "Az igazolatlan tranzakciók addig nem lesznek igazoltak amíg a szinkronizálás nem lesz kész.";

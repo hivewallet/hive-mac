@@ -87,7 +87,7 @@
 "1HB-Qg-iyg.title" = "Jelszó megváltoztatása...";
 
 /* Class = "NSMenuItem"; title = "Lock Wallet"; ObjectID = "AFM-Ev-d2A"; */
-"AFM-Ev-d2A.title" = "Lock Wallet";
+"AFM-Ev-d2A.title" = "Tárca lezárása";
 
 /* Class = "NSMenuItem"; title = "Open CoinMap..."; ObjectID = "ASP-Ns-ktD"; */
 "ASP-Ns-ktD.title" = "PénzTérkép megnyitása...";
@@ -96,10 +96,10 @@
 "GX7-xG-GKH.title" = "Tárca";
 
 /* Class = "NSMenuItem"; title = "Send Feedback…"; ObjectID = "GsI-lc-HhD"; */
-"GsI-lc-HhD.title" = "Send Feedback…";
+"GsI-lc-HhD.title" = "Visszajelzés küldése...";
 
 /* Class = "NSMenu"; title = "Help"; ObjectID = "K2u-T2-G1a"; */
-"K2u-T2-G1a.title" = "Help";
+"K2u-T2-G1a.title" = "Segítség";
 
 /* Class = "NSMenuItem"; title = "Debugging tools..."; ObjectID = "Ue9-mi-gbe"; */
 "Ue9-mi-gbe.title" = "Hibakeresési információ...";
@@ -108,7 +108,7 @@
 "V0L-sM-c8h.title" = "Mentési központ...";
 
 /* Class = "NSMenuItem"; title = "Help"; ObjectID = "ZUU-kM-x8u"; */
-"ZUU-kM-x8u.title" = "Help";
+"ZUU-kM-x8u.title" = "Segítség";
 
 /* Class = "NSMenu"; title = "Tools"; ObjectID = "cCx-Ak-fii"; */
 "cCx-Ak-fii.title" = "Eszközök";
@@ -123,4 +123,4 @@
 "lLT-53-p4m.title" = "Hibakeresési információ...";
 
 /* Class = "NSMenuItem"; title = "Scan a QR code…"; ObjectID = "vdw-IK-snJ"; */
-"vdw-IK-snJ.title" = "Scan a QR code…";
+"vdw-IK-snJ.title" = "QR kód beolvasása";
