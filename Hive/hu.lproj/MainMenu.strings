@@ -102,7 +102,7 @@
 "K2u-T2-G1a.title" = "Segítség";
 
 /* Class = "NSMenuItem"; title = "Debugging tools..."; ObjectID = "Ue9-mi-gbe"; */
-"Ue9-mi-gbe.title" = "Hibakeresési információ...";
+"Ue9-mi-gbe.title" = "Hibakeresési eszközök...";
 
 /* Class = "NSMenuItem"; title = "Backup Center..."; ObjectID = "V0L-sM-c8h"; */
 "V0L-sM-c8h.title" = "Mentési központ...";
