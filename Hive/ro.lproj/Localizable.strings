@@ -72,7 +72,7 @@
 "Contact can't be saved." = "Contactul nu poate fi salvat.";
 
 /* Entry in application icon context menu */
-"Contact the author" = "Contact the author";
+"Contact the author" = "Contactaţi autorul";
 
 /* Contacts view title */
 "Contacts" = "Contacte";
@@ -99,7 +99,7 @@
 "Do you want to add \"%@\" to Hive?" = "Doriţi să adăugaţi la \"%@\" Hive?";
 
 /* Uninstall app popup title */
-"Do you want to remove \"%@\" from the application list?" = "Do you want to remove \"%@\" from the application list?";
+"Do you want to remove \"%@\" from the application list?" = "Doriţi să ştergeţi \"%@\" din lista de aplicaţii?";
 
 /* Backup error message */
 "Dropbox folder not found" = "Directorul Dropbox nu a putut fi găsit.";
@@ -303,16 +303,16 @@
 "Transactions" = "Tranzacții";
 
 /* Uninstall app button title */
-"Uninstall" = "Uninstall";
+"Uninstall" = "Dezinstalează";
 
 /* Entry in application icon context menu */
-"Uninstall application" = "Uninstall application";
+"Uninstall application" = "Dezinstalează aplicaţia";
 
 /* Backup status: backup up to date */
 "Up to date" = "La zi";
 
 /* Entry in application icon context menu */
-"Visit application's site" = "Visit application's site";
+"Visit application's site" = "Vizitaţi site-ul aplicaţiei";
 
 /* Backup status: backup scheduled or in progress */
 "Waiting for backup" = "În aşteptarea backup-ului";
@@ -327,7 +327,7 @@
 "What does this mean?" = "Ce înseamnă asta?";
 
 /* Uninstall app popup message */
-"You can install it again through the App Store app later if you change your mind." = "You can install it again through the App Store app later if you change your mind.";
+"You can install it again through the App Store app later if you change your mind." = "Dacă va răzgândiţi, puteţi reinstala mai târziu din App Store.";
 
 /* Details of an alert when trying to send more than you have */
 "You cannot send more money than you own." = "Nu puteți trimite mai mulți bani decât aveți.";
