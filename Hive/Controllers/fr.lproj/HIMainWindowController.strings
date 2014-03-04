@@ -12,4 +12,4 @@
 "AEG-XJ-abS.title" = "Déverrouiller";
 
 /* Class = "NSTextFieldCell"; title = "Hive is locked.\nEnter your password to unlock:"; ObjectID = "oW1-yx-he4"; */
-"oW1-yx-he4.title" = "Hive is locked.\nEnter your password to unlock:";
+"oW1-yx-he4.title" = "Hive est verrouillé.\nSaisissez votre mot de passe pour déverrouiller :";
