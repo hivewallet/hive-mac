@@ -3,16 +3,16 @@
 "I10-iV-C0e.title" = "I-configure ang backup";
 
 /* Class = "NSTextFieldCell"; title = "✓ enabled"; ObjectID = "KqD-DN-1Yk"; */
-"KqD-DN-1Yk.title" = "✓ enabled";
+"KqD-DN-1Yk.title" = "✓ i-enable";
 
 /* Class = "NSTextFieldCell"; title = "✘ disabled"; ObjectID = "M9O-91-CDX"; */
-"M9O-91-CDX.title" = "✘ disabled";
+"M9O-91-CDX.title" = "✘ na-disable";
 
 /* Class = "NSTextFieldCell"; title = "✘ disabled"; ObjectID = "NSS-6s-Nas"; */
-"NSS-6s-Nas.title" = "✘ disabled";
+"NSS-6s-Nas.title" = "✘ na-disable";
 
 /* Class = "NSTextFieldCell"; title = "✓ enabled"; ObjectID = "OI0-bL-7Zs"; */
-"OI0-bL-7Zs.title" = "✓ enabled";
+"OI0-bL-7Zs.title" = "✓ na-enable";
 
 /* Class = "NSButtonCell"; title = "Enable"; ObjectID = "f0R-BI-Nz4"; */
 "f0R-BI-Nz4.title" = "I-enable";

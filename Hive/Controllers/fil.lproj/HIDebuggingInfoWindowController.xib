@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="4514" systemVersion="13B42" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none">
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="4514" systemVersion="13C64" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none">
     <dependencies>
         <deployment defaultVersion="1070" identifier="macosx"/>
         <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="4514"/>
@@ -57,7 +57,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                         <textFieldCell key="cell" sendsActionOnEndEditing="YES" id="o5O-SS-J37">
                             <font key="font" metaFont="system"/>
-                            <string key="title">Kung ikaw ay nakakaranas ng problema sa iyong wallet, maari lamang na ipadala ang laman ng text area sa ilalim. Nais naming ipaalam na HINDI kasama ang iyong mag private key sa datos at hindi kami papayagan na gastusin ang iyong Bitcoin!</string>
+                            <string key="title">Kung ikaw ay may problema sa iyong wallet, maari lamang na ipadala ang laman ng text area sa ilalim. Nais naming ipaalam na HINDI kasama ang iyong mga private key sa datos at hindi kami papayagan na gastusin ang iyong Bitcoin!</string>
                             <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                             <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                         </textFieldCell>

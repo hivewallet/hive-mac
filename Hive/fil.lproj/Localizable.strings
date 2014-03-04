@@ -21,7 +21,7 @@
 "Apps" = "Mga App";
 
 /* Cancel editing alert title */
-"Are you sure you want to leave this page?" = "Are you sure you want to leave this page?";
+"Are you sure you want to leave this page?" = "Nais mo talagang iwan ang page na ito?";
 
 /* Warning when trying to a large BTC amount (btc, fiat amount and address) */
 "Are you sure you want to send %@ (%@) to %@?" = "Sigurado ka bang nais mong ipadala ang %1$@ (%2$@) sa %3$@?";
@@ -72,7 +72,7 @@
 "Contact can't be saved." = "Hindi mai-save ang contact.";
 
 /* Entry in application icon context menu */
-"Contact the author" = "Contact the author";
+"Contact the author" = "I-contact ang author";
 
 /* Contacts view title */
 "Contacts" = "Mga Contact";
@@ -90,7 +90,7 @@
 "Disabled" = "na-disable";
 
 /* Confirm leaving a form without saving data */
-"Discard Changes" = "Discard Changes";
+"Discard Changes" = "Tanggalin ang mga pagbabago";
 
 /* Remove contact alert dialog title */
 "Do you really want to remove %@ from your contact list?" = "Gusto mo ba talaga tanggalin %@ sa iyong listahan ng mga contacts?";
@@ -99,7 +99,7 @@
 "Do you want to add \"%@\" to Hive?" = "Gusto mo bang idagdag any \"%@\" sa Hive?";
 
 /* Uninstall app popup title */
-"Do you want to remove \"%@\" from the application list?" = "Do you want to remove \"%@\" from the application list?";
+"Do you want to remove \"%@\" from the application list?" = "Nais mo bang tanggaling ang \"%@\" mula sa listahan ng application?";
 
 /* Backup error message */
 "Dropbox folder not found" = "Ang Dropbox folder ay hindi mahanap";
@@ -132,7 +132,7 @@
 "Firstname" = "Pangalan";
 
 /* Hiveapp file not readable error title */
-"Hive application file \"%@\" could not be opened." = "Hive application file \"%@\" could not be opened.";
+"Hive application file \"%@\" could not be opened." = "Ang Hive application file \"%@\" ay hindi mabuksan.";
 
 /* Initialization error title */
 "Hive cannot be started." = "Ang Hive ay hindi masimulan.";
@@ -144,10 +144,10 @@
 "Hive directory is excluded from Time Machine backup" = "Ang Hive directory is excluded from Time Machine backup";
 
 /* Sync in progress alert title */
-"Hive is currently syncing with the Bitcoin network. Are you sure you want to quit?" = "Hive is currently syncing with the Bitcoin network. Are you sure you want to quit?";
+"Hive is currently syncing with the Bitcoin network. Are you sure you want to quit?" = "Ang hive ay kasalakuyang nagsi-sync sa Bitcoin network. Nais mo talagang mag-quit?";
 
 /* Chain file unreadable error explanation */
-"Hive will now delete the file and synchronize with the Bitcoin network again. Please leave Hive open for the next several minutes, and try not to send any transactions right now." = "Hive will now delete the file and synchronize with the Bitcoin network again. Please leave Hive open for the next several minutes, and try not to send any transactions right now.";
+"Hive will now delete the file and synchronize with the Bitcoin network again. Please leave Hive open for the next several minutes, and try not to send any transactions right now." = "Ang Hive ay magbubura ng file at magsi-synchronize sa Bitcoin network uli. Maari lamang na iwan ang Hive na nakabukas nang ilang minuto, at mabuting huwag munang magpadala ng kahit anong transaksiyon ngayon.";
 
 /* Share sent transaction text */
 "I've just received some Bitcoin using Hive" = "Ako ay nakatanggap ng Bitcoin gamit ang Hive";
@@ -159,10 +159,10 @@
 "Install" = "I-install";
 
 /* Backup requires password alert details */
-"It's dangerous to upload unencrypted wallets." = "It's dangerous to upload unencrypted wallets.";
+"It's dangerous to upload unencrypted wallets." = "Delikado ang mag-upload ng mga wallet na hindi encrypted.";
 
 /* Don't leave a form without saving data */
-"Keep Editing" = "Keep Editing";
+"Keep Editing" = "Panatilihin ang pag-eedit";
 
 /* Address caption field placeholder */
 "Label" = "Label";
@@ -189,7 +189,7 @@
 "No backup since %@" = "Walang backup mula %@";
 
 /* No backups enabled notification title */
-"No backups configured" = "No backups configured";
+"No backups configured" = "Walang configured na backups";
 
 /* Transaction failed alert message */
 "No Bitcoin have been taken from your wallet." = "Walang Bitcoin na ibinawas sa iyong wallet.";
@@ -258,10 +258,10 @@
 "The existing app file will be replaced by the new version. This will not affect any app settings or saved data." = "Ang umiiral na app file ay pinalitan ng bagong version. Hindi maapektuhan any kahit anong mga app setting o nai-save na data.";
 
 /* Hiveapp file not readable error details */
-"The file is damaged or does not contain a Hive application." = "The file is damaged or does not contain a Hive application.";
+"The file is damaged or does not contain a Hive application." = "Ang file ay sira o walang laman na kahit anong Hive application.";
 
 /* Sending dust alert message */
-"This amount is too low to be sent through the network." = "This amount is too low to be sent through the network.";
+"This amount is too low to be sent through the network." = "Ang dami ay masyadong mababa upang maipadala sa pamamagitan ng network.";
 
 /* Alert details when transaction was cancelled */
 "This can happen because of bugs in the wallet code or because the transaction was rejected by the network." = "Ito ay marring nangyari dahil saw bugs mull sa wallet code o dahil ang transaction nai-reject ng network.";
@@ -279,13 +279,13 @@
 "Time Machine is disabled in System Preferences" = "Ang Time Machine ay na-disable sa System Preferences";
 
 /* No backups enabled notification details */
-"To protect your bitcoins, it's recommended that you enable at least one type of backup." = "To protect your bitcoins, it's recommended that you enable at least one type of backup.";
+"To protect your bitcoins, it's recommended that you enable at least one type of backup." = "Upang maprotektahan ang iyong mga bitcoin, nirerekomenda na i-enable ang kahit na isang uri ng backup";
 
 /* Amount exceeds available balance alert message */
 "To send this transaction, you'll need to wait for your pending transactions to be confirmed first (this shouldn't take more than a few minutes)." = "Upang maipadala ang transaction na ito, kinakailangan mag-antay para makumpirma ang iyong pending transactions muna ( ito ay hindi tatagal ng ilang minuto).";
 
 /* Message when trying to start an app that requires a newer API level. */
-"To use the app, please update to the latest version of Hive." = "To use the app, please update to the latest version of Hive.";
+"To use the app, please update to the latest version of Hive." = "Upang magamit ang app, maari lamang na i-update sa pinakahuling salin ng Hive.";
 
 /* Notification of cancelled transaction */
 "Transaction cancelled" = "Ang transaction ay naikansela";
@@ -303,16 +303,16 @@
 "Transactions" = "mga Transaction";
 
 /* Uninstall app button title */
-"Uninstall" = "Uninstall";
+"Uninstall" = "I-uninstall";
 
 /* Entry in application icon context menu */
-"Uninstall application" = "Uninstall application";
+"Uninstall application" = "I-uninstall ang application";
 
 /* Backup status: backup up to date */
 "Up to date" = "Up to date";
 
 /* Entry in application icon context menu */
-"Visit application's site" = "Visit application's site";
+"Visit application's site" = "Bisitahin ang site ng application";
 
 /* Backup status: backup scheduled or in progress */
 "Waiting for backup" = "Nag-aantay para sa backup";
@@ -327,7 +327,7 @@
 "What does this mean?" = "Ano ibig sabihin nito?";
 
 /* Uninstall app popup message */
-"You can install it again through the App Store app later if you change your mind." = "You can install it again through the App Store app later if you change your mind.";
+"You can install it again through the App Store app later if you change your mind." = "Maari mong i-install ito uli mula sa App Store kung magbago ang iyong isip.";
 
 /* Details of an alert when trying to send more than you have */
 "You cannot send more money than you own." = "Hindi ka maaring magpadala ng pera nang higit sa kung ano ang meron ka.";
@@ -357,7 +357,7 @@
 "You've received Bitcoin" = "Ikaw ay nakatanggap ng Bitcoin";
 
 /* Cancel editing alert message */
-"Your changes won't be saved." = "Your changes won't be saved.";
+"Your changes won't be saved." = "Ang iyong mga pagbabago ay hindi maisa-save.";
 
 /* Sync in progress alert details */
-"Your pending transactions won't be confirmed until the sync is complete." = "Your pending transactions won't be confirmed until the sync is complete.";
+"Your pending transactions won't be confirmed until the sync is complete." = "Ang iyong mga pending na transaksiyon ay hindi makukumpirma hanggang ang sync ay makumpleto.";
