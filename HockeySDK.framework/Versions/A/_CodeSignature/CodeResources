@@ -8,9 +8,13 @@
 		<data>
 		l9nFHkT9skEPnHX7X/5rY3fE7Nk=
 		</data>
+		<key>Resources/BITFeedbackWindowController.nib</key>
+		<data>
+		jaH8GWYRq0LKIiF2zou6TI4P1yA=
+		</data>
 		<key>Resources/Info.plist</key>
 		<data>
-		73TMzEhdxLwQqgyMeW9xZMqbkHs=
+		10R4Rgrnl95srn+wGrvv+pIe7Zg=
 		</data>
 		<key>Resources/de.lproj/HockeySDK.strings</key>
 		<dict>
@@ -43,7 +47,7 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			BO5qSZv93SYLAw3FCPq58g/OEOg=
+			hdsHlH0+VHdFhbkPJa8Aln6O0T4=
 			</data>
 			<key>optional</key>
 			<true/>
@@ -99,6 +103,18 @@
 		<data>
 		GSYEFnWlyc8STfRefMp+RqhAn+A=
 		</data>
+		<key>Headers/BITFeedbackManager.h</key>
+		<data>
+		E18EVtWftzzW+DaWA4+pgLr/5fI=
+		</data>
+		<key>Headers/BITFeedbackWindowController.h</key>
+		<data>
+		2iQdR8PFVWYjyiXNdWwZF+/ZVrU=
+		</data>
+		<key>Headers/BITHockeyBaseManager.h</key>
+		<data>
+		gmwjEH6gxn+KGW5wx/CajufVfvw=
+		</data>
 		<key>Headers/BITHockeyManager.h</key>
 		<data>
 		+g1Q2Eab4jR1DbbMq0h+DZNWFic=
@@ -119,9 +135,13 @@
 		<data>
 		l9nFHkT9skEPnHX7X/5rY3fE7Nk=
 		</data>
+		<key>Resources/BITFeedbackWindowController.nib</key>
+		<data>
+		jaH8GWYRq0LKIiF2zou6TI4P1yA=
+		</data>
 		<key>Resources/Info.plist</key>
 		<data>
-		73TMzEhdxLwQqgyMeW9xZMqbkHs=
+		10R4Rgrnl95srn+wGrvv+pIe7Zg=
 		</data>
 		<key>Resources/de.lproj/HockeySDK.strings</key>
 		<dict>
@@ -154,7 +174,7 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			BO5qSZv93SYLAw3FCPq58g/OEOg=
+			hdsHlH0+VHdFhbkPJa8Aln6O0T4=
 			</data>
 			<key>optional</key>
 			<true/>

@@ -150,8 +150,6 @@
 		58605A6818041DFC00FD9C2A /* NPZipFileHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 58605A6418041DFC00FD9C2A /* NPZipFileHeader.m */; };
 		58605A6918041DFC00FD9C2A /* NPZipHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 58605A6618041DFC00FD9C2A /* NPZipHeader.m */; };
 		5860D3FF180455B900BD852C /* HIApplicationsManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 5860D3FE180455B900BD852C /* HIApplicationsManager.m */; };
-		58655D3C183D14FC000DE7AE /* HockeySDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 58655D3B183D14FC000DE7AE /* HockeySDK.framework */; };
-		58655D41183D1531000DE7AE /* HockeySDK.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 58655D3B183D14FC000DE7AE /* HockeySDK.framework */; };
 		586905961843DE5C0053D74F /* HIDebuggingToolsWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 586905941843DE5C0053D74F /* HIDebuggingToolsWindowController.m */; };
 		5884A00F17F1B63D004A31FA /* Tor.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5884A00C17F1B5FF004A31FA /* Tor.framework */; };
 		5884A01017F1B646004A31FA /* Tor.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 5884A00C17F1B5FF004A31FA /* Tor.framework */; };
@@ -178,6 +176,8 @@
 		58A03B0D17D9DC4100ADD5E5 /* HIButtonWithSpinner.m in Sources */ = {isa = PBXBuildFile; fileRef = 58A03B0C17D9DC4100ADD5E5 /* HIButtonWithSpinner.m */; };
 		58A0A49618ABC75E00A5A084 /* HITemporaryContact.m in Sources */ = {isa = PBXBuildFile; fileRef = 58A0A49518ABC75E00A5A084 /* HITemporaryContact.m */; };
 		58A0A49F18AD37E600A5A084 /* HILocalBackup.m in Sources */ = {isa = PBXBuildFile; fileRef = 58A0A49E18AD37E600A5A084 /* HILocalBackup.m */; };
+		58A149CA18C61BB900591F17 /* HockeySDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 58A149C918C61BB900591F17 /* HockeySDK.framework */; };
+		58A149CB18C61BD600591F17 /* HockeySDK.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 58A149C918C61BB900591F17 /* HockeySDK.framework */; };
 		58A275DB18BBD30300C102B2 /* honey_im_subtle@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 58A275D918BBD30300C102B2 /* honey_im_subtle@2x.png */; };
 		58A275DC18BBD30300C102B2 /* honey_im_subtle.png in Resources */ = {isa = PBXBuildFile; fileRef = 58A275DA18BBD30300C102B2 /* honey_im_subtle.png */; };
 		58A275E118BBD56900C102B2 /* HILockScreenView.m in Sources */ = {isa = PBXBuildFile; fileRef = 58A275E018BBD56900C102B2 /* HILockScreenView.m */; };
@@ -290,10 +290,10 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				58655D41183D1531000DE7AE /* HockeySDK.framework in CopyFiles */,
 				5884A01017F1B646004A31FA /* Tor.framework in CopyFiles */,
 				D901F4F817B272E60071780D /* BitcoinJKit.framework in CopyFiles */,
 				5884A03C17F578EB004A31FA /* Sparkle.framework in CopyFiles */,
+				58A149CB18C61BD600591F17 /* HockeySDK.framework in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1006,7 +1006,6 @@
 		58605A6618041DFC00FD9C2A /* NPZipHeader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NPZipHeader.m; sourceTree = "<group>"; };
 		5860D3FD180455B900BD852C /* HIApplicationsManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HIApplicationsManager.h; sourceTree = "<group>"; };
 		5860D3FE180455B900BD852C /* HIApplicationsManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HIApplicationsManager.m; sourceTree = "<group>"; };
-		58655D3B183D14FC000DE7AE /* HockeySDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = HockeySDK.framework; sourceTree = "<group>"; };
 		586905931843DE5C0053D74F /* HIDebuggingToolsWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HIDebuggingToolsWindowController.h; sourceTree = "<group>"; };
 		586905941843DE5C0053D74F /* HIDebuggingToolsWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HIDebuggingToolsWindowController.m; sourceTree = "<group>"; };
 		586905E118450BD90053D74F /* ja */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = ja; path = ja.lproj/HIApplicationsViewController.xib; sourceTree = "<group>"; };
@@ -1510,6 +1509,7 @@
 		58A0A49518ABC75E00A5A084 /* HITemporaryContact.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HITemporaryContact.m; sourceTree = "<group>"; };
 		58A0A49D18AD37E600A5A084 /* HILocalBackup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HILocalBackup.h; sourceTree = "<group>"; };
 		58A0A49E18AD37E600A5A084 /* HILocalBackup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HILocalBackup.m; sourceTree = "<group>"; };
+		58A149C918C61BB900591F17 /* HockeySDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = HockeySDK.framework; sourceTree = "<group>"; };
 		58A275D918BBD30300C102B2 /* honey_im_subtle@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "honey_im_subtle@2x.png"; sourceTree = "<group>"; };
 		58A275DA18BBD30300C102B2 /* honey_im_subtle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = honey_im_subtle.png; sourceTree = "<group>"; };
 		58A275DF18BBD56900C102B2 /* HILockScreenView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HILockScreenView.h; sourceTree = "<group>"; };
@@ -1850,9 +1850,9 @@
 				D95929DD17742B71008B4F43 /* WebKit.framework in Frameworks */,
 				D97E7FCE176BB64900D2350B /* SystemConfiguration.framework in Frameworks */,
 				D9A592361768CBE400502635 /* QuartzCore.framework in Frameworks */,
+				58A149CA18C61BB900591F17 /* HockeySDK.framework in Frameworks */,
 				D9A591C81767B4A800502635 /* Cocoa.framework in Frameworks */,
 				05D9F526F5294257A0422835 /* libPods.a in Frameworks */,
-				58655D3C183D14FC000DE7AE /* HockeySDK.framework in Frameworks */,
 				5884A03717F56D86004A31FA /* Sparkle.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -2360,11 +2360,11 @@
 		D9A591C61767B4A800502635 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				58A149C918C61BB900591F17 /* HockeySDK.framework */,
 				24E1291318A2B03F0064C075 /* QTKit.framework */,
 				1EFBACBE45EB458A8ED83785 /* libPods.a */,
 				D91FE826179887C4001B37D8 /* libz.dylib */,
 				D9A591C71767B4A800502635 /* Cocoa.framework */,
-				58655D3B183D14FC000DE7AE /* HockeySDK.framework */,
 				D9235387177C6779003533DF /* JavaScriptCore.framework */,
 				D9A592351768CBE400502635 /* QuartzCore.framework */,
 				5884A03617F56D86004A31FA /* Sparkle.framework */,
