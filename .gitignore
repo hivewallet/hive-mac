@@ -28,3 +28,6 @@ sourcetreeconfig
 
 # Podfiles
 Pods/*
+
+# Build scripts
+/build
