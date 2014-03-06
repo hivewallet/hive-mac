@@ -1,15 +1,15 @@
 
 /* Class = "INAppStoreWindow"; title = "Hive"; ObjectID = "3"; */
-"3.title" = "ハイブ";
+"3.title" = "Hive";
 
 /* Class = "NSButtonCell"; title = "Send"; ObjectID = "45"; */
 "45.title" = "送る";
 
 /* Class = "NSTextFieldCell"; title = "Network connection error"; ObjectID = "2MH-gv-3gz"; */
-"2MH-gv-3gz.title" = "Network connection error";
+"2MH-gv-3gz.title" = "ネットワーク接続エラー";
 
 /* Class = "NSButtonCell"; title = "Unlock"; ObjectID = "AEG-XJ-abS"; */
-"AEG-XJ-abS.title" = "Unlock";
+"AEG-XJ-abS.title" = "アンロック";
 
 /* Class = "NSTextFieldCell"; title = "Hive is locked.\nEnter your password to unlock:"; ObjectID = "oW1-yx-he4"; */
-"oW1-yx-he4.title" = "Hive is locked.\nEnter your password to unlock:";
+"oW1-yx-he4.title" = "Hiveはロックされています。\nパスワードを入力してください:";

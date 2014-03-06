@@ -1,24 +1,24 @@
 
 /* Class = "NSButtonCell"; title = "Save"; ObjectID = "14"; */
-"14.title" = "Save";
+"14.title" = "保存";
 
 /* Class = "NSTextFieldCell"; title = "Contact information"; ObjectID = "75"; */
-"75.title" = "コンタクトインフォ";
+"75.title" = "コンタクト情報";
 
 /* Class = "NSTextFieldCell"; title = "Email:"; ObjectID = "78"; */
 "78.title" = "メール:";
 
 /* Class = "NSButtonCell"; title = "Add address"; ObjectID = "80"; */
-"80.title" = "アドレスを参加する";
+"80.title" = "アドレスを追加";
 
 /* Class = "NSTextFieldCell"; title = "Bitcoin addresses"; ObjectID = "81"; */
 "81.title" = "ビットコインアドレス";
 
 /* Class = "NSButtonCell"; title = "Remove contact"; ObjectID = "97"; */
-"97.title" = "コンタクトを外す";
+"97.title" = "コンタクトを削除";
 
 /* Class = "NSTextFieldCell"; title = "edit"; ObjectID = "107"; */
-"107.title" = "変更する";
+"107.title" = "編集";
 
 /* Class = "NSButtonCell"; title = "QR"; ObjectID = "Fp7-Nh-Dhm"; */
 "Fp7-Nh-Dhm.title" = "QR";

@@ -1,6 +1,6 @@
 
 /* Class = "NSTextFieldCell"; title = "Configure backup"; ObjectID = "I10-iV-C0e"; */
-"I10-iV-C0e.title" = "バックアップを設定する";
+"I10-iV-C0e.title" = "バックアップの設定";
 
 /* Class = "NSTextFieldCell"; title = "✓ enabled"; ObjectID = "KqD-DN-1Yk"; */
 "KqD-DN-1Yk.title" = "✓ 有効";
@@ -18,10 +18,10 @@
 "f0R-BI-Nz4.title" = "有効";
 
 /* Class = "NSButtonCell"; title = "Next Step"; ObjectID = "j0E-b4-dgh"; */
-"j0E-b4-dgh.title" = "次";
+"j0E-b4-dgh.title" = "次へ";
 
 /* Class = "NSButtonCell"; title = "Enable"; ObjectID = "lG8-G7-noh"; */
 "lG8-G7-noh.title" = "有効";
 
 /* Class = "NSTextFieldCell"; title = "Backing up your wallet file is also an important safety measure to protect your money. Let's make a backup copy of your wallet now. If you ever lose your computer, Hive can retrieve your wallet from these sources."; ObjectID = "rIc-eX-ajY"; */
-"rIc-eX-ajY.title" = "バックアップはコインを守る為に凄く大切。ウオレットのバックアップ作りましょう。パソコンの故障などの場合、ハイブはこのバックアップを利用してウオレットを回復できます。";
+"rIc-eX-ajY.title" = "バックアップはコインを保護するためにとても重要です。ウォレットのバックアップ作りましょう。もしパソコンが故障しても、このバックアップを利用してウォレットを復元できます。";

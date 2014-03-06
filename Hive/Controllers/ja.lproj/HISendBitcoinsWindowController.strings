@@ -9,13 +9,13 @@
 "10.title" = "送る";
 
 /* Class = "NSTextFieldCell"; title = "To:"; ObjectID = "14"; */
-"14.title" = "へ:";
+"14.title" = "送金先:";
 
 /* Class = "NSTextFieldCell"; placeholderString = "Type to search..."; ObjectID = "20"; */
-"20.placeholderString" = "探すためにはタイプして...";
+"20.placeholderString" = "検索...";
 
 /* Class = "NSTextFieldCell"; title = "Main address"; ObjectID = "22"; */
 "22.title" = "メインアドレス";
 
 /* Class = "NSTextFieldCell"; title = "Currency exchange rates are provided by BitcoinAverage markets ticker. Bitcoin prices can change quickly, so other apps or sites might show different exchange rates."; ObjectID = "dxM-9E-wwb"; */
-"dxM-9E-wwb.title" = "Currency exchange rates are provided by BitcoinAverage markets ticker. Bitcoin prices can change quickly, so other apps or sites might show different exchange rates.";
+"dxM-9E-wwb.title" = "現在の為替レートは BitcoinAverage によって提供されています。ビットコインの相場は変動しやすいため、他のアプリやサイトで違う価格が表示されていることがあります。";

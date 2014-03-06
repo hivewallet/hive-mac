@@ -6,16 +6,16 @@
 "0m5-Xd-7pp.placeholderString" = "email@domain.com";
 
 /* Class = "NSTextFieldCell"; title = "Please send us a report to help us fix the problem."; ObjectID = "Cob-tq-o5r"; */
-"Cob-tq-o5r.title" = "この問題を解決する為にレポートを送って下さい";
+"Cob-tq-o5r.title" = "この問題を解決する為にレポートを送ってください";
 
 /* Class = "NSTextFieldCell"; title = "Describe what you were doing when the error occurred:"; ObjectID = "F9w-28-7kX"; */
-"F9w-28-7kX.title" = "どんな時に何をやって問題が起きたかを教えて下さい (出来れば英語で):";
+"F9w-28-7kX.title" = "どんな時に何をやって問題が起きたかを教えてください（出来れば英語で）:";
 
 /* Class = "NSTextFieldCell"; title = "Oh no, something went wrong!"; ObjectID = "Mpx-rH-nUM"; */
-"Mpx-rH-nUM.title" = "あら、何かが正しく行かなかったみたい";
+"Mpx-rH-nUM.title" = "何か問題が発生したようです。";
 
 /* Class = "NSTextFieldCell"; title = "Your name (optional)"; ObjectID = "pya-AJ-MPI"; */
-"pya-AJ-MPI.title" = "Your name (optional)";
+"pya-AJ-MPI.title" = "あなたの名前（オプション）";
 
 /* Class = "NSButtonCell"; title = "Send"; ObjectID = "tDm-yy-jVS"; */
 "tDm-yy-jVS.title" = "送る";
@@ -27,7 +27,7 @@
 "uLK-ff-isg.title" = "エラーの内容:";
 
 /* Class = "NSTextFieldCell"; title = "An unexpected error has occurred in Hive."; ObjectID = "xF4-pJ-cQU"; */
-"xF4-pJ-cQU.title" = "ハイブは不明なエラーを発生しました";
+"xF4-pJ-cQU.title" = "不明なエラーが発生しました。";
 
 /* Class = "NSTextFieldCell"; title = "Your email (optional)"; ObjectID = "zup-Q6-bK7"; */
-"zup-Q6-bK7.title" = "Your email (optional)";
+"zup-Q6-bK7.title" = "メールアドレス（オプション）";
