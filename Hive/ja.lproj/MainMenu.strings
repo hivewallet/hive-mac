@@ -3,16 +3,16 @@
 "29.title" = "メインメニュー";
 
 /* Class = "NSMenuItem"; title = "Hive"; ObjectID = "56"; */
-"56.title" = "ハイブ";
+"56.title" = "Hive";
 
 /* Class = "NSMenu"; title = "Hive"; ObjectID = "57"; */
-"57.title" = "ハイブ";
+"57.title" = "Hive";
 
 /* Class = "NSMenuItem"; title = "About Hive"; ObjectID = "58"; */
-"58.title" = "ハイブについて";
+"58.title" = "Hiveについて";
 
 /* Class = "NSMenuItem"; title = "Preferences…"; ObjectID = "129"; */
-"129.title" = "設定…";
+"129.title" = "設定...";
 
 /* Class = "NSMenu"; title = "Services"; ObjectID = "130"; */
 "130.title" = "サービス";
@@ -21,22 +21,22 @@
 "131.title" = "サービス";
 
 /* Class = "NSMenuItem"; title = "Hide Hive"; ObjectID = "134"; */
-"134.title" = "ハイブを隠す";
+"134.title" = "Hiveを隠す";
 
 /* Class = "NSMenuItem"; title = "Quit Hive"; ObjectID = "136"; */
-"136.title" = "ハイブを止める";
+"136.title" = "Hiveを止める";
 
 /* Class = "NSMenuItem"; title = "Hide Others"; ObjectID = "145"; */
-"145.title" = "これ意外を隠す";
+"145.title" = "これ以外を隠す";
 
 /* Class = "NSMenuItem"; title = "Show All"; ObjectID = "150"; */
 "150.title" = "全てを表示";
 
 /* Class = "NSMenuItem"; title = "Edit"; ObjectID = "801"; */
-"801.title" = "変更";
+"801.title" = "編集";
 
 /* Class = "NSMenu"; title = "Edit"; ObjectID = "802"; */
-"802.title" = "変更";
+"802.title" = "編集";
 
 /* Class = "NSMenuItem"; title = "Undo"; ObjectID = "804"; */
 "804.title" = "取り消し";
@@ -51,19 +51,19 @@
 "808.title" = "コピー";
 
 /* Class = "NSMenuItem"; title = "Paste"; ObjectID = "809"; */
-"809.title" = "張り付け";
+"809.title" = "貼りつけ";
 
 /* Class = "NSMenuItem"; title = "Delete"; ObjectID = "811"; */
 "811.title" = "削除";
 
 /* Class = "NSMenuItem"; title = "Select All"; ObjectID = "812"; */
-"812.title" = "全てを選択";
+"812.title" = "全て選択";
 
 /* Class = "NSMenuItem"; title = "Window"; ObjectID = "854"; */
-"854.title" = "ウインドウ";
+"854.title" = "ウィンドウ";
 
 /* Class = "NSMenu"; title = "Window"; ObjectID = "855"; */
-"855.title" = "ウインドウ";
+"855.title" = "ウィンドウ";
 
 /* Class = "NSMenuItem"; title = "Minimize"; ObjectID = "857"; */
 "857.title" = "最小化する";
@@ -81,34 +81,34 @@
 "866.title" = "ビットコインを送る...";
 
 /* Class = "NSMenuItem"; title = "Check for Updates..."; ObjectID = "870"; */
-"870.title" = "最新のアップデートを確認する…";
+"870.title" = "最新のアップデートを確認する...";
 
 /* Class = "NSMenuItem"; title = "Change Password…"; ObjectID = "1HB-Qg-iyg"; */
-"1HB-Qg-iyg.title" = "パスワードを変更…";
+"1HB-Qg-iyg.title" = "パスワードを変更...";
 
 /* Class = "NSMenuItem"; title = "Lock Wallet"; ObjectID = "AFM-Ev-d2A"; */
-"AFM-Ev-d2A.title" = "Lock Wallet";
+"AFM-Ev-d2A.title" = "ウォレットをロック";
 
 /* Class = "NSMenuItem"; title = "Open CoinMap..."; ObjectID = "ASP-Ns-ktD"; */
-"ASP-Ns-ktD.title" = "コインマップを開く…";
+"ASP-Ns-ktD.title" = "コインマップを開く...";
 
 /* Class = "NSMenuItem"; title = "Wallet"; ObjectID = "GX7-xG-GKH"; */
-"GX7-xG-GKH.title" = "ウオレット";
+"GX7-xG-GKH.title" = "ウォレット";
 
 /* Class = "NSMenuItem"; title = "Send Feedback…"; ObjectID = "GsI-lc-HhD"; */
-"GsI-lc-HhD.title" = "Send Feedback…";
+"GsI-lc-HhD.title" = "フィードバックを送る...";
 
 /* Class = "NSMenu"; title = "Help"; ObjectID = "K2u-T2-G1a"; */
-"K2u-T2-G1a.title" = "Help";
+"K2u-T2-G1a.title" = "ヘルプ";
 
 /* Class = "NSMenuItem"; title = "Debugging tools..."; ObjectID = "Ue9-mi-gbe"; */
-"Ue9-mi-gbe.title" = "デバッグのツール...";
+"Ue9-mi-gbe.title" = "デバッグツール...";
 
 /* Class = "NSMenuItem"; title = "Backup Center..."; ObjectID = "V0L-sM-c8h"; */
 "V0L-sM-c8h.title" = "バックアップセンター...";
 
 /* Class = "NSMenuItem"; title = "Help"; ObjectID = "ZUU-kM-x8u"; */
-"ZUU-kM-x8u.title" = "Help";
+"ZUU-kM-x8u.title" = "ヘルプ";
 
 /* Class = "NSMenu"; title = "Tools"; ObjectID = "cCx-Ak-fii"; */
 "cCx-Ak-fii.title" = "ツール";
@@ -117,10 +117,10 @@
 "eBU-ec-85y.title" = "ツール";
 
 /* Class = "NSMenu"; title = "Wallet"; ObjectID = "jrd-Ul-XjV"; */
-"jrd-Ul-XjV.title" = "ウオレット";
+"jrd-Ul-XjV.title" = "ウォレット";
 
 /* Class = "NSMenuItem"; title = "Debugging info..."; ObjectID = "lLT-53-p4m"; */
-"lLT-53-p4m.title" = "デバッグの内容...";
+"lLT-53-p4m.title" = "デバッグ情報...";
 
 /* Class = "NSMenuItem"; title = "Scan a QR code…"; ObjectID = "vdw-IK-snJ"; */
-"vdw-IK-snJ.title" = "Scan a QR code…";
+"vdw-IK-snJ.title" = "QRコードを読み取る...";

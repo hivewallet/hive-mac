@@ -1,9 +1,9 @@
 
 /* Class = "NSButtonCell"; title = "Edit"; ObjectID = "50"; */
-"50.title" = "変更";
+"50.title" = "編集";
 
 /* Class = "NSTextFieldCell"; title = "Contact information"; ObjectID = "62"; */
-"62.title" = "コンタクトインフォ";
+"62.title" = "コンタクト情報";
 
 /* Class = "NSTextFieldCell"; title = "Email:"; ObjectID = "65"; */
 "65.title" = "メール:";
