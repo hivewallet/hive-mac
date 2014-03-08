@@ -46,6 +46,10 @@ static CGFloat ViewSlideDuration = 0.3;
     [[self topViewController] viewWillAppear];
 }
 
+- (void)applicationReturnedToForeground {
+    [[self topViewController] applicationReturnedToForeground];
+}
+
 - (HIViewController *)topViewController {
     return [viewControllers lastObject];
 }

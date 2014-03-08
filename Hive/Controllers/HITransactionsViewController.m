@@ -116,6 +116,10 @@
     [self markAllTransactionsAsRead];
 }
 
+- (void)applicationReturnedToForeground {
+    [self markAllTransactionsAsRead];
+}
+
 - (void)markAllTransactionsAsRead {
     NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:HITransactionEntity];
     request.predicate = [NSPredicate predicateWithFormat:@"read = NO"];

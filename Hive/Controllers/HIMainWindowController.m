@@ -210,6 +210,11 @@ NSString * const LockScreenEnabledDefaultsKey = @"LockScreenEnabled";
     }
 }
 
+- (IBAction)showWindow:(id)sender {
+    [super showWindow:sender];
+    [self.sidebarController applicationReturnedToForeground];
+}
+
 - (void)sendWindowDidClose:(NSNotification *)notification {
     BOOL success = [notification.userInfo[HISendBitcoinsWindowSuccessKey] boolValue];
 

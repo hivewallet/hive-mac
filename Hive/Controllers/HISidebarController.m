@@ -109,4 +109,11 @@ static const NSInteger SidebarIndexNotSelected = -1;
     return [NSImage imageNamed:iconName];
 }
 
+- (void)applicationReturnedToForeground {
+    if (self.selectedTabIndex != SidebarIndexNotSelected) {
+        HIViewController *selectedController = _viewControllers[self.selectedTabIndex];
+        [selectedController applicationReturnedToForeground];
+    }
+}
+
 @end

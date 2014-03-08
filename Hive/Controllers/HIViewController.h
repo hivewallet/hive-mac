@@ -26,6 +26,7 @@
 
 - (void)viewWillAppear;
 - (void)viewWillDisappear;
+- (void)applicationReturnedToForeground;
 - (void)viewWasSelectedFromTabBar;
 - (void)viewWasSelectedFromTabBarAgain;
 - (void)requestPopFromStackWithAction:(void (^)())action;

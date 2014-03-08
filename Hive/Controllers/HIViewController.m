@@ -34,6 +34,10 @@
     
 }
 
+- (void)applicationReturnedToForeground {
+
+}
+
 - (void)viewWillDisappear {
     
 }

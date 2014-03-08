@@ -42,4 +42,6 @@ extern const NSInteger SidebarButtonHeight;
 - (void)selectControllerAtIndex:(NSInteger)index;
 - (void)unselectCurrentController;
 
+- (void)applicationReturnedToForeground;
+
 @end
