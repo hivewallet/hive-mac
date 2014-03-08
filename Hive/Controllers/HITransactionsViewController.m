@@ -17,6 +17,10 @@
 #import "HITransactionsViewController.h"
 #import "NSColor+Hive.h"
 
+static int KVO_CONTEXT;
+
+static NSString *const KEY_UNREAD_TRANSACTIONS = @"unreadTransactions";
+
 @interface HITransactionsViewController () <BCTransactionObserver>
 
 @property (strong, nonatomic) IBOutlet NSView *noTransactionsView;
@@ -84,7 +88,7 @@
     [self.arrayController addObserver:self
                            forKeyPath:@"arrangedObjects.@count"
                               options:NSKeyValueObservingOptionInitial
-                              context:NULL];
+                              context:&KVO_CONTEXT];
 
     [[BCClient sharedClient] addTransactionObserver:self];
 
@@ -92,10 +96,12 @@
                                              selector:@selector(updateBitcoinFormat:)
                                                  name:HIPreferredFormatChangeNotification
                                                object:nil];
+    [self beginObservingUnreadCount];
 }
 
 - (void)dealloc {
-    [self.arrayController removeObserver:self forKeyPath:@"arrangedObjects.@count"];
+    [self endObservingUnreadCount];
+    [self.arrayController removeObserver:self forKeyPath:@"arrangedObjects.@count" context:&KVO_CONTEXT];
     [[NSNotificationCenter defaultCenter] removeObserver:self];
     [[BCClient sharedClient] removeTransactionObserver:self];
 
@@ -107,8 +113,14 @@
                       ofObject:(id)object
                         change:(NSDictionary *)change
                        context:(void *)context {
-    if (object == self.arrayController) {
-        [self updateNoTransactionsView];
+    if (context == &KVO_CONTEXT) {
+        if (object == self.arrayController) {
+            [self updateNoTransactionsView];
+        } else if (object == [BCClient sharedClient]) {
+            [self updateBadge];
+        }
+    } else {
+        [super observeValueForKeyPath:keyPath ofObject:object change:change context:context];
     }
 }
 
@@ -328,6 +340,23 @@
     }
 
     [self.tableView deselectRow:row];
+}
+
+#pragma mark - badge
+
+- (void)beginObservingUnreadCount {
+    [[BCClient sharedClient] addObserver:self
+                              forKeyPath:KEY_UNREAD_TRANSACTIONS
+                                 options:NSKeyValueObservingOptionInitial
+                                 context:&KVO_CONTEXT];
+}
+
+- (void)updateBadge {
+    self.badgeNumber = [BCClient sharedClient].unreadTransactions;
+}
+
+- (void)endObservingUnreadCount {
+    [[BCClient sharedClient] removeObserver:self forKeyPath:KEY_UNREAD_TRANSACTIONS context:&KVO_CONTEXT];
 }
 
 @end

@@ -9,6 +9,12 @@
 #import "HISidebarButton.h"
 #import "HISidebarController.h"
 #import "HIViewController.h"
+#import "NSColor+Hive.h"
+#import "KWExample.h"
+
+static int KVO_CONTEXT;
+
+static NSString *const KEY_BADGE_NUMBER = @"badgeNumber";
 
 // This magic number must match the sidebar width in the XIB.
 // TODO: There should be a constraint so this is just a single value!
@@ -20,6 +26,7 @@ static const NSInteger SidebarIndexNotSelected = -1;
 
 @interface HISidebarController () {
     NSMutableArray *_barButtons;
+    NSMutableArray *_badges;
     NSMutableArray *_viewControllers;
 }
 
@@ -33,7 +40,12 @@ static const NSInteger SidebarIndexNotSelected = -1;
     self.selectedTabIndex = SidebarIndexNotSelected;
 
     _barButtons = [[NSMutableArray alloc] init];
+    _badges = [[NSMutableArray alloc] init];
     _viewControllers = [[NSMutableArray alloc] init];
+}
+
+- (void)dealloc {
+    [self removeBadgeObservers];
 }
 
 - (void)setEnabled:(BOOL)enabled {
@@ -52,6 +64,8 @@ static const NSInteger SidebarIndexNotSelected = -1;
     NSButton *button = [self tabBarButtonForController:controller];
     [_barButtons addObject:button];
     [self.view addSubview:button];
+
+    [self addBadgeForButton:button controller:controller];
 }
 
 - (NSButton *)tabBarButtonForController:(HIViewController *)controller {
@@ -113,6 +127,63 @@ static const NSInteger SidebarIndexNotSelected = -1;
     if (self.selectedTabIndex != SidebarIndexNotSelected) {
         HIViewController *selectedController = _viewControllers[self.selectedTabIndex];
         [selectedController applicationReturnedToForeground];
+    }
+}
+
+#pragma mark - badge
+
+- (void)addBadgeForButton:(NSButton *)button controller:(HIViewController *)controller {
+    NSButton *badge = [self createBadgeForButton:button];
+    [_badges addObject:badge];
+
+    [controller addObserver:self
+                 forKeyPath:KEY_BADGE_NUMBER
+                    options:NSKeyValueObservingOptionInitial
+                    context:&KVO_CONTEXT];
+}
+
+- (NSButton *)createBadgeForButton:(NSButton *)button {
+    NSButton *badge = [NSButton new];
+
+    badge.bezelStyle = NSRecessedBezelStyle;
+    badge.buttonType = NSMomentaryLightButton;
+    badge.enabled = NO;
+
+    [self.view addSubview:badge];
+    badge.translatesAutoresizingMaskIntoConstraints = NO;
+    [self.view addConstraints:@[
+        ALIGN_CENTER_X(badge, button, 12),
+        ALIGN_CENTER_Y(badge, button, 10),
+    ]];
+
+    return badge;
+}
+
+- (void)observeValueForKeyPath:(NSString *)keyPath
+                      ofObject:(id)object
+                        change:(NSDictionary *)change
+                       context:(void *)context {
+    if (context == &KVO_CONTEXT) {
+        [self updateBadgeForViewController:object];
+    } else {
+        [super observeValueForKeyPath:keyPath ofObject:object change:change context:context];
+    }
+}
+
+- (void)updateBadgeForViewController:(HIViewController *)viewController {
+    NSUInteger index = [self.viewControllers indexOfObject:viewController];
+    assert(index != NSNotFound);
+
+    NSUInteger number = viewController.badgeNumber;
+    NSButton *badge = _badges[index];
+    
+    badge.title = [@(number) stringValue];
+    badge.hidden = number == 0;
+}
+
+- (void)removeBadgeObservers {
+    for (NSViewController *viewController in _viewControllers) {
+        [viewController removeObserver:self forKeyPath:KEY_BADGE_NUMBER context:&KVO_CONTEXT];
     }
 }
 

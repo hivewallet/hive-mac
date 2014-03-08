@@ -12,6 +12,10 @@
 
 static CGFloat ViewSlideDuration = 0.3;
 
+static int KVO_CONTEXT;
+
+static NSString *const KEY_TITLE = @"title";
+static NSString *const KEY_BADGE_NUMBER = @"badgeNumber";
 
 @interface HINavigationController () {
     NSMutableArray *viewControllers;
@@ -30,6 +34,11 @@ static CGFloat ViewSlideDuration = 0.3;
     if (self) {
         viewControllers = [[NSMutableArray alloc] init];
         _rootViewController = rootViewController;
+
+        [_rootViewController addObserver:self
+                              forKeyPath:KEY_BADGE_NUMBER
+                                 options:NSKeyValueObservingOptionInitial
+                                 context:&KVO_CONTEXT];
     }
 
     return self;
@@ -157,7 +166,7 @@ static CGFloat ViewSlideDuration = 0.3;
         }];
     }
 
-    [controller addObserver:self forKeyPath:@"title" options:0 context:NULL];
+    [controller addObserver:self forKeyPath:KEY_TITLE options:0 context:&KVO_CONTEXT];
 }
 
 - (void)popToViewController:(HIViewController *)targetController animated:(BOOL)animated {
@@ -178,7 +187,7 @@ static CGFloat ViewSlideDuration = 0.3;
 
     index++;
     while (index < viewControllers.count) {
-        [viewControllers[index] removeObserver:self forKeyPath:@"title"];
+        [viewControllers[index] removeObserver:self forKeyPath:KEY_TITLE context:&KVO_CONTEXT];
         [viewControllers removeObjectAtIndex:index];
     }
 
@@ -277,13 +286,22 @@ static CGFloat ViewSlideDuration = 0.3;
 }
 
 - (void)observeValueForKeyPath:(NSString *)keyPath
-                      ofObject:(id)object
+                      ofObject:(HIViewController *)object
                         change:(NSDictionary *)change
                        context:(void *)context {
-    NSUInteger index = [self.viewControllers indexOfObject:object];
 
-    if (index != NSNotFound) {
-        [_titleView updateTitleAtPosition:index toValue:[object title]];
+    if (context == &KVO_CONTEXT) {
+        if ([keyPath isEqualToString:KEY_TITLE]) {
+            NSUInteger index = [self.viewControllers indexOfObject:object];
+
+            if (index != NSNotFound) {
+                [_titleView updateTitleAtPosition:index toValue:[object title]];
+            }
+        } else if ([keyPath isEqualToString:KEY_BADGE_NUMBER]) {
+            self.badgeNumber = object.badgeNumber;
+        }
+    } else {
+        [super observeValueForKeyPath:keyPath ofObject:object change:change context:context];
     }
 }
 
