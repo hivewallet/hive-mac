@@ -1,6 +1,6 @@
 
 /* Body for feedback emails */
-"(Please write in English if possible.)" = "(Please write in English if possible.)";
+"(Please write in English if possible.)" = "(Maari lamang na isulat sa Ingles kung posible.)";
 
 /* Address field placeholder */
 "Address" = "Address";
@@ -9,10 +9,10 @@
 "Amount exceeds balance." = "Mas malaki ang amount kaysa sa balanse.";
 
 /* Anonymous username for profile page */
-"Anonymous" = "Anonymous";
+"Anonymous" = "Hindi kilala";
 
 /* Message when trying to start an app that requires a newer API level. */
-"App requires a newer version of Hive." = "App requires a newer version of Hive.";
+"App requires a newer version of Hive." = "Ang app ay nangangailangan ng bagong bersyon ng Hive.";
 
 /* App load error title */
 "Application can't be loaded" = "Hindi mai-load ang application.";
@@ -45,7 +45,7 @@
 "Bitcoin network data file could not be opened - another instance of Hive might still be running." = "Bitcoin network data file could not be opened - another instance of Hive might still be running.";
 
 /* Chain file unreadable error title */
-"Bitcoin network data file could not be opened." = "Bitcoin network data file could not be opened.";
+"Bitcoin network data file could not be opened." = "Ang Bitcoin network date file ay hindi mabuksan.";
 
 /* Backup error message */
 "Can't create a directory to store the wallet backup" = "Hindi makagawa ng directory upang mai-store ang wallet backup";
@@ -174,7 +174,7 @@
 "Lastname" = "Apelyido";
 
 /* Main address caption */
-"main" = "main";
+"main" = "pangunahin";
 
 /* Main address caption string for profiles */
 "Main address" = "Pangunahing address";
