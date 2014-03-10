@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="4514" systemVersion="13B42" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none">
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="4514" systemVersion="13C64" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none">
     <dependencies>
         <deployment version="1070" defaultVersion="1070" identifier="macosx"/>
         <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="4514"/>
@@ -14,10 +14,10 @@
         <customObject id="-3" userLabel="Application"/>
         <menu title="メインメニュー" systemMenu="main" id="29">
             <items>
-                <menuItem title="ハイブ" id="56">
-                    <menu key="submenu" title="ハイブ" systemMenu="apple" id="57">
+                <menuItem title="Hive" id="56">
+                    <menu key="submenu" title="Hive" systemMenu="apple" id="57">
                         <items>
-                            <menuItem title="ハイブについて" id="58">
+                            <menuItem title="Hiveについて" id="58">
                                 <modifierMask key="keyEquivalentModifierMask"/>
                                 <connections>
                                     <action selector="showAboutWindow:" target="494" id="cP6-Rg-Zok"/>
@@ -26,12 +26,12 @@
                             <menuItem isSeparatorItem="YES" id="236">
                                 <modifierMask key="keyEquivalentModifierMask" command="YES"/>
                             </menuItem>
-                            <menuItem title="設定…" keyEquivalent="," id="129">
+                            <menuItem title="設定..." keyEquivalent="," id="129">
                                 <connections>
                                     <action selector="openPreferences:" target="-1" id="754"/>
                                 </connections>
                             </menuItem>
-                            <menuItem title="最新のアップデートを確認する…" id="870">
+                            <menuItem title="最新のアップデートを確認する..." id="870">
                                 <modifierMask key="keyEquivalentModifierMask"/>
                                 <connections>
                                     <action selector="checkForUpdates:" target="869" id="871"/>
@@ -46,12 +46,12 @@
                             <menuItem isSeparatorItem="YES" id="144">
                                 <modifierMask key="keyEquivalentModifierMask" command="YES"/>
                             </menuItem>
-                            <menuItem title="ハイブを隠す" keyEquivalent="h" id="134">
+                            <menuItem title="Hiveを隠す" keyEquivalent="h" id="134">
                                 <connections>
                                     <action selector="hide:" target="-1" id="367"/>
                                 </connections>
                             </menuItem>
-                            <menuItem title="これ意外を隠す" keyEquivalent="h" id="145">
+                            <menuItem title="これ以外を隠す" keyEquivalent="h" id="145">
                                 <modifierMask key="keyEquivalentModifierMask" option="YES" command="YES"/>
                                 <connections>
                                     <action selector="hideOtherApplications:" target="-1" id="368"/>
@@ -65,7 +65,7 @@
                             <menuItem isSeparatorItem="YES" id="149">
                                 <modifierMask key="keyEquivalentModifierMask" command="YES"/>
                             </menuItem>
-                            <menuItem title="ハイブを止める" keyEquivalent="q" id="136">
+                            <menuItem title="Hiveを止める" keyEquivalent="q" id="136">
                                 <connections>
                                     <action selector="terminate:" target="-3" id="449"/>
                                 </connections>
@@ -73,8 +73,8 @@
                         </items>
                     </menu>
                 </menuItem>
-                <menuItem title="ウオレット" id="GX7-xG-GKH">
-                    <menu key="submenu" title="ウオレット" id="jrd-Ul-XjV">
+                <menuItem title="ウォレット" id="GX7-xG-GKH">
+                    <menu key="submenu" title="ウォレット" id="jrd-Ul-XjV">
                         <items>
                             <menuItem title="ビットコインを送る..." keyEquivalent="S" id="866">
                                 <connections>
@@ -82,13 +82,13 @@
                                 </connections>
                             </menuItem>
                             <menuItem isSeparatorItem="YES" id="CGD-5y-ezT"/>
-                            <menuItem title="パスワードを変更…" id="1HB-Qg-iyg">
+                            <menuItem title="パスワードを変更..." id="1HB-Qg-iyg">
                                 <modifierMask key="keyEquivalentModifierMask"/>
                                 <connections>
                                     <action selector="changeWalletPassword:" target="494" id="n4h-c8-Hjn"/>
                                 </connections>
                             </menuItem>
-                            <menuItem title="Lock Wallet" keyEquivalent="l" id="AFM-Ev-d2A">
+                            <menuItem title="ウォレットをロック" keyEquivalent="l" id="AFM-Ev-d2A">
                                 <connections>
                                     <action selector="lockWallet:" target="-1" id="XWR-xx-Wx0"/>
                                 </connections>
@@ -103,9 +103,9 @@
                         </binding>
                     </connections>
                 </menuItem>
-                <menuItem title="変更" id="801">
+                <menuItem title="編集" id="801">
                     <modifierMask key="keyEquivalentModifierMask"/>
-                    <menu key="submenu" title="変更" id="802">
+                    <menu key="submenu" title="編集" id="802">
                         <items>
                             <menuItem title="取り消し" keyEquivalent="z" id="804">
                                 <connections>
@@ -128,7 +128,7 @@
                                     <action selector="copy:" target="-1" id="850"/>
                                 </connections>
                             </menuItem>
-                            <menuItem title="張り付け" keyEquivalent="v" id="809">
+                            <menuItem title="貼りつけ" keyEquivalent="v" id="809">
                                 <connections>
                                     <action selector="paste:" target="-1" id="851"/>
                                 </connections>
@@ -138,7 +138,7 @@
                                     <action selector="delete:" target="-1" id="852"/>
                                 </connections>
                             </menuItem>
-                            <menuItem title="全てを選択" keyEquivalent="a" id="812">
+                            <menuItem title="全て選択" keyEquivalent="a" id="812">
                                 <connections>
                                     <action selector="selectAll:" target="-1" id="853"/>
                                 </connections>
@@ -156,24 +156,24 @@
                                     <action selector="showBackupCenter:" target="-1" id="w3X-q3-iCI"/>
                                 </connections>
                             </menuItem>
-                            <menuItem title="コインマップを開く…" id="ASP-Ns-ktD">
+                            <menuItem title="コインマップを開く..." id="ASP-Ns-ktD">
                                 <modifierMask key="keyEquivalentModifierMask"/>
                                 <connections>
                                     <action selector="openCoinMapSite:" target="494" id="Ozv-6D-Aab"/>
                                 </connections>
                             </menuItem>
-                            <menuItem title="Scan a QR code…" id="vdw-IK-snJ">
+                            <menuItem title="QRコードを読み取る..." id="vdw-IK-snJ">
                                 <modifierMask key="keyEquivalentModifierMask"/>
                                 <connections>
                                     <action selector="scanQRCode:" target="494" id="mEt-Z8-Hrc"/>
                                 </connections>
                             </menuItem>
-                            <menuItem title="デバッグの内容..." keyEquivalent="D" id="lLT-53-p4m">
+                            <menuItem title="デバッグ情報..." keyEquivalent="D" id="lLT-53-p4m">
                                 <connections>
                                     <action selector="showDebuggingInfo:" target="-1" id="Exc-Ye-jOL"/>
                                 </connections>
                             </menuItem>
-                            <menuItem title="デバッグのツール..." id="Ue9-mi-gbe">
+                            <menuItem title="デバッグツール..." id="Ue9-mi-gbe">
                                 <modifierMask key="keyEquivalentModifierMask"/>
                                 <connections>
                                     <action selector="showDebuggingTools:" target="-1" id="s18-1s-iwD"/>
@@ -189,9 +189,9 @@
                         </binding>
                     </connections>
                 </menuItem>
-                <menuItem title="ウインドウ" id="854">
+                <menuItem title="ウィンドウ" id="854">
                     <modifierMask key="keyEquivalentModifierMask"/>
-                    <menu key="submenu" title="ウインドウ" id="855">
+                    <menu key="submenu" title="ウィンドウ" id="855">
                         <items>
                             <menuItem title="最小化する" keyEquivalent="m" id="857">
                                 <connections>
@@ -219,11 +219,11 @@
                         </items>
                     </menu>
                 </menuItem>
-                <menuItem title="Help" id="ZUU-kM-x8u" userLabel="Menu Item - Help">
+                <menuItem title="ヘルプ" id="ZUU-kM-x8u" userLabel="Menu Item - Help">
                     <modifierMask key="keyEquivalentModifierMask"/>
-                    <menu key="submenu" title="Help" id="K2u-T2-G1a">
+                    <menu key="submenu" title="ヘルプ" id="K2u-T2-G1a">
                         <items>
-                            <menuItem title="Send Feedback…" id="GsI-lc-HhD">
+                            <menuItem title="フィードバックを送る..." id="GsI-lc-HhD">
                                 <modifierMask key="keyEquivalentModifierMask"/>
                                 <connections>
                                     <action selector="sendFeedback:" target="494" id="CqW-xg-URA"/>
