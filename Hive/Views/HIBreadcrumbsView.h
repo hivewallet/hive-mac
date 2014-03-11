@@ -3,6 +3,6 @@
 @interface HIBreadcrumbsView : HIClearView
 
 @property (nonatomic, copy) NSArray *titles;
-@property (nonatomic, assign) int activeIndex;
+@property (nonatomic, assign) NSInteger activeIndex;
 
 @end

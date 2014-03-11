@@ -9,8 +9,6 @@
 #import "HIAddress.h"
 #import "HIContact.h"
 
-static const NSInteger SuffixLength = 8;
-
 NSString * const HIAddressEntity = @"HIAddress";
 
 

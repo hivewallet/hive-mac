@@ -4,7 +4,7 @@
 static const double SPACING = 12;
 static const double ARROW_WIDTH = 8;
 static const double HEIGHT = 30;
-static const int FONT_SIZE = 14;
+static const CGFloat FONT_SIZE = 14;
 
 @interface HIBreadcrumbsView ()
 
@@ -124,13 +124,13 @@ static const int FONT_SIZE = 14;
     }
 }
 
-- (void)setActiveIndex:(int)activeIndex {
+- (void)setActiveIndex:(NSInteger)activeIndex {
     [self updateLabelAtIndex:_activeIndex selected:NO];
     _activeIndex = activeIndex;
     [self updateLabelAtIndex:_activeIndex selected:YES];
 }
 
-- (void)updateLabelAtIndex:(int)index selected:(BOOL)selected {
+- (void)updateLabelAtIndex:(NSInteger)index selected:(BOOL)selected {
     NSTextField *label = self.labels[index];
     label.attributedStringValue = [self createLabelString:self.titles[index] selected:selected];
     label.textColor = selected ? [NSColor whiteColor] : self.color;

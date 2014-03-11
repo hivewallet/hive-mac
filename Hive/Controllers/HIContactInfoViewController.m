@@ -19,8 +19,6 @@
 #import "HIViewController.h"
 #import "NSColor+Hive.h"
 
-static const NSInteger AddressFieldTag = 2;
-
 
 @interface HIContactInfoViewController () {
     id<HIPerson> _contact;
