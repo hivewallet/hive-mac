@@ -2599,6 +2599,9 @@
 					24EAAFBE186E1BBD00E1D2D3 = {
 						TestTargetID = D9A591C31767B4A800502635;
 					};
+					D9A591C31767B4A800502635 = {
+						DevelopmentTeam = VK4N5L9C69;
+					};
 				};
 			};
 			buildConfigurationList = D9A591BF1767B4A800502635 /* Build configuration list for PBXProject "Hive" */;
@@ -4684,6 +4687,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 10153A3CC4364D6799CB4A2D /* Pods.xcconfig */;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
 				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = NO;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -4703,6 +4707,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 10153A3CC4364D6799CB4A2D /* Pods.xcconfig */;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "Developer ID Application";
 				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = YES;
 				FRAMEWORK_SEARCH_PATHS = (
