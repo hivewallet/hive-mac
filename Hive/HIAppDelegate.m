@@ -538,6 +538,10 @@ void handleException(NSException *exception) {
     [[NSWorkspace sharedWorkspace] openURL:[NSURL URLWithString:@"http://coinmap.org"]];
 }
 
+- (IBAction)openFAQ:(id)sender {
+    [[NSWorkspace sharedWorkspace] openURL:[NSURL URLWithString:@"https://github.com/hivewallet/hive-osx/wiki/FAQ"]];
+}
+
 - (IBAction)showDebuggingInfo:(id)sender {
     [self openPopupWindowWithClass:[HIDebuggingInfoWindowController class]];
 }
