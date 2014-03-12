@@ -187,12 +187,7 @@ static int ddLogLevel = LOG_LEVEL_VERBOSE;
         exit(1);
     }
 
-    [self preinstallAppsIfNeeded];
-    [self rebuildTransactionListIfNeeded];
-    [self rebuildAppsList];
-    [self updateLastVersionKey];
     [self configureNotifications];
-
     [self startBitcoinClientWithPreviousError:nil];
 
     NSSetUncaughtExceptionHandler(&handleException);
@@ -268,14 +263,14 @@ static int ddLogLevel = LOG_LEVEL_VERBOSE;
         HILogError(@"BitcoinManager start error: %@", error);
         [self showInitializationError:error];
     } else {
+        [self rebuildTransactionListIfNeeded];
         [self showAppWindow];
-        [self nagUnprotectedUsers];
-        [[HINotificationService sharedService] checkIfBackupsEnabled];
 
         dispatch_async(dispatch_get_main_queue(), ^{
-            [self setAsDefaultHandler];
+            [self nagUnprotectedUsers];
             [self initializeBackups];
-            [self startNetworkMonitor];
+            [[HINotificationService sharedService] checkIfBackupsEnabled];
+            [self finishInitialization];
         });
     }
 }
@@ -327,6 +322,7 @@ static int ddLogLevel = LOG_LEVEL_VERBOSE;
 
     self.wizard.onCompletion = ^{
         [weakSelf showAppWindow];
+        [weakSelf finishInitialization];
     };
 
     [self.wizard showWindow:self];
@@ -385,6 +381,17 @@ static int ddLogLevel = LOG_LEVEL_VERBOSE;
     if (returnCode == NSAlertFirstButtonReturn) {
         [self changeWalletPassword:nil];
     }
+}
+
+
+#pragma mark - Last initialization phase, executed asynchronously
+
+- (void)finishInitialization {
+    [self preinstallAppsIfNeeded];
+    [self rebuildAppsList];
+    [self setAsDefaultHandler];
+    [self startNetworkMonitor];
+    [self updateLastVersionKey];
 }
 
 
