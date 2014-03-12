@@ -2847,7 +2847,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "if [ -n \"$CODE_SIGN_IDENTITY\" ]; then\n    codesign -f --preserve-metadata=identifier,entitlements,resource-rules,requirements -s \"$CODE_SIGN_IDENTITY\" \"$CONFIGURATION_BUILD_DIR/$FRAMEWORKS_FOLDER_PATH/Sparkle.framework\"\nfi";
+			shellScript = "if [ -n \"$CODE_SIGN_IDENTITY\" ]; then\n  for name in BitcoinJKit Tor Sparkle; do\n    codesign -f --preserve-metadata=identifier,entitlements,resource-rules,requirements -s \"$CODE_SIGN_IDENTITY\" \"$CONFIGURATION_BUILD_DIR/$FRAMEWORKS_FOLDER_PATH/$name.framework\"\n  done\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		76E026BD5FBE46B6A03E4CCE /* Check Pods Manifest.lock */ = {
