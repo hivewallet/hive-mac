@@ -200,7 +200,7 @@ exceptionWasRaised:(WebScriptCallFrame *)frame
     [webFrame.windowObject setValue:nil forKey:@"__GC_frame_exception"];
 
     NSString *fileName = [NSString stringWithFormat:@"%@:%@", self.title, _sourceFiles[@(sid)]];
-    NSString *formattedStrackTrace =
+    NSString *formattedStrackTrace = [stackTrace isKindOfClass:[WebUndefined class]] ? nil :
         [[stackTrace componentsSeparatedByString:@"\n"] componentsJoinedByString:@"\n\tat "];
 
     HILoggerLog(fileName.UTF8String, (frame.functionName ?: @"").UTF8String, lineNumber, HILoggerLevelError,
