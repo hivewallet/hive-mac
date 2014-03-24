@@ -731,11 +731,11 @@ NSString * const HISendBitcoinsWindowSuccessKey = @"success";
         NSRect dialogFrame = self.window.frame;
         NSRect popupFrame = popup.frame;
         NSRect separatorFrame = [self.window.contentView convertRect:self.separator.frame
-                                                            fromView:self.wrapper];
+                                                            fromView:self.separator.superview];
 
-        popupFrame = NSMakeRect(dialogFrame.origin.x + separatorFrame.origin.x,
+        popupFrame = NSMakeRect(dialogFrame.origin.x + separatorFrame.origin.x + 1,
                                 dialogFrame.origin.y + separatorFrame.origin.y - popupFrame.size.height,
-                                separatorFrame.size.width,
+                                separatorFrame.size.width - 2,
                                 popupFrame.size.height);
 
         [popup setFrame:popupFrame display:YES];
