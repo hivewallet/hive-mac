@@ -743,7 +743,12 @@ NSString * const HISendBitcoinsWindowSuccessKey = @"success";
         // make the results list window a child of the send window
         // but delay the call until the window fully initializes
         dispatch_async(dispatch_get_main_queue(), ^{
+            BOOL wasVisible = popup.isVisible;
             [self.window addChildWindow:popup ordered:NSWindowAbove];
+
+            // addChildWindow: has the side effect of making the window visible,
+            // so hide if it it was supposed to be hidden (i.e. when there were no results found)
+            [popup setIsVisible:wasVisible];
         });
     }
 
