@@ -538,7 +538,7 @@ void handleException(NSException *exception) {
 }
 
 - (IBAction)lockWallet:(id)sender {
-    [_mainWindowController lockApplicationAnimated:YES];
+    [_mainWindowController lockWalletAnimated:YES];
 }
 
 - (IBAction)openCoinMapSite:(id)sender {

@@ -13,5 +13,6 @@
 @property (nonatomic, strong) IBOutlet NSImageView *lockIcon;
 @property (nonatomic, strong) IBOutlet NSTextField *passwordField;
 @property (nonatomic, strong) IBOutlet NSButton *submitButton;
+@property (nonatomic, strong) IBOutlet NSButton *dontShowAgainField;
 
 @end

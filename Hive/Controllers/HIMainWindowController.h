@@ -29,6 +29,7 @@ extern NSString * const LockScreenEnabledDefaultsKey;
 @property (strong) IBOutlet NSView *networkErrorView;
 
 - (void)switchToPanel:(Class)panelClass;
+- (void)lockWalletAnimated:(BOOL)animated;
 - (void)lockApplicationAnimated:(BOOL)animated;
 - (void)unlockApplicationAnimated:(BOOL)animated;
 

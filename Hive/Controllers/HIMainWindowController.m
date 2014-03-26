@@ -109,6 +109,9 @@ NSString * const LockScreenEnabledDefaultsKey = @"LockScreenEnabled";
         if (passwordHolder.data.length > 0) {
             if ([[HIBitcoinManager defaultManager] isPasswordCorrect:passwordHolder.data]) {
                 [mwc unlockApplicationAnimated:YES];
+
+                BOOL lockEnabled = (mwc.overlayView.dontShowAgainField.state == NSOffState);
+                [[NSUserDefaults standardUserDefaults] setBool:lockEnabled forKey:LockScreenEnabledDefaultsKey];
             } else {
                 [mwc.window hiShake];
             }
@@ -132,7 +135,14 @@ NSString * const LockScreenEnabledDefaultsKey = @"LockScreenEnabled";
 }
 
 - (void)onSleep {
-    [self lockApplicationAnimated:NO];
+    [self lockWalletAnimated:NO];
+}
+
+- (void)lockWalletAnimated:(BOOL)animated {
+    [[NSUserDefaults standardUserDefaults] setBool:YES forKey:LockScreenEnabledDefaultsKey];
+    self.overlayView.dontShowAgainField.state = NSOffState;
+
+    [self lockApplicationAnimated:YES];
 }
 
 - (void)lockApplicationAnimated:(BOOL)animated {

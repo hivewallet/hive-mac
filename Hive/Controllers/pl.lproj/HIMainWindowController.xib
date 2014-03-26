@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="4514" systemVersion="13B42" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none">
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="5053" systemVersion="13C64" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none">
     <dependencies>
         <deployment version="1070" defaultVersion="1070" identifier="macosx"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="4514"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="5053"/>
     </dependencies>
     <objects>
         <customObject id="-2" userLabel="File's Owner" customClass="HIMainWindowController">
@@ -124,8 +124,17 @@ Podaj swoje hasło, aby odblokować:</string>
                         <action selector="submit:" target="81A-v1-c1A" id="Nk1-3c-hte"/>
                     </connections>
                 </button>
+                <button id="0NO-RO-ztL">
+                    <rect key="frame" x="45" y="23" width="202" height="18"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <buttonCell key="cell" type="check" title="Don't show this screen again" bezelStyle="regularSquare" imagePosition="left" inset="2" id="eYr-Hn-j6l">
+                        <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                        <font key="font" metaFont="system"/>
+                    </buttonCell>
+                </button>
             </subviews>
             <connections>
+                <outlet property="dontShowAgainField" destination="0NO-RO-ztL" id="4mY-pQ-V2U"/>
                 <outlet property="lockIcon" destination="WwZ-gF-2Xu" id="c6u-tn-9Nf"/>
                 <outlet property="passwordField" destination="K81-E4-JIF" id="rw6-bd-Tmn"/>
                 <outlet property="submitButton" destination="RGj-ct-Dq5" id="0BF-d0-bXh"/>
