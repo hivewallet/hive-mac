@@ -9,7 +9,6 @@
 #import <Cocoa/Cocoa.h>
 
 @class HIBox;
-@class HITextField;
 @class HIViewController;
 @protocol HIPerson;
 @class HIAddressesBox;
@@ -21,7 +20,7 @@
 @interface HIContactInfoViewController : NSViewController
 
 @property (weak) IBOutlet HIAddressesBox *addressBoxView;
-@property (weak) IBOutlet HITextField *profileEmailField;
+@property (weak) IBOutlet NSTextField *profileEmailField;
 @property (weak) IBOutlet NSScrollView *profileScrollView;
 @property (weak) IBOutlet NSView *profileScrollContent;
 @property (weak) IBOutlet NSButton *editButton;

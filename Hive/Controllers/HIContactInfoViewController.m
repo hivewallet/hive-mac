@@ -57,7 +57,7 @@
 
     [self configureScrollView];
 
-    [self.profileEmailField setValueAndRecalc:((_contact.email.length > 0) ? _contact.email : @"")];
+    self.profileEmailField.stringValue = _contact.email ?: @"";
 
     self.addressBoxView.addresses = _contact.addresses.allObjects;
     self.addressBoxView.observingWallet = [_contact isKindOfClass:[HIProfile class]];
