@@ -6,12 +6,9 @@
 //  Copyright (c) 2013 Hive Developers. All rights reserved.
 //
 
-#import "HIBox.h"
 #import "HIContact.h"
 #import "HIContactTabBarController.h"
-#import "HIFlippedView.h"
 #import "HIProfileTabView.h"
-#import "HITextField.h"
 #import "HIViewController.h"
 
 /*
