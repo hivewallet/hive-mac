@@ -98,7 +98,6 @@
 		586059BD18041A1300FD9C2A /* NSColor+Hive.m in Sources */ = {isa = PBXBuildFile; fileRef = 586059B618041A1300FD9C2A /* NSColor+Hive.m */; };
 		586059BE18041A1300FD9C2A /* NSImage+NPEffects.m in Sources */ = {isa = PBXBuildFile; fileRef = 586059B818041A1300FD9C2A /* NSImage+NPEffects.m */; };
 		586059BF18041A1300FD9C2A /* NSView+Snapshot.m in Sources */ = {isa = PBXBuildFile; fileRef = 586059BA18041A1300FD9C2A /* NSView+Snapshot.m */; };
-		586059C018041A1300FD9C2A /* SUCodeSigningVerifier+DisableCodeSigningCheck.m in Sources */ = {isa = PBXBuildFile; fileRef = 586059BC18041A1300FD9C2A /* SUCodeSigningVerifier+DisableCodeSigningCheck.m */; };
 		586059CB18041A6D00FD9C2A /* HIApplicationRuntimeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 586059C218041A6D00FD9C2A /* HIApplicationRuntimeViewController.m */; };
 		586059CD18041A6D00FD9C2A /* HIApplicationsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 586059C518041A6D00FD9C2A /* HIApplicationsViewController.m */; };
 		586059CF18041A6D00FD9C2A /* HIApplicationURLProtocol.m in Sources */ = {isa = PBXBuildFile; fileRef = 586059C818041A6D00FD9C2A /* HIApplicationURLProtocol.m */; };
@@ -153,8 +152,6 @@
 		586905961843DE5C0053D74F /* HIDebuggingToolsWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 586905941843DE5C0053D74F /* HIDebuggingToolsWindowController.m */; };
 		5884A00F17F1B63D004A31FA /* Tor.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5884A00C17F1B5FF004A31FA /* Tor.framework */; };
 		5884A01017F1B646004A31FA /* Tor.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 5884A00C17F1B5FF004A31FA /* Tor.framework */; };
-		5884A03717F56D86004A31FA /* Sparkle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5884A03617F56D86004A31FA /* Sparkle.framework */; };
-		5884A03C17F578EB004A31FA /* Sparkle.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 5884A03617F56D86004A31FA /* Sparkle.framework */; };
 		5884A03E17F57AE9004A31FA /* dsa_pub.pem in Resources */ = {isa = PBXBuildFile; fileRef = 5884A03D17F57AE9004A31FA /* dsa_pub.pem */; };
 		5889538F1888A68100243190 /* HIBackupCenterWindowController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 588953911888A68100243190 /* HIBackupCenterWindowController.xib */; };
 		588953AF188920D000243190 /* HIBackupCenterWindowController.strings in Resources */ = {isa = PBXBuildFile; fileRef = 588953B1188920D000243190 /* HIBackupCenterWindowController.strings */; };
@@ -292,7 +289,6 @@
 			files = (
 				5884A01017F1B646004A31FA /* Tor.framework in CopyFiles */,
 				D901F4F817B272E60071780D /* BitcoinJKit.framework in CopyFiles */,
-				5884A03C17F578EB004A31FA /* Sparkle.framework in CopyFiles */,
 				58A149CB18C61BD600591F17 /* HockeySDK.framework in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -933,8 +929,6 @@
 		586059B818041A1300FD9C2A /* NSImage+NPEffects.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSImage+NPEffects.m"; sourceTree = "<group>"; };
 		586059B918041A1300FD9C2A /* NSView+Snapshot.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSView+Snapshot.h"; sourceTree = "<group>"; };
 		586059BA18041A1300FD9C2A /* NSView+Snapshot.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSView+Snapshot.m"; sourceTree = "<group>"; };
-		586059BB18041A1300FD9C2A /* SUCodeSigningVerifier+DisableCodeSigningCheck.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SUCodeSigningVerifier+DisableCodeSigningCheck.h"; sourceTree = "<group>"; };
-		586059BC18041A1300FD9C2A /* SUCodeSigningVerifier+DisableCodeSigningCheck.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "SUCodeSigningVerifier+DisableCodeSigningCheck.m"; sourceTree = "<group>"; };
 		586059C118041A6D00FD9C2A /* HIApplicationRuntimeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HIApplicationRuntimeViewController.h; sourceTree = "<group>"; };
 		586059C218041A6D00FD9C2A /* HIApplicationRuntimeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HIApplicationRuntimeViewController.m; sourceTree = "<group>"; };
 		586059C418041A6D00FD9C2A /* HIApplicationsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HIApplicationsViewController.h; sourceTree = "<group>"; };
@@ -1035,7 +1029,6 @@
 		586905FB18450BDC0053D74F /* ja */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = ja; path = ja.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		586905FD18450BDC0053D74F /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Localizable.strings; sourceTree = "<group>"; };
 		5884A00417F1B5FE004A31FA /* Tor.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Tor.xcodeproj; path = Tor.framework/Tor.xcodeproj; sourceTree = "<group>"; };
-		5884A03617F56D86004A31FA /* Sparkle.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Sparkle.framework; sourceTree = "<group>"; };
 		5884A03D17F57AE9004A31FA /* dsa_pub.pem */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = dsa_pub.pem; sourceTree = "<group>"; };
 		588953901888A68100243190 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/HIBackupCenterWindowController.xib; sourceTree = "<group>"; };
 		588953941888A68B00243190 /* pl */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = pl; path = pl.lproj/HIBackupCenterWindowController.xib; sourceTree = "<group>"; };
@@ -1853,7 +1846,6 @@
 				58A149CA18C61BB900591F17 /* HockeySDK.framework in Frameworks */,
 				D9A591C81767B4A800502635 /* Cocoa.framework in Frameworks */,
 				05D9F526F5294257A0422835 /* libPods.a in Frameworks */,
-				5884A03717F56D86004A31FA /* Sparkle.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2367,7 +2359,6 @@
 				D9A591C71767B4A800502635 /* Cocoa.framework */,
 				D9235387177C6779003533DF /* JavaScriptCore.framework */,
 				D9A592351768CBE400502635 /* QuartzCore.framework */,
-				5884A03617F56D86004A31FA /* Sparkle.framework */,
 				D97E7FCD176BB64900D2350B /* SystemConfiguration.framework */,
 				D95929DC17742B70008B4F43 /* WebKit.framework */,
 				D91FE8071793FEFC001B37D8 /* BitcoinKit.xcodeproj */,
@@ -2519,8 +2510,6 @@
 				586059BA18041A1300FD9C2A /* NSView+Snapshot.m */,
 				1AA1021B2F3F04674129E978 /* NSWindow+HIShake.h */,
 				1AA10B9F1D9322FFF21821DA /* NSWindow+HIShake.m */,
-				586059BB18041A1300FD9C2A /* SUCodeSigningVerifier+DisableCodeSigningCheck.h */,
-				586059BC18041A1300FD9C2A /* SUCodeSigningVerifier+DisableCodeSigningCheck.m */,
 			);
 			path = Categories;
 			sourceTree = "<group>";
@@ -2940,7 +2929,6 @@
 				586059BE18041A1300FD9C2A /* NSImage+NPEffects.m in Sources */,
 				583076BF18B3C8220017084A /* HIAboutHiveWindowController.m in Sources */,
 				586059BF18041A1300FD9C2A /* NSView+Snapshot.m in Sources */,
-				586059C018041A1300FD9C2A /* SUCodeSigningVerifier+DisableCodeSigningCheck.m in Sources */,
 				58F496F818B7EE8F0033B7E0 /* HINetworkConnectionMonitor.m in Sources */,
 				586059CB18041A6D00FD9C2A /* HIApplicationRuntimeViewController.m in Sources */,
 				583076C418B3CFDC0017084A /* HILicenseInfoPanelController.m in Sources */,
