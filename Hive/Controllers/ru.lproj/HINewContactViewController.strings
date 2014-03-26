@@ -1,6 +1,6 @@
 
 /* Class = "NSButtonCell"; title = "Save"; ObjectID = "14"; */
-"14.title" = "Save";
+"14.title" = "Сохранить";
 
 /* Class = "NSTextFieldCell"; title = "Contact information"; ObjectID = "75"; */
 "75.title" = "Контактная информация";
@@ -18,7 +18,7 @@
 "97.title" = "Удалить контакт";
 
 /* Class = "NSTextFieldCell"; title = "edit"; ObjectID = "107"; */
-"107.title" = "edit";
+"107.title" = "редактировать";
 
 /* Class = "NSButtonCell"; title = "QR"; ObjectID = "Fp7-Nh-Dhm"; */
 "Fp7-Nh-Dhm.title" = "QR";

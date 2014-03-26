@@ -15,7 +15,7 @@
 "Mpx-rH-nUM.title" = "О нет! Что-то пошло не так!!";
 
 /* Class = "NSTextFieldCell"; title = "Your name (optional)"; ObjectID = "pya-AJ-MPI"; */
-"pya-AJ-MPI.title" = "Your name (optional)";
+"pya-AJ-MPI.title" = "Имя (необязательно)";
 
 /* Class = "NSButtonCell"; title = "Send"; ObjectID = "tDm-yy-jVS"; */
 "tDm-yy-jVS.title" = "Отправить";
@@ -30,4 +30,4 @@
 "xF4-pJ-cQU.title" = "Произошла непредвиденная ошибка в Hive.";
 
 /* Class = "NSTextFieldCell"; title = "Your email (optional)"; ObjectID = "zup-Q6-bK7"; */
-"zup-Q6-bK7.title" = "Your email (optional)";
+"zup-Q6-bK7.title" = "Эл. почта (необязательно)";
