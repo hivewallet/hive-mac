@@ -135,7 +135,9 @@ NSString * const LockScreenEnabledDefaultsKey = @"LockScreenEnabled";
 }
 
 - (void)onSleep {
-    [self lockWalletAnimated:NO];
+    if ([self isLockScreenEnabled]) {
+        [self lockWalletAnimated:NO];
+    }
 }
 
 - (void)lockWalletAnimated:(BOOL)animated {
