@@ -155,7 +155,7 @@ static NSString const *ConstraintKey = @"constraint";
         ButtonKey: titleButton,
     } mutableCopy]];
 
-    [self centerTopViewAnimated:NO];
+    [self centerTopViewAnimated:NO isOnlyView:_stack.count == 1];
 
     if (animated) {
         titleButton.alphaValue = 0;
@@ -207,24 +207,27 @@ static NSString const *ConstraintKey = @"constraint";
     return size;
 }
 
-- (void)centerTopViewAnimated:(BOOL)animated {
+- (void)centerTopViewAnimated:(BOOL)animated isOnlyView:(BOOL)onlyView {
 
     NSMutableDictionary *stackItem = _stack[_stack.count - 1];
     HIDraggableButton *button = stackItem[ButtonKey];
     NSString *title = stackItem[TitleKey];
 
     CGSize newSize = [self setStyleForButton:button title:title small:NO animated:animated];
+    CGFloat centerOffset = onlyView ? 0 : SidebarButtonWidth * .5;
 
     if (animated) {
         // In 10.8+ we could just add new constraint for animation, but for 10.7 we need to animate a constraint.
-        double targetX = MAX(0, (self.bounds.size.width - newSize.width - SidebarButtonWidth) * .5)
-                + SidebarButtonWidth;
+        double targetX =
+            onlyView
+                ? (self.bounds.size.width - newSize.width) * .5
+                : MAX(0, (self.bounds.size.width - newSize.width) * .5 - centerOffset) + SidebarButtonWidth;
 
         NSLayoutConstraint *leftConstraint = stackItem[ConstraintKey];
         leftConstraint.animator.constant = targetX;
     } else {
         [self removeConstraint:stackItem[ConstraintKey]];
-        stackItem[ConstraintKey] = ALIGN_CENTER_X(button, self, SidebarButtonWidth * .5);
+        stackItem[ConstraintKey] = ALIGN_CENTER_X(button, self, centerOffset);
         [self addConstraint:stackItem[ConstraintKey]];
     }
 
@@ -254,10 +257,10 @@ static NSString const *ConstraintKey = @"constraint";
             [self positionArrowViewNextToButtonAtIndex:_stack.count - 2];
         }
 
-        [self centerTopViewAnimated:YES];
+        [self centerTopViewAnimated:YES isOnlyView:isLastView];
 
     } completionHandler:^{
-        [self centerTopViewAnimated:NO];
+        [self centerTopViewAnimated:NO isOnlyView:isLastView];
         if (isLastView) {
             [self.arrowView removeFromSuperview];
         }
