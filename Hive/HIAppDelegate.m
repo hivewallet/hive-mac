@@ -573,7 +573,8 @@ void handleException(NSException *exception) {
 }
 
 - (IBAction)showBackupCenter:(id)sender {
-    [self openPopupWindowWithClass:[HIBackupCenterWindowController class]];
+    [self openPreferences:sender];
+    [_preferencesWindowController selectBackupCenter];
 }
 
 - (IBAction)showAboutWindow:(id)sender {
