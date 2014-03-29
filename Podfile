@@ -8,6 +8,7 @@ pod 'INAppStoreWindow'
 pod 'LetsMove'
 pod 'ZXingObjC'
 pod 'Sparkle-pornel'
+pod 'MASPreferences'
 
 target :test, :exclusive => true do
   link_with 'HiveTests'
