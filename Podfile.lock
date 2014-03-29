@@ -16,6 +16,7 @@ PODS:
     - Kiwi/NonARC
   - LetsMove (1.9)
   - MASPreferences (1.1)
+  - MASShortcut (1.2.3)
   - OCHamcrest (3.0.1)
   - Sparkle-pornel (1.6.0)
   - ZXingObjC (2.2.3)
@@ -29,6 +30,7 @@ DEPENDENCIES:
   - Kiwi/XCTest
   - LetsMove
   - MASPreferences
+  - MASShortcut
   - OCHamcrest (~> 3.0)
   - Sparkle-pornel
   - ZXingObjC
@@ -42,6 +44,7 @@ SPEC CHECKSUMS:
   Kiwi: 04c51e880831d291748ec702d42c4101f7eb95c9
   LetsMove: a9a34ea5794a765d3caa78497c503e0d231724c6
   MASPreferences: 103fda1283c701dfed5503edbe24b1ab504ed6d9
+  MASShortcut: 6abaedac53a0542f4856f35be4f1f970b652a51e
   OCHamcrest: 782c52ae8c673e5d6060a65005cfd26d20d519ba
   Sparkle-pornel: 697179faef16db4d28704e3aec179a36a05b0a23
   ZXingObjC: 352024760388de6b6241d34844fac59f2a1a6c68

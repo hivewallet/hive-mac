@@ -4,11 +4,28 @@
 #import <FontAwesomeIconFactory/NIKFontAwesomeIconFactory+OSX.h>
 
 #import "HIKeyPreferencesViewController.h"
+#import "MASShortcutView.h"
+#import "MASShortcutView+UserDefaults.h"
+#import "HIShortcutService.h"
+
+@interface HIKeyPreferencesViewController ()
+
+@property (nonatomic, strong) IBOutlet MASShortcutView *sendShortcutPicker;
+@property (nonatomic, strong) IBOutlet MASShortcutView *cameraShortcutPicker;
+
+@end
 
 @implementation HIKeyPreferencesViewController : NSViewController
 
 - (id)init {
     return [self initWithNibName:[self className] bundle:nil];
+}
+
+- (void)awakeFromNib {
+    HIShortcutService *shortcutService = [HIShortcutService sharedService];
+    self.sendShortcutPicker.associatedUserDefaultsKey = shortcutService.sendPreferenceKey;
+    self.cameraShortcutPicker.associatedUserDefaultsKey = shortcutService.cameraPreferenceKey;
+    [super awakeFromNib];
 }
 
 #pragma mark - MASPreferencesViewController

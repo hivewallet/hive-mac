@@ -9,6 +9,7 @@ pod 'LetsMove'
 pod 'ZXingObjC'
 pod 'Sparkle-pornel'
 pod 'MASPreferences'
+pod 'MASShortcut'
 
 target :test, :exclusive => true do
   link_with 'HiveTests'

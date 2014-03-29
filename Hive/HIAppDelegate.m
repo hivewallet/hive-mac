@@ -38,6 +38,7 @@
 #import "HIPreferencesWindowController.h"
 #import "HISendBitcoinsWindowController.h"
 #import "HISendFeedbackService.h"
+#import "HIShortcutService.h"
 #import "HITransaction.h"
 #import "HITransactionsViewController.h"
 #import "HIWizardWindowController.h"
@@ -109,10 +110,22 @@ static int ddLogLevel = LOG_LEVEL_VERBOSE;
                                                  name:NSWindowWillCloseNotification
                                                object:nil];
 
+    [self configureShortcuts];
     [self configureMenu];
 
     // this must be at the end
     [self configureHockeyApp];
+}
+
+- (void)configureShortcuts {
+    [HIShortcutService sharedService].sendBlock = ^{
+        [[NSApplication sharedApplication] activateIgnoringOtherApps:YES];
+        [self openSendBitcoinsWindow:nil];
+    };
+    [HIShortcutService sharedService].cameraBlock = ^{
+        [[NSApplication sharedApplication] activateIgnoringOtherApps:YES];
+        [self scanQRCode:nil];
+    };
 }
 
 - (void)configureMenu {
