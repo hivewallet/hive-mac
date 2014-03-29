@@ -35,6 +35,7 @@
 #import "HINetworkConnectionMonitor.h"
 #import "HINotificationService.h"
 #import "HIPasswordChangeWindowController.h"
+#import "HIPreferencesWindowController.h"
 #import "HISendBitcoinsWindowController.h"
 #import "HISendFeedbackService.h"
 #import "HITransaction.h"
@@ -55,6 +56,7 @@ static int ddLogLevel = LOG_LEVEL_VERBOSE;
 
 @interface HIAppDelegate ()<BITHockeyManagerDelegate> {
     HIMainWindowController *_mainWindowController;
+    HIPreferencesWindowController *_preferencesWindowController;
     HINetworkConnectionMonitor *_networkMonitor;
     NSMutableArray *_popupWindows;
     dispatch_queue_t _externalEventQueue;
@@ -574,6 +576,13 @@ void handleException(NSException *exception) {
     [[HISendFeedbackService sharedService] sendSupportEmail];
 }
 
+- (IBAction)openPreferences:(id)sender {
+    if (!_preferencesWindowController) {
+        _preferencesWindowController = [HIPreferencesWindowController new];
+    }
+    [_preferencesWindowController showWindow:self];
+    [_popupWindows addObject:_preferencesWindowController];
+}
 
 #pragma mark - Window handling
 
