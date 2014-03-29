@@ -35,8 +35,10 @@
 #import "HINetworkConnectionMonitor.h"
 #import "HINotificationService.h"
 #import "HIPasswordChangeWindowController.h"
+#import "HIPreferencesWindowController.h"
 #import "HISendBitcoinsWindowController.h"
 #import "HISendFeedbackService.h"
+#import "HIShortcutService.h"
 #import "HITransaction.h"
 #import "HITransactionsViewController.h"
 #import "HIWizardWindowController.h"
@@ -55,6 +57,7 @@ static int ddLogLevel = LOG_LEVEL_VERBOSE;
 
 @interface HIAppDelegate ()<BITHockeyManagerDelegate> {
     HIMainWindowController *_mainWindowController;
+    HIPreferencesWindowController *_preferencesWindowController;
     HINetworkConnectionMonitor *_networkMonitor;
     NSMutableArray *_popupWindows;
     dispatch_queue_t _externalEventQueue;
@@ -107,10 +110,22 @@ static int ddLogLevel = LOG_LEVEL_VERBOSE;
                                                  name:NSWindowWillCloseNotification
                                                object:nil];
 
+    [self configureShortcuts];
     [self configureMenu];
 
     // this must be at the end
     [self configureHockeyApp];
+}
+
+- (void)configureShortcuts {
+    [HIShortcutService sharedService].sendBlock = ^{
+        [[NSApplication sharedApplication] activateIgnoringOtherApps:YES];
+        [self openSendBitcoinsWindow:nil];
+    };
+    [HIShortcutService sharedService].cameraBlock = ^{
+        [[NSApplication sharedApplication] activateIgnoringOtherApps:YES];
+        [self scanQRCode:nil];
+    };
 }
 
 - (void)configureMenu {
@@ -574,6 +589,13 @@ void handleException(NSException *exception) {
     [[HISendFeedbackService sharedService] sendSupportEmail];
 }
 
+- (IBAction)openPreferences:(id)sender {
+    if (!_preferencesWindowController) {
+        _preferencesWindowController = [HIPreferencesWindowController new];
+    }
+    [_preferencesWindowController showWindow:self];
+    [_popupWindows addObject:_preferencesWindowController];
+}
 
 #pragma mark - Window handling
 
