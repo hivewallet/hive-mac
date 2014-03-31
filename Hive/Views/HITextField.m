@@ -105,8 +105,13 @@ NSString * const kHITextFieldContentChanged = @"kHITextFieldContentChanged";
 }
 
 - (void)resizeWithOldSuperviewSize:(NSSize)oldSize {
+    NSSize newSize = self.superview.bounds.size;
+
     [super resizeWithOldSuperviewSize:oldSize];
-    [self recalcForString:self.stringValue];
+
+    if (newSize.width != oldSize.width) {
+        [self recalcForString:self.stringValue];
+    }
 }
 
 - (void)recalcForString:(NSString *)string {
