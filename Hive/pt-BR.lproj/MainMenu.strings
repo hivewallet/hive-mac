@@ -84,46 +84,46 @@
 "870.title" = "Buscar atualizações...";
 
 /* Class = "NSMenuItem"; title = "Change Password…"; ObjectID = "1HB-Qg-iyg"; */
-"1HB-Qg-iyg.title" = "Change Password…";
+"1HB-Qg-iyg.title" = "Alterar senha...";
 
 /* Class = "NSMenuItem"; title = "Lock Wallet"; ObjectID = "AFM-Ev-d2A"; */
-"AFM-Ev-d2A.title" = "Lock Wallet";
+"AFM-Ev-d2A.title" = "Bloquear Carteira";
 
 /* Class = "NSMenuItem"; title = "Open CoinMap..."; ObjectID = "ASP-Ns-ktD"; */
 "ASP-Ns-ktD.title" = "Abrir CoinMap...";
 
 /* Class = "NSMenuItem"; title = "Wallet"; ObjectID = "GX7-xG-GKH"; */
-"GX7-xG-GKH.title" = "Wallet";
+"GX7-xG-GKH.title" = "Carteira";
 
 /* Class = "NSMenuItem"; title = "Send Feedback…"; ObjectID = "GsI-lc-HhD"; */
-"GsI-lc-HhD.title" = "Send Feedback…";
+"GsI-lc-HhD.title" = "Enviar Feedback...";
 
 /* Class = "NSMenu"; title = "Help"; ObjectID = "K2u-T2-G1a"; */
-"K2u-T2-G1a.title" = "Help";
+"K2u-T2-G1a.title" = "Ajuda";
 
 /* Class = "NSMenuItem"; title = "Debugging tools..."; ObjectID = "Ue9-mi-gbe"; */
-"Ue9-mi-gbe.title" = "Debugging tools...";
+"Ue9-mi-gbe.title" = "Ferramentas de Debug...";
 
 /* Class = "NSMenuItem"; title = "Backup Center..."; ObjectID = "V0L-sM-c8h"; */
-"V0L-sM-c8h.title" = "Backup Center...";
+"V0L-sM-c8h.title" = "Central de Backup...";
 
 /* Class = "NSMenuItem"; title = "Open FAQ…"; ObjectID = "VQa-2Z-6fS"; */
-"VQa-2Z-6fS.title" = "Open FAQ…";
+"VQa-2Z-6fS.title" = "Abrir FAQ...";
 
 /* Class = "NSMenuItem"; title = "Help"; ObjectID = "ZUU-kM-x8u"; */
-"ZUU-kM-x8u.title" = "Help";
+"ZUU-kM-x8u.title" = "Ajuda";
 
 /* Class = "NSMenu"; title = "Tools"; ObjectID = "cCx-Ak-fii"; */
-"cCx-Ak-fii.title" = "Tools";
+"cCx-Ak-fii.title" = "Ferramentas";
 
 /* Class = "NSMenuItem"; title = "Tools"; ObjectID = "eBU-ec-85y"; */
-"eBU-ec-85y.title" = "Tools";
+"eBU-ec-85y.title" = "Ferramentas";
 
 /* Class = "NSMenu"; title = "Wallet"; ObjectID = "jrd-Ul-XjV"; */
-"jrd-Ul-XjV.title" = "Wallet";
+"jrd-Ul-XjV.title" = "Carteira";
 
 /* Class = "NSMenuItem"; title = "Debugging info..."; ObjectID = "lLT-53-p4m"; */
 "lLT-53-p4m.title" = "Informações de Debug...";
 
 /* Class = "NSMenuItem"; title = "Scan a QR code…"; ObjectID = "vdw-IK-snJ"; */
-"vdw-IK-snJ.title" = "Scan a QR code…";
+"vdw-IK-snJ.title" = "Escanear um código QR...";

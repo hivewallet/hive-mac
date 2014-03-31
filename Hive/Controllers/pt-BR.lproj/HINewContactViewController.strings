@@ -1,24 +1,24 @@
 
 /* Class = "NSButtonCell"; title = "Save"; ObjectID = "14"; */
-"14.title" = "Save";
+"14.title" = "Salvar";
 
 /* Class = "NSTextFieldCell"; title = "Contact information"; ObjectID = "75"; */
-"75.title" = "Contact information";
+"75.title" = "Informação de Contato";
 
 /* Class = "NSTextFieldCell"; title = "Email:"; ObjectID = "78"; */
 "78.title" = "Email:";
 
 /* Class = "NSButtonCell"; title = "Add address"; ObjectID = "80"; */
-"80.title" = "Add address";
+"80.title" = "Adicionar endereço";
 
 /* Class = "NSTextFieldCell"; title = "Bitcoin addresses"; ObjectID = "81"; */
-"81.title" = "Bitcoin addresses";
+"81.title" = "Endereço de Bitcoin";
 
 /* Class = "NSButtonCell"; title = "Remove contact"; ObjectID = "97"; */
-"97.title" = "Remove contact";
+"97.title" = "Remover contato";
 
 /* Class = "NSTextFieldCell"; title = "edit"; ObjectID = "107"; */
-"107.title" = "edit";
+"107.title" = "editar";
 
 /* Class = "NSButtonCell"; title = "QR"; ObjectID = "Fp7-Nh-Dhm"; */
 "Fp7-Nh-Dhm.title" = "QR";

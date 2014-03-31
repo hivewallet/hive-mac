@@ -73,8 +73,8 @@
                         </items>
                     </menu>
                 </menuItem>
-                <menuItem title="Wallet" id="GX7-xG-GKH">
-                    <menu key="submenu" title="Wallet" id="jrd-Ul-XjV">
+                <menuItem title="Carteira" id="GX7-xG-GKH">
+                    <menu key="submenu" title="Carteira" id="jrd-Ul-XjV">
                         <items>
                             <menuItem title="Enviar Bitcoins..." keyEquivalent="S" id="866">
                                 <connections>
@@ -82,13 +82,13 @@
                                 </connections>
                             </menuItem>
                             <menuItem isSeparatorItem="YES" id="CGD-5y-ezT"/>
-                            <menuItem title="Change Password…" id="1HB-Qg-iyg">
+                            <menuItem title="Alterar senha..." id="1HB-Qg-iyg">
                                 <modifierMask key="keyEquivalentModifierMask"/>
                                 <connections>
                                     <action selector="changeWalletPassword:" target="494" id="n4h-c8-Hjn"/>
                                 </connections>
                             </menuItem>
-                            <menuItem title="Lock Wallet" keyEquivalent="l" id="AFM-Ev-d2A">
+                            <menuItem title="Bloquear Carteira" keyEquivalent="l" id="AFM-Ev-d2A">
                                 <connections>
                                     <action selector="lockWallet:" target="-1" id="XWR-xx-Wx0"/>
                                 </connections>
@@ -146,11 +146,11 @@
                         </items>
                     </menu>
                 </menuItem>
-                <menuItem title="Tools" id="eBU-ec-85y">
+                <menuItem title="Ferramentas" id="eBU-ec-85y">
                     <modifierMask key="keyEquivalentModifierMask"/>
-                    <menu key="submenu" title="Tools" id="cCx-Ak-fii">
+                    <menu key="submenu" title="Ferramentas" id="cCx-Ak-fii">
                         <items>
-                            <menuItem title="Backup Center..." id="V0L-sM-c8h">
+                            <menuItem title="Central de Backup..." id="V0L-sM-c8h">
                                 <modifierMask key="keyEquivalentModifierMask"/>
                                 <connections>
                                     <action selector="showBackupCenter:" target="-1" id="w3X-q3-iCI"/>
@@ -162,7 +162,7 @@
                                     <action selector="openCoinMapSite:" target="494" id="Ozv-6D-Aab"/>
                                 </connections>
                             </menuItem>
-                            <menuItem title="Scan a QR code…" id="vdw-IK-snJ">
+                            <menuItem title="Escanear um código QR..." id="vdw-IK-snJ">
                                 <modifierMask key="keyEquivalentModifierMask"/>
                                 <connections>
                                     <action selector="scanQRCode:" target="494" id="mEt-Z8-Hrc"/>
@@ -173,7 +173,7 @@
                                     <action selector="showDebuggingInfo:" target="-1" id="Exc-Ye-jOL"/>
                                 </connections>
                             </menuItem>
-                            <menuItem title="Debugging tools..." id="Ue9-mi-gbe">
+                            <menuItem title="Ferramentas de Debug..." id="Ue9-mi-gbe">
                                 <modifierMask key="keyEquivalentModifierMask"/>
                                 <connections>
                                     <action selector="showDebuggingTools:" target="-1" id="s18-1s-iwD"/>
@@ -219,17 +219,17 @@
                         </items>
                     </menu>
                 </menuItem>
-                <menuItem title="Help" id="ZUU-kM-x8u" userLabel="Menu Item - Help">
+                <menuItem title="Ajuda" id="ZUU-kM-x8u" userLabel="Menu Item - Help">
                     <modifierMask key="keyEquivalentModifierMask"/>
-                    <menu key="submenu" title="Help" id="K2u-T2-G1a">
+                    <menu key="submenu" title="Ajuda" id="K2u-T2-G1a">
                         <items>
-                            <menuItem title="Open FAQ…" id="VQa-2Z-6fS">
+                            <menuItem title="Abrir FAQ..." id="VQa-2Z-6fS">
                                 <modifierMask key="keyEquivalentModifierMask"/>
                                 <connections>
                                     <action selector="openFAQ:" target="494" id="Hg3-rm-MEN"/>
                                 </connections>
                             </menuItem>
-                            <menuItem title="Send Feedback…" id="GsI-lc-HhD">
+                            <menuItem title="Enviar Feedback..." id="GsI-lc-HhD">
                                 <modifierMask key="keyEquivalentModifierMask"/>
                                 <connections>
                                     <action selector="sendFeedback:" target="494" id="CqW-xg-URA"/>
