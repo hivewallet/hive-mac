@@ -1,6 +1,6 @@
 
 /* Class = "NSButtonCell"; title = "Save"; ObjectID = "14"; */
-"14.title" = "Save";
+"14.title" = "Opslaan";
 
 /* Class = "NSTextFieldCell"; title = "Contact information"; ObjectID = "75"; */
 "75.title" = "Contact informatie";
@@ -12,7 +12,7 @@
 "80.title" = "Adres toevoegen";
 
 /* Class = "NSTextFieldCell"; title = "Bitcoin addresses"; ObjectID = "81"; */
-"81.title" = "Bitcoinadressen";
+"81.title" = "Bitcoin adressen";
 
 /* Class = "NSButtonCell"; title = "Remove contact"; ObjectID = "97"; */
 "97.title" = "Verwijder contact";

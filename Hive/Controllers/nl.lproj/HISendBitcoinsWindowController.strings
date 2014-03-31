@@ -1,12 +1,12 @@
 
 /* Class = "NSWindow"; title = "Send Bitcoin"; ObjectID = "1"; */
-"1.title" = "Bitcoin Verzenden";
+"1.title" = "Bitcoin versturen";
 
 /* Class = "NSButtonCell"; title = "Cancel"; ObjectID = "6"; */
 "6.title" = "Annuleren";
 
 /* Class = "NSButtonCell"; title = "Send"; ObjectID = "10"; */
-"10.title" = "Verzend";
+"10.title" = "Verzenden";
 
 /* Class = "NSTextFieldCell"; title = "To:"; ObjectID = "14"; */
 "14.title" = "Naar:";
@@ -18,4 +18,4 @@
 "22.title" = "Hoofdadres";
 
 /* Class = "NSTextFieldCell"; title = "Currency exchange rates are provided by BitcoinAverage markets ticker. Bitcoin prices can change quickly, so other apps or sites might show different exchange rates."; ObjectID = "dxM-9E-wwb"; */
-"dxM-9E-wwb.title" = "Currency exchange rates are provided by BitcoinAverage markets ticker. Bitcoin prices can change quickly, so other apps or sites might show different exchange rates.";
+"dxM-9E-wwb.title" = "De valutakoersen worden geleverd door BitcoinAverage ticker. Bitcoin prijzen kunnen snel veranderen, waardoor andere apps of websites verschillende prijzen kunnen laten zien.";

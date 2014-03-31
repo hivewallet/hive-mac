@@ -21,16 +21,16 @@
 "131.title" = "Diensten";
 
 /* Class = "NSMenuItem"; title = "Hide Hive"; ObjectID = "134"; */
-"134.title" = "Hive Verbergen";
+"134.title" = "Hive verbergen";
 
 /* Class = "NSMenuItem"; title = "Quit Hive"; ObjectID = "136"; */
-"136.title" = "Hive Afsluiten";
+"136.title" = "Hive afsluiten";
 
 /* Class = "NSMenuItem"; title = "Hide Others"; ObjectID = "145"; */
 "145.title" = "Anderen verbergen";
 
 /* Class = "NSMenuItem"; title = "Show All"; ObjectID = "150"; */
-"150.title" = "Alles Laten Zien";
+"150.title" = "Alles laten zien";
 
 /* Class = "NSMenuItem"; title = "Edit"; ObjectID = "801"; */
 "801.title" = "Aanpassen";
@@ -39,7 +39,7 @@
 "802.title" = "Aanpassen";
 
 /* Class = "NSMenuItem"; title = "Undo"; ObjectID = "804"; */
-"804.title" = "Ongedaan Maken";
+"804.title" = "Ongedaan maken";
 
 /* Class = "NSMenuItem"; title = "Redo"; ObjectID = "805"; */
 "805.title" = "Opnieuw";
@@ -57,7 +57,7 @@
 "811.title" = "Verwijderen";
 
 /* Class = "NSMenuItem"; title = "Select All"; ObjectID = "812"; */
-"812.title" = "Alles Selecteren";
+"812.title" = "Alles selecteren";
 
 /* Class = "NSMenuItem"; title = "Window"; ObjectID = "854"; */
 "854.title" = "Venster";
@@ -72,7 +72,7 @@
 "858.title" = "Vergroten";
 
 /* Class = "NSMenuItem"; title = "Bring All to Front"; ObjectID = "860"; */
-"860.title" = "Breng Alles Naar Voren";
+"860.title" = "Zet alles op de voorgrond";
 
 /* Class = "NSMenuItem"; title = "Close"; ObjectID = "864"; */
 "864.title" = "Afsluiten";
@@ -81,49 +81,49 @@
 "866.title" = "Bitcoins verzenden...";
 
 /* Class = "NSMenuItem"; title = "Check for Updates..."; ObjectID = "870"; */
-"870.title" = "Controleer voor updates...";
+"870.title" = "Controleren op updates...";
 
 /* Class = "NSMenuItem"; title = "Change Password…"; ObjectID = "1HB-Qg-iyg"; */
-"1HB-Qg-iyg.title" = "Change Password…";
+"1HB-Qg-iyg.title" = "Wachtwoord veranderen...";
 
 /* Class = "NSMenuItem"; title = "Lock Wallet"; ObjectID = "AFM-Ev-d2A"; */
-"AFM-Ev-d2A.title" = "Lock Wallet";
+"AFM-Ev-d2A.title" = "Vergrendel portemonnee";
 
 /* Class = "NSMenuItem"; title = "Open CoinMap..."; ObjectID = "ASP-Ns-ktD"; */
-"ASP-Ns-ktD.title" = "Open CoinMap...";
+"ASP-Ns-ktD.title" = "CoinMap openen...";
 
 /* Class = "NSMenuItem"; title = "Wallet"; ObjectID = "GX7-xG-GKH"; */
-"GX7-xG-GKH.title" = "Wallet";
+"GX7-xG-GKH.title" = "Portemonnee";
 
 /* Class = "NSMenuItem"; title = "Send Feedback…"; ObjectID = "GsI-lc-HhD"; */
-"GsI-lc-HhD.title" = "Send Feedback…";
+"GsI-lc-HhD.title" = "Verstuurd feedback...";
 
 /* Class = "NSMenu"; title = "Help"; ObjectID = "K2u-T2-G1a"; */
 "K2u-T2-G1a.title" = "Help";
 
 /* Class = "NSMenuItem"; title = "Debugging tools..."; ObjectID = "Ue9-mi-gbe"; */
-"Ue9-mi-gbe.title" = "Debugging tools...";
+"Ue9-mi-gbe.title" = "Foutopsporingstools...";
 
 /* Class = "NSMenuItem"; title = "Backup Center..."; ObjectID = "V0L-sM-c8h"; */
-"V0L-sM-c8h.title" = "Backup Center...";
+"V0L-sM-c8h.title" = "Backup centrum...";
 
 /* Class = "NSMenuItem"; title = "Open FAQ…"; ObjectID = "VQa-2Z-6fS"; */
-"VQa-2Z-6fS.title" = "Open FAQ…";
+"VQa-2Z-6fS.title" = "FAQ openen...";
 
 /* Class = "NSMenuItem"; title = "Help"; ObjectID = "ZUU-kM-x8u"; */
 "ZUU-kM-x8u.title" = "Help";
 
 /* Class = "NSMenu"; title = "Tools"; ObjectID = "cCx-Ak-fii"; */
-"cCx-Ak-fii.title" = "Tools";
+"cCx-Ak-fii.title" = "Hulpmiddelen";
 
 /* Class = "NSMenuItem"; title = "Tools"; ObjectID = "eBU-ec-85y"; */
-"eBU-ec-85y.title" = "Tools";
+"eBU-ec-85y.title" = "Hulpmiddelen";
 
 /* Class = "NSMenu"; title = "Wallet"; ObjectID = "jrd-Ul-XjV"; */
-"jrd-Ul-XjV.title" = "Wallet";
+"jrd-Ul-XjV.title" = "Portemonnee";
 
 /* Class = "NSMenuItem"; title = "Debugging info..."; ObjectID = "lLT-53-p4m"; */
-"lLT-53-p4m.title" = "Debugging info...";
+"lLT-53-p4m.title" = "Foutopsporing informatie...";
 
 /* Class = "NSMenuItem"; title = "Scan a QR code…"; ObjectID = "vdw-IK-snJ"; */
-"vdw-IK-snJ.title" = "Scan a QR code…";
+"vdw-IK-snJ.title" = "Scan een QR code...";

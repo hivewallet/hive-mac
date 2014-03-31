@@ -89,7 +89,7 @@
                 <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="56">
                     <rect key="frame" x="28" y="183" width="195" height="17"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Bitcoinadressen" id="68">
+                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Bitcoin adressen" id="68">
                         <font key="font" size="13" name="Helvetica-Bold"/>
                         <color key="textColor" red="0.57254901960000004" green="0.57254901960000004" blue="0.57254901960000004" alpha="1" colorSpace="calibratedRGB"/>
                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>

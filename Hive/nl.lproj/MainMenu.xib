@@ -31,7 +31,7 @@
                                     <action selector="openPreferences:" target="-1" id="754"/>
                                 </connections>
                             </menuItem>
-                            <menuItem title="Controleer voor updates..." id="870">
+                            <menuItem title="Controleren op updates..." id="870">
                                 <modifierMask key="keyEquivalentModifierMask"/>
                                 <connections>
                                     <action selector="checkForUpdates:" target="869" id="871"/>
@@ -46,7 +46,7 @@
                             <menuItem isSeparatorItem="YES" id="144">
                                 <modifierMask key="keyEquivalentModifierMask" command="YES"/>
                             </menuItem>
-                            <menuItem title="Hive Verbergen" keyEquivalent="h" id="134">
+                            <menuItem title="Hive verbergen" keyEquivalent="h" id="134">
                                 <connections>
                                     <action selector="hide:" target="-1" id="367"/>
                                 </connections>
@@ -57,7 +57,7 @@
                                     <action selector="hideOtherApplications:" target="-1" id="368"/>
                                 </connections>
                             </menuItem>
-                            <menuItem title="Alles Laten Zien" id="150">
+                            <menuItem title="Alles laten zien" id="150">
                                 <connections>
                                     <action selector="unhideAllApplications:" target="-1" id="370"/>
                                 </connections>
@@ -65,7 +65,7 @@
                             <menuItem isSeparatorItem="YES" id="149">
                                 <modifierMask key="keyEquivalentModifierMask" command="YES"/>
                             </menuItem>
-                            <menuItem title="Hive Afsluiten" keyEquivalent="q" id="136">
+                            <menuItem title="Hive afsluiten" keyEquivalent="q" id="136">
                                 <connections>
                                     <action selector="terminate:" target="-3" id="449"/>
                                 </connections>
@@ -73,8 +73,8 @@
                         </items>
                     </menu>
                 </menuItem>
-                <menuItem title="Wallet" id="GX7-xG-GKH">
-                    <menu key="submenu" title="Wallet" id="jrd-Ul-XjV">
+                <menuItem title="Portemonnee" id="GX7-xG-GKH">
+                    <menu key="submenu" title="Portemonnee" id="jrd-Ul-XjV">
                         <items>
                             <menuItem title="Bitcoins verzenden..." keyEquivalent="S" id="866">
                                 <connections>
@@ -82,13 +82,13 @@
                                 </connections>
                             </menuItem>
                             <menuItem isSeparatorItem="YES" id="CGD-5y-ezT"/>
-                            <menuItem title="Change Password…" id="1HB-Qg-iyg">
+                            <menuItem title="Wachtwoord veranderen..." id="1HB-Qg-iyg">
                                 <modifierMask key="keyEquivalentModifierMask"/>
                                 <connections>
                                     <action selector="changeWalletPassword:" target="494" id="n4h-c8-Hjn"/>
                                 </connections>
                             </menuItem>
-                            <menuItem title="Lock Wallet" keyEquivalent="l" id="AFM-Ev-d2A">
+                            <menuItem title="Vergrendel portemonnee" keyEquivalent="l" id="AFM-Ev-d2A">
                                 <connections>
                                     <action selector="lockWallet:" target="-1" id="XWR-xx-Wx0"/>
                                 </connections>
@@ -107,7 +107,7 @@
                     <modifierMask key="keyEquivalentModifierMask"/>
                     <menu key="submenu" title="Aanpassen" id="802">
                         <items>
-                            <menuItem title="Ongedaan Maken" keyEquivalent="z" id="804">
+                            <menuItem title="Ongedaan maken" keyEquivalent="z" id="804">
                                 <connections>
                                     <action selector="undo:" target="-1" id="848"/>
                                 </connections>
@@ -138,7 +138,7 @@
                                     <action selector="delete:" target="-1" id="852"/>
                                 </connections>
                             </menuItem>
-                            <menuItem title="Alles Selecteren" keyEquivalent="a" id="812">
+                            <menuItem title="Alles selecteren" keyEquivalent="a" id="812">
                                 <connections>
                                     <action selector="selectAll:" target="-1" id="853"/>
                                 </connections>
@@ -146,34 +146,34 @@
                         </items>
                     </menu>
                 </menuItem>
-                <menuItem title="Tools" id="eBU-ec-85y">
+                <menuItem title="Hulpmiddelen" id="eBU-ec-85y">
                     <modifierMask key="keyEquivalentModifierMask"/>
-                    <menu key="submenu" title="Tools" id="cCx-Ak-fii">
+                    <menu key="submenu" title="Hulpmiddelen" id="cCx-Ak-fii">
                         <items>
-                            <menuItem title="Backup Center..." id="V0L-sM-c8h">
+                            <menuItem title="Backup centrum..." id="V0L-sM-c8h">
                                 <modifierMask key="keyEquivalentModifierMask"/>
                                 <connections>
                                     <action selector="showBackupCenter:" target="-1" id="w3X-q3-iCI"/>
                                 </connections>
                             </menuItem>
-                            <menuItem title="Open CoinMap..." id="ASP-Ns-ktD">
+                            <menuItem title="CoinMap openen..." id="ASP-Ns-ktD">
                                 <modifierMask key="keyEquivalentModifierMask"/>
                                 <connections>
                                     <action selector="openCoinMapSite:" target="494" id="Ozv-6D-Aab"/>
                                 </connections>
                             </menuItem>
-                            <menuItem title="Scan a QR code…" id="vdw-IK-snJ">
+                            <menuItem title="Scan een QR code..." id="vdw-IK-snJ">
                                 <modifierMask key="keyEquivalentModifierMask"/>
                                 <connections>
                                     <action selector="scanQRCode:" target="494" id="mEt-Z8-Hrc"/>
                                 </connections>
                             </menuItem>
-                            <menuItem title="Debugging info..." keyEquivalent="D" id="lLT-53-p4m">
+                            <menuItem title="Foutopsporing informatie..." keyEquivalent="D" id="lLT-53-p4m">
                                 <connections>
                                     <action selector="showDebuggingInfo:" target="-1" id="Exc-Ye-jOL"/>
                                 </connections>
                             </menuItem>
-                            <menuItem title="Debugging tools..." id="Ue9-mi-gbe">
+                            <menuItem title="Foutopsporingstools..." id="Ue9-mi-gbe">
                                 <modifierMask key="keyEquivalentModifierMask"/>
                                 <connections>
                                     <action selector="showDebuggingTools:" target="-1" id="s18-1s-iwD"/>
@@ -211,7 +211,7 @@
                             <menuItem isSeparatorItem="YES" id="859">
                                 <modifierMask key="keyEquivalentModifierMask" command="YES"/>
                             </menuItem>
-                            <menuItem title="Breng Alles Naar Voren" id="860">
+                            <menuItem title="Zet alles op de voorgrond" id="860">
                                 <connections>
                                     <action selector="arrangeInFront:" target="-1" id="863"/>
                                 </connections>
@@ -223,13 +223,13 @@
                     <modifierMask key="keyEquivalentModifierMask"/>
                     <menu key="submenu" title="Help" id="K2u-T2-G1a">
                         <items>
-                            <menuItem title="Open FAQ…" id="VQa-2Z-6fS">
+                            <menuItem title="FAQ openen..." id="VQa-2Z-6fS">
                                 <modifierMask key="keyEquivalentModifierMask"/>
                                 <connections>
                                     <action selector="openFAQ:" target="494" id="Hg3-rm-MEN"/>
                                 </connections>
                             </menuItem>
-                            <menuItem title="Send Feedback…" id="GsI-lc-HhD">
+                            <menuItem title="Verstuurd feedback..." id="GsI-lc-HhD">
                                 <modifierMask key="keyEquivalentModifierMask"/>
                                 <connections>
                                     <action selector="sendFeedback:" target="494" id="CqW-xg-URA"/>

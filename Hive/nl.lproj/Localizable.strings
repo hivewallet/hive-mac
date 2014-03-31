@@ -1,78 +1,78 @@
 
 /* Body for feedback emails */
-"(Please write in English if possible.)" = "(Please write in English if possible.)";
+"(Please write in English if possible.)" = "(Schrijf alsjeblieft in het Engels)";
 
 /* Address field placeholder */
 "Address" = "Adres";
 
 /* Title of an alert when trying to send more than you have */
-"Amount exceeds balance." = "Bedrag is hoger dan de balans";
+"Amount exceeds balance." = "Bedrag is hoger dan uw huidige balans";
 
 /* Anonymous username for profile page */
 "Anonymous" = "Anoniem";
 
 /* Message when trying to start an app that requires a newer API level. */
-"App requires a newer version of Hive." = "App requires a newer version of Hive.";
+"App requires a newer version of Hive." = "App vereist een nieuwere versie van Hive.";
 
 /* App load error title */
 "Application can't be loaded" = "Applicatie kan niet worden geladen";
 
 /* Applications view title */
-"Apps" = "Apps";
+"Apps" = "Applicaties";
 
 /* Cancel editing alert title */
-"Are you sure you want to leave this page?" = "Are you sure you want to leave this page?";
+"Are you sure you want to leave this page?" = "Weet u zeker dat je deze pagina wilt verlaten?";
 
 /* Warning when trying to a large BTC amount (btc, fiat amount and address) */
-"Are you sure you want to send %@ (%@) to %@?" = "Are you sure you want to send %1$@ (%2$@) to %3$@?";
+"Are you sure you want to send %@ (%@) to %@?" = "Weet u zeker dat je %1$@ (%2$@) naar %3$@ wilt verzenden?";
 
 /* Wizard backup page title */
 "Backup" = "Backup";
 
 /* Backup status: backup can't or won't be completed */
-"Backup error" = "Backup error";
+"Backup error" = "Backup fout";
 
 /* No comment provided by engineer. */
-"Backup hasn't been done yet" = "Backup hasn't been done yet";
+"Backup hasn't been done yet" = "U hebt nog geen backup uitgevoerd";
 
 /* Backup error message */
-"Backup is not configured" = "Backup is not configured";
+"Backup is not configured" = "Backup is nog niet ingesteld";
 
 /* Backup status: backup done but not updated recently */
-"Backup problem" = "Backup problem";
+"Backup problem" = "Backup probleem";
 
 /* initialization error */
-"Bitcoin network data file could not be opened - another instance of Hive might still be running." = "Bitcoin network data file could not be opened - another instance of Hive might still be running.";
+"Bitcoin network data file could not be opened - another instance of Hive might still be running." = "Het Bitcoin netwerk data bestand kon niet worden geopend - een andere instantie van Hive is misschien nog aan het draaien.";
 
 /* Chain file unreadable error title */
-"Bitcoin network data file could not be opened." = "Bitcoin network data file could not be opened.";
+"Bitcoin network data file could not be opened." = "Het Bitcoin netwerk data bestand kon niet geopend worden.";
 
 /* Backup error message */
-"Can't create a directory to store the wallet backup" = "Can't create a directory to store the wallet backup";
+"Can't create a directory to store the wallet backup" = "Kon de folder om de portemonnee backup in op te slaan niet aanmaken";
 
 /* Cancel button title */
 "Cancel" = "Annuleren";
 
 /* Dead transaction label */
-"CANCELLED" = "CANCELLED";
+"CANCELLED" = "GEANNULEERD";
 
 /* Dropbox folder save panel confirmation button */
-"Choose" = "Choose";
+"Choose" = "Kies";
 
 /* No comment provided by engineer. */
-"Choose a directory inside Dropbox folder where the backup should be saved:" = "Choose a directory inside Dropbox folder where the backup should be saved:";
+"Choose a directory inside Dropbox folder where the backup should be saved:" = "Kies een folder in uw Dropbox map waar je de backup wilt opslaan:";
 
 /* No comment provided by engineer. */
-"click to copy" = "klik om te kopiëren";
+"click to copy" = "klik om te kopieren";
 
 /* Confirm button next to passphrase */
-"Confirm" = "Confirm";
+"Confirm" = "Bevestigen";
 
 /* Contact name empty alert title */
-"Contact can't be saved." = "Contact kan niet worden opgeslagen.";
+"Contact can't be saved." = "Contact kon niet worden opgeslagen.";
 
 /* Entry in application icon context menu */
-"Contact the author" = "Contact the author";
+"Contact the author" = "Contacteer de maker";
 
 /* Contacts view title */
 "Contacts" = "Contacten";
@@ -81,34 +81,34 @@
 "copied!" = "gekopieërd!";
 
 /* initialization error */
-"Could not read wallet file. It might be damaged." = "Could not read wallet file. It might be damaged.";
+"Could not read wallet file. It might be damaged." = "Kon het portemonnee bestand niet lezen. Het is misschien beschadigd.";
 
 /* Disable backup button title */
-"Disable" = "Disable";
+"Disable" = "Uitschakelen";
 
 /* Backup status: adapter disabled */
-"Disabled" = "Disabled";
+"Disabled" = "Uitgeschakeld";
 
 /* Confirm leaving a form without saving data */
-"Discard Changes" = "Discard Changes";
+"Discard Changes" = "Wijzigingen niet opslaan";
 
 /* Remove contact alert dialog title */
 "Do you really want to remove %@ from your contact list?" = "Wilt u %@ echt verwijderen uit uw contactenlijst?";
 
 /* Install app popup title */
-"Do you want to add \"%@\" to Hive?" = "Do you want to add \"%@\" to Hive?";
+"Do you want to add \"%@\" to Hive?" = "Wilt u \"%@\" toevoegen op Hive?";
 
 /* Uninstall app popup title */
-"Do you want to remove \"%@\" from the application list?" = "Do you want to remove \"%@\" from the application list?";
+"Do you want to remove \"%@\" from the application list?" = "Wilt u \"%@\" verwijderen van uw applicatie lijst?";
 
 /* Backup error message */
-"Dropbox folder not found" = "Dropbox folder not found";
+"Dropbox folder not found" = "Dropbox map is niet gevonden";
 
 /* Dropbox no backup folder alert title */
-"Dropbox folder not found." = "Dropbox folder not found.";
+"Dropbox folder not found." = "Dropbox map is niet gevonden";
 
 /* Backup error message */
-"Dropbox isn't running" = "Dropbox isn't running";
+"Dropbox isn't running" = "Dropbox draait niet";
 
 /* Page title when editing contact's info */
 "Edit contact" = "Wijzig contact";
@@ -120,55 +120,55 @@
 "email" = "email";
 
 /* Enable backup button title (no configuration required) */
-"Enable" = "Enable";
+"Enable" = "Inschakelen";
 
 /* Enable backup button title (requires configuration) */
-"Enable..." = "Enable...";
+"Enable..." = "Inschakelen...";
 
 /* Passphrase prompt for sending */
-"Enter your passphrase to confirm the transaction:" = "Enter your passphrase to confirm the transaction:";
+"Enter your passphrase to confirm the transaction:" = "Voer uw wachtwoordzin zin in om de transactie te bevestigen:";
 
 /* Firstname field placeholder */
 "Firstname" = "Voornaam";
 
 /* Hiveapp file not readable error title */
-"Hive application file \"%@\" could not be opened." = "Hive application file \"%@\" could not be opened.";
+"Hive application file \"%@\" could not be opened." = "Hive applicatie bestand \"%@\" kon niet worden geopend.";
 
 /* Initialization error title */
-"Hive cannot be started." = "Hive cannot be started.";
+"Hive cannot be started." = "Hive kon niet opgestart worden.";
 
 /* Database error alert title */
-"Hive database file cannot be opened." = "Hive database file cannot be opened.";
+"Hive database file cannot be opened." = "Het Hive database bestand kon niet worden geopened.";
 
 /* Backup error message */
-"Hive directory is excluded from Time Machine backup" = "Hive directory is excluded from Time Machine backup";
+"Hive directory is excluded from Time Machine backup" = "De Hive map is uitgesloten van de Time Machine backup";
 
 /* Sync in progress alert title */
-"Hive is currently syncing with the Bitcoin network. Are you sure you want to quit?" = "Hive is currently syncing with the Bitcoin network. Are you sure you want to quit?";
+"Hive is currently syncing with the Bitcoin network. Are you sure you want to quit?" = "Hive is op dit moment aan het synchroniseren met het Bitcoin netwerk. Weet je zeker dat je wilt afsluiten?";
 
 /* Chain file unreadable error explanation */
-"Hive will now delete the file and synchronize with the Bitcoin network again. Please leave Hive open for the next several minutes, and try not to send any transactions right now." = "Hive will now delete the file and synchronize with the Bitcoin network again. Please leave Hive open for the next several minutes, and try not to send any transactions right now.";
+"Hive will now delete the file and synchronize with the Bitcoin network again. Please leave Hive open for the next several minutes, and try not to send any transactions right now." = "Hive zal nu het bestand verwijderen opnieuw met het Bitcoin netwerk synchroniseren. Laat Hive alsjeblieft voor een paar minuten open en probeer geen transacties te versturen.";
 
 /* Share sent transaction text */
-"I've just received some Bitcoin using Hive" = "I've just received some Bitcoin using Hive";
+"I've just received some Bitcoin using Hive" = "Ik heb net wat Bitcoins ontvangen via Hive";
 
 /* Share sent transaction text */
-"I've just sent some Bitcoin using Hive" = "I've just sent some Bitcoin using Hive";
+"I've just sent some Bitcoin using Hive" = "Ik heb net wat Bitcoins verstuurd met Hive";
 
 /* Install app button title */
-"Install" = "Install";
+"Install" = "Installeren";
 
 /* Backup requires password alert details */
-"It's dangerous to upload unencrypted wallets." = "It's dangerous to upload unencrypted wallets.";
+"It's dangerous to upload unencrypted wallets." = "Het is gevaarlijk om niet gecodeerde portemonnee's te uploaden.";
 
 /* Don't leave a form without saving data */
-"Keep Editing" = "Keep Editing";
+"Keep Editing" = "Verder gaan met bewerken";
 
 /* Address caption field placeholder */
-"Label" = "Label";
+"Label" = "Adres";
 
 /* On what date was the last backup done */
-"Last backup on %@" = "Last backup on %@";
+"Last backup on %@" = "Laatste backup was op %@";
 
 /* Lastname field placeholder */
 "Lastname" = "Achternaam";
@@ -186,34 +186,34 @@
 "No address entered." = "Geen adres ingevoerd.";
 
 /* Backup is outdated, last backup was on that date */
-"No backup since %@" = "No backup since %@";
+"No backup since %@" = "Er is geen backup gemaakt sinds %@";
 
 /* No backups enabled notification title */
-"No backups configured" = "No backups configured";
+"No backups configured" = "Geen backups ingesteld";
 
 /* Transaction failed alert message */
 "No Bitcoin have been taken from your wallet." = "Er zijn geen Bitcoin uit uw portemonnee gehaald.";
 
 /* OK button title */
-"OK" = "Ok";
+"OK" = "Oke";
 
 /* Autocomplete dropdown prompt */
 "or choose from the list" = "of kies uit de lijst";
 
 /* Wizard password page title */
-"Password" = "Password";
+"Password" = "Wachtwoord";
 
 /* Pending transaction label */
-"PENDING" = "PENDING";
+"PENDING" = "IN AFWACHTING";
 
 /* Invalid address alert message */
-"Please check if you have entered the address correctly." = "Controleer of u het adres juist heeft ingevoerd";
+"Please check if you have entered the address correctly." = "Controleer of u het adres juist hebt ingevoerd";
 
 /* Warning details when trying to send to your own address */
-"Please enter a different address." = "Please enter a different address.";
+"Please enter a different address." = "Kies alsjeblieft een ander adres.";
 
 /* Empty address alert message */
-"Please enter a valid Bitcoin address or select one from the dropdown list." = "Voer een geldig Bitcoinadres in of kies een adres uit de lijst.";
+"Please enter a valid Bitcoin address or select one from the dropdown list." = "Voer alsjeblieft een geldig Bitcoin adres in of kies een adres uit de lijst.";
 
 /* Profile view title string */
 "Profile" = "Profiel";
@@ -222,142 +222,142 @@
 "Quit anyway" = "Toch stoppen";
 
 /* Received amount of BTC from unknown source */
-"Received &a" = "Received &a";
+"Received &a" = "&a ontvangen";
 
 /* Received amount of BTC from contact */
-"Received &a from &c" = "Received &a from &c";
+"Received &a from &c" = "&a ontvangen van &c";
 
 /* Install app button title when app exists */
-"Reinstall" = "Reinstall";
+"Reinstall" = "Herinstalleren";
 
 /* No comment provided by engineer. */
-"Remove" = "Remove";
+"Remove" = "Verwijderen";
 
 /* Dropbox invalid folder alert title */
-"Selected directory is outside Dropbox folder." = "Selected directory is outside Dropbox folder.";
+"Selected directory is outside Dropbox folder." = "Selecteer een map buiten uw Dropbox map.";
 
 /* Send button title */
-"Send" = "Send";
+"Send" = "Versturen";
 
 /* Sent amount of BTC to a contact/address */
-"Sent &a to &c" = "Sent &a to &c";
+"Sent &a to &c" = "Verstuur &a naar &c";
 
 /* Amount exceeds available balance alert title */
-"Some funds are temporarily unavailable." = "Some funds are temporarily unavailable.";
+"Some funds are temporarily unavailable." = "Een gedeelte van uw balans is op dit moment niet beschikbaar.";
 
 /* Wizard completed page title */
 "Start!" = "Start!";
 
 /* App load error description */
-"The application data file has been removed or corrupted." = "The application data file has been removed or corrupted.";
+"The application data file has been removed or corrupted." = "Het applicatie data bestand is verwijderd of corrupt.";
 
 /* Error message when database is incompatible with this version */
-"The database was saved by a newer version of Hive - please download the latest version from http://hivewallet.com." = "The database was saved by a newer version of Hive - please download the latest version from http://hivewallet.com.";
+"The database was saved by a newer version of Hive - please download the latest version from http://hivewallet.com." = "De database was opgeslagen door een nieuwere versie van Hive - download alsjeblieft de laatste versie van http://hivewallet.com.";
 
 /* Install app popup warning message when app exists */
-"The existing app file will be replaced by the new version. This will not affect any app settings or saved data." = "The existing app file will be replaced by the new version. This will not affect any app settings or saved data.";
+"The existing app file will be replaced by the new version. This will not affect any app settings or saved data." = "Het huidige applicatie bestand zal vervangen worden door de nieuwe versie. Het zal uw huidige instellingen of opgeslagen data niet aantasten.";
 
 /* Hiveapp file not readable error details */
-"The file is damaged or does not contain a Hive application." = "The file is damaged or does not contain a Hive application.";
+"The file is damaged or does not contain a Hive application." = "Het bestand is beschadigt of bevat geen Hive applicatie.";
 
 /* Sending dust alert message */
-"This amount is too low to be sent through the network." = "This amount is too low to be sent through the network.";
+"This amount is too low to be sent through the network." = "Deze hoeveelheid is te weinig om door het netwerk te versturen.";
 
 /* Alert details when transaction was cancelled */
-"This can happen because of bugs in the wallet code or because the transaction was rejected by the network." = "This can happen because of bugs in the wallet code or because the transaction was rejected by the network.";
+"This can happen because of bugs in the wallet code or because the transaction was rejected by the network." = "Dit kan gebeuren door fouten in de code of omdat de transactie is geweigerd door het netwerk.";
 
 /* Warning details when trying to send a large BTC amount */
-"This is more than what you usually send." = "This is more than what you usually send.";
+"This is more than what you usually send." = "Dit is meer dan u normaal verstuurt.";
 
 /* Warning title when trying to send to your own address */
-"This is your wallet address." = "This is your wallet address.";
+"This is your wallet address." = "Dit is uw portemonnee adres.";
 
 /* Invalid address alert title */
-"This isn't a valid Bitcoin address." = "Dit is geen geldig Bitcoinadres.";
+"This isn't a valid Bitcoin address." = "Dit is geen geldig Bitcoin adres.";
 
 /* Backup error message */
-"Time Machine is disabled in System Preferences" = "Time Machine is disabled in System Preferences";
+"Time Machine is disabled in System Preferences" = "Time Machine is uitgeschakelt in Systeem Instellingen.";
 
 /* No backups enabled notification details */
-"To protect your bitcoins, it's recommended that you enable at least one type of backup." = "To protect your bitcoins, it's recommended that you enable at least one type of backup.";
+"To protect your bitcoins, it's recommended that you enable at least one type of backup." = "Om je Bitcoins te beschermen is het aangeraden om minimaal 1 backup manier te activeren.";
 
 /* Amount exceeds available balance alert message */
-"To send this transaction, you'll need to wait for your pending transactions to be confirmed first (this shouldn't take more than a few minutes)." = "To send this transaction, you'll need to wait for your pending transactions to be confirmed first (this shouldn't take more than a few minutes).";
+"To send this transaction, you'll need to wait for your pending transactions to be confirmed first (this shouldn't take more than a few minutes)." = "Om deze transactie te versturen zult u moeten wachten totdat de alle transactie bevestigd zijn (dit zou niet langer dan een paar minuten moeten duren).";
 
 /* Message when trying to start an app that requires a newer API level. */
-"To use the app, please update to the latest version of Hive." = "To use the app, please update to the latest version of Hive.";
+"To use the app, please update to the latest version of Hive." = "Update Hive alsjeblieft naar de laatste versie om deze app te kunnen gebruiken.";
 
 /* Notification of cancelled transaction */
-"Transaction cancelled" = "Transaction cancelled";
+"Transaction cancelled" = "De transactie is geanulleerd";
 
 /* Notification of confirmed sent transaction */
-"Transaction completed" = "Transaction completed";
+"Transaction completed" = "Transactie is voltooid";
 
 /* Transaction failed alert title */
 "Transaction could not be completed." = "Transactie kon niet worden voltooid.";
 
 /* Alert when transaction was cancelled (with transaction date) */
-"Transaction from %@ was cancelled." = "Transaction from %@ was cancelled.";
+"Transaction from %@ was cancelled." = "De transactie van %@ is geannuleerd.";
 
 /* Transactions view title */
 "Transactions" = "Transacties";
 
 /* Uninstall app button title */
-"Uninstall" = "Uninstall";
+"Uninstall" = "Verwijderen";
 
 /* Entry in application icon context menu */
-"Uninstall application" = "Uninstall application";
+"Uninstall application" = "Applicatie verwijderen";
 
 /* Backup status: backup up to date */
 "Up to date" = "Up to date";
 
 /* Entry in application icon context menu */
-"Visit application's site" = "Visit application's site";
+"Visit application's site" = "Bezoek de applicatie website";
 
 /* Backup status: backup scheduled or in progress */
-"Waiting for backup" = "Waiting for backup";
+"Waiting for backup" = "Wachten op de backup";
 
 /* Install app popup warning message */
-"We cannot guarantee the safety of all apps - please be careful if you download Hive apps from third party sites." = "We cannot guarantee the safety of all apps - please be careful if you download Hive apps from third party sites.";
+"We cannot guarantee the safety of all apps - please be careful if you download Hive apps from third party sites." = "We kunnen de veiligheid van alle apps niet garanderen - wees alsjeblieft voorzichtig als u Hive apps download van derden.";
 
 /* Wizard welcome page title */
-"Welcome" = "Welcome";
+"Welcome" = "Welkom";
 
 /* Button to show info about pending funds */
-"What does this mean?" = "What does this mean?";
+"What does this mean?" = "Wat betekent dit?";
 
 /* Uninstall app popup message */
-"You can install it again through the App Store app later if you change your mind." = "You can install it again through the App Store app later if you change your mind.";
+"You can install it again through the App Store app later if you change your mind." = "Je kunt de app opnieuw installeren via de App Store als je je later bedenkt.";
 
 /* Details of an alert when trying to send more than you have */
 "You cannot send more money than you own." = "U kunt niet meer geld verzenden dan dat u daadwerkelijk heeft.";
 
 /* Install app popup title when app exists */
-"You have already added \"%@\" to Hive. Would you like to overwrite it?" = "You have already added \"%@\" to Hive. Would you like to overwrite it?";
+"You have already added \"%@\" to Hive. Would you like to overwrite it?" = "U hebt \"%@\" al toegevoegd aan Hive. Wil u deze persoon overschrijven?";
 
 /* Notification of confirmed sent transaction (with BTC amount) */
-"You have sent %@." = "You have sent %@.";
+"You have sent %@." = "U hebt %@ verstuurd.";
 
 /* Dropbox no backup folder alert details */
-"You must install Dropbox first (see www.dropbox.com)." = "You must install Dropbox first (see www.dropbox.com).";
+"You must install Dropbox first (see www.dropbox.com)." = "U moet Dropbox eerst installeren (zie www.dropbox.com).";
 
 /* Dropbox invalid folder alert details */
-"You need to choose or create a directory inside your Dropbox folder." = "You need to choose or create a directory inside your Dropbox folder.";
+"You need to choose or create a directory inside your Dropbox folder." = "U moet een map seleteren of aanmaken binnen uw Dropbox map.";
 
 /* Contact name empty alert message */
-"You need to give the contact a name before you can add it to the list." = "U moet het contact een naam geven voordat u het aan de lijst kan toevoegen.";
+"You need to give the contact a name before you can add it to the list." = "U moet de contactpersoon eerst een naam geven voordat u deze aan de lijst kunt toevoegen.";
 
 /* Backup requires password alert title */
-"You need to set a wallet password first (see Wallet menu)." = "You need to set a wallet password first (see Wallet menu).";
+"You need to set a wallet password first (see Wallet menu)." = "Je zult eerst een wachtwoord moeten instellen (zie het Portemmonnee menu).";
 
 /* Remove contact alert dialog body */
-"You won't be able to undo this operation." = "You won't be able to undo this operation.";
+"You won't be able to undo this operation." = "Je kunt deze actie niet ongedaan maken.";
 
 /* Notification of incoming transaction */
-"You've received Bitcoin" = "You've received Bitcoin";
+"You've received Bitcoin" = "Je hebt Bitcoins ontvangen";
 
 /* Cancel editing alert message */
-"Your changes won't be saved." = "Your changes won't be saved.";
+"Your changes won't be saved." = "Je aanpassingen zullen niet worden opgeslagen.";
 
 /* Sync in progress alert details */
-"Your pending transactions won't be confirmed until the sync is complete." = "Your pending transactions won't be confirmed until the sync is complete.";
+"Your pending transactions won't be confirmed until the sync is complete." = "Uw lopende transacties zullen niet worden bevestigd totdat de synchronisatie is voltooid.";
