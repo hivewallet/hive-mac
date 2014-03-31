@@ -27,9 +27,11 @@ NSString * const kHITextFieldContentChanged = @"kHITextFieldContentChanged";
 }
 
 - (void)awakeFromNib {
-//    self.wantsLayer = YES;
     self.delegate = self;
-    _bgView = [[NSView alloc] initWithFrame:NSMakeRect(self.frame.origin.x-1, self.frame.origin.y+1, self.frame.size.width+2, self.frame.size.height+2)];
+    _bgView = [[NSView alloc] initWithFrame:NSMakeRect(self.frame.origin.x - 1,
+                                                       self.frame.origin.y + 1,
+                                                       self.frame.size.width + 2,
+                                                       self.frame.size.height + 2)];
     _bgView.wantsLayer = YES;
     _bgView.layer.backgroundColor = [[NSColor whiteColor] hiNativeColor];
     _bgView.layer.borderWidth = 1.0;
@@ -45,6 +47,7 @@ NSString * const kHITextFieldContentChanged = @"kHITextFieldContentChanged";
 
 - (id)initWithFrame:(NSRect)frame {
     self = [super initWithFrame:frame];
+
     if (self) {
         self.cell = [HITextFieldCell new];
         [self.cell setUsesSingleLineMode:YES];
@@ -69,7 +72,6 @@ NSString * const kHITextFieldContentChanged = @"kHITextFieldContentChanged";
         if (self.stringValue.length == 0) {
             _isEmpty = YES;
             self.stringValue = [self.cell placeholderString];
-//            [self selectText:nil];
 
             dispatch_async(dispatch_get_main_queue(), ^{
                 _isFocused = YES;
@@ -80,14 +82,17 @@ NSString * const kHITextFieldContentChanged = @"kHITextFieldContentChanged";
                 _isFocused = YES;
             });
         }
+
         [self recalcForString:self.stringValue];
     }
+
     return become;
 }
 
 - (void)mouseDown:(NSEvent *)theEvent {
-    if (_isFocused)
+    if (_isFocused) {
         [super mouseDown:theEvent];
+    }
 }
 
 - (void)controlTextDidEndEditing:(NSNotification *)obj {
@@ -133,12 +138,11 @@ NSString * const kHITextFieldContentChanged = @"kHITextFieldContentChanged";
 }
 
 - (void)controlTextDidChange:(NSNotification *)obj {
-    // Recalculate sizes
     [_bgView setNeedsDisplay:YES];
     [self recalcForString:self.stringValue];
     _isEmpty = (self.stringValue.length == 0);
-    if (self.stringValue.length == 0) {
-        _isEmpty = YES;
+
+    if (_isEmpty) {
         self.stringValue = [self.cell placeholderString];
         dispatch_async(dispatch_get_main_queue(), ^{
             _isFocused = YES;
@@ -149,7 +153,10 @@ NSString * const kHITextFieldContentChanged = @"kHITextFieldContentChanged";
 
 - (void)setFrame:(NSRect)frameRect {
     [super setFrame:frameRect];
-    _bgView.frame = NSMakeRect(self.frame.origin.x-1, self.frame.origin.y+1, self.frame.size.width+2, self.frame.size.height+2);
+    _bgView.frame = NSMakeRect(self.frame.origin.x - 1,
+                               self.frame.origin.y + 1,
+                               self.frame.size.width + 2,
+                               self.frame.size.height + 2);
 }
 
 - (BOOL)isFocused {
@@ -163,4 +170,5 @@ NSString * const kHITextFieldContentChanged = @"kHITextFieldContentChanged";
 - (void)dealloc {
     [_bgView removeFromSuperview];
 }
+
 @end
