@@ -87,7 +87,7 @@
 "1HB-Qg-iyg.title" = "Passwort ändern…";
 
 /* Class = "NSMenuItem"; title = "Lock Wallet"; ObjectID = "AFM-Ev-d2A"; */
-"AFM-Ev-d2A.title" = "Lock Wallet";
+"AFM-Ev-d2A.title" = "Wallet sperren";
 
 /* Class = "NSMenuItem"; title = "Open CoinMap..."; ObjectID = "ASP-Ns-ktD"; */
 "ASP-Ns-ktD.title" = "Öffne CoinMap...";
@@ -108,7 +108,7 @@
 "V0L-sM-c8h.title" = "Backups...";
 
 /* Class = "NSMenuItem"; title = "Open FAQ…"; ObjectID = "VQa-2Z-6fS"; */
-"VQa-2Z-6fS.title" = "Open FAQ…";
+"VQa-2Z-6fS.title" = "FAQ öffnen…";
 
 /* Class = "NSMenuItem"; title = "Help"; ObjectID = "ZUU-kM-x8u"; */
 "ZUU-kM-x8u.title" = "Hilfe";

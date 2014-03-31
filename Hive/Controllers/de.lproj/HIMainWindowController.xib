@@ -70,7 +70,7 @@
                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="kiW-99-t6l">
                     <rect key="frame" x="18" y="9" width="272" height="17"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
-                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="Network connection error" id="2MH-gv-3gz">
+                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="Netzwerk-Fehler" id="2MH-gv-3gz">
                         <font key="font" size="13" name="Helvetica-Bold"/>
                         <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
@@ -92,8 +92,8 @@
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                     <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="center" id="oW1-yx-he4">
                         <font key="font" metaFont="system"/>
-                        <string key="title">Hive is locked.
-Enter your password to unlock:</string>
+                        <string key="title">Hive ist gesperrt.
+Geben Sie Ihr Passwort zum Entsperren ein:</string>
                         <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                     </textFieldCell>
@@ -116,7 +116,7 @@ Enter your password to unlock:</string>
                 <button id="RGj-ct-Dq5">
                     <rect key="frame" x="104" y="169" width="84" height="29"/>
                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
-                    <buttonCell key="cell" type="bevel" title="Unlock" bezelStyle="regularSquare" imagePosition="overlaps" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="AEG-XJ-abS" customClass="HIDoneButtonCell">
+                    <buttonCell key="cell" type="bevel" title="Entsperren" bezelStyle="regularSquare" imagePosition="overlaps" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="AEG-XJ-abS" customClass="HIDoneButtonCell">
                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                         <font key="font" metaFont="system"/>
                     </buttonCell>
