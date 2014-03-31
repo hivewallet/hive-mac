@@ -48,11 +48,6 @@ NSString * const LockScreenDidDisappearNotification = @"LockScreenDidDisappearNo
         [lwc onPasswordEntered:passwordHolder];
     };
 
-    NSRect unlockFrame = self.submitButton.frame;
-    unlockFrame.size.width = self.submitButton.intrinsicContentSize.width + 10.0;
-    unlockFrame.origin.x = (self.view.bounds.size.width - unlockFrame.size.width) / 2.0;
-    self.submitButton.frame = unlockFrame;
-
     [self setInitialState];
 }
 
