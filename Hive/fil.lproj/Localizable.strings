@@ -42,7 +42,7 @@
 "Backup problem" = "Backup problem";
 
 /* initialization error */
-"Bitcoin network data file could not be opened - another instance of Hive might still be running." = "Bitcoin network data file could not be opened - another instance of Hive might still be running.";
+"Bitcoin network data file could not be opened - another instance of Hive might still be running." = "Ang Bitcoin network data file ay hinid mabuksan - ibang instansiya ng Hive ay maaring tumatakbo.";
 
 /* Chain file unreadable error title */
 "Bitcoin network data file could not be opened." = "Ang Bitcoin network date file ay hindi mabuksan.";

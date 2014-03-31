@@ -3,13 +3,13 @@
 "1.title" = "Magpadala ng Bitcoin";
 
 /* Class = "NSButtonCell"; title = "Cancel"; ObjectID = "6"; */
-"6.title" = "I-kansela";
+"6.title" = "Ikansela";
 
 /* Class = "NSButtonCell"; title = "Send"; ObjectID = "10"; */
-"10.title" = "I-padala";
+"10.title" = "Ipadala";
 
 /* Class = "NSTextFieldCell"; title = "To:"; ObjectID = "14"; */
-"14.title" = "To:";
+"14.title" = "Sa:";
 
 /* Class = "NSTextFieldCell"; placeholderString = "Type to search..."; ObjectID = "20"; */
 "20.placeholderString" = "Magtype upang maghanap...";
@@ -18,4 +18,4 @@
 "22.title" = "Pangunahing address";
 
 /* Class = "NSTextFieldCell"; title = "Currency exchange rates are provided by BitcoinAverage markets ticker. Bitcoin prices can change quickly, so other apps or sites might show different exchange rates."; ObjectID = "dxM-9E-wwb"; */
-"dxM-9E-wwb.title" = "Ang mga Currency exchange rate ay nilaan ng BitcoinAverage markets ticker. Ang presyo ng Bitcoin ay nababago nang mabilisan, kaya ang ibang mga app ay magpakita ng magkakaibang exchange rate.";
+"dxM-9E-wwb.title" = "Ang mga Currency exchange rate ay nilaan ng BitcoinAverage markets ticker. Ang presyo ng Bitcoin ay nababago nang mabilisan, kaya ang ibang mga app ay maaring magpakita ng magkakaibang exchange rate.";
