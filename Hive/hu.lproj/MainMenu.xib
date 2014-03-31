@@ -223,7 +223,7 @@
                     <modifierMask key="keyEquivalentModifierMask"/>
                     <menu key="submenu" title="Segítség" id="K2u-T2-G1a">
                         <items>
-                            <menuItem title="Open FAQ…" id="VQa-2Z-6fS">
+                            <menuItem title="GYIK megnyitása..." id="VQa-2Z-6fS">
                                 <modifierMask key="keyEquivalentModifierMask"/>
                                 <connections>
                                     <action selector="openFAQ:" target="494" id="Hg3-rm-MEN"/>
