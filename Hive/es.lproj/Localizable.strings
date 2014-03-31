@@ -1,6 +1,6 @@
 
 /* Body for feedback emails */
-"(Please write in English if possible.)" = "(Please write in English if possible.)";
+"(Please write in English if possible.)" = "(Escribe en inglés si es posible)";
 
 /* Address field placeholder */
 "Address" = "Dirección";
@@ -12,43 +12,43 @@
 "Anonymous" = "Anónimo";
 
 /* Message when trying to start an app that requires a newer API level. */
-"App requires a newer version of Hive." = "App requires a newer version of Hive.";
+"App requires a newer version of Hive." = "La aplicación requiere una versión más reciente de Hive";
 
 /* App load error title */
 "Application can't be loaded" = "La aplicación no puede ser cargada";
 
 /* Applications view title */
-"Apps" = "Apps";
+"Apps" = "Aplicaciones";
 
 /* Cancel editing alert title */
-"Are you sure you want to leave this page?" = "Are you sure you want to leave this page?";
+"Are you sure you want to leave this page?" = "¿Estás seguro de que quieres abandonar esta página?";
 
 /* Warning when trying to a large BTC amount (btc, fiat amount and address) */
 "Are you sure you want to send %@ (%@) to %@?" = "¿Seguro que quieres enviar %1$@ (%2$@) a %3$@?";
 
 /* Wizard backup page title */
-"Backup" = "Backup";
+"Backup" = "Copia de Seguridad";
 
 /* Backup status: backup can't or won't be completed */
-"Backup error" = "Error de Backup";
+"Backup error" = "Error de Copia de Seguridad";
 
 /* No comment provided by engineer. */
-"Backup hasn't been done yet" = "No se ha hecho aún el Backup";
+"Backup hasn't been done yet" = "No se ha hecho aún la copia de seguridad";
 
 /* Backup error message */
-"Backup is not configured" = "No está configurado el Backup";
+"Backup is not configured" = "La copia de seguridad no está configurada";
 
 /* Backup status: backup done but not updated recently */
-"Backup problem" = "Problema de Backup";
+"Backup problem" = "Problema con la copia de seguridad";
 
 /* initialization error */
-"Bitcoin network data file could not be opened - another instance of Hive might still be running." = "Bitcoin network data file could not be opened - another instance of Hive might still be running.";
+"Bitcoin network data file could not be opened - another instance of Hive might still be running." = "No se pudo abrir el fichero de datos de red de Bitcoin - otra instancia de Hive puede que siga en marcha";
 
 /* Chain file unreadable error title */
-"Bitcoin network data file could not be opened." = "Bitcoin network data file could not be opened.";
+"Bitcoin network data file could not be opened." = "No se pudo abrir el fichero de datos de red de Bitcoin.";
 
 /* Backup error message */
-"Can't create a directory to store the wallet backup" = "No puedo crear la carpeta para guardar el backup";
+"Can't create a directory to store the wallet backup" = "No puedo crear el directorio para guardar la copia de seguridad";
 
 /* Cancel button title */
 "Cancel" = "Cancelar";
@@ -60,10 +60,10 @@
 "Choose" = "Elige";
 
 /* No comment provided by engineer. */
-"Choose a directory inside Dropbox folder where the backup should be saved:" = "Elige una carpeta dentro de Dropbox donde el backup debería ser guardado:";
+"Choose a directory inside Dropbox folder where the backup should be saved:" = "Elige una carpeta dentro de Dropbox donde guardar la copia de seguridad:";
 
 /* No comment provided by engineer. */
-"click to copy" = "haz click para copiar";
+"click to copy" = "clickea para copiar";
 
 /* Confirm button next to passphrase */
 "Confirm" = "Confirmar";
@@ -72,7 +72,7 @@
 "Contact can't be saved." = "El contacto no puede ser guardado.";
 
 /* Entry in application icon context menu */
-"Contact the author" = "Contact the author";
+"Contact the author" = "Contacta con el autor";
 
 /* Contacts view title */
 "Contacts" = "Contactos";
@@ -90,7 +90,7 @@
 "Disabled" = "Deshabilitado";
 
 /* Confirm leaving a form without saving data */
-"Discard Changes" = "Discard Changes";
+"Discard Changes" = "Deshacer Cambios";
 
 /* Remove contact alert dialog title */
 "Do you really want to remove %@ from your contact list?" = "¿De verdad quieres eliminar a %@ de tu lista de contactos?";
@@ -99,7 +99,7 @@
 "Do you want to add \"%@\" to Hive?" = "¿Quieres añadir a \"%@\" a Hive?";
 
 /* Uninstall app popup title */
-"Do you want to remove \"%@\" from the application list?" = "Do you want to remove \"%@\" from the application list?";
+"Do you want to remove \"%@\" from the application list?" = "¿Quieres quitar \"%@\" de la lista de aplicaciones?";
 
 /* Backup error message */
 "Dropbox folder not found" = "Carpeta de Dropbox no encontrada";
@@ -132,7 +132,7 @@
 "Firstname" = "Nombre";
 
 /* Hiveapp file not readable error title */
-"Hive application file \"%@\" could not be opened." = "Hive application file \"%@\" could not be opened.";
+"Hive application file \"%@\" could not be opened." = "El fichero de la aplicación \"%@\" no se pudo abrir.";
 
 /* Initialization error title */
 "Hive cannot be started." = "Hive no puede iniciarse.";
@@ -144,10 +144,10 @@
 "Hive directory is excluded from Time Machine backup" = "La carpeta de Hive está excluida del backup de Time Machine";
 
 /* Sync in progress alert title */
-"Hive is currently syncing with the Bitcoin network. Are you sure you want to quit?" = "Hive is currently syncing with the Bitcoin network. Are you sure you want to quit?";
+"Hive is currently syncing with the Bitcoin network. Are you sure you want to quit?" = "Hive se está sincronizando en este momento con la red Bitcoin. ¿Estás seguro de que quieres salir?";
 
 /* Chain file unreadable error explanation */
-"Hive will now delete the file and synchronize with the Bitcoin network again. Please leave Hive open for the next several minutes, and try not to send any transactions right now." = "Hive will now delete the file and synchronize with the Bitcoin network again. Please leave Hive open for the next several minutes, and try not to send any transactions right now.";
+"Hive will now delete the file and synchronize with the Bitcoin network again. Please leave Hive open for the next several minutes, and try not to send any transactions right now." = "Hive eliminará ahora el fichero y sincronizará con la red Bitcoin de nuevo. Por favor deje Hive abierto durante los próximos minutos y evite enviar ninguna transacción en este momento.";
 
 /* Share sent transaction text */
 "I've just received some Bitcoin using Hive" = "Acabo de recibir algunos Bitcoins usando Hive";
@@ -162,7 +162,7 @@
 "It's dangerous to upload unencrypted wallets." = "Es peligroso subir carteras sin cifrar.";
 
 /* Don't leave a form without saving data */
-"Keep Editing" = "Keep Editing";
+"Keep Editing" = "Seguir Editando";
 
 /* Address caption field placeholder */
 "Label" = "Etiqueta";
@@ -189,7 +189,7 @@
 "No backup since %@" = "Sin backup desde %@";
 
 /* No backups enabled notification title */
-"No backups configured" = "No backups configured";
+"No backups configured" = "No hay copias de seguridad configuradas";
 
 /* Transaction failed alert message */
 "No Bitcoin have been taken from your wallet." = "Ningún Bitcoin ha sido tomado de tu cartera.";
@@ -258,10 +258,10 @@
 "The existing app file will be replaced by the new version. This will not affect any app settings or saved data." = "El archivo existente de la app será reemplazado por la nueva versión. Esto no afectará a ninguna opción de app o datos guardados.";
 
 /* Hiveapp file not readable error details */
-"The file is damaged or does not contain a Hive application." = "The file is damaged or does not contain a Hive application.";
+"The file is damaged or does not contain a Hive application." = "El fichero está dañado y no contiene ninguna aplicación de Hive";
 
 /* Sending dust alert message */
-"This amount is too low to be sent through the network." = "This amount is too low to be sent through the network.";
+"This amount is too low to be sent through the network." = "Esta cantidad es demasiado pequeña para ser enviada a través de la red.";
 
 /* Alert details when transaction was cancelled */
 "This can happen because of bugs in the wallet code or because the transaction was rejected by the network." = "Esto puede suceder debido a errores en el código de la cartera o porque la transacción fue rechazada por la red.";
@@ -279,13 +279,13 @@
 "Time Machine is disabled in System Preferences" = "Time Machine está deshabilitado en Preferencias del Sistema";
 
 /* No backups enabled notification details */
-"To protect your bitcoins, it's recommended that you enable at least one type of backup." = "To protect your bitcoins, it's recommended that you enable at least one type of backup.";
+"To protect your bitcoins, it's recommended that you enable at least one type of backup." = "Para proteger tus bitcoins se recomienda que actives al menos un tipo de copia de seguridad.";
 
 /* Amount exceeds available balance alert message */
 "To send this transaction, you'll need to wait for your pending transactions to be confirmed first (this shouldn't take more than a few minutes)." = "Para enviar esta transacción, necesitarás esperar a que tus transacciones pendientes se confirmen primero (no debería tomar más de unos minutos).";
 
 /* Message when trying to start an app that requires a newer API level. */
-"To use the app, please update to the latest version of Hive." = "To use the app, please update to the latest version of Hive.";
+"To use the app, please update to the latest version of Hive." = "Para usar esta aplicación, por favor actualice Hive a la última versión.";
 
 /* Notification of cancelled transaction */
 "Transaction cancelled" = "Transacción cancelada";
@@ -303,16 +303,16 @@
 "Transactions" = "Transacciones";
 
 /* Uninstall app button title */
-"Uninstall" = "Uninstall";
+"Uninstall" = "Desinstalar";
 
 /* Entry in application icon context menu */
-"Uninstall application" = "Uninstall application";
+"Uninstall application" = "Desinstalar aplicación";
 
 /* Backup status: backup up to date */
 "Up to date" = "Actualizado";
 
 /* Entry in application icon context menu */
-"Visit application's site" = "Visit application's site";
+"Visit application's site" = "Visita la web de la aplicación";
 
 /* Backup status: backup scheduled or in progress */
 "Waiting for backup" = "Esperando un backup";
@@ -327,7 +327,7 @@
 "What does this mean?" = "¿Qué significa esto?";
 
 /* Uninstall app popup message */
-"You can install it again through the App Store app later if you change your mind." = "You can install it again through the App Store app later if you change your mind.";
+"You can install it again through the App Store app later if you change your mind." = "Puedes instalarla de nuevo a través de la aplicación App Store si cambias de idea más tarde.";
 
 /* Details of an alert when trying to send more than you have */
 "You cannot send more money than you own." = "No puedes enviar más dinero del que tienes.";
@@ -357,7 +357,7 @@
 "You've received Bitcoin" = "Has recibido Bitcoin";
 
 /* Cancel editing alert message */
-"Your changes won't be saved." = "Your changes won't be saved.";
+"Your changes won't be saved." = "Tus cambios no se guardarán";
 
 /* Sync in progress alert details */
-"Your pending transactions won't be confirmed until the sync is complete." = "Your pending transactions won't be confirmed until the sync is complete.";
+"Your pending transactions won't be confirmed until the sync is complete." = "Tus transacciones pendientes no serán confirmadas hasta que se complete la sincronización.";

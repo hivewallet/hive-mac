@@ -1,6 +1,6 @@
 
 /* Class = "HIKeyObservingWindow"; title = "Backup Center"; ObjectID = "1"; */
-"1.title" = "Backup Center";
+"1.title" = "Copias de Seguridad";
 
 /* Class = "NSTextFieldCell"; title = "Status details"; ObjectID = "1f9-7o-UKm"; */
 "1f9-7o-UKm.title" = "Detalles de estado";
@@ -12,13 +12,13 @@
 "CNI-B2-pea.title" = "Estado";
 
 /* Class = "NSButtonCell"; title = "Enable"; ObjectID = "brF-Bb-pc1"; */
-"brF-Bb-pc1.title" = "Habilitado";
+"brF-Bb-pc1.title" = "Habilitar";
 
 /* Class = "NSTableColumn"; headerCell.title = "Backup type"; ObjectID = "gS6-M0-vFe"; */
-"gS6-M0-vFe.headerCell.title" = "Tipo de backup";
+"gS6-M0-vFe.headerCell.title" = "Tipo de Copia de Seguridad";
 
 /* Class = "NSTableColumn"; headerCell.title = "Status"; ObjectID = "ggB-aI-7mE"; */
 "ggB-aI-7mE.headerCell.title" = "Estado";
 
 /* Class = "NSTextFieldCell"; title = "Backup type"; ObjectID = "mMS-Su-94P"; */
-"mMS-Su-94P.title" = "Tipo de backup";
+"mMS-Su-94P.title" = "Tipo de Copia de Seguridad";

@@ -18,4 +18,4 @@
 "22.title" = "Dirección principal";
 
 /* Class = "NSTextFieldCell"; title = "Currency exchange rates are provided by BitcoinAverage markets ticker. Bitcoin prices can change quickly, so other apps or sites might show different exchange rates."; ObjectID = "dxM-9E-wwb"; */
-"dxM-9E-wwb.title" = "Currency exchange rates are provided by BitcoinAverage markets ticker. Bitcoin prices can change quickly, so other apps or sites might show different exchange rates.";
+"dxM-9E-wwb.title" = "Tipo de cambio proporcionado por las cotizaciones de mercado de BitcoinAverage. Los precios de Bitcoin pueden variar rápidamente, por lo que otras aplicaciones o sitios web pueden mostrar un tipo de cambio distinto.";
