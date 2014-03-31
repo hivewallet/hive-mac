@@ -8,11 +8,12 @@
 
 #import <FontAwesomeIconFactory/NIKFontAwesomeIconFactory+OSX.h>
 #import "HILockScreenView.h"
-#import "HIMainWindowController.h"
 
 @interface HILockScreenView () {
     NSColor *backgroundPattern;
 }
+
+@property (nonatomic, strong) IBOutlet NSImageView *lockIcon;
 
 @end
 
@@ -32,9 +33,6 @@
     NIKFontAwesomeIconFactory *factory = [[NIKFontAwesomeIconFactory alloc] init];
     factory.size = self.lockIcon.frame.size.width;
     self.lockIcon.image = [factory createImageForIcon:NIKFontAwesomeIconLock];
-
-    BOOL lockEnabled = [[NSUserDefaults standardUserDefaults] boolForKey:LockScreenEnabledDefaultsKey];
-    self.dontShowAgainField.state = lockEnabled ? NSOffState : NSOnState;
 }
 
 - (void)drawRect:(NSRect)dirtyRect {

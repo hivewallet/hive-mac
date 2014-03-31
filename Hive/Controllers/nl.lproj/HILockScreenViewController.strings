@@ -1,0 +1,9 @@
+
+/* Class = "NSTextFieldCell"; title = "Hive is locked.\nEnter your password to unlock:"; ObjectID = "Gmn-jq-R5t"; */
+"Gmn-jq-R5t.title" = "Hive is vergrendeld\nVoer uw wachtwoord in om Hive te ontgrendelen:";
+
+/* Class = "NSButtonCell"; title = "Unlock"; ObjectID = "W4R-hH-myj"; */
+"W4R-hH-myj.title" = "Ontgrendel";
+
+/* Class = "NSButtonCell"; title = "Don't show this screen again"; ObjectID = "fZF-LI-0oD"; */
+"fZF-LI-0oD.title" = "Don't show this screen again";

@@ -8,11 +8,10 @@
 
 #import <Cocoa/Cocoa.h>
 
-@interface HILockScreenView : NSView
+/*
+ The overlay view that covers the main window when the wallet is locked on startup.
+ */
 
-@property (nonatomic, strong) IBOutlet NSImageView *lockIcon;
-@property (nonatomic, strong) IBOutlet NSTextField *passwordField;
-@property (nonatomic, strong) IBOutlet NSButton *submitButton;
-@property (nonatomic, strong) IBOutlet NSButton *dontShowAgainField;
+@interface HILockScreenView : NSView
 
 @end

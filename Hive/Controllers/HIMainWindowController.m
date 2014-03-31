@@ -6,29 +6,23 @@
 //  Copyright (c) 2013 Hive Developers. All rights reserved.
 //
 
-#import <BitcoinJKit/HIBitcoinManager.h>
 #import <QuartzCore/QuartzCore.h>
-#import "HIAppDelegate.h"
 #import "HIApplicationsViewController.h"
 #import "HIContactsViewController.h"
-#import "HIContactViewController.h"
+#import "HILockScreenViewController.h"
 #import "HIMainWindowController.h"
 #import "HINavigationController.h"
 #import "HINetworkConnectionMonitor.h"
-#import "HIPasswordHolder.h"
-#import "HIProfile.h"
 #import "HIProfileViewController.h"
 #import "HISendBitcoinsWindowController.h"
 #import "HISidebarController.h"
 #import "HITransactionsViewController.h"
 #import "HIViewController.h"
 #import "NSColor+Hive.h"
-#import "NSImage+NPEffects.h"
-#import "NSWindow+HIShake.h"
 
 static const CGFloat TitleBarHeight = 35.0;
 static const NSTimeInterval SlideAnimationDuration = 0.3;
-NSString * const LockScreenEnabledDefaultsKey = @"LockScreenEnabled";
+
 
 @interface HIMainWindowController () {
     NSView *_titleView;
@@ -40,6 +34,7 @@ NSString * const LockScreenEnabledDefaultsKey = @"LockScreenEnabled";
 
 @end
 
+
 @implementation HIMainWindowController
 
 - (id)initWithWindowNibName:(NSString *)windowNibName {
@@ -48,7 +43,6 @@ NSString * const LockScreenEnabledDefaultsKey = @"LockScreenEnabled";
 
 - (void)dealloc {
     [[NSNotificationCenter defaultCenter] removeObserver:self];
-    [[[NSWorkspace sharedWorkspace] notificationCenter] removeObserver:self];
 }
 
 - (INAppStoreWindow *)appStoreWindow {
@@ -58,25 +52,39 @@ NSString * const LockScreenEnabledDefaultsKey = @"LockScreenEnabled";
 - (void)windowDidLoad {
     [super windowDidLoad];
 
-    [[NSNotificationCenter defaultCenter] addObserver:self
-                                             selector:@selector(sendWindowDidClose:)
-                                                 name:HISendBitcoinsWindowDidClose
-                                               object:nil];
+    NSNotificationCenter *center = [NSNotificationCenter defaultCenter];
 
-    [[NSNotificationCenter defaultCenter] addObserver:self
-                                             selector:@selector(onNetworkConnected)
-                                                 name:HINetworkConnectionMonitorConnected
-                                               object:nil];
+    [center addObserver:self
+               selector:@selector(sendWindowDidClose:)
+                   name:HISendBitcoinsWindowDidClose
+                 object:nil];
 
-    [[NSNotificationCenter defaultCenter] addObserver:self
-                                             selector:@selector(onNetworkDisconnected)
-                                                 name:HINetworkConnectionMonitorDisconnected
-                                               object:nil];
+    [center addObserver:self
+               selector:@selector(onNetworkConnected)
+                   name:HINetworkConnectionMonitorConnected
+                 object:nil];
 
-    [[[NSWorkspace sharedWorkspace] notificationCenter] addObserver:self
-                                                           selector:@selector(onSleep)
-                                                               name:NSWorkspaceWillSleepNotification
-                                                             object:nil];
+    [center addObserver:self
+               selector:@selector(onNetworkDisconnected)
+                   name:HINetworkConnectionMonitorDisconnected
+                 object:nil];
+
+    [center addObserver:self
+               selector:@selector(onLockScreenWillAppear)
+                   name:LockScreenWillAppearNotification
+                 object:nil];
+
+    [center addObserver:self
+               selector:@selector(onLockScreenDidAppear)
+                   name:LockScreenDidAppearNotification
+                 object:nil];
+
+    [center addObserver:self
+               selector:@selector(onLockScreenWillDisappear)
+                   name:LockScreenWillDisappearNotification
+                 object:nil];
+
+    [self.lockScreenController loadView];
 
     // After everything is set up and visible, start pre-loading the other panels for smooth animation.
     [self performSelector:@selector(preloadViews:)
@@ -103,110 +111,32 @@ NSString * const LockScreenEnabledDefaultsKey = @"LockScreenEnabled";
         self.sendButton.frame = NSInsetRect(self.sendButton.frame, -2.0, 0.0);
         self.sendButton.font = [NSFont boldSystemFontOfSize:11.0];
     }
-
-    __unsafe_unretained typeof(self) mwc = self;
-    self.passwordInputViewController.onSubmit = ^(HIPasswordHolder *passwordHolder) {
-        if (passwordHolder.data.length > 0) {
-            if ([[HIBitcoinManager defaultManager] isPasswordCorrect:passwordHolder.data]) {
-                [mwc unlockApplicationAnimated:YES];
-
-                BOOL lockEnabled = (mwc.overlayView.dontShowAgainField.state == NSOffState);
-                [[NSUserDefaults standardUserDefaults] setBool:lockEnabled forKey:LockScreenEnabledDefaultsKey];
-            } else {
-                [mwc.window hiShake];
-            }
-        }
-    };
-
-    NSRect unlockFrame = self.overlayView.submitButton.frame;
-    unlockFrame.size.width = self.overlayView.submitButton.intrinsicContentSize.width + 10.0;
-    unlockFrame.origin.x = (self.overlayView.bounds.size.width - unlockFrame.size.width) / 2.0;
-    self.overlayView.submitButton.frame = unlockFrame;
-
-    if ([[HIBitcoinManager defaultManager] isWalletEncrypted] && [self isLockScreenEnabled]) {
-        [self lockApplicationAnimated:NO];
-    } else {
-        [self unlockApplicationAnimated:NO];
-    }
 }
 
-- (BOOL)isLockScreenEnabled {
-    return [[NSUserDefaults standardUserDefaults] boolForKey:LockScreenEnabledDefaultsKey];
-}
-
-- (void)onSleep {
-    if ([self isLockScreenEnabled]) {
-        [self lockWalletAnimated:NO];
-    }
-}
-
-- (void)lockWalletAnimated:(BOOL)animated {
-    [[NSUserDefaults standardUserDefaults] setBool:YES forKey:LockScreenEnabledDefaultsKey];
-    self.overlayView.dontShowAgainField.state = NSOffState;
-
-    [self lockApplicationAnimated:YES];
-}
-
-- (void)lockApplicationAnimated:(BOOL)animated {
+- (void)onLockScreenWillAppear {
     // set overlay to cover the whole right part of the window
-    [self.overlayView setFrame:self.contentView.frame];
-
-    if (animated) {
-        [self.overlayView setAlphaValue:0.0];
-        [self.window.contentView addSubview:self.overlayView];
-
-        [NSAnimationContext runAnimationGroup:^(NSAnimationContext *context) {
-            [self.overlayView.animator setAlphaValue:1.0];
-        } completionHandler:^{
-            // without this, the slide in animation doesn't work properly for some reason
-            NSRect frame = _currentViewController.view.frame;
-            frame.origin.x = 0 - frame.size.width / 3.0;
-            [_currentViewController.view setFrame:frame];
-
-            [_currentViewController.view removeFromSuperview];
-            _currentViewController = nil;
-        }];
-    } else {
-        [self.overlayView setAlphaValue:1.0];
-        [self.window.contentView addSubview:self.overlayView];
-
-        NSRect frame = _currentViewController.view.frame;
-        frame.origin.x = 0 - frame.size.width / 3.0;
-        [_currentViewController.view setFrame:frame];
-
-        [_currentViewController.view removeFromSuperview];
-        _currentViewController = nil;
-    }
+    self.lockScreenController.view.frame = self.contentView.frame;
 
     [_titleView removeFromSuperview];
     _titleView = nil;
 
-    [self.window makeFirstResponder:self.overlayView.passwordField];
-
     [self.sidebarController setEnabled:NO];
     [self.sidebarController unselectCurrentController];
-
-    [[NSApp delegate] setApplicationLocked:YES];
 }
 
-- (void)unlockApplicationAnimated:(BOOL)animated {
-    if (animated) {
-        [NSAnimationContext runAnimationGroup:^(NSAnimationContext *context) {
-            [self.overlayView.animator setAlphaValue:0.0];
-        } completionHandler:^{
-            [self.overlayView removeFromSuperview];
-        }];
-    } else {
-        [self.overlayView setAlphaValue:0.0];
-        [self.overlayView removeFromSuperview];
-    }
+- (void)onLockScreenDidAppear {
+    // without this, the slide in animation doesn't work properly for some reason
+    NSRect frame = _currentViewController.view.frame;
+    frame.origin.x = 0 - frame.size.width / 3.0;
+    [_currentViewController.view setFrame:frame];
 
+    [_currentViewController.view removeFromSuperview];
+    _currentViewController = nil;
+}
+
+- (void)onLockScreenWillDisappear {
     [self.sidebarController setEnabled:YES];
     [self.sidebarController selectControllerAtIndex:0];
-
-    [self.window makeFirstResponder:nil];
-
-    [[NSApp delegate] setApplicationLocked:NO];
 }
 
 - (void)preloadViews:(NSArray *)panels {

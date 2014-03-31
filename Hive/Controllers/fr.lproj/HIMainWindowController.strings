@@ -7,9 +7,3 @@
 
 /* Class = "NSTextFieldCell"; title = "Network connection error"; ObjectID = "2MH-gv-3gz"; */
 "2MH-gv-3gz.title" = "Erreur de connexion réseau";
-
-/* Class = "NSButtonCell"; title = "Unlock"; ObjectID = "AEG-XJ-abS"; */
-"AEG-XJ-abS.title" = "Déverrouiller";
-
-/* Class = "NSTextFieldCell"; title = "Hive is locked.\nEnter your password to unlock:"; ObjectID = "oW1-yx-he4"; */
-"oW1-yx-he4.title" = "Hive est verrouillé.\nSaisissez votre mot de passe pour déverrouiller :";

@@ -30,6 +30,7 @@
 #import "HIDebuggingToolsWindowController.h"
 #import "HIErrorWindowController.h"
 #import "HIFirstRunWizardWindowController.h"
+#import "HILockScreenViewController.h"
 #import "HILogFormatter.h"
 #import "HIMainWindowController.h"
 #import "HINetworkConnectionMonitor.h"
@@ -553,7 +554,7 @@ void handleException(NSException *exception) {
 }
 
 - (IBAction)lockWallet:(id)sender {
-    [_mainWindowController lockWalletAnimated:YES];
+    [_mainWindowController.lockScreenController lockWalletAnimated:YES];
 }
 
 - (IBAction)openCoinMapSite:(id)sender {

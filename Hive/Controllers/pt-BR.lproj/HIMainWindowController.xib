@@ -8,9 +8,8 @@
         <customObject id="-2" userLabel="File's Owner" customClass="HIMainWindowController">
             <connections>
                 <outlet property="contentView" destination="36" id="38"/>
+                <outlet property="lockScreenController" destination="Y0y-mp-Fpb" id="meU-qi-2Nb"/>
                 <outlet property="networkErrorView" destination="cbo-ZW-eve" id="pKX-sj-kip"/>
-                <outlet property="overlayView" destination="N6A-Jl-eUO" id="TgJ-GE-Gm8"/>
-                <outlet property="passwordInputViewController" destination="81A-v1-c1A" id="N8c-RX-yUR"/>
                 <outlet property="sendButton" destination="44" id="nqI-bw-r6i"/>
                 <outlet property="sidebarController" destination="39" id="40"/>
                 <outlet property="window" destination="3" id="10"/>
@@ -78,72 +77,10 @@
                 </textField>
             </subviews>
         </customView>
-        <customView wantsLayer="YES" id="N6A-Jl-eUO" userLabel="Overlay View" customClass="HILockScreenView">
-            <rect key="frame" x="0.0" y="0.0" width="292" height="500"/>
-            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-            <subviews>
-                <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" id="WwZ-gF-2Xu">
-                    <rect key="frame" x="122" y="292" width="48" height="48"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
-                    <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" id="hYX-5J-efD"/>
-                </imageView>
-                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="wEc-PD-35m">
-                    <rect key="frame" x="18" y="248" width="256" height="36"/>
-                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
-                    <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="center" id="oW1-yx-he4">
-                        <font key="font" metaFont="system"/>
-                        <string key="title">Hive está bloqueado.
-Entre sua senha para desbloquear:</string>
-                        <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
-                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
-                    </textFieldCell>
-                </textField>
-                <secureTextField verticalHuggingPriority="750" id="K81-E4-JIF">
-                    <rect key="frame" x="32" y="211" width="228" height="22"/>
-                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
-                    <secureTextFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" drawsBackground="YES" usesSingleLineMode="YES" id="FTp-v6-47W">
-                        <font key="font" metaFont="system"/>
-                        <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
-                        <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
-                        <allowedInputSourceLocales>
-                            <string>NSAllRomanInputSourcesLocaleIdentifier</string>
-                        </allowedInputSourceLocales>
-                    </secureTextFieldCell>
-                    <connections>
-                        <outlet property="delegate" destination="81A-v1-c1A" id="Xhq-PB-vW2"/>
-                    </connections>
-                </secureTextField>
-                <button id="RGj-ct-Dq5">
-                    <rect key="frame" x="104" y="169" width="84" height="29"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
-                    <buttonCell key="cell" type="bevel" title="Desbloquear" bezelStyle="regularSquare" imagePosition="overlaps" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="AEG-XJ-abS" customClass="HIDoneButtonCell">
-                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                        <font key="font" metaFont="system"/>
-                    </buttonCell>
-                    <connections>
-                        <action selector="submit:" target="81A-v1-c1A" id="Nk1-3c-hte"/>
-                    </connections>
-                </button>
-                <button id="0NO-RO-ztL">
-                    <rect key="frame" x="45" y="23" width="202" height="18"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <buttonCell key="cell" type="check" title="Don't show this screen again" bezelStyle="regularSquare" imagePosition="left" inset="2" id="eYr-Hn-j6l">
-                        <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
-                        <font key="font" metaFont="system"/>
-                    </buttonCell>
-                </button>
-            </subviews>
+        <viewController nibName="HILockScreenViewController" id="Y0y-mp-Fpb" customClass="HILockScreenViewController">
             <connections>
-                <outlet property="dontShowAgainField" destination="0NO-RO-ztL" id="4mY-pQ-V2U"/>
-                <outlet property="lockIcon" destination="WwZ-gF-2Xu" id="c6u-tn-9Nf"/>
-                <outlet property="passwordField" destination="K81-E4-JIF" id="rw6-bd-Tmn"/>
-                <outlet property="submitButton" destination="RGj-ct-Dq5" id="0BF-d0-bXh"/>
+                <outlet property="container" destination="4" id="KWu-2p-VNA"/>
             </connections>
-        </customView>
-        <customObject id="81A-v1-c1A" customClass="HIPasswordInputViewController">
-            <connections>
-                <outlet property="passwordField" destination="K81-E4-JIF" id="vR6-Nd-fzM"/>
-            </connections>
-        </customObject>
+        </viewController>
     </objects>
 </document>
