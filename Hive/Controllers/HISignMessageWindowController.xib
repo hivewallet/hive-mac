@@ -100,6 +100,9 @@ Gw
                         <buttonCell key="cell" type="bevel" title="Sign" bezelStyle="regularSquare" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="W8R-Z4-t5H" customClass="HIDoneButtonCell">
                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                             <font key="font" metaFont="system"/>
+                            <string key="keyEquivalent" base64-UTF8="YES">
+DQ
+</string>
                         </buttonCell>
                         <connections>
                             <action selector="signPressed:" target="-2" id="LIQ-f5-lU2"/>
