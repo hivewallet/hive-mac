@@ -175,6 +175,8 @@
 		588E356618212BFB006A6A25 /* HIErrorWindowController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 588E356818212BFB006A6A25 /* HIErrorWindowController.xib */; };
 		588EFB2E17D8D2970085F6E6 /* HIProfileTabView.m in Sources */ = {isa = PBXBuildFile; fileRef = 588EFB2D17D8D2970085F6E6 /* HIProfileTabView.m */; };
 		588F3E8518719A9000FF42EA /* HIBackupStatusCellView.m in Sources */ = {isa = PBXBuildFile; fileRef = 588F3E8418719A9000FF42EA /* HIBackupStatusCellView.m */; };
+		58904B9418EAB78A00B471B3 /* HISignMessageWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 58904B9218EAB78A00B471B3 /* HISignMessageWindowController.m */; };
+		58904B9518EAB78A00B471B3 /* HISignMessageWindowController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 58904B9318EAB78A00B471B3 /* HISignMessageWindowController.xib */; };
 		589064B7180596B80082BE5C /* HIEditableImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 589064B6180596B80082BE5C /* HIEditableImageView.m */; };
 		589FAA2718B81A7600E2CAF3 /* HIErrorBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 589FAA2618B81A7600E2CAF3 /* HIErrorBar.m */; };
 		58A03B0D17D9DC4100ADD5E5 /* HIButtonWithSpinner.m in Sources */ = {isa = PBXBuildFile; fileRef = 58A03B0C17D9DC4100ADD5E5 /* HIButtonWithSpinner.m */; };
@@ -1514,6 +1516,9 @@
 		588EFB2D17D8D2970085F6E6 /* HIProfileTabView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HIProfileTabView.m; sourceTree = "<group>"; };
 		588F3E8318719A9000FF42EA /* HIBackupStatusCellView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HIBackupStatusCellView.h; sourceTree = "<group>"; };
 		588F3E8418719A9000FF42EA /* HIBackupStatusCellView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HIBackupStatusCellView.m; sourceTree = "<group>"; };
+		58904B9118EAB78A00B471B3 /* HISignMessageWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HISignMessageWindowController.h; sourceTree = "<group>"; };
+		58904B9218EAB78A00B471B3 /* HISignMessageWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HISignMessageWindowController.m; sourceTree = "<group>"; };
+		58904B9318EAB78A00B471B3 /* HISignMessageWindowController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HISignMessageWindowController.xib; sourceTree = "<group>"; };
 		589064B5180596B80082BE5C /* HIEditableImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HIEditableImageView.h; sourceTree = "<group>"; };
 		589064B6180596B80082BE5C /* HIEditableImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HIEditableImageView.m; sourceTree = "<group>"; };
 		589C610B183A6B2500EE523F /* ro */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = ro; path = ro.lproj/HIApplicationsViewController.xib; sourceTree = "<group>"; };
@@ -2241,6 +2246,16 @@
 			name = HIErrorWindowController;
 			sourceTree = "<group>";
 		};
+		58904B8E18EAB76800B471B3 /* HISignMessageWindowController */ = {
+			isa = PBXGroup;
+			children = (
+				58904B9118EAB78A00B471B3 /* HISignMessageWindowController.h */,
+				58904B9218EAB78A00B471B3 /* HISignMessageWindowController.m */,
+				58904B9318EAB78A00B471B3 /* HISignMessageWindowController.xib */,
+			);
+			name = HISignMessageWindowController;
+			sourceTree = "<group>";
+		};
 		58A2A7E817D8783D0001464A /* HISendBitcoinsWindowController */ = {
 			isa = PBXGroup;
 			children = (
@@ -2585,6 +2600,7 @@
 				1AA103C2AED626BF5E200D14 /* HIProfileViewController */,
 				1AA10FD814FF44C3B5CF256D /* HIQRCodeWindowController */,
 				58A2A7E817D8783D0001464A /* HISendBitcoinsWindowController */,
+				58904B8E18EAB76800B471B3 /* HISignMessageWindowController */,
 				D948157E17CE10D9006A0312 /* HITransactionsViewController */,
 				586059FD18041AD600FD9C2A /* HIViewController.h */,
 				586059FE18041AD600FD9C2A /* HIViewController.m */,
@@ -2784,6 +2800,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				588953E9188921E300243190 /* HIPasswordChangeWindowController.strings in Resources */,
+				58904B9518EAB78A00B471B3 /* HISignMessageWindowController.xib in Resources */,
 				58A37AE2180D99A100CFCDE3 /* HIMainWindowController.strings in Resources */,
 				58E336171892C02E004D60C3 /* HIApplicationsViewController.strings in Resources */,
 				58A37AD0180D995F00CFCDE3 /* HINewContactViewController.strings in Resources */,
@@ -3057,6 +3074,7 @@
 				58605A0018041AD600FD9C2A /* HINavigationController.m in Sources */,
 				2478B8D3184A80A400BA2C35 /* HIFeeDetailsViewController.m in Sources */,
 				582C7DA918521A3500126C10 /* HIJavaScriptObject.m in Sources */,
+				58904B9418EAB78A00B471B3 /* HISignMessageWindowController.m in Sources */,
 				588E33B71817E6AE006A6A25 /* HIBitcoinURL.m in Sources */,
 				58605A0118041AD600FD9C2A /* HISidebarController.m in Sources */,
 				58605A0218041AD600FD9C2A /* HIViewController.m in Sources */,

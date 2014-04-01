@@ -40,6 +40,7 @@
 #import "HISendBitcoinsWindowController.h"
 #import "HISendFeedbackService.h"
 #import "HIShortcutService.h"
+#import "HISignMessageWindowController.h"
 #import "HITransaction.h"
 #import "HITransactionsViewController.h"
 #import "HIWizardWindowController.h"
@@ -563,6 +564,10 @@ void handleException(NSException *exception) {
 
 - (IBAction)openFAQ:(id)sender {
     [[NSWorkspace sharedWorkspace] openURL:[NSURL URLWithString:@"https://github.com/hivewallet/hive-osx/wiki/FAQ"]];
+}
+
+- (IBAction)openSignMessageWindow:(id)sender {
+    [self openPopupWindowWithClass:[HISignMessageWindowController class]];
 }
 
 - (IBAction)showDebuggingInfo:(id)sender {

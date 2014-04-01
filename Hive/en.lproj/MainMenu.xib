@@ -162,6 +162,12 @@
                                     <action selector="scanQRCode:" target="494" id="mEt-Z8-Hrc"/>
                                 </connections>
                             </menuItem>
+                            <menuItem title="Sign message..." id="SoJ-eV-k9I">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                                <connections>
+                                    <action selector="openSignMessageWindow:" target="494" id="BXf-n1-5Go"/>
+                                </connections>
+                            </menuItem>
                             <menuItem title="Debugging info..." keyEquivalent="D" id="lLT-53-p4m">
                                 <connections>
                                     <action selector="showDebuggingInfo:" target="-1" id="Exc-Ye-jOL"/>
