@@ -157,6 +157,7 @@
 		58605A6918041DFC00FD9C2A /* NPZipHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 58605A6618041DFC00FD9C2A /* NPZipHeader.m */; };
 		5860D3FF180455B900BD852C /* HIApplicationsManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 5860D3FE180455B900BD852C /* HIApplicationsManager.m */; };
 		586905961843DE5C0053D74F /* HIDebuggingToolsWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 586905941843DE5C0053D74F /* HIDebuggingToolsWindowController.m */; };
+		588427D018F2DF6600DE6CC4 /* bitcoinkit.checkpoints in Resources */ = {isa = PBXBuildFile; fileRef = 588427CF18F2DF6600DE6CC4 /* bitcoinkit.checkpoints */; };
 		5884A00F17F1B63D004A31FA /* Tor.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5884A00C17F1B5FF004A31FA /* Tor.framework */; };
 		5884A01017F1B646004A31FA /* Tor.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 5884A00C17F1B5FF004A31FA /* Tor.framework */; };
 		5884A03E17F57AE9004A31FA /* dsa_pub.pem in Resources */ = {isa = PBXBuildFile; fileRef = 5884A03D17F57AE9004A31FA /* dsa_pub.pem */; };
@@ -1100,6 +1101,7 @@
 		586905FA18450BDC0053D74F /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/MainMenu.strings; sourceTree = "<group>"; };
 		586905FB18450BDC0053D74F /* ja */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = ja; path = ja.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		586905FD18450BDC0053D74F /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Localizable.strings; sourceTree = "<group>"; };
+		588427CF18F2DF6600DE6CC4 /* bitcoinkit.checkpoints */ = {isa = PBXFileReference; lastKnownFileType = file; path = bitcoinkit.checkpoints; sourceTree = "<group>"; };
 		5884A00417F1B5FE004A31FA /* Tor.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Tor.xcodeproj; path = Tor.framework/Tor.xcodeproj; sourceTree = "<group>"; };
 		5884A03D17F57AE9004A31FA /* dsa_pub.pem */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = dsa_pub.pem; sourceTree = "<group>"; };
 		588953901888A68100243190 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/HIBackupCenterWindowController.xib; sourceTree = "<group>"; };
@@ -2521,6 +2523,7 @@
 		D9A591CE1767B4A800502635 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				588427CF18F2DF6600DE6CC4 /* bitcoinkit.checkpoints */,
 				585FFF4318159803005BCF73 /* Credits.rtf */,
 				5884A03D17F57AE9004A31FA /* dsa_pub.pem */,
 				58FB21EB1875809B00F87B9E /* get_dropbox_folder.sh */,
@@ -2866,6 +2869,7 @@
 				24300BFC188892CD00FDEF2F /* wizard-background.png in Resources */,
 				588E356618212BFB006A6A25 /* HIErrorWindowController.xib in Resources */,
 				588E34F2182013E9006A6A25 /* HIDebuggingInfoWindowController.strings in Resources */,
+				588427D018F2DF6600DE6CC4 /* bitcoinkit.checkpoints in Resources */,
 				58605A4D18041D0A00FD9C2A /* icon-next__active.pdf in Resources */,
 				5857131418902E630094F884 /* HIWizardPasswordViewController.strings in Resources */,
 				585713521890321A0094F884 /* HIWizardWelcomeViewController.strings in Resources */,
