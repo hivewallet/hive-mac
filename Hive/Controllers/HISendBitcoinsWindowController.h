@@ -48,6 +48,7 @@ typedef void(^HITransactionCompletionCallback)(BOOL success, NSString *transacti
 - (void)setLockedAmount:(satoshi_t)amount;
 - (void)selectContact:(id<HIPerson>)contact address:(HIAddress *)address;
 - (void)lockAddress;
+- (void)showPaymentRequest:(int)sessionId details:(NSDictionary *)data;
 
 - (IBAction)cancelClicked:(id)sender;
 - (IBAction)sendClicked:(id)sender;

@@ -495,6 +495,25 @@ static int ddLogLevel = LOG_LEVEL_VERBOSE;
         return YES;
     }
 
+    if ([filename.pathExtension isEqual:@"bitcoinpaymentrequest"]) {
+        __weak id delegate = self;
+        [self handleExternalEvent:^{
+            HIBitcoinManager *manager = [HIBitcoinManager defaultManager];
+            [manager openPaymentRequestFromFile:filename
+                                       callback:^(NSError *error, int sessionId, NSDictionary *data) {
+                                           if (error) {
+                                               // TODO show error
+                                           } else {
+                                              HISendBitcoinsWindowController *window = [delegate sendBitcoinsWindow];
+                                              [window showPaymentRequest:sessionId details:data];
+                                              [window showWindow:self];
+                                          }
+                                       }];
+        }];
+
+        return YES;
+    }
+
     return NO;
 }
 

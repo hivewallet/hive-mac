@@ -19,6 +19,7 @@
 #import "HIExchangeRateService.h"
 #import "HIFeeDetailsViewController.h"
 #import "HILinkTextField.h"
+#import "HIPasswordHolder.h"
 #import "HIPasswordInputViewController.h"
 #import "HIPerson.h"
 #import "HISendBitcoinsWindowController.h"
@@ -31,13 +32,15 @@
 NSString * const HISendBitcoinsWindowDidClose = @"HISendBitcoinsWindowDidClose";
 NSString * const HISendBitcoinsWindowSuccessKey = @"success";
 
-@interface HISendBitcoinsWindowController () <HIExchangeRateObserver, NSPopoverDelegate, HICameraWindowControllerDelegate> {
+@interface HISendBitcoinsWindowController ()
+        <HIExchangeRateObserver, NSPopoverDelegate, HICameraWindowControllerDelegate> {
     HIContact *_contact;
     HIContactAutocompleteWindowController *_autocompleteController;
     NSString *_hashAddress;
     BOOL _lockedAddress;
     satoshi_t _amount;
     NSPopover *_passwordPopover;
+    int _paymentRequestSession;
 }
 
 @property (assign) satoshi_t amountFieldValue;
@@ -218,6 +221,17 @@ NSString * const HISendBitcoinsWindowSuccessKey = @"success";
     [self setQRCodeScanningEnabled:NO];
 
     [self.window makeFirstResponder:nil];
+}
+
+- (void)showPaymentRequest:(int)sessionId details:(NSDictionary *)data {
+    _paymentRequestSession = sessionId;
+
+    NSNumber *amount = data[@"amount"];
+    NSString *paymentURL = data[@"paymentURL"];
+    NSURL *URL = paymentURL ? [NSURL URLWithString:paymentURL] : nil;
+
+    [self setLockedAddress:(URL ? URL.host : @"?")];
+    [self setLockedAmount:amount.integerValue];
 }
 
 
@@ -439,29 +453,38 @@ NSString * const HISendBitcoinsWindowSuccessKey = @"success";
     satoshi_t satoshi = self.amountFieldValue;
     satoshi_t satoshiWithFee = satoshi + self.currentFee;
 
-
-    NSString *target = _hashAddress ?: self.nameLabel.stringValue;
-
     if (satoshiWithFee > [[BCClient sharedClient] estimatedBalance]) {
         [self showInsufficientFundsAlert];
     }
     else if (satoshiWithFee > [[BCClient sharedClient] availableBalance]) {
         [self showBlockedFundsAlert];
     }
-    else if (target.length == 0) {
-        [self showNoAddressAlert];
-    }
-    else if (![[HIBitcoinManager defaultManager] isAddressValid:target]) {
-        [self showInvalidAddressAlert];
-    }
-    else if ([[HIBitcoinManager defaultManager].walletAddress isEqual:target]) {
-        [self showOwnAddressAlert];
-    }
-    else if (![HITransaction isAmountWithinExpectedRange:satoshi]) {
-        [self showLargeAmountAlertForAmount:satoshi toTarget:target button:sender];
-    }
     else {
-        [self processSendingBitcoin:satoshi toTarget:target button:sender];
+        if (_paymentRequestSession > 0) {
+            if ([self isPasswordRequired]) {
+                [self showPasswordPopover:sender forPaymentRequest:_paymentRequestSession];
+            } else {
+                [self sendPaymentRequest:_paymentRequestSession password:nil];
+            }
+        } else {
+            NSString *target = _hashAddress ?: self.nameLabel.stringValue;
+
+            if (target.length == 0) {
+                [self showNoAddressAlert];
+            }
+            else if (![[HIBitcoinManager defaultManager] isAddressValid:target]) {
+                [self showInvalidAddressAlert];
+            }
+            else if ([[HIBitcoinManager defaultManager].walletAddress isEqual:target]) {
+                [self showOwnAddressAlert];
+            }
+            else if (![HITransaction isAmountWithinExpectedRange:satoshi]) {
+                [self showLargeAmountAlertForAmount:satoshi toTarget:target button:sender];
+            }
+            else {
+                [self processSendingBitcoin:satoshi toTarget:target button:sender];
+            }
+        }
     }
 }
 
@@ -515,6 +538,31 @@ NSString * const HISendBitcoinsWindowSuccessKey = @"success";
     }
 }
 
+- (void)sendPaymentRequest:(int)sessionId password:(HIPasswordHolder *)password {
+    [self.sendButton showSpinner];
+    [self.cancelButton setEnabled:NO];
+    [self hidePasswordPopover];
+
+    void (^callback)(NSError*, NSDictionary*) = ^(NSError *error, NSDictionary *data) {
+        if (error) {
+            if (error.code == kHIBitcoinManagerWrongPassword) {
+                [self.window hiShake];
+            } else {
+                // TODO handle error
+            }
+
+            [self.sendButton hideSpinner];
+            [self.cancelButton setEnabled:YES];
+        } else {
+            [self showPaymentConfirmationAndClose:data];
+        }
+    };
+
+    [[HIBitcoinManager defaultManager] sendPaymentRequest:sessionId
+                                                 password:password.data
+                                                 callback:callback];
+}
+
 - (void)closeAndNotifyWithSuccess:(BOOL)success transactionId:(NSString *)transactionId {
     if (_sendCompletion) {
         _sendCompletion(success, transactionId);
@@ -525,6 +573,19 @@ NSString * const HISendBitcoinsWindowSuccessKey = @"success";
     [[NSNotificationCenter defaultCenter] postNotificationName:HISendBitcoinsWindowDidClose
                                                         object:self
                                                       userInfo:@{HISendBitcoinsWindowSuccessKey: @(success)}];
+}
+
+- (void)showPaymentConfirmationAndClose:(NSDictionary *)data {
+    NSString *memo = data[@"memo"] ?: @"";
+
+    NSAlert *alert = [NSAlert alertWithMessageText:@"Payment successful"
+                                     defaultButton:@"OK"
+                                   alternateButton:nil
+                                       otherButton:nil
+                         informativeTextWithFormat:@"%@", memo];
+
+    [alert runModal];
+    [self close];
 }
 
 
@@ -774,10 +835,10 @@ NSString * const HISendBitcoinsWindowSuccessKey = @"success";
     return [BCClient sharedClient].isWalletPasswordProtected;
 }
 
-- (void)showPasswordPopover:(NSButton *)sender forSendingBitcoin:(uint64)bitcoin toTarget:(NSString *)target {
-    _passwordPopover = [NSPopover new];
-    _passwordPopover.behavior = NSPopoverBehaviorTransient;
-    _passwordPopover.delegate = self;
+- (NSPopover *)preparePasswordPopover {
+    NSPopover *popover = [NSPopover new];
+    popover.behavior = NSPopoverBehaviorTransient;
+    popover.delegate = self;
 
     if (!self.passwordInputViewController) {
         self.passwordInputViewController = [HIPasswordInputViewController new];
@@ -787,15 +848,30 @@ NSString * const HISendBitcoinsWindowSuccessKey = @"success";
             NSLocalizedString(@"Confirm", @"Confirm button next to passphrase");
     }
 
+    popover.contentViewController = self.passwordInputViewController;
+    return popover;
+}
+
+- (void)showPasswordPopover:(NSButton *)sender forSendingBitcoin:(uint64)bitcoin toTarget:(NSString *)target {
+    _passwordPopover = [self preparePasswordPopover];
+
     __unsafe_unretained __typeof__ (self) weakSelf = self;
     self.passwordInputViewController.onSubmit = ^(HIPasswordHolder *passwordHolder) {
         [weakSelf sendBitcoin:bitcoin toTarget:target password:passwordHolder];
     };
 
-    _passwordPopover.contentViewController = self.passwordInputViewController;
-    [_passwordPopover showRelativeToRect:sender.bounds
-                                  ofView:sender
-                           preferredEdge:NSMaxYEdge];
+    [_passwordPopover showRelativeToRect:sender.bounds ofView:sender preferredEdge:NSMaxYEdge];
+}
+
+- (void)showPasswordPopover:(NSButton *)sender forPaymentRequest:(int)sessionId {
+    _passwordPopover = [self preparePasswordPopover];
+
+    __unsafe_unretained __typeof__ (self) weakSelf = self;
+    self.passwordInputViewController.onSubmit = ^(HIPasswordHolder *passwordHolder) {
+        [weakSelf sendPaymentRequest:sessionId password:passwordHolder];
+    };
+
+    [_passwordPopover showRelativeToRect:sender.bounds ofView:sender preferredEdge:NSMaxYEdge];
 }
 
 - (void)hidePasswordPopover {

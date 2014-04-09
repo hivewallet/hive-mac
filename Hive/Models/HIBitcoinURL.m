@@ -53,6 +53,7 @@ static NSString * const BitcoinURLPrefix = @"bitcoin:";
     _address = [base substringFromIndex:BitcoinURLPrefix.length];
     _label = self.parameters[@"label"];
     _message = self.parameters[@"message"];
+    _paymentRequestURL = self.parameters[@"r"];
 
     NSString *amountParameter = self.parameters[@"amount"];
     _amount = amountParameter ? [NSDecimalNumber decimalNumberWithString:amountParameter].hiSatoshi : 0;

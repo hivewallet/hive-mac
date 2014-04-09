@@ -1,6 +1,6 @@
-#import "HIBitcoinURLService.h"
-
+#import <BitcoinJKit/BitcoinJKit.h>
 #import "HIBitcoinURL.h"
+#import "HIBitcoinURLService.h"
 #import "HISendBitcoinsWindowController.h"
 #import "HITemporaryContact.h"
 
@@ -23,14 +23,51 @@
     HIBitcoinURL *bitcoinURL = [[HIBitcoinURL alloc] initWithURLString:bitcoinURLString];
     HILogDebug(@"Parsed URL as %@", bitcoinURL);
 
-    if (bitcoinURL.valid) {
-        HIAppDelegate *appDelegate = [NSApplication sharedApplication].delegate;
-        HISendBitcoinsWindowController *window = [appDelegate sendBitcoinsWindow];
-        [self applyURL:bitcoinURL toSendWindow:window];
-        [window showWindow:self];
-    }
+    HIAppDelegate *appDelegate = [[NSApplication sharedApplication] delegate];
 
-    return bitcoinURL.valid;
+    if (bitcoinURL) {
+        if (bitcoinURL.valid) {
+            if (bitcoinURL.paymentRequestURL) {
+                return [self handlePaymentRequestURL:bitcoinURL.paymentRequestURL];
+            } else {
+                HISendBitcoinsWindowController *window = [appDelegate sendBitcoinsWindow];
+                [self applyURL:bitcoinURL toSendWindow:window];
+                [window showWindow:self];
+                return YES;
+            }
+        } else {
+            // invalid bitcoin URL
+            return NO;
+        }
+    } else {
+        // not a bitcoin URL at all, try loading a payment request
+        return [self handlePaymentRequestURL:bitcoinURL.paymentRequestURL];
+    }
+}
+
+- (BOOL)handlePaymentRequestURL:(NSString *)URLString {
+    NSURL *URL = [NSURL URLWithString:URLString];
+
+    if (URL) {
+        // TODO show loading spinner
+
+        HIBitcoinManager *manager = [HIBitcoinManager defaultManager];
+        [manager openPaymentRequestFromURL:URLString
+                                  callback:^(NSError *error, int sessionId, NSDictionary *data) {
+                                      if (error) {
+                                          // TODO show error
+                                      } else {
+                                          HIAppDelegate *appDelegate = [[NSApplication sharedApplication] delegate];
+                                          HISendBitcoinsWindowController *window = [appDelegate sendBitcoinsWindow];
+                                          [window showPaymentRequest:sessionId details:data];
+                                          [window showWindow:self];
+                                      }
+                                  }];
+        return YES;
+    } else {
+        // TODO handle error
+        return NO;
+    }
 }
 
 - (BOOL)applyURLString:(NSString *)bitcoinURLString toSendWindow:(HISendBitcoinsWindowController *)window {
