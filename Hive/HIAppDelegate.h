@@ -10,6 +10,7 @@
 #import <INAppStoreWindow/INAppStoreWindow.h>
 
 @class HIContact;
+@class HINetworkConnectionMonitor;
 @class HISendBitcoinsWindowController;
 
 @interface HIAppDelegate : NSObject <NSApplicationDelegate>
@@ -22,5 +23,6 @@
 
 @property (nonatomic, assign, getter=isFullMenuEnabled) BOOL fullMenuEnabled;
 @property (nonatomic, assign, getter=isApplicationLocked) BOOL applicationLocked;
+@property (nonatomic, readonly) HINetworkConnectionMonitor *networkMonitor;
 
 @end

@@ -13,4 +13,6 @@ extern NSString * const HINetworkConnectionMonitorDisconnected;
 
 @interface HINetworkConnectionMonitor : NSObject
 
+@property (nonatomic, readonly) BOOL connected;
+
 @end

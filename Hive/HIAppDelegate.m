@@ -57,15 +57,15 @@ static int ddLogLevel = LOG_LEVEL_VERBOSE;
 
 @end
 
-@interface HIAppDelegate ()<BITHockeyManagerDelegate> {
+@interface HIAppDelegate () <BITHockeyManagerDelegate> {
     HIMainWindowController *_mainWindowController;
     HIPreferencesWindowController *_preferencesWindowController;
-    HINetworkConnectionMonitor *_networkMonitor;
     NSMutableArray *_popupWindows;
     dispatch_queue_t _externalEventQueue;
 }
 
 @property (nonatomic, strong) HIWizardWindowController *wizard;
+@property (nonatomic, strong) HINetworkConnectionMonitor *networkMonitor;
 
 @end
 
@@ -298,7 +298,7 @@ static int ddLogLevel = LOG_LEVEL_VERBOSE;
 }
 
 - (void)startNetworkMonitor {
-    _networkMonitor = [[HINetworkConnectionMonitor alloc] init];
+    self.networkMonitor = [[HINetworkConnectionMonitor alloc] init];
 }
 
 - (void)setAsDefaultHandler {

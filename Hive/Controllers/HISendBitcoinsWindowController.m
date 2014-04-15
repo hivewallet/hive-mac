@@ -19,6 +19,7 @@
 #import "HIExchangeRateService.h"
 #import "HIFeeDetailsViewController.h"
 #import "HILinkTextField.h"
+#import "HINetworkConnectionMonitor.h"
 #import "HIPasswordInputViewController.h"
 #import "HIPerson.h"
 #import "HISendBitcoinsWindowController.h"
@@ -442,6 +443,9 @@ NSString * const HISendBitcoinsWindowSuccessKey = @"success";
 
     NSString *target = _hashAddress ?: self.nameLabel.stringValue;
 
+    if (![[[NSApp delegate] networkMonitor] connected]) {
+        [self showNoConnectionAlert];
+    }
     if (satoshiWithFee > [[BCClient sharedClient] estimatedBalance]) {
         [self showInsufficientFundsAlert];
     }
@@ -546,7 +550,6 @@ NSString * const HISendBitcoinsWindowSuccessKey = @"success";
                                                @"Sending dust alert message")];
 }
 
-
 - (void)showInsufficientFundsAlert {
     [self showAlertWithTitle:NSLocalizedString(@"Amount exceeds balance.",
                                                @"Title of an alert when trying to send more than you have")
@@ -575,6 +578,14 @@ NSString * const HISendBitcoinsWindowSuccessKey = @"success";
     [alert setAccessoryView:link];
 
     [alert beginSheetModalForWindow:self.window modalDelegate:nil didEndSelector:nil contextInfo:NULL];
+}
+
+- (void)showNoConnectionAlert {
+    [self showAlertWithTitle:NSLocalizedString(@"Hive is not connected to the Bitcoin network.",
+                                               @"No network connection alert title")
+
+                     message:NSLocalizedString(@"You need to be connected to the network to send any transactions.",
+                                               @"No network connection alert message")];
 }
 
 - (void)showNoAddressAlert {
