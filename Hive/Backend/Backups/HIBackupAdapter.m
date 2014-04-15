@@ -129,6 +129,10 @@ NSString *HIBackupStatusTextFailure;
     return [[NSUserDefaults standardUserDefaults] dictionaryForKey:BackupSettingsKey];
 }
 
++ (void)resetBackupSettings {
+    [[NSUserDefaults standardUserDefaults] removeObjectForKey:BackupSettingsKey];
+}
+
 /* Last known backup status */
 - (void)setStatus:(HIBackupAdapterStatus)status {
     if (status != _status) {

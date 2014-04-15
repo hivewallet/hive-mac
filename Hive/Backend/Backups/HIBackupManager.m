@@ -65,6 +65,10 @@
     [[[NSWorkspace sharedWorkspace] notificationCenter] removeObserver:self];
 }
 
+- (void)resetSettings {
+    [HIBackupAdapter resetBackupSettings];
+}
+
 - (void)initializeAdapters {
     if (!self.initialized) {
         NSDictionary *settings = [HIBackupAdapter backupSettings];
