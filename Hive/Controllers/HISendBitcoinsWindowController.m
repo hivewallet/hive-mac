@@ -443,7 +443,7 @@ NSString * const HISendBitcoinsWindowSuccessKey = @"success";
 
     NSString *target = _hashAddress ?: self.nameLabel.stringValue;
 
-    if (![[[NSApp delegate] networkMonitor] connected]) {
+    if (![[HIBitcoinManager defaultManager] isConnected]) {
         [self showNoConnectionAlert];
     }
     if (satoshiWithFee > [[BCClient sharedClient] estimatedBalance]) {
