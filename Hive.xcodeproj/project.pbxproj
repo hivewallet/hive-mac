@@ -2338,8 +2338,8 @@
 				1AA1022DA4CD99B7CB61C335 /* HINotificationService.m */,
 				1AA10BFBA89C0A555ACF047A /* HISendFeedbackService.h */,
 				1AA1087CF3AB1F831B230294 /* HISendFeedbackService.m */,
-				1AA1085915844864667B118C /* HIShortcutService.m */,
 				1AA10D9CBDE4AF80B9B560A0 /* HIShortcutService.h */,
+				1AA1085915844864667B118C /* HIShortcutService.m */,
 			);
 			path = Backend;
 			sourceTree = "<group>";
