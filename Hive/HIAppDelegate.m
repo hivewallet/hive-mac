@@ -120,13 +120,22 @@ static int ddLogLevel = LOG_LEVEL_VERBOSE;
 }
 
 - (void)configureShortcuts {
-    [HIShortcutService sharedService].sendBlock = ^{
+    HIShortcutService *shortcuts = [HIShortcutService sharedService];
+
+    shortcuts.sendBlock = ^{
         [[NSApplication sharedApplication] activateIgnoringOtherApps:YES];
-        [self openSendBitcoinsWindow:nil];
+
+        if (!self.applicationLocked) {
+            [self openSendBitcoinsWindow:nil];
+        }
     };
-    [HIShortcutService sharedService].cameraBlock = ^{
+
+    shortcuts.cameraBlock = ^{
         [[NSApplication sharedApplication] activateIgnoringOtherApps:YES];
-        [self scanQRCode:nil];
+
+        if (!self.applicationLocked) {
+            [self scanQRCode:nil];
+        }
     };
 }
 
