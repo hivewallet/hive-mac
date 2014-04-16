@@ -1925,11 +1925,11 @@
 		1AA10541E9CC36CCCF16920A /* HIPreferencesWindowController */ = {
 			isa = PBXGroup;
 			children = (
-				1AA10D7BCF51F6AE70202C19 /* HIPreferencesWindowController.m */,
-				1AA10EBD9592DC674CFC808E /* HIPreferencesWindowController.h */,
-				1AA10535D664FC91503D3769 /* HIKeyPreferencesViewController.m */,
 				1AA106E65C78A2B9A35C9624 /* HIKeyPreferencesViewController.h */,
+				1AA10535D664FC91503D3769 /* HIKeyPreferencesViewController.m */,
 				2454876518E7483B005D9F86 /* HIKeyPreferencesViewController.xib */,
+				1AA10EBD9592DC674CFC808E /* HIPreferencesWindowController.h */,
+				1AA10D7BCF51F6AE70202C19 /* HIPreferencesWindowController.m */,
 			);
 			name = HIPreferencesWindowController;
 			sourceTree = "<group>";

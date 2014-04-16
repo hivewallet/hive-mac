@@ -41,7 +41,7 @@
 }
 
 - (NSString *)toolbarItemLabel {
-    return NSLocalizedString(@"Keys", @"Preferences title for keys");
+    return NSLocalizedString(@"Shortcuts", @"Title for shortcut keys preferences panel");
 }
 
 @end

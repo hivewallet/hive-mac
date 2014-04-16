@@ -8,7 +8,7 @@
         [HIKeyPreferencesViewController new],
     ];
     return [self initWithViewControllers:viewControllers
-                                   title:NSLocalizedString(@"Preferences", @"title for preferences window")];
+                                   title:NSLocalizedString(@"Preferences", @"Preferences window title")];
 }
 
 @end
