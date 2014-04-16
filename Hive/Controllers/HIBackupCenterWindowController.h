@@ -7,12 +7,9 @@
 //
 
 #import <Cocoa/Cocoa.h>
-#import <MASPreferences/MASPreferencesViewController.h>
-
 #import "HIKeyObservingWindow.h"
 
-@interface HIBackupCenterWindowController : NSViewController
-    <NSTableViewDataSource, NSTableViewDelegate, NSWindowDelegate, HIKeyObservingWindowDelegate,
-    MASPreferencesViewController>
+@interface HIBackupCenterWindowController : NSWindowController
+    <NSTableViewDataSource, NSTableViewDelegate, NSWindowDelegate, HIKeyObservingWindowDelegate>
 
 @end

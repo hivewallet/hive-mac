@@ -13,8 +13,6 @@
 #import "HIBackupManager.h"
 #import "HIBackupStatusCellView.h"
 
-#import <FontAwesomeIconFactory/NIKFontAwesomeIconFactory+OSX.h>
-
 static const CGFloat TableRowHeight = 60.0;
 static const NSTimeInterval UpdateTimerInterval = 5.0;
 
@@ -31,7 +29,7 @@ static const NSTimeInterval UpdateTimerInterval = 5.0;
 @implementation HIBackupCenterWindowController
 
 - (id)init {
-    self = [self initWithNibName:self.className bundle:nil];
+    self = [self initWithWindowNibName:self.className];
 
     if (self) {
         _adapters = [[HIBackupManager sharedManager] visibleAdapters];
@@ -183,12 +181,12 @@ static const NSTimeInterval UpdateTimerInterval = 5.0;
                 informativeTextWithFormat:NSLocalizedString(@"It's dangerous to upload unencrypted wallets.",
                                                             @"Backup requires password alert details")];
 
-        [alert beginSheetModalForWindow:self.view.window modalDelegate:nil didEndSelector:nil contextInfo:NULL];
+        [alert beginSheetModalForWindow:self.window modalDelegate:nil didEndSelector:nil contextInfo:NULL];
         return;
     }
 
     if (!adapter.enabled && [self adapterShouldBeConfigured:adapter]) {
-        [adapter configureInWindow:self.view.window];
+        [adapter configureInWindow:self.window];
     } else {
         adapter.enabled = !adapter.enabled;
     }
@@ -206,7 +204,7 @@ static const NSTimeInterval UpdateTimerInterval = 5.0;
 }
 
 - (void)windowDidBecomeKey:(NSNotification *)notification {
-    [self keyFlagsChanged:[NSEvent modifierFlags] inWindow:self.view.window];
+    [self keyFlagsChanged:[NSEvent modifierFlags] inWindow:self.window];
 }
 
 - (void)observeValueForKeyPath:(NSString *)keyPath
@@ -250,7 +248,7 @@ static const NSTimeInterval UpdateTimerInterval = 5.0;
 // mavericks fuck yeah
 - (void)windowDidChangeOcclusionState:(NSNotification *)notification {
     #pragma deploymate push "ignored-api-availability"
-    BOOL visible = (self.view.window.occlusionState & NSWindowOcclusionStateVisible);
+    BOOL visible = (self.window.occlusionState & NSWindowOcclusionStateVisible);
     #pragma deploymate pop
 
     if (visible && !_updateTimer) {
@@ -258,22 +256,6 @@ static const NSTimeInterval UpdateTimerInterval = 5.0;
     } else if (!visible && _updateTimer) {
         [self stopTimer];
     }
-}
-
-#pragma mark - MASPreferencesViewController
-
-- (NSString *)identifier {
-    return @"BackupCenter";
-}
-
-- (NSImage *)toolbarItemImage {
-    NIKFontAwesomeIconFactory *factory = [NIKFontAwesomeIconFactory toolbarItemIconFactory];
-    factory.colors = @[[NSColor colorWithCalibratedRed:.2 green:.2 blue:.25 alpha:1.0]];
-    return [factory createImageForIcon:NIKFontAwesomeIconCloudUpload];
-}
-
-- (NSString *)toolbarItemLabel {
-    return NSLocalizedString(@"Backup Center", @"Preferences title for backup center");
 }
 
 @end
