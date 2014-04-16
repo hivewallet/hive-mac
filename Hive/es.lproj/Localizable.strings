@@ -128,6 +128,9 @@
 /* Passphrase prompt for sending */
 "Enter your passphrase to confirm the transaction:" = "Introduce tu contraseña para confirmar la transacción:";
 
+/* Passphrase prompt for message signing */
+"Enter your password to sign the message:" = "Enter your password to sign the message:";
+
 /* Firstname field placeholder */
 "Firstname" = "Nombre";
 
@@ -145,6 +148,9 @@
 
 /* Sync in progress alert title */
 "Hive is currently syncing with the Bitcoin network. Are you sure you want to quit?" = "Hive se está sincronizando en este momento con la red Bitcoin. ¿Estás seguro de que quieres salir?";
+
+/* No network connection alert title */
+"Hive is not connected to the Bitcoin network." = "Hive is not connected to the Bitcoin network.";
 
 /* Chain file unreadable error explanation */
 "Hive will now delete the file and synchronize with the Bitcoin network again. Please leave Hive open for the next several minutes, and try not to send any transactions right now." = "Hive eliminará ahora el fichero y sincronizará con la red Bitcoin de nuevo. Por favor deje Hive abierto durante los próximos minutos y evite enviar ninguna transacción en este momento.";
@@ -215,6 +221,9 @@
 /* Empty address alert message */
 "Please enter a valid Bitcoin address or select one from the dropdown list." = "Por favor introduce una dirección Bitcoin válida o selecciona una de la lista desplegable.";
 
+/* Preferences window title */
+"Preferences" = "Preferences";
+
 /* Profile view title string */
 "Profile" = "Perfil";
 
@@ -241,6 +250,9 @@
 
 /* Sent amount of BTC to a contact/address */
 "Sent &a to &c" = "Enviar &a a &c";
+
+/* Title for shortcut keys preferences panel */
+"Shortcuts" = "Shortcuts";
 
 /* Amount exceeds available balance alert title */
 "Some funds are temporarily unavailable." = "Algunos fondos no están disponibles temporalmente.";
@@ -340,6 +352,9 @@
 
 /* Dropbox no backup folder alert details */
 "You must install Dropbox first (see www.dropbox.com)." = "Debes instalar Dropbox primero (mira www.dropbox.com).";
+
+/* No network connection alert message */
+"You need to be connected to the network to send any transactions." = "You need to be connected to the network to send any transactions.";
 
 /* Dropbox invalid folder alert details */
 "You need to choose or create a directory inside your Dropbox folder." = "Necesitas elegir o crear una carpeta dentro de Dropbox.";

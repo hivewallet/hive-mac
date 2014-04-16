@@ -128,6 +128,9 @@
 /* Passphrase prompt for sending */
 "Enter your passphrase to confirm the transaction:" = "Introduceţi fraza de acces pentru a confirma tranzacţia:";
 
+/* Passphrase prompt for message signing */
+"Enter your password to sign the message:" = "Enter your password to sign the message:";
+
 /* Firstname field placeholder */
 "Firstname" = "Prenume";
 
@@ -145,6 +148,9 @@
 
 /* Sync in progress alert title */
 "Hive is currently syncing with the Bitcoin network. Are you sure you want to quit?" = "Hive momentan se sincronizează cu reţeaua Bitcoin. Sigur doriţi să anulaţi?";
+
+/* No network connection alert title */
+"Hive is not connected to the Bitcoin network." = "Hive is not connected to the Bitcoin network.";
 
 /* Chain file unreadable error explanation */
 "Hive will now delete the file and synchronize with the Bitcoin network again. Please leave Hive open for the next several minutes, and try not to send any transactions right now." = "Hive va şterge fişierul şi se va sincroniza cu reţeaua Bitcoin din nou. Va rugăm lăsaţi Hive deschis pentru următoarele câteva minute şi încercaţi să nu efectuaţi tranzacţii momentan.";
@@ -215,6 +221,9 @@
 /* Empty address alert message */
 "Please enter a valid Bitcoin address or select one from the dropdown list." = "Vă rugăm introduceți o adresă Bitcoin validă sau alegeți una din listă.";
 
+/* Preferences window title */
+"Preferences" = "Preferences";
+
 /* Profile view title string */
 "Profile" = "Profil";
 
@@ -241,6 +250,9 @@
 
 /* Sent amount of BTC to a contact/address */
 "Sent &a to &c" = "Trimis &a la &c";
+
+/* Title for shortcut keys preferences panel */
+"Shortcuts" = "Shortcuts";
 
 /* Amount exceeds available balance alert title */
 "Some funds are temporarily unavailable." = "Unele fonduri pot fi temporar inaccesibile.";
@@ -340,6 +352,9 @@
 
 /* Dropbox no backup folder alert details */
 "You must install Dropbox first (see www.dropbox.com)." = "Dropbox trebuie instalat mai întâi(detalii pe www.dropbox.com).";
+
+/* No network connection alert message */
+"You need to be connected to the network to send any transactions." = "You need to be connected to the network to send any transactions.";
 
 /* Dropbox invalid folder alert details */
 "You need to choose or create a directory inside your Dropbox folder." = "Trebuie să selectaţi sau să creaţi un director în cadrul directorului dumneavoastră Dropbox.";

@@ -128,6 +128,9 @@
 /* Passphrase prompt for sending */
 "Enter your passphrase to confirm the transaction:" = "Syötä salasanasi vahvistaaksesi tapahtuman:";
 
+/* Passphrase prompt for message signing */
+"Enter your password to sign the message:" = "Enter your password to sign the message:";
+
 /* Firstname field placeholder */
 "Firstname" = "Etunimi";
 
@@ -145,6 +148,9 @@
 
 /* Sync in progress alert title */
 "Hive is currently syncing with the Bitcoin network. Are you sure you want to quit?" = "Hive is currently syncing with the Bitcoin network. Are you sure you want to quit?";
+
+/* No network connection alert title */
+"Hive is not connected to the Bitcoin network." = "Hive is not connected to the Bitcoin network.";
 
 /* Chain file unreadable error explanation */
 "Hive will now delete the file and synchronize with the Bitcoin network again. Please leave Hive open for the next several minutes, and try not to send any transactions right now." = "Hive will now delete the file and synchronize with the Bitcoin network again. Please leave Hive open for the next several minutes, and try not to send any transactions right now.";
@@ -215,6 +221,9 @@
 /* Empty address alert message */
 "Please enter a valid Bitcoin address or select one from the dropdown list." = "Ilmoita voimassa oleva Bitcoin-osoite tai valitse pudotusvalikosta.";
 
+/* Preferences window title */
+"Preferences" = "Preferences";
+
 /* Profile view title string */
 "Profile" = "Profiili";
 
@@ -241,6 +250,9 @@
 
 /* Sent amount of BTC to a contact/address */
 "Sent &a to &c" = "Lähetä &a käyttäjälle &c";
+
+/* Title for shortcut keys preferences panel */
+"Shortcuts" = "Shortcuts";
 
 /* Amount exceeds available balance alert title */
 "Some funds are temporarily unavailable." = "Osa varoista on väliakaisesti saavuttamattomissa.";
@@ -340,6 +352,9 @@
 
 /* Dropbox no backup folder alert details */
 "You must install Dropbox first (see www.dropbox.com)." = "Sinun täytyy ensin asentaa Dropbox(see www.dropbox.com).";
+
+/* No network connection alert message */
+"You need to be connected to the network to send any transactions." = "You need to be connected to the network to send any transactions.";
 
 /* Dropbox invalid folder alert details */
 "You need to choose or create a directory inside your Dropbox folder." = "Sinun pitää valita tai luoda kansio Dropbox-kansioon.";
