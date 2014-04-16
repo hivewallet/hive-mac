@@ -1,6 +1,6 @@
 
 /* Body for feedback emails */
-"(Please write in English if possible.)" = "(Please write in English if possible.)";
+"(Please write in English if possible.)" = "(Lütfen İngilizce yazınız)";
 
 /* Address field placeholder */
 "Address" = "Adres";
@@ -12,7 +12,7 @@
 "Anonymous" = "Adsız kullanıcı";
 
 /* Message when trying to start an app that requires a newer API level. */
-"App requires a newer version of Hive." = "App requires a newer version of Hive.";
+"App requires a newer version of Hive." = "Uygulama için daha güncel bir Hive versiyonu gerekiyor.";
 
 /* App load error title */
 "Application can't be loaded" = "Uygulama yüklenemiyor";
@@ -24,55 +24,55 @@
 "Are you sure you want to leave this page?" = "Bu sayfayı terketmek istediğinizden eminmisiniz?";
 
 /* Warning when trying to a large BTC amount (btc, fiat amount and address) */
-"Are you sure you want to send %@ (%@) to %@?" = "Are you sure you want to send %1$@ (%2$@) to %3$@?";
+"Are you sure you want to send %@ (%@) to %@?" = "%3$@ 'a %1$@ (%2$@) göndermek istediğinize emin misiniz?";
 
 /* Wizard backup page title */
-"Backup" = "Backup";
+"Backup" = "Yedekle";
 
 /* Backup status: backup can't or won't be completed */
-"Backup error" = "Backup error";
+"Backup error" = "Yedekleme hatası";
 
 /* No comment provided by engineer. */
-"Backup hasn't been done yet" = "Backup hasn't been done yet";
+"Backup hasn't been done yet" = "Yedekleme henüz yapılmadı";
 
 /* Backup error message */
-"Backup is not configured" = "Backup is not configured";
+"Backup is not configured" = "Yedekleme konfigüre edilmedi";
 
 /* Backup status: backup done but not updated recently */
-"Backup problem" = "Backup problem";
+"Backup problem" = "Yedekleme sorunu";
 
 /* initialization error */
-"Bitcoin network data file could not be opened - another instance of Hive might still be running." = "Bitcoin network data file could not be opened - another instance of Hive might still be running.";
+"Bitcoin network data file could not be opened - another instance of Hive might still be running." = "Bitcoin ağ veri dosyası açılamadı - Başka bir Hive uygulaması açık kalmış olabilir.";
 
 /* Chain file unreadable error title */
-"Bitcoin network data file could not be opened." = "Bitcoin network data file could not be opened.";
+"Bitcoin network data file could not be opened." = "Bitcoin ağ veri dosyası açılamadı.";
 
 /* Backup error message */
-"Can't create a directory to store the wallet backup" = "Can't create a directory to store the wallet backup";
+"Can't create a directory to store the wallet backup" = "Cüzdan yedeğini yüklemek üzere bir dizin yaratılamıyor";
 
 /* Cancel button title */
 "Cancel" = "İptal Et";
 
 /* Dead transaction label */
-"CANCELLED" = "CANCELLED";
+"CANCELLED" = "İPTAL EDİLDİ";
 
 /* Dropbox folder save panel confirmation button */
-"Choose" = "Choose";
+"Choose" = "Seç";
 
 /* No comment provided by engineer. */
-"Choose a directory inside Dropbox folder where the backup should be saved:" = "Choose a directory inside Dropbox folder where the backup should be saved:";
+"Choose a directory inside Dropbox folder where the backup should be saved:" = "Dropbox klasörü içinde yedeğin saklanacağı bir dizin seçin:";
 
 /* No comment provided by engineer. */
 "click to copy" = "kopyalamak için tıkla";
 
 /* Confirm button next to passphrase */
-"Confirm" = "Confirm";
+"Confirm" = "Doğrula";
 
 /* Contact name empty alert title */
 "Contact can't be saved." = "Bağlantı kaydedilemiyor.";
 
 /* Entry in application icon context menu */
-"Contact the author" = "Contact the author";
+"Contact the author" = "Yazara ulaş";
 
 /* Contacts view title */
 "Contacts" = "Bağlantılar";
@@ -81,34 +81,34 @@
 "copied!" = "kopyalandı!";
 
 /* initialization error */
-"Could not read wallet file. It might be damaged." = "Could not read wallet file. It might be damaged.";
+"Could not read wallet file. It might be damaged." = "Cüzdan dosyası okunamadı. Zarar görmüş olabilir.";
 
 /* Disable backup button title */
-"Disable" = "Disable";
+"Disable" = "Devre dışı bırak";
 
 /* Backup status: adapter disabled */
-"Disabled" = "Disabled";
+"Disabled" = "Etkin değil";
 
 /* Confirm leaving a form without saving data */
-"Discard Changes" = "Discard Changes";
+"Discard Changes" = "Değişikliklerden Vazgeç";
 
 /* Remove contact alert dialog title */
 "Do you really want to remove %@ from your contact list?" = "Bağlantı listenizden %@ bağlantısını kaldırmak istiyor musunuz?";
 
 /* Install app popup title */
-"Do you want to add \"%@\" to Hive?" = "Do you want to add \"%@\" to Hive?";
+"Do you want to add \"%@\" to Hive?" = "\"%@\" 'ı Hive'a eklemek istiyor musunuz?";
 
 /* Uninstall app popup title */
-"Do you want to remove \"%@\" from the application list?" = "Do you want to remove \"%@\" from the application list?";
+"Do you want to remove \"%@\" from the application list?" = "\"%@\" uygulamasını uygulama listesinden kaldırmak istiyor musunuz?";
 
 /* Backup error message */
-"Dropbox folder not found" = "Dropbox folder not found";
+"Dropbox folder not found" = "Dropbox klasörü bulunamadı";
 
 /* Dropbox no backup folder alert title */
-"Dropbox folder not found." = "Dropbox folder not found.";
+"Dropbox folder not found." = "Dropbox klasörü bulunamadı.";
 
 /* Backup error message */
-"Dropbox isn't running" = "Dropbox isn't running";
+"Dropbox isn't running" = "Dropbox çalışmıyor";
 
 /* Page title when editing contact's info */
 "Edit contact" = "Bağlantıyı düzenle";
@@ -120,13 +120,13 @@
 "email" = "eposta";
 
 /* Enable backup button title (no configuration required) */
-"Enable" = "Enable";
+"Enable" = "Etkinleştir";
 
 /* Enable backup button title (requires configuration) */
-"Enable..." = "Enable...";
+"Enable..." = "Etkinleştir...";
 
 /* Passphrase prompt for sending */
-"Enter your passphrase to confirm the transaction:" = "Enter your passphrase to confirm the transaction:";
+"Enter your passphrase to confirm the transaction:" = "İşlemi onaylamak için parolanızı girin:";
 
 /* Passphrase prompt for message signing */
 "Enter your password to sign the message:" = "Enter your password to sign the message:";
@@ -135,46 +135,46 @@
 "Firstname" = "Adı";
 
 /* Hiveapp file not readable error title */
-"Hive application file \"%@\" could not be opened." = "Hive application file \"%@\" could not be opened.";
+"Hive application file \"%@\" could not be opened." = "\"%@\" Hive uygulaması açılamadı.";
 
 /* Initialization error title */
-"Hive cannot be started." = "Hive cannot be started.";
+"Hive cannot be started." = "Hive başlatılamıyor.";
 
 /* Database error alert title */
-"Hive database file cannot be opened." = "Hive database file cannot be opened.";
+"Hive database file cannot be opened." = "Hive veritabanı dosyası açılamıyor.";
 
 /* Backup error message */
-"Hive directory is excluded from Time Machine backup" = "Hive directory is excluded from Time Machine backup";
+"Hive directory is excluded from Time Machine backup" = "Hive dizini Time Machine yedeklemesinden çıkarılmış";
 
 /* Sync in progress alert title */
-"Hive is currently syncing with the Bitcoin network. Are you sure you want to quit?" = "Hive is currently syncing with the Bitcoin network. Are you sure you want to quit?";
+"Hive is currently syncing with the Bitcoin network. Are you sure you want to quit?" = "Hive su an Bitcoin ağı ile senkronize oluyor. Çıkmak istediğinizden emin misiniz?";
 
 /* No network connection alert title */
 "Hive is not connected to the Bitcoin network." = "Hive is not connected to the Bitcoin network.";
 
 /* Chain file unreadable error explanation */
-"Hive will now delete the file and synchronize with the Bitcoin network again. Please leave Hive open for the next several minutes, and try not to send any transactions right now." = "Hive will now delete the file and synchronize with the Bitcoin network again. Please leave Hive open for the next several minutes, and try not to send any transactions right now.";
+"Hive will now delete the file and synchronize with the Bitcoin network again. Please leave Hive open for the next several minutes, and try not to send any transactions right now." = "Hive Bitcoin ağından indirilmiş dosyayı silecek ve tekrar senkronize işlemine başlayacak. Lütfen birkaç dakika Hive açık kalsın ve herhangi bir işlem yapmayın.";
 
 /* Share sent transaction text */
-"I've just received some Bitcoin using Hive" = "I've just received some Bitcoin using Hive";
+"I've just received some Bitcoin using Hive" = "Az önce Hive üzerinden bir miktar Bitcoin aldım";
 
 /* Share sent transaction text */
-"I've just sent some Bitcoin using Hive" = "I've just sent some Bitcoin using Hive";
+"I've just sent some Bitcoin using Hive" = "Az önce Hive kullanarak bir miktar Bitcoin gönderdim";
 
 /* Install app button title */
-"Install" = "Install";
+"Install" = "Kur";
 
 /* Backup requires password alert details */
-"It's dangerous to upload unencrypted wallets." = "It's dangerous to upload unencrypted wallets.";
+"It's dangerous to upload unencrypted wallets." = "Şifrelenmemiş cüzdanları karşıya yüklemek tehlikelidir.";
 
 /* Don't leave a form without saving data */
-"Keep Editing" = "Keep Editing";
+"Keep Editing" = "Düzenlemeye Devam Et";
 
 /* Address caption field placeholder */
 "Label" = "Etiket";
 
 /* On what date was the last backup done */
-"Last backup on %@" = "Last backup on %@";
+"Last backup on %@" = "En son yedekleme %@ tarihinde";
 
 /* Lastname field placeholder */
 "Lastname" = "Soyadı";
@@ -192,10 +192,10 @@
 "No address entered." = "Adres girilmedi.";
 
 /* Backup is outdated, last backup was on that date */
-"No backup since %@" = "No backup since %@";
+"No backup since %@" = "%@ tarihinden beri yedekleme yapılmamış";
 
 /* No backups enabled notification title */
-"No backups configured" = "No backups configured";
+"No backups configured" = "Hiç yedekleme ayarlanmamış.";
 
 /* Transaction failed alert message */
 "No Bitcoin have been taken from your wallet." = "Cüzdanınızdan hiç bir Bitcoin alınmadı.";
@@ -207,16 +207,16 @@
 "or choose from the list" = "veya listeden seçin";
 
 /* Wizard password page title */
-"Password" = "Password";
+"Password" = "Şifre";
 
 /* Pending transaction label */
-"PENDING" = "PENDING";
+"PENDING" = "BEKLEMEDE";
 
 /* Invalid address alert message */
 "Please check if you have entered the address correctly." = "Lütfen adresi doğru girdiğinizi kontrol edin.";
 
 /* Warning details when trying to send to your own address */
-"Please enter a different address." = "Please enter a different address.";
+"Please enter a different address." = "Lütfen farklı bir adres giriniz";
 
 /* Empty address alert message */
 "Please enter a valid Bitcoin address or select one from the dropdown list." = "Lütfen geçerli bir Bitcoin adresi girin ya da açılır listeden bir tane seçin.";
@@ -231,148 +231,148 @@
 "Quit anyway" = "Gene de kapat";
 
 /* Received amount of BTC from unknown source */
-"Received &a" = "Received &a";
+"Received &a" = "&a kadar alındı";
 
 /* Received amount of BTC from contact */
-"Received &a from &c" = "Received &a from &c";
+"Received &a from &c" = "&c 'dan &a miktar alındı";
 
 /* Install app button title when app exists */
-"Reinstall" = "Reinstall";
+"Reinstall" = "Tekrar kur";
 
 /* No comment provided by engineer. */
-"Remove" = "Remove";
+"Remove" = "Kaldır";
 
 /* Dropbox invalid folder alert title */
-"Selected directory is outside Dropbox folder." = "Selected directory is outside Dropbox folder.";
+"Selected directory is outside Dropbox folder." = "Seçilen dizin Dropbox klasörü dışında.";
 
 /* Send button title */
-"Send" = "Send";
+"Send" = "Gönder";
 
 /* Sent amount of BTC to a contact/address */
-"Sent &a to &c" = "Sent &a to &c";
+"Sent &a to &c" = "&c 'ye &a kadar gönder";
 
 /* Title for shortcut keys preferences panel */
 "Shortcuts" = "Shortcuts";
 
 /* Amount exceeds available balance alert title */
-"Some funds are temporarily unavailable." = "Some funds are temporarily unavailable.";
+"Some funds are temporarily unavailable." = "Bazı kaynaklar geçici olarak kullanılamaz durumda.";
 
 /* Wizard completed page title */
-"Start!" = "Start!";
+"Start!" = "Başla!";
 
 /* App load error description */
-"The application data file has been removed or corrupted." = "The application data file has been removed or corrupted.";
+"The application data file has been removed or corrupted." = "Uygulama dosyaları silinmiş veya bozulmuş.";
 
 /* Error message when database is incompatible with this version */
-"The database was saved by a newer version of Hive - please download the latest version from http://hivewallet.com." = "The database was saved by a newer version of Hive - please download the latest version from http://hivewallet.com.";
+"The database was saved by a newer version of Hive - please download the latest version from http://hivewallet.com." = "Veritabanı daha güncel bir Hive versiyonu ile kaydedilmiş - lütfen en güncel versiyonu indiriniz: http://hivewallet.com.";
 
 /* Install app popup warning message when app exists */
-"The existing app file will be replaced by the new version. This will not affect any app settings or saved data." = "The existing app file will be replaced by the new version. This will not affect any app settings or saved data.";
+"The existing app file will be replaced by the new version. This will not affect any app settings or saved data." = "Varolan uygulama dosyası daha yeni bir versiyon ile değiştirilecek. Bu işlem kayıtlı veri ve ayarları etkilemez.";
 
 /* Hiveapp file not readable error details */
-"The file is damaged or does not contain a Hive application." = "The file is damaged or does not contain a Hive application.";
+"The file is damaged or does not contain a Hive application." = "Dosya bozulmuş veya bir Hive uygulaması içermiyor.";
 
 /* Sending dust alert message */
-"This amount is too low to be sent through the network." = "This amount is too low to be sent through the network.";
+"This amount is too low to be sent through the network." = "Bu miktar göndermek için çok düşük.";
 
 /* Alert details when transaction was cancelled */
-"This can happen because of bugs in the wallet code or because the transaction was rejected by the network." = "This can happen because of bugs in the wallet code or because the transaction was rejected by the network.";
+"This can happen because of bugs in the wallet code or because the transaction was rejected by the network." = "Bu, cüzdan kodundaki hata veya işlemlerin ağ tarafından reddedilmesi durumlarında oluşabilir.";
 
 /* Warning details when trying to send a large BTC amount */
-"This is more than what you usually send." = "This is more than what you usually send.";
+"This is more than what you usually send." = "Bu genelde gönderdiğinizden daha yüksek bir miktar.";
 
 /* Warning title when trying to send to your own address */
-"This is your wallet address." = "This is your wallet address.";
+"This is your wallet address." = "Bu cüzdan adresinizdir.";
 
 /* Invalid address alert title */
 "This isn't a valid Bitcoin address." = "Bu geçerli bir Bitcoin adresi değil.";
 
 /* Backup error message */
-"Time Machine is disabled in System Preferences" = "Time Machine is disabled in System Preferences";
+"Time Machine is disabled in System Preferences" = "Time Machine Sistem Ayarları'nda iptal edilmiş";
 
 /* No backups enabled notification details */
-"To protect your bitcoins, it's recommended that you enable at least one type of backup." = "To protect your bitcoins, it's recommended that you enable at least one type of backup.";
+"To protect your bitcoins, it's recommended that you enable at least one type of backup." = "Bitcoinlerinizi korumak için en az bir yedekleme tipini aktifleştirmeniz önerilir.";
 
 /* Amount exceeds available balance alert message */
-"To send this transaction, you'll need to wait for your pending transactions to be confirmed first (this shouldn't take more than a few minutes)." = "To send this transaction, you'll need to wait for your pending transactions to be confirmed first (this shouldn't take more than a few minutes).";
+"To send this transaction, you'll need to wait for your pending transactions to be confirmed first (this shouldn't take more than a few minutes)." = "Bu işlemi tamamlamak için, bekleyen işlemlerinizin onaylanması gerekmektedir (bu işlem birkaç dakikadan fazla sürmez)";
 
 /* Message when trying to start an app that requires a newer API level. */
-"To use the app, please update to the latest version of Hive." = "To use the app, please update to the latest version of Hive.";
+"To use the app, please update to the latest version of Hive." = "Uygulamayı kullanmak için Hive'ı son sürüme güncelleyin.";
 
 /* Notification of cancelled transaction */
-"Transaction cancelled" = "Transaction cancelled";
+"Transaction cancelled" = "İşlem iptal edildi.";
 
 /* Notification of confirmed sent transaction */
-"Transaction completed" = "Transaction completed";
+"Transaction completed" = "İşlem tamamlandı";
 
 /* Transaction failed alert title */
 "Transaction could not be completed." = "İşlem tamamlanamadı.";
 
 /* Alert when transaction was cancelled (with transaction date) */
-"Transaction from %@ was cancelled." = "Transaction from %@ was cancelled.";
+"Transaction from %@ was cancelled." = "%@ tarafından gönderilmiş işlem iptal edildi.";
 
 /* Transactions view title */
 "Transactions" = "İşlemler";
 
 /* Uninstall app button title */
-"Uninstall" = "Uninstall";
+"Uninstall" = "Kaldır";
 
 /* Entry in application icon context menu */
-"Uninstall application" = "Uninstall application";
+"Uninstall application" = "Uygulamayı kaldır.";
 
 /* Backup status: backup up to date */
-"Up to date" = "Up to date";
+"Up to date" = "Güncel";
 
 /* Entry in application icon context menu */
-"Visit application's site" = "Visit application's site";
+"Visit application's site" = "Uygulama sitesini ziyaret et.";
 
 /* Backup status: backup scheduled or in progress */
-"Waiting for backup" = "Waiting for backup";
+"Waiting for backup" = "Yedekleme için bekleniyor";
 
 /* Install app popup warning message */
-"We cannot guarantee the safety of all apps - please be careful if you download Hive apps from third party sites." = "We cannot guarantee the safety of all apps - please be careful if you download Hive apps from third party sites.";
+"We cannot guarantee the safety of all apps - please be careful if you download Hive apps from third party sites." = "Bütün uygulamaların güvenli olduklarını garanti edemeyiz - Hive uygulamalarını başka bir siteden indirdiyseniz dikkatli olunuz.";
 
 /* Wizard welcome page title */
-"Welcome" = "Welcome";
+"Welcome" = "Hoşgeldiniz";
 
 /* Button to show info about pending funds */
-"What does this mean?" = "What does this mean?";
+"What does this mean?" = "Bu ne anlama geliyor?";
 
 /* Uninstall app popup message */
-"You can install it again through the App Store app later if you change your mind." = "You can install it again through the App Store app later if you change your mind.";
+"You can install it again through the App Store app later if you change your mind." = "Fikriniz değişirse, uygulamayı App Store üzerinden tekrar yükleyebilirsiniz.";
 
 /* Details of an alert when trying to send more than you have */
 "You cannot send more money than you own." = "Sahip olduğunuz miktardan daha fazla parayı gönderemezsiniz.";
 
 /* Install app popup title when app exists */
-"You have already added \"%@\" to Hive. Would you like to overwrite it?" = "You have already added \"%@\" to Hive. Would you like to overwrite it?";
+"You have already added \"%@\" to Hive. Would you like to overwrite it?" = "Zaten \"%@\" Hive'a eklenmiş. Üstüne yazmak ister misiniz?";
 
 /* Notification of confirmed sent transaction (with BTC amount) */
-"You have sent %@." = "You have sent %@.";
+"You have sent %@." = "%@ gönderdiniz.";
 
 /* Dropbox no backup folder alert details */
-"You must install Dropbox first (see www.dropbox.com)." = "You must install Dropbox first (see www.dropbox.com).";
+"You must install Dropbox first (see www.dropbox.com)." = "Önce Dropbox yazılımını kurmalısınız (www.dropbox.com)";
 
 /* No network connection alert message */
 "You need to be connected to the network to send any transactions." = "You need to be connected to the network to send any transactions.";
 
 /* Dropbox invalid folder alert details */
-"You need to choose or create a directory inside your Dropbox folder." = "You need to choose or create a directory inside your Dropbox folder.";
+"You need to choose or create a directory inside your Dropbox folder." = "Dropbox klasörünüzü içinde bir klasör seçmeli yada yaratmalısınız.";
 
 /* Contact name empty alert message */
 "You need to give the contact a name before you can add it to the list." = "Listeye eklemeden önce bağlantıya bir isim vermeniz gerekmekte.";
 
 /* Backup requires password alert title */
-"You need to set a wallet password first (see Wallet menu)." = "You need to set a wallet password first (see Wallet menu).";
+"You need to set a wallet password first (see Wallet menu)." = "Önce bir cüzdan şifresi belirlemelisiniz (Cüzdan menüsüne bakınız)";
 
 /* Remove contact alert dialog body */
-"You won't be able to undo this operation." = "You won't be able to undo this operation.";
+"You won't be able to undo this operation." = "Bu işlemi geri alamayacaksınız.";
 
 /* Notification of incoming transaction */
-"You've received Bitcoin" = "You've received Bitcoin";
+"You've received Bitcoin" = "Bitcoin geldi.";
 
 /* Cancel editing alert message */
-"Your changes won't be saved." = "Your changes won't be saved.";
+"Your changes won't be saved." = "Yaptığınız değişiklikler kaydedilmeyecek.";
 
 /* Sync in progress alert details */
-"Your pending transactions won't be confirmed until the sync is complete." = "Your pending transactions won't be confirmed until the sync is complete.";
+"Your pending transactions won't be confirmed until the sync is complete." = "Sekronizasyon işlemi tamamlanmadan bekleyen işlemleriniz onaylanmayacak.";

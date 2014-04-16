@@ -1,6 +1,6 @@
 
 /* Class = "NSButtonCell"; title = "Save"; ObjectID = "14"; */
-"14.title" = "Save";
+"14.title" = "Kaydet";
 
 /* Class = "NSTextFieldCell"; title = "Contact information"; ObjectID = "75"; */
 "75.title" = "Bağlantı bilgisi";
@@ -21,7 +21,7 @@
 "107.title" = "düzenle";
 
 /* Class = "NSButtonCell"; title = "QR"; ObjectID = "Fp7-Nh-Dhm"; */
-"Fp7-Nh-Dhm.title" = "QR";
+"Fp7-Nh-Dhm.title" = "QR kodu";
 
 /* Class = "NSButtonCell"; title = "Cancel"; ObjectID = "WNT-Ju-zbY"; */
 "WNT-Ju-zbY.title" = "İptal Et";
