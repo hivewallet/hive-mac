@@ -6,7 +6,7 @@
 "Address" = "Adresse";
 
 /* Title of an alert when trying to send more than you have */
-"Amount exceeds balance." = "Gesamtbetrag ist höher als der Kontostand";
+"Amount exceeds balance." = "Gesamtbetrag ist höher als der Kontostand.";
 
 /* Anonymous username for profile page */
 "Anonymous" = "Anonym";

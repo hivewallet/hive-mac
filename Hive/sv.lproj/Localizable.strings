@@ -189,7 +189,7 @@
 "New contact" = "Ny kontakt";
 
 /* Empty address alert title */
-"No address entered." = "Ingen adress ifylld";
+"No address entered." = "Ingen adress ifylld.";
 
 /* Backup is outdated, last backup was on that date */
 "No backup since %@" = "Ingen säkerhetskopia sedan %@";
@@ -360,7 +360,7 @@
 "You need to choose or create a directory inside your Dropbox folder." = "Du måste välja eller skapa en katalog i din Dropbox-plats.";
 
 /* Contact name empty alert message */
-"You need to give the contact a name before you can add it to the list." = "Du måste ge kontakten ett namn innan du kan lägga till i listan";
+"You need to give the contact a name before you can add it to the list." = "Du måste ge kontakten ett namn innan du kan lägga till i listan.";
 
 /* Backup requires password alert title */
 "You need to set a wallet password first (see Wallet menu)." = "Duy måste ange ett plånbokslösenord först (se Plånboksmenyn).";

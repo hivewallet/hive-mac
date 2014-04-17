@@ -219,7 +219,7 @@
 "Please enter a different address." = "Inserisci un indirizzo diverso.";
 
 /* Empty address alert message */
-"Please enter a valid Bitcoin address or select one from the dropdown list." = "Inserisci un indirizzo Bitcoin valido, oppure selezionalo dalla lista";
+"Please enter a valid Bitcoin address or select one from the dropdown list." = "Inserisci un indirizzo Bitcoin valido, oppure selezionalo dalla lista.";
 
 /* Preferences window title */
 "Preferences" = "Preferences";

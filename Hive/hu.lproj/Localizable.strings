@@ -69,7 +69,7 @@
 "Confirm" = "Megerősítés";
 
 /* Contact name empty alert title */
-"Contact can't be saved." = "A kapcsolatot nem lehet menteni";
+"Contact can't be saved." = "A kapcsolatot nem lehet menteni.";
 
 /* Entry in application icon context menu */
 "Contact the author" = "Lépj kapcsolatba a készítővel";
@@ -81,7 +81,7 @@
 "copied!" = "másolva!";
 
 /* initialization error */
-"Could not read wallet file. It might be damaged." = "A tárcát nem lehet olvasni. Lehet hogy megsérült";
+"Could not read wallet file. It might be damaged." = "A tárcát nem lehet olvasni. Lehet hogy megsérült.";
 
 /* Disable backup button title */
 "Disable" = "Kikapcsolás";
@@ -138,7 +138,7 @@
 "Hive application file \"%@\" could not be opened." = "A Hive \"%@\" nevű fájlját nem lehet megnyitni.";
 
 /* Initialization error title */
-"Hive cannot be started." = "A Hiveot nem lehet elindítani";
+"Hive cannot be started." = "A Hiveot nem lehet elindítani.";
 
 /* Database error alert title */
 "Hive database file cannot be opened." = "A Hive adatbázisát nem lehet megnyitni.";
@@ -165,7 +165,7 @@
 "Install" = "Telepít";
 
 /* Backup requires password alert details */
-"It's dangerous to upload unencrypted wallets." = "Titkosítás nélkül veszélyes feltölteni a tárcát";
+"It's dangerous to upload unencrypted wallets." = "Titkosítás nélkül veszélyes feltölteni a tárcát.";
 
 /* Don't leave a form without saving data */
 "Keep Editing" = "Folytassuk a szerkesztést";
@@ -189,7 +189,7 @@
 "New contact" = "Új kapcsolat";
 
 /* Empty address alert title */
-"No address entered." = "Nem írtál be címet";
+"No address entered." = "Nem írtál be címet.";
 
 /* Backup is outdated, last backup was on that date */
 "No backup since %@" = "Nem volt mentés %@ óta";
@@ -198,7 +198,7 @@
 "No backups configured" = "Nincsenek beállított mentések";
 
 /* Transaction failed alert message */
-"No Bitcoin have been taken from your wallet." = "Semmilyen Bitcoin sem hiányzik a tárcádból";
+"No Bitcoin have been taken from your wallet." = "Semmilyen Bitcoin sem hiányzik a tárcádból.";
 
 /* OK button title */
 "OK" = "OK";
@@ -213,10 +213,10 @@
 "PENDING" = "VÁRAKOZÓ";
 
 /* Invalid address alert message */
-"Please check if you have entered the address correctly." = "Nézd meg hogy a cím helyes-e";
+"Please check if you have entered the address correctly." = "Nézd meg hogy a cím helyes-e.";
 
 /* Warning details when trying to send to your own address */
-"Please enter a different address." = "Válassz másik címet-";
+"Please enter a different address." = "Válassz másik címet.";
 
 /* Empty address alert message */
 "Please enter a valid Bitcoin address or select one from the dropdown list." = "Válasz egy valós címet vagy válasz a listáról.";
@@ -357,13 +357,13 @@
 "You need to be connected to the network to send any transactions." = "You need to be connected to the network to send any transactions.";
 
 /* Dropbox invalid folder alert details */
-"You need to choose or create a directory inside your Dropbox folder." = "Ki kell választanod vagy létre kell hoznod egy mappát a Dropboxodon belül?";
+"You need to choose or create a directory inside your Dropbox folder." = "Ki kell választanod vagy létre kell hoznod egy mappát a Dropboxodon belül.";
 
 /* Contact name empty alert message */
 "You need to give the contact a name before you can add it to the list." = "Meg kell adnod egy neved mielőtt hozzáadod a listához.";
 
 /* Backup requires password alert title */
-"You need to set a wallet password first (see Wallet menu)." = "Először adj a Tárcádhoz egy jelszót (lást Tárca menü)";
+"You need to set a wallet password first (see Wallet menu)." = "Először adj a Tárcádhoz egy jelszót (lást Tárca menü).";
 
 /* Remove contact alert dialog body */
 "You won't be able to undo this operation." = "Ezt nem lehet visszavonni.";
@@ -372,7 +372,7 @@
 "You've received Bitcoin" = "Bitcoint kaptál";
 
 /* Cancel editing alert message */
-"Your changes won't be saved." = "A változtatások nem lettek elmentve";
+"Your changes won't be saved." = "A változtatások nem lettek elmentve.";
 
 /* Sync in progress alert details */
 "Your pending transactions won't be confirmed until the sync is complete." = "Az igazolatlan tranzakciók addig nem lesznek igazoltak amíg a szinkronizálás nem lesz kész.";

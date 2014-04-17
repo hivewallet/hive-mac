@@ -285,7 +285,7 @@
 "This is your wallet address." = "Ceci est l'adresse de votre portefeuille.";
 
 /* Invalid address alert title */
-"This isn't a valid Bitcoin address." = "Cette adresse Bitcoin est invalide";
+"This isn't a valid Bitcoin address." = "Cette adresse Bitcoin est invalide.";
 
 /* Backup error message */
 "Time Machine is disabled in System Preferences" = "Time Machine est désactivé dans les Préférences système";
@@ -306,7 +306,7 @@
 "Transaction completed" = "Transaction terminée";
 
 /* Transaction failed alert title */
-"Transaction could not be completed." = "La transaction n'a pas pu être terminée";
+"Transaction could not be completed." = "La transaction n'a pas pu être terminée.";
 
 /* Alert when transaction was cancelled (with transaction date) */
 "Transaction from %@ was cancelled." = "La transaction du %@ a été annulée.";

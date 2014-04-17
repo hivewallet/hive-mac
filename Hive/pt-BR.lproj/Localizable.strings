@@ -45,7 +45,7 @@
 "Bitcoin network data file could not be opened - another instance of Hive might still be running." = "O arquivo de dados da rede Bitcoin não pode ser aberto - outra instância do Hive pode estar em execução.";
 
 /* Chain file unreadable error title */
-"Bitcoin network data file could not be opened." = "O arquivo de dados da rede Bitcoin não pode ser aberto";
+"Bitcoin network data file could not be opened." = "O arquivo de dados da rede Bitcoin não pode ser aberto.";
 
 /* Backup error message */
 "Can't create a directory to store the wallet backup" = "Não foi possível criar um diretório para armazenar o backup da carteira";
@@ -243,7 +243,7 @@
 "Remove" = "Remover";
 
 /* Dropbox invalid folder alert title */
-"Selected directory is outside Dropbox folder." = "O diretório selecionado está fora da pasta do Dropbox";
+"Selected directory is outside Dropbox folder." = "O diretório selecionado está fora da pasta do Dropbox.";
 
 /* Send button title */
 "Send" = "Enviar";

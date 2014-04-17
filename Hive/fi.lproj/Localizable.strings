@@ -6,7 +6,7 @@
 "Address" = "Osoite";
 
 /* Title of an alert when trying to send more than you have */
-"Amount exceeds balance." = "Summa ylittää tilin saldon";
+"Amount exceeds balance." = "Summa ylittää tilin saldon.";
 
 /* Anonymous username for profile page */
 "Anonymous" = "Nimetön";

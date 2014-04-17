@@ -216,7 +216,7 @@
 "Please check if you have entered the address correctly." = "Lütfen adresi doğru girdiğinizi kontrol edin.";
 
 /* Warning details when trying to send to your own address */
-"Please enter a different address." = "Lütfen farklı bir adres giriniz";
+"Please enter a different address." = "Lütfen farklı bir adres giriniz.";
 
 /* Empty address alert message */
 "Please enter a valid Bitcoin address or select one from the dropdown list." = "Lütfen geçerli bir Bitcoin adresi girin ya da açılır listeden bir tane seçin.";
@@ -294,7 +294,7 @@
 "To protect your bitcoins, it's recommended that you enable at least one type of backup." = "Bitcoinlerinizi korumak için en az bir yedekleme tipini aktifleştirmeniz önerilir.";
 
 /* Amount exceeds available balance alert message */
-"To send this transaction, you'll need to wait for your pending transactions to be confirmed first (this shouldn't take more than a few minutes)." = "Bu işlemi tamamlamak için, bekleyen işlemlerinizin onaylanması gerekmektedir (bu işlem birkaç dakikadan fazla sürmez)";
+"To send this transaction, you'll need to wait for your pending transactions to be confirmed first (this shouldn't take more than a few minutes)." = "Bu işlemi tamamlamak için, bekleyen işlemlerinizin onaylanması gerekmektedir (bu işlem birkaç dakikadan fazla sürmez).";
 
 /* Message when trying to start an app that requires a newer API level. */
 "To use the app, please update to the latest version of Hive." = "Uygulamayı kullanmak için Hive'ı son sürüme güncelleyin.";
@@ -318,13 +318,13 @@
 "Uninstall" = "Kaldır";
 
 /* Entry in application icon context menu */
-"Uninstall application" = "Uygulamayı kaldır.";
+"Uninstall application" = "Uygulamayı kaldır";
 
 /* Backup status: backup up to date */
 "Up to date" = "Güncel";
 
 /* Entry in application icon context menu */
-"Visit application's site" = "Uygulama sitesini ziyaret et.";
+"Visit application's site" = "Uygulama sitesini ziyaret et";
 
 /* Backup status: backup scheduled or in progress */
 "Waiting for backup" = "Yedekleme için bekleniyor";
@@ -351,7 +351,7 @@
 "You have sent %@." = "%@ gönderdiniz.";
 
 /* Dropbox no backup folder alert details */
-"You must install Dropbox first (see www.dropbox.com)." = "Önce Dropbox yazılımını kurmalısınız (www.dropbox.com)";
+"You must install Dropbox first (see www.dropbox.com)." = "Önce Dropbox yazılımını kurmalısınız (www.dropbox.com).";
 
 /* No network connection alert message */
 "You need to be connected to the network to send any transactions." = "You need to be connected to the network to send any transactions.";
@@ -363,7 +363,7 @@
 "You need to give the contact a name before you can add it to the list." = "Listeye eklemeden önce bağlantıya bir isim vermeniz gerekmekte.";
 
 /* Backup requires password alert title */
-"You need to set a wallet password first (see Wallet menu)." = "Önce bir cüzdan şifresi belirlemelisiniz (Cüzdan menüsüne bakınız)";
+"You need to set a wallet password first (see Wallet menu)." = "Önce bir cüzdan şifresi belirlemelisiniz (Cüzdan menüsüne bakınız).";
 
 /* Remove contact alert dialog body */
 "You won't be able to undo this operation." = "Bu işlemi geri alamayacaksınız.";

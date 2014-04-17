@@ -291,7 +291,7 @@
 "Time Machine is disabled in System Preferences" = "Ang Time Machine ay na-disable sa System Preferences";
 
 /* No backups enabled notification details */
-"To protect your bitcoins, it's recommended that you enable at least one type of backup." = "Upang maprotektahan ang iyong mga bitcoin, nirerekomenda na i-enable ang kahit na isang uri ng backup";
+"To protect your bitcoins, it's recommended that you enable at least one type of backup." = "Upang maprotektahan ang iyong mga bitcoin, nirerekomenda na i-enable ang kahit na isang uri ng backup.";
 
 /* Amount exceeds available balance alert message */
 "To send this transaction, you'll need to wait for your pending transactions to be confirmed first (this shouldn't take more than a few minutes)." = "Upang maipadala ang transaction na ito, kinakailangan mag-antay para makumpirma ang iyong pending transactions muna ( ito ay hindi tatagal ng ilang minuto).";

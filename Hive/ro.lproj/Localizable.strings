@@ -264,7 +264,7 @@
 "The application data file has been removed or corrupted." = "Fişierul de date al aplicaţiei a fost îndepărtat sau corupt.";
 
 /* Error message when database is incompatible with this version */
-"The database was saved by a newer version of Hive - please download the latest version from http://hivewallet.com." = "Baza de date a fost salvată de o versiune mai nouă de Hive - va rugăm să descărcaţi ultima versiune de pe http://hivewallet.com";
+"The database was saved by a newer version of Hive - please download the latest version from http://hivewallet.com." = "Baza de date a fost salvată de o versiune mai nouă de Hive - va rugăm să descărcaţi ultima versiune de pe http://hivewallet.com.";
 
 /* Install app popup warning message when app exists */
 "The existing app file will be replaced by the new version. This will not affect any app settings or saved data." = "Aplicaţia existentă va fi înlocuită de o versiune nouă. Acest lucru nu va afecta nici o setare a aplicaţiei sau a datelor salvate.";

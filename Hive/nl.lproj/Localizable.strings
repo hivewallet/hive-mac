@@ -6,7 +6,7 @@
 "Address" = "Adres";
 
 /* Title of an alert when trying to send more than you have */
-"Amount exceeds balance." = "Bedrag is hoger dan uw huidige balans";
+"Amount exceeds balance." = "Bedrag is hoger dan uw huidige balans.";
 
 /* Anonymous username for profile page */
 "Anonymous" = "Anoniem";
@@ -105,7 +105,7 @@
 "Dropbox folder not found" = "Dropbox map is niet gevonden";
 
 /* Dropbox no backup folder alert title */
-"Dropbox folder not found." = "Dropbox map is niet gevonden";
+"Dropbox folder not found." = "Dropbox map is niet gevonden.";
 
 /* Backup error message */
 "Dropbox isn't running" = "Dropbox draait niet";
@@ -213,7 +213,7 @@
 "PENDING" = "IN AFWACHTING";
 
 /* Invalid address alert message */
-"Please check if you have entered the address correctly." = "Controleer of u het adres juist hebt ingevoerd";
+"Please check if you have entered the address correctly." = "Controleer of u het adres juist hebt ingevoerd.";
 
 /* Warning details when trying to send to your own address */
 "Please enter a different address." = "Kies alsjeblieft een ander adres.";
