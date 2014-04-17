@@ -1,18 +1,18 @@
 
 /* Class = "NSWindow"; title = "Sign message"; ObjectID = "F0z-JX-Cv5"; */
-"F0z-JX-Cv5.title" = "Sign message";
+"F0z-JX-Cv5.title" = "Podpisz wiadomość";
 
 /* Class = "NSTextFieldCell"; placeholderString = "Enter the message here"; ObjectID = "FFb-qR-Wps"; */
-"FFb-qR-Wps.placeholderString" = "Enter the message here";
+"FFb-qR-Wps.placeholderString" = "Tu wprowadź wiadomość";
 
 /* Class = "NSTextFieldCell"; title = "Generated signature:"; ObjectID = "Kod-IU-V2E"; */
-"Kod-IU-V2E.title" = "Generated signature:";
+"Kod-IU-V2E.title" = "Wygenerowany podpis:";
 
 /* Class = "NSButtonCell"; title = "Sign"; ObjectID = "W8R-Z4-t5H"; */
-"W8R-Z4-t5H.title" = "Sign";
+"W8R-Z4-t5H.title" = "Podpisz";
 
 /* Class = "NSTextFieldCell"; title = "Some services request that you verify ownership of a Bitcoin address by creating a cryptographic signature of a message using your private key. To do that, enter the message you would like to sign into the box below and choose \"Sign\"."; ObjectID = "kUl-US-tKo"; */
-"kUl-US-tKo.title" = "Some services request that you verify ownership of a Bitcoin address by creating a cryptographic signature of a message using your private key. To do that, enter the message you would like to sign into the box below and choose \"Sign\".";
+"kUl-US-tKo.title" = "Niektóre serwisy wymagają potwierdzenia, że dany adres Bitcoin należy do ciebie, przez utworzenie przez portfel kryptograficznego podpisu określonej wiadomości. Aby to zrobić, podaj wiadomość, która ma być podpisana i naciśnij przycisk \"Podpisz\".";
 
 /* Class = "NSButtonCell"; title = "Close"; ObjectID = "u9d-Yr-bsb"; */
-"u9d-Yr-bsb.title" = "Close";
+"u9d-Yr-bsb.title" = "Zamknij";
