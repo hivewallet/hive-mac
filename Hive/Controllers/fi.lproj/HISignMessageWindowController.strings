@@ -3,7 +3,7 @@
 "F0z-JX-Cv5.title" = "Sign message";
 
 /* Class = "NSTextFieldCell"; placeholderString = "Enter the message here"; ObjectID = "FFb-qR-Wps"; */
-"FFb-qR-Wps.placeholderString" = "Enter the message here";
+"FFb-qR-Wps.placeholderString" = "Kirjoita viestisi tähän";
 
 /* Class = "NSTextFieldCell"; title = "Generated signature:"; ObjectID = "Kod-IU-V2E"; */
 "Kod-IU-V2E.title" = "Generated signature:";
@@ -15,4 +15,4 @@
 "kUl-US-tKo.title" = "Some services request that you verify ownership of a Bitcoin address by creating a cryptographic signature of a message using your private key. To do that, enter the message you would like to sign into the box below and choose \"Sign\".";
 
 /* Class = "NSButtonCell"; title = "Close"; ObjectID = "u9d-Yr-bsb"; */
-"u9d-Yr-bsb.title" = "Close";
+"u9d-Yr-bsb.title" = "Sulje";

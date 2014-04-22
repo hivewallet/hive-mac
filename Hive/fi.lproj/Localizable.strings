@@ -117,7 +117,7 @@
 "Edit profile" = "Muokkaa profiilia";
 
 /* Email field placeholder */
-"email" = "email";
+"email" = "sähköposti";
 
 /* Enable backup button title (no configuration required) */
 "Enable" = "Salli";

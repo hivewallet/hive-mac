@@ -1,12 +1,12 @@
 
 /* Class = "NSButtonCell"; title = "Save"; ObjectID = "14"; */
-"14.title" = "Save";
+"14.title" = "Tallenna";
 
 /* Class = "NSTextFieldCell"; title = "Contact information"; ObjectID = "75"; */
 "75.title" = "Yhteystiedon tiedot";
 
 /* Class = "NSTextFieldCell"; title = "Email:"; ObjectID = "78"; */
-"78.title" = "Email:";
+"78.title" = "Sähköposti:";
 
 /* Class = "NSButtonCell"; title = "Add address"; ObjectID = "80"; */
 "80.title" = "Lisää osoite";
