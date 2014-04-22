@@ -129,7 +129,7 @@
 "Enter your passphrase to confirm the transaction:" = "I-enter any iyong passphrase upang maikumpirma ang transaction:";
 
 /* Passphrase prompt for message signing */
-"Enter your password to sign the message:" = "Enter your password to sign the message:";
+"Enter your password to sign the message:" = "I-enter and password upang mag-sign ng mensahe:";
 
 /* Firstname field placeholder */
 "Firstname" = "Pangalan";
@@ -150,7 +150,7 @@
 "Hive is currently syncing with the Bitcoin network. Are you sure you want to quit?" = "Ang hive ay kasalakuyang nagsi-sync sa Bitcoin network. Nais mo talagang mag-quit?";
 
 /* No network connection alert title */
-"Hive is not connected to the Bitcoin network." = "Hive is not connected to the Bitcoin network.";
+"Hive is not connected to the Bitcoin network." = "Ang Hive ay hindi konektado sa Bitcoin network.";
 
 /* Chain file unreadable error explanation */
 "Hive will now delete the file and synchronize with the Bitcoin network again. Please leave Hive open for the next several minutes, and try not to send any transactions right now." = "Ang Hive ay magbubura ng file at magsi-synchronize sa Bitcoin network uli. Maari lamang na iwan ang Hive na nakabukas nang ilang minuto, at mabuting huwag munang magpadala ng kahit anong transaksiyon ngayon.";
@@ -222,7 +222,7 @@
 "Please enter a valid Bitcoin address or select one from the dropdown list." = "Ilagay ang tamang Bitcoin address o mamili mula sa dropdown list.";
 
 /* Preferences window title */
-"Preferences" = "Preferences";
+"Preferences" = "Mga Preference";
 
 /* Profile view title string */
 "Profile" = "Profile";
@@ -252,7 +252,7 @@
 "Sent &a to &c" = "Naipadala ang &a sa &c";
 
 /* Title for shortcut keys preferences panel */
-"Shortcuts" = "Shortcuts";
+"Shortcuts" = "Mga Shortcut";
 
 /* Amount exceeds available balance alert title */
 "Some funds are temporarily unavailable." = "Ang ilang pondo ay pansamantalang hindi magagamit.";
@@ -354,7 +354,7 @@
 "You must install Dropbox first (see www.dropbox.com)." = "Kailangan mo munang i-install ang Dropbox (see www.dropbox.com).";
 
 /* No network connection alert message */
-"You need to be connected to the network to send any transactions." = "You need to be connected to the network to send any transactions.";
+"You need to be connected to the network to send any transactions." = "Kinakailangan mong maging konektado sa network upang makapagpadala ng mga transaksyon.";
 
 /* Dropbox invalid folder alert details */
 "You need to choose or create a directory inside your Dropbox folder." = "Kinakailangan mong mamili o gumawa ng directory sa loob ny iyong Dropbox folder.";
