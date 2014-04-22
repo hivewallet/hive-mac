@@ -129,7 +129,7 @@
 "Enter your passphrase to confirm the transaction:" = "Saisir votre phrase de passe pour confirmer la transaction :";
 
 /* Passphrase prompt for message signing */
-"Enter your password to sign the message:" = "Enter your password to sign the message:";
+"Enter your password to sign the message:" = "Saisissez votre mot de passe pour signer le message :";
 
 /* Firstname field placeholder */
 "Firstname" = "Prénom";
@@ -150,7 +150,7 @@
 "Hive is currently syncing with the Bitcoin network. Are you sure you want to quit?" = "Hive est en cours de synchronisation avec le réseau Bitcoin. Êtes-vous sûr de vouloir quitter ?";
 
 /* No network connection alert title */
-"Hive is not connected to the Bitcoin network." = "Hive is not connected to the Bitcoin network.";
+"Hive is not connected to the Bitcoin network." = "Hive n'est pas connecté au réseau Bitcoin.";
 
 /* Chain file unreadable error explanation */
 "Hive will now delete the file and synchronize with the Bitcoin network again. Please leave Hive open for the next several minutes, and try not to send any transactions right now." = "Hive va maintenant supprimer le fichier et se synchroniser de nouveau avec le réseau Bitcoin. Veuillez laisser Hive ouvert pour les prochaines minutes et essayez de ne pas envoyer de transactions pour l'instant.";
@@ -222,7 +222,7 @@
 "Please enter a valid Bitcoin address or select one from the dropdown list." = "Veuillez saisir une adresse Bitcoin valide ou en choisir une dans la liste déroulante.";
 
 /* Preferences window title */
-"Preferences" = "Preferences";
+"Preferences" = "Préférences";
 
 /* Profile view title string */
 "Profile" = "Profil";
@@ -252,7 +252,7 @@
 "Sent &a to &c" = "&a envoyé à &c";
 
 /* Title for shortcut keys preferences panel */
-"Shortcuts" = "Shortcuts";
+"Shortcuts" = "Raccourcis";
 
 /* Amount exceeds available balance alert title */
 "Some funds are temporarily unavailable." = "Certains fonds sont temporairement non disponibles.";
@@ -354,7 +354,7 @@
 "You must install Dropbox first (see www.dropbox.com)." = "Vous devez d'abord installer Dropbox (voir www.dropbox.com).";
 
 /* No network connection alert message */
-"You need to be connected to the network to send any transactions." = "You need to be connected to the network to send any transactions.";
+"You need to be connected to the network to send any transactions." = "Vous devez être connecté au réseau pour envoyer des transactions.";
 
 /* Dropbox invalid folder alert details */
 "You need to choose or create a directory inside your Dropbox folder." = "Vous devez choisir ou créer un répertoire dans votre dossier Dropbox.";
