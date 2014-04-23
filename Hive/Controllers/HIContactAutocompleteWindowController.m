@@ -80,8 +80,12 @@ static const CGFloat MaxAutocompleteHeight = 300.0;
         [params addObjectsFromArray:@[token, token, token, token]];
     }
 
-    NSString *completePredicate = [predicateParts componentsJoinedByString:@" && "];
-    return [NSPredicate predicateWithFormat:completePredicate argumentArray:params];
+    if (predicateParts.count > 0) {
+        NSString *completePredicate = [predicateParts componentsJoinedByString:@" && "];
+        return [NSPredicate predicateWithFormat:completePredicate argumentArray:params];
+    } else {
+        return nil;
+    }
 }
 
 
