@@ -86,7 +86,6 @@ NSString * const BCClientPasswordChangedNotification = @"BCClientPasswordChanged
 
         HIBitcoinManager *bitcoin = [HIBitcoinManager defaultManager];
         bitcoin.dataURL = [self bitcoinjDirectory];
-        bitcoin.checkpointsFilePath = [[NSBundle mainBundle] pathForResource:@"bitcoinkit" ofType:@"checkpoints"];
         bitcoin.exceptionHandler = ^(NSException *exception) {
             dispatch_async(dispatch_get_main_queue(), ^{
                 [[NSApp delegate] showExceptionWindowWithException:exception];
@@ -97,6 +96,8 @@ NSString * const BCClientPasswordChangedNotification = @"BCClientPasswordChanged
 
         if (DEBUG_OPTION_ENABLED(TESTING_NETWORK)) {
             bitcoin.testingNetwork = YES;
+        } else {
+            bitcoin.checkpointsFilePath = [[NSBundle mainBundle] pathForResource:@"bitcoinkit" ofType:@"checkpoints"];
         }
 
         [bitcoin addObserver:self
