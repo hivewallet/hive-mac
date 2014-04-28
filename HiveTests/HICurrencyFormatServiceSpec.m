@@ -77,6 +77,11 @@ describe(@"Parsing", ^{
         assertThat(amount, equalTo(@1000.6));
     });
 
+    it(@"should parse value without leading zero correctly", ^{
+        NSNumber *amount = [service parseString:@".60" error:NULL];
+        assertThat(amount, equalTo(@.6));
+    });
+
     context(@"parsing with unit", ^{
         it(@"should parse value with unit", ^{
             NSNumber *amount = [service parseString:@"$1,000.6" error:NULL];
