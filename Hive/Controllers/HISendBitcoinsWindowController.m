@@ -379,8 +379,15 @@ NSString * const HISendBitcoinsWindowSuccessKey = @"success";
 
 - (void)updateFee {
     satoshi_t fee = self.currentFee;
-    NSString *feeString = [self.bitcoinFormatService stringForBitcoin:fee withFormat:self.selectedBitcoinFormat];
-    feeString = [@"+" stringByAppendingString:feeString];
+    NSString *feeString;
+
+    if (fee > 0) {
+        feeString = [NSString stringWithFormat:@"+%@",
+                     [self.bitcoinFormatService stringForBitcoin:fee withFormat:self.selectedBitcoinFormat]];
+    } else {
+        // we couldn't calculate the fee
+        feeString = @"+?";
+    }
 
     NSDictionary *attributes = @{
         NSForegroundColorAttributeName: [NSColor colorWithCalibratedWhite:.3 alpha:1.0],
@@ -388,12 +395,12 @@ NSString * const HISendBitcoinsWindowSuccessKey = @"success";
     };
 
     self.feeButton.attributedTitle = [[NSAttributedString alloc] initWithString:feeString attributes:attributes];
-    self.feeButton.hidden = fee == 0;
     self.feeDetailsViewController.fee = self.currentFee;
 }
 
 - (satoshi_t)currentFee {
-    return [[BCClient sharedClient] feeWhenSendingBitcoin:self.amountFieldValue];
+    return [[BCClient sharedClient] feeWhenSendingBitcoin:self.amountFieldValue
+                                              toRecipient:(_hashAddress ?: self.nameLabel.stringValue)];
 }
 
 - (IBAction)showFeePopover:(NSButton *)sender {
@@ -509,6 +516,8 @@ NSString * const HISendBitcoinsWindowSuccessKey = @"success";
             [self.window hiShake];
         } else if (error.code == kHIBitcoinManagerSendingDustError) {
             [self showSendingDustAlert];
+        } else if (error.code == kHIBitcoinManagerInsufficientMoneyError) {
+            [self showInsufficientFundsWithFeeAlert];
         } else {
             [self showTransactionErrorAlert];
         }
@@ -556,6 +565,16 @@ NSString * const HISendBitcoinsWindowSuccessKey = @"success";
 
                      message:NSLocalizedString(@"You cannot send more money than you own.",
                                                @"Details of an alert when trying to send more than you have")];
+}
+
+- (void)showInsufficientFundsWithFeeAlert {
+    [self showAlertWithTitle:NSLocalizedString(@"Amount (including required fee) exceeds balance.",
+                                               @"Title of an alert when trying to send more than you have with fee")
+
+                     message:NSLocalizedString(@"You're trying to send a large transaction and the fee needs to be "
+                                               @"higher than usually. Try to send a bit less, or split the "
+                                               @"transaction into smaller ones.",
+                                               @"Alert details when trying to send more than you have with fee")];
 }
 
 - (void)showBlockedFundsAlert {
@@ -660,18 +679,16 @@ NSString * const HISendBitcoinsWindowSuccessKey = @"success";
 - (void)controlTextDidChange:(NSNotification *)notification {
     if (notification.object == self.amountField) {
         [self updateConvertedAmountFromAmount];
-        [self updateFee];
-        [self updateSendButtonEnabled];
     } else if (notification.object == self.convertedAmountField) {
         [self updateAmountFromConvertedAmount];
-        [self updateFee];
-        [self updateSendButtonEnabled];
     } else {
         [self setQRCodeScanningEnabled:self.nameLabel.stringValue.length == 0];
         [self clearContact];
         [self startAutocompleteForCurrentQuery];
-        [self updateSendButtonEnabled];
     }
+
+    [self updateFee];
+    [self updateSendButtonEnabled];
 }
 
 - (void)controlTextDidEndEditing:(NSNotification *)notification {
@@ -775,6 +792,7 @@ NSString * const HISendBitcoinsWindowSuccessKey = @"success";
 - (void)addressSelectedInAutocomplete:(HIAddress *)address {
     [self selectContact:address.contact address:address];
     [self hideAutocompleteWindow];
+    [self updateFee];
     [self updateSendButtonEnabled];
 }
 
