@@ -63,7 +63,7 @@ describe(@"Formatting", ^{
 
 });
 
-describe(@"Formatting", ^{
+describe(@"Parsing", ^{
 
     __block HICurrencyFormatService *service;
 
