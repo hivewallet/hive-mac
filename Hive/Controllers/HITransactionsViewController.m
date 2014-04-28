@@ -314,6 +314,11 @@ static NSString *const KEY_UNREAD_TRANSACTIONS = @"unreadTransactions";
                      [transaction.senderHash substringFromIndex:(transaction.senderHash.length - 8)]];
         }
 
+        if (!value) {
+            HILogWarn(@"Transaction has no senderHash: %@", transaction);
+            value = @"?";
+        }
+
         NSAttributedString *fragment = [[NSAttributedString alloc] initWithString:value attributes:boldAttributes];
         [summary replaceCharactersInRange:contactRange withAttributedString:fragment];
     }
