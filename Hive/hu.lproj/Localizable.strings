@@ -129,7 +129,7 @@
 "Enter your passphrase to confirm the transaction:" = "Add meg a jelszóda a küldéshez";
 
 /* Passphrase prompt for message signing */
-"Enter your password to sign the message:" = "Enter your password to sign the message:";
+"Enter your password to sign the message:" = "Írd be a jelszót az aláíráshoz:";
 
 /* Firstname field placeholder */
 "Firstname" = "Vezetéknév";
@@ -150,7 +150,7 @@
 "Hive is currently syncing with the Bitcoin network. Are you sure you want to quit?" = "A Hive jelenleg a Bitcoin hálózattal szinkronizál. Biztos hogy kilépsz?";
 
 /* No network connection alert title */
-"Hive is not connected to the Bitcoin network." = "Hive is not connected to the Bitcoin network.";
+"Hive is not connected to the Bitcoin network." = "A Hive nem kapcsolódott a Bitcoin hálózathoz.";
 
 /* Chain file unreadable error explanation */
 "Hive will now delete the file and synchronize with the Bitcoin network again. Please leave Hive open for the next several minutes, and try not to send any transactions right now." = "A Hive most törli a fájlt és újra szikronizál a Bitcoin hálozattal. Ne próbálj meg pénzt küldeni néhány percig.";
@@ -222,7 +222,7 @@
 "Please enter a valid Bitcoin address or select one from the dropdown list." = "Válasz egy valós címet vagy válasz a listáról.";
 
 /* Preferences window title */
-"Preferences" = "Preferences";
+"Preferences" = "Beállítások";
 
 /* Profile view title string */
 "Profile" = "Profil";
@@ -252,7 +252,7 @@
 "Sent &a to &c" = "Elküldve &a &c-nek";
 
 /* Title for shortcut keys preferences panel */
-"Shortcuts" = "Shortcuts";
+"Shortcuts" = "Parancsikonok";
 
 /* Amount exceeds available balance alert title */
 "Some funds are temporarily unavailable." = "Néhány Bitcoin még elérhetetlen.";
@@ -354,7 +354,7 @@
 "You must install Dropbox first (see www.dropbox.com)." = "Először telepítsd fel a DropBoxot (lásd www.dropbox.com).";
 
 /* No network connection alert message */
-"You need to be connected to the network to send any transactions." = "You need to be connected to the network to send any transactions.";
+"You need to be connected to the network to send any transactions." = "Kapcsolódva kel lenned ha tranzakciót akarsz küldeni.";
 
 /* Dropbox invalid folder alert details */
 "You need to choose or create a directory inside your Dropbox folder." = "Ki kell választanod vagy létre kell hoznod egy mappát a Dropboxodon belül.";
