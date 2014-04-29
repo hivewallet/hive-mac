@@ -72,7 +72,7 @@ Geben Sie Ihr Passwort zum Entsperren ein:</string>
                 <button translatesAutoresizingMaskIntoConstraints="NO" id="mNZ-Bj-zUU">
                     <rect key="frame" x="45" y="23" width="202" height="18"/>
                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <buttonCell key="cell" type="check" title="Don't show this screen again" bezelStyle="regularSquare" imagePosition="left" inset="2" id="fZF-LI-0oD">
+                    <buttonCell key="cell" type="check" title="Diese Abfrage nicht mehr anzeigen" bezelStyle="regularSquare" imagePosition="left" inset="2" id="fZF-LI-0oD">
                         <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                         <font key="font" metaFont="system"/>
                     </buttonCell>
