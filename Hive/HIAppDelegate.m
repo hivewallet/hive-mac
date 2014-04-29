@@ -624,6 +624,25 @@ void handleException(NSException *exception) {
 }
 
 - (void)showExceptionWindowWithException:(NSException *)exception {
+    HILogWarn(@"Caught exception: %@", exception.reason);
+
+    NSString *javaStackTrace = exception.userInfo[@"stackTrace"];
+    if (javaStackTrace) {
+        HILogWarn(@"Java stack trace:\n%@", javaStackTrace);
+    }
+
+    if (exception.callStackSymbols) {
+        HILogWarn(@"Cocoa stack trace:\n%@", exception.callStackSymbols);
+    }
+
+    for (NSWindowController *wc in _popupWindows) {
+        if ([wc isKindOfClass:[HIErrorWindowController class]]) {
+            // don't show a whole cascade of error windows
+            HILogDebug(@"Ignoring exception because error window is already open.");
+            return;
+        }
+    }
+
     HIErrorWindowController *window = [[HIErrorWindowController alloc] initWithException:exception];
     [window showWindow:self];
     [_popupWindows addObject:window];
