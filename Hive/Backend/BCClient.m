@@ -114,10 +114,6 @@ NSString * const BCClientPasswordChangedNotification = @"BCClientPasswordChanged
                   forKeyPath:@"syncProgress"
                      options:NSKeyValueObservingOptionInitial | NSKeyValueObservingOptionNew
                      context:NULL];
-        [bitcoin addObserver:self
-                  forKeyPath:@"connections"
-                     options:NSKeyValueObservingOptionInitial | NSKeyValueObservingOptionNew
-                     context:NULL];
     }
 
     return self;
@@ -304,7 +300,6 @@ NSString * const BCClientPasswordChangedNotification = @"BCClientPasswordChanged
     @try {
         HIBitcoinManager *manager = [HIBitcoinManager defaultManager];
 
-        [manager removeObserver:self forKeyPath:@"connections"];
         [manager removeObserver:self forKeyPath:@"availableBalance"];
         [manager removeObserver:self forKeyPath:@"estimatedBalance"];
         [manager removeObserver:self forKeyPath:@"syncProgress"];
