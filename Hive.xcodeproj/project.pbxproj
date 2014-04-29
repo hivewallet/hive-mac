@@ -155,8 +155,6 @@
 		5860D3FF180455B900BD852C /* HIApplicationsManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 5860D3FE180455B900BD852C /* HIApplicationsManager.m */; };
 		586905961843DE5C0053D74F /* HIDebuggingToolsWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 586905941843DE5C0053D74F /* HIDebuggingToolsWindowController.m */; };
 		588427D018F2DF6600DE6CC4 /* bitcoinkit.checkpoints in Resources */ = {isa = PBXBuildFile; fileRef = 588427CF18F2DF6600DE6CC4 /* bitcoinkit.checkpoints */; };
-		5884A00F17F1B63D004A31FA /* Tor.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5884A00C17F1B5FF004A31FA /* Tor.framework */; };
-		5884A01017F1B646004A31FA /* Tor.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 5884A00C17F1B5FF004A31FA /* Tor.framework */; };
 		5884A03E17F57AE9004A31FA /* dsa_pub.pem in Resources */ = {isa = PBXBuildFile; fileRef = 5884A03D17F57AE9004A31FA /* dsa_pub.pem */; };
 		5889538F1888A68100243190 /* HIBackupCenterWindowController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 588953911888A68100243190 /* HIBackupCenterWindowController.xib */; };
 		588953AF188920D000243190 /* HIBackupCenterWindowController.strings in Resources */ = {isa = PBXBuildFile; fileRef = 588953B1188920D000243190 /* HIBackupCenterWindowController.strings */; };
@@ -257,20 +255,6 @@
 			remoteGlobalIDString = D9A591C31767B4A800502635;
 			remoteInfo = Hive;
 		};
-		5884A00B17F1B5FF004A31FA /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 5884A00417F1B5FE004A31FA /* Tor.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = D9CEAE4A1786E5E4005F8DF0;
-			remoteInfo = Tor;
-		};
-		5884A00D17F1B5FF004A31FA /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 5884A00417F1B5FE004A31FA /* Tor.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = D9CEAE621786E5E4005F8DF0;
-			remoteInfo = TorTests;
-		};
 		D901F4F417B272CE0071780D /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D91FE8071793FEFC001B37D8 /* BitcoinKit.xcodeproj */;
@@ -294,7 +278,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				5884A01017F1B646004A31FA /* Tor.framework in CopyFiles */,
 				D901F4F817B272E60071780D /* BitcoinJKit.framework in CopyFiles */,
 				58A149CB18C61BD600591F17 /* HockeySDK.framework in CopyFiles */,
 			);
@@ -1096,7 +1079,6 @@
 		586905FB18450BDC0053D74F /* ja */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = ja; path = ja.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		586905FD18450BDC0053D74F /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Localizable.strings; sourceTree = "<group>"; };
 		588427CF18F2DF6600DE6CC4 /* bitcoinkit.checkpoints */ = {isa = PBXFileReference; lastKnownFileType = file; path = bitcoinkit.checkpoints; sourceTree = "<group>"; };
-		5884A00417F1B5FE004A31FA /* Tor.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Tor.xcodeproj; path = Tor.framework/Tor.xcodeproj; sourceTree = "<group>"; };
 		5884A03D17F57AE9004A31FA /* dsa_pub.pem */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = dsa_pub.pem; sourceTree = "<group>"; };
 		588953901888A68100243190 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/HIBackupCenterWindowController.xib; sourceTree = "<group>"; };
 		588953941888A68B00243190 /* pl */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = pl; path = pl.lproj/HIBackupCenterWindowController.xib; sourceTree = "<group>"; };
@@ -2006,7 +1988,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5884A00F17F1B63D004A31FA /* Tor.framework in Frameworks */,
 				D91FE827179887C5001B37D8 /* libz.dylib in Frameworks */,
 				D901F4F917B273440071780D /* BitcoinJKit.framework in Frameworks */,
 				D9235388177C6779003533DF /* JavaScriptCore.framework in Frameworks */,
@@ -2308,15 +2289,6 @@
 			name = HIDebuggingToolsWindowController;
 			sourceTree = "<group>";
 		};
-		5884A00517F1B5FE004A31FA /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				5884A00C17F1B5FF004A31FA /* Tor.framework */,
-				5884A00E17F1B5FF004A31FA /* TorTests.octest */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
 		588E34D0181FF28C006A6A25 /* HIDebuggingInfoWindowController */ = {
 			isa = PBXGroup;
 			children = (
@@ -2569,7 +2541,6 @@
 				D9235387177C6779003533DF /* JavaScriptCore.framework */,
 				D95929DC17742B70008B4F43 /* WebKit.framework */,
 				D91FE8071793FEFC001B37D8 /* BitcoinKit.xcodeproj */,
-				5884A00417F1B5FE004A31FA /* Tor.xcodeproj */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -2828,10 +2799,6 @@
 					ProductGroup = D91FE8081793FEFC001B37D8 /* Products */;
 					ProjectRef = D91FE8071793FEFC001B37D8 /* BitcoinKit.xcodeproj */;
 				},
-				{
-					ProductGroup = 5884A00517F1B5FE004A31FA /* Products */;
-					ProjectRef = 5884A00417F1B5FE004A31FA /* Tor.xcodeproj */;
-				},
 			);
 			projectRoot = "";
 			targets = (
@@ -2842,20 +2809,6 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
-		5884A00C17F1B5FF004A31FA /* Tor.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = Tor.framework;
-			remoteRef = 5884A00B17F1B5FF004A31FA /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		5884A00E17F1B5FF004A31FA /* TorTests.octest */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.cfbundle;
-			path = TorTests.octest;
-			remoteRef = 5884A00D17F1B5FF004A31FA /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
 		D901F4F517B272CE0071780D /* BitcoinJKit.framework */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.framework;

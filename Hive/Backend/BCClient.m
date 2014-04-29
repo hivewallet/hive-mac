@@ -8,7 +8,7 @@
 
 #import <AFNetworking/AFJSONRequestOperation.h>
 #import <BitcoinJKit/BitcoinJKit.h>
-#import <Tor/Tor.h>
+// #import <Tor/Tor.h>
 #import "BCClient.h"
 #import "HIAppDelegate.h"
 #import "HIApplicationsManager.h"
@@ -67,10 +67,10 @@ NSString * const BCClientPasswordChangedNotification = @"BCClientPasswordChanged
         _transactionUpdateContext.parentContext = mainContext;
 
         NSNotificationCenter *notificationCenter = [NSNotificationCenter defaultCenter];
-        [notificationCenter addObserver:self
+        /*[notificationCenter addObserver:self
                                selector:@selector(torStarted:)
                                    name:kHITorManagerStarted
-                                 object:nil];
+                                 object:nil];*/
         [notificationCenter addObserver:self
                                selector:@selector(bitcoinKitStarted:)
                                    name:kHIBitcoinManagerStartedNotification
@@ -80,9 +80,11 @@ NSString * const BCClientPasswordChangedNotification = @"BCClientPasswordChanged
                                    name:kHIBitcoinManagerTransactionChangedNotification
                                  object:nil];
 
+        /*
         HITorManager *tor = [HITorManager defaultManager];
         tor.dataDirectoryURL = [self torDirectory];
         tor.port = 9999;
+        */
 
         HIBitcoinManager *bitcoin = [HIBitcoinManager defaultManager];
         bitcoin.dataURL = [self bitcoinjDirectory];
@@ -163,9 +165,11 @@ NSString * const BCClientPasswordChangedNotification = @"BCClientPasswordChanged
     }
 }
 
+/*
 - (void)torStarted:(NSNotification *)notification {
     [HITorManager defaultManager].torRouting = YES;
 }
+*/
 
 - (void)bitcoinKitStarted:(NSNotification *)notification {
     dispatch_async(dispatch_get_main_queue(), ^{
