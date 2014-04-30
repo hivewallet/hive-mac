@@ -183,6 +183,7 @@ NSString * const HISendBitcoinsWindowSuccessKey = @"success";
     if ([self isWindowLoaded]) {
         [self.nameLabel setEditable:NO];
         [self.dropdownButton setHidden:YES];
+        [self setQRCodeScanningEnabled:NO];
     }
 }
 
