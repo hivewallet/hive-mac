@@ -107,8 +107,7 @@
 }
 
 - (void)rebuildTransactionList {
-    [[BCClient sharedClient] clearTransactionsList];
-    [[BCClient sharedClient] rebuildTransactionsList];
+    [[BCClient sharedClient] repairTransactionsList];
 }
 
 - (void)rebuildApplicationList {

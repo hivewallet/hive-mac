@@ -64,7 +64,7 @@ extern NSString * const BCClientPasswordChangedNotification;
 - (satoshi_t)feeWhenSendingBitcoin:(uint64)amount toRecipient:(NSString *)recipient;
 
 - (NSDictionary *)transactionDefinitionWithHash:(NSString *)hash;
-- (void)rebuildTransactionsList;
+- (void)repairTransactionsList;
 - (void)clearTransactionsList;
 
 - (void)addTransactionObserver:(id<BCTransactionObserver>)observer;
