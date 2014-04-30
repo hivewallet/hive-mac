@@ -205,12 +205,26 @@ NSString * const BCClientPasswordChangedNotification = @"BCClientPasswordChanged
 
 - (void)repairTransactionsList {
     NSArray *transactions = [[HIBitcoinManager defaultManager] allTransactions];
-
     HILogInfo(@"Repairing %ld transactions in the database", transactions.count);
 
+    NSMutableDictionary *knownTransactions = [NSMutableDictionary new];
+    NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:HITransactionEntity];
+    for (HITransaction *transaction in [_transactionUpdateContext executeFetchRequest:request
+                                                                         error:NULL]) {
+        knownTransactions[transaction.id] = transaction;
+    }
+
     [_transactionUpdateContext performBlock:^{
-        for (NSDictionary *transaction in transactions) {
-            [self repairTransaction:transaction];
+        for (NSDictionary *transactionData in transactions) {
+            HITransaction *transaction = [self repairTransaction:transactionData];
+            [knownTransactions removeObjectForKey:transaction.id];
+        }
+
+        if (knownTransactions.count > 0) {
+            HILogError(@"Unknown transactions were found and will be deleted.");
+            for (HITransaction *transaction in knownTransactions.allValues) {
+                [_transactionUpdateContext deleteObject:transaction];
+            }
         }
 
         NSError *error = nil;
@@ -233,7 +247,7 @@ NSString * const BCClientPasswordChangedNotification = @"BCClientPasswordChanged
     }];
 }
 
-- (void)repairTransaction:(NSDictionary *)data {
+- (HITransaction *)repairTransaction:(NSDictionary *)data {
     NSAssert(data != nil, @"Transaction data shouldn't be null");
     NSAssert(data[@"txid"] != nil, @"Transaction id shouldn't be null");
 
@@ -245,6 +259,7 @@ NSString * const BCClientPasswordChangedNotification = @"BCClientPasswordChanged
 
     [self fillTransaction:transaction fromData:data];
     [self updateStatusForTransaction:transaction fromData:data];
+    return transaction;
 }
 
 - (void)transactionUpdated:(NSNotification *)notification {
