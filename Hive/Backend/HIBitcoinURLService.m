@@ -28,7 +28,7 @@
     if (bitcoinURL) {
         if (bitcoinURL.valid) {
             if (bitcoinURL.paymentRequestURL) {
-                return [self handlePaymentRequestURL:bitcoinURL.paymentRequestURL];
+                return [self handlePaymentRequestURL:bitcoinURL.paymentRequestURL fromBitcoinURL:bitcoinURL];
             } else {
                 HISendBitcoinsWindowController *window = [appDelegate sendBitcoinsWindow];
                 [self applyURL:bitcoinURL toSendWindow:window];
@@ -41,11 +41,11 @@
         }
     } else {
         // not a bitcoin URL at all, try loading a payment request
-        return [self handlePaymentRequestURL:bitcoinURL.paymentRequestURL];
+        return [self handlePaymentRequestURL:bitcoinURL.paymentRequestURL fromBitcoinURL:bitcoinURL];
     }
 }
 
-- (BOOL)handlePaymentRequestURL:(NSString *)URLString {
+- (BOOL)handlePaymentRequestURL:(NSString *)URLString fromBitcoinURL:(HIBitcoinURL *)bitcoinURL {
     NSURL *URL = [NSURL URLWithString:URLString];
 
     if (URL) {
@@ -58,6 +58,8 @@
                                           // TODO show error
                                           HILogDebug(@"Error: %@", error);
                                       } else {
+                                          data = [self extendPaymentRequestData:data withBitcoinURLDetails:bitcoinURL];
+
                                           HIAppDelegate *appDelegate = [[NSApplication sharedApplication] delegate];
                                           HISendBitcoinsWindowController *window = [appDelegate sendBitcoinsWindow];
                                           [window showPaymentRequest:sessionId details:data];
@@ -69,6 +71,26 @@
         // TODO handle error
         return NO;
     }
+}
+
+- (NSDictionary *)extendPaymentRequestData:(NSDictionary *)data withBitcoinURLDetails:(HIBitcoinURL *)bitcoinURL {
+    NSMutableDictionary *extended = [NSMutableDictionary dictionaryWithDictionary:data];
+
+    extended[@"bitcoinURLAmount"] = @(bitcoinURL.amount);
+
+    if (bitcoinURL.address) {
+        extended[@"bitcoinURLAddress"] = bitcoinURL.address;
+    }
+
+    if (bitcoinURL.label) {
+        extended[@"bitcoinURLLabel"] = bitcoinURL.label;
+    }
+
+    if (bitcoinURL.message) {
+        extended[@"bitcoinURLMessage"] = bitcoinURL.message;
+    }
+
+    return [NSDictionary dictionaryWithDictionary:extended];
 }
 
 - (BOOL)applyURLString:(NSString *)bitcoinURLString toSendWindow:(HISendBitcoinsWindowController *)window {

@@ -239,6 +239,8 @@ NSString * const HISendBitcoinsWindowSuccessKey = @"success";
     NSNumber *amount = data[@"amount"];
     NSString *paymentURL = data[@"paymentURL"];
     NSString *pkiName = data[@"pkiName"];
+    NSString *label = data[@"bitcoinURLLabel"];
+    NSString *message = data[@"bitcoinURLMessage"];
     NSString *recipientName;
 
     NSURL *URL = [NSURL URLWithString:paymentURL];
@@ -247,6 +249,10 @@ NSString * const HISendBitcoinsWindowSuccessKey = @"success";
         recipientName = pkiName;
     } else if (URL) {
         recipientName = URL.host;
+    } else if (label) {
+        recipientName = label;
+    } else if (message) {
+        recipientName = message;
     } else {
         recipientName = @"?";
     }
