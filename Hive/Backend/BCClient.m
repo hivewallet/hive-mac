@@ -203,14 +203,14 @@ NSString * const BCClientPasswordChangedNotification = @"BCClientPasswordChanged
     }
 }
 
-- (void)rebuildTransactionsList {
+- (void)repairTransactionsList {
     NSArray *transactions = [[HIBitcoinManager defaultManager] allTransactions];
 
-    HILogInfo(@"Adding %ld transactions to database", transactions.count);
+    HILogInfo(@"Repairing %ld transactions in the database", transactions.count);
 
     [_transactionUpdateContext performBlock:^{
         for (NSDictionary *transaction in transactions) {
-            [self parseTransaction:transaction sendNotifications:NO];
+            [self repairTransaction:transaction];
         }
 
         NSError *error = nil;
@@ -233,6 +233,20 @@ NSString * const BCClientPasswordChangedNotification = @"BCClientPasswordChanged
     }];
 }
 
+- (void)repairTransaction:(NSDictionary *)data {
+    NSAssert(data != nil, @"Transaction data shouldn't be null");
+    NSAssert(data[@"txid"] != nil, @"Transaction id shouldn't be null");
+
+    HITransaction *transaction = [self fetchTransactionWithId:data[@"txid"]];
+    if (!transaction) {
+        transaction = [NSEntityDescription insertNewObjectForEntityForName:HITransactionEntity
+                                                    inManagedObjectContext:_transactionUpdateContext];
+    }
+
+    [self fillTransaction:transaction fromData:data];
+    [self updateStatusForTransaction:transaction fromData:data];
+}
+
 - (void)transactionUpdated:(NSNotification *)notification {
     dispatch_async(dispatch_get_main_queue(), ^{
         NSDictionary *transaction = [[HIBitcoinManager defaultManager] transactionForHash:notification.object];
@@ -243,7 +257,7 @@ NSString * const BCClientPasswordChangedNotification = @"BCClientPasswordChanged
         }
 
         [_transactionUpdateContext performBlock:^{
-            [self parseTransaction:transaction sendNotifications:YES];
+            [self parseAndNotifyOfTransaction:transaction];
 
             NSError *error = nil;
             [_transactionUpdateContext save:&error];
@@ -370,13 +384,11 @@ NSString * const BCClientPasswordChangedNotification = @"BCClientPasswordChanged
     return [[HIBitcoinManager defaultManager] transactionForHash:hash];
 }
 
-- (void)parseTransaction:(NSDictionary *)data sendNotifications:(BOOL)sendNotifications {
+- (void)parseAndNotifyOfTransaction:(NSDictionary *)data {
     NSAssert(data != nil, @"Transaction data shouldn't be null");
     NSAssert(data[@"txid"] != nil, @"Transaction id shouldn't be null");
 
-    NSString *transactionId = data[@"txid"];
-
-    HITransaction *transaction = [self fetchTransactionWithId:transactionId];
+    HITransaction *transaction = [self fetchTransactionWithId:data[@"txid"]];
     BOOL alreadyExists = transaction != nil;
     if (!alreadyExists) {
         transaction = [NSEntityDescription insertNewObjectForEntityForName:HITransactionEntity
@@ -385,18 +397,19 @@ NSString * const BCClientPasswordChangedNotification = @"BCClientPasswordChanged
     }
 
     BOOL statusChanged = [self updateStatusForTransaction:transaction fromData:data];
-    if (sendNotifications) {
-        if (alreadyExists) {
-            if (statusChanged) {
-                [self notifyObserversWithSelector:@selector(transactionChangedStatus:) transaction:transaction];
-            }
-        } else {
-            [self notifyObserversWithSelector:@selector(transactionAdded:) transaction:transaction];
+    if (alreadyExists) {
+        if (statusChanged) {
+            [self notifyObserversWithSelector:@selector(transactionChangedStatus:) transaction:transaction];
         }
+    } else {
+        [self notifyObserversWithSelector:@selector(transactionAdded:) transaction:transaction];
     }
 }
 
 - (void)fillTransaction:(HITransaction *)transaction fromData:(NSDictionary *)data {
+    NSAssert(!transaction.id || [data[@"txid"] isEqual:transaction.id],
+             @"Transaction id must match");
+
     transaction.id = data[@"txid"];
     transaction.date = data[@"time"];
     transaction.amount = [data[@"amount"] longLongValue];
