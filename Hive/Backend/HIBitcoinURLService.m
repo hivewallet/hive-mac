@@ -56,6 +56,7 @@
                                   callback:^(NSError *error, int sessionId, NSDictionary *data) {
                                       if (error) {
                                           // TODO show error
+                                          HILogDebug(@"Error: %@", error);
                                       } else {
                                           HIAppDelegate *appDelegate = [[NSApplication sharedApplication] delegate];
                                           HISendBitcoinsWindowController *window = [appDelegate sendBitcoinsWindow];

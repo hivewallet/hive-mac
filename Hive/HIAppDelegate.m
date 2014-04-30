@@ -510,6 +510,7 @@ static int ddLogLevel = LOG_LEVEL_VERBOSE;
                                        callback:^(NSError *error, int sessionId, NSDictionary *data) {
                                            if (error) {
                                                // TODO show error
+                                               HILogDebug(@"Error: %@", error);
                                            } else {
                                               HISendBitcoinsWindowController *window = [delegate sendBitcoinsWindow];
                                               [window showPaymentRequest:sessionId details:data];
