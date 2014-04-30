@@ -133,6 +133,14 @@ NSString * const HISendBitcoinsWindowSuccessKey = @"success";
 
     [self updateSendButtonEnabled];
     [self updateInterfaceForExchangeRate];
+
+    if (!_lockedAddress) {
+        [self.window makeFirstResponder:self.nameLabel];
+    } else if (!_amount) {
+        [self.window makeFirstResponder:self.amountField];
+    } else {
+        [self.window makeFirstResponder:nil];
+    }
 }
 
 - (void)setUpQRCodeButton {
