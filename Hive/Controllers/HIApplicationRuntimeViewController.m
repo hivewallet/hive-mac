@@ -78,6 +78,7 @@
     HISendBitcoinsWindowController *sc = [delegate sendBitcoinsWindow];
     [sc setLockedAddress:hash];
     [sc setSendCompletion:completion];
+    [sc setSourceApplication:self.application];
 
     if (amount) {
         [sc setLockedAmount:amount];
