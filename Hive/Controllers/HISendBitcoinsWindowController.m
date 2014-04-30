@@ -26,6 +26,7 @@
 #import "HITransaction.h"
 #import "NSDecimalNumber+HISatoshiConversion.h"
 #import "NSWindow+HIShake.h"
+#import "HIApplication.h"
 
 #import <FontAwesomeIconFactory/NIKFontAwesomeIconFactory+OSX.h>
 
@@ -33,6 +34,7 @@ NSString * const HISendBitcoinsWindowDidClose = @"HISendBitcoinsWindowDidClose";
 NSString * const HISendBitcoinsWindowSuccessKey = @"success";
 
 @interface HISendBitcoinsWindowController () <HIExchangeRateObserver, NSPopoverDelegate, HICameraWindowControllerDelegate> {
+    HIApplication *_sourceApplication;
     HIContact *_contact;
     HIContactAutocompleteWindowController *_autocompleteController;
     NSString *_hashAddress;
@@ -206,7 +208,13 @@ NSString * const HISendBitcoinsWindowSuccessKey = @"success";
     _hashAddress = nil;
 
     self.addressLabel.stringValue = @"";
-    self.photoView.image = [NSImage imageNamed:@"avatar-empty"];
+    [self updateAvatarImage];
+}
+
+- (void)setSourceApplication:(HIApplication *)application {
+    _sourceApplication = application;
+
+    [self updateAvatarImage];
 }
 
 - (void)selectContact:(id<HIPerson>)contact address:(HIAddress *)address {
@@ -215,12 +223,21 @@ NSString * const HISendBitcoinsWindowSuccessKey = @"success";
 
     self.nameLabel.stringValue = contact.name;
     self.addressLabel.stringValue = address.addressWithCaption ?: @"";
-    self.photoView.image = _contact.avatarImage;
+    [self updateAvatarImage];
     [self setQRCodeScanningEnabled:NO];
 
     [self.window makeFirstResponder:nil];
 }
 
+- (void)updateAvatarImage {
+    if (_contact.avatarImage) {
+        self.photoView.image = _contact.avatarImage;
+    } else if (_sourceApplication.icon) {
+        self.photoView.image = _sourceApplication.icon;
+    } else {
+        self.photoView.image = [NSImage imageNamed:@"avatar-empty"];
+    }
+}
 
 #pragma mark - Text fields
 
@@ -500,6 +517,7 @@ NSString * const HISendBitcoinsWindowSuccessKey = @"success";
     [[BCClient sharedClient] sendBitcoins:satoshi
                                    toHash:target
                                  password:password
+                        sourceApplication:_sourceApplication
                                     error:&error
                                completion:^(BOOL success, NSString *transactionId) {
         if (success) {

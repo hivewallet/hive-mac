@@ -11,6 +11,7 @@
 #import "HIContactAutocompleteWindowController.h"
 
 @class HIButtonWithSpinner;
+@class HIApplication;
 
 extern NSString * const HISendBitcoinsWindowDidClose;
 extern NSString * const HISendBitcoinsWindowSuccessKey;
@@ -46,6 +47,7 @@ typedef void(^HITransactionCompletionCallback)(BOOL success, NSString *transacti
 - (void)setHashAddress:(NSString *)hash;
 - (void)setLockedAddress:(NSString *)hash;
 - (void)setLockedAmount:(satoshi_t)amount;
+- (void)setSourceApplication:(HIApplication *)application;
 - (void)selectContact:(id<HIPerson>)contact address:(HIAddress *)address;
 - (void)lockAddress;
 
