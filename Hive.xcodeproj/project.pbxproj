@@ -462,6 +462,7 @@
 		248631D418A7AD1800A020A9 /* HIQRCodeWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HIQRCodeWindowController.h; sourceTree = "<group>"; };
 		248631D518A7AD1800A020A9 /* HIQRCodeWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HIQRCodeWindowController.m; sourceTree = "<group>"; };
 		248631D618A7AD1800A020A9 /* HIQRCodeWindowController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HIQRCodeWindowController.xib; sourceTree = "<group>"; };
+		24A69630191171E8007DC178 /* 2014043001.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = 2014043001.xcdatamodel; sourceTree = "<group>"; };
 		24E2C7BD189D93E6008E17CC /* HICameraWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HICameraWindowController.h; sourceTree = "<group>"; };
 		24E2C7BE189D93E6008E17CC /* HICameraWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HICameraWindowController.m; sourceTree = "<group>"; };
 		24EAAFBF186E1BBD00E1D2D3 /* HiveTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HiveTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -5110,9 +5111,10 @@
 			children = (
 				58357A3B186068A70077B717 /* 2013121701.xcdatamodel */,
 				58571253188D8E7A0094F884 /* 2014012001.xcdatamodel */,
+				24A69630191171E8007DC178 /* 2014043001.xcdatamodel */,
 				D962AF021769FEF9009F882A /* Hive.xcdatamodel */,
 			);
-			currentVersion = 58571253188D8E7A0094F884 /* 2014012001.xcdatamodel */;
+			currentVersion = 24A69630191171E8007DC178 /* 2014043001.xcdatamodel */;
 			path = Hive.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;

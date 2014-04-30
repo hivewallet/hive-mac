@@ -9,6 +9,7 @@
 #import "HIContact.h"
 #import "HIDatabaseManager.h"
 #import "HITransaction.h"
+#import "HIApplication.h"
 
 NSString * const HITransactionEntity = @"HITransaction";
 
@@ -26,6 +27,7 @@ NSString * const HITransactionEntity = @"HITransaction";
 @dynamic confirmations;
 @dynamic request;
 @dynamic contact;
+@dynamic sourceApplication;
 @dynamic read;
 
 + (BOOL)isAmountWithinExpectedRange:(satoshi_t)amount {
