@@ -203,14 +203,28 @@ NSString * const BCClientPasswordChangedNotification = @"BCClientPasswordChanged
     }
 }
 
-- (void)rebuildTransactionsList {
+- (void)repairTransactionsList {
     NSArray *transactions = [[HIBitcoinManager defaultManager] allTransactions];
+    HILogInfo(@"Repairing %ld transactions in the database", transactions.count);
 
-    HILogInfo(@"Adding %ld transactions to database", transactions.count);
+    NSMutableDictionary *knownTransactions = [NSMutableDictionary new];
+    NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:HITransactionEntity];
+    for (HITransaction *transaction in [_transactionUpdateContext executeFetchRequest:request
+                                                                         error:NULL]) {
+        knownTransactions[transaction.id] = transaction;
+    }
 
     [_transactionUpdateContext performBlock:^{
-        for (NSDictionary *transaction in transactions) {
-            [self parseTransaction:transaction sendNotifications:NO];
+        for (NSDictionary *transactionData in transactions) {
+            HITransaction *transaction = [self repairTransaction:transactionData];
+            [knownTransactions removeObjectForKey:transaction.id];
+        }
+
+        if (knownTransactions.count > 0) {
+            HILogError(@"Unknown transactions were found and will be deleted.");
+            for (HITransaction *transaction in knownTransactions.allValues) {
+                [_transactionUpdateContext deleteObject:transaction];
+            }
         }
 
         NSError *error = nil;
@@ -233,6 +247,21 @@ NSString * const BCClientPasswordChangedNotification = @"BCClientPasswordChanged
     }];
 }
 
+- (HITransaction *)repairTransaction:(NSDictionary *)data {
+    NSAssert(data != nil, @"Transaction data shouldn't be null");
+    NSAssert(data[@"txid"] != nil, @"Transaction id shouldn't be null");
+
+    HITransaction *transaction = [self fetchTransactionWithId:data[@"txid"]];
+    if (!transaction) {
+        transaction = [NSEntityDescription insertNewObjectForEntityForName:HITransactionEntity
+                                                    inManagedObjectContext:_transactionUpdateContext];
+    }
+
+    [self fillTransaction:transaction fromData:data];
+    [self updateStatusForTransaction:transaction fromData:data];
+    return transaction;
+}
+
 - (void)transactionUpdated:(NSNotification *)notification {
     dispatch_async(dispatch_get_main_queue(), ^{
         NSDictionary *transaction = [[HIBitcoinManager defaultManager] transactionForHash:notification.object];
@@ -243,7 +272,7 @@ NSString * const BCClientPasswordChangedNotification = @"BCClientPasswordChanged
         }
 
         [_transactionUpdateContext performBlock:^{
-            [self parseTransaction:transaction sendNotifications:YES];
+            [self parseAndNotifyOfTransaction:transaction];
 
             NSError *error = nil;
             [_transactionUpdateContext save:&error];
@@ -370,41 +399,58 @@ NSString * const BCClientPasswordChangedNotification = @"BCClientPasswordChanged
     return [[HIBitcoinManager defaultManager] transactionForHash:hash];
 }
 
-- (void)parseTransaction:(NSDictionary *)data sendNotifications:(BOOL)sendNotifications {
+- (void)parseAndNotifyOfTransaction:(NSDictionary *)data {
     NSAssert(data != nil, @"Transaction data shouldn't be null");
     NSAssert(data[@"txid"] != nil, @"Transaction id shouldn't be null");
 
-    NSString *transactionId = data[@"txid"];
-
-    HITransaction *transaction = [self fetchTransactionWithId:transactionId];
+    HITransaction *transaction = [self fetchTransactionWithId:data[@"txid"]];
     BOOL alreadyExists = transaction != nil;
     if (!alreadyExists) {
         transaction = [NSEntityDescription insertNewObjectForEntityForName:HITransactionEntity
                                                     inManagedObjectContext:_transactionUpdateContext];
+        [self fillTransaction:transaction fromData:data];
+    }
 
-        transaction.id = data[@"txid"];
-        transaction.date = data[@"time"];
-        transaction.amount = [data[@"amount"] longLongValue];
-        transaction.fee = [data[@"fee"] longLongValue];
-        transaction.request = (![data[@"details"][0][@"category"] isEqual:@"send"]);
-        transaction.senderHash = data[@"details"][0][@"address"];
+    BOOL statusChanged = [self updateStatusForTransaction:transaction fromData:data];
+    if (alreadyExists) {
+        if (statusChanged) {
+            [self notifyObserversWithSelector:@selector(transactionChangedStatus:) transaction:transaction];
+        }
+    } else {
+        [self notifyObserversWithSelector:@selector(transactionAdded:) transaction:transaction];
+    }
+}
 
-        if (transaction.senderHash) {
-            // Try to find a contact that matches that transaction
-            NSFetchRequest *request = [[NSFetchRequest alloc] initWithEntityName:HIContactEntity];
-            request.predicate = [NSPredicate predicateWithFormat:@"ANY addresses.address == %@",
-                                 transaction.senderHash];
+- (void)fillTransaction:(HITransaction *)transaction fromData:(NSDictionary *)data {
+    NSAssert(!transaction.id || [data[@"txid"] isEqual:transaction.id],
+             @"Transaction id must match");
 
-            NSArray *response = [_transactionUpdateContext executeFetchRequest:request error:NULL];
+    transaction.id = data[@"txid"];
+    transaction.date = data[@"time"];
+    transaction.amount = [data[@"amount"] longLongValue];
+    transaction.fee = [data[@"fee"] longLongValue];
+    transaction.request = (![data[@"details"][0][@"category"] isEqual:@"send"]);
+    transaction.senderHash = data[@"details"][0][@"address"];
 
-            if (response.count > 0) {
-                HIContact *contact = response[0];
-                transaction.senderName = [NSString stringWithFormat:@"%@ %@", contact.firstname, contact.lastname];
-                transaction.senderEmail = contact.email;
-                transaction.contact = contact;
-            }
+    if (transaction.senderHash) {
+        // Try to find a contact that matches that transaction
+        NSFetchRequest *request = [[NSFetchRequest alloc] initWithEntityName:HIContactEntity];
+        request.predicate = [NSPredicate predicateWithFormat:@"ANY addresses.address == %@",
+                                                             transaction.senderHash];
+
+        NSArray *response = [_transactionUpdateContext executeFetchRequest:request error:NULL];
+
+        if (response.count > 0) {
+            HIContact *contact = response[0];
+            transaction.senderName = [NSString stringWithFormat:@"%@ %@", contact.firstname, contact.lastname];
+            transaction.senderEmail = contact.email;
+            transaction.contact = contact;
         }
     }
+}
+
+- (BOOL)updateStatusForTransaction:(HITransaction *)transaction fromData:(NSDictionary *)data {
+    NSAssert([data[@"txid"] isEqual:transaction.id], @"Transaction id must match");
 
     NSString *confidence = data[@"confidence"];
 
@@ -418,18 +464,9 @@ NSString * const BCClientPasswordChangedNotification = @"BCClientPasswordChanged
     } else {
         transaction.status = HITransactionStatusUnknown;
     }
-
-    if (sendNotifications) {
-        if (alreadyExists) {
-            if (transaction.status != previousStatus) {
-                [self notifyObserversWithSelector:@selector(transactionChangedStatus:) transaction:transaction];
-            }
-        } else {
-            [self notifyObserversWithSelector:@selector(transactionAdded:) transaction:transaction];
-        }
-    }
-
+    BOOL statusChanged = transaction.status != previousStatus;
     HILogDebug(@"Transaction %@ is now %@ (%d)", transaction.id, confidence, transaction.status);
+    return statusChanged;
 }
 
 - (HITransaction *)fetchTransactionWithId:(NSString *)transactionId {

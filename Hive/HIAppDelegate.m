@@ -242,7 +242,7 @@ static int ddLogLevel = LOG_LEVEL_VERBOSE;
     if ([lastVersion isLessThan:versionAfterUpdate]) {
         HILogInfo(@"Transaction list needs to be rebuild (%@ < %@)", lastVersion, versionAfterUpdate);
         [[BCClient sharedClient] clearTransactionsList];
-        [[BCClient sharedClient] rebuildTransactionsList];
+        [[BCClient sharedClient] repairTransactionsList];
         return;
     }
 
@@ -254,7 +254,7 @@ static int ddLogLevel = LOG_LEVEL_VERBOSE;
     if (count > 0) {
         HILogInfo(@"Found some transactions with invalid date, rebuilding transaction list");
         [[BCClient sharedClient] clearTransactionsList];
-        [[BCClient sharedClient] rebuildTransactionsList];
+        [[BCClient sharedClient] repairTransactionsList];
     }
 }
 
