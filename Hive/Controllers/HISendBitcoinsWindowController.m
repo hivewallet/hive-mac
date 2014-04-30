@@ -517,6 +517,7 @@ NSString * const HISendBitcoinsWindowSuccessKey = @"success";
     [[BCClient sharedClient] sendBitcoins:satoshi
                                    toHash:target
                                  password:password
+                        sourceApplication:_sourceApplication
                                     error:&error
                                completion:^(BOOL success, NSString *transactionId) {
         if (success) {
