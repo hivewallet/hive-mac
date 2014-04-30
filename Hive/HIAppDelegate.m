@@ -57,15 +57,15 @@ static int ddLogLevel = LOG_LEVEL_VERBOSE;
 
 @end
 
-@interface HIAppDelegate ()<BITHockeyManagerDelegate> {
+@interface HIAppDelegate () <BITHockeyManagerDelegate> {
     HIMainWindowController *_mainWindowController;
     HIPreferencesWindowController *_preferencesWindowController;
-    HINetworkConnectionMonitor *_networkMonitor;
     NSMutableArray *_popupWindows;
     dispatch_queue_t _externalEventQueue;
 }
 
 @property (nonatomic, strong) HIWizardWindowController *wizard;
+@property (nonatomic, strong) HINetworkConnectionMonitor *networkMonitor;
 
 @end
 
@@ -120,13 +120,22 @@ static int ddLogLevel = LOG_LEVEL_VERBOSE;
 }
 
 - (void)configureShortcuts {
-    [HIShortcutService sharedService].sendBlock = ^{
+    HIShortcutService *shortcuts = [HIShortcutService sharedService];
+
+    shortcuts.sendBlock = ^{
         [[NSApplication sharedApplication] activateIgnoringOtherApps:YES];
-        [self openSendBitcoinsWindow:nil];
+
+        if (!self.applicationLocked) {
+            [self openSendBitcoinsWindow:nil];
+        }
     };
-    [HIShortcutService sharedService].cameraBlock = ^{
+
+    shortcuts.cameraBlock = ^{
         [[NSApplication sharedApplication] activateIgnoringOtherApps:YES];
-        [self scanQRCode:nil];
+
+        if (!self.applicationLocked) {
+            [self scanQRCode:nil];
+        }
     };
 }
 
@@ -164,9 +173,7 @@ static int ddLogLevel = LOG_LEVEL_VERBOSE;
 
 - (void)configureHockeyApp {
     BITHockeyManager *hockeyapp = [BITHockeyManager sharedHockeyManager];
-    [hockeyapp configureWithIdentifier:@"f5b8dab305a1fe6973043674446c7312"
-                           companyName:@"Hive"
-                              delegate:self];
+    [hockeyapp configureWithIdentifier:@"f5b8dab305a1fe6973043674446c7312" delegate:self];
     [hockeyapp startManager];
 }
 
@@ -298,7 +305,7 @@ static int ddLogLevel = LOG_LEVEL_VERBOSE;
 }
 
 - (void)startNetworkMonitor {
-    _networkMonitor = [[HINetworkConnectionMonitor alloc] init];
+    self.networkMonitor = [[HINetworkConnectionMonitor alloc] init];
 }
 
 - (void)setAsDefaultHandler {
@@ -559,7 +566,13 @@ static void (^logHandler)(const char*, const char*, int, HILoggerLevel, NSString
 void handleException(NSException *exception) {
     HILogError(@"Exception caught: %@", exception);
 
-    [[NSApp delegate] showExceptionWindowWithException:exception];
+    if (dispatch_get_current_queue() == dispatch_get_main_queue()) {
+        [[NSApp delegate] showExceptionWindowWithException:exception];
+    } else {
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [[NSApp delegate] showExceptionWindowWithException:exception];
+        });
+    }
 }
 
 
@@ -598,8 +611,7 @@ void handleException(NSException *exception) {
 }
 
 - (IBAction)showBackupCenter:(id)sender {
-    [self openPreferences:sender];
-    [_preferencesWindowController selectBackupCenter];
+    [self openPopupWindowWithClass:[HIBackupCenterWindowController class]];
 }
 
 - (IBAction)showAboutWindow:(id)sender {
@@ -631,6 +643,25 @@ void handleException(NSException *exception) {
 }
 
 - (void)showExceptionWindowWithException:(NSException *)exception {
+    HILogWarn(@"Caught exception: %@", exception.reason);
+
+    NSString *javaStackTrace = exception.userInfo[@"stackTrace"];
+    if (javaStackTrace) {
+        HILogWarn(@"Java stack trace:\n%@", javaStackTrace);
+    }
+
+    if (exception.callStackSymbols) {
+        HILogWarn(@"Cocoa stack trace:\n%@", exception.callStackSymbols);
+    }
+
+    for (NSWindowController *wc in _popupWindows) {
+        if ([wc isKindOfClass:[HIErrorWindowController class]]) {
+            // don't show a whole cascade of error windows
+            HILogDebug(@"Ignoring exception because error window is already open.");
+            return;
+        }
+    }
+
     HIErrorWindowController *window = [[HIErrorWindowController alloc] initWithException:exception];
     [window showWindow:self];
     [_popupWindows addObject:window];

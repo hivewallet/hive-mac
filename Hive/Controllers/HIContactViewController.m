@@ -43,8 +43,6 @@
 
     self.view.layer.backgroundColor = [[NSColor hiWindowBackgroundColor] hiNativeColor];
 
-    [self refreshData];
-
     [self.tabBarController selectTabAtIndex:0];
 }
 

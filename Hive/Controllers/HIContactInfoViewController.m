@@ -55,13 +55,13 @@
 - (void)configureViewForContact:(id<HIPerson>)contact {
     _contact = contact;
 
-    [self configureScrollView];
-
     self.profileEmailField.stringValue = _contact.email ?: @"";
 
     self.addressBoxView.addresses = _contact.addresses.allObjects;
     self.addressBoxView.observingWallet = [_contact isKindOfClass:[HIProfile class]];
     self.addressBoxView.showsQRCode = [_contact isKindOfClass:[HIProfile class]];
+
+    [self configureScrollView];
 }
 
 - (void)configureScrollView {

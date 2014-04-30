@@ -19,6 +19,7 @@
 #import "HIExchangeRateService.h"
 #import "HIFeeDetailsViewController.h"
 #import "HILinkTextField.h"
+#import "HINetworkConnectionMonitor.h"
 #import "HIPasswordHolder.h"
 #import "HIPasswordInputViewController.h"
 #import "HIPerson.h"
@@ -26,6 +27,7 @@
 #import "HITransaction.h"
 #import "NSDecimalNumber+HISatoshiConversion.h"
 #import "NSWindow+HIShake.h"
+#import "HIApplication.h"
 
 #import <FontAwesomeIconFactory/NIKFontAwesomeIconFactory+OSX.h>
 
@@ -34,6 +36,7 @@ NSString * const HISendBitcoinsWindowSuccessKey = @"success";
 
 @interface HISendBitcoinsWindowController ()
         <HIExchangeRateObserver, NSPopoverDelegate, HICameraWindowControllerDelegate> {
+    HIApplication *_sourceApplication;
     HIContact *_contact;
     HIContactAutocompleteWindowController *_autocompleteController;
     NSString *_hashAddress;
@@ -208,7 +211,13 @@ NSString * const HISendBitcoinsWindowSuccessKey = @"success";
     _hashAddress = nil;
 
     self.addressLabel.stringValue = @"";
-    self.photoView.image = [NSImage imageNamed:@"avatar-empty"];
+    [self updateAvatarImage];
+}
+
+- (void)setSourceApplication:(HIApplication *)application {
+    _sourceApplication = application;
+
+    [self updateAvatarImage];
 }
 
 - (void)selectContact:(id<HIPerson>)contact address:(HIAddress *)address {
@@ -217,7 +226,7 @@ NSString * const HISendBitcoinsWindowSuccessKey = @"success";
 
     self.nameLabel.stringValue = contact.name;
     self.addressLabel.stringValue = address.addressWithCaption ?: @"";
-    self.photoView.image = _contact.avatarImage;
+    [self updateAvatarImage];
     [self setQRCodeScanningEnabled:NO];
 
     [self.window makeFirstResponder:nil];
@@ -234,6 +243,15 @@ NSString * const HISendBitcoinsWindowSuccessKey = @"success";
     [self setLockedAmount:amount.integerValue];
 }
 
+- (void)updateAvatarImage {
+    if (_contact.avatarImage) {
+        self.photoView.image = _contact.avatarImage;
+    } else if (_sourceApplication.icon) {
+        self.photoView.image = _sourceApplication.icon;
+    } else {
+        self.photoView.image = [NSImage imageNamed:@"avatar-empty"];
+    }
+}
 
 #pragma mark - Text fields
 
@@ -392,8 +410,15 @@ NSString * const HISendBitcoinsWindowSuccessKey = @"success";
 
 - (void)updateFee {
     satoshi_t fee = self.currentFee;
-    NSString *feeString = [self.bitcoinFormatService stringForBitcoin:fee withFormat:self.selectedBitcoinFormat];
-    feeString = [@"+" stringByAppendingString:feeString];
+    NSString *feeString;
+
+    if (fee > 0) {
+        feeString = [NSString stringWithFormat:@"+%@",
+                     [self.bitcoinFormatService stringForBitcoin:fee withFormat:self.selectedBitcoinFormat]];
+    } else {
+        // we couldn't calculate the fee
+        feeString = @"+?";
+    }
 
     NSDictionary *attributes = @{
         NSForegroundColorAttributeName: [NSColor colorWithCalibratedWhite:.3 alpha:1.0],
@@ -401,12 +426,12 @@ NSString * const HISendBitcoinsWindowSuccessKey = @"success";
     };
 
     self.feeButton.attributedTitle = [[NSAttributedString alloc] initWithString:feeString attributes:attributes];
-    self.feeButton.hidden = fee == 0;
     self.feeDetailsViewController.fee = self.currentFee;
 }
 
 - (satoshi_t)currentFee {
-    return [[BCClient sharedClient] feeWhenSendingBitcoin:self.amountFieldValue];
+    return [[BCClient sharedClient] feeWhenSendingBitcoin:self.amountFieldValue
+                                              toRecipient:(_hashAddress ?: self.nameLabel.stringValue)];
 }
 
 - (IBAction)showFeePopover:(NSButton *)sender {
@@ -453,7 +478,10 @@ NSString * const HISendBitcoinsWindowSuccessKey = @"success";
     satoshi_t satoshi = self.amountFieldValue;
     satoshi_t satoshiWithFee = satoshi + self.currentFee;
 
-    if (satoshiWithFee > [[BCClient sharedClient] estimatedBalance]) {
+    if (![[HIBitcoinManager defaultManager] isConnected]) {
+        [self showNoConnectionAlert];
+    }
+    else if (satoshiWithFee > [[BCClient sharedClient] estimatedBalance]) {
         [self showInsufficientFundsAlert];
     }
     else if (satoshiWithFee > [[BCClient sharedClient] availableBalance]) {
@@ -512,6 +540,7 @@ NSString * const HISendBitcoinsWindowSuccessKey = @"success";
     [[BCClient sharedClient] sendBitcoins:satoshi
                                    toHash:target
                                  password:password
+                        sourceApplication:_sourceApplication
                                     error:&error
                                completion:^(BOOL success, NSString *transactionId) {
         if (success) {
@@ -528,6 +557,8 @@ NSString * const HISendBitcoinsWindowSuccessKey = @"success";
             [self.window hiShake];
         } else if (error.code == kHIBitcoinManagerSendingDustError) {
             [self showSendingDustAlert];
+        } else if (error.code == kHIBitcoinManagerInsufficientMoneyError) {
+            [self showInsufficientFundsWithFeeAlert];
         } else {
             [self showTransactionErrorAlert];
         }
@@ -607,13 +638,22 @@ NSString * const HISendBitcoinsWindowSuccessKey = @"success";
                                                @"Sending dust alert message")];
 }
 
-
 - (void)showInsufficientFundsAlert {
     [self showAlertWithTitle:NSLocalizedString(@"Amount exceeds balance.",
                                                @"Title of an alert when trying to send more than you have")
 
                      message:NSLocalizedString(@"You cannot send more money than you own.",
                                                @"Details of an alert when trying to send more than you have")];
+}
+
+- (void)showInsufficientFundsWithFeeAlert {
+    [self showAlertWithTitle:NSLocalizedString(@"Amount (including required fee) exceeds balance.",
+                                               @"Title of an alert when trying to send more than you have with fee")
+
+                     message:NSLocalizedString(@"You're trying to send a large transaction and the fee needs to be "
+                                               @"higher than usually. Try to send a bit less, or split the "
+                                               @"transaction into smaller ones.",
+                                               @"Alert details when trying to send more than you have with fee")];
 }
 
 - (void)showBlockedFundsAlert {
@@ -636,6 +676,14 @@ NSString * const HISendBitcoinsWindowSuccessKey = @"success";
     [alert setAccessoryView:link];
 
     [alert beginSheetModalForWindow:self.window modalDelegate:nil didEndSelector:nil contextInfo:NULL];
+}
+
+- (void)showNoConnectionAlert {
+    [self showAlertWithTitle:NSLocalizedString(@"Hive is not connected to the Bitcoin network.",
+                                               @"No network connection alert title")
+
+                     message:NSLocalizedString(@"You need to be connected to the network to send any transactions.",
+                                               @"No network connection alert message")];
 }
 
 - (void)showNoAddressAlert {
@@ -710,18 +758,16 @@ NSString * const HISendBitcoinsWindowSuccessKey = @"success";
 - (void)controlTextDidChange:(NSNotification *)notification {
     if (notification.object == self.amountField) {
         [self updateConvertedAmountFromAmount];
-        [self updateFee];
-        [self updateSendButtonEnabled];
     } else if (notification.object == self.convertedAmountField) {
         [self updateAmountFromConvertedAmount];
-        [self updateFee];
-        [self updateSendButtonEnabled];
     } else {
         [self setQRCodeScanningEnabled:self.nameLabel.stringValue.length == 0];
         [self clearContact];
         [self startAutocompleteForCurrentQuery];
-        [self updateSendButtonEnabled];
     }
+
+    [self updateFee];
+    [self updateSendButtonEnabled];
 }
 
 - (void)controlTextDidEndEditing:(NSNotification *)notification {
@@ -825,6 +871,7 @@ NSString * const HISendBitcoinsWindowSuccessKey = @"success";
 - (void)addressSelectedInAutocomplete:(HIAddress *)address {
     [self selectContact:address.contact address:address];
     [self hideAutocompleteWindow];
+    [self updateFee];
     [self updateSendButtonEnabled];
 }
 

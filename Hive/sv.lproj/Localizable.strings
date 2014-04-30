@@ -128,6 +128,9 @@
 /* Passphrase prompt for sending */
 "Enter your passphrase to confirm the transaction:" = "Ange ditt lösenord för att genomföra transaktionen:";
 
+/* Passphrase prompt for message signing */
+"Enter your password to sign the message:" = "Enter your password to sign the message:";
+
 /* Firstname field placeholder */
 "Firstname" = "Förnamn";
 
@@ -145,6 +148,9 @@
 
 /* Sync in progress alert title */
 "Hive is currently syncing with the Bitcoin network. Are you sure you want to quit?" = "Hive is currently syncing with the Bitcoin network. Are you sure you want to quit?";
+
+/* No network connection alert title */
+"Hive is not connected to the Bitcoin network." = "Hive is not connected to the Bitcoin network.";
 
 /* Chain file unreadable error explanation */
 "Hive will now delete the file and synchronize with the Bitcoin network again. Please leave Hive open for the next several minutes, and try not to send any transactions right now." = "Hive will now delete the file and synchronize with the Bitcoin network again. Please leave Hive open for the next several minutes, and try not to send any transactions right now.";
@@ -183,7 +189,7 @@
 "New contact" = "Ny kontakt";
 
 /* Empty address alert title */
-"No address entered." = "Ingen adress ifylld";
+"No address entered." = "Ingen adress ifylld.";
 
 /* Backup is outdated, last backup was on that date */
 "No backup since %@" = "Ingen säkerhetskopia sedan %@";
@@ -215,6 +221,9 @@
 /* Empty address alert message */
 "Please enter a valid Bitcoin address or select one from the dropdown list." = "Vänligen, fyll i en korrekt Bitcoin-adress eller välj från rullgardinslistan.";
 
+/* Preferences window title */
+"Preferences" = "Preferences";
+
 /* Profile view title string */
 "Profile" = "Profil";
 
@@ -241,6 +250,9 @@
 
 /* Sent amount of BTC to a contact/address */
 "Sent &a to &c" = "Skickat &a till &c";
+
+/* Title for shortcut keys preferences panel */
+"Shortcuts" = "Shortcuts";
 
 /* Amount exceeds available balance alert title */
 "Some funds are temporarily unavailable." = "Endel tillgångar är tillfälligt inte tillgängliga.";
@@ -341,11 +353,14 @@
 /* Dropbox no backup folder alert details */
 "You must install Dropbox first (see www.dropbox.com)." = "Du måste installera dropbox först (se www.dropbox.com).";
 
+/* No network connection alert message */
+"You need to be connected to the network to send any transactions." = "You need to be connected to the network to send any transactions.";
+
 /* Dropbox invalid folder alert details */
 "You need to choose or create a directory inside your Dropbox folder." = "Du måste välja eller skapa en katalog i din Dropbox-plats.";
 
 /* Contact name empty alert message */
-"You need to give the contact a name before you can add it to the list." = "Du måste ge kontakten ett namn innan du kan lägga till i listan";
+"You need to give the contact a name before you can add it to the list." = "Du måste ge kontakten ett namn innan du kan lägga till i listan.";
 
 /* Backup requires password alert title */
 "You need to set a wallet password first (see Wallet menu)." = "Duy måste ange ett plånbokslösenord först (se Plånboksmenyn).";

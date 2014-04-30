@@ -10,18 +10,24 @@
 #import "HINetworkConnectionMonitor.h"
 
 static const NSTimeInterval DisconnectionDelay = 30.0;
+
 NSString * const HINetworkConnectionMonitorConnected = @"HINetworkConnectionMonitorConnected";
 NSString * const HINetworkConnectionMonitorDisconnected = @"HINetworkConnectionMonitorDisconnected";
 
-@implementation HINetworkConnectionMonitor {
-    BOOL _connected;
-}
+@interface HINetworkConnectionMonitor ()
+
+@property (nonatomic) BOOL connected;
+
+@end
+
+
+@implementation HINetworkConnectionMonitor
 
 - (id)init {
     self = [super init];
 
     if (self) {
-        _connected = YES;
+        self.connected = YES;
         [[HIBitcoinManager defaultManager] addObserver:self
                                             forKeyPath:@"isConnected"
                                                options:NSKeyValueObservingOptionInitial
@@ -37,7 +43,7 @@ NSString * const HINetworkConnectionMonitorDisconnected = @"HINetworkConnectionM
                        context:(void *)context {
     if (object == [HIBitcoinManager defaultManager] && [path isEqual:@"isConnected"]) {
         if ([[HIBitcoinManager defaultManager] isConnected]) {
-            if (_connected) {
+            if (self.connected) {
                 HILogInfo(@"Connection timeout cancelled.");
                 [[self class] cancelPreviousPerformRequestsWithTarget:self
                                                              selector:@selector(onDisconnect)
@@ -56,13 +62,13 @@ NSString * const HINetworkConnectionMonitorDisconnected = @"HINetworkConnectionM
 
 - (void)onConnect {
     HILogInfo(@"Network connection established.");
-    _connected = YES;
+    self.connected = YES;
     [[NSNotificationCenter defaultCenter] postNotificationName:HINetworkConnectionMonitorConnected object:self];
 }
 
 - (void)onDisconnect {
     HILogWarn(@"Network connection lost.");
-    _connected = NO;
+    self.connected = NO;
     [[NSNotificationCenter defaultCenter] postNotificationName:HINetworkConnectionMonitorDisconnected object:self];
 }
 

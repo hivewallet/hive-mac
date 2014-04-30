@@ -8,6 +8,7 @@
 
 #import "BCClient.h"
 #import "HIAddress.h"
+#import "HIApplication.h"
 #import "HIBitcoinFormatService.h"
 #import "HIContact.h"
 #import "HIContactRowView.h"
@@ -214,6 +215,9 @@ static NSString *const KEY_UNREAD_TRANSACTIONS = @"unreadTransactions";
     if (transaction.contact && transaction.contact.avatarImage) {
         cell.imageView.image = transaction.contact.avatarImage;
         cell.imageView.imageScaling = NSImageScaleProportionallyUpOrDown;
+    } else if (transaction.sourceApplication && transaction.sourceApplication.icon) {
+        cell.imageView.image = transaction.sourceApplication.icon;
+        cell.imageView.imageScaling = NSImageScaleProportionallyDown;
     } else {
         cell.imageView.image = btcImage;
         cell.imageView.imageScaling = NSImageScaleProportionallyDown;
@@ -312,6 +316,11 @@ static NSString *const KEY_UNREAD_TRANSACTIONS = @"unreadTransactions";
             value = [NSString stringWithFormat:@"%@…%@",
                      [transaction.senderHash substringToIndex:8],
                      [transaction.senderHash substringFromIndex:(transaction.senderHash.length - 8)]];
+        }
+
+        if (!value) {
+            HILogWarn(@"Transaction has no senderHash: %@", transaction);
+            value = @"?";
         }
 
         NSAttributedString *fragment = [[NSAttributedString alloc] initWithString:value attributes:boldAttributes];

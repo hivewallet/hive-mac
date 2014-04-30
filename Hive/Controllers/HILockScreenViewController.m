@@ -68,10 +68,19 @@ NSString * const LockScreenDidDisappearNotification = @"LockScreenDidDisappearNo
 }
 
 - (void)lockWalletAnimated:(BOOL)animated {
-    self.dontShowAgainField.state = NSOffState;
+    if ([[HIBitcoinManager defaultManager] isWalletEncrypted]) {
+        self.dontShowAgainField.state = NSOffState;
 
-    [self showLockScreenAnimated:animated];
-    [self setLockScreenEnabled:YES];
+        [self showLockScreenAnimated:animated];
+        [self setLockScreenEnabled:YES];
+    } else {
+        NSAlert *alert = [NSAlert alertWithMessageText:@"You need to set a wallet password first."
+                                         defaultButton:@"Ok"
+                                       alternateButton:nil otherButton:nil
+                             informativeTextWithFormat:@"Open the \"Wallet\" menu and select \"Change Password\" "
+                                                       @"to encrypt your wallet with a password."];
+        [alert runModal];
+    }
 }
 
 - (void)showLockScreenAnimated:(BOOL)animated {

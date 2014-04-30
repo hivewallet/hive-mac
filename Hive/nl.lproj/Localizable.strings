@@ -6,7 +6,7 @@
 "Address" = "Adres";
 
 /* Title of an alert when trying to send more than you have */
-"Amount exceeds balance." = "Bedrag is hoger dan uw huidige balans";
+"Amount exceeds balance." = "Bedrag is hoger dan uw huidige balans.";
 
 /* Anonymous username for profile page */
 "Anonymous" = "Anoniem";
@@ -105,7 +105,7 @@
 "Dropbox folder not found" = "Dropbox map is niet gevonden";
 
 /* Dropbox no backup folder alert title */
-"Dropbox folder not found." = "Dropbox map is niet gevonden";
+"Dropbox folder not found." = "Dropbox map is niet gevonden.";
 
 /* Backup error message */
 "Dropbox isn't running" = "Dropbox draait niet";
@@ -128,6 +128,9 @@
 /* Passphrase prompt for sending */
 "Enter your passphrase to confirm the transaction:" = "Voer uw wachtwoordzin zin in om de transactie te bevestigen:";
 
+/* Passphrase prompt for message signing */
+"Enter your password to sign the message:" = "Enter your password to sign the message:";
+
 /* Firstname field placeholder */
 "Firstname" = "Voornaam";
 
@@ -145,6 +148,9 @@
 
 /* Sync in progress alert title */
 "Hive is currently syncing with the Bitcoin network. Are you sure you want to quit?" = "Hive is op dit moment aan het synchroniseren met het Bitcoin netwerk. Weet je zeker dat je wilt afsluiten?";
+
+/* No network connection alert title */
+"Hive is not connected to the Bitcoin network." = "Hive is not connected to the Bitcoin network.";
 
 /* Chain file unreadable error explanation */
 "Hive will now delete the file and synchronize with the Bitcoin network again. Please leave Hive open for the next several minutes, and try not to send any transactions right now." = "Hive zal nu het bestand verwijderen opnieuw met het Bitcoin netwerk synchroniseren. Laat Hive alsjeblieft voor een paar minuten open en probeer geen transacties te versturen.";
@@ -207,13 +213,16 @@
 "PENDING" = "IN AFWACHTING";
 
 /* Invalid address alert message */
-"Please check if you have entered the address correctly." = "Controleer of u het adres juist hebt ingevoerd";
+"Please check if you have entered the address correctly." = "Controleer of u het adres juist hebt ingevoerd.";
 
 /* Warning details when trying to send to your own address */
 "Please enter a different address." = "Kies alsjeblieft een ander adres.";
 
 /* Empty address alert message */
 "Please enter a valid Bitcoin address or select one from the dropdown list." = "Voer alsjeblieft een geldig Bitcoin adres in of kies een adres uit de lijst.";
+
+/* Preferences window title */
+"Preferences" = "Preferences";
 
 /* Profile view title string */
 "Profile" = "Profiel";
@@ -241,6 +250,9 @@
 
 /* Sent amount of BTC to a contact/address */
 "Sent &a to &c" = "Verstuur &a naar &c";
+
+/* Title for shortcut keys preferences panel */
+"Shortcuts" = "Shortcuts";
 
 /* Amount exceeds available balance alert title */
 "Some funds are temporarily unavailable." = "Een gedeelte van uw balans is op dit moment niet beschikbaar.";
@@ -340,6 +352,9 @@
 
 /* Dropbox no backup folder alert details */
 "You must install Dropbox first (see www.dropbox.com)." = "U moet Dropbox eerst installeren (zie www.dropbox.com).";
+
+/* No network connection alert message */
+"You need to be connected to the network to send any transactions." = "You need to be connected to the network to send any transactions.";
 
 /* Dropbox invalid folder alert details */
 "You need to choose or create a directory inside your Dropbox folder." = "U moet een map seleteren of aanmaken binnen uw Dropbox map.";

@@ -101,6 +101,9 @@
 /* Class = "NSMenu"; title = "Help"; ObjectID = "K2u-T2-G1a"; */
 "K2u-T2-G1a.title" = "Help";
 
+/* Class = "NSMenuItem"; title = "Sign message..."; ObjectID = "SoJ-eV-k9I"; */
+"SoJ-eV-k9I.title" = "Sign message...";
+
 /* Class = "NSMenuItem"; title = "Debugging tools..."; ObjectID = "Ue9-mi-gbe"; */
 "Ue9-mi-gbe.title" = "Debugg-verktyg...";
 

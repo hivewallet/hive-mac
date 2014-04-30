@@ -106,7 +106,7 @@
 
 - (NSDecimalNumber *)parseString:(NSString *)string error:(NSError **)error {
 
-    string = [self cleanUpInputString:string];
+    string = [self stringWithoutCurrencySymbols:string];
 
     NSNumberFormatter *currencyNumberFormatter = [self createNumberFormatter];
     currencyNumberFormatter.generatesDecimalNumbers = YES;
@@ -126,10 +126,10 @@
     }
 }
 
-- (NSString *)cleanUpInputString:(NSString *)string {
-    NSCharacterSet *numeric = [NSCharacterSet characterSetWithCharactersInString:@"-0123456789"];
-    NSRange start = [string rangeOfCharacterFromSet:numeric];
-    NSRange end = [string rangeOfCharacterFromSet:numeric options:NSBackwardsSearch];
+- (NSString *)stringWithoutCurrencySymbols:(NSString *)string {
+    NSCharacterSet *strippedCharacters = [[NSCharacterSet letterCharacterSet] invertedSet];
+    NSRange start = [string rangeOfCharacterFromSet:strippedCharacters];
+    NSRange end = [string rangeOfCharacterFromSet:strippedCharacters options:NSBackwardsSearch];
     if (start.location == NSNotFound) {
         return string;
     } else {

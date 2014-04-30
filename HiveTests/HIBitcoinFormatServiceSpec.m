@@ -131,6 +131,11 @@ describe(@"Parsing", ^{
         assertThat(@(amount), equalToLongLong(60));
     });
 
+    it(@"should parse string without leading zero correctly", ^{
+        satoshi_t amount = [service parseString:@".60" withFormat:@"BTC" error:NULL];
+        assertThat(@(amount), equalToLongLong(60000000));
+    });
+
     it(@"should parse string with thousands separator correctly", ^{
         satoshi_t amount = [service parseString:@"1,000.6" withFormat:@"BTC" error:NULL];
         assertThat(@(amount), equalToLongLong(100060000000));

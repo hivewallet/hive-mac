@@ -1,0 +1,18 @@
+
+/* Class = "NSWindow"; title = "Sign message"; ObjectID = "F0z-JX-Cv5"; */
+"F0z-JX-Cv5.title" = "Firma messaggio";
+
+/* Class = "NSTextFieldCell"; placeholderString = "Enter the message here"; ObjectID = "FFb-qR-Wps"; */
+"FFb-qR-Wps.placeholderString" = "Inserisci qui il messaggio";
+
+/* Class = "NSTextFieldCell"; title = "Generated signature:"; ObjectID = "Kod-IU-V2E"; */
+"Kod-IU-V2E.title" = "Firma generata:";
+
+/* Class = "NSButtonCell"; title = "Sign"; ObjectID = "W8R-Z4-t5H"; */
+"W8R-Z4-t5H.title" = "Firma";
+
+/* Class = "NSTextFieldCell"; title = "Some services request that you verify ownership of a Bitcoin address by creating a cryptographic signature of a message using your private key. To do that, enter the message you would like to sign into the box below and choose \"Sign\"."; ObjectID = "kUl-US-tKo"; */
+"kUl-US-tKo.title" = "Alcuni servizi richiedono che tu dimostri la proprietà di un indirizzo Bitcoin creando una firma crittografica di un messaggio usando la tua chiava privata. Per fare questo, inserisci il messaggio che vorresti firmare nella casella qui sotto e scegli \"Firma\".";
+
+/* Class = "NSButtonCell"; title = "Close"; ObjectID = "u9d-Yr-bsb"; */
+"u9d-Yr-bsb.title" = "Chiudi";

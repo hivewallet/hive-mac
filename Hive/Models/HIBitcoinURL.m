@@ -56,7 +56,14 @@ static NSString * const BitcoinURLPrefix = @"bitcoin:";
     _paymentRequestURL = self.parameters[@"r"];
 
     NSString *amountParameter = self.parameters[@"amount"];
-    _amount = amountParameter ? [NSDecimalNumber decimalNumberWithString:amountParameter].hiSatoshi : 0;
+    if (amountParameter) {
+        NSDecimalNumber *amount = [NSDecimalNumber decimalNumberWithString:amountParameter];
+        if (amount && amount != [NSDecimalNumber notANumber]) {
+            _amount = [amount hiSatoshi];
+        } else {
+            HILogWarn(@"Amount '%@' is not a valid number.", amountParameter);
+        }
+    }
 }
 
 - (BOOL)validate {

@@ -18,11 +18,11 @@
 #pragma mark - keys
 
 - (NSString *)sendPreferenceKey {
-    return @"key.send";
+    return @"GlobalShortcutKeySend";
 }
 
 - (NSString *)cameraPreferenceKey {
-    return @"key.camera";
+    return @"GlobalShortcutKeyOpenCamera";
 }
 
 #pragma mark - blocks

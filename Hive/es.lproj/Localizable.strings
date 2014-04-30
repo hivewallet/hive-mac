@@ -12,7 +12,7 @@
 "Anonymous" = "Anónimo";
 
 /* Message when trying to start an app that requires a newer API level. */
-"App requires a newer version of Hive." = "La aplicación requiere una versión más reciente de Hive";
+"App requires a newer version of Hive." = "La aplicación requiere una versión más reciente de Hive.";
 
 /* App load error title */
 "Application can't be loaded" = "La aplicación no puede ser cargada";
@@ -42,7 +42,7 @@
 "Backup problem" = "Problema con la copia de seguridad";
 
 /* initialization error */
-"Bitcoin network data file could not be opened - another instance of Hive might still be running." = "No se pudo abrir el fichero de datos de red de Bitcoin - otra instancia de Hive puede que siga en marcha";
+"Bitcoin network data file could not be opened - another instance of Hive might still be running." = "No se pudo abrir el fichero de datos de red de Bitcoin - otra instancia de Hive puede que siga en marcha.";
 
 /* Chain file unreadable error title */
 "Bitcoin network data file could not be opened." = "No se pudo abrir el fichero de datos de red de Bitcoin.";
@@ -128,6 +128,9 @@
 /* Passphrase prompt for sending */
 "Enter your passphrase to confirm the transaction:" = "Introduce tu contraseña para confirmar la transacción:";
 
+/* Passphrase prompt for message signing */
+"Enter your password to sign the message:" = "Enter your password to sign the message:";
+
 /* Firstname field placeholder */
 "Firstname" = "Nombre";
 
@@ -145,6 +148,9 @@
 
 /* Sync in progress alert title */
 "Hive is currently syncing with the Bitcoin network. Are you sure you want to quit?" = "Hive se está sincronizando en este momento con la red Bitcoin. ¿Estás seguro de que quieres salir?";
+
+/* No network connection alert title */
+"Hive is not connected to the Bitcoin network." = "Hive is not connected to the Bitcoin network.";
 
 /* Chain file unreadable error explanation */
 "Hive will now delete the file and synchronize with the Bitcoin network again. Please leave Hive open for the next several minutes, and try not to send any transactions right now." = "Hive eliminará ahora el fichero y sincronizará con la red Bitcoin de nuevo. Por favor deje Hive abierto durante los próximos minutos y evite enviar ninguna transacción en este momento.";
@@ -215,6 +221,9 @@
 /* Empty address alert message */
 "Please enter a valid Bitcoin address or select one from the dropdown list." = "Por favor introduce una dirección Bitcoin válida o selecciona una de la lista desplegable.";
 
+/* Preferences window title */
+"Preferences" = "Preferences";
+
 /* Profile view title string */
 "Profile" = "Perfil";
 
@@ -242,6 +251,9 @@
 /* Sent amount of BTC to a contact/address */
 "Sent &a to &c" = "Enviar &a a &c";
 
+/* Title for shortcut keys preferences panel */
+"Shortcuts" = "Shortcuts";
+
 /* Amount exceeds available balance alert title */
 "Some funds are temporarily unavailable." = "Algunos fondos no están disponibles temporalmente.";
 
@@ -258,7 +270,7 @@
 "The existing app file will be replaced by the new version. This will not affect any app settings or saved data." = "El archivo existente de la app será reemplazado por la nueva versión. Esto no afectará a ninguna opción de app o datos guardados.";
 
 /* Hiveapp file not readable error details */
-"The file is damaged or does not contain a Hive application." = "El fichero está dañado y no contiene ninguna aplicación de Hive";
+"The file is damaged or does not contain a Hive application." = "El fichero está dañado y no contiene ninguna aplicación de Hive.";
 
 /* Sending dust alert message */
 "This amount is too low to be sent through the network." = "Esta cantidad es demasiado pequeña para ser enviada a través de la red.";
@@ -341,6 +353,9 @@
 /* Dropbox no backup folder alert details */
 "You must install Dropbox first (see www.dropbox.com)." = "Debes instalar Dropbox primero (mira www.dropbox.com).";
 
+/* No network connection alert message */
+"You need to be connected to the network to send any transactions." = "You need to be connected to the network to send any transactions.";
+
 /* Dropbox invalid folder alert details */
 "You need to choose or create a directory inside your Dropbox folder." = "Necesitas elegir o crear una carpeta dentro de Dropbox.";
 
@@ -357,7 +372,7 @@
 "You've received Bitcoin" = "Has recibido Bitcoin";
 
 /* Cancel editing alert message */
-"Your changes won't be saved." = "Tus cambios no se guardarán";
+"Your changes won't be saved." = "Tus cambios no se guardarán.";
 
 /* Sync in progress alert details */
 "Your pending transactions won't be confirmed until the sync is complete." = "Tus transacciones pendientes no serán confirmadas hasta que se complete la sincronización.";

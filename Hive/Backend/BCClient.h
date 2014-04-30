@@ -13,6 +13,7 @@
 @class HIContact;
 @class HIPasswordHolder;
 @class HITransaction;
+@class HIApplication;
 
 extern NSString * const BCClientBitcoinjDirectory;
 extern NSString * const BCClientTorDirectory;
@@ -50,6 +51,7 @@ extern NSString * const BCClientPasswordChangedNotification;
 - (void)sendBitcoins:(uint64)amount
               toHash:(NSString *)hash
             password:(HIPasswordHolder *)password
+   sourceApplication:(HIApplication *)sourceApplication
                error:(NSError **)error
           completion:(void (^)(BOOL success, NSString *transactionId))completion;
 
@@ -59,7 +61,7 @@ extern NSString * const BCClientPasswordChangedNotification;
                error:(NSError **)error
           completion:(void(^)(BOOL success, NSString *transactionId))completion;
 
-- (satoshi_t)feeWhenSendingBitcoin:(uint64)amount;
+- (satoshi_t)feeWhenSendingBitcoin:(uint64)amount toRecipient:(NSString *)recipient;
 
 - (NSDictionary *)transactionDefinitionWithHash:(NSString *)hash;
 - (void)rebuildTransactionsList;

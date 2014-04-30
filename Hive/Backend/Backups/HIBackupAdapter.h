@@ -56,6 +56,7 @@ extern NSString *HIBackupStatusTextFailure;
 @property (nonatomic, getter = isEnabled) BOOL enabled;
 
 + (NSDictionary *)backupSettings;
++ (void)resetBackupSettings;
 
 - (void)updateStatus;
 - (void)updateStatusIfEnabled;

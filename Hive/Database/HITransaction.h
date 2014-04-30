@@ -9,6 +9,7 @@
 #import <CoreData/CoreData.h>
 #import <Foundation/Foundation.h>
 
+@class HIApplication;
 @class HIContact;
 
 typedef NS_ENUM(int16_t, HITransactionStatus) {
@@ -62,6 +63,9 @@ extern NSString * const HITransactionEntity;
 
 // if the address hash matches any of the contacts' addreses, contact is linked here, otherwise it's nil
 @property (nonatomic, retain) HIContact *contact;
+
+// if the transaction was created from within an app
+@property (nonatomic, retain) HIApplication *sourceApplication;
 
 // HITransactionDirectionIncoming or HITransactionDirectionOutgoing
 @property (nonatomic, readonly, getter = direction) HITransactionDirection direction;

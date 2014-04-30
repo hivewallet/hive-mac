@@ -109,8 +109,8 @@ static NSString *const KEY_WALLET_HASH = @"walletHash";
     NSView *separator = [[NSView alloc] initWithFrame:frame];
 
     separator.wantsLayer = YES;
-    separator.layer.backgroundColor = [[NSColor colorWithCalibratedWhite:0.5 alpha:0.5] hiNativeColor];
-    separator.autoresizingMask = NSViewMinYMargin | NSViewWidthSizable;
+    separator.layer.backgroundColor = [[NSColor colorWithCalibratedWhite:0.5 alpha:0.3] hiNativeColor];
+    separator.autoresizingMask = NSViewMaxYMargin | NSViewWidthSizable;
 
     return separator;
 }

@@ -15,6 +15,7 @@
 
 + (HIBackupManager *)sharedManager;
 - (void)initializeAdapters;
+- (void)resetSettings;
 - (void)performBackups;
 
 @end

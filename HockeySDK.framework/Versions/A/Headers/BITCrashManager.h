@@ -2,7 +2,7 @@
  * Author: Andreas Linde <mail@andreaslinde.de>
  *         Kent Sutherland
  *
- * Copyright (c) 2012-2013 HockeyApp, Bit Stadium GmbH.
+ * Copyright (c) 2012-2014 HockeyApp, Bit Stadium GmbH.
  * Copyright (c) 2011 Andreas Linde & Kent Sutherland.
  * All rights reserved.
  *
@@ -28,7 +28,9 @@
  * OTHER DEALINGS IN THE SOFTWARE.
  */
 
-#import <Cocoa/Cocoa.h>
+#import <Foundation/Foundation.h>
+
+#import "BITHockeyBaseManager.h"
 
 // flags if the crashreporter is activated at all
 // set this as bool in user defaults e.g. in the settings, if you want to let the user be able to deactivate it
@@ -76,10 +78,10 @@
  *
  * @warning If you start the app with the Xcode debugger attached, detecting crashes will _NOT_ be enabled!
  */
-@interface BITCrashManager : NSObject {
+@interface BITCrashManager : BITHockeyBaseManager {
 @private
   NSFileManager *_fileManager;
-
+  
   BOOL _crashIdenticalCurrentVersion;
   BOOL _crashManagerActivated;
   
@@ -89,18 +91,12 @@
   NSInteger         _statusCode;
   NSURLConnection   *_urlConnection;
   NSMutableData     *_responseData;
-
+  
   id<BITCrashManagerDelegate> _delegate;
-
-  NSString   *_appIdentifier;
-  NSString   *_serverURL;
-  NSString   *_companyName;
+  
   BOOL       _autoSubmitCrashReport;
   BOOL       _askUserDetails;
   
-  NSString   *_userName;
-  NSString   *_userEmail;
-    
   NSMutableArray *_crashFiles;
   NSString       *_crashesDir;
   NSString       *_settingsFile;
@@ -114,7 +110,7 @@
   
   BOOL                _didCrashInLastSession;
   NSMutableDictionary *_approvedCrashReports;
-
+  
   NSMutableDictionary *_dictOfLastSessionCrash;
   
   BOOL       _invokedReturnToMainApplication;
@@ -133,26 +129,11 @@
 ///-----------------------------------------------------------------------------
 
 /**
- * Defines the server URL to send data to or request data from
- *
- * By default this is set to the HockeyApp servers and there rarely should be a
- * need to modify that.
- */
-@property (nonatomic, strong) NSString *serverURL;
-
-
-/**
  *  Defines if the user interface should ask for name and email
  *
  *  Default: _YES_
  */
 @property (nonatomic, assign) BOOL askUserDetails;
-
-
-/**
- *  Defines the company name to be shown in the crash reporting dialog
- */
-@property (nonatomic, retain) NSString *companyName;
 
 
 /**
@@ -251,6 +232,20 @@
  *  @return BOOL if the debugger is attached on app startup
  */
 - (BOOL)isDebuggerAttached;
+
+
+/**
+ * Lets the app crash for easy testing of the SDK
+ *
+ * The best way to use this is to trigger the crash with a button action.
+ *
+ * Make sure not to let the app crash in `applicationDidFinishLaunching` or any other
+ * startup method! Since otherwise the app would crash before the SDK could process it.
+ *
+ * Note that our SDK provides support for handling crashes that happen early on startup.
+ * Check the documentation for more information on how to use this.
+ */
+- (void)generateTestCrash;
 
 
 @end

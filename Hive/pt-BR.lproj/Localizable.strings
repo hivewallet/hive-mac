@@ -45,7 +45,7 @@
 "Bitcoin network data file could not be opened - another instance of Hive might still be running." = "O arquivo de dados da rede Bitcoin não pode ser aberto - outra instância do Hive pode estar em execução.";
 
 /* Chain file unreadable error title */
-"Bitcoin network data file could not be opened." = "O arquivo de dados da rede Bitcoin não pode ser aberto";
+"Bitcoin network data file could not be opened." = "O arquivo de dados da rede Bitcoin não pode ser aberto.";
 
 /* Backup error message */
 "Can't create a directory to store the wallet backup" = "Não foi possível criar um diretório para armazenar o backup da carteira";
@@ -128,6 +128,9 @@
 /* Passphrase prompt for sending */
 "Enter your passphrase to confirm the transaction:" = "Entre a sua senha para confirmar a transação:";
 
+/* Passphrase prompt for message signing */
+"Enter your password to sign the message:" = "Enter your password to sign the message:";
+
 /* Firstname field placeholder */
 "Firstname" = "Primeiro nome";
 
@@ -145,6 +148,9 @@
 
 /* Sync in progress alert title */
 "Hive is currently syncing with the Bitcoin network. Are you sure you want to quit?" = "O Hive está sendo sincronizado com a rede Bitcoin. Você tem certeza que deseja sair?";
+
+/* No network connection alert title */
+"Hive is not connected to the Bitcoin network." = "Hive is not connected to the Bitcoin network.";
 
 /* Chain file unreadable error explanation */
 "Hive will now delete the file and synchronize with the Bitcoin network again. Please leave Hive open for the next several minutes, and try not to send any transactions right now." = "O Hive vai excluir o arquivo e e sincronizar com a rede Bitcoin novamente. Por favor deixe o Hive aberto pelos próximos minutos e tente não enviar nenhuma transação agora.";
@@ -215,6 +221,9 @@
 /* Empty address alert message */
 "Please enter a valid Bitcoin address or select one from the dropdown list." = "Por favor digite um endereço de Bitcoin válido ou selecione no menu.";
 
+/* Preferences window title */
+"Preferences" = "Preferences";
+
 /* Profile view title string */
 "Profile" = "Perfil";
 
@@ -234,13 +243,16 @@
 "Remove" = "Remover";
 
 /* Dropbox invalid folder alert title */
-"Selected directory is outside Dropbox folder." = "O diretório selecionado está fora da pasta do Dropbox";
+"Selected directory is outside Dropbox folder." = "O diretório selecionado está fora da pasta do Dropbox.";
 
 /* Send button title */
 "Send" = "Enviar";
 
 /* Sent amount of BTC to a contact/address */
 "Sent &a to &c" = "Enviar &a para &c";
+
+/* Title for shortcut keys preferences panel */
+"Shortcuts" = "Shortcuts";
 
 /* Amount exceeds available balance alert title */
 "Some funds are temporarily unavailable." = "Alguns recursos estão temporariamente indisponíveis.";
@@ -340,6 +352,9 @@
 
 /* Dropbox no backup folder alert details */
 "You must install Dropbox first (see www.dropbox.com)." = "Você precisa instalar o Dropbox antes (veja www.dropbox.com).";
+
+/* No network connection alert message */
+"You need to be connected to the network to send any transactions." = "You need to be connected to the network to send any transactions.";
 
 /* Dropbox invalid folder alert details */
 "You need to choose or create a directory inside your Dropbox folder." = "Você precisa escolher ou criar um diretório dentro da sua pasta Dropbox.";

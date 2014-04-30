@@ -128,6 +128,9 @@
 /* Passphrase prompt for sending */
 "Enter your passphrase to confirm the transaction:" = "I-enter any iyong passphrase upang maikumpirma ang transaction:";
 
+/* Passphrase prompt for message signing */
+"Enter your password to sign the message:" = "I-enter and password upang mag-sign ng mensahe:";
+
 /* Firstname field placeholder */
 "Firstname" = "Pangalan";
 
@@ -145,6 +148,9 @@
 
 /* Sync in progress alert title */
 "Hive is currently syncing with the Bitcoin network. Are you sure you want to quit?" = "Ang hive ay kasalakuyang nagsi-sync sa Bitcoin network. Nais mo talagang mag-quit?";
+
+/* No network connection alert title */
+"Hive is not connected to the Bitcoin network." = "Ang Hive ay hindi konektado sa Bitcoin network.";
 
 /* Chain file unreadable error explanation */
 "Hive will now delete the file and synchronize with the Bitcoin network again. Please leave Hive open for the next several minutes, and try not to send any transactions right now." = "Ang Hive ay magbubura ng file at magsi-synchronize sa Bitcoin network uli. Maari lamang na iwan ang Hive na nakabukas nang ilang minuto, at mabuting huwag munang magpadala ng kahit anong transaksiyon ngayon.";
@@ -215,6 +221,9 @@
 /* Empty address alert message */
 "Please enter a valid Bitcoin address or select one from the dropdown list." = "Ilagay ang tamang Bitcoin address o mamili mula sa dropdown list.";
 
+/* Preferences window title */
+"Preferences" = "Mga Preference";
+
 /* Profile view title string */
 "Profile" = "Profile";
 
@@ -241,6 +250,9 @@
 
 /* Sent amount of BTC to a contact/address */
 "Sent &a to &c" = "Naipadala ang &a sa &c";
+
+/* Title for shortcut keys preferences panel */
+"Shortcuts" = "Mga Shortcut";
 
 /* Amount exceeds available balance alert title */
 "Some funds are temporarily unavailable." = "Ang ilang pondo ay pansamantalang hindi magagamit.";
@@ -279,7 +291,7 @@
 "Time Machine is disabled in System Preferences" = "Ang Time Machine ay na-disable sa System Preferences";
 
 /* No backups enabled notification details */
-"To protect your bitcoins, it's recommended that you enable at least one type of backup." = "Upang maprotektahan ang iyong mga bitcoin, nirerekomenda na i-enable ang kahit na isang uri ng backup";
+"To protect your bitcoins, it's recommended that you enable at least one type of backup." = "Upang maprotektahan ang iyong mga bitcoin, nirerekomenda na i-enable ang kahit na isang uri ng backup.";
 
 /* Amount exceeds available balance alert message */
 "To send this transaction, you'll need to wait for your pending transactions to be confirmed first (this shouldn't take more than a few minutes)." = "Upang maipadala ang transaction na ito, kinakailangan mag-antay para makumpirma ang iyong pending transactions muna ( ito ay hindi tatagal ng ilang minuto).";
@@ -340,6 +352,9 @@
 
 /* Dropbox no backup folder alert details */
 "You must install Dropbox first (see www.dropbox.com)." = "Kailangan mo munang i-install ang Dropbox (see www.dropbox.com).";
+
+/* No network connection alert message */
+"You need to be connected to the network to send any transactions." = "Kinakailangan mong maging konektado sa network upang makapagpadala ng mga transaksyon.";
 
 /* Dropbox invalid folder alert details */
 "You need to choose or create a directory inside your Dropbox folder." = "Kinakailangan mong mamili o gumawa ng directory sa loob ny iyong Dropbox folder.";

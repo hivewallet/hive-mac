@@ -8,7 +8,7 @@
 
 #import <AFNetworking/AFJSONRequestOperation.h>
 #import <BitcoinJKit/BitcoinJKit.h>
-#import <Tor/Tor.h>
+// #import <Tor/Tor.h>
 #import "BCClient.h"
 #import "HIAppDelegate.h"
 #import "HIApplicationsManager.h"
@@ -16,6 +16,7 @@
 #import "HIDatabaseManager.h"
 #import "HIPasswordHolder.h"
 #import "HITransaction.h"
+#import "HIApplication.h"
 
 static NSString * const kBCClientBaseURLString = @"https://grabhive.com/";
 NSString * const BCClientBitcoinjDirectory = @"BitcoinJ.network";
@@ -67,10 +68,10 @@ NSString * const BCClientPasswordChangedNotification = @"BCClientPasswordChanged
         _transactionUpdateContext.parentContext = mainContext;
 
         NSNotificationCenter *notificationCenter = [NSNotificationCenter defaultCenter];
-        [notificationCenter addObserver:self
+        /*[notificationCenter addObserver:self
                                selector:@selector(torStarted:)
                                    name:kHITorManagerStarted
-                                 object:nil];
+                                 object:nil];*/
         [notificationCenter addObserver:self
                                selector:@selector(bitcoinKitStarted:)
                                    name:kHIBitcoinManagerStartedNotification
@@ -80,13 +81,14 @@ NSString * const BCClientPasswordChangedNotification = @"BCClientPasswordChanged
                                    name:kHIBitcoinManagerTransactionChangedNotification
                                  object:nil];
 
+        /*
         HITorManager *tor = [HITorManager defaultManager];
         tor.dataDirectoryURL = [self torDirectory];
         tor.port = 9999;
+        */
 
         HIBitcoinManager *bitcoin = [HIBitcoinManager defaultManager];
         bitcoin.dataURL = [self bitcoinjDirectory];
-        bitcoin.checkpointsFilePath = [[NSBundle mainBundle] pathForResource:@"bitcoinkit" ofType:@"checkpoints"];
         bitcoin.exceptionHandler = ^(NSException *exception) {
             dispatch_async(dispatch_get_main_queue(), ^{
                 [[NSApp delegate] showExceptionWindowWithException:exception];
@@ -97,6 +99,8 @@ NSString * const BCClientPasswordChangedNotification = @"BCClientPasswordChanged
 
         if (DEBUG_OPTION_ENABLED(TESTING_NETWORK)) {
             bitcoin.testingNetwork = YES;
+        } else {
+            bitcoin.checkpointsFilePath = [[NSBundle mainBundle] pathForResource:@"bitcoinkit" ofType:@"checkpoints"];
         }
 
         [bitcoin addObserver:self
@@ -109,10 +113,6 @@ NSString * const BCClientPasswordChangedNotification = @"BCClientPasswordChanged
                      context:NULL];
         [bitcoin addObserver:self
                   forKeyPath:@"syncProgress"
-                     options:NSKeyValueObservingOptionInitial | NSKeyValueObservingOptionNew
-                     context:NULL];
-        [bitcoin addObserver:self
-                  forKeyPath:@"connections"
                      options:NSKeyValueObservingOptionInitial | NSKeyValueObservingOptionNew
                      context:NULL];
     }
@@ -162,9 +162,11 @@ NSString * const BCClientPasswordChangedNotification = @"BCClientPasswordChanged
     }
 }
 
+/*
 - (void)torStarted:(NSNotification *)notification {
     [HITorManager defaultManager].torRouting = YES;
 }
+*/
 
 - (void)bitcoinKitStarted:(NSNotification *)notification {
     dispatch_async(dispatch_get_main_queue(), ^{
@@ -299,7 +301,6 @@ NSString * const BCClientPasswordChangedNotification = @"BCClientPasswordChanged
     @try {
         HIBitcoinManager *manager = [HIBitcoinManager defaultManager];
 
-        [manager removeObserver:self forKeyPath:@"connections"];
         [manager removeObserver:self forKeyPath:@"availableBalance"];
         [manager removeObserver:self forKeyPath:@"estimatedBalance"];
         [manager removeObserver:self forKeyPath:@"syncProgress"];
@@ -373,16 +374,11 @@ NSString * const BCClientPasswordChangedNotification = @"BCClientPasswordChanged
     NSAssert(data != nil, @"Transaction data shouldn't be null");
     NSAssert(data[@"txid"] != nil, @"Transaction id shouldn't be null");
 
-    NSFetchRequest *request = [[NSFetchRequest alloc] initWithEntityName:HITransactionEntity];
-    request.predicate = [NSPredicate predicateWithFormat:@"id == %@", data[@"txid"]];
+    NSString *transactionId = data[@"txid"];
 
-    HITransaction *transaction;
-    NSArray *response = [_transactionUpdateContext executeFetchRequest:request error:NULL];
-
-    BOOL alreadyExists = response.count > 0;
-    if (alreadyExists) {
-        transaction = response[0];
-    } else {
+    HITransaction *transaction = [self fetchTransactionWithId:transactionId];
+    BOOL alreadyExists = transaction != nil;
+    if (!alreadyExists) {
         transaction = [NSEntityDescription insertNewObjectForEntityForName:HITransactionEntity
                                                     inManagedObjectContext:_transactionUpdateContext];
 
@@ -436,9 +432,17 @@ NSString * const BCClientPasswordChangedNotification = @"BCClientPasswordChanged
     HILogDebug(@"Transaction %@ is now %@ (%d)", transaction.id, confidence, transaction.status);
 }
 
+- (HITransaction *)fetchTransactionWithId:(NSString *)transactionId {
+    NSFetchRequest *request = [[NSFetchRequest alloc] initWithEntityName:HITransactionEntity];
+    request.predicate = [NSPredicate predicateWithFormat:@"id == %@", transactionId];
+    NSArray *response = [_transactionUpdateContext executeFetchRequest:request error:NULL];
+    return response.count > 0 ? response[0] : nil;
+}
+
 - (void)sendBitcoins:(uint64)amount
               toHash:(NSString *)hash
             password:(HIPasswordHolder *)password
+   sourceApplication:(HIApplication *)sourceApplication
                error:(NSError **)error
           completion:(void (^)(BOOL success, NSString *transactionId))completion {
 
@@ -474,10 +478,26 @@ NSString * const BCClientPasswordChangedNotification = @"BCClientPasswordChanged
                 dispatch_async(dispatch_get_main_queue(), ^{
                     HILogInfo(@"Transaction %@: id = %@", transactionId ? @"succeeded" : @"failed", transactionId);
                     completion((transactionId != nil), transactionId);
+
+                    [self attachSourceApplication:sourceApplication
+                                  toTransactionId:transactionId];
                 });
             }];
         }
     }
+}
+
+- (void)attachSourceApplication:(HIApplication *)application toTransactionId:(NSString *)id {
+    HITransaction *transaction = [self fetchTransactionWithId:id];
+    HIApplication *applicationInUpdateContext = [self fetchApplicationForUpdateContext:application];
+    transaction.sourceApplication = applicationInUpdateContext;
+}
+
+- (HIApplication *)fetchApplicationForUpdateContext:(HIApplication *)application {
+    NSFetchRequest *request = [[NSFetchRequest alloc] initWithEntityName:HIApplicationEntity];
+    request.predicate = [NSPredicate predicateWithFormat:@"id == %@", application.id];
+    NSArray *response = [_transactionUpdateContext executeFetchRequest:request error:NULL];
+    return response.count > 0 ? response[0] : nil;
 }
 
 - (void)sendBitcoins:(uint64)amount
@@ -485,11 +505,17 @@ NSString * const BCClientPasswordChangedNotification = @"BCClientPasswordChanged
             password:(HIPasswordHolder *)password
                error:(NSError **)error
           completion:(void(^)(BOOL success, NSString *transactionId))completion {
-    [self sendBitcoins:amount toHash:contact.account password:password error:error completion:completion];
+
+    [self sendBitcoins:amount
+                toHash:contact.account
+              password:password
+     sourceApplication:nil
+                 error:error
+            completion:completion];
 }
 
-- (satoshi_t)feeWhenSendingBitcoin:(uint64)amount {
-    return amount > 0 ? [[HIBitcoinManager defaultManager] calculateTransactionFeeForSendingCoins:amount] : 0;
+- (satoshi_t)feeWhenSendingBitcoin:(uint64)amount toRecipient:(NSString *)recipient {
+    return [[HIBitcoinManager defaultManager] calculateTransactionFeeForSendingCoins:amount toRecipient:recipient];
 }
 
 - (void)addTransactionObserver:(id <BCTransactionObserver>)observer {

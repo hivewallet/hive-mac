@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="5053" systemVersion="13C64" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none">
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="5056" systemVersion="13C64" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none">
     <dependencies>
         <deployment version="1070" defaultVersion="1070" identifier="macosx"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="5053"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="5056"/>
     </dependencies>
     <objects>
         <customObject id="-2" userLabel="File's Owner" customClass="NSApplication">
@@ -29,6 +29,11 @@
                             <menuItem title="Asetukset…" keyEquivalent="," id="129">
                                 <connections>
                                     <action selector="openPreferences:" target="-1" id="754"/>
+                                    <binding destination="494" name="hidden" keyPath="fullMenuEnabled" id="jYH-gV-zfX">
+                                        <dictionary key="options">
+                                            <string key="NSValueTransformerName">NSNegateBoolean</string>
+                                        </dictionary>
+                                    </binding>
                                 </connections>
                             </menuItem>
                             <menuItem title="Tarkista päivitykset..." id="870">
@@ -88,7 +93,7 @@
                                     <action selector="changeWalletPassword:" target="494" id="n4h-c8-Hjn"/>
                                 </connections>
                             </menuItem>
-                            <menuItem title="Lock Wallet" keyEquivalent="l" id="AFM-Ev-d2A">
+                            <menuItem title="Lukitse lompakko" keyEquivalent="l" id="AFM-Ev-d2A">
                                 <connections>
                                     <action selector="lockWallet:" target="-1" id="XWR-xx-Wx0"/>
                                 </connections>
@@ -162,10 +167,16 @@
                                     <action selector="openCoinMapSite:" target="494" id="Ozv-6D-Aab"/>
                                 </connections>
                             </menuItem>
-                            <menuItem title="Scan a QR code…" id="vdw-IK-snJ">
+                            <menuItem title="Skannaa QR-koodi..." id="vdw-IK-snJ">
                                 <modifierMask key="keyEquivalentModifierMask"/>
                                 <connections>
                                     <action selector="scanQRCode:" target="494" id="mEt-Z8-Hrc"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="Sign message..." id="SoJ-eV-k9I">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                                <connections>
+                                    <action selector="openSignMessageWindow:" target="494" id="BXf-n1-5Go"/>
                                 </connections>
                             </menuItem>
                             <menuItem title="Testaustyökalut..." keyEquivalent="D" id="lLT-53-p4m">
@@ -219,11 +230,11 @@
                         </items>
                     </menu>
                 </menuItem>
-                <menuItem title="Help" id="ZUU-kM-x8u" userLabel="Menu Item - Help">
+                <menuItem title="Ohje" id="ZUU-kM-x8u" userLabel="Menu Item - Help">
                     <modifierMask key="keyEquivalentModifierMask"/>
-                    <menu key="submenu" title="Help" id="K2u-T2-G1a">
+                    <menu key="submenu" title="Ohje" id="K2u-T2-G1a">
                         <items>
-                            <menuItem title="Open FAQ…" id="VQa-2Z-6fS">
+                            <menuItem title="Avaa Usein kysytyt kysymykset" id="VQa-2Z-6fS">
                                 <modifierMask key="keyEquivalentModifierMask"/>
                                 <connections>
                                     <action selector="openFAQ:" target="494" id="Hg3-rm-MEN"/>

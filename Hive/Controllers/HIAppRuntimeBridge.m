@@ -42,6 +42,7 @@ static const NSInteger kHIAppRuntimeBridgeParsingError = -1000;
     NSArray *_availableCurrencies;
     NSString *_preferredCurrency;
     NSString *_preferredBitcoinFormat;
+    BOOL _onTestnet;
 }
 
 @end
@@ -144,6 +145,10 @@ static const NSInteger kHIAppRuntimeBridgeParsingError = -1000;
         // We currently do not send live updates to apps, so remember this.
         _preferredCurrency = [[HIExchangeRateService sharedService] preferredCurrency];
         _preferredBitcoinFormat = [[HIBitcoinFormatService sharedService] preferredFormat];
+
+        if (DEBUG_OPTION_ENABLED(TESTING_NETWORK)) {
+            _onTestnet = YES;
+        }
     }
 
     return self;
@@ -297,6 +302,8 @@ static const NSInteger kHIAppRuntimeBridgeParsingError = -1000;
                            @"preferredBitcoinFormat": _preferredBitcoinFormat,
                            @"buildNumber": bundleInfo[@"CFBundleVersion"],
                            @"version": bundleInfo[@"CFBundleShortVersionString"],
+                           @"platform": @"osx",
+                           @"testnet": @(_onTestnet),
                          };
 
     JSValueRef jsonValue = [self valueObjectFromDictionary:data];

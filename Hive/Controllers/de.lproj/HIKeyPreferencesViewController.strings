@@ -1,0 +1,9 @@
+
+/* Class = "NSTextFieldCell"; title = "Scan QR code:"; ObjectID = "psj-Lk-deP"; */
+"psj-Lk-deP.title" = "QR-Code scannen:";
+
+/* Class = "NSTextFieldCell"; title = "Show “Send” window:"; ObjectID = "sbC-cS-hdN"; */
+"sbC-cS-hdN.title" = "„Senden“-Fenster anzeigen:";
+
+/* Class = "NSTextFieldCell"; title = "Global Shortcuts"; ObjectID = "uBD-1D-rbI"; */
+"uBD-1D-rbI.title" = "Globale Tastaturkürzel";

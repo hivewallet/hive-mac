@@ -140,3 +140,15 @@ source_file = Hive/Controllers/en.lproj/HILockScreenViewController.strings
 source_lang = en
 type = STRINGS
 
+[hive-osx.HISignMessageWindowController]
+file_filter = Hive/Controllers/<lang>.lproj/HISignMessageWindowController.strings
+source_file = Hive/Controllers/en.lproj/HISignMessageWindowController.strings
+source_lang = en
+type = STRINGS
+
+[hive-osx.HIKeyPreferencesViewController]
+file_filter = Hive/Controllers/<lang>.lproj/HIKeyPreferencesViewController.strings
+source_file = Hive/Controllers/en.lproj/HIKeyPreferencesViewController.strings
+source_lang = en
+type = STRINGS
+
