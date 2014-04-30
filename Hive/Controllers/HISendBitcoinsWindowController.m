@@ -238,9 +238,20 @@ NSString * const HISendBitcoinsWindowSuccessKey = @"success";
 
     NSNumber *amount = data[@"amount"];
     NSString *paymentURL = data[@"paymentURL"];
-    NSURL *URL = paymentURL ? [NSURL URLWithString:paymentURL] : nil;
+    NSString *pkiName = data[@"pkiName"];
+    NSString *recipientName;
 
-    [self setLockedAddress:(URL ? URL.host : @"?")];
+    NSURL *URL = [NSURL URLWithString:paymentURL];
+
+    if (pkiName) {
+        recipientName = pkiName;
+    } else if (URL) {
+        recipientName = URL.host;
+    } else {
+        recipientName = @"?";
+    }
+
+    [self setLockedAddress:recipientName];
     [self setLockedAmount:amount.integerValue];
 }
 
