@@ -339,7 +339,7 @@ Gw
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <textFieldCell key="cell" selectable="YES" sendsActionOnEndEditing="YES" id="dxM-9E-wwb">
                         <font key="font" metaFont="system"/>
-                        <string key="title">As cotações são fornecidas pelo site BitcoinAverage. Os preços do Bitcoin podem oscilar rapidamente, então outras aplicações ou sites podem apresentar cotações diferentes.</string>
+                        <string key="title">As cotações são fornecidas pelo site BitcoinAverage. Os preços de Bitcoin podem oscilar rapidamente, então outras aplicações ou sites podem apresentar cotações diferentes.</string>
                         <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                     </textFieldCell>

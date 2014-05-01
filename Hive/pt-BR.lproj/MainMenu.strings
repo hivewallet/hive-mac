@@ -9,7 +9,7 @@
 "57.title" = "Hive";
 
 /* Class = "NSMenuItem"; title = "About Hive"; ObjectID = "58"; */
-"58.title" = "Sobre Hive";
+"58.title" = "Sobre o Hive";
 
 /* Class = "NSMenuItem"; title = "Preferences…"; ObjectID = "129"; */
 "129.title" = "Preferências…";
@@ -78,7 +78,7 @@
 "864.title" = "Fechar";
 
 /* Class = "NSMenuItem"; title = "Send Bitcoin..."; ObjectID = "866"; */
-"866.title" = "Enviar Bitcoins...";
+"866.title" = "Enviar Bitcoin...";
 
 /* Class = "NSMenuItem"; title = "Check for Updates..."; ObjectID = "870"; */
 "870.title" = "Buscar atualizações...";
@@ -102,7 +102,7 @@
 "K2u-T2-G1a.title" = "Ajuda";
 
 /* Class = "NSMenuItem"; title = "Sign message..."; ObjectID = "SoJ-eV-k9I"; */
-"SoJ-eV-k9I.title" = "Sign message...";
+"SoJ-eV-k9I.title" = "Assinar mensagem...";
 
 /* Class = "NSMenuItem"; title = "Debugging tools..."; ObjectID = "Ue9-mi-gbe"; */
 "Ue9-mi-gbe.title" = "Ferramentas de Debug...";
@@ -129,4 +129,4 @@
 "lLT-53-p4m.title" = "Informações de Debug...";
 
 /* Class = "NSMenuItem"; title = "Scan a QR code…"; ObjectID = "vdw-IK-snJ"; */
-"vdw-IK-snJ.title" = "Escanear um código QR...";
+"vdw-IK-snJ.title" = "Escanear um QR Code...";

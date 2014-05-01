@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="5053" systemVersion="13C64" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none">
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="5056" systemVersion="13C1021" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none">
     <dependencies>
         <deployment defaultVersion="1070" identifier="macosx"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="5053"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="5056"/>
     </dependencies>
     <objects>
         <customObject id="-2" userLabel="File's Owner" customClass="HIDebuggingInfoWindowController">
@@ -57,7 +57,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                         <textFieldCell key="cell" sendsActionOnEndEditing="YES" id="o5O-SS-J37">
                             <font key="font" metaFont="system"/>
-                            <string key="title">Se tiver problemas com sua carteira, podemos pedir para você nos enviar o contúdo da área de texto abaixo. Observe que os dados NÃO incluem sua chave privada e consequentemente não permitirá que seus Bitcoins sejam acessados por nós!</string>
+                            <string key="title">Se tiver problemas com sua carteira, podemos pedir para você nos enviar o conteúdo da área de texto abaixo. Observe que os dados NÃO incluem sua chave privada e consequentemente não permitirá que seus Bitcoins sejam acessados por nós!</string>
                             <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                             <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                         </textFieldCell>
@@ -65,7 +65,7 @@
                     <button verticalHuggingPriority="750" id="7D6-dq-xT9">
                         <rect key="frame" x="506" y="13" width="130" height="32"/>
                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
-                        <buttonCell key="cell" type="push" title="Salvar em arquivo..." bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="1AY-mJ-Thd">
+                        <buttonCell key="cell" type="push" title="Salvar para arquivo..." bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="1AY-mJ-Thd">
                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                             <font key="font" metaFont="system"/>
                         </buttonCell>

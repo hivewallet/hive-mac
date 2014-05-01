@@ -15,7 +15,7 @@
 "Mpx-rH-nUM.title" = "Ah não, algo deu errado!";
 
 /* Class = "NSTextFieldCell"; title = "Your name (optional)"; ObjectID = "pya-AJ-MPI"; */
-"pya-AJ-MPI.title" = "Seu Nome (opcional)";
+"pya-AJ-MPI.title" = "Seu nome (opcional)";
 
 /* Class = "NSButtonCell"; title = "Send"; ObjectID = "tDm-yy-jVS"; */
 "tDm-yy-jVS.title" = "Enviar";

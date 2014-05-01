@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="5056" systemVersion="13C64" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none">
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="5056" systemVersion="13C1021" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none">
     <dependencies>
         <deployment version="1070" defaultVersion="1070" identifier="macosx"/>
         <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="5056"/>
@@ -17,7 +17,7 @@
                 <menuItem title="Hive" id="56">
                     <menu key="submenu" title="Hive" systemMenu="apple" id="57">
                         <items>
-                            <menuItem title="Sobre Hive" id="58">
+                            <menuItem title="Sobre o Hive" id="58">
                                 <modifierMask key="keyEquivalentModifierMask"/>
                                 <connections>
                                     <action selector="showAboutWindow:" target="494" id="cP6-Rg-Zok"/>
@@ -81,7 +81,7 @@
                 <menuItem title="Carteira" id="GX7-xG-GKH">
                     <menu key="submenu" title="Carteira" id="jrd-Ul-XjV">
                         <items>
-                            <menuItem title="Enviar Bitcoins..." keyEquivalent="S" id="866">
+                            <menuItem title="Enviar Bitcoin..." keyEquivalent="S" id="866">
                                 <connections>
                                     <action selector="openSendBitcoinsWindow:" target="-1" id="868"/>
                                 </connections>
@@ -167,13 +167,13 @@
                                     <action selector="openCoinMapSite:" target="494" id="Ozv-6D-Aab"/>
                                 </connections>
                             </menuItem>
-                            <menuItem title="Escanear um código QR..." id="vdw-IK-snJ">
+                            <menuItem title="Escanear um QR Code..." id="vdw-IK-snJ">
                                 <modifierMask key="keyEquivalentModifierMask"/>
                                 <connections>
                                     <action selector="scanQRCode:" target="494" id="mEt-Z8-Hrc"/>
                                 </connections>
                             </menuItem>
-                            <menuItem title="Sign message..." id="SoJ-eV-k9I">
+                            <menuItem title="Assinar mensagem..." id="SoJ-eV-k9I">
                                 <modifierMask key="keyEquivalentModifierMask"/>
                                 <connections>
                                     <action selector="openSignMessageWindow:" target="494" id="BXf-n1-5Go"/>
