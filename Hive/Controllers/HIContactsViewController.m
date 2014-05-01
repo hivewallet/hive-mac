@@ -84,8 +84,12 @@
 }
 
 - (NSArray *)sortDescriptors {
-    return @[[NSSortDescriptor sortDescriptorWithKey:@"lastname" ascending:YES],
-             [NSSortDescriptor sortDescriptorWithKey:@"firstname" ascending:YES]];
+    return @[[NSSortDescriptor sortDescriptorWithKey:@"lastname"
+                                           ascending:YES
+                                            selector:@selector(localizedStandardCompare:)],
+             [NSSortDescriptor sortDescriptorWithKey:@"firstname"
+                                           ascending:YES
+                                            selector:@selector(localizedStandardCompare:)]];
 }
 
 #pragma mark - NSTableViewDataSource
