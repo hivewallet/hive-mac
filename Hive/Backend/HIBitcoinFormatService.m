@@ -22,7 +22,7 @@ static NSString *const HIFormatPreferenceKey = @"BitcoinFormat";
 - (id)init {
     self = [super init];
     if (self) {
-        _locale = [NSLocale currentLocale];
+        self.locale = [NSLocale autoupdatingCurrentLocale];
     }
     return self;
 }
@@ -76,7 +76,7 @@ static NSString *const HIFormatPreferenceKey = @"BitcoinFormat";
 - (NSNumberFormatter *)createNumberFormatterWithFormat:(NSString *)format {
     // Do not use the formatter's multiplier! It causes rounding errors!
     NSNumberFormatter *formatter = [NSNumberFormatter new];
-    formatter.locale = _locale;
+    formatter.locale = self.locale;
     formatter.generatesDecimalNumbers = YES;
     formatter.numberStyle = NSNumberFormatterDecimalStyle;
     formatter.minimumIntegerDigits = 1;
