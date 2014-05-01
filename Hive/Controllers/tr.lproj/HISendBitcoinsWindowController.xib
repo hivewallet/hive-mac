@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="5056" systemVersion="13C64" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="5056" systemVersion="13C1021" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
         <deployment defaultVersion="1070" identifier="macosx"/>
         <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="5056"/>
@@ -42,7 +42,7 @@
                         <rect key="frame" x="17" y="20" width="80" height="28"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <constraints>
-                            <constraint firstAttribute="width" constant="80" id="73U-Qq-n6l"/>
+                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="80" id="73U-Qq-n6l"/>
                             <constraint firstAttribute="height" constant="28" id="zY6-4Y-TRC"/>
                         </constraints>
                         <shadow key="shadow" blurRadius="1">
@@ -64,7 +64,7 @@ Gw
                         <rect key="frame" x="338" y="19" width="80" height="29"/>
                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
                         <constraints>
-                            <constraint firstAttribute="width" constant="76" id="uHK-iv-97X"/>
+                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="76" id="uHK-iv-97X"/>
                         </constraints>
                         <shadow key="shadow" blurRadius="1">
                             <size key="offset" width="0.0" height="1"/>
