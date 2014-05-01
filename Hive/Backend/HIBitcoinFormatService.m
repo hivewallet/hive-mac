@@ -121,14 +121,25 @@ static NSString *const HIFormatPreferenceKey = @"BitcoinFormat";
 - (satoshi_t)parseString:(NSString *)string
               withFormat:(NSString *)format
                    error:(NSError **)error {
+    return [self parseString:string withFormat:format locale:self.locale error:error];
+}
+
+- (satoshi_t)parseString:(NSString *)string
+              withFormat:(NSString *)format
+                  locale:(NSLocale *)locale
+                   error:(NSError **)error {
 
     NSParameterAssert(string);
 
     NSNumberFormatter *formatter = [self createNumberFormatterWithFormat:format];
+    formatter.locale = locale;
+
     if (error) {
         *error = nil;
     }
+
     NSDecimalNumber *number = nil;
+
     if ([formatter getObjectValue:&number
                         forString:string
                             range:NULL
