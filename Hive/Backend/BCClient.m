@@ -221,8 +221,8 @@ NSString * const BCClientPasswordChangedNotification = @"BCClientPasswordChanged
         }
 
         if (knownTransactions.count > 0) {
-            HILogError(@"Unknown transactions were found and will be deleted.");
             for (HITransaction *transaction in knownTransactions.allValues) {
+                HILogError(@"Deleting unknown transaction: %@", transaction);
                 [_transactionUpdateContext deleteObject:transaction];
             }
         }
@@ -525,9 +525,17 @@ NSString * const BCClientPasswordChangedNotification = @"BCClientPasswordChanged
 }
 
 - (void)attachSourceApplication:(HIApplication *)application toTransactionId:(NSString *)id {
-    HITransaction *transaction = [self fetchTransactionWithId:id];
-    HIApplication *applicationInUpdateContext = [self fetchApplicationForUpdateContext:application];
-    transaction.sourceApplication = applicationInUpdateContext;
+    [_transactionUpdateContext performBlock:^{
+        HITransaction *transaction = [self fetchTransactionWithId:id];
+        HIApplication *applicationInUpdateContext =
+            [self fetchApplicationForUpdateContext:application];
+        transaction.sourceApplication = applicationInUpdateContext;
+        NSError *error = nil;
+        [_transactionUpdateContext save:&error];
+        if (error) {
+            HILogError(@"Error attaching icon: %@", error);
+        }
+    }];
 }
 
 - (HIApplication *)fetchApplicationForUpdateContext:(HIApplication *)application {

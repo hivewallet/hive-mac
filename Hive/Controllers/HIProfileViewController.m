@@ -59,6 +59,10 @@
                                                  selector:@selector(updateBitcoinFormat:)
                                                      name:HIPreferredFormatChangeNotification
                                                    object:nil];
+        [[NSNotificationCenter defaultCenter] addObserver:self
+                                                 selector:@selector(onLocaleChange)
+                                                     name:NSCurrentLocaleDidChangeNotification
+                                                   object:nil];
 
         _exchangeRateService = [HIExchangeRateService sharedService];
         [_exchangeRateService addExchangeRateObserver:self];
@@ -127,6 +131,10 @@
 
 - (void)updateBalanceLabel {
     self.balanceLabel.stringValue = [self.bitcoinFormatService stringForBitcoin:self.estimatedBalance];
+}
+
+- (void)onLocaleChange {
+    [self updateBalance];
 }
 
 - (void)observeValueForKeyPath:(NSString *)keyPath

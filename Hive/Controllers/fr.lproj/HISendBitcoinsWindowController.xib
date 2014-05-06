@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="4514" systemVersion="13B42" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="5056" systemVersion="13C1021" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
         <deployment defaultVersion="1070" identifier="macosx"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="4514"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="5056"/>
     </dependencies>
     <objects>
         <customObject id="-2" userLabel="File's Owner" customClass="HISendBitcoinsWindowController">
@@ -27,7 +27,7 @@
         </customObject>
         <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
         <customObject id="-3" userLabel="Application"/>
-        <window title="Envoyer des bitcoins" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" restorable="NO" oneShot="NO" wantsToBeColor="NO" frameAutosaveName="SendBitcoinWindow" animationBehavior="default" id="1">
+        <window title="Envoyer des bitcoins" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" restorable="NO" oneShot="NO" frameAutosaveName="SendBitcoinWindow" animationBehavior="default" id="1">
             <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
             <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
             <rect key="contentRect" x="196" y="240" width="435" height="234"/>
@@ -42,7 +42,7 @@
                         <rect key="frame" x="17" y="20" width="80" height="28"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <constraints>
-                            <constraint firstAttribute="width" constant="80" id="73U-Qq-n6l"/>
+                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="80" id="73U-Qq-n6l"/>
                             <constraint firstAttribute="height" constant="28" id="zY6-4Y-TRC"/>
                         </constraints>
                         <shadow key="shadow" blurRadius="1">
@@ -64,7 +64,7 @@ Gw
                         <rect key="frame" x="338" y="19" width="80" height="29"/>
                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
                         <constraints>
-                            <constraint firstAttribute="width" constant="76" id="uHK-iv-97X"/>
+                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="76" id="uHK-iv-97X"/>
                         </constraints>
                         <shadow key="shadow" blurRadius="1">
                             <size key="offset" width="0.0" height="1"/>

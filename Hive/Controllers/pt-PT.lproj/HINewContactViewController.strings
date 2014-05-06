@@ -1,0 +1,27 @@
+
+/* Class = "NSButtonCell"; title = "Save"; ObjectID = "14"; */
+"14.title" = "Save";
+
+/* Class = "NSTextFieldCell"; title = "Contact information"; ObjectID = "75"; */
+"75.title" = "Informação de contacto";
+
+/* Class = "NSTextFieldCell"; title = "Email:"; ObjectID = "78"; */
+"78.title" = "Email:";
+
+/* Class = "NSButtonCell"; title = "Add address"; ObjectID = "80"; */
+"80.title" = "Adicionar endereço";
+
+/* Class = "NSTextFieldCell"; title = "Bitcoin addresses"; ObjectID = "81"; */
+"81.title" = "Endereços Bitcoin";
+
+/* Class = "NSButtonCell"; title = "Remove contact"; ObjectID = "97"; */
+"97.title" = "Eliminar contacto";
+
+/* Class = "NSTextFieldCell"; title = "edit"; ObjectID = "107"; */
+"107.title" = "editar";
+
+/* Class = "NSButtonCell"; title = "QR"; ObjectID = "Fp7-Nh-Dhm"; */
+"Fp7-Nh-Dhm.title" = "QR";
+
+/* Class = "NSButtonCell"; title = "Cancel"; ObjectID = "WNT-Ju-zbY"; */
+"WNT-Ju-zbY.title" = "Cancelar";

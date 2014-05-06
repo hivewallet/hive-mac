@@ -34,4 +34,10 @@ extern NSString *const HIPreferredFormatChangeNotification;
               withFormat:(NSString *)format
                    error:(NSError **)error;
 
+/* Parses a bitcoin value in a specific format and with a specific locale. */
+- (satoshi_t)parseString:(NSString *)string
+              withFormat:(NSString *)format
+                  locale:(NSLocale *)locale
+                   error:(NSError **)error;
+
 @end

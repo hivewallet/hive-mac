@@ -1,9 +1,9 @@
 
 /* Class = "NSButtonCell"; title = "Save"; ObjectID = "14"; */
-"14.title" = "Save";
+"14.title" = "Salvar";
 
 /* Class = "NSTextFieldCell"; title = "Contact information"; ObjectID = "75"; */
-"75.title" = "Informação de contacto";
+"75.title" = "Informações de contato";
 
 /* Class = "NSTextFieldCell"; title = "Email:"; ObjectID = "78"; */
 "78.title" = "Email:";
@@ -12,10 +12,10 @@
 "80.title" = "Adicionar endereço";
 
 /* Class = "NSTextFieldCell"; title = "Bitcoin addresses"; ObjectID = "81"; */
-"81.title" = "Endereços Bitcoin";
+"81.title" = "Endereço Bitcoin";
 
 /* Class = "NSButtonCell"; title = "Remove contact"; ObjectID = "97"; */
-"97.title" = "Eliminar contacto";
+"97.title" = "Remover contato";
 
 /* Class = "NSTextFieldCell"; title = "edit"; ObjectID = "107"; */
 "107.title" = "editar";

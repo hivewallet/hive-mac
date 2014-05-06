@@ -16,7 +16,7 @@
 - (id)init {
     self = [super init];
     if (self) {
-        _locale = [NSLocale currentLocale];
+        self.locale = [NSLocale autoupdatingCurrentLocale];
     }
 
     return self;

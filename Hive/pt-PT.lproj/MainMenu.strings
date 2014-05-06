@@ -1,0 +1,129 @@
+
+/* Class = "NSMenuItem"; title = "Hive"; ObjectID = "56"; */
+"56.title" = "Hive";
+
+/* Class = "NSMenu"; title = "Hive"; ObjectID = "57"; */
+"57.title" = "Hive";
+
+/* Class = "NSMenuItem"; title = "About Hive"; ObjectID = "58"; */
+"58.title" = "Sobre o Hive";
+
+/* Class = "NSMenuItem"; title = "Preferences…"; ObjectID = "129"; */
+"129.title" = "Preferências…";
+
+/* Class = "NSMenu"; title = "Services"; ObjectID = "130"; */
+"130.title" = "Serviços";
+
+/* Class = "NSMenuItem"; title = "Services"; ObjectID = "131"; */
+"131.title" = "Serviços";
+
+/* Class = "NSMenuItem"; title = "Hide Hive"; ObjectID = "134"; */
+"134.title" = "Ocultar o Hive";
+
+/* Class = "NSMenuItem"; title = "Quit Hive"; ObjectID = "136"; */
+"136.title" = "Fechar o Hive";
+
+/* Class = "NSMenuItem"; title = "Hide Others"; ObjectID = "145"; */
+"145.title" = "Ocultar Outros";
+
+/* Class = "NSMenuItem"; title = "Show All"; ObjectID = "150"; */
+"150.title" = "Mostrar Todos";
+
+/* Class = "NSMenuItem"; title = "Edit"; ObjectID = "801"; */
+"801.title" = "Editar";
+
+/* Class = "NSMenu"; title = "Edit"; ObjectID = "802"; */
+"802.title" = "Editar";
+
+/* Class = "NSMenuItem"; title = "Undo"; ObjectID = "804"; */
+"804.title" = "Desfazer";
+
+/* Class = "NSMenuItem"; title = "Redo"; ObjectID = "805"; */
+"805.title" = "Refazer";
+
+/* Class = "NSMenuItem"; title = "Cut"; ObjectID = "807"; */
+"807.title" = "Cortar";
+
+/* Class = "NSMenuItem"; title = "Copy"; ObjectID = "808"; */
+"808.title" = "Copiar";
+
+/* Class = "NSMenuItem"; title = "Paste"; ObjectID = "809"; */
+"809.title" = "Colar";
+
+/* Class = "NSMenuItem"; title = "Delete"; ObjectID = "811"; */
+"811.title" = "Eliminar";
+
+/* Class = "NSMenuItem"; title = "Select All"; ObjectID = "812"; */
+"812.title" = "Selecionar Todos";
+
+/* Class = "NSMenuItem"; title = "Window"; ObjectID = "854"; */
+"854.title" = "Janela";
+
+/* Class = "NSMenu"; title = "Window"; ObjectID = "855"; */
+"855.title" = "Janela";
+
+/* Class = "NSMenuItem"; title = "Minimize"; ObjectID = "857"; */
+"857.title" = "Minimizar";
+
+/* Class = "NSMenuItem"; title = "Zoom"; ObjectID = "858"; */
+"858.title" = "Zoom";
+
+/* Class = "NSMenuItem"; title = "Bring All to Front"; ObjectID = "860"; */
+"860.title" = "Colocar à frente de tudo";
+
+/* Class = "NSMenuItem"; title = "Close"; ObjectID = "864"; */
+"864.title" = "Fechar";
+
+/* Class = "NSMenuItem"; title = "Send Bitcoin..."; ObjectID = "866"; */
+"866.title" = "Enviar Bitcoins...";
+
+/* Class = "NSMenuItem"; title = "Check for Updates..."; ObjectID = "870"; */
+"870.title" = "Verificar Actualizações...";
+
+/* Class = "NSMenuItem"; title = "Change Password…"; ObjectID = "1HB-Qg-iyg"; */
+"1HB-Qg-iyg.title" = "Mudar a Senha…";
+
+/* Class = "NSMenuItem"; title = "Lock Wallet"; ObjectID = "AFM-Ev-d2A"; */
+"AFM-Ev-d2A.title" = "Bloquear Carteira";
+
+/* Class = "NSMenuItem"; title = "CoinMap"; ObjectID = "ASP-Ns-ktD"; */
+"ASP-Ns-ktD.title" = "CoinMap";
+
+/* Class = "NSMenuItem"; title = "Wallet"; ObjectID = "GX7-xG-GKH"; */
+"GX7-xG-GKH.title" = "Carteira";
+
+/* Class = "NSMenuItem"; title = "Send Feedback…"; ObjectID = "GsI-lc-HhD"; */
+"GsI-lc-HhD.title" = "Enviar Sugestões...";
+
+/* Class = "NSMenu"; title = "Help"; ObjectID = "K2u-T2-G1a"; */
+"K2u-T2-G1a.title" = "Ajuda";
+
+/* Class = "NSMenuItem"; title = "Sign message..."; ObjectID = "SoJ-eV-k9I"; */
+"SoJ-eV-k9I.title" = "Assinar mensagem...";
+
+/* Class = "NSMenuItem"; title = "Debugging tools"; ObjectID = "Ue9-mi-gbe"; */
+"Ue9-mi-gbe.title" = "Ferramentas de depuração";
+
+/* Class = "NSMenuItem"; title = "Backup Center"; ObjectID = "V0L-sM-c8h"; */
+"V0L-sM-c8h.title" = "Cópia Central";
+
+/* Class = "NSMenuItem"; title = "FAQ"; ObjectID = "VQa-2Z-6fS"; */
+"VQa-2Z-6fS.title" = "FAQ";
+
+/* Class = "NSMenuItem"; title = "Help"; ObjectID = "ZUU-kM-x8u"; */
+"ZUU-kM-x8u.title" = "Ajuda";
+
+/* Class = "NSMenu"; title = "Tools"; ObjectID = "cCx-Ak-fii"; */
+"cCx-Ak-fii.title" = "Ferramentas";
+
+/* Class = "NSMenuItem"; title = "Tools"; ObjectID = "eBU-ec-85y"; */
+"eBU-ec-85y.title" = "Ferramentas";
+
+/* Class = "NSMenu"; title = "Wallet"; ObjectID = "jrd-Ul-XjV"; */
+"jrd-Ul-XjV.title" = "Carteira";
+
+/* Class = "NSMenuItem"; title = "Debugging info"; ObjectID = "lLT-53-p4m"; */
+"lLT-53-p4m.title" = "Informação de Depuração";
+
+/* Class = "NSMenuItem"; title = "Scan a QR code…"; ObjectID = "vdw-IK-snJ"; */
+"vdw-IK-snJ.title" = "Capturar um código QR...";

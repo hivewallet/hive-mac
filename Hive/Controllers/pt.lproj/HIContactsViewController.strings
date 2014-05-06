@@ -1,9 +1,9 @@
 
 /* Class = "NSTextFieldCell"; title = "Looks like you don't have any contacts yet! Add your first one and start sending money!"; ObjectID = "123"; */
-"123.title" = "Ainda não tem contactos! Adicione o primeiro contacto e comece a enviar dinheiro!";
+"123.title" = "Parece que você não possui nenhum contato! Adicione seu primeiro contato e comece a enviar dinheiro!";
 
 /* Class = "NSButtonCell"; title = "Add contact"; ObjectID = "125"; */
-"125.title" = "Adicionar contacto";
+"125.title" = "Adicionar contato";
 
 /* Class = "NSTextFieldCell"; title = "You can then use the ✚ button on top to add more contacts."; ObjectID = "129"; */
-"129.title" = "Pode usar o \U2795 botão acima para adicionar contactos.";
+"129.title" = "Você pode então usar o botão ✚ no alto para adicionar mais contatos.";

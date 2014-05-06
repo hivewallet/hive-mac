@@ -1,7 +1,4 @@
 
-/* Class = "NSMenu"; title = "AMainMenu"; ObjectID = "29"; */
-"29.title" = "AMainMenu";
-
 /* Class = "NSMenuItem"; title = "Hive"; ObjectID = "56"; */
 "56.title" = "Hive";
 
@@ -89,8 +86,8 @@
 /* Class = "NSMenuItem"; title = "Lock Wallet"; ObjectID = "AFM-Ev-d2A"; */
 "AFM-Ev-d2A.title" = "Zablokuj portfel";
 
-/* Class = "NSMenuItem"; title = "Open CoinMap..."; ObjectID = "ASP-Ns-ktD"; */
-"ASP-Ns-ktD.title" = "Otwórz CoinMap...";
+/* Class = "NSMenuItem"; title = "CoinMap"; ObjectID = "ASP-Ns-ktD"; */
+"ASP-Ns-ktD.title" = "CoinMap";
 
 /* Class = "NSMenuItem"; title = "Wallet"; ObjectID = "GX7-xG-GKH"; */
 "GX7-xG-GKH.title" = "Portfel";
@@ -104,14 +101,14 @@
 /* Class = "NSMenuItem"; title = "Sign message..."; ObjectID = "SoJ-eV-k9I"; */
 "SoJ-eV-k9I.title" = "Podpisz wiadomość...";
 
-/* Class = "NSMenuItem"; title = "Debugging tools..."; ObjectID = "Ue9-mi-gbe"; */
-"Ue9-mi-gbe.title" = "Narzędzia do debugowania...";
+/* Class = "NSMenuItem"; title = "Debugging tools"; ObjectID = "Ue9-mi-gbe"; */
+"Ue9-mi-gbe.title" = "Narzędzia do debugowania";
 
-/* Class = "NSMenuItem"; title = "Backup Center..."; ObjectID = "V0L-sM-c8h"; */
-"V0L-sM-c8h.title" = "Kopie zapasowe...";
+/* Class = "NSMenuItem"; title = "Backup Center"; ObjectID = "V0L-sM-c8h"; */
+"V0L-sM-c8h.title" = "Kopie zapasowe";
 
-/* Class = "NSMenuItem"; title = "Open FAQ…"; ObjectID = "VQa-2Z-6fS"; */
-"VQa-2Z-6fS.title" = "Otwórz FAQ…";
+/* Class = "NSMenuItem"; title = "FAQ"; ObjectID = "VQa-2Z-6fS"; */
+"VQa-2Z-6fS.title" = "FAQ";
 
 /* Class = "NSMenuItem"; title = "Help"; ObjectID = "ZUU-kM-x8u"; */
 "ZUU-kM-x8u.title" = "Pomoc";
@@ -125,8 +122,8 @@
 /* Class = "NSMenu"; title = "Wallet"; ObjectID = "jrd-Ul-XjV"; */
 "jrd-Ul-XjV.title" = "Portfel";
 
-/* Class = "NSMenuItem"; title = "Debugging info..."; ObjectID = "lLT-53-p4m"; */
-"lLT-53-p4m.title" = "Informacje techniczne...";
+/* Class = "NSMenuItem"; title = "Debugging info"; ObjectID = "lLT-53-p4m"; */
+"lLT-53-p4m.title" = "Informacje techniczne";
 
 /* Class = "NSMenuItem"; title = "Scan a QR code…"; ObjectID = "vdw-IK-snJ"; */
 "vdw-IK-snJ.title" = "Skanuj kod QR...";

@@ -45,14 +45,8 @@ static NSString *const KEY_UNREAD_TRANSACTIONS = @"unreadTransactions";
         self.iconName = @"timeline";
 
         _transactionDateFormatter = [NSDateFormatter new];
-        _transactionDateFormatter.dateFormat = [NSDateFormatter dateFormatFromTemplate:@"LLL d jj:mm a"
-                                                                               options:0
-                                                                                locale:[NSLocale  currentLocale]];
-
         _fullTransactionDateFormatter = [NSDateFormatter new];
-        _fullTransactionDateFormatter.dateFormat = [NSDateFormatter dateFormatFromTemplate:@"LLL d YYYY jj:mm a"
-                                                                                   options:0
-                                                                                    locale:[NSLocale  currentLocale]];
+        [self setDateFormats];
 
         _amountLabelFont = [NSFont fontWithName:@"Helvetica Bold" size:13.0];
     }
@@ -70,7 +64,17 @@ static NSString *const KEY_UNREAD_TRANSACTIONS = @"unreadTransactions";
     return self;
 }
 
-- (void) loadView {
+- (void)setDateFormats {
+    _transactionDateFormatter.dateFormat = [NSDateFormatter dateFormatFromTemplate:@"LLL d jj:mm a"
+                                                                           options:0
+                                                                            locale:[NSLocale  currentLocale]];
+
+    _fullTransactionDateFormatter.dateFormat = [NSDateFormatter dateFormatFromTemplate:@"LLL d YYYY jj:mm a"
+                                                                               options:0
+                                                                                locale:[NSLocale  currentLocale]];
+}
+
+- (void)loadView {
     [super loadView];
 
     self.arrayController.managedObjectContext = DBM;
@@ -96,6 +100,10 @@ static NSString *const KEY_UNREAD_TRANSACTIONS = @"unreadTransactions";
     [[NSNotificationCenter defaultCenter] addObserver:self
                                              selector:@selector(updateBitcoinFormat:)
                                                  name:HIPreferredFormatChangeNotification
+                                               object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(onLocaleChange)
+                                                 name:NSCurrentLocaleDidChangeNotification
                                                object:nil];
     [self beginObservingUnreadCount];
 }
@@ -153,6 +161,11 @@ static NSString *const KEY_UNREAD_TRANSACTIONS = @"unreadTransactions";
     BOOL shouldShowTransactions = _contact || count > 0;
     [self.noTransactionsView setHidden:shouldShowTransactions];
     [self.scrollView setHidden:!shouldShowTransactions];
+}
+
+- (void)onLocaleChange {
+    [self setDateFormats];
+    [self.tableView reloadData];
 }
 
 

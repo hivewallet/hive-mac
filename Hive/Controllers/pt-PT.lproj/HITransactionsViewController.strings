@@ -1,0 +1,15 @@
+
+/* Class = "NSTextFieldCell"; title = "Received"; ObjectID = "22"; */
+"22.title" = "Recebido";
+
+/* Class = "NSTextFieldCell"; title = "Date"; ObjectID = "41"; */
+"41.title" = "Date";
+
+/* Class = "NSTextFieldCell"; title = "You can then use the Send button to send someone money."; ObjectID = "63"; */
+"63.title" = "Pode usar o botão Enviar para enviar dinheiro.";
+
+/* Class = "NSTextFieldCell"; title = "Looks like you haven't made any transactions yet. Send some Bitcoin to your Hive wallet address!"; ObjectID = "Tlv-45-Iq6"; */
+"Tlv-45-Iq6.title" = "Looks like you haven't made any transactions yet. Send some Bitcoin to your Hive wallet address!";
+
+/* Class = "NSTextFieldCell"; title = "PENDING"; ObjectID = "oXJ-Jx-H6s"; */
+"oXJ-Jx-H6s.title" = "PENDING";

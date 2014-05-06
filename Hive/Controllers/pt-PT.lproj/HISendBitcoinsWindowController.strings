@@ -1,0 +1,21 @@
+
+/* Class = "NSWindow"; title = "Send Bitcoin"; ObjectID = "1"; */
+"1.title" = "Enviar Bitcoin";
+
+/* Class = "NSButtonCell"; title = "Cancel"; ObjectID = "6"; */
+"6.title" = "Cancelar";
+
+/* Class = "NSButtonCell"; title = "Send"; ObjectID = "10"; */
+"10.title" = "Enviar";
+
+/* Class = "NSTextFieldCell"; title = "To:"; ObjectID = "14"; */
+"14.title" = "Para:";
+
+/* Class = "NSTextFieldCell"; placeholderString = "Type to search..."; ObjectID = "20"; */
+"20.placeholderString" = "Escreva para procurar...";
+
+/* Class = "NSTextFieldCell"; title = "Main address"; ObjectID = "22"; */
+"22.title" = "Endereço principal";
+
+/* Class = "NSTextFieldCell"; title = "Currency exchange rates are provided by BitcoinAverage markets ticker. Bitcoin prices can change quickly, so other apps or sites might show different exchange rates."; ObjectID = "dxM-9E-wwb"; */
+"dxM-9E-wwb.title" = "Currency exchange rates are provided by BitcoinAverage markets ticker. Bitcoin prices can change quickly, so other apps or sites might show different exchange rates.";

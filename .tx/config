@@ -1,6 +1,6 @@
 [main]
 host = https://www.transifex.com
-lang_map = zh_CN: zh-Hans, pt_BR: pt-BR, sr@latin: sr-Latn
+lang_map = zh_CN: zh-Hans, pt_PT: pt-PT, pt_BR: pt, sr@latin: sr-Latn
 
 [hive-osx.Localizable]
 file_filter = Hive/<lang>.lproj/Localizable.strings

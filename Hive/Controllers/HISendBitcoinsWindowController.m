@@ -43,6 +43,7 @@ NSString * const HISendBitcoinsWindowSuccessKey = @"success";
     BOOL _lockedAddress;
     satoshi_t _amount;
     NSPopover *_passwordPopover;
+    NSLocale *_locale;
     int _paymentRequestSession;
 }
 
@@ -77,10 +78,15 @@ NSString * const HISendBitcoinsWindowSuccessKey = @"success";
 
         _bitcoinFormatService = [HIBitcoinFormatService sharedService];
         _selectedBitcoinFormat = _bitcoinFormatService.preferredFormat;
+        _locale = [NSLocale currentLocale];
 
         [[NSNotificationCenter defaultCenter] addObserver:self
                                                  selector:@selector(updateBitcoinFormat:)
                                                      name:HIPreferredFormatChangeNotification
+                                                   object:nil];
+        [[NSNotificationCenter defaultCenter] addObserver:self
+                                                 selector:@selector(onLocaleChange)
+                                                     name:NSCurrentLocaleDidChangeNotification
                                                    object:nil];
     }
 
@@ -283,6 +289,19 @@ NSString * const HISendBitcoinsWindowSuccessKey = @"success";
 
 - (void)updateBitcoinFormat:(NSNotification *)notification {
     self.selectedBitcoinFormat = [[HIBitcoinFormatService sharedService] preferredFormat];
+}
+
+- (void)onLocaleChange {
+    satoshi_t amount = [self.bitcoinFormatService parseString:self.amountField.stringValue
+                                                   withFormat:self.selectedBitcoinFormat
+                                                       locale:_locale
+                                                        error:NULL];
+    self.amountFieldValue = MAX(amount, 0);
+
+    [self updateFee];
+    [self updateConvertedAmountFromAmount];
+
+    _locale = [NSLocale currentLocale];
 }
 
 - (void)setSelectedBitcoinFormat:(NSString *)selectedBitcoinFormat {

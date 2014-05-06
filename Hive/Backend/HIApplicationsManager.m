@@ -54,22 +54,12 @@ const NSInteger HIApplicationManagerInsecureConnectionError = -2;
     return [[DBM executeFetchRequest:request error:NULL] firstObject];
 }
 
-- (void)removeAllApps {
-    NSError *error = nil;
-    NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:HIApplicationEntity];
-    NSArray *apps = [DBM executeFetchRequest:request error:&error];
-
-    HILogInfo(@"Removing all apps");
-
-    if (error) {
-        HILogError(@"Error loading apps: %@", error);
-        return;
-    }
-
+- (void)removeApps:(NSArray *)apps {
     for (HIApplication *app in apps) {
         [DBM deleteObject:app];
     }
 
+    NSError *error;
     [DBM save:&error];
 
     if (error) {
@@ -78,8 +68,22 @@ const NSInteger HIApplicationManagerInsecureConnectionError = -2;
     }
 }
 
+- (NSArray *)allApps {
+    NSError *error = nil;
+    NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:HIApplicationEntity];
+    NSArray *apps = [DBM executeFetchRequest:request error:&error];
+    if (error) {
+        HILogError(@"Error loading apps: %@", error);
+        apps = @[];
+    }
+    return apps;
+}
+
 - (void)rebuildAppsList {
-    [self removeAllApps];
+    NSMutableDictionary *knownApps = [NSMutableDictionary new];
+    for (HIApplication *app in self.allApps) {
+        knownApps[app.id] = app;
+    }
 
     NSArray *apps = [[NSFileManager defaultManager] contentsOfDirectoryAtURL:self.applicationsDirectory
                                                   includingPropertiesForKeys:nil
@@ -96,7 +100,11 @@ const NSInteger HIApplicationManagerInsecureConnectionError = -2;
         } else {
             HILogWarn(@"App name for %@ doesn't match its manifest name (%@)", appURL, actualName);
         }
+
+        [knownApps removeObjectForKey:actualName];
     }
+
+    [self removeApps:[knownApps allValues]];
 }
 
 - (void)preinstallApps {

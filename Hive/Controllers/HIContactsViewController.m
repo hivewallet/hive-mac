@@ -39,6 +39,11 @@
                            forKeyPath:@"arrangedObjects.@count"
                               options:NSKeyValueObservingOptionInitial
                               context:NULL];
+
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(onLocaleChange)
+                                                 name:NSCurrentLocaleDidChangeNotification
+                                               object:nil];
 }
 
 - (void)viewWillAppear {
@@ -47,6 +52,7 @@
 
 - (void)dealloc {
     [self.arrayController removeObserver:self forKeyPath:@"arrangedObjects.@count"];
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
 
     _tableView.delegate = nil;
     _tableView.dataSource = nil;
@@ -59,6 +65,10 @@
     if (object == self.arrayController) {
         [self updateForeverAloneScreen];
     }
+}
+
+- (void)onLocaleChange {
+    [self.arrayController rearrangeObjects];
 }
 
 - (void)updateForeverAloneScreen {
@@ -84,8 +94,12 @@
 }
 
 - (NSArray *)sortDescriptors {
-    return @[[NSSortDescriptor sortDescriptorWithKey:@"lastname" ascending:YES],
-             [NSSortDescriptor sortDescriptorWithKey:@"firstname" ascending:YES]];
+    return @[[NSSortDescriptor sortDescriptorWithKey:@"lastname"
+                                           ascending:YES
+                                            selector:@selector(localizedStandardCompare:)],
+             [NSSortDescriptor sortDescriptorWithKey:@"firstname"
+                                           ascending:YES
+                                            selector:@selector(localizedStandardCompare:)]];
 }
 
 #pragma mark - NSTableViewDataSource
