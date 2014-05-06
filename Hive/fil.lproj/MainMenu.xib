@@ -12,7 +12,7 @@
         </customObject>
         <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
         <customObject id="-3" userLabel="Application"/>
-        <menu title="APangunahingMenu" systemMenu="main" id="29">
+        <menu systemMenu="main" id="29">
             <items>
                 <menuItem title="Hive" id="56">
                     <menu key="submenu" title="Hive" systemMenu="apple" id="57">
