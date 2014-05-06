@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="5056" systemVersion="13C64" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none">
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="5056" systemVersion="13C1021" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none">
     <dependencies>
         <deployment version="1070" defaultVersion="1070" identifier="macosx"/>
         <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="5056"/>
@@ -161,7 +161,7 @@
                                     <action selector="showBackupCenter:" target="-1" id="w3X-q3-iCI"/>
                                 </connections>
                             </menuItem>
-                            <menuItem title="CoinMap'i Aç..." id="ASP-Ns-ktD">
+                            <menuItem title="CoinMap" id="ASP-Ns-ktD">
                                 <modifierMask key="keyEquivalentModifierMask"/>
                                 <connections>
                                     <action selector="openCoinMapSite:" target="494" id="Ozv-6D-Aab"/>
@@ -179,7 +179,8 @@
                                     <action selector="openSignMessageWindow:" target="494" id="BXf-n1-5Go"/>
                                 </connections>
                             </menuItem>
-                            <menuItem title="Hata giderme bilgisi..." keyEquivalent="D" id="lLT-53-p4m">
+                            <menuItem isSeparatorItem="YES" id="5f3-xf-h00"/>
+                            <menuItem title="Hata giderme bilgisi" keyEquivalent="D" id="lLT-53-p4m">
                                 <connections>
                                     <action selector="showDebuggingInfo:" target="-1" id="Exc-Ye-jOL"/>
                                 </connections>
@@ -234,7 +235,7 @@
                     <modifierMask key="keyEquivalentModifierMask"/>
                     <menu key="submenu" title="Yardım" id="K2u-T2-G1a">
                         <items>
-                            <menuItem title="SıkçaSorulanSorular Aç" id="VQa-2Z-6fS">
+                            <menuItem title="Sıkça Sorulan Sorular" id="VQa-2Z-6fS">
                                 <modifierMask key="keyEquivalentModifierMask"/>
                                 <connections>
                                     <action selector="openFAQ:" target="494" id="Hg3-rm-MEN"/>

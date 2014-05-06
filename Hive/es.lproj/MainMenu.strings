@@ -89,8 +89,8 @@
 /* Class = "NSMenuItem"; title = "Lock Wallet"; ObjectID = "AFM-Ev-d2A"; */
 "AFM-Ev-d2A.title" = "Bloquear Cartera";
 
-/* Class = "NSMenuItem"; title = "Open CoinMap..."; ObjectID = "ASP-Ns-ktD"; */
-"ASP-Ns-ktD.title" = "Abrir CoinMap...";
+/* Class = "NSMenuItem"; title = "CoinMap"; ObjectID = "ASP-Ns-ktD"; */
+"ASP-Ns-ktD.title" = "CoinMap";
 
 /* Class = "NSMenuItem"; title = "Wallet"; ObjectID = "GX7-xG-GKH"; */
 "GX7-xG-GKH.title" = "Cartera";
@@ -104,14 +104,14 @@
 /* Class = "NSMenuItem"; title = "Sign message..."; ObjectID = "SoJ-eV-k9I"; */
 "SoJ-eV-k9I.title" = "Sign message...";
 
-/* Class = "NSMenuItem"; title = "Debugging tools..."; ObjectID = "Ue9-mi-gbe"; */
-"Ue9-mi-gbe.title" = "Herramientas de Depuración...";
+/* Class = "NSMenuItem"; title = "Debugging tools"; ObjectID = "Ue9-mi-gbe"; */
+"Ue9-mi-gbe.title" = "Herramientas de Depuración";
 
-/* Class = "NSMenuItem"; title = "Backup Center..."; ObjectID = "V0L-sM-c8h"; */
-"V0L-sM-c8h.title" = "Copias de Seguridad...";
+/* Class = "NSMenuItem"; title = "Backup Center"; ObjectID = "V0L-sM-c8h"; */
+"V0L-sM-c8h.title" = "Copias de Seguridad";
 
-/* Class = "NSMenuItem"; title = "Open FAQ…"; ObjectID = "VQa-2Z-6fS"; */
-"VQa-2Z-6fS.title" = "Abrir FAQ...";
+/* Class = "NSMenuItem"; title = "FAQ"; ObjectID = "VQa-2Z-6fS"; */
+"VQa-2Z-6fS.title" = "FAQ";
 
 /* Class = "NSMenuItem"; title = "Help"; ObjectID = "ZUU-kM-x8u"; */
 "ZUU-kM-x8u.title" = "Ayuda";
@@ -125,8 +125,8 @@
 /* Class = "NSMenu"; title = "Wallet"; ObjectID = "jrd-Ul-XjV"; */
 "jrd-Ul-XjV.title" = "Cartera";
 
-/* Class = "NSMenuItem"; title = "Debugging info..."; ObjectID = "lLT-53-p4m"; */
-"lLT-53-p4m.title" = "Información de depuración...";
+/* Class = "NSMenuItem"; title = "Debugging info"; ObjectID = "lLT-53-p4m"; */
+"lLT-53-p4m.title" = "Información de depuración";
 
 /* Class = "NSMenuItem"; title = "Scan a QR code…"; ObjectID = "vdw-IK-snJ"; */
 "vdw-IK-snJ.title" = "Escanear código QR";
