@@ -667,13 +667,14 @@ void handleException(NSException *exception) {
 }
 
 - (HISendBitcoinsWindowController *)sendBitcoinsWindowForContact:(HIContact *)contact {
-    HISendBitcoinsWindowController *wc = [[HISendBitcoinsWindowController alloc] initWithContact:contact];
-    [_popupWindows addObject:wc];
+    HISendBitcoinsWindowController *wc = [self sendBitcoinsWindow];
+    [wc selectContact:contact];
     return wc;
 }
 
 - (HISendBitcoinsWindowController *)sendBitcoinsWindow {
     HISendBitcoinsWindowController *wc = [[HISendBitcoinsWindowController alloc] init];
+    [wc window];
     [_popupWindows addObject:wc];
     return wc;
 }

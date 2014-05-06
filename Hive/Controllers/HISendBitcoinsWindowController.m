@@ -67,11 +67,9 @@ NSString * const HISendBitcoinsWindowSuccessKey = @"success";
 #pragma mark - Init & cleanup
 
 - (id)init {
-    self = [super initWithWindowNibName:@"HISendBitcoinsWindowController"];
+    self = [super initWithWindowNibName:self.className];
 
     if (self) {
-        _amount = 0ll;
-
         _exchangeRateService = [HIExchangeRateService sharedService];
         [_exchangeRateService addExchangeRateObserver:self];
         self.selectedCurrency = _exchangeRateService.preferredCurrency;
@@ -93,52 +91,24 @@ NSString * const HISendBitcoinsWindowSuccessKey = @"success";
     return self;
 }
 
-- (id)initWithContact:(HIContact *)contact {
-    self = [self init];
-
-    if (self) {
-        _contact = contact;
-    }
-
-    return self;
-}
-
 - (void)windowDidLoad {
     [super windowDidLoad];
     [self.window center];
 
-    if (_contact) {
-        HIAddress *address = [_contact.addresses anyObject];
-        [self selectContact:_contact address:address];
-    } else if (_hashAddress) {
-        [self setHashAddress:_hashAddress];
-    } else {
-        [self setHashAddress:@""];
-
-        self.addressLabel.stringValue = NSLocalizedString(@"or choose from the list", @"Autocomplete dropdown prompt");
-    }
-
-    if (_lockedAddress) {
-        [self lockAddress];
-    }
-
     self.photoView.layer.cornerRadius = 5.0;
     self.photoView.layer.masksToBounds = YES;
-
     self.wrapper.layer.cornerRadius = 5.0;
 
-    [self setUpQRCodeButton];
+    [self setupQRCodeButton];
     [self setupCurrencyList];
-
-    if (_amount) {
-        [self updateFieldsForLockedAmount];
-    } else {
-        self.amountFieldValue = 0ll;
-    }
-    [self updateConvertedAmountFromAmount];
-
-    [self updateSendButtonEnabled];
+    [self setAmountFieldValue:0];
+    [self updateAvatarImage];
     [self updateInterfaceForExchangeRate];
+    [self updateSendButtonEnabled];
+}
+
+- (void)showWindow:(id)sender {
+    [super showWindow:sender];
 
     if (!_lockedAddress) {
         [self.window makeFirstResponder:self.nameLabel];
@@ -149,7 +119,7 @@ NSString * const HISendBitcoinsWindowSuccessKey = @"success";
     }
 }
 
-- (void)setUpQRCodeButton {
+- (void)setupQRCodeButton {
     NIKFontAwesomeIconFactory *iconFactory = [NIKFontAwesomeIconFactory new];
     iconFactory.padded = YES;
     iconFactory.size = 14;
@@ -183,22 +153,17 @@ NSString * const HISendBitcoinsWindowSuccessKey = @"success";
 #pragma mark - Configuration
 
 - (void)setHashAddress:(NSString *)hash {
-    if ([self isWindowLoaded]) {
-        [self clearContact];
-        self.nameLabel.stringValue = hash;
-    }
-
+    [self clearContact];
+    self.nameLabel.stringValue = hash;
     _hashAddress = hash;
 }
 
 - (void)lockAddress {
     _lockedAddress = YES;
 
-    if ([self isWindowLoaded]) {
-        [self.nameLabel setEditable:NO];
-        [self.dropdownButton setHidden:YES];
-        [self setQRCodeScanningEnabled:NO];
-    }
+    [self.nameLabel setEditable:NO];
+    [self.dropdownButton setHidden:YES];
+    [self setQRCodeScanningEnabled:NO];
 }
 
 - (void)setLockedAddress:(NSString *)hash {
@@ -208,14 +173,10 @@ NSString * const HISendBitcoinsWindowSuccessKey = @"success";
 
 - (void)setLockedAmount:(satoshi_t)amount {
     _amount = amount;
-    if ([self isWindowLoaded]) {
-        [self updateFieldsForLockedAmount];
-    }
-}
 
-- (void)updateFieldsForLockedAmount {
     self.amountFieldValue = _amount;
     [self updateConvertedAmountFromAmount];
+    [self updateSendButtonEnabled];
 
     [self.amountField setEditable:NO];
     [self.convertedAmountField setEditable:NO];
@@ -225,7 +186,7 @@ NSString * const HISendBitcoinsWindowSuccessKey = @"success";
     _contact = nil;
     _hashAddress = nil;
 
-    self.addressLabel.stringValue = @"";
+    self.addressLabel.stringValue = @" ";
     [self updateAvatarImage];
 }
 
@@ -235,12 +196,16 @@ NSString * const HISendBitcoinsWindowSuccessKey = @"success";
     [self updateAvatarImage];
 }
 
+- (void)selectContact:(id<HIPerson>)contact {
+    [self selectContact:contact address:[contact.addresses anyObject]];
+}
+
 - (void)selectContact:(id<HIPerson>)contact address:(HIAddress *)address {
     _contact = contact;
     _hashAddress = address.address;
 
     self.nameLabel.stringValue = contact.name;
-    self.addressLabel.stringValue = address.addressWithCaption ?: @"";
+    self.addressLabel.stringValue = address.addressWithCaption ?: @" ";
     [self updateAvatarImage];
     [self setQRCodeScanningEnabled:NO];
 
@@ -284,6 +249,7 @@ NSString * const HISendBitcoinsWindowSuccessKey = @"success";
         self.photoView.image = [NSImage imageNamed:@"avatar-empty"];
     }
 }
+
 
 #pragma mark - Text fields
 
