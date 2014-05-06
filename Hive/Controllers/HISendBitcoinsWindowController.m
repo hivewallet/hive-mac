@@ -267,6 +267,8 @@ NSString * const HISendBitcoinsWindowSuccessKey = @"success";
 - (void)showPaymentRequest:(int)sessionId details:(NSDictionary *)data {
     _paymentRequestSession = sessionId;
 
+    self.window.title = NSLocalizedString(@"Pay with Bitcoin", @"Send Bitcoin window title for payment request");
+
     NSNumber *amount = data[@"amount"];
     NSString *memo = data[@"memo"];
     NSString *paymentURL = data[@"paymentURL"];
