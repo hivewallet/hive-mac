@@ -240,8 +240,7 @@ static int ddLogLevel = LOG_LEVEL_VERBOSE;
     NSString *versionAfterUpdate = @"2014012001";
 
     if ([lastVersion isLessThan:versionAfterUpdate]) {
-        HILogInfo(@"Transaction list needs to be rebuild (%@ < %@)", lastVersion, versionAfterUpdate);
-        [[BCClient sharedClient] clearTransactionsList];
+        HILogInfo(@"Transaction list needs to be updated (%@ < %@)", lastVersion, versionAfterUpdate);
         [[BCClient sharedClient] repairTransactionsList];
         return;
     }
@@ -252,8 +251,7 @@ static int ddLogLevel = LOG_LEVEL_VERBOSE;
     NSUInteger count = [DBM countForFetchRequest:request error:NULL];
 
     if (count > 0) {
-        HILogInfo(@"Found some transactions with invalid date, rebuilding transaction list");
-        [[BCClient sharedClient] clearTransactionsList];
+        HILogInfo(@"Found some transactions with invalid date, updating all transaction data");
         [[BCClient sharedClient] repairTransactionsList];
     }
 }

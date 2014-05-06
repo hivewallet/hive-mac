@@ -221,8 +221,8 @@ NSString * const BCClientPasswordChangedNotification = @"BCClientPasswordChanged
         }
 
         if (knownTransactions.count > 0) {
-            HILogError(@"Unknown transactions were found and will be deleted.");
             for (HITransaction *transaction in knownTransactions.allValues) {
+                HILogError(@"Deleting unknown transaction: %@", transaction);
                 [_transactionUpdateContext deleteObject:transaction];
             }
         }
