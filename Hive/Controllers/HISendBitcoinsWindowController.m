@@ -45,6 +45,7 @@ NSString * const HISendBitcoinsWindowSuccessKey = @"success";
     NSPopover *_passwordPopover;
     NSLocale *_locale;
     int _paymentRequestSession;
+    NSArray *_detailsSectionConstraints;
 }
 
 @property (assign) satoshi_t amountFieldValue;
@@ -105,6 +106,7 @@ NSString * const HISendBitcoinsWindowSuccessKey = @"success";
     [self updateAvatarImage];
     [self updateInterfaceForExchangeRate];
     [self updateSendButtonEnabled];
+    [self hideDetailsSection];
 }
 
 - (void)showWindow:(id)sender {
@@ -137,6 +139,56 @@ NSString * const HISendBitcoinsWindowSuccessKey = @"success";
 - (void)updateSendButtonEnabled {
     NSString *hash = _hashAddress ?: self.nameLabel.stringValue;
     self.sendButtonEnabled = self.amountFieldValue > 0 && hash.length > 0;
+}
+
+- (void)showDetailsSection {
+    [self removeConstraintsFromView:self.wrapper matchingSubviews:^BOOL(NSArray *views) {
+        return [views containsObject:self.separator] && [views containsObject:self.detailsSeparator];
+    }];
+
+    [self.wrapper addConstraints:_detailsSectionConstraints];
+
+    [self.detailsLabel setHidden:NO];
+    [self.detailsBox setHidden:NO];
+    [self.detailsSeparator setHidden:NO];
+}
+
+- (void)hideDetailsSection {
+    [self.detailsLabel setHidden:YES];
+    [self.detailsBox setHidden:YES];
+    [self.detailsSeparator setHidden:YES];
+
+    NSArray *removed = [self removeConstraintsFromView:self.wrapper matchingSubviews:^BOOL(NSArray *views) {
+        BOOL separator = [views containsObject:self.separator] || [views containsObject:self.detailsSeparator];
+        return separator && [views containsObject:self.detailsBox];
+    }];
+
+    [self.wrapper addConstraint:VSPACE(self.separator, self.detailsSeparator)];
+
+    _detailsSectionConstraints = removed;
+}
+
+- (NSArray *)removeConstraintsFromView:(NSView *)superview matchingSubviews:(BOOL (^)(NSArray *))viewsMatch {
+    NSMutableArray *removed = [NSMutableArray new];
+
+    [superview.constraints enumerateObjectsUsingBlock:^(id constraint, NSUInteger idx, BOOL *stop) {
+        NSMutableArray *views = [NSMutableArray new];
+
+        if ([constraint firstItem]) {
+            [views addObject:[constraint firstItem]];
+        }
+
+        if ([constraint secondItem]) {
+            [views addObject:[constraint secondItem]];
+        }
+
+        if (viewsMatch(views)) {
+            [superview removeConstraint:constraint];
+            [removed addObject:constraint];
+        }
+    }];
+
+    return removed;
 }
 
 - (void)windowWillClose:(NSNotification *)notification {
@@ -216,6 +268,7 @@ NSString * const HISendBitcoinsWindowSuccessKey = @"success";
     _paymentRequestSession = sessionId;
 
     NSNumber *amount = data[@"amount"];
+    NSString *memo = data[@"memo"];
     NSString *paymentURL = data[@"paymentURL"];
     NSString *pkiName = data[@"pkiName"];
     NSString *label = data[@"bitcoinURLLabel"];
@@ -238,6 +291,13 @@ NSString * const HISendBitcoinsWindowSuccessKey = @"success";
 
     [self setLockedAddress:recipientName];
     [self setLockedAmount:amount.integerValue];
+
+    if (memo) {
+        [self showDetailsSection];
+
+        memo = [memo stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
+        [[self.detailsBox documentView] setString:memo];
+    }
 }
 
 - (void)updateAvatarImage {

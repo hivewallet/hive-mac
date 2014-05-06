@@ -41,6 +41,10 @@ typedef void(^HITransactionCompletionCallback)(BOOL success, NSString *transacti
 @property (strong) IBOutlet HIButtonWithSpinner *sendButton;
 @property (nonatomic, strong) IBOutlet NSButton *dropdownButton;
 
+@property (nonatomic, assign) IBOutlet NSTextField *detailsLabel;
+@property (nonatomic, assign) IBOutlet NSScrollView *detailsBox;
+@property (nonatomic, assign) IBOutlet NSBox *detailsSeparator;
+
 @property (copy) HITransactionCompletionCallback sendCompletion;
 
 - (void)setHashAddress:(NSString *)hash;
