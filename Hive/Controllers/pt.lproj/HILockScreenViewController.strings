@@ -1,9 +1,9 @@
 
 /* Class = "NSTextFieldCell"; title = "Hive is locked.\nEnter your password to unlock:"; ObjectID = "Gmn-jq-R5t"; */
-"Gmn-jq-R5t.title" = "Hive está bloqueado.\nEntre sua senha para desbloquear:";
+"Gmn-jq-R5t.title" = "Hive está bloqueado.\nDigite sua senha para desbloquear:";
 
 /* Class = "NSButtonCell"; title = "Unlock"; ObjectID = "W4R-hH-myj"; */
 "W4R-hH-myj.title" = "Desbloquear";
 
 /* Class = "NSButtonCell"; title = "Don't show this screen again"; ObjectID = "fZF-LI-0oD"; */
-"fZF-LI-0oD.title" = "Não mostre esta tela novamente";
+"fZF-LI-0oD.title" = "Não mostrar esta tela novamente";

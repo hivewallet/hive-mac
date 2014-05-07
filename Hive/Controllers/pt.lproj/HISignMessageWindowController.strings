@@ -3,7 +3,7 @@
 "F0z-JX-Cv5.title" = "Assinar mensagem";
 
 /* Class = "NSTextFieldCell"; placeholderString = "Enter the message here"; ObjectID = "FFb-qR-Wps"; */
-"FFb-qR-Wps.placeholderString" = "Digite a mensagem aqui";
+"FFb-qR-Wps.placeholderString" = "Insira a mensagem aqui";
 
 /* Class = "NSTextFieldCell"; title = "Generated signature:"; ObjectID = "Kod-IU-V2E"; */
 "Kod-IU-V2E.title" = "Assinatura gerada:";

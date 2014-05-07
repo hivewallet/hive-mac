@@ -37,7 +37,7 @@
                 <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="gDC-Cm-H3d">
                     <rect key="frame" x="392" y="59" width="67" height="23"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                    <buttonCell key="cell" type="smallSquare" title="Próximo" bezelStyle="smallSquare" imagePosition="overlaps" alignment="center" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="j0E-b4-dgh" customClass="HIWizardButtonCell">
+                    <buttonCell key="cell" type="smallSquare" title="Próximo passo" bezelStyle="smallSquare" imagePosition="overlaps" alignment="center" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="j0E-b4-dgh" customClass="HIWizardButtonCell">
                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                         <font key="font" metaFont="system"/>
                     </buttonCell>
@@ -78,7 +78,7 @@
                     </constraints>
                     <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="center" id="rIc-eX-ajY">
                         <font key="font" metaFont="system" size="16"/>
-                        <string key="title">Salvar o seu arquivo de carteira é também uma medida de segurança importante para proteger o seu dinheiro. Vamos fazer uma cópia de segurança da sua carteira agora. Se você perder o seu computador, o Hive pode recuperar a sua carteira a partir desta cópia.</string>
+                        <string key="title">Salvar o seu arquivo da carteira é também uma medida de segurança importante para proteger o seu dinheiro. Faremos uma cópia de segurança da sua carteira agora. Se você perder o seu computador, o Hive pode recuperar a sua carteira a partir desta cópia.</string>
                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                     </textFieldCell>
@@ -150,7 +150,7 @@
                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="kvT-RL-uZq">
                     <rect key="frame" x="548" y="241" width="85" height="20"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="✘ desabilitado" id="M9O-91-CDX">
+                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="✘ desativado" id="M9O-91-CDX">
                         <font key="font" size="16" name="ZapfDingbatsITC"/>
                         <color key="textColor" red="0.86645009566326525" green="0.54672967535343253" blue="0.47391934301160576" alpha="1" colorSpace="calibratedRGB"/>
                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
@@ -162,7 +162,7 @@
                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="faS-RI-DlM">
                     <rect key="frame" x="548" y="180" width="85" height="20"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="✘ desabilitado" id="NSS-6s-Nas">
+                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="✘ desativado" id="NSS-6s-Nas">
                         <font key="font" size="16" name="ZapfDingbatsITC"/>
                         <color key="textColor" red="0.86645009569999998" green="0.54672967539999995" blue="0.47391934299999999" alpha="1" colorSpace="calibratedRGB"/>
                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>

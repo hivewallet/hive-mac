@@ -70,7 +70,7 @@
                             <menuItem isSeparatorItem="YES" id="149">
                                 <modifierMask key="keyEquivalentModifierMask" command="YES"/>
                             </menuItem>
-                            <menuItem title="Encerrar Hive" keyEquivalent="q" id="136">
+                            <menuItem title="Encerrar o Hive" keyEquivalent="q" id="136">
                                 <connections>
                                     <action selector="terminate:" target="-3" id="449"/>
                                 </connections>
@@ -93,7 +93,7 @@
                                     <action selector="changeWalletPassword:" target="494" id="n4h-c8-Hjn"/>
                                 </connections>
                             </menuItem>
-                            <menuItem title="Bloquear Carteira" keyEquivalent="l" id="AFM-Ev-d2A">
+                            <menuItem title="Bloquear carteira" keyEquivalent="l" id="AFM-Ev-d2A">
                                 <connections>
                                     <action selector="lockWallet:" target="-1" id="XWR-xx-Wx0"/>
                                 </connections>
@@ -138,7 +138,7 @@
                                     <action selector="paste:" target="-1" id="851"/>
                                 </connections>
                             </menuItem>
-                            <menuItem title="Deletar" id="811">
+                            <menuItem title="Apagar" id="811">
                                 <connections>
                                     <action selector="delete:" target="-1" id="852"/>
                                 </connections>
@@ -155,7 +155,7 @@
                     <modifierMask key="keyEquivalentModifierMask"/>
                     <menu key="submenu" title="Ferramentas" id="cCx-Ak-fii">
                         <items>
-                            <menuItem title="Central de Backup" id="V0L-sM-c8h">
+                            <menuItem title="Central de backup" id="V0L-sM-c8h">
                                 <modifierMask key="keyEquivalentModifierMask"/>
                                 <connections>
                                     <action selector="showBackupCenter:" target="-1" id="w3X-q3-iCI"/>
@@ -180,12 +180,12 @@
                                 </connections>
                             </menuItem>
                             <menuItem isSeparatorItem="YES" id="5f3-xf-h00"/>
-                            <menuItem title="Informações de Debug" keyEquivalent="D" id="lLT-53-p4m">
+                            <menuItem title="Informações de debug" keyEquivalent="D" id="lLT-53-p4m">
                                 <connections>
                                     <action selector="showDebuggingInfo:" target="-1" id="Exc-Ye-jOL"/>
                                 </connections>
                             </menuItem>
-                            <menuItem title="Ferramentas de Debug" id="Ue9-mi-gbe">
+                            <menuItem title="Ferramentas de debug" id="Ue9-mi-gbe">
                                 <modifierMask key="keyEquivalentModifierMask"/>
                                 <connections>
                                     <action selector="showDebuggingTools:" target="-1" id="s18-1s-iwD"/>
@@ -223,7 +223,7 @@
                             <menuItem isSeparatorItem="YES" id="859">
                                 <modifierMask key="keyEquivalentModifierMask" command="YES"/>
                             </menuItem>
-                            <menuItem title="Trazer todos para frente" id="860">
+                            <menuItem title="Trazer tudo para frente" id="860">
                                 <connections>
                                     <action selector="arrangeInFront:" target="-1" id="863"/>
                                 </connections>
