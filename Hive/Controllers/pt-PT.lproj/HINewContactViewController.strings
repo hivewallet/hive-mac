@@ -1,9 +1,9 @@
 
 /* Class = "NSButtonCell"; title = "Save"; ObjectID = "14"; */
-"14.title" = "Save";
+"14.title" = "Salvar";
 
 /* Class = "NSTextFieldCell"; title = "Contact information"; ObjectID = "75"; */
-"75.title" = "Informação de contacto";
+"75.title" = "Informação para contacto";
 
 /* Class = "NSTextFieldCell"; title = "Email:"; ObjectID = "78"; */
 "78.title" = "Email:";
