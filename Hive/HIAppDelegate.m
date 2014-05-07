@@ -502,25 +502,89 @@ static int ddLogLevel = LOG_LEVEL_VERBOSE;
 
     if ([filename.pathExtension isEqual:@"bitcoinpaymentrequest"]) {
         __weak id delegate = self;
+
         [self handleExternalEvent:^{
             HIBitcoinManager *manager = [HIBitcoinManager defaultManager];
+            NSError *callError = nil;
+
             [manager openPaymentRequestFromFile:filename
-                                       callback:^(NSError *error, int sessionId, NSDictionary *data) {
-                                           if (error) {
-                                               // TODO show error
-                                               HILogDebug(@"Error: %@", error);
+                                          error:&callError
+                                       callback:^(NSError *loadError, int sessionId, NSDictionary *data) {
+                                           if (loadError) {
+                                               [self handlePaymentRequestLoadError:loadError];
                                            } else {
                                               HISendBitcoinsWindowController *window = [delegate sendBitcoinsWindow];
                                               [window showPaymentRequest:sessionId details:data];
                                               [window showWindow:self];
                                           }
                                        }];
+
+            if (callError) {
+                NSString *title = NSLocalizedString(@"Payment request file could not be opened.",
+                                                    @"Alert title when payment request file can't be read");
+                NSString *message = NSLocalizedString(@"The file doesn't exist or is not accessible.",
+                                                      @"Alert message when payment request file can't be read");
+
+                NSAlert *alert = [NSAlert alertWithMessageText:title
+                                                 defaultButton:NSLocalizedString(@"OK", @"OK button title")
+                                               alternateButton:nil
+                                                   otherButton:nil
+                                     informativeTextWithFormat:@"%@", message];
+                [alert runModal];
+            }
         }];
 
         return YES;
     }
 
     return NO;
+}
+
+- (void)handlePaymentRequestLoadError:(NSError *)error {
+    HILogDebug(@"Payment request load error: %@", error);
+
+    NSString *title = NSLocalizedString(@"This payment request is invalid.",
+                                        @"Alert title when payment request file has some invalid or unexpected data");
+
+    NSString *message = nil;
+
+    if (error.code == kHIBitcoinManagerInvalidProtocolBufferError) {
+        message = NSLocalizedString(@"This file does not contain a valid Bitcoin payment request.",
+                                    @"Alert message when payment request file isn't really a payment request at all");
+    }
+    else if (error.code == kHIBitcoinManagerPaymentRequestExpiredError) {
+        title = NSLocalizedString(@"Payment request has already expired.",
+                                  @"Alert title when payment request was valid before but has expired");
+
+        message = NSLocalizedString(@"You'll need to return to the site that requested the payment "
+                                    @"and initiate the payment again.",
+                                    @"Alert message when payment request was valid before but has expired");
+    }
+    else if (error.code == kHIBitcoinManagerPaymentRequestWrongNetworkError) {
+        message = NSLocalizedString(@"The payment is supposed to be sent on a different Bitcoin network.",
+                                    @"Alert message when user is on the main net and payment request is for testnet "
+                                    @"(or vice versa)");
+    }
+    else if ([error.localizedFailureReason rangeOfString:@"com.google."].location != NSNotFound) {
+        // probably some less common kind of PaymentRequestException
+        message = error.localizedFailureReason;
+    }
+    else {
+        // probably an IO error, only happens for remote requests
+        title = NSLocalizedString(@"Payment request file could not be loaded.",
+                                  @"Alert title when payment request can't be loaded from the server");
+
+        message = NSLocalizedString(@"Check your network connection, try again later "
+                                    @"or report the problem to the payment recipient.",
+                                    @"Alert message when payment request can't be loaded from the server");
+    }
+
+    NSAlert *alert = [NSAlert alertWithMessageText:title
+                                     defaultButton:NSLocalizedString(@"OK", @"OK button title")
+                                   alternateButton:nil
+                                       otherButton:nil
+                         informativeTextWithFormat:@"%@", message];
+    [alert runModal];
 }
 
 

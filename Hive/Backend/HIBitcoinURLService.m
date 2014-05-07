@@ -49,28 +49,57 @@
     NSURL *URL = [NSURL URLWithString:URLString];
 
     if (URL) {
-        // TODO show loading spinner
-
         HIBitcoinManager *manager = [HIBitcoinManager defaultManager];
+        NSError *callError = nil;
+
         [manager openPaymentRequestFromURL:URLString
-                                  callback:^(NSError *error, int sessionId, NSDictionary *data) {
-                                      if (error) {
-                                          // TODO show error
-                                          HILogDebug(@"Error: %@", error);
+                                     error:&callError
+                                  callback:^(NSError *loadError, int sessionId, NSDictionary *data) {
+
+                                      HIAppDelegate *appDelegate = [[NSApplication sharedApplication] delegate];
+
+                                      // TODO hide loading spinner
+
+                                      if (loadError) {
+                                          [appDelegate handlePaymentRequestLoadError:loadError];
                                       } else {
                                           data = [self extendPaymentRequestData:data withBitcoinURLDetails:bitcoinURL];
 
-                                          HIAppDelegate *appDelegate = [[NSApplication sharedApplication] delegate];
                                           HISendBitcoinsWindowController *window = [appDelegate sendBitcoinsWindow];
                                           [window showPaymentRequest:sessionId details:data];
                                           [window showWindow:self];
                                       }
                                   }];
-        return YES;
+
+        if (callError) {
+            // this should never happen, because only a URL error can be returned here,
+            // and URLWithString: should return nil if the URL is not correct
+
+            [self handlePaymentRequestURLErrorForURL:URLString];
+            return NO;
+        } else {
+            // TODO show loading spinner
+            return YES;
+        }
     } else {
-        // TODO handle error
+        [self handlePaymentRequestURLErrorForURL:URLString];
         return NO;
     }
+}
+
+- (void)handlePaymentRequestURLErrorForURL:(NSString *)URLString {
+    NSString *title = NSLocalizedString(@"This payment request link is invalid.",
+                                        @"Alert title when URL to a payment request file is not valid");
+
+    NSString *message = NSLocalizedString(@"\"%@\" is not a valid URL.",
+                                          @"Alert message when URL to a payment request file is not valid");
+
+    NSAlert *alert = [NSAlert alertWithMessageText:title
+                                     defaultButton:NSLocalizedString(@"OK", @"OK button title")
+                                   alternateButton:nil
+                                       otherButton:nil
+                         informativeTextWithFormat:message, URLString];
+    [alert runModal];
 }
 
 - (NSDictionary *)extendPaymentRequestData:(NSDictionary *)data withBitcoinURLDetails:(HIBitcoinURL *)bitcoinURL {
