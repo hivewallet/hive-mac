@@ -3,14 +3,14 @@
 //
 
 #ifdef __OBJC__
-    #import <Cocoa/Cocoa.h>
-    #import <CoreData/CoreData.h>
-    #import <Foundation/Foundation.h>
-    #import <JavaScriptCore/JavaScriptCore.h>
-    #import <QuartzCore/QuartzCore.h>
-    #import <QTKit/QTkit.h>
-    #import <SystemConfiguration/SystemConfiguration.h>
-    #import <WebKit/WebKit.h>
+    @import Cocoa;
+    @import CoreData;
+    @import Foundation;
+    @import JavaScriptCore;
+    @import QuartzCore;
+    @import QTKit;
+    @import SystemConfiguration;
+    @import WebKit;
 
     #import "HIAppDelegate.h"
 
