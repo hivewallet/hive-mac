@@ -54,7 +54,7 @@
 "Cancel" = "キャンセル";
 
 /* Dead transaction label */
-"CANCELLED" = "キャンセル";
+"CANCELLED" = "キャンセル済み";
 
 /* Dropbox folder save panel confirmation button */
 "Choose" = "選択";
@@ -126,10 +126,10 @@
 "Enable..." = "有効化...";
 
 /* Passphrase prompt for sending */
-"Enter your passphrase to confirm the transaction:" = "送金のためパスワードを入力してください:";
+"Enter your passphrase to confirm the transaction:" = "パスワードを入力して送金:";
 
 /* Passphrase prompt for message signing */
-"Enter your password to sign the message:" = "Enter your password to sign the message:";
+"Enter your password to sign the message:" = "パスワードを入力してメッセージに署名:";
 
 /* Firstname field placeholder */
 "Firstname" = "姓";
@@ -150,7 +150,7 @@
 "Hive is currently syncing with the Bitcoin network. Are you sure you want to quit?" = "ビットコインのネットワークと同期中です。終了してもよろしいですか？";
 
 /* No network connection alert title */
-"Hive is not connected to the Bitcoin network." = "Hive is not connected to the Bitcoin network.";
+"Hive is not connected to the Bitcoin network." = "Hiveはビットコインのネットワークに接続していません。";
 
 /* Chain file unreadable error explanation */
 "Hive will now delete the file and synchronize with the Bitcoin network again. Please leave Hive open for the next several minutes, and try not to send any transactions right now." = "ファイルを削除してビットコインのネットワークと再同期します。数分間Hiveを開いたままにしておき、送金は行わないでください。";
@@ -198,7 +198,7 @@
 "No backups configured" = "バックアップが設定されていません";
 
 /* Transaction failed alert message */
-"No Bitcoin have been taken from your wallet." = "ビットコインが出金できませんでした。";
+"No Bitcoin have been taken from your wallet." = "ビットコインが送金できませんでした。";
 
 /* OK button title */
 "OK" = "OK";
@@ -222,7 +222,7 @@
 "Please enter a valid Bitcoin address or select one from the dropdown list." = "アドレスを入力するかリストから選んでください。";
 
 /* Preferences window title */
-"Preferences" = "Preferences";
+"Preferences" = "設定";
 
 /* Profile view title string */
 "Profile" = "プロフィール";
@@ -231,10 +231,10 @@
 "Quit anyway" = "とにかく閉じる";
 
 /* Received amount of BTC from unknown source */
-"Received &a" = "&a が届きました";
+"Received &a" = "&aを受け取りました";
 
 /* Received amount of BTC from contact */
-"Received &a from &c" = "&c から　&a　を受け取りました";
+"Received &a from &c" = "&cから&aを受け取りました";
 
 /* Install app button title when app exists */
 "Reinstall" = "再インストール";
@@ -246,13 +246,13 @@
 "Selected directory is outside Dropbox folder." = "選択したディレクトリはDropboxフォルダの外にあります。";
 
 /* Send button title */
-"Send" = "送る";
+"Send" = "送金";
 
 /* Sent amount of BTC to a contact/address */
-"Sent &a to &c" = "&c　に　&a　を送る　";
+"Sent &a to &c" = "&cに&aを送りました";
 
 /* Title for shortcut keys preferences panel */
-"Shortcuts" = "Shortcuts";
+"Shortcuts" = "ショートカット";
 
 /* Amount exceeds available balance alert title */
 "Some funds are temporarily unavailable." = "一部のコインは一時的に利用できません";
@@ -303,7 +303,7 @@
 "Transaction cancelled" = "取引はキャンセルされました";
 
 /* Notification of confirmed sent transaction */
-"Transaction completed" = "取引は完了しました";
+"Transaction completed" = "取引が完了しました";
 
 /* Transaction failed alert title */
 "Transaction could not be completed." = "取引に失敗しました。";
@@ -312,7 +312,7 @@
 "Transaction from %@ was cancelled." = "%@　からの取引はキャンセルされました。";
 
 /* Transactions view title */
-"Transactions" = "取引";
+"Transactions" = "取引履歴";
 
 /* Uninstall app button title */
 "Uninstall" = "削除";
@@ -342,7 +342,7 @@
 "You can install it again through the App Store app later if you change your mind." = "アプリストアから後で再インストールすることができます。";
 
 /* Details of an alert when trying to send more than you have */
-"You cannot send more money than you own." = "残高を超えるお金を送金することはできません。";
+"You cannot send more money than you own." = "残高を超える送金をすることはできません。";
 
 /* Install app popup title when app exists */
 "You have already added \"%@\" to Hive. Would you like to overwrite it?" = "すでに　\"%@\" はインストールされています。再インストールしますか？";
@@ -354,7 +354,7 @@
 "You must install Dropbox first (see www.dropbox.com)." = "初めにDropboxをインストールする必要があります。(www.dropbox.com　をご覧ください)";
 
 /* No network connection alert message */
-"You need to be connected to the network to send any transactions." = "You need to be connected to the network to send any transactions.";
+"You need to be connected to the network to send any transactions." = "ネットワークに接続する必要があります。";
 
 /* Dropbox invalid folder alert details */
 "You need to choose or create a directory inside your Dropbox folder." = "Dropboxの中のフォルダーから選ぶか、新しくディレクトリを作る必要があります。";
@@ -363,7 +363,7 @@
 "You need to give the contact a name before you can add it to the list." = "リストに追加する前に名前を付ける必要がります。";
 
 /* Backup requires password alert title */
-"You need to set a wallet password first (see Wallet menu)." = "初めにウォレットのパスワードを設定する必要があります。 (ウォレットメニューから)";
+"You need to set a wallet password first (see Wallet menu)." = "初めにウォレットのパスワードを設定する必要があります。 (ウォレットメニューから設定できます)";
 
 /* Remove contact alert dialog body */
 "You won't be able to undo this operation." = "この操作を取り消すことはできません。";

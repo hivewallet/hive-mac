@@ -24,4 +24,4 @@
 "lG8-G7-noh.title" = "有効";
 
 /* Class = "NSTextFieldCell"; title = "Backing up your wallet file is also an important safety measure to protect your money. Let's make a backup copy of your wallet now. If you ever lose your computer, Hive can retrieve your wallet from these sources."; ObjectID = "rIc-eX-ajY"; */
-"rIc-eX-ajY.title" = "バックアップはコインを保護するためにとても重要です。ウォレットのバックアップ作りましょう。もしパソコンが故障しても、このバックアップを利用してウォレットを復元できます。";
+"rIc-eX-ajY.title" = "バックアップはコインを保護するために非常に重要です。ウォレットのバックアップ作りましょう。もしパソコンが故障しても、このバックアップを利用してウォレットを復元できます。";
