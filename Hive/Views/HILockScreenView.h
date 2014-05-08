@@ -6,8 +6,6 @@
 //  Copyright (c) 2014 Hive Developers. All rights reserved.
 //
 
-#import <Cocoa/Cocoa.h>
-
 /*
  The overlay view that covers the main window when the wallet is locked on startup.
  */

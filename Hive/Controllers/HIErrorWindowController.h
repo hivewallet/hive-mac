@@ -6,8 +6,6 @@
 //  Copyright (c) 2013 Hive Developers. All rights reserved.
 //
 
-#import <Cocoa/Cocoa.h>
-
 /*
  Implements the error popup that shows up when an exception is caught. Exception details can be sent to the Hockeyapp
  API.

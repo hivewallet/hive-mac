@@ -4,8 +4,16 @@
 
 #ifdef __OBJC__
     #import <Cocoa/Cocoa.h>
+    #import <CoreData/CoreData.h>
+    #import <Foundation/Foundation.h>
+    #import <JavaScriptCore/JavaScriptCore.h>
+    #import <QuartzCore/QuartzCore.h>
+    #import <QTKit/QTkit.h>
     #import <SystemConfiguration/SystemConfiguration.h>
+    #import <WebKit/WebKit.h>
+
     #import "HIAppDelegate.h"
+
 // change this to 1 to use the testing network, not the main blockchain
     #define TESTING_NETWORK 0
     #define TEMP_DIRECTORY 0

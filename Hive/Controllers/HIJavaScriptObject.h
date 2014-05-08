@@ -6,10 +6,6 @@
 //  Copyright (c) 2013 Hive Developers. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
-#import <JavaScriptCore/JavaScriptCore.h>
-#import <WebKit/WebKit.h>
-
 #define SafeJSONValue(x) ((x) ?: [NSNull null])
 #define IsNullOrUndefined(x) (!(x) || [(x) isKindOfClass:[WebUndefined class]])
 #define ValidateArgument(cl, var) [self validateType:[cl class] ofArgument:var name:@ # var cmd:_cmd]

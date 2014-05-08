@@ -6,8 +6,6 @@
 //  Copyright (c) 2013 Hive Developers. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
-
 /*
  Manages Core Data helper objects (model, context, store coordinator).
  */

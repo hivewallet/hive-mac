@@ -7,7 +7,6 @@
 //
 
 #import <CocoaLumberjack/DDLog.h>
-#import <Foundation/Foundation.h>
 
 /*
  Implementation of a CocoaLumberjack log formatter used for formatting log entries for the file in ~/Library/Logs

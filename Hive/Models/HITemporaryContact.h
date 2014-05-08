@@ -6,7 +6,6 @@
 //  Copyright (c) 2014 Hive Developers. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
 #import "HIPerson.h"
 
 @class HIAddress;

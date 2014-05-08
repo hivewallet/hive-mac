@@ -6,8 +6,6 @@
 //  Copyright (c) 2013 Hive Developers. All rights reserved.
 //
 
-#import <Cocoa/Cocoa.h>
-
 /*
  A button cell for a red rounded button - used in contact edit view for the delete contact button.
  */

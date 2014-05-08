@@ -6,8 +6,6 @@
 //  Copyright (c) 2013 Hive Developers. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
-
 #define BackupError(domain, errorCode, reason) [NSError errorWithDomain:domain \
                                                                    code:errorCode \
                                                                userInfo:@{NSLocalizedFailureReasonErrorKey: \

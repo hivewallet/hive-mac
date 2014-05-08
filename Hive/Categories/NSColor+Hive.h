@@ -6,8 +6,6 @@
 //  Copyright (c) 2013 Hive Developers. All rights reserved.
 //
 
-#import <Cocoa/Cocoa.h>
-
 @interface NSColor (Hive)
 
 + (NSColor *)hiWindowBackgroundColor;

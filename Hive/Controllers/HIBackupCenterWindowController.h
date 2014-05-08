@@ -6,7 +6,6 @@
 //  Copyright (c) 2013 Hive Developers. All rights reserved.
 //
 
-#import <Cocoa/Cocoa.h>
 #import "HIKeyObservingWindow.h"
 
 @interface HIBackupCenterWindowController : NSWindowController

@@ -6,8 +6,6 @@
 //  Copyright (c) 2013 Hive Developers. All rights reserved.
 //
 
-#import <QuartzCore/QuartzCore.h>
-
 #import "HIDraggableButton.h"
 #import "HIRightPointingArrowView.h"
 #import "HISidebarController.h"

@@ -6,7 +6,6 @@
 //  Copyright (c) 2013 Hive Developers. All rights reserved.
 //
 
-#import <WebKit/WebKit.h>
 #import "HIApplication.h"
 #import "HISendBitcoinsWindowController.h"
 #import "HIViewController.h"

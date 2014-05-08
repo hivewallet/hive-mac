@@ -6,7 +6,6 @@
 //  Copyright (c) 2013 Hive Developers. All rights reserved.
 //
 
-#import <QuartzCore/QuartzCore.h>
 #import "HINavigationController.h"
 #import "HITitleView.h"
 

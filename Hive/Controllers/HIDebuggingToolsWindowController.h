@@ -6,8 +6,6 @@
 //  Copyright (c) 2013 Hive Developers. All rights reserved.
 //
 
-#import <Cocoa/Cocoa.h>
-
 /*
  Implements the "Debugging Tools" window which provides access to various hacks like resetting applications or
  transactions list etc.

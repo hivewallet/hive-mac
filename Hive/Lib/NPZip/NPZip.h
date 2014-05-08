@@ -6,7 +6,6 @@
 //  Copyright (c) 2011 Hive Developers. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
 #import "NPZipHeader.h"
 
 @interface NPZip : NSObject {

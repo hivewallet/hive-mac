@@ -3,7 +3,6 @@
 #import "HIBitcoinURLService.h"
 #import "ZXLuminanceSource.h"
 
-#import <QTKit/QTkit.h>
 #import <ZXingObjC/ZXingObjC.h>
 
 static const NSTimeInterval SCAN_INTERVAL = .25;

@@ -6,8 +6,6 @@
 //  Copyright (c) 2013 Hive Developers. All rights reserved.
 //
 
-#import <Cocoa/Cocoa.h>
-
 /*
  An NSBox with a custom rounded border and white background. Used in contact details views.
  */
