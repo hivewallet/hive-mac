@@ -37,7 +37,7 @@ static BOOL isDiskTrailer(char *start) {
 
 @synthesize files = __files;
 
-- (id)initWithFile:(NSString *)filePath {
+- (instancetype)initWithFile:(NSString *)filePath {
     self = [self init];
     if (self) {
         [self readHeaderFromFile:filePath];

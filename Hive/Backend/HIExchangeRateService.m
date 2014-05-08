@@ -29,7 +29,7 @@ static const NSTimeInterval HIExchangeRateMinimumUpdateInterval = 60.0;
     return sharedService;
 }
 
-- (id)init {
+- (instancetype)init {
     self = [super init];
     if (self) {
         _client = [BCClient sharedClient];

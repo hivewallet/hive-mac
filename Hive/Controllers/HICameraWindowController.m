@@ -31,11 +31,11 @@ static const NSTimeInterval SCAN_INTERVAL = .25;
     return sharedWindowController;
 }
 
-- (id)init {
+- (instancetype)init {
     return [self initWithWindowNibName:[self className]];
 }
 
-- (id)initWithWindow:(NSWindow *)window {
+- (instancetype)initWithWindow:(NSWindow *)window {
     self = [super initWithWindow:window];
     if (self) {
         _waiting = YES;

@@ -42,7 +42,7 @@ typedef void(^HITransactionCompletionCallback)(BOOL success, NSString *transacti
 
 @property (copy) HITransactionCompletionCallback sendCompletion;
 
-- (id)initWithContact:(HIContact *)contact;
+- (instancetype)initWithContact:(HIContact *)contact;
 - (void)setHashAddress:(NSString *)hash;
 - (void)setLockedAddress:(NSString *)hash;
 - (void)setLockedAmount:(satoshi_t)amount;

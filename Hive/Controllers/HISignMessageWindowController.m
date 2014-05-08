@@ -27,7 +27,7 @@
 
 @implementation HISignMessageWindowController
 
-- (id)init {
+- (instancetype)init {
     return [super initWithWindowNibName:self.className];
 }
 

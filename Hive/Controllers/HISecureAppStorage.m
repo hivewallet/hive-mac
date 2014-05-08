@@ -39,7 +39,7 @@
 
 #pragma mark - init & cleanup
 
-- (id)initWithApplication:(HIApplication *)application frame:(WebFrame *)frame {
+- (instancetype)initWithApplication:(HIApplication *)application frame:(WebFrame *)frame {
     self = [super init];
 
     if (self) {

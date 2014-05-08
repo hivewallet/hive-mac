@@ -28,7 +28,7 @@ static const NSTimeInterval UpdateTimerInterval = 5.0;
 
 @implementation HIBackupCenterWindowController
 
-- (id)init {
+- (instancetype)init {
     self = [self initWithWindowNibName:self.className];
 
     if (self) {

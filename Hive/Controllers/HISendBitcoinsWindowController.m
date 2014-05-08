@@ -63,7 +63,7 @@ NSString * const HISendBitcoinsWindowSuccessKey = @"success";
 
 #pragma mark - Init & cleanup
 
-- (id)init {
+- (instancetype)init {
     self = [super initWithWindowNibName:@"HISendBitcoinsWindowController"];
 
     if (self) {
@@ -90,7 +90,7 @@ NSString * const HISendBitcoinsWindowSuccessKey = @"success";
     return self;
 }
 
-- (id)initWithContact:(HIContact *)contact {
+- (instancetype)initWithContact:(HIContact *)contact {
     self = [self init];
 
     if (self) {

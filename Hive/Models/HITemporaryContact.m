@@ -20,7 +20,7 @@
     avatar = _avatar,
     name = _name;
 
-- (id)initWithName:(NSString *)name address:(NSString *)addressHash {
+- (instancetype)initWithName:(NSString *)name address:(NSString *)addressHash {
     self = [super init];
 
     if (self) {

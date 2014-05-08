@@ -45,7 +45,7 @@ NSString * const kHITextFieldContentChanged = @"kHITextFieldContentChanged";
     [self.superview addSubview:_bgView positioned:NSWindowBelow relativeTo:self];
 }
 
-- (id)initWithFrame:(NSRect)frame {
+- (instancetype)initWithFrame:(NSRect)frame {
     self = [super initWithFrame:frame];
 
     if (self) {

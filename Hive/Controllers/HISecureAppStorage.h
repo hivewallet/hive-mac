@@ -16,6 +16,6 @@
 
 @interface HISecureAppStorage : HIJavaScriptObject
 
-- (id)initWithApplication:(HIApplication *)application frame:(WebFrame *)frame;
+- (instancetype)initWithApplication:(HIApplication *)application frame:(WebFrame *)frame;
 
 @end

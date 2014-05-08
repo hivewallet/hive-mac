@@ -16,7 +16,7 @@
 
 @implementation HILicenseInfoPanelController
 
-- (id)init {
+- (instancetype)init {
     self = [self initWithWindowNibName:self.className];
     return self;
 }

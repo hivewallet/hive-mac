@@ -19,7 +19,7 @@
 @property (readonly) HIViewController *topViewController;
 @property (readonly) HIViewController *rootViewController;
 
-- (id)initWithRootViewController:(HIViewController *)rootViewController;
+- (instancetype)initWithRootViewController:(HIViewController *)rootViewController;
 - (NSArray *)viewControllers;
 
 - (void)pushViewController:(HIViewController *)controller animated:(BOOL)animated;

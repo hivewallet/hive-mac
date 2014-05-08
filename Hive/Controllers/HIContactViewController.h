@@ -26,7 +26,7 @@
 @property (strong) IBOutlet HIContactTabBarController *tabBarController;
 @property (strong) IBOutlet NSView *contentView;
 
-- (id)initWithContact:(HIContact *)aContact;
+- (instancetype)initWithContact:(HIContact *)aContact;
 - (IBAction)sendBitcoinsPressed:(id)sender;
 
 @end

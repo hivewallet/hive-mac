@@ -37,7 +37,7 @@ static NSString *const KEY_UNREAD_TRANSACTIONS = @"unreadTransactions";
     NSFont *_amountLabelFont;
 }
 
-- (id)init {
+- (instancetype)init {
     self = [super initWithNibName:@"HITransactionsViewController" bundle:nil];
 
     if (self) {
@@ -54,7 +54,7 @@ static NSString *const KEY_UNREAD_TRANSACTIONS = @"unreadTransactions";
     return self;
 }
 
-- (id)initWithContact:(HIContact *)contact {
+- (instancetype)initWithContact:(HIContact *)contact {
     self = [self init];
 
     if (self) {

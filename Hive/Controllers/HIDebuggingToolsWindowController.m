@@ -25,7 +25,7 @@
 
 @implementation HIDebuggingToolsWindowController
 
-- (id)init {
+- (instancetype)init {
     return [super initWithWindowNibName:@"HIDebuggingToolsWindowController"];
 }
 

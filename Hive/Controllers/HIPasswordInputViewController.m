@@ -24,7 +24,7 @@ static const NSTimeInterval IDLE_RESET_DELAY = 30.0;
 
 @implementation HIPasswordInputViewController
 
-- (id)init {
+- (instancetype)init {
     return [self initWithNibName:[self className] bundle:nil];
 }
 

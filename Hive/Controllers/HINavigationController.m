@@ -27,7 +27,7 @@ static NSString *const KEY_BADGE_NUMBER = @"badgeNumber";
 
 @implementation HINavigationController
 
-- (id)initWithRootViewController:(HIViewController *)rootViewController {
+- (instancetype)initWithRootViewController:(HIViewController *)rootViewController {
     self = [super init];
 
     if (self) {

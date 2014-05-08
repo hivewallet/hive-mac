@@ -47,7 +47,7 @@ NSString * const BCClientPasswordChangedNotification = @"BCClientPasswordChanged
     return sharedClient;
 }
 
-- (id)initWithBaseURL:(NSURL *)URL {
+- (instancetype)initWithBaseURL:(NSURL *)URL {
     self = [super initWithBaseURL:URL];
 
     if (self) {

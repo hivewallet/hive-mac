@@ -25,6 +25,6 @@
 
 @property (nonatomic, retain) NSMutableDictionary *files;
 
-- (id)initWithFile:(NSString *)filePath;
+- (instancetype)initWithFile:(NSString *)filePath;
 
 @end

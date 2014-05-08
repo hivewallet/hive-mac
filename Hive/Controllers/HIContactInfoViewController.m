@@ -29,7 +29,7 @@
 
 @implementation HIContactInfoViewController
 
-- (id)initWithParent:(HIViewController *)parent {
+- (instancetype)initWithParent:(HIViewController *)parent {
     self = [super initWithNibName:@"HIContactInfoViewController" bundle:nil];
 
     if (self) {

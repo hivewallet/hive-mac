@@ -28,7 +28,7 @@ static NSString *const KEY_WALLET_HASH = @"walletHash";
 
 @implementation HIAddressesBox
 
-- (id)initWithFrame:(NSRect)frameRect {
+- (instancetype)initWithFrame:(NSRect)frameRect {
     self = [super initWithFrame:frameRect];
     if (self) {
         _box = [[HIBox alloc] initWithFrame:self.bounds];

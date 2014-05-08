@@ -29,7 +29,7 @@ const NSInteger HIDropboxBackupNotRunning = -3;
 
 @implementation HIDropboxBackup
 
-- (id)init {
+- (instancetype)init {
     self = [super init];
 
     if (self) {

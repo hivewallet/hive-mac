@@ -18,7 +18,7 @@
 @property (strong) IBOutlet NSTextView *comments;
 @property (strong) IBOutlet NSTextView *exceptionDetails;
 
-- (id)initWithException:(NSException *)exception;
+- (instancetype)initWithException:(NSException *)exception;
 - (IBAction)cancelReport:(id)sender;
 - (IBAction)sendReport:(id)sender;
 

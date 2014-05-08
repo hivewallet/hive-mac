@@ -26,7 +26,7 @@
 
 @implementation HIErrorWindowController
 
-- (id)initWithException:(NSException *)exception {
+- (instancetype)initWithException:(NSException *)exception {
     self = [super initWithWindowNibName:@"HIErrorWindowController"];
 
     if (self) {

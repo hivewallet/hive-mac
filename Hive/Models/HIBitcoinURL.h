@@ -20,6 +20,6 @@
 @property (readonly) NSString *message;
 @property (readonly) satoshi_t amount;
 
-- (id)initWithURLString:(NSString *)URL;
+- (instancetype)initWithURLString:(NSString *)URL;
 
 @end

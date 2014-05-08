@@ -18,7 +18,7 @@
     }
 }
 
-- (id)initWithString:(NSString *)password {
+- (instancetype)initWithString:(NSString *)password {
     self = [super init];
     if (self) {
         NSData *data = [password dataUsingEncoding:NSUTF16StringEncoding];

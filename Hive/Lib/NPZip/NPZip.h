@@ -14,8 +14,8 @@
 	NPZipHeader *__zipHeader;
 }
 
-+ (id) archiveWithFile:(NSString *)location;
-- (id) initWithFile:(NSString *)location;
++ (instancetype) archiveWithFile:(NSString *)location;
+- (instancetype) initWithFile:(NSString *)location;
 
 - (NSString *) name;
 - (NSString *) path;

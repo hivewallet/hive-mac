@@ -18,7 +18,7 @@
     _gradient = [[NSGradient alloc] initWithStartingColor:red1 endingColor:red2];
 }
 
-- (id)initWithFrame:(NSRect)frame {
+- (instancetype)initWithFrame:(NSRect)frame {
     self = [super initWithFrame:frame];
 
     if (self) {

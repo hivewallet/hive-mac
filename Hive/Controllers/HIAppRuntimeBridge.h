@@ -22,7 +22,7 @@
 
 + (BOOL)isApiVersionInApplicationSupported:(HIApplication *)application;
 
-- (id)initWithApplication:(HIApplication *)application frame:(WebFrame *)frame;
+- (instancetype)initWithApplication:(HIApplication *)application frame:(WebFrame *)frame;
 
 - (void)killCallbacks;
 

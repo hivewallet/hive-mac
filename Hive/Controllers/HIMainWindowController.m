@@ -36,7 +36,7 @@ static const NSTimeInterval SlideAnimationDuration = 0.3;
 
 @implementation HIMainWindowController
 
-- (id)initWithWindowNibName:(NSString *)windowNibName {
+- (instancetype)initWithWindowNibName:(NSString *)windowNibName {
     return [super initWithWindowNibName:windowNibName];
 }
 

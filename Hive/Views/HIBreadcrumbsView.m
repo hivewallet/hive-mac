@@ -16,7 +16,7 @@ static const CGFloat FONT_SIZE = 14;
 
 @implementation HIBreadcrumbsView
 
-- (id)initWithFrame:(NSRect)frameRect {
+- (instancetype)initWithFrame:(NSRect)frameRect {
     self = [super initWithFrame:frameRect];
     if (self) {
         _color = [NSColor colorWithCalibratedWhite:0.8 alpha:1.0];

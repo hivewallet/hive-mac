@@ -13,7 +13,7 @@
     return sharedService;
 }
 
-- (id)init {
+- (instancetype)init {
     self = [super init];
     if (self) {
         self.locale = [NSLocale autoupdatingCurrentLocale];
