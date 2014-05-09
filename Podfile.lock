@@ -18,7 +18,7 @@ PODS:
   - MASPreferences (1.1)
   - MASShortcut (1.2.3)
   - OCHamcrest (3.0.1)
-  - Sparkle-pornel (1.6.0)
+  - Sparkle-pornel (1.6.1)
   - ZXingObjC (2.2.3)
 
 DEPENDENCIES:
@@ -46,7 +46,7 @@ SPEC CHECKSUMS:
   MASPreferences: 2c2f30b38c3dfceb0d3b29132a13417706a5adac
   MASShortcut: 6abaedac53a0542f4856f35be4f1f970b652a51e
   OCHamcrest: 782c52ae8c673e5d6060a65005cfd26d20d519ba
-  Sparkle-pornel: 5d12913e9bd42a0cb24b4a6ca70c6f7e5606668a
+  Sparkle-pornel: b624b1aeac3584136396faaaee3e3f74a4d0c0e8
   ZXingObjC: 352024760388de6b6241d34844fac59f2a1a6c68
 
 COCOAPODS: 0.32.1
