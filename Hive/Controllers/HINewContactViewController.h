@@ -18,26 +18,6 @@
 
 @interface HINewContactViewController : HIViewController
 
-@property (strong) IBOutlet HITextField *firstnameField;
-@property (strong) IBOutlet HITextField *lastnameField;
-@property (strong) IBOutlet HITextField *emailField;
-@property (strong) IBOutlet NSView *scrollContent;
-@property (weak) IBOutlet HIBox *walletsView;
-@property (weak) IBOutlet NSScrollView *scrollView;
-@property (weak) IBOutlet NSView *footerView;
-@property (weak) IBOutlet NSButton *addAddressButton;
-@property (weak) IBOutlet NSButton *scanQRCodeButton;
-@property (weak) IBOutlet NSButton *removeContactButton;
-@property (weak) IBOutlet NSTextField *editAvatarLabel;
-
 @property (strong) id<HIPerson> contact;
-
-@property (strong) IBOutlet NSImageView *avatarView;
-
-- (IBAction)cancelClicked:(NSButton *)sender;
-- (IBAction)doneClicked:(NSButton *)sender;
-- (IBAction)removeContactClicked:(NSButton *)sender;
-- (IBAction)addAddressClicked:(NSButton *)sender;
-- (IBAction)avatarChanged:(id)sender;
 
 @end

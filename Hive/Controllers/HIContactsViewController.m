@@ -15,6 +15,19 @@
 #import "HINewContactViewController.h"
 #import "NSColor+Hive.h"
 
+@interface HIContactsViewController()
+
+@property (strong) IBOutlet NSTableView *tableView;
+@property (strong) IBOutlet NSScrollView *scrollView;
+@property (strong) IBOutlet NSView *navigationView;
+@property (nonatomic, readonly, getter = managedObjectContext) NSManagedObjectContext *managedObjectContext;
+@property (nonatomic, readonly, getter = sortDescriptors) NSArray *sortDescriptors;
+@property (strong) IBOutlet NSArrayController *arrayController;
+@property (strong) IBOutlet NSView *foreverAloneScreen;
+
+- (IBAction)newContactClicked:(NSButton *)sender;
+
+@end
 
 @implementation HIContactsViewController
 
