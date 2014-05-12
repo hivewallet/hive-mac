@@ -575,7 +575,7 @@ static int ddLogLevel = LOG_LEVEL_VERBOSE;
 
         message = NSLocalizedString(@"Check your network connection, try again later "
                                     @"or report the problem to the payment recipient.",
-                                    @"Alert message when payment request can't be loaded from the server");
+                                    @"Alert message when payment request can't be loaded from or sent to the server");
     }
 
     NSAlert *alert = [NSAlert alertWithMessageText:title

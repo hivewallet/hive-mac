@@ -643,18 +643,9 @@ NSString * const HISendBitcoinsWindowSuccessKey = @"success";
 }
 
 - (void)sendPaymentRequest:(int)sessionId password:(HIPasswordHolder *)password {
-    [self.sendButton showSpinner];
-    [self.cancelButton setEnabled:NO];
-    [self hidePasswordPopover];
-
-    void (^callback)(NSError*, NSDictionary*) = ^(NSError *error, NSDictionary *data) {
-        if (error) {
-            if (error.code == kHIBitcoinManagerWrongPassword) {
-                [self.window hiShake];
-            } else {
-                // TODO handle error
-            }
-
+    void (^callback)(NSError*, NSDictionary*) = ^(NSError *sendError, NSDictionary *data) {
+        if (sendError) {
+            [self showPaymentSendErrorAlert];
             [self.sendButton hideSpinner];
             [self.cancelButton setEnabled:YES];
         } else {
@@ -662,9 +653,30 @@ NSString * const HISendBitcoinsWindowSuccessKey = @"success";
         }
     };
 
+    NSError *callError = nil;
+
     [[HIBitcoinManager defaultManager] sendPaymentRequest:sessionId
                                                  password:password.data
+                                                    error:&callError
                                                  callback:callback];
+
+    if (callError) {
+        if (callError.code == kHIBitcoinManagerWrongPassword) {
+            [self.window hiShake];
+        } else if (callError.code == kHIBitcoinManagerSendingDustError) {
+            [self showSendingDustAlert];
+        } else if (callError.code == kHIBitcoinManagerInsufficientMoneyError) {
+            [self showInsufficientFundsWithFeeAlert];
+        } else if (callError.code == kHIBitcoinManagerPaymentRequestExpiredError) {
+            [self showPaymentExpiredAlert];
+        } else {
+            [self showTransactionErrorAlert];
+        }
+    } else {
+        [self.sendButton showSpinner];
+        [self.cancelButton setEnabled:NO];
+        [self hidePasswordPopover];
+    }
 }
 
 - (void)closeAndNotifyWithSuccess:(BOOL)success transactionId:(NSString *)transactionId {
@@ -782,6 +794,25 @@ NSString * const HISendBitcoinsWindowSuccessKey = @"success";
 
                      message:NSLocalizedString(@"Please enter a different address.",
                                                @"Warning details when trying to send to your own address")];
+}
+
+- (void)showPaymentExpiredAlert {
+    [self showAlertWithTitle:NSLocalizedString(@"Payment request has already expired.",
+                                               @"Alert title when payment request was valid before but has expired")
+
+                     message:NSLocalizedString(@"You'll need to return to the site that requested the payment "
+                                               @"and initiate the payment again.",
+                                               @"Alert message when payment request was valid before but has expired")];
+}
+
+- (void)showPaymentSendErrorAlert {
+    [self showAlertWithTitle:NSLocalizedString(@"Payment could not be completed.",
+                                               @"Alert title when payment response can't be sent to the merchant")
+
+                     message:NSLocalizedString(@"Check your network connection, try again later "
+                                               @"or report the problem to the payment recipient.",
+                                               @"Alert message when payment request can't be loaded from "
+                                               @"or sent to the server")];
 }
 
 - (void)showLargeAmountAlertForAmount:(satoshi_t)satoshi toTarget:(NSString *)target button:(id)sender {
