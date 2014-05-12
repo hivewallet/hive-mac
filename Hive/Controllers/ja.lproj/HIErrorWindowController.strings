@@ -18,7 +18,7 @@
 "pya-AJ-MPI.title" = "あなたの名前（オプション）";
 
 /* Class = "NSButtonCell"; title = "Send"; ObjectID = "tDm-yy-jVS"; */
-"tDm-yy-jVS.title" = "送る";
+"tDm-yy-jVS.title" = "送信";
 
 /* Class = "NSButtonCell"; title = "Cancel"; ObjectID = "tR0-Dg-y0x"; */
 "tR0-Dg-y0x.title" = "キャンセル";
