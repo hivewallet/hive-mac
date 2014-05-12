@@ -17,7 +17,7 @@ const NSInteger HILocalBackupFailed = -2;
 
 @implementation HILocalBackup
 
-- (id)init {
+- (instancetype)init {
     self = [super init];
 
     if (self) {

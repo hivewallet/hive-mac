@@ -6,8 +6,6 @@
 //  Copyright (c) 2013 Hive Developers. All rights reserved.
 //
 
-#import <Cocoa/Cocoa.h>
-
 @class HIBox;
 @class HIViewController;
 @protocol HIPerson;
@@ -25,7 +23,7 @@
 @property (weak) IBOutlet NSView *profileScrollContent;
 @property (weak) IBOutlet NSButton *editButton;
 
-- (id)initWithParent:(HIViewController *)parent;
+- (instancetype)initWithParent:(HIViewController *)parent;
 - (IBAction)editButtonClicked:(NSButton *)sender;
 - (void)configureViewForContact:(id<HIPerson>)contact;
 

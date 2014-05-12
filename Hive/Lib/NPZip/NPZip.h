@@ -6,7 +6,6 @@
 //  Copyright (c) 2011 Hive Developers. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
 #import "NPZipHeader.h"
 
 @interface NPZip : NSObject {
@@ -15,8 +14,8 @@
 	NPZipHeader *__zipHeader;
 }
 
-+ (id) archiveWithFile:(NSString *)location;
-- (id) initWithFile:(NSString *)location;
++ (instancetype) archiveWithFile:(NSString *)location;
+- (instancetype) initWithFile:(NSString *)location;
 
 - (NSString *) name;
 - (NSString *) path;

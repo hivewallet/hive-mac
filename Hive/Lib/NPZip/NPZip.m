@@ -35,11 +35,11 @@ static uint32_t NPReadUInt32(FILE *fp) {
 @implementation NPZip
 
 
-+ (id) archiveWithFile:(NSString *)location {
++ (instancetype) archiveWithFile:(NSString *)location {
 	return [[NPZip alloc] initWithFile:location];
 }
 
-- (id) initWithFile:(NSString *)location {
+- (instancetype) initWithFile:(NSString *)location {
 	// check if file exists
 	if (![[NSFileManager defaultManager] fileExistsAtPath:location]) {
 		return nil;

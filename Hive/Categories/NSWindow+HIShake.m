@@ -1,7 +1,5 @@
 #import "NSWindow+HIShake.h"
 
-#import <QuartzCore/QuartzCore.h>
-
 @implementation NSWindow (HIShake)
 
 - (void)hiShake {

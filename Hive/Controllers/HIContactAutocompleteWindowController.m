@@ -23,7 +23,7 @@ static const CGFloat MaxAutocompleteHeight = 300.0;
 
 @implementation HIContactAutocompleteWindowController
 
-- (id)init {
+- (instancetype)init {
     self = [super initWithWindowNibName:@"HIContactAutocompleteWindowController"];
 
     if (self) {

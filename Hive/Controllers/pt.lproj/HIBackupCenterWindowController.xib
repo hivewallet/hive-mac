@@ -110,7 +110,7 @@
                                                         <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="shn-gI-JD4">
                                                             <rect key="frame" x="27" y="4" width="282" height="17"/>
                                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
-                                                            <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Detalhes de Status" id="1f9-7o-UKm">
+                                                            <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Detalhes do Status" id="1f9-7o-UKm">
                                                                 <font key="font" size="10" name="LucidaGrande"/>
                                                                 <color key="textColor" white="0.3256678427419355" alpha="1" colorSpace="calibratedWhite"/>
                                                                 <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>

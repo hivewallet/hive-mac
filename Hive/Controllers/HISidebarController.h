@@ -6,8 +6,6 @@
 //  Copyright (c) 2013 Hive Developers. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
-
 @class HIViewController;
 
 extern const NSInteger SidebarButtonWidth;

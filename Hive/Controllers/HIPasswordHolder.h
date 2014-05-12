@@ -9,7 +9,7 @@
  */
 @property (nonatomic, strong, readonly) NSData *data;
 
-- (id)initWithString:(NSString *)password;
+- (instancetype)initWithString:(NSString *)password;
 
 - (void)clear;
 

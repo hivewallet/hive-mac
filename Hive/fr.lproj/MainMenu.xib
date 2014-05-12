@@ -155,7 +155,7 @@
                     <modifierMask key="keyEquivalentModifierMask"/>
                     <menu key="submenu" title="Outils" id="cCx-Ak-fii">
                         <items>
-                            <menuItem title="Centre de sauvegardes" id="V0L-sM-c8h">
+                            <menuItem title="Centre de sauvegarde" id="V0L-sM-c8h">
                                 <modifierMask key="keyEquivalentModifierMask"/>
                                 <connections>
                                     <action selector="showBackupCenter:" target="-1" id="w3X-q3-iCI"/>

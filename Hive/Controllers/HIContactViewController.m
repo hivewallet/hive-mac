@@ -22,7 +22,7 @@
 
 @implementation HIContactViewController
 
-- (id)initWithContact:(HIContact *)contact {
+- (instancetype)initWithContact:(HIContact *)contact {
     self = [super initWithNibName:@"HIContactViewController" bundle:nil];
 
     if (self) {

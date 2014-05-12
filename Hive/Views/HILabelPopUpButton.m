@@ -2,7 +2,7 @@
 
 @implementation HILabelPopUpButton
 
-- (id)initWithFrame:(NSRect)frameRect {
+- (instancetype)initWithFrame:(NSRect)frameRect {
     self = [super initWithFrame:frameRect];
     if (self) {
         [self adjustPopUpButtonFont];
@@ -11,7 +11,7 @@
 }
 
 
-- (id)initWithFrame:(NSRect)buttonFrame pullsDown:(BOOL)flag {
+- (instancetype)initWithFrame:(NSRect)buttonFrame pullsDown:(BOOL)flag {
     self = [super initWithFrame:buttonFrame pullsDown:flag];
     if (self) {
         [self adjustPopUpButtonFont];

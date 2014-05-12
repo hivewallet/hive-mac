@@ -13,7 +13,6 @@
 #import <CocoaLumberjack/DDLog.h>
 #import <CocoaLumberjack/DDTTYLogger.h>
 #import <HockeySDK/HockeySDK.h>
-#import <WebKit/WebKit.h>
 
 #import "BCClient.h"
 #import "HIAboutHiveWindowController.h"

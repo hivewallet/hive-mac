@@ -37,7 +37,7 @@ static NSString *const KEY_UNREAD_TRANSACTIONS = @"unreadTransactions";
     NSFont *_amountLabelFont;
 }
 
-- (id)init {
+- (instancetype)init {
     self = [super initWithNibName:@"HITransactionsViewController" bundle:nil];
 
     if (self) {
@@ -54,7 +54,7 @@ static NSString *const KEY_UNREAD_TRANSACTIONS = @"unreadTransactions";
     return self;
 }
 
-- (id)initWithContact:(HIContact *)contact {
+- (instancetype)initWithContact:(HIContact *)contact {
     self = [self init];
 
     if (self) {
@@ -178,14 +178,16 @@ static NSString *const KEY_UNREAD_TRANSACTIONS = @"unreadTransactions";
 
 #pragma mark - BCTransactionObserver
 
-- (void)transactionChangedStatus:(HITransaction *)transaction {
+- (void)transactionChangedStatus:(HITransaction *)updatedTransaction {
     NSArray *list = self.arrayController.arrangedObjects;
-    NSInteger position = [list indexOfObjectPassingTest:^BOOL(id obj, NSUInteger idx, BOOL *stop) {
-        return [[obj id] isEqual:transaction.id];
+    NSInteger position = [list indexOfObjectPassingTest:^BOOL(id transaction, NSUInteger idx, BOOL *stop) {
+        return [[transaction id] isEqual:updatedTransaction.id];
     }];
 
     if (position != NSNotFound) {
-        [list[position] setStatus:transaction.status];
+        HITransaction *originalTransaction = list[position];
+        originalTransaction.status = updatedTransaction.status;
+
         [self.tableView reloadDataForRowIndexes:[NSIndexSet indexSetWithIndex:position]
                                   columnIndexes:[NSIndexSet indexSetWithIndex:0]];
     }

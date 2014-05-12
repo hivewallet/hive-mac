@@ -6,7 +6,6 @@
 //  Copyright (c) 2013 Hive Developers. All rights reserved.
 //
 
-#import <QuartzCore/QuartzCore.h>
 #import "HINavigationController.h"
 #import "HITitleView.h"
 
@@ -28,7 +27,7 @@ static NSString *const KEY_BADGE_NUMBER = @"badgeNumber";
 
 @implementation HINavigationController
 
-- (id)initWithRootViewController:(HIViewController *)rootViewController {
+- (instancetype)initWithRootViewController:(HIViewController *)rootViewController {
     self = [super init];
 
     if (self) {

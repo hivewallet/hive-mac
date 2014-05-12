@@ -3,7 +3,7 @@
 "14.title" = "Salvar";
 
 /* Class = "NSTextFieldCell"; title = "Contact information"; ObjectID = "75"; */
-"75.title" = "Informações de contato";
+"75.title" = "Informação para contato";
 
 /* Class = "NSTextFieldCell"; title = "Email:"; ObjectID = "78"; */
 "78.title" = "Email:";

@@ -32,7 +32,7 @@ static const NSTimeInterval IDLE_RESET_DELAY = 30.0;
 
 @implementation HIPasswordChangeWindowController
 
-- (id)init {
+- (instancetype)init {
     return [self initWithWindowNibName:[self className]];
 }
 

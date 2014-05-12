@@ -10,7 +10,7 @@
 
 @implementation HIViewController
 
-- (id)init {
+- (instancetype)init {
     self = [self initWithNibName:NSStringFromClass([self class]) bundle:nil];
 
     if (self) {

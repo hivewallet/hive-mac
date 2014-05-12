@@ -3,9 +3,17 @@
 //
 
 #ifdef __OBJC__
-    #import <Cocoa/Cocoa.h>
-    #import <SystemConfiguration/SystemConfiguration.h>
+    @import Cocoa;
+    @import CoreData;
+    @import Foundation;
+    @import JavaScriptCore;
+    @import QuartzCore;
+    @import QTKit;
+    @import SystemConfiguration;
+    @import WebKit;
+
     #import "HIAppDelegate.h"
+
 // change this to 1 to use the testing network, not the main blockchain
     #define TESTING_NETWORK 0
     #define TEMP_DIRECTORY 0

@@ -14,6 +14,6 @@
 
 @interface HITransactionsViewController : HIViewController
 
-- (id)initWithContact:(HIContact *)contact;
+- (instancetype)initWithContact:(HIContact *)contact;
 
 @end

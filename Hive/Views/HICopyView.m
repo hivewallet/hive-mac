@@ -5,7 +5,7 @@
 //  Created by Bazyli Zygan on 23.09.2013.
 //  Copyright (c) 2013 Hive Developers. All rights reserved.
 //
-#import <QuartzCore/QuartzCore.h>
+
 #import "HICopyView.h"
 #import "NSColor+Hive.h"
 
@@ -21,7 +21,7 @@
 
 @implementation HICopyView
 
-- (id)initWithFrame:(NSRect)frame {
+- (instancetype)initWithFrame:(NSRect)frame {
     self = [super initWithFrame:frame];
 
     if (self) {

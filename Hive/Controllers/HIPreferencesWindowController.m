@@ -3,7 +3,7 @@
 
 @implementation HIPreferencesWindowController
 
-- (id)init {
+- (instancetype)init {
     NSArray *viewControllers = @[
         [HIKeyPreferencesViewController new],
     ];

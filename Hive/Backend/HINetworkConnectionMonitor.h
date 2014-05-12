@@ -6,8 +6,6 @@
 //  Copyright (c) 2014 Hive Developers. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
-
 extern NSString * const HINetworkConnectionMonitorConnected;
 extern NSString * const HINetworkConnectionMonitorDisconnected;
 

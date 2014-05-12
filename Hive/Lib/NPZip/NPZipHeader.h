@@ -6,7 +6,6 @@
 //  Copyright (c) 2011 Hive Developers. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
 #import "NPZipFileHeader.h"
 
 @interface NPZipHeader : NSObject {
@@ -26,6 +25,6 @@
 
 @property (nonatomic, retain) NSMutableDictionary *files;
 
-- (id)initWithFile:(NSString *)filePath;
+- (instancetype)initWithFile:(NSString *)filePath;
 
 @end

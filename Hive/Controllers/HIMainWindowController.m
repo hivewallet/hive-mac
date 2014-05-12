@@ -6,7 +6,6 @@
 //  Copyright (c) 2013 Hive Developers. All rights reserved.
 //
 
-#import <QuartzCore/QuartzCore.h>
 #import "HIApplicationsViewController.h"
 #import "HIContactsViewController.h"
 #import "HILockScreenViewController.h"
@@ -37,7 +36,7 @@ static const NSTimeInterval SlideAnimationDuration = 0.3;
 
 @implementation HIMainWindowController
 
-- (id)initWithWindowNibName:(NSString *)windowNibName {
+- (instancetype)initWithWindowNibName:(NSString *)windowNibName {
     return [super initWithWindowNibName:windowNibName];
 }
 

@@ -6,9 +6,6 @@
 //  Copyright (c) 2013 Hive Developers. All rights reserved.
 //
 
-#import <CoreData/CoreData.h>
-#import <Foundation/Foundation.h>
-
 extern NSString * const HIApplicationEntity;
 
 

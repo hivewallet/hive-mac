@@ -67,7 +67,7 @@ NSString * const HISendBitcoinsWindowSuccessKey = @"success";
 
 #pragma mark - Init & cleanup
 
-- (id)init {
+- (instancetype)init {
     self = [super initWithWindowNibName:self.className];
 
     if (self) {

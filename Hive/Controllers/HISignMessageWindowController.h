@@ -6,8 +6,6 @@
 //  Copyright (c) 2014 Hive Developers. All rights reserved.
 //
 
-#import <Cocoa/Cocoa.h>
-
 @interface HISignMessageWindowController : NSWindowController
 
 @end

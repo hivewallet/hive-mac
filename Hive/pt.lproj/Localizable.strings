@@ -60,7 +60,7 @@
 "Choose" = "Escolha";
 
 /* No comment provided by engineer. */
-"Choose a directory inside Dropbox folder where the backup should be saved:" = "Escolha um diretório dentro do Dropbox onde o backup deve ser salvo:";
+"Choose a directory inside Dropbox folder where the backup should be saved:" = "Escolha um diretório dentro do Dropbox onde o backup será salvo:";
 
 /* No comment provided by engineer. */
 "click to copy" = "clique para copiar";
@@ -84,10 +84,10 @@
 "Could not read wallet file. It might be damaged." = "Não foi possível ler o arquivo da carteira. Ele pode estar danificado.";
 
 /* Disable backup button title */
-"Disable" = "Desabilitar";
+"Disable" = "Desativar";
 
 /* Backup status: adapter disabled */
-"Disabled" = "Desabilitado";
+"Disabled" = "Desativado";
 
 /* Confirm leaving a form without saving data */
 "Discard Changes" = "Descartar Mudanças";
@@ -126,7 +126,7 @@
 "Enable..." = "Habilitar...";
 
 /* Passphrase prompt for sending */
-"Enter your passphrase to confirm the transaction:" = "Entre a sua senha para confirmar a transação:";
+"Enter your passphrase to confirm the transaction:" = "Digite sua senha para confirmar a transação:";
 
 /* Passphrase prompt for message signing */
 "Enter your password to sign the message:" = "Digite sua senha para assinar a mensagem:";
@@ -138,7 +138,7 @@
 "Hive application file \"%@\" could not be opened." = "O arquivo de aplicação Hive \"%@\" não pôde ser aberto.";
 
 /* Initialization error title */
-"Hive cannot be started." = "Hive não pode ser iniciado.";
+"Hive cannot be started." = "Hive não pôde ser iniciado.";
 
 /* Database error alert title */
 "Hive database file cannot be opened." = "O arquivo de banco de dados do Hive não pôde ser aberto.";
@@ -156,10 +156,10 @@
 "Hive will now delete the file and synchronize with the Bitcoin network again. Please leave Hive open for the next several minutes, and try not to send any transactions right now." = "Agora o Hive vai excluir o arquivo e sincronizar com a rede Bitcoin novamente. Por favor deixe o Hive aberto pelos próximos minutos e tente não enviar nenhuma transação agora.";
 
 /* Share sent transaction text */
-"I've just received some Bitcoin using Hive" = "Acabei de receber alguns Bitcoins utilizando o Hive";
+"I've just received some Bitcoin using Hive" = "Acabei de receber Bitcoins utilizando o Hive";
 
 /* Share sent transaction text */
-"I've just sent some Bitcoin using Hive" = "Acabei de enviar alguns Bitcoins utilizando o Hive";
+"I've just sent some Bitcoin using Hive" = "Acabei de enviar Bitcoins utilizando o Hive";
 
 /* Install app button title */
 "Install" = "Instalar";
@@ -171,7 +171,7 @@
 "Keep Editing" = "Continue Editando";
 
 /* Address caption field placeholder */
-"Label" = "Label";
+"Label" = "Etiqueta";
 
 /* On what date was the last backup done */
 "Last backup on %@" = "Último backup em %@";
@@ -249,7 +249,7 @@
 "Send" = "Enviar";
 
 /* Sent amount of BTC to a contact/address */
-"Sent &a to &c" = "Enviar &a para &c";
+"Sent &a to &c" = "Enviado &a para &c";
 
 /* Title for shortcut keys preferences panel */
 "Shortcuts" = "Atalhos";
@@ -288,7 +288,7 @@
 "This isn't a valid Bitcoin address." = "Este não é um endereço de Bitcoin válido.";
 
 /* Backup error message */
-"Time Machine is disabled in System Preferences" = "O Time Machine está desabilitado nas Preferências do Sistema";
+"Time Machine is disabled in System Preferences" = "O Time Machine está desativado nas Preferências do Sistema";
 
 /* No backups enabled notification details */
 "To protect your bitcoins, it's recommended that you enable at least one type of backup." = "Para proteger seus bitcoins é recomendado que você habilite pelo menos um tipo de backup.";
@@ -324,7 +324,7 @@
 "Up to date" = "Atualizado";
 
 /* Entry in application icon context menu */
-"Visit application's site" = "Visite o site da aplicação";
+"Visit application's site" = "Visitar o site da aplicação";
 
 /* Backup status: backup scheduled or in progress */
 "Waiting for backup" = "Esperando pelo backup";
@@ -339,7 +339,7 @@
 "What does this mean?" = "O que isto significa?";
 
 /* Uninstall app popup message */
-"You can install it again through the App Store app later if you change your mind." = "Você pode instalá-lo novamente através da App Store se você mudar de ideia.";
+"You can install it again through the App Store app later if you change your mind." = "Se mudar de idéia você pode instalá-lo novamente através da App Store.";
 
 /* Details of an alert when trying to send more than you have */
 "You cannot send more money than you own." = "Você não pode enviar mais dinheiro do que você possui.";

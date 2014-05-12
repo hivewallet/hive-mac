@@ -24,7 +24,7 @@
 
 @implementation HIAboutHiveWindowController
 
-- (id)init {
+- (instancetype)init {
     self = [self initWithWindowNibName:self.className];
     return self;
 }

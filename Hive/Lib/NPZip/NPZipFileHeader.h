@@ -6,10 +6,7 @@
 //  Copyright (c) 2011 Hive Developers. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
-
-@interface NPZipFileHeader : NSObject {
-}
+@interface NPZipFileHeader : NSObject
 
 @property (nonatomic, retain) NSString *name;
 @property (nonatomic, assign) uint32_t signature; /* 0x02014b50 */
@@ -27,6 +24,6 @@
 @property (nonatomic, assign) uint32_t ext_attr;
 @property (nonatomic, assign) uint32_t local_offset;	
 
-+ (id)headerFromHandler:(FILE *)fp;
++ (instancetype)headerFromHandler:(FILE *)fp;
 
 @end

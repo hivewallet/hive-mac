@@ -27,7 +27,7 @@
 "uLK-ff-isg.title" = "Detalhes do Erro:";
 
 /* Class = "NSTextFieldCell"; title = "An unexpected error has occurred in Hive."; ObjectID = "xF4-pJ-cQU"; */
-"xF4-pJ-cQU.title" = "Um erro inesperado ocorreu com o Hive.";
+"xF4-pJ-cQU.title" = "Ocorreu um erro inesperado com o Hive.";
 
 /* Class = "NSTextFieldCell"; title = "Your email (optional)"; ObjectID = "zup-Q6-bK7"; */
 "zup-Q6-bK7.title" = "Seu email (opcional)";

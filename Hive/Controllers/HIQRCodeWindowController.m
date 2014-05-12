@@ -24,11 +24,11 @@ static const NSTimeInterval CURSOR_HIDE_IDLE_DELAY = 1.0;
 
 @implementation HIQRCodeWindowController
 
-- (id)init {
+- (instancetype)init {
     return [self initWithWindowNibName:[self className]];
 }
 
-- (id)initWithWindow:(NSWindow *)window {
+- (instancetype)initWithWindow:(NSWindow *)window {
     self = [super initWithWindow:window];
     if (self) {
         NSPanel *panel = (NSPanel *)self.window;

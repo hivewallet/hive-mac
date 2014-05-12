@@ -14,7 +14,7 @@ static NSString * const BitcoinURLPrefix = @"bitcoin:";
 
 @implementation HIBitcoinURL
 
-- (id)initWithURLString:(NSString *)URL {
+- (instancetype)initWithURLString:(NSString *)URL {
     self = [super init];
 
     if (self) {

@@ -113,7 +113,7 @@ static const NSInteger kHIAppRuntimeBridgeParsingError = -1000;
 
 #pragma mark - init & cleanup
 
-- (id)initWithApplication:(HIApplication *)application frame:(WebFrame *)frame {
+- (instancetype)initWithApplication:(HIApplication *)application frame:(WebFrame *)frame {
 
     NSAssert([[self class] isApiVersionInApplicationSupported:application],
              @"Application should not have been loaded");

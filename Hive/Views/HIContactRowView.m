@@ -28,11 +28,11 @@
     separatorColor = RGB(192, 192, 192);
 }
 
-- (id)init {
+- (instancetype)init {
     return [self initWithFrame:NSMakeRect(0, 0, 100, 100)];
 }
 
-- (id)initWithFrame:(NSRect)frame {
+- (instancetype)initWithFrame:(NSRect)frame {
     self = [super initWithFrame:frame];
 
     if (self) {

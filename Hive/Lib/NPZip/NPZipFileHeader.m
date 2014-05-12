@@ -32,7 +32,7 @@ static uint32_t NPReadUInt32(FILE *fp) {
 @synthesize disk_start, int_attr;
 @synthesize ext_attr, local_offset;
 
-+ (id)headerFromHandler:(FILE *)fp {
++ (instancetype)headerFromHandler:(FILE *)fp {
     NPZipFileHeader *h = [[NPZipFileHeader alloc] init];
     
 	h.signature = NPReadUInt32(fp);

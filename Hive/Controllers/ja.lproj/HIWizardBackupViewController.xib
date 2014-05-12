@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="5053" systemVersion="13C64" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="5056" systemVersion="13C1021" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
         <deployment version="1070" defaultVersion="1070" identifier="macosx"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="5053"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="5056"/>
     </dependencies>
     <objects>
         <customObject id="-2" userLabel="File's Owner" customClass="HIWizardBackupViewController">
@@ -76,7 +76,7 @@
                         <constraint firstAttribute="width" constant="600" id="Jn9-t9-FWD"/>
                         <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="57" id="glQ-rH-ZKG"/>
                     </constraints>
-                    <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="center" title="バックアップはコインを保護するためにとても重要です。ウォレットのバックアップ作りましょう。もしパソコンが故障しても、このバックアップを利用してウォレットを復元できます。" id="rIc-eX-ajY">
+                    <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="center" title="バックアップはコインを保護するために非常に重要です。ウォレットのバックアップ作りましょう。もしパソコンが故障しても、このバックアップを利用してウォレットを復元できます。" id="rIc-eX-ajY">
                         <font key="font" metaFont="system" size="16"/>
                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>

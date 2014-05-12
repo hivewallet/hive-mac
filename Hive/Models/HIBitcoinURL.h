@@ -6,9 +6,6 @@
 //  Copyright (c) 2013 Hive Developers. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
-
-
 /*
  Represents a bitcoin: URL that opens a send window when clicked e.g. in a browser.
  */
@@ -24,6 +21,6 @@
 @property (readonly) NSString *paymentRequestURL;
 @property (readonly) satoshi_t amount;
 
-- (id)initWithURLString:(NSString *)URL;
+- (instancetype)initWithURLString:(NSString *)URL;
 
 @end

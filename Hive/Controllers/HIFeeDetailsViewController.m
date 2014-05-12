@@ -18,7 +18,7 @@
 
 @implementation HIFeeDetailsViewController
 
-- (id)init {
+- (instancetype)init {
     return [self initWithNibName:[self className] bundle:nil];
 }
 

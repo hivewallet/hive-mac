@@ -6,7 +6,7 @@
 "6.title" = "キャンセル";
 
 /* Class = "NSButtonCell"; title = "Send"; ObjectID = "10"; */
-"10.title" = "送る";
+"10.title" = "送金";
 
 /* Class = "NSTextFieldCell"; title = "To:"; ObjectID = "14"; */
 "14.title" = "送金先:";

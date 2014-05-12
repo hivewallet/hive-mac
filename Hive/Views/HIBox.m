@@ -12,7 +12,7 @@
 
 @implementation HIBox
 
-- (id)initWithFrame:(NSRect)frame {
+- (instancetype)initWithFrame:(NSRect)frame {
     self = [super initWithFrame:frame];
     if (self) {
         [self setUpBox];

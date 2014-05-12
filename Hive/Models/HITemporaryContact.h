@@ -6,7 +6,6 @@
 //  Copyright (c) 2014 Hive Developers. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
 #import "HIPerson.h"
 
 @class HIAddress;
@@ -18,7 +17,7 @@
 
 @interface HITemporaryContact : NSObject<HIPerson>
 
-- (id)initWithName:(NSString *)name address:(NSString *)addressHash;
+- (instancetype)initWithName:(NSString *)name address:(NSString *)addressHash;
 
 @end
 

@@ -21,7 +21,7 @@
                                               endingColor:RGB(238, 238, 238)];
 }
 
-- (id)initWithFrame:(NSRect)frame {
+- (instancetype)initWithFrame:(NSRect)frame {
     self = [super initWithFrame:frame];
 
     if (self) {

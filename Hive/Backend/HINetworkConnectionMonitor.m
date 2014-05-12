@@ -23,7 +23,7 @@ NSString * const HINetworkConnectionMonitorDisconnected = @"HINetworkConnectionM
 
 @implementation HINetworkConnectionMonitor
 
-- (id)init {
+- (instancetype)init {
     self = [super init];
 
     if (self) {

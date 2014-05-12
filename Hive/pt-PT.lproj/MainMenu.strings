@@ -21,13 +21,13 @@
 "134.title" = "Ocultar o Hive";
 
 /* Class = "NSMenuItem"; title = "Quit Hive"; ObjectID = "136"; */
-"136.title" = "Fechar o Hive";
+"136.title" = "Encerrar o Hive";
 
 /* Class = "NSMenuItem"; title = "Hide Others"; ObjectID = "145"; */
-"145.title" = "Ocultar Outros";
+"145.title" = "Ocultar outros";
 
 /* Class = "NSMenuItem"; title = "Show All"; ObjectID = "150"; */
-"150.title" = "Mostrar Todos";
+"150.title" = "Mostrar todos";
 
 /* Class = "NSMenuItem"; title = "Edit"; ObjectID = "801"; */
 "801.title" = "Editar";
@@ -54,7 +54,7 @@
 "811.title" = "Eliminar";
 
 /* Class = "NSMenuItem"; title = "Select All"; ObjectID = "812"; */
-"812.title" = "Selecionar Todos";
+"812.title" = "Selecionar todos";
 
 /* Class = "NSMenuItem"; title = "Window"; ObjectID = "854"; */
 "854.title" = "Janela";
@@ -69,22 +69,22 @@
 "858.title" = "Zoom";
 
 /* Class = "NSMenuItem"; title = "Bring All to Front"; ObjectID = "860"; */
-"860.title" = "Colocar à frente de tudo";
+"860.title" = "Trazer tudo à frente";
 
 /* Class = "NSMenuItem"; title = "Close"; ObjectID = "864"; */
-"864.title" = "Fechar";
+"864.title" = "Encerrar";
 
 /* Class = "NSMenuItem"; title = "Send Bitcoin..."; ObjectID = "866"; */
-"866.title" = "Enviar Bitcoins...";
+"866.title" = "Enviar Bitcoin...";
 
 /* Class = "NSMenuItem"; title = "Check for Updates..."; ObjectID = "870"; */
-"870.title" = "Verificar Actualizações...";
+"870.title" = "Verificar actualizações...";
 
 /* Class = "NSMenuItem"; title = "Change Password…"; ObjectID = "1HB-Qg-iyg"; */
-"1HB-Qg-iyg.title" = "Mudar a Senha…";
+"1HB-Qg-iyg.title" = "Mudar a senha…";
 
 /* Class = "NSMenuItem"; title = "Lock Wallet"; ObjectID = "AFM-Ev-d2A"; */
-"AFM-Ev-d2A.title" = "Bloquear Carteira";
+"AFM-Ev-d2A.title" = "Bloquear carteira";
 
 /* Class = "NSMenuItem"; title = "CoinMap"; ObjectID = "ASP-Ns-ktD"; */
 "ASP-Ns-ktD.title" = "CoinMap";
@@ -93,7 +93,7 @@
 "GX7-xG-GKH.title" = "Carteira";
 
 /* Class = "NSMenuItem"; title = "Send Feedback…"; ObjectID = "GsI-lc-HhD"; */
-"GsI-lc-HhD.title" = "Enviar Sugestões...";
+"GsI-lc-HhD.title" = "Enviar sugestões...";
 
 /* Class = "NSMenu"; title = "Help"; ObjectID = "K2u-T2-G1a"; */
 "K2u-T2-G1a.title" = "Ajuda";
@@ -105,7 +105,7 @@
 "Ue9-mi-gbe.title" = "Ferramentas de depuração";
 
 /* Class = "NSMenuItem"; title = "Backup Center"; ObjectID = "V0L-sM-c8h"; */
-"V0L-sM-c8h.title" = "Cópia Central";
+"V0L-sM-c8h.title" = "Central de backup";
 
 /* Class = "NSMenuItem"; title = "FAQ"; ObjectID = "VQa-2Z-6fS"; */
 "VQa-2Z-6fS.title" = "FAQ";
@@ -123,7 +123,7 @@
 "jrd-Ul-XjV.title" = "Carteira";
 
 /* Class = "NSMenuItem"; title = "Debugging info"; ObjectID = "lLT-53-p4m"; */
-"lLT-53-p4m.title" = "Informação de Depuração";
+"lLT-53-p4m.title" = "Informações de depuração";
 
 /* Class = "NSMenuItem"; title = "Scan a QR code…"; ObjectID = "vdw-IK-snJ"; */
-"vdw-IK-snJ.title" = "Capturar um código QR...";
+"vdw-IK-snJ.title" = "Capturar um QR code...";

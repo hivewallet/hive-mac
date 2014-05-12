@@ -6,8 +6,6 @@
 //  Copyright (c) 2013 Hive Developers. All rights reserved.
 //
 
-#import <QuartzCore/QuartzCore.h>
-
 #import "HIDraggableButton.h"
 #import "HIRightPointingArrowView.h"
 #import "HISidebarController.h"
@@ -34,7 +32,7 @@ static NSString const *ConstraintKey = @"constraint";
 
 @implementation HITitleView
 
-- (id)initWithFrame:(NSRect)frame {
+- (instancetype)initWithFrame:(NSRect)frame {
     self = [super initWithFrame:frame];
 
     if (self) {

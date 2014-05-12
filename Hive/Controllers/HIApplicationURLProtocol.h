@@ -6,8 +6,6 @@
 //  Copyright (c) 2013 Hive Developers. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
-
 /*
  Used for loading application files from the app bundle in user's Application Support folder.
  */

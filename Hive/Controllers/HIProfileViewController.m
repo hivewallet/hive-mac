@@ -40,7 +40,7 @@
 
 @implementation HIProfileViewController
 
-- (id)init {
+- (instancetype)init {
     self = [super initWithNibName:@"HIProfileViewController" bundle:nil];
 
     if (self) {

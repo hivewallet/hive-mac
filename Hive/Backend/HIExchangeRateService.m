@@ -29,7 +29,7 @@ static const NSTimeInterval HIExchangeRateMinimumUpdateInterval = 60.0;
     return sharedService;
 }
 
-- (id)init {
+- (instancetype)init {
     self = [super init];
     if (self) {
         _client = [BCClient sharedClient];
@@ -145,10 +145,13 @@ static const NSTimeInterval HIExchangeRateMinimumUpdateInterval = 60.0;
     NSDecimalNumber *exchangeRate = [NSDecimalNumber decimalNumberWithString:string
                                                                       locale:@{NSLocaleDecimalSeparator: @"."}];
 
-    if (exchangeRate && exchangeRate != [NSDecimalNumber notANumber]) {
+    if (exchangeRate
+        && ![exchangeRate isEqual:[NSDecimalNumber zero]]
+        && exchangeRate != [NSDecimalNumber notANumber]) {
         self.exchangeRates[currency] = exchangeRate;
     } else {
         HILogWarn(@"Invalid exchange rate for %@: '%@'", currency, string);
+        [self.exchangeRates removeObjectForKey:currency];
     }
 
 }

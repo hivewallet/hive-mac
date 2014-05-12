@@ -14,7 +14,7 @@
 
 @implementation HIDebuggingInfoWindowController
 
-- (id)init {
+- (instancetype)init {
     return [self initWithWindowNibName:@"HIDebuggingInfoWindowController"];
 }
 
