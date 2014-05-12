@@ -216,6 +216,7 @@ NSString * const HISendBitcoinsWindowSuccessKey = @"success";
     [self.nameLabel setEditable:NO];
     [self.dropdownButton setHidden:YES];
     [self setQRCodeScanningEnabled:NO];
+    [self updateAvatarImage];
 }
 
 - (void)setLockedAddress:(NSString *)hash {
@@ -303,10 +304,14 @@ NSString * const HISendBitcoinsWindowSuccessKey = @"success";
 }
 
 - (void)updateAvatarImage {
-    if (_contact.avatarImage) {
+    self.photoView.hidden = NO;
+
+    if (_contact.avatar) {
         self.photoView.image = _contact.avatarImage;
     } else if (_sourceApplication.icon) {
         self.photoView.image = _sourceApplication.icon;
+    } else if (_lockedAddress) {
+        self.photoView.hidden = YES;
     } else {
         self.photoView.image = [NSImage imageNamed:@"avatar-empty"];
     }
