@@ -448,15 +448,15 @@ Gw
                 <constraint firstAttribute="bottom" secondItem="tct-Xp-d6b" secondAttribute="bottom" constant="12" id="zzX-16-IWC"/>
             </constraints>
         </customView>
-        <box autoresizesSubviews="NO" transparent="YES" boxType="custom" borderType="none" titlePosition="noTitle" translatesAutoresizingMaskIntoConstraints="NO" id="lfv-xx-kWw" userLabel="Ackbar">
-            <rect key="frame" x="0.0" y="0.0" width="392" height="107"/>
+        <box autoresizesSubviews="NO" transparent="YES" boxType="custom" borderType="line" titlePosition="noTitle" translatesAutoresizingMaskIntoConstraints="NO" id="lfv-xx-kWw" userLabel="Ackbar">
+            <rect key="frame" x="0.0" y="0.0" width="393" height="107"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
             <view key="contentView">
-                <rect key="frame" x="0.0" y="0.0" width="392" height="107"/>
+                <rect key="frame" x="1" y="1" width="391" height="105"/>
                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                 <subviews>
                     <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="DBJ-jB-H9V">
-                        <rect key="frame" x="184" y="66" width="25" height="25"/>
+                        <rect key="frame" x="183" y="65" width="25" height="25"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="25" id="Zu0-wi-AFw"/>
@@ -465,7 +465,7 @@ Gw
                         <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="icon-success" id="1Jm-2j-jgh"/>
                     </imageView>
                     <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="jOk-cn-WRi">
-                        <rect key="frame" x="14" y="41" width="364" height="17"/>
+                        <rect key="frame" x="13" y="40" width="365" height="17"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                         <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="Payment successful" id="JAi-pl-Y47">
                             <font key="font" metaFont="systemBold"/>
@@ -474,7 +474,7 @@ Gw
                         </textFieldCell>
                     </textField>
                     <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" setsMaxLayoutWidthAtFirstLayout="YES" translatesAutoresizingMaskIntoConstraints="NO" id="TzX-tz-eVL">
-                        <rect key="frame" x="44" y="16" width="304" height="17"/>
+                        <rect key="frame" x="43" y="15" width="305" height="17"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                         <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="center" title="&lt;It's a trap!>" id="tH6-pe-MMb">
                             <font key="font" metaFont="system"/>

@@ -658,9 +658,9 @@ NSString * const HISendBitcoinsWindowSuccessKey = @"success";
 - (void)sendPaymentRequest:(int)sessionId password:(HIPasswordHolder *)password {
     void (^callback)(NSError*, NSDictionary*) = ^(NSError *sendError, NSDictionary *data) {
         if (sendError) {
-            [self showPaymentSendErrorAlert];
             [self.sendButton hideSpinner];
             [self.cancelButton setEnabled:YES];
+            [self showPaymentSendErrorAlert];
         } else {
             [self showPaymentConfirmation:data];
         }
@@ -716,7 +716,7 @@ NSString * const HISendBitcoinsWindowSuccessKey = @"success";
     [self.cancelButton removeFromSuperview];
     [self.sendButton removeFromSuperview];
 
-    CGFloat padding = self.wrapper.frame.origin.x + 1;
+    CGFloat padding = self.wrapper.frame.origin.x;
     [self.window.contentView addSubview:self.ackBar];
     [self.window.contentView addConstraints:@[
                                               INSET_LEADING(self.ackBar, padding),
