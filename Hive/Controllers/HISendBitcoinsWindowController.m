@@ -720,14 +720,15 @@ NSString * const HISendBitcoinsWindowSuccessKey = @"success";
 
     [self.cancelButton removeFromSuperview];
     [self.sendButton removeFromSuperview];
+    [self.closeButton setHidden:NO];
 
     CGFloat padding = self.wrapper.frame.origin.x;
     [self.window.contentView addSubview:self.ackBar];
     [self.window.contentView addConstraints:@[
                                               INSET_LEADING(self.ackBar, padding),
                                               INSET_TRAILING(self.ackBar, padding),
-                                              INSET_BOTTOM(self.ackBar, padding),
-                                              VSPACE(self.wrapper, self.ackBar, padding)
+                                              VSPACE(self.wrapper, self.ackBar, padding),
+                                              VSPACE(self.ackBar, self.closeButton, padding)
                                             ]];
 
     NSColor *fillColor = [NSColor colorWithCalibratedHue:95.0/360 saturation:0.5 brightness:1.0 alpha:1.0];
