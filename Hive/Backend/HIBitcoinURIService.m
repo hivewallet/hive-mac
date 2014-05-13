@@ -49,25 +49,23 @@
     NSURL *URL = [NSURL URLWithString:URLString];
 
     if (URL) {
+        HIAppDelegate *appDelegate = [[NSApplication sharedApplication] delegate];
         HIBitcoinManager *manager = [HIBitcoinManager defaultManager];
         NSError *callError = nil;
+
+        __block HISendBitcoinsWindowController *window;
 
         [manager openPaymentRequestFromURL:URLString
                                      error:&callError
                                   callback:^(NSError *loadError, int sessionId, NSDictionary *data) {
-
-                                      HIAppDelegate *appDelegate = [[NSApplication sharedApplication] delegate];
-
-                                      // TODO hide loading spinner
-
                                       if (loadError) {
+                                          [window close];
                                           [appDelegate handlePaymentRequestLoadError:loadError];
                                       } else {
                                           data = [self extendPaymentRequestData:data withBitcoinURIDetails:bitcoinURI];
 
-                                          HISendBitcoinsWindowController *window = [appDelegate sendBitcoinsWindow];
+                                          [window hidePaymentRequestLoadingBox];
                                           [window showPaymentRequest:sessionId details:data];
-                                          [window showWindow:self];
                                       }
                                   }];
 
@@ -78,7 +76,10 @@
             [self handlePaymentRequestURLErrorForURL:URLString];
             return NO;
         } else {
-            // TODO show loading spinner
+            window = [appDelegate sendBitcoinsWindow];
+            [window showPaymentRequestLoadingBox];
+            [window showWindow:self];
+
             return YES;
         }
     } else {

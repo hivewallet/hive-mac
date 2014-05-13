@@ -283,10 +283,13 @@ NSString * const HISendBitcoinsWindowSuccessKey = @"success";
     [self.window makeFirstResponder:nil];
 }
 
+- (void)usePaymentRequestTitle {
+    self.window.title = NSLocalizedString(@"Pay with Bitcoin", @"Send Bitcoin window title for payment request");
+}
+
 - (void)showPaymentRequest:(int)sessionId details:(NSDictionary *)data {
     _paymentRequestSession = sessionId;
-
-    self.window.title = NSLocalizedString(@"Pay with Bitcoin", @"Send Bitcoin window title for payment request");
+    [self usePaymentRequestTitle];
 
     NSNumber *amount = data[@"amount"];
     NSString *memo = data[@"memo"];
@@ -318,6 +321,25 @@ NSString * const HISendBitcoinsWindowSuccessKey = @"success";
     if (memo.length > 0) {
         [self setDetailsText:memo];
     }
+}
+
+- (void)showPaymentRequestLoadingBox {
+    [self usePaymentRequestTitle];
+
+    [self.window.contentView addSubview:self.loadingBox];
+    [self.window.contentView addConstraints:@[
+                                              INSET_LEADING(self.loadingBox),
+                                              INSET_TRAILING(self.loadingBox),
+                                              INSET_TOP(self.loadingBox),
+                                              INSET_BOTTOM(self.loadingBox)
+                                            ]];
+
+    [self.loadingSpinner startAnimation:self];
+}
+
+- (void)hidePaymentRequestLoadingBox {
+    [self.loadingSpinner stopAnimation:self];
+    [self.loadingBox removeFromSuperview];
 }
 
 - (void)updateAvatarImage {

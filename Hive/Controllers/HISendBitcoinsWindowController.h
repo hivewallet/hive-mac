@@ -49,6 +49,9 @@ typedef void(^HITransactionCompletionCallback)(BOOL success, NSString *transacti
 @property (nonatomic, strong) IBOutlet NSBox *ackBar;
 @property (nonatomic, strong) IBOutlet NSTextField *ackMessage;
 
+@property (nonatomic, strong) IBOutlet NSBox *loadingBox;
+@property (nonatomic, strong) IBOutlet NSProgressIndicator *loadingSpinner;
+
 @property (copy) HITransactionCompletionCallback sendCompletion;
 
 - (void)setHashAddress:(NSString *)hash;
@@ -60,6 +63,8 @@ typedef void(^HITransactionCompletionCallback)(BOOL success, NSString *transacti
 - (void)selectContact:(id<HIPerson>)contact address:(HIAddress *)address;
 - (void)lockAddress;
 - (void)showPaymentRequest:(int)sessionId details:(NSDictionary *)data;
+- (void)showPaymentRequestLoadingBox;
+- (void)hidePaymentRequestLoadingBox;
 
 - (IBAction)cancelClicked:(id)sender;
 - (IBAction)sendClicked:(id)sender;

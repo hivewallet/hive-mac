@@ -23,6 +23,8 @@
                 <outlet property="detailsSeparator" destination="yli-1Y-1Bz" id="8Qd-DG-Q4g"/>
                 <outlet property="dropdownButton" destination="51" id="54"/>
                 <outlet property="feeButton" destination="fQu-xK-vvV" id="aWn-ee-8jl"/>
+                <outlet property="loadingBox" destination="w4j-FC-nxE" id="nE6-ue-aG7"/>
+                <outlet property="loadingSpinner" destination="kSb-NJ-GMe" id="mbl-bS-u0Q"/>
                 <outlet property="lockIcon" destination="a7Z-0M-rXL" id="g8A-Mo-2ja"/>
                 <outlet property="nameLabel" destination="19" id="27"/>
                 <outlet property="photoView" destination="17" id="28"/>
@@ -522,6 +524,38 @@ Gw
             </constraints>
             <color key="borderColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             <color key="fillColor" red="0.67064476013183594" green="1" blue="0.49472254514694214" alpha="0.0" colorSpace="calibratedRGB"/>
+        </box>
+        <box autoresizesSubviews="NO" boxType="custom" borderType="none" titlePosition="noTitle" translatesAutoresizingMaskIntoConstraints="NO" id="w4j-FC-nxE">
+            <rect key="frame" x="0.0" y="0.0" width="228" height="161"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+            <view key="contentView">
+                <rect key="frame" x="0.0" y="0.0" width="228" height="161"/>
+                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                <subviews>
+                    <progressIndicator horizontalHuggingPriority="750" verticalHuggingPriority="750" maxValue="100" bezeled="NO" indeterminate="YES" controlSize="small" style="spinning" translatesAutoresizingMaskIntoConstraints="NO" id="kSb-NJ-GMe">
+                        <rect key="frame" x="106" y="72" width="16" height="16"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    </progressIndicator>
+                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="fJN-rD-IAw">
+                        <rect key="frame" x="14" y="96" width="200" height="17"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="Loading payment details..." id="Agy-4s-MVS">
+                            <font key="font" metaFont="system"/>
+                            <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                        </textFieldCell>
+                    </textField>
+                </subviews>
+            </view>
+            <constraints>
+                <constraint firstItem="kSb-NJ-GMe" firstAttribute="centerY" secondItem="w4j-FC-nxE" secondAttribute="centerY" id="DCV-wF-B9m"/>
+                <constraint firstItem="fJN-rD-IAw" firstAttribute="leading" secondItem="w4j-FC-nxE" secondAttribute="leading" constant="16" id="GmB-RR-TbB"/>
+                <constraint firstItem="kSb-NJ-GMe" firstAttribute="top" secondItem="fJN-rD-IAw" secondAttribute="bottom" constant="8" symbolic="YES" id="ILX-M7-vIb"/>
+                <constraint firstAttribute="trailing" secondItem="fJN-rD-IAw" secondAttribute="trailing" constant="16" id="OIz-cX-8aL"/>
+                <constraint firstItem="kSb-NJ-GMe" firstAttribute="centerX" secondItem="fJN-rD-IAw" secondAttribute="centerX" id="ZWO-db-R28"/>
+            </constraints>
+            <color key="borderColor" white="0.0" alpha="0.41999999999999998" colorSpace="calibratedWhite"/>
+            <color key="fillColor" red="0.93000000000000005" green="0.93000000000000005" blue="0.93000000000000005" alpha="1" colorSpace="deviceRGB"/>
         </box>
     </objects>
     <resources>
