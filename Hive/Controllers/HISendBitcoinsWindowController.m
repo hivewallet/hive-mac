@@ -289,7 +289,7 @@ NSString * const HISendBitcoinsWindowSuccessKey = @"success";
     self.window.title = NSLocalizedString(@"Pay with Bitcoin", @"Send Bitcoin window title for payment request");
 
     NSNumber *amount = data[@"amount"];
-    NSString *memo = data[@"memo"] ?: data[@"bitcoinURIMessage"];
+    NSString *memo = data[@"memo"];
     NSString *paymentURL = data[@"paymentURL"];
     NSString *pkiName = data[@"pkiName"];
     NSString *label = data[@"bitcoinURILabel"];
@@ -311,7 +311,11 @@ NSString * const HISendBitcoinsWindowSuccessKey = @"success";
     [self setLockedAddress:recipientName];
     [self setLockedAmount:amount.integerValue];
 
-    if (memo) {
+    if (memo.length == 0) {
+        memo = data[@"bitcoinURIMessage"];
+    }
+
+    if (memo.length > 0) {
         [self setDetailsText:memo];
     }
 }
@@ -712,7 +716,7 @@ NSString * const HISendBitcoinsWindowSuccessKey = @"success";
 - (void)showPaymentConfirmation:(NSDictionary *)data {
     NSString *memo = data[@"memo"];
 
-    if (memo) {
+    if (memo.length > 0) {
         self.ackMessage.stringValue = memo;
     } else {
         [self.ackMessage removeFromSuperview];
