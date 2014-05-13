@@ -135,7 +135,7 @@
 
 - (void)applyURI:(HIBitcoinURI *)bitcoinURI toSendWindow:(HISendBitcoinsWindowController *)window {
     if (bitcoinURI.address) {
-        if (bitcoinURI.label || bitcoinURI.message) {
+        if (bitcoinURI.label) {
             id<HIPerson> contact = [self createContactForURI:bitcoinURI];
             [window selectContact:contact address:contact.addresses.anyObject];
             [window lockAddress];
@@ -147,11 +147,14 @@
     if (bitcoinURI.amount) {
         [window setLockedAmount:bitcoinURI.amount];
     }
+
+    if (bitcoinURI.message) {
+        [window setDetailsText:bitcoinURI.message];
+    }
 }
 
 - (id<HIPerson>)createContactForURI:(HIBitcoinURI *)bitcoinURI {
-    return [[HITemporaryContact alloc] initWithName:(bitcoinURI.label ?: bitcoinURI.message)
-                                            address:bitcoinURI.address];
+    return [[HITemporaryContact alloc] initWithName:bitcoinURI.label address:bitcoinURI.address];
 }
 
 @end

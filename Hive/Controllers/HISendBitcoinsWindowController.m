@@ -241,6 +241,13 @@ NSString * const HISendBitcoinsWindowSuccessKey = @"success";
     [self.convertedAmountField setEditable:NO];
 }
 
+- (void)setDetailsText:(NSString *)text {
+    [self showDetailsSection];
+
+    text = [text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
+    [[self.detailsBox documentView] setString:text];
+}
+
 - (void)clearContact {
     _contact = nil;
     _hashAddress = nil;
@@ -300,10 +307,7 @@ NSString * const HISendBitcoinsWindowSuccessKey = @"success";
     [self setLockedAmount:amount.integerValue];
 
     if (memo) {
-        [self showDetailsSection];
-
-        memo = [memo stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
-        [[self.detailsBox documentView] setString:memo];
+        [self setDetailsText:memo];
     }
 }
 
