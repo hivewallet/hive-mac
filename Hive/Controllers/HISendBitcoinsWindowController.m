@@ -25,6 +25,7 @@
 #import "HIPerson.h"
 #import "HISendBitcoinsWindowController.h"
 #import "HITransaction.h"
+#import "NSColor+Hive.h"
 #import "NSDecimalNumber+HISatoshiConversion.h"
 #import "NSWindow+HIShake.h"
 #import "HIApplication.h"
@@ -100,6 +101,10 @@ NSString * const HISendBitcoinsWindowSuccessKey = @"success";
     self.photoView.layer.masksToBounds = YES;
     self.wrapper.layer.cornerRadius = 5.0;
     self.lockIcon.hidden = YES;
+
+    self.detailsBox.layer.borderWidth = 1.0;
+    self.detailsBox.layer.borderColor = [[NSColor colorWithCalibratedWhite:0.85 alpha:1.0] hiNativeColor];
+    [[self.detailsBox documentView] setTextContainerInset:NSMakeSize(1.0, 5.0)];
 
     [self setupQRCodeButton];
     [self setupCurrencyList];

@@ -169,22 +169,22 @@ Gw
                                     <color key="borderColor" red="0.69700002670000005" green="0.69688004260000003" blue="0.69695496560000003" alpha="0.41999999999999998" colorSpace="calibratedRGB"/>
                                     <color key="fillColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </box>
-                                <scrollView autohidesScrollers="YES" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7BV-3k-SAc">
+                                <scrollView wantsLayer="YES" borderType="none" autohidesScrollers="YES" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7BV-3k-SAc">
                                     <rect key="frame" x="100" y="98" width="289" height="100"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <clipView key="contentView" id="nsi-by-jyR">
-                                        <rect key="frame" x="1" y="1" width="287" height="98"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="289" height="100"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                         <subviews>
                                             <textView editable="NO" importsGraphics="NO" verticallyResizable="YES" id="TOr-tJ-9E8">
-                                                <rect key="frame" x="0.0" y="0.0" width="287" height="98"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="289" height="100"/>
                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                 <color key="textColor" red="0.19189956784248352" green="0.19189383089542389" blue="0.19189707934856415" alpha="1" colorSpace="calibratedRGB"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                <size key="minSize" width="287" height="98"/>
+                                                <size key="minSize" width="289" height="100"/>
                                                 <size key="maxSize" width="463" height="10000000"/>
                                                 <attributedString key="textStorage">
-                                                    <fragment content="HIExchangeRateService.m">
+                                                    <fragment content="&lt;memo>">
                                                         <attributes>
                                                             <color key="NSColor" red="0.19189956784248352" green="0.19189383089542389" blue="0.19189707934856415" alpha="1" colorSpace="calibratedRGB"/>
                                                             <font key="NSFont" size="12" name="LucidaGrande"/>
@@ -198,7 +198,7 @@ Gw
                                                     </fragment>
                                                 </attributedString>
                                                 <color key="insertionPointColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                                                <size key="minSize" width="287" height="98"/>
+                                                <size key="minSize" width="289" height="100"/>
                                                 <size key="maxSize" width="463" height="10000000"/>
                                             </textView>
                                         </subviews>
@@ -449,6 +449,6 @@ Gw
     <resources>
         <image name="icon-dropdown-close" width="7" height="5"/>
         <image name="icon-dropdown-open" width="7" height="5"/>
-        <image name="icon-lock" width="32" height="32"/>
+        <image name="icon-lock" width="12" height="15"/>
     </resources>
 </document>
