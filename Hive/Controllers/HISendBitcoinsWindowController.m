@@ -739,6 +739,15 @@ NSString * const HISendBitcoinsWindowSuccessKey = @"success";
     ackBarContents.layer.borderColor = [borderColor hiNativeColor];
     ackBarContents.layer.borderWidth = 1.0;
     ackBarContents.layer.cornerRadius = 5.0;
+
+    self.ackBar.alphaValue = 0.0;
+    self.closeButton.alphaValue = 0.0;
+
+    [NSAnimationContext runAnimationGroup:^(NSAnimationContext *context) {
+        context.duration = 0.5;
+        self.ackBar.animator.alphaValue = 1.0;
+        self.closeButton.animator.alphaValue = 1.0;
+    } completionHandler:^{}];
 }
 
 
