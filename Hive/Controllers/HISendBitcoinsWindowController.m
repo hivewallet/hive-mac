@@ -277,11 +277,10 @@ NSString * const HISendBitcoinsWindowSuccessKey = @"success";
     self.window.title = NSLocalizedString(@"Pay with Bitcoin", @"Send Bitcoin window title for payment request");
 
     NSNumber *amount = data[@"amount"];
-    NSString *memo = data[@"memo"];
+    NSString *memo = data[@"memo"] ?: data[@"bitcoinURLMessage"];
     NSString *paymentURL = data[@"paymentURL"];
     NSString *pkiName = data[@"pkiName"];
     NSString *label = data[@"bitcoinURLLabel"];
-    NSString *message = data[@"bitcoinURLMessage"];
     NSString *recipientName;
 
     NSURL *URL = [NSURL URLWithString:paymentURL];
@@ -293,8 +292,6 @@ NSString * const HISendBitcoinsWindowSuccessKey = @"success";
         recipientName = URL.host;
     } else if (label) {
         recipientName = label;
-    } else if (message) {
-        recipientName = message;
     } else {
         recipientName = @"?";
     }
