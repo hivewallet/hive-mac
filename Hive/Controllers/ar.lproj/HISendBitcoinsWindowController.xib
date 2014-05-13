@@ -45,7 +45,7 @@
                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                 <subviews>
                     <button translatesAutoresizingMaskIntoConstraints="NO" id="5">
-                        <rect key="frame" x="17" y="20" width="80" height="28"/>
+                        <rect key="frame" x="18" y="20" width="80" height="28"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <constraints>
                             <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="80" id="73U-Qq-n6l"/>
@@ -67,7 +67,7 @@ Gw
                         </connections>
                     </button>
                     <button translatesAutoresizingMaskIntoConstraints="NO" id="9" customClass="HIButtonWithSpinner">
-                        <rect key="frame" x="338" y="19" width="80" height="29"/>
+                        <rect key="frame" x="337" y="19" width="80" height="29"/>
                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
                         <constraints>
                             <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="76" id="uHK-iv-97X"/>
@@ -85,7 +85,7 @@ Gw
                             <binding destination="-2" name="enabled" keyPath="sendButtonEnabled" id="Hbt-qs-jWd"/>
                         </connections>
                     </button>
-                    <box autoresizesSubviews="NO" wantsLayer="YES" boxType="custom" borderType="line" titlePosition="noTitle" translatesAutoresizingMaskIntoConstraints="NO" id="11">
+                    <box autoresizesSubviews="NO" wantsLayer="YES" transparent="YES" boxType="custom" borderType="line" titlePosition="noTitle" translatesAutoresizingMaskIntoConstraints="NO" id="11">
                         <rect key="frame" x="17" y="64" width="401" height="275"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <view key="contentView">
@@ -406,20 +406,20 @@ Gw
                             <constraint firstItem="fQu-xK-vvV" firstAttribute="leading" secondItem="36" secondAttribute="trailing" constant="8" id="xoD-0j-rmU"/>
                             <constraint firstItem="u5l-cR-nXn" firstAttribute="leading" secondItem="ZPL-GE-Omh" secondAttribute="leading" id="z0b-1c-BUf"/>
                         </constraints>
-                        <color key="borderColor" red="0.42444920539999997" green="0.42443650960000001" blue="0.42444372180000001" alpha="0.41999999999999998" colorSpace="calibratedRGB"/>
+                        <color key="borderColor" red="0.42444920539999997" green="0.42443650960000001" blue="0.42444372180000001" alpha="0.0" colorSpace="calibratedRGB"/>
                         <color key="fillColor" red="1" green="0.99997437" blue="0.99999129769999995" alpha="1" colorSpace="calibratedRGB"/>
                     </box>
                 </subviews>
                 <constraints>
                     <constraint firstAttribute="bottom" secondItem="5" secondAttribute="bottom" constant="20" id="77r-S4-mbb"/>
                     <constraint firstAttribute="bottom" secondItem="9" secondAttribute="bottom" constant="22" id="XGN-Fg-a1A"/>
-                    <constraint firstItem="5" firstAttribute="leading" secondItem="2" secondAttribute="leading" constant="17" id="Z4c-2i-KeA"/>
+                    <constraint firstItem="5" firstAttribute="leading" secondItem="2" secondAttribute="leading" constant="18" id="Z4c-2i-KeA"/>
                     <constraint firstItem="11" firstAttribute="leading" secondItem="2" secondAttribute="leading" constant="17" id="di5-i3-kas"/>
                     <constraint firstItem="11" firstAttribute="centerX" secondItem="2" secondAttribute="centerX" id="mPt-nC-fey"/>
                     <constraint firstItem="11" firstAttribute="top" secondItem="2" secondAttribute="top" constant="18" id="r9z-gB-HGu"/>
                     <constraint firstAttribute="trailing" secondItem="11" secondAttribute="trailing" constant="17" id="roI-Mv-HDQ"/>
                     <constraint firstItem="5" firstAttribute="top" secondItem="11" secondAttribute="bottom" constant="16" id="uI8-9q-QAt"/>
-                    <constraint firstAttribute="trailing" secondItem="9" secondAttribute="trailing" constant="19" id="xA9-TY-y37"/>
+                    <constraint firstAttribute="trailing" secondItem="9" secondAttribute="trailing" constant="20" id="xA9-TY-y37"/>
                 </constraints>
             </view>
             <connections>

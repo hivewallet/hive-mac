@@ -99,8 +99,13 @@ NSString * const HISendBitcoinsWindowSuccessKey = @"success";
 
     self.photoView.layer.cornerRadius = 5.0;
     self.photoView.layer.masksToBounds = YES;
-    self.wrapper.layer.cornerRadius = 5.0;
     self.lockIcon.hidden = YES;
+
+    NSView *wrapperContents = self.wrapper.contentView;
+    wrapperContents.layer.borderWidth = 1.0;
+    wrapperContents.layer.borderColor = [[NSColor colorWithCalibratedWhite:0.8 alpha:1.0] hiNativeColor];
+    wrapperContents.layer.backgroundColor = [[NSColor whiteColor] hiNativeColor];
+    wrapperContents.layer.cornerRadius = 5.0;
 
     self.detailsBox.layer.borderWidth = 1.0;
     self.detailsBox.layer.borderColor = [[NSColor colorWithCalibratedWhite:0.85 alpha:1.0] hiNativeColor];
