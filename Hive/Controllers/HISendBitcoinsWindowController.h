@@ -45,6 +45,9 @@ typedef void(^HITransactionCompletionCallback)(BOOL success, NSString *transacti
 @property (nonatomic, assign) IBOutlet NSScrollView *detailsBox;
 @property (nonatomic, assign) IBOutlet NSBox *detailsSeparator;
 
+@property (nonatomic, strong) IBOutlet NSBox *ackBar;
+@property (nonatomic, strong) IBOutlet NSTextField *ackMessage;
+
 @property (copy) HITransactionCompletionCallback sendCompletion;
 
 - (void)setHashAddress:(NSString *)hash;

@@ -208,6 +208,8 @@
 		58A37ADF180D998700CFCDE3 /* HITransactionsViewController.strings in Resources */ = {isa = PBXBuildFile; fileRef = 58A37ADD180D998700CFCDE3 /* HITransactionsViewController.strings */; };
 		58A37AE2180D99A100CFCDE3 /* HIMainWindowController.strings in Resources */ = {isa = PBXBuildFile; fileRef = 58A37AE0180D99A100CFCDE3 /* HIMainWindowController.strings */; };
 		58A37AE5180D99F200CFCDE3 /* MainMenu.strings in Resources */ = {isa = PBXBuildFile; fileRef = 58A37AE3180D99F200CFCDE3 /* MainMenu.strings */; };
+		58AE8CBB19226AF900946C97 /* icon-success.png in Resources */ = {isa = PBXBuildFile; fileRef = 58AE8CB919226AF800946C97 /* icon-success.png */; };
+		58AE8CBC19226AF900946C97 /* icon-success@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 58AE8CBA19226AF800946C97 /* icon-success@2x.png */; };
 		58C85B5818FFE90700B2C350 /* HISignMessageWindowController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 58C85B5A18FFE90700B2C350 /* HISignMessageWindowController.xib */; };
 		58C85B7918FFE97F00B2C350 /* HIKeyPreferencesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 58C85B7B18FFE97F00B2C350 /* HIKeyPreferencesViewController.xib */; };
 		58C85B9818FFEA0100B2C350 /* HISignMessageWindowController.strings in Resources */ = {isa = PBXBuildFile; fileRef = 58C85B9A18FFEA0100B2C350 /* HISignMessageWindowController.strings */; };
@@ -1688,6 +1690,8 @@
 		58A37BA2180DBAA100CFCDE3 /* da */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = da; path = da.lproj/MainMenu.strings; sourceTree = "<group>"; };
 		58A37BA3180DBAA100CFCDE3 /* da */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = da; path = da.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		58A37BA6180DBAA100CFCDE3 /* da */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = da; path = da.lproj/Localizable.strings; sourceTree = "<group>"; };
+		58AE8CB919226AF800946C97 /* icon-success.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-success.png"; sourceTree = "<group>"; };
+		58AE8CBA19226AF800946C97 /* icon-success@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-success@2x.png"; sourceTree = "<group>"; };
 		58C85B5918FFE90700B2C350 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/HISignMessageWindowController.xib; sourceTree = "<group>"; };
 		58C85B5D18FFE92100B2C350 /* pl */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = pl; path = pl.lproj/HISignMessageWindowController.xib; sourceTree = "<group>"; };
 		58C85B5E18FFE92200B2C350 /* fr */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = fr; path = fr.lproj/HISignMessageWindowController.xib; sourceTree = "<group>"; };
@@ -2597,8 +2601,8 @@
 				58605A2218041D0A00FD9C2A /* bg-sidebar.pdf */,
 				58605A2318041D0A00FD9C2A /* button__inset.pdf */,
 				583B1E0218687CF400817EF8 /* dropbox-glyph-blue.pdf */,
-				58A275D918BBD30300C102B2 /* honey_im_subtle@2x.png */,
 				58A275DA18BBD30300C102B2 /* honey_im_subtle.png */,
+				58A275D918BBD30300C102B2 /* honey_im_subtle@2x.png */,
 				58605A2418041D0A00FD9C2A /* icon-apps__active.pdf */,
 				58605A2518041D0A00FD9C2A /* icon-apps__inactive.pdf */,
 				58605A2618041D0A00FD9C2A /* icon-bitcoin.pdf */,
@@ -2616,6 +2620,8 @@
 				58605A3018041D0A00FD9C2A /* icon-plus.pdf */,
 				58605A3118041D0A00FD9C2A /* icon-sadface.pdf */,
 				58605A3218041D0A00FD9C2A /* icon-search.pdf */,
+				58AE8CB919226AF800946C97 /* icon-success.png */,
+				58AE8CBA19226AF800946C97 /* icon-success@2x.png */,
 				58605A3318041D0A00FD9C2A /* icon-tabbar-timeline__active.pdf */,
 				58605A3418041D0A00FD9C2A /* icon-tabbar-timeline__inactive.pdf */,
 				58605A3518041D0A00FD9C2A /* icon-tabbar-user__active.pdf */,
@@ -2855,6 +2861,7 @@
 				58A275DB18BBD30300C102B2 /* honey_im_subtle@2x.png in Resources */,
 				24300BE418830C4700FDEF2F /* HIWizardViewController.xib in Resources */,
 				58A37A8A180D747C00CFCDE3 /* Localizable.strings in Resources */,
+				58AE8CBC19226AF900946C97 /* icon-success@2x.png in Resources */,
 				58571296189029850094F884 /* HIWizardBackupViewController.strings in Resources */,
 				582918B518E9ABF2001B0870 /* HILockScreenViewController.xib in Resources */,
 				588954231889254A00243190 /* HIPasswordInputViewController.strings in Resources */,
@@ -2890,6 +2897,7 @@
 				58605A4518041D0A00FD9C2A /* icon-bitcoin.pdf in Resources */,
 				58F496F118B67A1C0033B7E0 /* icon-unknown-app.png in Resources */,
 				58605A4618041D0A00FD9C2A /* icon-delete.pdf in Resources */,
+				58AE8CBB19226AF900946C97 /* icon-success.png in Resources */,
 				58A37ADB180D997C00CFCDE3 /* HIContactAutocompleteWindowController.strings in Resources */,
 				585712B618902CD70094F884 /* HIWizardCompletedViewController.xib in Resources */,
 				58A37ADC180D997C00CFCDE3 /* HISendBitcoinsWindowController.strings in Resources */,

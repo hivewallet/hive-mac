@@ -8,6 +8,8 @@
         <customObject id="-2" userLabel="File's Owner" customClass="HISendBitcoinsWindowController">
             <connections>
                 <outlet property="QRCodeButton" destination="NBI-47-dFp" id="mVF-r3-mCD"/>
+                <outlet property="ackBar" destination="lfv-xx-kWw" id="rnC-sd-CDD"/>
+                <outlet property="ackMessage" destination="TzX-tz-eVL" id="rWs-L6-fuj"/>
                 <outlet property="addressLabel" destination="21" id="26"/>
                 <outlet property="amountField" destination="36" id="40"/>
                 <outlet property="bitcoinCurrencyPopupButton" destination="u5l-cR-nXn" id="oLd-Li-Te1"/>
@@ -410,11 +412,12 @@ Gw
                 </subviews>
                 <constraints>
                     <constraint firstAttribute="bottom" secondItem="5" secondAttribute="bottom" constant="20" id="77r-S4-mbb"/>
-                    <constraint firstItem="11" firstAttribute="leading" secondItem="5" secondAttribute="leading" id="E8c-Ia-taQ"/>
                     <constraint firstAttribute="bottom" secondItem="9" secondAttribute="bottom" constant="22" id="XGN-Fg-a1A"/>
                     <constraint firstItem="5" firstAttribute="leading" secondItem="2" secondAttribute="leading" constant="17" id="Z4c-2i-KeA"/>
+                    <constraint firstItem="11" firstAttribute="leading" secondItem="2" secondAttribute="leading" constant="17" id="di5-i3-kas"/>
                     <constraint firstItem="11" firstAttribute="centerX" secondItem="2" secondAttribute="centerX" id="mPt-nC-fey"/>
                     <constraint firstItem="11" firstAttribute="top" secondItem="2" secondAttribute="top" constant="18" id="r9z-gB-HGu"/>
+                    <constraint firstAttribute="trailing" secondItem="11" secondAttribute="trailing" constant="17" id="roI-Mv-HDQ"/>
                     <constraint firstItem="5" firstAttribute="top" secondItem="11" secondAttribute="bottom" constant="16" id="uI8-9q-QAt"/>
                     <constraint firstAttribute="trailing" secondItem="9" secondAttribute="trailing" constant="19" id="xA9-TY-y37"/>
                 </constraints>
@@ -423,7 +426,7 @@ Gw
                 <outlet property="delegate" destination="-2" id="4"/>
             </connections>
         </window>
-        <customView id="yvi-wx-iNB">
+        <customView id="yvi-wx-iNB" userLabel="Currency rate info view">
             <rect key="frame" x="0.0" y="0.0" width="343" height="109"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
             <subviews>
@@ -445,10 +448,62 @@ Gw
                 <constraint firstAttribute="bottom" secondItem="tct-Xp-d6b" secondAttribute="bottom" constant="12" id="zzX-16-IWC"/>
             </constraints>
         </customView>
+        <box autoresizesSubviews="NO" transparent="YES" boxType="custom" borderType="none" titlePosition="noTitle" translatesAutoresizingMaskIntoConstraints="NO" id="lfv-xx-kWw" userLabel="Ackbar">
+            <rect key="frame" x="0.0" y="0.0" width="392" height="107"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+            <view key="contentView">
+                <rect key="frame" x="0.0" y="0.0" width="392" height="107"/>
+                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                <subviews>
+                    <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="DBJ-jB-H9V">
+                        <rect key="frame" x="184" y="66" width="25" height="25"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="25" id="Zu0-wi-AFw"/>
+                            <constraint firstAttribute="height" constant="25" id="piJ-fI-Wm0"/>
+                        </constraints>
+                        <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="icon-success" id="1Jm-2j-jgh"/>
+                    </imageView>
+                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="jOk-cn-WRi">
+                        <rect key="frame" x="14" y="41" width="364" height="17"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="Payment successful" id="JAi-pl-Y47">
+                            <font key="font" metaFont="systemBold"/>
+                            <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                        </textFieldCell>
+                    </textField>
+                    <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" setsMaxLayoutWidthAtFirstLayout="YES" translatesAutoresizingMaskIntoConstraints="NO" id="TzX-tz-eVL">
+                        <rect key="frame" x="44" y="16" width="304" height="17"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                        <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="center" title="&lt;It's a trap!>" id="tH6-pe-MMb">
+                            <font key="font" metaFont="system"/>
+                            <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                        </textFieldCell>
+                    </textField>
+                </subviews>
+            </view>
+            <constraints>
+                <constraint firstItem="TzX-tz-eVL" firstAttribute="trailing" secondItem="jOk-cn-WRi" secondAttribute="trailing" constant="-30" id="6sj-kC-TwU"/>
+                <constraint firstItem="DBJ-jB-H9V" firstAttribute="top" secondItem="lfv-xx-kWw" secondAttribute="top" constant="16" id="Dgw-07-98E"/>
+                <constraint firstAttribute="bottom" secondItem="TzX-tz-eVL" secondAttribute="bottom" constant="16" id="V2h-sp-C5W"/>
+                <constraint firstItem="TzX-tz-eVL" firstAttribute="leading" secondItem="jOk-cn-WRi" secondAttribute="leading" constant="30" id="ahk-gt-8bi"/>
+                <constraint firstAttribute="trailing" secondItem="jOk-cn-WRi" secondAttribute="trailing" constant="16" id="fPb-9P-Zj7"/>
+                <constraint firstItem="DBJ-jB-H9V" firstAttribute="centerX" secondItem="jOk-cn-WRi" secondAttribute="centerX" id="fsN-dx-XIj"/>
+                <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="jOk-cn-WRi" secondAttribute="bottom" constant="16" id="gWv-Xn-vSH"/>
+                <constraint firstItem="jOk-cn-WRi" firstAttribute="top" secondItem="DBJ-jB-H9V" secondAttribute="bottom" constant="8" symbolic="YES" id="swF-bG-NfD"/>
+                <constraint firstItem="jOk-cn-WRi" firstAttribute="leading" secondItem="lfv-xx-kWw" secondAttribute="leading" constant="16" id="xEP-Tb-6ub"/>
+                <constraint firstItem="TzX-tz-eVL" firstAttribute="top" secondItem="jOk-cn-WRi" secondAttribute="bottom" constant="8" symbolic="YES" id="yOB-6c-ED3"/>
+            </constraints>
+            <color key="borderColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+            <color key="fillColor" red="0.67064476013183594" green="1" blue="0.49472254514694214" alpha="0.0" colorSpace="calibratedRGB"/>
+        </box>
     </objects>
     <resources>
         <image name="icon-dropdown-close" width="7" height="5"/>
         <image name="icon-dropdown-open" width="7" height="5"/>
         <image name="icon-lock" width="12" height="15"/>
+        <image name="icon-success" width="25" height="25"/>
     </resources>
 </document>

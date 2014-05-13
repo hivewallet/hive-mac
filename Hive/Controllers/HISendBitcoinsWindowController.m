@@ -662,7 +662,7 @@ NSString * const HISendBitcoinsWindowSuccessKey = @"success";
             [self.sendButton hideSpinner];
             [self.cancelButton setEnabled:YES];
         } else {
-            [self showPaymentConfirmationAndClose:data];
+            [self showPaymentConfirmation:data];
         }
     };
 
@@ -704,17 +704,35 @@ NSString * const HISendBitcoinsWindowSuccessKey = @"success";
                                                       userInfo:@{HISendBitcoinsWindowSuccessKey: @(success)}];
 }
 
-- (void)showPaymentConfirmationAndClose:(NSDictionary *)data {
-    NSString *memo = data[@"memo"] ?: @"";
+- (void)showPaymentConfirmation:(NSDictionary *)data {
+    NSString *memo = data[@"memo"];
 
-    NSAlert *alert = [NSAlert alertWithMessageText:@"Payment successful"
-                                     defaultButton:@"OK"
-                                   alternateButton:nil
-                                       otherButton:nil
-                         informativeTextWithFormat:@"%@", memo];
+    if (memo) {
+        self.ackMessage.stringValue = memo;
+    } else {
+        [self.ackMessage removeFromSuperview];
+    }
 
-    [alert runModal];
-    [self close];
+    [self.cancelButton removeFromSuperview];
+    [self.sendButton removeFromSuperview];
+
+    CGFloat padding = self.wrapper.frame.origin.x + 1;
+    [self.window.contentView addSubview:self.ackBar];
+    [self.window.contentView addConstraints:@[
+                                              INSET_LEADING(self.ackBar, padding),
+                                              INSET_TRAILING(self.ackBar, padding),
+                                              INSET_BOTTOM(self.ackBar, padding),
+                                              VSPACE(self.wrapper, self.ackBar, padding)
+                                            ]];
+
+    NSColor *fillColor = [NSColor colorWithCalibratedHue:95.0/360 saturation:0.5 brightness:1.0 alpha:1.0];
+    NSColor *borderColor = [NSColor colorWithCalibratedHue:95.0/360 saturation:0.5 brightness:0.8 alpha:1.0];
+
+    NSView *ackBarContents = self.ackBar.contentView;
+    ackBarContents.layer.backgroundColor = [fillColor hiNativeColor];
+    ackBarContents.layer.borderColor = [borderColor hiNativeColor];
+    ackBarContents.layer.borderWidth = 1.0;
+    ackBarContents.layer.cornerRadius = 5.0;
 }
 
 
