@@ -20,6 +20,7 @@
                 <outlet property="detailsSeparator" destination="yli-1Y-1Bz" id="8Qd-DG-Q4g"/>
                 <outlet property="dropdownButton" destination="51" id="54"/>
                 <outlet property="feeButton" destination="fQu-xK-vvV" id="aWn-ee-8jl"/>
+                <outlet property="lockIcon" destination="a7Z-0M-rXL" id="g8A-Mo-2ja"/>
                 <outlet property="nameLabel" destination="19" id="27"/>
                 <outlet property="photoView" destination="17" id="28"/>
                 <outlet property="sendButton" destination="9" id="43"/>
@@ -106,6 +107,15 @@ Gw
                                         <constraint firstAttribute="width" constant="35" id="BWM-aC-rHf"/>
                                     </constraints>
                                     <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageAlignment="right" imageScaling="proportionallyDown" id="18"/>
+                                </imageView>
+                                <imageView wantsLayer="YES" translatesAutoresizingMaskIntoConstraints="NO" id="a7Z-0M-rXL" userLabel="Lock icon">
+                                    <rect key="frame" x="69" y="234" width="24" height="24"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="24" id="AEm-Jn-SOl"/>
+                                        <constraint firstAttribute="height" constant="24" id="csk-2P-Rlg"/>
+                                    </constraints>
+                                    <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageAlignment="right" imageScaling="proportionallyDown" image="icon-lock" id="E9Z-op-yoc"/>
                                 </imageView>
                                 <textField focusRingType="none" verticalHuggingPriority="750" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" translatesAutoresizingMaskIntoConstraints="NO" id="19">
                                     <rect key="frame" x="98" y="238" width="269" height="18"/>
@@ -361,6 +371,7 @@ Gw
                             <constraint firstItem="u5l-cR-nXn" firstAttribute="top" secondItem="yli-1Y-1Bz" secondAttribute="bottom" constant="11" id="Lof-rp-Xkn"/>
                             <constraint firstItem="23" firstAttribute="leading" secondItem="11" secondAttribute="leading" id="Q3f-pp-Wei"/>
                             <constraint firstItem="51" firstAttribute="centerX" secondItem="NBI-47-dFp" secondAttribute="centerX" id="Qe7-EM-Fdm"/>
+                            <constraint firstItem="19" firstAttribute="centerY" secondItem="a7Z-0M-rXL" secondAttribute="centerY" constant="-1" id="Rfm-f3-pTM"/>
                             <constraint firstItem="u5l-cR-nXn" firstAttribute="leading" secondItem="13" secondAttribute="leading" constant="-10" id="SSt-wx-3g1"/>
                             <constraint firstItem="u5l-cR-nXn" firstAttribute="trailing" secondItem="ZPL-GE-Omh" secondAttribute="trailing" id="TaX-HF-bnb"/>
                             <constraint firstItem="u5l-cR-nXn" firstAttribute="leading" secondItem="11" secondAttribute="leading" constant="19" id="V4z-n5-u9T"/>
@@ -374,6 +385,7 @@ Gw
                             <constraint firstItem="Uma-46-IZW" firstAttribute="leading" secondItem="11" secondAttribute="leading" id="aaU-mS-fsS"/>
                             <constraint firstItem="23" firstAttribute="top" secondItem="51" secondAttribute="bottom" constant="24" id="apA-pR-iNk"/>
                             <constraint firstAttribute="trailing" secondItem="51" secondAttribute="trailing" constant="11" id="bLf-dY-Lmq"/>
+                            <constraint firstItem="19" firstAttribute="leading" secondItem="a7Z-0M-rXL" secondAttribute="trailing" constant="7" id="dDT-lQ-3TG"/>
                             <constraint firstItem="23" firstAttribute="top" secondItem="21" secondAttribute="bottom" constant="6" id="dPt-Rk-FoT"/>
                             <constraint firstItem="23" firstAttribute="top" secondItem="13" secondAttribute="bottom" constant="27" id="dqN-zu-Oxg"/>
                             <constraint firstItem="NBI-47-dFp" firstAttribute="trailing" secondItem="fQu-xK-vvV" secondAttribute="trailing" constant="-11" id="eZq-MA-kts"/>
@@ -437,5 +449,6 @@ Gw
     <resources>
         <image name="icon-dropdown-close" width="7" height="5"/>
         <image name="icon-dropdown-open" width="7" height="5"/>
+        <image name="icon-lock" width="32" height="32"/>
     </resources>
 </document>

@@ -99,6 +99,7 @@ NSString * const HISendBitcoinsWindowSuccessKey = @"success";
     self.photoView.layer.cornerRadius = 5.0;
     self.photoView.layer.masksToBounds = YES;
     self.wrapper.layer.cornerRadius = 5.0;
+    self.lockIcon.hidden = YES;
 
     [self setupQRCodeButton];
     [self setupCurrencyList];
@@ -282,6 +283,7 @@ NSString * const HISendBitcoinsWindowSuccessKey = @"success";
 
     if (pkiName) {
         recipientName = pkiName;
+        self.lockIcon.hidden = NO;
     } else if (URL) {
         recipientName = URL.host;
     } else if (label) {

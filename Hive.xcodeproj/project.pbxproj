@@ -62,6 +62,8 @@
 		5804C32617FC88BA003B7891 /* HIProfile.m in Sources */ = {isa = PBXBuildFile; fileRef = 5804C32517FC88BA003B7891 /* HIProfile.m */; };
 		581711BE17D0A26D00DE775A /* HISidebarButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 581711BD17D0A26D00DE775A /* HISidebarButton.m */; };
 		581818E217F1A8A800D00770 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 581818E117F1A8A800D00770 /* README.md */; };
+		581E9EA719214609007B1760 /* icon-lock.png in Resources */ = {isa = PBXBuildFile; fileRef = 581E9EA519214609007B1760 /* icon-lock.png */; };
+		581E9EA819214609007B1760 /* icon-lock@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 581E9EA619214609007B1760 /* icon-lock@2x.png */; };
 		582372EC18C0C48500132894 /* mobile-recharge.hiveapp in Resources */ = {isa = PBXBuildFile; fileRef = 582372EB18C0C48500132894 /* mobile-recharge.hiveapp */; };
 		582918A718E5C732001B0870 /* HILockScreenViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 582918A518E5C732001B0870 /* HILockScreenViewController.m */; };
 		582918B518E9ABF2001B0870 /* HILockScreenViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 582918B718E9ABF2001B0870 /* HILockScreenViewController.xib */; };
@@ -530,6 +532,8 @@
 		581711BC17D0A26D00DE775A /* HISidebarButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HISidebarButton.h; sourceTree = "<group>"; };
 		581711BD17D0A26D00DE775A /* HISidebarButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HISidebarButton.m; sourceTree = "<group>"; };
 		581818E117F1A8A800D00770 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = SOURCE_ROOT; };
+		581E9EA519214609007B1760 /* icon-lock.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-lock.png"; sourceTree = "<group>"; };
+		581E9EA619214609007B1760 /* icon-lock@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-lock@2x.png"; sourceTree = "<group>"; };
 		581EFBCA17DA441A00E2738D /* HITransactionCellView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HITransactionCellView.h; sourceTree = "<group>"; };
 		581EFBCB17DA441B00E2738D /* HITransactionCellView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HITransactionCellView.m; sourceTree = "<group>"; };
 		582372EB18C0C48500132894 /* mobile-recharge.hiveapp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "mobile-recharge.hiveapp"; sourceTree = "<group>"; };
@@ -2604,6 +2608,8 @@
 				58605A2A18041D0A00FD9C2A /* icon-gray-btc.pdf */,
 				58605A2B18041D0A00FD9C2A /* icon-group__active.pdf */,
 				58605A2C18041D0A00FD9C2A /* icon-group__inactive.pdf */,
+				581E9EA519214609007B1760 /* icon-lock.png */,
+				581E9EA619214609007B1760 /* icon-lock@2x.png */,
 				58605A2D18041D0A00FD9C2A /* icon-nav-bar-back.pdf */,
 				58605A2F18041D0A00FD9C2A /* icon-next.pdf */,
 				58605A2E18041D0A00FD9C2A /* icon-next__active.pdf */,
@@ -2844,6 +2850,7 @@
 				58A37AD6180D996E00CFCDE3 /* HIContactViewController.strings in Resources */,
 				58A2760518BE81F100C102B2 /* com.hivewallet.bitpremier.hiveapp in Resources */,
 				2478B8D5184A88E700BA2C35 /* HIFeeDetailsViewController.xib in Resources */,
+				581E9EA719214609007B1760 /* icon-lock.png in Resources */,
 				588E355318212BDF006A6A25 /* HIErrorWindowController.strings in Resources */,
 				58A275DB18BBD30300C102B2 /* honey_im_subtle@2x.png in Resources */,
 				24300BE418830C4700FDEF2F /* HIWizardViewController.xib in Resources */,
@@ -2907,6 +2914,7 @@
 				582918D618E9AC37001B0870 /* HILockScreenViewController.strings in Resources */,
 				58605A4E18041D0A00FD9C2A /* icon-next.pdf in Resources */,
 				58A2760618BE81F100C102B2 /* com.hivewallet.bitstamptrader.hiveapp in Resources */,
+				581E9EA819214609007B1760 /* icon-lock@2x.png in Resources */,
 				582372EC18C0C48500132894 /* mobile-recharge.hiveapp in Resources */,
 				588953AF188920D000243190 /* HIBackupCenterWindowController.strings in Resources */,
 				58605A4F18041D0A00FD9C2A /* icon-plus.pdf in Resources */,

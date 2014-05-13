@@ -27,6 +27,7 @@ typedef void(^HITransactionCompletionCallback)(BOOL success, NSString *transacti
 @property (strong) IBOutlet NSBox *wrapper;
 @property (strong) IBOutlet NSBox *separator;
 @property (strong) IBOutlet NSImageView *photoView;
+@property (strong) IBOutlet NSImageView *lockIcon;
 @property (strong) IBOutlet NSTextField *nameLabel;
 @property (strong) IBOutlet NSTextField *addressLabel;
 @property (strong) IBOutlet NSTextField *amountField;
