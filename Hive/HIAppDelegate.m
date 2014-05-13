@@ -22,7 +22,7 @@
 #import "HIApplicationURLProtocol.h"
 #import "HIBackupCenterWindowController.h"
 #import "HIBackupManager.h"
-#import "HIBitcoinURLService.h"
+#import "HIBitcoinURIService.h"
 #import "HICameraWindowController.h"
 #import "HIDatabaseManager.h"
 #import "HIDebuggingInfoWindowController.h"
@@ -444,10 +444,10 @@ static int ddLogLevel = LOG_LEVEL_VERBOSE;
 
 // handler for bitcoin:xxx URLs
 - (void)handleURLEvent:(NSAppleEventDescriptor *)event withReplyEvent:(NSAppleEventDescriptor *)reply {
-    NSString *URLString = [[event paramDescriptorForKeyword:keyDirectObject] stringValue];
+    NSString *URIString = [[event paramDescriptorForKeyword:keyDirectObject] stringValue];
 
     [self handleExternalEvent:^{
-        [[HIBitcoinURLService sharedService] handleBitcoinURLString:URLString];
+        [[HIBitcoinURIService sharedService] handleBitcoinURIString:URIString];
     }];
 }
 

@@ -1,5 +1,5 @@
 //
-//  HIBitcoinURL.h
+//  HIBitcoinURI.h
 //  Hive
 //
 //  Created by Jakub Suder on 23.10.2013.
@@ -7,13 +7,13 @@
 //
 
 /*
- Represents a bitcoin: URL that opens a send window when clicked e.g. in a browser.
+ Represents a bitcoin: URI that opens a send window when clicked e.g. in a browser.
  */
 
-@interface HIBitcoinURL : NSObject
+@interface HIBitcoinURI : NSObject
 
 @property (readonly) BOOL valid;
-@property (readonly) NSString *URLString;
+@property (readonly) NSString *URIString;
 @property (readonly) NSString *address;
 @property (readonly) NSDictionary *parameters;
 @property (readonly) NSString *label;
@@ -21,6 +21,6 @@
 @property (readonly) NSString *paymentRequestURL;
 @property (readonly) satoshi_t amount;
 
-- (instancetype)initWithURLString:(NSString *)URL;
+- (instancetype)initWithURIString:(NSString *)URI;
 
 @end

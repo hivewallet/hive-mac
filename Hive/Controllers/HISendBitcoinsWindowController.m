@@ -11,7 +11,7 @@
 #import "BCClient.h"
 #import "HIAddress.h"
 #import "HIBitcoinFormatService.h"
-#import "HIBitcoinURLService.h"
+#import "HIBitcoinURIService.h"
 #import "HIButtonWithSpinner.h"
 #import "HICameraWindowController.h"
 #import "HIContactAutocompleteWindowController.h"
@@ -277,10 +277,10 @@ NSString * const HISendBitcoinsWindowSuccessKey = @"success";
     self.window.title = NSLocalizedString(@"Pay with Bitcoin", @"Send Bitcoin window title for payment request");
 
     NSNumber *amount = data[@"amount"];
-    NSString *memo = data[@"memo"] ?: data[@"bitcoinURLMessage"];
+    NSString *memo = data[@"memo"] ?: data[@"bitcoinURIMessage"];
     NSString *paymentURL = data[@"paymentURL"];
     NSString *pkiName = data[@"pkiName"];
-    NSString *label = data[@"bitcoinURLLabel"];
+    NSString *label = data[@"bitcoinURILabel"];
     NSString *recipientName;
 
     NSURL *URL = [NSURL URLWithString:paymentURL];
@@ -1072,8 +1072,8 @@ NSString * const HISendBitcoinsWindowSuccessKey = @"success";
 #pragma mark - HICameraWindowControllerDelegate
 
 - (BOOL)cameraWindowController:(HICameraWindowController *)cameraWindowController
-              didScanQRCodeURL:(NSString *)QRCodeURL {
-    return [[HIBitcoinURLService sharedService] applyURLString:QRCodeURL
+              didScanQRCodeURI:(NSString *)QRCodeURI {
+    return [[HIBitcoinURIService sharedService] applyURIString:QRCodeURI
                                                   toSendWindow:self];
 }
 
