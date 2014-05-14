@@ -1,5 +1,5 @@
 //
-//  HIBitcoinURL.m
+//  HIBitcoinURI.m
 //  Hive
 //
 //  Created by Jakub Suder on 23.10.2013.
@@ -7,24 +7,24 @@
 //
 
 #import <BitcoinJKit/HIBitcoinManager.h>
-#import "HIBitcoinURL.h"
+#import "HIBitcoinURI.h"
 #import "NSDecimalNumber+HISatoshiConversion.h"
 
-static NSString * const BitcoinURLPrefix = @"bitcoin:";
+static NSString * const BitcoinURIPrefix = @"bitcoin:";
 
-@implementation HIBitcoinURL
+@implementation HIBitcoinURI
 
-- (instancetype)initWithURLString:(NSString *)URL {
+- (instancetype)initWithURIString:(NSString *)URI {
     self = [super init];
 
     if (self) {
-        _URLString = URL;
+        _URIString = URI;
 
-        if ([URL hasPrefix:BitcoinURLPrefix]) {
+        if ([URI hasPrefix:BitcoinURIPrefix]) {
             [self extractFields];
             _valid = [self validate];
-        } else if ([self looksLikeBitcoinAddress:URL]) {
-            _address = [URL copy];
+        } else if ([self looksLikeBitcoinAddress:URI]) {
+            _address = [URI copy];
             _valid = [[HIBitcoinManager defaultManager] isAddressValid:_address];
         } else {
             return nil;
@@ -34,25 +34,26 @@ static NSString * const BitcoinURLPrefix = @"bitcoin:";
     return self;
 }
 
-- (BOOL)looksLikeBitcoinAddress:(NSString *)URL {
-    return [[URL stringByTrimmingCharactersInSet:[NSCharacterSet alphanumericCharacterSet]] isEqual:@""];
+- (BOOL)looksLikeBitcoinAddress:(NSString *)URI {
+    return [[URI stringByTrimmingCharactersInSet:[NSCharacterSet alphanumericCharacterSet]] isEqual:@""];
 }
 
 - (void)extractFields {
-    NSRange questionMark = [self.URLString rangeOfString:@"?"];
+    NSRange questionMark = [self.URIString rangeOfString:@"?"];
     NSString *base;
 
     if (questionMark.location == NSNotFound) {
-        base = [self.URLString copy];
+        base = [self.URIString copy];
     } else {
-        NSString *parameterString = [self.URLString substringFromIndex:(questionMark.location + 1)];
+        NSString *parameterString = [self.URIString substringFromIndex:(questionMark.location + 1)];
         _parameters = [self parseParameterString:parameterString];
-        base = [self.URLString substringToIndex:questionMark.location];
+        base = [self.URIString substringToIndex:questionMark.location];
     }
 
-    _address = [base substringFromIndex:BitcoinURLPrefix.length];
+    _address = [base substringFromIndex:BitcoinURIPrefix.length];
     _label = self.parameters[@"label"];
     _message = self.parameters[@"message"];
+    _paymentRequestURL = self.parameters[@"r"];
 
     NSString *amountParameter = self.parameters[@"amount"];
     if (amountParameter) {
@@ -91,7 +92,7 @@ static NSString * const BitcoinURLPrefix = @"bitcoin:";
 }
 
 - (NSString *)description {
-    return [NSString stringWithFormat:@"<BitcoinURL: %p, valid = %d, address = %@, amount = %lld, parameters = %@>",
+    return [NSString stringWithFormat:@"<BitcoinURI: %p, valid = %d, address = %@, amount = %lld, parameters = %@>",
             self, _valid, _address, _amount, _parameters];
 }
 

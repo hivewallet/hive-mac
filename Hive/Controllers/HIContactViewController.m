@@ -57,6 +57,8 @@
     self.photoView.image = _contact.avatarImage;
 
     [_infoPanel configureViewForContact:_contact];
+
+    [self.sendBitcoinButton setEnabled:(_contact.addresses.count > 0)];
 }
 
 - (void)controller:(HIContactTabBarController *)controller switchedToTabIndex:(NSInteger)index {

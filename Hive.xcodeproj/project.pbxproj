@@ -10,7 +10,7 @@
 		05D9F526F5294257A0422835 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1EFBACBE45EB458A8ED83785 /* libPods.a */; };
 		1AA1008D9D0E0DC1B7F4E36D /* HILinkTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AA100BCED704B381898FF89 /* HILinkTextField.m */; };
 		1AA100A06AF3D94CDB6D1867 /* HIDraggableButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AA10ED2A6A54B40FB3067FD /* HIDraggableButton.m */; };
-		1AA100EA733AE3603014D604 /* HIBitcoinURLService.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AA109C51D4A1A22BB28F6BF /* HIBitcoinURLService.m */; };
+		1AA100EA733AE3603014D604 /* HIBitcoinURIService.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AA109C51D4A1A22BB28F6BF /* HIBitcoinURIService.m */; };
 		1AA101EED53C9E95085C6DE3 /* HIProfileViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1AA10EA4B4E51F7D0E32DC6D /* HIProfileViewController.xib */; };
 		1AA102413A9415398B3C6B35 /* HIGradientButtonCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AA10EB1DE996965F848889D /* HIGradientButtonCell.m */; };
 		1AA1028C64880CACCA3AE5CA /* HIDirectoryDataService.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AA10B46D06417F03AD71274 /* HIDirectoryDataService.m */; };
@@ -62,6 +62,8 @@
 		5804C32617FC88BA003B7891 /* HIProfile.m in Sources */ = {isa = PBXBuildFile; fileRef = 5804C32517FC88BA003B7891 /* HIProfile.m */; };
 		581711BE17D0A26D00DE775A /* HISidebarButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 581711BD17D0A26D00DE775A /* HISidebarButton.m */; };
 		581818E217F1A8A800D00770 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 581818E117F1A8A800D00770 /* README.md */; };
+		581E9EA719214609007B1760 /* icon-lock.png in Resources */ = {isa = PBXBuildFile; fileRef = 581E9EA519214609007B1760 /* icon-lock.png */; };
+		581E9EA819214609007B1760 /* icon-lock@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 581E9EA619214609007B1760 /* icon-lock@2x.png */; };
 		582372EC18C0C48500132894 /* mobile-recharge.hiveapp in Resources */ = {isa = PBXBuildFile; fileRef = 582372EB18C0C48500132894 /* mobile-recharge.hiveapp */; };
 		582918A718E5C732001B0870 /* HILockScreenViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 582918A518E5C732001B0870 /* HILockScreenViewController.m */; };
 		582918B518E9ABF2001B0870 /* HILockScreenViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 582918B718E9ABF2001B0870 /* HILockScreenViewController.xib */; };
@@ -162,7 +164,7 @@
 		588953E9188921E300243190 /* HIPasswordChangeWindowController.strings in Resources */ = {isa = PBXBuildFile; fileRef = 588953EB188921E300243190 /* HIPasswordChangeWindowController.strings */; };
 		58895405188924FB00243190 /* HIPasswordInputViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 58895407188924FB00243190 /* HIPasswordInputViewController.xib */; };
 		588954231889254A00243190 /* HIPasswordInputViewController.strings in Resources */ = {isa = PBXBuildFile; fileRef = 588954251889254A00243190 /* HIPasswordInputViewController.strings */; };
-		588E33B71817E6AE006A6A25 /* HIBitcoinURL.m in Sources */ = {isa = PBXBuildFile; fileRef = 588E33B61817E6AE006A6A25 /* HIBitcoinURL.m */; };
+		588E33B71817E6AE006A6A25 /* HIBitcoinURI.m in Sources */ = {isa = PBXBuildFile; fileRef = 588E33B61817E6AE006A6A25 /* HIBitcoinURI.m */; };
 		588E34D9181FF32B006A6A25 /* HIDebuggingInfoWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 588E34D7181FF32B006A6A25 /* HIDebuggingInfoWindowController.m */; };
 		588E34DB181FF8A7006A6A25 /* HIDebuggingInfoWindowController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 588E34DD181FF8A7006A6A25 /* HIDebuggingInfoWindowController.xib */; };
 		588E34F2182013E9006A6A25 /* HIDebuggingInfoWindowController.strings in Resources */ = {isa = PBXBuildFile; fileRef = 588E34F4182013E9006A6A25 /* HIDebuggingInfoWindowController.strings */; };
@@ -206,6 +208,8 @@
 		58A37ADF180D998700CFCDE3 /* HITransactionsViewController.strings in Resources */ = {isa = PBXBuildFile; fileRef = 58A37ADD180D998700CFCDE3 /* HITransactionsViewController.strings */; };
 		58A37AE2180D99A100CFCDE3 /* HIMainWindowController.strings in Resources */ = {isa = PBXBuildFile; fileRef = 58A37AE0180D99A100CFCDE3 /* HIMainWindowController.strings */; };
 		58A37AE5180D99F200CFCDE3 /* MainMenu.strings in Resources */ = {isa = PBXBuildFile; fileRef = 58A37AE3180D99F200CFCDE3 /* MainMenu.strings */; };
+		58AE8CBB19226AF900946C97 /* icon-success.png in Resources */ = {isa = PBXBuildFile; fileRef = 58AE8CB919226AF800946C97 /* icon-success.png */; };
+		58AE8CBC19226AF900946C97 /* icon-success@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 58AE8CBA19226AF800946C97 /* icon-success@2x.png */; };
 		58C85B5818FFE90700B2C350 /* HISignMessageWindowController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 58C85B5A18FFE90700B2C350 /* HISignMessageWindowController.xib */; };
 		58C85B7918FFE97F00B2C350 /* HIKeyPreferencesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 58C85B7B18FFE97F00B2C350 /* HIKeyPreferencesViewController.xib */; };
 		58C85B9818FFEA0100B2C350 /* HISignMessageWindowController.strings in Resources */ = {isa = PBXBuildFile; fileRef = 58C85B9A18FFEA0100B2C350 /* HISignMessageWindowController.strings */; };
@@ -311,7 +315,7 @@
 		1AA106E65C78A2B9A35C9624 /* HIKeyPreferencesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HIKeyPreferencesViewController.h; sourceTree = "<group>"; };
 		1AA106F09BEB25F235D75A80 /* HIPasswordHolder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HIPasswordHolder.h; sourceTree = "<group>"; };
 		1AA10711079E121245A12DED /* HIPasswordHolder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HIPasswordHolder.m; sourceTree = "<group>"; };
-		1AA107211BD084775E0C7199 /* HIBitcoinURLService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HIBitcoinURLService.h; sourceTree = "<group>"; };
+		1AA107211BD084775E0C7199 /* HIBitcoinURIService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HIBitcoinURIService.h; sourceTree = "<group>"; };
 		1AA10789485D85E021441CEF /* HIAddressesBox.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HIAddressesBox.h; sourceTree = "<group>"; };
 		1AA107B12E9AB06FCF455005 /* HICurrencyFormatServiceSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HICurrencyFormatServiceSpec.m; sourceTree = "<group>"; };
 		1AA107FF085E51B83E5F751D /* HIAddressesBox.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HIAddressesBox.m; sourceTree = "<group>"; };
@@ -320,7 +324,7 @@
 		1AA109349A0DB4DF39E55FA4 /* HILabelPopUpButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HILabelPopUpButton.h; sourceTree = "<group>"; };
 		1AA1095B1D4E2BF3C14C3FC2 /* ar */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = ar; path = ar.lproj/HIProfileViewController.xib; sourceTree = "<group>"; };
 		1AA1099A1809B28C291572E7 /* HILabelPopUpButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HILabelPopUpButton.m; sourceTree = "<group>"; };
-		1AA109C51D4A1A22BB28F6BF /* HIBitcoinURLService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HIBitcoinURLService.m; sourceTree = "<group>"; };
+		1AA109C51D4A1A22BB28F6BF /* HIBitcoinURIService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HIBitcoinURIService.m; sourceTree = "<group>"; };
 		1AA109D1C9CD1E776FBE62A3 /* HIClearView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HIClearView.m; sourceTree = "<group>"; };
 		1AA10A32478D47E8D26B9653 /* HIDraggableButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HIDraggableButton.h; sourceTree = "<group>"; };
 		1AA10AA07C166902BE59EB57 /* HIBreadcrumbsView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HIBreadcrumbsView.m; sourceTree = "<group>"; };
@@ -530,6 +534,8 @@
 		581711BC17D0A26D00DE775A /* HISidebarButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HISidebarButton.h; sourceTree = "<group>"; };
 		581711BD17D0A26D00DE775A /* HISidebarButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HISidebarButton.m; sourceTree = "<group>"; };
 		581818E117F1A8A800D00770 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = SOURCE_ROOT; };
+		581E9EA519214609007B1760 /* icon-lock.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-lock.png"; sourceTree = "<group>"; };
+		581E9EA619214609007B1760 /* icon-lock@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-lock@2x.png"; sourceTree = "<group>"; };
 		581EFBCA17DA441A00E2738D /* HITransactionCellView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HITransactionCellView.h; sourceTree = "<group>"; };
 		581EFBCB17DA441B00E2738D /* HITransactionCellView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HITransactionCellView.m; sourceTree = "<group>"; };
 		582372EB18C0C48500132894 /* mobile-recharge.hiveapp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "mobile-recharge.hiveapp"; sourceTree = "<group>"; };
@@ -1237,8 +1243,8 @@
 		5889543C1889255D00243190 /* sr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = sr; path = sr.lproj/HIPasswordInputViewController.strings; sourceTree = "<group>"; };
 		5889543D1889255E00243190 /* sr-Latn */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "sr-Latn"; path = "sr-Latn.lproj/HIPasswordInputViewController.strings"; sourceTree = "<group>"; };
 		5889543E1889255E00243190 /* sv */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = sv; path = sv.lproj/HIPasswordInputViewController.strings; sourceTree = "<group>"; };
-		588E33B51817E6AE006A6A25 /* HIBitcoinURL.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HIBitcoinURL.h; sourceTree = "<group>"; };
-		588E33B61817E6AE006A6A25 /* HIBitcoinURL.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HIBitcoinURL.m; sourceTree = "<group>"; };
+		588E33B51817E6AE006A6A25 /* HIBitcoinURI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HIBitcoinURI.h; sourceTree = "<group>"; };
+		588E33B61817E6AE006A6A25 /* HIBitcoinURI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HIBitcoinURI.m; sourceTree = "<group>"; };
 		588E33BF181810AD006A6A25 /* ru */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = ru; path = ru.lproj/HIApplicationsViewController.xib; sourceTree = "<group>"; };
 		588E33C0181810AD006A6A25 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/HIContactsViewController.strings; sourceTree = "<group>"; };
 		588E33C1181810AD006A6A25 /* ru */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = ru; path = ru.lproj/HIContactsViewController.xib; sourceTree = "<group>"; };
@@ -1684,6 +1690,8 @@
 		58A37BA2180DBAA100CFCDE3 /* da */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = da; path = da.lproj/MainMenu.strings; sourceTree = "<group>"; };
 		58A37BA3180DBAA100CFCDE3 /* da */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = da; path = da.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		58A37BA6180DBAA100CFCDE3 /* da */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = da; path = da.lproj/Localizable.strings; sourceTree = "<group>"; };
+		58AE8CB919226AF800946C97 /* icon-success.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-success.png"; sourceTree = "<group>"; };
+		58AE8CBA19226AF800946C97 /* icon-success@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-success@2x.png"; sourceTree = "<group>"; };
 		58C85B5918FFE90700B2C350 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/HISignMessageWindowController.xib; sourceTree = "<group>"; };
 		58C85B5D18FFE92100B2C350 /* pl */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = pl; path = pl.lproj/HISignMessageWindowController.xib; sourceTree = "<group>"; };
 		58C85B5E18FFE92200B2C350 /* fr */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = fr; path = fr.lproj/HISignMessageWindowController.xib; sourceTree = "<group>"; };
@@ -2164,8 +2172,8 @@
 		5804C31F17FC884E003B7891 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				588E33B51817E6AE006A6A25 /* HIBitcoinURL.h */,
-				588E33B61817E6AE006A6A25 /* HIBitcoinURL.m */,
+				588E33B51817E6AE006A6A25 /* HIBitcoinURI.h */,
+				588E33B61817E6AE006A6A25 /* HIBitcoinURI.m */,
 				1AA10683D3C0D3D1757EE24E /* HIPerson.h */,
 				5804C32417FC88BA003B7891 /* HIProfile.h */,
 				5804C32517FC88BA003B7891 /* HIProfile.m */,
@@ -2405,8 +2413,8 @@
 				5860D3FE180455B900BD852C /* HIApplicationsManager.m */,
 				1AA105D345F413155D76B5B8 /* HIBitcoinFormatService.h */,
 				1AA100CAE5EF0CB61AF126DB /* HIBitcoinFormatService.m */,
-				1AA107211BD084775E0C7199 /* HIBitcoinURLService.h */,
-				1AA109C51D4A1A22BB28F6BF /* HIBitcoinURLService.m */,
+				1AA107211BD084775E0C7199 /* HIBitcoinURIService.h */,
+				1AA109C51D4A1A22BB28F6BF /* HIBitcoinURIService.m */,
 				1AA102DC4B21868564928E39 /* HICurrencyFormatService.h */,
 				1AA1067F6D5A72CF17997A19 /* HICurrencyFormatService.m */,
 				585A8B2318576F020096888C /* HIDatabaseManager.h */,
@@ -2593,8 +2601,8 @@
 				58605A2218041D0A00FD9C2A /* bg-sidebar.pdf */,
 				58605A2318041D0A00FD9C2A /* button__inset.pdf */,
 				583B1E0218687CF400817EF8 /* dropbox-glyph-blue.pdf */,
-				58A275D918BBD30300C102B2 /* honey_im_subtle@2x.png */,
 				58A275DA18BBD30300C102B2 /* honey_im_subtle.png */,
+				58A275D918BBD30300C102B2 /* honey_im_subtle@2x.png */,
 				58605A2418041D0A00FD9C2A /* icon-apps__active.pdf */,
 				58605A2518041D0A00FD9C2A /* icon-apps__inactive.pdf */,
 				58605A2618041D0A00FD9C2A /* icon-bitcoin.pdf */,
@@ -2604,12 +2612,16 @@
 				58605A2A18041D0A00FD9C2A /* icon-gray-btc.pdf */,
 				58605A2B18041D0A00FD9C2A /* icon-group__active.pdf */,
 				58605A2C18041D0A00FD9C2A /* icon-group__inactive.pdf */,
+				581E9EA519214609007B1760 /* icon-lock.png */,
+				581E9EA619214609007B1760 /* icon-lock@2x.png */,
 				58605A2D18041D0A00FD9C2A /* icon-nav-bar-back.pdf */,
 				58605A2F18041D0A00FD9C2A /* icon-next.pdf */,
 				58605A2E18041D0A00FD9C2A /* icon-next__active.pdf */,
 				58605A3018041D0A00FD9C2A /* icon-plus.pdf */,
 				58605A3118041D0A00FD9C2A /* icon-sadface.pdf */,
 				58605A3218041D0A00FD9C2A /* icon-search.pdf */,
+				58AE8CB919226AF800946C97 /* icon-success.png */,
+				58AE8CBA19226AF800946C97 /* icon-success@2x.png */,
 				58605A3318041D0A00FD9C2A /* icon-tabbar-timeline__active.pdf */,
 				58605A3418041D0A00FD9C2A /* icon-tabbar-timeline__inactive.pdf */,
 				58605A3518041D0A00FD9C2A /* icon-tabbar-user__active.pdf */,
@@ -2844,10 +2856,12 @@
 				58A37AD6180D996E00CFCDE3 /* HIContactViewController.strings in Resources */,
 				58A2760518BE81F100C102B2 /* com.hivewallet.bitpremier.hiveapp in Resources */,
 				2478B8D5184A88E700BA2C35 /* HIFeeDetailsViewController.xib in Resources */,
+				581E9EA719214609007B1760 /* icon-lock.png in Resources */,
 				588E355318212BDF006A6A25 /* HIErrorWindowController.strings in Resources */,
 				58A275DB18BBD30300C102B2 /* honey_im_subtle@2x.png in Resources */,
 				24300BE418830C4700FDEF2F /* HIWizardViewController.xib in Resources */,
 				58A37A8A180D747C00CFCDE3 /* Localizable.strings in Resources */,
+				58AE8CBC19226AF900946C97 /* icon-success@2x.png in Resources */,
 				58571296189029850094F884 /* HIWizardBackupViewController.strings in Resources */,
 				582918B518E9ABF2001B0870 /* HILockScreenViewController.xib in Resources */,
 				588954231889254A00243190 /* HIPasswordInputViewController.strings in Resources */,
@@ -2883,6 +2897,7 @@
 				58605A4518041D0A00FD9C2A /* icon-bitcoin.pdf in Resources */,
 				58F496F118B67A1C0033B7E0 /* icon-unknown-app.png in Resources */,
 				58605A4618041D0A00FD9C2A /* icon-delete.pdf in Resources */,
+				58AE8CBB19226AF900946C97 /* icon-success.png in Resources */,
 				58A37ADB180D997C00CFCDE3 /* HIContactAutocompleteWindowController.strings in Resources */,
 				585712B618902CD70094F884 /* HIWizardCompletedViewController.xib in Resources */,
 				58A37ADC180D997C00CFCDE3 /* HISendBitcoinsWindowController.strings in Resources */,
@@ -2907,6 +2922,7 @@
 				582918D618E9AC37001B0870 /* HILockScreenViewController.strings in Resources */,
 				58605A4E18041D0A00FD9C2A /* icon-next.pdf in Resources */,
 				58A2760618BE81F100C102B2 /* com.hivewallet.bitstamptrader.hiveapp in Resources */,
+				581E9EA819214609007B1760 /* icon-lock@2x.png in Resources */,
 				582372EC18C0C48500132894 /* mobile-recharge.hiveapp in Resources */,
 				588953AF188920D000243190 /* HIBackupCenterWindowController.strings in Resources */,
 				58605A4F18041D0A00FD9C2A /* icon-plus.pdf in Resources */,
@@ -3111,7 +3127,7 @@
 				2478B8D3184A80A400BA2C35 /* HIFeeDetailsViewController.m in Sources */,
 				582C7DA918521A3500126C10 /* HIJavaScriptObject.m in Sources */,
 				58904B9418EAB78A00B471B3 /* HISignMessageWindowController.m in Sources */,
-				588E33B71817E6AE006A6A25 /* HIBitcoinURL.m in Sources */,
+				588E33B71817E6AE006A6A25 /* HIBitcoinURI.m in Sources */,
 				58605A0118041AD600FD9C2A /* HISidebarController.m in Sources */,
 				58605A0218041AD600FD9C2A /* HIViewController.m in Sources */,
 				588E354F18212BB8006A6A25 /* HIErrorWindowController.m in Sources */,
@@ -3149,7 +3165,7 @@
 				1AA10E305C91DC42C81D0DC3 /* HIAddressesBox.m in Sources */,
 				1AA10A26CEBC9FDF10C919A8 /* HIEmptyTransactionsView.m in Sources */,
 				1AA10D8123CFE9FDA6CFFEA0 /* HISendFeedbackService.m in Sources */,
-				1AA100EA733AE3603014D604 /* HIBitcoinURLService.m in Sources */,
+				1AA100EA733AE3603014D604 /* HIBitcoinURIService.m in Sources */,
 				1AA10F7BD079E23BAB09D4E1 /* HIPreferencesWindowController.m in Sources */,
 				1AA10CB8A5A84BFA71D3D0F6 /* HIKeyPreferencesViewController.m in Sources */,
 				1AA10F0AB0B36A26463B74A9 /* HIShortcutService.m in Sources */,

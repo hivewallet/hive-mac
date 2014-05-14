@@ -11,7 +11,7 @@
 #import "BCClient.h"
 #import "HIAddress.h"
 #import "HIBitcoinFormatService.h"
-#import "HIBitcoinURLService.h"
+#import "HIBitcoinURIService.h"
 #import "HIButtonWithSpinner.h"
 #import "HICameraWindowController.h"
 #import "HIContactAutocompleteWindowController.h"
@@ -20,10 +20,12 @@
 #import "HIFeeDetailsViewController.h"
 #import "HILinkTextField.h"
 #import "HINetworkConnectionMonitor.h"
+#import "HIPasswordHolder.h"
 #import "HIPasswordInputViewController.h"
 #import "HIPerson.h"
 #import "HISendBitcoinsWindowController.h"
 #import "HITransaction.h"
+#import "NSColor+Hive.h"
 #import "NSDecimalNumber+HISatoshiConversion.h"
 #import "NSWindow+HIShake.h"
 #import "HIApplication.h"
@@ -33,7 +35,8 @@
 NSString * const HISendBitcoinsWindowDidClose = @"HISendBitcoinsWindowDidClose";
 NSString * const HISendBitcoinsWindowSuccessKey = @"success";
 
-@interface HISendBitcoinsWindowController () <HIExchangeRateObserver, NSPopoverDelegate, HICameraWindowControllerDelegate> {
+@interface HISendBitcoinsWindowController ()
+        <HIExchangeRateObserver, NSPopoverDelegate, HICameraWindowControllerDelegate> {
     HIApplication *_sourceApplication;
     HIContact *_contact;
     HIContactAutocompleteWindowController *_autocompleteController;
@@ -42,6 +45,8 @@ NSString * const HISendBitcoinsWindowSuccessKey = @"success";
     satoshi_t _amount;
     NSPopover *_passwordPopover;
     NSLocale *_locale;
+    int _paymentRequestSession;
+    NSArray *_detailsSectionConstraints;
 }
 
 @property (assign) satoshi_t amountFieldValue;
@@ -64,11 +69,9 @@ NSString * const HISendBitcoinsWindowSuccessKey = @"success";
 #pragma mark - Init & cleanup
 
 - (instancetype)init {
-    self = [super initWithWindowNibName:@"HISendBitcoinsWindowController"];
+    self = [super initWithWindowNibName:self.className];
 
     if (self) {
-        _amount = 0ll;
-
         _exchangeRateService = [HIExchangeRateService sharedService];
         [_exchangeRateService addExchangeRateObserver:self];
         self.selectedCurrency = _exchangeRateService.preferredCurrency;
@@ -90,55 +93,46 @@ NSString * const HISendBitcoinsWindowSuccessKey = @"success";
     return self;
 }
 
-- (instancetype)initWithContact:(HIContact *)contact {
-    self = [self init];
-
-    if (self) {
-        _contact = contact;
-    }
-
-    return self;
-}
-
 - (void)windowDidLoad {
     [super windowDidLoad];
     [self.window center];
 
-    if (_contact) {
-        HIAddress *address = [_contact.addresses anyObject];
-        [self selectContact:_contact address:address];
-    } else if (_hashAddress) {
-        [self setHashAddress:_hashAddress];
-    } else {
-        [self setHashAddress:@""];
-
-        self.addressLabel.stringValue = NSLocalizedString(@"or choose from the list", @"Autocomplete dropdown prompt");
-    }
-
-    if (_lockedAddress) {
-        [self lockAddress];
-    }
-
     self.photoView.layer.cornerRadius = 5.0;
     self.photoView.layer.masksToBounds = YES;
+    self.lockIcon.hidden = YES;
 
-    self.wrapper.layer.cornerRadius = 5.0;
+    NSView *wrapperContents = self.wrapper.contentView;
+    wrapperContents.layer.borderWidth = 1.0;
+    wrapperContents.layer.borderColor = [[NSColor colorWithCalibratedWhite:0.8 alpha:1.0] hiNativeColor];
+    wrapperContents.layer.backgroundColor = [[NSColor whiteColor] hiNativeColor];
+    wrapperContents.layer.cornerRadius = 5.0;
 
-    [self setUpQRCodeButton];
+    self.detailsBox.layer.borderWidth = 1.0;
+    self.detailsBox.layer.borderColor = [[NSColor colorWithCalibratedWhite:0.85 alpha:1.0] hiNativeColor];
+    [[self.detailsBox documentView] setTextContainerInset:NSMakeSize(1.0, 5.0)];
+
+    [self setupQRCodeButton];
     [self setupCurrencyList];
-
-    if (_amount) {
-        [self updateFieldsForLockedAmount];
-    } else {
-        self.amountFieldValue = 0ll;
-    }
-    [self updateConvertedAmountFromAmount];
-
-    [self updateSendButtonEnabled];
+    [self setAmountFieldValue:0];
+    [self updateAvatarImage];
     [self updateInterfaceForExchangeRate];
+    [self updateSendButtonEnabled];
+    [self hideDetailsSection];
 }
 
-- (void)setUpQRCodeButton {
+- (void)showWindow:(id)sender {
+    [super showWindow:sender];
+
+    if (!_lockedAddress) {
+        [self.window makeFirstResponder:self.nameLabel];
+    } else if (!_amount) {
+        [self.window makeFirstResponder:self.amountField];
+    } else {
+        [self.window makeFirstResponder:nil];
+    }
+}
+
+- (void)setupQRCodeButton {
     NIKFontAwesomeIconFactory *iconFactory = [NIKFontAwesomeIconFactory new];
     iconFactory.padded = YES;
     iconFactory.size = 14;
@@ -158,6 +152,56 @@ NSString * const HISendBitcoinsWindowSuccessKey = @"success";
     self.sendButtonEnabled = self.amountFieldValue > 0 && hash.length > 0;
 }
 
+- (void)showDetailsSection {
+    [self removeConstraintsFromView:self.wrapper matchingSubviews:^BOOL(NSArray *views) {
+        return [views containsObject:self.separator] && [views containsObject:self.detailsSeparator];
+    }];
+
+    [self.wrapper addConstraints:_detailsSectionConstraints];
+
+    [self.detailsLabel setHidden:NO];
+    [self.detailsBox setHidden:NO];
+    [self.detailsSeparator setHidden:NO];
+}
+
+- (void)hideDetailsSection {
+    [self.detailsLabel setHidden:YES];
+    [self.detailsBox setHidden:YES];
+    [self.detailsSeparator setHidden:YES];
+
+    NSArray *removed = [self removeConstraintsFromView:self.wrapper matchingSubviews:^BOOL(NSArray *views) {
+        BOOL separator = [views containsObject:self.separator] || [views containsObject:self.detailsSeparator];
+        return separator && [views containsObject:self.detailsBox];
+    }];
+
+    [self.wrapper addConstraint:VSPACE(self.separator, self.detailsSeparator)];
+
+    _detailsSectionConstraints = removed;
+}
+
+- (NSArray *)removeConstraintsFromView:(NSView *)superview matchingSubviews:(BOOL (^)(NSArray *))viewsMatch {
+    NSMutableArray *removed = [NSMutableArray new];
+
+    [superview.constraints enumerateObjectsUsingBlock:^(id constraint, NSUInteger idx, BOOL *stop) {
+        NSMutableArray *views = [NSMutableArray new];
+
+        if ([constraint firstItem]) {
+            [views addObject:[constraint firstItem]];
+        }
+
+        if ([constraint secondItem]) {
+            [views addObject:[constraint secondItem]];
+        }
+
+        if (viewsMatch(views)) {
+            [superview removeConstraint:constraint];
+            [removed addObject:constraint];
+        }
+    }];
+
+    return removed;
+}
+
 - (void)windowWillClose:(NSNotification *)notification {
     _autocompleteController = nil;
     [_exchangeRateService removeExchangeRateObserver:self];
@@ -172,21 +216,18 @@ NSString * const HISendBitcoinsWindowSuccessKey = @"success";
 #pragma mark - Configuration
 
 - (void)setHashAddress:(NSString *)hash {
-    if ([self isWindowLoaded]) {
-        [self clearContact];
-        self.nameLabel.stringValue = hash;
-    }
-
+    [self clearContact];
+    self.nameLabel.stringValue = hash;
     _hashAddress = hash;
 }
 
 - (void)lockAddress {
     _lockedAddress = YES;
 
-    if ([self isWindowLoaded]) {
-        [self.nameLabel setEditable:NO];
-        [self.dropdownButton setHidden:YES];
-    }
+    [self.nameLabel setEditable:NO];
+    [self.dropdownButton setHidden:YES];
+    [self setQRCodeScanningEnabled:NO];
+    [self updateAvatarImage];
 }
 
 - (void)setLockedAddress:(NSString *)hash {
@@ -196,24 +237,27 @@ NSString * const HISendBitcoinsWindowSuccessKey = @"success";
 
 - (void)setLockedAmount:(satoshi_t)amount {
     _amount = amount;
-    if ([self isWindowLoaded]) {
-        [self updateFieldsForLockedAmount];
-    }
-}
 
-- (void)updateFieldsForLockedAmount {
     self.amountFieldValue = _amount;
     [self updateConvertedAmountFromAmount];
+    [self updateSendButtonEnabled];
 
     [self.amountField setEditable:NO];
     [self.convertedAmountField setEditable:NO];
+}
+
+- (void)setDetailsText:(NSString *)text {
+    [self showDetailsSection];
+
+    text = [text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
+    [[self.detailsBox documentView] setString:text];
 }
 
 - (void)clearContact {
     _contact = nil;
     _hashAddress = nil;
 
-    self.addressLabel.stringValue = @"";
+    self.addressLabel.stringValue = @" ";
     [self updateAvatarImage];
 }
 
@@ -223,27 +267,95 @@ NSString * const HISendBitcoinsWindowSuccessKey = @"success";
     [self updateAvatarImage];
 }
 
+- (void)selectContact:(id<HIPerson>)contact {
+    [self selectContact:contact address:[contact.addresses anyObject]];
+}
+
 - (void)selectContact:(id<HIPerson>)contact address:(HIAddress *)address {
     _contact = contact;
     _hashAddress = address.address;
 
     self.nameLabel.stringValue = contact.name;
-    self.addressLabel.stringValue = address.addressWithCaption ?: @"";
+    self.addressLabel.stringValue = address.addressWithCaption ?: @" ";
     [self updateAvatarImage];
     [self setQRCodeScanningEnabled:NO];
 
     [self.window makeFirstResponder:nil];
 }
 
+- (void)usePaymentRequestTitle {
+    self.window.title = NSLocalizedString(@"Pay with Bitcoin", @"Send Bitcoin window title for payment request");
+}
+
+- (void)showPaymentRequest:(int)sessionId details:(NSDictionary *)data {
+    _paymentRequestSession = sessionId;
+    [self usePaymentRequestTitle];
+
+    NSNumber *amount = data[@"amount"];
+    NSString *memo = data[@"memo"];
+    NSString *paymentURL = data[@"paymentURL"];
+    NSString *pkiName = data[@"pkiName"];
+    NSString *label = data[@"bitcoinURILabel"];
+    NSString *recipientName;
+
+    NSURL *URL = [NSURL URLWithString:paymentURL];
+
+    if (pkiName) {
+        recipientName = pkiName;
+        self.lockIcon.hidden = NO;
+    } else if (URL) {
+        recipientName = URL.host;
+    } else if (label) {
+        recipientName = label;
+    } else {
+        recipientName = @"?";
+    }
+
+    [self setLockedAddress:recipientName];
+    [self setLockedAmount:amount.integerValue];
+
+    if (memo.length == 0) {
+        memo = data[@"bitcoinURIMessage"];
+    }
+
+    if (memo.length > 0) {
+        [self setDetailsText:memo];
+    }
+}
+
+- (void)showPaymentRequestLoadingBox {
+    [self usePaymentRequestTitle];
+
+    [self.window.contentView addSubview:self.loadingBox];
+    [self.window.contentView addConstraints:@[
+                                              INSET_LEADING(self.loadingBox),
+                                              INSET_TRAILING(self.loadingBox),
+                                              INSET_TOP(self.loadingBox),
+                                              INSET_BOTTOM(self.loadingBox)
+                                            ]];
+
+    [self.loadingSpinner startAnimation:self];
+}
+
+- (void)hidePaymentRequestLoadingBox {
+    [self.loadingSpinner stopAnimation:self];
+    [self.loadingBox removeFromSuperview];
+}
+
 - (void)updateAvatarImage {
-    if (_contact.avatarImage) {
+    self.photoView.hidden = NO;
+
+    if (_contact.avatar) {
         self.photoView.image = _contact.avatarImage;
     } else if (_sourceApplication.icon) {
         self.photoView.image = _sourceApplication.icon;
+    } else if (_lockedAddress) {
+        self.photoView.hidden = YES;
     } else {
         self.photoView.image = [NSImage imageNamed:@"avatar-empty"];
     }
 }
+
 
 #pragma mark - Text fields
 
@@ -483,32 +595,41 @@ NSString * const HISendBitcoinsWindowSuccessKey = @"success";
     satoshi_t satoshi = self.amountFieldValue;
     satoshi_t satoshiWithFee = satoshi + self.currentFee;
 
-
-    NSString *target = _hashAddress ?: self.nameLabel.stringValue;
-
     if (![[HIBitcoinManager defaultManager] isConnected]) {
         [self showNoConnectionAlert];
     }
-    if (satoshiWithFee > [[BCClient sharedClient] estimatedBalance]) {
+    else if (satoshiWithFee > [[BCClient sharedClient] estimatedBalance]) {
         [self showInsufficientFundsAlert];
     }
     else if (satoshiWithFee > [[BCClient sharedClient] availableBalance]) {
         [self showBlockedFundsAlert];
     }
-    else if (target.length == 0) {
-        [self showNoAddressAlert];
-    }
-    else if (![[HIBitcoinManager defaultManager] isAddressValid:target]) {
-        [self showInvalidAddressAlert];
-    }
-    else if ([[HIBitcoinManager defaultManager].walletAddress isEqual:target]) {
-        [self showOwnAddressAlert];
-    }
-    else if (![HITransaction isAmountWithinExpectedRange:satoshi]) {
-        [self showLargeAmountAlertForAmount:satoshi toTarget:target button:sender];
-    }
     else {
-        [self processSendingBitcoin:satoshi toTarget:target button:sender];
+        if (_paymentRequestSession > 0) {
+            if ([self isPasswordRequired]) {
+                [self showPasswordPopover:sender forPaymentRequest:_paymentRequestSession];
+            } else {
+                [self sendPaymentRequest:_paymentRequestSession password:nil];
+            }
+        } else {
+            NSString *target = _hashAddress ?: self.nameLabel.stringValue;
+
+            if (target.length == 0) {
+                [self showNoAddressAlert];
+            }
+            else if (![[HIBitcoinManager defaultManager] isAddressValid:target]) {
+                [self showInvalidAddressAlert];
+            }
+            else if ([[HIBitcoinManager defaultManager].walletAddress isEqual:target]) {
+                [self showOwnAddressAlert];
+            }
+            else if (![HITransaction isAmountWithinExpectedRange:satoshi]) {
+                [self showLargeAmountAlertForAmount:satoshi toTarget:target button:sender];
+            }
+            else {
+                [self processSendingBitcoin:satoshi toTarget:target button:sender];
+            }
+        }
     }
 }
 
@@ -565,6 +686,43 @@ NSString * const HISendBitcoinsWindowSuccessKey = @"success";
     }
 }
 
+- (void)sendPaymentRequest:(int)sessionId password:(HIPasswordHolder *)password {
+    void (^callback)(NSError*, NSDictionary*) = ^(NSError *sendError, NSDictionary *data) {
+        if (sendError) {
+            [self.sendButton hideSpinner];
+            [self.cancelButton setEnabled:YES];
+            [self showPaymentSendErrorAlert];
+        } else {
+            [self showPaymentConfirmation:data];
+        }
+    };
+
+    NSError *callError = nil;
+
+    [[HIBitcoinManager defaultManager] sendPaymentRequest:sessionId
+                                                 password:password.data
+                                                    error:&callError
+                                                 callback:callback];
+
+    if (callError) {
+        if (callError.code == kHIBitcoinManagerWrongPassword) {
+            [self.window hiShake];
+        } else if (callError.code == kHIBitcoinManagerSendingDustError) {
+            [self showSendingDustAlert];
+        } else if (callError.code == kHIBitcoinManagerInsufficientMoneyError) {
+            [self showInsufficientFundsWithFeeAlert];
+        } else if (callError.code == kHIBitcoinManagerPaymentRequestExpiredError) {
+            [self showPaymentExpiredAlert];
+        } else {
+            [self showTransactionErrorAlert];
+        }
+    } else {
+        [self.sendButton showSpinner];
+        [self.cancelButton setEnabled:NO];
+        [self hidePasswordPopover];
+    }
+}
+
 - (void)closeAndNotifyWithSuccess:(BOOL)success transactionId:(NSString *)transactionId {
     if (_sendCompletion) {
         _sendCompletion(success, transactionId);
@@ -575,6 +733,47 @@ NSString * const HISendBitcoinsWindowSuccessKey = @"success";
     [[NSNotificationCenter defaultCenter] postNotificationName:HISendBitcoinsWindowDidClose
                                                         object:self
                                                       userInfo:@{HISendBitcoinsWindowSuccessKey: @(success)}];
+}
+
+- (void)showPaymentConfirmation:(NSDictionary *)data {
+    NSString *memo = data[@"memo"];
+
+    if (memo.length > 0) {
+        self.ackMessage.stringValue = memo;
+    } else {
+        [self.ackMessage removeFromSuperview];
+    }
+
+    [self.cancelButton removeFromSuperview];
+    [self.sendButton removeFromSuperview];
+    [self.closeButton setHidden:NO];
+
+    CGFloat padding = self.wrapper.frame.origin.x;
+    [self.window.contentView addSubview:self.ackBar];
+    [self.window.contentView addConstraints:@[
+                                              INSET_LEADING(self.ackBar, padding),
+                                              INSET_TRAILING(self.ackBar, padding),
+                                              VSPACE(self.wrapper, self.ackBar, padding),
+                                              VSPACE(self.ackBar, self.closeButton, padding)
+                                            ]];
+
+    NSColor *fillColor = [NSColor colorWithCalibratedHue:95.0/360 saturation:0.5 brightness:1.0 alpha:1.0];
+    NSColor *borderColor = [NSColor colorWithCalibratedHue:95.0/360 saturation:0.5 brightness:0.8 alpha:1.0];
+
+    NSView *ackBarContents = self.ackBar.contentView;
+    ackBarContents.layer.backgroundColor = [fillColor hiNativeColor];
+    ackBarContents.layer.borderColor = [borderColor hiNativeColor];
+    ackBarContents.layer.borderWidth = 1.0;
+    ackBarContents.layer.cornerRadius = 5.0;
+
+    self.ackBar.alphaValue = 0.0;
+    self.closeButton.alphaValue = 0.0;
+
+    [NSAnimationContext runAnimationGroup:^(NSAnimationContext *context) {
+        context.duration = 0.5;
+        self.ackBar.animator.alphaValue = 1.0;
+        self.closeButton.animator.alphaValue = 1.0;
+    } completionHandler:^{}];
 }
 
 
@@ -667,6 +866,25 @@ NSString * const HISendBitcoinsWindowSuccessKey = @"success";
 
                      message:NSLocalizedString(@"Please enter a different address.",
                                                @"Warning details when trying to send to your own address")];
+}
+
+- (void)showPaymentExpiredAlert {
+    [self showAlertWithTitle:NSLocalizedString(@"Payment request has already expired.",
+                                               @"Alert title when payment request was valid before but has expired")
+
+                     message:NSLocalizedString(@"You'll need to return to the site that requested the payment "
+                                               @"and initiate the payment again.",
+                                               @"Alert message when payment request was valid before but has expired")];
+}
+
+- (void)showPaymentSendErrorAlert {
+    [self showAlertWithTitle:NSLocalizedString(@"Payment could not be completed.",
+                                               @"Alert title when payment response can't be sent to the merchant")
+
+                     message:NSLocalizedString(@"Check your network connection, try again later "
+                                               @"or report the problem to the payment recipient.",
+                                               @"Alert message when payment request can't be loaded from "
+                                               @"or sent to the server")];
 }
 
 - (void)showLargeAmountAlertForAmount:(satoshi_t)satoshi toTarget:(NSString *)target button:(id)sender {
@@ -840,10 +1058,10 @@ NSString * const HISendBitcoinsWindowSuccessKey = @"success";
     return [BCClient sharedClient].isWalletPasswordProtected;
 }
 
-- (void)showPasswordPopover:(NSButton *)sender forSendingBitcoin:(uint64)bitcoin toTarget:(NSString *)target {
-    _passwordPopover = [NSPopover new];
-    _passwordPopover.behavior = NSPopoverBehaviorTransient;
-    _passwordPopover.delegate = self;
+- (NSPopover *)preparePasswordPopover {
+    NSPopover *popover = [NSPopover new];
+    popover.behavior = NSPopoverBehaviorTransient;
+    popover.delegate = self;
 
     if (!self.passwordInputViewController) {
         self.passwordInputViewController = [HIPasswordInputViewController new];
@@ -853,15 +1071,30 @@ NSString * const HISendBitcoinsWindowSuccessKey = @"success";
             NSLocalizedString(@"Confirm", @"Confirm button next to passphrase");
     }
 
+    popover.contentViewController = self.passwordInputViewController;
+    return popover;
+}
+
+- (void)showPasswordPopover:(NSButton *)sender forSendingBitcoin:(uint64)bitcoin toTarget:(NSString *)target {
+    _passwordPopover = [self preparePasswordPopover];
+
     __unsafe_unretained __typeof__ (self) weakSelf = self;
     self.passwordInputViewController.onSubmit = ^(HIPasswordHolder *passwordHolder) {
         [weakSelf sendBitcoin:bitcoin toTarget:target password:passwordHolder];
     };
 
-    _passwordPopover.contentViewController = self.passwordInputViewController;
-    [_passwordPopover showRelativeToRect:sender.bounds
-                                  ofView:sender
-                           preferredEdge:NSMaxYEdge];
+    [_passwordPopover showRelativeToRect:sender.bounds ofView:sender preferredEdge:NSMaxYEdge];
+}
+
+- (void)showPasswordPopover:(NSButton *)sender forPaymentRequest:(int)sessionId {
+    _passwordPopover = [self preparePasswordPopover];
+
+    __unsafe_unretained __typeof__ (self) weakSelf = self;
+    self.passwordInputViewController.onSubmit = ^(HIPasswordHolder *passwordHolder) {
+        [weakSelf sendPaymentRequest:sessionId password:passwordHolder];
+    };
+
+    [_passwordPopover showRelativeToRect:sender.bounds ofView:sender preferredEdge:NSMaxYEdge];
 }
 
 - (void)hidePasswordPopover {
@@ -902,8 +1135,8 @@ NSString * const HISendBitcoinsWindowSuccessKey = @"success";
 #pragma mark - HICameraWindowControllerDelegate
 
 - (BOOL)cameraWindowController:(HICameraWindowController *)cameraWindowController
-              didScanQRCodeURL:(NSString *)QRCodeURL {
-    return [[HIBitcoinURLService sharedService] applyURLString:QRCodeURL
+              didScanQRCodeURI:(NSString *)QRCodeURI {
+    return [[HIBitcoinURIService sharedService] applyURIString:QRCodeURI
                                                   toSendWindow:self];
 }
 

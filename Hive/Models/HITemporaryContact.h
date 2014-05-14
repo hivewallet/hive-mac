@@ -12,7 +12,7 @@
 
 /*
  This is a temporary HIContact object that isn't saved to the database; used e.g. for passing contact data from
- bitcoin: URLs to the Send window.
+ bitcoin: URIs to the Send window.
  */
 
 @interface HITemporaryContact : NSObject<HIPerson>

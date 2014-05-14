@@ -27,6 +27,7 @@ typedef void(^HITransactionCompletionCallback)(BOOL success, NSString *transacti
 @property (strong) IBOutlet NSBox *wrapper;
 @property (strong) IBOutlet NSBox *separator;
 @property (strong) IBOutlet NSImageView *photoView;
+@property (strong) IBOutlet NSImageView *lockIcon;
 @property (strong) IBOutlet NSTextField *nameLabel;
 @property (strong) IBOutlet NSTextField *addressLabel;
 @property (strong) IBOutlet NSTextField *amountField;
@@ -37,18 +38,33 @@ typedef void(^HITransactionCompletionCallback)(BOOL success, NSString *transacti
 @property (strong) IBOutlet NSPopUpButton *bitcoinCurrencyPopupButton;
 @property (strong) IBOutlet NSButton *feeButton;
 @property (strong) IBOutlet NSButton *cancelButton;
+@property (strong) IBOutlet NSButton *closeButton;
 @property (strong) IBOutlet HIButtonWithSpinner *sendButton;
 @property (nonatomic, strong) IBOutlet NSButton *dropdownButton;
 
+@property (nonatomic, assign) IBOutlet NSTextField *detailsLabel;
+@property (nonatomic, assign) IBOutlet NSScrollView *detailsBox;
+@property (nonatomic, assign) IBOutlet NSBox *detailsSeparator;
+
+@property (nonatomic, strong) IBOutlet NSBox *ackBar;
+@property (nonatomic, strong) IBOutlet NSTextField *ackMessage;
+
+@property (nonatomic, strong) IBOutlet NSBox *loadingBox;
+@property (nonatomic, strong) IBOutlet NSProgressIndicator *loadingSpinner;
+
 @property (copy) HITransactionCompletionCallback sendCompletion;
 
-- (instancetype)initWithContact:(HIContact *)contact;
 - (void)setHashAddress:(NSString *)hash;
 - (void)setLockedAddress:(NSString *)hash;
 - (void)setLockedAmount:(satoshi_t)amount;
+- (void)setDetailsText:(NSString *)text;
 - (void)setSourceApplication:(HIApplication *)application;
+- (void)selectContact:(id<HIPerson>)contact;
 - (void)selectContact:(id<HIPerson>)contact address:(HIAddress *)address;
 - (void)lockAddress;
+- (void)showPaymentRequest:(int)sessionId details:(NSDictionary *)data;
+- (void)showPaymentRequestLoadingBox;
+- (void)hidePaymentRequestLoadingBox;
 
 - (IBAction)cancelClicked:(id)sender;
 - (IBAction)sendClicked:(id)sender;

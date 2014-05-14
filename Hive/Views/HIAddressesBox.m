@@ -245,18 +245,18 @@ static NSString *const KEY_WALLET_HASH = @"walletHash";
 - (void)showQRCodeWindow:(NSButton *)sender {
     NSString *address = [[BCClient sharedClient] walletHash];
     HIProfile *profile = [[HIProfile alloc] init];
-    NSString *bitcoinURL;
+    NSString *bitcoinURI;
 
     if (profile.hasName) {
-        bitcoinURL = [NSString stringWithFormat:@"bitcoin:%@?label=%@",
+        bitcoinURI = [NSString stringWithFormat:@"bitcoin:%@?label=%@",
                       address,
                       [profile.name stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]];
     } else {
-        bitcoinURL = [NSString stringWithFormat:@"bitcoin:%@", address];
+        bitcoinURI = [NSString stringWithFormat:@"bitcoin:%@", address];
     }
 
     self.QRCodeWindowController = [HIQRCodeWindowController new];
-    self.QRCodeWindowController.QRCodeString = bitcoinURL;
+    self.QRCodeWindowController.QRCodeString = bitcoinURI;
     self.QRCodeWindowController.label = address;
 
     [self zoomQRCodeWindowFromButton:sender];
