@@ -55,6 +55,8 @@
 
         __block HISendBitcoinsWindowController *window;
 
+        HILogDebug(@"Loading remote payment request from %@", URLString);
+
         [manager openPaymentRequestFromURL:URLString
                                      error:&callError
                                   callback:^(NSError *loadError, int sessionId, NSDictionary *data) {
@@ -89,6 +91,8 @@
 }
 
 - (void)handlePaymentRequestURLErrorForURL:(NSString *)URLString {
+    HILogWarn(@"Payment request URL is invalid: %@", URLString);
+
     NSString *title = NSLocalizedString(@"This payment request link is invalid.",
                                         @"Alert title when URL to a payment request file is not valid");
 

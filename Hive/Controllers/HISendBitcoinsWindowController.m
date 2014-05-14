@@ -291,6 +291,8 @@ NSString * const HISendBitcoinsWindowSuccessKey = @"success";
 }
 
 - (void)showPaymentRequest:(int)sessionId details:(NSDictionary *)data {
+    HILogDebug(@"Payment request data loaded: %@", data);
+
     _paymentRequestSession = sessionId;
     [self usePaymentRequestTitle];
 
@@ -694,6 +696,8 @@ NSString * const HISendBitcoinsWindowSuccessKey = @"success";
 - (void)sendPaymentRequest:(int)sessionId password:(HIPasswordHolder *)password {
     void (^callback)(NSError*, NSDictionary*) = ^(NSError *sendError, NSDictionary *data) {
         if (sendError) {
+            HILogWarn(@"Payment sending failed: %@", sendError);
+
             [self.sendButton hideSpinner];
             [self.cancelButton setEnabled:YES];
             [self showPaymentSendErrorAlert];
@@ -704,12 +708,16 @@ NSString * const HISendBitcoinsWindowSuccessKey = @"success";
 
     NSError *callError = nil;
 
+    HILogDebug(@"Submitting payment request...");
+
     [[HIBitcoinManager defaultManager] sendPaymentRequest:sessionId
                                                  password:password.data
                                                     error:&callError
                                                  callback:callback];
 
     if (callError) {
+        HILogWarn(@"Payment could not be sent: %@", callError);
+
         if (callError.code == kHIBitcoinManagerWrongPassword) {
             [self.window hiShake];
         } else if (callError.code == kHIBitcoinManagerSendingDustError) {
@@ -741,6 +749,8 @@ NSString * const HISendBitcoinsWindowSuccessKey = @"success";
 }
 
 - (void)showPaymentConfirmation:(NSDictionary *)data {
+    HILogDebug(@"Payment confirmed: %@", data);
+
     NSString *memo = data[@"memo"];
 
     if (memo.length > 0) {

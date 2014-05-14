@@ -506,6 +506,8 @@ static int ddLogLevel = LOG_LEVEL_VERBOSE;
             HIBitcoinManager *manager = [HIBitcoinManager defaultManager];
             NSError *callError = nil;
 
+            HILogDebug(@"Opening local payment request file from %@", filename);
+
             [manager openPaymentRequestFromFile:filename
                                           error:&callError
                                        callback:^(NSError *loadError, int sessionId, NSDictionary *data) {
