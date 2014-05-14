@@ -122,7 +122,10 @@ NSString * const HISendBitcoinsWindowSuccessKey = @"success";
 
 - (void)showWindow:(id)sender {
     [super showWindow:sender];
+    [self focusAppropriateField];
+}
 
+- (void)focusAppropriateField {
     if (!_lockedAddress) {
         [self.window makeFirstResponder:self.nameLabel];
     } else if (!_amount) {
@@ -321,6 +324,8 @@ NSString * const HISendBitcoinsWindowSuccessKey = @"success";
     if (memo.length > 0) {
         [self setDetailsText:memo];
     }
+
+    [self focusAppropriateField];
 }
 
 - (void)showPaymentRequestLoadingBox {
