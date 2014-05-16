@@ -151,8 +151,7 @@ NSString * const HISendBitcoinsWindowSuccessKey = @"success";
 }
 
 - (void)updateSendButtonEnabled {
-    NSString *hash = _hashAddress ?: self.nameLabel.stringValue;
-    self.sendButtonEnabled = self.amountFieldValue > 0 && hash.length > 0;
+    self.sendButtonEnabled = self.amountFieldValue > 0 && self.currentRecipient.length > 0;
 }
 
 - (void)showDetailsSection {
@@ -555,7 +554,11 @@ NSString * const HISendBitcoinsWindowSuccessKey = @"success";
 
 - (satoshi_t)currentFee {
     return [[BCClient sharedClient] feeWhenSendingBitcoin:self.amountFieldValue
-                                              toRecipient:(_hashAddress ?: self.nameLabel.stringValue)];
+                                              toRecipient:self.currentRecipient];
+}
+
+- (NSString *)currentRecipient {
+    return _hashAddress ?: self.nameLabel.stringValue;
 }
 
 - (IBAction)showFeePopover:(NSButton *)sender {
@@ -619,7 +622,7 @@ NSString * const HISendBitcoinsWindowSuccessKey = @"success";
                 [self sendPaymentRequest:_paymentRequestSession password:nil];
             }
         } else {
-            NSString *target = _hashAddress ?: self.nameLabel.stringValue;
+            NSString *target = self.currentRecipient;
 
             if (target.length == 0) {
                 [self showNoAddressAlert];
