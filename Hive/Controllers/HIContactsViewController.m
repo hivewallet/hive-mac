@@ -14,8 +14,9 @@
 #import "HINavigationController.h"
 #import "HINewContactViewController.h"
 #import "NSColor+Hive.h"
+#import "HINameFormatService.h"
 
-@interface HIContactsViewController()
+@interface HIContactsViewController()<HINameFormatServiceObserver>
 
 @property (strong) IBOutlet NSTableView *tableView;
 @property (strong) IBOutlet NSScrollView *scrollView;
@@ -67,6 +68,11 @@
 
 - (void)viewWillAppear {
     [self.arrayController rearrangeObjects];
+    [[HINameFormatService sharedService] addObserver:self];
+}
+
+- (void)viewWillDisappear {
+    [[HINameFormatService sharedService] removeObserver:self];
 }
 
 - (void)dealloc {
@@ -157,6 +163,12 @@
 
         [self.tableView deselectRow:row];
     });
+}
+
+#pragma mark - HINameFormatServiceObserver
+
+- (void)nameFormatDidChange {
+    [self.arrayController rearrangeObjects];
 }
 
 @end

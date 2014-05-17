@@ -28,6 +28,7 @@
 		1AA10A3DE7069E497A59CF0C /* HINotificationService.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AA1022DA4CD99B7CB61C335 /* HINotificationService.m */; };
 		1AA10AB8CB13510790BD9A6D /* HIPasswordHolder.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AA10711079E121245A12DED /* HIPasswordHolder.m */; };
 		1AA10B3C94C377F4EF024D41 /* HIProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AA1013FB9712D7B30A91BFB /* HIProfileViewController.m */; };
+		1AA10C18B4A4DB69D11D2865 /* HINameFormatService.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AA10FA59EE4E8EDFD4C96AA /* HINameFormatService.m */; };
 		1AA10CB8A5A84BFA71D3D0F6 /* HIKeyPreferencesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AA10535D664FC91503D3769 /* HIKeyPreferencesViewController.m */; };
 		1AA10D8123CFE9FDA6CFFEA0 /* HISendFeedbackService.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AA1087CF3AB1F831B230294 /* HISendFeedbackService.m */; };
 		1AA10DECEE3B99EDD1C14B81 /* HICurrencyFormatServiceSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AA107B12E9AB06FCF455005 /* HICurrencyFormatServiceSpec.m */; };
@@ -330,6 +331,7 @@
 		1AA10AA07C166902BE59EB57 /* HIBreadcrumbsView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HIBreadcrumbsView.m; sourceTree = "<group>"; };
 		1AA10ABE84E126AEFF538618 /* HINotificationService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HINotificationService.h; sourceTree = "<group>"; };
 		1AA10AD24CA867B468C6409C /* HIWizardButtonCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HIWizardButtonCell.h; sourceTree = "<group>"; };
+		1AA10AF547346B009D38D852 /* HINameFormatService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HINameFormatService.h; sourceTree = "<group>"; };
 		1AA10B46D06417F03AD71274 /* HIDirectoryDataService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HIDirectoryDataService.m; sourceTree = "<group>"; };
 		1AA10B56EFB8D052C7EEFF9E /* HIEmptyTransactionsView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HIEmptyTransactionsView.m; sourceTree = "<group>"; };
 		1AA10B9F1D9322FFF21821DA /* NSWindow+HIShake.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSWindow+HIShake.m"; sourceTree = "<group>"; };
@@ -346,6 +348,7 @@
 		1AA10ED2A6A54B40FB3067FD /* HIDraggableButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HIDraggableButton.m; sourceTree = "<group>"; };
 		1AA10EF74F3C5F1303FD333E /* HIGradientButtonCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HIGradientButtonCell.h; sourceTree = "<group>"; };
 		1AA10F3E7660E657A58361D9 /* HIProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HIProfileViewController.h; sourceTree = "<group>"; };
+		1AA10FA59EE4E8EDFD4C96AA /* HINameFormatService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HINameFormatService.m; sourceTree = "<group>"; };
 		1AA10FF5AC215B56078E2A1F /* HIWizardWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HIWizardWindowController.h; sourceTree = "<group>"; };
 		1EFBACBE45EB458A8ED83785 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		24178E2D1861005100A73D4E /* HIPasswordChangeWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HIPasswordChangeWindowController.h; sourceTree = "<group>"; };
@@ -2433,6 +2436,8 @@
 				1AA1087CF3AB1F831B230294 /* HISendFeedbackService.m */,
 				1AA10D9CBDE4AF80B9B560A0 /* HIShortcutService.h */,
 				1AA1085915844864667B118C /* HIShortcutService.m */,
+				1AA10FA59EE4E8EDFD4C96AA /* HINameFormatService.m */,
+				1AA10AF547346B009D38D852 /* HINameFormatService.h */,
 			);
 			path = Backend;
 			sourceTree = "<group>";
@@ -3171,6 +3176,7 @@
 				1AA10F7BD079E23BAB09D4E1 /* HIPreferencesWindowController.m in Sources */,
 				1AA10CB8A5A84BFA71D3D0F6 /* HIKeyPreferencesViewController.m in Sources */,
 				1AA10F0AB0B36A26463B74A9 /* HIShortcutService.m in Sources */,
+				1AA10C18B4A4DB69D11D2865 /* HINameFormatService.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

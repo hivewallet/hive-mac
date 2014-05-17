@@ -442,7 +442,7 @@ NSString * const BCClientPasswordChangedNotification = @"BCClientPasswordChanged
 
         if (response.count > 0) {
             HIContact *contact = response[0];
-            transaction.senderName = [NSString stringWithFormat:@"%@ %@", contact.firstname, contact.lastname];
+            transaction.senderName = contact.name;
             transaction.senderEmail = contact.email;
             transaction.contact = contact;
         }

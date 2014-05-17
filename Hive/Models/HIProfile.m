@@ -9,6 +9,7 @@
 #import "BCClient.h"
 #import "HIAddress.h"
 #import "HIProfile.h"
+#import "HINameFormatService.h"
 
 @implementation HIProfileAddress
 
@@ -79,18 +80,7 @@
 }
 
 - (NSString *)name {
-    NSString *first = self.firstname;
-    NSString *last = self.lastname;
-
-    if (first.length > 0 && last.length > 0) {
-        return [NSString stringWithFormat:@"%@ %@", self.firstname, self.lastname];
-    } else if (first.length > 0) {
-        return self.firstname;
-    } else if (last.length > 0) {
-        return self.lastname;
-    } else {
-        return NSLocalizedString(@"Anonymous", @"Anonymous username for profile page");
-    }
+    return [[HINameFormatService sharedService] fullNameForPerson:self];
 }
 
 - (BOOL)hasName {
