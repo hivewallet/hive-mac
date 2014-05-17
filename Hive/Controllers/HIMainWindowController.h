@@ -19,11 +19,7 @@
 
 @interface HIMainWindowController : NSWindowController <HISidebarControllerDelegate>
 
-@property (strong) IBOutlet NSView *contentView;
-@property (strong) IBOutlet NSButton *sendButton;
-@property (strong) IBOutlet HILockScreenViewController *lockScreenController;
-@property (strong) IBOutlet HISidebarController *sidebarController;
-@property (strong) IBOutlet NSView *networkErrorView;
+@property (strong, readonly) HILockScreenViewController *lockScreenController;
 
 - (void)switchToPanel:(Class)panelClass;
 

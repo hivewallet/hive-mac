@@ -22,6 +22,9 @@ static NSString * const AppStoreAppFilename = @"app-store";
 
 @interface HIApplicationsViewController ()
 
+@property (weak) IBOutlet NSCollectionView *collectionView;
+@property (strong) IBOutlet NSArrayController *arrayController;
+
 - (IBAction)getMoreAppsClicked:(id)sender;
 
 @end

@@ -5,9 +5,6 @@
  */
 @interface HIPasswordCreationInputHandler : NSObject
 
-@property (nonatomic, strong) IBOutlet NSTextField *passwordField;
-@property (nonatomic, strong) IBOutlet NSTextField *repeatedPasswordField;
-
 - (void)resetInput;
 - (void)textDidChangeInTextField:(NSTextField *)textField;
 - (void)editingDidEnd;

@@ -12,6 +12,12 @@
 #import "HIDebuggingInfoWindowController.h"
 #import "HITransaction.h"
 
+@interface HIDebuggingInfoWindowController()
+
+@property (strong) IBOutlet NSTextView *textView;
+
+@end
+
 @implementation HIDebuggingInfoWindowController
 
 - (instancetype)init {

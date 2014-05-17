@@ -1,6 +1,13 @@
 #import "HIPasswordCreationInputHandler.h"
 #import "HIPasswordHolder.h"
 
+@interface HIPasswordCreationInputHandler()
+
+@property (nonatomic, strong) IBOutlet NSTextField *passwordField;
+@property (nonatomic, strong) IBOutlet NSTextField *repeatedPasswordField;
+
+@end
+
 @implementation HIPasswordCreationInputHandler
 
 - (void)resetInput {

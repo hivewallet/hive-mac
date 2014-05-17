@@ -12,10 +12,9 @@
 
 @interface HITransactionCellView : NSTableCellView
 
-@property (strong, nonatomic) IBOutlet NSTextField *dateLabel;
-@property (strong, nonatomic) IBOutlet NSImageView *directionMark;
-@property (strong, nonatomic) IBOutlet NSTextField *pendingLabel;
-@property (strong, nonatomic) IBOutlet NSButton *shareButton;
+@property (strong, nonatomic, readonly) NSTextField *dateLabel;
+@property (strong, nonatomic, readonly) NSImageView *directionMark;
+@property (strong, nonatomic, readonly) NSTextField *pendingLabel;
 
 @property (nonatomic, copy) NSAttributedString *shareText;
 

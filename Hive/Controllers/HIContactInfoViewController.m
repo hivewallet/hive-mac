@@ -25,6 +25,12 @@
     HIViewController *_parent;
 }
 
+@property (weak) IBOutlet HIAddressesBox *addressBoxView;
+@property (weak) IBOutlet NSTextField *profileEmailField;
+@property (weak) IBOutlet NSScrollView *profileScrollView;
+@property (weak) IBOutlet NSView *profileScrollContent;
+@property (weak) IBOutlet NSButton *editButton;
+
 @end
 
 @implementation HIContactInfoViewController

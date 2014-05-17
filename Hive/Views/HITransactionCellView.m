@@ -10,6 +10,11 @@
 
 @interface HITransactionCellView ()
 
+@property (strong, nonatomic) IBOutlet NSTextField *dateLabel;
+@property (strong, nonatomic) IBOutlet NSImageView *directionMark;
+@property (strong, nonatomic) IBOutlet NSTextField *pendingLabel;
+@property (strong, nonatomic) IBOutlet NSButton *shareButton;
+
 @property (nonatomic, assign) BOOL mouseInside;
 @property (nonatomic, strong) NSTrackingArea *trackingArea;
 

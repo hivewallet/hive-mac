@@ -12,6 +12,6 @@
 
 @interface HIContactAutocompleteCellView : NSTableCellView
 
-@property (nonatomic, strong) IBOutlet NSTextField *addressLabel;
+@property (nonatomic, strong, readonly) NSTextField *addressLabel;
 
 @end

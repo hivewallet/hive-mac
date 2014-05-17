@@ -31,6 +31,8 @@
     NSMutableDictionary *_sourceFiles;
 }
 
+@property (weak) IBOutlet WebView *webView;
+
 @end
 
 @implementation HIApplicationRuntimeViewController

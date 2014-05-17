@@ -30,11 +30,9 @@ extern const NSInteger SidebarButtonHeight;
 @interface HISidebarController : NSObject
 
 @property (nonatomic, copy, readonly) NSArray *viewControllers;
-@property (strong, nonatomic) IBOutlet NSView *view;
-@property (strong, nonatomic) IBOutlet NSButton *sendButton;
 @property (nonatomic, assign) BOOL enabled;
 
-@property (assign, nonatomic) IBOutlet id<HISidebarControllerDelegate> delegate;
+@property (strong, nonatomic, readonly) NSView *view;
 
 - (void)addViewController:(HIViewController *)controller;
 - (void)selectControllerAtIndex:(NSInteger)index;

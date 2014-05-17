@@ -8,6 +8,11 @@
 
 #import "HIBackupActionsCellView.h"
 
-@implementation HIBackupActionsCellView
+@interface HIBackupActionsCellView()
 
+@property (nonatomic, strong) IBOutlet NSButton *enableButton;
+
+@end
+
+@implementation HIBackupActionsCellView
 @end

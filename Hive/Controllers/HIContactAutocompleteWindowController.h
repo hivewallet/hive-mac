@@ -21,8 +21,6 @@
 
 @interface HIContactAutocompleteWindowController : NSWindowController <NSTableViewDelegate>
 
-@property (nonatomic, strong) IBOutlet NSArrayController *arrayController;
-@property (nonatomic, strong) IBOutlet NSTableView *tableView;
 @property (nonatomic, unsafe_unretained) id<HIContactAutocompleteDelegate> delegate;
 
 - (void)searchWithContact:(HIContact *)contact;

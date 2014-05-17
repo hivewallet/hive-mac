@@ -8,6 +8,12 @@
 
 #import "HIContactAutocompleteCellView.h"
 
+@interface HIContactAutocompleteCellView()
+
+@property (nonatomic, strong) IBOutlet NSTextField *addressLabel;
+
+@end
+
 @implementation HIContactAutocompleteCellView
 
 - (void)setBackgroundStyle:(NSBackgroundStyle)backgroundStyle {

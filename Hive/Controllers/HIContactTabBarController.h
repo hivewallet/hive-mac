@@ -26,8 +26,6 @@
 
 @interface HIContactTabBarController : NSViewController
 
-@property (nonatomic, strong) IBOutlet id<HIProfileTabBarControllerDelegate> tabDelegate;
-
 - (void)selectTabAtIndex:(NSUInteger)selectedIndex;
 
 @end

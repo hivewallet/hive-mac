@@ -13,11 +13,6 @@
 
 @interface HIErrorWindowController : NSWindowController
 
-@property (strong) IBOutlet NSTextField *nameField;
-@property (strong) IBOutlet NSTextField *emailField;
-@property (strong) IBOutlet NSTextView *comments;
-@property (strong) IBOutlet NSTextView *exceptionDetails;
-
 - (instancetype)initWithException:(NSException *)exception;
 - (IBAction)cancelReport:(id)sender;
 - (IBAction)sendReport:(id)sender;

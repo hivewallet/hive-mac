@@ -18,6 +18,13 @@
     NSArray *_panelControllers;
 }
 
+@property (strong) IBOutlet NSImageView *photoView;
+@property (strong) IBOutlet NSTextField *nameLabel;
+@property (strong) IBOutlet NSButton *sendBitcoinButton;
+@property (strong) IBOutlet HIProfileTabView *tabView;
+@property (strong) IBOutlet HIContactTabBarController *tabBarController;
+@property (strong) IBOutlet NSView *contentView;
+
 @end
 
 @implementation HIContactViewController

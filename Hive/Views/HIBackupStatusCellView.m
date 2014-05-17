@@ -8,6 +8,11 @@
 
 #import "HIBackupStatusCellView.h"
 
-@implementation HIBackupStatusCellView
+@interface HIBackupStatusCellView()
 
+@property (nonatomic, strong) IBOutlet NSTextField *statusDetailsLabel;
+
+@end
+
+@implementation HIBackupStatusCellView
 @end

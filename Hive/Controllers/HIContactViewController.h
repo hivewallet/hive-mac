@@ -19,13 +19,6 @@
 
 @interface HIContactViewController : HIViewController <HIProfileTabBarControllerDelegate>
 
-@property (strong) IBOutlet NSImageView *photoView;
-@property (strong) IBOutlet NSTextField *nameLabel;
-@property (strong) IBOutlet NSButton *sendBitcoinButton;
-@property (strong) IBOutlet HIProfileTabView *tabView;
-@property (strong) IBOutlet HIContactTabBarController *tabBarController;
-@property (strong) IBOutlet NSView *contentView;
-
 - (instancetype)initWithContact:(HIContact *)aContact;
 - (IBAction)sendBitcoinsPressed:(id)sender;
 

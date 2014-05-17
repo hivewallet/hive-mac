@@ -17,7 +17,6 @@
 @interface HIApplicationRuntimeViewController : HIViewController
 
 @property (strong) HIApplication *application;
-@property (weak) IBOutlet WebView *webView;
 
 - (void)requestPaymentToHash:(NSString *)hash
                       amount:(satoshi_t)amount

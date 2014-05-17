@@ -17,12 +17,6 @@
 
 @interface HIContactInfoViewController : NSViewController
 
-@property (weak) IBOutlet HIAddressesBox *addressBoxView;
-@property (weak) IBOutlet NSTextField *profileEmailField;
-@property (weak) IBOutlet NSScrollView *profileScrollView;
-@property (weak) IBOutlet NSView *profileScrollContent;
-@property (weak) IBOutlet NSButton *editButton;
-
 - (instancetype)initWithParent:(HIViewController *)parent;
 - (IBAction)editButtonClicked:(NSButton *)sender;
 - (void)configureViewForContact:(id<HIPerson>)contact;

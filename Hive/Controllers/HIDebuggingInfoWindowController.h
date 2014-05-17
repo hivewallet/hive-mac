@@ -11,7 +11,4 @@
  */
 
 @interface HIDebuggingInfoWindowController : NSWindowController <NSWindowDelegate>
-
-@property (strong) IBOutlet NSTextView *textView;
-
 @end

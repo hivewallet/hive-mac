@@ -16,7 +16,5 @@
 
 @property (nonatomic, readonly, getter = managedObjectContext) NSManagedObjectContext *managedObjectContext;
 @property (nonatomic, readonly, getter = sortDescriptors) NSArray *sortDescriptors;
-@property (weak) IBOutlet NSCollectionView *collectionView;
-@property (strong) IBOutlet NSArrayController *arrayController;
 
 @end

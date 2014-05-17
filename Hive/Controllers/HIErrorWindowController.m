@@ -22,6 +22,11 @@
     NSException *_exception;
 }
 
+@property (strong) IBOutlet NSTextField *nameField;
+@property (strong) IBOutlet NSTextField *emailField;
+@property (strong) IBOutlet NSTextView *comments;
+@property (strong) IBOutlet NSTextView *exceptionDetails;
+
 @end
 
 @implementation HIErrorWindowController

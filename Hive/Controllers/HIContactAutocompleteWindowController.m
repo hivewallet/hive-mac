@@ -19,6 +19,9 @@ static const CGFloat MaxAutocompleteHeight = 300.0;
     NSMutableDictionary *_trackingAreas;
 }
 
+@property (nonatomic, strong) IBOutlet NSArrayController *arrayController;
+@property (nonatomic, strong) IBOutlet NSTableView *tableView;
+
 @end
 
 @implementation HIContactAutocompleteWindowController
