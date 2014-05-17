@@ -559,8 +559,12 @@ NSString * const BCClientPasswordChangedNotification = @"BCClientPasswordChanged
             completion:completion];
 }
 
-- (satoshi_t)feeWhenSendingBitcoin:(uint64)amount toRecipient:(NSString *)recipient {
-    return [[HIBitcoinManager defaultManager] calculateTransactionFeeForSendingCoins:amount toRecipient:recipient];
+- (satoshi_t)feeWhenSendingBitcoin:(uint64)amount
+                       toRecipient:(NSString *)recipient
+                             error:(NSError **)error {
+    return [[HIBitcoinManager defaultManager] calculateTransactionFeeForSendingCoins:amount
+                                                                         toRecipient:recipient
+                                                                               error:error];
 }
 
 - (void)addTransactionObserver:(id <BCTransactionObserver>)observer {

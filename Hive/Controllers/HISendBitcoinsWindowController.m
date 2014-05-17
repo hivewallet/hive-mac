@@ -553,12 +553,15 @@ NSString * const HISendBitcoinsWindowSuccessKey = @"success";
 }
 
 - (satoshi_t)currentFee {
-    return [[BCClient sharedClient] feeWhenSendingBitcoin:self.amountFieldValue
-                                              toRecipient:self.currentRecipient];
+    NSError *error = nil;
+    satoshi_t fee = [[BCClient sharedClient] feeWhenSendingBitcoin:self.amountFieldValue
+                                                       toRecipient:self.currentRecipient
+                                                             error:&error];
+    return error ? 0 : fee;
 }
 
 - (NSString *)currentRecipient {
-    return _hashAddress ?: self.nameLabel.stringValue;
+    return (_hashAddress ?: self.nameLabel.stringValue);
 }
 
 - (IBAction)showFeePopover:(NSButton *)sender {
