@@ -226,7 +226,6 @@
 		D901F4F917B273440071780D /* BitcoinJKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D901F4F517B272CE0071780D /* BitcoinJKit.framework */; };
 		D91FE827179887C5001B37D8 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = D91FE826179887C4001B37D8 /* libz.dylib */; };
 		D9235373177C4222003533DF /* HIApplication.m in Sources */ = {isa = PBXBuildFile; fileRef = D9235372177C4222003533DF /* HIApplication.m */; };
-		D9235388177C6779003533DF /* JavaScriptCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D9235387177C6779003533DF /* JavaScriptCore.framework */; };
 		D938F01017E6278B00566FFD /* HITextFieldCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D938F00F17E6278B00566FFD /* HITextFieldCell.m */; };
 		D939FE9C17F076E80088F5D3 /* HICopyView.m in Sources */ = {isa = PBXBuildFile; fileRef = D939FE9B17F076E80088F5D3 /* HICopyView.m */; };
 		D94815B417D492A0006A0312 /* HITitleView.m in Sources */ = {isa = PBXBuildFile; fileRef = D94815B317D492A0006A0312 /* HITitleView.m */; };
@@ -234,7 +233,6 @@
 		D94815F217D4D9AF006A0312 /* HISeparatorView.m in Sources */ = {isa = PBXBuildFile; fileRef = D94815F117D4D9AF006A0312 /* HISeparatorView.m */; };
 		D94815F517D72AF8006A0312 /* HITextField.m in Sources */ = {isa = PBXBuildFile; fileRef = D94815F417D72AF8006A0312 /* HITextField.m */; };
 		D958A8B817E8547A00CED98C /* HIFlippedView.m in Sources */ = {isa = PBXBuildFile; fileRef = D958A8B717E8547A00CED98C /* HIFlippedView.m */; };
-		D95929DD17742B71008B4F43 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D95929DC17742B70008B4F43 /* WebKit.framework */; };
 		D962AF031769FEF9009F882A /* Hive.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D962AF011769FEF9009F882A /* Hive.xcdatamodeld */; };
 		D9716B6D17D88F8800888F4E /* HIDoneButtonCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D9716B6C17D88F8800888F4E /* HIDoneButtonCell.m */; };
 		D9716B7217D8B42E00888F4E /* HIButtonCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D9716B7117D8B42E00888F4E /* HIButtonCell.m */; };
@@ -1941,7 +1939,6 @@
 		D91FE826179887C4001B37D8 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		D9235371177C4222003533DF /* HIApplication.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HIApplication.h; path = Database/HIApplication.h; sourceTree = "<group>"; };
 		D9235372177C4222003533DF /* HIApplication.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HIApplication.m; path = Database/HIApplication.m; sourceTree = "<group>"; };
-		D9235387177C6779003533DF /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 		D938F00E17E6278B00566FFD /* HITextFieldCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HITextFieldCell.h; sourceTree = "<group>"; };
 		D938F00F17E6278B00566FFD /* HITextFieldCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HITextFieldCell.m; sourceTree = "<group>"; };
 		D939FE9A17F076E80088F5D3 /* HICopyView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HICopyView.h; sourceTree = "<group>"; };
@@ -1956,7 +1953,6 @@
 		D94815F417D72AF8006A0312 /* HITextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HITextField.m; sourceTree = "<group>"; };
 		D958A8B617E8547A00CED98C /* HIFlippedView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HIFlippedView.h; sourceTree = "<group>"; };
 		D958A8B717E8547A00CED98C /* HIFlippedView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HIFlippedView.m; sourceTree = "<group>"; };
-		D95929DC17742B70008B4F43 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
 		D962AF021769FEF9009F882A /* Hive.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Hive.xcdatamodel; sourceTree = "<group>"; };
 		D9716B6B17D88F8800888F4E /* HIDoneButtonCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HIDoneButtonCell.h; sourceTree = "<group>"; };
 		D9716B6C17D88F8800888F4E /* HIDoneButtonCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HIDoneButtonCell.m; sourceTree = "<group>"; };
@@ -1999,8 +1995,6 @@
 			files = (
 				D91FE827179887C5001B37D8 /* libz.dylib in Frameworks */,
 				D901F4F917B273440071780D /* BitcoinJKit.framework in Frameworks */,
-				D9235388177C6779003533DF /* JavaScriptCore.framework in Frameworks */,
-				D95929DD17742B71008B4F43 /* WebKit.framework in Frameworks */,
 				58A149CA18C61BB900591F17 /* HockeySDK.framework in Frameworks */,
 				05D9F526F5294257A0422835 /* libPods.a in Frameworks */,
 			);
@@ -2547,8 +2541,6 @@
 				1EFBACBE45EB458A8ED83785 /* libPods.a */,
 				D91FE826179887C4001B37D8 /* libz.dylib */,
 				58A149C918C61BB900591F17 /* HockeySDK.framework */,
-				D9235387177C6779003533DF /* JavaScriptCore.framework */,
-				D95929DC17742B70008B4F43 /* WebKit.framework */,
 				D91FE8071793FEFC001B37D8 /* BitcoinKit.xcodeproj */,
 			);
 			name = Frameworks;
