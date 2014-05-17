@@ -21,9 +21,10 @@
 @property (strong) IBOutlet NSScrollView *scrollView;
 @property (strong) IBOutlet NSView *navigationView;
 @property (nonatomic, readonly, getter = managedObjectContext) NSManagedObjectContext *managedObjectContext;
-@property (nonatomic, readonly, getter = sortDescriptors) NSArray *sortDescriptors;
+@property (nonatomic, copy) NSArray *sortDescriptors;
 @property (strong) IBOutlet NSArrayController *arrayController;
 @property (strong) IBOutlet NSView *foreverAloneScreen;
+@property (nonatomic, assign) BOOL sortByLastName;
 
 - (IBAction)newContactClicked:(NSButton *)sender;
 
@@ -57,6 +58,11 @@
                                              selector:@selector(onLocaleChange)
                                                  name:NSCurrentLocaleDidChangeNotification
                                                object:nil];
+    [self bind:@"sortByLastName"
+      toObject:[NSUserDefaults standardUserDefaults]
+   withKeyPath:@"SortByLastName"
+       options:nil];
+    [self updateSortDescriptors];
 }
 
 - (void)viewWillAppear {
@@ -64,6 +70,7 @@
 }
 
 - (void)dealloc {
+    [self unbind:@"sortByLastName"];
     [self.arrayController removeObserver:self forKeyPath:@"arrangedObjects.@count"];
     [[NSNotificationCenter defaultCenter] removeObserver:self];
 
@@ -106,13 +113,21 @@
     return DBM;
 }
 
-- (NSArray *)sortDescriptors {
-    return @[[NSSortDescriptor sortDescriptorWithKey:@"lastname"
-                                           ascending:YES
-                                            selector:@selector(localizedStandardCompare:)],
-             [NSSortDescriptor sortDescriptorWithKey:@"firstname"
-                                           ascending:YES
-                                            selector:@selector(localizedStandardCompare:)]];
+- (void)setSortByLastName:(BOOL)sortByLastName {
+    _sortByLastName = sortByLastName;
+    [self updateSortDescriptors];
+}
+
+- (void)updateSortDescriptors {
+    NSSortDescriptor *lastName =
+        [NSSortDescriptor sortDescriptorWithKey:@"lastname"
+                                      ascending:YES
+                                       selector:@selector(localizedStandardCompare:)];
+    NSSortDescriptor *firstName =
+        [NSSortDescriptor sortDescriptorWithKey:@"firstname"
+                                      ascending:YES
+                                       selector:@selector(localizedStandardCompare:)];
+    self.sortDescriptors = self.sortByLastName ? @[lastName, firstName] : @[firstName, lastName];
 }
 
 #pragma mark - NSTableViewDataSource
