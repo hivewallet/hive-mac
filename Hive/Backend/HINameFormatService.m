@@ -1,4 +1,5 @@
 #import "HINameFormatService.h"
+#import "HIObservationHandler.h"
 #import "HIPerson.h"
 
 static NSString * const LastNameFirstDefaultsKey = @"LastNameFirst";
@@ -6,7 +7,7 @@ static int KVContext;
 
 @interface HINameFormatService()
 
-@property (nonatomic, strong) NSMutableSet *observers;
+@property (nonatomic, strong, readonly) HIObservationHandler *observers;
 
 @end
 
@@ -26,7 +27,7 @@ static int KVContext;
 - (id)init {
     self = [super init];
     if (self) {
-        _observers = [NSMutableSet new];
+        _observers = [HIObservationHandler new];
 
         [[NSUserDefaults standardUserDefaults] addObserver:self
                                                 forKeyPath:LastNameFirstDefaultsKey
@@ -57,15 +58,15 @@ static int KVContext;
 #pragma mark - observation
 
 - (void)addObserver:(id<HINameFormatServiceObserver>)observer {
-    [self.observers addObject:observer];
+    [self.observers addObserver:observer];
 }
 
 - (void)removeObserver:(id<HINameFormatServiceObserver>)observer {
-    [self.observers removeObject:observer];
+    [self.observers removeObserver:observer];
 }
 
 - (void)notifyObservers {
-    for (id<HINameFormatServiceObserver> observer in self.observers) {
+    for (id<HINameFormatServiceObserver> observer in self.observers.allObservers) {
         [observer nameFormatDidChange];
     }
 }
