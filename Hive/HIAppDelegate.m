@@ -100,6 +100,7 @@ static int ddLogLevel = LOG_LEVEL_VERBOSE;
 
       // enable lock screen on startup, unless it's explicitly disabled
       LockScreenEnabledDefaultsKey: @YES,
+      @"SortByLastName": @1,
     }];
 
     [NSURLProtocol registerClass:[HIApplicationURLProtocol class]];

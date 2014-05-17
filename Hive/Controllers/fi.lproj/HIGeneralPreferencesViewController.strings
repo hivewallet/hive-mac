@@ -1,0 +1,21 @@
+
+/* Class = "NSMenuItem"; title = "Last Name"; ObjectID = "DUH-JI-H8J"; */
+"DUH-JI-H8J.title" = "Last Name";
+
+/* Class = "NSTextFieldCell"; title = "Sort By:"; ObjectID = "ELC-Fb-fGt"; */
+"ELC-Fb-fGt.title" = "Sort By:";
+
+/* Class = "NSButtonCell"; title = "Following last name"; ObjectID = "eBf-qE-ozk"; */
+"eBf-qE-ozk.title" = "Following last name";
+
+/* Class = "NSButtonCell"; title = "Radio"; ObjectID = "f0t-3j-tsu"; */
+"f0t-3j-tsu.title" = "Radio";
+
+/* Class = "NSButtonCell"; title = "Before last name"; ObjectID = "kyg-PT-wnV"; */
+"kyg-PT-wnV.title" = "Before last name";
+
+/* Class = "NSTextFieldCell"; title = "Show first name:"; ObjectID = "uRu-rC-vCh"; */
+"uRu-rC-vCh.title" = "Show first name:";
+
+/* Class = "NSMenuItem"; title = "First Name"; ObjectID = "wzm-Cx-x6L"; */
+"wzm-Cx-x6L.title" = "First Name";

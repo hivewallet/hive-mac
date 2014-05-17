@@ -11,12 +11,13 @@
 #import "HIContactInfoViewController.h"
 #import "HICurrencyFormatService.h"
 #import "HIExchangeRateService.h"
+#import "HINameFormatService.h"
 #import "HIProfile.h"
 #import "HIProfileViewController.h"
 #import "NSColor+Hive.h"
 #import "NSDecimalNumber+HISatoshiConversion.h"
 
-@interface HIProfileViewController () <HIExchangeRateObserver> {
+@interface HIProfileViewController () <HIExchangeRateObserver, HINameFormatServiceObserver> {
     HIProfile *_profile;
     HIContactInfoViewController *_infoPanel;
 }
@@ -107,6 +108,11 @@
 
 - (void)viewWillAppear {
     [self refreshData];
+    [[HINameFormatService sharedService] addObserver:self];
+}
+
+- (void)viewWillDisappear {
+    [[HINameFormatService sharedService] removeObserver:self];
 }
 
 - (void)refreshData {
@@ -203,6 +209,12 @@
         self.exchangeRate = exchangeRate;
         [self updateConvertedBalanceLabel];
     }
+}
+
+#pragma mark - HINameFormatServiceObserver
+
+- (void)nameFormatDidChange {
+    [self refreshData];
 }
 
 @end

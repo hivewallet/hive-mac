@@ -8,11 +8,12 @@
 
 #import "HIContactInfoViewController.h"
 #import "HIContactViewController.h"
+#import "HINameFormatService.h"
 #import "HISendBitcoinsWindowController.h"
 #import "HITransactionsViewController.h"
 #import "NSColor+Hive.h"
 
-@interface HIContactViewController () {
+@interface HIContactViewController ()<HINameFormatServiceObserver> {
     HIContact *_contact;
     HIContactInfoViewController *_infoPanel;
     NSArray *_panelControllers;
@@ -55,6 +56,11 @@
 
 - (void)viewWillAppear {
     [self refreshData];
+    [[HINameFormatService sharedService] addObserver:self];
+}
+
+- (void)viewWillDisappear {
+    [[HINameFormatService sharedService] removeObserver:self];
 }
 
 - (void)refreshData {
@@ -83,6 +89,12 @@
 - (IBAction)sendBitcoinsPressed:(id)sender {
     HISendBitcoinsWindowController *window = [[NSApp delegate] sendBitcoinsWindowForContact:_contact];
     [window showWindow:self];
+}
+
+#pragma mark - HINameFormatServiceObserver
+
+- (void)nameFormatDidChange {
+    [self refreshData];
 }
 
 @end
