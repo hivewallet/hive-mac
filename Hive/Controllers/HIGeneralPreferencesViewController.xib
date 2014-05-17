@@ -39,14 +39,17 @@
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <popUpButtonCell key="cell" type="push" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" id="5Ps-Zf-589">
                         <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
-                        <font key="font" metaFont="system"/>
+                        <font key="font" metaFont="menu"/>
                         <menu key="menu" title="OtherViews" id="NNp-vD-ZfF">
                             <items>
                                 <menuItem title="First Name" id="wzm-Cx-x6L"/>
-                                <menuItem title="Last Name" state="on" id="DUH-JI-H8J"/>
+                                <menuItem title="Last Name" id="DUH-JI-H8J"/>
                             </items>
                         </menu>
                     </popUpButtonCell>
+                    <connections>
+                        <binding destination="jnu-HK-12I" name="selectedIndex" keyPath="values.SortByLastName" id="1dB-Rd-yHA"/>
+                    </connections>
                 </popUpButton>
                 <matrix verticalHuggingPriority="750" allowsEmptySelection="NO" autorecalculatesCellSize="YES" translatesAutoresizingMaskIntoConstraints="NO" id="s2V-GR-aA8">
                     <rect key="frame" x="235" y="72" width="147" height="38"/>
@@ -70,6 +73,9 @@
                             </buttonCell>
                         </column>
                     </cells>
+                    <connections>
+                        <binding destination="jnu-HK-12I" name="selectedIndex" keyPath="values.LastNameFirst" id="jXm-1q-Mlq"/>
+                    </connections>
                 </matrix>
             </subviews>
             <constraints>
@@ -83,5 +89,6 @@
                 <constraint firstItem="7Kh-km-ejy" firstAttribute="top" secondItem="s2V-GR-aA8" secondAttribute="bottom" constant="8" id="zcG-Vb-7o3"/>
             </constraints>
         </customView>
+        <userDefaultsController representsSharedInstance="YES" id="jnu-HK-12I"/>
     </objects>
 </document>
