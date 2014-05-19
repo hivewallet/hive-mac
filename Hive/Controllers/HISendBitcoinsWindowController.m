@@ -344,7 +344,10 @@ NSString * const HISendBitcoinsWindowSuccessKey = @"success";
     }
 
     [self setLockedAddress:recipientName];
-    [self setLockedAmount:amount.integerValue];
+
+    if ([amount integerValue] > 0) {
+        [self setLockedAmount:amount.integerValue];
+    }
 
     if (memo.length == 0) {
         memo = data[@"bitcoinURIMessage"];
