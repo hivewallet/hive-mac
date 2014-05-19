@@ -15,10 +15,10 @@
 "brF-Bb-pc1.title" = "Activaţi";
 
 /* Class = "NSTableColumn"; headerCell.title = "Backup type"; ObjectID = "gS6-M0-vFe"; */
-"gS6-M0-vFe.headerCell.title" = "Tipul Backup-ului";
+"gS6-M0-vFe.headerCell.title" = "Tipul de backup";
 
 /* Class = "NSTableColumn"; headerCell.title = "Status"; ObjectID = "ggB-aI-7mE"; */
 "ggB-aI-7mE.headerCell.title" = "Status";
 
 /* Class = "NSTextFieldCell"; title = "Backup type"; ObjectID = "mMS-Su-94P"; */
-"mMS-Su-94P.title" = "Tipul Backup-ului";
+"mMS-Su-94P.title" = "Tipul de backup";
