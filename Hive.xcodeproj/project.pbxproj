@@ -1723,6 +1723,12 @@
 		58A37BA6180DBAA100CFCDE3 /* da */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = da; path = da.lproj/Localizable.strings; sourceTree = "<group>"; };
 		58AE8CB919226AF800946C97 /* icon-success.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-success.png"; sourceTree = "<group>"; };
 		58AE8CBA19226AF800946C97 /* icon-success@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-success@2x.png"; sourceTree = "<group>"; };
+		58AE8CC0192A8DE900946C97 /* sr-Latn */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = "sr-Latn"; path = "sr-Latn.lproj/HIGeneralPreferencesViewController.xib"; sourceTree = "<group>"; };
+		58AE8CC1192A8DEA00946C97 /* sr */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = sr; path = sr.lproj/HIGeneralPreferencesViewController.xib; sourceTree = "<group>"; };
+		58AE8CC2192A8DEB00946C97 /* ja */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = ja; path = ja.lproj/HIGeneralPreferencesViewController.xib; sourceTree = "<group>"; };
+		58AE8CC3192A8DEC00946C97 /* pt */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = pt; path = pt.lproj/HIGeneralPreferencesViewController.xib; sourceTree = "<group>"; };
+		58AE8CC4192A8DED00946C97 /* ro */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = ro; path = ro.lproj/HIGeneralPreferencesViewController.xib; sourceTree = "<group>"; };
+		58AE8CC5192A8DEE00946C97 /* hu */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = hu; path = hu.lproj/HIGeneralPreferencesViewController.xib; sourceTree = "<group>"; };
 		58C85B5918FFE90700B2C350 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/HISignMessageWindowController.xib; sourceTree = "<group>"; };
 		58C85B5D18FFE92100B2C350 /* pl */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = pl; path = pl.lproj/HISignMessageWindowController.xib; sourceTree = "<group>"; };
 		58C85B5E18FFE92200B2C350 /* fr */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = fr; path = fr.lproj/HISignMessageWindowController.xib; sourceTree = "<group>"; };
@@ -3395,6 +3401,12 @@
 				24FA98801927893100D7058F /* tr */,
 				24FA98811927893100D7058F /* pt-PT */,
 				24FA98821927893200D7058F /* sv */,
+				58AE8CC0192A8DE900946C97 /* sr-Latn */,
+				58AE8CC1192A8DEA00946C97 /* sr */,
+				58AE8CC2192A8DEB00946C97 /* ja */,
+				58AE8CC3192A8DEC00946C97 /* pt */,
+				58AE8CC4192A8DED00946C97 /* ro */,
+				58AE8CC5192A8DEE00946C97 /* hu */,
 			);
 			name = HIGeneralPreferencesViewController.xib;
 			sourceTree = "<group>";
