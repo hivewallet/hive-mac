@@ -155,9 +155,9 @@ NSString * const HISendBitcoinsWindowSuccessKey = @"success";
 
 - (void)focusAppropriateField {
     if (!_lockedAddress) {
-        [self.window makeFirstResponder:self.nameLabel];
+        [self focusFieldAndMoveCursorToEnd:self.nameLabel];
     } else if (!_amount) {
-        [self.window makeFirstResponder:self.amountField];
+        [self focusFieldAndMoveCursorToEnd:self.amountField];
     } else {
         [self.window makeFirstResponder:nil];
     }
@@ -614,12 +614,15 @@ NSString * const HISendBitcoinsWindowSuccessKey = @"success";
 
 #pragma mark - Handling button clicks
 
+- (void)focusFieldAndMoveCursorToEnd:(NSTextField *)field {
+    [self.window makeFirstResponder:field];
+    NSText *editor = [self.window fieldEditor:YES forObject:field];
+    [editor setSelectedRange:NSMakeRange(field.stringValue.length, 0)];
+}
+
 - (void)dropdownButtonClicked:(id)sender {
     if ([sender state] == NSOnState) {
-        // focus name label, but don't select whole text, just put the cursor at the end
-        [self.window makeFirstResponder:self.nameLabel];
-        NSText *editor = [self.window fieldEditor:YES forObject:self.nameLabel];
-        [editor setSelectedRange:NSMakeRange(self.nameLabel.stringValue.length, 0)];
+        [self focusFieldAndMoveCursorToEnd:self.nameLabel];
 
         if (_contact) {
             [self startAutocompleteForCurrentContact];
