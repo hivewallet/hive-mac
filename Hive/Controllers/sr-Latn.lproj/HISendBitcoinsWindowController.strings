@@ -14,8 +14,20 @@
 /* Class = "NSTextFieldCell"; placeholderString = "Type to search..."; ObjectID = "20"; */
 "20.placeholderString" = "Ukucajte radi pretrage...";
 
-/* Class = "NSTextFieldCell"; title = "Main address"; ObjectID = "22"; */
-"22.title" = "Glavna adresa";
+/* Class = "NSTextFieldCell"; placeholderString = "or choose from the list"; ObjectID = "22"; */
+"22.placeholderString" = "or choose from the list";
+
+/* Class = "NSTextFieldCell"; title = "Loading payment details..."; ObjectID = "Agy-4s-MVS"; */
+"Agy-4s-MVS.title" = "Loading payment details...";
+
+/* Class = "NSTextFieldCell"; title = "Details:"; ObjectID = "EeC-5l-RYD"; */
+"EeC-5l-RYD.title" = "Details:";
+
+/* Class = "NSTextFieldCell"; title = "Payment successful"; ObjectID = "JAi-pl-Y47"; */
+"JAi-pl-Y47.title" = "Payment successful";
 
 /* Class = "NSTextFieldCell"; title = "Currency exchange rates are provided by BitcoinAverage markets ticker. Bitcoin prices can change quickly, so other apps or sites might show different exchange rates."; ObjectID = "dxM-9E-wwb"; */
 "dxM-9E-wwb.title" = "Currency exchange rates are provided by BitcoinAverage markets ticker. Bitcoin prices can change quickly, so other apps or sites might show different exchange rates.";
+
+/* Class = "NSButtonCell"; title = "Close"; ObjectID = "iOT-cc-UWm"; */
+"iOT-cc-UWm.title" = "Close";
