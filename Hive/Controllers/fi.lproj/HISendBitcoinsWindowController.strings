@@ -15,7 +15,7 @@
 "20.placeholderString" = "Kirjoita hakeaksesi...";
 
 /* Class = "NSTextFieldCell"; placeholderString = "or choose from the list"; ObjectID = "22"; */
-"22.placeholderString" = "or choose from the list";
+"22.placeholderString" = "tai valitse listasta";
 
 /* Class = "NSTextFieldCell"; title = "Loading payment details..."; ObjectID = "Agy-4s-MVS"; */
 "Agy-4s-MVS.title" = "Loading payment details...";
@@ -30,4 +30,4 @@
 "dxM-9E-wwb.title" = "Currency exchange rates are provided by BitcoinAverage markets ticker. Bitcoin prices can change quickly, so other apps or sites might show different exchange rates.";
 
 /* Class = "NSButtonCell"; title = "Close"; ObjectID = "iOT-cc-UWm"; */
-"iOT-cc-UWm.title" = "Close";
+"iOT-cc-UWm.title" = "Sulje";

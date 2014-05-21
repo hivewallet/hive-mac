@@ -15,7 +15,7 @@
 "20.placeholderString" = "Magtype upang maghanap...";
 
 /* Class = "NSTextFieldCell"; placeholderString = "or choose from the list"; ObjectID = "22"; */
-"22.placeholderString" = "or choose from the list";
+"22.placeholderString" = "o mamili sa listahan";
 
 /* Class = "NSTextFieldCell"; title = "Loading payment details..."; ObjectID = "Agy-4s-MVS"; */
 "Agy-4s-MVS.title" = "Loading payment details...";
@@ -30,4 +30,4 @@
 "dxM-9E-wwb.title" = "Ang mga Currency exchange rate ay nilaan ng BitcoinAverage markets ticker. Ang presyo ng Bitcoin ay nababago nang mabilisan, kaya ang ibang mga app ay maaring magpakita ng magkakaibang exchange rate.";
 
 /* Class = "NSButtonCell"; title = "Close"; ObjectID = "iOT-cc-UWm"; */
-"iOT-cc-UWm.title" = "Close";
+"iOT-cc-UWm.title" = "Isara";

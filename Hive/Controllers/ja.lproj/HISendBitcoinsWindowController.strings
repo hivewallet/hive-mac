@@ -15,7 +15,7 @@
 "20.placeholderString" = "検索...";
 
 /* Class = "NSTextFieldCell"; placeholderString = "or choose from the list"; ObjectID = "22"; */
-"22.placeholderString" = "or choose from the list";
+"22.placeholderString" = "またはリストから選ぶ";
 
 /* Class = "NSTextFieldCell"; title = "Loading payment details..."; ObjectID = "Agy-4s-MVS"; */
 "Agy-4s-MVS.title" = "Loading payment details...";
@@ -30,4 +30,4 @@
 "dxM-9E-wwb.title" = "現在の為替レートは BitcoinAverage によって提供されています。ビットコインの相場は変動しやすいため、他のアプリやサイトで違う価格が表示されていることがあります。";
 
 /* Class = "NSButtonCell"; title = "Close"; ObjectID = "iOT-cc-UWm"; */
-"iOT-cc-UWm.title" = "Close";
+"iOT-cc-UWm.title" = "閉じる";

@@ -15,7 +15,7 @@
 "20.placeholderString" = "Digite para pesquisar...";
 
 /* Class = "NSTextFieldCell"; placeholderString = "or choose from the list"; ObjectID = "22"; */
-"22.placeholderString" = "or choose from the list";
+"22.placeholderString" = "ou escolha da lista";
 
 /* Class = "NSTextFieldCell"; title = "Loading payment details..."; ObjectID = "Agy-4s-MVS"; */
 "Agy-4s-MVS.title" = "Loading payment details...";
@@ -30,4 +30,4 @@
 "dxM-9E-wwb.title" = "As cotações são fornecidas pelo site BitcoinAverage. Os preços de Bitcoin podem oscilar rapidamente, então outras aplicações ou sites podem apresentar cotações diferentes.";
 
 /* Class = "NSButtonCell"; title = "Close"; ObjectID = "iOT-cc-UWm"; */
-"iOT-cc-UWm.title" = "Close";
+"iOT-cc-UWm.title" = "Fechar";

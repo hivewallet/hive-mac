@@ -155,7 +155,7 @@ Gw
                                 <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="1" verticalCompressionResistancePriority="1" translatesAutoresizingMaskIntoConstraints="NO" id="21">
                                     <rect key="frame" x="98" y="216" width="288" height="17"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
-                                    <textFieldCell key="cell" lineBreakMode="truncatingTail" sendsActionOnEndEditing="YES" title="Indirizzo principale" placeholderString="or choose from the list" id="22">
+                                    <textFieldCell key="cell" lineBreakMode="truncatingTail" sendsActionOnEndEditing="YES" placeholderString="o scegli dalla lista" id="22">
                                         <font key="font" size="10" name="LucidaGrande"/>
                                         <color key="textColor" red="0.50653034450000001" green="0.50649648899999999" blue="0.50651627779999997" alpha="1" colorSpace="calibratedRGB"/>
                                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
@@ -423,7 +423,7 @@ Gw
                             <size key="offset" width="0.0" height="1"/>
                             <color key="color" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         </shadow>
-                        <buttonCell key="cell" type="square" title="Close" bezelStyle="shadowlessSquare" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="iOT-cc-UWm" customClass="HIButtonCell">
+                        <buttonCell key="cell" type="square" title="Chiudi" bezelStyle="shadowlessSquare" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="iOT-cc-UWm" customClass="HIButtonCell">
                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                             <font key="font" metaFont="system"/>
                             <string key="keyEquivalent" base64-UTF8="YES">

@@ -15,7 +15,7 @@
 "20.placeholderString" = "Wpisz adres lub nazwę kontaktu...";
 
 /* Class = "NSTextFieldCell"; placeholderString = "or choose from the list"; ObjectID = "22"; */
-"22.placeholderString" = "or choose from the list";
+"22.placeholderString" = "lub wybierz z listy";
 
 /* Class = "NSTextFieldCell"; title = "Loading payment details..."; ObjectID = "Agy-4s-MVS"; */
 "Agy-4s-MVS.title" = "Loading payment details...";
@@ -30,4 +30,4 @@
 "dxM-9E-wwb.title" = "Kursy walut są pobierane z serwisu BitcoinAverage. Ceny Bitcoina mogą się szybko zmieniać, dlatego inne strony i aplikacje mogą czasem wyświetlać inne kursy.";
 
 /* Class = "NSButtonCell"; title = "Close"; ObjectID = "iOT-cc-UWm"; */
-"iOT-cc-UWm.title" = "Close";
+"iOT-cc-UWm.title" = "Zamknij";

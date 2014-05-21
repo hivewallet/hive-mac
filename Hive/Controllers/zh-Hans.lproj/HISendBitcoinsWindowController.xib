@@ -155,7 +155,7 @@ Gw
                                 <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="1" verticalCompressionResistancePriority="1" translatesAutoresizingMaskIntoConstraints="NO" id="21">
                                     <rect key="frame" x="98" y="216" width="288" height="17"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
-                                    <textFieldCell key="cell" lineBreakMode="truncatingTail" sendsActionOnEndEditing="YES" title="主要地址" placeholderString="or choose from the list" id="22">
+                                    <textFieldCell key="cell" lineBreakMode="truncatingTail" sendsActionOnEndEditing="YES" placeholderString="或从目录中选一个" id="22">
                                         <font key="font" size="10" name="LucidaGrande"/>
                                         <color key="textColor" red="0.50653034450000001" green="0.50649648899999999" blue="0.50651627779999997" alpha="1" colorSpace="calibratedRGB"/>
                                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
