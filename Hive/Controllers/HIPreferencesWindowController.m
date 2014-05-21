@@ -9,8 +9,13 @@
         [HIGeneralPreferencesViewController new],
         [HIKeyPreferencesViewController new],
     ];
+
     return [self initWithViewControllers:viewControllers
                                    title:NSLocalizedString(@"Preferences", @"Preferences window title")];
+}
+
+- (void)awakeFromNib {
+    [self.window setShowsResizeIndicator:NO];
 }
 
 @end
