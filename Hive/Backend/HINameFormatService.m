@@ -1,6 +1,7 @@
 #import "HINameFormatService.h"
 #import "HIObservationHandler.h"
 #import "HIPerson.h"
+#import "HIProfile.h"
 
 static NSString * const LastNameFirstDefaultsKey = @"LastNameFirst";
 static int KVContext;
@@ -84,6 +85,8 @@ static int KVContext;
         return person.firstname;
     } else if (person.lastname.length > 0) {
         return person.lastname;
+    } else if ([person isKindOfClass:[HIProfile class]]) {
+        return NSLocalizedString(@"Anonymous", @"Anonymous username for profile page");
     } else {
         return @"";
     }
