@@ -107,6 +107,24 @@
     [alert runModal];
 }
 
+- (void)showQRCodeErrorForURI:(NSString *)URIString {
+    HILogWarn(@"bitcoin: URI is invalid or can't be used to extract address: %@", URIString);
+
+    NSString *title = NSLocalizedString(@"This QR code is invalid or can't be used here.",
+                                        @"Alert title when address can't be extracted from a bitcoin: URI");
+
+    NSString *message = NSLocalizedString(@"Link included in this QR code (\"%@\") is invalid "
+                                          @"or does not contain a Bitcoin address.",
+                                          @"Alert message when address can't be extracted from a bitcoin: URI");
+
+    NSAlert *alert = [NSAlert alertWithMessageText:title
+                                     defaultButton:NSLocalizedString(@"OK", @"OK button title")
+                                   alternateButton:nil
+                                       otherButton:nil
+                         informativeTextWithFormat:message, URIString];
+    [alert runModal];
+}
+
 - (NSDictionary *)extendPaymentRequestData:(NSDictionary *)data withBitcoinURIDetails:(HIBitcoinURI *)bitcoinURI {
     NSMutableDictionary *extended = [NSMutableDictionary dictionaryWithDictionary:data];
 
@@ -133,6 +151,8 @@
 
     if (bitcoinURI.valid) {
         [self applyURI:bitcoinURI toSendWindow:window];
+    } else {
+        [self showQRCodeErrorForURI:bitcoinURIString];
     }
 
     return bitcoinURI.valid;

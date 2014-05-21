@@ -10,5 +10,6 @@
 
 - (BOOL)handleBitcoinURIString:(NSString *)bitcoinURIString;
 - (BOOL)applyURIString:(NSString *)bitcoinURIString toSendWindow:(HISendBitcoinsWindowController *)window;
+- (void)showQRCodeErrorForURI:(NSString *)URIString;
 
 @end

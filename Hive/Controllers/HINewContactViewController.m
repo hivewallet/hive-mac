@@ -8,6 +8,7 @@
 
 #import "HIAddress.h"
 #import "HIBitcoinURI.h"
+#import "HIBitcoinURIService.h"
 #import "HICameraWindowController.h"
 #import "HIContact.h"
 #import "HIDatabaseManager.h"
@@ -560,13 +561,16 @@ static NSString * const Separator = @"Separator";
 
 - (BOOL)cameraWindowController:(HICameraWindowController *)cameraWindowController
               didScanQRCodeURI:(NSString *)QRCodeURI {
-    _edited = YES;
+
     HIBitcoinURI *uri = [[HIBitcoinURI alloc] initWithURIString:QRCodeURI];
 
     if (uri.valid) {
+        _edited = YES;
         [self removeLastPlaceholderIfEmpty];
         [self addAddressPlaceholderWithHash:uri.address name:nil editable:YES];
         [self.view.window makeFirstResponder:_placeholders.lastObject[NameField]];
+    } else {
+        [[HIBitcoinURIService sharedService] showQRCodeErrorForURI:QRCodeURI];
     }
 
     return uri.valid;
