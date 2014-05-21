@@ -110,12 +110,15 @@ static const NSTimeInterval SCAN_INTERVAL = .25;
     if (!self.scanning && [[NSDate new] timeIntervalSinceDate:self.lastScanDate] > SCAN_INTERVAL) {
         self.lastScanDate = [NSDate new];
         self.scanning = YES;
+
         dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
             NSString *scannedQRCode = [self scanQRCodeInImage:image];
+
             dispatch_async(dispatch_get_main_queue(), ^{
                 if (scannedQRCode) {
                     [self finishScanningWithCode:scannedQRCode];
                 }
+
                 self.scanning = NO;
             });
         });
@@ -141,16 +144,15 @@ static const NSTimeInterval SCAN_INTERVAL = .25;
 }
 
 - (void)finishScanningWithCode:(NSString *)scannedQRCode {
-    BOOL success;
     id<HICameraWindowControllerDelegate> delegate = self.delegate;
+
+    [self.captureSession stopRunning];
+    [self.window performClose:nil];
+
     if (delegate) {
-        success = [delegate cameraWindowController:self didScanQRCodeURI:scannedQRCode];
+        [delegate cameraWindowController:self didScanQRCodeURI:scannedQRCode];
     } else {
-        success = [[HIBitcoinURIService sharedService] handleBitcoinURIString:scannedQRCode];
-    }
-    if (success) {
-        [self.captureSession stopRunning];
-        [self.window performClose:nil];
+        [[HIBitcoinURIService sharedService] handleBitcoinURIString:scannedQRCode];
     }
 }
 
