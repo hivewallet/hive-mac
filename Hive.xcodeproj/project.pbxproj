@@ -2056,15 +2056,15 @@
 		1AA10541E9CC36CCCF16920A /* HIPreferencesWindowController */ = {
 			isa = PBXGroup;
 			children = (
+				24FA9857192757A800D7058F /* HIGeneralPreferencesViewController.h */,
+				24FA9858192757A800D7058F /* HIGeneralPreferencesViewController.m */,
+				24FA986E1927891E00D7058F /* HIGeneralPreferencesViewController.xib */,
 				1AA106E65C78A2B9A35C9624 /* HIKeyPreferencesViewController.h */,
 				1AA10535D664FC91503D3769 /* HIKeyPreferencesViewController.m */,
 				58C85B9D18FFEA0500B2C350 /* HIKeyPreferencesViewController.strings */,
 				58C85B7B18FFE97F00B2C350 /* HIKeyPreferencesViewController.xib */,
 				1AA10EBD9592DC674CFC808E /* HIPreferencesWindowController.h */,
 				1AA10D7BCF51F6AE70202C19 /* HIPreferencesWindowController.m */,
-				24FA9857192757A800D7058F /* HIGeneralPreferencesViewController.h */,
-				24FA9858192757A800D7058F /* HIGeneralPreferencesViewController.m */,
-				24FA986E1927891E00D7058F /* HIGeneralPreferencesViewController.xib */,
 			);
 			name = HIPreferencesWindowController;
 			sourceTree = "<group>";
@@ -2460,18 +2460,18 @@
 				1AA10B46D06417F03AD71274 /* HIDirectoryDataService.m */,
 				1AA10C583F128C0BCD84C878 /* HIExchangeRateService.h */,
 				1AA1032408E917EE5B7752AC /* HIExchangeRateService.m */,
+				1AA10AF547346B009D38D852 /* HINameFormatService.h */,
+				1AA10FA59EE4E8EDFD4C96AA /* HINameFormatService.m */,
 				58F496F618B7EE8F0033B7E0 /* HINetworkConnectionMonitor.h */,
 				58F496F718B7EE8F0033B7E0 /* HINetworkConnectionMonitor.m */,
 				1AA10ABE84E126AEFF538618 /* HINotificationService.h */,
 				1AA1022DA4CD99B7CB61C335 /* HINotificationService.m */,
+				1AA1074CC0EE4C19941F2723 /* HIObservationHandler.h */,
+				1AA10B7D898B3F3FE49C1B78 /* HIObservationHandler.m */,
 				1AA10BFBA89C0A555ACF047A /* HISendFeedbackService.h */,
 				1AA1087CF3AB1F831B230294 /* HISendFeedbackService.m */,
 				1AA10D9CBDE4AF80B9B560A0 /* HIShortcutService.h */,
 				1AA1085915844864667B118C /* HIShortcutService.m */,
-				1AA10FA59EE4E8EDFD4C96AA /* HINameFormatService.m */,
-				1AA10AF547346B009D38D852 /* HINameFormatService.h */,
-				1AA10B7D898B3F3FE49C1B78 /* HIObservationHandler.m */,
-				1AA1074CC0EE4C19941F2723 /* HIObservationHandler.h */,
 			);
 			path = Backend;
 			sourceTree = "<group>";
