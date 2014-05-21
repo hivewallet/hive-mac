@@ -37,6 +37,7 @@
             }
         } else {
             // invalid bitcoin URI
+            [self handlePaymentURIErrorForURI:bitcoinURIString];
             return NO;
         }
     } else {
@@ -75,7 +76,7 @@
             // this should never happen, because only a URL error can be returned here,
             // and URLWithString: should return nil if the URL is not correct
 
-            [self handlePaymentRequestURLErrorForURL:URLString];
+            [self handlePaymentURIErrorForURI:URLString];
             return NO;
         } else {
             window = [appDelegate sendBitcoinsWindow];
@@ -85,25 +86,25 @@
             return YES;
         }
     } else {
-        [self handlePaymentRequestURLErrorForURL:URLString];
+        [self handlePaymentURIErrorForURI:URLString];
         return NO;
     }
 }
 
-- (void)handlePaymentRequestURLErrorForURL:(NSString *)URLString {
-    HILogWarn(@"Payment request URL is invalid: %@", URLString);
+- (void)handlePaymentURIErrorForURI:(NSString *)URIString {
+    HILogWarn(@"Payment request URL or bitcoin URI is invalid: %@", URIString);
 
-    NSString *title = NSLocalizedString(@"This payment request link is invalid.",
-                                        @"Alert title when URL to a payment request file is not valid");
+    NSString *title = NSLocalizedString(@"This Bitcoin payment link is invalid.",
+                                        @"Alert title when bitcoin: URI or payment request URL is not valid");
 
-    NSString *message = NSLocalizedString(@"\"%@\" is not a valid URL.",
-                                          @"Alert message when URL to a payment request file is not valid");
+    NSString *message = NSLocalizedString(@"\"%@\" is not a valid URI.",
+                                          @"Alert message when bitcoin: URI or payment request URL is not valid");
 
     NSAlert *alert = [NSAlert alertWithMessageText:title
                                      defaultButton:NSLocalizedString(@"OK", @"OK button title")
                                    alternateButton:nil
                                        otherButton:nil
-                         informativeTextWithFormat:message, URLString];
+                         informativeTextWithFormat:message, URIString];
     [alert runModal];
 }
 
