@@ -95,7 +95,7 @@ Gw
                             <rect key="frame" x="1" y="1" width="399" height="273"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             <subviews>
-                                <textField horizontalHuggingPriority="1000" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="13">
+                                <textField horizontalHuggingPriority="750" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="13">
                                     <rect key="frame" x="26" y="237" width="22" height="16"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="right" title="Komu:" id="14">
@@ -113,7 +113,7 @@ Gw
                                     </constraints>
                                     <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageAlignment="right" imageScaling="proportionallyDown" id="18"/>
                                 </imageView>
-                                <imageView wantsLayer="YES" translatesAutoresizingMaskIntoConstraints="NO" id="a7Z-0M-rXL" userLabel="Lock icon">
+                                <imageView wantsLayer="YES" horizontalHuggingPriority="1000" translatesAutoresizingMaskIntoConstraints="NO" id="a7Z-0M-rXL" userLabel="Lock icon">
                                     <rect key="frame" x="69" y="234" width="24" height="24"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                     <constraints>
@@ -234,7 +234,7 @@ Gw
                                     <color key="borderColor" red="0.69700002670000005" green="0.69688004260000003" blue="0.69695496560000003" alpha="0.41999999999999998" colorSpace="calibratedRGB"/>
                                     <color key="fillColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </box>
-                                <popUpButton translatesAutoresizingMaskIntoConstraints="NO" id="u5l-cR-nXn" userLabel="Bitcoin format pop up" customClass="HILabelPopUpButton">
+                                <popUpButton horizontalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="u5l-cR-nXn" userLabel="Bitcoin format pop up" customClass="HILabelPopUpButton">
                                     <rect key="frame" x="18" y="54" width="70" height="21"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                     <constraints>
@@ -292,7 +292,7 @@ Gw
                                     <color key="borderColor" red="0.69700002670000005" green="0.69688004260000003" blue="0.69695496560000003" alpha="0.41999999999999998" colorSpace="calibratedRGB"/>
                                     <color key="fillColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </box>
-                                <popUpButton translatesAutoresizingMaskIntoConstraints="NO" id="ZPL-GE-Omh" userLabel="Currency pop up" customClass="HILabelPopUpButton">
+                                <popUpButton horizontalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="ZPL-GE-Omh" userLabel="Currency pop up" customClass="HILabelPopUpButton">
                                     <rect key="frame" x="18" y="9" width="70" height="21"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                     <constraints>
@@ -345,7 +345,7 @@ Gw
                                         <action selector="scanQRCode:" target="-2" id="5lY-W6-2zB"/>
                                     </connections>
                                 </button>
-                                <textField horizontalHuggingPriority="1000" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="6zj-3w-Hqs">
+                                <textField horizontalHuggingPriority="750" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="6zj-3w-Hqs">
                                     <rect key="frame" x="26" y="180" width="48" height="16"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="right" title="Details:" id="EeC-5l-RYD">
