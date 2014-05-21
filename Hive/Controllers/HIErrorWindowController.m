@@ -14,7 +14,6 @@
 - (NSString *)userName;
 - (NSString *)userEmail;
 - (NSString *)loadSettings;
-- (BOOL)addStringValueToKeychain:(NSString *)stringValue forKey:(NSString *)key;
 
 @end
 
@@ -82,14 +81,14 @@
     NSString *userName = self.nameField.stringValue;
     NSString *userEmail = self.emailField.stringValue;
 
-    BITCrashManager *crashManager = [[BITHockeyManager sharedHockeyManager] crashManager];
+    BITHockeyManager *manager = [BITHockeyManager sharedHockeyManager];
 
     if (userName) {
-        [crashManager addStringValueToKeychain:userName forKey:@"default.BITCrashMetaUserName"];
+        [manager setUserName:userName];
     }
 
     if (userEmail) {
-        [crashManager addStringValueToKeychain:userEmail forKey:@"default.BITCrashMetaUserEmail"];
+        [manager setUserEmail:userEmail];
     }
 
     NSString *description = [NSString stringWithFormat:@"%@\n\nLog:\n%@\n\n%@",
@@ -139,7 +138,7 @@
                      description,
                      crashLogString];
 
-    [[[BITHockeyManager sharedHockeyManager] crashManager] performSelector:@selector(postXML:) withObject:xml];
+    [[manager crashManager] performSelector:@selector(postXML:) withObject:xml];
 
     [self close];
 }
