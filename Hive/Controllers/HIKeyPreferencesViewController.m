@@ -44,4 +44,8 @@
     return NSLocalizedString(@"Shortcuts", @"Title for shortcut keys preferences panel");
 }
 
+- (NSView *)initialKeyView {
+    return nil;
+}
+
 @end
