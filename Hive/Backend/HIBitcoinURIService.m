@@ -79,7 +79,7 @@
             // this should never happen, because only a URL error can be returned here,
             // and URLWithString: should return nil if the URL is not correct
 
-            [self handlePaymentURIErrorForURI:URLString];
+            [self handlePaymentRequestURLErrorForURL:URLString];
             return NO;
         } else {
             window = [appDelegate sendBitcoinsWindow];
@@ -89,19 +89,36 @@
             return YES;
         }
     } else {
-        [self handlePaymentURIErrorForURI:URLString];
+        [self handlePaymentRequestURLErrorForURL:URLString];
         return NO;
     }
 }
 
+- (void)handlePaymentRequestURLErrorForURL:(NSString *)URLString {
+    HILogWarn(@"Payment request URL is invalid: %@", URLString);
+
+    NSString *title = NSLocalizedString(@"This Bitcoin payment URL is invalid.",
+                                        @"Alert title when payment request URL is not valid");
+
+    NSString *message = NSLocalizedString(@"\"%@\" is not a valid URL.",
+                                          @"Alert message when payment request URL is not valid");
+
+    NSAlert *alert = [NSAlert alertWithMessageText:title
+                                     defaultButton:NSLocalizedString(@"OK", @"OK button title")
+                                   alternateButton:nil
+                                       otherButton:nil
+                         informativeTextWithFormat:message, URLString];
+    [alert runModal];
+}
+
 - (void)handlePaymentURIErrorForURI:(NSString *)URIString {
-    HILogWarn(@"Payment request URL or bitcoin URI is invalid: %@", URIString);
+    HILogWarn(@"bitcoin: URI is invalid: %@", URIString);
 
     NSString *title = NSLocalizedString(@"This Bitcoin payment link is invalid.",
-                                        @"Alert title when bitcoin: URI or payment request URL is not valid");
+                                        @"Alert title when bitcoin: URI is not valid");
 
-    NSString *message = NSLocalizedString(@"\"%@\" is not a valid URI.",
-                                          @"Alert message when bitcoin: URI or payment request URL is not valid");
+    NSString *message = NSLocalizedString(@"\"%@\" is not a valid payment link.",
+                                          @"Alert message when bitcoin: URI is not valid");
 
     NSAlert *alert = [NSAlert alertWithMessageText:title
                                      defaultButton:NSLocalizedString(@"OK", @"OK button title")
@@ -114,7 +131,7 @@
 - (void)showQRCodeErrorForURI:(NSString *)URIString {
     HILogWarn(@"bitcoin: URI is invalid or can't be used to extract address: %@", URIString);
 
-    NSString *title = NSLocalizedString(@"This QR code is invalid or can't be used here.",
+    NSString *title = NSLocalizedString(@"This QR code can't be used here.",
                                         @"Alert title when address can't be extracted from a bitcoin: URI");
 
     NSString *message = NSLocalizedString(@"Link included in this QR code (\"%@\") is invalid "

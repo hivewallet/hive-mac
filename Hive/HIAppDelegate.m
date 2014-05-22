@@ -524,7 +524,7 @@ static int ddLogLevel = LOG_LEVEL_VERBOSE;
                                        }];
 
             if (callError) {
-                NSString *title = NSLocalizedString(@"Payment request file could not be opened.",
+                NSString *title = NSLocalizedString(@"Payment data file could not be opened.",
                                                     @"Alert title when payment request file can't be read");
                 NSString *message = NSLocalizedString(@"The file doesn't exist or is not accessible.",
                                                       @"Alert message when payment request file can't be read");
@@ -547,7 +547,7 @@ static int ddLogLevel = LOG_LEVEL_VERBOSE;
 - (void)handlePaymentRequestLoadError:(NSError *)error {
     HILogDebug(@"Payment request load error: %@", error);
 
-    NSString *title = NSLocalizedString(@"This payment request is invalid.",
+    NSString *title = NSLocalizedString(@"Payment data is invalid.",
                                         @"Alert title when payment request file has some invalid or unexpected data");
 
     NSString *message = nil;
@@ -558,15 +558,15 @@ static int ddLogLevel = LOG_LEVEL_VERBOSE;
     }
     else if (error.code == kHIBitcoinManagerPaymentRequestExpiredError) {
         title = NSLocalizedString(@"Payment request has already expired.",
-                                  @"Alert title when payment request was valid before but has expired");
+                                  @"Alert title when the time limit to complete the payment has passed");
 
         message = NSLocalizedString(@"You'll need to return to the site that requested the payment "
                                     @"and initiate the payment again.",
-                                    @"Alert message when payment request was valid before but has expired");
+                                    @"Alert message when the time limit to complete the payment has passed");
     }
     else if (error.code == kHIBitcoinManagerPaymentRequestWrongNetworkError) {
-        message = NSLocalizedString(@"The payment is supposed to be sent on a different Bitcoin network.",
-                                    @"Alert message when user is on the main net and payment request is for testnet "
+        message = NSLocalizedString(@"This payment is supposed to be sent on a different Bitcoin network.",
+                                    @"Alert message when user is on the mainnet and payment request is for testnet "
                                     @"(or vice versa)");
     }
     else if ([error.localizedFailureReason rangeOfString:@"com.google."].location != NSNotFound) {
@@ -575,7 +575,7 @@ static int ddLogLevel = LOG_LEVEL_VERBOSE;
     }
     else {
         // probably an IO error, only happens for remote requests
-        title = NSLocalizedString(@"Payment request file could not be loaded.",
+        title = NSLocalizedString(@"Payment details could not be loaded.",
                                   @"Alert title when payment request can't be loaded from the server");
 
         message = NSLocalizedString(@"Check your network connection, try again later "

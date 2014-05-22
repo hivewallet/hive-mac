@@ -925,16 +925,16 @@ NSString * const HISendBitcoinsWindowSuccessKey = @"success";
 
 - (void)showPaymentExpiredAlert {
     [self showAlertWithTitle:NSLocalizedString(@"Payment request has already expired.",
-                                               @"Alert title when payment request was valid before but has expired")
+                                               @"Alert title when the time limit to complete the payment has passed")
 
                      message:NSLocalizedString(@"You'll need to return to the site that requested the payment "
                                                @"and initiate the payment again.",
-                                               @"Alert message when payment request was valid before but has expired")];
+                                               @"Alert message when the time limit to complete the payment has passed")];
 }
 
 - (void)showPaymentSendErrorAlert {
     [self showAlertWithTitle:NSLocalizedString(@"Payment could not be completed.",
-                                               @"Alert title when payment response can't be sent to the merchant")
+                                               @"Alert title when payment can't be sent to the merchant")
 
                      message:NSLocalizedString(@"Check your network connection, try again later "
                                                @"or report the problem to the payment recipient.",
