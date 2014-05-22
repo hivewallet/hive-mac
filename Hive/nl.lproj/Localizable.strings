@@ -2,6 +2,12 @@
 /* Body for feedback emails */
 "(Please write in English if possible.)" = "(Schrijf alsjeblieft in het Engels)";
 
+/* Alert message when bitcoin: URI is not valid */
+"\"%@\" is not a valid payment link." = "\"%@\" is not a valid payment link.";
+
+/* Alert message when payment request URL is not valid */
+"\"%@\" is not a valid URL." = "\"%@\" is not a valid URL.";
+
 /* Address field placeholder */
 "Address" = "Adres";
 
@@ -55,6 +61,9 @@
 
 /* Dead transaction label */
 "CANCELLED" = "GEANNULEERD";
+
+/* Alert message when payment request can't be loaded from or sent to the server */
+"Check your network connection, try again later or report the problem to the payment recipient." = "Check your network connection, try again later or report the problem to the payment recipient.";
 
 /* Dropbox folder save panel confirmation button */
 "Choose" = "Kies";
@@ -134,6 +143,9 @@
 /* Firstname field placeholder */
 "Firstname" = "Voornaam";
 
+/* Title for general preferences panel */
+"General" = "General";
+
 /* Hiveapp file not readable error title */
 "Hive application file \"%@\" could not be opened." = "Hive applicatie bestand \"%@\" kon niet worden geopend.";
 
@@ -161,6 +173,9 @@
 /* Share sent transaction text */
 "I've just sent some Bitcoin using Hive" = "Ik heb net wat Bitcoins verstuurd met Hive";
 
+/* Alert details when trying to send more than you have with fee */
+"If you send your whole wallet balance, there's nothing left to pay the required fee. Try to send a bit less, or split the transaction into smaller ones." = "If you send your whole wallet balance, there's nothing left to pay the required fee. Try to send a bit less, or split the transaction into smaller ones.";
+
 /* Install app button title */
 "Install" = "Installeren";
 
@@ -178,6 +193,9 @@
 
 /* Lastname field placeholder */
 "Lastname" = "Achternaam";
+
+/* Alert message when address can't be extracted from a bitcoin: URI */
+"Link included in this QR code (\"%@\") is invalid or does not contain a Bitcoin address." = "Link included in this QR code (\"%@\") is invalid or does not contain a Bitcoin address.";
 
 /* Main address caption */
 "main" = "hoofd";
@@ -200,14 +218,32 @@
 /* Transaction failed alert message */
 "No Bitcoin have been taken from your wallet." = "Er zijn geen Bitcoin uit uw portemonnee gehaald.";
 
+/* Title of an alert when trying to send more than you have with fee */
+"Not enough funds left to pay the transaction fee." = "Not enough funds left to pay the transaction fee.";
+
 /* OK button title */
 "OK" = "Oke";
 
-/* Autocomplete dropdown prompt */
-"or choose from the list" = "of kies uit de lijst";
-
 /* Wizard password page title */
 "Password" = "Wachtwoord";
+
+/* Send Bitcoin window title for payment request */
+"Pay with Bitcoin" = "Pay with Bitcoin";
+
+/* Alert title when payment can't be sent to the merchant */
+"Payment could not be completed." = "Payment could not be completed.";
+
+/* Alert title when payment request file can't be read */
+"Payment data file could not be opened." = "Payment data file could not be opened.";
+
+/* Alert title when payment request file has some invalid or unexpected data */
+"Payment data is invalid." = "Payment data is invalid.";
+
+/* Alert title when payment request can't be loaded from the server */
+"Payment details could not be loaded." = "Payment details could not be loaded.";
+
+/* Alert title when the time limit to complete the payment has passed */
+"Payment request has already expired." = "Payment request has already expired.";
 
 /* Pending transaction label */
 "PENDING" = "IN AFWACHTING";
@@ -269,14 +305,26 @@
 /* Install app popup warning message when app exists */
 "The existing app file will be replaced by the new version. This will not affect any app settings or saved data." = "Het huidige applicatie bestand zal vervangen worden door de nieuwe versie. Het zal uw huidige instellingen of opgeslagen data niet aantasten.";
 
+/* Alert message when payment request file can't be read */
+"The file doesn't exist or is not accessible." = "The file doesn't exist or is not accessible.";
+
 /* Hiveapp file not readable error details */
 "The file is damaged or does not contain a Hive application." = "Het bestand is beschadigt of bevat geen Hive applicatie.";
 
 /* Sending dust alert message */
 "This amount is too low to be sent through the network." = "Deze hoeveelheid is te weinig om door het netwerk te versturen.";
 
+/* Alert title when bitcoin: URI is not valid */
+"This Bitcoin payment link is invalid." = "This Bitcoin payment link is invalid.";
+
+/* Alert title when payment request URL is not valid */
+"This Bitcoin payment URL is invalid." = "This Bitcoin payment URL is invalid.";
+
 /* Alert details when transaction was cancelled */
 "This can happen because of bugs in the wallet code or because the transaction was rejected by the network." = "Dit kan gebeuren door fouten in de code of omdat de transactie is geweigerd door het netwerk.";
+
+/* Alert message when payment request file isn't really a payment request at all */
+"This file does not contain a valid Bitcoin payment request." = "This file does not contain a valid Bitcoin payment request.";
 
 /* Warning details when trying to send a large BTC amount */
 "This is more than what you usually send." = "Dit is meer dan u normaal verstuurt.";
@@ -286,6 +334,12 @@
 
 /* Invalid address alert title */
 "This isn't a valid Bitcoin address." = "Dit is geen geldig Bitcoin adres.";
+
+/* Alert message when user is on the mainnet and payment request is for testnet (or vice versa) */
+"This payment is supposed to be sent on a different Bitcoin network." = "This payment is supposed to be sent on a different Bitcoin network.";
+
+/* Alert title when address can't be extracted from a bitcoin: URI */
+"This QR code can't be used here." = "This QR code can't be used here.";
 
 /* Backup error message */
 "Time Machine is disabled in System Preferences" = "Time Machine is uitgeschakelt in Systeem Instellingen.";
@@ -367,6 +421,9 @@
 
 /* Remove contact alert dialog body */
 "You won't be able to undo this operation." = "Je kunt deze actie niet ongedaan maken.";
+
+/* Alert message when the time limit to complete the payment has passed */
+"You'll need to return to the site that requested the payment and initiate the payment again." = "You'll need to return to the site that requested the payment and initiate the payment again.";
 
 /* Notification of incoming transaction */
 "You've received Bitcoin" = "Je hebt Bitcoins ontvangen";
