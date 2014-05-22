@@ -42,7 +42,7 @@
         }
     } else {
         // not a bitcoin URI at all, try loading a payment request
-        return [self handlePaymentRequestURL:bitcoinURI.paymentRequestURL fromBitcoinURI:bitcoinURI];
+        return [self handlePaymentRequestURL:bitcoinURIString fromBitcoinURI:nil];
     }
 }
 
@@ -65,7 +65,10 @@
                                           [window close];
                                           [appDelegate handlePaymentRequestLoadError:loadError];
                                       } else {
-                                          data = [self extendPaymentRequestData:data withBitcoinURIDetails:bitcoinURI];
+                                          if (bitcoinURI) {
+                                              data = [self extendPaymentRequestData:data
+                                                              withBitcoinURIDetails:bitcoinURI];
+                                          }
 
                                           [window hidePaymentRequestLoadingBox];
                                           [window showPaymentRequest:sessionId details:data];
