@@ -859,11 +859,11 @@ NSString * const HISendBitcoinsWindowSuccessKey = @"success";
 }
 
 - (void)showInsufficientFundsWithFeeAlert {
-    [self showAlertWithTitle:NSLocalizedString(@"Amount (including required fee) exceeds balance.",
+    [self showAlertWithTitle:NSLocalizedString(@"Not enough funds left to pay the transaction fee.",
                                                @"Title of an alert when trying to send more than you have with fee")
 
-                     message:NSLocalizedString(@"You're trying to send a large transaction and the fee needs to be "
-                                               @"higher than usually. Try to send a bit less, or split the "
+                     message:NSLocalizedString(@"If you send your whole wallet balance, there's nothing left to pay "
+                                               @"the required fee. Try to send a bit less, or split the "
                                                @"transaction into smaller ones.",
                                                @"Alert details when trying to send more than you have with fee")];
 }
