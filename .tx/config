@@ -152,3 +152,9 @@ source_file = Hive/Controllers/en.lproj/HIKeyPreferencesViewController.strings
 source_lang = en
 type = STRINGS
 
+[hive-osx.HIGeneralPreferencesViewController]
+file_filter = Hive/Controllers/<lang>.lproj/HIGeneralPreferencesViewController.strings
+source_file = Hive/Controllers/en.lproj/HIGeneralPreferencesViewController.strings
+source_lang = en
+type = STRINGS
+
