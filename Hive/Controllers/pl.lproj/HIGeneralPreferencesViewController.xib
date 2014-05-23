@@ -51,9 +51,12 @@
                         <binding destination="jnu-HK-12I" name="selectedIndex" keyPath="values.SortByLastName" id="1dB-Rd-yHA"/>
                     </connections>
                 </popUpButton>
-                <matrix verticalHuggingPriority="750" allowsEmptySelection="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s2V-GR-aA8">
+                <matrix verticalHuggingPriority="750" allowsEmptySelection="NO" autosizesCells="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s2V-GR-aA8">
                     <rect key="frame" x="235" y="57" width="147" height="38"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="38" id="OJr-Eu-FQ9"/>
+                    </constraints>
                     <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                     <size key="cellSize" width="147" height="18"/>
                     <size key="intercellSpacing" width="4" height="2"/>
