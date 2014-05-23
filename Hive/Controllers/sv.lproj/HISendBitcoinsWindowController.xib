@@ -262,7 +262,7 @@ Gw
                                         <outlet property="delegate" destination="-2" id="Kkb-Ce-ODs"/>
                                     </connections>
                                 </textField>
-                                <button translatesAutoresizingMaskIntoConstraints="NO" id="fQu-xK-vvV" userLabel="Fee">
+                                <button horizontalHuggingPriority="300" translatesAutoresizingMaskIntoConstraints="NO" id="fQu-xK-vvV" userLabel="Fee">
                                     <rect key="frame" x="331" y="49" width="69" height="26"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                     <constraints>
