@@ -2,7 +2,6 @@
 #import <AFNetworking/AFHTTPRequestOperation.h>
 #import "BCClient.h"
 #import "HIExchangeRateService.h"
-#import "HIObservationHandler.h"
 
 static NSString *const HIConversionPreferenceKey = @"ConversionCurrency";
 static const NSTimeInterval HIExchangeRateAutomaticUpdateInterval = 60.0 * 60.0;
@@ -11,7 +10,7 @@ static const NSTimeInterval HIExchangeRateMinimumUpdateInterval = 60.0;
 @interface HIExchangeRateService ()
 
 @property (nonatomic, strong) AFHTTPClient *client;
-@property (nonatomic, strong, readonly) HIObservationHandler *observers;
+@property (nonatomic, strong) NSMutableSet *observers;
 @property (nonatomic, strong, readonly) NSMutableDictionary *exchangeRates;
 @property (nonatomic, copy) NSDate *lastUpdate;
 
@@ -34,7 +33,7 @@ static const NSTimeInterval HIExchangeRateMinimumUpdateInterval = 60.0;
     self = [super init];
     if (self) {
         _client = [BCClient sharedClient];
-        _observers = [HIObservationHandler new];
+        _observers = [NSMutableSet new];
         _exchangeRates = [NSMutableDictionary new];
         _lastUpdate = [NSDate dateWithTimeIntervalSince1970:0];
 
@@ -76,15 +75,15 @@ static const NSTimeInterval HIExchangeRateMinimumUpdateInterval = 60.0;
 #pragma mark - exchange rate observation
 
 - (void)addExchangeRateObserver:(id<HIExchangeRateObserver>)observer {
-    if (self.observers.allObservers.count == 0 && [self shouldUpdateAutomatically]) {
+    if (self.observers.count == 0 && [self shouldUpdateAutomatically]) {
         [self scheduleAutomaticUpdate];
     }
-    [self.observers addObserver:observer];
+    [self.observers addObject:observer];
 }
 
 - (void)removeExchangeRateObserver:(id<HIExchangeRateObserver>)observer {
-    [self.observers removeObserver:observer];
-    if (self.observers.allObservers.count == 0) {
+    [self.observers removeObject:observer];
+    if (self.observers.count == 0) {
         [self cancelAutomaticUpdate];
     }
 }
@@ -166,7 +165,7 @@ static const NSTimeInterval HIExchangeRateMinimumUpdateInterval = 60.0;
 
 - (void)notifyOfExchangeRate:(NSDecimalNumber *)exchangeRate
                  forCurrency:(NSString *)currency {
-    for (id<HIExchangeRateObserver> observer in self.observers.allObservers) {
+    for (id<HIExchangeRateObserver> observer in self.observers) {
         [observer exchangeRateUpdatedTo:exchangeRate forCurrency:currency];
     }
 }
@@ -195,7 +194,7 @@ static const NSTimeInterval HIExchangeRateMinimumUpdateInterval = 60.0;
 - (void)didChangeAppNapState:(NSNotification *)notification {
     BOOL visible = [self shouldUpdateAutomatically];
     if (visible) {
-        if (self.observers.allObservers.count > 0) {
+        if (self.observers.count > 0) {
             [self performAutomaticUpdate];
         }
     } else {
