@@ -9,6 +9,7 @@
 #import "BCClient.h"
 #import "HIDatabaseManager.h"
 #import "HIDropboxBackup.h"
+#import "NSAlert+Hive.h"
 
 static NSString * const LocationKey = @"location";
 static NSString * const LastBackupKey = @"lastBackup";
@@ -177,14 +178,12 @@ const NSInteger HIDropboxBackupNotRunning = -3;
 
 - (void)configureInWindow:(NSWindow *)window {
     if (![self dropboxFolderExists]) {
-        NSAlert *alert = [NSAlert alertWithMessageText:NSLocalizedString(@"Dropbox folder not found.",
-                                                                         @"Dropbox no backup folder alert title")
-                                         defaultButton:NSLocalizedString(@"OK", @"OK button title")
-                                       alternateButton:nil
-                                           otherButton:nil
-                             informativeTextWithFormat:NSLocalizedString(@"You must install Dropbox first "
-                                                                         @"(see www.dropbox.com).",
-                                                                         @"Dropbox no backup folder alert details")];
+        NSAlert *alert = [NSAlert hiOKAlertWithTitle:NSLocalizedString(@"Dropbox folder not found.",
+                                                                       @"Dropbox no backup folder alert title")
+                                             message:NSLocalizedString(@"You must install Dropbox first "
+                                                                       @"(see www.dropbox.com).",
+                                                                       @"Dropbox no backup folder alert details")];
+
         [alert beginSheetModalForWindow:window modalDelegate:nil didEndSelector:nil contextInfo:NULL];
         return;
     }
@@ -211,15 +210,11 @@ const NSInteger HIDropboxBackupNotRunning = -3;
     if (dropboxFolder && ![selectedDirectory hasPrefix:dropboxFolder]) {
         HILogWarn(@"Selected directory outside Dropbox folder (%@ vs. %@)", selectedDirectory, dropboxFolder);
 
-        NSAlert *alert =
-            [NSAlert alertWithMessageText:NSLocalizedString(@"Selected directory is outside Dropbox folder.",
-                                                            @"Dropbox invalid folder alert title")
-                            defaultButton:NSLocalizedString(@"OK", @"OK button title")
-                          alternateButton:nil
-                              otherButton:nil
-                informativeTextWithFormat:NSLocalizedString(@"You need to choose or create a directory "
-                                                            @"inside your Dropbox folder.",
-                                                            @"Dropbox invalid folder alert details")];
+        NSAlert *alert = [NSAlert hiOKAlertWithTitle:NSLocalizedString(@"Selected directory is outside Dropbox folder.",
+                                                                       @"Dropbox invalid folder alert title")
+                                             message:NSLocalizedString(@"You need to choose or create a directory "
+                                                                       @"inside your Dropbox folder.",
+                                                                       @"Dropbox invalid folder alert details")];
 
         [alert beginSheetModalForWindow:window modalDelegate:nil didEndSelector:nil contextInfo:NULL];
         return;

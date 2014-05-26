@@ -27,6 +27,7 @@
 #import "HITransaction.h"
 #import "NSColor+Hive.h"
 #import "NSDecimalNumber+HISatoshiConversion.h"
+#import "NSAlert+Hive.h"
 #import "NSWindow+HIShake.h"
 #import "HIApplication.h"
 
@@ -869,17 +870,15 @@ NSString * const HISendBitcoinsWindowSuccessKey = @"success";
 }
 
 - (void)showBlockedFundsAlert {
-    NSAlert *alert = [[NSAlert alloc] init];
+    NSString *title = NSLocalizedString(@"Some funds are temporarily unavailable.",
+                                        @"Amount exceeds available balance alert title");
 
-    [alert setMessageText:NSLocalizedString(@"Some funds are temporarily unavailable.",
-                                            @"Amount exceeds available balance alert title")];
+    NSString *message = NSLocalizedString(@"To send this transaction, you'll need to wait for your pending "
+                                          @"transactions to be confirmed first (this shouldn't take more "
+                                          @"than a few minutes).",
+                                          @"Amount exceeds available balance alert message");
 
-    [alert setInformativeText:NSLocalizedString(@"To send this transaction, you'll need to wait for your pending "
-                                                @"transactions to be confirmed first (this shouldn't take more "
-                                                @"than a few minutes).",
-                                                @"Amount exceeds available balance alert message")];
-
-    [alert addButtonWithTitle:NSLocalizedString(@"OK", @"OK button title")];
+    NSAlert *alert = [NSAlert hiOKAlertWithTitle:title message:message];
 
     HILinkTextField *link = [[HILinkTextField alloc] initWithFrame:NSMakeRect(0, 0, 300, 15)];
     link.stringValue = NSLocalizedString(@"What does this mean?", @"Button to show info about pending funds");
@@ -974,11 +973,7 @@ NSString * const HISendBitcoinsWindowSuccessKey = @"success";
 }
 
 - (void)showAlertWithTitle:(NSString *)title message:(NSString *)message {
-    NSAlert *alert = [[NSAlert alloc] init];
-
-    [alert setMessageText:title];
-    [alert setInformativeText:message];
-    [alert addButtonWithTitle:NSLocalizedString(@"OK", @"OK button title")];
+    NSAlert *alert = [NSAlert hiOKAlertWithTitle:title message:message];
 
     [alert beginSheetModalForWindow:self.window modalDelegate:nil didEndSelector:nil contextInfo:NULL];
 }

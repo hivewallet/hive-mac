@@ -11,6 +11,7 @@
 #import "HIAppRuntimeBridge.h"
 #import "HIMainWindowController.h"
 #import "HISendBitcoinsWindowController.h"
+#import "NSAlert+Hive.h"
 
 @interface WebView (HIItsThere)
 
@@ -101,11 +102,8 @@
 }
 
 - (void)webView:(WebView *)wv runJavaScriptAlertPanelWithMessage:(NSString *)msg initiatedByFrame:(WebFrame *)frame {
-    NSAlert *alert = [[NSAlert alloc] init];
-    [alert setMessageText:self.application.name];
-    [alert setInformativeText:msg];
-    [alert addButtonWithTitle:NSLocalizedString(@"OK", @"OK button title")];
-    
+    NSAlert *alert = [NSAlert hiOKAlertWithTitle:self.application.name message:msg];
+
     [alert beginSheetModalForWindow:self.view.window
                       modalDelegate:nil
                      didEndSelector:nil
@@ -133,11 +131,12 @@
     NSURL *URL = error.userInfo[NSURLErrorFailingURLErrorKey];
 
     if ([URL isEqual:_baseURL]) {
-        NSRunAlertPanel(NSLocalizedString(@"Application can't be loaded", @"App load error title"),
-                        NSLocalizedString(@"The application data file has been removed or corrupted.",
-                                          @"App load error description"),
-                        NSLocalizedString(@"OK", @"OK button title"),
-                        nil, nil);
+        NSAlert *alert = [NSAlert hiOKAlertWithTitle:NSLocalizedString(@"Application can't be loaded",
+                                                                       @"App load error title")
+                                             message:NSLocalizedString(@"The application data file has been "
+                                                                       @"removed or corrupted.",
+                                                                       @"App load error description")];
+        [alert runModal];
     }
 }
 

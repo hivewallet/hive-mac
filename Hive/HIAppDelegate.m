@@ -43,6 +43,7 @@
 #import "HITransaction.h"
 #import "HITransactionsViewController.h"
 #import "HIWizardWindowController.h"
+#import "NSAlert+Hive.h"
 #import "PFMoveApplication.h"
 
 static NSString * const LastVersionKey = @"LastHiveVersion";
@@ -326,13 +327,7 @@ static int ddLogLevel = LOG_LEVEL_VERBOSE;
                                           @"minutes, and try not to send any transactions right now.",
                                           @"Chain file unreadable error explanation");
 
-    NSAlert *alert = [NSAlert alertWithMessageText:title
-                                     defaultButton:NSLocalizedString(@"OK", @"OK button title")
-                                   alternateButton:nil
-                                       otherButton:nil
-                         informativeTextWithFormat:@"%@", message];
-
-    [alert runModal];
+    [[NSAlert hiOKAlertWithTitle:title message:message] runModal];
 }
 
 - (void)showAppWindow {
@@ -367,13 +362,9 @@ static int ddLogLevel = LOG_LEVEL_VERBOSE;
 
     HILogError(@"Aborting launch because of initialization error: %@", error);
 
-    NSAlert *alert = [NSAlert alertWithMessageText:NSLocalizedString(@"Hive cannot be started.",
-                                                                     @"Initialization error title")
-                                     defaultButton:NSLocalizedString(@"OK", @"OK button title")
-                                   alternateButton:nil
-                                       otherButton:nil
-                         informativeTextWithFormat:@"%@", message];
-
+    NSAlert *alert = [NSAlert hiOKAlertWithTitle:NSLocalizedString(@"Hive cannot be started.",
+                                                                   @"Initialization error title")
+                                         message:message];
     [alert setAlertStyle:NSCriticalAlertStyle];
     [alert runModal];
 
@@ -529,12 +520,7 @@ static int ddLogLevel = LOG_LEVEL_VERBOSE;
                 NSString *message = NSLocalizedString(@"The file doesn't exist or is not accessible.",
                                                       @"Alert message when payment request file can't be read");
 
-                NSAlert *alert = [NSAlert alertWithMessageText:title
-                                                 defaultButton:NSLocalizedString(@"OK", @"OK button title")
-                                               alternateButton:nil
-                                                   otherButton:nil
-                                     informativeTextWithFormat:@"%@", message];
-                [alert runModal];
+                [[NSAlert hiOKAlertWithTitle:title message:message] runModal];
             }
         }];
 
@@ -583,12 +569,7 @@ static int ddLogLevel = LOG_LEVEL_VERBOSE;
                                     @"Alert message when payment request can't be loaded from or sent to the server");
     }
 
-    NSAlert *alert = [NSAlert alertWithMessageText:title
-                                     defaultButton:NSLocalizedString(@"OK", @"OK button title")
-                                   alternateButton:nil
-                                       otherButton:nil
-                         informativeTextWithFormat:@"%@", message];
-    [alert runModal];
+    [[NSAlert hiOKAlertWithTitle:title message:message] runModal];
 }
 
 

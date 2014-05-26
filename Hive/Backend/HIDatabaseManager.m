@@ -8,6 +8,7 @@
 
 #import "BCClient.h"
 #import "HIDatabaseManager.h"
+#import "NSAlert+Hive.h"
 
 #define CheckError(error)               \
     if (error) {                        \
@@ -217,12 +218,9 @@ static NSInteger HIDatabaseManagerFileExistsAtLocationError = 1000;
         }
     }
 
-    NSAlert *alert = [NSAlert alertWithMessageText:NSLocalizedString(@"Hive database file cannot be opened.",
-                                                                     @"Database error alert title")
-                                     defaultButton:NSLocalizedString(@"OK", @"OK button title")
-                                   alternateButton:nil
-                                       otherButton:nil
-                         informativeTextWithFormat:@"%@", explanation];
+    NSAlert *alert = [NSAlert hiOKAlertWithTitle:NSLocalizedString(@"Hive database file cannot be opened.",
+                                                                   @"Database error alert title")
+                                         message:explanation];
     [alert setAlertStyle:NSCriticalAlertStyle];
     [alert runModal];
 }

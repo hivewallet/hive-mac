@@ -5,6 +5,7 @@
 #import "HIBackupManager.h"
 #import "HIBitcoinFormatService.h"
 #import "HITransaction.h"
+#import "NSAlert+Hive.h"
 
 static int KVO_CONTEXT;
 static NSString *const HINotificationTypeKey = @"HINotificationTypeKey";
@@ -224,15 +225,11 @@ typedef NS_ENUM(NSInteger, HINotificationType) {
                                           @"or because the transaction was rejected by the network.",
                                           @"Alert details when transaction was cancelled");
 
-    NSAlert *alert = [NSAlert alertWithMessageText:[NSString stringWithFormat:title, formattedDate]
-                                     defaultButton:NSLocalizedString(@"OK", @"OK button title")
-                                   alternateButton:nil
-                                       otherButton:nil
-                         informativeTextWithFormat:@"%@", message];
-
-    [alert setAlertStyle:NSCriticalAlertStyle];
-
     dispatch_async(dispatch_get_main_queue(), ^{
+        NSAlert *alert = [NSAlert hiOKAlertWithTitle:[NSString stringWithFormat:title, formattedDate]
+                                             message:message];
+
+        [alert setAlertStyle:NSCriticalAlertStyle];
         [alert runModal];
     });
 }

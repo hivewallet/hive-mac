@@ -15,6 +15,7 @@
 #import "HINavigationController.h"
 #import "HINewContactViewController.h"
 #import "HIProfile.h"
+#import "NSAlert+Hive.h"
 #import "NSColor+Hive.h"
 
 #import <FontAwesomeIconFactory/NIKFontAwesomeIconFactory+OSX.h>
@@ -416,15 +417,11 @@ static NSString * const Separator = @"Separator";
     NSString *email = self.emailField.enteredValue;
 
     if (!firstName && !lastName && (!_contact || [_contact isKindOfClass:[HIContact class]])) {
-        NSAlert *alert = [[NSAlert alloc] init];
-
-        alert.messageText = NSLocalizedString(@"Contact can't be saved.", @"Contact name empty alert title");
-        alert.informativeText = NSLocalizedString(@"You need to give the contact a name before you can add it "
-                                                  @"to the list.",
-                                                  @"Contact name empty alert message");
-
-        [alert addButtonWithTitle:NSLocalizedString(@"OK", @"OK button title")];
-
+        NSAlert *alert = [NSAlert hiOKAlertWithTitle:NSLocalizedString(@"Contact can't be saved.",
+                                                                       @"Contact name empty alert title")
+                                             message:NSLocalizedString(@"You need to give the contact a name "
+                                                                       @"before you can add it to the list.",
+                                                                       @"Contact name empty alert message")];
         [alert beginSheetModalForWindow:self.view.window
                           modalDelegate:nil
                          didEndSelector:nil

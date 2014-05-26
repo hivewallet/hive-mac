@@ -220,6 +220,7 @@
 		58C85B9B18FFEA0500B2C350 /* HIKeyPreferencesViewController.strings in Resources */ = {isa = PBXBuildFile; fileRef = 58C85B9D18FFEA0500B2C350 /* HIKeyPreferencesViewController.strings */; };
 		58CFD95417CF914000A035FA /* HISidebarView.m in Sources */ = {isa = PBXBuildFile; fileRef = 58CFD95217CF914000A035FA /* HISidebarView.m */; };
 		58D4D61F18290079009CB7A5 /* patten_hive.hiveapp in Resources */ = {isa = PBXBuildFile; fileRef = 58D4D61E18290079009CB7A5 /* patten_hive.hiveapp */; };
+		58E228DC193359C200851F1B /* NSAlert+Hive.m in Sources */ = {isa = PBXBuildFile; fileRef = 58E228DB193359C200851F1B /* NSAlert+Hive.m */; };
 		58E336171892C02E004D60C3 /* HIApplicationsViewController.strings in Resources */ = {isa = PBXBuildFile; fileRef = 58E336191892C02E004D60C3 /* HIApplicationsViewController.strings */; };
 		58E3363A18934DCB004D60C3 /* coinbase.hiveapp in Resources */ = {isa = PBXBuildFile; fileRef = 58E3363918934DCB004D60C3 /* coinbase.hiveapp */; };
 		58F02AEE17E1F5A400B65429 /* HIRightPointingArrowView.m in Sources */ = {isa = PBXBuildFile; fileRef = 58F02AED17E1F5A400B65429 /* HIRightPointingArrowView.m */; };
@@ -1911,6 +1912,8 @@
 		58D4D658182A7627009CB7A5 /* tr */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = tr; path = tr.lproj/MainMenu.strings; sourceTree = "<group>"; };
 		58D4D659182A7627009CB7A5 /* tr */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = tr; path = tr.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		58D4D65B182A7627009CB7A5 /* tr */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = tr; path = tr.lproj/Localizable.strings; sourceTree = "<group>"; };
+		58E228DA193359C200851F1B /* NSAlert+Hive.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSAlert+Hive.h"; sourceTree = "<group>"; };
+		58E228DB193359C200851F1B /* NSAlert+Hive.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSAlert+Hive.m"; sourceTree = "<group>"; };
 		58E336181892C02E004D60C3 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/HIApplicationsViewController.strings; sourceTree = "<group>"; };
 		58E3361A1892C032004D60C3 /* pl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = pl; path = pl.lproj/HIApplicationsViewController.strings; sourceTree = "<group>"; };
 		58E3361B1892C033004D60C3 /* it */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = it; path = it.lproj/HIApplicationsViewController.strings; sourceTree = "<group>"; };
@@ -2489,8 +2492,6 @@
 				58F496F718B7EE8F0033B7E0 /* HINetworkConnectionMonitor.m */,
 				1AA10ABE84E126AEFF538618 /* HINotificationService.h */,
 				1AA1022DA4CD99B7CB61C335 /* HINotificationService.m */,
-				1AA1074CC0EE4C19941F2723 /* HIObservationHandler.h */,
-				1AA10B7D898B3F3FE49C1B78 /* HIObservationHandler.m */,
 				1AA10BFBA89C0A555ACF047A /* HISendFeedbackService.h */,
 				1AA1087CF3AB1F831B230294 /* HISendFeedbackService.m */,
 				1AA10D9CBDE4AF80B9B560A0 /* HIShortcutService.h */,
@@ -2738,6 +2739,8 @@
 		D9A5922617684D5400502635 /* Categories */ = {
 			isa = PBXGroup;
 			children = (
+				58E228DA193359C200851F1B /* NSAlert+Hive.h */,
+				58E228DB193359C200851F1B /* NSAlert+Hive.m */,
 				586059B518041A1300FD9C2A /* NSColor+Hive.h */,
 				586059B618041A1300FD9C2A /* NSColor+Hive.m */,
 				1AA10BD2B747098DE4F5E6E8 /* NSDecimalNumber+HISatoshiConversion.h */,
@@ -3174,6 +3177,7 @@
 				583B1E011868784600817EF8 /* HIBackupManager.m in Sources */,
 				58A0A49618ABC75E00A5A084 /* HITemporaryContact.m in Sources */,
 				586059D018041A6D00FD9C2A /* HIAppRuntimeBridge.m in Sources */,
+				58E228DC193359C200851F1B /* NSAlert+Hive.m in Sources */,
 				586059D418041A7A00FD9C2A /* HIContactsViewController.m in Sources */,
 				24300C1E188C3F5900FDEF2F /* HIWizardWelcomeViewController.m in Sources */,
 				24300BD918830ACA00FDEF2F /* HIFirstRunWizardWindowController.m in Sources */,

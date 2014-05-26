@@ -13,6 +13,7 @@
 #import "HIApplicationsViewController.h"
 #import "HIDatabaseManager.h"
 #import "HIDirectoryDataService.h"
+#import "NSAlert+Hive.h"
 
 
 NSString * const HIApplicationsManagerDomain = @"HIApplicationsManagerDomain";
@@ -190,12 +191,7 @@ const NSInteger HIApplicationManagerInsecureConnectionError = -2;
         NSString *description = NSLocalizedString(@"The file is damaged or does not contain a Hive application.",
                                                   @"Hiveapp file not readable error details");
 
-        NSAlert *alert = [NSAlert alertWithMessageText:title
-                                         defaultButton:NSLocalizedString(@"OK", @"OK button title")
-                                       alternateButton:nil
-                                           otherButton:nil
-                             informativeTextWithFormat:@"%@", description];
-        [alert runModal];
+        [[NSAlert hiOKAlertWithTitle:title message:description] runModal];
 
         if (error) {
             *error = [NSError errorWithDomain:HIApplicationsManagerDomain

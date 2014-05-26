@@ -12,6 +12,7 @@
 #import "HIBackupCenterWindowController.h"
 #import "HIBackupManager.h"
 #import "HIBackupStatusCellView.h"
+#import "NSAlert+Hive.h"
 
 static const CGFloat TableRowHeight = 60.0;
 static const NSTimeInterval UpdateTimerInterval = 5.0;
@@ -171,15 +172,11 @@ static const NSTimeInterval UpdateTimerInterval = 5.0;
     BOOL isEncrypted = [[BCClient sharedClient] isWalletPasswordProtected];
 
     if (!adapter.enabled && adapter.requiresEncryption && !isEncrypted) {
-        NSAlert *alert =
-            [NSAlert alertWithMessageText:NSLocalizedString(@"You need to set a wallet password first "
-                                                            @"(see Wallet menu).",
-                                                            @"Backup requires password alert title")
-                            defaultButton:NSLocalizedString(@"OK", @"OK button title")
-                          alternateButton:nil
-                              otherButton:nil
-                informativeTextWithFormat:NSLocalizedString(@"It's dangerous to upload unencrypted wallets.",
-                                                            @"Backup requires password alert details")];
+        NSAlert *alert = [NSAlert hiOKAlertWithTitle:NSLocalizedString(@"You need to set a wallet password first "
+                                                                       @"(see Wallet menu).",
+                                                                       @"Backup requires password alert title")
+                                             message:NSLocalizedString(@"It's dangerous to upload unencrypted wallets.",
+                                                                       @"Backup requires password alert details")];
 
         [alert beginSheetModalForWindow:self.window modalDelegate:nil didEndSelector:nil contextInfo:NULL];
         return;

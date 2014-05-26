@@ -3,6 +3,7 @@
 #import "HIBitcoinURIService.h"
 #import "HISendBitcoinsWindowController.h"
 #import "HITemporaryContact.h"
+#import "NSAlert+Hive.h"
 
 @implementation HIBitcoinURIService
 
@@ -103,12 +104,7 @@
     NSString *message = NSLocalizedString(@"\"%@\" is not a valid URL.",
                                           @"Alert message when payment request URL is not valid");
 
-    NSAlert *alert = [NSAlert alertWithMessageText:title
-                                     defaultButton:NSLocalizedString(@"OK", @"OK button title")
-                                   alternateButton:nil
-                                       otherButton:nil
-                         informativeTextWithFormat:message, URLString];
-    [alert runModal];
+    [[NSAlert hiOKAlertWithTitle:title format:message, URLString] runModal];
 }
 
 - (void)handlePaymentURIErrorForURI:(NSString *)URIString {
@@ -120,12 +116,7 @@
     NSString *message = NSLocalizedString(@"\"%@\" is not a valid payment link.",
                                           @"Alert message when bitcoin: URI is not valid");
 
-    NSAlert *alert = [NSAlert alertWithMessageText:title
-                                     defaultButton:NSLocalizedString(@"OK", @"OK button title")
-                                   alternateButton:nil
-                                       otherButton:nil
-                         informativeTextWithFormat:message, URIString];
-    [alert runModal];
+    [[NSAlert hiOKAlertWithTitle:title format:message, URIString] runModal];
 }
 
 - (void)showQRCodeErrorForURI:(NSString *)URIString {
@@ -138,12 +129,7 @@
                                           @"or does not contain a Bitcoin address.",
                                           @"Alert message when address can't be extracted from a bitcoin: URI");
 
-    NSAlert *alert = [NSAlert alertWithMessageText:title
-                                     defaultButton:NSLocalizedString(@"OK", @"OK button title")
-                                   alternateButton:nil
-                                       otherButton:nil
-                         informativeTextWithFormat:message, URIString];
-    [alert runModal];
+    [[NSAlert hiOKAlertWithTitle:title format:message, URIString] runModal];
 }
 
 - (NSDictionary *)extendPaymentRequestData:(NSDictionary *)data withBitcoinURIDetails:(HIBitcoinURI *)bitcoinURI {
