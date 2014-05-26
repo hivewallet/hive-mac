@@ -75,6 +75,8 @@ static NSInteger HIDatabaseManagerFileExistsAtLocationError = 1000;
     BOOL exists = [fileManager fileExistsAtPath:applicationFilesDirectory.path isDirectory:&isDirectory];
 
     if (!exists) {
+        HILogDebug(@"Creating new application support directory");
+
         [fileManager createDirectoryAtPath:applicationFilesDirectory.path
                withIntermediateDirectories:YES
                                 attributes:nil
