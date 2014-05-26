@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="4514" systemVersion="12F45" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none">
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="5056" systemVersion="13C1021" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
         <deployment defaultVersion="1070" identifier="macosx"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="4514"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="5056"/>
     </dependencies>
     <objects>
         <customObject id="-2" userLabel="File's Owner" customClass="HIDebuggingInfoWindowController">
@@ -13,7 +13,7 @@
         </customObject>
         <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
         <customObject id="-3" userLabel="Application"/>
-        <window title="Debugging Info" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" restorable="NO" oneShot="NO" releasedWhenClosed="NO" wantsToBeColor="NO" frameAutosaveName="DebuggingInfoWindow" animationBehavior="default" id="1">
+        <window title="Debugging Info" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" restorable="NO" oneShot="NO" releasedWhenClosed="NO" frameAutosaveName="DebuggingInfoWindow" animationBehavior="default" id="1">
             <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
             <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
             <rect key="contentRect" x="196" y="240" width="650" height="622"/>
@@ -23,21 +23,21 @@
                 <rect key="frame" x="0.0" y="0.0" width="650" height="622"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <scrollView horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" usesPredominantAxisScrolling="NO" id="BFl-4M-70B">
-                        <rect key="frame" x="20" y="61" width="610" height="460"/>
+                    <scrollView horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BFl-4M-70B">
+                        <rect key="frame" x="20" y="61" width="610" height="470"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <clipView key="contentView" id="Zet-VK-Ouf">
-                            <rect key="frame" x="1" y="1" width="593" height="458"/>
+                            <rect key="frame" x="1" y="1" width="593" height="468"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             <subviews>
                                 <textView editable="NO" importsGraphics="NO" findStyle="panel" continuousSpellChecking="YES" allowsUndo="YES" usesRuler="YES" usesFontPanel="YES" verticallyResizable="YES" allowsNonContiguousLayout="YES" quoteSubstitution="YES" dashSubstitution="YES" smartInsertDelete="YES" id="1y2-mO-PsH">
-                                    <rect key="frame" x="0.0" y="0.0" width="593" height="458"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="593" height="468"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                    <size key="minSize" width="593" height="458"/>
+                                    <size key="minSize" width="593" height="468"/>
                                     <size key="maxSize" width="686" height="10000000"/>
                                     <color key="insertionPointColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                                    <size key="minSize" width="593" height="458"/>
+                                    <size key="minSize" width="593" height="468"/>
                                     <size key="maxSize" width="686" height="10000000"/>
                                 </textView>
                             </subviews>
@@ -48,12 +48,12 @@
                             <autoresizingMask key="autoresizingMask"/>
                         </scroller>
                         <scroller key="verticalScroller" verticalHuggingPriority="750" doubleValue="1" horizontal="NO" id="Op0-A6-avL">
-                            <rect key="frame" x="593" y="1" width="16" height="458"/>
+                            <rect key="frame" x="594" y="1" width="15" height="468"/>
                             <autoresizingMask key="autoresizingMask"/>
                         </scroller>
                     </scrollView>
-                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="hey-Jk-5AG">
-                        <rect key="frame" x="17" y="529" width="616" height="73"/>
+                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="hey-Jk-5AG">
+                        <rect key="frame" x="18" y="551" width="614" height="51"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                         <textFieldCell key="cell" sendsActionOnEndEditing="YES" id="o5O-SS-J37">
                             <font key="font" metaFont="system"/>
@@ -62,8 +62,8 @@
                             <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                         </textFieldCell>
                     </textField>
-                    <button verticalHuggingPriority="750" id="7D6-dq-xT9">
-                        <rect key="frame" x="506" y="13" width="130" height="32"/>
+                    <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="7D6-dq-xT9">
+                        <rect key="frame" x="515" y="13" width="121" height="32"/>
                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
                         <buttonCell key="cell" type="push" title="Save to file..." bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="1AY-mJ-Thd">
                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
@@ -74,6 +74,17 @@
                         </connections>
                     </button>
                 </subviews>
+                <constraints>
+                    <constraint firstItem="BFl-4M-70B" firstAttribute="top" secondItem="hey-Jk-5AG" secondAttribute="bottom" constant="20" id="HKC-vU-tqT"/>
+                    <constraint firstItem="hey-Jk-5AG" firstAttribute="leading" secondItem="2" secondAttribute="leading" constant="20" symbolic="YES" id="HTT-e6-EfJ"/>
+                    <constraint firstAttribute="trailing" secondItem="BFl-4M-70B" secondAttribute="trailing" constant="20" symbolic="YES" id="Oab-uF-rKV"/>
+                    <constraint firstItem="BFl-4M-70B" firstAttribute="leading" secondItem="2" secondAttribute="leading" constant="20" symbolic="YES" id="SBs-GU-oPq"/>
+                    <constraint firstItem="BFl-4M-70B" firstAttribute="centerX" secondItem="hey-Jk-5AG" secondAttribute="centerX" id="dwG-3T-2Oz"/>
+                    <constraint firstAttribute="bottom" secondItem="7D6-dq-xT9" secondAttribute="bottom" constant="20" symbolic="YES" id="gkY-ql-hoO"/>
+                    <constraint firstItem="hey-Jk-5AG" firstAttribute="top" secondItem="2" secondAttribute="top" constant="20" symbolic="YES" id="i25-sw-aSZ"/>
+                    <constraint firstItem="BFl-4M-70B" firstAttribute="trailing" secondItem="7D6-dq-xT9" secondAttribute="trailing" id="p8c-Ox-9Yg"/>
+                    <constraint firstItem="7D6-dq-xT9" firstAttribute="top" secondItem="BFl-4M-70B" secondAttribute="bottom" constant="20" symbolic="YES" id="y59-bD-Gy8"/>
+                </constraints>
             </view>
             <connections>
                 <outlet property="delegate" destination="-2" id="4"/>
