@@ -1,18 +1,18 @@
 
 /* Class = "NSMenuItem"; title = "Last Name"; ObjectID = "DUH-JI-H8J"; */
-"DUH-JI-H8J.title" = "Last Name";
+"DUH-JI-H8J.title" = "姓氏";
 
 /* Class = "NSTextFieldCell"; title = "Sort By:"; ObjectID = "ELC-Fb-fGt"; */
-"ELC-Fb-fGt.title" = "Sort By:";
+"ELC-Fb-fGt.title" = "排序依据：";
 
 /* Class = "NSButtonCell"; title = "Following last name"; ObjectID = "eBf-qE-ozk"; */
-"eBf-qE-ozk.title" = "Following last name";
+"eBf-qE-ozk.title" = "在姓氏之后";
 
 /* Class = "NSButtonCell"; title = "Before last name"; ObjectID = "kyg-PT-wnV"; */
-"kyg-PT-wnV.title" = "Before last name";
+"kyg-PT-wnV.title" = "在姓氏之前";
 
 /* Class = "NSTextFieldCell"; title = "Show first name:"; ObjectID = "uRu-rC-vCh"; */
-"uRu-rC-vCh.title" = "Show first name:";
+"uRu-rC-vCh.title" = "显示名字";
 
 /* Class = "NSMenuItem"; title = "First Name"; ObjectID = "wzm-Cx-x6L"; */
-"wzm-Cx-x6L.title" = "First Name";
+"wzm-Cx-x6L.title" = "名字";

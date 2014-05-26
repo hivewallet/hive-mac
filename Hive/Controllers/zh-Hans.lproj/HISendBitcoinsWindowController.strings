@@ -1,33 +1,33 @@
 
 /* Class = "NSWindow"; title = "Send Bitcoin"; ObjectID = "1"; */
-"1.title" = "汇钱";
+"1.title" = "汇款";
 
 /* Class = "NSButtonCell"; title = "Cancel"; ObjectID = "6"; */
 "6.title" = "取消";
 
 /* Class = "NSButtonCell"; title = "Send"; ObjectID = "10"; */
-"10.title" = "汇";
+"10.title" = "发送";
 
 /* Class = "NSTextFieldCell"; title = "To:"; ObjectID = "14"; */
-"14.title" = "给:";
+"14.title" = "汇给：";
 
 /* Class = "NSTextFieldCell"; placeholderString = "Type to search..."; ObjectID = "20"; */
-"20.placeholderString" = "打字以搜寻...";
+"20.placeholderString" = "键入关键字搜寻...";
 
 /* Class = "NSTextFieldCell"; placeholderString = "or choose from the list"; ObjectID = "22"; */
-"22.placeholderString" = "或从目录中选一个";
+"22.placeholderString" = "或 从列表中选取";
 
 /* Class = "NSTextFieldCell"; title = "Loading payment details..."; ObjectID = "Agy-4s-MVS"; */
-"Agy-4s-MVS.title" = "Loading payment details...";
+"Agy-4s-MVS.title" = "载入交易信息...";
 
 /* Class = "NSTextFieldCell"; title = "Details:"; ObjectID = "EeC-5l-RYD"; */
-"EeC-5l-RYD.title" = "Details:";
+"EeC-5l-RYD.title" = "详情：";
 
 /* Class = "NSTextFieldCell"; title = "Payment successful"; ObjectID = "JAi-pl-Y47"; */
-"JAi-pl-Y47.title" = "Payment successful";
+"JAi-pl-Y47.title" = "交易成功";
 
 /* Class = "NSTextFieldCell"; title = "Currency exchange rates are provided by BitcoinAverage markets ticker. Bitcoin prices can change quickly, so other apps or sites might show different exchange rates."; ObjectID = "dxM-9E-wwb"; */
-"dxM-9E-wwb.title" = "Currency exchange rates are provided by BitcoinAverage markets ticker. Bitcoin prices can change quickly, so other apps or sites might show different exchange rates.";
+"dxM-9E-wwb.title" = "货币汇率由 BitcoinAverage 提供。比特币价格变化迅速，因此其他应用程序或网站可能会显示不同的汇率。";
 
 /* Class = "NSButtonCell"; title = "Close"; ObjectID = "iOT-cc-UWm"; */
-"iOT-cc-UWm.title" = "Close";
+"iOT-cc-UWm.title" = "关闭";

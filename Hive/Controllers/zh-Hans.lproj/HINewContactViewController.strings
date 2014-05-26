@@ -1,27 +1,27 @@
 
 /* Class = "NSButtonCell"; title = "Save"; ObjectID = "14"; */
-"14.title" = "Save";
+"14.title" = "保存";
 
 /* Class = "NSTextFieldCell"; title = "Contact information"; ObjectID = "75"; */
-"75.title" = "联系资料";
+"75.title" = "联系人资料";
 
 /* Class = "NSTextFieldCell"; title = "Email:"; ObjectID = "78"; */
-"78.title" = "电邮地址:";
+"78.title" = "Email:";
 
 /* Class = "NSButtonCell"; title = "Add address"; ObjectID = "80"; */
-"80.title" = "加新地址";
+"80.title" = "添加新地址";
 
 /* Class = "NSTextFieldCell"; title = "Bitcoin addresses"; ObjectID = "81"; */
 "81.title" = "比特币地址";
 
 /* Class = "NSButtonCell"; title = "Remove contact"; ObjectID = "97"; */
-"97.title" = "删除联系";
+"97.title" = "删除联系人";
 
 /* Class = "NSTextFieldCell"; title = "edit"; ObjectID = "107"; */
-"107.title" = "更改";
+"107.title" = "编辑";
 
 /* Class = "NSButtonCell"; title = "QR"; ObjectID = "Fp7-Nh-Dhm"; */
-"Fp7-Nh-Dhm.title" = "QR";
+"Fp7-Nh-Dhm.title" = "二维码";
 
 /* Class = "NSButtonCell"; title = "Cancel"; ObjectID = "WNT-Ju-zbY"; */
 "WNT-Ju-zbY.title" = "取消";

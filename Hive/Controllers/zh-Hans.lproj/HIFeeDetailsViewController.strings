@@ -1,9 +1,9 @@
 
 /* Class = "NSTextFieldCell"; title = "The fees you pay help keep the Bitcoin network running!"; ObjectID = "JVe-5I-zWC"; */
-"JVe-5I-zWC.title" = "The fees you pay help keep the Bitcoin network running!";
+"JVe-5I-zWC.title" = "您所支付的手续费用以维持比特网络的正常运行。";
 
 /* Class = "NSTextFieldCell"; title = "Current transaction fee:"; ObjectID = "exO-xB-xYk"; */
-"exO-xB-xYk.title" = "Current transaction fee:";
+"exO-xB-xYk.title" = "手续费：";
 
 /* Class = "NSTextFieldCell"; title = "Learn more…"; ObjectID = "kHH-z3-bVk"; */
-"kHH-z3-bVk.title" = "Learn more…";
+"kHH-z3-bVk.title" = "了解更多...";

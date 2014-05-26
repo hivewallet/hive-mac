@@ -36,7 +36,7 @@
                                     </binding>
                                 </connections>
                             </menuItem>
-                            <menuItem title="查看是否有更新..." id="870">
+                            <menuItem title="查看更新..." id="870">
                                 <modifierMask key="keyEquivalentModifierMask"/>
                                 <connections>
                                     <action selector="checkForUpdates:" target="869" id="871"/>
@@ -51,12 +51,12 @@
                             <menuItem isSeparatorItem="YES" id="144">
                                 <modifierMask key="keyEquivalentModifierMask" command="YES"/>
                             </menuItem>
-                            <menuItem title="藏 Hive" keyEquivalent="h" id="134">
+                            <menuItem title="隐藏 Hive" keyEquivalent="h" id="134">
                                 <connections>
                                     <action selector="hide:" target="-1" id="367"/>
                                 </connections>
                             </menuItem>
-                            <menuItem title="藏其他" keyEquivalent="h" id="145">
+                            <menuItem title="隐藏其他程序" keyEquivalent="h" id="145">
                                 <modifierMask key="keyEquivalentModifierMask" option="YES" command="YES"/>
                                 <connections>
                                     <action selector="hideOtherApplications:" target="-1" id="368"/>
@@ -78,22 +78,22 @@
                         </items>
                     </menu>
                 </menuItem>
-                <menuItem title="Wallet" id="GX7-xG-GKH">
-                    <menu key="submenu" title="Wallet" id="jrd-Ul-XjV">
+                <menuItem title="钱包" id="GX7-xG-GKH">
+                    <menu key="submenu" title="钱包" id="jrd-Ul-XjV">
                         <items>
-                            <menuItem title="汇出比特币..." keyEquivalent="S" id="866">
+                            <menuItem title="发送比特币..." keyEquivalent="S" id="866">
                                 <connections>
                                     <action selector="openSendBitcoinsWindow:" target="-1" id="868"/>
                                 </connections>
                             </menuItem>
                             <menuItem isSeparatorItem="YES" id="CGD-5y-ezT"/>
-                            <menuItem title="Change Password…" id="1HB-Qg-iyg">
+                            <menuItem title="修改密码..." id="1HB-Qg-iyg">
                                 <modifierMask key="keyEquivalentModifierMask"/>
                                 <connections>
                                     <action selector="changeWalletPassword:" target="494" id="n4h-c8-Hjn"/>
                                 </connections>
                             </menuItem>
-                            <menuItem title="Lock Wallet" keyEquivalent="l" id="AFM-Ev-d2A">
+                            <menuItem title="锁定钱包" keyEquivalent="l" id="AFM-Ev-d2A">
                                 <connections>
                                     <action selector="lockWallet:" target="-1" id="XWR-xx-Wx0"/>
                                 </connections>
@@ -108,11 +108,11 @@
                         </binding>
                     </connections>
                 </menuItem>
-                <menuItem title="更改" id="801">
+                <menuItem title="编辑" id="801">
                     <modifierMask key="keyEquivalentModifierMask"/>
-                    <menu key="submenu" title="更改" id="802">
+                    <menu key="submenu" title="编辑" id="802">
                         <items>
-                            <menuItem title="回改" keyEquivalent="z" id="804">
+                            <menuItem title="撤销" keyEquivalent="z" id="804">
                                 <connections>
                                     <action selector="undo:" target="-1" id="848"/>
                                 </connections>
@@ -123,7 +123,7 @@
                             <menuItem isSeparatorItem="YES" id="806">
                                 <modifierMask key="keyEquivalentModifierMask" command="YES"/>
                             </menuItem>
-                            <menuItem title="剪" keyEquivalent="x" id="807">
+                            <menuItem title="剪切" keyEquivalent="x" id="807">
                                 <connections>
                                     <action selector="cut:" target="-1" id="849"/>
                                 </connections>
@@ -133,7 +133,7 @@
                                     <action selector="copy:" target="-1" id="850"/>
                                 </connections>
                             </menuItem>
-                            <menuItem title="贴" keyEquivalent="v" id="809">
+                            <menuItem title="粘贴" keyEquivalent="v" id="809">
                                 <connections>
                                     <action selector="paste:" target="-1" id="851"/>
                                 </connections>
@@ -151,11 +151,11 @@
                         </items>
                     </menu>
                 </menuItem>
-                <menuItem title="Tools" id="eBU-ec-85y">
+                <menuItem title="工具" id="eBU-ec-85y">
                     <modifierMask key="keyEquivalentModifierMask"/>
-                    <menu key="submenu" title="Tools" id="cCx-Ak-fii">
+                    <menu key="submenu" title="工具" id="cCx-Ak-fii">
                         <items>
-                            <menuItem title="Backup Center" id="V0L-sM-c8h">
+                            <menuItem title="备份中心" id="V0L-sM-c8h">
                                 <modifierMask key="keyEquivalentModifierMask"/>
                                 <connections>
                                     <action selector="showBackupCenter:" target="-1" id="w3X-q3-iCI"/>
@@ -167,25 +167,25 @@
                                     <action selector="openCoinMapSite:" target="494" id="Ozv-6D-Aab"/>
                                 </connections>
                             </menuItem>
-                            <menuItem title="Scan a QR code…" id="vdw-IK-snJ">
+                            <menuItem title="扫描二维码" id="vdw-IK-snJ">
                                 <modifierMask key="keyEquivalentModifierMask"/>
                                 <connections>
                                     <action selector="scanQRCode:" target="494" id="mEt-Z8-Hrc"/>
                                 </connections>
                             </menuItem>
-                            <menuItem title="Sign message..." id="SoJ-eV-k9I">
+                            <menuItem title="签名消息..." id="SoJ-eV-k9I">
                                 <modifierMask key="keyEquivalentModifierMask"/>
                                 <connections>
                                     <action selector="openSignMessageWindow:" target="494" id="BXf-n1-5Go"/>
                                 </connections>
                             </menuItem>
                             <menuItem isSeparatorItem="YES" id="5f3-xf-h00"/>
-                            <menuItem title="Debugging info" keyEquivalent="D" id="lLT-53-p4m">
+                            <menuItem title="调试信息" keyEquivalent="D" id="lLT-53-p4m">
                                 <connections>
                                     <action selector="showDebuggingInfo:" target="-1" id="Exc-Ye-jOL"/>
                                 </connections>
                             </menuItem>
-                            <menuItem title="Debugging tools" id="Ue9-mi-gbe">
+                            <menuItem title="调试工具" id="Ue9-mi-gbe">
                                 <modifierMask key="keyEquivalentModifierMask"/>
                                 <connections>
                                     <action selector="showDebuggingTools:" target="-1" id="s18-1s-iwD"/>
@@ -201,11 +201,11 @@
                         </binding>
                     </connections>
                 </menuItem>
-                <menuItem title="窗户" id="854">
+                <menuItem title="窗口" id="854">
                     <modifierMask key="keyEquivalentModifierMask"/>
-                    <menu key="submenu" title="窗户" id="855">
+                    <menu key="submenu" title="窗口" id="855">
                         <items>
-                            <menuItem title="小化" keyEquivalent="m" id="857">
+                            <menuItem title="最小化" keyEquivalent="m" id="857">
                                 <connections>
                                     <action selector="performMiniaturize:" target="-1" id="861"/>
                                 </connections>
@@ -215,7 +215,7 @@
                                     <action selector="performClose:" target="-1" id="865"/>
                                 </connections>
                             </menuItem>
-                            <menuItem title="放大" id="858">
+                            <menuItem title="缩放" id="858">
                                 <connections>
                                     <action selector="performZoom:" target="-1" id="862"/>
                                 </connections>
@@ -223,7 +223,7 @@
                             <menuItem isSeparatorItem="YES" id="859">
                                 <modifierMask key="keyEquivalentModifierMask" command="YES"/>
                             </menuItem>
-                            <menuItem title="全部移来前面" id="860">
+                            <menuItem title="移到最前" id="860">
                                 <connections>
                                     <action selector="arrangeInFront:" target="-1" id="863"/>
                                 </connections>
@@ -231,9 +231,9 @@
                         </items>
                     </menu>
                 </menuItem>
-                <menuItem title="Help" id="ZUU-kM-x8u" userLabel="Menu Item - Help">
+                <menuItem title="帮助" id="ZUU-kM-x8u" userLabel="Menu Item - Help">
                     <modifierMask key="keyEquivalentModifierMask"/>
-                    <menu key="submenu" title="Help" id="K2u-T2-G1a">
+                    <menu key="submenu" title="帮助" id="K2u-T2-G1a">
                         <items>
                             <menuItem title="FAQ" id="VQa-2Z-6fS">
                                 <modifierMask key="keyEquivalentModifierMask"/>
@@ -241,7 +241,7 @@
                                     <action selector="openFAQ:" target="494" id="Hg3-rm-MEN"/>
                                 </connections>
                             </menuItem>
-                            <menuItem title="Send Feedback…" id="GsI-lc-HhD">
+                            <menuItem title="发送回执..." id="GsI-lc-HhD">
                                 <modifierMask key="keyEquivalentModifierMask"/>
                                 <connections>
                                     <action selector="sendFeedback:" target="494" id="CqW-xg-URA"/>

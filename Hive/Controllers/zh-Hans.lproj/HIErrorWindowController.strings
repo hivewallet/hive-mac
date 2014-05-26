@@ -1,33 +1,33 @@
 
 /* Class = "NSWindow"; title = "Error"; ObjectID = "1"; */
-"1.title" = "Error";
+"1.title" = "错误";
 
 /* Class = "NSTextFieldCell"; placeholderString = "email@domain.com"; ObjectID = "0m5-Xd-7pp"; */
 "0m5-Xd-7pp.placeholderString" = "email@domain.com";
 
 /* Class = "NSTextFieldCell"; title = "Please send us a report to help us fix the problem."; ObjectID = "Cob-tq-o5r"; */
-"Cob-tq-o5r.title" = "Please send us a report to help us fix the problem.";
+"Cob-tq-o5r.title" = "请给我们发送相关报告以方便我们修补错误。";
 
 /* Class = "NSTextFieldCell"; title = "Describe what you were doing when the error occurred:"; ObjectID = "F9w-28-7kX"; */
-"F9w-28-7kX.title" = "Describe what you were doing when the error occurred (preferably in English):";
+"F9w-28-7kX.title" = "描述问题发生前您进行的操作（请尽可能使用英语）：";
 
 /* Class = "NSTextFieldCell"; title = "Oh no, something went wrong!"; ObjectID = "Mpx-rH-nUM"; */
-"Mpx-rH-nUM.title" = "Oh no, something went wrong!";
+"Mpx-rH-nUM.title" = "抱歉，程序出现了问题！";
 
 /* Class = "NSTextFieldCell"; title = "Your name (optional)"; ObjectID = "pya-AJ-MPI"; */
-"pya-AJ-MPI.title" = "Your name (optional)";
+"pya-AJ-MPI.title" = "您的名字（可选）";
 
 /* Class = "NSButtonCell"; title = "Send"; ObjectID = "tDm-yy-jVS"; */
-"tDm-yy-jVS.title" = "Send";
+"tDm-yy-jVS.title" = "发送";
 
 /* Class = "NSButtonCell"; title = "Cancel"; ObjectID = "tR0-Dg-y0x"; */
-"tR0-Dg-y0x.title" = "Cancel";
+"tR0-Dg-y0x.title" = "取消";
 
 /* Class = "NSTextFieldCell"; title = "Error details:"; ObjectID = "uLK-ff-isg"; */
-"uLK-ff-isg.title" = "Error details:";
+"uLK-ff-isg.title" = "错误描述：";
 
 /* Class = "NSTextFieldCell"; title = "An unexpected error has occurred in Hive."; ObjectID = "xF4-pJ-cQU"; */
-"xF4-pJ-cQU.title" = "An unexpected error has occurred in Hive.";
+"xF4-pJ-cQU.title" = "Hive 发生了一个未预期错误。";
 
 /* Class = "NSTextFieldCell"; title = "Your email (optional)"; ObjectID = "zup-Q6-bK7"; */
-"zup-Q6-bK7.title" = "Your email (optional)";
+"zup-Q6-bK7.title" = "您的 Email（可选）";

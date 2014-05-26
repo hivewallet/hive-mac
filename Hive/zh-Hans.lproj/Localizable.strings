@@ -1,201 +1,201 @@
 
 /* Body for feedback emails */
-"(Please write in English if possible.)" = "(Please write in English if possible.)";
+"(Please write in English if possible.)" = "（请尽可能使用英语）";
 
 /* Alert message when bitcoin: URI is not valid */
-"\"%@\" is not a valid payment link." = "\"%@\" is not a valid payment link.";
+"\"%@\" is not a valid payment link." = "“%@” 不是一个正确的支付链接。";
 
 /* Alert message when payment request URL is not valid */
-"\"%@\" is not a valid URL." = "\"%@\" is not a valid URL.";
+"\"%@\" is not a valid URL." = "“%@” 不是一个正确的链接。";
 
 /* Address field placeholder */
-"Address" = "地址";
+"Address" = "比特币地址";
 
 /* Title of an alert when trying to send more than you have */
 "Amount exceeds balance." = "数量高于帐户余额。";
 
 /* Anonymous username for profile page */
-"Anonymous" = "(匿名者)";
+"Anonymous" = "(匿名)";
 
 /* Message when trying to start an app that requires a newer API level. */
-"App requires a newer version of Hive." = "App requires a newer version of Hive.";
+"App requires a newer version of Hive." = "该应用要求高版本 Hive。";
 
 /* App load error title */
 "Application can't be loaded" = "应用程序无法加载";
 
 /* Applications view title */
-"Apps" = "应用程序";
+"Apps" = "应用";
 
 /* Cancel editing alert title */
-"Are you sure you want to leave this page?" = "Are you sure you want to leave this page?";
+"Are you sure you want to leave this page?" = "您确定您要离开该页面？";
 
 /* Warning when trying to a large BTC amount (btc, fiat amount and address) */
-"Are you sure you want to send %@ (%@) to %@?" = "Are you sure you want to send %1$@ (%2$@) to %3$@?";
+"Are you sure you want to send %@ (%@) to %@?" = "您确定您要发送 %1$@ (%2$@) 给 %3$@？";
 
 /* Wizard backup page title */
-"Backup" = "Backup";
+"Backup" = "备份";
 
 /* Backup status: backup can't or won't be completed */
-"Backup error" = "Backup error";
+"Backup error" = "备份失败";
 
 /* No comment provided by engineer. */
-"Backup hasn't been done yet" = "Backup hasn't been done yet";
+"Backup hasn't been done yet" = "备份进程中断";
 
 /* Backup error message */
-"Backup is not configured" = "Backup is not configured";
+"Backup is not configured" = "没有启用备份";
 
 /* Backup status: backup done but not updated recently */
-"Backup problem" = "Backup problem";
+"Backup problem" = "备份出现问题";
 
 /* initialization error */
-"Bitcoin network data file could not be opened - another instance of Hive might still be running." = "Bitcoin network data file could not be opened - another instance of Hive might still be running.";
+"Bitcoin network data file could not be opened - another instance of Hive might still be running." = "比特币网络数据文件无法打开 - 可能被其他应用程序占用。";
 
 /* Chain file unreadable error title */
-"Bitcoin network data file could not be opened." = "Bitcoin network data file could not be opened.";
+"Bitcoin network data file could not be opened." = "比特币网络数据文件无法打开。";
 
 /* Backup error message */
-"Can't create a directory to store the wallet backup" = "Can't create a directory to store the wallet backup";
+"Can't create a directory to store the wallet backup" = "创建比特钱包失败";
 
 /* Cancel button title */
 "Cancel" = "取消";
 
 /* Dead transaction label */
-"CANCELLED" = "CANCELLED";
+"CANCELLED" = "已取消";
 
 /* Alert message when payment request can't be loaded from or sent to the server */
-"Check your network connection, try again later or report the problem to the payment recipient." = "Check your network connection, try again later or report the problem to the payment recipient.";
+"Check your network connection, try again later or report the problem to the payment recipient." = "请检查您的网络连接并稍后再试或报告这个问题。";
 
 /* Dropbox folder save panel confirmation button */
-"Choose" = "Choose";
+"Choose" = "选择";
 
 /* No comment provided by engineer. */
-"Choose a directory inside Dropbox folder where the backup should be saved:" = "Choose a directory inside Dropbox folder where the backup should be saved:";
+"Choose a directory inside Dropbox folder where the backup should be saved:" = "选择 Dropbox 文件夹：";
 
 /* No comment provided by engineer. */
-"click to copy" = "点击进行复制";
+"click to copy" = "点击复制";
 
 /* Confirm button next to passphrase */
-"Confirm" = "Confirm";
+"Confirm" = "确认";
 
 /* Contact name empty alert title */
-"Contact can't be saved." = "无法保存此联系";
+"Contact can't be saved." = "无法保存此联系人信息";
 
 /* Entry in application icon context menu */
-"Contact the author" = "Contact the author";
+"Contact the author" = "联系作者";
 
 /* Contacts view title */
 "Contacts" = "联系簿";
 
 /* No comment provided by engineer. */
-"copied!" = "复制了！";
+"copied!" = "已复制";
 
 /* initialization error */
-"Could not read wallet file. It might be damaged." = "Could not read wallet file. It might be damaged.";
+"Could not read wallet file. It might be damaged." = "无法读取钱包文件，文件或许已损坏！";
 
 /* Disable backup button title */
-"Disable" = "Disable";
+"Disable" = "禁用";
 
 /* Backup status: adapter disabled */
-"Disabled" = "Disabled";
+"Disabled" = "已禁用";
 
 /* Confirm leaving a form without saving data */
-"Discard Changes" = "Discard Changes";
+"Discard Changes" = "撤销";
 
 /* Remove contact alert dialog title */
-"Do you really want to remove %@ from your contact list?" = "您要从联系簿中把 %@ 删除掉吗？";
+"Do you really want to remove %@ from your contact list?" = "您要把 %@ 从联系簿中删除吗？";
 
 /* Install app popup title */
-"Do you want to add \"%@\" to Hive?" = "Do you want to add \"%@\" to Hive?";
+"Do you want to add \"%@\" to Hive?" = "您要安装 “%@” 吗？";
 
 /* Uninstall app popup title */
-"Do you want to remove \"%@\" from the application list?" = "Do you want to remove \"%@\" from the application list?";
+"Do you want to remove \"%@\" from the application list?" = "您确定要卸载 “%@” ？";
 
 /* Backup error message */
-"Dropbox folder not found" = "Dropbox folder not found";
+"Dropbox folder not found" = "找不到 Dropbox 文件夹";
 
 /* Dropbox no backup folder alert title */
-"Dropbox folder not found." = "Dropbox folder not found.";
+"Dropbox folder not found." = "找不到 Dropbox 文件夹";
 
 /* Backup error message */
-"Dropbox isn't running" = "Dropbox isn't running";
+"Dropbox isn't running" = "Dropbox 未执行";
 
 /* Page title when editing contact's info */
-"Edit contact" = "更改联系";
+"Edit contact" = "编辑联系人";
 
 /* Page title when editing your own profile info */
-"Edit profile" = "更改个人资料";
+"Edit profile" = "编辑个人资料";
 
 /* Email field placeholder */
-"email" = "电邮地址";
+"email" = "Email";
 
 /* Enable backup button title (no configuration required) */
-"Enable" = "Enable";
+"Enable" = "启用";
 
 /* Enable backup button title (requires configuration) */
-"Enable..." = "Enable...";
+"Enable..." = "启用...";
 
 /* Passphrase prompt for sending */
-"Enter your passphrase to confirm the transaction:" = "Enter your passphrase to confirm the transaction:";
+"Enter your passphrase to confirm the transaction:" = "输入密码以确认交易：";
 
 /* Passphrase prompt for message signing */
-"Enter your password to sign the message:" = "Enter your password to sign the message:";
+"Enter your password to sign the message:" = "输入您的密码以签名信息：";
 
 /* Firstname field placeholder */
-"Firstname" = "名";
+"Firstname" = "名字";
 
 /* Title for general preferences panel */
-"General" = "General";
+"General" = "通用";
 
 /* Hiveapp file not readable error title */
-"Hive application file \"%@\" could not be opened." = "Hive application file \"%@\" could not be opened.";
+"Hive application file \"%@\" could not be opened." = "Hive 文件 “%@” 无法打开。";
 
 /* Initialization error title */
-"Hive cannot be started." = "Hive cannot be started.";
+"Hive cannot be started." = "无法启动 Hive";
 
 /* Database error alert title */
-"Hive database file cannot be opened." = "Hive database file cannot be opened.";
+"Hive database file cannot be opened." = "无法打开 Hive 数据文件";
 
 /* Backup error message */
-"Hive directory is excluded from Time Machine backup" = "Hive directory is excluded from Time Machine backup";
+"Hive directory is excluded from Time Machine backup" = "Hive 文件夹被排除在 Time Machine 之外";
 
 /* Sync in progress alert title */
-"Hive is currently syncing with the Bitcoin network. Are you sure you want to quit?" = "Hive is currently syncing with the Bitcoin network. Are you sure you want to quit?";
+"Hive is currently syncing with the Bitcoin network. Are you sure you want to quit?" = "Hive 任然在和比特币网络同步，确认退出？";
 
 /* No network connection alert title */
-"Hive is not connected to the Bitcoin network." = "Hive is not connected to the Bitcoin network.";
+"Hive is not connected to the Bitcoin network." = "Hive 已从比特币网络离线。";
 
 /* Chain file unreadable error explanation */
-"Hive will now delete the file and synchronize with the Bitcoin network again. Please leave Hive open for the next several minutes, and try not to send any transactions right now." = "Hive will now delete the file and synchronize with the Bitcoin network again. Please leave Hive open for the next several minutes, and try not to send any transactions right now.";
+"Hive will now delete the file and synchronize with the Bitcoin network again. Please leave Hive open for the next several minutes, and try not to send any transactions right now." = "Hive 不会删除文件并重新同步。请保持 Hive 开启 且不要进行任何交易 直到 Hive 恢复。";
 
 /* Share sent transaction text */
-"I've just received some Bitcoin using Hive" = "I've just received some Bitcoin using Hive";
+"I've just received some Bitcoin using Hive" = "我刚刚通过 Hive 收到了一些比特币";
 
 /* Share sent transaction text */
-"I've just sent some Bitcoin using Hive" = "I've just sent some Bitcoin using Hive";
+"I've just sent some Bitcoin using Hive" = "我刚刚通过 Hive 发送了一些比特币";
 
 /* Alert details when trying to send more than you have with fee */
-"If you send your whole wallet balance, there's nothing left to pay the required fee. Try to send a bit less, or split the transaction into smaller ones." = "If you send your whole wallet balance, there's nothing left to pay the required fee. Try to send a bit less, or split the transaction into smaller ones.";
+"If you send your whole wallet balance, there's nothing left to pay the required fee. Try to send a bit less, or split the transaction into smaller ones." = "您不能全额发送您的钱包，这样您将无法支付交易手续费。";
 
 /* Install app button title */
-"Install" = "Install";
+"Install" = "安装";
 
 /* Backup requires password alert details */
-"It's dangerous to upload unencrypted wallets." = "It's dangerous to upload unencrypted wallets.";
+"It's dangerous to upload unencrypted wallets." = "上传未加密的钱包文件有风险！";
 
 /* Don't leave a form without saving data */
-"Keep Editing" = "Keep Editing";
+"Keep Editing" = "继续编辑";
 
 /* Address caption field placeholder */
-"Label" = "Label";
+"Label" = "标签";
 
 /* On what date was the last backup done */
-"Last backup on %@" = "Last backup on %@";
+"Last backup on %@" = "最后一次备份于 %@";
 
 /* Lastname field placeholder */
-"Lastname" = "姓";
+"Lastname" = "姓氏";
 
 /* Alert message when address can't be extracted from a bitcoin: URI */
-"Link included in this QR code (\"%@\") is invalid or does not contain a Bitcoin address." = "Link included in this QR code (\"%@\") is invalid or does not contain a Bitcoin address.";
+"Link included in this QR code (\"%@\") is invalid or does not contain a Bitcoin address." = "看起来这个二维码中的信息（“%@”）不正确";
 
 /* Main address caption */
 "main" = "主要";
@@ -204,61 +204,61 @@
 "Main address" = "主要地址";
 
 /* New contact view controller title */
-"New contact" = "添加联系";
+"New contact" = "添加联系人";
 
 /* Empty address alert title */
-"No address entered." = "地址没被填上。";
+"No address entered." = "没有填写比特币地址。";
 
 /* Backup is outdated, last backup was on that date */
-"No backup since %@" = "No backup since %@";
+"No backup since %@" = "自从 %@ 从未备份";
 
 /* No backups enabled notification title */
-"No backups configured" = "No backups configured";
+"No backups configured" = "没有设置备份";
 
 /* Transaction failed alert message */
 "No Bitcoin have been taken from your wallet." = "没有从帐户中取出比特币。";
 
 /* Title of an alert when trying to send more than you have with fee */
-"Not enough funds left to pay the transaction fee." = "Not enough funds left to pay the transaction fee.";
+"Not enough funds left to pay the transaction fee." = "余额不足以支付交易手续费。";
 
 /* OK button title */
-"OK" = "OK";
+"OK" = "确定";
 
 /* Wizard password page title */
-"Password" = "Password";
+"Password" = "密码";
 
 /* Send Bitcoin window title for payment request */
-"Pay with Bitcoin" = "Pay with Bitcoin";
+"Pay with Bitcoin" = "通过比特币付款";
 
 /* Alert title when payment can't be sent to the merchant */
-"Payment could not be completed." = "Payment could not be completed.";
+"Payment could not be completed." = "支付中断。";
 
 /* Alert title when payment request file can't be read */
-"Payment data file could not be opened." = "Payment data file could not be opened.";
+"Payment data file could not be opened." = "交易数据文件无法打开。";
 
 /* Alert title when payment request file has some invalid or unexpected data */
-"Payment data is invalid." = "Payment data is invalid.";
+"Payment data is invalid." = "交易数据不正确。";
 
 /* Alert title when payment request can't be loaded from the server */
-"Payment details could not be loaded." = "Payment details could not be loaded.";
+"Payment details could not be loaded." = "无法载入交易详情。";
 
 /* Alert title when the time limit to complete the payment has passed */
-"Payment request has already expired." = "Payment request has already expired.";
+"Payment request has already expired." = "交易请求已过期。";
 
 /* Pending transaction label */
-"PENDING" = "PENDING";
+"PENDING" = "待确认";
 
 /* Invalid address alert message */
 "Please check if you have entered the address correctly." = "请您检查比特币地址，确认输入时没有出差错。";
 
 /* Warning details when trying to send to your own address */
-"Please enter a different address." = "Please enter a different address.";
+"Please enter a different address." = "请输入不同的比特币地址。";
 
 /* Empty address alert message */
-"Please enter a valid Bitcoin address or select one from the dropdown list." = "请输入一个合格的比特币地址，或从目录中选一个。";
+"Please enter a valid Bitcoin address or select one from the dropdown list." = "请输入一个合格的比特币地址，或从列表中选一个。";
 
 /* Preferences window title */
-"Preferences" = "Preferences";
+"Preferences" = "偏好设置";
 
 /* Profile view title string */
 "Profile" = "个人资料";
@@ -267,169 +267,169 @@
 "Quit anyway" = "退出";
 
 /* Received amount of BTC from unknown source */
-"Received &a" = "Received &a";
+"Received &a" = "收到 &a";
 
 /* Received amount of BTC from contact */
-"Received &a from &c" = "Received &a from &c";
+"Received &a from &c" = "从 &c 收到 &a";
 
 /* Install app button title when app exists */
-"Reinstall" = "Reinstall";
+"Reinstall" = "重装";
 
 /* No comment provided by engineer. */
-"Remove" = "Remove";
+"Remove" = "移除";
 
 /* Dropbox invalid folder alert title */
-"Selected directory is outside Dropbox folder." = "Selected directory is outside Dropbox folder.";
+"Selected directory is outside Dropbox folder." = "选择的文件夹不在 Dropbox 目录中。";
 
 /* Send button title */
-"Send" = "Send";
+"Send" = "发送";
 
 /* Sent amount of BTC to a contact/address */
-"Sent &a to &c" = "Sent &a to &c";
+"Sent &a to &c" = "发送 &a 给 &c";
 
 /* Title for shortcut keys preferences panel */
-"Shortcuts" = "Shortcuts";
+"Shortcuts" = "热键";
 
 /* Amount exceeds available balance alert title */
-"Some funds are temporarily unavailable." = "Some funds are temporarily unavailable.";
+"Some funds are temporarily unavailable." = "部分资金暂时不可用。";
 
 /* Wizard completed page title */
-"Start!" = "Start!";
+"Start!" = "开始";
 
 /* App load error description */
-"The application data file has been removed or corrupted." = "The application data file has been removed or corrupted.";
+"The application data file has been removed or corrupted." = "应用文件已被移除或损坏。";
 
 /* Error message when database is incompatible with this version */
-"The database was saved by a newer version of Hive - please download the latest version from http://hivewallet.com." = "The database was saved by a newer version of Hive - please download the latest version from http://hivewallet.com.";
+"The database was saved by a newer version of Hive - please download the latest version from http://hivewallet.com." = "请使用新版本 Hive 打开钱包！获取新版本请访问：http://hivewallet.com";
 
 /* Install app popup warning message when app exists */
-"The existing app file will be replaced by the new version. This will not affect any app settings or saved data." = "The existing app file will be replaced by the new version. This will not affect any app settings or saved data.";
+"The existing app file will be replaced by the new version. This will not affect any app settings or saved data." = "应用文件会被新版本覆盖，但是不会影响您的设置和数据。";
 
 /* Alert message when payment request file can't be read */
-"The file doesn't exist or is not accessible." = "The file doesn't exist or is not accessible.";
+"The file doesn't exist or is not accessible." = "文件不存在或无权访问。";
 
 /* Hiveapp file not readable error details */
-"The file is damaged or does not contain a Hive application." = "The file is damaged or does not contain a Hive application.";
+"The file is damaged or does not contain a Hive application." = "文件损坏或无法被 Hive 使用。";
 
 /* Sending dust alert message */
-"This amount is too low to be sent through the network." = "This amount is too low to be sent through the network.";
+"This amount is too low to be sent through the network." = "数目过小无法发送。";
 
 /* Alert title when bitcoin: URI is not valid */
-"This Bitcoin payment link is invalid." = "This Bitcoin payment link is invalid.";
+"This Bitcoin payment link is invalid." = "该比特币链接不正确。";
 
 /* Alert title when payment request URL is not valid */
-"This Bitcoin payment URL is invalid." = "This Bitcoin payment URL is invalid.";
+"This Bitcoin payment URL is invalid." = "该比特币支付链接不正确。";
 
 /* Alert details when transaction was cancelled */
-"This can happen because of bugs in the wallet code or because the transaction was rejected by the network." = "This can happen because of bugs in the wallet code or because the transaction was rejected by the network.";
+"This can happen because of bugs in the wallet code or because the transaction was rejected by the network." = "可能由 钱包程序的漏洞或比特币网络拒绝 引起。";
 
 /* Alert message when payment request file isn't really a payment request at all */
-"This file does not contain a valid Bitcoin payment request." = "This file does not contain a valid Bitcoin payment request.";
+"This file does not contain a valid Bitcoin payment request." = "该文件不是一个正确地支付请求文件。";
 
 /* Warning details when trying to send a large BTC amount */
-"This is more than what you usually send." = "This is more than what you usually send.";
+"This is more than what you usually send." = "您正在尝试发送一大笔款项。";
 
 /* Warning title when trying to send to your own address */
-"This is your wallet address." = "This is your wallet address.";
+"This is your wallet address." = "不能发送比特币给自己。";
 
 /* Invalid address alert title */
-"This isn't a valid Bitcoin address." = "这不是一个合格的比特币地址。";
+"This isn't a valid Bitcoin address." = "输入的比特币地址不正确。";
 
 /* Alert message when user is on the mainnet and payment request is for testnet (or vice versa) */
-"This payment is supposed to be sent on a different Bitcoin network." = "This payment is supposed to be sent on a different Bitcoin network.";
+"This payment is supposed to be sent on a different Bitcoin network." = "该交易被发送到其他的比特币网络。";
 
 /* Alert title when address can't be extracted from a bitcoin: URI */
-"This QR code can't be used here." = "This QR code can't be used here.";
+"This QR code can't be used here." = "该二维码不能用于此处。";
 
 /* Backup error message */
-"Time Machine is disabled in System Preferences" = "Time Machine is disabled in System Preferences";
+"Time Machine is disabled in System Preferences" = "Time Machine 已被系统禁用。";
 
 /* No backups enabled notification details */
-"To protect your bitcoins, it's recommended that you enable at least one type of backup." = "To protect your bitcoins, it's recommended that you enable at least one type of backup.";
+"To protect your bitcoins, it's recommended that you enable at least one type of backup." = "为了保护您的比特币，请至少启用一种备份方式。";
 
 /* Amount exceeds available balance alert message */
-"To send this transaction, you'll need to wait for your pending transactions to be confirmed first (this shouldn't take more than a few minutes)." = "To send this transaction, you'll need to wait for your pending transactions to be confirmed first (this shouldn't take more than a few minutes).";
+"To send this transaction, you'll need to wait for your pending transactions to be confirmed first (this shouldn't take more than a few minutes)." = "发送款项后您需要等待比特币网络确认交易信息。";
 
 /* Message when trying to start an app that requires a newer API level. */
-"To use the app, please update to the latest version of Hive." = "To use the app, please update to the latest version of Hive.";
+"To use the app, please update to the latest version of Hive." = "请升级到最新版 Hive 以使用该应用。";
 
 /* Notification of cancelled transaction */
-"Transaction cancelled" = "Transaction cancelled";
+"Transaction cancelled" = "交易取消";
 
 /* Notification of confirmed sent transaction */
-"Transaction completed" = "Transaction completed";
+"Transaction completed" = "交易完成";
 
 /* Transaction failed alert title */
 "Transaction could not be completed." = "交易无法完成。";
 
 /* Alert when transaction was cancelled (with transaction date) */
-"Transaction from %@ was cancelled." = "Transaction from %@ was cancelled.";
+"Transaction from %@ was cancelled." = "%@ 的交易已被取消。";
 
 /* Transactions view title */
 "Transactions" = "交易";
 
 /* Uninstall app button title */
-"Uninstall" = "Uninstall";
+"Uninstall" = "卸载";
 
 /* Entry in application icon context menu */
-"Uninstall application" = "Uninstall application";
+"Uninstall application" = "卸载应用";
 
 /* Backup status: backup up to date */
-"Up to date" = "Up to date";
+"Up to date" = "最新状态";
 
 /* Entry in application icon context menu */
-"Visit application's site" = "Visit application's site";
+"Visit application's site" = "访问应用网址";
 
 /* Backup status: backup scheduled or in progress */
-"Waiting for backup" = "Waiting for backup";
+"Waiting for backup" = "等待备份";
 
 /* Install app popup warning message */
-"We cannot guarantee the safety of all apps - please be careful if you download Hive apps from third party sites." = "We cannot guarantee the safety of all apps - please be careful if you download Hive apps from third party sites.";
+"We cannot guarantee the safety of all apps - please be careful if you download Hive apps from third party sites." = "我们不保证所有应用的安全性，请不要轻易信任第三方 Hive 应用。";
 
 /* Wizard welcome page title */
-"Welcome" = "Welcome";
+"Welcome" = "欢迎";
 
 /* Button to show info about pending funds */
-"What does this mean?" = "What does this mean?";
+"What does this mean?" = "这代表了什么？";
 
 /* Uninstall app popup message */
-"You can install it again through the App Store app later if you change your mind." = "You can install it again through the App Store app later if you change your mind.";
+"You can install it again through the App Store app later if you change your mind." = "您可以通过应用商店重新安装该应用。";
 
 /* Details of an alert when trying to send more than you have */
 "You cannot send more money than you own." = "您要取出的数量不可高于帐户余额。";
 
 /* Install app popup title when app exists */
-"You have already added \"%@\" to Hive. Would you like to overwrite it?" = "You have already added \"%@\" to Hive. Would you like to overwrite it?";
+"You have already added \"%@\" to Hive. Would you like to overwrite it?" = "您已经安装过 “%@” ，您要覆盖它吗？";
 
 /* Notification of confirmed sent transaction (with BTC amount) */
-"You have sent %@." = "You have sent %@.";
+"You have sent %@." = "您已发送 %@";
 
 /* Dropbox no backup folder alert details */
-"You must install Dropbox first (see www.dropbox.com)." = "You must install Dropbox first (see www.dropbox.com).";
+"You must install Dropbox first (see www.dropbox.com)." = "您必须首先安装 Dropbox（访问 www.dropbox.com）";
 
 /* No network connection alert message */
-"You need to be connected to the network to send any transactions." = "You need to be connected to the network to send any transactions.";
+"You need to be connected to the network to send any transactions." = "您必须先连接到网络。";
 
 /* Dropbox invalid folder alert details */
-"You need to choose or create a directory inside your Dropbox folder." = "You need to choose or create a directory inside your Dropbox folder.";
+"You need to choose or create a directory inside your Dropbox folder." = "你需要选择 Dropbox 目录。";
 
 /* Contact name empty alert message */
-"You need to give the contact a name before you can add it to the list." = "加入联系簿之前，先给联系人一个名字。";
+"You need to give the contact a name before you can add it to the list." = "加入联系簿之前，先给联系人命名。";
 
 /* Backup requires password alert title */
-"You need to set a wallet password first (see Wallet menu)." = "You need to set a wallet password first (see Wallet menu).";
+"You need to set a wallet password first (see Wallet menu)." = "您必须先设置一个钱包密码（相关选项在 钱包 菜单）";
 
 /* Remove contact alert dialog body */
-"You won't be able to undo this operation." = "You won't be able to undo this operation.";
+"You won't be able to undo this operation." = "您无法撤销该修改。";
 
 /* Alert message when the time limit to complete the payment has passed */
-"You'll need to return to the site that requested the payment and initiate the payment again." = "You'll need to return to the site that requested the payment and initiate the payment again.";
+"You'll need to return to the site that requested the payment and initiate the payment again." = "您需要重新访问该站点并重新支付。";
 
 /* Notification of incoming transaction */
-"You've received Bitcoin" = "You've received Bitcoin";
+"You've received Bitcoin" = "您已收到新的比特币";
 
 /* Cancel editing alert message */
-"Your changes won't be saved." = "Your changes won't be saved.";
+"Your changes won't be saved." = "您的修改不会被保存。";
 
 /* Sync in progress alert details */
-"Your pending transactions won't be confirmed until the sync is complete." = "Your pending transactions won't be confirmed until the sync is complete.";
+"Your pending transactions won't be confirmed until the sync is complete." = "在同步结束前，您的交易不会被确认。";

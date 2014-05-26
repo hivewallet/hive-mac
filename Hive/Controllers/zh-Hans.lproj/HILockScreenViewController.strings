@@ -1,9 +1,9 @@
 
 /* Class = "NSTextFieldCell"; title = "Hive is locked.\nEnter your password to unlock:"; ObjectID = "Gmn-jq-R5t"; */
-"Gmn-jq-R5t.title" = "Hive is locked.\nEnter your password to unlock:";
+"Gmn-jq-R5t.title" = "Hive 已被锁定。\n输入您的密码解锁：";
 
 /* Class = "NSButtonCell"; title = "Unlock"; ObjectID = "W4R-hH-myj"; */
-"W4R-hH-myj.title" = "Unlock";
+"W4R-hH-myj.title" = "解锁";
 
 /* Class = "NSButtonCell"; title = "Don't show this screen again"; ObjectID = "fZF-LI-0oD"; */
-"fZF-LI-0oD.title" = "Don't show this screen again";
+"fZF-LI-0oD.title" = "不再显示此界面";

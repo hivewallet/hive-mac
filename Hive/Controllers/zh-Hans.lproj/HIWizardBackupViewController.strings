@@ -1,27 +1,27 @@
 
 /* Class = "NSTextFieldCell"; title = "Configure backup"; ObjectID = "I10-iV-C0e"; */
-"I10-iV-C0e.title" = "Configure backup";
+"I10-iV-C0e.title" = "设置备份";
 
 /* Class = "NSTextFieldCell"; title = "✓ enabled"; ObjectID = "KqD-DN-1Yk"; */
-"KqD-DN-1Yk.title" = "✓ enabled";
+"KqD-DN-1Yk.title" = "✓ 已启用";
 
 /* Class = "NSTextFieldCell"; title = "✘ disabled"; ObjectID = "M9O-91-CDX"; */
-"M9O-91-CDX.title" = "✘ disabled";
+"M9O-91-CDX.title" = "✘ 已禁用";
 
 /* Class = "NSTextFieldCell"; title = "✘ disabled"; ObjectID = "NSS-6s-Nas"; */
-"NSS-6s-Nas.title" = "✘ disabled";
+"NSS-6s-Nas.title" = "✘ 已禁用";
 
 /* Class = "NSTextFieldCell"; title = "✓ enabled"; ObjectID = "OI0-bL-7Zs"; */
-"OI0-bL-7Zs.title" = "✓ enabled";
+"OI0-bL-7Zs.title" = "✓ 已启用";
 
 /* Class = "NSButtonCell"; title = "Enable"; ObjectID = "f0R-BI-Nz4"; */
-"f0R-BI-Nz4.title" = "Enable";
+"f0R-BI-Nz4.title" = "启用";
 
 /* Class = "NSButtonCell"; title = "Next Step"; ObjectID = "j0E-b4-dgh"; */
-"j0E-b4-dgh.title" = "Next Step";
+"j0E-b4-dgh.title" = "下一步";
 
 /* Class = "NSButtonCell"; title = "Enable"; ObjectID = "lG8-G7-noh"; */
-"lG8-G7-noh.title" = "Enable";
+"lG8-G7-noh.title" = "启用";
 
 /* Class = "NSTextFieldCell"; title = "Backing up your wallet file is also an important safety measure to protect your money. Let's make a backup copy of your wallet now. If you ever lose your computer, Hive can retrieve your wallet from these sources."; ObjectID = "rIc-eX-ajY"; */
-"rIc-eX-ajY.title" = "Backing up your wallet file is also an important safety measure to protect your money. Let's make a backup copy of your wallet now. If you ever lose your computer, Hive can retrieve your wallet from these sources.";
+"rIc-eX-ajY.title" = "备份钱包是一个十分有效的安全措施。现在立刻备份您的钱包吧！如果您不慎丢失您的电脑或损坏您的钱包文件，Hive 可以快速恢复您的钱包。";

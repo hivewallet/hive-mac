@@ -18,37 +18,37 @@
 "131.title" = "服务";
 
 /* Class = "NSMenuItem"; title = "Hide Hive"; ObjectID = "134"; */
-"134.title" = "藏 Hive";
+"134.title" = "隐藏 Hive";
 
 /* Class = "NSMenuItem"; title = "Quit Hive"; ObjectID = "136"; */
 "136.title" = "退出 Hive";
 
 /* Class = "NSMenuItem"; title = "Hide Others"; ObjectID = "145"; */
-"145.title" = "藏其他";
+"145.title" = "隐藏其他程序";
 
 /* Class = "NSMenuItem"; title = "Show All"; ObjectID = "150"; */
 "150.title" = "显示全部";
 
 /* Class = "NSMenuItem"; title = "Edit"; ObjectID = "801"; */
-"801.title" = "更改";
+"801.title" = "编辑";
 
 /* Class = "NSMenu"; title = "Edit"; ObjectID = "802"; */
-"802.title" = "更改";
+"802.title" = "编辑";
 
 /* Class = "NSMenuItem"; title = "Undo"; ObjectID = "804"; */
-"804.title" = "回改";
+"804.title" = "撤销";
 
 /* Class = "NSMenuItem"; title = "Redo"; ObjectID = "805"; */
 "805.title" = "重做";
 
 /* Class = "NSMenuItem"; title = "Cut"; ObjectID = "807"; */
-"807.title" = "剪";
+"807.title" = "剪切";
 
 /* Class = "NSMenuItem"; title = "Copy"; ObjectID = "808"; */
 "808.title" = "复制";
 
 /* Class = "NSMenuItem"; title = "Paste"; ObjectID = "809"; */
-"809.title" = "贴";
+"809.title" = "粘贴";
 
 /* Class = "NSMenuItem"; title = "Delete"; ObjectID = "811"; */
 "811.title" = "删除";
@@ -57,73 +57,73 @@
 "812.title" = "选择全部";
 
 /* Class = "NSMenuItem"; title = "Window"; ObjectID = "854"; */
-"854.title" = "窗户";
+"854.title" = "窗口";
 
 /* Class = "NSMenu"; title = "Window"; ObjectID = "855"; */
-"855.title" = "窗户";
+"855.title" = "窗口";
 
 /* Class = "NSMenuItem"; title = "Minimize"; ObjectID = "857"; */
-"857.title" = "小化";
+"857.title" = "最小化";
 
 /* Class = "NSMenuItem"; title = "Zoom"; ObjectID = "858"; */
-"858.title" = "放大";
+"858.title" = "缩放";
 
 /* Class = "NSMenuItem"; title = "Bring All to Front"; ObjectID = "860"; */
-"860.title" = "全部移来前面";
+"860.title" = "移到最前";
 
 /* Class = "NSMenuItem"; title = "Close"; ObjectID = "864"; */
 "864.title" = "关闭";
 
 /* Class = "NSMenuItem"; title = "Send Bitcoin..."; ObjectID = "866"; */
-"866.title" = "汇出比特币...";
+"866.title" = "发送比特币...";
 
 /* Class = "NSMenuItem"; title = "Check for Updates..."; ObjectID = "870"; */
-"870.title" = "查看是否有更新...";
+"870.title" = "查看更新...";
 
 /* Class = "NSMenuItem"; title = "Change Password…"; ObjectID = "1HB-Qg-iyg"; */
-"1HB-Qg-iyg.title" = "Change Password…";
+"1HB-Qg-iyg.title" = "修改密码...";
 
 /* Class = "NSMenuItem"; title = "Lock Wallet"; ObjectID = "AFM-Ev-d2A"; */
-"AFM-Ev-d2A.title" = "Lock Wallet";
+"AFM-Ev-d2A.title" = "锁定钱包";
 
 /* Class = "NSMenuItem"; title = "CoinMap"; ObjectID = "ASP-Ns-ktD"; */
 "ASP-Ns-ktD.title" = "CoinMap";
 
 /* Class = "NSMenuItem"; title = "Wallet"; ObjectID = "GX7-xG-GKH"; */
-"GX7-xG-GKH.title" = "Wallet";
+"GX7-xG-GKH.title" = "钱包";
 
 /* Class = "NSMenuItem"; title = "Send Feedback…"; ObjectID = "GsI-lc-HhD"; */
-"GsI-lc-HhD.title" = "Send Feedback…";
+"GsI-lc-HhD.title" = "发送回执...";
 
 /* Class = "NSMenu"; title = "Help"; ObjectID = "K2u-T2-G1a"; */
-"K2u-T2-G1a.title" = "Help";
+"K2u-T2-G1a.title" = "帮助";
 
 /* Class = "NSMenuItem"; title = "Sign message..."; ObjectID = "SoJ-eV-k9I"; */
-"SoJ-eV-k9I.title" = "Sign message...";
+"SoJ-eV-k9I.title" = "签名消息...";
 
 /* Class = "NSMenuItem"; title = "Debugging tools"; ObjectID = "Ue9-mi-gbe"; */
-"Ue9-mi-gbe.title" = "Debugging tools";
+"Ue9-mi-gbe.title" = "调试工具";
 
 /* Class = "NSMenuItem"; title = "Backup Center"; ObjectID = "V0L-sM-c8h"; */
-"V0L-sM-c8h.title" = "Backup Center";
+"V0L-sM-c8h.title" = "备份中心";
 
 /* Class = "NSMenuItem"; title = "FAQ"; ObjectID = "VQa-2Z-6fS"; */
 "VQa-2Z-6fS.title" = "FAQ";
 
 /* Class = "NSMenuItem"; title = "Help"; ObjectID = "ZUU-kM-x8u"; */
-"ZUU-kM-x8u.title" = "Help";
+"ZUU-kM-x8u.title" = "帮助";
 
 /* Class = "NSMenu"; title = "Tools"; ObjectID = "cCx-Ak-fii"; */
-"cCx-Ak-fii.title" = "Tools";
+"cCx-Ak-fii.title" = "工具";
 
 /* Class = "NSMenuItem"; title = "Tools"; ObjectID = "eBU-ec-85y"; */
-"eBU-ec-85y.title" = "Tools";
+"eBU-ec-85y.title" = "工具";
 
 /* Class = "NSMenu"; title = "Wallet"; ObjectID = "jrd-Ul-XjV"; */
-"jrd-Ul-XjV.title" = "Wallet";
+"jrd-Ul-XjV.title" = "钱包";
 
 /* Class = "NSMenuItem"; title = "Debugging info"; ObjectID = "lLT-53-p4m"; */
-"lLT-53-p4m.title" = "Debugging info";
+"lLT-53-p4m.title" = "调试信息";
 
 /* Class = "NSMenuItem"; title = "Scan a QR code…"; ObjectID = "vdw-IK-snJ"; */
-"vdw-IK-snJ.title" = "Scan a QR code…";
+"vdw-IK-snJ.title" = "扫描二维码";
