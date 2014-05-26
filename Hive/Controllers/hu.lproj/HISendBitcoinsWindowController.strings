@@ -18,13 +18,13 @@
 "22.placeholderString" = "vagy válasz a listáról";
 
 /* Class = "NSTextFieldCell"; title = "Loading payment details..."; ObjectID = "Agy-4s-MVS"; */
-"Agy-4s-MVS.title" = "Loading payment details...";
+"Agy-4s-MVS.title" = "Fizetési adatok betöltése...";
 
 /* Class = "NSTextFieldCell"; title = "Details:"; ObjectID = "EeC-5l-RYD"; */
-"EeC-5l-RYD.title" = "Details:";
+"EeC-5l-RYD.title" = "Részletek:";
 
 /* Class = "NSTextFieldCell"; title = "Payment successful"; ObjectID = "JAi-pl-Y47"; */
-"JAi-pl-Y47.title" = "Payment successful";
+"JAi-pl-Y47.title" = "Sikeres transzakció";
 
 /* Class = "NSTextFieldCell"; title = "Currency exchange rates are provided by BitcoinAverage markets ticker. Bitcoin prices can change quickly, so other apps or sites might show different exchange rates."; ObjectID = "dxM-9E-wwb"; */
 "dxM-9E-wwb.title" = "A Bitcoin átváltási értéket a BitcoinAverage oldal szolgáltatja. Az árak gyorsan mozognak ezért az alkalmazás és egyéb átváltó oldalak közt lehetnek eltérések";

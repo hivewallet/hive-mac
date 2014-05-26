@@ -3,10 +3,10 @@
 "(Please write in English if possible.)" = "(Ha lehet angolul írd)";
 
 /* Alert message when bitcoin: URI is not valid */
-"\"%@\" is not a valid payment link." = "\"%@\" is not a valid payment link.";
+"\"%@\" is not a valid payment link." = "\"%@\" nem valós bitcoin cím.";
 
 /* Alert message when payment request URL is not valid */
-"\"%@\" is not a valid URL." = "\"%@\" is not a valid URL.";
+"\"%@\" is not a valid URL." = "\"%@\" nem valós URL.";
 
 /* Address field placeholder */
 "Address" = "Cím";
@@ -63,7 +63,7 @@
 "CANCELLED" = "MÉGSÉZVE";
 
 /* Alert message when payment request can't be loaded from or sent to the server */
-"Check your network connection, try again later or report the problem to the payment recipient." = "Check your network connection, try again later or report the problem to the payment recipient.";
+"Check your network connection, try again later or report the problem to the payment recipient." = "Ellenőrizd az internet kapcsolatodat. Próbáld meg később vagy szólj annak akinek küldeni akartál.";
 
 /* Dropbox folder save panel confirmation button */
 "Choose" = "Válassz";
@@ -144,7 +144,7 @@
 "Firstname" = "Vezetéknév";
 
 /* Title for general preferences panel */
-"General" = "General";
+"General" = "Általános";
 
 /* Hiveapp file not readable error title */
 "Hive application file \"%@\" could not be opened." = "A Hive \"%@\" nevű fájlját nem lehet megnyitni.";
@@ -174,7 +174,7 @@
 "I've just sent some Bitcoin using Hive" = "Most küldtem egy kis Bitcoint a Hive használatával";
 
 /* Alert details when trying to send more than you have with fee */
-"If you send your whole wallet balance, there's nothing left to pay the required fee. Try to send a bit less, or split the transaction into smaller ones." = "If you send your whole wallet balance, there's nothing left to pay the required fee. Try to send a bit less, or split the transaction into smaller ones.";
+"If you send your whole wallet balance, there's nothing left to pay the required fee. Try to send a bit less, or split the transaction into smaller ones." = "Hogyha minden bitcoinodat elküldöd nem lesz elég az illeték fizetésére. Próbálj kevesebbet küldeni vagy több kisebb részben.";
 
 /* Install app button title */
 "Install" = "Telepít";
@@ -195,7 +195,7 @@
 "Lastname" = "Keresztnév";
 
 /* Alert message when address can't be extracted from a bitcoin: URI */
-"Link included in this QR code (\"%@\") is invalid or does not contain a Bitcoin address." = "Link included in this QR code (\"%@\") is invalid or does not contain a Bitcoin address.";
+"Link included in this QR code (\"%@\") is invalid or does not contain a Bitcoin address." = "A QR kód (%@\") hibás vagy nem tartalmaz Bitcoin címet.";
 
 /* Main address caption */
 "main" = "fő";
@@ -219,7 +219,7 @@
 "No Bitcoin have been taken from your wallet." = "Semmilyen Bitcoin sem hiányzik a tárcádból.";
 
 /* Title of an alert when trying to send more than you have with fee */
-"Not enough funds left to pay the transaction fee." = "Not enough funds left to pay the transaction fee.";
+"Not enough funds left to pay the transaction fee." = "Nem maradt elég bitcoin az illeték fizetésére.";
 
 /* OK button title */
 "OK" = "OK";
@@ -228,22 +228,22 @@
 "Password" = "Jelszó";
 
 /* Send Bitcoin window title for payment request */
-"Pay with Bitcoin" = "Pay with Bitcoin";
+"Pay with Bitcoin" = "Fizess bitcoinnal";
 
 /* Alert title when payment can't be sent to the merchant */
-"Payment could not be completed." = "Payment could not be completed.";
+"Payment could not be completed." = "A fizetést nem lehet véghezvinni.";
 
 /* Alert title when payment request file can't be read */
-"Payment data file could not be opened." = "Payment data file could not be opened.";
+"Payment data file could not be opened." = "Hiba a fizetési kérelem megnyitásakor.";
 
 /* Alert title when payment request file has some invalid or unexpected data */
-"Payment data is invalid." = "Payment data is invalid.";
+"Payment data is invalid." = "Fizetési adat hiba.";
 
 /* Alert title when payment request can't be loaded from the server */
-"Payment details could not be loaded." = "Payment details could not be loaded.";
+"Payment details could not be loaded." = "A fizetés adatait nem lehet betölteni.";
 
 /* Alert title when the time limit to complete the payment has passed */
-"Payment request has already expired." = "Payment request has already expired.";
+"Payment request has already expired." = "A fizetési kérelem már lejárt.";
 
 /* Pending transaction label */
 "PENDING" = "VÁRAKOZÓ";
@@ -306,7 +306,7 @@
 "The existing app file will be replaced by the new version. This will not affect any app settings or saved data." = "Az előző verzió egy újabbal lesz lecserélve. Ez nem befolyásolja a beállításaidat és adataidat.";
 
 /* Alert message when payment request file can't be read */
-"The file doesn't exist or is not accessible." = "The file doesn't exist or is not accessible.";
+"The file doesn't exist or is not accessible." = "A fájl nem létezik vagy nem elérhető.";
 
 /* Hiveapp file not readable error details */
 "The file is damaged or does not contain a Hive application." = "A fájl sérült vagy nem Hive alkalmzás.";
@@ -315,16 +315,16 @@
 "This amount is too low to be sent through the network." = "Ilyen kicsi mennyiséget nem lehet küldeni.";
 
 /* Alert title when bitcoin: URI is not valid */
-"This Bitcoin payment link is invalid." = "This Bitcoin payment link is invalid.";
+"This Bitcoin payment link is invalid." = "A bitcoin cím hibás.";
 
 /* Alert title when payment request URL is not valid */
-"This Bitcoin payment URL is invalid." = "This Bitcoin payment URL is invalid.";
+"This Bitcoin payment URL is invalid." = "A bitcoin fizetési link nem valós.";
 
 /* Alert details when transaction was cancelled */
 "This can happen because of bugs in the wallet code or because the transaction was rejected by the network." = "Ez azért történhetett mert baj van a tárca kódjában vagy a tranzakciót a hálózat visszautasította.";
 
 /* Alert message when payment request file isn't really a payment request at all */
-"This file does not contain a valid Bitcoin payment request." = "This file does not contain a valid Bitcoin payment request.";
+"This file does not contain a valid Bitcoin payment request." = "Ez a fájl nem tartalmaz valós kifizetést.";
 
 /* Warning details when trying to send a large BTC amount */
 "This is more than what you usually send." = "Ez több mint az átlagos küldési méret.";
@@ -336,10 +336,10 @@
 "This isn't a valid Bitcoin address." = "Ez nem egy valós Bitcoin cím.";
 
 /* Alert message when user is on the mainnet and payment request is for testnet (or vice versa) */
-"This payment is supposed to be sent on a different Bitcoin network." = "This payment is supposed to be sent on a different Bitcoin network.";
+"This payment is supposed to be sent on a different Bitcoin network." = "Ezt a fizetést nem erre a hálózatra készítették.";
 
 /* Alert title when address can't be extracted from a bitcoin: URI */
-"This QR code can't be used here." = "This QR code can't be used here.";
+"This QR code can't be used here." = "QR kód hiba";
 
 /* Backup error message */
 "Time Machine is disabled in System Preferences" = "A Time Machine ki van kapcsolva a rendszerben.";
@@ -423,7 +423,7 @@
 "You won't be able to undo this operation." = "Ezt nem lehet visszavonni.";
 
 /* Alert message when the time limit to complete the payment has passed */
-"You'll need to return to the site that requested the payment and initiate the payment again." = "You'll need to return to the site that requested the payment and initiate the payment again.";
+"You'll need to return to the site that requested the payment and initiate the payment again." = "Újra kérned kell a kifizetést.";
 
 /* Notification of incoming transaction */
 "You've received Bitcoin" = "Bitcoint kaptál";
