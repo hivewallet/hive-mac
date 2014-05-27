@@ -46,7 +46,6 @@
 }
 
 - (void)viewWillAppear {
-    [[HIBackupManager sharedManager] resetSettings];
     [[HIBackupManager sharedManager] initializeAdapters];
 
     dispatch_async(dispatch_get_main_queue(), ^{

@@ -339,6 +339,9 @@ static int ddLogLevel = LOG_LEVEL_VERBOSE;
     self.wizard = [HIFirstRunWizardWindowController new];
     __weak __typeof__ (self) weakSelf = self;
 
+    // make sure we don't back up new wallet to the old place (or back it up before it's created)
+    [[HIBackupManager sharedManager] resetSettings];
+
     self.wizard.onCompletion = ^{
         [weakSelf showAppWindow];
         [weakSelf finishInitialization];
