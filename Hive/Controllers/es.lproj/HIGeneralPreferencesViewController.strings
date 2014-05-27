@@ -1,18 +1,18 @@
 
 /* Class = "NSMenuItem"; title = "Last Name"; ObjectID = "DUH-JI-H8J"; */
-"DUH-JI-H8J.title" = "Last Name";
+"DUH-JI-H8J.title" = "Apellidos";
 
 /* Class = "NSTextFieldCell"; title = "Sort By:"; ObjectID = "ELC-Fb-fGt"; */
-"ELC-Fb-fGt.title" = "Sort By:";
+"ELC-Fb-fGt.title" = "Ordenar por:";
 
 /* Class = "NSButtonCell"; title = "Following last name"; ObjectID = "eBf-qE-ozk"; */
-"eBf-qE-ozk.title" = "Following last name";
+"eBf-qE-ozk.title" = "Después de los apellidos";
 
 /* Class = "NSButtonCell"; title = "Before last name"; ObjectID = "kyg-PT-wnV"; */
-"kyg-PT-wnV.title" = "Before last name";
+"kyg-PT-wnV.title" = "Antes de los apellidos";
 
 /* Class = "NSTextFieldCell"; title = "Show first name:"; ObjectID = "uRu-rC-vCh"; */
-"uRu-rC-vCh.title" = "Show first name:";
+"uRu-rC-vCh.title" = "Mostrar nombre:";
 
 /* Class = "NSMenuItem"; title = "First Name"; ObjectID = "wzm-Cx-x6L"; */
-"wzm-Cx-x6L.title" = "First Name";
+"wzm-Cx-x6L.title" = "Nombre";

@@ -3,7 +3,7 @@
 "1.title" = "Error";
 
 /* Class = "NSTextFieldCell"; placeholderString = "email@domain.com"; ObjectID = "0m5-Xd-7pp"; */
-"0m5-Xd-7pp.placeholderString" = "email@domain.com";
+"0m5-Xd-7pp.placeholderString" = "email@dominio.com";
 
 /* Class = "NSTextFieldCell"; title = "Please send us a report to help us fix the problem."; ObjectID = "Cob-tq-o5r"; */
 "Cob-tq-o5r.title" = "Por favor envíanos un reporte para ayudar a solucionar el problema.";
