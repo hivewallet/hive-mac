@@ -37,7 +37,7 @@
                     </constraints>
                     <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="center" id="Gmn-jq-R5t">
                         <font key="font" metaFont="system"/>
-                        <string key="title">Hive está bloqueado.
+                        <string key="title">O Hive está bloqueado.
 Digite sua senha para desbloquear:</string>
                         <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>

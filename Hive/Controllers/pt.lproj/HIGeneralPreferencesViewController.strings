@@ -9,7 +9,7 @@
 "eBf-qE-ozk.title" = "Após o sobrenome";
 
 /* Class = "NSButtonCell"; title = "Before last name"; ObjectID = "kyg-PT-wnV"; */
-"kyg-PT-wnV.title" = "Nome do meio";
+"kyg-PT-wnV.title" = "Antes do sobrenome";
 
 /* Class = "NSTextFieldCell"; title = "Show first name:"; ObjectID = "uRu-rC-vCh"; */
 "uRu-rC-vCh.title" = "Mostrar nome:";

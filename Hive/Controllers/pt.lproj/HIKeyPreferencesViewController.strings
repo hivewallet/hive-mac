@@ -1,9 +1,9 @@
 
 /* Class = "NSTextFieldCell"; title = "Scan QR code:"; ObjectID = "psj-Lk-deP"; */
-"psj-Lk-deP.title" = "Escanear QR code:";
+"psj-Lk-deP.title" = "Para capturar um QR code:";
 
 /* Class = "NSTextFieldCell"; title = "Show “Send” window:"; ObjectID = "sbC-cS-hdN"; */
-"sbC-cS-hdN.title" = "Mostrar janela \"Enviar\":";
+"sbC-cS-hdN.title" = "Para mostrar a janela \"Enviar\":";
 
 /* Class = "NSTextFieldCell"; title = "Global Shortcuts"; ObjectID = "uBD-1D-rbI"; */
-"uBD-1D-rbI.title" = "Atalhos Globais";
+"uBD-1D-rbI.title" = "Criar Atalhos";

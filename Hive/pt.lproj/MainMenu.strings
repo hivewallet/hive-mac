@@ -126,4 +126,4 @@
 "lLT-53-p4m.title" = "Informações de debug";
 
 /* Class = "NSMenuItem"; title = "Scan a QR code…"; ObjectID = "vdw-IK-snJ"; */
-"vdw-IK-snJ.title" = "Escanear um QR Code...";
+"vdw-IK-snJ.title" = "Capturar um QR Code...";

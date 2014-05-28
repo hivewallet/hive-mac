@@ -66,7 +66,7 @@
                     </buttonCell>
                     <cells>
                         <column>
-                            <buttonCell type="radio" title="Nome do meio" imagePosition="left" alignment="left" state="on" tag="1" inset="2" id="kyg-PT-wnV">
+                            <buttonCell type="radio" title="Antes do sobrenome" imagePosition="left" alignment="left" state="on" tag="1" inset="2" id="kyg-PT-wnV">
                                 <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                 <font key="font" metaFont="system"/>
                             </buttonCell>

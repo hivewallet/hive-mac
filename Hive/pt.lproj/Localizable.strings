@@ -141,7 +141,7 @@
 "Enter your password to sign the message:" = "Digite sua senha para assinar a mensagem:";
 
 /* Firstname field placeholder */
-"Firstname" = "Primeiro nome";
+"Firstname" = "Nome";
 
 /* Title for general preferences panel */
 "General" = "Geral";
