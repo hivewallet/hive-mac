@@ -27,7 +27,7 @@
 "Apps" = "Apps";
 
 /* Cancel editing alert title */
-"Are you sure you want to leave this page?" = "Are you sure you want to leave this page?";
+"Are you sure you want to leave this page?" = "Είστε σίγουρος ότι θέλετε να κλείσετε αυτήν την σελίδα;";
 
 /* Warning when trying to a large BTC amount (btc, fiat amount and address) */
 "Are you sure you want to send %@ (%@) to %@?" = "Είστε σίγουροι πως θέλετε να στείλετε %1$@ (%2$@) στη %3$@?";
@@ -99,7 +99,7 @@
 "Disabled" = "Απενεργοποιημένο";
 
 /* Confirm leaving a form without saving data */
-"Discard Changes" = "Discard Changes";
+"Discard Changes" = "Ακύρωση Αλλαγών";
 
 /* Remove contact alert dialog title */
 "Do you really want to remove %@ from your contact list?" = "Είστε σίγουροι πως θέλετε ν' αφαιρέσετε τον/ην %@ από τη λίστα επαφών σας;";
@@ -222,7 +222,7 @@
 "Not enough funds left to pay the transaction fee." = "Not enough funds left to pay the transaction fee.";
 
 /* OK button title */
-"OK" = "OK";
+"OK" = "ΕΝΤΑΞΕΙ";
 
 /* Wizard password page title */
 "Password" = "Κωδικός";
@@ -429,7 +429,7 @@
 "You've received Bitcoin" = "Έχετε λάβει Bitcoin";
 
 /* Cancel editing alert message */
-"Your changes won't be saved." = "Your changes won't be saved.";
+"Your changes won't be saved." = "Οι αλλαγές σας δεν θα αποθηκευτούν.";
 
 /* Sync in progress alert details */
 "Your pending transactions won't be confirmed until the sync is complete." = "Your pending transactions won't be confirmed until the sync is complete.";
