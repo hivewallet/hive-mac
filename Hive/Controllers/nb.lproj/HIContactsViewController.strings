@@ -1,0 +1,9 @@
+
+/* Class = "NSTextFieldCell"; title = "Looks like you don't have any contacts yet! Add your first one and start sending money!"; ObjectID = "123"; */
+"123.title" = "Ser ut som du ikke har noen kontakter ennå! Legg til din første kontakt og begynn å sende penger!";
+
+/* Class = "NSButtonCell"; title = "Add contact"; ObjectID = "125"; */
+"125.title" = "Legg til kontakt";
+
+/* Class = "NSTextFieldCell"; title = "You can then use the ✚ button on top to add more contacts."; ObjectID = "129"; */
+"129.title" = "Du kan bruke ✚ knappen for å legge til flere kontakter.";

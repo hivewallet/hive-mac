@@ -1,0 +1,9 @@
+
+/* Class = "NSTextFieldCell"; title = "A wallet is like a set of keys that unlock your money. Let's create one now."; ObjectID = "AHC-MY-HDw"; */
+"AHC-MY-HDw.title" = "En lommebok er som et sett nøkler som gir deg tilgang til dine penger. La oss lage en nå.";
+
+/* Class = "NSTextFieldCell"; title = "Welcome to Hive"; ObjectID = "I10-iV-C0e"; */
+"I10-iV-C0e.title" = "Velkommen til Hive";
+
+/* Class = "NSButtonCell"; title = "Create a new wallet"; ObjectID = "j0E-b4-dgh"; */
+"j0E-b4-dgh.title" = "Lag en ny lommebok";

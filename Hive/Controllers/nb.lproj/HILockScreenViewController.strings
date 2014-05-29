@@ -1,0 +1,9 @@
+
+/* Class = "NSTextFieldCell"; title = "Hive is locked.\nEnter your password to unlock:"; ObjectID = "Gmn-jq-R5t"; */
+"Gmn-jq-R5t.title" = "Hive er låst.\nSkriv inn ditt passord for å låse opp:";
+
+/* Class = "NSButtonCell"; title = "Unlock"; ObjectID = "W4R-hH-myj"; */
+"W4R-hH-myj.title" = "Lås opp";
+
+/* Class = "NSButtonCell"; title = "Don't show this screen again"; ObjectID = "fZF-LI-0oD"; */
+"fZF-LI-0oD.title" = "Ikke vis dette skjermbildet igjen";
