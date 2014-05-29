@@ -1,0 +1,9 @@
+
+/* Class = "NSTextFieldCell"; title = "The fees you pay help keep the Bitcoin network running!"; ObjectID = "JVe-5I-zWC"; */
+"JVe-5I-zWC.title" = "کارمزد هایی که شما پرداخت می کنید باعث می شود تا شبکه بیت کوین به کار خود ادامه دهد!";
+
+/* Class = "NSTextFieldCell"; title = "Current transaction fee:"; ObjectID = "exO-xB-xYk"; */
+"exO-xB-xYk.title" = "کارمزد تراکنش جاری";
+
+/* Class = "NSTextFieldCell"; title = "Learn more…"; ObjectID = "kHH-z3-bVk"; */
+"kHH-z3-bVk.title" = "بیشتر بیاموزید";

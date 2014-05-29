@@ -1,0 +1,9 @@
+
+/* Class = "NSWindow"; title = "Debugging Info"; ObjectID = "1"; */
+"1.title" = "اطلاعات اشکال زدایی";
+
+/* Class = "NSButtonCell"; title = "Save to file..."; ObjectID = "1AY-mJ-Thd"; */
+"1AY-mJ-Thd.title" = "ذخیره کردن در...";
+
+/* Class = "NSTextFieldCell"; title = "If you have problems with your wallet, we may ask you to send us the contents of the text area below. Please note that the data does NOT include your private keys and will not allow us to spend your Bitcoin!"; ObjectID = "o5O-SS-J37"; */
+"o5O-SS-J37.title" = "اگر شما با کیف پولتان مشکل دارید، ممکن هست که ما از شما بخواهیم که محتویاتی را که در جعبه متنی زیر می باشد را برای ما ارسال کنید. این مورد رو در نظر داشته باشید که این محتویات شامل کلید اولیه کیف پول شما نمی باشد که ما بتوانیم از آن سوء استفاده بکنیم!";

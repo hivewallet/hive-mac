@@ -1,0 +1,18 @@
+
+/* Class = "NSWindow"; title = "Sign message"; ObjectID = "F0z-JX-Cv5"; */
+"F0z-JX-Cv5.title" = "امضا کردن پیام";
+
+/* Class = "NSTextFieldCell"; placeholderString = "Enter the message here"; ObjectID = "FFb-qR-Wps"; */
+"FFb-qR-Wps.placeholderString" = "پیام را اینجا وارد نمائید";
+
+/* Class = "NSTextFieldCell"; title = "Generated signature:"; ObjectID = "Kod-IU-V2E"; */
+"Kod-IU-V2E.title" = "امضای تولید شده";
+
+/* Class = "NSButtonCell"; title = "Sign"; ObjectID = "W8R-Z4-t5H"; */
+"W8R-Z4-t5H.title" = "امضا";
+
+/* Class = "NSTextFieldCell"; title = "Some services request that you verify ownership of a Bitcoin address by creating a cryptographic signature of a message using your private key. To do that, enter the message you would like to sign into the box below and choose \"Sign\"."; ObjectID = "kUl-US-tKo"; */
+"kUl-US-tKo.title" = "بعضی از سرویس ها نیازمند این هستند که به آنها ثابت کنید که خود شما صاحب فلان آدرس بیت کوین هستید به همین خاطر شما می توانید از طریق یک امضای کریپتوگرافیکی به واسطه کلید خصوصی تان این مهم را به آنها اثبات نمایید. برای انجام این کار، امضایی که مد نظرتان می باشد را به عنوان یک پیام در کادر زیر وارد نموده و \"امضا\" را انتخاب نمایید.";
+
+/* Class = "NSButtonCell"; title = "Close"; ObjectID = "u9d-Yr-bsb"; */
+"u9d-Yr-bsb.title" = "بستن";

@@ -1,0 +1,33 @@
+
+/* Class = "NSWindow"; title = "Send Bitcoin"; ObjectID = "1"; */
+"1.title" = "ارسال بیت کوین";
+
+/* Class = "NSButtonCell"; title = "Cancel"; ObjectID = "6"; */
+"6.title" = "لغو";
+
+/* Class = "NSButtonCell"; title = "Send"; ObjectID = "10"; */
+"10.title" = "ارسال";
+
+/* Class = "NSTextFieldCell"; title = "To:"; ObjectID = "14"; */
+"14.title" = "به";
+
+/* Class = "NSTextFieldCell"; placeholderString = "Type to search..."; ObjectID = "20"; */
+"20.placeholderString" = "برای جستجو تایپ کنید";
+
+/* Class = "NSTextFieldCell"; placeholderString = "or choose from the list"; ObjectID = "22"; */
+"22.placeholderString" = "یا از لیست انتخاب کنید";
+
+/* Class = "NSTextFieldCell"; title = "Loading payment details..."; ObjectID = "Agy-4s-MVS"; */
+"Agy-4s-MVS.title" = "در حال بارگذاری جزئیات پرداخت";
+
+/* Class = "NSTextFieldCell"; title = "Details:"; ObjectID = "EeC-5l-RYD"; */
+"EeC-5l-RYD.title" = "جزئیات";
+
+/* Class = "NSTextFieldCell"; title = "Payment successful"; ObjectID = "JAi-pl-Y47"; */
+"JAi-pl-Y47.title" = "پرداخت با موفقیت انجام شد";
+
+/* Class = "NSTextFieldCell"; title = "Currency exchange rates are provided by BitcoinAverage markets ticker. Bitcoin prices can change quickly, so other apps or sites might show different exchange rates."; ObjectID = "dxM-9E-wwb"; */
+"dxM-9E-wwb.title" = "نرخ برابری ارزی از نشانگر BitcoinAverage بدست آمده است. قیمتها سریع تغییر می کنند و به همین دلیل ممکن است برنامه ها و سایت های دیگر، نرخ های متفاوتی را نشان دهند.";
+
+/* Class = "NSButtonCell"; title = "Close"; ObjectID = "iOT-cc-UWm"; */
+"iOT-cc-UWm.title" = "بستن";

@@ -1,0 +1,9 @@
+
+/* Class = "NSTextFieldCell"; title = "A wallet is like a set of keys that unlock your money. Let's create one now."; ObjectID = "AHC-MY-HDw"; */
+"AHC-MY-HDw.title" = "کیف پول مانند مجموعه ای از کلید هاست که پول شما رو باز می کنید. هم اکنون یکی بسازید.";
+
+/* Class = "NSTextFieldCell"; title = "Welcome to Hive"; ObjectID = "I10-iV-C0e"; */
+"I10-iV-C0e.title" = "به هایو خوش آمدید";
+
+/* Class = "NSButtonCell"; title = "Create a new wallet"; ObjectID = "j0E-b4-dgh"; */
+"j0E-b4-dgh.title" = "کیف پول جدید";

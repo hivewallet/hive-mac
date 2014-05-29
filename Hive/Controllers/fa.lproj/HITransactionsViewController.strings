@@ -1,0 +1,15 @@
+
+/* Class = "NSTextFieldCell"; title = "Received"; ObjectID = "22"; */
+"22.title" = "دریافت شده";
+
+/* Class = "NSTextFieldCell"; title = "Date"; ObjectID = "41"; */
+"41.title" = "تاریخ";
+
+/* Class = "NSTextFieldCell"; title = "You can then use the Send button to send someone money."; ObjectID = "63"; */
+"63.title" = "شما می توانید از دکمه ارسال برای ارسال پول به کسی استفاده کنید.";
+
+/* Class = "NSTextFieldCell"; title = "Looks like you haven't made any transactions yet. Send some Bitcoin to your Hive wallet address!"; ObjectID = "Tlv-45-Iq6"; */
+"Tlv-45-Iq6.title" = "به نظر میاد شما هنوز هیچ تراکنشی را انجام نداده اید. یک مقدار بیت کوین به آدرس کیف پول هایو خودتان  ارسال کنید!";
+
+/* Class = "NSTextFieldCell"; title = "PENDING"; ObjectID = "oXJ-Jx-H6s"; */
+"oXJ-Jx-H6s.title" = "معلق";

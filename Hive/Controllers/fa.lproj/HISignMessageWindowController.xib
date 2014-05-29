@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="5056" systemVersion="13C1021" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
+    <dependencies>
+        <deployment defaultVersion="1070" identifier="macosx"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="5056"/>
+    </dependencies>
+    <objects>
+        <customObject id="-2" userLabel="File's Owner" customClass="HISignMessageWindowController">
+            <connections>
+                <outlet property="messageBox" destination="m8a-R0-u5y" id="b1I-th-nX9"/>
+                <outlet property="signatureBox" destination="ExD-wA-el8" id="DjO-5Z-5Tj"/>
+                <outlet property="window" destination="F0z-JX-Cv5" id="gIp-Ho-8D9"/>
+            </connections>
+        </customObject>
+        <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
+        <customObject id="-3" userLabel="Application"/>
+        <window title="امضا کردن پیام" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" releasedWhenClosed="NO" animationBehavior="default" id="F0z-JX-Cv5">
+            <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
+            <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
+            <rect key="contentRect" x="196" y="240" width="480" height="404"/>
+            <rect key="screenRect" x="0.0" y="0.0" width="1440" height="878"/>
+            <view key="contentView" wantsLayer="YES" id="se5-gp-TjO">
+                <rect key="frame" x="0.0" y="0.0" width="480" height="404"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Djp-LP-s2y">
+                        <rect key="frame" x="18" y="316" width="444" height="68"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                        <textFieldCell key="cell" sendsActionOnEndEditing="YES" id="kUl-US-tKo">
+                            <font key="font" metaFont="system"/>
+                            <string key="title">بعضی از سرویس ها نیازمند این هستند که به آنها ثابت کنید که خود شما صاحب فلان آدرس بیت کوین هستید به همین خاطر شما می توانید از طریق یک امضای کریپتوگرافیکی به واسطه کلید خصوصی تان این مهم را به آنها اثبات نمایید. برای انجام این کار، امضایی که مد نظرتان می باشد را به عنوان یک پیام در کادر زیر وارد نموده و "امضا" را انتخاب نمایید.</string>
+                            <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                        </textFieldCell>
+                    </textField>
+                    <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="m8a-R0-u5y">
+                        <rect key="frame" x="20" y="181" width="440" height="120"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="120" id="Gfy-bf-vBs"/>
+                        </constraints>
+                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" placeholderString="پیام را اینجا وارد نمائید" drawsBackground="YES" id="FFb-qR-Wps">
+                            <font key="font" metaFont="system"/>
+                            <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                            <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                        </textFieldCell>
+                    </textField>
+                    <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="ExD-wA-el8">
+                        <rect key="frame" x="20" y="61" width="440" height="80"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="80" id="fMf-79-eJU"/>
+                        </constraints>
+                        <textFieldCell key="cell" lineBreakMode="charWrapping" selectable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" placeholderString="" drawsBackground="YES" id="b2B-y6-1Qo">
+                            <font key="font" metaFont="system"/>
+                            <color key="textColor" name="disabledControlTextColor" catalog="System" colorSpace="catalog"/>
+                            <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                        </textFieldCell>
+                    </textField>
+                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="hz2-5N-S2H">
+                        <rect key="frame" x="18" y="149" width="444" height="17"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="امضای تولید شده" id="Kod-IU-V2E">
+                            <font key="font" metaFont="system"/>
+                            <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                        </textFieldCell>
+                    </textField>
+                    <button translatesAutoresizingMaskIntoConstraints="NO" id="d1s-q6-ZlJ">
+                        <rect key="frame" x="20" y="20" width="80" height="25"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="25" id="FyK-0D-roL"/>
+                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="80" id="n0D-zE-gxe"/>
+                        </constraints>
+                        <shadow key="shadow" blurRadius="1">
+                            <size key="offset" width="0.0" height="1"/>
+                            <color key="color" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                        </shadow>
+                        <buttonCell key="cell" type="square" title="بستن" bezelStyle="shadowlessSquare" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="u9d-Yr-bsb" customClass="HIButtonCell">
+                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                            <font key="font" metaFont="system"/>
+                            <string key="keyEquivalent" base64-UTF8="YES">
+Gw
+</string>
+                        </buttonCell>
+                        <connections>
+                            <action selector="cancelPressed:" target="-2" id="Jkx-VH-dqf"/>
+                        </connections>
+                    </button>
+                    <button translatesAutoresizingMaskIntoConstraints="NO" id="nCX-4C-waM">
+                        <rect key="frame" x="380" y="18" width="80" height="29"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
+                        <constraints>
+                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="76" id="hl1-TM-mie"/>
+                        </constraints>
+                        <shadow key="shadow" blurRadius="1">
+                            <size key="offset" width="0.0" height="1"/>
+                            <color key="color" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                        </shadow>
+                        <buttonCell key="cell" type="bevel" title="امضا" bezelStyle="regularSquare" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="W8R-Z4-t5H" customClass="HIDoneButtonCell">
+                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                            <font key="font" metaFont="system"/>
+                            <string key="keyEquivalent" base64-UTF8="YES">
+DQ
+</string>
+                        </buttonCell>
+                        <connections>
+                            <action selector="signPressed:" target="-2" id="LIQ-f5-lU2"/>
+                        </connections>
+                    </button>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="m8a-R0-u5y" firstAttribute="trailing" secondItem="ExD-wA-el8" secondAttribute="trailing" id="0Ra-nU-x72"/>
+                    <constraint firstItem="Djp-LP-s2y" firstAttribute="top" secondItem="se5-gp-TjO" secondAttribute="top" constant="20" symbolic="YES" id="3aJ-1a-dR7"/>
+                    <constraint firstItem="hz2-5N-S2H" firstAttribute="leading" secondItem="se5-gp-TjO" secondAttribute="leading" constant="20" symbolic="YES" id="3mw-8F-M23"/>
+                    <constraint firstItem="d1s-q6-ZlJ" firstAttribute="centerY" secondItem="nCX-4C-waM" secondAttribute="centerY" id="7AS-RL-zYW"/>
+                    <constraint firstItem="Djp-LP-s2y" firstAttribute="leading" secondItem="se5-gp-TjO" secondAttribute="leading" constant="20" symbolic="YES" id="Egr-Ul-w6s"/>
+                    <constraint firstItem="d1s-q6-ZlJ" firstAttribute="top" secondItem="ExD-wA-el8" secondAttribute="bottom" constant="16" id="JL8-eF-PEi"/>
+                    <constraint firstItem="nCX-4C-waM" firstAttribute="trailing" secondItem="ExD-wA-el8" secondAttribute="trailing" constant="-2" id="KXz-Ju-cfb"/>
+                    <constraint firstItem="m8a-R0-u5y" firstAttribute="top" secondItem="Djp-LP-s2y" secondAttribute="bottom" constant="15" id="Ntk-sQ-tHr"/>
+                    <constraint firstItem="hz2-5N-S2H" firstAttribute="trailing" secondItem="ExD-wA-el8" secondAttribute="trailing" id="QXS-22-Kny"/>
+                    <constraint firstItem="m8a-R0-u5y" firstAttribute="leading" secondItem="ExD-wA-el8" secondAttribute="leading" id="QZY-r9-GAi"/>
+                    <constraint firstItem="m8a-R0-u5y" firstAttribute="leading" secondItem="Djp-LP-s2y" secondAttribute="leading" id="R0g-lH-4fa"/>
+                    <constraint firstItem="ExD-wA-el8" firstAttribute="top" secondItem="hz2-5N-S2H" secondAttribute="bottom" constant="8" symbolic="YES" id="dvj-qE-2Z7"/>
+                    <constraint firstItem="m8a-R0-u5y" firstAttribute="trailing" secondItem="Djp-LP-s2y" secondAttribute="trailing" id="nZZ-al-gvZ"/>
+                    <constraint firstItem="ExD-wA-el8" firstAttribute="leading" secondItem="d1s-q6-ZlJ" secondAttribute="leading" id="s4t-Ob-UCY"/>
+                    <constraint firstAttribute="trailing" secondItem="Djp-LP-s2y" secondAttribute="trailing" constant="20" symbolic="YES" id="sOM-NO-x0E"/>
+                    <constraint firstItem="hz2-5N-S2H" firstAttribute="top" secondItem="m8a-R0-u5y" secondAttribute="bottom" constant="15" id="wMT-nQ-uiH"/>
+                    <constraint firstAttribute="bottom" secondItem="d1s-q6-ZlJ" secondAttribute="bottom" constant="20" symbolic="YES" id="zrU-Lc-dcQ"/>
+                </constraints>
+            </view>
+            <connections>
+                <outlet property="delegate" destination="-2" id="0bl-1N-AYu"/>
+            </connections>
+        </window>
+    </objects>
+</document>

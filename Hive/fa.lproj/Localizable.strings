@@ -1,0 +1,435 @@
+
+/* Body for feedback emails */
+"(Please write in English if possible.)" = "(لطفا اگر ممکن هست به انگلیسی بنویسید.)";
+
+/* Alert message when bitcoin: URI is not valid */
+"\"%@\" is not a valid payment link." = "\"%@\" یک لینک پرداخت معتبر نمی باشد.";
+
+/* Alert message when payment request URL is not valid */
+"\"%@\" is not a valid URL." = "\"%@\" یک آدرس معتبر نمی باشد";
+
+/* Address field placeholder */
+"Address" = "آدرس";
+
+/* Title of an alert when trying to send more than you have */
+"Amount exceeds balance." = "مقدار از موجودی بیشتر می باشد.";
+
+/* Anonymous username for profile page */
+"Anonymous" = "ناشناس";
+
+/* Message when trying to start an app that requires a newer API level. */
+"App requires a newer version of Hive." = "برنامه نیاز به نسخه جدیدتری از هایو دارد";
+
+/* App load error title */
+"Application can't be loaded" = "برنامه نمی تواند بارگذاری شود";
+
+/* Applications view title */
+"Apps" = "برنامه ها";
+
+/* Cancel editing alert title */
+"Are you sure you want to leave this page?" = "آیا شما مطمئن هستید که می خواهید این صفحه را ترک کتید؟";
+
+/* Warning when trying to a large BTC amount (btc, fiat amount and address) */
+"Are you sure you want to send %@ (%@) to %@?" = "آیا شما مطمئن هستید که می خواهید ارسال کنید %1$@ (%2$@) to %3$@؟";
+
+/* Wizard backup page title */
+"Backup" = "پشتیبانی";
+
+/* Backup status: backup can't or won't be completed */
+"Backup error" = "خطا در تهیه نسخه پشتیبان";
+
+/* No comment provided by engineer. */
+"Backup hasn't been done yet" = "تهیه نسخه پشتیبان هنوز انجام نشده است";
+
+/* Backup error message */
+"Backup is not configured" = "پشتیبان گیر پیکر بندی نشده است";
+
+/* Backup status: backup done but not updated recently */
+"Backup problem" = "مشکل در پشتیبان گیری";
+
+/* initialization error */
+"Bitcoin network data file could not be opened - another instance of Hive might still be running." = "فایل مربوط به اطلاعات شبکه بیت کوین باز نشد. ممکن است نسخه دیگری از هایو در حال اجرا باشد.";
+
+/* Chain file unreadable error title */
+"Bitcoin network data file could not be opened." = "فایل مربوط به اطلاعات شبکه بیت کوین باز نشد.";
+
+/* Backup error message */
+"Can't create a directory to store the wallet backup" = "برای ذخیره نسخه پشتیبان از کیف پول نمی توان دایرکتوری ایجاد کرد";
+
+/* Cancel button title */
+"Cancel" = "لغو";
+
+/* Dead transaction label */
+"CANCELLED" = "لغو شده";
+
+/* Alert message when payment request can't be loaded from or sent to the server */
+"Check your network connection, try again later or report the problem to the payment recipient." = "از متصل بودنتان به شبکه اطمینان حاصل کنید، می توانید بعدا سعی کنید یا این مشکل را به بخش پرداخت گزارش کنید.";
+
+/* Dropbox folder save panel confirmation button */
+"Choose" = "انتخاب";
+
+/* No comment provided by engineer. */
+"Choose a directory inside Dropbox folder where the backup should be saved:" = "یک دایرکتوری از درون پوشه دراپ باکس جایی که نسخه پشتیبان باید ذخیره شود را انتخاب کنید";
+
+/* No comment provided by engineer. */
+"click to copy" = "برای کپی کردن اینجا کلیک کنید";
+
+/* Confirm button next to passphrase */
+"Confirm" = "تائید";
+
+/* Contact name empty alert title */
+"Contact can't be saved." = "مخاطب ذخیر نمی شود.";
+
+/* Entry in application icon context menu */
+"Contact the author" = "تماس با نویسنده";
+
+/* Contacts view title */
+"Contacts" = "مخاطبین";
+
+/* No comment provided by engineer. */
+"copied!" = "کپی شد!";
+
+/* initialization error */
+"Could not read wallet file. It might be damaged." = "فایل کیف پول خوانده نشد. ممکن است فایل خراب شده باشد.";
+
+/* Disable backup button title */
+"Disable" = "غیر فعال";
+
+/* Backup status: adapter disabled */
+"Disabled" = "غیر فعال شده";
+
+/* Confirm leaving a form without saving data */
+"Discard Changes" = "لغو تغییرات";
+
+/* Remove contact alert dialog title */
+"Do you really want to remove %@ from your contact list?" = "آیا شما واقعا می خواهید %@ از لیست مخاطبین شما پاک شود؟";
+
+/* Install app popup title */
+"Do you want to add \"%@\" to Hive?" = "آیا شما می خواهید \"%@\" را به هایو اضافه کنید؟";
+
+/* Uninstall app popup title */
+"Do you want to remove \"%@\" from the application list?" = "آیا شما می خواهید \"%@\" را از لیست برنامه پاک کنید؟";
+
+/* Backup error message */
+"Dropbox folder not found" = "پوشه دراپ باکس پیدا نشد";
+
+/* Dropbox no backup folder alert title */
+"Dropbox folder not found." = "پوشه دراپ باکس پیدا نشد";
+
+/* Backup error message */
+"Dropbox isn't running" = "دراپ باکس در حال اجرا نیست";
+
+/* Page title when editing contact's info */
+"Edit contact" = "وبرایش مخاطب";
+
+/* Page title when editing your own profile info */
+"Edit profile" = "ویرایش پروفایل";
+
+/* Email field placeholder */
+"email" = "ایمیل";
+
+/* Enable backup button title (no configuration required) */
+"Enable" = "فعال";
+
+/* Enable backup button title (requires configuration) */
+"Enable..." = "فعال";
+
+/* Passphrase prompt for sending */
+"Enter your passphrase to confirm the transaction:" = "برای تائید تراکنش گذرواژه خود را وارد نمائید:";
+
+/* Passphrase prompt for message signing */
+"Enter your password to sign the message:" = "برای امضا کردن پیام رمزتان را وارد نمائید:";
+
+/* Firstname field placeholder */
+"Firstname" = "نام";
+
+/* Title for general preferences panel */
+"General" = "عمومی";
+
+/* Hiveapp file not readable error title */
+"Hive application file \"%@\" could not be opened." = "فایل \"%@\" برنامه هایو نمی تواند باز شود";
+
+/* Initialization error title */
+"Hive cannot be started." = "هایو نمی تواند اجرا شود.";
+
+/* Database error alert title */
+"Hive database file cannot be opened." = "فایل پایگاه داده هایو نمی تواند باز شود";
+
+/* Backup error message */
+"Hive directory is excluded from Time Machine backup" = "دایرکتوری هایو از پشتیبان گیر ماشین زمان جدا شده است";
+
+/* Sync in progress alert title */
+"Hive is currently syncing with the Bitcoin network. Are you sure you want to quit?" = "هایو در حال همگام سازی خود با شبکه بیت کویت هست. آیا مطمئن هستید که می خواهید از برنامه خارج شوید؟";
+
+/* No network connection alert title */
+"Hive is not connected to the Bitcoin network." = "هایو به شبکه بیت کوین متصل نمی باشد.";
+
+/* Chain file unreadable error explanation */
+"Hive will now delete the file and synchronize with the Bitcoin network again. Please leave Hive open for the next several minutes, and try not to send any transactions right now." = "هایو هم اکنون فایل ها را پاک می کند و مجددا به همگام سازی با شبکه بیت کوین می پردازد. لطفا برای چند دقیقه هایو را باز نگه دارید و در طی این زمان سعی به انجام هیچ گونه تراکنشی نکنید.";
+
+/* Share sent transaction text */
+"I've just received some Bitcoin using Hive" = "صرفا یک مقدار بیت کوین از طریق هایو دریافت کردم";
+
+/* Share sent transaction text */
+"I've just sent some Bitcoin using Hive" = "صرفا یک مقدار بیت کوین از طریق هایو ارسال کردم";
+
+/* Alert details when trying to send more than you have with fee */
+"If you send your whole wallet balance, there's nothing left to pay the required fee. Try to send a bit less, or split the transaction into smaller ones." = "اگر شما تمام موجودی کیف پولتان را بفرستید، دیگر چیزی برای پرداخت کارمز باقی نمی ماند. سعی کنید کمتر از موجودی کل حسابتان را پرداخت کنید، یا تراکنش ها را به تراکنش های کوچکتر تقسیم کنید.";
+
+/* Install app button title */
+"Install" = "نصب";
+
+/* Backup requires password alert details */
+"It's dangerous to upload unencrypted wallets." = "ارسال و ذخیره کیف پول های رمزگذاری نشده خطرناک می باشد.";
+
+/* Don't leave a form without saving data */
+"Keep Editing" = "ادامه دادن به ویرایش";
+
+/* Address caption field placeholder */
+"Label" = "برچسب";
+
+/* On what date was the last backup done */
+"Last backup on %@" = "آخرین زمان تهیه نسخه پشتیبان %@";
+
+/* Lastname field placeholder */
+"Lastname" = "نام خانوادگی";
+
+/* Alert message when address can't be extracted from a bitcoin: URI */
+"Link included in this QR code (\"%@\") is invalid or does not contain a Bitcoin address." = "پیوندی که در این کد QR  (\"%@\")  می باشد نامعتبر می باشد و یا اینکه شامل یک آدرس بیت کوین نمی باشد";
+
+/* Main address caption */
+"main" = "اصلی";
+
+/* Main address caption string for profiles */
+"Main address" = "آدرس اصلی";
+
+/* New contact view controller title */
+"New contact" = "مخاطب جدید";
+
+/* Empty address alert title */
+"No address entered." = "هیچ آدرسی وارد نشده.";
+
+/* Backup is outdated, last backup was on that date */
+"No backup since %@" = "هیچ نسخه پشتیبانی از %@ تهیه نشده است";
+
+/* No backups enabled notification title */
+"No backups configured" = "هیچ نسخه پشتیبانی پیکر بندی نشده است";
+
+/* Transaction failed alert message */
+"No Bitcoin have been taken from your wallet." = "هیچ بیت کوینی از کیف پول شما کسر نشده است.";
+
+/* Title of an alert when trying to send more than you have with fee */
+"Not enough funds left to pay the transaction fee." = "پول به اندازه کافی برای پرداخت کارمزد تراکنش باقی نمانده است.";
+
+/* OK button title */
+"OK" = "تایید";
+
+/* Wizard password page title */
+"Password" = "رمز";
+
+/* Send Bitcoin window title for payment request */
+"Pay with Bitcoin" = "پرداخت با بیت کوین";
+
+/* Alert title when payment can't be sent to the merchant */
+"Payment could not be completed." = "پرداخت انجام نشد";
+
+/* Alert title when payment request file can't be read */
+"Payment data file could not be opened." = "فایل مربوط به اطلاعات پرداخت باز نشد.";
+
+/* Alert title when payment request file has some invalid or unexpected data */
+"Payment data is invalid." = "اطلاعات پرداخت نامعتبر است";
+
+/* Alert title when payment request can't be loaded from the server */
+"Payment details could not be loaded." = "جزئیات پرداخت بارگذاری نشد.";
+
+/* Alert title when the time limit to complete the payment has passed */
+"Payment request has already expired." = "درخواست پرداخت باطل شده است";
+
+/* Pending transaction label */
+"PENDING" = "معلق";
+
+/* Invalid address alert message */
+"Please check if you have entered the address correctly." = "لطفا صحت آدرس وارد شده را بررسی نمایید.";
+
+/* Warning details when trying to send to your own address */
+"Please enter a different address." = "لطفا آدرس دیگری را وارد نمائید.";
+
+/* Empty address alert message */
+"Please enter a valid Bitcoin address or select one from the dropdown list." = "لطفا یک آدرس بیت کوین معتبر را وارد نمائید یا یک آدرس را از منوی کشویی پایین انتخاب نمائید.";
+
+/* Preferences window title */
+"Preferences" = "تنظیمات";
+
+/* Profile view title string */
+"Profile" = "پروفایل";
+
+/* Quit anyway button title */
+"Quit anyway" = "خروج به هر نحوی که شده";
+
+/* Received amount of BTC from unknown source */
+"Received &a" = "دریافت شده &a";
+
+/* Received amount of BTC from contact */
+"Received &a from &c" = "دریافت شده &a از &c";
+
+/* Install app button title when app exists */
+"Reinstall" = "نصب مجدد";
+
+/* No comment provided by engineer. */
+"Remove" = "حذف کردن";
+
+/* Dropbox invalid folder alert title */
+"Selected directory is outside Dropbox folder." = "دایرکتوری انتخاب شده از درون پوشه دراپ باکس نمی باشد";
+
+/* Send button title */
+"Send" = "ارسال";
+
+/* Sent amount of BTC to a contact/address */
+"Sent &a to &c" = "ارسال &a به &c";
+
+/* Title for shortcut keys preferences panel */
+"Shortcuts" = "میانبرها";
+
+/* Amount exceeds available balance alert title */
+"Some funds are temporarily unavailable." = "مقادیری از پول ها در حال حاضر در دسترس نمی باشند";
+
+/* Wizard completed page title */
+"Start!" = "شروع!";
+
+/* App load error description */
+"The application data file has been removed or corrupted." = "اطلاعات مربوط به برنامه حذف و یا غیر قابل استفاده شده اند.";
+
+/* Error message when database is incompatible with this version */
+"The database was saved by a newer version of Hive - please download the latest version from http://hivewallet.com." = "پایگاه داده توسط نسخه جدید تری از هایو ذخیره شده است-لطفا برای دریافت نسخه جدیدتر هایو به آدرس http://hivewallet.com مراجعه کنید";
+
+/* Install app popup warning message when app exists */
+"The existing app file will be replaced by the new version. This will not affect any app settings or saved data." = "فایل های نسخه جدید برنامه با فایل های نسخه جاری از برنامه جایگزین خواهد شد. این کار هیچ تاثیری بر روی اطلاعات ذخیره شده و یا تنظیمات برنامه نخواهد گذاشت";
+
+/* Alert message when payment request file can't be read */
+"The file doesn't exist or is not accessible." = "فایل موجود نمی باشد و یا قابل دسترس نیست";
+
+/* Hiveapp file not readable error details */
+"The file is damaged or does not contain a Hive application." = "فایل مشکل دارد و یا شامل برنامه هایو نمی باشد";
+
+/* Sending dust alert message */
+"This amount is too low to be sent through the network." = "این مقدار بسیار ناچیز می باشد برای ارسال از طریق شبکه";
+
+/* Alert title when bitcoin: URI is not valid */
+"This Bitcoin payment link is invalid." = "این پیوند بیت کوین معتبر نمی باشد.";
+
+/* Alert title when payment request URL is not valid */
+"This Bitcoin payment URL is invalid." = "آدرس پرداخت بیت کوین معتبر نمی باشد.";
+
+/* Alert details when transaction was cancelled */
+"This can happen because of bugs in the wallet code or because the transaction was rejected by the network." = "این حالت زمانی می تواند رخ دهد که باگ هایی در کد کیف پول باشد یا به خاطر اینکه تراکنش توسط شبکه مورد قبول واقع نشده باشد.";
+
+/* Alert message when payment request file isn't really a payment request at all */
+"This file does not contain a valid Bitcoin payment request." = "فایل شامل یک درخواست معتبر بیت کوینی نمی باشد.";
+
+/* Warning details when trying to send a large BTC amount */
+"This is more than what you usually send." = "این مقدار بیشتر از چیزی می باشد که شما به طور معمول می فرستید.";
+
+/* Warning title when trying to send to your own address */
+"This is your wallet address." = "این آدرس کیف پول شما می باشد.";
+
+/* Invalid address alert title */
+"This isn't a valid Bitcoin address." = "این یک آدرس معتبر بین کوین نمی باشد.";
+
+/* Alert message when user is on the mainnet and payment request is for testnet (or vice versa) */
+"This payment is supposed to be sent on a different Bitcoin network." = "این پرداخت قرار است بر روی شبکه دیگری از بیت کوین ارسال شود";
+
+/* Alert title when address can't be extracted from a bitcoin: URI */
+"This QR code can't be used here." = "این کد QR در اینجا قابل استفاده نمی باشد.";
+
+/* Backup error message */
+"Time Machine is disabled in System Preferences" = "در قسمت تنظمیات سیستم گزینه ماشین زمان غیر فعال شده است";
+
+/* No backups enabled notification details */
+"To protect your bitcoins, it's recommended that you enable at least one type of backup." = "برای محافظت از بیت کوین تان، توصیه می شود که حداقل یک مورد از پشتیبان گیری ها فعال شود.";
+
+/* Amount exceeds available balance alert message */
+"To send this transaction, you'll need to wait for your pending transactions to be confirmed first (this shouldn't take more than a few minutes)." = "برای ارسال این تراکنش، شما اول باید منتظر بمانید تا تراکنش های معلق شما تائید شوند (که این کار نباید بیشتر از چند دقیقه وقت شما رو بگیرد).";
+
+/* Message when trying to start an app that requires a newer API level. */
+"To use the app, please update to the latest version of Hive." = "برای استفاده از برنامه آن را به آخرین نسخه ارتقا دهید";
+
+/* Notification of cancelled transaction */
+"Transaction cancelled" = "تراکنش لغو شده است";
+
+/* Notification of confirmed sent transaction */
+"Transaction completed" = "تراکنش انجام شده است";
+
+/* Transaction failed alert title */
+"Transaction could not be completed." = "تراکنش کامل انجام نشد.";
+
+/* Alert when transaction was cancelled (with transaction date) */
+"Transaction from %@ was cancelled." = "تراکنش از طرف %@ لغو شده است.";
+
+/* Transactions view title */
+"Transactions" = "تراکنش ها";
+
+/* Uninstall app button title */
+"Uninstall" = "حذف کردن";
+
+/* Entry in application icon context menu */
+"Uninstall application" = "حذف برنامه";
+
+/* Backup status: backup up to date */
+"Up to date" = "به روز";
+
+/* Entry in application icon context menu */
+"Visit application's site" = "دیدن وب سایت برنامه";
+
+/* Backup status: backup scheduled or in progress */
+"Waiting for backup" = "منتظر نسخه پشتیبان";
+
+/* Install app popup warning message */
+"We cannot guarantee the safety of all apps - please be careful if you download Hive apps from third party sites." = "ما نمی توانیم امنیت همه نرم افزار ها رو تضمین کنیم- مراقب باشد اگر نرم افزار هایو را از سایت هایی به غیر سایت اصلی برنامه ذریافت می کنید.";
+
+/* Wizard welcome page title */
+"Welcome" = "خوش آمدید";
+
+/* Button to show info about pending funds */
+"What does this mean?" = "این به چه معنا می باشد؟";
+
+/* Uninstall app popup message */
+"You can install it again through the App Store app later if you change your mind." = "شما می توانید این رو از طریق App Store مجددا هر زمان که خواستید نصب کنید.";
+
+/* Details of an alert when trying to send more than you have */
+"You cannot send more money than you own." = "شما نمی توانید بیشتر از پولی که دارید پول ارسال کنید.";
+
+/* Install app popup title when app exists */
+"You have already added \"%@\" to Hive. Would you like to overwrite it?" = "شما قبلا \"%@\" را در هایو اضافه کرده اید. آیا تمایل دارید که این مورد را بر روی مورد قبلی جایگزین کنید؟";
+
+/* Notification of confirmed sent transaction (with BTC amount) */
+"You have sent %@." = "شما  %@ ارسال کرده اید.";
+
+/* Dropbox no backup folder alert details */
+"You must install Dropbox first (see www.dropbox.com)." = "شما می بایست ابتدا دراپ باکس را نصب کنید (به این منظور از این  وب سایت دیدن کنیدwww.dropbox.com ).";
+
+/* No network connection alert message */
+"You need to be connected to the network to send any transactions." = "برای ارسال هرگونه تراکنش شما می بایست به شبکه متصل باشید";
+
+/* Dropbox invalid folder alert details */
+"You need to choose or create a directory inside your Dropbox folder." = "شما باید یک دایرکتوری درون پوشه دراپ باکس تان انتخاب و یا ایجاد کنید.";
+
+/* Contact name empty alert message */
+"You need to give the contact a name before you can add it to the list." = "شما باید یک نام برای مخاطب تان انتخاب کنید قبل از اینکه آن را ذخیره کنید.";
+
+/* Backup requires password alert title */
+"You need to set a wallet password first (see Wallet menu)." = "شما ابتدا می بایست یک رمز برای کیف پولتان انتخاب کنید (به منوی کیف پول مراجعه کنید).";
+
+/* Remove contact alert dialog body */
+"You won't be able to undo this operation." = "شما قادر به بازگرداندن این عملیات نخواهید بود.";
+
+/* Alert message when the time limit to complete the payment has passed */
+"You'll need to return to the site that requested the payment and initiate the payment again." = "شما باید به سایتی برگردید که درخواست پرداخت را داده و پرداخت را دوباره انجام دهید";
+
+/* Notification of incoming transaction */
+"You've received Bitcoin" = "شما بیت کوین دریافت کرده اید";
+
+/* Cancel editing alert message */
+"Your changes won't be saved." = "تغییرات شما ذخیره نخواهند شد.";
+
+/* Sync in progress alert details */
+"Your pending transactions won't be confirmed until the sync is complete." = "تراکنش های معلق شما تا زمانیکه همگام سازی کامل نشود تایید نخواهند شد.";
