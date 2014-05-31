@@ -36,17 +36,17 @@ DEPENDENCIES:
   - ZXingObjC
 
 SPEC CHECKSUMS:
-  AFNetworking: 61fdd49e2ffe6380378df37b3b6e70630bb9dd66
-  AutoLayoutMacros: abdc5ab32081d1ea2a984426fe6fa595213d7e5b
-  CocoaLumberjack: be87113f649942f020a37c061c58009b6ee5ff68
-  FontAwesomeIconFactory: eb4101e952987a817b1f37b73f45cd59acb1a0bb
-  INAppStoreWindow: 265a8810a450c7d3279fc9f9686bbd563bb78dc5
-  Kiwi: 04c51e880831d291748ec702d42c4101f7eb95c9
-  LetsMove: 104879e23f804eb02d740c9883f58b848f34eff0
-  MASPreferences: 2c2f30b38c3dfceb0d3b29132a13417706a5adac
-  MASShortcut: 6abaedac53a0542f4856f35be4f1f970b652a51e
-  OCHamcrest: 782c52ae8c673e5d6060a65005cfd26d20d519ba
-  Sparkle-pornel: b624b1aeac3584136396faaaee3e3f74a4d0c0e8
-  ZXingObjC: 352024760388de6b6241d34844fac59f2a1a6c68
+  AFNetworking: 5f5b2a731d6fc2082b8abc63d40fcaed5482c42f
+  AutoLayoutMacros: f36c1d1e5e30859ea2c7805941c397927743d0b5
+  CocoaLumberjack: 744856111d9431252611e696ea460ffe36fdc5ae
+  FontAwesomeIconFactory: a60171039c8067b7fd04d0300f0a7f8fc5cffbae
+  INAppStoreWindow: 867bc4bdf2a28d6272fc73090c299d129079067a
+  Kiwi: 7b9bc7294de746357213067a1df49cc0a59384e8
+  LetsMove: 9554c194d1378c89909fd66005cf7a662f43932d
+  MASPreferences: 971d03da4b3818f8ea0d0ef10b86b02b2c052d17
+  MASShortcut: e5e47bf0367e77f2c4089b4edc4c8143f3106eed
+  OCHamcrest: 207233b7d7a44dadd66aca398947cc7e029c9be5
+  Sparkle-pornel: dfb419ba2135a0b7e9c686c566eeb4abb5af2df1
+  ZXingObjC: 179c19da2ac04926ba17405e55821772424deeff
 
-COCOAPODS: 0.32.1
+COCOAPODS: 0.33.1
