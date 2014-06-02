@@ -19,7 +19,7 @@
                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="q5b-38-aQg">
                     <rect key="frame" x="120" y="78" width="109" height="17"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Show first name:" id="uRu-rC-vCh">
+                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Zeige Vornamen:" id="uRu-rC-vCh">
                         <font key="font" metaFont="system"/>
                         <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
@@ -28,7 +28,7 @@
                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="wd9-nv-Svp">
                     <rect key="frame" x="177" y="31" width="52" height="17"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Sort By:" id="ELC-Fb-fGt">
+                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Sortieren nach:" id="ELC-Fb-fGt">
                         <font key="font" metaFont="system"/>
                         <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
@@ -42,8 +42,8 @@
                         <font key="font" metaFont="menu"/>
                         <menu key="menu" title="OtherViews" id="NNp-vD-ZfF">
                             <items>
-                                <menuItem title="First Name" id="wzm-Cx-x6L"/>
-                                <menuItem title="Last Name" id="DUH-JI-H8J"/>
+                                <menuItem title="Vorname" id="wzm-Cx-x6L"/>
+                                <menuItem title="Nachname" id="DUH-JI-H8J"/>
                             </items>
                         </menu>
                     </popUpButtonCell>
@@ -66,11 +66,11 @@
                     </buttonCell>
                     <cells>
                         <column>
-                            <buttonCell type="radio" title="Before last name" imagePosition="left" alignment="left" state="on" tag="1" inset="2" id="kyg-PT-wnV">
+                            <buttonCell type="radio" title="vor Nachname" imagePosition="left" alignment="left" state="on" tag="1" inset="2" id="kyg-PT-wnV">
                                 <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                 <font key="font" metaFont="system"/>
                             </buttonCell>
-                            <buttonCell type="radio" title="Following last name" imagePosition="left" alignment="left" inset="2" id="eBf-qE-ozk">
+                            <buttonCell type="radio" title="hinter Nachnamen" imagePosition="left" alignment="left" inset="2" id="eBf-qE-ozk">
                                 <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                 <font key="font" metaFont="system"/>
                             </buttonCell>

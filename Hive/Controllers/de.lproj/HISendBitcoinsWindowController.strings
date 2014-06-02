@@ -18,13 +18,13 @@
 "22.placeholderString" = "aus der Liste auswählen";
 
 /* Class = "NSTextFieldCell"; title = "Loading payment details..."; ObjectID = "Agy-4s-MVS"; */
-"Agy-4s-MVS.title" = "Loading payment details...";
+"Agy-4s-MVS.title" = "Lade Details der Bezahlung…";
 
 /* Class = "NSTextFieldCell"; title = "Details:"; ObjectID = "EeC-5l-RYD"; */
 "EeC-5l-RYD.title" = "Details:";
 
 /* Class = "NSTextFieldCell"; title = "Payment successful"; ObjectID = "JAi-pl-Y47"; */
-"JAi-pl-Y47.title" = "Payment successful";
+"JAi-pl-Y47.title" = "Bezahlung erfolgreich";
 
 /* Class = "NSTextFieldCell"; title = "Currency exchange rates are provided by BitcoinAverage markets ticker. Bitcoin prices can change quickly, so other apps or sites might show different exchange rates."; ObjectID = "dxM-9E-wwb"; */
 "dxM-9E-wwb.title" = "Wechselkurse basieren auf dem BitcoinAverage Ticket. Bitcoin Preise ändern sich sehr häufig, deshalb kann es passieren, dass andere Apps oder Dienste einen anderen Wechselkurs darstellen.";
