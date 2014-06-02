@@ -3,7 +3,7 @@
 "(Please write in English if possible.)" = "(Будь-ласка, пишіть англійською мовою, якщо це можливо.)";
 
 /* Alert message when bitcoin: URI is not valid */
-"\"%@\" is not a valid payment link." = "\"%@\" не є вірним платіжним адресом";
+"\"%@\" is not a valid payment link." = "\"%@\" не є вірним платіжним адресом.";
 
 /* Alert message when payment request URL is not valid */
 "\"%@\" is not a valid URL." = "\"%@\" не є вірним адресом URL.";
@@ -12,13 +12,13 @@
 "Address" = "Адреса";
 
 /* Title of an alert when trying to send more than you have */
-"Amount exceeds balance." = "Сума перевищує даний баланс гаманця";
+"Amount exceeds balance." = "Сума перевищує даний баланс гаманця.";
 
 /* Anonymous username for profile page */
 "Anonymous" = "Анонімний";
 
 /* Message when trying to start an app that requires a newer API level. */
-"App requires a newer version of Hive." = "Програмульці потрібна нова версія Хайву";
+"App requires a newer version of Hive." = "Програмульці потрібна нова версія Хайву.";
 
 /* App load error title */
 "Application can't be loaded" = "Програма не може бути завантажена";
@@ -42,7 +42,7 @@
 "Backup hasn't been done yet" = "Резервне копіювання не було завершено";
 
 /* Backup error message */
-"Backup is not configured" = "Резервне копіювання не було налаштовано ";
+"Backup is not configured" = "Резервне копіювання не було налаштовано";
 
 /* Backup status: backup done but not updated recently */
 "Backup problem" = "Помилка в резервному копіюванні";
@@ -63,13 +63,13 @@
 "CANCELLED" = "Відмінено";
 
 /* Alert message when payment request can't be loaded from or sent to the server */
-"Check your network connection, try again later or report the problem to the payment recipient." = "Перевір з'єднання з мережею, спробуйте пізніше або повідомт про проблему отримувача платежу";
+"Check your network connection, try again later or report the problem to the payment recipient." = "Перевір з'єднання з мережею, спробуйте пізніше або повідомт про проблему отримувача платежу.";
 
 /* Dropbox folder save panel confirmation button */
 "Choose" = "Закрити";
 
 /* No comment provided by engineer. */
-"Choose a directory inside Dropbox folder where the backup should be saved:" = "Виберіть директорію всередині  директорію Дропбоксу де було збережено резервне копіювання:";
+"Choose a directory inside Dropbox folder where the backup should be saved:" = "Виберіть директорію всередині директорію Дропбоксу де було збережено резервне копіювання:";
 
 /* No comment provided by engineer. */
 "click to copy" = "Клік щоб скопіювати";
@@ -78,7 +78,7 @@
 "Confirm" = "Підтвердити";
 
 /* Contact name empty alert title */
-"Contact can't be saved." = "Контакти не можуть бути збережені";
+"Contact can't be saved." = "Контакти не можуть бути збережені.";
 
 /* Entry in application icon context menu */
 "Contact the author" = "Контакт до автора";
@@ -102,7 +102,7 @@
 "Discard Changes" = "Скасувати зміни";
 
 /* Remove contact alert dialog title */
-"Do you really want to remove %@ from your contact list?" = "Ви дійсно хочете витерти  %@ з вашої адресної книги?";
+"Do you really want to remove %@ from your contact list?" = "Ви дійсно хочете витерти %@ з вашої адресної книги?";
 
 /* Install app popup title */
 "Do you want to add \"%@\" to Hive?" = "Ви хочете додати \"%@\" до Хайву?";
@@ -114,7 +114,7 @@
 "Dropbox folder not found" = "Директорія Дропбоксу не знайдена";
 
 /* Dropbox no backup folder alert title */
-"Dropbox folder not found." = "Директорія Дропбоксу не знайдена";
+"Dropbox folder not found." = "Директорія Дропбоксу не знайдена.";
 
 /* Backup error message */
 "Dropbox isn't running" = "Дропбоксу не працює в даний момент";
@@ -132,7 +132,7 @@
 "Enable" = "Зробити Активним";
 
 /* Enable backup button title (requires configuration) */
-"Enable..." = "Активний";
+"Enable..." = "Активний...";
 
 /* Passphrase prompt for sending */
 "Enter your passphrase to confirm the transaction:" = "Введіть ваш пароль для підтвердження транзакції:";
@@ -147,13 +147,13 @@
 "General" = "Головні";
 
 /* Hiveapp file not readable error title */
-"Hive application file \"%@\" could not be opened." = "Програмний файл Хайву  \"%@\" не може бути відкритий";
+"Hive application file \"%@\" could not be opened." = "Програмний файл Хайву \"%@\" не може бути відкритий.";
 
 /* Initialization error title */
-"Hive cannot be started." = "Хайв не може бути включений";
+"Hive cannot be started." = "Хайв не може бути включений.";
 
 /* Database error alert title */
-"Hive database file cannot be opened." = "База даних Хайву не може бути відкрита";
+"Hive database file cannot be opened." = "База даних Хайву не може бути відкрита.";
 
 /* Backup error message */
 "Hive directory is excluded from Time Machine backup" = "Директорія Хайву вилучена із резервного копіювання Машини Часу";
@@ -180,7 +180,7 @@
 "Install" = "Встановлення";
 
 /* Backup requires password alert details */
-"It's dangerous to upload unencrypted wallets." = "Не безпечно завантажувати не зашифровані гаманці";
+"It's dangerous to upload unencrypted wallets." = "Не безпечно завантажувати не зашифровані гаманці.";
 
 /* Don't leave a form without saving data */
 "Keep Editing" = "Продовжуй Редагування";
@@ -195,7 +195,7 @@
 "Lastname" = "Прізвище";
 
 /* Alert message when address can't be extracted from a bitcoin: URI */
-"Link included in this QR code (\"%@\") is invalid or does not contain a Bitcoin address." = "Посилання вміст якого є в цьому QR коді (\"%@\") є недоступним або не вміщає в себе Біткойн адресу. ";
+"Link included in this QR code (\"%@\") is invalid or does not contain a Bitcoin address." = "Посилання вміст якого є в цьому QR коді (\"%@\") є недоступним або не вміщає в себе Біткойн адресу.";
 
 /* Main address caption */
 "main" = "Головна";
@@ -207,7 +207,7 @@
 "New contact" = "Новий контакт";
 
 /* Empty address alert title */
-"No address entered." = "Адреса не введена";
+"No address entered." = "Адреса не введена.";
 
 /* Backup is outdated, last backup was on that date */
 "No backup since %@" = "Немає резервного копіювання %@";
@@ -216,7 +216,7 @@
 "No backups configured" = "Немає резервних копії конфігурацій";
 
 /* Transaction failed alert message */
-"No Bitcoin have been taken from your wallet." = "Біткойни не взяті із твого гаманця";
+"No Bitcoin have been taken from your wallet." = "Біткойни не взяті із твого гаманця.";
 
 /* Title of an alert when trying to send more than you have with fee */
 "Not enough funds left to pay the transaction fee." = "Не залишилось достатньо коштів щоб заплатити комісію.";
@@ -237,7 +237,7 @@
 "Payment data file could not be opened." = "Платіжний файл не відкривається.";
 
 /* Alert title when payment request file has some invalid or unexpected data */
-"Payment data is invalid." = "Оплата  не дійсна.";
+"Payment data is invalid." = "Оплата не дійсна.";
 
 /* Alert title when payment request can't be loaded from the server */
 "Payment details could not be loaded." = "Платіжні дані не завантажуються.";
@@ -249,13 +249,13 @@
 "PENDING" = "В ОЧІКУВАННІ";
 
 /* Invalid address alert message */
-"Please check if you have entered the address correctly." = "Буль-ласка перевір чи введений адрес є вірний";
+"Please check if you have entered the address correctly." = "Буль-ласка перевір чи введений адрес є вірний.";
 
 /* Warning details when trying to send to your own address */
-"Please enter a different address." = "Буль-ласка введіть різні адреси";
+"Please enter a different address." = "Буль-ласка введіть різні адреси.";
 
 /* Empty address alert message */
-"Please enter a valid Bitcoin address or select one from the dropdown list." = "Буль-ласка введіть вірну адресу Біткойн або ж виберіть одну із випадаючого меню";
+"Please enter a valid Bitcoin address or select one from the dropdown list." = "Буль-ласка введіть вірну адресу Біткойн або ж виберіть одну із випадаючого меню.";
 
 /* Preferences window title */
 "Preferences" = "Вибір";
@@ -267,7 +267,7 @@
 "Quit anyway" = "Всеодно вийти";
 
 /* Received amount of BTC from unknown source */
-"Received &a" = "Отримано  &a";
+"Received &a" = "Отримано &a";
 
 /* Received amount of BTC from contact */
 "Received &a from &c" = "Отримано &a від &c";
@@ -279,7 +279,7 @@
 "Remove" = "Витерти";
 
 /* Dropbox invalid folder alert title */
-"Selected directory is outside Dropbox folder." = "Вибрана директорія є за межами Дропбокс директорії";
+"Selected directory is outside Dropbox folder." = "Вибрана директорія є за межами Дропбокс директорії.";
 
 /* Send button title */
 "Send" = "Відправити";
@@ -291,7 +291,7 @@
 "Shortcuts" = "Ярлики";
 
 /* Amount exceeds available balance alert title */
-"Some funds are temporarily unavailable." = "Деякі заощадження зараз не доступні";
+"Some funds are temporarily unavailable." = "Деякі заощадження зараз не доступні.";
 
 /* Wizard completed page title */
 "Start!" = "Старт!";
@@ -300,25 +300,25 @@
 "The application data file has been removed or corrupted." = "Файл даних було видалено або пошкоджено.";
 
 /* Error message when database is incompatible with this version */
-"The database was saved by a newer version of Hive - please download the latest version from http://hivewallet.com." = "База даних була збережена в новій версії Хайву -  буль-ласка завантажте новішу версію з http://hivewallet.com";
+"The database was saved by a newer version of Hive - please download the latest version from http://hivewallet.com." = "База даних була збережена в новій версії Хайву - буль-ласка завантажте новішу версію з http://hivewallet.com.";
 
 /* Install app popup warning message when app exists */
-"The existing app file will be replaced by the new version. This will not affect any app settings or saved data." = "Існуючи програмний файл буде замінений новою версією. Це не повпливає на будьякі налаштування в програмі або збережених даних.    ";
+"The existing app file will be replaced by the new version. This will not affect any app settings or saved data." = "Існуючи програмний файл буде замінений новою версією. Це не повпливає на будьякі налаштування в програмі або збережених даних.";
 
 /* Alert message when payment request file can't be read */
 "The file doesn't exist or is not accessible." = "Цей файл не існує або не доступний.";
 
 /* Hiveapp file not readable error details */
-"The file is damaged or does not contain a Hive application." = "Файл пошкоджено або не містить Хайв застосування";
+"The file is damaged or does not contain a Hive application." = "Файл пошкоджено або не містить Хайв застосування.";
 
 /* Sending dust alert message */
-"This amount is too low to be sent through the network." = "Ця сума надто мала для відправлення через мережу";
+"This amount is too low to be sent through the network." = "Ця сума надто мала для відправлення через мережу.";
 
 /* Alert title when bitcoin: URI is not valid */
-"This Bitcoin payment link is invalid." = "Біткойн платіжний лінк не дійсний";
+"This Bitcoin payment link is invalid." = "Біткойн платіжний лінк не дійсний.";
 
 /* Alert title when payment request URL is not valid */
-"This Bitcoin payment URL is invalid." = "Біткойн платіж URL не дійсний";
+"This Bitcoin payment URL is invalid." = "Біткойн платіж URL не дійсний.";
 
 /* Alert details when transaction was cancelled */
 "This can happen because of bugs in the wallet code or because the transaction was rejected by the network." = "Це може статися через помилки в коді гаманця або тому, що операція була відкинута мережі.";
@@ -330,10 +330,10 @@
 "This is more than what you usually send." = "Це більше, ніж те, що ви зазвичай посилаєте.";
 
 /* Warning title when trying to send to your own address */
-"This is your wallet address." = "Це адреса вашого гаманця";
+"This is your wallet address." = "Це адреса вашого гаманця.";
 
 /* Invalid address alert title */
-"This isn't a valid Bitcoin address." = "Це не дійсний Біткойн адрес";
+"This isn't a valid Bitcoin address." = "Це не дійсний Біткойн адрес.";
 
 /* Alert message when user is on the mainnet and payment request is for testnet (or vice versa) */
 "This payment is supposed to be sent on a different Bitcoin network." = "Можливо цей платіж має бути відправлений на іншу Біткойн мережу.";
@@ -348,10 +348,10 @@
 "To protect your bitcoins, it's recommended that you enable at least one type of backup." = "Щоб зберегти ваші Біткойни, рекомендується зробити резервне копіювання.";
 
 /* Amount exceeds available balance alert message */
-"To send this transaction, you'll need to wait for your pending transactions to be confirmed first (this shouldn't take more than a few minutes)." = "Щоб відправити цю транзакцію, ти повинен почекати  твоїх транзакцій які з находяться в очікуванні щоб були підтвердженими (це не повинно зайняти більшеніж декілька хвилин)";
+"To send this transaction, you'll need to wait for your pending transactions to be confirmed first (this shouldn't take more than a few minutes)." = "Щоб відправити цю транзакцію, ти повинен почекати твоїх транзакцій які з находяться в очікуванні щоб були підтвердженими (це не повинно зайняти більшеніж декілька хвилин).";
 
 /* Message when trying to start an app that requires a newer API level. */
-"To use the app, please update to the latest version of Hive." = "Щоб використовувати програмульку, будь-ласка обновіть версію Хайву";
+"To use the app, please update to the latest version of Hive." = "Щоб використовувати програмульку, будь-ласка обновіть версію Хайву.";
 
 /* Notification of cancelled transaction */
 "Transaction cancelled" = "Транзакція Відмінена";
@@ -360,10 +360,10 @@
 "Transaction completed" = "Транзакція Виконана";
 
 /* Transaction failed alert title */
-"Transaction could not be completed." = "Транзакція не може бути виконана";
+"Transaction could not be completed." = "Транзакція не може бути виконана.";
 
 /* Alert when transaction was cancelled (with transaction date) */
-"Transaction from %@ was cancelled." = "Транзакція із  %@  була відмінена";
+"Transaction from %@ was cancelled." = "Транзакція із %@ була відмінена.";
 
 /* Transactions view title */
 "Transactions" = "Транзакція";
@@ -384,7 +384,7 @@
 "Waiting for backup" = "В очікуванні резервного копіювання";
 
 /* Install app popup warning message */
-"We cannot guarantee the safety of all apps - please be careful if you download Hive apps from third party sites." = "Ми не можемо гарантувати безпеку всіх програм - будь-ласка будьте уважні якщо ви завантажуєте Хайв програми з інших сайтів";
+"We cannot guarantee the safety of all apps - please be careful if you download Hive apps from third party sites." = "Ми не можемо гарантувати безпеку всіх програм - будь-ласка будьте уважні якщо ви завантажуєте Хайв програми з інших сайтів.";
 
 /* Wizard welcome page title */
 "Welcome" = "Ласкаво просило";
@@ -396,19 +396,19 @@
 "You can install it again through the App Store app later if you change your mind." = "Ви можете заінталювати це ще раз через пропгамний магазин пізніше якщо ви зміните свою думку.";
 
 /* Details of an alert when trying to send more than you have */
-"You cannot send more money than you own." = "Ви не можете вислати більше грошей а ніж маєте";
+"You cannot send more money than you own." = "Ви не можете вислати більше грошей а ніж маєте.";
 
 /* Install app popup title when app exists */
-"You have already added \"%@\" to Hive. Would you like to overwrite it?" = "Ви вже додали  \"%@\"  до Хайву. Ви бажаєте перезберегти це?";
+"You have already added \"%@\" to Hive. Would you like to overwrite it?" = "Ви вже додали \"%@\" до Хайву. Ви бажаєте перезберегти це?";
 
 /* Notification of confirmed sent transaction (with BTC amount) */
 "You have sent %@." = "Ви відправили %@.";
 
 /* Dropbox no backup folder alert details */
-"You must install Dropbox first (see www.dropbox.com)." = "Ви маєте спочатку заінсталювати Дропбокс (загляньте сюди: www.dropbox.com)";
+"You must install Dropbox first (see www.dropbox.com)." = "Ви маєте спочатку заінсталювати Дропбокс (загляньте сюди: www.dropbox.com).";
 
 /* No network connection alert message */
-"You need to be connected to the network to send any transactions." = "Ви маєте бути з'єднані з мережею щоб відправляти будь-які транзакції";
+"You need to be connected to the network to send any transactions." = "Ви маєте бути з'єднані з мережею щоб відправляти будь-які транзакції.";
 
 /* Dropbox invalid folder alert details */
 "You need to choose or create a directory inside your Dropbox folder." = "Ви повинні вибрати або створити директорію всередині папки Dropbox.";
@@ -432,4 +432,4 @@
 "Your changes won't be saved." = "Ваші зміни не будуть збережені.";
 
 /* Sync in progress alert details */
-"Your pending transactions won't be confirmed until the sync is complete." = "Ваші транзакції в очікуванні  не можуть бути підтверджені поки синхронізація не завершиться.";
+"Your pending transactions won't be confirmed until the sync is complete." = "Ваші транзакції в очікуванні не можуть бути підтверджені поки синхронізація не завершиться.";

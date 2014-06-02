@@ -27,7 +27,7 @@
 "JAi-pl-Y47.title" = "Успішний платіж";
 
 /* Class = "NSTextFieldCell"; title = "Currency exchange rates are provided by BitcoinAverage markets ticker. Bitcoin prices can change quickly, so other apps or sites might show different exchange rates."; ObjectID = "dxM-9E-wwb"; */
-"dxM-9E-wwb.title" = "Курси валют надаються із ринків: BitcoinAverage. Ціни біткойну можуть швидко змінюватись, отож інші програмульки або сайти можуть показувати інший  курси валют.\n\n\n";
+"dxM-9E-wwb.title" = "Курси валют надаються із ринків: BitcoinAverage. Ціни біткойну можуть швидко змінюватись, отож інші програмульки або сайти можуть показувати інший курси валют.\n\n\n";
 
 /* Class = "NSButtonCell"; title = "Close"; ObjectID = "iOT-cc-UWm"; */
 "iOT-cc-UWm.title" = "Закрити";

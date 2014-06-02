@@ -6,7 +6,7 @@
 "0m5-Xd-7pp.placeholderString" = "email@domain.com";
 
 /* Class = "NSTextFieldCell"; title = "Please send us a report to help us fix the problem."; ObjectID = "Cob-tq-o5r"; */
-"Cob-tq-o5r.title" = "Vennligst send oss en melding slik at vi kan fikse problemet. ";
+"Cob-tq-o5r.title" = "Vennligst send oss en melding slik at vi kan fikse problemet.";
 
 /* Class = "NSTextFieldCell"; title = "Describe what you were doing when the error occurred:"; ObjectID = "F9w-28-7kX"; */
 "F9w-28-7kX.title" = "Beskriv hva du gjorde da feilen oppsto:";

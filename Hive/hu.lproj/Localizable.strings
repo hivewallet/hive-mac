@@ -339,7 +339,7 @@
 "This payment is supposed to be sent on a different Bitcoin network." = "Ezt a fizetést nem erre a hálózatra készítették.";
 
 /* Alert title when address can't be extracted from a bitcoin: URI */
-"This QR code can't be used here." = "QR kód hiba";
+"This QR code can't be used here." = "QR kód hiba.";
 
 /* Backup error message */
 "Time Machine is disabled in System Preferences" = "A Time Machine ki van kapcsolva a rendszerben.";
