@@ -1,0 +1,9 @@
+
+/* Class = "INAppStoreWindow"; title = "Hive"; ObjectID = "3"; */
+"3.title" = "Хайв";
+
+/* Class = "NSButtonCell"; title = "Send"; ObjectID = "45"; */
+"45.title" = "Відправити";
+
+/* Class = "NSTextFieldCell"; title = "Network connection error"; ObjectID = "2MH-gv-3gz"; */
+"2MH-gv-3gz.title" = "Помилка в з'єднанні мережі";

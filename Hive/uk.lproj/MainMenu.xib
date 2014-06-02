@@ -1,0 +1,259 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="5056" systemVersion="13C1021" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none">
+    <dependencies>
+        <deployment version="1070" defaultVersion="1070" identifier="macosx"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="5056"/>
+    </dependencies>
+    <objects>
+        <customObject id="-2" userLabel="File's Owner" customClass="NSApplication">
+            <connections>
+                <outlet property="delegate" destination="494" id="495"/>
+            </connections>
+        </customObject>
+        <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
+        <customObject id="-3" userLabel="Application"/>
+        <menu systemMenu="main" id="29">
+            <items>
+                <menuItem title="Хайв" id="56">
+                    <menu key="submenu" title="Хайв" systemMenu="apple" id="57">
+                        <items>
+                            <menuItem title="Про Хайв" id="58">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                                <connections>
+                                    <action selector="showAboutWindow:" target="494" id="cP6-Rg-Zok"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem isSeparatorItem="YES" id="236">
+                                <modifierMask key="keyEquivalentModifierMask" command="YES"/>
+                            </menuItem>
+                            <menuItem title="Уподобання ..." keyEquivalent="," id="129">
+                                <connections>
+                                    <action selector="openPreferences:" target="-1" id="754"/>
+                                    <binding destination="494" name="hidden" keyPath="fullMenuEnabled" id="jYH-gV-zfX">
+                                        <dictionary key="options">
+                                            <string key="NSValueTransformerName">NSNegateBoolean</string>
+                                        </dictionary>
+                                    </binding>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="Оновлення" id="870">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                                <connections>
+                                    <action selector="checkForUpdates:" target="869" id="871"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem isSeparatorItem="YES" id="143">
+                                <modifierMask key="keyEquivalentModifierMask" command="YES"/>
+                            </menuItem>
+                            <menuItem title="Сервіси" id="131">
+                                <menu key="submenu" title="Сервіси" systemMenu="services" id="130"/>
+                            </menuItem>
+                            <menuItem isSeparatorItem="YES" id="144">
+                                <modifierMask key="keyEquivalentModifierMask" command="YES"/>
+                            </menuItem>
+                            <menuItem title="Сховати Хайв" keyEquivalent="h" id="134">
+                                <connections>
+                                    <action selector="hide:" target="-1" id="367"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="Сховати інше" keyEquivalent="h" id="145">
+                                <modifierMask key="keyEquivalentModifierMask" option="YES" command="YES"/>
+                                <connections>
+                                    <action selector="hideOtherApplications:" target="-1" id="368"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="Показати Все" id="150">
+                                <connections>
+                                    <action selector="unhideAllApplications:" target="-1" id="370"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem isSeparatorItem="YES" id="149">
+                                <modifierMask key="keyEquivalentModifierMask" command="YES"/>
+                            </menuItem>
+                            <menuItem title="Вийти з Хайву" keyEquivalent="q" id="136">
+                                <connections>
+                                    <action selector="terminate:" target="-3" id="449"/>
+                                </connections>
+                            </menuItem>
+                        </items>
+                    </menu>
+                </menuItem>
+                <menuItem title="Гаманець" id="GX7-xG-GKH">
+                    <menu key="submenu" title="Гаманець" id="jrd-Ul-XjV">
+                        <items>
+                            <menuItem title="Відправити Біткойн" keyEquivalent="S" id="866">
+                                <connections>
+                                    <action selector="openSendBitcoinsWindow:" target="-1" id="868"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem isSeparatorItem="YES" id="CGD-5y-ezT"/>
+                            <menuItem title="Змінити Пароль" id="1HB-Qg-iyg">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                                <connections>
+                                    <action selector="changeWalletPassword:" target="494" id="n4h-c8-Hjn"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="Замкнути Гаманець" keyEquivalent="l" id="AFM-Ev-d2A">
+                                <connections>
+                                    <action selector="lockWallet:" target="-1" id="XWR-xx-Wx0"/>
+                                </connections>
+                            </menuItem>
+                        </items>
+                    </menu>
+                    <connections>
+                        <binding destination="494" name="hidden" keyPath="fullMenuEnabled" id="SqK-nd-3WU">
+                            <dictionary key="options">
+                                <string key="NSValueTransformerName">NSNegateBoolean</string>
+                            </dictionary>
+                        </binding>
+                    </connections>
+                </menuItem>
+                <menuItem title="Редагувати" id="801">
+                    <modifierMask key="keyEquivalentModifierMask"/>
+                    <menu key="submenu" title="Редагувати" id="802">
+                        <items>
+                            <menuItem title="Відмінити" keyEquivalent="z" id="804">
+                                <connections>
+                                    <action selector="undo:" target="-1" id="848"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="Переробити" keyEquivalent="Z" id="805">
+                                <modifierMask key="keyEquivalentModifierMask" shift="YES" command="YES"/>
+                            </menuItem>
+                            <menuItem isSeparatorItem="YES" id="806">
+                                <modifierMask key="keyEquivalentModifierMask" command="YES"/>
+                            </menuItem>
+                            <menuItem title="Вирізатии" keyEquivalent="x" id="807">
+                                <connections>
+                                    <action selector="cut:" target="-1" id="849"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="Скопіювати" keyEquivalent="c" id="808">
+                                <connections>
+                                    <action selector="copy:" target="-1" id="850"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="Вставити" keyEquivalent="v" id="809">
+                                <connections>
+                                    <action selector="paste:" target="-1" id="851"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="Витерти" id="811">
+                                <connections>
+                                    <action selector="delete:" target="-1" id="852"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="Вибрати Все" keyEquivalent="a" id="812">
+                                <connections>
+                                    <action selector="selectAll:" target="-1" id="853"/>
+                                </connections>
+                            </menuItem>
+                        </items>
+                    </menu>
+                </menuItem>
+                <menuItem title="Інструменти" id="eBU-ec-85y">
+                    <modifierMask key="keyEquivalentModifierMask"/>
+                    <menu key="submenu" title="Інструменти" id="cCx-Ak-fii">
+                        <items>
+                            <menuItem title="Центр Резервного Копіювання" id="V0L-sM-c8h">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                                <connections>
+                                    <action selector="showBackupCenter:" target="-1" id="w3X-q3-iCI"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="Карта Монети" id="ASP-Ns-ktD">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                                <connections>
+                                    <action selector="openCoinMapSite:" target="494" id="Ozv-6D-Aab"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="Сканувати QR код..." id="vdw-IK-snJ">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                                <connections>
+                                    <action selector="scanQRCode:" target="494" id="mEt-Z8-Hrc"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="Підписати Повідомлення..." id="SoJ-eV-k9I">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                                <connections>
+                                    <action selector="openSignMessageWindow:" target="494" id="BXf-n1-5Go"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem isSeparatorItem="YES" id="5f3-xf-h00"/>
+                            <menuItem title="Інформація про Налагодження" keyEquivalent="D" id="lLT-53-p4m">
+                                <connections>
+                                    <action selector="showDebuggingInfo:" target="-1" id="Exc-Ye-jOL"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="Інструменти Налагодження" id="Ue9-mi-gbe">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                                <connections>
+                                    <action selector="showDebuggingTools:" target="-1" id="s18-1s-iwD"/>
+                                </connections>
+                            </menuItem>
+                        </items>
+                    </menu>
+                    <connections>
+                        <binding destination="494" name="hidden" keyPath="fullMenuEnabled" id="sZl-rV-GaA">
+                            <dictionary key="options">
+                                <string key="NSValueTransformerName">NSNegateBoolean</string>
+                            </dictionary>
+                        </binding>
+                    </connections>
+                </menuItem>
+                <menuItem title="Вікно" id="854">
+                    <modifierMask key="keyEquivalentModifierMask"/>
+                    <menu key="submenu" title="Вікно" id="855">
+                        <items>
+                            <menuItem title="Згорнути" keyEquivalent="m" id="857">
+                                <connections>
+                                    <action selector="performMiniaturize:" target="-1" id="861"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="Закрити" keyEquivalent="w" id="864">
+                                <connections>
+                                    <action selector="performClose:" target="-1" id="865"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="Збільшити" id="858">
+                                <connections>
+                                    <action selector="performZoom:" target="-1" id="862"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem isSeparatorItem="YES" id="859">
+                                <modifierMask key="keyEquivalentModifierMask" command="YES"/>
+                            </menuItem>
+                            <menuItem title="Перенести Все на Передній План" id="860">
+                                <connections>
+                                    <action selector="arrangeInFront:" target="-1" id="863"/>
+                                </connections>
+                            </menuItem>
+                        </items>
+                    </menu>
+                </menuItem>
+                <menuItem title="Допомога" id="ZUU-kM-x8u" userLabel="Menu Item - Help">
+                    <modifierMask key="keyEquivalentModifierMask"/>
+                    <menu key="submenu" title="Допомога" id="K2u-T2-G1a">
+                        <items>
+                            <menuItem title="Питання та Відповіді" id="VQa-2Z-6fS">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                                <connections>
+                                    <action selector="openFAQ:" target="494" id="Hg3-rm-MEN"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="Надіслати відгук ..." id="GsI-lc-HhD">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                                <connections>
+                                    <action selector="sendFeedback:" target="494" id="CqW-xg-URA"/>
+                                </connections>
+                            </menuItem>
+                        </items>
+                    </menu>
+                </menuItem>
+            </items>
+        </menu>
+        <customObject id="494" customClass="HIAppDelegate"/>
+        <customObject id="420" customClass="NSFontManager"/>
+        <customObject id="869" customClass="SUUpdater"/>
+    </objects>
+</document>

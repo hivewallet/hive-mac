@@ -1,0 +1,435 @@
+
+/* Body for feedback emails */
+"(Please write in English if possible.)" = "(Будь-ласка, пишіть англійською мовою, якщо це можливо.)";
+
+/* Alert message when bitcoin: URI is not valid */
+"\"%@\" is not a valid payment link." = "\"%@\" не є вірним платіжним адресом";
+
+/* Alert message when payment request URL is not valid */
+"\"%@\" is not a valid URL." = "\"%@\" не є вірним адресом URL.";
+
+/* Address field placeholder */
+"Address" = "Адреса";
+
+/* Title of an alert when trying to send more than you have */
+"Amount exceeds balance." = "Сума перевищує даний баланс гаманця";
+
+/* Anonymous username for profile page */
+"Anonymous" = "Анонімний";
+
+/* Message when trying to start an app that requires a newer API level. */
+"App requires a newer version of Hive." = "Програмульці потрібна нова версія Хайву";
+
+/* App load error title */
+"Application can't be loaded" = "Програма не може бути завантажена";
+
+/* Applications view title */
+"Apps" = "Програмульки";
+
+/* Cancel editing alert title */
+"Are you sure you want to leave this page?" = "Ви впевнені, що хочете залишити цю сторінку?";
+
+/* Warning when trying to a large BTC amount (btc, fiat amount and address) */
+"Are you sure you want to send %@ (%@) to %@?" = "Ви впевнені, що хочете відправити %1$@ (%2$@) to %3$@?";
+
+/* Wizard backup page title */
+"Backup" = "Резервне копіювання";
+
+/* Backup status: backup can't or won't be completed */
+"Backup error" = "Помилка в резервному копіювання";
+
+/* No comment provided by engineer. */
+"Backup hasn't been done yet" = "Резервне копіювання не було завершено";
+
+/* Backup error message */
+"Backup is not configured" = "Резервне копіювання не було налаштовано ";
+
+/* Backup status: backup done but not updated recently */
+"Backup problem" = "Помилка в резервному копіюванні";
+
+/* initialization error */
+"Bitcoin network data file could not be opened - another instance of Hive might still be running." = "Файл мережі Біткойн не може бути відкритий - другий примірник Хайву може далі працювіати.";
+
+/* Chain file unreadable error title */
+"Bitcoin network data file could not be opened." = "Файл мережі Біткойн не може бути відкритий.";
+
+/* Backup error message */
+"Can't create a directory to store the wallet backup" = "Не можу створити директорію для резервного копіювання гаманця";
+
+/* Cancel button title */
+"Cancel" = "Відміна";
+
+/* Dead transaction label */
+"CANCELLED" = "Відмінено";
+
+/* Alert message when payment request can't be loaded from or sent to the server */
+"Check your network connection, try again later or report the problem to the payment recipient." = "Перевір з'єднання з мережею, спробуйте пізніше або повідомт про проблему отримувача платежу";
+
+/* Dropbox folder save panel confirmation button */
+"Choose" = "Закрити";
+
+/* No comment provided by engineer. */
+"Choose a directory inside Dropbox folder where the backup should be saved:" = "Виберіть директорію всередині  директорію Дропбоксу де було збережено резервне копіювання:";
+
+/* No comment provided by engineer. */
+"click to copy" = "Клік щоб скопіювати";
+
+/* Confirm button next to passphrase */
+"Confirm" = "Підтвердити";
+
+/* Contact name empty alert title */
+"Contact can't be saved." = "Контакти не можуть бути збережені";
+
+/* Entry in application icon context menu */
+"Contact the author" = "Контакт до автора";
+
+/* Contacts view title */
+"Contacts" = "Контакти";
+
+/* No comment provided by engineer. */
+"copied!" = "Скопійовано!";
+
+/* initialization error */
+"Could not read wallet file. It might be damaged." = "Не можу зчитати файл гаманця. Він може бути пошкоджений.";
+
+/* Disable backup button title */
+"Disable" = "Зробити не активним";
+
+/* Backup status: adapter disabled */
+"Disabled" = "Не активний";
+
+/* Confirm leaving a form without saving data */
+"Discard Changes" = "Скасувати зміни";
+
+/* Remove contact alert dialog title */
+"Do you really want to remove %@ from your contact list?" = "Ви дійсно хочете витерти  %@ з вашої адресної книги?";
+
+/* Install app popup title */
+"Do you want to add \"%@\" to Hive?" = "Ви хочете додати \"%@\" до Хайву?";
+
+/* Uninstall app popup title */
+"Do you want to remove \"%@\" from the application list?" = "Ви хочете витерти \"%@\" із списку програми?";
+
+/* Backup error message */
+"Dropbox folder not found" = "Директорія Дропбоксу не знайдена";
+
+/* Dropbox no backup folder alert title */
+"Dropbox folder not found." = "Директорія Дропбоксу не знайдена";
+
+/* Backup error message */
+"Dropbox isn't running" = "Дропбоксу не працює в даний момент";
+
+/* Page title when editing contact's info */
+"Edit contact" = "Редагування контактів";
+
+/* Page title when editing your own profile info */
+"Edit profile" = "Редагування профілю";
+
+/* Email field placeholder */
+"email" = "Електронна скринька";
+
+/* Enable backup button title (no configuration required) */
+"Enable" = "Зробити Активним";
+
+/* Enable backup button title (requires configuration) */
+"Enable..." = "Активний";
+
+/* Passphrase prompt for sending */
+"Enter your passphrase to confirm the transaction:" = "Введіть ваш пароль для підтвердження транзакції:";
+
+/* Passphrase prompt for message signing */
+"Enter your password to sign the message:" = "Введіть свій пароль щоб підписати повідомлення:";
+
+/* Firstname field placeholder */
+"Firstname" = "Ім'я";
+
+/* Title for general preferences panel */
+"General" = "Головні";
+
+/* Hiveapp file not readable error title */
+"Hive application file \"%@\" could not be opened." = "Програмний файл Хайву  \"%@\" не може бути відкритий";
+
+/* Initialization error title */
+"Hive cannot be started." = "Хайв не може бути включений";
+
+/* Database error alert title */
+"Hive database file cannot be opened." = "База даних Хайву не може бути відкрита";
+
+/* Backup error message */
+"Hive directory is excluded from Time Machine backup" = "Директорія Хайву вилучена із резервного копіювання Машини Часу";
+
+/* Sync in progress alert title */
+"Hive is currently syncing with the Bitcoin network. Are you sure you want to quit?" = "Хайв на даний момент синхронізується із Біткойн мережею. Ви впевнені, що хочете вийти?";
+
+/* No network connection alert title */
+"Hive is not connected to the Bitcoin network." = "Хайв не з'єднаний з біткойн мережею.";
+
+/* Chain file unreadable error explanation */
+"Hive will now delete the file and synchronize with the Bitcoin network again. Please leave Hive open for the next several minutes, and try not to send any transactions right now." = "Хайв зараз витре файл і синхронізується з мережею Біткойн знову. Будь ласка залиште Хайв увімкненим на декілька хвилин, та не відправляйте жодних транзакцій на даний момент.";
+
+/* Share sent transaction text */
+"I've just received some Bitcoin using Hive" = "Я щойно отримав (ла) Біткойни використовуючи Хайв";
+
+/* Share sent transaction text */
+"I've just sent some Bitcoin using Hive" = "Я щойно відправив (ла) Біткойни використовуючи Хайв";
+
+/* Alert details when trying to send more than you have with fee */
+"If you send your whole wallet balance, there's nothing left to pay the required fee. Try to send a bit less, or split the transaction into smaller ones." = "Якщо ви відправляєте весь баланс гаманця, тоді не залишиться коштів щоб заплатити комісію. Спробуйте відправити трохи менше, або ж розділіть трансакції на більш дрібні.";
+
+/* Install app button title */
+"Install" = "Встановлення";
+
+/* Backup requires password alert details */
+"It's dangerous to upload unencrypted wallets." = "Не безпечно завантажувати не зашифровані гаманці";
+
+/* Don't leave a form without saving data */
+"Keep Editing" = "Продовжуй Редагування";
+
+/* Address caption field placeholder */
+"Label" = "Етикетка";
+
+/* On what date was the last backup done */
+"Last backup on %@" = "Попереднє резервне копіювання %@";
+
+/* Lastname field placeholder */
+"Lastname" = "Прізвище";
+
+/* Alert message when address can't be extracted from a bitcoin: URI */
+"Link included in this QR code (\"%@\") is invalid or does not contain a Bitcoin address." = "Посилання вміст якого є в цьому QR коді (\"%@\") є недоступним або не вміщає в себе Біткойн адресу. ";
+
+/* Main address caption */
+"main" = "Головна";
+
+/* Main address caption string for profiles */
+"Main address" = "Головна адреса";
+
+/* New contact view controller title */
+"New contact" = "Новий контакт";
+
+/* Empty address alert title */
+"No address entered." = "Адреса не введена";
+
+/* Backup is outdated, last backup was on that date */
+"No backup since %@" = "Немає резервного копіювання %@";
+
+/* No backups enabled notification title */
+"No backups configured" = "Немає резервних копії конфігурацій";
+
+/* Transaction failed alert message */
+"No Bitcoin have been taken from your wallet." = "Біткойни не взяті із твого гаманця";
+
+/* Title of an alert when trying to send more than you have with fee */
+"Not enough funds left to pay the transaction fee." = "Не залишилось достатньо коштів щоб заплатити комісію.";
+
+/* OK button title */
+"OK" = "Добре";
+
+/* Wizard password page title */
+"Password" = "Пароль";
+
+/* Send Bitcoin window title for payment request */
+"Pay with Bitcoin" = "Заплатити Біткойнами";
+
+/* Alert title when payment can't be sent to the merchant */
+"Payment could not be completed." = "Платіж не може бути здійснений.";
+
+/* Alert title when payment request file can't be read */
+"Payment data file could not be opened." = "Платіжний файл не відкривається.";
+
+/* Alert title when payment request file has some invalid or unexpected data */
+"Payment data is invalid." = "Оплата  не дійсна.";
+
+/* Alert title when payment request can't be loaded from the server */
+"Payment details could not be loaded." = "Платіжні дані не завантажуються.";
+
+/* Alert title when the time limit to complete the payment has passed */
+"Payment request has already expired." = "Час платіжного запиту вичерпано.";
+
+/* Pending transaction label */
+"PENDING" = "В ОЧІКУВАННІ";
+
+/* Invalid address alert message */
+"Please check if you have entered the address correctly." = "Буль-ласка перевір чи введений адрес є вірний";
+
+/* Warning details when trying to send to your own address */
+"Please enter a different address." = "Буль-ласка введіть різні адреси";
+
+/* Empty address alert message */
+"Please enter a valid Bitcoin address or select one from the dropdown list." = "Буль-ласка введіть вірну адресу Біткойн або ж виберіть одну із випадаючого меню";
+
+/* Preferences window title */
+"Preferences" = "Вибір";
+
+/* Profile view title string */
+"Profile" = "Профайл";
+
+/* Quit anyway button title */
+"Quit anyway" = "Всеодно вийти";
+
+/* Received amount of BTC from unknown source */
+"Received &a" = "Отримано  &a";
+
+/* Received amount of BTC from contact */
+"Received &a from &c" = "Отримано &a від &c";
+
+/* Install app button title when app exists */
+"Reinstall" = "Переінсталювати";
+
+/* No comment provided by engineer. */
+"Remove" = "Витерти";
+
+/* Dropbox invalid folder alert title */
+"Selected directory is outside Dropbox folder." = "Вибрана директорія є за межами Дропбокс директорії";
+
+/* Send button title */
+"Send" = "Відправити";
+
+/* Sent amount of BTC to a contact/address */
+"Sent &a to &c" = "Відправити з &a до &c";
+
+/* Title for shortcut keys preferences panel */
+"Shortcuts" = "Ярлики";
+
+/* Amount exceeds available balance alert title */
+"Some funds are temporarily unavailable." = "Деякі заощадження зараз не доступні";
+
+/* Wizard completed page title */
+"Start!" = "Старт!";
+
+/* App load error description */
+"The application data file has been removed or corrupted." = "Файл даних було видалено або пошкоджено.";
+
+/* Error message when database is incompatible with this version */
+"The database was saved by a newer version of Hive - please download the latest version from http://hivewallet.com." = "База даних була збережена в новій версії Хайву -  буль-ласка завантажте новішу версію з http://hivewallet.com";
+
+/* Install app popup warning message when app exists */
+"The existing app file will be replaced by the new version. This will not affect any app settings or saved data." = "Існуючи програмний файл буде замінений новою версією. Це не повпливає на будьякі налаштування в програмі або збережених даних.    ";
+
+/* Alert message when payment request file can't be read */
+"The file doesn't exist or is not accessible." = "Цей файл не існує або не доступний.";
+
+/* Hiveapp file not readable error details */
+"The file is damaged or does not contain a Hive application." = "Файл пошкоджено або не містить Хайв застосування";
+
+/* Sending dust alert message */
+"This amount is too low to be sent through the network." = "Ця сума надто мала для відправлення через мережу";
+
+/* Alert title when bitcoin: URI is not valid */
+"This Bitcoin payment link is invalid." = "Біткойн платіжний лінк не дійсний";
+
+/* Alert title when payment request URL is not valid */
+"This Bitcoin payment URL is invalid." = "Біткойн платіж URL не дійсний";
+
+/* Alert details when transaction was cancelled */
+"This can happen because of bugs in the wallet code or because the transaction was rejected by the network." = "Це може статися через помилки в коді гаманця або тому, що операція була відкинута мережі.";
+
+/* Alert message when payment request file isn't really a payment request at all */
+"This file does not contain a valid Bitcoin payment request." = "Цей файл не містить дійсний платіжний запит Біткойну.";
+
+/* Warning details when trying to send a large BTC amount */
+"This is more than what you usually send." = "Це більше, ніж те, що ви зазвичай посилаєте.";
+
+/* Warning title when trying to send to your own address */
+"This is your wallet address." = "Це адреса вашого гаманця";
+
+/* Invalid address alert title */
+"This isn't a valid Bitcoin address." = "Це не дійсний Біткойн адрес";
+
+/* Alert message when user is on the mainnet and payment request is for testnet (or vice versa) */
+"This payment is supposed to be sent on a different Bitcoin network." = "Можливо цей платіж має бути відправлений на іншу Біткойн мережу.";
+
+/* Alert title when address can't be extracted from a bitcoin: URI */
+"This QR code can't be used here." = "Цей QR код не можна використати тут.";
+
+/* Backup error message */
+"Time Machine is disabled in System Preferences" = "Машина часу не активна в системних уподобаннях";
+
+/* No backups enabled notification details */
+"To protect your bitcoins, it's recommended that you enable at least one type of backup." = "Щоб зберегти ваші Біткойни, рекомендується зробити резервне копіювання.";
+
+/* Amount exceeds available balance alert message */
+"To send this transaction, you'll need to wait for your pending transactions to be confirmed first (this shouldn't take more than a few minutes)." = "Щоб відправити цю транзакцію, ти повинен почекати  твоїх транзакцій які з находяться в очікуванні щоб були підтвердженими (це не повинно зайняти більшеніж декілька хвилин)";
+
+/* Message when trying to start an app that requires a newer API level. */
+"To use the app, please update to the latest version of Hive." = "Щоб використовувати програмульку, будь-ласка обновіть версію Хайву";
+
+/* Notification of cancelled transaction */
+"Transaction cancelled" = "Транзакція Відмінена";
+
+/* Notification of confirmed sent transaction */
+"Transaction completed" = "Транзакція Виконана";
+
+/* Transaction failed alert title */
+"Transaction could not be completed." = "Транзакція не може бути виконана";
+
+/* Alert when transaction was cancelled (with transaction date) */
+"Transaction from %@ was cancelled." = "Транзакція із  %@  була відмінена";
+
+/* Transactions view title */
+"Transactions" = "Транзакція";
+
+/* Uninstall app button title */
+"Uninstall" = "Деінсталяція";
+
+/* Entry in application icon context menu */
+"Uninstall application" = "Деінсталяція програми";
+
+/* Backup status: backup up to date */
+"Up to date" = "До теперішнього часу";
+
+/* Entry in application icon context menu */
+"Visit application's site" = "Відвідати сайт з програмою";
+
+/* Backup status: backup scheduled or in progress */
+"Waiting for backup" = "В очікуванні резервного копіювання";
+
+/* Install app popup warning message */
+"We cannot guarantee the safety of all apps - please be careful if you download Hive apps from third party sites." = "Ми не можемо гарантувати безпеку всіх програм - будь-ласка будьте уважні якщо ви завантажуєте Хайв програми з інших сайтів";
+
+/* Wizard welcome page title */
+"Welcome" = "Ласкаво просило";
+
+/* Button to show info about pending funds */
+"What does this mean?" = "Що це означає?";
+
+/* Uninstall app popup message */
+"You can install it again through the App Store app later if you change your mind." = "Ви можете заінталювати це ще раз через пропгамний магазин пізніше якщо ви зміните свою думку.";
+
+/* Details of an alert when trying to send more than you have */
+"You cannot send more money than you own." = "Ви не можете вислати більше грошей а ніж маєте";
+
+/* Install app popup title when app exists */
+"You have already added \"%@\" to Hive. Would you like to overwrite it?" = "Ви вже додали  \"%@\"  до Хайву. Ви бажаєте перезберегти це?";
+
+/* Notification of confirmed sent transaction (with BTC amount) */
+"You have sent %@." = "Ви відправили %@.";
+
+/* Dropbox no backup folder alert details */
+"You must install Dropbox first (see www.dropbox.com)." = "Ви маєте спочатку заінсталювати Дропбокс (загляньте сюди: www.dropbox.com)";
+
+/* No network connection alert message */
+"You need to be connected to the network to send any transactions." = "Ви маєте бути з'єднані з мережею щоб відправляти будь-які транзакції";
+
+/* Dropbox invalid folder alert details */
+"You need to choose or create a directory inside your Dropbox folder." = "Ви повинні вибрати або створити директорію всередині папки Dropbox.";
+
+/* Contact name empty alert message */
+"You need to give the contact a name before you can add it to the list." = "Ви повинні дати контакту ім'я, перш ніж ви можете додати його в список.";
+
+/* Backup requires password alert title */
+"You need to set a wallet password first (see Wallet menu)." = "Вам потрібно встановити пароль на гаманець (див. меню Гаманець).";
+
+/* Remove contact alert dialog body */
+"You won't be able to undo this operation." = "Ви не зможете скасувати цю операцію.";
+
+/* Alert message when the time limit to complete the payment has passed */
+"You'll need to return to the site that requested the payment and initiate the payment again." = "Ви повинні повернутись до сайту який запрошує платіж та ініціювати платіж.";
+
+/* Notification of incoming transaction */
+"You've received Bitcoin" = "Ви отримали Біткойн";
+
+/* Cancel editing alert message */
+"Your changes won't be saved." = "Ваші зміни не будуть збережені.";
+
+/* Sync in progress alert details */
+"Your pending transactions won't be confirmed until the sync is complete." = "Ваші транзакції в очікуванні  не можуть бути підтверджені поки синхронізація не завершиться.";

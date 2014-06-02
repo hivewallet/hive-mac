@@ -1,0 +1,18 @@
+
+/* Class = "NSMenuItem"; title = "Last Name"; ObjectID = "DUH-JI-H8J"; */
+"DUH-JI-H8J.title" = "Прізвище";
+
+/* Class = "NSTextFieldCell"; title = "Sort By:"; ObjectID = "ELC-Fb-fGt"; */
+"ELC-Fb-fGt.title" = "Сортувати за:";
+
+/* Class = "NSButtonCell"; title = "Following last name"; ObjectID = "eBf-qE-ozk"; */
+"eBf-qE-ozk.title" = "Наступне після прізвища";
+
+/* Class = "NSButtonCell"; title = "Before last name"; ObjectID = "kyg-PT-wnV"; */
+"kyg-PT-wnV.title" = "Перед прізвищем";
+
+/* Class = "NSTextFieldCell"; title = "Show first name:"; ObjectID = "uRu-rC-vCh"; */
+"uRu-rC-vCh.title" = "Показувати Ім'я:";
+
+/* Class = "NSMenuItem"; title = "First Name"; ObjectID = "wzm-Cx-x6L"; */
+"wzm-Cx-x6L.title" = "Ім'я";
