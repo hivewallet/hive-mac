@@ -30,7 +30,7 @@
 "Are you sure you want to leave this page?" = "Er du sikker på at du vil forlate denne siden?";
 
 /* Warning when trying to a large BTC amount (btc, fiat amount and address) */
-"Are you sure you want to send %@ (%@) to %@?" = "Er du sikker på at du vil sende %1$@ (%2$@) to %3$@?";
+"Are you sure you want to send %@ (%@) to %@?" = "Er du sikker på at du vil sende %1$@ (%2$@) til %3$@?";
 
 /* Wizard backup page title */
 "Backup" = "Sikkerhetskopi";
@@ -135,7 +135,7 @@
 "Enable..." = "Aktiver...";
 
 /* Passphrase prompt for sending */
-"Enter your passphrase to confirm the transaction:" = "Skriv inn passorder ditt for å bekrefte transaksjonen:";
+"Enter your passphrase to confirm the transaction:" = "Skriv inn passordet ditt for å bekrefte transaksjonen:";
 
 /* Passphrase prompt for message signing */
 "Enter your password to sign the message:" = "Skriv inn passordet ditt for å signere meldingen:";
@@ -150,7 +150,7 @@
 "Hive application file \"%@\" could not be opened." = "Hives applikasjonsfil \"%@\" kunne ikke åpnes.";
 
 /* Initialization error title */
-"Hive cannot be started." = "Hive kunne ikke bli startet.";
+"Hive cannot be started." = "Hive kunne ikke startes.";
 
 /* Database error alert title */
 "Hive database file cannot be opened." = "Databasefilene til Hive ble ikke funnet. ";
@@ -174,7 +174,7 @@
 "I've just sent some Bitcoin using Hive" = "Jeg har nettopp sendt litt Bitcoin med Hive";
 
 /* Alert details when trying to send more than you have with fee */
-"If you send your whole wallet balance, there's nothing left to pay the required fee. Try to send a bit less, or split the transaction into smaller ones." = "Om du sender hele din saldo så er det ingen ting igjen for å betale den krevde avgiften. Prøv å sende litt mindre eller del opp transaksjonen flere mindre.";
+"If you send your whole wallet balance, there's nothing left to pay the required fee. Try to send a bit less, or split the transaction into smaller ones." = "Om du sender hele din saldo så er det ingen ting igjen for å betale den krevde avgiften. Prøv å sende litt mindre eller del opp transaksjonen i flere mindre transkasjoner. ";
 
 /* Install app button title */
 "Install" = "Installer";
@@ -246,7 +246,7 @@
 "Payment request has already expired." = "Betalingsforespørselen har allerede utgått.";
 
 /* Pending transaction label */
-"PENDING" = "VENTENDE";
+"PENDING" = "UBEKREFTET";
 
 /* Invalid address alert message */
 "Please check if you have entered the address correctly." = "Vennligst sjekk om du har skrevet inn adressen riktig.";
@@ -348,7 +348,7 @@
 "To protect your bitcoins, it's recommended that you enable at least one type of backup." = "For å beskytte dine bitcoin er det anbefalt å ha ihvertfall en type sikkerhetskopiering påslått.";
 
 /* Amount exceeds available balance alert message */
-"To send this transaction, you'll need to wait for your pending transactions to be confirmed first (this shouldn't take more than a few minutes)." = "For å sende denne transaksjonen så mu vente til dine ventende transaksjoner har blitt bekreftet (dette burde ikke ta mer enn noen minutter).";
+"To send this transaction, you'll need to wait for your pending transactions to be confirmed first (this shouldn't take more than a few minutes)." = "For å sende denne transaksjonen så mu vente til dine ubekreftede transaksjoner har blitt bekreftet (dette burde ikke ta mer enn noen minutter).";
 
 /* Message when trying to start an app that requires a newer API level. */
 "To use the app, please update to the latest version of Hive." = "For å brukke appen, vennligst oppdater til den siste versjonen av Hive.";

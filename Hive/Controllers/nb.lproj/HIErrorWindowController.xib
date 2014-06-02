@@ -162,7 +162,7 @@
                     <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="sox-gS-qeH">
                         <rect key="frame" x="17" y="220" width="223" height="17"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Detaljer om feil:" id="uLK-ff-isg">
+                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Feildetaljer:" id="uLK-ff-isg">
                             <font key="font" metaFont="system"/>
                             <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                             <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>

@@ -57,7 +57,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                         <textFieldCell key="cell" sendsActionOnEndEditing="YES" id="o5O-SS-J37">
                             <font key="font" metaFont="system"/>
-                            <string key="title">Om du har problemer med din lommebok, så vil vi gjerne at du sender teksten nedenfor til oss. Vennligst legg merke til at informasjone inneholder IKKE dine private nøkler og vil ikke gjøre det mulig for oss å bruke dine bitcoin.</string>
+                            <string key="title">Om du har problemer med din lommebok, så vil vi gjerne at du sender teksten nedenfor til oss. Vennligst legg merke til at informasjonen IKKE inneholder dine private nøkler og vil ikke gjøre det mulig for oss å bruke dine bitcoin.</string>
                             <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                             <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                         </textFieldCell>

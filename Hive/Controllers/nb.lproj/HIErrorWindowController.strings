@@ -24,7 +24,7 @@
 "tR0-Dg-y0x.title" = "Avbryt";
 
 /* Class = "NSTextFieldCell"; title = "Error details:"; ObjectID = "uLK-ff-isg"; */
-"uLK-ff-isg.title" = "Detaljer om feil:";
+"uLK-ff-isg.title" = "Feildetaljer:";
 
 /* Class = "NSTextFieldCell"; title = "An unexpected error has occurred in Hive."; ObjectID = "xF4-pJ-cQU"; */
 "xF4-pJ-cQU.title" = "En uventet feil har oppstått i Hive.";

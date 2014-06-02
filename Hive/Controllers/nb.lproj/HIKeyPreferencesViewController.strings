@@ -3,7 +3,7 @@
 "psj-Lk-deP.title" = "Skann QR kode:";
 
 /* Class = "NSTextFieldCell"; title = "Show “Send” window:"; ObjectID = "sbC-cS-hdN"; */
-"sbC-cS-hdN.title" = "Vis \"Send\" vinduet:";
+"sbC-cS-hdN.title" = "Vis \"Send\"-vinduet:";
 
 /* Class = "NSTextFieldCell"; title = "Global Shortcuts"; ObjectID = "uBD-1D-rbI"; */
 "uBD-1D-rbI.title" = "Globale snarveier";
