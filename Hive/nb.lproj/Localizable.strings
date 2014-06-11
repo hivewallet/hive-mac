@@ -21,7 +21,7 @@
 "App requires a newer version of Hive." = "Appen krever en nyere versjon av Hive.";
 
 /* App load error title */
-"Application can't be loaded" = "Progammet kunne ikke kjøres";
+"Application can't be loaded" = "Programmet kunne ikke kjøres";
 
 /* Applications view title */
 "Apps" = "Apper";
@@ -99,10 +99,10 @@
 "Disabled" = "Deaktivert";
 
 /* Confirm leaving a form without saving data */
-"Discard Changes" = "Forkast Endringer";
+"Discard Changes" = "Forkast endringer";
 
 /* Remove contact alert dialog title */
-"Do you really want to remove %@ from your contact list?" = "Er du sikker på at vil fjerne %@ fra din kontakliste?";
+"Do you really want to remove %@ from your contact list?" = "Er du sikker på at vil fjerne %@ fra din kontaktliste?";
 
 /* Install app popup title */
 "Do you want to add \"%@\" to Hive?" = "Vil du legge til \"%@\" til Hive?";
@@ -162,7 +162,7 @@
 "Hive is currently syncing with the Bitcoin network. Are you sure you want to quit?" = "Hive synkroniserer nå med Bitcoin-nettverket. Er du sikker på at du vil avslutte?";
 
 /* No network connection alert title */
-"Hive is not connected to the Bitcoin network." = "Hive er ikke forbundet til Bitcoin-nettverket.";
+"Hive is not connected to the Bitcoin network." = "Hive er ikke tilkoblet til Bitcoin-nettverket.";
 
 /* Chain file unreadable error explanation */
 "Hive will now delete the file and synchronize with the Bitcoin network again. Please leave Hive open for the next several minutes, and try not to send any transactions right now." = "Hive vil nå slette filen og synkronisere med Bitcoin-nettverket på nytt. Vennligst la Hive være åpent de neste minuttene og prøv å ikke sende noen transaksjoner akkurat nå.";
@@ -231,7 +231,7 @@
 "Pay with Bitcoin" = "Betal med Bitcoin";
 
 /* Alert title when payment can't be sent to the merchant */
-"Payment could not be completed." = "Betalingen kunne ikke bli gjennomført.";
+"Payment could not be completed." = "Betalingen kunne ikke gjennomføres.";
 
 /* Alert title when payment request file can't be read */
 "Payment data file could not be opened." = "Betalingsfilen kunne ikke åpnes.";
@@ -303,7 +303,7 @@
 "The database was saved by a newer version of Hive - please download the latest version from http://hivewallet.com." = "Databasen ble lagret av en nyere versjon av Hive - vennligst last ned den siste versjonen fra http://hivewallet.com.";
 
 /* Install app popup warning message when app exists */
-"The existing app file will be replaced by the new version. This will not affect any app settings or saved data." = "Den eskiterende applikasjonsfilen vil bli erstattet av den nye versjonen. Dette vil ikke berøre instillingene eller lagret data.";
+"The existing app file will be replaced by the new version. This will not affect any app settings or saved data." = "Den eksisterende applikasjonsfilen vil bli erstattet av den nye versjonen. Dette vil ikke berøre instillingene eller lagret data.";
 
 /* Alert message when payment request file can't be read */
 "The file doesn't exist or is not accessible." = "Filen eksiterer ikke eller er ikke mulig å nå.";
@@ -315,16 +315,16 @@
 "This amount is too low to be sent through the network." = "Mengden er for lav for å bli sendt igjennom nettverket.";
 
 /* Alert title when bitcoin: URI is not valid */
-"This Bitcoin payment link is invalid." = "Bitcoin betalingslenken er ugyldig.";
+"This Bitcoin payment link is invalid." = "Bitcoin-betalingslenken er ugyldig.";
 
 /* Alert title when payment request URL is not valid */
-"This Bitcoin payment URL is invalid." = "Denne Bitcoin betalingslenken er ugyldig.";
+"This Bitcoin payment URL is invalid." = "Denne Bitcoin-betalingslenken er ugyldig.";
 
 /* Alert details when transaction was cancelled */
-"This can happen because of bugs in the wallet code or because the transaction was rejected by the network." = "Dette kan skje på grunn av feil i lommebok-koden eller fordi transkasjonen var avvist av nettverket.";
+"This can happen because of bugs in the wallet code or because the transaction was rejected by the network." = "Dette kan skje på grunn av feil i lommebok-koden eller fordi transkasjonen ble avvist av nettverket.";
 
 /* Alert message when payment request file isn't really a payment request at all */
-"This file does not contain a valid Bitcoin payment request." = "Filen inneholder ikke en gyldig Bitcoin betalingsforespørsel.";
+"This file does not contain a valid Bitcoin payment request." = "Filen inneholder ikke en gyldig Bitcoin-betalingsforespørsel.";
 
 /* Warning details when trying to send a large BTC amount */
 "This is more than what you usually send." = "Dette er mer enn du vanligvis sender.";
@@ -339,7 +339,7 @@
 "This payment is supposed to be sent on a different Bitcoin network." = "Denne betalingen er ment å sendes på et annet Bitcoin-nettverk.";
 
 /* Alert title when address can't be extracted from a bitcoin: URI */
-"This QR code can't be used here." = "Denne ØR-koden kan ikke bli brukt her.";
+"This QR code can't be used here." = "Denne QR-koden kan ikke bli brukt her.";
 
 /* Backup error message */
 "Time Machine is disabled in System Preferences" = "Time Machine er slått av i Systemvalg.";
@@ -351,7 +351,7 @@
 "To send this transaction, you'll need to wait for your pending transactions to be confirmed first (this shouldn't take more than a few minutes)." = "For å sende denne transaksjonen så mu vente til dine ubekreftede transaksjoner har blitt bekreftet (dette burde ikke ta mer enn noen minutter).";
 
 /* Message when trying to start an app that requires a newer API level. */
-"To use the app, please update to the latest version of Hive." = "For å brukke appen, vennligst oppdater til den siste versjonen av Hive.";
+"To use the app, please update to the latest version of Hive." = "For å bruke appen, vennligst oppdater til den siste versjonen av Hive.";
 
 /* Notification of cancelled transaction */
 "Transaction cancelled" = "Transaksjon avbrutt";
@@ -384,7 +384,7 @@
 "Waiting for backup" = "Venter for sikkerhetskopiering";
 
 /* Install app popup warning message */
-"We cannot guarantee the safety of all apps - please be careful if you download Hive apps from third party sites." = "VI kan ikke garantere sikkerheten til alle apper - vennligst vær forsiktig om du laster ned Hive-apper fra tjerdepartisider.";
+"We cannot guarantee the safety of all apps - please be careful if you download Hive apps from third party sites." = "Vi kan ikke garantere sikkerheten til alle apper - vennligst vær forsiktig om du laster ned Hive-apper fra tjerdepartisider.";
 
 /* Wizard welcome page title */
 "Welcome" = "Velkommen";
@@ -408,7 +408,7 @@
 "You must install Dropbox first (see www.dropbox.com)." = "Du må installere Dropbox først (se www.dropbox.com).";
 
 /* No network connection alert message */
-"You need to be connected to the network to send any transactions." = "Du må være forbundet til nettverket for å sende transaksjoner.";
+"You need to be connected to the network to send any transactions." = "Du må være koblet til nettverket for å sende transaksjoner.";
 
 /* Dropbox invalid folder alert details */
 "You need to choose or create a directory inside your Dropbox folder." = "Du må velge eller lage en mappe i din Dropbox-mappe.";
@@ -432,4 +432,4 @@
 "Your changes won't be saved." = "Dine endringer vil ikke bli lagret.";
 
 /* Sync in progress alert details */
-"Your pending transactions won't be confirmed until the sync is complete." = "Dine ventende transaksjoner vil ikke bli bekreftet før synkronisering er ferdig.";
+"Your pending transactions won't be confirmed until the sync is complete." = "Dine ventende transaksjoner vil ikke bli bekreftet før synkroniseringen er ferdig.";
