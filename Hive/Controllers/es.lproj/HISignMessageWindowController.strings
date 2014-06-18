@@ -12,7 +12,7 @@
 "W8R-Z4-t5H.title" = "Firmar";
 
 /* Class = "NSTextFieldCell"; title = "Some services request that you verify ownership of a Bitcoin address by creating a cryptographic signature of a message using your private key. To do that, enter the message you would like to sign into the box below and choose \"Sign\"."; ObjectID = "kUl-US-tKo"; */
-"kUl-US-tKo.title" = "Algunos servicios pueden solicitar que verifique la posesión de una dirección Bitcoin con la creación de una firma criptográfica usando su clave privada. Para hacerlo, introduzca el mensaje que le gustaría firmar en el recuadro de más abajo y pulse en \"Firmar\".";
+"kUl-US-tKo.title" = "Algunos servicios pueden solicitar que verifique la posesión de una dirección Bitcoin con la creación de una firma criptográfica usando su clave privada. Para hacerlo, introduzca el mensaje que le gustaría firmar en el recuadro de más abajo y pulse \"Firmar\".";
 
 /* Class = "NSButtonCell"; title = "Close"; ObjectID = "u9d-Yr-bsb"; */
 "u9d-Yr-bsb.title" = "Cerrar";

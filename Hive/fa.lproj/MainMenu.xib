@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="5056" systemVersion="13C1021" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none">
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="5056" systemVersion="13D65" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none">
     <dependencies>
         <deployment version="1070" defaultVersion="1070" identifier="macosx"/>
         <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="5056"/>
@@ -14,8 +14,8 @@
         <customObject id="-3" userLabel="Application"/>
         <menu systemMenu="main" id="29">
             <items>
-                <menuItem title="کندو" id="56">
-                    <menu key="submenu" title="کندو" systemMenu="apple" id="57">
+                <menuItem title="هایو" id="56">
+                    <menu key="submenu" title="هایو" systemMenu="apple" id="57">
                         <items>
                             <menuItem title="درباره هایو" id="58">
                                 <modifierMask key="keyEquivalentModifierMask"/>
