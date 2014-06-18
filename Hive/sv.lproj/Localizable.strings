@@ -1,12 +1,12 @@
 
 /* Body for feedback emails */
-"(Please write in English if possible.)" = "(Please write in English if possible.)";
+"(Please write in English if possible.)" = "(Var snäll och skriv på Engelska om möjligt.)";
 
 /* Alert message when bitcoin: URI is not valid */
-"\"%@\" is not a valid payment link." = "\"%@\" is not a valid payment link.";
+"\"%@\" is not a valid payment link." = "\"%@\" är inte en giltig betalningslänk.";
 
 /* Alert message when payment request URL is not valid */
-"\"%@\" is not a valid URL." = "\"%@\" is not a valid URL.";
+"\"%@\" is not a valid URL." = "\"%@\" är inte en giltig URL.";
 
 /* Address field placeholder */
 "Address" = "Adress";
@@ -18,16 +18,16 @@
 "Anonymous" = "Anonym";
 
 /* Message when trying to start an app that requires a newer API level. */
-"App requires a newer version of Hive." = "App requires a newer version of Hive.";
+"App requires a newer version of Hive." = "Appen kräver en nyare version av Hive.";
 
 /* App load error title */
 "Application can't be loaded" = "Programmet kan inte laddas";
 
 /* Applications view title */
-"Apps" = "Apps";
+"Apps" = "Appar";
 
 /* Cancel editing alert title */
-"Are you sure you want to leave this page?" = "Are you sure you want to leave this page?";
+"Are you sure you want to leave this page?" = "Är du säker på att du vill lämna denna sida?";
 
 /* Warning when trying to a large BTC amount (btc, fiat amount and address) */
 "Are you sure you want to send %@ (%@) to %@?" = "Är du säker på att du vill skicka %1$@ (%2$@) till %3$@?";
@@ -48,10 +48,10 @@
 "Backup problem" = "Problem med säkerhetskopiering";
 
 /* initialization error */
-"Bitcoin network data file could not be opened - another instance of Hive might still be running." = "Bitcoin network data file could not be opened - another instance of Hive might still be running.";
+"Bitcoin network data file could not be opened - another instance of Hive might still be running." = "Bitcoins nätverksdatafil kunde inte öppnas - en annan instans av Hive kanske redan körs. ";
 
 /* Chain file unreadable error title */
-"Bitcoin network data file could not be opened." = "Bitcoin network data file could not be opened.";
+"Bitcoin network data file could not be opened." = "Bitcoins nätverksdatafil kunde inte öppnas.";
 
 /* Backup error message */
 "Can't create a directory to store the wallet backup" = "Går inte att skapa en mapp för att lagra plånbokens säkerhetskopia";
@@ -63,7 +63,7 @@
 "CANCELLED" = "AVBRUTEN";
 
 /* Alert message when payment request can't be loaded from or sent to the server */
-"Check your network connection, try again later or report the problem to the payment recipient." = "Check your network connection, try again later or report the problem to the payment recipient.";
+"Check your network connection, try again later or report the problem to the payment recipient." = "Kontrollera din nätverksanslutning, försök igen senare eller rapportera problemet till betalningsmottagaren.";
 
 /* Dropbox folder save panel confirmation button */
 "Choose" = "Välj";
@@ -81,7 +81,7 @@
 "Contact can't be saved." = "Kontakt kan inte sparas.";
 
 /* Entry in application icon context menu */
-"Contact the author" = "Contact the author";
+"Contact the author" = "Kontakta utvecklaren.";
 
 /* Contacts view title */
 "Contacts" = "Kontakter";
@@ -99,7 +99,7 @@
 "Disabled" = "Inaktiverad";
 
 /* Confirm leaving a form without saving data */
-"Discard Changes" = "Discard Changes";
+"Discard Changes" = "Ignorera ändringar";
 
 /* Remove contact alert dialog title */
 "Do you really want to remove %@ from your contact list?" = "Är du säker på att du vill ta bort %@ från dina kontakter?";
@@ -108,7 +108,7 @@
 "Do you want to add \"%@\" to Hive?" = "Vill du lägga till \"%@\" i Hive?";
 
 /* Uninstall app popup title */
-"Do you want to remove \"%@\" from the application list?" = "Do you want to remove \"%@\" from the application list?";
+"Do you want to remove \"%@\" from the application list?" = "Vill du ta bort \"%@\" från applikationslistan?";
 
 /* Backup error message */
 "Dropbox folder not found" = "Dropbox-katalog hittades inte";
@@ -138,16 +138,16 @@
 "Enter your passphrase to confirm the transaction:" = "Ange ditt lösenord för att genomföra transaktionen:";
 
 /* Passphrase prompt for message signing */
-"Enter your password to sign the message:" = "Enter your password to sign the message:";
+"Enter your password to sign the message:" = "Ange ditt lösenord för att signera meddelande:";
 
 /* Firstname field placeholder */
 "Firstname" = "Förnamn";
 
 /* Title for general preferences panel */
-"General" = "General";
+"General" = "Generellt";
 
 /* Hiveapp file not readable error title */
-"Hive application file \"%@\" could not be opened." = "Hive application file \"%@\" could not be opened.";
+"Hive application file \"%@\" could not be opened." = "Hives programfil \"%@\" kunde inte öppnas.";
 
 /* Initialization error title */
 "Hive cannot be started." = "Hive kan inte köras.";
@@ -159,13 +159,13 @@
 "Hive directory is excluded from Time Machine backup" = "Hive-katalog är exkluderad från Time Machines säkerhetskopia";
 
 /* Sync in progress alert title */
-"Hive is currently syncing with the Bitcoin network. Are you sure you want to quit?" = "Hive is currently syncing with the Bitcoin network. Are you sure you want to quit?";
+"Hive is currently syncing with the Bitcoin network. Are you sure you want to quit?" = "Hive synkroniseras precis mot Bitcoin-nätverket. Är du säker på att du vill avsluta?";
 
 /* No network connection alert title */
-"Hive is not connected to the Bitcoin network." = "Hive is not connected to the Bitcoin network.";
+"Hive is not connected to the Bitcoin network." = "Hive är inte anslutet till Bitcoin-nätverket.";
 
 /* Chain file unreadable error explanation */
-"Hive will now delete the file and synchronize with the Bitcoin network again. Please leave Hive open for the next several minutes, and try not to send any transactions right now." = "Hive will now delete the file and synchronize with the Bitcoin network again. Please leave Hive open for the next several minutes, and try not to send any transactions right now.";
+"Hive will now delete the file and synchronize with the Bitcoin network again. Please leave Hive open for the next several minutes, and try not to send any transactions right now." = "Hive kommer nu att ta bort filen och synkronisera med Bitcoin-nätverket igen. Var vänlig och lämna Hive igång under några minuter, och försök att inte skicka några transaktioner just nu.";
 
 /* Share sent transaction text */
 "I've just received some Bitcoin using Hive" = "Jag mottog precis Bitcoins med Hive";
@@ -174,7 +174,7 @@
 "I've just sent some Bitcoin using Hive" = "Jag skickade precis Bitcoins med Hive";
 
 /* Alert details when trying to send more than you have with fee */
-"If you send your whole wallet balance, there's nothing left to pay the required fee. Try to send a bit less, or split the transaction into smaller ones." = "If you send your whole wallet balance, there's nothing left to pay the required fee. Try to send a bit less, or split the transaction into smaller ones.";
+"If you send your whole wallet balance, there's nothing left to pay the required fee. Try to send a bit less, or split the transaction into smaller ones." = "Om du vill skicka totala balansen av din plånbok, så finns det ingenting kvar för att betala överföringsavgiften. Försök skicka lite mindre, eller dela upp transaktionen i mindre delar. ";
 
 /* Install app button title */
 "Install" = "Installera";
@@ -183,7 +183,7 @@
 "It's dangerous to upload unencrypted wallets." = "Det är väldigt osäkert att ladda upp okrypterade plånböcker.";
 
 /* Don't leave a form without saving data */
-"Keep Editing" = "Keep Editing";
+"Keep Editing" = "Fortsätt ändra";
 
 /* Address caption field placeholder */
 "Label" = "Etikett";
@@ -195,7 +195,7 @@
 "Lastname" = "Efernamn";
 
 /* Alert message when address can't be extracted from a bitcoin: URI */
-"Link included in this QR code (\"%@\") is invalid or does not contain a Bitcoin address." = "Link included in this QR code (\"%@\") is invalid or does not contain a Bitcoin address.";
+"Link included in this QR code (\"%@\") is invalid or does not contain a Bitcoin address." = "Länken som finns i QR-koden (\"%@\") är inte giltig eller innehåller inte en Bitcoin-adress. ";
 
 /* Main address caption */
 "main" = "Huvudadress";
@@ -213,37 +213,37 @@
 "No backup since %@" = "Ingen säkerhetskopia sedan %@";
 
 /* No backups enabled notification title */
-"No backups configured" = "No backups configured";
+"No backups configured" = "Ingen säkerhetskopiering är konfigurerad.";
 
 /* Transaction failed alert message */
 "No Bitcoin have been taken from your wallet." = "Inga Bitcoins har blivit tagna från din plånbok.";
 
 /* Title of an alert when trying to send more than you have with fee */
-"Not enough funds left to pay the transaction fee." = "Not enough funds left to pay the transaction fee.";
+"Not enough funds left to pay the transaction fee." = "Inte tillräckligt med medel kvar för att betala transaktionsavgiften.";
 
 /* OK button title */
 "OK" = "OK";
 
 /* Wizard password page title */
-"Password" = "Password";
+"Password" = "Lösenrod";
 
 /* Send Bitcoin window title for payment request */
-"Pay with Bitcoin" = "Pay with Bitcoin";
+"Pay with Bitcoin" = "Betala med Bitcoin";
 
 /* Alert title when payment can't be sent to the merchant */
-"Payment could not be completed." = "Payment could not be completed.";
+"Payment could not be completed." = "Betalning kunde inte genomföras.";
 
 /* Alert title when payment request file can't be read */
-"Payment data file could not be opened." = "Payment data file could not be opened.";
+"Payment data file could not be opened." = "Betalningsdatafil kunde inte öppnas. ";
 
 /* Alert title when payment request file has some invalid or unexpected data */
-"Payment data is invalid." = "Payment data is invalid.";
+"Payment data is invalid." = "Betalningsdata är inte giltig.";
 
 /* Alert title when payment request can't be loaded from the server */
-"Payment details could not be loaded." = "Payment details could not be loaded.";
+"Payment details could not be loaded." = "Betalningsdetaljer kunde inte laddas.";
 
 /* Alert title when the time limit to complete the payment has passed */
-"Payment request has already expired." = "Payment request has already expired.";
+"Payment request has already expired." = "Betalningsförfrågan har redan gått ut.";
 
 /* Pending transaction label */
 "PENDING" = "PÅGÅENDE";
@@ -258,7 +258,7 @@
 "Please enter a valid Bitcoin address or select one from the dropdown list." = "Vänligen, fyll i en korrekt Bitcoin-adress eller välj från rullgardinslistan.";
 
 /* Preferences window title */
-"Preferences" = "Preferences";
+"Preferences" = "Inställningar";
 
 /* Profile view title string */
 "Profile" = "Profil";
@@ -282,13 +282,13 @@
 "Selected directory is outside Dropbox folder." = "Välj en katalog som är utanför Dropbox-plats.";
 
 /* Send button title */
-"Send" = "Send";
+"Send" = "Skicka";
 
 /* Sent amount of BTC to a contact/address */
 "Sent &a to &c" = "Skickat &a till &c";
 
 /* Title for shortcut keys preferences panel */
-"Shortcuts" = "Shortcuts";
+"Shortcuts" = "Snabbkommando";
 
 /* Amount exceeds available balance alert title */
 "Some funds are temporarily unavailable." = "Endel tillgångar är tillfälligt inte tillgängliga.";
@@ -306,25 +306,25 @@
 "The existing app file will be replaced by the new version. This will not affect any app settings or saved data." = "Nuvarande app-fil kommer att bli ersatt med en ny version. Detta kommer inte påverka några inställningar eller sparade uppgifter..";
 
 /* Alert message when payment request file can't be read */
-"The file doesn't exist or is not accessible." = "The file doesn't exist or is not accessible.";
+"The file doesn't exist or is not accessible." = "Filen finns inte eller inte åtkomlig.";
 
 /* Hiveapp file not readable error details */
-"The file is damaged or does not contain a Hive application." = "The file is damaged or does not contain a Hive application.";
+"The file is damaged or does not contain a Hive application." = "Filen är skadad eller innehåller inte en Hive-applikation. ";
 
 /* Sending dust alert message */
-"This amount is too low to be sent through the network." = "This amount is too low to be sent through the network.";
+"This amount is too low to be sent through the network." = "Detta belopp är för litet för att skickas via nätverket.";
 
 /* Alert title when bitcoin: URI is not valid */
-"This Bitcoin payment link is invalid." = "This Bitcoin payment link is invalid.";
+"This Bitcoin payment link is invalid." = "Denna Bitcoi-betalningslänk är inte giltig.";
 
 /* Alert title when payment request URL is not valid */
-"This Bitcoin payment URL is invalid." = "This Bitcoin payment URL is invalid.";
+"This Bitcoin payment URL is invalid." = "Denna Bitcoin-betalnings-URL är inte giltig.";
 
 /* Alert details when transaction was cancelled */
 "This can happen because of bugs in the wallet code or because the transaction was rejected by the network." = "Detta kan hända på grund av en bugg i plånbokskoden eller att en transaktion blev avvisad av nätverket.";
 
 /* Alert message when payment request file isn't really a payment request at all */
-"This file does not contain a valid Bitcoin payment request." = "This file does not contain a valid Bitcoin payment request.";
+"This file does not contain a valid Bitcoin payment request." = "Denna fil innehåller inte giltig Bitcoin-betalningsförfrågan. ";
 
 /* Warning details when trying to send a large BTC amount */
 "This is more than what you usually send." = "Detta är större summa än vad du brukar skicka.";
@@ -336,22 +336,22 @@
 "This isn't a valid Bitcoin address." = "Detta är inte en giltig Bitcoin-adress.";
 
 /* Alert message when user is on the mainnet and payment request is for testnet (or vice versa) */
-"This payment is supposed to be sent on a different Bitcoin network." = "This payment is supposed to be sent on a different Bitcoin network.";
+"This payment is supposed to be sent on a different Bitcoin network." = "Denna betalning är menad att skickas på ett annat Bitcoin-nätverk. ";
 
 /* Alert title when address can't be extracted from a bitcoin: URI */
-"This QR code can't be used here." = "This QR code can't be used here.";
+"This QR code can't be used here." = "Denna QR-kod kan inte användas här.";
 
 /* Backup error message */
 "Time Machine is disabled in System Preferences" = "Time Machine är avvaktiverad Systeminställningar";
 
 /* No backups enabled notification details */
-"To protect your bitcoins, it's recommended that you enable at least one type of backup." = "To protect your bitcoins, it's recommended that you enable at least one type of backup.";
+"To protect your bitcoins, it's recommended that you enable at least one type of backup." = "För att skydda dina bitcoins, är det rekomedat att du aktiverar minst en typ av säkerhetskopiering. ";
 
 /* Amount exceeds available balance alert message */
 "To send this transaction, you'll need to wait for your pending transactions to be confirmed first (this shouldn't take more than a few minutes)." = "För att skicka denna transaktion, måste du vänta att dina avvaktande transaktioner blir bekräftade först (Det bör inte ta mer än några minuter).";
 
 /* Message when trying to start an app that requires a newer API level. */
-"To use the app, please update to the latest version of Hive." = "To use the app, please update to the latest version of Hive.";
+"To use the app, please update to the latest version of Hive." = "För att använda appen, var vänlig att uppdatera till senaste versionen av Hive.";
 
 /* Notification of cancelled transaction */
 "Transaction cancelled" = "Transaktion avbryten";
@@ -369,16 +369,16 @@
 "Transactions" = "Transaktion";
 
 /* Uninstall app button title */
-"Uninstall" = "Uninstall";
+"Uninstall" = "Avinstallera";
 
 /* Entry in application icon context menu */
-"Uninstall application" = "Uninstall application";
+"Uninstall application" = "Avinstallera applikation";
 
 /* Backup status: backup up to date */
 "Up to date" = "Aktuell";
 
 /* Entry in application icon context menu */
-"Visit application's site" = "Visit application's site";
+"Visit application's site" = "Besök applikationens webbsida";
 
 /* Backup status: backup scheduled or in progress */
 "Waiting for backup" = "Väntar på säkerhetskopierng";
@@ -393,7 +393,7 @@
 "What does this mean?" = "Vad betyder detta?";
 
 /* Uninstall app popup message */
-"You can install it again through the App Store app later if you change your mind." = "You can install it again through the App Store app later if you change your mind.";
+"You can install it again through the App Store app later if you change your mind." = "Du kan installera det igen via App Store senare om du ändrar dig. ";
 
 /* Details of an alert when trying to send more than you have */
 "You cannot send more money than you own." = "Du kan inte skcika mer pengar än vad du äger.";
@@ -408,7 +408,7 @@
 "You must install Dropbox first (see www.dropbox.com)." = "Du måste installera dropbox först (se www.dropbox.com).";
 
 /* No network connection alert message */
-"You need to be connected to the network to send any transactions." = "You need to be connected to the network to send any transactions.";
+"You need to be connected to the network to send any transactions." = "Du behöver vara ansluten till nätverket för att skicka transaktioner. ";
 
 /* Dropbox invalid folder alert details */
 "You need to choose or create a directory inside your Dropbox folder." = "Du måste välja eller skapa en katalog i din Dropbox-plats.";
@@ -423,13 +423,13 @@
 "You won't be able to undo this operation." = "Du kommer inte kunna ångra denna åtgärd.";
 
 /* Alert message when the time limit to complete the payment has passed */
-"You'll need to return to the site that requested the payment and initiate the payment again." = "You'll need to return to the site that requested the payment and initiate the payment again.";
+"You'll need to return to the site that requested the payment and initiate the payment again." = "Du behöver återgå till sidan som gjorde betalningsförfrågan och göra om betalningen igen.";
 
 /* Notification of incoming transaction */
 "You've received Bitcoin" = "Du mottog Bitcoins";
 
 /* Cancel editing alert message */
-"Your changes won't be saved." = "Your changes won't be saved.";
+"Your changes won't be saved." = "Dina ändringar kommer inte sparas.";
 
 /* Sync in progress alert details */
-"Your pending transactions won't be confirmed until the sync is complete." = "Your pending transactions won't be confirmed until the sync is complete.";
+"Your pending transactions won't be confirmed until the sync is complete." = "Dina pågående transaktioner kommer inte att bli bekräftade förrän synkroniseringen är klar. ";

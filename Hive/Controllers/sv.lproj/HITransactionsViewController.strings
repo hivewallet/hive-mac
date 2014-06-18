@@ -9,7 +9,7 @@
 "63.title" = "Du kan sedan använda Skicka-knappen för att skicka någon pengar.";
 
 /* Class = "NSTextFieldCell"; title = "Looks like you haven't made any transactions yet. Send some Bitcoin to your Hive wallet address!"; ObjectID = "Tlv-45-Iq6"; */
-"Tlv-45-Iq6.title" = "Looks like you haven't made any transactions yet. Send some Bitcoin to your Hive wallet address!";
+"Tlv-45-Iq6.title" = "Ser ut som att du inte har gjort några transaktioner än. Skicka lite Bitcoins till din Hive-plånboksadress. ";
 
 /* Class = "NSTextFieldCell"; title = "PENDING"; ObjectID = "oXJ-Jx-H6s"; */
 "oXJ-Jx-H6s.title" = "Pågående";
