@@ -66,7 +66,7 @@
 "Check your network connection, try again later or report the problem to the payment recipient." = "Check your network connection, try again later or report the problem to the payment recipient.";
 
 /* Dropbox folder save panel confirmation button */
-"Choose" = "Choose";
+"Choose" = "اختر";
 
 /* No comment provided by engineer. */
 "Choose a directory inside Dropbox folder where the backup should be saved:" = "Choose a directory inside Dropbox folder where the backup should be saved:";
@@ -75,7 +75,7 @@
 "click to copy" = "اضغط للنسخ";
 
 /* Confirm button next to passphrase */
-"Confirm" = "Confirm";
+"Confirm" = "تأكيد";
 
 /* Contact name empty alert title */
 "Contact can't be saved." = "تعذر حفظ جهة الاتصال";
@@ -93,13 +93,13 @@
 "Could not read wallet file. It might be damaged." = "Could not read wallet file. It might be damaged.";
 
 /* Disable backup button title */
-"Disable" = "Disable";
+"Disable" = "عطل";
 
 /* Backup status: adapter disabled */
-"Disabled" = "Disabled";
+"Disabled" = "معطل";
 
 /* Confirm leaving a form without saving data */
-"Discard Changes" = "Discard Changes";
+"Discard Changes" = "تجاهل التعديلات";
 
 /* Remove contact alert dialog title */
 "Do you really want to remove %@ from your contact list?" = "هل ترغب فى ازالة %@ من جعات الاتصال الخاصة بك";
@@ -144,7 +144,7 @@
 "Firstname" = "لاسم الاول";
 
 /* Title for general preferences panel */
-"General" = "General";
+"General" = "عام";
 
 /* Hiveapp file not readable error title */
 "Hive application file \"%@\" could not be opened." = "Hive application file \"%@\" could not be opened.";
@@ -225,10 +225,10 @@
 "OK" = "أوك";
 
 /* Wizard password page title */
-"Password" = "Password";
+"Password" = "كلمة السر";
 
 /* Send Bitcoin window title for payment request */
-"Pay with Bitcoin" = "Pay with Bitcoin";
+"Pay with Bitcoin" = "ادفع باستخدام بيتكوين";
 
 /* Alert title when payment can't be sent to the merchant */
 "Payment could not be completed." = "Payment could not be completed.";

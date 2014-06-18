@@ -3,7 +3,7 @@
 "22.title" = "مستلمة";
 
 /* Class = "NSTextFieldCell"; title = "Date"; ObjectID = "41"; */
-"41.title" = "Date";
+"41.title" = "التاريخ";
 
 /* Class = "NSTextFieldCell"; title = "You can then use the Send button to send someone money."; ObjectID = "63"; */
 "63.title" = "بعد ذلك يمكنك أستخدام زر أرسال لأرسال بعض الاموال لشخص ما";
