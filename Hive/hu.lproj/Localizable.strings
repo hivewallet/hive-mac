@@ -342,7 +342,7 @@
 "This QR code can't be used here." = "QR kód hiba.";
 
 /* Backup error message */
-"Time Machine is disabled in System Preferences" = "A Time Machine ki van kapcsolva a rendszerben.";
+"Time Machine is disabled in System Preferences" = "A Time Machine ki van kapcsolva a rendszerben";
 
 /* No backups enabled notification details */
 "To protect your bitcoins, it's recommended that you enable at least one type of backup." = "Hogy megvédd a Bitcoinjaidat állíts be legalább egy féle mentést.";

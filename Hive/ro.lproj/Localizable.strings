@@ -111,7 +111,7 @@
 "Do you want to remove \"%@\" from the application list?" = "Doriţi să ştergeţi \"%@\" din lista de aplicaţii?";
 
 /* Backup error message */
-"Dropbox folder not found" = "Directorul Dropbox nu a putut fi găsit.";
+"Dropbox folder not found" = "Directorul Dropbox nu a putut fi găsit";
 
 /* Dropbox no backup folder alert title */
 "Dropbox folder not found." = "Directorul Dropbox nu a putut fi găsit.";
@@ -156,7 +156,7 @@
 "Hive database file cannot be opened." = "Baza de date Hive nu poate fi deschisă.";
 
 /* Backup error message */
-"Hive directory is excluded from Time Machine backup" = "Directorul Hive este exclus din backup-ul Maşinii Timpului.";
+"Hive directory is excluded from Time Machine backup" = "Directorul Hive este exclus din backup-ul Maşinii Timpului";
 
 /* Sync in progress alert title */
 "Hive is currently syncing with the Bitcoin network. Are you sure you want to quit?" = "Hive momentan se sincronizează cu reţeaua Bitcoin. Sigur doriţi să anulaţi?";
@@ -342,7 +342,7 @@
 "This QR code can't be used here." = "This QR code can't be used here.";
 
 /* Backup error message */
-"Time Machine is disabled in System Preferences" = "Maşina Timpului este dezactivată în Preferinţe Sistem.";
+"Time Machine is disabled in System Preferences" = "Maşina Timpului este dezactivată în Preferinţe Sistem";
 
 /* No backups enabled notification details */
 "To protect your bitcoins, it's recommended that you enable at least one type of backup." = "Pentru a vă proteja bitcoinii, este recomandat să activaţi măcar un tip de backup.";

@@ -117,7 +117,7 @@
 "Dropbox folder not found." = "Dropbox фолдер није пронађен.";
 
 /* Backup error message */
-"Dropbox isn't running" = "Dropbox није укључен.";
+"Dropbox isn't running" = "Dropbox није укључен";
 
 /* Page title when editing contact's info */
 "Edit contact" = "Измените контакт";
@@ -342,7 +342,7 @@
 "This QR code can't be used here." = "This QR code can't be used here.";
 
 /* Backup error message */
-"Time Machine is disabled in System Preferences" = "Time Machine је онеспособљен у системским подешавањима.";
+"Time Machine is disabled in System Preferences" = "Time Machine је онеспособљен у системским подешавањима";
 
 /* No backups enabled notification details */
 "To protect your bitcoins, it's recommended that you enable at least one type of backup." = "To protect your bitcoins, it's recommended that you enable at least one type of backup.";

@@ -342,7 +342,7 @@
 "This QR code can't be used here." = "Denne QR-koden kan ikke bli brukt her.";
 
 /* Backup error message */
-"Time Machine is disabled in System Preferences" = "Time Machine er slått av i Systemvalg.";
+"Time Machine is disabled in System Preferences" = "Time Machine er slått av i Systemvalg";
 
 /* No backups enabled notification details */
 "To protect your bitcoins, it's recommended that you enable at least one type of backup." = "For å beskytte dine bitcoin er det anbefalt å ha ihvertfall en type sikkerhetskopiering påslått.";

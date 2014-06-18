@@ -213,7 +213,7 @@
 "No backup since %@" = "%@ tarihinden beri yedekleme yapılmamış";
 
 /* No backups enabled notification title */
-"No backups configured" = "Hiç yedekleme ayarlanmamış.";
+"No backups configured" = "Hiç yedekleme ayarlanmamış";
 
 /* Transaction failed alert message */
 "No Bitcoin have been taken from your wallet." = "Cüzdanınızdan hiç bir Bitcoin alınmadı.";
@@ -354,7 +354,7 @@
 "To use the app, please update to the latest version of Hive." = "Uygulamayı kullanmak için Hive'ı son sürüme güncelleyin.";
 
 /* Notification of cancelled transaction */
-"Transaction cancelled" = "İşlem iptal edildi.";
+"Transaction cancelled" = "İşlem iptal edildi";
 
 /* Notification of confirmed sent transaction */
 "Transaction completed" = "İşlem tamamlandı";
@@ -426,7 +426,7 @@
 "You'll need to return to the site that requested the payment and initiate the payment again." = "You'll need to return to the site that requested the payment and initiate the payment again.";
 
 /* Notification of incoming transaction */
-"You've received Bitcoin" = "Bitcoin geldi.";
+"You've received Bitcoin" = "Bitcoin geldi";
 
 /* Cancel editing alert message */
 "Your changes won't be saved." = "Yaptığınız değişiklikler kaydedilmeyecek.";

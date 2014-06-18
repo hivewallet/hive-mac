@@ -69,7 +69,7 @@
 "Choose" = "Wählen";
 
 /* No comment provided by engineer. */
-"Choose a directory inside Dropbox folder where the backup should be saved:" = "Wählen Sie den Speicherort für Ihr Backup innerhalb des Dropbox-Ordners.";
+"Choose a directory inside Dropbox folder where the backup should be saved:" = "Wählen Sie den Speicherort für Ihr Backup innerhalb des Dropbox-Ordners:";
 
 /* No comment provided by engineer. */
 "click to copy" = "Kopieren";
@@ -135,7 +135,7 @@
 "Enable..." = "aktiviert...";
 
 /* Passphrase prompt for sending */
-"Enter your passphrase to confirm the transaction:" = "Geben Sie Ihr Passwort ein, um die Transaktion zu bestätigen.";
+"Enter your passphrase to confirm the transaction:" = "Geben Sie Ihr Passwort ein, um die Transaktion zu bestätigen:";
 
 /* Passphrase prompt for message signing */
 "Enter your password to sign the message:" = "Geben Sie Ihr Passwort ein, um diese Nachricht zu signieren:";

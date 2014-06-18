@@ -342,7 +342,7 @@
 "This QR code can't be used here." = "This QR code can't be used here.";
 
 /* Backup error message */
-"Time Machine is disabled in System Preferences" = "Time Machine is uitgeschakelt in Systeem Instellingen.";
+"Time Machine is disabled in System Preferences" = "Time Machine is uitgeschakelt in Systeem Instellingen";
 
 /* No backups enabled notification details */
 "To protect your bitcoins, it's recommended that you enable at least one type of backup." = "Om je Bitcoins te beschermen is het aangeraden om minimaal 1 backup manier te activeren.";

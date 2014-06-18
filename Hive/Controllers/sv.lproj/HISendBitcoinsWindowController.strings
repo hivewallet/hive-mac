@@ -27,7 +27,7 @@
 "JAi-pl-Y47.title" = "Betalning lyckades";
 
 /* Class = "NSTextFieldCell"; title = "Currency exchange rates are provided by BitcoinAverage markets ticker. Bitcoin prices can change quickly, so other apps or sites might show different exchange rates."; ObjectID = "dxM-9E-wwb"; */
-"dxM-9E-wwb.title" = "Valutakurser är försedda av BitcoinAverage markets ticker. Bitcoin-priser kan ändras snabbt, så andra appar eller sidor kan visa andra valutakurser. ";
+"dxM-9E-wwb.title" = "Valutakurser är försedda av BitcoinAverage markets ticker. Bitcoin-priser kan ändras snabbt, så andra appar eller sidor kan visa andra valutakurser.";
 
 /* Class = "NSButtonCell"; title = "Close"; ObjectID = "iOT-cc-UWm"; */
 "iOT-cc-UWm.title" = "Stäng";

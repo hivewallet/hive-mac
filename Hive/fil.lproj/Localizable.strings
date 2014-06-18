@@ -21,7 +21,7 @@
 "App requires a newer version of Hive." = "Ang app ay nangangailangan ng bagong bersyon ng Hive.";
 
 /* App load error title */
-"Application can't be loaded" = "Hindi mai-load ang application.";
+"Application can't be loaded" = "Hindi mai-load ang application";
 
 /* Applications view title */
 "Apps" = "Mga App";
@@ -117,7 +117,7 @@
 "Dropbox folder not found." = "Ang Dropbox folder ay hindi mahanap.";
 
 /* Backup error message */
-"Dropbox isn't running" = "Ang Dropbox ay hindi gumagana.";
+"Dropbox isn't running" = "Ang Dropbox ay hindi gumagana";
 
 /* Page title when editing contact's info */
 "Edit contact" = "Baguhin ang contact";
