@@ -1,0 +1,24 @@
+
+/* Class = "HIKeyObservingWindow"; title = "Backup Center"; ObjectID = "1"; */
+"1.title" = "ศูนย์เก็บข้อมูล";
+
+/* Class = "NSTextFieldCell"; title = "Status details"; ObjectID = "1f9-7o-UKm"; */
+"1f9-7o-UKm.title" = "รายละเอียดสถานะ";
+
+/* Class = "NSTableColumn"; headerCell.title = "Actions"; ObjectID = "5e5-Co-YVU"; */
+"5e5-Co-YVU.headerCell.title" = "การกระทำ";
+
+/* Class = "NSTextFieldCell"; title = "Status"; ObjectID = "CNI-B2-pea"; */
+"CNI-B2-pea.title" = "สถานะ";
+
+/* Class = "NSButtonCell"; title = "Enable"; ObjectID = "brF-Bb-pc1"; */
+"brF-Bb-pc1.title" = "เปิดการใช้งาน";
+
+/* Class = "NSTableColumn"; headerCell.title = "Backup type"; ObjectID = "gS6-M0-vFe"; */
+"gS6-M0-vFe.headerCell.title" = "ชนิดการสำรองข้อมูล";
+
+/* Class = "NSTableColumn"; headerCell.title = "Status"; ObjectID = "ggB-aI-7mE"; */
+"ggB-aI-7mE.headerCell.title" = "สถานะ ";
+
+/* Class = "NSTextFieldCell"; title = "Backup type"; ObjectID = "mMS-Su-94P"; */
+"mMS-Su-94P.title" = "ชนิดการสำรองข้อมูล";

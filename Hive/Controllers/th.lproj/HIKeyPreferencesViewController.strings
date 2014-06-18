@@ -1,0 +1,9 @@
+
+/* Class = "NSTextFieldCell"; title = "Scan QR code:"; ObjectID = "psj-Lk-deP"; */
+"psj-Lk-deP.title" = "แสดง QR โค้ด:  ";
+
+/* Class = "NSTextFieldCell"; title = "Show “Send” window:"; ObjectID = "sbC-cS-hdN"; */
+"sbC-cS-hdN.title" = "แสดงหน้าต่าง \"ส่ง\": ";
+
+/* Class = "NSTextFieldCell"; title = "Global Shortcuts"; ObjectID = "uBD-1D-rbI"; */
+"uBD-1D-rbI.title" = "ทางลัด";

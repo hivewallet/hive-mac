@@ -1,0 +1,18 @@
+
+/* Class = "NSMenuItem"; title = "Last Name"; ObjectID = "DUH-JI-H8J"; */
+"DUH-JI-H8J.title" = "นามสกุล";
+
+/* Class = "NSTextFieldCell"; title = "Sort By:"; ObjectID = "ELC-Fb-fGt"; */
+"ELC-Fb-fGt.title" = "คัดแยกโดย";
+
+/* Class = "NSButtonCell"; title = "Following last name"; ObjectID = "eBf-qE-ozk"; */
+"eBf-qE-ozk.title" = "นามสกุลถัดไป";
+
+/* Class = "NSButtonCell"; title = "Before last name"; ObjectID = "kyg-PT-wnV"; */
+"kyg-PT-wnV.title" = "นามสกุลก่อนหน้า";
+
+/* Class = "NSTextFieldCell"; title = "Show first name:"; ObjectID = "uRu-rC-vCh"; */
+"uRu-rC-vCh.title" = "แสดงชื่อ";
+
+/* Class = "NSMenuItem"; title = "First Name"; ObjectID = "wzm-Cx-x6L"; */
+"wzm-Cx-x6L.title" = "ชื่อ ";

@@ -1,0 +1,27 @@
+
+/* Class = "NSButtonCell"; title = "Save"; ObjectID = "14"; */
+"14.title" = "บันทึก";
+
+/* Class = "NSTextFieldCell"; title = "Contact information"; ObjectID = "75"; */
+"75.title" = "ข้อมูลผู้ติดต่อ";
+
+/* Class = "NSTextFieldCell"; title = "Email:"; ObjectID = "78"; */
+"78.title" = "อีเมลล์ ";
+
+/* Class = "NSButtonCell"; title = "Add address"; ObjectID = "80"; */
+"80.title" = "เพิ่มที่อยู่";
+
+/* Class = "NSTextFieldCell"; title = "Bitcoin addresses"; ObjectID = "81"; */
+"81.title" = "ที่อยู่ของบิทคอยน์";
+
+/* Class = "NSButtonCell"; title = "Remove contact"; ObjectID = "97"; */
+"97.title" = "ลบผู้ติดต่อ";
+
+/* Class = "NSTextFieldCell"; title = "edit"; ObjectID = "107"; */
+"107.title" = "แก้ไข";
+
+/* Class = "NSButtonCell"; title = "QR"; ObjectID = "Fp7-Nh-Dhm"; */
+"Fp7-Nh-Dhm.title" = "คิวอาร์";
+
+/* Class = "NSButtonCell"; title = "Cancel"; ObjectID = "WNT-Ju-zbY"; */
+"WNT-Ju-zbY.title" = "ยกเลิก";

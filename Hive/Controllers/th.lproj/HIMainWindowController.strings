@@ -1,0 +1,9 @@
+
+/* Class = "INAppStoreWindow"; title = "Hive"; ObjectID = "3"; */
+"3.title" = "ไฮฟ์ ";
+
+/* Class = "NSButtonCell"; title = "Send"; ObjectID = "45"; */
+"45.title" = "ส่ง";
+
+/* Class = "NSTextFieldCell"; title = "Network connection error"; ObjectID = "2MH-gv-3gz"; */
+"2MH-gv-3gz.title" = "การเชื่อมต่ออินเทอร์เน็ตผิดพลาด";
