@@ -171,7 +171,7 @@ static const CGFloat MaxAutocompleteHeight = 300.0;
 - (void)confirmSelection {
     NSInteger row = self.tableView.selectedRow;
 
-    if (row >= 0) {
+    if (row >= 0 && self.arrayController.arrangedObjects) {
         HIAddress *address = self.arrayController.arrangedObjects[self.tableView.selectedRow];
         [self.delegate addressSelectedInAutocomplete:address];
         [self.tableView deselectAll:self];
