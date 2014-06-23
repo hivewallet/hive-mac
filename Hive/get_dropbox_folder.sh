@@ -59,8 +59,14 @@ function get_dropbox_folder {
   then
     fatal "Please install sqlite3"
   fi
+
   # which database have we got?
-  if [ -f "$HOME/.dropbox/config.db" ]
+  if [ -f "$HOME/.dropbox/info.json" ]
+  then
+    info="$HOME/.dropbox/info.json"
+    DROPBOX_FOLDER=$(cat "$info" | grep '"personal": {"path":' | sed -E -e 's/.*"personal": {"path": "([^"]+)".*/\1/')
+    return
+  elif [ -f "$HOME/.dropbox/config.db" ]
   then
     local DBFILE="$HOME/.dropbox/config.db"
     local DBVER=$( "$SQLITE3" -noheader "$DBFILE" 'SELECT value FROM config WHERE key="config_schema_version"' )
@@ -71,6 +77,7 @@ function get_dropbox_folder {
   else
     fatal "Dropbox database not found, is dropbox installed?"
   fi
+
   # get the desired value
   if [ $DBVER -eq 0 ]
   then
@@ -85,6 +92,7 @@ function get_dropbox_folder {
   else
     fatal "Unhandled DB schema version $DBVER"
   fi
+
   if [ -z "$DBVALUE" ]
   then
     # value not set, read value from host.db instead
