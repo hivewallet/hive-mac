@@ -6,4 +6,4 @@
 "125.title" = "Tilføj person";
 
 /* Class = "NSTextFieldCell"; title = "You can then use the ✚ button on top to add more contacts."; ObjectID = "129"; */
-"129.title" = "Benyt også knappen \U2795 øverst for at tilføje flere personer.";
+"129.title" = "Benyt også knappen ✚ øverst for at tilføje flere personer.";
