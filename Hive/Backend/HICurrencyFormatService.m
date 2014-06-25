@@ -127,9 +127,14 @@
 }
 
 - (NSString *)stringWithoutCurrencySymbols:(NSString *)string {
-    NSCharacterSet *strippedCharacters = [[NSCharacterSet letterCharacterSet] invertedSet];
-    NSRange start = [string rangeOfCharacterFromSet:strippedCharacters];
-    NSRange end = [string rangeOfCharacterFromSet:strippedCharacters options:NSBackwardsSearch];
+    NSMutableCharacterSet *valueCharacters = [[NSMutableCharacterSet alloc] init];
+    [valueCharacters formUnionWithCharacterSet:[NSCharacterSet decimalDigitCharacterSet]];
+    [valueCharacters formUnionWithCharacterSet:[NSCharacterSet punctuationCharacterSet]];
+    [valueCharacters formUnionWithCharacterSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
+
+    NSRange start = [string rangeOfCharacterFromSet:valueCharacters];
+    NSRange end = [string rangeOfCharacterFromSet:valueCharacters options:NSBackwardsSearch];
+
     if (start.location == NSNotFound) {
         return string;
     } else {

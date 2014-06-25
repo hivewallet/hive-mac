@@ -87,13 +87,21 @@ describe(@"Parsing", ^{
             NSNumber *amount = [service parseString:@"$1,000.6" error:NULL];
             assertThat(amount, equalTo(@1000.6));
         });
+
         it(@"should parse value with trailing unit", ^{
             service.locale = [[NSLocale alloc] initWithLocaleIdentifier:@"de_DE"];
             NSNumber *amount = [service parseString:@"1.000,6\u00A0€" error:NULL];
             assertThat(amount, equalTo(@1000.6));
         });
+
         it(@"should parse value with currency if it doesn't matches the locale's currency", ^{
             NSNumber *amount = [service parseString:@"zł1,000.60" error:NULL];
+            assertThat(amount, equalTo(@1000.6));
+        });
+
+        it(@"should parse value with a dollar in Thai locale", ^{
+            service.locale = [[NSLocale alloc] initWithLocaleIdentifier:@"th_TH"];
+            NSNumber *amount = [service parseString:@"$1,000.60" error:NULL];
             assertThat(amount, equalTo(@1000.6));
         });
     });
