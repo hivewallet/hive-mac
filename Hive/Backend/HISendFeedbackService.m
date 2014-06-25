@@ -15,7 +15,7 @@
 
 - (void)sendSupportEmail {
 
-    NSString *escapedTo = [self escapeForURL:@"macsupport@hivewallet.com"];
+    NSString *escapedTo = [self escapeForURL:@"macsupport@hivewallet.zendesk.com"];
     NSString *escapedSubject = [self escapeForURL:[self createSubject]];
     NSString *escapedBody = [self escapeForURL:[self createBody]];
 
@@ -28,10 +28,8 @@
 }
 
 - (NSString *)createSubject {
-
     NSBundle *bundle = [NSBundle mainBundle];
-    NSArray *preferredLanguages =
-        [NSBundle preferredLocalizationsFromArray:[NSBundle mainBundle].localizations];
+    NSArray *preferredLanguages = [NSBundle preferredLocalizationsFromArray:[NSBundle mainBundle].localizations];
 
     return [NSString stringWithFormat:@"Feedback for %@ %@/%@ (%@)",
                                       [bundle objectForInfoDictionaryKey:@"CFBundleName"],
