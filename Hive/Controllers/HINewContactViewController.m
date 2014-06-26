@@ -15,6 +15,7 @@
 #import "HINavigationController.h"
 #import "HINewContactViewController.h"
 #import "HIProfile.h"
+#import "NSURL+Gravatar.h"
 #import "NSAlert+Hive.h"
 #import "NSColor+Hive.h"
 
@@ -398,6 +399,9 @@ static NSString * const Separator = @"Separator";
 
 - (void)textFieldChanged:(NSNotification *)notification {
     _edited = YES;
+    if (!_contact.avatar.length && !_avatarChanged && self.emailField.enteredValue.length > 0) {
+        [self fetchGravatarForEmailAddress:self.emailField.enteredValue];
+    }
 }
 
 - (void)avatarChanged:(id)sender {
@@ -571,6 +575,24 @@ static NSString * const Separator = @"Separator";
     }
 
     return uri.valid;
+}
+
+#pragma mark - gravatar
+
+- (void)fetchGravatarForEmailAddress:(NSString *)email {
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+        NSURL *url = [NSURL URLWithGravatarEmail:email size:512];
+        NSImage *image = [[NSImage alloc] initWithContentsOfURL:url];
+        if (image) {
+            dispatch_async(dispatch_get_main_queue(), ^{
+                // Make sure the user didn't select one while we waited.
+                if (!_avatarChanged) {
+                    self.avatarView.image = image;
+                    _avatarChanged = YES;
+                }
+            });
+        }
+    });
 }
 
 @end

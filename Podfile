@@ -10,6 +10,7 @@ pod 'ZXingObjC'
 pod 'Sparkle-pornel'
 pod 'MASPreferences'
 pod 'MASShortcut'
+pod 'NSURL+Gravatar'
 
 target :test, :exclusive => true do
   link_with 'HiveTests'
