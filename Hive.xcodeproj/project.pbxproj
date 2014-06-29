@@ -36,6 +36,7 @@
 		1AA10E305C91DC42C81D0DC3 /* HIAddressesBox.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AA107FF085E51B83E5F751D /* HIAddressesBox.m */; };
 		1AA10ECC39D33A1362882EB2 /* HIProfileViewController.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1AA108BDEC523213EF9B8309 /* HIProfileViewController.strings */; };
 		1AA10F0AB0B36A26463B74A9 /* HIShortcutService.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AA1085915844864667B118C /* HIShortcutService.m */; };
+		1AA10F4B12CF1FAA908C67F4 /* NSString+HICleanUpNumber.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AA1046CF53321E40FB2CFCE /* NSString+HICleanUpNumber.m */; };
 		1AA10F7BD079E23BAB09D4E1 /* HIPreferencesWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AA10D7BCF51F6AE70202C19 /* HIPreferencesWindowController.m */; };
 		1AA10FF5281477AC42B0B952 /* HIWizardSmallButtonCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AA101A350D2350E6AF62F4C /* HIWizardSmallButtonCell.m */; };
 		24178E301861005100A73D4E /* HIPasswordChangeWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 24178E2E1861005100A73D4E /* HIPasswordChangeWindowController.m */; };
@@ -305,6 +306,8 @@
 		1AA1023A121C8842E7B7CE4A /* HIDirectoryDataService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HIDirectoryDataService.h; sourceTree = "<group>"; };
 		1AA102DC4B21868564928E39 /* HICurrencyFormatService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HICurrencyFormatService.h; sourceTree = "<group>"; };
 		1AA1032408E917EE5B7752AC /* HIExchangeRateService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HIExchangeRateService.m; sourceTree = "<group>"; };
+		1AA103EFC48859E0AF3ABC87 /* NSString+HICleanUpNumber.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+HICleanUpNumber.h"; sourceTree = "<group>"; };
+		1AA1046CF53321E40FB2CFCE /* NSString+HICleanUpNumber.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+HICleanUpNumber.m"; sourceTree = "<group>"; };
 		1AA10497F9EEF9DF75030891 /* HILinkTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HILinkTextField.h; sourceTree = "<group>"; };
 		1AA104995C1BAF25C99780F1 /* NSDecimalNumber+HISatoshiConversion.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDecimalNumber+HISatoshiConversion.m"; sourceTree = "<group>"; };
 		1AA10535D664FC91503D3769 /* HIKeyPreferencesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HIKeyPreferencesViewController.m; sourceTree = "<group>"; };
@@ -2963,6 +2966,8 @@
 				586059BA18041A1300FD9C2A /* NSView+Snapshot.m */,
 				1AA1021B2F3F04674129E978 /* NSWindow+HIShake.h */,
 				1AA10B9F1D9322FFF21821DA /* NSWindow+HIShake.m */,
+				1AA1046CF53321E40FB2CFCE /* NSString+HICleanUpNumber.m */,
+				1AA103EFC48859E0AF3ABC87 /* NSString+HICleanUpNumber.h */,
 			);
 			path = Categories;
 			sourceTree = "<group>";
@@ -3330,6 +3335,7 @@
 			files = (
 				24EAAFC9186E1BBD00E1D2D3 /* HIBitcoinFormatServiceSpec.m in Sources */,
 				1AA10DECEE3B99EDD1C14B81 /* HICurrencyFormatServiceSpec.m in Sources */,
+				1AA10F4B12CF1FAA908C67F4 /* NSString+HICleanUpNumber.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

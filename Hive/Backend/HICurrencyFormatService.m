@@ -1,4 +1,5 @@
 #import "HICurrencyFormatService.h"
+#import "NSString+HICleanUpNumber.h"
 
 @implementation HICurrencyFormatService
 
@@ -106,7 +107,7 @@
 
 - (NSDecimalNumber *)parseString:(NSString *)string error:(NSError **)error {
 
-    string = [self stringWithoutCurrencySymbols:string];
+    string = [string hi_stringWithCleanedUpDecimalNumberUsingLocale:self.locale] ?: string;
 
     NSNumberFormatter *currencyNumberFormatter = [self createNumberFormatter];
     currencyNumberFormatter.generatesDecimalNumbers = YES;
@@ -120,25 +121,14 @@
                                        forString:string
                                            range:NULL
                                            error:error]) {
-        return number;
+
+        // The value returned by the number formatter is actually wrong, because it rounds to double
+        // internally.
+        // We just use it for returning an error if the number cannot be parsed.
+
+        return [[NSDecimalNumber alloc] initWithString:string locale:self.locale];
     } else {
         return 0ll;
-    }
-}
-
-- (NSString *)stringWithoutCurrencySymbols:(NSString *)string {
-    NSMutableCharacterSet *valueCharacters = [[NSMutableCharacterSet alloc] init];
-    [valueCharacters formUnionWithCharacterSet:[NSCharacterSet decimalDigitCharacterSet]];
-    [valueCharacters formUnionWithCharacterSet:[NSCharacterSet punctuationCharacterSet]];
-    [valueCharacters formUnionWithCharacterSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
-
-    NSRange start = [string rangeOfCharacterFromSet:valueCharacters];
-    NSRange end = [string rangeOfCharacterFromSet:valueCharacters options:NSBackwardsSearch];
-
-    if (start.location == NSNotFound) {
-        return string;
-    } else {
-        return [string substringWithRange:NSMakeRange(start.location, end.location - start.location + 1)];
     }
 }
 

@@ -146,6 +146,11 @@ describe(@"Parsing", ^{
         assertThat(@(amount), equalToLongLong(-60000000));
     });
 
+    it(@"should round BTC value correctly", ^{
+        satoshi_t amount = [service parseString:@"81.1" withFormat:@"mBTC" error:NULL];
+        assertThat(@(amount), equalToLongLong(8110000));
+    });
+
     context(@"using a different locale", ^{
         it(@"should parse value correctly", ^{
             service.locale = [[NSLocale alloc] initWithLocaleIdentifier:@"de_DE"];

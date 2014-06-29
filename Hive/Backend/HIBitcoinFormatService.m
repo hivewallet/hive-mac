@@ -1,6 +1,7 @@
 #import "HIBitcoinFormatService.h"
 
 #import "NSDecimalNumber+HISatoshiConversion.h"
+#import "NSString+HICleanUpNumber.h"
 
 NSString *const HIPreferredFormatChangeNotification = @"HIPreferredFormatChangeNotification";
 
@@ -131,6 +132,8 @@ static NSString *const HIFormatPreferenceKey = @"BitcoinFormat";
 
     NSParameterAssert(string);
 
+    string = [string hi_stringWithCleanedUpDecimalNumberUsingLocale:self.locale] ?: string;
+
     NSNumberFormatter *formatter = [self createNumberFormatterWithFormat:format];
     formatter.locale = locale;
 
@@ -144,6 +147,12 @@ static NSString *const HIFormatPreferenceKey = @"BitcoinFormat";
                         forString:string
                             range:NULL
                             error:error]) {
+
+        // The value returned by the number formatter is actually wrong, because it rounds to double
+        // internally.
+        // We just use it for returning an error if the number cannot be parsed.
+
+        number = [[NSDecimalNumber alloc] initWithString:string locale:self.locale];
         number = [number decimalNumberByMultiplyingByPowerOf10:-[self shiftForFormat:format]];
         return number.hiSatoshi;
     } else {
