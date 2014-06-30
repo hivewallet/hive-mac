@@ -1,18 +1,18 @@
 
 /* Class = "NSMenuItem"; title = "Last Name"; ObjectID = "DUH-JI-H8J"; */
-"DUH-JI-H8J.title" = "性";
+"DUH-JI-H8J.title" = "姓";
 
 /* Class = "NSTextFieldCell"; title = "Sort By:"; ObjectID = "ELC-Fb-fGt"; */
 "ELC-Fb-fGt.title" = "並び替える:";
 
 /* Class = "NSButtonCell"; title = "Following last name"; ObjectID = "eBf-qE-ozk"; */
-"eBf-qE-ozk.title" = "性のあと";
+"eBf-qE-ozk.title" = "姓のあと";
 
 /* Class = "NSButtonCell"; title = "Before last name"; ObjectID = "kyg-PT-wnV"; */
-"kyg-PT-wnV.title" = "性の前";
+"kyg-PT-wnV.title" = "姓の前";
 
 /* Class = "NSTextFieldCell"; title = "Show first name:"; ObjectID = "uRu-rC-vCh"; */
 "uRu-rC-vCh.title" = "名前を表示";
 
 /* Class = "NSMenuItem"; title = "First Name"; ObjectID = "wzm-Cx-x6L"; */
-"wzm-Cx-x6L.title" = "名前";
+"wzm-Cx-x6L.title" = "名";

@@ -141,7 +141,7 @@
 "Enter your password to sign the message:" = "パスワードを入力してメッセージに署名:";
 
 /* Firstname field placeholder */
-"Firstname" = "姓";
+"Firstname" = "名";
 
 /* Title for general preferences panel */
 "General" = "設定";
@@ -192,7 +192,7 @@
 "Last backup on %@" = "最新のバックアップ：　%@　";
 
 /* Lastname field placeholder */
-"Lastname" = "名";
+"Lastname" = "姓";
 
 /* Alert message when address can't be extracted from a bitcoin: URI */
 "Link included in this QR code (\"%@\") is invalid or does not contain a Bitcoin address." = "このQRコード (\"%@\")のリンクは使用する事ができません。";
