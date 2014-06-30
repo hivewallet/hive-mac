@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="5056" systemVersion="13C1021" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="5056" systemVersion="13D65" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
         <deployment defaultVersion="1070" identifier="macosx"/>
         <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="5056"/>
@@ -42,8 +42,8 @@
                         <font key="font" metaFont="menu"/>
                         <menu key="menu" title="OtherViews" id="NNp-vD-ZfF">
                             <items>
-                                <menuItem title="名前" id="wzm-Cx-x6L"/>
-                                <menuItem title="性" id="DUH-JI-H8J"/>
+                                <menuItem title="名" id="wzm-Cx-x6L"/>
+                                <menuItem title="姓" id="DUH-JI-H8J"/>
                             </items>
                         </menu>
                     </popUpButtonCell>
@@ -66,11 +66,11 @@
                     </buttonCell>
                     <cells>
                         <column>
-                            <buttonCell type="radio" title="性の前" imagePosition="left" alignment="left" state="on" tag="1" inset="2" id="kyg-PT-wnV">
+                            <buttonCell type="radio" title="姓の前" imagePosition="left" alignment="left" state="on" tag="1" inset="2" id="kyg-PT-wnV">
                                 <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                 <font key="font" metaFont="system"/>
                             </buttonCell>
-                            <buttonCell type="radio" title="性のあと" imagePosition="left" alignment="left" inset="2" id="eBf-qE-ozk">
+                            <buttonCell type="radio" title="姓のあと" imagePosition="left" alignment="left" inset="2" id="eBf-qE-ozk">
                                 <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                 <font key="font" metaFont="system"/>
                             </buttonCell>
