@@ -1,9 +1,9 @@
 
 /* Class = "NSTextFieldCell"; title = "Hive is locked.\nEnter your password to unlock:"; ObjectID = "Gmn-jq-R5t"; */
-"Gmn-jq-R5t.title" = "Hive is locked.\nEnter your password to unlock:";
+"Gmn-jq-R5t.title" = "Uzamknuto.\nVložte heslo pro odemčení:";
 
 /* Class = "NSButtonCell"; title = "Unlock"; ObjectID = "W4R-hH-myj"; */
-"W4R-hH-myj.title" = "Unlock";
+"W4R-hH-myj.title" = "Odemknout";
 
 /* Class = "NSButtonCell"; title = "Don't show this screen again"; ObjectID = "fZF-LI-0oD"; */
-"fZF-LI-0oD.title" = "Don't show this screen again";
+"fZF-LI-0oD.title" = "Nezobrazovat znovu toho okno";

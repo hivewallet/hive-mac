@@ -1,12 +1,12 @@
 
 /* Body for feedback emails */
-"(Please write in English if possible.)" = "(Please write in English if possible.)";
+"(Please write in English if possible.)" = "(Prosím napište to anglicky, pokud to jen trochu půjde)";
 
 /* Alert message when bitcoin: URI is not valid */
-"\"%@\" is not a valid payment link." = "\"%@\" is not a valid payment link.";
+"\"%@\" is not a valid payment link." = "\"%@\" není platný odkaz.";
 
 /* Alert message when payment request URL is not valid */
-"\"%@\" is not a valid URL." = "\"%@\" is not a valid URL.";
+"\"%@\" is not a valid URL." = "\"%@\" není validní URL.";
 
 /* Address field placeholder */
 "Address" = "Adresa";
@@ -18,7 +18,7 @@
 "Anonymous" = "Anonymní";
 
 /* Message when trying to start an app that requires a newer API level. */
-"App requires a newer version of Hive." = "App requires a newer version of Hive.";
+"App requires a newer version of Hive." = "Aplikace vyžaduje novější verzi Hive.";
 
 /* App load error title */
 "Application can't be loaded" = "Aplikaci nelze načíst";
@@ -27,61 +27,61 @@
 "Apps" = "Aplikace";
 
 /* Cancel editing alert title */
-"Are you sure you want to leave this page?" = "Are you sure you want to leave this page?";
+"Are you sure you want to leave this page?" = "Jste si jistí, že chcete opustit tuto stránku?";
 
 /* Warning when trying to a large BTC amount (btc, fiat amount and address) */
-"Are you sure you want to send %@ (%@) to %@?" = "Are you sure you want to send %1$@ (%2$@) to %3$@?";
+"Are you sure you want to send %@ (%@) to %@?" = "Jste si jistí, že chcete zaslat %1$@ (%2$@) do %3$@?";
 
 /* Wizard backup page title */
-"Backup" = "Backup";
+"Backup" = "Záloha";
 
 /* Backup status: backup can't or won't be completed */
-"Backup error" = "Backup error";
+"Backup error" = "Chyba zálohování";
 
 /* No comment provided by engineer. */
-"Backup hasn't been done yet" = "Backup hasn't been done yet";
+"Backup hasn't been done yet" = "Zálohování nebylo dosud provedeno";
 
 /* Backup error message */
-"Backup is not configured" = "Backup is not configured";
+"Backup is not configured" = "Zálohování není nakonfigurováno";
 
 /* Backup status: backup done but not updated recently */
-"Backup problem" = "Backup problem";
+"Backup problem" = "Problém se zálohou";
 
 /* initialization error */
-"Bitcoin network data file could not be opened - another instance of Hive might still be running." = "Bitcoin network data file could not be opened - another instance of Hive might still be running.";
+"Bitcoin network data file could not be opened - another instance of Hive might still be running." = "Soubor s Bitcoinovou sítí nelze otevřít - další části Hive, ale mohou dále běžet.";
 
 /* Chain file unreadable error title */
-"Bitcoin network data file could not be opened." = "Bitcoin network data file could not be opened.";
+"Bitcoin network data file could not be opened." = "Soubor obsahující Bitcoinovou síť nelze otevřít.";
 
 /* Backup error message */
-"Can't create a directory to store the wallet backup" = "Can't create a directory to store the wallet backup";
+"Can't create a directory to store the wallet backup" = "Nelze vytvořit adresář pro uložení zálohy";
 
 /* Cancel button title */
-"Cancel" = "Storno";
+"Cancel" = "Zrušit";
 
 /* Dead transaction label */
-"CANCELLED" = "CANCELLED";
+"CANCELLED" = "ZRUŠENO";
 
 /* Alert message when payment request can't be loaded from or sent to the server */
-"Check your network connection, try again later or report the problem to the payment recipient." = "Check your network connection, try again later or report the problem to the payment recipient.";
+"Check your network connection, try again later or report the problem to the payment recipient." = "Zkontrolujte připojení k síti, zkuste to znovu později, nebo nahlašte problém příjemci platby.";
 
 /* Dropbox folder save panel confirmation button */
-"Choose" = "Choose";
+"Choose" = "Zvolit";
 
 /* No comment provided by engineer. */
-"Choose a directory inside Dropbox folder where the backup should be saved:" = "Choose a directory inside Dropbox folder where the backup should be saved:";
+"Choose a directory inside Dropbox folder where the backup should be saved:" = "Vyberte si adresář na Dropboxu, kam chcete ukládat zálohy:";
 
 /* No comment provided by engineer. */
 "click to copy" = "pro zkopírování klikněte";
 
 /* Confirm button next to passphrase */
-"Confirm" = "Confirm";
+"Confirm" = "Potvrdit";
 
 /* Contact name empty alert title */
 "Contact can't be saved." = "Kontakt nelze uložit.";
 
 /* Entry in application icon context menu */
-"Contact the author" = "Contact the author";
+"Contact the author" = "Kontaktujte autora";
 
 /* Contacts view title */
 "Contacts" = "Kontakty";
@@ -90,34 +90,34 @@
 "copied!" = "zkopírováno!";
 
 /* initialization error */
-"Could not read wallet file. It might be damaged." = "Could not read wallet file. It might be damaged.";
+"Could not read wallet file. It might be damaged." = "Nelze přečíst soubor s peněženkou. Může být poškozená.";
 
 /* Disable backup button title */
-"Disable" = "Disable";
+"Disable" = "Zakázat";
 
 /* Backup status: adapter disabled */
-"Disabled" = "Disabled";
+"Disabled" = "Zakázáno";
 
 /* Confirm leaving a form without saving data */
-"Discard Changes" = "Discard Changes";
+"Discard Changes" = "Zrušit změny";
 
 /* Remove contact alert dialog title */
 "Do you really want to remove %@ from your contact list?" = "Opravdu chcete odstranit kontakt %@ z adresáře?";
 
 /* Install app popup title */
-"Do you want to add \"%@\" to Hive?" = "Do you want to add \"%@\" to Hive?";
+"Do you want to add \"%@\" to Hive?" = "Chcete přidat \"%@\" do Hive?";
 
 /* Uninstall app popup title */
-"Do you want to remove \"%@\" from the application list?" = "Do you want to remove \"%@\" from the application list?";
+"Do you want to remove \"%@\" from the application list?" = "Chcete odstranit \"%@\", ze seznamu aplikací?";
 
 /* Backup error message */
-"Dropbox folder not found" = "Dropbox folder not found";
+"Dropbox folder not found" = "Dropbox adresář nenalezen";
 
 /* Dropbox no backup folder alert title */
-"Dropbox folder not found." = "Dropbox folder not found.";
+"Dropbox folder not found." = "Dropbox adresář nenalezen.";
 
 /* Backup error message */
-"Dropbox isn't running" = "Dropbox isn't running";
+"Dropbox isn't running" = "Dropbox neběží";
 
 /* Page title when editing contact's info */
 "Edit contact" = "Editovat kontakt";
@@ -129,73 +129,73 @@
 "email" = "e-mail";
 
 /* Enable backup button title (no configuration required) */
-"Enable" = "Enable";
+"Enable" = "Povolit";
 
 /* Enable backup button title (requires configuration) */
-"Enable..." = "Enable...";
+"Enable..." = "Povolit...";
 
 /* Passphrase prompt for sending */
-"Enter your passphrase to confirm the transaction:" = "Enter your passphrase to confirm the transaction:";
+"Enter your passphrase to confirm the transaction:" = "Zadejte heslo pro potvrzení transakce:";
 
 /* Passphrase prompt for message signing */
-"Enter your password to sign the message:" = "Enter your password to sign the message:";
+"Enter your password to sign the message:" = "Zadejte heslo pro přečtení zprávy:";
 
 /* Firstname field placeholder */
 "Firstname" = "Křestní jméno";
 
 /* Title for general preferences panel */
-"General" = "General";
+"General" = "Hlavní";
 
 /* Hiveapp file not readable error title */
-"Hive application file \"%@\" could not be opened." = "Hive application file \"%@\" could not be opened.";
+"Hive application file \"%@\" could not be opened." = "Soubor aplikace Hive \"%@\" nelze otevřít.";
 
 /* Initialization error title */
-"Hive cannot be started." = "Hive cannot be started.";
+"Hive cannot be started." = "Hive nelze spustit.";
 
 /* Database error alert title */
-"Hive database file cannot be opened." = "Hive database file cannot be opened.";
+"Hive database file cannot be opened." = "Databázový soubor Hive nelze otevřít.";
 
 /* Backup error message */
-"Hive directory is excluded from Time Machine backup" = "Hive directory is excluded from Time Machine backup";
+"Hive directory is excluded from Time Machine backup" = "Hive adresář je vyloučen ze zálohování Time Machine";
 
 /* Sync in progress alert title */
-"Hive is currently syncing with the Bitcoin network. Are you sure you want to quit?" = "Hive is currently syncing with the Bitcoin network. Are you sure you want to quit?";
+"Hive is currently syncing with the Bitcoin network. Are you sure you want to quit?" = "Hive se právě synchronizuje s Bitcoinovou sítí. Opravdu chcete vše ukončit?";
 
 /* No network connection alert title */
-"Hive is not connected to the Bitcoin network." = "Hive is not connected to the Bitcoin network.";
+"Hive is not connected to the Bitcoin network." = "Hive není připojena k Bitcoinové síti.";
 
 /* Chain file unreadable error explanation */
-"Hive will now delete the file and synchronize with the Bitcoin network again. Please leave Hive open for the next several minutes, and try not to send any transactions right now." = "Hive will now delete the file and synchronize with the Bitcoin network again. Please leave Hive open for the next several minutes, and try not to send any transactions right now.";
+"Hive will now delete the file and synchronize with the Bitcoin network again. Please leave Hive open for the next several minutes, and try not to send any transactions right now." = "Hive nyní odstraní soubory a začne novou synchronizaci s Bitcoinovou sítí. Prosím nechte Hive spuštěný a nějakou chvíli neposílejte žádné transakce.";
 
 /* Share sent transaction text */
-"I've just received some Bitcoin using Hive" = "I've just received some Bitcoin using Hive";
+"I've just received some Bitcoin using Hive" = "Právě jsem dostal nějaké Bitcoiny použitím Hive";
 
 /* Share sent transaction text */
-"I've just sent some Bitcoin using Hive" = "I've just sent some Bitcoin using Hive";
+"I've just sent some Bitcoin using Hive" = "Právě jsem poslal nějaké Bitcoiny pomocí Hive";
 
 /* Alert details when trying to send more than you have with fee */
-"If you send your whole wallet balance, there's nothing left to pay the required fee. Try to send a bit less, or split the transaction into smaller ones." = "If you send your whole wallet balance, there's nothing left to pay the required fee. Try to send a bit less, or split the transaction into smaller ones.";
+"If you send your whole wallet balance, there's nothing left to pay the required fee. Try to send a bit less, or split the transaction into smaller ones." = "Pokud jste odeslali všechen svůj zůstatek, je možné, že nezbylo na poplatek za transakci. Zkuste odeslat méně, nebo platbu rozdělit do více menších.";
 
 /* Install app button title */
-"Install" = "Install";
+"Install" = "Instalace";
 
 /* Backup requires password alert details */
-"It's dangerous to upload unencrypted wallets." = "It's dangerous to upload unencrypted wallets.";
+"It's dangerous to upload unencrypted wallets." = "Je nebezpečné nahrávat nešifrované peněženky.";
 
 /* Don't leave a form without saving data */
-"Keep Editing" = "Keep Editing";
+"Keep Editing" = "Pokračujte v úpravě";
 
 /* Address caption field placeholder */
 "Label" = "Označení";
 
 /* On what date was the last backup done */
-"Last backup on %@" = "Last backup on %@";
+"Last backup on %@" = "Poslední záloha %@";
 
 /* Lastname field placeholder */
 "Lastname" = "Příjmení";
 
 /* Alert message when address can't be extracted from a bitcoin: URI */
-"Link included in this QR code (\"%@\") is invalid or does not contain a Bitcoin address." = "Link included in this QR code (\"%@\") is invalid or does not contain a Bitcoin address.";
+"Link included in this QR code (\"%@\") is invalid or does not contain a Bitcoin address." = "Data obsažená v QR kódu (\"%@\") jsou neplatná, nebo neobsahují Bitcoinovou adresu.";
 
 /* Main address caption */
 "main" = "hlavní";
@@ -210,55 +210,55 @@
 "No address entered." = "Nezadali jste adresu.";
 
 /* Backup is outdated, last backup was on that date */
-"No backup since %@" = "No backup since %@";
+"No backup since %@" = "Bez zálohy od %@";
 
 /* No backups enabled notification title */
-"No backups configured" = "No backups configured";
+"No backups configured" = "Zálohy nejsou konfigurované";
 
 /* Transaction failed alert message */
 "No Bitcoin have been taken from your wallet." = "Z peněženky nebyl vydán žádný Bitcoin.";
 
 /* Title of an alert when trying to send more than you have with fee */
-"Not enough funds left to pay the transaction fee." = "Not enough funds left to pay the transaction fee.";
+"Not enough funds left to pay the transaction fee." = "Není dostatek finančních prostředků k zaplacení transakčních poplatků.";
 
 /* OK button title */
 "OK" = "OK";
 
 /* Wizard password page title */
-"Password" = "Password";
+"Password" = "Heslo";
 
 /* Send Bitcoin window title for payment request */
-"Pay with Bitcoin" = "Pay with Bitcoin";
+"Pay with Bitcoin" = "Zaplať Bitcoinem";
 
 /* Alert title when payment can't be sent to the merchant */
-"Payment could not be completed." = "Payment could not be completed.";
+"Payment could not be completed." = "Platba nemohla být dokončena.";
 
 /* Alert title when payment request file can't be read */
-"Payment data file could not be opened." = "Payment data file could not be opened.";
+"Payment data file could not be opened." = "Soubor s platbou nelze otevřít.";
 
 /* Alert title when payment request file has some invalid or unexpected data */
-"Payment data is invalid." = "Payment data is invalid.";
+"Payment data is invalid." = "Data k platbě jsou neplatná.";
 
 /* Alert title when payment request can't be loaded from the server */
-"Payment details could not be loaded." = "Payment details could not be loaded.";
+"Payment details could not be loaded." = "Platební údaje nelze načíst.";
 
 /* Alert title when the time limit to complete the payment has passed */
-"Payment request has already expired." = "Payment request has already expired.";
+"Payment request has already expired." = "Žádost o platbu již vypršela.";
 
 /* Pending transaction label */
-"PENDING" = "PENDING";
+"PENDING" = "ČEKÁNÍ";
 
 /* Invalid address alert message */
 "Please check if you have entered the address correctly." = "Prosím zkontrolujte, zda jste zadali adresu správně.";
 
 /* Warning details when trying to send to your own address */
-"Please enter a different address." = "Please enter a different address.";
+"Please enter a different address." = "Prosím zadejte jinou adresu.";
 
 /* Empty address alert message */
 "Please enter a valid Bitcoin address or select one from the dropdown list." = "Prosím vložte platnou bitcoinovou adresu nebo ji vyberte z rozbalovacího seznamu.";
 
 /* Preferences window title */
-"Preferences" = "Preferences";
+"Preferences" = "Nastavení";
 
 /* Profile view title string */
 "Profile" = "Profil";
@@ -267,169 +267,169 @@
 "Quit anyway" = "Ukončit";
 
 /* Received amount of BTC from unknown source */
-"Received &a" = "Received &a";
+"Received &a" = "Přijaté &a";
 
 /* Received amount of BTC from contact */
-"Received &a from &c" = "Received &a from &c";
+"Received &a from &c" = "Přijaté &a od &c";
 
 /* Install app button title when app exists */
-"Reinstall" = "Reinstall";
+"Reinstall" = "Přeinstalovat";
 
 /* No comment provided by engineer. */
-"Remove" = "Remove";
+"Remove" = "Odebrat";
 
 /* Dropbox invalid folder alert title */
-"Selected directory is outside Dropbox folder." = "Selected directory is outside Dropbox folder.";
+"Selected directory is outside Dropbox folder." = "Zvolený adresář je mimo složky Dropboxu.";
 
 /* Send button title */
-"Send" = "Send";
+"Send" = "Poslat";
 
 /* Sent amount of BTC to a contact/address */
-"Sent &a to &c" = "Sent &a to &c";
+"Sent &a to &c" = "Poslat &a do &c";
 
 /* Title for shortcut keys preferences panel */
-"Shortcuts" = "Shortcuts";
+"Shortcuts" = "Klávesové zkratky";
 
 /* Amount exceeds available balance alert title */
-"Some funds are temporarily unavailable." = "Some funds are temporarily unavailable.";
+"Some funds are temporarily unavailable." = "Některé fondy jsou dočasně nedostupné.";
 
 /* Wizard completed page title */
 "Start!" = "Start!";
 
 /* App load error description */
-"The application data file has been removed or corrupted." = "The application data file has been removed or corrupted.";
+"The application data file has been removed or corrupted." = "Datové soubory aplikace byly odstraněny nebo poškozeny.";
 
 /* Error message when database is incompatible with this version */
-"The database was saved by a newer version of Hive - please download the latest version from http://hivewallet.com." = "The database was saved by a newer version of Hive - please download the latest version from http://hivewallet.com.";
+"The database was saved by a newer version of Hive - please download the latest version from http://hivewallet.com." = "Databáze byla uložena v novější verzi Hive - prosím stáhněte si poslední verzi aplikace z http://hivewallet.com.";
 
 /* Install app popup warning message when app exists */
-"The existing app file will be replaced by the new version. This will not affect any app settings or saved data." = "The existing app file will be replaced by the new version. This will not affect any app settings or saved data.";
+"The existing app file will be replaced by the new version. This will not affect any app settings or saved data." = "Stávající aplikace bude nahrazena novější verzí. Nebude to mít žádný vliv na nastavení aplikace nebo uložená data.";
 
 /* Alert message when payment request file can't be read */
-"The file doesn't exist or is not accessible." = "The file doesn't exist or is not accessible.";
+"The file doesn't exist or is not accessible." = "Soubor neexistuje, nebo není dostupný.";
 
 /* Hiveapp file not readable error details */
-"The file is damaged or does not contain a Hive application." = "The file is damaged or does not contain a Hive application.";
+"The file is damaged or does not contain a Hive application." = "Soubor je poškozen, nebo neobsahuje žádné Hive aplikace.";
 
 /* Sending dust alert message */
-"This amount is too low to be sent through the network." = "This amount is too low to be sent through the network.";
+"This amount is too low to be sent through the network." = "Tato částka je příliš nízká na zaslání do Bitcoinové sítě.";
 
 /* Alert title when bitcoin: URI is not valid */
-"This Bitcoin payment link is invalid." = "This Bitcoin payment link is invalid.";
+"This Bitcoin payment link is invalid." = "Tento platební odkaz je neplatný.";
 
 /* Alert title when payment request URL is not valid */
-"This Bitcoin payment URL is invalid." = "This Bitcoin payment URL is invalid.";
+"This Bitcoin payment URL is invalid." = "Tato Bitcoinová URL k platbě je neplatná.";
 
 /* Alert details when transaction was cancelled */
-"This can happen because of bugs in the wallet code or because the transaction was rejected by the network." = "This can happen because of bugs in the wallet code or because the transaction was rejected by the network.";
+"This can happen because of bugs in the wallet code or because the transaction was rejected by the network." = "Může k tomu dojít chybou v kódu peněženky, nebo protože transakci odmítnula síť.";
 
 /* Alert message when payment request file isn't really a payment request at all */
-"This file does not contain a valid Bitcoin payment request." = "This file does not contain a valid Bitcoin payment request.";
+"This file does not contain a valid Bitcoin payment request." = "Tento soubor neobsahuje platnou žádost o platbu Bitcoinem.";
 
 /* Warning details when trying to send a large BTC amount */
-"This is more than what you usually send." = "This is more than what you usually send.";
+"This is more than what you usually send." = "To je více, než obvykle odesíláte.";
 
 /* Warning title when trying to send to your own address */
-"This is your wallet address." = "This is your wallet address.";
+"This is your wallet address." = "Toto je adresa Vaší peněženky.";
 
 /* Invalid address alert title */
 "This isn't a valid Bitcoin address." = "Toto není platná bitcoinová adresa.";
 
 /* Alert message when user is on the mainnet and payment request is for testnet (or vice versa) */
-"This payment is supposed to be sent on a different Bitcoin network." = "This payment is supposed to be sent on a different Bitcoin network.";
+"This payment is supposed to be sent on a different Bitcoin network." = "Tato platba má být zaslána na jinou Bitcoinovou síť.";
 
 /* Alert title when address can't be extracted from a bitcoin: URI */
-"This QR code can't be used here." = "This QR code can't be used here.";
+"This QR code can't be used here." = "Tento QR kód tady nelze použít.";
 
 /* Backup error message */
-"Time Machine is disabled in System Preferences" = "Time Machine is disabled in System Preferences";
+"Time Machine is disabled in System Preferences" = "Time Machine je vypnut v Předvolbách systému.";
 
 /* No backups enabled notification details */
-"To protect your bitcoins, it's recommended that you enable at least one type of backup." = "To protect your bitcoins, it's recommended that you enable at least one type of backup.";
+"To protect your bitcoins, it's recommended that you enable at least one type of backup." = "Chcete-li ochránit své Bitcoiny, je potřeba využívat alespoň nějaký druh zálohy.";
 
 /* Amount exceeds available balance alert message */
-"To send this transaction, you'll need to wait for your pending transactions to be confirmed first (this shouldn't take more than a few minutes)." = "To send this transaction, you'll need to wait for your pending transactions to be confirmed first (this shouldn't take more than a few minutes).";
+"To send this transaction, you'll need to wait for your pending transactions to be confirmed first (this shouldn't take more than a few minutes)." = "Chcete-li odeslat tuto transakci, budete muset počkat ještě na vyřízení předchozích transakcí, které musí být vyřízené jako první. (to by mělo trvat několik minut)";
 
 /* Message when trying to start an app that requires a newer API level. */
-"To use the app, please update to the latest version of Hive." = "To use the app, please update to the latest version of Hive.";
+"To use the app, please update to the latest version of Hive." = "Chcete-li využívat aplikaci, aktualizujte si jí prosím na novější verzi.";
 
 /* Notification of cancelled transaction */
-"Transaction cancelled" = "Transaction cancelled";
+"Transaction cancelled" = "Transakce zrušena";
 
 /* Notification of confirmed sent transaction */
-"Transaction completed" = "Transaction completed";
+"Transaction completed" = "Transakce kompletní";
 
 /* Transaction failed alert title */
 "Transaction could not be completed." = "Transakci nebylo možné uskutečnit.";
 
 /* Alert when transaction was cancelled (with transaction date) */
-"Transaction from %@ was cancelled." = "Transaction from %@ was cancelled.";
+"Transaction from %@ was cancelled." = "Transakce od %@ byla zrušena.";
 
 /* Transactions view title */
 "Transactions" = "Transakce";
 
 /* Uninstall app button title */
-"Uninstall" = "Uninstall";
+"Uninstall" = "Odinstalovat";
 
 /* Entry in application icon context menu */
-"Uninstall application" = "Uninstall application";
+"Uninstall application" = "Odinstalovat aplikaci";
 
 /* Backup status: backup up to date */
-"Up to date" = "Up to date";
+"Up to date" = "Aktuální";
 
 /* Entry in application icon context menu */
-"Visit application's site" = "Visit application's site";
+"Visit application's site" = "Navštívit stránku aplikace";
 
 /* Backup status: backup scheduled or in progress */
-"Waiting for backup" = "Waiting for backup";
+"Waiting for backup" = "Čekání na zálohy";
 
 /* Install app popup warning message */
-"We cannot guarantee the safety of all apps - please be careful if you download Hive apps from third party sites." = "We cannot guarantee the safety of all apps - please be careful if you download Hive apps from third party sites.";
+"We cannot guarantee the safety of all apps - please be careful if you download Hive apps from third party sites." = "Nemůžeme zaručit bezpečnost všech aplikací - prosím dejte pozor, pokud stahujete Hive ze stránek které nejsou naše.";
 
 /* Wizard welcome page title */
-"Welcome" = "Welcome";
+"Welcome" = "Vítejte";
 
 /* Button to show info about pending funds */
-"What does this mean?" = "What does this mean?";
+"What does this mean?" = "Co to znamená?";
 
 /* Uninstall app popup message */
-"You can install it again through the App Store app later if you change your mind." = "You can install it again through the App Store app later if you change your mind.";
+"You can install it again through the App Store app later if you change your mind." = "Pokud si to rozmyslíte, můžete jí později pomocí App Store znovu nainstalovat.";
 
 /* Details of an alert when trying to send more than you have */
 "You cannot send more money than you own." = "Nemůžete poslat víc peněz, než kolik jich máte.";
 
 /* Install app popup title when app exists */
-"You have already added \"%@\" to Hive. Would you like to overwrite it?" = "You have already added \"%@\" to Hive. Would you like to overwrite it?";
+"You have already added \"%@\" to Hive. Would you like to overwrite it?" = "Už jste jednou do \"%@\" Hive přidali. Chcete to přepsat?";
 
 /* Notification of confirmed sent transaction (with BTC amount) */
-"You have sent %@." = "You have sent %@.";
+"You have sent %@." = "Odeslali jste: %@.";
 
 /* Dropbox no backup folder alert details */
-"You must install Dropbox first (see www.dropbox.com)." = "You must install Dropbox first (see www.dropbox.com).";
+"You must install Dropbox first (see www.dropbox.com)." = "Musíte první nainstalovat Dropbox (najdete ho na: www.dropbox.com)";
 
 /* No network connection alert message */
-"You need to be connected to the network to send any transactions." = "You need to be connected to the network to send any transactions.";
+"You need to be connected to the network to send any transactions." = "Musíte být připojeni k síti, pro posílání transakcí.";
 
 /* Dropbox invalid folder alert details */
-"You need to choose or create a directory inside your Dropbox folder." = "You need to choose or create a directory inside your Dropbox folder.";
+"You need to choose or create a directory inside your Dropbox folder." = "Musíte si vybrat nebo vytvořit adresář uvnitř Vašeho Dropbox adresáře.";
 
 /* Contact name empty alert message */
 "You need to give the contact a name before you can add it to the list." = "Před přidáním do adresáře musíte kontaktu zadat jméno.";
 
 /* Backup requires password alert title */
-"You need to set a wallet password first (see Wallet menu)." = "You need to set a wallet password first (see Wallet menu).";
+"You need to set a wallet password first (see Wallet menu)." = "Musíte jako první nastavit heslo peněženky (podívejte se do menu).";
 
 /* Remove contact alert dialog body */
-"You won't be able to undo this operation." = "You won't be able to undo this operation.";
+"You won't be able to undo this operation." = "Nebude možné již tuto operaci vrátit.";
 
 /* Alert message when the time limit to complete the payment has passed */
-"You'll need to return to the site that requested the payment and initiate the payment again." = "You'll need to return to the site that requested the payment and initiate the payment again.";
+"You'll need to return to the site that requested the payment and initiate the payment again." = "Budete se muset vrátit na stránku, která požadovala platbu a zkusit to znovu.";
 
 /* Notification of incoming transaction */
-"You've received Bitcoin" = "You've received Bitcoin";
+"You've received Bitcoin" = "Dostali jste Bitcoiny";
 
 /* Cancel editing alert message */
-"Your changes won't be saved." = "Your changes won't be saved.";
+"Your changes won't be saved." = "Vaše změny nebudou uloženy.";
 
 /* Sync in progress alert details */
-"Your pending transactions won't be confirmed until the sync is complete." = "Your pending transactions won't be confirmed until the sync is complete.";
+"Your pending transactions won't be confirmed until the sync is complete." = "Vaše nevyřízená transakce nebude potvrzena, dokud nebude synchronizace kompletní.";

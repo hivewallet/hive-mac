@@ -18,16 +18,16 @@
 "22.placeholderString" = "nebo vyberte ze seznamu";
 
 /* Class = "NSTextFieldCell"; title = "Loading payment details..."; ObjectID = "Agy-4s-MVS"; */
-"Agy-4s-MVS.title" = "Loading payment details...";
+"Agy-4s-MVS.title" = "Načítání údajů k platbě...";
 
 /* Class = "NSTextFieldCell"; title = "Details:"; ObjectID = "EeC-5l-RYD"; */
-"EeC-5l-RYD.title" = "Details:";
+"EeC-5l-RYD.title" = "Detaily:";
 
 /* Class = "NSTextFieldCell"; title = "Payment successful"; ObjectID = "JAi-pl-Y47"; */
-"JAi-pl-Y47.title" = "Payment successful";
+"JAi-pl-Y47.title" = "Platba úspěšná!";
 
 /* Class = "NSTextFieldCell"; title = "Currency exchange rates are provided by BitcoinAverage markets ticker. Bitcoin prices can change quickly, so other apps or sites might show different exchange rates."; ObjectID = "dxM-9E-wwb"; */
-"dxM-9E-wwb.title" = "Currency exchange rates are provided by BitcoinAverage markets ticker. Bitcoin prices can change quickly, so other apps or sites might show different exchange rates.";
+"dxM-9E-wwb.title" = "Směnný kurz je poskytován z průměrných cen na Bitcoinových trzích. Cena Bitcoinu se může rychle měnit, takže ostatní aplikace nebo stránky mohou ukazovat různé směnné kurzy.";
 
 /* Class = "NSButtonCell"; title = "Close"; ObjectID = "iOT-cc-UWm"; */
-"iOT-cc-UWm.title" = "Close";
+"iOT-cc-UWm.title" = "Zavřit";
