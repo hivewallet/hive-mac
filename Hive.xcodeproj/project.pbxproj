@@ -36,7 +36,6 @@
 		1AA10E305C91DC42C81D0DC3 /* HIAddressesBox.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AA107FF085E51B83E5F751D /* HIAddressesBox.m */; };
 		1AA10ECC39D33A1362882EB2 /* HIProfileViewController.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1AA108BDEC523213EF9B8309 /* HIProfileViewController.strings */; };
 		1AA10F0AB0B36A26463B74A9 /* HIShortcutService.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AA1085915844864667B118C /* HIShortcutService.m */; };
-		1AA10F4B12CF1FAA908C67F4 /* NSString+HICleanUpNumber.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AA1046CF53321E40FB2CFCE /* NSString+HICleanUpNumber.m */; };
 		1AA10F7BD079E23BAB09D4E1 /* HIPreferencesWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AA10D7BCF51F6AE70202C19 /* HIPreferencesWindowController.m */; };
 		1AA10FF5281477AC42B0B952 /* HIWizardSmallButtonCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AA101A350D2350E6AF62F4C /* HIWizardSmallButtonCell.m */; };
 		24178E301861005100A73D4E /* HIPasswordChangeWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 24178E2E1861005100A73D4E /* HIPasswordChangeWindowController.m */; };
@@ -56,6 +55,7 @@
 		2478B8F2184A89EA00BA2C35 /* HIFeeDetailsViewController.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2478B8F0184A89EA00BA2C35 /* HIFeeDetailsViewController.strings */; };
 		248631D718A7AD1800A020A9 /* HIQRCodeWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 248631D518A7AD1800A020A9 /* HIQRCodeWindowController.m */; };
 		248631D818A7AD1800A020A9 /* HIQRCodeWindowController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 248631D618A7AD1800A020A9 /* HIQRCodeWindowController.xib */; };
+		2499BBD919620192002C3B34 /* NSString+HICleanUpNumber.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AA1046CF53321E40FB2CFCE /* NSString+HICleanUpNumber.m */; };
 		24E2C7C0189D93E6008E17CC /* HICameraWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 24E2C7BE189D93E6008E17CC /* HICameraWindowController.m */; };
 		24EAAFC7186E1BBD00E1D2D3 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 24EAAFC5186E1BBD00E1D2D3 /* InfoPlist.strings */; };
 		24EAAFC9186E1BBD00E1D2D3 /* HIBitcoinFormatServiceSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 24EAAFC8186E1BBD00E1D2D3 /* HIBitcoinFormatServiceSpec.m */; };
@@ -3335,7 +3335,6 @@
 			files = (
 				24EAAFC9186E1BBD00E1D2D3 /* HIBitcoinFormatServiceSpec.m in Sources */,
 				1AA10DECEE3B99EDD1C14B81 /* HICurrencyFormatServiceSpec.m in Sources */,
-				1AA10F4B12CF1FAA908C67F4 /* NSString+HICleanUpNumber.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -3369,6 +3368,7 @@
 				58A03B0D17D9DC4100ADD5E5 /* HIButtonWithSpinner.m in Sources */,
 				583B1DE41864A32900817EF8 /* HISecureAppStorage.m in Sources */,
 				58F02AEE17E1F5A400B65429 /* HIRightPointingArrowView.m in Sources */,
+				2499BBD919620192002C3B34 /* NSString+HICleanUpNumber.m in Sources */,
 				5850D231189922C6001736D2 /* HIKeyObservingWindow.m in Sources */,
 				D938F01017E6278B00566FFD /* HITextFieldCell.m in Sources */,
 				D958A8B817E8547A00CED98C /* HIFlippedView.m in Sources */,
