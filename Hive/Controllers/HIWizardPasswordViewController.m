@@ -51,12 +51,14 @@
 
 #pragma mark - NSTextFieldDelegate
 
-- (BOOL)control:(NSControl *)control textView:(NSTextView *)textView doCommandBySelector:(SEL)commandSelector {
+- (BOOL)control:(NSTextField *)control textView:(NSTextView *)textView doCommandBySelector:(SEL)commandSelector {
     if (commandSelector == @selector(insertNewline:)) {
-        if (control == self.passwordField) {
-            [self.repeatedPasswordField becomeFirstResponder];
-        } else {
-            [self nextButtonPressed:control];
+        if (control.stringValue.length > 0) {
+            if (control == self.passwordField) {
+                [self.repeatedPasswordField becomeFirstResponder];
+            } else {
+                [self nextButtonPressed:control];
+            }
         }
         return YES;
     } else {
