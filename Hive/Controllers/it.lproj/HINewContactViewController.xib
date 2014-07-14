@@ -204,11 +204,10 @@
                     <rect key="frame" x="0.0" y="53" width="275" height="256"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                     <clipView key="contentView" drawsBackground="NO" copiesOnScroll="NO" id="jig-CP-vci">
-                        <rect key="frame" x="0.0" y="0.0" width="275" height="256"/>
+                        <rect key="frame" x="0.0" y="0.0" width="260" height="256"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view id="85">
-                                <rect key="frame" x="0.0" y="0.0" width="15" height="0.0"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             </view>
                         </subviews>

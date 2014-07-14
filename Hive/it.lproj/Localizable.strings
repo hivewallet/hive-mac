@@ -3,10 +3,10 @@
 "(Please write in English if possible.)" = "(Scrivi in Inglese, se possibile.)";
 
 /* Alert message when bitcoin: URI is not valid */
-"\"%@\" is not a valid payment link." = "\"%@\" is not a valid payment link.";
+"\"%@\" is not a valid payment link." = "\"%@\" non è un link di pagamento valido.";
 
 /* Alert message when payment request URL is not valid */
-"\"%@\" is not a valid URL." = "\"%@\" is not a valid URL.";
+"\"%@\" is not a valid URL." = "\"%@\" non è un URL valido.";
 
 /* Address field placeholder */
 "Address" = "Indirizzo";
@@ -63,7 +63,7 @@
 "CANCELLED" = "CANCELLATO";
 
 /* Alert message when payment request can't be loaded from or sent to the server */
-"Check your network connection, try again later or report the problem to the payment recipient." = "Check your network connection, try again later or report the problem to the payment recipient.";
+"Check your network connection, try again later or report the problem to the payment recipient." = "Controlla la tua connessione di rete, riprova più tardi o segnala il problema al destinatario del pagamento.";
 
 /* Dropbox folder save panel confirmation button */
 "Choose" = "Scegli";
@@ -144,7 +144,7 @@
 "Firstname" = "Nome";
 
 /* Title for general preferences panel */
-"General" = "General";
+"General" = "Generali";
 
 /* Hiveapp file not readable error title */
 "Hive application file \"%@\" could not be opened." = "Il file \"%@\" dell'applicazione Hive non può essere aperto.";
@@ -174,7 +174,7 @@
 "I've just sent some Bitcoin using Hive" = "Ho appena inviato Bitcoins utilizzando Hive";
 
 /* Alert details when trying to send more than you have with fee */
-"If you send your whole wallet balance, there's nothing left to pay the required fee. Try to send a bit less, or split the transaction into smaller ones." = "If you send your whole wallet balance, there's nothing left to pay the required fee. Try to send a bit less, or split the transaction into smaller ones.";
+"If you send your whole wallet balance, there's nothing left to pay the required fee. Try to send a bit less, or split the transaction into smaller ones." = "Se invii l'intero ammontare del tuo portamonete, non rimarrà niente per pagare la commissione richiesta. Prova ad inviare un poco di meno, o spessa la transazione in più piccole.";
 
 /* Install app button title */
 "Install" = "Installa";
@@ -195,7 +195,7 @@
 "Lastname" = "Cognome";
 
 /* Alert message when address can't be extracted from a bitcoin: URI */
-"Link included in this QR code (\"%@\") is invalid or does not contain a Bitcoin address." = "Link included in this QR code (\"%@\") is invalid or does not contain a Bitcoin address.";
+"Link included in this QR code (\"%@\") is invalid or does not contain a Bitcoin address." = "Il link incluso in questo codice QR (\"%@\") non è valido o non contiene un indirizzo Bitcoin.";
 
 /* Main address caption */
 "main" = "principale";
@@ -219,7 +219,7 @@
 "No Bitcoin have been taken from your wallet." = "Non è stato toccato nessun Bitcoin del tuo portafoglio.";
 
 /* Title of an alert when trying to send more than you have with fee */
-"Not enough funds left to pay the transaction fee." = "Not enough funds left to pay the transaction fee.";
+"Not enough funds left to pay the transaction fee." = "Non ci sono abbastati fondi rimanenti per pagare la commissione di transazione.";
 
 /* OK button title */
 "OK" = "OK";
@@ -228,22 +228,22 @@
 "Password" = "Password";
 
 /* Send Bitcoin window title for payment request */
-"Pay with Bitcoin" = "Pay with Bitcoin";
+"Pay with Bitcoin" = "Paga con Bitcoin";
 
 /* Alert title when payment can't be sent to the merchant */
-"Payment could not be completed." = "Payment could not be completed.";
+"Payment could not be completed." = "Non è stato possibile completare il pagamento.";
 
 /* Alert title when payment request file can't be read */
-"Payment data file could not be opened." = "Payment data file could not be opened.";
+"Payment data file could not be opened." = "Il file con i dati di pagamento non può essere aperto.";
 
 /* Alert title when payment request file has some invalid or unexpected data */
-"Payment data is invalid." = "Payment data is invalid.";
+"Payment data is invalid." = "Dati di pagamento invalidi.";
 
 /* Alert title when payment request can't be loaded from the server */
-"Payment details could not be loaded." = "Payment details could not be loaded.";
+"Payment details could not be loaded." = "Non è stato possibile caricare i dettagli di pagamento.";
 
 /* Alert title when the time limit to complete the payment has passed */
-"Payment request has already expired." = "Payment request has already expired.";
+"Payment request has already expired." = "La richiesta di pagamento è appena scaduta.";
 
 /* Pending transaction label */
 "PENDING" = "NON CONFERMATA";
@@ -306,7 +306,7 @@
 "The existing app file will be replaced by the new version. This will not affect any app settings or saved data." = "Il file di applicazione attuale sarà sostituito dalla nuova versione. Questo non avrà alcun effetto sulle impostazioni e sui dati dell'applicazione.";
 
 /* Alert message when payment request file can't be read */
-"The file doesn't exist or is not accessible." = "The file doesn't exist or is not accessible.";
+"The file doesn't exist or is not accessible." = "Il file non esiste o non è accessibile.";
 
 /* Hiveapp file not readable error details */
 "The file is damaged or does not contain a Hive application." = "Il file è danneggiato, o non contiene l'applicazione Hive.";
@@ -315,16 +315,16 @@
 "This amount is too low to be sent through the network." = "Questo importo è troppo basso per poter essere inviato.";
 
 /* Alert title when bitcoin: URI is not valid */
-"This Bitcoin payment link is invalid." = "This Bitcoin payment link is invalid.";
+"This Bitcoin payment link is invalid." = "Questo link di pagamento Bitcoin non è valido.";
 
 /* Alert title when payment request URL is not valid */
-"This Bitcoin payment URL is invalid." = "This Bitcoin payment URL is invalid.";
+"This Bitcoin payment URL is invalid." = "Questo URL di pagamento Bitcoin non è valido.";
 
 /* Alert details when transaction was cancelled */
 "This can happen because of bugs in the wallet code or because the transaction was rejected by the network." = "Questo può accadere a causa di alcuni bugs nel codice del portafoglio, o perchè la transazione è stata rifiutata dal network.";
 
 /* Alert message when payment request file isn't really a payment request at all */
-"This file does not contain a valid Bitcoin payment request." = "This file does not contain a valid Bitcoin payment request.";
+"This file does not contain a valid Bitcoin payment request." = "Questo file non contiene una richiesta di pagamento Bitcoin valida.";
 
 /* Warning details when trying to send a large BTC amount */
 "This is more than what you usually send." = "Questo è molto di più di quanto invii di solito.";
@@ -336,10 +336,10 @@
 "This isn't a valid Bitcoin address." = "Questo non è un indirizzo Bitcoin valido.";
 
 /* Alert message when user is on the mainnet and payment request is for testnet (or vice versa) */
-"This payment is supposed to be sent on a different Bitcoin network." = "This payment is supposed to be sent on a different Bitcoin network.";
+"This payment is supposed to be sent on a different Bitcoin network." = "Questo pagamento si suppone debba essere inviato ad un network Bitcoin differente.";
 
 /* Alert title when address can't be extracted from a bitcoin: URI */
-"This QR code can't be used here." = "This QR code can't be used here.";
+"This QR code can't be used here." = "Questo codice QR non può essere usato qui.";
 
 /* Backup error message */
 "Time Machine is disabled in System Preferences" = "Time Machine è disaibilitato nelle Preferenze di Sistema";
@@ -423,7 +423,7 @@
 "You won't be able to undo this operation." = "Non potrai cancellare questa operazione.";
 
 /* Alert message when the time limit to complete the payment has passed */
-"You'll need to return to the site that requested the payment and initiate the payment again." = "You'll need to return to the site that requested the payment and initiate the payment again.";
+"You'll need to return to the site that requested the payment and initiate the payment again." = "Devi tornare al sito che ha richiesto il pagamento e avviare ancora il pagamento.";
 
 /* Notification of incoming transaction */
 "You've received Bitcoin" = "Hai ricevuto Bitcoins";
