@@ -57,7 +57,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                         <textFieldCell key="cell" sendsActionOnEndEditing="YES" id="o5O-SS-J37">
                             <font key="font" metaFont="system"/>
-                            <string key="title">หากคุณมีปัญหากับกระเป๋าเงิน เราอาจต้องให้คุณส่งเนื้อหาของข้อความในแถบด้านล่างมาให้เรา  จำไว้ว่าข้อมูลนั้นไม่ได้รวมถึงกุญแจส่วนตัวของคุณ และเราจะไม่สามารถใช้บิทคอยน์ของคุณได้เลย! </string>
+                            <string key="title">หากคุณมีปัญหากับกระเป๋าเงิน เราอาจต้องให้คุณส่งเนื้อหาของข้อความในแถบด้านล่างมาให้เรา  จำไว้ว่าข้อมูลนั้นไม่ได้รวมถึงกุญแจส่วนตัวของคุณ และนั่นจะไม่อนุมัติให้เราใช้บิทคอยน์ของคุณได้!  </string>
                             <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                             <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                         </textFieldCell>

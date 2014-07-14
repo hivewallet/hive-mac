@@ -1,6 +1,6 @@
 
 /* Body for feedback emails */
-"(Please write in English if possible.)" = "(กรุณาเขียนเป็นภาษาอังกฤษ หากท่านสามารถ)";
+"(Please write in English if possible.)" = "(ถ้าเป็นไปได้  กรุณาเขียนเป็นภาษาอังกฤษ)";
 
 /* Alert message when bitcoin: URI is not valid */
 "\"%@\" is not a valid payment link." = "\"%@\" ไม่ใช่หน้าการชำระเงินที่ถูกต้อง";
@@ -18,7 +18,7 @@
 "Anonymous" = "นิรนาม";
 
 /* Message when trying to start an app that requires a newer API level. */
-"App requires a newer version of Hive." = "โปรแกรมนี้ต้องการเวอร์ชั่นล่าสุดของ Hive";
+"App requires a newer version of Hive." = "โปรแกรมนี้ต้องการเวอร์ชั่นล่าสุดของ ไฮฟ์";
 
 /* App load error title */
 "Application can't be loaded" = "โปรแกรมนี้ไม่สามารถโหลดได้";
@@ -48,10 +48,10 @@
 "Backup problem" = "ปัญหาของการเก็บข้อมูล";
 
 /* initialization error */
-"Bitcoin network data file could not be opened - another instance of Hive might still be running." = "ข้อมูลเครือข่าย Bitcoin เปิดไม่ได้ แต่ข้อมูลของ Hive อาจจะกำลังทำงานอยู่ ";
+"Bitcoin network data file could not be opened - another instance of Hive might still be running." = "ข้อมูลเครือข่าย บิตคอยน์ ไม่สามารถเปิดได้ แต่ข้อมูลของ ไฮฟ์ อาจจะกำลังทำงานอยู่ ";
 
 /* Chain file unreadable error title */
-"Bitcoin network data file could not be opened." = "ข้อมูลเครือข่าย Bitcoin เปิดไม่ได้";
+"Bitcoin network data file could not be opened." = "ข้อมูลเครือข่าย บิตคอยน์ ไม่สามารถเปิดได้";
 
 /* Backup error message */
 "Can't create a directory to store the wallet backup" = "ไม่สามารถสร้างพื้นที่ของฐานข้อมูลกระเป๋าเงินได้";
@@ -60,7 +60,7 @@
 "Cancel" = "ยกเลิก";
 
 /* Dead transaction label */
-"CANCELLED" = "ยกเลิก";
+"CANCELLED" = "ยกเลิกแล้ว";
 
 /* Alert message when payment request can't be loaded from or sent to the server */
 "Check your network connection, try again later or report the problem to the payment recipient." = "กรุณาตรวจสอบการเชื่อมต่ออินเตอร์เนต ลองอีกครั้ง หรือ แจ้งปัญหาที่พบกับผู้รับเงิน";
@@ -87,7 +87,7 @@
 "Contacts" = "รายชื่อผู้ติดต่อ";
 
 /* No comment provided by engineer. */
-"copied!" = "คัดลอก";
+"copied!" = "คัดลอก!";
 
 /* initialization error */
 "Could not read wallet file. It might be damaged." = "ไม่สามารถอ่านข้อมูลกระเป๋าเงินได้ เนื่องจากข้อมูลอาจเสียหาย";
@@ -99,7 +99,7 @@
 "Disabled" = "ปิดการใช้งาน";
 
 /* Confirm leaving a form without saving data */
-"Discard Changes" = "ยกเลิก";
+"Discard Changes" = "ยกเลิกการเปลี่ยนแปลง";
 
 /* Remove contact alert dialog title */
 "Do you really want to remove %@ from your contact list?" = "คุณต้องการลบ %@ จากรายชื่อผู้ติดต่อหรือไม่";
@@ -132,7 +132,7 @@
 "Enable" = "เปิดการใช้งาน";
 
 /* Enable backup button title (requires configuration) */
-"Enable..." = "เปิดการใช้งาน";
+"Enable..." = "เปิดการใช้งาน...";
 
 /* Passphrase prompt for sending */
 "Enter your passphrase to confirm the transaction:" = "ระบุประโยครหัสผ่านเพื่อยืนยันการโอน";
@@ -147,7 +147,7 @@
 "General" = "ทั่วไป";
 
 /* Hiveapp file not readable error title */
-"Hive application file \"%@\" could not be opened." = "ข้อมูล \"%@\" ของโปรแกรม Hive เปิดไม่ได้";
+"Hive application file \"%@\" could not be opened." = "ข้อมูล \"%@\" ของโปรแกรม ไฮฟ์ ไม่สามารถเปิดได้";
 
 /* Initialization error title */
 "Hive cannot be started." = "ไม่สามารถเปิดใช้งานไฮฟ์ได้";
@@ -159,13 +159,13 @@
 "Hive directory is excluded from Time Machine backup" = "สารบบของไฮฟ์ไม่ได้รวมอยู่ในฐานเก็บข้อมูลย้อนหลัง";
 
 /* Sync in progress alert title */
-"Hive is currently syncing with the Bitcoin network. Are you sure you want to quit?" = "Hive กำลังรวบรวมข้อมูลจาก เครือข่าย Bitcoin คุณแน่ใจหรือที่จะออกจากโปรแกรม";
+"Hive is currently syncing with the Bitcoin network. Are you sure you want to quit?" = "ไฮฟ์ กำลังรวบรวมข้อมูลจาก เครือข่ายบิตคอยน์ คุณแน่ใจหรือที่จะออกจากโปรแกรม?";
 
 /* No network connection alert title */
-"Hive is not connected to the Bitcoin network." = "Hive ไม่สามารถเชื่อมต่อกับเครือข่าย Bitcoin";
+"Hive is not connected to the Bitcoin network." = "ไฮฟ์ ไม่สามารถเชื่อมต่อกับเครือข่าย บิตคอยน์";
 
 /* Chain file unreadable error explanation */
-"Hive will now delete the file and synchronize with the Bitcoin network again. Please leave Hive open for the next several minutes, and try not to send any transactions right now." = "Hive จะลบข้อมูลและเชื่อมต่อกับเครือข่าย Bitcoin อีกครั้ง กรุณาเปิดโปรแกรมทิ้งไว้สักครู่ และอย่าเพิ่งทำธุรกรรมใดๆระหว่างรอ";
+"Hive will now delete the file and synchronize with the Bitcoin network again. Please leave Hive open for the next several minutes, and try not to send any transactions right now." = "ไฮฟ์ จะลบข้อมูลและเชื่อมต่อกับเครือข่าย บิตคอยน์ อีกครั้ง กรุณาเปิดโปรแกรมทิ้งไว้สักครู่ และอย่าเพิ่งทำธุรกรรมใดๆระหว่างรอ";
 
 /* Share sent transaction text */
 "I've just received some Bitcoin using Hive" = "ฉันเพิ่งได้รับ Bitcoin จำนวนหนึ่งจากการใช้ไฮฟ์";
@@ -195,7 +195,7 @@
 "Lastname" = "นามสกุล";
 
 /* Alert message when address can't be extracted from a bitcoin: URI */
-"Link included in this QR code (\"%@\") is invalid or does not contain a Bitcoin address." = "ลิ้งค์ที่มีโค้ด QR (\"%@\") นี้ใช้ไม่ได้ หรือ ไม่มีที่อยู่ Bitcoin";
+"Link included in this QR code (\"%@\") is invalid or does not contain a Bitcoin address." = "ลิ้งค์ที่มีโค้ด QR (\"%@\") นี้ใช้ไม่ได้ หรือ ไม่มีที่อยู่ บิตคอยน์";
 
 /* Main address caption */
 "main" = "หน้าหลัก";
@@ -216,7 +216,7 @@
 "No backups configured" = "ยังไม่ได้สร้างฐานข้อมูล";
 
 /* Transaction failed alert message */
-"No Bitcoin have been taken from your wallet." = "ไม่มีบิทคอยน์ถูกโอนออกไปจากกระเป๋าเงินของคุณ ";
+"No Bitcoin have been taken from your wallet." = "ไม่มีบิทคอยน์ได้รับการโอนออกไปจากกระเป๋าเงินของคุณ ";
 
 /* Title of an alert when trying to send more than you have with fee */
 "Not enough funds left to pay the transaction fee." = "จำนวนเงินไม่เพียงพอในการชำระค่าธรรมเนียม";
@@ -228,7 +228,7 @@
 "Password" = "รหัสผ่าน";
 
 /* Send Bitcoin window title for payment request */
-"Pay with Bitcoin" = "ชำระด้วย Bitcoin";
+"Pay with Bitcoin" = "ชำระด้วย บิตคอยน์";
 
 /* Alert title when payment can't be sent to the merchant */
 "Payment could not be completed." = "การชำระเงินไม่สำเร็จ";
@@ -255,7 +255,7 @@
 "Please enter a different address." = "กรุณาระบุที่อยู่อื่น";
 
 /* Empty address alert message */
-"Please enter a valid Bitcoin address or select one from the dropdown list." = "กรุณาระบุที่อยู่ของ Bitcoin หรือ เลือกจากรายการ";
+"Please enter a valid Bitcoin address or select one from the dropdown list." = "กรุณาระบุที่อยู่ของ บิตคอยน์ หรือเลือกจากรายการ";
 
 /* Preferences window title */
 "Preferences" = "สิทธิพิเศษ";
@@ -294,7 +294,7 @@
 "Some funds are temporarily unavailable." = "เงินบางจำนวนไม่สามารถใช้ได้ชั่วคราว";
 
 /* Wizard completed page title */
-"Start!" = "เริ่ม";
+"Start!" = "เริ่ม!";
 
 /* App load error description */
 "The application data file has been removed or corrupted." = "แฟ้มข้อมูลของโปรแกรมถูกยกเลิกหรือเสียหาย";
@@ -309,22 +309,22 @@
 "The file doesn't exist or is not accessible." = "ไม่มีข้อมูล หรือเข้าค้นข้อมูลไม่ได้";
 
 /* Hiveapp file not readable error details */
-"The file is damaged or does not contain a Hive application." = "ข้อมูลเสียหายหรือไม่มีโปรแกรม Hive";
+"The file is damaged or does not contain a Hive application." = "ข้อมูลเสียหายหรือไม่มีโปรแกรม ไฮฟ์";
 
 /* Sending dust alert message */
-"This amount is too low to be sent through the network." = "เงินจำนวนนี้น้อยไปที่จะส่ง";
+"This amount is too low to be sent through the network." = "เงินจำนวนนี้น้อยเกินไปที่จะส่งผ่านระบบ";
 
 /* Alert title when bitcoin: URI is not valid */
-"This Bitcoin payment link is invalid." = "ลิ้งค์การชำระเงิน Bitcoin ไม่ถูกต้อง";
+"This Bitcoin payment link is invalid." = "ลิ้งค์การชำระเงิน บิตคอยน์ ไม่ถูกต้อง";
 
 /* Alert title when payment request URL is not valid */
-"This Bitcoin payment URL is invalid." = "URL ของการชำระเงิน Bitcoin ไม่ถูกต้อง";
+"This Bitcoin payment URL is invalid." = "URL ของการชำระเงิน บิตคอยน์ ไม่ถูกต้อง";
 
 /* Alert details when transaction was cancelled */
 "This can happen because of bugs in the wallet code or because the transaction was rejected by the network." = "สิ่งนี้อาจเกิดขึ้นได้เพราะ bugs ที่แฝงอยู่ในโค้ดของกระเป๋าเงิน หรือ เพราะการโอนเงินไม่สำเร็จ";
 
 /* Alert message when payment request file isn't really a payment request at all */
-"This file does not contain a valid Bitcoin payment request." = "ข้อมูลนี้ไม่มีการชำระเงิน Bitcoin ที่ถูกต้อง";
+"This file does not contain a valid Bitcoin payment request." = "ข้อมูลนี้ไม่มีการชำระเงิน บิตคอยน์ ที่ถูกต้อง";
 
 /* Warning details when trying to send a large BTC amount */
 "This is more than what you usually send." = "จำนวนเงินที่ส่งไปมากกว่าทุกครั้งที่ท่านเคยส่ง";
@@ -333,10 +333,10 @@
 "This is your wallet address." = "นี่คือที่อยู่ของกระเป๋าเงินของคุณ";
 
 /* Invalid address alert title */
-"This isn't a valid Bitcoin address." = "นี่ไม่ใช่ที่อยู่ที่ถูกต้องของ Bitcoin";
+"This isn't a valid Bitcoin address." = "นี่ไม่ใช่ที่อยู่ที่ถูกต้องของบิตคอยน์ ";
 
 /* Alert message when user is on the mainnet and payment request is for testnet (or vice versa) */
-"This payment is supposed to be sent on a different Bitcoin network." = "การชำระเงินนี้ควรจะส่งไปที่เครือข่าย Bitcoin อื่น";
+"This payment is supposed to be sent on a different Bitcoin network." = "การชำระเงินนี้ควรจะส่งไปที่เครือข่าย บิตคอยน์ อื่น";
 
 /* Alert title when address can't be extracted from a bitcoin: URI */
 "This QR code can't be used here." = "ไม่สามารถใช้โค้ด QR ที่นี่ได้ ";
@@ -345,13 +345,13 @@
 "Time Machine is disabled in System Preferences" = "Time Machine ถูกปิดการใช้งานใน System Preferences";
 
 /* No backups enabled notification details */
-"To protect your bitcoins, it's recommended that you enable at least one type of backup." = "ในการป้องกัน bitcoin ของคุณ เราแนะนำให้คุณสร้างฐานข้อมูลไว้หนึ่งรูปแบบ";
+"To protect your bitcoins, it's recommended that you enable at least one type of backup." = "เพื่อป้องกัน บิตคอยน์ ของคุณ เราแนะนำให้คุณสร้างฐานข้อมูลไว้หนึ่งรูปแบบ";
 
 /* Amount exceeds available balance alert message */
-"To send this transaction, you'll need to wait for your pending transactions to be confirmed first (this shouldn't take more than a few minutes)." = "คุณต้องรอการยืนยันก่อน ถึงจะทำธุรกรรมนี้ได้ (รอไม่เกินสองสามนาที)";
+"To send this transaction, you'll need to wait for your pending transactions to be confirmed first (this shouldn't take more than a few minutes)." = "คุณต้องรอการยืนยันก่อน จึงจะทำธุรกรรมนี้ได้ (ใช้เวลารอไม่เกินสองสามนาที)";
 
 /* Message when trying to start an app that requires a newer API level. */
-"To use the app, please update to the latest version of Hive." = "หากจะใช้โปรแกรม กรุณา update เวอร์ชั่นล่าสุดของ Hive";
+"To use the app, please update to the latest version of Hive." = "หากจะใช้โปรแกรม กรุณาอัพเดท เวอร์ชั่นล่าสุดของ ไฮฟ์";
 
 /* Notification of cancelled transaction */
 "Transaction cancelled" = "ยกเลิกการทำธุรกรรม";
@@ -384,7 +384,7 @@
 "Waiting for backup" = "รอการจัดเก็บฐานข้อมูล";
 
 /* Install app popup warning message */
-"We cannot guarantee the safety of all apps - please be careful if you download Hive apps from third party sites." = "เราไม่สามารถการันตีความปลอดภัยได้ทุกโปรแกรม กรุณาระมัดระวังในการดาวน์โหลดโปรแกรม Hive จากเว็บไซด์อื่นๆ";
+"We cannot guarantee the safety of all apps - please be careful if you download Hive apps from third party sites." = "เราไม่สามารถการันตีความปลอดภัยได้ทุกโปรแกรม กรุณาระมัดระวังในการดาวน์โหลดโปรแกรมไฮฟ์ จากเว็บไซด์อื่นๆ";
 
 /* Wizard welcome page title */
 "Welcome" = "ยินดีต้อนรับ";
@@ -399,7 +399,7 @@
 "You cannot send more money than you own." = "คุณไม่สามารถโอนเงินได้มากกว่าจำนวนที่คุณมี";
 
 /* Install app popup title when app exists */
-"You have already added \"%@\" to Hive. Would you like to overwrite it?" = "คุณได้เพิ่ม \"%@\" ใน Hive แล้ว คุณต้องการบันทึกข้อมูลแทนที่ข้อมูลเก่าหรือไม่";
+"You have already added \"%@\" to Hive. Would you like to overwrite it?" = "คุณได้เพิ่ม \"%@\" ใน ไฮฟ์ แล้ว คุณต้องการบันทึกข้อมูลแทนที่ข้อมูลเก่าหรือไม่";
 
 /* Notification of confirmed sent transaction (with BTC amount) */
 "You have sent %@." = "คุณส่ง %@";
@@ -426,7 +426,7 @@
 "You'll need to return to the site that requested the payment and initiate the payment again." = "คุณต้องกลับไปที่เว็บไซด์ที่มีหน้าการชำระเงิน และทำการชำระเงินอีกครั้ง";
 
 /* Notification of incoming transaction */
-"You've received Bitcoin" = "คุณได้รับ Bitcion";
+"You've received Bitcoin" = "คุณได้รับบิตคอยน์";
 
 /* Cancel editing alert message */
 "Your changes won't be saved." = "ข้อมูลที่เปลี่ยนแปลงไม่ได้รับการบันทึก";

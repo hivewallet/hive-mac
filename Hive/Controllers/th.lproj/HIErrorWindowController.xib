@@ -72,7 +72,7 @@
                     <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="XU2-Dv-jOg">
                         <rect key="frame" x="98" y="474" width="394" height="17"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
-                        <textFieldCell key="cell" lineBreakMode="truncatingTail" sendsActionOnEndEditing="YES" alignment="center" title="ข้อผิดพลาดที่คาดไม่ถึงเกิดขึ้นที่ Hive" id="xF4-pJ-cQU">
+                        <textFieldCell key="cell" lineBreakMode="truncatingTail" sendsActionOnEndEditing="YES" alignment="center" title="เกิดข้อผิดพลาดที่ไม่คาดคิดที่ไฮฟ์" id="xF4-pJ-cQU">
                             <font key="font" metaFont="system"/>
                             <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                             <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
@@ -110,7 +110,7 @@
                     <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="e09-2q-61N">
                         <rect key="frame" x="98" y="449" width="394" height="17"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
-                        <textFieldCell key="cell" lineBreakMode="truncatingTail" sendsActionOnEndEditing="YES" alignment="center" title="กรุณาส่งคำร้องเพื่อให้เราแก้ไข" id="Cob-tq-o5r">
+                        <textFieldCell key="cell" lineBreakMode="truncatingTail" sendsActionOnEndEditing="YES" alignment="center" title="กรุณาส่งคำร้องเพื่อให้เราช่วยในการแก้ไข" id="Cob-tq-o5r">
                             <font key="font" metaFont="system"/>
                             <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                             <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>

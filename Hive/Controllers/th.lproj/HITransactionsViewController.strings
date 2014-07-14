@@ -6,7 +6,7 @@
 "41.title" = "วันที่";
 
 /* Class = "NSTextFieldCell"; title = "You can then use the Send button to send someone money."; ObjectID = "63"; */
-"63.title" = "คุณสามารถใช้ปุ่ม Send เพื่อส่งเงินให้คนอื่นได้ ";
+"63.title" = "คุณสามารถใช้ปุ่ม ส่ง เพื่อส่งเงินให้คนอื่นได้ ";
 
 /* Class = "NSTextFieldCell"; title = "Looks like you haven't made any transactions yet. Send some Bitcoin to your Hive wallet address!"; ObjectID = "Tlv-45-Iq6"; */
 "Tlv-45-Iq6.title" = "ดูเหมือนว่าคุณยังไม่ได้ดำเนินการอะไรเลย  ส่งบิทคอยน์ไปที่ที่อยู่กระเป๋าเงินของคุณสิ! ";

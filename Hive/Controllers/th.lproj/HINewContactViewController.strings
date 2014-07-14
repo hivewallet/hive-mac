@@ -21,7 +21,7 @@
 "107.title" = "แก้ไข";
 
 /* Class = "NSButtonCell"; title = "QR"; ObjectID = "Fp7-Nh-Dhm"; */
-"Fp7-Nh-Dhm.title" = "คิวอาร์";
+"Fp7-Nh-Dhm.title" = "QR";
 
 /* Class = "NSButtonCell"; title = "Cancel"; ObjectID = "WNT-Ju-zbY"; */
 "WNT-Ju-zbY.title" = "ยกเลิก";

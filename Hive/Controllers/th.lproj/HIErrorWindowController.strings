@@ -6,7 +6,7 @@
 "0m5-Xd-7pp.placeholderString" = "อีเมลล์@domain.com";
 
 /* Class = "NSTextFieldCell"; title = "Please send us a report to help us fix the problem."; ObjectID = "Cob-tq-o5r"; */
-"Cob-tq-o5r.title" = "กรุณาส่งคำร้องเพื่อให้เราแก้ไข";
+"Cob-tq-o5r.title" = "กรุณาส่งคำร้องเพื่อให้เราช่วยในการแก้ไข";
 
 /* Class = "NSTextFieldCell"; title = "Describe what you were doing when the error occurred:"; ObjectID = "F9w-28-7kX"; */
 "F9w-28-7kX.title" = "กรุณาอธิบายถึงสิ่งที่คุณทำเมื่อเกิดข้อผิดพลาด";
@@ -27,7 +27,7 @@
 "uLK-ff-isg.title" = "ข้อผิดพลาด";
 
 /* Class = "NSTextFieldCell"; title = "An unexpected error has occurred in Hive."; ObjectID = "xF4-pJ-cQU"; */
-"xF4-pJ-cQU.title" = "ข้อผิดพลาดที่คาดไม่ถึงเกิดขึ้นที่ Hive";
+"xF4-pJ-cQU.title" = "เกิดข้อผิดพลาดที่ไม่คาดคิดที่ไฮฟ์";
 
 /* Class = "NSTextFieldCell"; title = "Your email (optional)"; ObjectID = "zup-Q6-bK7"; */
 "zup-Q6-bK7.title" = "Email ของคุณ (ไม่บังคับ)";

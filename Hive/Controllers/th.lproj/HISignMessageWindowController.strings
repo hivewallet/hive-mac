@@ -12,7 +12,7 @@
 "W8R-Z4-t5H.title" = "ลงลายมือชื่อ";
 
 /* Class = "NSTextFieldCell"; title = "Some services request that you verify ownership of a Bitcoin address by creating a cryptographic signature of a message using your private key. To do that, enter the message you would like to sign into the box below and choose \"Sign\"."; ObjectID = "kUl-US-tKo"; */
-"kUl-US-tKo.title" = "การบริการบางอย่างต้องการให้คุณยืนยันตัวตนของที่อยู่ Bitcoin ด้วยการสร้างลายมือชื่อของคุณด้วยรหัสพิเศษ ในการสร้างลายมือชื่อนั้น พิมพ์ข้อความที่คุณต้องการในกล่องด้านล่างนี้ และเลือก เมนู \"ลงลายมือชื่อ\"";
+"kUl-US-tKo.title" = "การบริการบางอย่างต้องการให้คุณยืนยันตัวตนของที่อยู่ บิตคอยน์ ด้วยการสร้างลายมือชื่อของคุณด้วยรหัสพิเศษ ในการสร้างลายมือชื่อนั้น พิมพ์ข้อความที่คุณต้องการในกล่องด้านล่างนี้ และเลือก เมนู \"ลงลายมือชื่อ\"";
 
 /* Class = "NSButtonCell"; title = "Close"; ObjectID = "u9d-Yr-bsb"; */
 "u9d-Yr-bsb.title" = "ปิด";

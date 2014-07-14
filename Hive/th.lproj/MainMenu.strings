@@ -1,12 +1,12 @@
 
 /* Class = "NSMenuItem"; title = "Hive"; ObjectID = "56"; */
-"56.title" = "Hive";
+"56.title" = "ไฮฟ์";
 
 /* Class = "NSMenu"; title = "Hive"; ObjectID = "57"; */
-"57.title" = "Hive";
+"57.title" = "ไฮฟ์";
 
 /* Class = "NSMenuItem"; title = "About Hive"; ObjectID = "58"; */
-"58.title" = "เกี่ยวกับ Hive";
+"58.title" = "เกี่ยวกับ ไฮฟ์";
 
 /* Class = "NSMenuItem"; title = "Preferences…"; ObjectID = "129"; */
 "129.title" = "สิทธิพิเศษ";
@@ -18,10 +18,10 @@
 "131.title" = "บริการ";
 
 /* Class = "NSMenuItem"; title = "Hide Hive"; ObjectID = "134"; */
-"134.title" = "ซ่อน Hive";
+"134.title" = "ซ่อน ไฮฟ์";
 
 /* Class = "NSMenuItem"; title = "Quit Hive"; ObjectID = "136"; */
-"136.title" = "ปิด Hive";
+"136.title" = "ปิด ไฮฟ์";
 
 /* Class = "NSMenuItem"; title = "Hide Others"; ObjectID = "145"; */
 "145.title" = "ซ่อน";
@@ -75,7 +75,7 @@
 "864.title" = "ปิด";
 
 /* Class = "NSMenuItem"; title = "Send Bitcoin..."; ObjectID = "866"; */
-"866.title" = "ส่ง Bitcoin";
+"866.title" = "ส่ง บิตคอยน์";
 
 /* Class = "NSMenuItem"; title = "Check for Updates..."; ObjectID = "870"; */
 "870.title" = "ตรวจสอบการอัพเดท";

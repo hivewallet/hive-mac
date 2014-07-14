@@ -28,7 +28,7 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                         <textFieldCell key="cell" sendsActionOnEndEditing="YES" id="kUl-US-tKo">
                             <font key="font" metaFont="system"/>
-                            <string key="title">การบริการบางอย่างต้องการให้คุณยืนยันตัวตนของที่อยู่ Bitcoin ด้วยการสร้างลายมือชื่อของคุณด้วยรหัสพิเศษ ในการสร้างลายมือชื่อนั้น พิมพ์ข้อความที่คุณต้องการในกล่องด้านล่างนี้ และเลือก เมนู "ลงลายมือชื่อ"</string>
+                            <string key="title">การบริการบางอย่างต้องการให้คุณยืนยันตัวตนของที่อยู่ บิตคอยน์ ด้วยการสร้างลายมือชื่อของคุณด้วยรหัสพิเศษ ในการสร้างลายมือชื่อนั้น พิมพ์ข้อความที่คุณต้องการในกล่องด้านล่างนี้ และเลือก เมนู "ลงลายมือชื่อ"</string>
                             <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                             <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                         </textFieldCell>

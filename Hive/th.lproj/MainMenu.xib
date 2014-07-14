@@ -14,10 +14,10 @@
         <customObject id="-3" userLabel="Application"/>
         <menu systemMenu="main" id="29">
             <items>
-                <menuItem title="Hive" id="56">
-                    <menu key="submenu" title="Hive" systemMenu="apple" id="57">
+                <menuItem title="ไฮฟ์" id="56">
+                    <menu key="submenu" title="ไฮฟ์" systemMenu="apple" id="57">
                         <items>
-                            <menuItem title="เกี่ยวกับ Hive" id="58">
+                            <menuItem title="เกี่ยวกับ ไฮฟ์" id="58">
                                 <modifierMask key="keyEquivalentModifierMask"/>
                                 <connections>
                                     <action selector="showAboutWindow:" target="494" id="cP6-Rg-Zok"/>
@@ -51,7 +51,7 @@
                             <menuItem isSeparatorItem="YES" id="144">
                                 <modifierMask key="keyEquivalentModifierMask" command="YES"/>
                             </menuItem>
-                            <menuItem title="ซ่อน Hive" keyEquivalent="h" id="134">
+                            <menuItem title="ซ่อน ไฮฟ์" keyEquivalent="h" id="134">
                                 <connections>
                                     <action selector="hide:" target="-1" id="367"/>
                                 </connections>
@@ -70,7 +70,7 @@
                             <menuItem isSeparatorItem="YES" id="149">
                                 <modifierMask key="keyEquivalentModifierMask" command="YES"/>
                             </menuItem>
-                            <menuItem title="ปิด Hive" keyEquivalent="q" id="136">
+                            <menuItem title="ปิด ไฮฟ์" keyEquivalent="q" id="136">
                                 <connections>
                                     <action selector="terminate:" target="-3" id="449"/>
                                 </connections>
@@ -81,7 +81,7 @@
                 <menuItem title="กระเป๋าเงิน" id="GX7-xG-GKH">
                     <menu key="submenu" title="กระเป๋าเงิน" id="jrd-Ul-XjV">
                         <items>
-                            <menuItem title="ส่ง Bitcoin" keyEquivalent="S" id="866">
+                            <menuItem title="ส่ง บิตคอยน์" keyEquivalent="S" id="866">
                                 <connections>
                                     <action selector="openSendBitcoinsWindow:" target="-1" id="868"/>
                                 </connections>
