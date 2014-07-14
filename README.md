@@ -36,6 +36,8 @@ Before you build the project, you also need to install some additional libraries
 
 Then you can open the project workspace in Xcode (`Hive.xcworkspace`, not `Hive.xcodeproj`), hit the Run button and wait for it to build. Enjoy!
 
+Note: the Xcode build is configured to use Hive certificates, so you'll probably need to disable code signing to make it build without them.
+
 
 ## Test vs. production network
 
