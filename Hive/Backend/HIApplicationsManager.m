@@ -109,11 +109,6 @@ const NSInteger HIApplicationManagerInsecureConnectionError = -2;
 }
 
 - (void)preinstallApps {
-    // delete old versions of apps with old ids - this can be removed later
-    for (NSString *name in @[@"bitstamp", @"localbitcoins", @"minefield", @"seansoutpost", @"supporthive2"]) {
-        NSURL *appURL = [[self applicationsDirectory] URLByAppendingPathComponent:name];
-        [[NSFileManager defaultManager] removeItemAtURL:appURL error:NULL];
-    }
     [self rebuildAppsList];
 
     // install bundled apps
