@@ -74,7 +74,7 @@
 /* No comment provided by engineer. */
 "click to copy" = "klik om te kopieren";
 
-/* Confirm button next to passphrase */
+/* Confirm button in password entry form */
 "Confirm" = "Bevestigen";
 
 /* Contact name empty alert title */
@@ -134,10 +134,10 @@
 /* Enable backup button title (requires configuration) */
 "Enable..." = "Inschakelen...";
 
-/* Passphrase prompt for sending */
+/* Password prompt for sending */
 "Enter your passphrase to confirm the transaction:" = "Voer uw wachtwoordzin zin in om de transactie te bevestigen:";
 
-/* Passphrase prompt for message signing */
+/* Password prompt for message signing */
 "Enter your password to sign the message:" = "Vul je wachtwoord in om het bericht te ondertekenen:";
 
 /* Firstname field placeholder */

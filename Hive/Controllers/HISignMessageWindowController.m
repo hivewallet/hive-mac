@@ -51,9 +51,9 @@
     if (!self.passwordInputViewController) {
         self.passwordInputViewController = [HIPasswordInputViewController new];
         self.passwordInputViewController.prompt =
-            NSLocalizedString(@"Enter your password to sign the message:", @"Passphrase prompt for message signing");
+            NSLocalizedString(@"Enter your password to sign the message:", @"Password prompt for message signing");
         self.passwordInputViewController.submitLabel =
-            NSLocalizedString(@"Confirm", @"Confirm button next to passphrase");
+            NSLocalizedString(@"Confirm", @"Confirm button in password entry form");
     }
 
     __unsafe_unretained id weakSelf = self;

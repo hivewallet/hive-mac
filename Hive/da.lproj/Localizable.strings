@@ -74,7 +74,7 @@
 /* No comment provided by engineer. */
 "click to copy" = "kopier?";
 
-/* Confirm button next to passphrase */
+/* Confirm button in password entry form */
 "Confirm" = "Bekræft";
 
 /* Contact name empty alert title */
@@ -134,10 +134,10 @@
 /* Enable backup button title (requires configuration) */
 "Enable..." = "Slå til…";
 
-/* Passphrase prompt for sending */
+/* Password prompt for sending */
 "Enter your passphrase to confirm the transaction:" = "Indtast din adgangskode for at bekræfte transaktionen:";
 
-/* Passphrase prompt for message signing */
+/* Password prompt for message signing */
 "Enter your password to sign the message:" = "Indtast din adgangskode for at signere beskeden:";
 
 /* Firstname field placeholder */
