@@ -135,7 +135,7 @@
 "Enable..." = "Ενεργοποίηση...";
 
 /* Password prompt for sending */
-"Enter your passphrase to confirm the transaction:" = "Εισάγετε τον κωδικό σας για επιβεβαίωση της συναλλαγής:";
+"Enter your password to confirm the transaction:" = "Εισάγετε τον κωδικό σας για επιβεβαίωση της συναλλαγής:";
 
 /* Password prompt for message signing */
 "Enter your password to sign the message:" = "Enter your password to sign the message:";

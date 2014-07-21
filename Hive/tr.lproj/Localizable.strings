@@ -135,7 +135,7 @@
 "Enable..." = "Etkinleştir...";
 
 /* Password prompt for sending */
-"Enter your passphrase to confirm the transaction:" = "İşlemi onaylamak için parolanızı girin:";
+"Enter your password to confirm the transaction:" = "İşlemi onaylamak için parolanızı girin:";
 
 /* Password prompt for message signing */
 "Enter your password to sign the message:" = "Enter your password to sign the message:";

@@ -135,7 +135,7 @@
 "Enable..." = "Slå til…";
 
 /* Password prompt for sending */
-"Enter your passphrase to confirm the transaction:" = "Indtast din adgangskode for at bekræfte transaktionen:";
+"Enter your password to confirm the transaction:" = "Indtast din adgangskode for at bekræfte transaktionen:";
 
 /* Password prompt for message signing */
 "Enter your password to sign the message:" = "Indtast din adgangskode for at signere beskeden:";
