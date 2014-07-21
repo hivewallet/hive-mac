@@ -84,7 +84,7 @@
 "1HB-Qg-iyg.title" = "Изменить пароль…";
 
 /* Class = "NSMenuItem"; title = "Lock Wallet"; ObjectID = "AFM-Ev-d2A"; */
-"AFM-Ev-d2A.title" = "Lock Wallet";
+"AFM-Ev-d2A.title" = "Зашифровать кошелек";
 
 /* Class = "NSMenuItem"; title = "CoinMap"; ObjectID = "ASP-Ns-ktD"; */
 "ASP-Ns-ktD.title" = "CoinMap";
@@ -93,10 +93,10 @@
 "GX7-xG-GKH.title" = "Кошелек";
 
 /* Class = "NSMenuItem"; title = "Send Feedback…"; ObjectID = "GsI-lc-HhD"; */
-"GsI-lc-HhD.title" = "Send Feedback…";
+"GsI-lc-HhD.title" = "Отправить отзыв...";
 
 /* Class = "NSMenu"; title = "Help"; ObjectID = "K2u-T2-G1a"; */
-"K2u-T2-G1a.title" = "Help";
+"K2u-T2-G1a.title" = "Помощь";
 
 /* Class = "NSMenuItem"; title = "Sign message..."; ObjectID = "SoJ-eV-k9I"; */
 "SoJ-eV-k9I.title" = "Sign message...";
@@ -111,7 +111,7 @@
 "VQa-2Z-6fS.title" = "FAQ";
 
 /* Class = "NSMenuItem"; title = "Help"; ObjectID = "ZUU-kM-x8u"; */
-"ZUU-kM-x8u.title" = "Help";
+"ZUU-kM-x8u.title" = "Помощь";
 
 /* Class = "NSMenu"; title = "Tools"; ObjectID = "cCx-Ak-fii"; */
 "cCx-Ak-fii.title" = "Инструменты";
@@ -126,4 +126,4 @@
 "lLT-53-p4m.title" = "Отладочная информация";
 
 /* Class = "NSMenuItem"; title = "Scan a QR code…"; ObjectID = "vdw-IK-snJ"; */
-"vdw-IK-snJ.title" = "Scan a QR code…";
+"vdw-IK-snJ.title" = "Сканировать QR код...";
