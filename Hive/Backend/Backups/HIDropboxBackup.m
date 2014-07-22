@@ -6,42 +6,10 @@
 //  Copyright (c) 2013 Hive Developers. All rights reserved.
 //
 
-#import "BCClient.h"
-#import "HIDatabaseManager.h"
 #import "HIDropboxBackup.h"
-#import "NSAlert+Hive.h"
-
-static NSString * const LocationKey = @"location";
-static NSString * const LastBackupKey = @"lastBackup";
-
-NSString * const HIDropboxBackupError = @"HIDropboxBackupError";
-const NSInteger HIDropboxBackupNotConfigured = -1;
-const NSInteger HIDropboxBackupCouldntComplete = -2;
-const NSInteger HIDropboxBackupNotRunning = -3;
-
-
-@interface HIDropboxBackup ()
-
-@property (nonatomic, copy) NSString *backupLocation;
-@property (nonatomic, copy) NSDate *lastRegisteredBackup;
-
-@end
 
 
 @implementation HIDropboxBackup
-
-- (instancetype)init {
-    self = [super init];
-
-    if (self) {
-        self.status = HIBackupStatusWaiting;
-        self.error = nil;
-        self.lastBackupDate = self.lastRegisteredBackup;
-    }
-
-    return self;
-}
-
 
 #pragma mark - Superclass method overrides
 
@@ -65,51 +33,43 @@ const NSInteger HIDropboxBackupNotRunning = -3;
     return NO;
 }
 
-- (BOOL)requiresEncryption {
-    return YES;
+- (NSString *)syncingAppId {
+    return @"com.getdropbox.dropbox";
 }
 
-- (BOOL)canBeConfigured {
-    return YES;
+- (NSString *)errorDomain {
+    return @"HIDropboxBackupError";
 }
 
-- (BOOL)needsToBeConfigured {
-    NSArray *dropboxFolders = [self existingDropboxFolders];
-
-    return !self.backupLocation && (dropboxFolders.count != 1);
+- (NSString *)errorTitleForSelectedFolderOutsideSyncFolder {
+    return NSLocalizedString(@"Selected directory is outside Dropbox folder.",
+                             @"Dropbox invalid folder alert title");
 }
 
-- (BOOL)isVisible {
-    return YES;
+- (NSString *)errorMessageForSelectedFolderOutsideSyncFolder {
+    return NSLocalizedString(@"You need to choose or create a directory inside your Dropbox folder.",
+                             @"Dropbox invalid folder alert details");
 }
 
-- (void)updateStatus {
-    if (self.error.code == HIDropboxBackupNotRunning) {
-        // we've done the backup but we're waiting for Dropbox to be started
-        if ([self isDropboxRunning]) {
-            [self registerSuccessfulBackup];
-        }
-    } else if (self.status == HIBackupStatusDisabled) {
-        // backup was just switched on
-        [self performBackup];
-    }
+- (NSString *)errorMessageForAppNotRunning {
+    return NSLocalizedString(@"Dropbox isn't running", @"Backup error message");
 }
 
-- (void)setEnabled:(BOOL)newState {
-    [super setEnabled:newState];
-
-    if (newState == false) {
-        // clear location setting if it's invalid
-        if (self.backupLocation && ![self pathIsInsideDropboxFolder:self.backupLocation]) {
-            self.backupLocation = nil;
-        }
-    }
+- (NSString *)errorTitleForAppNotInstalled {
+    return NSLocalizedString(@"Dropbox folder not found.",
+                             @"Dropbox no backup folder alert title");
 }
 
+- (NSString *)errorMessageForAppNotInstalled {
+    return NSLocalizedString(@"You must install Dropbox first (see www.dropbox.com).",
+                             @"Dropbox no backup folder alert details");
+}
 
-#pragma mark - Configuring backup
+- (NSString *)promptMessageForChooseBackupFolder {
+    return NSLocalizedString(@"Choose a directory inside Dropbox folder where the backup should be saved:", nil);
+}
 
-- (NSArray *)dropboxFolders {
+- (NSArray *)syncFolders {
     NSString *configDir = [NSHomeDirectory() stringByAppendingPathComponent:@".dropbox"];
     NSString *jsonFile = [configDir stringByAppendingPathComponent:@"info.json"];
 
@@ -136,35 +96,11 @@ const NSInteger HIDropboxBackupNotRunning = -3;
     }
 }
 
-- (NSArray *)existingDropboxFolders {
-    NSArray *folders = [self dropboxFolders];
-
-    if (!folders) {
-        return nil;
-    }
-
-    NSMutableArray *existingFolders = [[NSMutableArray alloc] initWithCapacity:folders.count];
-
-    for (NSString *path in folders) {
-        BOOL isDirectory = NO;
-        BOOL exists = [[NSFileManager defaultManager] fileExistsAtPath:path isDirectory:&isDirectory];
-
-        if (exists && isDirectory) {
-            [existingFolders addObject:path];
-        } else {
-            HILogWarn(@"Dropbox folder not found (path=%@, exists=%d, isDirectory=%d)", path, exists, isDirectory);
-        }
-    }
-
-    return existingFolders;
-}
-
 - (NSString *)defaultBackupFolder {
-    NSArray *dropboxFolders = [self existingDropboxFolders];
+    NSArray *dropboxFolders = [self existingSyncFolders];
 
     if (dropboxFolders.count == 1) {
-        NSString *prefix = [[[BCClient sharedClient] walletHash] substringToIndex:5];
-        NSString *hiveDirectoryName = [@"Hive-" stringByAppendingString:prefix];
+        NSString *hiveDirectoryName = [self backupFolderName];
         NSString *dropboxFolder = [dropboxFolders firstObject];
         NSString *appsFolder = [dropboxFolder stringByAppendingPathComponent:@"Apps"];
         BOOL isDirectory;
@@ -177,255 +113,6 @@ const NSInteger HIDropboxBackupNotRunning = -3;
     } else {
         return nil;
     }
-}
-
-- (NSString *)backupLocation {
-    return self.adapterSettings[LocationKey];
-}
-
-- (void)setBackupLocation:(NSString *)location {
-    NSMutableDictionary *adapterSettings = self.adapterSettings;
-
-    if (location) {
-        [adapterSettings setObject:location forKey:LocationKey];
-    } else {
-        [adapterSettings removeObjectForKey:LocationKey];
-    }
-
-    [self saveAdapterSettings:adapterSettings];
-}
-
-- (NSDate *)lastRegisteredBackup {
-    return self.adapterSettings[LastBackupKey];
-}
-
-- (void)setLastRegisteredBackup:(NSDate *)date {
-    NSMutableDictionary *adapterSettings = self.adapterSettings;
-    [adapterSettings setObject:date forKey:LastBackupKey];
-    [self saveAdapterSettings:adapterSettings];
-}
-
-- (void)configureInWindow:(NSWindow *)window {
-    // show error if there are no Dropbox folders configured
-    NSArray *dropboxFolders = [self dropboxFolders];
-
-    if (dropboxFolders.count == 0) {
-        NSAlert *alert = [NSAlert hiOKAlertWithTitle:NSLocalizedString(@"Dropbox folder not found.",
-                                                                       @"Dropbox no backup folder alert title")
-                                             message:NSLocalizedString(@"You must install Dropbox first "
-                                                                       @"(see www.dropbox.com).",
-                                                                       @"Dropbox no backup folder alert details")];
-
-        [alert beginSheetModalForWindow:window modalDelegate:nil didEndSelector:nil contextInfo:NULL];
-        return;
-    }
-
-    // choose one of the existing folders as a starting point, fall back to home
-    NSArray *existingFolders = [self existingDropboxFolders];
-    NSString *initialFolder = [existingFolders firstObject] ?: NSHomeDirectory();
-
-    NSOpenPanel *panel = [NSOpenPanel openPanel];
-    panel.prompt = NSLocalizedString(@"Choose", @"Dropbox folder save panel confirmation button");
-    panel.message = NSLocalizedString(@"Choose a directory inside Dropbox folder where the backup should be saved:",
-                                      nil);
-    panel.directoryURL = [NSURL fileURLWithPath:initialFolder];
-    panel.canChooseDirectories = YES;
-    panel.canCreateDirectories = YES;
-    panel.canChooseFiles = NO;
-
-    [panel beginSheetModalForWindow:window completionHandler:^(NSInteger result) {
-        if (result == NSFileHandlingPanelOKButton) {
-            dispatch_async(dispatch_get_main_queue(), ^{
-                [self backupFolderSelected:panel.URL.path inWindow:window];
-            });
-        }
-    }];
-}
-
-- (BOOL)pathIsInsideDropboxFolder:(NSString *)path {
-    NSArray *dropboxFolders = [self dropboxFolders];
-
-    if (dropboxFolders) {
-        for (NSString *folder in dropboxFolders) {
-            if ([path hasPrefix:folder]) {
-                return YES;
-            }
-        }
-    }
-
-    return NO;
-}
-
-- (void)backupFolderSelected:(NSString *)selectedDirectory inWindow:(NSWindow *)window {
-    if (![self pathIsInsideDropboxFolder:selectedDirectory]) {
-        HILogWarn(@"Selected directory outside Dropbox folder (%@, Dropbox folders: %@)",
-                  selectedDirectory, [self dropboxFolders]);
-
-        NSAlert *alert = [NSAlert hiOKAlertWithTitle:NSLocalizedString(@"Selected directory is outside Dropbox folder.",
-                                                                       @"Dropbox invalid folder alert title")
-                                             message:NSLocalizedString(@"You need to choose or create a directory "
-                                                                       @"inside your Dropbox folder.",
-                                                                       @"Dropbox invalid folder alert details")];
-
-        [alert beginSheetModalForWindow:window modalDelegate:nil didEndSelector:nil contextInfo:NULL];
-        return;
-    }
-
-    self.backupLocation = selectedDirectory;
-    self.enabled = YES;
-}
-
-
-#pragma mark - Performing backup
-
-- (void)performBackup {
-    if (!self.backupLocation) {
-        self.backupLocation = [self defaultBackupFolder];
-    }
-
-    NSURL *backupLocation = self.backupLocation ? [NSURL fileURLWithPath:self.backupLocation] : nil;
-
-    if (!backupLocation) {
-        HILogWarn(@"Backup not configured (no backup location)");
-
-        self.status = HIBackupStatusFailure;
-        self.error = BackupError(HIDropboxBackupError, HIDropboxBackupNotConfigured,
-                                 NSLocalizedString(@"Backup is not configured", @"Backup error message"));
-        return;
-    }
-
-    if (![self pathIsInsideDropboxFolder:backupLocation.path]) {
-        HILogWarn(@"Backup directory outside Dropbox folder (%@, Dropbox folders: %@)",
-                  backupLocation, [self dropboxFolders]);
-
-        self.status = HIBackupStatusFailure;
-        self.error = BackupError(HIDropboxBackupError, HIDropboxBackupNotConfigured,
-                                 NSLocalizedString(@"Selected directory is outside Dropbox folder.",
-                                                   @"Dropbox invalid folder alert title"));
-        return;
-    }
-
-    BOOL isDirectory;
-    BOOL exists = [[NSFileManager defaultManager] fileExistsAtPath:backupLocation.path isDirectory:&isDirectory];
-
-    if (!exists) {
-        NSError *error = nil;
-
-        [[NSFileManager defaultManager] createDirectoryAtPath:backupLocation.path
-                                  withIntermediateDirectories:YES
-                                                   attributes:nil
-                                                        error:&error];
-
-        if (error) {
-            HILogWarn(@"Backup not configured properly (backup folder can't be created at %@: %@)",
-                      backupLocation, error);
-
-            self.status = HIBackupStatusFailure;
-            self.error = BackupError(HIDropboxBackupError, HIDropboxBackupNotConfigured,
-                                     NSLocalizedString(@"Can't create a directory to store the wallet backup",
-                                                       @"Backup error message"));
-            return;
-        }
-    } else if (!isDirectory) {
-        HILogWarn(@"Backup not configured properly (backup folder can't be created at %@, something exists there)",
-                  backupLocation);
-
-        self.status = HIBackupStatusFailure;
-        self.error = BackupError(HIDropboxBackupError, HIDropboxBackupNotConfigured,
-                                 NSLocalizedString(@"Can't create a directory to store the wallet backup",
-                                                   @"Backup error message"));
-        return;
-    }
-
-    if (![self backUpCoreDataStore]) {
-        return;
-    }
-
-    if (![self backUpWallet]) {
-        return;
-    }
-
-    if ([self isDropboxRunning]) {
-        [self registerSuccessfulBackup];
-    } else {
-        HILogWarn(@"Backup not finished - Dropbox isn't running");
-
-        // we'll keep checking in updateStatus
-        self.status = [self updatedAfterLastWalletChange] ? HIBackupStatusOutdated : HIBackupStatusFailure;
-        self.error = BackupError(HIDropboxBackupError, HIDropboxBackupNotRunning,
-                                 NSLocalizedString(@"Dropbox isn't running", @"Backup error message"));
-    }
-}
-
-- (BOOL)backUpCoreDataStore {
-    NSURL *backupLocation = [NSURL fileURLWithPath:self.backupLocation];
-    NSError *error = nil;
-
-    [[HIDatabaseManager sharedManager] backupStoreToDirectory:backupLocation error:&error];
-
-    if (error) {
-        self.status = HIBackupStatusFailure;
-        self.error = BackupError(HIDropboxBackupError, HIDropboxBackupCouldntComplete, error.localizedFailureReason);
-        return NO;
-    }
-
-    return YES;
-}
-
-- (BOOL)backUpWallet {
-    NSURL *backupLocation = [NSURL fileURLWithPath:self.backupLocation];
-    NSURL *bitcoinjDirectory = [backupLocation URLByAppendingPathComponent:BCClientBitcoinjDirectory];
-
-    BOOL isDirectory;
-    BOOL exists = [[NSFileManager defaultManager] fileExistsAtPath:bitcoinjDirectory.path isDirectory:&isDirectory];
-
-    NSError *error = nil;
-
-    if (!exists) {
-        [[NSFileManager defaultManager] createDirectoryAtURL:bitcoinjDirectory
-                                 withIntermediateDirectories:NO
-                                                  attributes:nil
-                                                       error:&error];
-
-        if (error) {
-            HILogError(@"Couldn't create backup directory: %@", error);
-
-            self.status = HIBackupStatusFailure;
-            self.error = BackupError(HIDropboxBackupError, HIDropboxBackupCouldntComplete, error.localizedFailureReason);
-            return NO;
-        }
-    } else if (!isDirectory) {
-        self.status = HIBackupStatusFailure;
-        self.error = BackupError(HIDropboxBackupError, HIDropboxBackupCouldntComplete,
-                                 NSLocalizedString(@"Can't create a directory to store the wallet backup",
-                                                   @"Backup error message"));
-
-        HILogError(@"Couldn't create backup directory: %@ is a file", bitcoinjDirectory);
-        [NSApp presentError:self.error];
-
-        return NO;
-    }
-
-    [[BCClient sharedClient] backupWalletToDirectory:bitcoinjDirectory error:&error];
-
-    if (error) {
-        self.status = HIBackupStatusFailure;
-        self.error = BackupError(HIDropboxBackupError, HIDropboxBackupCouldntComplete, error.localizedFailureReason);
-        return NO;
-    }
-
-    return YES;
-}
-
-- (void)registerSuccessfulBackup {
-    self.status = HIBackupStatusUpToDate;
-    self.error = nil;
-    self.lastBackupDate = [NSDate date];
-    self.lastRegisteredBackup = self.lastBackupDate;
-}
-
-- (BOOL)isDropboxRunning {
-    return ([NSRunningApplication runningApplicationsWithBundleIdentifier:@"com.getdropbox.dropbox"].count > 0);
 }
 
 @end

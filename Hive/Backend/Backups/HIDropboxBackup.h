@@ -6,13 +6,8 @@
 //  Copyright (c) 2013 Hive Developers. All rights reserved.
 //
 
-#import "HIBackupAdapter.h"
+#import "HISyncingAppAdapter.h"
 
-extern NSString * const HIDropboxBackupError;
-extern const NSInteger HIDropboxBackupNotConfigured;
-extern const NSInteger HIDropboxBackupCouldntComplete;
-extern const NSInteger HIDropboxBackupNotRunning;
-
-@interface HIDropboxBackup : HIBackupAdapter
+@interface HIDropboxBackup : HISyncingAppAdapter
 
 @end

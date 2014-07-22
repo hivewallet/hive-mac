@@ -10,6 +10,7 @@
 #import "HIBackupAdapter.h"
 #import "HIBackupManager.h"
 #import "HIDropboxBackup.h"
+#import "HIGoogleDriveBackup.h"
 #import "HILocalBackup.h"
 #import "HITimeMachineBackup.h"
 
@@ -39,6 +40,7 @@
     if (self) {
         _allAdapters = @[
                          [HIDropboxBackup new],
+                         [HIGoogleDriveBackup new],
                          [HILocalBackup new],
                          [HITimeMachineBackup new],
                        ];

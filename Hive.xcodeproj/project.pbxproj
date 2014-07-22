@@ -212,6 +212,10 @@
 		58A37ADF180D998700CFCDE3 /* HITransactionsViewController.strings in Resources */ = {isa = PBXBuildFile; fileRef = 58A37ADD180D998700CFCDE3 /* HITransactionsViewController.strings */; };
 		58A37AE2180D99A100CFCDE3 /* HIMainWindowController.strings in Resources */ = {isa = PBXBuildFile; fileRef = 58A37AE0180D99A100CFCDE3 /* HIMainWindowController.strings */; };
 		58A37AE5180D99F200CFCDE3 /* MainMenu.strings in Resources */ = {isa = PBXBuildFile; fileRef = 58A37AE3180D99F200CFCDE3 /* MainMenu.strings */; };
+		58A8760A197E9CF600524C77 /* HISyncingAppAdapter.m in Sources */ = {isa = PBXBuildFile; fileRef = 58A87609197E9CF600524C77 /* HISyncingAppAdapter.m */; };
+		58A8760D197E9D0F00524C77 /* HIGoogleDriveBackup.m in Sources */ = {isa = PBXBuildFile; fileRef = 58A8760C197E9D0F00524C77 /* HIGoogleDriveBackup.m */; };
+		58A8760F197E9E8100524C77 /* google-drive-128.png in Resources */ = {isa = PBXBuildFile; fileRef = 58A8760E197E9E8100524C77 /* google-drive-128.png */; };
+		58A87611197EB36300524C77 /* get_gdrive_folder.sh in Resources */ = {isa = PBXBuildFile; fileRef = 58A87610197EB35800524C77 /* get_gdrive_folder.sh */; };
 		58AE8CBB19226AF900946C97 /* icon-success.png in Resources */ = {isa = PBXBuildFile; fileRef = 58AE8CB919226AF800946C97 /* icon-success.png */; };
 		58AE8CBC19226AF900946C97 /* icon-success@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 58AE8CBA19226AF800946C97 /* icon-success@2x.png */; };
 		58AE8CC9192CCF1200946C97 /* HIGeneralPreferencesViewController.strings in Resources */ = {isa = PBXBuildFile; fileRef = 58AE8CCB192CCF1200946C97 /* HIGeneralPreferencesViewController.strings */; };
@@ -1773,6 +1777,12 @@
 		58A37BA2180DBAA100CFCDE3 /* da */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = da; path = da.lproj/MainMenu.strings; sourceTree = "<group>"; };
 		58A37BA3180DBAA100CFCDE3 /* da */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = da; path = da.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		58A37BA6180DBAA100CFCDE3 /* da */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = da; path = da.lproj/Localizable.strings; sourceTree = "<group>"; };
+		58A87608197E9CF600524C77 /* HISyncingAppAdapter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HISyncingAppAdapter.h; sourceTree = "<group>"; };
+		58A87609197E9CF600524C77 /* HISyncingAppAdapter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HISyncingAppAdapter.m; sourceTree = "<group>"; };
+		58A8760B197E9D0F00524C77 /* HIGoogleDriveBackup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HIGoogleDriveBackup.h; sourceTree = "<group>"; };
+		58A8760C197E9D0F00524C77 /* HIGoogleDriveBackup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HIGoogleDriveBackup.m; sourceTree = "<group>"; };
+		58A8760E197E9E8100524C77 /* google-drive-128.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "google-drive-128.png"; sourceTree = "<group>"; };
+		58A87610197EB35800524C77 /* get_gdrive_folder.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = get_gdrive_folder.sh; sourceTree = "<group>"; };
 		58AE8CB919226AF800946C97 /* icon-success.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-success.png"; sourceTree = "<group>"; };
 		58AE8CBA19226AF800946C97 /* icon-success@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-success@2x.png"; sourceTree = "<group>"; };
 		58AE8CC0192A8DE900946C97 /* sr-Latn */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = "sr-Latn"; path = "sr-Latn.lproj/HIGeneralPreferencesViewController.xib"; sourceTree = "<group>"; };
@@ -2535,8 +2545,12 @@
 				583B1E001868784600817EF8 /* HIBackupManager.m */,
 				583B1DFC18686C8400817EF8 /* HIDropboxBackup.h */,
 				583B1DFD18686C8400817EF8 /* HIDropboxBackup.m */,
+				58A8760B197E9D0F00524C77 /* HIGoogleDriveBackup.h */,
+				58A8760C197E9D0F00524C77 /* HIGoogleDriveBackup.m */,
 				58A0A49D18AD37E600A5A084 /* HILocalBackup.h */,
 				58A0A49E18AD37E600A5A084 /* HILocalBackup.m */,
+				58A87608197E9CF600524C77 /* HISyncingAppAdapter.h */,
+				58A87609197E9CF600524C77 /* HISyncingAppAdapter.m */,
 				583B1DF918686C4700817EF8 /* HITimeMachineBackup.h */,
 				583B1DFA18686C4700817EF8 /* HITimeMachineBackup.m */,
 			);
@@ -2858,6 +2872,7 @@
 				588427CF18F2DF6600DE6CC4 /* bitcoinkit.checkpoints */,
 				585FFF4318159803005BCF73 /* Credits.rtf */,
 				5884A03D17F57AE9004A31FA /* dsa_pub.pem */,
+				58A87610197EB35800524C77 /* get_gdrive_folder.sh */,
 				D9A591CF1767B4A800502635 /* Hive-Info.plist */,
 				D9A591D51767B4A800502635 /* Hive-Prefix.pch */,
 				D9F8454E1781C509004076F6 /* Icon.icns */,
@@ -2876,6 +2891,7 @@
 				58605A2218041D0A00FD9C2A /* bg-sidebar.pdf */,
 				58605A2318041D0A00FD9C2A /* button__inset.pdf */,
 				583B1E0218687CF400817EF8 /* dropbox-glyph-blue.pdf */,
+				58A8760E197E9E8100524C77 /* google-drive-128.png */,
 				58A275DA18BBD30300C102B2 /* honey_im_subtle.png */,
 				58A275D918BBD30300C102B2 /* honey_im_subtle@2x.png */,
 				58605A2418041D0A00FD9C2A /* icon-apps__active.pdf */,
@@ -3195,6 +3211,7 @@
 				5889538F1888A68100243190 /* HIBackupCenterWindowController.xib in Resources */,
 				58605A4C18041D0A00FD9C2A /* icon-nav-bar-back.pdf in Resources */,
 				58A37ADF180D998700CFCDE3 /* HITransactionsViewController.strings in Resources */,
+				58A8760F197E9E8100524C77 /* google-drive-128.png in Resources */,
 				248631D818A7AD1800A020A9 /* HIQRCodeWindowController.xib in Resources */,
 				24300BFC188892CD00FDEF2F /* wizard-background.png in Resources */,
 				588E356618212BFB006A6A25 /* HIErrorWindowController.xib in Resources */,
@@ -3225,6 +3242,7 @@
 				583076C918B3E8C00017084A /* app-store.hiveapp in Resources */,
 				58605A5718041D0A00FD9C2A /* icon-timeline__inactive.pdf in Resources */,
 				58A2760818BE81F100C102B2 /* com.hivewallet.supporthive.hiveapp in Resources */,
+				58A87611197EB36300524C77 /* get_gdrive_folder.sh in Resources */,
 				58605A5818041D0A00FD9C2A /* icon-transactions-arrow-left.pdf in Resources */,
 				58605A5918041D0A00FD9C2A /* icon-transactions-arrow-right.pdf in Resources */,
 				58605A5A18041D0A00FD9C2A /* icon-transactions-btc-symbol.pdf in Resources */,
@@ -3431,8 +3449,10 @@
 				1AA10A016757DBB9BE7808C5 /* HIExchangeRateService.m in Sources */,
 				1AA10B3C94C377F4EF024D41 /* HIProfileViewController.m in Sources */,
 				1AA1008D9D0E0DC1B7F4E36D /* HILinkTextField.m in Sources */,
+				58A8760A197E9CF600524C77 /* HISyncingAppAdapter.m in Sources */,
 				1AA10AB8CB13510790BD9A6D /* HIPasswordHolder.m in Sources */,
 				1AA1079715A3C2B9CD4CC308 /* NSWindow+HIShake.m in Sources */,
+				58A8760D197E9D0F00524C77 /* HIGoogleDriveBackup.m in Sources */,
 				1AA1031B9A110C6B939AB603 /* HIBitcoinFormatService.m in Sources */,
 				1AA105A7496BDE6BA5E2FA84 /* NSDecimalNumber+HISatoshiConversion.m in Sources */,
 				1AA1076874E6E840D30050E5 /* HILabelPopUpButton.m in Sources */,
