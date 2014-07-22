@@ -65,11 +65,14 @@
 /* Alert message when payment request can't be loaded from or sent to the server */
 "Check your network connection, try again later or report the problem to the payment recipient." = "Sprawdź połączenie z siecią, spróbuj ponownie za chwilę, lub zgłoś problem odbiorcy płatności.";
 
-/* Dropbox folder save panel confirmation button */
+/* Backup folder save panel confirmation button */
 "Choose" = "Wybierz";
 
 /* No comment provided by engineer. */
 "Choose a directory inside Dropbox folder where the backup should be saved:" = "Wybierz katalog wewnątrz folderu Dropbox, w którym ma być zapisywana kopia:";
+
+/* No comment provided by engineer. */
+"Choose a directory inside Google Drive folder where the backup should be saved:" = "Wybierz katalog wewnątrz folderu Google Drive, w którym ma być zapisywana kopia:";
 
 /* No comment provided by engineer. */
 "click to copy" = "kliknij aby skopiować";
@@ -110,9 +113,6 @@
 /* Uninstall app popup title */
 "Do you want to remove \"%@\" from the application list?" = "Czy chcesz usunąć \"%@\" z listy aplikacji?";
 
-/* Backup error message */
-"Dropbox folder not found" = "Nie znaleziono folderu Dropbox";
-
 /* Dropbox no backup folder alert title */
 "Dropbox folder not found." = "Nie znaleziono folderu Dropbox.";
 
@@ -145,6 +145,12 @@
 
 /* Title for general preferences panel */
 "General" = "Ogólne";
+
+/* Google Drive no backup folder alert title */
+"Google Drive folder not found." = "Nie znaleziono folderu Google Drive.";
+
+/* Backup error message */
+"Google Drive isn't running" = "Aplikacja Google Drive nie jest uruchomiona";
 
 /* Hiveapp file not readable error title */
 "Hive application file \"%@\" could not be opened." = "Nie można otworzyć pliku aplikacji \"%@\".";
@@ -281,6 +287,9 @@
 /* Dropbox invalid folder alert title */
 "Selected directory is outside Dropbox folder." = "Wybrany katalog nie znajduje się wewnątrz folderu Dropbox.";
 
+/* Google Drive invalid folder alert title */
+"Selected directory is outside Google Drive folder." = "Wybrany katalog nie znajduje się wewnątrz folderu Google Drive.";
+
 /* Send button title */
 "Send" = "Wyślij";
 
@@ -407,11 +416,17 @@
 /* Dropbox no backup folder alert details */
 "You must install Dropbox first (see www.dropbox.com)." = "Musisz najpierw zainstalować Dropbox (zobacz www.dropbox.com).";
 
+/* Google Drive no backup folder alert details */
+"You must install Google Drive first (see https://www.google.com/intl/en/drive/download)." = "Musisz najpierw zainstalować Google Drive (zobacz na: https://www.google.com/intl/en/drive/download).";
+
 /* No network connection alert message */
 "You need to be connected to the network to send any transactions." = "Aby wysyłać transakcje, musisz być połączony z siecią.";
 
 /* Dropbox invalid folder alert details */
 "You need to choose or create a directory inside your Dropbox folder." = "Musisz wybrać lub założyć katalog wewnątrz twojego folderu Dropbox.";
+
+/* Google Drive invalid folder alert details */
+"You need to choose or create a directory inside your Google Drive folder." = "Musisz wybrać lub założyć katalog wewnątrz twojego folderu Google Drive.";
 
 /* Contact name empty alert message */
 "You need to give the contact a name before you can add it to the list." = "Kontakt musi mieć jakąś nazwę, żeby mógł zostać dodany do listy.";

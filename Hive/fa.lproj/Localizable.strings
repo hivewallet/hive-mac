@@ -65,11 +65,14 @@
 /* Alert message when payment request can't be loaded from or sent to the server */
 "Check your network connection, try again later or report the problem to the payment recipient." = "از متصل بودنتان به شبکه اطمینان حاصل کنید، می توانید بعدا سعی کنید یا این مشکل را به بخش پرداخت گزارش کنید.";
 
-/* Dropbox folder save panel confirmation button */
+/* Backup folder save panel confirmation button */
 "Choose" = "انتخاب";
 
 /* No comment provided by engineer. */
 "Choose a directory inside Dropbox folder where the backup should be saved:" = "یک دایرکتوری از درون پوشه دراپ باکس جایی که نسخه پشتیبان باید ذخیره شود را انتخاب کنید";
+
+/* No comment provided by engineer. */
+"Choose a directory inside Google Drive folder where the backup should be saved:" = "Choose a directory inside Google Drive folder where the backup should be saved:";
 
 /* No comment provided by engineer. */
 "click to copy" = "برای کپی کردن اینجا کلیک کنید";
@@ -110,9 +113,6 @@
 /* Uninstall app popup title */
 "Do you want to remove \"%@\" from the application list?" = "آیا شما می خواهید \"%@\" را از لیست برنامه پاک کنید؟";
 
-/* Backup error message */
-"Dropbox folder not found" = "پوشه دراپ باکس پیدا نشد";
-
 /* Dropbox no backup folder alert title */
 "Dropbox folder not found." = "پوشه دراپ باکس پیدا نشد";
 
@@ -145,6 +145,12 @@
 
 /* Title for general preferences panel */
 "General" = "عمومی";
+
+/* Google Drive no backup folder alert title */
+"Google Drive folder not found." = "Google Drive folder not found.";
+
+/* Backup error message */
+"Google Drive isn't running" = "Google Drive isn't running";
 
 /* Hiveapp file not readable error title */
 "Hive application file \"%@\" could not be opened." = "فایل \"%@\" برنامه هایو نمی تواند باز شود";
@@ -281,6 +287,9 @@
 /* Dropbox invalid folder alert title */
 "Selected directory is outside Dropbox folder." = "دایرکتوری انتخاب شده از درون پوشه دراپ باکس نمی باشد";
 
+/* Google Drive invalid folder alert title */
+"Selected directory is outside Google Drive folder." = "Selected directory is outside Google Drive folder.";
+
 /* Send button title */
 "Send" = "ارسال";
 
@@ -407,11 +416,17 @@
 /* Dropbox no backup folder alert details */
 "You must install Dropbox first (see www.dropbox.com)." = "شما می بایست ابتدا دراپ باکس را نصب کنید (به این منظور از این  وب سایت دیدن کنیدwww.dropbox.com ).";
 
+/* Google Drive no backup folder alert details */
+"You must install Google Drive first (see https://www.google.com/intl/en/drive/download)." = "You must install Google Drive first (see https://www.google.com/intl/en/drive/download).";
+
 /* No network connection alert message */
 "You need to be connected to the network to send any transactions." = "برای ارسال هرگونه تراکنش شما می بایست به شبکه متصل باشید";
 
 /* Dropbox invalid folder alert details */
 "You need to choose or create a directory inside your Dropbox folder." = "شما باید یک دایرکتوری درون پوشه دراپ باکس تان انتخاب و یا ایجاد کنید.";
+
+/* Google Drive invalid folder alert details */
+"You need to choose or create a directory inside your Google Drive folder." = "You need to choose or create a directory inside your Google Drive folder.";
 
 /* Contact name empty alert message */
 "You need to give the contact a name before you can add it to the list." = "شما باید یک نام برای مخاطب تان انتخاب کنید قبل از اینکه آن را ذخیره کنید.";

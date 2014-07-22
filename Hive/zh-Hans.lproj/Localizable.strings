@@ -65,11 +65,14 @@
 /* Alert message when payment request can't be loaded from or sent to the server */
 "Check your network connection, try again later or report the problem to the payment recipient." = "请检查您的网络连接并稍后再试或报告这个问题。";
 
-/* Dropbox folder save panel confirmation button */
+/* Backup folder save panel confirmation button */
 "Choose" = "选择";
 
 /* No comment provided by engineer. */
 "Choose a directory inside Dropbox folder where the backup should be saved:" = "选择 Dropbox 文件夹：";
+
+/* No comment provided by engineer. */
+"Choose a directory inside Google Drive folder where the backup should be saved:" = "Choose a directory inside Google Drive folder where the backup should be saved:";
 
 /* No comment provided by engineer. */
 "click to copy" = "点击复制";
@@ -110,9 +113,6 @@
 /* Uninstall app popup title */
 "Do you want to remove \"%@\" from the application list?" = "您确定要卸载 “%@” ？";
 
-/* Backup error message */
-"Dropbox folder not found" = "找不到 Dropbox 文件夹";
-
 /* Dropbox no backup folder alert title */
 "Dropbox folder not found." = "找不到 Dropbox 文件夹";
 
@@ -145,6 +145,12 @@
 
 /* Title for general preferences panel */
 "General" = "通用";
+
+/* Google Drive no backup folder alert title */
+"Google Drive folder not found." = "Google Drive folder not found.";
+
+/* Backup error message */
+"Google Drive isn't running" = "Google Drive isn't running";
 
 /* Hiveapp file not readable error title */
 "Hive application file \"%@\" could not be opened." = "Hive 文件 “%@” 无法打开。";
@@ -281,6 +287,9 @@
 /* Dropbox invalid folder alert title */
 "Selected directory is outside Dropbox folder." = "选择的文件夹不在 Dropbox 目录中。";
 
+/* Google Drive invalid folder alert title */
+"Selected directory is outside Google Drive folder." = "Selected directory is outside Google Drive folder.";
+
 /* Send button title */
 "Send" = "发送";
 
@@ -407,11 +416,17 @@
 /* Dropbox no backup folder alert details */
 "You must install Dropbox first (see www.dropbox.com)." = "您必须首先安装 Dropbox（访问 www.dropbox.com）";
 
+/* Google Drive no backup folder alert details */
+"You must install Google Drive first (see https://www.google.com/intl/en/drive/download)." = "You must install Google Drive first (see https://www.google.com/intl/en/drive/download).";
+
 /* No network connection alert message */
 "You need to be connected to the network to send any transactions." = "您必须先连接到网络。";
 
 /* Dropbox invalid folder alert details */
 "You need to choose or create a directory inside your Dropbox folder." = "你需要选择 Dropbox 目录。";
+
+/* Google Drive invalid folder alert details */
+"You need to choose or create a directory inside your Google Drive folder." = "You need to choose or create a directory inside your Google Drive folder.";
 
 /* Contact name empty alert message */
 "You need to give the contact a name before you can add it to the list." = "加入联系簿之前，先给联系人命名。";

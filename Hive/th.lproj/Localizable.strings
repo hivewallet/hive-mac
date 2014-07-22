@@ -65,11 +65,14 @@
 /* Alert message when payment request can't be loaded from or sent to the server */
 "Check your network connection, try again later or report the problem to the payment recipient." = "กรุณาตรวจสอบการเชื่อมต่ออินเตอร์เนต ลองอีกครั้ง หรือ แจ้งปัญหาที่พบกับผู้รับเงิน";
 
-/* Dropbox folder save panel confirmation button */
+/* Backup folder save panel confirmation button */
 "Choose" = "เลือก";
 
 /* No comment provided by engineer. */
 "Choose a directory inside Dropbox folder where the backup should be saved:" = "เลือกพื้นที่เพื่อเก็บข้อมูลภายในแฟ้มของ Dropbox";
+
+/* No comment provided by engineer. */
+"Choose a directory inside Google Drive folder where the backup should be saved:" = "Choose a directory inside Google Drive folder where the backup should be saved:";
 
 /* No comment provided by engineer. */
 "click to copy" = "คลิกเพื่อคัดลอก";
@@ -110,9 +113,6 @@
 /* Uninstall app popup title */
 "Do you want to remove \"%@\" from the application list?" = "คุณจะลบ \"%@\" ออกจากรายชื่อโปรแกรมหรือไม่";
 
-/* Backup error message */
-"Dropbox folder not found" = "ไม่สามารถค้นหาแฟ้ม Dropbox ";
-
 /* Dropbox no backup folder alert title */
 "Dropbox folder not found." = "ไม่สามารถค้นหาแฟ้ม Dropbox ";
 
@@ -145,6 +145,12 @@
 
 /* Title for general preferences panel */
 "General" = "ทั่วไป";
+
+/* Google Drive no backup folder alert title */
+"Google Drive folder not found." = "Google Drive folder not found.";
+
+/* Backup error message */
+"Google Drive isn't running" = "Google Drive isn't running";
 
 /* Hiveapp file not readable error title */
 "Hive application file \"%@\" could not be opened." = "ข้อมูล \"%@\" ของโปรแกรม ไฮฟ์ ไม่สามารถเปิดได้";
@@ -281,6 +287,9 @@
 /* Dropbox invalid folder alert title */
 "Selected directory is outside Dropbox folder." = "เลือกเส้นทางอื่น นอกเหนือจากแฟ้ม Dropbox";
 
+/* Google Drive invalid folder alert title */
+"Selected directory is outside Google Drive folder." = "Selected directory is outside Google Drive folder.";
+
 /* Send button title */
 "Send" = "ส่ง";
 
@@ -407,11 +416,17 @@
 /* Dropbox no backup folder alert details */
 "You must install Dropbox first (see www.dropbox.com)." = "คุณต้องติดตั้งโปรแกรม Dropbox ก่อน (ไปที่ www.dropbox.com)";
 
+/* Google Drive no backup folder alert details */
+"You must install Google Drive first (see https://www.google.com/intl/en/drive/download)." = "You must install Google Drive first (see https://www.google.com/intl/en/drive/download).";
+
 /* No network connection alert message */
 "You need to be connected to the network to send any transactions." = "คุณต้องเชื่อมต่อกับเครือข่ายอินเตอร์เนตเพื่อทำธุรกรรม";
 
 /* Dropbox invalid folder alert details */
 "You need to choose or create a directory inside your Dropbox folder." = "คุณต้องเลือกหรือสร้างอีกแฟ้มใน Dropbox";
+
+/* Google Drive invalid folder alert details */
+"You need to choose or create a directory inside your Google Drive folder." = "You need to choose or create a directory inside your Google Drive folder.";
 
 /* Contact name empty alert message */
 "You need to give the contact a name before you can add it to the list." = "คุณต้องระบุชื่อผู้ติดต่อก่อนที่คุณจะเพิ่มเข้าไปในรายชื่อ";

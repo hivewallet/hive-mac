@@ -65,11 +65,14 @@
 /* Alert message when payment request can't be loaded from or sent to the server */
 "Check your network connection, try again later or report the problem to the payment recipient." = "Kontrollera din nätverksanslutning, försök igen senare eller rapportera problemet till betalningsmottagaren.";
 
-/* Dropbox folder save panel confirmation button */
+/* Backup folder save panel confirmation button */
 "Choose" = "Välj";
 
 /* No comment provided by engineer. */
 "Choose a directory inside Dropbox folder where the backup should be saved:" = "Välj en katalog i din dropbox-plats där säkerhetskopian ska lagras:";
+
+/* No comment provided by engineer. */
+"Choose a directory inside Google Drive folder where the backup should be saved:" = "Choose a directory inside Google Drive folder where the backup should be saved:";
 
 /* No comment provided by engineer. */
 "click to copy" = "klicka för att kopiera";
@@ -110,9 +113,6 @@
 /* Uninstall app popup title */
 "Do you want to remove \"%@\" from the application list?" = "Vill du ta bort \"%@\" från applikationslistan?";
 
-/* Backup error message */
-"Dropbox folder not found" = "Dropbox-katalog hittades inte";
-
 /* Dropbox no backup folder alert title */
 "Dropbox folder not found." = "Dropbox-katalog hittas inte.";
 
@@ -145,6 +145,12 @@
 
 /* Title for general preferences panel */
 "General" = "Generellt";
+
+/* Google Drive no backup folder alert title */
+"Google Drive folder not found." = "Google Drive folder not found.";
+
+/* Backup error message */
+"Google Drive isn't running" = "Google Drive isn't running";
 
 /* Hiveapp file not readable error title */
 "Hive application file \"%@\" could not be opened." = "Hives programfil \"%@\" kunde inte öppnas.";
@@ -281,6 +287,9 @@
 /* Dropbox invalid folder alert title */
 "Selected directory is outside Dropbox folder." = "Välj en katalog som är utanför Dropbox-plats.";
 
+/* Google Drive invalid folder alert title */
+"Selected directory is outside Google Drive folder." = "Selected directory is outside Google Drive folder.";
+
 /* Send button title */
 "Send" = "Skicka";
 
@@ -407,11 +416,17 @@
 /* Dropbox no backup folder alert details */
 "You must install Dropbox first (see www.dropbox.com)." = "Du måste installera dropbox först (se www.dropbox.com).";
 
+/* Google Drive no backup folder alert details */
+"You must install Google Drive first (see https://www.google.com/intl/en/drive/download)." = "You must install Google Drive first (see https://www.google.com/intl/en/drive/download).";
+
 /* No network connection alert message */
 "You need to be connected to the network to send any transactions." = "Du behöver vara ansluten till nätverket för att skicka transaktioner.";
 
 /* Dropbox invalid folder alert details */
 "You need to choose or create a directory inside your Dropbox folder." = "Du måste välja eller skapa en katalog i din Dropbox-plats.";
+
+/* Google Drive invalid folder alert details */
+"You need to choose or create a directory inside your Google Drive folder." = "You need to choose or create a directory inside your Google Drive folder.";
 
 /* Contact name empty alert message */
 "You need to give the contact a name before you can add it to the list." = "Du måste ge kontakten ett namn innan du kan lägga till i listan.";
