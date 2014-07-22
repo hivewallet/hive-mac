@@ -35,10 +35,12 @@ static const NSTimeInterval UpdateTimerInterval = 5.0;
     if (self) {
         _adapters = [[HIBackupManager sharedManager] visibleAdapters];
 
+        NSKeyValueObservingOptions options = NSKeyValueObservingOptionOld | NSKeyValueObservingOptionNew;
+
         for (HIBackupAdapter *adapter in _adapters) {
-            [adapter addObserver:self forKeyPath:@"status" options:0 context:NULL];
-            [adapter addObserver:self forKeyPath:@"error" options:0 context:NULL];
-            [adapter addObserver:self forKeyPath:@"lastBackupDate" options:0 context:NULL];
+            [adapter addObserver:self forKeyPath:@"status" options:options context:NULL];
+            [adapter addObserver:self forKeyPath:@"error" options:options context:NULL];
+            [adapter addObserver:self forKeyPath:@"lastBackupDate" options:options context:NULL];
         }
 
         [self startTimer];
@@ -212,8 +214,13 @@ static const NSTimeInterval UpdateTimerInterval = 5.0;
     NSUInteger row = [_adapters indexOfObject:adapter];
 
     if (row != NSNotFound) {
-        [self.tableView reloadDataForRowIndexes:[NSIndexSet indexSetWithIndex:row]
-                                  columnIndexes:[NSIndexSet indexSetWithIndexesInRange:NSMakeRange(1, 2)]];
+        id oldValue = [change objectForKey:NSKeyValueChangeOldKey];
+        id newValue = [change objectForKey:NSKeyValueChangeNewKey];
+
+        if (![oldValue isEqual:newValue]) {
+            [self.tableView reloadDataForRowIndexes:[NSIndexSet indexSetWithIndex:row]
+                                      columnIndexes:[NSIndexSet indexSetWithIndexesInRange:NSMakeRange(1, 2)]];
+        }
     }
 }
 
@@ -242,7 +249,6 @@ static const NSTimeInterval UpdateTimerInterval = 5.0;
     _updateTimer = nil;
 }
 
-// mavericks fuck yeah
 - (void)windowDidChangeOcclusionState:(NSNotification *)notification {
     #pragma deploymate push "ignored-api-availability"
     BOOL visible = (self.window.occlusionState & NSWindowOcclusionStateVisible);

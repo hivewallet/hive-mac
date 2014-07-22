@@ -133,15 +133,6 @@ NSString *HIBackupStatusTextFailure;
     [[NSUserDefaults standardUserDefaults] removeObjectForKey:BackupSettingsKey];
 }
 
-/* Last known backup status */
-- (void)setStatus:(HIBackupAdapterStatus)status {
-    if (status != _status) {
-        [self willChangeValueForKey:@"status"];
-        _status = status;
-        [self didChangeValueForKey:@"status"];
-    }
-}
-
 /* Details of the problem with the backup, if there is any  */
 - (void)setError:(NSError *)error {
     if (error != _error) {
@@ -156,15 +147,6 @@ NSString *HIBackupStatusTextFailure;
             _errorMessage = newMessage;
             [self didChangeValueForKey:@"errorMessage"];
         }
-    }
-}
-
-/* Date of the last backup, if there was any */
-- (void)setLastBackupDate:(NSDate *)lastBackupDate {
-    if (lastBackupDate != _lastBackupDate) {
-        [self willChangeValueForKey:@"lastBackupDate"];
-        _lastBackupDate = lastBackupDate;
-        [self didChangeValueForKey:@"lastBackupDate"];
     }
 }
 
