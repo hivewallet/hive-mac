@@ -50,7 +50,7 @@ Patches and pull requests are very welcome. If you want to send us any code, rea
 
 Hive code is dual-licensed: we've released it under GPL v2 (see below), however we reserve a right to relicense it under a different license in future (including a commercial one), since we might want to e.g. put it on Mac or iOS App Store, or use it for other purposes with which GPL is incompatible. Because of that, we ask that you specify a more permissive license for your code when you submit a patch to us (e.g. MIT, WTFPL or public domain).
 
-If you like Hive, you can also send us donations in BTC to 142m1MpXHhymF4aASiWwYohe1Y55v5BQwc.
+If you like Hive, you can also send us donations in BTC to 1HLRg9C1GsfEVH555hgcjzDeas14jen2Cn.
 
 
 ## License
