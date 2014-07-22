@@ -135,10 +135,10 @@
 "Enable..." = "I-enable...";
 
 /* Password prompt for sending */
-"Enter your password to confirm the transaction:" = "I-enter and password upang maikumpirma ang transaction:";
+"Enter your password to confirm the transaction:" = "I-enter ang iyong password upang maikumpirma ang transaksyon:";
 
 /* Password prompt for message signing */
-"Enter your password to sign the message:" = "I-enter and password upang mag-sign ng mensahe:";
+"Enter your password to sign the message:" = "I-enter ang iyong password upang mag-sign ng mensahe:";
 
 /* Firstname field placeholder */
 "Firstname" = "Pangalan";
