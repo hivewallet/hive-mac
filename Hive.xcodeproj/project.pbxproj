@@ -227,7 +227,6 @@
 		58F02AEE17E1F5A400B65429 /* HIRightPointingArrowView.m in Sources */ = {isa = PBXBuildFile; fileRef = 58F02AED17E1F5A400B65429 /* HIRightPointingArrowView.m */; };
 		58F496F118B67A1C0033B7E0 /* icon-unknown-app.png in Resources */ = {isa = PBXBuildFile; fileRef = 58F496F018B67A1C0033B7E0 /* icon-unknown-app.png */; };
 		58F496F818B7EE8F0033B7E0 /* HINetworkConnectionMonitor.m in Sources */ = {isa = PBXBuildFile; fileRef = 58F496F718B7EE8F0033B7E0 /* HINetworkConnectionMonitor.m */; };
-		58FB21EC1875809B00F87B9E /* get_dropbox_folder.sh in Resources */ = {isa = PBXBuildFile; fileRef = 58FB21EB1875809B00F87B9E /* get_dropbox_folder.sh */; };
 		D901F4F817B272E60071780D /* BitcoinJKit.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = D901F4F517B272CE0071780D /* BitcoinJKit.framework */; };
 		D901F4F917B273440071780D /* BitcoinJKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D901F4F517B272CE0071780D /* BitcoinJKit.framework */; };
 		D91FE827179887C5001B37D8 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = D91FE826179887C4001B37D8 /* libz.dylib */; };
@@ -2185,7 +2184,6 @@
 		58F56BB51832909100C57640 /* pt-PT */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-PT"; path = "pt-PT.lproj/MainMenu.strings"; sourceTree = "<group>"; };
 		58F56BB61832909100C57640 /* pt-PT */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = "pt-PT"; path = "pt-PT.lproj/MainMenu.xib"; sourceTree = "<group>"; };
 		58F56BB81832909100C57640 /* pt-PT */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-PT"; path = "pt-PT.lproj/Localizable.strings"; sourceTree = "<group>"; };
-		58FB21EB1875809B00F87B9E /* get_dropbox_folder.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = get_dropbox_folder.sh; sourceTree = "<group>"; };
 		9A823D1518781AE10040C85C /* sv */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = sv; path = sv.lproj/HIApplicationsViewController.xib; sourceTree = "<group>"; };
 		9A823D1618781AE10040C85C /* sv */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = sv; path = sv.lproj/HIContactsViewController.strings; sourceTree = "<group>"; };
 		9A823D1718781AE10040C85C /* sv */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = sv; path = sv.lproj/HIContactsViewController.xib; sourceTree = "<group>"; };
@@ -2860,7 +2858,6 @@
 				588427CF18F2DF6600DE6CC4 /* bitcoinkit.checkpoints */,
 				585FFF4318159803005BCF73 /* Credits.rtf */,
 				5884A03D17F57AE9004A31FA /* dsa_pub.pem */,
-				58FB21EB1875809B00F87B9E /* get_dropbox_folder.sh */,
 				D9A591CF1767B4A800502635 /* Hive-Info.plist */,
 				D9A591D51767B4A800502635 /* Hive-Prefix.pch */,
 				D9F8454E1781C509004076F6 /* Icon.icns */,
@@ -3160,7 +3157,6 @@
 				58A37AA4180D7B0700CFCDE3 /* HIContactInfoViewController.xib in Resources */,
 				58A37AE5180D99F200CFCDE3 /* MainMenu.strings in Resources */,
 				58A37AA7180D7B0B00CFCDE3 /* HIContactViewController.xib in Resources */,
-				58FB21EC1875809B00F87B9E /* get_dropbox_folder.sh in Resources */,
 				58A275DC18BBD30300C102B2 /* honey_im_subtle.png in Resources */,
 				585FFF4418159803005BCF73 /* Credits.rtf in Resources */,
 				58A37AAA180D7B1000CFCDE3 /* HIContactAutocompleteWindowController.xib in Resources */,

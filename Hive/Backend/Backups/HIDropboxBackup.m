@@ -97,27 +97,28 @@ const NSInteger HIDropboxBackupNotRunning = -3;
 #pragma mark - Configuring backup
 
 - (NSString *)dropboxFolder {
-    NSTask *task = [[NSTask alloc] init];
-    task.launchPath = [[NSBundle mainBundle] pathForResource:@"get_dropbox_folder" ofType:@"sh"];
-    task.standardOutput = [NSPipe pipe];
-    task.standardError = [NSPipe pipe];
+    NSString *configDir = [NSHomeDirectory() stringByAppendingPathComponent:@".dropbox"];
+    NSString *jsonFile = [configDir stringByAppendingPathComponent:@"info.json"];
 
-    [task launch];
-    [task waitUntilExit];
+    if ([[NSFileManager defaultManager] fileExistsAtPath:jsonFile]) {
+        NSError *error = nil;
+        NSData *jsonData = [NSData dataWithContentsOfFile:jsonFile];
 
-    NSData *outputData = [[task.standardOutput fileHandleForReading] readDataToEndOfFile];
-    NSString *output = [[NSString alloc] initWithData:outputData encoding:NSUTF8StringEncoding];
-    output = [output stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
+        if (!jsonData) {
+            HILogWarn(@"Dropbox config file %@ couldn't be read.", jsonFile);
+            return nil;
+        }
 
-    if (task.terminationStatus == 0) {
-        return output;
+        id json = [NSJSONSerialization JSONObjectWithData:jsonData options:0 error:&error];
+
+        if (!json) {
+            HILogWarn(@"Dropbox config file %@ couldn't be parsed: %@.", jsonFile, error);
+            return nil;
+        }
+
+        return [[json objectForKey:@"personal"] objectForKey:@"path"];
     } else {
-        NSData *errorData = [[task.standardError fileHandleForReading] readDataToEndOfFile];
-        NSString *errorText = [[NSString alloc] initWithData:errorData encoding:NSUTF8StringEncoding];
-
-        HILogWarn(@"get_dropbox_folder failed: output = '%@', error = '%@', return code = %d",
-                   output, errorText, task.terminationStatus);
-
+        HILogWarn(@"Dropbox config file %@ doesn't exist.", jsonFile);
         return nil;
     }
 }
