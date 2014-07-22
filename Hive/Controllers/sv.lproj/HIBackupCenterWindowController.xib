@@ -55,7 +55,7 @@
                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                     <subviews>
                                                         <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" id="QLb-Nt-g5F">
-                                                            <rect key="frame" x="52" y="21" width="156" height="19"/>
+                                                            <rect key="frame" x="55" y="21" width="156" height="19"/>
                                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                                             <textFieldCell key="cell" lineBreakMode="truncatingTail" sendsActionOnEndEditing="YES" title="Backuptyp" id="mMS-Su-94P">
                                                                 <font key="font" size="14" name="LucidaGrande"/>

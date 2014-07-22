@@ -26,7 +26,7 @@
 }
 
 - (CGFloat)iconSize {
-    return 44.0;
+    return 48.0;
 }
 
 - (BOOL)isEnabledByDefault {
