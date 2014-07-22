@@ -165,7 +165,7 @@
 "Hive is not connected to the Bitcoin network." = "Ang Hive ay hindi konektado sa Bitcoin network.";
 
 /* Chain file unreadable error explanation */
-"Hive will now delete the file and synchronize with the Bitcoin network again. Please leave Hive open for the next several minutes, and try not to send any transactions right now." = "Ang Hive ay magbubura ng file at magsi-synchronize sa Bitcoin network uli. Maari lamang na iwan ang Hive na nakabukas nang ilang minuto, at mabuting huwag munang magpadala ng kahit anong transaksiyon ngayon.";
+"Hive will now delete the file and synchronize with the Bitcoin network again. Please leave Hive open for the next several minutes, and try not to send any transactions right now." = "Ang Hive ay magbubura ng file at magsi-synchronize sa Bitcoin network uli. Maari lamang na iwan ang Hive na nakabukas nang ilang minuto, at mabuting huwag munang magpadala ng kahit anong transaksyon ngayon.";
 
 /* Share sent transaction text */
 "I've just received some Bitcoin using Hive" = "Ako ay nakatanggap ng Bitcoin gamit ang Hive";
@@ -321,7 +321,7 @@
 "This Bitcoin payment URL is invalid." = "Ang Bitcoin payment URL na ito ay hindi balido.";
 
 /* Alert details when transaction was cancelled */
-"This can happen because of bugs in the wallet code or because the transaction was rejected by the network." = "Ito ay marring nangyari dahil saw bugs mull sa wallet code o dahil ang transaction nai-reject ng network.";
+"This can happen because of bugs in the wallet code or because the transaction was rejected by the network." = "Ito ay maaring nangyari dahil sa mga bug mula sa wallet code o dahil ang transaksyon ay nai-reject ng network.";
 
 /* Alert message when payment request file isn't really a payment request at all */
 "This file does not contain a valid Bitcoin payment request." = "Ang file ay hindi naglalaman ng balidong kahilingan ng Bitcoin payment.";
@@ -348,25 +348,25 @@
 "To protect your bitcoins, it's recommended that you enable at least one type of backup." = "Upang maprotektahan ang iyong mga bitcoin, nirerekomenda na i-enable ang kahit na isang uri ng backup.";
 
 /* Amount exceeds available balance alert message */
-"To send this transaction, you'll need to wait for your pending transactions to be confirmed first (this shouldn't take more than a few minutes)." = "Upang maipadala ang transaction na ito, kinakailangan mag-antay para makumpirma ang iyong pending transactions muna ( ito ay hindi tatagal ng ilang minuto).";
+"To send this transaction, you'll need to wait for your pending transactions to be confirmed first (this shouldn't take more than a few minutes)." = "Upang maipadala ang transaksyon na ito, kinakailangan mag-antay para makumpirma ang iyong mga nabibiting transaksyon muna ( ito ay hindi tatagal ng ilang minuto).";
 
 /* Message when trying to start an app that requires a newer API level. */
 "To use the app, please update to the latest version of Hive." = "Upang magamit ang app, maari lamang na i-update sa pinakahuling salin ng Hive.";
 
 /* Notification of cancelled transaction */
-"Transaction cancelled" = "Ang transaction ay naikansela";
+"Transaction cancelled" = "Ang transaksyon ay naikansela";
 
 /* Notification of confirmed sent transaction */
-"Transaction completed" = "Ang transaction ay nakumpleto na";
+"Transaction completed" = "Ang transaksyon ay nakumpleto na";
 
 /* Transaction failed alert title */
-"Transaction could not be completed." = "Hindi maikumpleto ang transaction.";
+"Transaction could not be completed." = "Hindi maikumpleto ang transaksyon.";
 
 /* Alert when transaction was cancelled (with transaction date) */
-"Transaction from %@ was cancelled." = "Ang transaction mula sa %@ ay nai-kansela.";
+"Transaction from %@ was cancelled." = "Ang transaksyon mula sa %@ ay nai-kansela.";
 
 /* Transactions view title */
-"Transactions" = "mga Transaction";
+"Transactions" = "mga Transaksyon";
 
 /* Uninstall app button title */
 "Uninstall" = "I-uninstall";
@@ -432,4 +432,4 @@
 "Your changes won't be saved." = "Ang iyong mga pagbabago ay hindi maisa-save.";
 
 /* Sync in progress alert details */
-"Your pending transactions won't be confirmed until the sync is complete." = "Ang iyong mga pending na transaksiyon ay hindi makukumpirma hanggang ang sync ay makumpleto.";
+"Your pending transactions won't be confirmed until the sync is complete." = "Ang iyong mga pending na transaksyon ay hindi makukumpirma hanggang ang sync ay makumpleto.";

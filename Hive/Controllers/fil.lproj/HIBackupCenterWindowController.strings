@@ -6,7 +6,7 @@
 "1f9-7o-UKm.title" = "Mga status detail";
 
 /* Class = "NSTableColumn"; headerCell.title = "Actions"; ObjectID = "5e5-Co-YVU"; */
-"5e5-Co-YVU.headerCell.title" = "Mga action";
+"5e5-Co-YVU.headerCell.title" = "Mga aksyon";
 
 /* Class = "NSTextFieldCell"; title = "Status"; ObjectID = "CNI-B2-pea"; */
 "CNI-B2-pea.title" = "Status";
