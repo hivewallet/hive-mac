@@ -72,7 +72,7 @@
 "Choose a directory inside Dropbox folder where the backup should be saved:" = "Elige una carpeta dentro de Dropbox donde guardar la copia de seguridad:";
 
 /* No comment provided by engineer. */
-"Choose a directory inside Google Drive folder where the backup should be saved:" = "Choose a directory inside Google Drive folder where the backup should be saved:";
+"Choose a directory inside Google Drive folder where the backup should be saved:" = "Elige una carpeta dentro de Google Drive donde guardar la copia de seguridad:";
 
 /* No comment provided by engineer. */
 "click to copy" = "clickea para copiar";
@@ -147,10 +147,10 @@
 "General" = "General";
 
 /* Google Drive no backup folder alert title */
-"Google Drive folder not found." = "Google Drive folder not found.";
+"Google Drive folder not found." = "Carpeta de Google Drive no encontrada.";
 
 /* Backup error message */
-"Google Drive isn't running" = "Google Drive isn't running";
+"Google Drive isn't running" = "Google Drive no está ejecutándose";
 
 /* Hiveapp file not readable error title */
 "Hive application file \"%@\" could not be opened." = "El fichero de la aplicación \"%@\" no se pudo abrir.";
@@ -288,7 +288,7 @@
 "Selected directory is outside Dropbox folder." = "La carpeta seleccionada está fuera de Dropbox.";
 
 /* Google Drive invalid folder alert title */
-"Selected directory is outside Google Drive folder." = "Selected directory is outside Google Drive folder.";
+"Selected directory is outside Google Drive folder." = "La carpeta seleccionada está fuera de Google Drive.";
 
 /* Send button title */
 "Send" = "Enviar";
@@ -417,7 +417,7 @@
 "You must install Dropbox first (see www.dropbox.com)." = "Debes instalar Dropbox primero (mira www.dropbox.com).";
 
 /* Google Drive no backup folder alert details */
-"You must install Google Drive first (see https://www.google.com/intl/en/drive/download)." = "You must install Google Drive first (see https://www.google.com/intl/en/drive/download).";
+"You must install Google Drive first (see https://www.google.com/intl/en/drive/download)." = "Debes instalar Google Drive primero (mira https://www.google.com/intl/es/drive/download).";
 
 /* No network connection alert message */
 "You need to be connected to the network to send any transactions." = "Necesitas estar conectado a la red para poder realizar pagos.";
@@ -426,7 +426,7 @@
 "You need to choose or create a directory inside your Dropbox folder." = "Necesitas elegir o crear una carpeta dentro de Dropbox.";
 
 /* Google Drive invalid folder alert details */
-"You need to choose or create a directory inside your Google Drive folder." = "You need to choose or create a directory inside your Google Drive folder.";
+"You need to choose or create a directory inside your Google Drive folder." = "Necesitas elegir o crear una carpeta dentro de Google Drive.";
 
 /* Contact name empty alert message */
 "You need to give the contact a name before you can add it to the list." = "Tienes que darle un nombre al contacto antes de añadirle a la lista.";

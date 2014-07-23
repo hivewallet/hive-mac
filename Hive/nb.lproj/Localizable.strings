@@ -72,7 +72,7 @@
 "Choose a directory inside Dropbox folder where the backup should be saved:" = "Velg en mappe i Dropbox-mappen hvor sikkerhetskopien skal lagres:";
 
 /* No comment provided by engineer. */
-"Choose a directory inside Google Drive folder where the backup should be saved:" = "Choose a directory inside Google Drive folder where the backup should be saved:";
+"Choose a directory inside Google Drive folder where the backup should be saved:" = "Velg en mappe i Google Drive-mappen hvor sikkerhetskopien skal lagres:";
 
 /* No comment provided by engineer. */
 "click to copy" = "klikk for å kopiere";
@@ -147,10 +147,10 @@
 "General" = "Generelt";
 
 /* Google Drive no backup folder alert title */
-"Google Drive folder not found." = "Google Drive folder not found.";
+"Google Drive folder not found." = "Google Drive-mappe ikke funnet.";
 
 /* Backup error message */
-"Google Drive isn't running" = "Google Drive isn't running";
+"Google Drive isn't running" = "Google Drive er ikke slått på";
 
 /* Hiveapp file not readable error title */
 "Hive application file \"%@\" could not be opened." = "Hives applikasjonsfil \"%@\" kunne ikke åpnes.";
@@ -288,7 +288,7 @@
 "Selected directory is outside Dropbox folder." = "Valgt mappe er utenfor Dropbox-mappen.";
 
 /* Google Drive invalid folder alert title */
-"Selected directory is outside Google Drive folder." = "Selected directory is outside Google Drive folder.";
+"Selected directory is outside Google Drive folder." = "Valgt mappe er utenfor Google Drive-mappen.";
 
 /* Send button title */
 "Send" = "Send";
@@ -417,7 +417,7 @@
 "You must install Dropbox first (see www.dropbox.com)." = "Du må installere Dropbox først (se www.dropbox.com).";
 
 /* Google Drive no backup folder alert details */
-"You must install Google Drive first (see https://www.google.com/intl/en/drive/download)." = "You must install Google Drive first (see https://www.google.com/intl/en/drive/download).";
+"You must install Google Drive first (see https://www.google.com/intl/en/drive/download)." = "Du må installere Google Drive først (se https://www.google.com/intl/no/drive/download/).";
 
 /* No network connection alert message */
 "You need to be connected to the network to send any transactions." = "Du må være koblet til nettverket for å sende transaksjoner.";
@@ -426,7 +426,7 @@
 "You need to choose or create a directory inside your Dropbox folder." = "Du må velge eller lage en mappe i din Dropbox-mappe.";
 
 /* Google Drive invalid folder alert details */
-"You need to choose or create a directory inside your Google Drive folder." = "You need to choose or create a directory inside your Google Drive folder.";
+"You need to choose or create a directory inside your Google Drive folder." = "Du må velge eller lage en mappe i din Google Drive-mappe.";
 
 /* Contact name empty alert message */
 "You need to give the contact a name before you can add it to the list." = "Du må gi kontakten et navn før du kan legge den til i listen.";
