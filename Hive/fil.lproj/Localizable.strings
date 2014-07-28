@@ -69,10 +69,10 @@
 "Choose" = "Pumili";
 
 /* No comment provided by engineer. */
-"Choose a directory inside Dropbox folder where the backup should be saved:" = "Pumili ng directory sa loob ng Dropbox folder kung saan dapat mai-save ang backup.:";
+"Choose a directory inside Dropbox folder where the backup should be saved:" = "Pumili ng directory sa loob ng Dropbox folder kung saan dapat mai-save ang backup:";
 
 /* No comment provided by engineer. */
-"Choose a directory inside Google Drive folder where the backup should be saved:" = "Choose a directory inside Google Drive folder where the backup should be saved:";
+"Choose a directory inside Google Drive folder where the backup should be saved:" = "Pumili ng directory sa loob ng google Drive folder kung saan ang back up ay isa-save:";
 
 /* No comment provided by engineer. */
 "click to copy" = "I-click para kopyahin";
@@ -147,10 +147,10 @@
 "General" = "Pangkalahatan";
 
 /* Google Drive no backup folder alert title */
-"Google Drive folder not found." = "Google Drive folder not found.";
+"Google Drive folder not found." = "Ang Google Drive folder ay hindi matagpuan.";
 
 /* Backup error message */
-"Google Drive isn't running" = "Google Drive isn't running";
+"Google Drive isn't running" = "Ang google Drive ay hindi tumatakbo o umiiral.";
 
 /* Hiveapp file not readable error title */
 "Hive application file \"%@\" could not be opened." = "Ang Hive application file \"%@\" ay hindi mabuksan.";
@@ -288,7 +288,7 @@
 "Selected directory is outside Dropbox folder." = "Ang napiling directory ay nasa labas ng Dropbox folder.";
 
 /* Google Drive invalid folder alert title */
-"Selected directory is outside Google Drive folder." = "Selected directory is outside Google Drive folder.";
+"Selected directory is outside Google Drive folder." = "Ang nai-selektang directory ay nasa labas ng Google Drive folder.";
 
 /* Send button title */
 "Send" = "Ipadala";
@@ -417,7 +417,7 @@
 "You must install Dropbox first (see www.dropbox.com)." = "Kailangan mo munang i-install ang Dropbox (see www.dropbox.com).";
 
 /* Google Drive no backup folder alert details */
-"You must install Google Drive first (see https://www.google.com/intl/en/drive/download)." = "You must install Google Drive first (see https://www.google.com/intl/en/drive/download).";
+"You must install Google Drive first (see https://www.google.com/intl/en/drive/download)." = "Kinakailangan mong i-install ang Google Drive muna (tignan ang https://www.google.com/intl/en/drive/download).";
 
 /* No network connection alert message */
 "You need to be connected to the network to send any transactions." = "Kinakailangan mong maging konektado sa network upang makapagpadala ng mga transaksyon.";
@@ -426,7 +426,7 @@
 "You need to choose or create a directory inside your Dropbox folder." = "Kinakailangan mong mamili o gumawa ng directory sa loob ny iyong Dropbox folder.";
 
 /* Google Drive invalid folder alert details */
-"You need to choose or create a directory inside your Google Drive folder." = "You need to choose or create a directory inside your Google Drive folder.";
+"You need to choose or create a directory inside your Google Drive folder." = "Kinakailangan mong mamili o gumawa ng directory sa loob ng iyong Google Drive folder.";
 
 /* Contact name empty alert message */
 "You need to give the contact a name before you can add it to the list." = "Kailangan mong pangalanan ang contact bago mo ito maidada-dagdag sa listahan.";
