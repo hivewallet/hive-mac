@@ -1,12 +1,12 @@
 
 /* Body for feedback emails */
-"(Please write in English if possible.)" = "(Please write in English if possible.)";
+"(Please write in English if possible.)" = "(Kirjoita englanniksi jos mahdollista.)";
 
 /* Alert message when bitcoin: URI is not valid */
-"\"%@\" is not a valid payment link." = "\"%@\" is not a valid payment link.";
+"\"%@\" is not a valid payment link." = "\"%@\" ei sovellu maksulinkiksi.";
 
 /* Alert message when payment request URL is not valid */
-"\"%@\" is not a valid URL." = "\"%@\" is not a valid URL.";
+"\"%@\" is not a valid URL." = "\"%@\" web-osoite on virheellinen.";
 
 /* Address field placeholder */
 "Address" = "Osoite";
@@ -18,7 +18,7 @@
 "Anonymous" = "Nimetön";
 
 /* Message when trying to start an app that requires a newer API level. */
-"App requires a newer version of Hive." = "App requires a newer version of Hive.";
+"App requires a newer version of Hive." = "Sovellus tarvitsee uudemman version Hive.";
 
 /* App load error title */
 "Application can't be loaded" = "Ohjelmaa ei voida ladata";
@@ -27,7 +27,7 @@
 "Apps" = "Ohjelmat";
 
 /* Cancel editing alert title */
-"Are you sure you want to leave this page?" = "Are you sure you want to leave this page?";
+"Are you sure you want to leave this page?" = "Haluatko varmasti poistua sivulta?";
 
 /* Warning when trying to a large BTC amount (btc, fiat amount and address) */
 "Are you sure you want to send %@ (%@) to %@?" = "Oletko varma, että haluat lähettää %1$@ (%2$@) osoiteeseen %3$@?";
@@ -48,10 +48,10 @@
 "Backup problem" = "Varmuuskopiointiongelma";
 
 /* initialization error */
-"Bitcoin network data file could not be opened - another instance of Hive might still be running." = "Bitcoin network data file could not be opened - another instance of Hive might still be running.";
+"Bitcoin network data file could not be opened - another instance of Hive might still be running." = "Bitcoinin verkoston datatiedostoa ei voida avata - varmista että Hive ei ole jo käytössä.";
 
 /* Chain file unreadable error title */
-"Bitcoin network data file could not be opened." = "Bitcoin network data file could not be opened.";
+"Bitcoin network data file could not be opened." = "Bitcoinin verkoston datatiedostoa ei voitu avata.";
 
 /* Backup error message */
 "Can't create a directory to store the wallet backup" = "Kansiota varmuuskopiota varten ei voitu luoda";
@@ -63,7 +63,7 @@
 "CANCELLED" = "PERUUTETTU";
 
 /* Alert message when payment request can't be loaded from or sent to the server */
-"Check your network connection, try again later or report the problem to the payment recipient." = "Check your network connection, try again later or report the problem to the payment recipient.";
+"Check your network connection, try again later or report the problem to the payment recipient." = "Ole hyvä ja tarkista nettyhteytesi tai yritä myohemmin uudelleen. Voit myös ilmoittaa ongelmastasi maksun saajalle.";
 
 /* Backup folder save panel confirmation button */
 "Choose" = "Valitse";
@@ -72,7 +72,7 @@
 "Choose a directory inside Dropbox folder where the backup should be saved:" = "Valitse Dropbox-kansiosta kansio, johon haluat tallentaa varmuuskopion:";
 
 /* No comment provided by engineer. */
-"Choose a directory inside Google Drive folder where the backup should be saved:" = "Choose a directory inside Google Drive folder where the backup should be saved:";
+"Choose a directory inside Google Drive folder where the backup should be saved:" = "Valitse Google Drive kansio johon haluat talllentaa varmuuskopiosi:";
 
 /* No comment provided by engineer. */
 "click to copy" = "klikkaa kopioidaksesi";
@@ -84,7 +84,7 @@
 "Contact can't be saved." = "Yhteystietoa ei voida tallentaa.";
 
 /* Entry in application icon context menu */
-"Contact the author" = "Contact the author";
+"Contact the author" = "Ota yhteyttä julkaisijaan";
 
 /* Contacts view title */
 "Contacts" = "Yhteystiedot";
@@ -102,7 +102,7 @@
 "Disabled" = "Poistettu päältä";
 
 /* Confirm leaving a form without saving data */
-"Discard Changes" = "Discard Changes";
+"Discard Changes" = "Peruuta Muutoket";
 
 /* Remove contact alert dialog title */
 "Do you really want to remove %@ from your contact list?" = "Haluatko varmasti poistaa henkilön %@ yhteystiedoistasi?";
@@ -111,7 +111,7 @@
 "Do you want to add \"%@\" to Hive?" = "Haluatko lisätä \"%@\" Hiveen?";
 
 /* Uninstall app popup title */
-"Do you want to remove \"%@\" from the application list?" = "Do you want to remove \"%@\" from the application list?";
+"Do you want to remove \"%@\" from the application list?" = "Haluatko varmasti poistaa sovelluksen \"%@\" listalta?";
 
 /* Dropbox no backup folder alert title */
 "Dropbox folder not found." = "Dropbox-kansiota ei löytynyt.";
@@ -138,22 +138,22 @@
 "Enter your password to confirm the transaction:" = "Syötä salasanasi vahvistaaksesi tapahtuman:";
 
 /* Password prompt for message signing */
-"Enter your password to sign the message:" = "Enter your password to sign the message:";
+"Enter your password to sign the message:" = "Kirjaudu sisään salasanallasi käyttääksesi tunnusta:";
 
 /* Firstname field placeholder */
 "Firstname" = "Etunimi";
 
 /* Title for general preferences panel */
-"General" = "General";
+"General" = "Yleinen";
 
 /* Google Drive no backup folder alert title */
-"Google Drive folder not found." = "Google Drive folder not found.";
+"Google Drive folder not found." = "Google Drivea ei loytynyt.";
 
 /* Backup error message */
-"Google Drive isn't running" = "Google Drive isn't running";
+"Google Drive isn't running" = "Google Drive ei ole käytossää";
 
 /* Hiveapp file not readable error title */
-"Hive application file \"%@\" could not be opened." = "Hive application file \"%@\" could not be opened.";
+"Hive application file \"%@\" could not be opened." = "Hive sovelluksen tiedostoa \"%@\" ei voida avata.";
 
 /* Initialization error title */
 "Hive cannot be started." = "Hivea ei voitu käynnistää.";
@@ -165,13 +165,13 @@
 "Hive directory is excluded from Time Machine backup" = "Hive kansio ei sisälly Time Machine varmuuskopioon";
 
 /* Sync in progress alert title */
-"Hive is currently syncing with the Bitcoin network. Are you sure you want to quit?" = "Hive is currently syncing with the Bitcoin network. Are you sure you want to quit?";
+"Hive is currently syncing with the Bitcoin network. Are you sure you want to quit?" = "Hive yrittää ottaa yhteyttä Bitcoinin tietoverkkoon, haluatko varmasti sulkea ohjelman?";
 
 /* No network connection alert title */
-"Hive is not connected to the Bitcoin network." = "Hive is not connected to the Bitcoin network.";
+"Hive is not connected to the Bitcoin network." = "Hivea ei ole kytketty Bitcoinin verkkoon.";
 
 /* Chain file unreadable error explanation */
-"Hive will now delete the file and synchronize with the Bitcoin network again. Please leave Hive open for the next several minutes, and try not to send any transactions right now." = "Hive will now delete the file and synchronize with the Bitcoin network again. Please leave Hive open for the next several minutes, and try not to send any transactions right now.";
+"Hive will now delete the file and synchronize with the Bitcoin network again. Please leave Hive open for the next several minutes, and try not to send any transactions right now." = "Hive poistaa nyt tiedoston ja ottaa uudellen yhteyttä Bitcoin-verkkoon. Ole hyvä ja odota muutama minuutti ja älä tee uusia maksuja juuri nyt.";
 
 /* Share sent transaction text */
 "I've just received some Bitcoin using Hive" = "Olen juuri saanut Bitcoineja käyttäen Hivea";
@@ -180,7 +180,7 @@
 "I've just sent some Bitcoin using Hive" = "Olen juuri lähettänyt Bitcoineja käyttäen Hivea";
 
 /* Alert details when trying to send more than you have with fee */
-"If you send your whole wallet balance, there's nothing left to pay the required fee. Try to send a bit less, or split the transaction into smaller ones." = "If you send your whole wallet balance, there's nothing left to pay the required fee. Try to send a bit less, or split the transaction into smaller ones.";
+"If you send your whole wallet balance, there's nothing left to pay the required fee. Try to send a bit less, or split the transaction into smaller ones." = "Ole tarkkana että et käytä koko tililisi saldoa yhdellä kertaa, koska siirroista peritään erillinen maksu. Tee siis mielummin pienempiä siirtoja tai lähetä isot summat osina.";
 
 /* Install app button title */
 "Install" = "Asenna";
@@ -189,10 +189,10 @@
 "It's dangerous to upload unencrypted wallets." = "On vaarallista ladata salaamattomia lompakoita.";
 
 /* Don't leave a form without saving data */
-"Keep Editing" = "Keep Editing";
+"Keep Editing" = "Jatka Editointia";
 
 /* Address caption field placeholder */
-"Label" = "Label";
+"Label" = "Etiketti";
 
 /* On what date was the last backup done */
 "Last backup on %@" = "Viimeisin varmuuskopionti %@";
@@ -201,7 +201,7 @@
 "Lastname" = "Sukunimi";
 
 /* Alert message when address can't be extracted from a bitcoin: URI */
-"Link included in this QR code (\"%@\") is invalid or does not contain a Bitcoin address." = "Link included in this QR code (\"%@\") is invalid or does not contain a Bitcoin address.";
+"Link included in this QR code (\"%@\") is invalid or does not contain a Bitcoin address." = "Tässä QR -koodissa oleve linkki (\"%@\") on virheellinen tai ei sisällä lainkaan Bitcoin osoitetta.";
 
 /* Main address caption */
 "main" = "pääosoite";
@@ -219,13 +219,13 @@
 "No backup since %@" = "Ei varmuuskopiota %@ jälkeen";
 
 /* No backups enabled notification title */
-"No backups configured" = "No backups configured";
+"No backups configured" = "Ei varmuuskopioita asennettuna";
 
 /* Transaction failed alert message */
 "No Bitcoin have been taken from your wallet." = "Bitcoineja ei otettu lompakostasi.";
 
 /* Title of an alert when trying to send more than you have with fee */
-"Not enough funds left to pay the transaction fee." = "Not enough funds left to pay the transaction fee.";
+"Not enough funds left to pay the transaction fee." = "Ei tarpeeksi katetta siirtokulujen maksuun.";
 
 /* OK button title */
 "OK" = "OK";
@@ -234,22 +234,22 @@
 "Password" = "Salasana";
 
 /* Send Bitcoin window title for payment request */
-"Pay with Bitcoin" = "Pay with Bitcoin";
+"Pay with Bitcoin" = "Maksa Bitcoinilla";
 
 /* Alert title when payment can't be sent to the merchant */
-"Payment could not be completed." = "Payment could not be completed.";
+"Payment could not be completed." = "Maksua ei voitu suorittaa.";
 
 /* Alert title when payment request file can't be read */
-"Payment data file could not be opened." = "Payment data file could not be opened.";
+"Payment data file could not be opened." = "Maksun datatiedostoa ei voitu avata.";
 
 /* Alert title when payment request file has some invalid or unexpected data */
-"Payment data is invalid." = "Payment data is invalid.";
+"Payment data is invalid." = "Maksutiedot ovat virheelliset.";
 
 /* Alert title when payment request can't be loaded from the server */
-"Payment details could not be loaded." = "Payment details could not be loaded.";
+"Payment details could not be loaded." = "Maksun tietoja ei voitu ladata.";
 
 /* Alert title when the time limit to complete the payment has passed */
-"Payment request has already expired." = "Payment request has already expired.";
+"Payment request has already expired." = "Maksupyyntö on jo erääntynyt.";
 
 /* Pending transaction label */
 "PENDING" = "ODOTTAA";
@@ -264,7 +264,7 @@
 "Please enter a valid Bitcoin address or select one from the dropdown list." = "Ilmoita voimassa oleva Bitcoin-osoite tai valitse pudotusvalikosta.";
 
 /* Preferences window title */
-"Preferences" = "Preferences";
+"Preferences" = "Asetukset";
 
 /* Profile view title string */
 "Profile" = "Profiili";
@@ -288,7 +288,7 @@
 "Selected directory is outside Dropbox folder." = "Valittu tiedosto on Dropbox-kansion ulkopuolella.";
 
 /* Google Drive invalid folder alert title */
-"Selected directory is outside Google Drive folder." = "Selected directory is outside Google Drive folder.";
+"Selected directory is outside Google Drive folder." = "Valitsemasi hakemisto on Google Drive kansion ulkopuolella.";
 
 /* Send button title */
 "Send" = "Lähetä";
@@ -297,7 +297,7 @@
 "Sent &a to &c" = "Lähetä &a käyttäjälle &c";
 
 /* Title for shortcut keys preferences panel */
-"Shortcuts" = "Shortcuts";
+"Shortcuts" = "Pikakuvake";
 
 /* Amount exceeds available balance alert title */
 "Some funds are temporarily unavailable." = "Osa varoista on väliakaisesti saavuttamattomissa.";
@@ -315,25 +315,25 @@
 "The existing app file will be replaced by the new version. This will not affect any app settings or saved data." = "Olemassaoleva sovelluskansio korvataan uudella versiolla. Tämä ei vaikuta sovelluksen asetuksiin tai tallennettuihin tietoihin.";
 
 /* Alert message when payment request file can't be read */
-"The file doesn't exist or is not accessible." = "The file doesn't exist or is not accessible.";
+"The file doesn't exist or is not accessible." = "Tiedostoa ei löytynyt.";
 
 /* Hiveapp file not readable error details */
-"The file is damaged or does not contain a Hive application." = "The file is damaged or does not contain a Hive application.";
+"The file is damaged or does not contain a Hive application." = "Tiedosto on vahingoittunut tai ei sisällä Hive-sovellusta.";
 
 /* Sending dust alert message */
-"This amount is too low to be sent through the network." = "This amount is too low to be sent through the network.";
+"This amount is too low to be sent through the network." = "Antamasi summa on liian pieni eikä sitä voida lähettää eteenpäin.";
 
 /* Alert title when bitcoin: URI is not valid */
-"This Bitcoin payment link is invalid." = "This Bitcoin payment link is invalid.";
+"This Bitcoin payment link is invalid." = "Bitcoinin maksulinkki/maksuosoite on virheellinen.";
 
 /* Alert title when payment request URL is not valid */
-"This Bitcoin payment URL is invalid." = "This Bitcoin payment URL is invalid.";
+"This Bitcoin payment URL is invalid." = "Maksun web-osoite on virheellinen.";
 
 /* Alert details when transaction was cancelled */
 "This can happen because of bugs in the wallet code or because the transaction was rejected by the network." = "Tämä voi tapahtua johtuen lompakkokoodissa olevista bugeista tai verkosto on hylännyt transaktion.";
 
 /* Alert message when payment request file isn't really a payment request at all */
-"This file does not contain a valid Bitcoin payment request." = "This file does not contain a valid Bitcoin payment request.";
+"This file does not contain a valid Bitcoin payment request." = "Tiedosta ei sisällä voimassa olevaa Bitcoin maksu pyyntöä.";
 
 /* Warning details when trying to send a large BTC amount */
 "This is more than what you usually send." = "Tämä on enemmän kuin yleensä lähetät.";
@@ -345,22 +345,22 @@
 "This isn't a valid Bitcoin address." = "Tämä Bitcoin-osoite ole voimassa.";
 
 /* Alert message when user is on the mainnet and payment request is for testnet (or vice versa) */
-"This payment is supposed to be sent on a different Bitcoin network." = "This payment is supposed to be sent on a different Bitcoin network.";
+"This payment is supposed to be sent on a different Bitcoin network." = "Tämä maksu on tarkoitus lähettää toiseen Bitcoin verkkoon.";
 
 /* Alert title when address can't be extracted from a bitcoin: URI */
-"This QR code can't be used here." = "This QR code can't be used here.";
+"This QR code can't be used here." = "Tätä QR-koodia ei voida käyttää.";
 
 /* Backup error message */
 "Time Machine is disabled in System Preferences" = "Time Machine on estetty kohteessa System Preferences";
 
 /* No backups enabled notification details */
-"To protect your bitcoins, it's recommended that you enable at least one type of backup." = "To protect your bitcoins, it's recommended that you enable at least one type of backup.";
+"To protect your bitcoins, it's recommended that you enable at least one type of backup." = "Suojellaksenne varojanne, suosittelemme että käytätte ainakin yhdenlaista varmuuskopiota.";
 
 /* Amount exceeds available balance alert message */
 "To send this transaction, you'll need to wait for your pending transactions to be confirmed first (this shouldn't take more than a few minutes)." = "Lähettääksesi tämän transaktion sinun täytyy odottaa, että vahvistamaton transaktiosi vahvistetaan (tämän ei pitäisi kestää muutamaa minuuttia pitempään).";
 
 /* Message when trying to start an app that requires a newer API level. */
-"To use the app, please update to the latest version of Hive." = "To use the app, please update to the latest version of Hive.";
+"To use the app, please update to the latest version of Hive." = "Pyydämme etta päivitätte Hive sovelluksen uusimpaan versioon.";
 
 /* Notification of cancelled transaction */
 "Transaction cancelled" = "Transaktio peruttu";
@@ -378,16 +378,16 @@
 "Transactions" = "Transaktiot";
 
 /* Uninstall app button title */
-"Uninstall" = "Uninstall";
+"Uninstall" = "Poista sovellus";
 
 /* Entry in application icon context menu */
-"Uninstall application" = "Uninstall application";
+"Uninstall application" = "Poista sovellus";
 
 /* Backup status: backup up to date */
 "Up to date" = "Päivitetty";
 
 /* Entry in application icon context menu */
-"Visit application's site" = "Visit application's site";
+"Visit application's site" = "Siirry sovelluksen nettisivulle";
 
 /* Backup status: backup scheduled or in progress */
 "Waiting for backup" = "Odottaa varmuuskopiointia";
@@ -402,7 +402,7 @@
 "What does this mean?" = "Mitä tämä tarkoittaa?";
 
 /* Uninstall app popup message */
-"You can install it again through the App Store app later if you change your mind." = "You can install it again through the App Store app later if you change your mind.";
+"You can install it again through the App Store app later if you change your mind." = "Jos muutat mielesi, voit asentaa ohjelman uudestaan App - storen kautta.";
 
 /* Details of an alert when trying to send more than you have */
 "You cannot send more money than you own." = "Et voi lähettää enempää rahaa kuin sinulla on.";
@@ -417,16 +417,16 @@
 "You must install Dropbox first (see www.dropbox.com)." = "Sinun täytyy ensin asentaa Dropbox(see www.dropbox.com).";
 
 /* Google Drive no backup folder alert details */
-"You must install Google Drive first (see https://www.google.com/intl/en/drive/download)." = "You must install Google Drive first (see https://www.google.com/intl/en/drive/download).";
+"You must install Google Drive first (see https://www.google.com/intl/en/drive/download)." = "Sinun tulee asentaa Google Drive ensiksi (katso https://www.google.com/intl/en/drive/download).";
 
 /* No network connection alert message */
-"You need to be connected to the network to send any transactions." = "You need to be connected to the network to send any transactions.";
+"You need to be connected to the network to send any transactions." = "Sinun täytyy olla kirjautuneena verkkoon, ennen kuin voit suorittaa yhtään maksua.";
 
 /* Dropbox invalid folder alert details */
 "You need to choose or create a directory inside your Dropbox folder." = "Sinun pitää valita tai luoda kansio Dropbox-kansioon.";
 
 /* Google Drive invalid folder alert details */
-"You need to choose or create a directory inside your Google Drive folder." = "You need to choose or create a directory inside your Google Drive folder.";
+"You need to choose or create a directory inside your Google Drive folder." = "Ole hyvä ja luo hakemisto sisään Google Drive kansioosi.";
 
 /* Contact name empty alert message */
 "You need to give the contact a name before you can add it to the list." = "Sinun täytyy antaa yhteystiedolle nimi ennen kuin voit lisätä sen luetteloon.";
@@ -438,13 +438,13 @@
 "You won't be able to undo this operation." = "Tätä toimintoa ei voi kumota.";
 
 /* Alert message when the time limit to complete the payment has passed */
-"You'll need to return to the site that requested the payment and initiate the payment again." = "You'll need to return to the site that requested the payment and initiate the payment again.";
+"You'll need to return to the site that requested the payment and initiate the payment again." = "Palaa takaisin maksunsaajan sivulle ja yritä maksua uudelleen.";
 
 /* Notification of incoming transaction */
 "You've received Bitcoin" = "Olet vastaanottanut Bitcoineja";
 
 /* Cancel editing alert message */
-"Your changes won't be saved." = "Your changes won't be saved.";
+"Your changes won't be saved." = "Muutoksiasi ei tallenneta.";
 
 /* Sync in progress alert details */
-"Your pending transactions won't be confirmed until the sync is complete." = "Your pending transactions won't be confirmed until the sync is complete.";
+"Your pending transactions won't be confirmed until the sync is complete." = "Keskeneräisiä maksusuorituksia ei voida vahvistaa ennen kuin synkronointi on vale.";

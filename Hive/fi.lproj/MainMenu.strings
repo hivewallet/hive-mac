@@ -12,10 +12,10 @@
 "129.title" = "Asetukset…";
 
 /* Class = "NSMenu"; title = "Services"; ObjectID = "130"; */
-"130.title" = "Services";
+"130.title" = "Palvelut";
 
 /* Class = "NSMenuItem"; title = "Services"; ObjectID = "131"; */
-"131.title" = "Services";
+"131.title" = "Palvelut";
 
 /* Class = "NSMenuItem"; title = "Hide Hive"; ObjectID = "134"; */
 "134.title" = "Piilota Hive";
@@ -66,7 +66,7 @@
 "857.title" = "Pienennä";
 
 /* Class = "NSMenuItem"; title = "Zoom"; ObjectID = "858"; */
-"858.title" = "Zoom";
+"858.title" = "Zoomaa";
 
 /* Class = "NSMenuItem"; title = "Bring All to Front"; ObjectID = "860"; */
 "860.title" = "Tuo kaikki eteen";
@@ -93,13 +93,13 @@
 "GX7-xG-GKH.title" = "Lompakko";
 
 /* Class = "NSMenuItem"; title = "Send Feedback…"; ObjectID = "GsI-lc-HhD"; */
-"GsI-lc-HhD.title" = "Send Feedback…";
+"GsI-lc-HhD.title" = "Lähetä Palautetta...";
 
 /* Class = "NSMenu"; title = "Help"; ObjectID = "K2u-T2-G1a"; */
 "K2u-T2-G1a.title" = "Ohje";
 
 /* Class = "NSMenuItem"; title = "Sign message..."; ObjectID = "SoJ-eV-k9I"; */
-"SoJ-eV-k9I.title" = "Sign message...";
+"SoJ-eV-k9I.title" = "Allekirjoita viesti...";
 
 /* Class = "NSMenuItem"; title = "Debugging tools"; ObjectID = "Ue9-mi-gbe"; */
 "Ue9-mi-gbe.title" = "Testaustyökalut";
