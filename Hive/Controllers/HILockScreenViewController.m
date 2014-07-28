@@ -136,13 +136,11 @@ NSString * const LockScreenDidDisappearNotification = @"LockScreenDidDisappearNo
 }
 
 - (void)onPasswordEntered:(HIPasswordHolder *)passwordHolder {
-    if (passwordHolder.data.length > 0) {
-        if ([[HIBitcoinManager defaultManager] isPasswordCorrect:passwordHolder.data]) {
-            [self hideLockScreenAnimated:YES];
-            [self setLockScreenEnabled:(self.dontShowAgainField.state == NSOffState)];
-        } else {
-            [self.container.window hiShake];
-        }
+    if ([[HIBitcoinManager defaultManager] isPasswordCorrect:passwordHolder.data]) {
+        [self hideLockScreenAnimated:YES];
+        [self setLockScreenEnabled:(self.dontShowAgainField.state == NSOffState)];
+    } else {
+        [self.container.window hiShake];
     }
 }
 
