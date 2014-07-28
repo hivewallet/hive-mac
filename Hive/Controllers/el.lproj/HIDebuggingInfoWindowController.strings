@@ -5,5 +5,8 @@
 /* Class = "NSButtonCell"; title = "Save to file..."; ObjectID = "1AY-mJ-Thd"; */
 "1AY-mJ-Thd.title" = "Αποθήκευση σε αρχείο...";
 
+/* Class = "NSButtonCell"; title = "Open log directory…"; ObjectID = "Ho5-3P-2to"; */
+"Ho5-3P-2to.title" = "Open log directory…";
+
 /* Class = "NSTextFieldCell"; title = "If you have problems with your wallet, we may ask you to send us the contents of the text area below. Please note that the data does NOT include your private keys and will not allow us to spend your Bitcoin!"; ObjectID = "o5O-SS-J37"; */
 "o5O-SS-J37.title" = "Αν αντιμετωπίζετε προβλήματα με το πορτοφόλι σας, ενδέχεται να σας ζητήσουμε να μας στείλετε το παρακάτω κείμενο. Σημειώστε πως σε αυτά τα δεδομένα δεν περιλαμβάνονται τα προσωπικά κλειδιά σας, ούτε θα μπορέσουμε να ξοδέξουμε τα Bitcoin σας.!";
