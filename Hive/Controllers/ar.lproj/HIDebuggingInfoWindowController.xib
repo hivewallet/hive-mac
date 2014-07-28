@@ -73,15 +73,28 @@
                             <action selector="saveToFilePressed:" target="-2" id="ErE-3A-saS"/>
                         </connections>
                     </button>
+                    <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="ywH-rA-9UH">
+                        <rect key="frame" x="14" y="13" width="171" height="32"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
+                        <buttonCell key="cell" type="push" title="Open log directory…" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="Ho5-3P-2to">
+                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                            <font key="font" metaFont="system"/>
+                        </buttonCell>
+                        <connections>
+                            <action selector="openLogDirectoryPressed:" target="-2" id="daM-5g-E3f"/>
+                        </connections>
+                    </button>
                 </subviews>
                 <constraints>
                     <constraint firstItem="BFl-4M-70B" firstAttribute="top" secondItem="hey-Jk-5AG" secondAttribute="bottom" constant="20" id="HKC-vU-tqT"/>
                     <constraint firstItem="hey-Jk-5AG" firstAttribute="leading" secondItem="2" secondAttribute="leading" constant="20" symbolic="YES" id="HTT-e6-EfJ"/>
+                    <constraint firstItem="ywH-rA-9UH" firstAttribute="baseline" secondItem="7D6-dq-xT9" secondAttribute="baseline" id="NlF-zY-QeH"/>
                     <constraint firstAttribute="trailing" secondItem="BFl-4M-70B" secondAttribute="trailing" constant="20" symbolic="YES" id="Oab-uF-rKV"/>
                     <constraint firstItem="BFl-4M-70B" firstAttribute="leading" secondItem="2" secondAttribute="leading" constant="20" symbolic="YES" id="SBs-GU-oPq"/>
                     <constraint firstItem="BFl-4M-70B" firstAttribute="centerX" secondItem="hey-Jk-5AG" secondAttribute="centerX" id="dwG-3T-2Oz"/>
                     <constraint firstAttribute="bottom" secondItem="7D6-dq-xT9" secondAttribute="bottom" constant="20" symbolic="YES" id="gkY-ql-hoO"/>
                     <constraint firstItem="hey-Jk-5AG" firstAttribute="top" secondItem="2" secondAttribute="top" constant="20" symbolic="YES" id="i25-sw-aSZ"/>
+                    <constraint firstItem="ywH-rA-9UH" firstAttribute="leading" secondItem="BFl-4M-70B" secondAttribute="leading" id="kIC-Sj-oLa"/>
                     <constraint firstItem="BFl-4M-70B" firstAttribute="trailing" secondItem="7D6-dq-xT9" secondAttribute="trailing" id="p8c-Ox-9Yg"/>
                     <constraint firstItem="7D6-dq-xT9" firstAttribute="top" secondItem="BFl-4M-70B" secondAttribute="bottom" constant="20" symbolic="YES" id="y59-bD-Gy8"/>
                 </constraints>

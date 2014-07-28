@@ -64,6 +64,29 @@
     self.textView.string = info;
 }
 
+- (IBAction)openLogDirectoryPressed:(id)sender {
+    NSFileManager *manager = [NSFileManager defaultManager];
+
+    NSURL *library = [[manager URLsForDirectory:NSLibraryDirectory inDomains:NSUserDomainMask] firstObject];
+    NSURL *logs = [library URLByAppendingPathComponent:@"Logs"];
+    NSURL *hiveLogs = [logs URLByAppendingPathComponent:@"Hive"];
+
+    if ([manager fileExistsAtPath:hiveLogs.path isDirectory:NULL]) {
+        [[NSWorkspace sharedWorkspace] openURL:hiveLogs];
+    } else {
+        NSAlert *alert = [NSAlert alertWithMessageText:@"Hive log directory not found."
+                                         defaultButton:@"OK"
+                                       alternateButton:nil
+                                           otherButton:nil
+                             informativeTextWithFormat:@"This shouldn't happen :("];
+
+        [alert beginSheetModalForWindow:self.window
+                          modalDelegate:nil
+                         didEndSelector:nil
+                            contextInfo:NULL];
+    }
+}
+
 - (IBAction)saveToFilePressed:(id)sender {
     NSSavePanel *panel = [NSSavePanel savePanel];
 
