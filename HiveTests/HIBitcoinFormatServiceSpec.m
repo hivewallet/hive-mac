@@ -43,9 +43,9 @@ describe(@"Formatting", ^{
         });
     });
 
-    context(@"preferred format is µBTC", ^{
+    context(@"preferred format is bits", ^{
         beforeEach(^{
-            service.preferredFormat = @"µBTC";
+            service.preferredFormat = @"bits";
         });
         it(@"formats using the preferred format", ^{
             NSString *string = [service stringForBitcoin:160];
@@ -53,7 +53,7 @@ describe(@"Formatting", ^{
         });
         it(@"adds the correct unit", ^{
             NSString *string = [service stringWithUnitForBitcoin:160];
-            assertThat(string, equalTo(@"1.6 µBTC"));
+            assertThat(string, equalTo(@"1.6 bits"));
         });
     });
 
@@ -79,9 +79,9 @@ describe(@"Formatting", ^{
         });
     });
 
-    context(@"formatting as µBTC", ^{
+    context(@"formatting as bits", ^{
         it(@"formats value correcly", ^{
-            NSString *string = [service stringForBitcoin:160 withFormat:@"µBTC"];
+            NSString *string = [service stringForBitcoin:160 withFormat:@"bits"];
             assertThat(string, equalTo(@"1.6"));
         });
     });
@@ -121,8 +121,8 @@ describe(@"Parsing", ^{
         assertThat(@(amount), equalToLongLong(60000));
     });
 
-    it(@"should parse µBTC value correctly", ^{
-        satoshi_t amount = [service parseString:@"0.6" withFormat:@"µBTC" error:NULL];
+    it(@"should parse bits value correctly", ^{
+        satoshi_t amount = [service parseString:@"0.6" withFormat:@"bits" error:NULL];
         assertThat(@(amount), equalToLongLong(60));
     });
 

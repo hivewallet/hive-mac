@@ -36,7 +36,7 @@ static NSString *const HIFormatPreferenceKey = @"BitcoinFormat";
     static NSArray *availableBitcoinFormats;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^ {
-        availableBitcoinFormats = @[@"BTC", @"mBTC", @"µBTC"];
+        availableBitcoinFormats = @[@"BTC", @"mBTC", @"bits"];
     });
     return availableBitcoinFormats;
 }
@@ -87,7 +87,7 @@ static NSString *const HIFormatPreferenceKey = @"BitcoinFormat";
     } else if ([format isEqualToString:@"mBTC"]) {
         formatter.minimumFractionDigits = 0;
         formatter.maximumFractionDigits = 5;
-    } else if ([format isEqualToString:@"µBTC"]) {
+    } else if ([format isEqualToString:@"bits"]) {
         formatter.minimumFractionDigits = 0;
         formatter.maximumFractionDigits = 2;
     } else if ([format isEqualToString:@"satoshi"]) {
@@ -110,7 +110,7 @@ static NSString *const HIFormatPreferenceKey = @"BitcoinFormat";
         return 0;
     } else if ([format isEqualToString:@"mBTC"]) {
         return 3;
-    } else if ([format isEqualToString:@"µBTC"]) {
+    } else if ([format isEqualToString:@"bits"]) {
         return 6;
     } else if ([format isEqualToString:@"satoshi"]) {
         return 8;
