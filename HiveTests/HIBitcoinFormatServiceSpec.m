@@ -86,13 +86,6 @@ describe(@"Formatting", ^{
         });
     });
 
-    context(@"formatting as satoshi", ^{
-        it(@"formats value correcly", ^{
-            NSString *string = [service stringForBitcoin:60 withFormat:@"satoshi"];
-            assertThat(string, equalTo(@"60"));
-        });
-    });
-
     context(@"using a different locale", ^{
         it(@"formats value correcly", ^{
             service.locale = [[NSLocale alloc] initWithLocaleIdentifier:@"de_DE"];
@@ -123,11 +116,6 @@ describe(@"Parsing", ^{
 
     it(@"should parse bits value correctly", ^{
         satoshi_t amount = [service parseString:@"0.6" withFormat:@"bits" error:NULL];
-        assertThat(@(amount), equalToLongLong(60));
-    });
-
-    it(@"should parse satoshi value correctly", ^{
-        satoshi_t amount = [service parseString:@"60" withFormat:@"satoshi" error:NULL];
         assertThat(@(amount), equalToLongLong(60));
     });
 

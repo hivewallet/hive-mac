@@ -90,9 +90,6 @@ static NSString *const HIFormatPreferenceKey = @"BitcoinFormat";
     } else if ([format isEqualToString:@"bits"]) {
         formatter.minimumFractionDigits = 0;
         formatter.maximumFractionDigits = 2;
-    } else if ([format isEqualToString:@"satoshi"]) {
-        formatter.minimumFractionDigits = 0;
-        formatter.maximumFractionDigits = 0;
     } else {
         @throw [self createUnknownFormatException:format];
     }
@@ -112,8 +109,6 @@ static NSString *const HIFormatPreferenceKey = @"BitcoinFormat";
         return 3;
     } else if ([format isEqualToString:@"bits"]) {
         return 6;
-    } else if ([format isEqualToString:@"satoshi"]) {
-        return 8;
     } else {
         @throw [self createUnknownFormatException:format];
     }
