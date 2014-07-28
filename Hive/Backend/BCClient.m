@@ -138,11 +138,6 @@ NSString * const BCClientPasswordChangedNotification = @"BCClientPasswordChanged
     return !*error;
 }
 
-- (void)createWallet:(NSError **)error {
-    HILogInfo(@"Creating new wallet...");
-    [[HIBitcoinManager defaultManager] createWallet:error];
-}
-
 - (void)createWalletWithPassword:(HIPasswordHolder *)password
                            error:(NSError **)error {
     HILogInfo(@"Creating new protected wallet...");

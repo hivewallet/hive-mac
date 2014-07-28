@@ -40,7 +40,6 @@ extern NSString * const BCClientPasswordChangedNotification;
 - (void)shutdown;
 - (void)updateNotifications;
 
-- (void)createWallet:(NSError **)error;
 - (void)createWalletWithPassword:(HIPasswordHolder *)password
                            error:(NSError **)error;
 

@@ -49,8 +49,9 @@ static const NSTimeInterval IDLE_RESET_DELAY = 30.0;
 - (IBAction)submit:(id)sender {
     [self.passwordCreationInputHandler finishWithPasswordHolder:^(HIPasswordHolder *changedPasswordHolder) {
         HIPasswordHolder *passwordHolder =
-            self.passwordField.stringValue.length > 0
-                ? [[HIPasswordHolder alloc] initWithString:self.passwordField.stringValue] : nil;
+            self.passwordField.isEnabled ?
+                [[HIPasswordHolder alloc] initWithString:self.passwordField.stringValue] : nil;
+
         @try {
             NSError *error = nil;
             [[BCClient sharedClient] changeWalletPassword:passwordHolder
@@ -92,7 +93,7 @@ static const NSTimeInterval IDLE_RESET_DELAY = 30.0;
             [self.updatedPasswordField becomeFirstResponder];
         } else if (control == self.updatedPasswordField) {
             [self.repeatedPasswordField becomeFirstResponder];
-        } else {
+        } else if (self.submitButtonEnabled) {
             [self submit:control];
         }
 
@@ -103,8 +104,8 @@ static const NSTimeInterval IDLE_RESET_DELAY = 30.0;
 }
 
 - (void)controlTextDidChange:(NSNotification *)notification {
-    self.submitButtonEnabled = (!self.passwordField.isEnabled || self.passwordField.stringValue.length > 0)
-        && self.updatedPasswordField.stringValue.length > 0;
+    self.submitButtonEnabled = (self.updatedPasswordField.stringValue.length > 0 &&
+                                self.repeatedPasswordField.stringValue.length > 0);
 
     [self.passwordCreationInputHandler textDidChangeInTextField:notification.object];
 
