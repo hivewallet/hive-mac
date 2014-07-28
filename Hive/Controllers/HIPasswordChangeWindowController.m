@@ -92,7 +92,7 @@ static const NSTimeInterval IDLE_RESET_DELAY = 30.0;
             [self.updatedPasswordField becomeFirstResponder];
         } else if (control == self.updatedPasswordField) {
             [self.repeatedPasswordField becomeFirstResponder];
-        } else {
+        } else if (self.submitButtonEnabled) {
             [self submit:control];
         }
 
