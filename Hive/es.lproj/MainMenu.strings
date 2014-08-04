@@ -69,7 +69,7 @@
 "858.title" = "Ampliar";
 
 /* Class = "NSMenuItem"; title = "Bring All to Front"; ObjectID = "860"; */
-"860.title" = "Traer Todo al Frente";
+"860.title" = "Traer todo al frente";
 
 /* Class = "NSMenuItem"; title = "Close"; ObjectID = "864"; */
 "864.title" = "Cerrar";
@@ -123,7 +123,7 @@
 "jrd-Ul-XjV.title" = "Cartera";
 
 /* Class = "NSMenuItem"; title = "Debugging info"; ObjectID = "lLT-53-p4m"; */
-"lLT-53-p4m.title" = "Información de depuración";
+"lLT-53-p4m.title" = "Información de Depuración";
 
 /* Class = "NSMenuItem"; title = "Scan a QR code…"; ObjectID = "vdw-IK-snJ"; */
 "vdw-IK-snJ.title" = "Escanear código QR";
