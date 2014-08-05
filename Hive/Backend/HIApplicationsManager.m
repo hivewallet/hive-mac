@@ -156,6 +156,8 @@ const NSInteger HIApplicationManagerInsecureConnectionError = -2;
 - (void)uninstallApplication:(HIApplication *)application {
     NSError *error = nil;
 
+    [self clearCookiesForApplication:application];
+
     NSURL *installedAppURL = [[self applicationsDirectory] URLByAppendingPathComponent:application.id];
     [[NSFileManager defaultManager] removeItemAtURL:installedAppURL error:&error];
     if (error) {
