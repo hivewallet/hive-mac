@@ -72,7 +72,7 @@
 "Choose a directory inside Dropbox folder where the backup should be saved:" = "Válasz mappát a Dropboxodban ahová a mentést fogod rakni";
 
 /* No comment provided by engineer. */
-"Choose a directory inside Google Drive folder where the backup should be saved:" = "Choose a directory inside Google Drive folder where the backup should be saved:";
+"Choose a directory inside Google Drive folder where the backup should be saved:" = "Válasz ki egy mappát a Google Drive mappában ahová a mentés el legyen mentve:";
 
 /* No comment provided by engineer. */
 "click to copy" = "kattints a másoláshoz";
@@ -147,10 +147,10 @@
 "General" = "Általános";
 
 /* Google Drive no backup folder alert title */
-"Google Drive folder not found." = "Google Drive folder not found.";
+"Google Drive folder not found." = "Google Drive mappa nem található.";
 
 /* Backup error message */
-"Google Drive isn't running" = "Google Drive isn't running";
+"Google Drive isn't running" = "A Google Drive nem fut.";
 
 /* Hiveapp file not readable error title */
 "Hive application file \"%@\" could not be opened." = "A Hive \"%@\" nevű fájlját nem lehet megnyitni.";
@@ -288,7 +288,7 @@
 "Selected directory is outside Dropbox folder." = "A kiválasztott mappa Dropboxon kívül van.";
 
 /* Google Drive invalid folder alert title */
-"Selected directory is outside Google Drive folder." = "Selected directory is outside Google Drive folder.";
+"Selected directory is outside Google Drive folder." = "A kiválasztott mappa nem Google Drive mappa.";
 
 /* Send button title */
 "Send" = "Küldés";
@@ -417,7 +417,7 @@
 "You must install Dropbox first (see www.dropbox.com)." = "Először telepítsd fel a DropBoxot (lásd www.dropbox.com).";
 
 /* Google Drive no backup folder alert details */
-"You must install Google Drive first (see https://www.google.com/intl/en/drive/download)." = "You must install Google Drive first (see https://www.google.com/intl/en/drive/download).";
+"You must install Google Drive first (see https://www.google.com/intl/en/drive/download)." = "Elösször telepítsd a Goggle Drive-ot (lásd https://www.google.com/intl/en/drive/download).";
 
 /* No network connection alert message */
 "You need to be connected to the network to send any transactions." = "Kapcsolódva kel lenned ha tranzakciót akarsz küldeni.";
@@ -426,7 +426,7 @@
 "You need to choose or create a directory inside your Dropbox folder." = "Ki kell választanod vagy létre kell hoznod egy mappát a Dropboxodon belül.";
 
 /* Google Drive invalid folder alert details */
-"You need to choose or create a directory inside your Google Drive folder." = "You need to choose or create a directory inside your Google Drive folder.";
+"You need to choose or create a directory inside your Google Drive folder." = "Válassz ki egy mappát vagy hozz létre egyet a Google Drive mappában.";
 
 /* Contact name empty alert message */
 "You need to give the contact a name before you can add it to the list." = "Meg kell adnod egy neved mielőtt hozzáadod a listához.";
