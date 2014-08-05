@@ -93,6 +93,19 @@
                         contextInfo:@selector(rebuildWallet)];
 }
 
+- (IBAction)clearApplicationDataClicked:(id)sender {
+    NSAlert *alert = [NSAlert alertWithMessageText:@"Are you sure?"
+                                     defaultButton:@"Clear application data"
+                                   alternateButton:@"Cancel"
+                                       otherButton:nil
+                         informativeTextWithFormat:@"All application cookies will be deleted."];
+
+    [alert beginSheetModalForWindow:self.window
+                      modalDelegate:self
+                     didEndSelector:@selector(alertClosed:withReturnCode:context:)
+                        contextInfo:@selector(clearApplicationData)];
+}
+
 - (void)alertClosed:(NSAlert *)alert withReturnCode:(NSInteger)code context:(void *)context {
     if (code == NSAlertDefaultReturn) {
         SEL selector = (SEL) context;
@@ -116,6 +129,16 @@
 
 - (void)reinstallBundledApps {
     [[HIApplicationsManager sharedManager] preinstallApps];
+}
+
+- (void)clearApplicationData {
+    NSUInteger deleted = [[HIApplicationsManager sharedManager] clearAllApplicationCookies];
+
+    [[NSAlert alertWithMessageText:@"Application data deleted."
+                     defaultButton:NSLocalizedString(@"OK", @"OK button title")
+                   alternateButton:nil
+                       otherButton:nil
+         informativeTextWithFormat:@"%ld cookie(s) have been removed.", deleted] runModal];
 }
 
 - (void)rebuildWallet {

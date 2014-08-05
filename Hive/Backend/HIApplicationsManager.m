@@ -347,6 +347,20 @@ const NSInteger HIApplicationManagerInsecureConnectionError = -2;
     return count;
 }
 
+- (NSUInteger)clearAllApplicationCookies {
+    NSHTTPCookieStorage *storage = [NSHTTPCookieStorage sharedHTTPCookieStorage];
+    NSUInteger count = 0;
+
+    for (NSHTTPCookie *cookie in storage.cookies) {
+        if ([cookie.domain hasSuffix:@".hiveapp"]) {
+            [storage deleteCookie:cookie];
+            count++;
+        }
+    }
+
+    return count;
+}
+
 - (NSURL *)applicationsDirectory {
     NSURL *appSupportURL = [(HIAppDelegate *) [NSApp delegate] applicationFilesDirectory];
     NSURL *applicationsURL = [appSupportURL URLByAppendingPathComponent:@"Applications"];
