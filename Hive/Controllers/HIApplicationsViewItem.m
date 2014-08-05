@@ -40,6 +40,12 @@
             [menu addItem:contactItem];
         }
 
+        NSMenuItem *clearDataItem = [[NSMenuItem alloc] init];
+        clearDataItem.target = self;
+        clearDataItem.action = @selector(clearDataItemClicked);
+        clearDataItem.title = @"Clear application data";
+        [menu addItem:clearDataItem];
+
         NSMenuItem *deleteItem = [[NSMenuItem alloc] init];
         deleteItem.target = self;
         deleteItem.action = @selector(uninstallItemClicked);
@@ -79,6 +85,17 @@
 - (void)uninstallItemClicked {
     HIApplication *application = (HIApplication *) self.representedObject;
     [[HIApplicationsManager sharedManager] requestApplicationRemoval:application];
+}
+
+- (void)clearDataItemClicked {
+    HIApplication *application = (HIApplication *) self.representedObject;
+    NSUInteger deleted = [[HIApplicationsManager sharedManager] clearCookiesForApplication:application];
+
+    [[NSAlert alertWithMessageText:@"Application data deleted."
+                     defaultButton:NSLocalizedString(@"OK", @"OK button title")
+                   alternateButton:nil
+                       otherButton:nil
+         informativeTextWithFormat:@"%ld cookie(s) have been removed.", deleted] runModal];
 }
 
 @end

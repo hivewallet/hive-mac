@@ -29,5 +29,6 @@ extern const NSInteger HIApplicationManagerInvalidAppFileError;
 - (NSDictionary *)applicationMetadata:(NSURL *)applicationPath;
 - (void)preinstallApps;
 - (void)rebuildAppsList;
+- (NSUInteger)clearCookiesForApplication:(HIApplication *)application;
 
 @end

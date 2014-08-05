@@ -25,6 +25,10 @@ NSString * const HIApplicationEntity = @"HIApplication";
     return data ? [NSJSONSerialization JSONObjectWithData:data options:0 error:NULL] : nil;
 }
 
+- (NSURL *)baseURL {
+    return [NSURL URLWithString:[NSString stringWithFormat:@"http://%@.hiveapp", self.id]];
+}
+
 - (NSImage *)icon {
     NSDictionary *manifest = self.manifest;
     NSString *icon = manifest[@"icon"];

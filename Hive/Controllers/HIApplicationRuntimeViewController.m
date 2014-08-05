@@ -66,7 +66,7 @@
     self.webView.applicationNameForUserAgent = [NSString stringWithFormat:@"Hive/%@", hiveVersion];
 
     // load the app
-    _baseURL = [NSURL URLWithString:[NSString stringWithFormat:@"http://%@.hiveapp/index.html", self.application.id]];
+    _baseURL = [self.application.baseURL URLByAppendingPathComponent:@"index.html"];
 
     [self.webView.mainFrame loadRequest:[NSURLRequest requestWithURL:_baseURL]];
 }

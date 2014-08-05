@@ -333,6 +333,18 @@ const NSInteger HIApplicationManagerInsecureConnectionError = -2;
     }
 }
 
+- (NSUInteger)clearCookiesForApplication:(HIApplication *)application {
+    NSHTTPCookieStorage *storage = [NSHTTPCookieStorage sharedHTTPCookieStorage];
+    NSUInteger count = 0;
+
+    for (NSHTTPCookie *cookie in [storage cookiesForURL:application.baseURL]) {
+        [storage deleteCookie:cookie];
+        count++;
+    }
+
+    return count;
+}
+
 - (NSURL *)applicationsDirectory {
     NSURL *appSupportURL = [(HIAppDelegate *) [NSApp delegate] applicationFilesDirectory];
     NSURL *applicationsURL = [appSupportURL URLByAppendingPathComponent:@"Applications"];
