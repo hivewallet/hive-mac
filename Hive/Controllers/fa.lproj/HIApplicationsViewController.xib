@@ -77,7 +77,7 @@
                         <action selector="getMoreAppsClicked:" target="-2" id="RBQ-bs-c50"/>
                     </connections>
                 </button>
-                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" setsMaxLayoutWidthAtFirstLayout="YES" id="rcg-HT-fbN">
+                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="rcg-HT-fbN">
                     <rect key="frame" x="0.0" y="277" width="318" height="38"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                     <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="center" title="Warning: the applications page will be removed in version 1.5." drawsBackground="YES" allowsEditingTextAttributes="YES" id="mNs-l9-wdG">
