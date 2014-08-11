@@ -33,6 +33,8 @@ profile
 # SourceTree (Mac) Configuration Files
 sourcetreeconfig
 
+FauxPasConfig
+
 # Podfiles
 Pods/*
 
