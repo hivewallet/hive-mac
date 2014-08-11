@@ -224,6 +224,8 @@
 		58C85B9B18FFEA0500B2C350 /* HIKeyPreferencesViewController.strings in Resources */ = {isa = PBXBuildFile; fileRef = 58C85B9D18FFEA0500B2C350 /* HIKeyPreferencesViewController.strings */; };
 		58CFD95417CF914000A035FA /* HISidebarView.m in Sources */ = {isa = PBXBuildFile; fileRef = 58CFD95217CF914000A035FA /* HISidebarView.m */; };
 		58D4D61F18290079009CB7A5 /* patten_hive.hiveapp in Resources */ = {isa = PBXBuildFile; fileRef = 58D4D61E18290079009CB7A5 /* patten_hive.hiveapp */; };
+		58DDC5D91998F68B001E47C9 /* HITransactionPopoverViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 58DDC5D71998F68B001E47C9 /* HITransactionPopoverViewController.m */; };
+		58DDC5DA1998F68B001E47C9 /* HITransactionPopoverViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 58DDC5D81998F68B001E47C9 /* HITransactionPopoverViewController.xib */; };
 		58E228DC193359C200851F1B /* NSAlert+Hive.m in Sources */ = {isa = PBXBuildFile; fileRef = 58E228DB193359C200851F1B /* NSAlert+Hive.m */; };
 		58E336171892C02E004D60C3 /* HIApplicationsViewController.strings in Resources */ = {isa = PBXBuildFile; fileRef = 58E336191892C02E004D60C3 /* HIApplicationsViewController.strings */; };
 		58E3363A18934DCB004D60C3 /* coinbase.hiveapp in Resources */ = {isa = PBXBuildFile; fileRef = 58E3363918934DCB004D60C3 /* coinbase.hiveapp */; };
@@ -2028,6 +2030,9 @@
 		58DB712F193C73B800B3FB28 /* uk */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = uk; path = uk.lproj/MainMenu.strings; sourceTree = "<group>"; };
 		58DB7130193C73B800B3FB28 /* uk */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = uk; path = uk.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		58DB7131193C73B800B3FB28 /* uk */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = uk; path = uk.lproj/Localizable.strings; sourceTree = "<group>"; };
+		58DDC5D61998F68B001E47C9 /* HITransactionPopoverViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HITransactionPopoverViewController.h; sourceTree = "<group>"; };
+		58DDC5D71998F68B001E47C9 /* HITransactionPopoverViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HITransactionPopoverViewController.m; sourceTree = "<group>"; };
+		58DDC5D81998F68B001E47C9 /* HITransactionPopoverViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HITransactionPopoverViewController.xib; sourceTree = "<group>"; };
 		58E228DA193359C200851F1B /* NSAlert+Hive.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSAlert+Hive.h"; sourceTree = "<group>"; };
 		58E228DB193359C200851F1B /* NSAlert+Hive.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSAlert+Hive.m"; sourceTree = "<group>"; };
 		58E336181892C02E004D60C3 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/HIApplicationsViewController.strings; sourceTree = "<group>"; };
@@ -2660,6 +2665,9 @@
 		D948157E17CE10D9006A0312 /* HITransactionsViewController */ = {
 			isa = PBXGroup;
 			children = (
+				58DDC5D61998F68B001E47C9 /* HITransactionPopoverViewController.h */,
+				58DDC5D71998F68B001E47C9 /* HITransactionPopoverViewController.m */,
+				58DDC5D81998F68B001E47C9 /* HITransactionPopoverViewController.xib */,
 				586059F218041ABD00FD9C2A /* HITransactionsViewController.h */,
 				586059F318041ABD00FD9C2A /* HITransactionsViewController.m */,
 				58A37ADD180D998700CFCDE3 /* HITransactionsViewController.strings */,
@@ -3210,6 +3218,7 @@
 				58A8760F197E9E8100524C77 /* google-drive-128.png in Resources */,
 				248631D818A7AD1800A020A9 /* HIQRCodeWindowController.xib in Resources */,
 				24300BFC188892CD00FDEF2F /* wizard-background.png in Resources */,
+				58DDC5DA1998F68B001E47C9 /* HITransactionPopoverViewController.xib in Resources */,
 				588E356618212BFB006A6A25 /* HIErrorWindowController.xib in Resources */,
 				588E34F2182013E9006A6A25 /* HIDebuggingInfoWindowController.strings in Resources */,
 				588427D018F2DF6600DE6CC4 /* bitcoinkit.checkpoints in Resources */,
@@ -3410,6 +3419,7 @@
 				58A0A49618ABC75E00A5A084 /* HITemporaryContact.m in Sources */,
 				586059D018041A6D00FD9C2A /* HIAppRuntimeBridge.m in Sources */,
 				58E228DC193359C200851F1B /* NSAlert+Hive.m in Sources */,
+				58DDC5D91998F68B001E47C9 /* HITransactionPopoverViewController.m in Sources */,
 				586059D418041A7A00FD9C2A /* HIContactsViewController.m in Sources */,
 				24300C1E188C3F5900FDEF2F /* HIWizardWelcomeViewController.m in Sources */,
 				24300BD918830ACA00FDEF2F /* HIFirstRunWizardWindowController.m in Sources */,

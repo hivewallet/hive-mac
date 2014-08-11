@@ -15,6 +15,7 @@
 #import "HIDatabaseManager.h"
 #import "HITransaction.h"
 #import "HITransactionCellView.h"
+#import "HITransactionPopoverViewController.h"
 #import "HITransactionsViewController.h"
 #import "NSColor+Hive.h"
 
@@ -364,7 +365,25 @@ static NSString *const KEY_UNREAD_TRANSACTIONS = @"unreadTransactions";
     }
 
     [self.tableView deselectRow:row];
+
+    HITransaction *transaction = self.arrayController.arrangedObjects[row];
+    if (transaction) {
+        [self showPopoverForTransaction:transaction inRow:row];
+    }
 }
+
+- (void)showPopoverForTransaction:(HITransaction *)transaction inRow:(NSInteger)row {
+    NSTableCellView *cell = [self.tableView viewAtColumn:0 row:row makeIfNecessary:NO];
+    if (!cell) {
+        return;
+    }
+
+    HITransactionPopoverViewController *pvc =
+        [[HITransactionPopoverViewController alloc] initWithTransaction:transaction];
+
+    [[pvc createPopover] showRelativeToRect:cell.bounds ofView:cell preferredEdge:NSMinYEdge];
+}
+
 
 #pragma mark - badge
 
