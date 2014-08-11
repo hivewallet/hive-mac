@@ -72,7 +72,7 @@
 "Choose a directory inside Dropbox folder where the backup should be saved:" = "เลือกพื้นที่เพื่อเก็บข้อมูลภายในแฟ้มของ Dropbox";
 
 /* No comment provided by engineer. */
-"Choose a directory inside Google Drive folder where the backup should be saved:" = "Choose a directory inside Google Drive folder where the backup should be saved:";
+"Choose a directory inside Google Drive folder where the backup should be saved:" = "เลือกสารบบจากโฟล์เดอร์กูเกิ้ลไดร์ฟที่คุณสามารถบันทึกการสำรองข้อมูลได้";
 
 /* No comment provided by engineer. */
 "click to copy" = "คลิกเพื่อคัดลอก";
@@ -135,7 +135,7 @@
 "Enable..." = "เปิดการใช้งาน...";
 
 /* Password prompt for sending */
-"Enter your password to confirm the transaction:" = "Enter your password to confirm the transaction:";
+"Enter your password to confirm the transaction:" = "กรอกรหัสผ่านเพื่อยืนยันการทำธุรกรรม";
 
 /* Password prompt for message signing */
 "Enter your password to sign the message:" = "ระบุรหัสผ่านเพื่อเขียนข้อความ";
@@ -147,10 +147,10 @@
 "General" = "ทั่วไป";
 
 /* Google Drive no backup folder alert title */
-"Google Drive folder not found." = "Google Drive folder not found.";
+"Google Drive folder not found." = "ไม่พบโฟล์เดอร์กูเกิ้ลไดร์ฟ";
 
 /* Backup error message */
-"Google Drive isn't running" = "Google Drive isn't running";
+"Google Drive isn't running" = "กูเกิ้ลไดร์ฟไม่ทำงาน";
 
 /* Hiveapp file not readable error title */
 "Hive application file \"%@\" could not be opened." = "ข้อมูล \"%@\" ของโปรแกรม ไฮฟ์ ไม่สามารถเปิดได้";
@@ -288,7 +288,7 @@
 "Selected directory is outside Dropbox folder." = "เลือกเส้นทางอื่น นอกเหนือจากแฟ้ม Dropbox";
 
 /* Google Drive invalid folder alert title */
-"Selected directory is outside Google Drive folder." = "Selected directory is outside Google Drive folder.";
+"Selected directory is outside Google Drive folder." = "สารบบที่เลือกไว้อยู่นอกโฟล์เดอร์กูเกิ้ลไดร์ฟ";
 
 /* Send button title */
 "Send" = "ส่ง";
@@ -417,7 +417,7 @@
 "You must install Dropbox first (see www.dropbox.com)." = "คุณต้องติดตั้งโปรแกรม Dropbox ก่อน (ไปที่ www.dropbox.com)";
 
 /* Google Drive no backup folder alert details */
-"You must install Google Drive first (see https://www.google.com/intl/en/drive/download)." = "You must install Google Drive first (see https://www.google.com/intl/en/drive/download).";
+"You must install Google Drive first (see https://www.google.com/intl/en/drive/download)." = "คุณต้องติดตั้งกูเกิ้ลไดร์ฟก่อน (คลิกที่นี่ https://www.google.com/intl/en/drive/download)";
 
 /* No network connection alert message */
 "You need to be connected to the network to send any transactions." = "คุณต้องเชื่อมต่อกับเครือข่ายอินเตอร์เนตเพื่อทำธุรกรรม";
@@ -426,7 +426,7 @@
 "You need to choose or create a directory inside your Dropbox folder." = "คุณต้องเลือกหรือสร้างอีกแฟ้มใน Dropbox";
 
 /* Google Drive invalid folder alert details */
-"You need to choose or create a directory inside your Google Drive folder." = "You need to choose or create a directory inside your Google Drive folder.";
+"You need to choose or create a directory inside your Google Drive folder." = "คุณต้องเลือกหรือสร้างสารบบนโฟล์เดอร์กูเกิ้ลไดร์ฟของคุณ";
 
 /* Contact name empty alert message */
 "You need to give the contact a name before you can add it to the list." = "คุณต้องระบุชื่อผู้ติดต่อก่อนที่คุณจะเพิ่มเข้าไปในรายชื่อ";
