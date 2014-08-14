@@ -173,6 +173,12 @@ describe(@"Parsing", ^{
         });
     });
 
+    context(@"when string is empty", ^{
+        it(@"should return 0", ^{
+            satoshi_t amount = [service parseString:@"" withFormat:@"BTC" error:NULL];
+            assertThat(@(amount), equalToLongLong(0));
+        });
+    });
 });
 
 describe(@"Observing", ^{

@@ -149,8 +149,13 @@ static NSString *const DefaultBitcoinFormat = @"mBTC";
         // We just use it for returning an error if the number cannot be parsed.
 
         number = [[NSDecimalNumber alloc] initWithString:string locale:self.locale];
-        number = [number decimalNumberByMultiplyingByPowerOf10:-[self shiftForFormat:format]];
-        return number.hiSatoshi;
+
+        if (number != [NSDecimalNumber notANumber]) {
+            number = [number decimalNumberByMultiplyingByPowerOf10:-[self shiftForFormat:format]];
+            return number.hiSatoshi;
+        } else {
+            return 0ll;
+        }
     } else {
         return 0ll;
     }
