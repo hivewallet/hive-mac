@@ -6,7 +6,7 @@
 "1AY-mJ-Thd.title" = "保存到文件...";
 
 /* Class = "NSButtonCell"; title = "Open log directory…"; ObjectID = "Ho5-3P-2to"; */
-"Ho5-3P-2to.title" = "Open log directory…";
+"Ho5-3P-2to.title" = "打开日志目录...";
 
 /* Class = "NSTextFieldCell"; title = "If you have problems with your wallet, we may ask you to send us the contents of the text area below. Please note that the data does NOT include your private keys and will not allow us to spend your Bitcoin!"; ObjectID = "o5O-SS-J37"; */
 "o5O-SS-J37.title" = "若您对于您的钱包存在任何疑问，请发送下面的信息给我们。注意，请不要包含您的私钥信息以保护您的钱包安全！";

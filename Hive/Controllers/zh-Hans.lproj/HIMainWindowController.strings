@@ -3,7 +3,7 @@
 "3.title" = "Hive";
 
 /* Class = "NSButtonCell"; title = "Send"; ObjectID = "45"; */
-"45.title" = "汇款";
+"45.title" = "发送";
 
 /* Class = "NSTextFieldCell"; title = "Network connection error"; ObjectID = "2MH-gv-3gz"; */
 "2MH-gv-3gz.title" = "网络连接错误";

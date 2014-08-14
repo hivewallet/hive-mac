@@ -3,7 +3,7 @@
 "DUH-JI-H8J.title" = "姓氏";
 
 /* Class = "NSTextFieldCell"; title = "Sort By:"; ObjectID = "ELC-Fb-fGt"; */
-"ELC-Fb-fGt.title" = "排序依据：";
+"ELC-Fb-fGt.title" = "排序方式：";
 
 /* Class = "NSButtonCell"; title = "Following last name"; ObjectID = "eBf-qE-ozk"; */
 "eBf-qE-ozk.title" = "在姓氏之后";

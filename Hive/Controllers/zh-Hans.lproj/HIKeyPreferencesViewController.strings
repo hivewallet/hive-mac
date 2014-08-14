@@ -3,7 +3,7 @@
 "psj-Lk-deP.title" = "扫描二维码：";
 
 /* Class = "NSTextFieldCell"; title = "Show “Send” window:"; ObjectID = "sbC-cS-hdN"; */
-"sbC-cS-hdN.title" = "显示“汇款”窗口：";
+"sbC-cS-hdN.title" = "显示“发送”窗口：";
 
 /* Class = "NSTextFieldCell"; title = "Global Shortcuts"; ObjectID = "uBD-1D-rbI"; */
 "uBD-1D-rbI.title" = "全局热键";

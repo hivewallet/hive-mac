@@ -87,7 +87,7 @@
 "AFM-Ev-d2A.title" = "锁定钱包";
 
 /* Class = "NSMenuItem"; title = "CoinMap"; ObjectID = "ASP-Ns-ktD"; */
-"ASP-Ns-ktD.title" = "CoinMap";
+"ASP-Ns-ktD.title" = "币地图";
 
 /* Class = "NSMenuItem"; title = "Wallet"; ObjectID = "GX7-xG-GKH"; */
 "GX7-xG-GKH.title" = "钱包";

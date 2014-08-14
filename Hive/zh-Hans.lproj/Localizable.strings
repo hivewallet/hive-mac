@@ -72,7 +72,7 @@
 "Choose a directory inside Dropbox folder where the backup should be saved:" = "选择 Dropbox 文件夹：";
 
 /* No comment provided by engineer. */
-"Choose a directory inside Google Drive folder where the backup should be saved:" = "Choose a directory inside Google Drive folder where the backup should be saved:";
+"Choose a directory inside Google Drive folder where the backup should be saved:" = "选择备份保存在Google Drive内部的目录文件夹中：";
 
 /* No comment provided by engineer. */
 "click to copy" = "点击复制";
@@ -147,10 +147,10 @@
 "General" = "通用";
 
 /* Google Drive no backup folder alert title */
-"Google Drive folder not found." = "Google Drive folder not found.";
+"Google Drive folder not found." = "没有发现Google Drive的文件夹。";
 
 /* Backup error message */
-"Google Drive isn't running" = "Google Drive isn't running";
+"Google Drive isn't running" = "Google Drive没有运行";
 
 /* Hiveapp file not readable error title */
 "Hive application file \"%@\" could not be opened." = "Hive 文件 “%@” 无法打开。";
@@ -288,7 +288,7 @@
 "Selected directory is outside Dropbox folder." = "选择的文件夹不在 Dropbox 目录中。";
 
 /* Google Drive invalid folder alert title */
-"Selected directory is outside Google Drive folder." = "Selected directory is outside Google Drive folder.";
+"Selected directory is outside Google Drive folder." = "选择Google Drive目录以外的文件夹。";
 
 /* Send button title */
 "Send" = "发送";
@@ -417,7 +417,7 @@
 "You must install Dropbox first (see www.dropbox.com)." = "您必须首先安装 Dropbox（访问 www.dropbox.com）";
 
 /* Google Drive no backup folder alert details */
-"You must install Google Drive first (see https://www.google.com/intl/en/drive/download)." = "You must install Google Drive first (see https://www.google.com/intl/en/drive/download).";
+"You must install Google Drive first (see https://www.google.com/intl/en/drive/download)." = "您必须先安装Google Drive (see https://www.google.com/intl/en/drive/download)。";
 
 /* No network connection alert message */
 "You need to be connected to the network to send any transactions." = "您必须先连接到网络。";
@@ -426,7 +426,7 @@
 "You need to choose or create a directory inside your Dropbox folder." = "你需要选择 Dropbox 目录。";
 
 /* Google Drive invalid folder alert details */
-"You need to choose or create a directory inside your Google Drive folder." = "You need to choose or create a directory inside your Google Drive folder.";
+"You need to choose or create a directory inside your Google Drive folder." = "你需要选择或创建您的Google Drive目录中的文件夹。";
 
 /* Contact name empty alert message */
 "You need to give the contact a name before you can add it to the list." = "加入联系簿之前，先给联系人命名。";
