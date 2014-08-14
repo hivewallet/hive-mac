@@ -57,7 +57,6 @@
 		248631D818A7AD1800A020A9 /* HIQRCodeWindowController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 248631D618A7AD1800A020A9 /* HIQRCodeWindowController.xib */; };
 		2499BBD919620192002C3B34 /* NSString+HICleanUpNumber.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AA1046CF53321E40FB2CFCE /* NSString+HICleanUpNumber.m */; };
 		24E2C7C0189D93E6008E17CC /* HICameraWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 24E2C7BE189D93E6008E17CC /* HICameraWindowController.m */; };
-		24EAAFC7186E1BBD00E1D2D3 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 24EAAFC5186E1BBD00E1D2D3 /* InfoPlist.strings */; };
 		24EAAFC9186E1BBD00E1D2D3 /* HIBitcoinFormatServiceSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 24EAAFC8186E1BBD00E1D2D3 /* HIBitcoinFormatServiceSpec.m */; };
 		24FA9859192757A800D7058F /* HIGeneralPreferencesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 24FA9858192757A800D7058F /* HIGeneralPreferencesViewController.m */; };
 		24FA986C1927891E00D7058F /* HIGeneralPreferencesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 24FA986E1927891E00D7058F /* HIGeneralPreferencesViewController.xib */; };
@@ -482,7 +481,6 @@
 		24E2C7BE189D93E6008E17CC /* HICameraWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HICameraWindowController.m; sourceTree = "<group>"; };
 		24EAAFBF186E1BBD00E1D2D3 /* HiveTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HiveTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		24EAAFC4186E1BBD00E1D2D3 /* HiveTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "HiveTests-Info.plist"; sourceTree = "<group>"; };
-		24EAAFC6186E1BBD00E1D2D3 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		24EAAFC8186E1BBD00E1D2D3 /* HIBitcoinFormatServiceSpec.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HIBitcoinFormatServiceSpec.m; sourceTree = "<group>"; };
 		24EAAFCA186E1BBD00E1D2D3 /* HiveTests-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "HiveTests-Prefix.pch"; sourceTree = "<group>"; };
 		24FA9857192757A800D7058F /* HIGeneralPreferencesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HIGeneralPreferencesViewController.h; sourceTree = "<group>"; };
@@ -2449,7 +2447,6 @@
 			isa = PBXGroup;
 			children = (
 				24EAAFC4186E1BBD00E1D2D3 /* HiveTests-Info.plist */,
-				24EAAFC5186E1BBD00E1D2D3 /* InfoPlist.strings */,
 				24EAAFCA186E1BBD00E1D2D3 /* HiveTests-Prefix.pch */,
 			);
 			name = "Supporting Files";
@@ -3136,7 +3133,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				24EAAFC7186E1BBD00E1D2D3 /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -3647,14 +3643,6 @@
 				5874916B1951E4EB00D9C1E9 /* th */,
 			);
 			name = HIFeeDetailsViewController.strings;
-			sourceTree = "<group>";
-		};
-		24EAAFC5186E1BBD00E1D2D3 /* InfoPlist.strings */ = {
-			isa = PBXVariantGroup;
-			children = (
-				24EAAFC6186E1BBD00E1D2D3 /* en */,
-			);
-			name = InfoPlist.strings;
 			sourceTree = "<group>";
 		};
 		24FA986E1927891E00D7058F /* HIGeneralPreferencesViewController.xib */ = {
