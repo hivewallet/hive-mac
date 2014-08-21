@@ -28,6 +28,7 @@
 #import "NSColor+Hive.h"
 #import "NSDecimalNumber+HISatoshiConversion.h"
 #import "NSAlert+Hive.h"
+#import "NSView+Hive.h"
 #import "NSWindow+HIShake.h"
 #import "HIApplication.h"
 
@@ -184,7 +185,7 @@ NSString * const HISendBitcoinsWindowSuccessKey = @"success";
 }
 
 - (void)showDetailsSection {
-    [self removeConstraintsFromView:self.wrapper matchingSubviews:^BOOL(NSArray *views) {
+    [self.wrapper hiRemoveConstraintsMatchingSubviews:^BOOL(NSArray *views) {
         return [views containsObject:self.separator] && [views containsObject:self.detailsSeparator];
     }];
 
@@ -200,7 +201,7 @@ NSString * const HISendBitcoinsWindowSuccessKey = @"success";
     [self.detailsBox setHidden:YES];
     [self.detailsSeparator setHidden:YES];
 
-    NSArray *removed = [self removeConstraintsFromView:self.wrapper matchingSubviews:^BOOL(NSArray *views) {
+    NSArray *removed = [self.wrapper hiRemoveConstraintsMatchingSubviews:^BOOL(NSArray *views) {
         BOOL separator = [views containsObject:self.separator] || [views containsObject:self.detailsSeparator];
         return separator && [views containsObject:self.detailsBox];
     }];
@@ -208,29 +209,6 @@ NSString * const HISendBitcoinsWindowSuccessKey = @"success";
     [self.wrapper addConstraint:VSPACE(self.separator, self.detailsSeparator)];
 
     _detailsSectionConstraints = removed;
-}
-
-- (NSArray *)removeConstraintsFromView:(NSView *)superview matchingSubviews:(BOOL (^)(NSArray *))viewsMatch {
-    NSMutableArray *removed = [NSMutableArray new];
-
-    [superview.constraints enumerateObjectsUsingBlock:^(id constraint, NSUInteger idx, BOOL *stop) {
-        NSMutableArray *views = [NSMutableArray new];
-
-        if ([constraint firstItem]) {
-            [views addObject:[constraint firstItem]];
-        }
-
-        if ([constraint secondItem]) {
-            [views addObject:[constraint secondItem]];
-        }
-
-        if (viewsMatch(views)) {
-            [superview removeConstraint:constraint];
-            [removed addObject:constraint];
-        }
-    }];
-
-    return removed;
 }
 
 - (void)windowWillClose:(NSNotification *)notification {
