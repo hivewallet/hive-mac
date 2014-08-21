@@ -6,14 +6,18 @@
 //  Copyright (c) 2014 Hive Developers. All rights reserved.
 //
 
+#import "BCClient.h"
 #import "HITransaction.h"
 #import "HITransactionPopoverViewController.h"
 
 @interface HITransactionPopoverViewController ()
 
 @property (weak) IBOutlet NSTextField *transactionIdField;
+@property (weak) IBOutlet NSTextField *statusField;
+@property (weak) IBOutlet NSTextField *confirmationsField;
 
 @property (strong) HITransaction *transaction;
+@property (strong) NSDictionary *transactionData;
 
 @end
 
@@ -37,7 +41,41 @@
 }
 
 - (void)awakeFromNib {
+    if (self.transaction.id) {
+        self.transactionData = [[BCClient sharedClient] transactionDefinitionWithHash:self.transaction.id];
+    }
+
     self.transactionIdField.stringValue = self.transaction.id ?: @"?";
+    self.confirmationsField.stringValue = [self.transactionData[@"confirmations"] description] ?: @"";
+    self.statusField.stringValue = [self transactionStatus];
+}
+
+- (NSString *)transactionStatus {
+    switch (self.transaction.status) {
+        case HITransactionStatusUnknown:
+            return NSLocalizedString(@"Not broadcasted yet",
+                                     @"Status for transaction not sent to any peers in transaction popup");
+
+        case HITransactionStatusPending: {
+            NSInteger peers = [self.transactionData[@"peers"] integerValue];
+
+            if (peers == 0) {
+                return NSLocalizedString(@"Not broadcasted yet",
+                                         @"Status for transaction not sent to any peers in transaction popup");
+            } else {
+                return NSLocalizedString(@"Waiting for confirmation",
+                                         @"Status for transaction sent to some peers in transaction popup");
+            }
+        }
+
+        case HITransactionStatusBuilding:
+            return NSLocalizedString(@"Confirmed",
+                                     @"Status for transaction included in a block in transaction popup");
+
+        case HITransactionStatusDead:
+            return NSLocalizedString(@"Rejected by the network",
+                                     @"Status for transaction removed from the main blockchain in transaction popup");
+    }
 }
 
 - (IBAction)showOnBlockchainInfoClicked:(id)sender {

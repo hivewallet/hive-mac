@@ -56,6 +56,7 @@ extern NSString * const HITransactionEntity;
 
 @property (nonatomic) NSDate *date;
 @property (nonatomic) int32_t confirmations;
+
 @property (nonatomic) BOOL request;
 
 // if the address hash matches any of the contacts' addreses, contact is linked here, otherwise it's nil
