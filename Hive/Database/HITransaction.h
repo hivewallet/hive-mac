@@ -44,6 +44,11 @@ extern NSString * const HITransactionEntity;
 // fee amount, in satoshis; for incoming transactions it might return 0
 @property (nonatomic) int64_t fee;
 
+// selected fiat currency, and amount/rate for that currency at the moment of sending
+@property (nonatomic, copy) NSString *fiatCurrency;
+@property (nonatomic, strong) NSDecimalNumber *fiatAmount;
+@property (nonatomic, strong) NSDecimalNumber *fiatRate;
+
 // BTC address of the sender
 @property (nonatomic, retain) NSString *senderHash;
 

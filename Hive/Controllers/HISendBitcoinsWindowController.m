@@ -703,12 +703,20 @@ NSString * const HISendBitcoinsWindowSuccessKey = @"success";
     NSError *error = nil;
     BCClient *client = [BCClient sharedClient];
 
+    NSDecimalNumber *fiatAmount = self.convertedAmountFieldValue;
+    NSDecimalNumber *fiatRate = self.exchangeRate;
+    NSString *fiatCurrency = self.selectedCurrency;
+
     [client sendBitcoins:satoshi
                   toHash:target
                 password:password
                    error:&error
               completion:^(BOOL success, HITransaction *transaction) {
         if (success) {
+            transaction.fiatAmount = fiatAmount;
+            transaction.fiatCurrency = fiatCurrency;
+            transaction.fiatRate = fiatRate;
+
             if (_sourceApplication) {
                 [client attachSourceApplication:_sourceApplication toTransaction:transaction];
             }
