@@ -106,7 +106,6 @@
 		586059B4180419F500FD9C2A /* BCClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 586059B3180419F500FD9C2A /* BCClient.m */; };
 		586059BD18041A1300FD9C2A /* NSColor+Hive.m in Sources */ = {isa = PBXBuildFile; fileRef = 586059B618041A1300FD9C2A /* NSColor+Hive.m */; };
 		586059BE18041A1300FD9C2A /* NSImage+NPEffects.m in Sources */ = {isa = PBXBuildFile; fileRef = 586059B818041A1300FD9C2A /* NSImage+NPEffects.m */; };
-		586059BF18041A1300FD9C2A /* NSView+Snapshot.m in Sources */ = {isa = PBXBuildFile; fileRef = 586059BA18041A1300FD9C2A /* NSView+Snapshot.m */; };
 		586059CB18041A6D00FD9C2A /* HIApplicationRuntimeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 586059C218041A6D00FD9C2A /* HIApplicationRuntimeViewController.m */; };
 		586059CD18041A6D00FD9C2A /* HIApplicationsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 586059C518041A6D00FD9C2A /* HIApplicationsViewController.m */; };
 		586059CF18041A6D00FD9C2A /* HIApplicationURLProtocol.m in Sources */ = {isa = PBXBuildFile; fileRef = 586059C818041A6D00FD9C2A /* HIApplicationURLProtocol.m */; };
@@ -1018,8 +1017,6 @@
 		586059B618041A1300FD9C2A /* NSColor+Hive.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSColor+Hive.m"; sourceTree = "<group>"; };
 		586059B718041A1300FD9C2A /* NSImage+NPEffects.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSImage+NPEffects.h"; sourceTree = "<group>"; };
 		586059B818041A1300FD9C2A /* NSImage+NPEffects.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSImage+NPEffects.m"; sourceTree = "<group>"; };
-		586059B918041A1300FD9C2A /* NSView+Snapshot.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSView+Snapshot.h"; sourceTree = "<group>"; };
-		586059BA18041A1300FD9C2A /* NSView+Snapshot.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSView+Snapshot.m"; sourceTree = "<group>"; };
 		586059C118041A6D00FD9C2A /* HIApplicationRuntimeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HIApplicationRuntimeViewController.h; sourceTree = "<group>"; };
 		586059C218041A6D00FD9C2A /* HIApplicationRuntimeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HIApplicationRuntimeViewController.m; sourceTree = "<group>"; };
 		586059C418041A6D00FD9C2A /* HIApplicationsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HIApplicationsViewController.h; sourceTree = "<group>"; };
@@ -2982,12 +2979,10 @@
 				1AA104995C1BAF25C99780F1 /* NSDecimalNumber+HISatoshiConversion.m */,
 				586059B718041A1300FD9C2A /* NSImage+NPEffects.h */,
 				586059B818041A1300FD9C2A /* NSImage+NPEffects.m */,
-				586059B918041A1300FD9C2A /* NSView+Snapshot.h */,
-				586059BA18041A1300FD9C2A /* NSView+Snapshot.m */,
+				1AA103EFC48859E0AF3ABC87 /* NSString+HICleanUpNumber.h */,
+				1AA1046CF53321E40FB2CFCE /* NSString+HICleanUpNumber.m */,
 				1AA1021B2F3F04674129E978 /* NSWindow+HIShake.h */,
 				1AA10B9F1D9322FFF21821DA /* NSWindow+HIShake.m */,
-				1AA1046CF53321E40FB2CFCE /* NSString+HICleanUpNumber.m */,
-				1AA103EFC48859E0AF3ABC87 /* NSString+HICleanUpNumber.h */,
 			);
 			path = Categories;
 			sourceTree = "<group>";
@@ -3409,7 +3404,6 @@
 				586059BD18041A1300FD9C2A /* NSColor+Hive.m in Sources */,
 				586059BE18041A1300FD9C2A /* NSImage+NPEffects.m in Sources */,
 				583076BF18B3C8220017084A /* HIAboutHiveWindowController.m in Sources */,
-				586059BF18041A1300FD9C2A /* NSView+Snapshot.m in Sources */,
 				58F496F818B7EE8F0033B7E0 /* HINetworkConnectionMonitor.m in Sources */,
 				586059CB18041A6D00FD9C2A /* HIApplicationRuntimeViewController.m in Sources */,
 				583076C418B3CFDC0017084A /* HILicenseInfoPanelController.m in Sources */,
