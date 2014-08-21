@@ -7,14 +7,24 @@
 //
 
 #import "BCClient.h"
+#import "HIBitcoinFormatService.h"
+#import "HICurrencyFormatService.h"
 #import "HITransaction.h"
 #import "HITransactionPopoverViewController.h"
+#import "NSView+Hive.h"
 
 @interface HITransactionPopoverViewController ()
 
 @property (weak) IBOutlet NSTextField *transactionIdField;
 @property (weak) IBOutlet NSTextField *statusField;
 @property (weak) IBOutlet NSTextField *confirmationsField;
+
+@property (weak) IBOutlet NSTextField *amountField;
+@property (weak) IBOutlet NSTextField *amountLabel;
+@property (weak) IBOutlet NSTextField *exchangeRateField;
+@property (weak) IBOutlet NSTextField *exchangeRateLabel;
+@property (weak) IBOutlet NSTextField *targetAddressField;
+@property (weak) IBOutlet NSTextField *targetAddressLabel;
 
 @property (strong) HITransaction *transaction;
 @property (strong) NSDictionary *transactionData;
@@ -48,6 +58,38 @@
     self.transactionIdField.stringValue = self.transaction.id ?: @"?";
     self.confirmationsField.stringValue = [self confirmationSummary];
     self.statusField.stringValue = [self transactionStatus];
+    self.amountField.stringValue = [self amountSummary];
+
+    if (self.transaction.fiatCurrency && self.transaction.fiatRate) {
+        self.exchangeRateField.stringValue = [self exchangeRateSummary];
+    } else {
+        [self.exchangeRateField setHidden:YES];
+        [self.exchangeRateLabel setHidden:YES];
+
+        [self.view hiRemoveConstraintsMatchingSubviews:^BOOL(NSArray *views) {
+            return [views containsObject:self.exchangeRateLabel];
+        }];
+
+        [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:[a]-[t]"
+                                                                          options:0
+                                                                          metrics:nil
+                                                                            views:@{@"a": self.amountLabel,
+                                                                                    @"t": self.targetAddressLabel}]];
+    }
+
+    if (self.transaction.direction == HITransactionDirectionIncoming) {
+        self.targetAddressLabel.stringValue =
+            NSLocalizedString(@"Received with address:",
+                              @"Transaction target address label for incoming transactions");
+    } else {
+        self.targetAddressLabel.stringValue =
+            NSLocalizedString(@"Target address:",
+                              @"Transaction target address label for outgoing transactions");
+    }
+
+    self.targetAddressField.stringValue = self.transaction.targetAddress ?:
+                                          [[BCClient sharedClient] walletHash] ?:
+                                          @"?";
 }
 
 - (NSString *)transactionStatus {
@@ -86,6 +128,29 @@
     } else {
         return [NSString stringWithFormat:@"%ld", confirmations];
     }
+}
+
+- (NSString *)amountSummary {
+    satoshi_t satoshiAmount = self.transaction.absoluteAmount;
+    NSString *btcAmount = [[HIBitcoinFormatService sharedService] stringForBitcoin:satoshiAmount withFormat:@"BTC"];
+
+    if (self.transaction.fiatCurrency && self.transaction.fiatAmount) {
+        HICurrencyFormatService *fiatFormatter = [HICurrencyFormatService sharedService];
+        NSString *fiatAmount = [fiatFormatter stringWithUnitForValue:self.transaction.fiatAmount
+                                                          inCurrency:self.transaction.fiatCurrency];
+
+        return [NSString stringWithFormat:@"%@ BTC (%@)", btcAmount, fiatAmount];
+    } else {
+        return [NSString stringWithFormat:@"%@ BTC", btcAmount];
+    }
+}
+
+- (NSString *)exchangeRateSummary {
+    HICurrencyFormatService *fiatFormatter = [HICurrencyFormatService sharedService];
+    NSString *oneBTCRate = [fiatFormatter stringWithUnitForValue:self.transaction.fiatRate
+                                                      inCurrency:self.transaction.fiatCurrency];
+
+    return [NSString stringWithFormat:@"1 BTC = %@", oneBTCRate];
 }
 
 - (IBAction)showOnBlockchainInfoClicked:(id)sender {

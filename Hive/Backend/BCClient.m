@@ -424,8 +424,16 @@ NSString * const BCClientPasswordChangedNotification = @"BCClientPasswordChanged
     transaction.date = data[@"time"];
     transaction.amount = [data[@"amount"] longLongValue];
     transaction.fee = [data[@"fee"] longLongValue];
+
+    // TODO: wtf is this for?
     transaction.request = (![data[@"details"][0][@"category"] isEqual:@"send"]);
+
     transaction.senderHash = data[@"details"][0][@"address"];
+
+    // TODO: set this on the Java side
+    if (transaction.direction == HITransactionDirectionIncoming && !transaction.senderHash) {
+        transaction.senderHash = self.walletHash;
+    }
 
     if (transaction.senderHash) {
         // Try to find a contact that matches that transaction
