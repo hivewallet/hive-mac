@@ -2034,10 +2034,6 @@
 		58DDC5D61998F68B001E47C9 /* HITransactionPopoverViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HITransactionPopoverViewController.h; sourceTree = "<group>"; };
 		58DDC5D71998F68B001E47C9 /* HITransactionPopoverViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HITransactionPopoverViewController.m; sourceTree = "<group>"; };
 		58DDC5D81998F68B001E47C9 /* HITransactionPopoverViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HITransactionPopoverViewController.xib; sourceTree = "<group>"; };
-		58DDC5DD1999128C001E47C9 /* 2014081101.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = 2014081101.xcdatamodel; sourceTree = "<group>"; };
-		58DDC5DE199913A9001E47C9 /* 2014081102.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = 2014081102.xcdatamodel; sourceTree = "<group>"; };
-		58DDC5DF19992573001E47C9 /* 2014081103.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = 2014081103.xcdatamodel; sourceTree = "<group>"; };
-		58DDC5E2199A7813001E47C9 /* 2014081201.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = 2014081201.xcdatamodel; sourceTree = "<group>"; };
 		58E228DA193359C200851F1B /* NSAlert+Hive.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSAlert+Hive.h"; sourceTree = "<group>"; };
 		58E228DB193359C200851F1B /* NSAlert+Hive.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSAlert+Hive.m"; sourceTree = "<group>"; };
 		58E336181892C02E004D60C3 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/HIApplicationsViewController.strings; sourceTree = "<group>"; };
@@ -5719,14 +5715,10 @@
 		D962AF011769FEF9009F882A /* Hive.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				58C4E83919A5FF91003B5171 /* 2014082101.xcdatamodel */,
 				58357A3B186068A70077B717 /* 2013121701.xcdatamodel */,
 				58571253188D8E7A0094F884 /* 2014012001.xcdatamodel */,
 				24A69630191171E8007DC178 /* 2014043001.xcdatamodel */,
-				58DDC5DD1999128C001E47C9 /* 2014081101.xcdatamodel */,
-				58DDC5DE199913A9001E47C9 /* 2014081102.xcdatamodel */,
-				58DDC5DF19992573001E47C9 /* 2014081103.xcdatamodel */,
-				58DDC5E2199A7813001E47C9 /* 2014081201.xcdatamodel */,
+				58C4E83919A5FF91003B5171 /* 2014082101.xcdatamodel */,
 				D962AF021769FEF9009F882A /* Hive.xcdatamodel */,
 			);
 			currentVersion = 58C4E83919A5FF91003B5171 /* 2014082101.xcdatamodel */;
