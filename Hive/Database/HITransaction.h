@@ -55,7 +55,6 @@ extern NSString * const HITransactionEntity;
 @property (nonatomic) HITransactionStatus status;
 
 @property (nonatomic) NSDate *date;
-@property (nonatomic) int32_t confirmations;
 
 @property (nonatomic) BOOL request;
 

@@ -24,7 +24,6 @@ NSString * const HITransactionEntity = @"HITransaction";
 @dynamic status;
 @dynamic date;
 @dynamic senderEmail;
-@dynamic confirmations;
 @dynamic request;
 @dynamic contact;
 @dynamic sourceApplication;
