@@ -40,4 +40,11 @@
     self.transactionIdField.stringValue = self.transaction.id ?: @"?";
 }
 
+- (IBAction)showOnBlockchainInfoClicked:(id)sender {
+    NSString *url = [NSString stringWithFormat:@"https://blockchain.info/tx/%@", self.transaction.id];
+    [[NSWorkspace sharedWorkspace] openURL:[NSURL URLWithString:url]];
+
+    [sender setState:NSOnState];
+}
+
 @end
