@@ -474,9 +474,8 @@ NSString * const BCClientPasswordChangedNotification = @"BCClientPasswordChanged
 - (void)sendBitcoins:(uint64)amount
               toHash:(NSString *)hash
             password:(HIPasswordHolder *)password
-   sourceApplication:(HIApplication *)sourceApplication
                error:(NSError **)error
-          completion:(void (^)(BOOL success, NSString *transactionId))completion {
+          completion:(void (^)(BOOL success, HITransaction *transaction))completion {
 
     HILogInfo(@"Sending %lld satoshi to %@ (%@ password)", amount, hash, password ? @"with" : @"no");
 
@@ -507,30 +506,22 @@ NSString * const BCClientPasswordChangedNotification = @"BCClientPasswordChanged
                       password:password.data
                          error:error
                     completion:^(NSString *transactionId) {
-                dispatch_async(dispatch_get_main_queue(), ^{
-                    HILogInfo(@"Transaction %@: id = %@", transactionId ? @"succeeded" : @"failed", transactionId);
-                    completion((transactionId != nil), transactionId);
 
-                    [self attachSourceApplication:sourceApplication
-                                  toTransactionId:transactionId];
+                BOOL success = (transactionId != nil);
+                HILogInfo(@"Transaction %@: id = %@", success ? @"succeeded" : @"failed", transactionId);
+
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    HITransaction *transaction = [self fetchTransactionWithId:transactionId];
+                    completion(success, transaction);
                 });
             }];
         }
     }
 }
 
-- (void)attachSourceApplication:(HIApplication *)application toTransactionId:(NSString *)id {
-    [_transactionUpdateContext performBlock:^{
-        HITransaction *transaction = [self fetchTransactionWithId:id];
-        HIApplication *applicationInUpdateContext =
-            [self fetchApplicationForUpdateContext:application];
-        transaction.sourceApplication = applicationInUpdateContext;
-        NSError *error = nil;
-        [_transactionUpdateContext save:&error];
-        if (error) {
-            HILogError(@"Error attaching icon: %@", error);
-        }
-    }];
+- (void)attachSourceApplication:(HIApplication *)application toTransaction:(HITransaction *)transaction {
+    HIApplication *applicationInUpdateContext = [self fetchApplicationForUpdateContext:application];
+    transaction.sourceApplication = applicationInUpdateContext;
 }
 
 - (HIApplication *)fetchApplicationForUpdateContext:(HIApplication *)application {
@@ -540,18 +531,15 @@ NSString * const BCClientPasswordChangedNotification = @"BCClientPasswordChanged
     return response.count > 0 ? response[0] : nil;
 }
 
-- (void)sendBitcoins:(uint64)amount
-           toContact:(HIContact *)contact
-            password:(HIPasswordHolder *)password
-               error:(NSError **)error
-          completion:(void(^)(BOOL success, NSString *transactionId))completion {
+- (void)updateTransaction:(HITransaction *)transaction {
+    [_transactionUpdateContext performBlock:^{
+        NSError *error = nil;
+        [_transactionUpdateContext save:&error];
 
-    [self sendBitcoins:amount
-                toHash:contact.account
-              password:password
-     sourceApplication:nil
-                 error:error
-            completion:completion];
+        if (error) {
+            HILogError(@"Error saving transaction: %@", error);
+        }
+    }];
 }
 
 - (satoshi_t)feeWhenSendingBitcoin:(uint64)amount
