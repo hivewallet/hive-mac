@@ -46,7 +46,7 @@
     }
 
     self.transactionIdField.stringValue = self.transaction.id ?: @"?";
-    self.confirmationsField.stringValue = [self.transactionData[@"confirmations"] description] ?: @"";
+    self.confirmationsField.stringValue = [self confirmationSummary];
     self.statusField.stringValue = [self transactionStatus];
 }
 
@@ -75,6 +75,16 @@
         case HITransactionStatusDead:
             return NSLocalizedString(@"Rejected by the network",
                                      @"Status for transaction removed from the main blockchain in transaction popup");
+    }
+}
+
+- (NSString *)confirmationSummary {
+    NSInteger confirmations = [self.transactionData[@"confirmations"] integerValue];
+
+    if (confirmations > 100) {
+        return @"100+";
+    } else {
+        return [NSString stringWithFormat:@"%ld", confirmations];
     }
 }
 
