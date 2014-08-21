@@ -81,4 +81,8 @@ NSString * const HITransactionEntity = @"HITransaction";
     return llabs(self.amount) - (self.isOutgoing ? self.fee : 0);
 }
 
+- (NSString *)targetAddress {
+    return self.senderHash;
+}
+
 @end

@@ -326,16 +326,16 @@ static NSString *const KEY_UNREAD_TRANSACTIONS = @"unreadTransactions";
         } else if (transaction.contact.lastname.length > 0) {
             value = transaction.contact.lastname;
         } else if (contactRange.location == summary.string.length - 2) {
-            value = transaction.senderHash;
+            value = transaction.targetAddress;
         } else {
             // we can't tail-truncate if the address is not at the end, so we'll truncate it manually
             value = [NSString stringWithFormat:@"%@…%@",
-                     [transaction.senderHash substringToIndex:8],
-                     [transaction.senderHash substringFromIndex:(transaction.senderHash.length - 8)]];
+                     [transaction.targetAddress substringToIndex:8],
+                     [transaction.targetAddress substringFromIndex:(transaction.targetAddress.length - 8)]];
         }
 
         if (!value) {
-            HILogWarn(@"Transaction has no senderHash: %@", transaction);
+            HILogWarn(@"Transaction has no targetAddress: %@", transaction);
             value = @"?";
         }
 

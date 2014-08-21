@@ -49,8 +49,11 @@ extern NSString * const HITransactionEntity;
 @property (nonatomic, strong) NSDecimalNumber *fiatAmount;
 @property (nonatomic, strong) NSDecimalNumber *fiatRate;
 
-// BTC address of the sender
+// confusingly named, this is actually the recipient's address...
 @property (nonatomic, retain) NSString *senderHash;
+
+// aliased here for convenience
+@property (nonatomic, readonly) NSString *targetAddress;
 
 // currently unused?
 @property (nonatomic, retain) NSString *senderName;
