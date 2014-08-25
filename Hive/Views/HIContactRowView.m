@@ -8,24 +8,20 @@
 
 #import "HIContactRowView.h"
 
-@interface HIContactRowView () {
-    NSGradient *gradient;
-    NSGradient *highlightedGradient;
-    NSColor *separatorColor;
-}
+@interface HIContactRowView ()
+
+@property (nonatomic) BOOL mouseInside;
+@property (strong) NSTrackingArea *trackingArea;
+@property (strong) NSColor *highlightColor;
+@property (strong) NSColor *hoverColor;
 
 @end
 
 @implementation HIContactRowView
 
 - (void)awakeFromNib {
-    gradient = [[NSGradient alloc] initWithStartingColor:RGB(245, 245, 245)
-                                             endingColor:[NSColor whiteColor]];
-    
-    highlightedGradient = [[NSGradient alloc] initWithStartingColor:RGB(42, 140, 244)
-                                                        endingColor:RGB(64, 201, 252)];
-    
-    separatorColor = RGB(192, 192, 192);
+    self.highlightColor = [NSColor colorWithCalibratedWhite:0.9 alpha:1.0];
+    self.hoverColor = [NSColor colorWithCalibratedWhite:0.97 alpha:1.0];
 }
 
 - (instancetype)init {
@@ -42,20 +38,59 @@
     return self;
 }
 
+- (void)setMouseInside:(BOOL)mouseInside {
+    if (_mouseInside != mouseInside) {
+        _mouseInside = mouseInside;
+        [self setNeedsDisplay:YES];
+    }
+}
+
 - (void)drawBackgroundInRect:(NSRect)dirtyRect {
-    [gradient drawInRect:self.bounds angle:270.0];
-    [separatorColor set];
-    
-    NSBezierPath *line = [NSBezierPath bezierPath];
-    line.lineWidth = 0.5;
-    [line moveToPoint:NSMakePoint(0, self.bounds.size.height)];
-    [line lineToPoint:NSMakePoint(self.bounds.size.width, self.bounds.size.height)];
-    [line stroke];
-    
+    if (self.mouseInside) {
+        [self.hoverColor setFill];
+        [NSBezierPath fillRect:dirtyRect];
+    } else {
+        [super drawBackgroundInRect:dirtyRect];
+    }
 }
 
 - (void)drawSelectionInRect:(NSRect)dirtyRect {
-    [highlightedGradient drawInRect:self.bounds angle:270.0];
+    [self.highlightColor setFill];
+    [NSBezierPath fillRect:dirtyRect];
+}
+
+- (NSBackgroundStyle)interiorBackgroundStyle {
+    return NSBackgroundStyleLight;
+}
+
+- (void)updateTrackingAreas {
+    [super updateTrackingAreas];
+    [self removeTrackingArea:self.trackingArea];
+
+    self.trackingArea = [[NSTrackingArea alloc] initWithRect:self.bounds
+                                                     options:NSTrackingMouseEnteredAndExited | NSTrackingActiveAlways
+                                                       owner:self
+                                                    userInfo:nil];
+    [self addTrackingArea:self.trackingArea];
+
+    NSPoint mouseLocation = [self.window mouseLocationOutsideOfEventStream];
+    self.mouseInside = NSPointInRect([self convertPoint:mouseLocation fromView:nil], self.bounds);
+
+    [super updateTrackingAreas];
+}
+
+- (void)dealloc {
+    [self removeTrackingArea:self.trackingArea];
+}
+
+- (void)mouseEntered:(NSEvent *)theEvent {
+    [super mouseEntered:theEvent];
+    self.mouseInside = YES;
+}
+
+- (void)mouseExited:(NSEvent *)theEvent {
+    self.mouseInside = NO;
+    [super mouseExited:theEvent];
 }
 
 @end
