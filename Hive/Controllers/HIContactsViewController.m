@@ -158,10 +158,7 @@
 
     dispatch_async(dispatch_get_main_queue(), ^{
         HIViewController *sub = [[HIContactViewController alloc] initWithContact:_arrayController.arrangedObjects[row]];
-        
         [self.navigationController pushViewController:sub animated:YES];
-
-        [self.tableView deselectRow:row];
     });
 }
 
