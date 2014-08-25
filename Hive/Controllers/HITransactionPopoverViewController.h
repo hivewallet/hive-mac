@@ -8,7 +8,16 @@
 
 #import <Cocoa/Cocoa.h>
 
+@class HITransactionPopoverViewController;
+
+@protocol HITransactionPopoverDelegate <NSObject>
+@optional
+- (void)transactionPopoverDidClose:(HITransactionPopoverViewController *)controller;
+@end
+
 @interface HITransactionPopoverViewController : NSViewController
+
+@property (strong) id<HITransactionPopoverDelegate> delegate;
 
 - (instancetype)initWithTransaction:(HITransaction *)transaction;
 - (NSPopover *)createPopover;

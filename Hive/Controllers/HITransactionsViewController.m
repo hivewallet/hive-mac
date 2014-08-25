@@ -23,12 +23,15 @@ static int KVO_CONTEXT;
 
 static NSString *const KEY_UNREAD_TRANSACTIONS = @"unreadTransactions";
 
-@interface HITransactionsViewController () <BCTransactionObserver>
+@interface HITransactionsViewController ()
+    <BCTransactionObserver, HITransactionPopoverDelegate, NSTableViewDataSource, NSTableViewDelegate>
 
 @property (strong, nonatomic) IBOutlet NSView *noTransactionsView;
 @property (strong, nonatomic) IBOutlet NSScrollView *scrollView;
 @property (strong) IBOutlet NSArrayController *arrayController;
 @property (strong) IBOutlet NSTableView *tableView;
+@property (strong) HITransactionPopoverViewController *popoverController;
+@property (assign) NSInteger currentlySelectedRow;
 
 @end
 
@@ -44,6 +47,7 @@ static NSString *const KEY_UNREAD_TRANSACTIONS = @"unreadTransactions";
     if (self) {
         self.title = NSLocalizedString(@"Transactions", @"Transactions view title");
         self.iconName = @"timeline";
+        self.currentlySelectedRow = -1;
 
         _transactionDateFormatter = [NSDateFormatter new];
         _fullTransactionDateFormatter = [NSDateFormatter new];
@@ -358,17 +362,27 @@ static NSString *const KEY_UNREAD_TRANSACTIONS = @"unreadTransactions";
     }
 }
 
-- (void)tableViewSelectionDidChange:(NSNotification *)notification {
-    NSInteger row = self.tableView.selectedRow;
-    if (row == -1) {
-        return;
+- (IBAction)tableViewWasClicked:(id)sender {
+    NSInteger previousRow = self.currentlySelectedRow;
+
+    if (previousRow != -1) {
+        [self.tableView deselectRow:previousRow];
+
+        self.popoverController.delegate = nil;
+        self.popoverController = nil;
+        self.currentlySelectedRow = -1;
     }
 
-    [self.tableView deselectRow:row];
+    NSInteger clickedRow = self.tableView.clickedRow;
 
-    HITransaction *transaction = self.arrayController.arrangedObjects[row];
-    if (transaction) {
-        [self showPopoverForTransaction:transaction inRow:row];
+    if (clickedRow != -1 && clickedRow != previousRow) {
+        HITransaction *transaction = self.arrayController.arrangedObjects[clickedRow];
+
+        if (transaction) {
+            [self showPopoverForTransaction:transaction inRow:clickedRow];
+        }
+
+        self.currentlySelectedRow = clickedRow;
     }
 }
 
@@ -378,10 +392,19 @@ static NSString *const KEY_UNREAD_TRANSACTIONS = @"unreadTransactions";
         return;
     }
 
-    HITransactionPopoverViewController *pvc =
-        [[HITransactionPopoverViewController alloc] initWithTransaction:transaction];
+    self.popoverController = [[HITransactionPopoverViewController alloc] initWithTransaction:transaction];
+    self.popoverController.delegate = self;
 
-    [[pvc createPopover] showRelativeToRect:cell.bounds ofView:cell preferredEdge:NSMinYEdge];
+    [[self.popoverController createPopover] showRelativeToRect:cell.bounds ofView:cell preferredEdge:NSMinYEdge];
+}
+
+- (void)transactionPopoverDidClose:(HITransactionPopoverViewController *)controller {
+    if (controller == self.popoverController) {
+        [self.tableView deselectAll:self];
+        self.currentlySelectedRow = -1;
+        self.popoverController.delegate = nil;
+        self.popoverController = nil;
+    }
 }
 
 

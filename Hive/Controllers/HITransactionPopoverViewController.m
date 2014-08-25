@@ -13,7 +13,7 @@
 #import "HITransactionPopoverViewController.h"
 #import "NSView+Hive.h"
 
-@interface HITransactionPopoverViewController ()
+@interface HITransactionPopoverViewController () <NSPopoverDelegate>
 
 @property (weak) IBOutlet NSTextField *transactionIdField;
 @property (weak) IBOutlet NSTextField *statusField;
@@ -46,7 +46,8 @@
 - (NSPopover *)createPopover {
     NSPopover *popover = [[NSPopover alloc] init];
     popover.contentViewController = self;
-    popover.behavior = NSPopoverBehaviorSemitransient;
+    popover.delegate = self;
+    popover.behavior = NSPopoverBehaviorTransient;
     return popover;
 }
 
@@ -158,6 +159,14 @@
     [[NSWorkspace sharedWorkspace] openURL:[NSURL URLWithString:url]];
 
     [sender setState:NSOnState];
+}
+
+- (void)popoverDidClose:(NSNotification *)notification {
+    id<HITransactionPopoverDelegate> delegate = self.delegate;
+
+    if (delegate && [delegate respondsToSelector:@selector(transactionPopoverDidClose:)]) {
+        [delegate transactionPopoverDidClose:self];
+    }
 }
 
 @end
