@@ -1,12 +1,12 @@
 
 /* Body for feedback emails */
-"(Please write in English if possible.)" = "(Please write in English if possible.)";
+"(Please write in English if possible.)" = "(Παρακαλώ γράψτε στα Αγγλικά αν είναι δυνατόν.)";
 
 /* Alert message when bitcoin: URI is not valid */
-"\"%@\" is not a valid payment link." = "\"%@\" is not a valid payment link.";
+"\"%@\" is not a valid payment link." = "\"%@\" δεν είναι έγκυρος σύνδεσμος πληρομής.";
 
 /* Alert message when payment request URL is not valid */
-"\"%@\" is not a valid URL." = "\"%@\" is not a valid URL.";
+"\"%@\" is not a valid URL." = "\"%@\" δεν είναι έγκυρο URL.";
 
 /* Address field placeholder */
 "Address" = "Διεύθυνση";
@@ -18,13 +18,13 @@
 "Anonymous" = "Ανώνυμος";
 
 /* Message when trying to start an app that requires a newer API level. */
-"App requires a newer version of Hive." = "App requires a newer version of Hive.";
+"App requires a newer version of Hive." = "Η εφαρμογή απαιτεί μια νεότερη έκδοση του Hive.";
 
 /* App load error title */
 "Application can't be loaded" = "Αδύνατη η φόρτωση της εφαρμογής";
 
 /* Applications view title */
-"Apps" = "Apps";
+"Apps" = "Εφαρμογές";
 
 /* Cancel editing alert title */
 "Are you sure you want to leave this page?" = "Είστε σίγουρος ότι θέλετε να κλείσετε αυτήν την σελίδα;";
@@ -33,7 +33,7 @@
 "Are you sure you want to send %@ (%@) to %@?" = "Είστε σίγουροι πως θέλετε να στείλετε %1$@ (%2$@) στη %3$@?";
 
 /* Wizard backup page title */
-"Backup" = "Backup";
+"Backup" = "Αντίγραφο ασφαλείας";
 
 /* Backup status: backup can't or won't be completed */
 "Backup error" = "Σφάλμα κατά το Backup";
@@ -84,7 +84,7 @@
 "Contact can't be saved." = "Αδύνατη η αποθήκευση της επαφής.";
 
 /* Entry in application icon context menu */
-"Contact the author" = "Contact the author";
+"Contact the author" = "Eπικοινωνήστε με τον συγγραφέα";
 
 /* Contacts view title */
 "Contacts" = "Επαφές";
@@ -126,7 +126,7 @@
 "Edit profile" = "Επεξεργασία προφίλ";
 
 /* Email field placeholder */
-"email" = "email";
+"email" = "διεύθυνση ηλεκτρονικού ταχυδρομείου";
 
 /* Enable backup button title (no configuration required) */
 "Enable" = "Ενεργοποίηση";
@@ -138,19 +138,19 @@
 "Enter your password to confirm the transaction:" = "Εισάγετε τον κωδικό σας για επιβεβαίωση της συναλλαγής:";
 
 /* Password prompt for message signing */
-"Enter your password to sign the message:" = "Enter your password to sign the message:";
+"Enter your password to sign the message:" = "Εισάγετε τον κωδικό σας για να υπογράψετε το μήνυμα.";
 
 /* Firstname field placeholder */
 "Firstname" = "Όνομα";
 
 /* Title for general preferences panel */
-"General" = "General";
+"General" = "Γενικά";
 
 /* Google Drive no backup folder alert title */
-"Google Drive folder not found." = "Google Drive folder not found.";
+"Google Drive folder not found." = "Το Google Drive δεν βρέθηκε.";
 
 /* Backup error message */
-"Google Drive isn't running" = "Google Drive isn't running";
+"Google Drive isn't running" = "Το Google Drive δεν τρέχει";
 
 /* Hiveapp file not readable error title */
 "Hive application file \"%@\" could not be opened." = "Hive application file \"%@\" could not be opened.";
@@ -189,7 +189,7 @@
 "It's dangerous to upload unencrypted wallets." = "Είναι επικίνδυνη η μεταφόρτωση μη κρυπτογραφημένων πορτοφολιών.";
 
 /* Don't leave a form without saving data */
-"Keep Editing" = "Keep Editing";
+"Keep Editing" = "Συνέχεια επεξεργασίας";
 
 /* Address caption field placeholder */
 "Label" = "Ετικέτα";
@@ -219,7 +219,7 @@
 "No backup since %@" = "Χωρίς backup από τις %@";
 
 /* No backups enabled notification title */
-"No backups configured" = "No backups configured";
+"No backups configured" = "Δεν ρυθμίστηκε αντίγραφο ασφαλείας";
 
 /* Transaction failed alert message */
 "No Bitcoin have been taken from your wallet." = "Δεν αφαιρέθηκαν Bitcoins από το πορτοφόλι σας.";
@@ -234,10 +234,10 @@
 "Password" = "Κωδικός";
 
 /* Send Bitcoin window title for payment request */
-"Pay with Bitcoin" = "Pay with Bitcoin";
+"Pay with Bitcoin" = "Πληρώστε με Bitcoin";
 
 /* Alert title when payment can't be sent to the merchant */
-"Payment could not be completed." = "Payment could not be completed.";
+"Payment could not be completed." = "H πληρωμή δεν μπόρεσε να ολοκληρωθεί.";
 
 /* Alert title when payment request file can't be read */
 "Payment data file could not be opened." = "Payment data file could not be opened.";
@@ -264,7 +264,7 @@
 "Please enter a valid Bitcoin address or select one from the dropdown list." = "Παρακαλώ εισάγετε μια έγκυρη διεύθυνση Bitcoin ή επιλέξτε μία από τη λίστα.";
 
 /* Preferences window title */
-"Preferences" = "Preferences";
+"Preferences" = "Προτιμήσεις";
 
 /* Profile view title string */
 "Profile" = "Προφίλ";
@@ -297,7 +297,7 @@
 "Sent &a to &c" = "Αποστάληκαν &a προς &c";
 
 /* Title for shortcut keys preferences panel */
-"Shortcuts" = "Shortcuts";
+"Shortcuts" = "Συντομεύσεις";
 
 /* Amount exceeds available balance alert title */
 "Some funds are temporarily unavailable." = "Μερικά ποσά είναι προσωρινά μη διαθέσιμα.";
@@ -315,7 +315,7 @@
 "The existing app file will be replaced by the new version. This will not affect any app settings or saved data." = "Το υπάρχον αρχείο της εφαρμογής θ' αντικατασταθεί από τη νεότερη έκδοση. Αυτό δεν θα επηρεάσει τις ρυθμίσεις ή τα δεδομένα της εφαρμογής.";
 
 /* Alert message when payment request file can't be read */
-"The file doesn't exist or is not accessible." = "The file doesn't exist or is not accessible.";
+"The file doesn't exist or is not accessible." = "Το αρχείο δεν υπάρχει ή δεν είναι προσβάσιμο.";
 
 /* Hiveapp file not readable error details */
 "The file is damaged or does not contain a Hive application." = "The file is damaged or does not contain a Hive application.";
@@ -327,13 +327,13 @@
 "This Bitcoin payment link is invalid." = "This Bitcoin payment link is invalid.";
 
 /* Alert title when payment request URL is not valid */
-"This Bitcoin payment URL is invalid." = "This Bitcoin payment URL is invalid.";
+"This Bitcoin payment URL is invalid." = "Αυτό το URL πληρωμής Bitcoin είναι άκυρος.";
 
 /* Alert details when transaction was cancelled */
 "This can happen because of bugs in the wallet code or because the transaction was rejected by the network." = "Αυτό ενδέχεται να συμβεί λόγων σφαλμάτων στον κώδικα του πορτοφολιού ή επειδή η συναλλαγή απορρίφθηκε από το δίκτυο.";
 
 /* Alert message when payment request file isn't really a payment request at all */
-"This file does not contain a valid Bitcoin payment request." = "This file does not contain a valid Bitcoin payment request.";
+"This file does not contain a valid Bitcoin payment request." = "Αυτό το αρχείο δεν περιέχει μια έγκυρη αίτηση πληρωμής Bitcoin.";
 
 /* Warning details when trying to send a large BTC amount */
 "This is more than what you usually send." = "Είναι περισσότερα από όσα στέλνετε συνήθως.";
@@ -360,7 +360,7 @@
 "To send this transaction, you'll need to wait for your pending transactions to be confirmed first (this shouldn't take more than a few minutes)." = "Για να ολοκληρώσετε αυτή τη συναλλαγή θα πρέπει να περιμένετε να επιβεβαιωθούν οι εκκρεμείς συναλλαγές πρώτα (δε θα διαρκέσει περισσότερο από μερικά λεπτά).";
 
 /* Message when trying to start an app that requires a newer API level. */
-"To use the app, please update to the latest version of Hive." = "To use the app, please update to the latest version of Hive.";
+"To use the app, please update to the latest version of Hive." = "Για να χρησιμοποιήσετε αυτήν την εφαρμογή, παρακαλώ ενημερώστε στην τελευταία έκδοση του Hive.";
 
 /* Notification of cancelled transaction */
 "Transaction cancelled" = "Η συναλλαγή ακυρώθηκε";
@@ -378,16 +378,16 @@
 "Transactions" = "Συναλλαγές";
 
 /* Uninstall app button title */
-"Uninstall" = "Uninstall";
+"Uninstall" = "Απεγκατάσταση";
 
 /* Entry in application icon context menu */
-"Uninstall application" = "Uninstall application";
+"Uninstall application" = "Απεγκατάσταση εφασμογής";
 
 /* Backup status: backup up to date */
 "Up to date" = "Ενημερωμένο";
 
 /* Entry in application icon context menu */
-"Visit application's site" = "Visit application's site";
+"Visit application's site" = "Επισκεφθείτε την ιστοσελίδα της εφαρμογής";
 
 /* Backup status: backup scheduled or in progress */
 "Waiting for backup" = "Αναμονή για backup";
