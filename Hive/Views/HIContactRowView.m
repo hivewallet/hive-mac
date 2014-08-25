@@ -20,8 +20,8 @@
 @implementation HIContactRowView
 
 - (void)awakeFromNib {
-    self.highlightColor = [NSColor colorWithCalibratedWhite:0.9 alpha:1.0];
-    self.hoverColor = [NSColor colorWithCalibratedWhite:0.97 alpha:1.0];
+    self.hoverColor = [NSColor colorWithCalibratedHue:215/360.0 saturation:0.03 brightness:0.98 alpha:1.0];
+    self.highlightColor = [NSColor colorWithCalibratedHue:215/360.0 saturation:0.12 brightness:0.98 alpha:1.0];
 }
 
 - (instancetype)init {
