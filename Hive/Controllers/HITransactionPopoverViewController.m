@@ -78,14 +78,10 @@
                                                                                     @"t": self.targetAddressLabel}]];
     }
 
+    // a little hax to include both variants in the XIB's strings file instead of Localizable.strings -
+    // one variant is the default text and the other is stored in the placeholder string
     if (self.transaction.direction == HITransactionDirectionIncoming) {
-        self.targetAddressLabel.stringValue =
-            NSLocalizedString(@"Received with address:",
-                              @"Transaction target address label for incoming transactions");
-    } else {
-        self.targetAddressLabel.stringValue =
-            NSLocalizedString(@"Target address:",
-                              @"Transaction target address label for outgoing transactions");
+        self.targetAddressLabel.stringValue = [self.targetAddressLabel.cell placeholderString];
     }
 
     self.targetAddressField.stringValue = self.transaction.targetAddress ?:
