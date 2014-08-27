@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="5064" systemVersion="13E28" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
+    <entity name="HIAddress" representedClassName="HIAddress" syncable="YES">
+        <attribute name="address" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="caption" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="contact" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="HIContact" inverseName="addresses" inverseEntity="HIContact" syncable="YES"/>
+    </entity>
+    <entity name="HIApplication" representedClassName="HIApplication" syncable="YES">
+        <attribute name="id" attributeType="String" indexed="YES" syncable="YES"/>
+        <attribute name="name" attributeType="String" syncable="YES"/>
+        <attribute name="path" attributeType="Transformable" syncable="YES"/>
+        <relationship name="transactions" optional="YES" toMany="YES" deletionRule="Cascade" ordered="YES" destinationEntity="HITransaction" inverseName="sourceApplication" inverseEntity="HITransaction" syncable="YES"/>
+    </entity>
+    <entity name="HIContact" representedClassName="HIContact" syncable="YES">
+        <attribute name="avatar" optional="YES" attributeType="Binary" syncable="YES"/>
+        <attribute name="email" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="firstname" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="lastname" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="addresses" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="HIAddress" inverseName="contact" inverseEntity="HIAddress" syncable="YES"/>
+        <relationship name="transactions" optional="YES" toMany="YES" deletionRule="Cascade" ordered="YES" destinationEntity="HITransaction" inverseName="contact" inverseEntity="HITransaction" syncable="YES"/>
+    </entity>
+    <entity name="HITransaction" representedClassName="HITransaction" syncable="YES">
+        <attribute name="amount" optional="YES" attributeType="Integer 64" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="date" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="details" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="fee" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
+        <attribute name="fiatAmount" optional="YES" attributeType="Decimal" minValueString="0" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="fiatCurrency" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="fiatRate" optional="YES" attributeType="Decimal" minValueString="0" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="id" attributeType="String" indexed="YES" syncable="YES"/>
+        <attribute name="label" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="read" attributeType="Boolean" defaultValueString="NO" syncable="YES"/>
+        <attribute name="request" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="senderEmail" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="senderHash" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="senderName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="status" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <relationship name="contact" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="HIContact" inverseName="transactions" inverseEntity="HIContact" syncable="YES"/>
+        <relationship name="sourceApplication" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="HIApplication" inverseName="transactions" inverseEntity="HIApplication" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="HIAddress" positionX="0" positionY="0" width="128" height="90"/>
+        <element name="HIApplication" positionX="0" positionY="0" width="128" height="103"/>
+        <element name="HIContact" positionX="0" positionY="0" width="128" height="135"/>
+        <element name="HITransaction" positionX="0" positionY="0" width="128" height="300"/>
+    </elements>
+</model>

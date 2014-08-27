@@ -59,6 +59,10 @@ extern NSString * const HITransactionEntity;
 @property (nonatomic, retain) NSString *senderName;
 @property (nonatomic, retain) NSString *senderEmail;
 
+// transaction metadata (from a URI or payment request, or the contact's name)
+@property (nonatomic, retain) NSString *label;
+@property (nonatomic, retain) NSString *details;
+
 // transaction status (pending, building etc.)
 @property (nonatomic) HITransactionStatus status;
 

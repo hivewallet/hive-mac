@@ -49,6 +49,7 @@ NSString * const HISendBitcoinsWindowSuccessKey = @"success";
     NSLocale *_locale;
     int _paymentRequestSession;
     NSArray *_detailsSectionConstraints;
+    NSString *_savedLabel;
 }
 
 @property (strong) IBOutlet NSBox *wrapper;
@@ -255,6 +256,17 @@ NSString * const HISendBitcoinsWindowSuccessKey = @"success";
     [self.convertedAmountField setEditable:NO];
 }
 
+- (NSString *)detailsText {
+    NSString *text = [self.detailsBox.documentView string];
+    BOOL hidden = self.detailsBox.isHidden;
+
+    if (!hidden && text.length > 0) {
+        return text;
+    } else {
+        return nil;
+    }
+}
+
 - (void)setDetailsText:(NSString *)text {
     [self showDetailsSection];
 
@@ -283,6 +295,7 @@ NSString * const HISendBitcoinsWindowSuccessKey = @"success";
 - (void)selectContact:(id<HIPerson>)contact address:(HIAddress *)address {
     _contact = contact;
     _hashAddress = address.address;
+    _savedLabel = contact.name;
 
     self.nameLabel.stringValue = contact.name;
     self.addressLabel.stringValue = address.addressWithCaption ?: @" ";
@@ -307,7 +320,7 @@ NSString * const HISendBitcoinsWindowSuccessKey = @"success";
     NSString *paymentURL = data[@"paymentURL"];
     NSString *pkiName = data[@"pkiName"];
     NSString *label = data[@"bitcoinURILabel"];
-    NSString *recipientName;
+    NSString *recipientName = nil;
 
     NSURL *URL = [NSURL URLWithString:paymentURL];
 
@@ -318,11 +331,14 @@ NSString * const HISendBitcoinsWindowSuccessKey = @"success";
         recipientName = URL.host;
     } else if (label) {
         recipientName = label;
-    } else {
-        recipientName = @"?";
     }
 
-    [self setLockedAddress:recipientName];
+    if (recipientName) {
+        _savedLabel = recipientName;
+        [self setLockedAddress:recipientName];
+    } else {
+        [self setLockedAddress:@"?"];
+    }
 
     if ([amount integerValue] > 0) {
         [self setLockedAmount:amount.integerValue];
@@ -694,6 +710,15 @@ NSString * const HISendBitcoinsWindowSuccessKey = @"success";
             transaction.fiatAmount = fiatAmount;
             transaction.fiatCurrency = fiatCurrency;
             transaction.fiatRate = fiatRate;
+
+            if (_savedLabel) {
+                transaction.label = _savedLabel;
+            }
+
+            NSString *detailsText = [self detailsText];
+            if (detailsText) {
+                transaction.details = detailsText;
+            }
 
             if (_sourceApplication) {
                 [client attachSourceApplication:_sourceApplication toTransaction:transaction];
