@@ -22,6 +22,8 @@
 @property (weak) IBOutlet NSBox *separatorAboveMetadataFields;
 @property (weak) IBOutlet NSTextField *amountField;
 @property (weak) IBOutlet NSTextField *exchangeRateField;
+@property (weak) IBOutlet NSTextField *recipientField;
+@property (weak) IBOutlet NSTextField *detailsField;
 @property (weak) IBOutlet NSTextField *targetAddressField;
 @property (weak) IBOutlet NSTextField *targetAddressLabel;
 
@@ -64,6 +66,18 @@
         self.exchangeRateField.stringValue = [self exchangeRateSummary];
     } else {
         [self hideField:self.exchangeRateField];
+    }
+
+    if (self.transaction.label) {
+        self.recipientField.stringValue = self.transaction.label;
+    } else {
+        [self hideField:self.recipientField];
+    }
+
+    if (self.transaction.details) {
+        self.detailsField.stringValue = self.transaction.details;
+    } else {
+        [self hideField:self.detailsField];
     }
 
     // a little hax to include both variants in the XIB's strings file instead of Localizable.strings -
