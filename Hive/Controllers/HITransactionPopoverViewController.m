@@ -76,6 +76,17 @@
 
     if (self.transaction.details) {
         self.detailsField.stringValue = self.transaction.details;
+
+        NSScrollView *scrollView = (NSScrollView *) self.detailsField.superview.superview;
+        CGFloat detailsHeight = MAX(30.0, self.detailsField.intrinsicContentSize.height + 5.0);
+
+        if (detailsHeight < scrollView.frame.size.height) {
+            NSArray *constraints = [NSLayoutConstraint constraintsWithVisualFormat:@"V:[scroll(height)]"
+                                                                           options:0
+                                                                           metrics:@{@"height": @(detailsHeight)}
+                                                                             views:@{@"scroll": scrollView}];
+            [self.view addConstraints:constraints];
+        }
     } else {
         [self hideField:self.detailsField];
     }
@@ -91,7 +102,7 @@
                                           @"?";
 }
 
-- (void)hideField:(NSTextField *)field {
+- (void)hideField:(NSView *)field {
     // views have tags in pairs, 101+102, 103+104 etc.
     NSInteger fieldTag = field.tag;
     NSInteger labelTag = fieldTag - 1;
@@ -100,6 +111,8 @@
 
     NSView *label = [self.view viewWithTag:labelTag];
     NSAssert(label != nil, @"Label view must exist");
+
+    field = [self getWrappingView:field];
 
     // hide the label+value pair
     [field setHidden:YES];
@@ -110,17 +123,23 @@
         return [views containsObject:label] || [views containsObject:field];
     }];
 
-    // connect the previous field to the next field
+    // find the previous field
     NSView *previousField = field;
+    NSInteger previousFieldTag = fieldTag;
     while (previousField && previousField.isHidden) {
-        previousField = [self.view viewWithTag:(previousField.tag - 2)];
+        previousFieldTag -= 2;
+        previousField = [self getWrappingView:[self.view viewWithTag:previousFieldTag]];
     }
 
+    // find the next label
     NSView *nextLabel = label;
+    NSInteger nextLabelTag = labelTag;
     while (nextLabel && nextLabel.isHidden) {
-        nextLabel = [self.view viewWithTag:(nextLabel.tag + 2)];
+        nextLabelTag += 2;
+        nextLabel = [self.view viewWithTag:nextLabelTag];
     }
 
+    // connect them to each other instead
     NSView *separator = self.separatorAboveMetadataFields;
 
     NSString *constraintFormat;
@@ -141,6 +160,14 @@
                                                                       options:0
                                                                       metrics:nil
                                                                         views:viewDictionary]];
+}
+
+- (NSView *)getWrappingView:(NSView *)view {
+    while (view && view.superview != self.view) {
+        view = view.superview;
+    }
+
+    return view;
 }
 
 - (NSString *)transactionStatus {
