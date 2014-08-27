@@ -345,6 +345,10 @@ static int ddLogLevel = LOG_LEVEL_VERBOSE;
     self.wizard.onCompletion = ^{
         [weakSelf showAppWindow];
         [weakSelf finishInitialization];
+
+        dispatch_async(dispatch_get_main_queue(), ^{
+            weakSelf.wizard = nil;
+        });
     };
 
     [self.wizard showWindow:self];

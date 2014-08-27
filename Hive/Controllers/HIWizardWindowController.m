@@ -56,6 +56,8 @@
 #pragma mark - HIWizardViewControllerDelegate
 
 - (void)didCompleteWizardPage {
+    self.currentViewController.wizardDelegate = nil;
+
     if (self.hasMorePages) {
         [self showNextPage];
     } else {
