@@ -19,10 +19,9 @@
 @property (weak) IBOutlet NSTextField *statusField;
 @property (weak) IBOutlet NSTextField *confirmationsField;
 
+@property (weak) IBOutlet NSBox *separatorAboveMetadataFields;
 @property (weak) IBOutlet NSTextField *amountField;
-@property (weak) IBOutlet NSTextField *amountLabel;
 @property (weak) IBOutlet NSTextField *exchangeRateField;
-@property (weak) IBOutlet NSTextField *exchangeRateLabel;
 @property (weak) IBOutlet NSTextField *targetAddressField;
 @property (weak) IBOutlet NSTextField *targetAddressLabel;
 
@@ -64,18 +63,7 @@
     if (self.transaction.fiatCurrency && self.transaction.fiatRate) {
         self.exchangeRateField.stringValue = [self exchangeRateSummary];
     } else {
-        [self.exchangeRateField setHidden:YES];
-        [self.exchangeRateLabel setHidden:YES];
-
-        [self.view hiRemoveConstraintsMatchingSubviews:^BOOL(NSArray *views) {
-            return [views containsObject:self.exchangeRateLabel];
-        }];
-
-        [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:[a]-[t]"
-                                                                          options:0
-                                                                          metrics:nil
-                                                                            views:@{@"a": self.amountLabel,
-                                                                                    @"t": self.targetAddressLabel}]];
+        [self hideField:self.exchangeRateField];
     }
 
     // a little hax to include both variants in the XIB's strings file instead of Localizable.strings -
@@ -87,6 +75,58 @@
     self.targetAddressField.stringValue = self.transaction.targetAddress ?:
                                           [[BCClient sharedClient] walletHash] ?:
                                           @"?";
+}
+
+- (void)hideField:(NSTextField *)field {
+    // views have tags in pairs, 101+102, 103+104 etc.
+    NSInteger fieldTag = field.tag;
+    NSInteger labelTag = fieldTag - 1;
+    NSAssert(fieldTag > 100, @"Field must have a tag above 100.");
+    NSAssert(fieldTag % 2 == 0, @"The value part of the field must have an even tag.");
+
+    NSView *label = [self.view viewWithTag:labelTag];
+    NSAssert(label != nil, @"Label view must exist");
+
+    // hide the label+value pair
+    [field setHidden:YES];
+    [label setHidden:YES];
+
+    // remove their constraints
+    [self.view hiRemoveConstraintsMatchingSubviews:^BOOL(NSArray *views) {
+        return [views containsObject:label] || [views containsObject:field];
+    }];
+
+    // connect the previous field to the next field
+    NSView *previousField = field;
+    while (previousField && previousField.isHidden) {
+        previousField = [self.view viewWithTag:(previousField.tag - 2)];
+    }
+
+    NSView *nextLabel = label;
+    while (nextLabel && nextLabel.isHidden) {
+        nextLabel = [self.view viewWithTag:(nextLabel.tag + 2)];
+    }
+
+    NSView *separator = self.separatorAboveMetadataFields;
+
+    NSString *constraintFormat;
+    NSDictionary *viewDictionary;
+
+    if (!previousField) {
+        viewDictionary = NSDictionaryOfVariableBindings(separator, nextLabel);
+        constraintFormat = @"V:[separator]-[nextLabel]";
+    } else if (!nextLabel) {
+        viewDictionary = NSDictionaryOfVariableBindings(previousField);
+        constraintFormat = @"V:[previousField]-|";
+    } else {
+        viewDictionary = NSDictionaryOfVariableBindings(previousField, nextLabel);
+        constraintFormat = @"V:[previousField]-[nextLabel]";
+    }
+
+    [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:constraintFormat
+                                                                      options:0
+                                                                      metrics:nil
+                                                                        views:viewDictionary]];
 }
 
 - (NSString *)transactionStatus {

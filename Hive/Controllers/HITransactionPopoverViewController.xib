@@ -8,10 +8,9 @@
         <customObject id="-2" userLabel="File's Owner" customClass="HITransactionPopoverViewController">
             <connections>
                 <outlet property="amountField" destination="A3b-sP-EFa" id="kC4-pB-gme"/>
-                <outlet property="amountLabel" destination="wGY-Sd-47R" id="ql9-4W-VPY"/>
                 <outlet property="confirmationsField" destination="hsi-lm-tcr" id="OYe-fS-ccM"/>
                 <outlet property="exchangeRateField" destination="X6s-Km-rIl" id="wLX-HK-Yfk"/>
-                <outlet property="exchangeRateLabel" destination="bfq-zJ-dtK" id="MXj-DE-laQ"/>
+                <outlet property="separatorAboveMetadataFields" destination="baj-gE-QEV" id="onY-dj-8mn"/>
                 <outlet property="statusField" destination="z9Z-Zh-1fV" id="cGN-LW-MFY"/>
                 <outlet property="targetAddressField" destination="REV-aW-GWK" id="on0-85-CFe"/>
                 <outlet property="targetAddressLabel" destination="QdT-Oh-DCh" id="I4i-9y-T3A"/>
@@ -104,7 +103,7 @@
                     <color key="fillColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     <font key="titleFont" metaFont="system"/>
                 </box>
-                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="QdT-Oh-DCh">
+                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" tag="105" translatesAutoresizingMaskIntoConstraints="NO" id="QdT-Oh-DCh">
                     <rect key="frame" x="18" y="39" width="109" height="17"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Target address:" placeholderString="Received with address:" id="ybn-TT-lTo">
@@ -113,7 +112,7 @@
                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                     </textFieldCell>
                 </textField>
-                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="REV-aW-GWK">
+                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" tag="106" translatesAutoresizingMaskIntoConstraints="NO" id="REV-aW-GWK">
                     <rect key="frame" x="18" y="20" width="275" height="16"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" sendsActionOnEndEditing="YES" title="&lt;1DPDD72LLmm5xNTjahEad2r4iQfnuxc9QG>" id="pbA-g9-YQs">
@@ -122,7 +121,7 @@
                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                     </textFieldCell>
                 </textField>
-                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="wGY-Sd-47R">
+                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" tag="101" translatesAutoresizingMaskIntoConstraints="NO" id="wGY-Sd-47R">
                     <rect key="frame" x="18" y="89" width="61" height="17"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Amount:" id="3G0-0s-dgf">
@@ -131,7 +130,7 @@
                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                     </textFieldCell>
                 </textField>
-                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="A3b-sP-EFa">
+                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" tag="102" translatesAutoresizingMaskIntoConstraints="NO" id="A3b-sP-EFa">
                     <rect key="frame" x="83" y="89" width="129" height="17"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" sendsActionOnEndEditing="YES" title="&lt;0 BTC (567 USD)>" id="Apl-ga-evL">
@@ -140,7 +139,7 @@
                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                     </textFieldCell>
                 </textField>
-                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="bfq-zJ-dtK">
+                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" tag="103" translatesAutoresizingMaskIntoConstraints="NO" id="bfq-zJ-dtK">
                     <rect key="frame" x="18" y="64" width="102" height="17"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Exchange rate:" id="WBQ-QW-Ib4">
@@ -149,7 +148,7 @@
                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                     </textFieldCell>
                 </textField>
-                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="X6s-Km-rIl">
+                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" tag="104" translatesAutoresizingMaskIntoConstraints="NO" id="X6s-Km-rIl">
                     <rect key="frame" x="124" y="64" width="143" height="17"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" sendsActionOnEndEditing="YES" title="&lt;1 BTC = 2000 USD>" id="0LL-6H-dbt">
