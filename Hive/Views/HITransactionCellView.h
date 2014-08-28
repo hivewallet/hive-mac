@@ -16,6 +16,4 @@
 @property (strong, nonatomic, readonly) NSImageView *directionMark;
 @property (strong, nonatomic, readonly) NSTextField *pendingLabel;
 
-@property (nonatomic, copy) NSAttributedString *shareText;
-
 @end

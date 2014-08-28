@@ -211,12 +211,10 @@ static NSString *const KEY_UNREAD_TRANSACTIONS = @"unreadTransactions";
 
     // cache some objects for optimization
     static dispatch_once_t onceToken;
-    static BOOL sharingSupported;
     static NSImage *plusImage, *minusImage, *btcImage;
     static NSColor *pendingColor, *cancelledColor;
 
     dispatch_once(&onceToken, ^{
-        sharingSupported = self.sharingSupported;
         plusImage = [NSImage imageNamed:@"icon-transactions-plus"];
         minusImage = [NSImage imageNamed:@"icon-transactions-minus"];
         btcImage = [NSImage imageNamed:@"icon-transactions-btc-symbol"];
@@ -227,7 +225,6 @@ static NSString *const KEY_UNREAD_TRANSACTIONS = @"unreadTransactions";
     HITransactionCellView *cell = [tableView makeViewWithIdentifier:tableColumn.identifier owner:self];
     HITransaction *transaction = self.arrayController.arrangedObjects[row];
 
-    cell.shareText = sharingSupported ? [self createShareTextForTransaction:transaction] : nil;
     cell.textField.attributedStringValue = [self summaryTextForTransaction:transaction];
     cell.dateLabel.stringValue = [self dateTextForTransaction:transaction];
     cell.directionMark.image = transaction.isIncoming ? plusImage : minusImage;
@@ -262,30 +259,6 @@ static NSString *const KEY_UNREAD_TRANSACTIONS = @"unreadTransactions";
     }
 
     return cell;
-}
-
-- (BOOL)sharingSupported {
-    return NSClassFromString(@"NSSharingServicePicker") != nil;
-}
-
-- (NSAttributedString *)createShareTextForTransaction:(HITransaction *)transaction {
-    // TODO: Actually add something transaction specific?
-    static NSAttributedString *sentString = nil, *receivedString = nil;
-    static dispatch_once_t onceToken;
-
-    dispatch_once(&onceToken, ^{
-        NSString *link = @" http://hivewallet.com";
-
-        NSString *text = NSLocalizedString(@"I've just sent some Bitcoin using Hive",
-                                           @"Share sent transaction text");
-        sentString = [[NSAttributedString alloc] initWithString:[text stringByAppendingString:link]];
-
-        text = NSLocalizedString(@"I've just received some Bitcoin using Hive",
-                                 @"Share sent transaction text");
-        receivedString = [[NSAttributedString alloc] initWithString:[text stringByAppendingString:link]];
-    });
-
-    return (transaction.isIncoming ? receivedString : sentString);
 }
 
 - (NSAttributedString *)summaryTextForTransaction:(HITransaction *)transaction {

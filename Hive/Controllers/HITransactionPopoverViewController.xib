@@ -13,6 +13,7 @@
                 <outlet property="exchangeRateField" destination="X6s-Km-rIl" id="wLX-HK-Yfk"/>
                 <outlet property="recipientField" destination="Lus-Rl-2Lz" id="4PV-za-gFJ"/>
                 <outlet property="separatorAboveMetadataFields" destination="baj-gE-QEV" id="onY-dj-8mn"/>
+                <outlet property="shareButton" destination="NIe-Cw-BCJ" id="a6d-l8-AGU"/>
                 <outlet property="statusField" destination="z9Z-Zh-1fV" id="cGN-LW-MFY"/>
                 <outlet property="targetAddressField" destination="REV-aW-GWK" id="on0-85-CFe"/>
                 <outlet property="targetAddressLabel" destination="QdT-Oh-DCh" id="I4i-9y-T3A"/>
@@ -36,7 +37,7 @@
                     </textFieldCell>
                 </textField>
                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="t1e-4W-2oE">
-                    <rect key="frame" x="18" y="337" width="294" height="32"/>
+                    <rect key="frame" x="18" y="332" width="294" height="32"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <textFieldCell key="cell" selectable="YES" sendsActionOnEndEditing="YES" title="&lt;9a3785e972d7f62af0e047911b5c991480a9a0cb9bf37dab4dfe9c46deca19c2>" id="Zfp-mP-dB5">
                         <font key="font" metaFont="cellTitle"/>
@@ -45,7 +46,7 @@
                     </textFieldCell>
                 </textField>
                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="TPU-Gl-Q4M">
-                    <rect key="frame" x="18" y="269" width="50" height="17"/>
+                    <rect key="frame" x="18" y="264" width="50" height="17"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Status:" id="uRB-Vb-JTA">
                         <font key="font" metaFont="systemBold"/>
@@ -54,7 +55,7 @@
                     </textFieldCell>
                 </textField>
                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="z9Z-Zh-1fV">
-                    <rect key="frame" x="72" y="269" width="77" height="17"/>
+                    <rect key="frame" x="72" y="264" width="77" height="17"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="&lt;pending>" id="8ax-jV-4P7">
                         <font key="font" metaFont="system"/>
@@ -63,7 +64,7 @@
                     </textFieldCell>
                 </textField>
                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="6B8-Wf-FKF">
-                    <rect key="frame" x="18" y="244" width="103" height="17"/>
+                    <rect key="frame" x="18" y="239" width="103" height="17"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Confirmations:" id="x54-St-kEH">
                         <font key="font" metaFont="systemBold"/>
@@ -72,7 +73,7 @@
                     </textFieldCell>
                 </textField>
                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="hsi-lm-tcr">
-                    <rect key="frame" x="125" y="244" width="33" height="17"/>
+                    <rect key="frame" x="125" y="239" width="33" height="17"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="&lt;0>" id="xfw-5n-2IU">
                         <font key="font" metaFont="system"/>
@@ -81,14 +82,14 @@
                     </textFieldCell>
                 </textField>
                 <box autoresizesSubviews="NO" verticalHuggingPriority="750" title="Box" boxType="separator" titlePosition="noTitle" translatesAutoresizingMaskIntoConstraints="NO" id="1Ak-no-qRW">
-                    <rect key="frame" x="12" y="296" width="306" height="5"/>
+                    <rect key="frame" x="12" y="291" width="306" height="5"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <color key="borderColor" white="0.0" alpha="0.41999999999999998" colorSpace="calibratedWhite"/>
                     <color key="fillColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     <font key="titleFont" metaFont="system"/>
                 </box>
                 <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="5av-kV-hd8">
-                    <rect key="frame" x="20" y="310" width="174" height="19"/>
+                    <rect key="frame" x="20" y="305" width="174" height="19"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <buttonCell key="cell" type="recessed" title="Show on blockchain.info..." bezelStyle="recessed" alignment="center" refusesFirstResponder="YES" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="Lay-eO-8hN">
                         <behavior key="behavior" lightByBackground="YES" lightByGray="YES" changeBackground="YES" changeGray="YES"/>
@@ -99,14 +100,14 @@
                     </connections>
                 </button>
                 <box autoresizesSubviews="NO" verticalHuggingPriority="750" title="Box" boxType="separator" titlePosition="noTitle" translatesAutoresizingMaskIntoConstraints="NO" id="baj-gE-QEV">
-                    <rect key="frame" x="12" y="229" width="306" height="5"/>
+                    <rect key="frame" x="12" y="224" width="306" height="5"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <color key="borderColor" white="0.0" alpha="0.41999999999999998" colorSpace="calibratedWhite"/>
                     <color key="fillColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     <font key="titleFont" metaFont="system"/>
                 </box>
                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" tag="107" translatesAutoresizingMaskIntoConstraints="NO" id="QdT-Oh-DCh">
-                    <rect key="frame" x="18" y="127" width="109" height="17"/>
+                    <rect key="frame" x="18" y="122" width="109" height="17"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Target address:" placeholderString="Received with address:" id="ybn-TT-lTo">
                         <font key="font" metaFont="systemBold"/>
@@ -115,7 +116,7 @@
                     </textFieldCell>
                 </textField>
                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" tag="108" translatesAutoresizingMaskIntoConstraints="NO" id="REV-aW-GWK">
-                    <rect key="frame" x="18" y="108" width="275" height="16"/>
+                    <rect key="frame" x="18" y="103" width="275" height="16"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" sendsActionOnEndEditing="YES" title="&lt;1DPDD72LLmm5xNTjahEad2r4iQfnuxc9QG>" id="pbA-g9-YQs">
                         <font key="font" metaFont="cellTitle"/>
@@ -124,7 +125,7 @@
                     </textFieldCell>
                 </textField>
                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" tag="101" translatesAutoresizingMaskIntoConstraints="NO" id="wGY-Sd-47R">
-                    <rect key="frame" x="18" y="202" width="61" height="17"/>
+                    <rect key="frame" x="18" y="197" width="61" height="17"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Amount:" id="3G0-0s-dgf">
                         <font key="font" metaFont="systemBold"/>
@@ -133,7 +134,7 @@
                     </textFieldCell>
                 </textField>
                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" tag="102" translatesAutoresizingMaskIntoConstraints="NO" id="A3b-sP-EFa">
-                    <rect key="frame" x="83" y="202" width="129" height="17"/>
+                    <rect key="frame" x="83" y="197" width="129" height="17"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" sendsActionOnEndEditing="YES" title="&lt;0 BTC (567 USD)>" id="Apl-ga-evL">
                         <font key="font" metaFont="system"/>
@@ -142,7 +143,7 @@
                     </textFieldCell>
                 </textField>
                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" tag="103" translatesAutoresizingMaskIntoConstraints="NO" id="bfq-zJ-dtK">
-                    <rect key="frame" x="18" y="177" width="102" height="17"/>
+                    <rect key="frame" x="18" y="172" width="102" height="17"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Exchange rate:" id="WBQ-QW-Ib4">
                         <font key="font" metaFont="systemBold"/>
@@ -151,7 +152,7 @@
                     </textFieldCell>
                 </textField>
                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" tag="104" translatesAutoresizingMaskIntoConstraints="NO" id="X6s-Km-rIl">
-                    <rect key="frame" x="124" y="177" width="143" height="17"/>
+                    <rect key="frame" x="124" y="172" width="143" height="17"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" sendsActionOnEndEditing="YES" title="&lt;1 BTC = 2000 USD>" id="0LL-6H-dbt">
                         <font key="font" metaFont="system"/>
@@ -160,7 +161,7 @@
                     </textFieldCell>
                 </textField>
                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" tag="105" translatesAutoresizingMaskIntoConstraints="NO" id="qPd-7W-CcZ">
-                    <rect key="frame" x="18" y="152" width="70" height="17"/>
+                    <rect key="frame" x="18" y="147" width="70" height="17"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Recipient:" id="FNo-KW-FSJ">
                         <font key="font" metaFont="systemBold"/>
@@ -169,7 +170,7 @@
                     </textFieldCell>
                 </textField>
                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" tag="106" translatesAutoresizingMaskIntoConstraints="NO" id="Lus-Rl-2Lz">
-                    <rect key="frame" x="92" y="152" width="80" height="17"/>
+                    <rect key="frame" x="92" y="147" width="80" height="17"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" sendsActionOnEndEditing="YES" title="&lt;recipient>" id="6IJ-am-yWe">
                         <font key="font" metaFont="system"/>
@@ -178,7 +179,7 @@
                     </textFieldCell>
                 </textField>
                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" tag="109" translatesAutoresizingMaskIntoConstraints="NO" id="WH5-v3-hwQ">
-                    <rect key="frame" x="18" y="83" width="55" height="17"/>
+                    <rect key="frame" x="18" y="78" width="55" height="17"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Details:" placeholderString="Received with address:" id="6nl-hl-J8B">
                         <font key="font" metaFont="systemBold"/>
@@ -187,10 +188,10 @@
                     </textFieldCell>
                 </textField>
                 <scrollView autohidesScrollers="YES" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NNf-lH-hmG">
-                    <rect key="frame" x="20" y="20" width="290" height="60"/>
+                    <rect key="frame" x="20" y="20" width="290" height="55"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <clipView key="contentView" id="siS-CE-hfA">
-                        <rect key="frame" x="1" y="1" width="288" height="58"/>
+                        <rect key="frame" x="1" y="1" width="288" height="53"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" tag="110" translatesAutoresizingMaskIntoConstraints="NO" id="9qm-gK-hKY">
@@ -219,6 +220,28 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </scroller>
                 </scrollView>
+                <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Odu-ld-Rhx">
+                    <rect key="frame" x="294" y="337" width="11" height="0.0"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="NSShareTemplate" imagePosition="only" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="irF-Oe-P5T">
+                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                        <font key="font" metaFont="system"/>
+                    </buttonCell>
+                </button>
+                <button translatesAutoresizingMaskIntoConstraints="NO" id="NIe-Cw-BCJ">
+                    <rect key="frame" x="286" y="372" width="34" height="26"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="30" id="bg0-Jl-pP1"/>
+                    </constraints>
+                    <buttonCell key="cell" type="bevel" bezelStyle="regularSquare" image="NSShareTemplate" imagePosition="only" alignment="center" refusesFirstResponder="YES" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="qgx-f5-xGH">
+                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                        <font key="font" metaFont="system"/>
+                    </buttonCell>
+                    <connections>
+                        <action selector="shareButtonPressed:" target="-2" id="et2-Hd-LTm"/>
+                    </connections>
+                </button>
             </subviews>
             <constraints>
                 <constraint firstItem="WH5-v3-hwQ" firstAttribute="top" secondItem="REV-aW-GWK" secondAttribute="bottom" constant="8" symbolic="YES" id="1uL-JP-kKi"/>
@@ -239,7 +262,7 @@
                 <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="REV-aW-GWK" secondAttribute="trailing" constant="20" symbolic="YES" id="Jv0-7r-ff5"/>
                 <constraint firstItem="REV-aW-GWK" firstAttribute="top" secondItem="QdT-Oh-DCh" secondAttribute="bottom" constant="3" id="M9y-R8-P0s"/>
                 <constraint firstItem="NNf-lH-hmG" firstAttribute="top" secondItem="WH5-v3-hwQ" secondAttribute="bottom" constant="3" id="Mv0-ah-bea"/>
-                <constraint firstItem="t1e-4W-2oE" firstAttribute="top" secondItem="Cgc-kK-Z68" secondAttribute="bottom" constant="3" id="NVR-L1-Nn1"/>
+                <constraint firstItem="t1e-4W-2oE" firstAttribute="top" secondItem="Cgc-kK-Z68" secondAttribute="bottom" constant="8" symbolic="YES" id="NVR-L1-Nn1"/>
                 <constraint firstItem="QdT-Oh-DCh" firstAttribute="leading" secondItem="Hz6-mo-xeY" secondAttribute="leading" constant="20" symbolic="YES" id="QJn-2T-rwL"/>
                 <constraint firstItem="z9Z-Zh-1fV" firstAttribute="leading" secondItem="TPU-Gl-Q4M" secondAttribute="trailing" constant="8" symbolic="YES" id="R3C-zJ-MWS"/>
                 <constraint firstItem="1Ak-no-qRW" firstAttribute="leading" secondItem="Hz6-mo-xeY" secondAttribute="leading" constant="12" id="ThZ-pr-VBP"/>
@@ -256,6 +279,7 @@
                 <constraint firstItem="wGY-Sd-47R" firstAttribute="leading" secondItem="Hz6-mo-xeY" secondAttribute="leading" constant="20" symbolic="YES" id="gEZ-LP-w2g"/>
                 <constraint firstItem="Cgc-kK-Z68" firstAttribute="leading" secondItem="Hz6-mo-xeY" secondAttribute="leading" constant="20" symbolic="YES" id="gmw-WG-Tv6"/>
                 <constraint firstItem="Lus-Rl-2Lz" firstAttribute="leading" secondItem="qPd-7W-CcZ" secondAttribute="trailing" constant="8" symbolic="YES" id="h1t-PR-rR0"/>
+                <constraint firstItem="NIe-Cw-BCJ" firstAttribute="top" secondItem="Hz6-mo-xeY" secondAttribute="top" constant="13" id="k14-Kz-3qU"/>
                 <constraint firstItem="6B8-Wf-FKF" firstAttribute="leading" secondItem="Hz6-mo-xeY" secondAttribute="leading" constant="20" symbolic="YES" id="ldV-6T-sIy"/>
                 <constraint firstItem="bfq-zJ-dtK" firstAttribute="top" secondItem="A3b-sP-EFa" secondAttribute="bottom" constant="8" symbolic="YES" id="mXB-s4-efx"/>
                 <constraint firstItem="A3b-sP-EFa" firstAttribute="leading" secondItem="wGY-Sd-47R" secondAttribute="trailing" constant="8" symbolic="YES" id="p2j-RQ-WpW"/>
@@ -263,6 +287,7 @@
                 <constraint firstItem="baj-gE-QEV" firstAttribute="top" secondItem="6B8-Wf-FKF" secondAttribute="bottom" constant="12" id="qq4-VJ-fNG"/>
                 <constraint firstItem="t1e-4W-2oE" firstAttribute="leading" secondItem="Hz6-mo-xeY" secondAttribute="leading" constant="20" symbolic="YES" id="r4U-vl-JgC"/>
                 <constraint firstItem="WH5-v3-hwQ" firstAttribute="leading" secondItem="Hz6-mo-xeY" secondAttribute="leading" constant="20" symbolic="YES" id="rAM-p3-Hi2"/>
+                <constraint firstAttribute="trailing" secondItem="NIe-Cw-BCJ" secondAttribute="trailing" constant="12" id="rP1-uN-KV7"/>
                 <constraint firstItem="5av-kV-hd8" firstAttribute="top" secondItem="t1e-4W-2oE" secondAttribute="bottom" constant="8" id="rTV-hq-5q0"/>
                 <constraint firstItem="A3b-sP-EFa" firstAttribute="baseline" secondItem="wGY-Sd-47R" secondAttribute="baseline" id="to5-am-G0u"/>
                 <constraint firstItem="Lus-Rl-2Lz" firstAttribute="top" secondItem="bfq-zJ-dtK" secondAttribute="bottom" constant="8" symbolic="YES" id="uaX-5i-C5i"/>
@@ -271,4 +296,7 @@
             </constraints>
         </customView>
     </objects>
+    <resources>
+        <image name="NSShareTemplate" width="18" height="16"/>
+    </resources>
 </document>

@@ -13,57 +13,10 @@
 @property (strong, nonatomic) IBOutlet NSTextField *dateLabel;
 @property (strong, nonatomic) IBOutlet NSImageView *directionMark;
 @property (strong, nonatomic) IBOutlet NSTextField *pendingLabel;
-@property (strong, nonatomic) IBOutlet NSButton *shareButton;
-
-@property (nonatomic, assign) BOOL mouseInside;
-@property (nonatomic, strong) NSTrackingArea *trackingArea;
 
 @end
 
 
 @implementation HITransactionCellView
-
-- (void)awakeFromNib {
-    [self.shareButton sendActionOn:NSLeftMouseDownMask];
-}
-
-- (IBAction)shareButtonPressed:(NSButton *)sender {
-    #pragma deploymate push "ignored-api-availability"
-    NSSharingServicePicker *sharingServicePicker = [[NSSharingServicePicker alloc] initWithItems:@[self.shareText]];
-    [sharingServicePicker showRelativeToRect:sender.bounds ofView:sender preferredEdge:CGRectMaxXEdge];
-    #pragma deploymate pop
-}
-
-#pragma mark - mouse handling
-
-- (void)updateTrackingAreas {
-    [super updateTrackingAreas];
-    [self removeTrackingArea:self.trackingArea];
-
-    self.trackingArea = [[NSTrackingArea alloc] initWithRect:self.bounds
-                                                     options:NSTrackingMouseEnteredAndExited | NSTrackingActiveAlways
-                                                       owner:self
-                                                    userInfo:nil];
-    [self addTrackingArea:self.trackingArea];
-
-    NSPoint mouseLocation = [self.window mouseLocationOutsideOfEventStream];
-    self.mouseInside = NSPointInRect([self convertPoint:mouseLocation fromView:nil], self.bounds);
-
-    [super updateTrackingAreas];
-}
-
-- (void)dealloc {
-    [self removeTrackingArea:self.trackingArea];
-}
-
-- (void)mouseEntered:(NSEvent *)theEvent {
-    [super mouseEntered:theEvent];
-    self.mouseInside = YES;
-}
-
-- (void)mouseExited:(NSEvent *)theEvent {
-    self.mouseInside = NO;
-    [super mouseExited:theEvent];
-}
 
 @end

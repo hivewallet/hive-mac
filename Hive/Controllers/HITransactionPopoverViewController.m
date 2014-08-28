@@ -26,6 +26,7 @@
 @property (weak) IBOutlet NSTextField *detailsField;
 @property (weak) IBOutlet NSTextField *targetAddressField;
 @property (weak) IBOutlet NSTextField *targetAddressLabel;
+@property (weak) IBOutlet NSButton *shareButton;
 
 @property (strong) HITransaction *transaction;
 @property (strong) NSDictionary *transactionData;
@@ -72,6 +73,22 @@
         self.recipientField.stringValue = self.transaction.label;
     } else {
         [self hideField:self.recipientField];
+    }
+
+    if ([self sharingSupported]) {
+        [self.shareButton sendActionOn:NSLeftMouseDownMask];
+
+        SInt32 major = 0;
+        SInt32 minor = 0;
+        Gestalt(gestaltSystemVersionMajor, &major);
+        Gestalt(gestaltSystemVersionMinor, &minor);
+
+        if (major == 10 && minor < 10) {
+            // the "Bevel" button style looks nice on Yosemite, but fugly on pre-Yosemite systems
+            [self.shareButton.cell setBezelStyle:NSTexturedRoundedBezelStyle];
+        }
+    } else {
+        [self.shareButton setHidden:YES];
     }
 
     if (self.transaction.details) {
@@ -168,6 +185,39 @@
     }
 
     return view;
+}
+
+- (BOOL)sharingSupported {
+    return NSClassFromString(@"NSSharingServicePicker") != nil;
+}
+
+- (IBAction)shareButtonPressed:(NSButton *)sender {
+    #pragma deploymate push "ignored-api-availability"
+    NSSharingServicePicker *sharingServicePicker = [[NSSharingServicePicker alloc] initWithItems:@[[self shareText]]];
+    [sharingServicePicker showRelativeToRect:sender.bounds
+                                      ofView:sender
+                               preferredEdge:CGRectMaxXEdge];
+    #pragma deploymate pop
+}
+
+- (NSAttributedString *)shareText {
+    // TODO: Actually add something transaction specific?
+    static NSAttributedString *sentString = nil, *receivedString = nil;
+    static dispatch_once_t onceToken;
+
+    dispatch_once(&onceToken, ^{
+        NSString *link = @" http://hivewallet.com";
+
+        NSString *text = NSLocalizedString(@"I've just sent some Bitcoin using Hive",
+                                           @"Share sent transaction text");
+        sentString = [[NSAttributedString alloc] initWithString:[text stringByAppendingString:link]];
+
+        text = NSLocalizedString(@"I've just received some Bitcoin using Hive",
+                                 @"Share sent transaction text");
+        receivedString = [[NSAttributedString alloc] initWithString:[text stringByAppendingString:link]];
+    });
+
+    return self.transaction.isIncoming ? receivedString : sentString;
 }
 
 - (NSString *)transactionStatus {
