@@ -50,6 +50,7 @@ NSString * const HISendBitcoinsWindowSuccessKey = @"success";
     int _paymentRequestSession;
     NSArray *_detailsSectionConstraints;
     NSString *_savedLabel;
+    NSURL *_paymentRequestURL;
 }
 
 @property (strong) IBOutlet NSBox *wrapper;
@@ -322,13 +323,13 @@ NSString * const HISendBitcoinsWindowSuccessKey = @"success";
     NSString *label = data[@"bitcoinURILabel"];
     NSString *recipientName = nil;
 
-    NSURL *URL = [NSURL URLWithString:paymentURL];
+    _paymentRequestURL = [NSURL URLWithString:paymentURL];
 
     if (pkiName) {
         recipientName = pkiName;
         self.lockIcon.hidden = NO;
-    } else if (URL) {
-        recipientName = URL.host;
+    } else if (_paymentRequestURL) {
+        recipientName = _paymentRequestURL.host;
     } else if (label) {
         recipientName = label;
     }
@@ -784,6 +785,10 @@ NSString * const HISendBitcoinsWindowSuccessKey = @"success";
 
     if (_sourceApplication) {
         [client attachSourceApplication:_sourceApplication toTransaction:transaction];
+    }
+
+    if (_paymentRequestURL) {
+        transaction.paymentRequestURL = _paymentRequestURL.absoluteString;
     }
 
     [client updateTransaction:transaction];

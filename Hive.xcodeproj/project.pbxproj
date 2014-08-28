@@ -1821,6 +1821,7 @@
 		58C4E83919A5FF91003B5171 /* 2014082101.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = 2014082101.xcdatamodel; sourceTree = "<group>"; };
 		58C4E83F19A605F7003B5171 /* 2014082102.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = 2014082102.xcdatamodel; sourceTree = "<group>"; };
 		58C4E84219AE2B5A003B5171 /* 2014082701.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = 2014082701.xcdatamodel; sourceTree = "<group>"; };
+		58C4E84319AF6F91003B5171 /* 2014082801.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = 2014082801.xcdatamodel; sourceTree = "<group>"; };
 		58C85B5918FFE90700B2C350 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/HISignMessageWindowController.xib; sourceTree = "<group>"; };
 		58C85B5D18FFE92100B2C350 /* pl */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = pl; path = pl.lproj/HISignMessageWindowController.xib; sourceTree = "<group>"; };
 		58C85B5E18FFE92200B2C350 /* fr */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = fr; path = fr.lproj/HISignMessageWindowController.xib; sourceTree = "<group>"; };
@@ -5723,9 +5724,10 @@
 				58C4E83919A5FF91003B5171 /* 2014082101.xcdatamodel */,
 				58C4E83F19A605F7003B5171 /* 2014082102.xcdatamodel */,
 				58C4E84219AE2B5A003B5171 /* 2014082701.xcdatamodel */,
+				58C4E84319AF6F91003B5171 /* 2014082801.xcdatamodel */,
 				D962AF021769FEF9009F882A /* Hive.xcdatamodel */,
 			);
-			currentVersion = 58C4E84219AE2B5A003B5171 /* 2014082701.xcdatamodel */;
+			currentVersion = 58C4E84319AF6F91003B5171 /* 2014082801.xcdatamodel */;
 			path = Hive.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;

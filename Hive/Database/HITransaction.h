@@ -63,6 +63,9 @@ extern NSString * const HITransactionEntity;
 @property (nonatomic, retain) NSString *label;
 @property (nonatomic, retain) NSString *details;
 
+// URL of the payment request
+@property (nonatomic, retain) NSString *paymentRequestURL;
+
 // transaction status (pending, building etc.)
 @property (nonatomic) HITransactionStatus status;
 
