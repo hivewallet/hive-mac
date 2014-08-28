@@ -13,6 +13,7 @@
 #import "HITransactionPopoverViewController.h"
 #import "NSView+Hive.h"
 
+
 @interface HITransactionPopoverViewController () <NSPopoverDelegate>
 
 @property (weak) IBOutlet NSTextField *transactionIdField;
@@ -33,6 +34,7 @@
 
 @end
 
+
 @implementation HITransactionPopoverViewController
 
 - (instancetype)initWithTransaction:(HITransaction *)transaction {
@@ -45,6 +47,9 @@
     return self;
 }
 
+
+#pragma mark - Managing the popover
+
 - (NSPopover *)createPopover {
     NSPopover *popover = [[NSPopover alloc] init];
     popover.contentViewController = self;
@@ -52,6 +57,17 @@
     popover.behavior = NSPopoverBehaviorTransient;
     return popover;
 }
+
+- (void)popoverDidClose:(NSNotification *)notification {
+    id<HITransactionPopoverDelegate> delegate = self.delegate;
+
+    if (delegate && [delegate respondsToSelector:@selector(transactionPopoverDidClose:)]) {
+        [delegate transactionPopoverDidClose:self];
+    }
+}
+
+
+#pragma mark - Configuring the view
 
 - (void)awakeFromNib {
     if (self.transaction.id) {
@@ -75,35 +91,9 @@
         [self hideField:self.recipientField];
     }
 
-    if ([self sharingSupported]) {
-        [self.shareButton sendActionOn:NSLeftMouseDownMask];
-
-        SInt32 major = 0;
-        SInt32 minor = 0;
-        Gestalt(gestaltSystemVersionMajor, &major);
-        Gestalt(gestaltSystemVersionMinor, &minor);
-
-        if (major == 10 && minor < 10) {
-            // the "Bevel" button style looks nice on Yosemite, but fugly on pre-Yosemite systems
-            [self.shareButton.cell setBezelStyle:NSTexturedRoundedBezelStyle];
-        }
-    } else {
-        [self.shareButton setHidden:YES];
-    }
-
     if (self.transaction.details) {
-        self.detailsField.stringValue = self.transaction.details;
-
-        NSScrollView *scrollView = (NSScrollView *) self.detailsField.superview.superview;
-        CGFloat detailsHeight = MAX(30.0, self.detailsField.intrinsicContentSize.height + 5.0);
-
-        if (detailsHeight < scrollView.frame.size.height) {
-            NSArray *constraints = [NSLayoutConstraint constraintsWithVisualFormat:@"V:[scroll(height)]"
-                                                                           options:0
-                                                                           metrics:@{@"height": @(detailsHeight)}
-                                                                             views:@{@"scroll": scrollView}];
-            [self.view addConstraints:constraints];
-        }
+        [self.detailsField setStringValue:self.transaction.details];
+        [self layoutScrollViewForField:self.detailsField];
     } else {
         [self hideField:self.detailsField];
     }
@@ -114,9 +104,13 @@
         self.targetAddressLabel.stringValue = [self.targetAddressLabel.cell placeholderString];
     }
 
-    self.targetAddressField.stringValue = self.transaction.targetAddress ?:
-                                          [[BCClient sharedClient] walletHash] ?:
-                                          @"?";
+    self.targetAddressField.stringValue = [self targetAddress];
+
+    if ([self isSharingSupported]) {
+        [self configureShareButton];
+    } else {
+        [self.shareButton setHidden:YES];
+    }
 }
 
 - (void)hideField:(NSView *)field {
@@ -179,6 +173,19 @@
                                                                         views:viewDictionary]];
 }
 
+- (void)layoutScrollViewForField:(NSTextField *)field {
+    NSScrollView *scrollView = (NSScrollView *) [self getWrappingView:field];
+    CGFloat height = MAX(30.0, field.intrinsicContentSize.height + 5.0);
+
+    if (height < scrollView.frame.size.height) {
+        NSArray *constraints = [NSLayoutConstraint constraintsWithVisualFormat:@"V:[scroll(height)]"
+                                                                       options:0
+                                                                       metrics:@{@"height": @(height)}
+                                                                         views:@{@"scroll": scrollView}];
+        [self.view addConstraints:constraints];
+    }
+}
+
 - (NSView *)getWrappingView:(NSView *)view {
     while (view && view.superview != self.view) {
         view = view.superview;
@@ -187,17 +194,22 @@
     return view;
 }
 
-- (BOOL)sharingSupported {
+- (BOOL)isSharingSupported {
     return NSClassFromString(@"NSSharingServicePicker") != nil;
 }
 
-- (IBAction)shareButtonPressed:(NSButton *)sender {
-    #pragma deploymate push "ignored-api-availability"
-    NSSharingServicePicker *sharingServicePicker = [[NSSharingServicePicker alloc] initWithItems:@[[self shareText]]];
-    [sharingServicePicker showRelativeToRect:sender.bounds
-                                      ofView:sender
-                               preferredEdge:CGRectMaxXEdge];
-    #pragma deploymate pop
+- (void)configureShareButton {
+    [self.shareButton sendActionOn:NSLeftMouseDownMask];
+
+    SInt32 major = 0;
+    SInt32 minor = 0;
+    Gestalt(gestaltSystemVersionMajor, &major);
+    Gestalt(gestaltSystemVersionMinor, &minor);
+
+    if (major == 10 && minor < 10) {
+        // the "Bevel" button style looks nice on Yosemite, but ugly on pre-Yosemite systems
+        [self.shareButton.cell setBezelStyle:NSTexturedRoundedBezelStyle];
+    }
 }
 
 - (NSAttributedString *)shareText {
@@ -248,6 +260,10 @@
     }
 }
 
+- (NSString *)targetAddress {
+    return self.transaction.targetAddress ?: [[BCClient sharedClient] walletHash] ?: @"?";
+}
+
 - (NSString *)confirmationSummary {
     NSInteger confirmations = [self.transactionData[@"confirmations"] integerValue];
 
@@ -281,6 +297,9 @@
     return [NSString stringWithFormat:@"1 BTC = %@", oneBTCRate];
 }
 
+
+#pragma mark - Action handlers
+
 - (IBAction)showOnBlockchainInfoClicked:(id)sender {
     NSString *url = [NSString stringWithFormat:@"https://blockchain.info/tx/%@", self.transaction.id];
     [[NSWorkspace sharedWorkspace] openURL:[NSURL URLWithString:url]];
@@ -288,12 +307,13 @@
     [sender setState:NSOnState];
 }
 
-- (void)popoverDidClose:(NSNotification *)notification {
-    id<HITransactionPopoverDelegate> delegate = self.delegate;
-
-    if (delegate && [delegate respondsToSelector:@selector(transactionPopoverDidClose:)]) {
-        [delegate transactionPopoverDidClose:self];
-    }
+- (IBAction)shareButtonPressed:(NSButton *)sender {
+    #pragma deploymate push "ignored-api-availability"
+    NSSharingServicePicker *sharingServicePicker = [[NSSharingServicePicker alloc] initWithItems:@[[self shareText]]];
+    [sharingServicePicker showRelativeToRect:sender.bounds
+                                      ofView:sender
+                               preferredEdge:CGRectMaxXEdge];
+    #pragma deploymate pop
 }
 
 @end
