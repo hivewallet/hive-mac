@@ -527,6 +527,24 @@ NSString * const BCClientPasswordChangedNotification = @"BCClientPasswordChanged
     }
 }
 
+- (void)submitPaymentRequestWithSessionId:(int)sessionId
+                                 password:(HIPasswordHolder *)password
+                                    error:(NSError **)error
+                               completion:(void (^)(NSError *error, NSDictionary *data, HITransaction *tx))completion {
+
+    HIBitcoinManager *manager = [HIBitcoinManager defaultManager];
+
+    [manager sendPaymentRequest:sessionId
+                       password:password.data
+                          error:error
+                       callback:^(NSError *sendError, NSDictionary *data, NSString *transactionId) {
+                           dispatch_async(dispatch_get_main_queue(), ^{
+                               HITransaction *transaction = [self fetchTransactionWithId:transactionId];
+                               completion(sendError, data, transaction);
+                           });
+                       }];
+}
+
 - (void)attachSourceApplication:(HIApplication *)application toTransaction:(HITransaction *)transaction {
     HIApplication *applicationInUpdateContext = [self fetchApplicationForUpdateContext:application];
     transaction.sourceApplication = applicationInUpdateContext;

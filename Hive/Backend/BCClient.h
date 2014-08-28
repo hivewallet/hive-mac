@@ -53,6 +53,11 @@ extern NSString * const BCClientPasswordChangedNotification;
                error:(NSError **)error
           completion:(void (^)(BOOL success, HITransaction *transaction))completion;
 
+- (void)submitPaymentRequestWithSessionId:(int)sessionId
+                                 password:(HIPasswordHolder *)password
+                                    error:(NSError **)error
+                               completion:(void (^)(NSError *error, NSDictionary *data, HITransaction *tx))completion;
+
 - (satoshi_t)feeWhenSendingBitcoin:(uint64)amount
                        toRecipient:(NSString *)recipient
                              error:(NSError **)error;

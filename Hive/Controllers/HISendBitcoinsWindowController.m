@@ -696,10 +696,7 @@ NSString * const HISendBitcoinsWindowSuccessKey = @"success";
 - (void)sendBitcoin:(uint64)satoshi toTarget:(NSString *)target password:(HIPasswordHolder *)password {
     NSError *callError = nil;
     BCClient *client = [BCClient sharedClient];
-
-    NSDecimalNumber *fiatAmount = self.convertedAmountFieldValue;
-    NSDecimalNumber *fiatRate = self.exchangeRate;
-    NSString *fiatCurrency = self.selectedCurrency;
+    NSDictionary *metadata = [self storeFiatCurrencyMetadata];
 
     [client sendBitcoins:satoshi
                   toHash:target
@@ -707,24 +704,7 @@ NSString * const HISendBitcoinsWindowSuccessKey = @"success";
                    error:&callError
               completion:^(BOOL success, HITransaction *transaction) {
         if (success) {
-            transaction.fiatAmount = fiatAmount;
-            transaction.fiatCurrency = fiatCurrency;
-            transaction.fiatRate = fiatRate;
-
-            if (_savedLabel) {
-                transaction.label = _savedLabel;
-            }
-
-            NSString *detailsText = [self detailsText];
-            if (detailsText) {
-                transaction.details = detailsText;
-            }
-
-            if (_sourceApplication) {
-                [client attachSourceApplication:_sourceApplication toTransaction:transaction];
-            }
-
-            [client updateTransaction:transaction];
+            [self saveMetadata:metadata withTransaction:transaction];
             [self closeAndNotifyWithSuccess:YES transactionId:transaction.id];
         } else {
             [self showTransactionErrorAlert];
@@ -741,28 +721,72 @@ NSString * const HISendBitcoinsWindowSuccessKey = @"success";
 
 - (void)sendPaymentRequest:(int)sessionId password:(HIPasswordHolder *)password {
     NSError *callError = nil;
+    BCClient *client = [BCClient sharedClient];
+    NSDictionary *metadata = [self storeFiatCurrencyMetadata];
 
     HILogDebug(@"Submitting payment request...");
 
-    [[HIBitcoinManager defaultManager] sendPaymentRequest:sessionId
-                                                 password:password.data
-                                                    error:&callError
-                                                 callback:^(NSError *sendError, NSDictionary *data) {
-                                                     if (sendError) {
-                                                         HILogWarn(@"Payment sending failed: %@", sendError);
+    [client submitPaymentRequestWithSessionId:sessionId
+                                     password:password
+                                        error:&callError
+                                   completion:^(NSError *sendError, NSDictionary *data, HITransaction *transaction) {
+                                       if (sendError) {
+                                           HILogWarn(@"Payment sending failed: %@", sendError);
 
-                                                         [self setSendingMode:NO];
-                                                         [self showPaymentSendErrorAlert];
-                                                     } else {
-                                                         [self showPaymentConfirmation:data];
-                                                     }
-                                                 }];
+                                           [self setSendingMode:NO];
+                                           [self showPaymentSendErrorAlert];
+                                       } else {
+                                           [self saveMetadata:metadata withTransaction:transaction];
+                                           [self showPaymentConfirmation:data];
+                                       }
+                                   }];
 
     if (callError) {
         [self handleSendingError:callError];
     } else {
         [self setSendingMode:YES];
     }
+}
+
+- (NSDictionary *)storeFiatCurrencyMetadata {
+    NSMutableDictionary *data = [[NSMutableDictionary alloc] init];
+
+    if (self.convertedAmountFieldValue) {
+        data[@"fiatAmount"] = self.convertedAmountFieldValue;
+    }
+
+    if (self.exchangeRate) {
+        data[@"fiatRate"] = self.exchangeRate;
+    }
+
+    if (self.selectedCurrency) {
+        data[@"fiatCurrency"] = self.selectedCurrency;
+    }
+
+    return data;
+}
+
+- (void)saveMetadata:(NSDictionary *)metadata withTransaction:(HITransaction *)transaction {
+    BCClient *client = [BCClient sharedClient];
+
+    transaction.fiatAmount = metadata[@"fiatAmount"];
+    transaction.fiatCurrency = metadata[@"fiatCurrency"];
+    transaction.fiatRate = metadata[@"fiatRate"];
+
+    if (_savedLabel) {
+        transaction.label = _savedLabel;
+    }
+
+    NSString *detailsText = [self detailsText];
+    if (detailsText) {
+        transaction.details = detailsText;
+    }
+
+    if (_sourceApplication) {
+        [client attachSourceApplication:_sourceApplication toTransaction:transaction];
+    }
+
+    [client updateTransaction:transaction];
 }
 
 - (void)handleSendingError:(NSError *)error {
