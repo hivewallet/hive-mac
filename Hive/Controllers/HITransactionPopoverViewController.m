@@ -233,7 +233,16 @@
 }
 
 - (NSString *)transactionStatus {
-    switch (self.transaction.status) {
+    HITransactionStatus status = self.transaction.status;
+
+    if (self.transaction.paymentRequestURL &&
+        (status == HITransactionStatusUnknown || status == HITransactionStatusPending)) {
+
+        return NSLocalizedString(@"Sent directly to recipient",
+                                 @"Status for transaction sent via payment request");
+    }
+
+    switch (status) {
         case HITransactionStatusUnknown:
             return NSLocalizedString(@"Not broadcasted yet",
                                      @"Status for transaction not sent to any peers in transaction popup");
