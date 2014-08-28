@@ -694,7 +694,7 @@ NSString * const HISendBitcoinsWindowSuccessKey = @"success";
 }
 
 - (void)sendBitcoin:(uint64)satoshi toTarget:(NSString *)target password:(HIPasswordHolder *)password {
-    NSError *error = nil;
+    NSError *callError = nil;
     BCClient *client = [BCClient sharedClient];
 
     NSDecimalNumber *fiatAmount = self.convertedAmountFieldValue;
@@ -704,7 +704,7 @@ NSString * const HISendBitcoinsWindowSuccessKey = @"success";
     [client sendBitcoins:satoshi
                   toHash:target
                 password:password
-                   error:&error
+                   error:&callError
               completion:^(BOOL success, HITransaction *transaction) {
         if (success) {
             transaction.fiatAmount = fiatAmount;
@@ -728,41 +728,18 @@ NSString * const HISendBitcoinsWindowSuccessKey = @"success";
             [self closeAndNotifyWithSuccess:YES transactionId:transaction.id];
         } else {
             [self showTransactionErrorAlert];
-            [self.sendButton hideSpinner];
-            [self.cancelButton setEnabled:YES];
+            [self setSendingMode:NO];
         }
     }];
 
-    if (error) {
-        if (error.code == kHIBitcoinManagerWrongPassword) {
-            [self.window hiShake];
-        } else if (error.code == kHIBitcoinManagerSendingDustError) {
-            [self showSendingDustAlert];
-        } else if (error.code == kHIBitcoinManagerInsufficientMoneyError) {
-            [self showInsufficientFundsWithFeeAlert];
-        } else {
-            [self showTransactionErrorAlert];
-        }
+    if (callError) {
+        [self handleSendingError:callError];
     } else {
-        [self.sendButton showSpinner];
-        [self.cancelButton setEnabled:NO];
-        [self hidePasswordPopover];
+        [self setSendingMode:YES];
     }
 }
 
 - (void)sendPaymentRequest:(int)sessionId password:(HIPasswordHolder *)password {
-    void (^callback)(NSError*, NSDictionary*) = ^(NSError *sendError, NSDictionary *data) {
-        if (sendError) {
-            HILogWarn(@"Payment sending failed: %@", sendError);
-
-            [self.sendButton hideSpinner];
-            [self.cancelButton setEnabled:YES];
-            [self showPaymentSendErrorAlert];
-        } else {
-            [self showPaymentConfirmation:data];
-        }
-    };
-
     NSError *callError = nil;
 
     HILogDebug(@"Submitting payment request...");
@@ -770,26 +747,48 @@ NSString * const HISendBitcoinsWindowSuccessKey = @"success";
     [[HIBitcoinManager defaultManager] sendPaymentRequest:sessionId
                                                  password:password.data
                                                     error:&callError
-                                                 callback:callback];
+                                                 callback:^(NSError *sendError, NSDictionary *data) {
+                                                     if (sendError) {
+                                                         HILogWarn(@"Payment sending failed: %@", sendError);
+
+                                                         [self setSendingMode:NO];
+                                                         [self showPaymentSendErrorAlert];
+                                                     } else {
+                                                         [self showPaymentConfirmation:data];
+                                                     }
+                                                 }];
 
     if (callError) {
-        HILogWarn(@"Payment could not be sent: %@", callError);
-
-        if (callError.code == kHIBitcoinManagerWrongPassword) {
-            [self.window hiShake];
-        } else if (callError.code == kHIBitcoinManagerSendingDustError) {
-            [self showSendingDustAlert];
-        } else if (callError.code == kHIBitcoinManagerInsufficientMoneyError) {
-            [self showInsufficientFundsWithFeeAlert];
-        } else if (callError.code == kHIBitcoinManagerPaymentRequestExpiredError) {
-            [self showPaymentExpiredAlert];
-        } else {
-            [self showTransactionErrorAlert];
-        }
+        [self handleSendingError:callError];
     } else {
+        [self setSendingMode:YES];
+    }
+}
+
+- (void)handleSendingError:(NSError *)error {
+    HILogWarn(@"Transaction could not be sent: %@", error);
+
+    if (error.code == kHIBitcoinManagerWrongPassword) {
+        [self.window hiShake];
+    } else if (error.code == kHIBitcoinManagerSendingDustError) {
+        [self showSendingDustAlert];
+    } else if (error.code == kHIBitcoinManagerInsufficientMoneyError) {
+        [self showInsufficientFundsWithFeeAlert];
+    } else if (error.code == kHIBitcoinManagerPaymentRequestExpiredError) {
+        [self showPaymentExpiredAlert];
+    } else {
+        [self showTransactionErrorAlert];
+    }
+}
+
+- (void)setSendingMode:(BOOL)sending {
+    if (sending) {
         [self.sendButton showSpinner];
         [self.cancelButton setEnabled:NO];
         [self hidePasswordPopover];
+    } else {
+        [self.sendButton hideSpinner];
+        [self.cancelButton setEnabled:YES];
     }
 }
 
