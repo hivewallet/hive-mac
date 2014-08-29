@@ -5,9 +5,6 @@
 /* Class = "NSTextFieldCell"; title = "Amount:"; ObjectID = "3G0-0s-dgf"; */
 "3G0-0s-dgf.title" = "Amount:";
 
-/* Class = "NSTextFieldCell"; placeholderString = "Received with address:"; ObjectID = "6nl-hl-J8B"; */
-"6nl-hl-J8B.placeholderString" = "Received with address:";
-
 /* Class = "NSTextFieldCell"; title = "Details:"; ObjectID = "6nl-hl-J8B"; */
 "6nl-hl-J8B.title" = "Details:";
 
