@@ -302,6 +302,8 @@ static NSString *const KEY_UNREAD_TRANSACTIONS = @"unreadTransactions";
             value = transaction.contact.firstname;
         } else if (transaction.contact.lastname.length > 0) {
             value = transaction.contact.lastname;
+        } else if (transaction.label) {
+            value = transaction.label;
         } else if (contactRange.location == summary.string.length - 2) {
             value = transaction.targetAddress;
         } else {
