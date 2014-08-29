@@ -258,38 +258,36 @@ NSString * const BCClientPasswordChangedNotification = @"BCClientPasswordChanged
 }
 
 - (void)transactionUpdated:(NSNotification *)notification {
-    dispatch_async(dispatch_get_main_queue(), ^{
-        NSDictionary *transaction = [[HIBitcoinManager defaultManager] transactionForHash:notification.object];
+    [_transactionUpdateContext performBlock:^{
+        NSDictionary *transaction = notification.userInfo[@"json"];
 
         if (!transaction) {
-            HILogError(@"Error: transactionUpdated: no such transaction %@", notification.object);
+            HILogError(@"Error: no transaction data for transaction %@", notification.object);
             return;
         }
 
-        [_transactionUpdateContext performBlock:^{
-            [self parseAndNotifyOfTransaction:transaction];
+        [self parseAndNotifyOfTransaction:transaction];
 
+        NSError *error = nil;
+        [_transactionUpdateContext save:&error];
+
+        if (!error) {
+            HILogInfo(@"Saved transaction %@", transaction[@"txid"]);
+        } else {
+            HILogError(@"Error saving transaction %@: %@", transaction[@"txid"], error);
+        }
+
+        dispatch_async(dispatch_get_main_queue(), ^{
             NSError *error = nil;
-            [_transactionUpdateContext save:&error];
+            [DBM save:&error];
 
-            if (!error) {
-                HILogInfo(@"Saved transaction %@", transaction[@"txid"]);
-            } else {
+            if (error) {
                 HILogError(@"Error saving transaction %@: %@", transaction[@"txid"], error);
             }
 
-            dispatch_async(dispatch_get_main_queue(), ^{
-                NSError *error = nil;
-                [DBM save:&error];
-
-                if (error) {
-                    HILogError(@"Error saving transaction %@: %@", transaction[@"txid"], error);
-                }
-
-                [self updateNotifications];
-            });
-        }];
-    });
+            [self updateNotifications];
+        });
+    }];
 }
 
 - (void)observeValueForKeyPath:(NSString *)keyPath
@@ -538,10 +536,13 @@ NSString * const BCClientPasswordChangedNotification = @"BCClientPasswordChanged
                        password:password.data
                           error:error
                        callback:^(NSError *sendError, NSDictionary *data, NSString *transactionId) {
-                           dispatch_async(dispatch_get_main_queue(), ^{
+                           [_transactionUpdateContext performBlock:^{
                                HITransaction *transaction = [self fetchTransactionWithId:transactionId];
-                               completion(sendError, data, transaction);
-                           });
+
+                               dispatch_async(dispatch_get_main_queue(), ^{
+                                   completion(sendError, data, transaction);
+                               });
+                           }];
                        }];
 }
 
