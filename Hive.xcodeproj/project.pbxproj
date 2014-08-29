@@ -218,6 +218,8 @@
 		58AE8CBB19226AF900946C97 /* icon-success.png in Resources */ = {isa = PBXBuildFile; fileRef = 58AE8CB919226AF800946C97 /* icon-success.png */; };
 		58AE8CBC19226AF900946C97 /* icon-success@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 58AE8CBA19226AF800946C97 /* icon-success@2x.png */; };
 		58AE8CC9192CCF1200946C97 /* HIGeneralPreferencesViewController.strings in Resources */ = {isa = PBXBuildFile; fileRef = 58AE8CCB192CCF1200946C97 /* HIGeneralPreferencesViewController.strings */; };
+		58C4E84719B0BD53003B5171 /* HITransactionPopoverViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 58C4E84919B0BD53003B5171 /* HITransactionPopoverViewController.xib */; };
+		58C4E86819B0BDD3003B5171 /* HITransactionPopoverViewController.strings in Resources */ = {isa = PBXBuildFile; fileRef = 58C4E86A19B0BDD3003B5171 /* HITransactionPopoverViewController.strings */; };
 		58C85B5818FFE90700B2C350 /* HISignMessageWindowController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 58C85B5A18FFE90700B2C350 /* HISignMessageWindowController.xib */; };
 		58C85B7918FFE97F00B2C350 /* HIKeyPreferencesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 58C85B7B18FFE97F00B2C350 /* HIKeyPreferencesViewController.xib */; };
 		58C85B9818FFEA0100B2C350 /* HISignMessageWindowController.strings in Resources */ = {isa = PBXBuildFile; fileRef = 58C85B9A18FFEA0100B2C350 /* HISignMessageWindowController.strings */; };
@@ -225,7 +227,6 @@
 		58CFD95417CF914000A035FA /* HISidebarView.m in Sources */ = {isa = PBXBuildFile; fileRef = 58CFD95217CF914000A035FA /* HISidebarView.m */; };
 		58D4D61F18290079009CB7A5 /* patten_hive.hiveapp in Resources */ = {isa = PBXBuildFile; fileRef = 58D4D61E18290079009CB7A5 /* patten_hive.hiveapp */; };
 		58DDC5D91998F68B001E47C9 /* HITransactionPopoverViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 58DDC5D71998F68B001E47C9 /* HITransactionPopoverViewController.m */; };
-		58DDC5DA1998F68B001E47C9 /* HITransactionPopoverViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 58DDC5D81998F68B001E47C9 /* HITransactionPopoverViewController.xib */; };
 		58E228DC193359C200851F1B /* NSAlert+Hive.m in Sources */ = {isa = PBXBuildFile; fileRef = 58E228DB193359C200851F1B /* NSAlert+Hive.m */; };
 		58E336171892C02E004D60C3 /* HIApplicationsViewController.strings in Resources */ = {isa = PBXBuildFile; fileRef = 58E336191892C02E004D60C3 /* HIApplicationsViewController.strings */; };
 		58E3363A18934DCB004D60C3 /* coinbase.hiveapp in Resources */ = {isa = PBXBuildFile; fileRef = 58E3363918934DCB004D60C3 /* coinbase.hiveapp */; };
@@ -1822,6 +1823,68 @@
 		58C4E83F19A605F7003B5171 /* 2014082102.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = 2014082102.xcdatamodel; sourceTree = "<group>"; };
 		58C4E84219AE2B5A003B5171 /* 2014082701.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = 2014082701.xcdatamodel; sourceTree = "<group>"; };
 		58C4E84319AF6F91003B5171 /* 2014082801.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = 2014082801.xcdatamodel; sourceTree = "<group>"; };
+		58C4E84819B0BD53003B5171 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/HITransactionPopoverViewController.xib; sourceTree = "<group>"; };
+		58C4E84A19B0BD5A003B5171 /* pl */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = pl; path = pl.lproj/HITransactionPopoverViewController.xib; sourceTree = "<group>"; };
+		58C4E84B19B0BD61003B5171 /* fr */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = fr; path = fr.lproj/HITransactionPopoverViewController.xib; sourceTree = "<group>"; };
+		58C4E84C19B0BD63003B5171 /* it */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = it; path = it.lproj/HITransactionPopoverViewController.xib; sourceTree = "<group>"; };
+		58C4E84D19B0BD6A003B5171 /* fi */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = fi; path = fi.lproj/HITransactionPopoverViewController.xib; sourceTree = "<group>"; };
+		58C4E84E19B0BD6B003B5171 /* da */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = da; path = da.lproj/HITransactionPopoverViewController.xib; sourceTree = "<group>"; };
+		58C4E84F19B0BD6E003B5171 /* de */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = de; path = de.lproj/HITransactionPopoverViewController.xib; sourceTree = "<group>"; };
+		58C4E85019B0BD70003B5171 /* nl */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = nl; path = nl.lproj/HITransactionPopoverViewController.xib; sourceTree = "<group>"; };
+		58C4E85119B0BD72003B5171 /* ru */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = ru; path = ru.lproj/HITransactionPopoverViewController.xib; sourceTree = "<group>"; };
+		58C4E85219B0BD74003B5171 /* fil */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = fil; path = fil.lproj/HITransactionPopoverViewController.xib; sourceTree = "<group>"; };
+		58C4E85319B0BD75003B5171 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = "zh-Hans"; path = "zh-Hans.lproj/HITransactionPopoverViewController.xib"; sourceTree = "<group>"; };
+		58C4E85419B0BD7C003B5171 /* ar */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = ar; path = ar.lproj/HITransactionPopoverViewController.xib; sourceTree = "<group>"; };
+		58C4E85519B0BD7E003B5171 /* hi */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = hi; path = hi.lproj/HITransactionPopoverViewController.xib; sourceTree = "<group>"; };
+		58C4E85619B0BD7F003B5171 /* ur */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = ur; path = ur.lproj/HITransactionPopoverViewController.xib; sourceTree = "<group>"; };
+		58C4E85719B0BD81003B5171 /* ko */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = ko; path = ko.lproj/HITransactionPopoverViewController.xib; sourceTree = "<group>"; };
+		58C4E85819B0BD84003B5171 /* es */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = es; path = es.lproj/HITransactionPopoverViewController.xib; sourceTree = "<group>"; };
+		58C4E85919B0BD87003B5171 /* cs */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = cs; path = cs.lproj/HITransactionPopoverViewController.xib; sourceTree = "<group>"; };
+		58C4E85A19B0BDA0003B5171 /* el */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = el; path = el.lproj/HITransactionPopoverViewController.xib; sourceTree = "<group>"; };
+		58C4E85B19B0BDA2003B5171 /* tr */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = tr; path = tr.lproj/HITransactionPopoverViewController.xib; sourceTree = "<group>"; };
+		58C4E85C19B0BDA4003B5171 /* pt-PT */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = "pt-PT"; path = "pt-PT.lproj/HITransactionPopoverViewController.xib"; sourceTree = "<group>"; };
+		58C4E85D19B0BDA9003B5171 /* sv */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = sv; path = sv.lproj/HITransactionPopoverViewController.xib; sourceTree = "<group>"; };
+		58C4E85E19B0BDAB003B5171 /* sr-Latn */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = "sr-Latn"; path = "sr-Latn.lproj/HITransactionPopoverViewController.xib"; sourceTree = "<group>"; };
+		58C4E85F19B0BDAD003B5171 /* sr */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = sr; path = sr.lproj/HITransactionPopoverViewController.xib; sourceTree = "<group>"; };
+		58C4E86019B0BDAF003B5171 /* ja */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = ja; path = ja.lproj/HITransactionPopoverViewController.xib; sourceTree = "<group>"; };
+		58C4E86119B0BDB1003B5171 /* pt */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = pt; path = pt.lproj/HITransactionPopoverViewController.xib; sourceTree = "<group>"; };
+		58C4E86219B0BDB3003B5171 /* ro */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = ro; path = ro.lproj/HITransactionPopoverViewController.xib; sourceTree = "<group>"; };
+		58C4E86319B0BDB6003B5171 /* hu */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = hu; path = hu.lproj/HITransactionPopoverViewController.xib; sourceTree = "<group>"; };
+		58C4E86419B0BDB8003B5171 /* nb */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = nb; path = nb.lproj/HITransactionPopoverViewController.xib; sourceTree = "<group>"; };
+		58C4E86519B0BDBA003B5171 /* fa */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = fa; path = fa.lproj/HITransactionPopoverViewController.xib; sourceTree = "<group>"; };
+		58C4E86619B0BDBC003B5171 /* uk */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = uk; path = uk.lproj/HITransactionPopoverViewController.xib; sourceTree = "<group>"; };
+		58C4E86719B0BDBE003B5171 /* th */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = th; path = th.lproj/HITransactionPopoverViewController.xib; sourceTree = "<group>"; };
+		58C4E86919B0BDD3003B5171 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/HITransactionPopoverViewController.strings; sourceTree = "<group>"; };
+		58C4E86B19B0BDD7003B5171 /* pl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = pl; path = pl.lproj/HITransactionPopoverViewController.strings; sourceTree = "<group>"; };
+		58C4E86C19B0BDD8003B5171 /* it */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = it; path = it.lproj/HITransactionPopoverViewController.strings; sourceTree = "<group>"; };
+		58C4E86D19B0BDD8003B5171 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/HITransactionPopoverViewController.strings; sourceTree = "<group>"; };
+		58C4E86E19B0BDD9003B5171 /* fi */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fi; path = fi.lproj/HITransactionPopoverViewController.strings; sourceTree = "<group>"; };
+		58C4E86F19B0BDDA003B5171 /* da */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = da; path = da.lproj/HITransactionPopoverViewController.strings; sourceTree = "<group>"; };
+		58C4E87019B0BDDB003B5171 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/HITransactionPopoverViewController.strings; sourceTree = "<group>"; };
+		58C4E87119B0BDDC003B5171 /* nl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = nl; path = nl.lproj/HITransactionPopoverViewController.strings; sourceTree = "<group>"; };
+		58C4E87219B0BDDD003B5171 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/HITransactionPopoverViewController.strings; sourceTree = "<group>"; };
+		58C4E87319B0BDDE003B5171 /* fil */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fil; path = fil.lproj/HITransactionPopoverViewController.strings; sourceTree = "<group>"; };
+		58C4E87419B0BDE1003B5171 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/HITransactionPopoverViewController.strings"; sourceTree = "<group>"; };
+		58C4E87519B0BDE6003B5171 /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/HITransactionPopoverViewController.strings; sourceTree = "<group>"; };
+		58C4E87619B0BDE8003B5171 /* cs */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = cs; path = cs.lproj/HITransactionPopoverViewController.strings; sourceTree = "<group>"; };
+		58C4E87719B0BDE9003B5171 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/HITransactionPopoverViewController.strings; sourceTree = "<group>"; };
+		58C4E87819B0BDEB003B5171 /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = ko.lproj/HITransactionPopoverViewController.strings; sourceTree = "<group>"; };
+		58C4E87919B0BDEC003B5171 /* ur */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ur; path = ur.lproj/HITransactionPopoverViewController.strings; sourceTree = "<group>"; };
+		58C4E87A19B0BDED003B5171 /* hi */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = hi; path = hi.lproj/HITransactionPopoverViewController.strings; sourceTree = "<group>"; };
+		58C4E87B19B0BDF0003B5171 /* th */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = th; path = th.lproj/HITransactionPopoverViewController.strings; sourceTree = "<group>"; };
+		58C4E87C19B0BDF2003B5171 /* uk */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = uk; path = uk.lproj/HITransactionPopoverViewController.strings; sourceTree = "<group>"; };
+		58C4E87D19B0BDF3003B5171 /* fa */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fa; path = fa.lproj/HITransactionPopoverViewController.strings; sourceTree = "<group>"; };
+		58C4E87E19B0BDF4003B5171 /* nb */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = nb; path = nb.lproj/HITransactionPopoverViewController.strings; sourceTree = "<group>"; };
+		58C4E87F19B0BDF5003B5171 /* hu */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = hu; path = hu.lproj/HITransactionPopoverViewController.strings; sourceTree = "<group>"; };
+		58C4E88019B0BDF6003B5171 /* ro */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ro; path = ro.lproj/HITransactionPopoverViewController.strings; sourceTree = "<group>"; };
+		58C4E88119B0BDF7003B5171 /* pt */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = pt; path = pt.lproj/HITransactionPopoverViewController.strings; sourceTree = "<group>"; };
+		58C4E88219B0BDF8003B5171 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/HITransactionPopoverViewController.strings; sourceTree = "<group>"; };
+		58C4E88319B0BDF9003B5171 /* sr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = sr; path = sr.lproj/HITransactionPopoverViewController.strings; sourceTree = "<group>"; };
+		58C4E88419B0BDFA003B5171 /* sr-Latn */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "sr-Latn"; path = "sr-Latn.lproj/HITransactionPopoverViewController.strings"; sourceTree = "<group>"; };
+		58C4E88519B0BDFC003B5171 /* sv */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = sv; path = sv.lproj/HITransactionPopoverViewController.strings; sourceTree = "<group>"; };
+		58C4E88619B0BDFE003B5171 /* pt-PT */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-PT"; path = "pt-PT.lproj/HITransactionPopoverViewController.strings"; sourceTree = "<group>"; };
+		58C4E88719B0BDFF003B5171 /* el */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = el; path = el.lproj/HITransactionPopoverViewController.strings; sourceTree = "<group>"; };
+		58C4E88819B0BE01003B5171 /* tr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = tr; path = tr.lproj/HITransactionPopoverViewController.strings; sourceTree = "<group>"; };
 		58C85B5918FFE90700B2C350 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/HISignMessageWindowController.xib; sourceTree = "<group>"; };
 		58C85B5D18FFE92100B2C350 /* pl */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = pl; path = pl.lproj/HISignMessageWindowController.xib; sourceTree = "<group>"; };
 		58C85B5E18FFE92200B2C350 /* fr */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = fr; path = fr.lproj/HISignMessageWindowController.xib; sourceTree = "<group>"; };
@@ -2036,7 +2099,6 @@
 		58DB7131193C73B800B3FB28 /* uk */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = uk; path = uk.lproj/Localizable.strings; sourceTree = "<group>"; };
 		58DDC5D61998F68B001E47C9 /* HITransactionPopoverViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HITransactionPopoverViewController.h; sourceTree = "<group>"; };
 		58DDC5D71998F68B001E47C9 /* HITransactionPopoverViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HITransactionPopoverViewController.m; sourceTree = "<group>"; };
-		58DDC5D81998F68B001E47C9 /* HITransactionPopoverViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HITransactionPopoverViewController.xib; sourceTree = "<group>"; };
 		58E228DA193359C200851F1B /* NSAlert+Hive.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSAlert+Hive.h"; sourceTree = "<group>"; };
 		58E228DB193359C200851F1B /* NSAlert+Hive.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSAlert+Hive.m"; sourceTree = "<group>"; };
 		58E336181892C02E004D60C3 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/HIApplicationsViewController.strings; sourceTree = "<group>"; };
@@ -2671,7 +2733,8 @@
 			children = (
 				58DDC5D61998F68B001E47C9 /* HITransactionPopoverViewController.h */,
 				58DDC5D71998F68B001E47C9 /* HITransactionPopoverViewController.m */,
-				58DDC5D81998F68B001E47C9 /* HITransactionPopoverViewController.xib */,
+				58C4E86A19B0BDD3003B5171 /* HITransactionPopoverViewController.strings */,
+				58C4E84919B0BD53003B5171 /* HITransactionPopoverViewController.xib */,
 				586059F218041ABD00FD9C2A /* HITransactionsViewController.h */,
 				586059F318041ABD00FD9C2A /* HITransactionsViewController.m */,
 				58A37ADD180D998700CFCDE3 /* HITransactionsViewController.strings */,
@@ -3222,7 +3285,7 @@
 				58A8760F197E9E8100524C77 /* google-drive-128.png in Resources */,
 				248631D818A7AD1800A020A9 /* HIQRCodeWindowController.xib in Resources */,
 				24300BFC188892CD00FDEF2F /* wizard-background.png in Resources */,
-				58DDC5DA1998F68B001E47C9 /* HITransactionPopoverViewController.xib in Resources */,
+				58C4E84719B0BD53003B5171 /* HITransactionPopoverViewController.xib in Resources */,
 				588E356618212BFB006A6A25 /* HIErrorWindowController.xib in Resources */,
 				588E34F2182013E9006A6A25 /* HIDebuggingInfoWindowController.strings in Resources */,
 				588427D018F2DF6600DE6CC4 /* bitcoinkit.checkpoints in Resources */,
@@ -3242,6 +3305,7 @@
 				58605A5218041D0A00FD9C2A /* icon-tabbar-timeline__active.pdf in Resources */,
 				58605A5318041D0A00FD9C2A /* icon-tabbar-timeline__inactive.pdf in Resources */,
 				5857133218902F650094F884 /* HIWizardWelcomeViewController.xib in Resources */,
+				58C4E86819B0BDD3003B5171 /* HITransactionPopoverViewController.strings in Resources */,
 				58605A5418041D0A00FD9C2A /* icon-tabbar-user__active.pdf in Resources */,
 				58605A5518041D0A00FD9C2A /* icon-tabbar-user__inactive.pdf in Resources */,
 				58605A5618041D0A00FD9C2A /* icon-timeline__active.pdf in Resources */,
@@ -5291,6 +5355,82 @@
 				587491731951E4EC00D9C1E9 /* th */,
 			);
 			name = HIGeneralPreferencesViewController.strings;
+			sourceTree = "<group>";
+		};
+		58C4E84919B0BD53003B5171 /* HITransactionPopoverViewController.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				58C4E84819B0BD53003B5171 /* en */,
+				58C4E84A19B0BD5A003B5171 /* pl */,
+				58C4E84B19B0BD61003B5171 /* fr */,
+				58C4E84C19B0BD63003B5171 /* it */,
+				58C4E84D19B0BD6A003B5171 /* fi */,
+				58C4E84E19B0BD6B003B5171 /* da */,
+				58C4E84F19B0BD6E003B5171 /* de */,
+				58C4E85019B0BD70003B5171 /* nl */,
+				58C4E85119B0BD72003B5171 /* ru */,
+				58C4E85219B0BD74003B5171 /* fil */,
+				58C4E85319B0BD75003B5171 /* zh-Hans */,
+				58C4E85419B0BD7C003B5171 /* ar */,
+				58C4E85519B0BD7E003B5171 /* hi */,
+				58C4E85619B0BD7F003B5171 /* ur */,
+				58C4E85719B0BD81003B5171 /* ko */,
+				58C4E85819B0BD84003B5171 /* es */,
+				58C4E85919B0BD87003B5171 /* cs */,
+				58C4E85A19B0BDA0003B5171 /* el */,
+				58C4E85B19B0BDA2003B5171 /* tr */,
+				58C4E85C19B0BDA4003B5171 /* pt-PT */,
+				58C4E85D19B0BDA9003B5171 /* sv */,
+				58C4E85E19B0BDAB003B5171 /* sr-Latn */,
+				58C4E85F19B0BDAD003B5171 /* sr */,
+				58C4E86019B0BDAF003B5171 /* ja */,
+				58C4E86119B0BDB1003B5171 /* pt */,
+				58C4E86219B0BDB3003B5171 /* ro */,
+				58C4E86319B0BDB6003B5171 /* hu */,
+				58C4E86419B0BDB8003B5171 /* nb */,
+				58C4E86519B0BDBA003B5171 /* fa */,
+				58C4E86619B0BDBC003B5171 /* uk */,
+				58C4E86719B0BDBE003B5171 /* th */,
+			);
+			name = HITransactionPopoverViewController.xib;
+			sourceTree = "<group>";
+		};
+		58C4E86A19B0BDD3003B5171 /* HITransactionPopoverViewController.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				58C4E86919B0BDD3003B5171 /* en */,
+				58C4E86B19B0BDD7003B5171 /* pl */,
+				58C4E86C19B0BDD8003B5171 /* it */,
+				58C4E86D19B0BDD8003B5171 /* fr */,
+				58C4E86E19B0BDD9003B5171 /* fi */,
+				58C4E86F19B0BDDA003B5171 /* da */,
+				58C4E87019B0BDDB003B5171 /* de */,
+				58C4E87119B0BDDC003B5171 /* nl */,
+				58C4E87219B0BDDD003B5171 /* ru */,
+				58C4E87319B0BDDE003B5171 /* fil */,
+				58C4E87419B0BDE1003B5171 /* zh-Hans */,
+				58C4E87519B0BDE6003B5171 /* ar */,
+				58C4E87619B0BDE8003B5171 /* cs */,
+				58C4E87719B0BDE9003B5171 /* es */,
+				58C4E87819B0BDEB003B5171 /* ko */,
+				58C4E87919B0BDEC003B5171 /* ur */,
+				58C4E87A19B0BDED003B5171 /* hi */,
+				58C4E87B19B0BDF0003B5171 /* th */,
+				58C4E87C19B0BDF2003B5171 /* uk */,
+				58C4E87D19B0BDF3003B5171 /* fa */,
+				58C4E87E19B0BDF4003B5171 /* nb */,
+				58C4E87F19B0BDF5003B5171 /* hu */,
+				58C4E88019B0BDF6003B5171 /* ro */,
+				58C4E88119B0BDF7003B5171 /* pt */,
+				58C4E88219B0BDF8003B5171 /* ja */,
+				58C4E88319B0BDF9003B5171 /* sr */,
+				58C4E88419B0BDFA003B5171 /* sr-Latn */,
+				58C4E88519B0BDFC003B5171 /* sv */,
+				58C4E88619B0BDFE003B5171 /* pt-PT */,
+				58C4E88719B0BDFF003B5171 /* el */,
+				58C4E88819B0BE01003B5171 /* tr */,
+			);
+			name = HITransactionPopoverViewController.strings;
 			sourceTree = "<group>";
 		};
 		58C85B5A18FFE90700B2C350 /* HISignMessageWindowController.xib */ = {

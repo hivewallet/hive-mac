@@ -80,6 +80,9 @@
 /* Confirm button in password entry form */
 "Confirm" = "Confirmare";
 
+/* Status for transaction included in a block in transaction popup */
+"Confirmed" = "Confirmed";
+
 /* Contact name empty alert title */
 "Contact can't be saved." = "Contactul nu poate fi salvat.";
 
@@ -224,6 +227,9 @@
 /* Transaction failed alert message */
 "No Bitcoin have been taken from your wallet." = "Nu a fost retras niciun Bitcoin din portofel.";
 
+/* Status for transaction not sent to any peers in transaction popup */
+"Not broadcasted yet" = "Not broadcasted yet";
+
 /* Title of an alert when trying to send more than you have with fee */
 "Not enough funds left to pay the transaction fee." = "Nu sunt fonduri suficiente pentru a plăti taxa de tranzacţie.";
 
@@ -281,6 +287,9 @@
 /* Install app button title when app exists */
 "Reinstall" = "Reinstalare";
 
+/* Status for transaction removed from the main blockchain in transaction popup */
+"Rejected by the network" = "Rejected by the network";
+
 /* No comment provided by engineer. */
 "Remove" = "Ştergere";
 
@@ -295,6 +304,9 @@
 
 /* Sent amount of BTC to a contact/address */
 "Sent &a to &c" = "Trimis &a la &c";
+
+/* Status for transaction sent via payment request */
+"Sent directly to recipient" = "Sent directly to recipient";
 
 /* Title for shortcut keys preferences panel */
 "Shortcuts" = "Scurtături";
@@ -391,6 +403,9 @@
 
 /* Backup status: backup scheduled or in progress */
 "Waiting for backup" = "În aşteptarea backup-ului";
+
+/* Status for transaction sent to some peers in transaction popup */
+"Waiting for confirmation" = "Waiting for confirmation";
 
 /* Install app popup warning message */
 "We cannot guarantee the safety of all apps - please be careful if you download Hive apps from third party sites." = "Nu putem garanta siguranţa tuturor aplicaţiilor - acordaţi atenţie sporită dacă descărcaţi aplicaţii Hive de pe alte site-uri.";

@@ -80,6 +80,9 @@
 /* Confirm button in password entry form */
 "Confirm" = "确认";
 
+/* Status for transaction included in a block in transaction popup */
+"Confirmed" = "Confirmed";
+
 /* Contact name empty alert title */
 "Contact can't be saved." = "无法保存此联系人信息";
 
@@ -224,6 +227,9 @@
 /* Transaction failed alert message */
 "No Bitcoin have been taken from your wallet." = "没有从帐户中取出比特币。";
 
+/* Status for transaction not sent to any peers in transaction popup */
+"Not broadcasted yet" = "Not broadcasted yet";
+
 /* Title of an alert when trying to send more than you have with fee */
 "Not enough funds left to pay the transaction fee." = "余额不足以支付交易手续费。";
 
@@ -281,6 +287,9 @@
 /* Install app button title when app exists */
 "Reinstall" = "重装";
 
+/* Status for transaction removed from the main blockchain in transaction popup */
+"Rejected by the network" = "Rejected by the network";
+
 /* No comment provided by engineer. */
 "Remove" = "移除";
 
@@ -295,6 +304,9 @@
 
 /* Sent amount of BTC to a contact/address */
 "Sent &a to &c" = "发送 &a 给 &c";
+
+/* Status for transaction sent via payment request */
+"Sent directly to recipient" = "Sent directly to recipient";
 
 /* Title for shortcut keys preferences panel */
 "Shortcuts" = "热键";
@@ -391,6 +403,9 @@
 
 /* Backup status: backup scheduled or in progress */
 "Waiting for backup" = "等待备份";
+
+/* Status for transaction sent to some peers in transaction popup */
+"Waiting for confirmation" = "Waiting for confirmation";
 
 /* Install app popup warning message */
 "We cannot guarantee the safety of all apps - please be careful if you download Hive apps from third party sites." = "我们不保证所有应用的安全性，请不要轻易信任第三方 Hive 应用。";
