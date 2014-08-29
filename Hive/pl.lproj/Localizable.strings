@@ -81,7 +81,7 @@
 "Confirm" = "Potwierdź";
 
 /* Status for transaction included in a block in transaction popup */
-"Confirmed" = "Confirmed";
+"Confirmed" = "Potwierdzona";
 
 /* Contact name empty alert title */
 "Contact can't be saved." = "Nie można zapisać kontaktu.";
@@ -228,7 +228,7 @@
 "No Bitcoin have been taken from your wallet." = "Bitcoiny nie zostały pobrane z twojego portfela.";
 
 /* Status for transaction not sent to any peers in transaction popup */
-"Not broadcasted yet" = "Not broadcasted yet";
+"Not broadcasted yet" = "Jeszcze nie wysłana";
 
 /* Title of an alert when trying to send more than you have with fee */
 "Not enough funds left to pay the transaction fee." = "Niewystarczające środki aby zapłacić opłatę transakcyjną.";
@@ -288,7 +288,7 @@
 "Reinstall" = "Przeinstaluj";
 
 /* Status for transaction removed from the main blockchain in transaction popup */
-"Rejected by the network" = "Rejected by the network";
+"Rejected by the network" = "Odrzucona przez sieć";
 
 /* No comment provided by engineer. */
 "Remove" = "Usuń";
@@ -306,7 +306,7 @@
 "Sent &a to &c" = "Wysłano &a do &c";
 
 /* Status for transaction sent via payment request */
-"Sent directly to recipient" = "Sent directly to recipient";
+"Sent directly to recipient" = "Wysłana bezpośrednio do odbiorcy";
 
 /* Title for shortcut keys preferences panel */
 "Shortcuts" = "Skróty";
@@ -405,7 +405,7 @@
 "Waiting for backup" = "Oczekiwanie na wykonanie kopii";
 
 /* Status for transaction sent to some peers in transaction popup */
-"Waiting for confirmation" = "Waiting for confirmation";
+"Waiting for confirmation" = "Oczekuje na potwierdzenie";
 
 /* Install app popup warning message */
 "We cannot guarantee the safety of all apps - please be careful if you download Hive apps from third party sites." = "Nie możemy zagwarantować bezpieczeństwa wszystkich aplikacji - zachowaj ostrożność jeśli ściągasz aplikacje ze stron innych producentów.";
