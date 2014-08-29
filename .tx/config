@@ -158,3 +158,9 @@ source_file = Hive/Controllers/en.lproj/HIGeneralPreferencesViewController.strin
 source_lang = en
 type = STRINGS
 
+[hive-osx.HITransactionPopoverViewController]
+file_filter = Hive/Controllers/<lang>.lproj/HITransactionPopoverViewController.strings
+source_file = Hive/Controllers/en.lproj/HITransactionPopoverViewController.strings
+source_lang = en
+type = STRINGS
+
