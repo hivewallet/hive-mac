@@ -422,10 +422,6 @@ NSString * const BCClientPasswordChangedNotification = @"BCClientPasswordChanged
     transaction.date = data[@"time"];
     transaction.amount = [data[@"amount"] longLongValue];
     transaction.fee = [data[@"fee"] longLongValue];
-
-    // TODO: wtf is this for?
-    transaction.request = (![data[@"details"][0][@"category"] isEqual:@"send"]);
-
     transaction.senderHash = data[@"details"][0][@"address"];
 
     // TODO: set this on the Java side
@@ -440,13 +436,7 @@ NSString * const BCClientPasswordChangedNotification = @"BCClientPasswordChanged
                                                              transaction.senderHash];
 
         NSArray *response = [_transactionUpdateContext executeFetchRequest:request error:NULL];
-
-        if (response.count > 0) {
-            HIContact *contact = response[0];
-            transaction.senderName = contact.name;
-            transaction.senderEmail = contact.email;
-            transaction.contact = contact;
-        }
+        transaction.contact = response.firstObject;
     }
 }
 

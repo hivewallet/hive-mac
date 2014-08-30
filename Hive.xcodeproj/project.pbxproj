@@ -2236,6 +2236,7 @@
 		58EBA3B11937FE9100F90E50 /* fa */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fa; path = fa.lproj/Localizable.strings; sourceTree = "<group>"; };
 		58F02AEC17E1F5A400B65429 /* HIRightPointingArrowView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HIRightPointingArrowView.h; sourceTree = "<group>"; };
 		58F02AED17E1F5A400B65429 /* HIRightPointingArrowView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HIRightPointingArrowView.m; sourceTree = "<group>"; };
+		58F286EB19B14FE0004ABE48 /* 2014083001.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = 2014083001.xcdatamodel; sourceTree = "<group>"; };
 		58F496F018B67A1C0033B7E0 /* icon-unknown-app.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-unknown-app.png"; sourceTree = "<group>"; };
 		58F496F618B7EE8F0033B7E0 /* HINetworkConnectionMonitor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HINetworkConnectionMonitor.h; sourceTree = "<group>"; };
 		58F496F718B7EE8F0033B7E0 /* HINetworkConnectionMonitor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HINetworkConnectionMonitor.m; sourceTree = "<group>"; };
@@ -5865,9 +5866,10 @@
 				58C4E83F19A605F7003B5171 /* 2014082102.xcdatamodel */,
 				58C4E84219AE2B5A003B5171 /* 2014082701.xcdatamodel */,
 				58C4E84319AF6F91003B5171 /* 2014082801.xcdatamodel */,
+				58F286EB19B14FE0004ABE48 /* 2014083001.xcdatamodel */,
 				D962AF021769FEF9009F882A /* Hive.xcdatamodel */,
 			);
-			currentVersion = 58C4E84319AF6F91003B5171 /* 2014082801.xcdatamodel */;
+			currentVersion = 58F286EB19B14FE0004ABE48 /* 2014083001.xcdatamodel */;
 			path = Hive.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;

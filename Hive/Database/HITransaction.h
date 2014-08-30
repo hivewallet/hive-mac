@@ -55,10 +55,6 @@ extern NSString * const HITransactionEntity;
 // aliased here for convenience
 @property (nonatomic, readonly) NSString *targetAddress;
 
-// currently unused?
-@property (nonatomic, retain) NSString *senderName;
-@property (nonatomic, retain) NSString *senderEmail;
-
 // transaction metadata (from a URI or payment request, or the contact's name)
 @property (nonatomic, retain) NSString *label;
 @property (nonatomic, retain) NSString *details;
@@ -70,8 +66,6 @@ extern NSString * const HITransactionEntity;
 @property (nonatomic) HITransactionStatus status;
 
 @property (nonatomic) NSDate *date;
-
-@property (nonatomic) BOOL request;
 
 // if the address hash matches any of the contacts' addreses, contact is linked here, otherwise it's nil
 @property (nonatomic, retain) HIContact *contact;
