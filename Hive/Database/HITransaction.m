@@ -18,19 +18,20 @@ NSString * const HITransactionEntity = @"HITransaction";
 
 @dynamic id;
 @dynamic amount;
-@dynamic fee;
-@dynamic senderHash;
-@dynamic status;
-@dynamic date;
 @dynamic contact;
-@dynamic sourceApplication;
-@dynamic read;
+@dynamic date;
+@dynamic details;
+@dynamic fee;
 @dynamic fiatAmount;
 @dynamic fiatCurrency;
 @dynamic fiatRate;
 @dynamic label;
-@dynamic details;
+@dynamic read;
 @dynamic paymentRequestURL;
+@dynamic senderHash;
+@dynamic sourceApplication;
+@dynamic status;
+
 
 + (BOOL)isAmountWithinExpectedRange:(satoshi_t)amount {
     // get previous transaction amounts (sent only)
