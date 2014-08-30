@@ -15,7 +15,6 @@
 #import "HICurrencyFormatService.h"
 #import "HIExchangeRateService.h"
 #import "HIProfile.h"
-#import "HISecureAppStorage.h"
 
 // API version
 // MINOR version must be incremented when new API features are added
@@ -38,7 +37,6 @@ static const NSInteger kHIAppRuntimeBridgeParsingError = -1000;
     NSMutableSet *_exchangeRateListeners;
     HIApplication *_application;
     NSDictionary *_applicationManifest;
-    HISecureAppStorage *_secureStorage;
     NSArray *_availableCurrencies;
     NSString *_preferredCurrency;
     NSString *_preferredBitcoinFormat;
@@ -101,7 +99,6 @@ static const NSInteger kHIAppRuntimeBridgeParsingError = -1000;
                    @"_uBTCInSatoshi": @"UBTC_IN_SATOSHI",
                    @"_IncomingTransactionType": @"TX_TYPE_INCOMING",
                    @"_OutgoingTransactionType": @"TX_TYPE_OUTGOING",
-                   @"_secureStorage": @"secureStorage",
                    @"_activeApiVersionMajor": @"apiVersionMajor",
                    @"_activeApiVersionMinor": @"apiVersionMinor",
                    };
@@ -139,7 +136,6 @@ static const NSInteger kHIAppRuntimeBridgeParsingError = -1000;
         _activeApiVersionMinor = API_VERSION_MINOR;
 
         _exchangeRateListeners = [NSMutableSet new];
-        _secureStorage = [[HISecureAppStorage alloc] initWithApplication:application frame:self.frame];
 
         _availableCurrencies = [[HIExchangeRateService sharedService] availableCurrencies];
         // We currently do not send live updates to apps, so remember this.

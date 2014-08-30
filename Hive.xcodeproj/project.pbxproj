@@ -83,7 +83,6 @@
 		583076C718B3D1260017084A /* Licenses.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 583076C618B3D1260017084A /* Licenses.rtf */; };
 		583076C918B3E8C00017084A /* app-store.hiveapp in Resources */ = {isa = PBXBuildFile; fileRef = 583076C818B3E8C00017084A /* app-store.hiveapp */; };
 		583B1DD118620BA800817EF8 /* HILogFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = 583B1DD018620BA800817EF8 /* HILogFormatter.m */; };
-		583B1DE41864A32900817EF8 /* HISecureAppStorage.m in Sources */ = {isa = PBXBuildFile; fileRef = 583B1DE31864A32900817EF8 /* HISecureAppStorage.m */; };
 		583B1DED186860EC00817EF8 /* HIBackupCenterWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 583B1DEB186860EC00817EF8 /* HIBackupCenterWindowController.m */; };
 		583B1DF818686C3800817EF8 /* HIBackupAdapter.m in Sources */ = {isa = PBXBuildFile; fileRef = 583B1DF718686C3800817EF8 /* HIBackupAdapter.m */; };
 		583B1DFB18686C4700817EF8 /* HITimeMachineBackup.m in Sources */ = {isa = PBXBuildFile; fileRef = 583B1DFA18686C4700817EF8 /* HITimeMachineBackup.m */; };
@@ -719,8 +718,6 @@
 		58357A3B186068A70077B717 /* 2013121701.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = 2013121701.xcdatamodel; sourceTree = "<group>"; };
 		583B1DCF18620BA800817EF8 /* HILogFormatter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HILogFormatter.h; sourceTree = "<group>"; };
 		583B1DD018620BA800817EF8 /* HILogFormatter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HILogFormatter.m; sourceTree = "<group>"; };
-		583B1DE21864A32900817EF8 /* HISecureAppStorage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HISecureAppStorage.h; sourceTree = "<group>"; };
-		583B1DE31864A32900817EF8 /* HISecureAppStorage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HISecureAppStorage.m; sourceTree = "<group>"; };
 		583B1DEA186860EC00817EF8 /* HIBackupCenterWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HIBackupCenterWindowController.h; sourceTree = "<group>"; };
 		583B1DEB186860EC00817EF8 /* HIBackupCenterWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HIBackupCenterWindowController.m; sourceTree = "<group>"; };
 		583B1DF618686C3800817EF8 /* HIBackupAdapter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HIBackupAdapter.h; sourceTree = "<group>"; };
@@ -2818,8 +2815,6 @@
 				586059CA18041A6D00FD9C2A /* HIAppRuntimeBridge.m */,
 				582C7DA718521A3500126C10 /* HIJavaScriptObject.h */,
 				582C7DA818521A3500126C10 /* HIJavaScriptObject.m */,
-				583B1DE21864A32900817EF8 /* HISecureAppStorage.h */,
-				583B1DE31864A32900817EF8 /* HISecureAppStorage.m */,
 			);
 			name = HIApplicationsViewController;
 			sourceTree = "<group>";
@@ -3454,7 +3449,6 @@
 				24300BE318830C4700FDEF2F /* HIWizardViewController.m in Sources */,
 				583B1DF818686C3800817EF8 /* HIBackupAdapter.m in Sources */,
 				58A03B0D17D9DC4100ADD5E5 /* HIButtonWithSpinner.m in Sources */,
-				583B1DE41864A32900817EF8 /* HISecureAppStorage.m in Sources */,
 				58F02AEE17E1F5A400B65429 /* HIRightPointingArrowView.m in Sources */,
 				2499BBD919620192002C3B34 /* NSString+HICleanUpNumber.m in Sources */,
 				5850D231189922C6001736D2 /* HIKeyObservingWindow.m in Sources */,
