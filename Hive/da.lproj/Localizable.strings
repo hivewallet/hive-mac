@@ -72,7 +72,7 @@
 "Choose a directory inside Dropbox folder where the backup should be saved:" = "Vælg en mappe inde i Dropbox-mappen, hvor backuppen skal gemmes:";
 
 /* No comment provided by engineer. */
-"Choose a directory inside Google Drive folder where the backup should be saved:" = "Choose a directory inside Google Drive folder where the backup should be saved:";
+"Choose a directory inside Google Drive folder where the backup should be saved:" = "Vælg en mappe inde i dit Google Drive, hvor backuppen skal gemmes:";
 
 /* No comment provided by engineer. */
 "click to copy" = "kopier?";
@@ -81,7 +81,7 @@
 "Confirm" = "Bekræft";
 
 /* Status for transaction included in a block in transaction popup */
-"Confirmed" = "Confirmed";
+"Confirmed" = "Bekræftet";
 
 /* Contact name empty alert title */
 "Contact can't be saved." = "Kontaktpersonen kunne ikke gemmes.";
@@ -150,10 +150,10 @@
 "General" = "Generelt";
 
 /* Google Drive no backup folder alert title */
-"Google Drive folder not found." = "Google Drive folder not found.";
+"Google Drive folder not found." = "Mappe på Google Drive ikke fundet.";
 
 /* Backup error message */
-"Google Drive isn't running" = "Google Drive isn't running";
+"Google Drive isn't running" = "Google Drive kører ikke";
 
 /* Hiveapp file not readable error title */
 "Hive application file \"%@\" could not be opened." = "Hive-applikationsarkivet “%@” kunne ikke læses.";
@@ -228,7 +228,7 @@
 "No Bitcoin have been taken from your wallet." = "Ingen Bitcoins er blevet overført fra din Bitcoin-wallet.";
 
 /* Status for transaction not sent to any peers in transaction popup */
-"Not broadcasted yet" = "Not broadcasted yet";
+"Not broadcasted yet" = "Ikke udsendt endnu";
 
 /* Title of an alert when trying to send more than you have with fee */
 "Not enough funds left to pay the transaction fee." = "Saldoen er for lav til at betale transaktionsgebyret";
@@ -288,7 +288,7 @@
 "Reinstall" = "Geninstaller";
 
 /* Status for transaction removed from the main blockchain in transaction popup */
-"Rejected by the network" = "Rejected by the network";
+"Rejected by the network" = "Afvist af netværket";
 
 /* No comment provided by engineer. */
 "Remove" = "Fjern";
@@ -297,7 +297,7 @@
 "Selected directory is outside Dropbox folder." = "Den valgte mappe er udenfor Dropbox-mappen.";
 
 /* Google Drive invalid folder alert title */
-"Selected directory is outside Google Drive folder." = "Selected directory is outside Google Drive folder.";
+"Selected directory is outside Google Drive folder." = "Den valgte mappe er udenfor Google Drive-mappen.";
 
 /* Send button title */
 "Send" = "Send";
@@ -306,7 +306,7 @@
 "Sent &a to &c" = "&a sendt til &c";
 
 /* Status for transaction sent via payment request */
-"Sent directly to recipient" = "Sent directly to recipient";
+"Sent directly to recipient" = "Sendt direkte til modtageren";
 
 /* Title for shortcut keys preferences panel */
 "Shortcuts" = "Genveje";
@@ -405,7 +405,7 @@
 "Waiting for backup" = "Backup er planlagt";
 
 /* Status for transaction sent to some peers in transaction popup */
-"Waiting for confirmation" = "Waiting for confirmation";
+"Waiting for confirmation" = "Afventer bekræftelse";
 
 /* Install app popup warning message */
 "We cannot guarantee the safety of all apps - please be careful if you download Hive apps from third party sites." = "Vi kan ikke garantere sikkerheden af alle apps – vær venligst forsigtig hvis du henter Hive-apps fra tredjepartssider.";
@@ -432,7 +432,7 @@
 "You must install Dropbox first (see www.dropbox.com)." = "Du skal først installere Dropbox (se www.dropbox.com).";
 
 /* Google Drive no backup folder alert details */
-"You must install Google Drive first (see https://www.google.com/intl/en/drive/download)." = "You must install Google Drive first (see https://www.google.com/intl/en/drive/download).";
+"You must install Google Drive first (see https://www.google.com/intl/en/drive/download)." = "Du skal først installere Google Drive (se https://www.google.com/intl/en/drive/download).";
 
 /* No network connection alert message */
 "You need to be connected to the network to send any transactions." = "Du skal være forbundet til netværket for at kunne sende transaktioner.";
@@ -441,7 +441,7 @@
 "You need to choose or create a directory inside your Dropbox folder." = "Du skal vælge eller oprette en mappe inde i din Dropbox-mappe.";
 
 /* Google Drive invalid folder alert details */
-"You need to choose or create a directory inside your Google Drive folder." = "You need to choose or create a directory inside your Google Drive folder.";
+"You need to choose or create a directory inside your Google Drive folder." = "Du skal vælge eller oprette en mappe på dit Google Drive.";
 
 /* Contact name empty alert message */
 "You need to give the contact a name before you can add it to the list." = "Det er nødvendigt at give kontaktpersonen et navn, før denne kan føjes til listen.";
