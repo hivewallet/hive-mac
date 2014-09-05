@@ -415,28 +415,48 @@ NSString * const BCClientPasswordChangedNotification = @"BCClientPasswordChanged
 }
 
 - (void)fillTransaction:(HITransaction *)transaction fromData:(NSDictionary *)data {
-    NSAssert(!transaction.id || [data[@"txid"] isEqual:transaction.id],
-             @"Transaction id must match");
+    NSAssert(!transaction.id || [data[@"txid"] isEqual:transaction.id], @"Transaction id must match");
 
     transaction.id = data[@"txid"];
     transaction.date = data[@"time"];
     transaction.amount = [data[@"amount"] longLongValue];
     transaction.fee = [data[@"fee"] longLongValue];
-    transaction.senderHash = data[@"details"][0][@"address"];
 
-    // TODO: set this on the Java side
-    if (transaction.direction == HITransactionDirectionIncoming && !transaction.senderHash) {
-        transaction.senderHash = self.walletHash;
+    NSString *contactHash;
+
+    if (transaction.isIncoming) {
+        // source address can't be determined
+        transaction.sourceAddress = nil;
+        contactHash = nil;
+
+        // target address (one of ours) is the first output with type = own
+        NSUInteger ownIndex = [data[@"outputs"] indexOfObjectPassingTest:^BOOL(id output, NSUInteger idx, BOOL *stop) {
+            return [output[@"type"] isEqual:@"own"];
+        }];
+
+        transaction.targetAddress = (ownIndex != NSNotFound) ? data[@"outputs"][ownIndex][@"address"] : nil;
+    } else {
+        // source address is our address
+        transaction.sourceAddress = [self walletHash];
+
+        // target address is the first output with type = external
+        NSUInteger extIndex = [data[@"outputs"] indexOfObjectPassingTest:^BOOL(id output, NSUInteger idx, BOOL *stop) {
+            return [output[@"type"] isEqual:@"external"];
+        }];
+
+        transaction.targetAddress = (extIndex != NSNotFound) ? data[@"outputs"][extIndex][@"address"] : nil;
+        contactHash = transaction.targetAddress;
     }
 
-    if (transaction.senderHash) {
+    if (contactHash) {
         // Try to find a contact that matches that transaction
         NSFetchRequest *request = [[NSFetchRequest alloc] initWithEntityName:HIContactEntity];
-        request.predicate = [NSPredicate predicateWithFormat:@"ANY addresses.address == %@",
-                                                             transaction.senderHash];
+        request.predicate = [NSPredicate predicateWithFormat:@"ANY addresses.address == %@", contactHash];
 
         NSArray *response = [_transactionUpdateContext executeFetchRequest:request error:NULL];
         transaction.contact = response.firstObject;
+    } else {
+        transaction.contact = nil;
     }
 }
 

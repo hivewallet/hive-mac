@@ -100,11 +100,11 @@
 
     // a little hax to include both variants in the XIB's strings file instead of Localizable.strings -
     // one variant is the default text and the other is stored in the placeholder string
-    if (self.transaction.direction == HITransactionDirectionIncoming) {
-        self.targetAddressLabel.stringValue = [self.targetAddressLabel.cell placeholderString];
+    if (self.transaction.isIncoming) {
+        self.targetAddressLabel.stringValue = [self.targetAddressLabel.cell placeholderString]; // "Received with:"
     }
 
-    self.targetAddressField.stringValue = [self targetAddress];
+    self.targetAddressField.stringValue = self.transaction.targetAddress ?: @"?";
 
     if ([self isSharingSupported]) {
         [self configureShareButton];
@@ -267,10 +267,6 @@
             return NSLocalizedString(@"Rejected by the network",
                                      @"Status for transaction removed from the main blockchain in transaction popup");
     }
-}
-
-- (NSString *)targetAddress {
-    return self.transaction.targetAddress ?: [[BCClient sharedClient] walletHash] ?: @"?";
 }
 
 - (NSString *)confirmationSummary {

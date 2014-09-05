@@ -240,22 +240,12 @@ static int ddLogLevel = LOG_LEVEL_VERBOSE;
 
 - (void)rebuildTransactionListIfNeeded {
     NSString *lastVersion = [[NSUserDefaults standardUserDefaults] objectForKey:LastVersionKey];
-    NSString *versionAfterUpdate = @"2014012001";
+    NSString *versionAfterUpdate = @"2014090502";
 
     if ([lastVersion isLessThan:versionAfterUpdate]) {
         HILogInfo(@"Transaction list needs to be updated (%@ < %@)", lastVersion, versionAfterUpdate);
         [[BCClient sharedClient] repairTransactionsList];
         return;
-    }
-
-    // we should be able to remove this in a few versions, this only happens if you run older versions of Hive
-    NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:HITransactionEntity];
-    request.predicate = [NSPredicate predicateWithFormat:@"date > %@", [NSDate date]];
-    NSUInteger count = [DBM countForFetchRequest:request error:NULL];
-
-    if (count > 0) {
-        HILogInfo(@"Found some transactions with invalid date, updating all transaction data");
-        [[BCClient sharedClient] repairTransactionsList];
     }
 }
 

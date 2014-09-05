@@ -731,6 +731,7 @@
 		583B1E0218687CF400817EF8 /* dropbox-glyph-blue.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "dropbox-glyph-blue.pdf"; sourceTree = "<group>"; };
 		583B1E0B1868BAC000817EF8 /* HIBackupActionsCellView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HIBackupActionsCellView.h; sourceTree = "<group>"; };
 		583B1E0C1868BAC000817EF8 /* HIBackupActionsCellView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HIBackupActionsCellView.m; sourceTree = "<group>"; };
+		584A372619B9F1D700EC65E3 /* 2014090501.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = 2014090501.xcdatamodel; sourceTree = "<group>"; };
 		5850D22F189922C6001736D2 /* HIKeyObservingWindow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HIKeyObservingWindow.h; sourceTree = "<group>"; };
 		5850D230189922C6001736D2 /* HIKeyObservingWindow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HIKeyObservingWindow.m; sourceTree = "<group>"; };
 		58543D8918AA532D002A224A /* hu */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = hu; path = hu.lproj/HINewContactViewController.xib; sourceTree = "<group>"; };
@@ -5861,9 +5862,10 @@
 				58C4E84219AE2B5A003B5171 /* 2014082701.xcdatamodel */,
 				58C4E84319AF6F91003B5171 /* 2014082801.xcdatamodel */,
 				58F286EB19B14FE0004ABE48 /* 2014083001.xcdatamodel */,
+				584A372619B9F1D700EC65E3 /* 2014090501.xcdatamodel */,
 				D962AF021769FEF9009F882A /* Hive.xcdatamodel */,
 			);
-			currentVersion = 58F286EB19B14FE0004ABE48 /* 2014083001.xcdatamodel */;
+			currentVersion = 584A372619B9F1D700EC65E3 /* 2014090501.xcdatamodel */;
 			path = Hive.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;

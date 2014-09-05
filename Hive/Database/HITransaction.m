@@ -28,9 +28,10 @@ NSString * const HITransactionDirectionUnknownException = @"HITransactionDirecti
 @dynamic label;
 @dynamic read;
 @dynamic paymentRequestURL;
-@dynamic senderHash;
+@dynamic sourceAddress;
 @dynamic sourceApplication;
 @dynamic status;
+@dynamic targetAddress;
 
 
 + (BOOL)isAmountWithinExpectedRange:(satoshi_t)amount {
@@ -88,10 +89,6 @@ NSString * const HITransactionDirectionUnknownException = @"HITransactionDirecti
 
 - (uint64_t)absoluteAmount {
     return llabs(self.amount) - (self.isOutgoing ? self.fee : 0);
-}
-
-- (NSString *)targetAddress {
-    return self.senderHash;
 }
 
 @end

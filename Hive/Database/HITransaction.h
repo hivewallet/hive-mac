@@ -67,11 +67,8 @@ extern NSString * const HITransactionDirectionUnknownException;
 // date when transaction was sent/received
 @property (nonatomic) NSDate *date;
 
-// confusingly named, this is actually the recipient's address...
-@property (nonatomic, retain) NSString *senderHash;
-
-// aliased here for convenience
-@property (nonatomic, readonly) NSString *targetAddress;
+@property (nonatomic, strong) NSString *sourceAddress;
+@property (nonatomic, strong) NSString *targetAddress;
 
 // if the address hash matches any of the contacts' addreses, contact is linked here, otherwise it's nil
 @property (nonatomic, retain) HIContact *contact;
