@@ -422,29 +422,32 @@ NSString * const BCClientPasswordChangedNotification = @"BCClientPasswordChanged
     transaction.amount = [data[@"amount"] longLongValue];
     transaction.fee = [data[@"fee"] longLongValue];
 
+    // source address will be in inputs (though it might be nil) - we take only the first non-empty one
+    NSUInteger srcIndex = [data[@"inputs"] indexOfObjectPassingTest:^BOOL(id input, NSUInteger idx, BOOL *stop) {
+        return (input[@"address"] != nil);
+    }];
+
+    transaction.sourceAddress = (srcIndex != NSNotFound) ? data[@"inputs"][srcIndex][@"address"] : nil;
+
     NSString *contactHash;
 
     if (transaction.isIncoming) {
-        // source address can't be determined
-        transaction.sourceAddress = nil;
-        contactHash = nil;
-
         // target address (one of ours) is the first output with type = own
         NSUInteger ownIndex = [data[@"outputs"] indexOfObjectPassingTest:^BOOL(id output, NSUInteger idx, BOOL *stop) {
             return [output[@"type"] isEqual:@"own"];
         }];
 
         transaction.targetAddress = (ownIndex != NSNotFound) ? data[@"outputs"][ownIndex][@"address"] : nil;
-    } else {
-        // source address is our address
-        transaction.sourceAddress = [self walletHash];
 
+        contactHash = transaction.sourceAddress;
+    } else {
         // target address is the first output with type = external
         NSUInteger extIndex = [data[@"outputs"] indexOfObjectPassingTest:^BOOL(id output, NSUInteger idx, BOOL *stop) {
             return [output[@"type"] isEqual:@"external"];
         }];
 
         transaction.targetAddress = (extIndex != NSNotFound) ? data[@"outputs"][extIndex][@"address"] : nil;
+
         contactHash = transaction.targetAddress;
     }
 

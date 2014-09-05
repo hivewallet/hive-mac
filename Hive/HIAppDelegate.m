@@ -240,7 +240,7 @@ static int ddLogLevel = LOG_LEVEL_VERBOSE;
 
 - (void)rebuildTransactionListIfNeeded {
     NSString *lastVersion = [[NSUserDefaults standardUserDefaults] objectForKey:LastVersionKey];
-    NSString *versionAfterUpdate = @"2014090502";
+    NSString *versionAfterUpdate = @"2014090503";
 
     if ([lastVersion isLessThan:versionAfterUpdate]) {
         HILogInfo(@"Transaction list needs to be updated (%@ < %@)", lastVersion, versionAfterUpdate);
