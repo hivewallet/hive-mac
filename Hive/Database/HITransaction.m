@@ -12,7 +12,7 @@
 #import "HIApplication.h"
 
 NSString * const HITransactionEntity = @"HITransaction";
-
+NSString * const HITransactionDirectionUnknownException = @"HITransactionDirectionUnknownException";
 
 @implementation HITransaction
 
@@ -67,7 +67,15 @@ NSString * const HITransactionEntity = @"HITransaction";
 }
 
 - (HITransactionDirection)direction {
-    return (self.amount >= 0) ? HITransactionDirectionIncoming : HITransactionDirectionOutgoing;
+    if (self.amount > 0) {
+        return HITransactionDirectionIncoming;
+    } else if (self.amount < 0) {
+        return HITransactionDirectionOutgoing;
+    } else {
+        @throw [NSException exceptionWithName:HITransactionDirectionUnknownException
+                                       reason:@"Transaction direction cannot be determined since its amount is 0"
+                                     userInfo:nil];
+    }
 }
 
 - (BOOL)isIncoming {

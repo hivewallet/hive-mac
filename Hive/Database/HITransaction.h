@@ -25,6 +25,9 @@ typedef NS_ENUM(NSUInteger, HITransactionDirection) {
 
 extern NSString * const HITransactionEntity;
 
+// thrown when transaction direction cannot be determined
+extern NSString * const HITransactionDirectionUnknownException;
+
 
 /*
  Represents a single transaction made or received by the user.
