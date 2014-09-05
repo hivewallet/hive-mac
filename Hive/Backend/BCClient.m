@@ -455,8 +455,13 @@ NSString * const BCClientPasswordChangedNotification = @"BCClientPasswordChanged
     } else {
         transaction.status = HITransactionStatusUnknown;
     }
-    BOOL statusChanged = transaction.status != previousStatus;
-    HILogDebug(@"Transaction %@ is now %@ (%d)", transaction.id, confidence, transaction.status);
+
+    BOOL statusChanged = (transaction.status != previousStatus);
+
+    if (statusChanged) {
+        HILogDebug(@"Transaction %@ is now %@ (%d)", transaction.id, confidence, transaction.status);
+    }
+
     return statusChanged;
 }
 
