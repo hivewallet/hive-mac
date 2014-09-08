@@ -584,6 +584,15 @@ NSString * const BCClientPasswordChangedNotification = @"BCClientPasswordChanged
         if (error) {
             HILogError(@"Error saving transaction: %@", error);
         }
+
+        dispatch_async(dispatch_get_main_queue(), ^{
+            NSError *error = nil;
+            [DBM save:&error];
+
+            if (error) {
+                HILogError(@"Error saving updated transactions: %@", error);
+            }
+        });
     }];
 }
 
