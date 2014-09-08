@@ -84,5 +84,6 @@ extern NSString * const BCClientPasswordChangedNotification;
 @optional
 - (void)transactionAdded:(HITransaction *)transaction;
 - (void)transactionChangedStatus:(HITransaction *)transaction;
+- (void)transactionMetadataWasUpdated:(HITransaction *)transaction;
 
 @end

@@ -184,13 +184,10 @@ static NSString *const KEY_UNREAD_TRANSACTIONS = @"unreadTransactions";
 #pragma mark - BCTransactionObserver
 
 - (void)transactionChangedStatus:(HITransaction *)updatedTransaction {
-    NSArray *list = self.arrayController.arrangedObjects;
-    NSInteger position = [list indexOfObjectPassingTest:^BOOL(id transaction, NSUInteger idx, BOOL *stop) {
-        return [[transaction id] isEqual:updatedTransaction.id];
-    }];
+    NSUInteger position = 0;
+    HITransaction *originalTransaction = [self findTransactionWithHash:updatedTransaction.id position:&position];
 
-    if (position != NSNotFound) {
-        HITransaction *originalTransaction = list[position];
+    if (originalTransaction) {
         originalTransaction.status = updatedTransaction.status;
 
         [self.tableView reloadDataForRowIndexes:[NSIndexSet indexSetWithIndex:position]
@@ -198,6 +195,34 @@ static NSString *const KEY_UNREAD_TRANSACTIONS = @"unreadTransactions";
     }
 }
 
+- (void)transactionMetadataWasUpdated:(HITransaction *)updatedTransaction {
+    NSUInteger position = 0;
+    HITransaction *originalTransaction = [self findTransactionWithHash:updatedTransaction.id position:&position];
+
+    if (originalTransaction) {
+        [DBM refreshObject:originalTransaction mergeChanges:NO];
+
+        [self.tableView reloadDataForRowIndexes:[NSIndexSet indexSetWithIndex:position]
+                                  columnIndexes:[NSIndexSet indexSetWithIndex:0]];
+    }
+}
+
+- (HITransaction *)findTransactionWithHash:(NSString *)transactionHash position:(NSUInteger *)returnedPosition {
+    NSArray *list = self.arrayController.arrangedObjects;
+    NSUInteger position = [list indexOfObjectPassingTest:^BOOL(id transaction, NSUInteger idx, BOOL *stop) {
+        return [[transaction id] isEqual:transactionHash];
+    }];
+
+    if (position != NSNotFound) {
+        if (returnedPosition) {
+            *returnedPosition = position;
+        }
+
+        return list[position];
+    } else {
+        return nil;
+    }
+}
 
 #pragma mark - NSTableViewDelegate
 

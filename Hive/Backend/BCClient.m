@@ -591,6 +591,8 @@ NSString * const BCClientPasswordChangedNotification = @"BCClientPasswordChanged
 
             if (error) {
                 HILogError(@"Error saving updated transactions: %@", error);
+            } else {
+                [self notifyObserversWithSelector:@selector(transactionMetadataWasUpdated:) transaction:transaction];
             }
         });
     }];
