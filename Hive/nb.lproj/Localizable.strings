@@ -81,7 +81,7 @@
 "Confirm" = "Bekreft";
 
 /* Status for transaction included in a block in transaction popup */
-"Confirmed" = "Confirmed";
+"Confirmed" = "Bekreftet";
 
 /* Contact name empty alert title */
 "Contact can't be saved." = "Kontakt kunne ikke lagres.";
@@ -228,7 +228,7 @@
 "No Bitcoin have been taken from your wallet." = "Ingen Bitcoin har blitt overført fra din lommebok.";
 
 /* Status for transaction not sent to any peers in transaction popup */
-"Not broadcasted yet" = "Not broadcasted yet";
+"Not broadcasted yet" = "Ikke kringkastet ennå";
 
 /* Title of an alert when trying to send more than you have with fee */
 "Not enough funds left to pay the transaction fee." = "Ikke nok midler igjen til å betale transaksjonsavgiften.";
@@ -288,7 +288,7 @@
 "Reinstall" = "Reinstaller";
 
 /* Status for transaction removed from the main blockchain in transaction popup */
-"Rejected by the network" = "Rejected by the network";
+"Rejected by the network" = "Avvist av nettverket";
 
 /* No comment provided by engineer. */
 "Remove" = "Fjern";
@@ -306,7 +306,7 @@
 "Sent &a to &c" = "Sendt &a til &c";
 
 /* Status for transaction sent via payment request */
-"Sent directly to recipient" = "Sent directly to recipient";
+"Sent directly to recipient" = "Send direkte til mottaker";
 
 /* Title for shortcut keys preferences panel */
 "Shortcuts" = "Snarveier";
@@ -405,7 +405,7 @@
 "Waiting for backup" = "Venter for sikkerhetskopiering";
 
 /* Status for transaction sent to some peers in transaction popup */
-"Waiting for confirmation" = "Waiting for confirmation";
+"Waiting for confirmation" = "Avventer bekreftelse";
 
 /* Install app popup warning message */
 "We cannot guarantee the safety of all apps - please be careful if you download Hive apps from third party sites." = "Vi kan ikke garantere sikkerheten til alle apper - vennligst vær forsiktig om du laster ned Hive-apper fra tjerdepartisider.";
