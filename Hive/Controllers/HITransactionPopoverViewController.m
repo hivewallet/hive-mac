@@ -54,7 +54,7 @@
     NSPopover *popover = [[NSPopover alloc] init];
     popover.contentViewController = self;
     popover.delegate = self;
-    popover.behavior = NSPopoverBehaviorTransient;
+    popover.behavior = NSPopoverBehaviorSemitransient;
     return popover;
 }
 
@@ -308,8 +308,6 @@
 - (IBAction)showOnBlockchainInfoClicked:(id)sender {
     NSString *url = [NSString stringWithFormat:@"https://blockchain.info/tx/%@", self.transaction.id];
     [[NSWorkspace sharedWorkspace] openURL:[NSURL URLWithString:url]];
-
-    [sender setState:NSOnState];
 }
 
 - (IBAction)shareButtonPressed:(NSButton *)sender {
