@@ -34,11 +34,12 @@ pre_install do |installer|
   }
 
   installer.pods.each do |pod|
-    %x[ find "#{pod.root}" -name '*.lproj' ].split.each do |bundle|
+    %x[ find "#{pod.root}" -name '*.lproj' ].split("\n").each do |bundle|
       locale = File.basename(bundle, ".lproj").downcase
       if locale_mapping.has_key?(locale)
         newLocaleName = locale_mapping[locale]
         newBundleName = File.join(File.dirname(bundle), newLocaleName + ".lproj")
+        puts "Moving #{bundle.inspect} -> #{newBundleName.inspect}"
         FileUtils.mv(bundle, newBundleName)
       end
     end
