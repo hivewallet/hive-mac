@@ -38,7 +38,7 @@
         _selectionView.alphaValue = 0.0;
         [self addSubview:_selectionView];
 
-        NSFont *labelFont = [NSFont fontWithName:@"Helvetica-Bold" size:12];
+        NSFont *labelFont = [NSFont boldSystemFontOfSize:12.0];
         NSSize clickTextSize = [_clickToCopyText sizeWithAttributes:@{NSFontAttributeName: labelFont}];
         NSSize copiedTextSize = [_copiedText sizeWithAttributes:@{NSFontAttributeName: labelFont}];
         CGFloat maxWidth = ceil(MAX(clickTextSize.width, copiedTextSize.width)) + 5.0;

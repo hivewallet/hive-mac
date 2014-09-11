@@ -245,13 +245,13 @@ static NSString * const Separator = @"Separator";
     HITextField *addressField = [[HITextField alloc] initWithFrame:CGRectMake(10, 30, 100, 21)];
     addressField.autoresizingMask = NSViewMinYMargin;
     [addressField.cell setPlaceholderString:NSLocalizedString(@"Address", @"Address field placeholder")];
-    addressField.font = [NSFont fontWithName:@"Helvetica" size:14];
+    addressField.font = [NSFont systemFontOfSize:14.0];
     [fieldContentView addSubview:addressField];
     parts[AddressField] = addressField;
 
     HITextField *nameField = [[HITextField alloc] initWithFrame:NSMakeRect(10, 5, 100, 21)];
     nameField.autoresizingMask = NSViewMinYMargin;
-    nameField.font = [NSFont fontWithName:@"Helvetica-Bold" size:14];
+    nameField.font = [NSFont boldSystemFontOfSize:14.0];
     [nameField.cell setPlaceholderString:NSLocalizedString(@"Label", @"Address caption field placeholder")];
     [fieldContentView addSubview:nameField];
     parts[NameField] = nameField;

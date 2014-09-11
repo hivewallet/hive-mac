@@ -127,7 +127,7 @@ static NSString *const KEY_WALLET_HASH = @"walletHash";
     NSTextField *nameField = [[NSTextField alloc] initWithFrame:nameFieldFrame];
     [nameField.cell setLineBreakMode:NSLineBreakByTruncatingTail];
     [nameField setAutoresizingMask:(NSViewMinYMargin | NSViewWidthSizable)];
-    [nameField setFont:[NSFont fontWithName:@"Helvetica-Bold" size:14]];
+    [nameField setFont:[NSFont boldSystemFontOfSize:14.0]];
     [nameField setEditable:NO];
     [nameField setSelectable:NO];
     [nameField setBordered:NO];
@@ -149,7 +149,7 @@ static NSString *const KEY_WALLET_HASH = @"walletHash";
     [addressField setBordered:NO];
     [addressField setBackgroundColor:[NSColor clearColor]];
     [addressField setAutoresizingMask:(NSViewMinYMargin | NSViewWidthSizable)];
-    [addressField setFont:[NSFont fontWithName:@"Helvetica" size:12]];
+    [addressField setFont:[NSFont systemFontOfSize:12.0]];
     [addressField setTextColor:[NSColor colorWithCalibratedWhite:0.5 alpha:1.0]];
     [addressField setTag:AddressFieldTag];
 
