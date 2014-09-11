@@ -7,7 +7,7 @@ pod 'FontAwesomeIconFactory'
 pod 'INAppStoreWindow'
 pod 'LetsMove'
 pod 'ZXingObjC', '~> 2.2.8'  # 3.x requires 10.8+
-pod 'Sparkle-pornel'
+pod 'Sparkle'
 pod 'MASPreferences'
 pod 'MASShortcut'
 pod 'NSURL+Gravatar'
