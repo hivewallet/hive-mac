@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="5056" systemVersion="13C1021" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="5056" systemVersion="14A343f" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
         <deployment defaultVersion="1070" identifier="macosx"/>
         <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="5056"/>
@@ -40,7 +40,7 @@
             <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
             <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
             <rect key="contentRect" x="196" y="240" width="435" height="356"/>
-            <rect key="screenRect" x="0.0" y="0.0" width="1440" height="878"/>
+            <rect key="screenRect" x="0.0" y="0.0" width="1920" height="1057"/>
             <value key="minSize" type="size" width="403" height="238"/>
             <value key="maxSize" type="size" width="1000" height="800"/>
             <view key="contentView" wantsLayer="YES" id="2">
@@ -96,7 +96,7 @@ Gw
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             <subviews>
                                 <textField horizontalHuggingPriority="750" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="13">
-                                    <rect key="frame" x="26" y="237" width="22" height="16"/>
+                                    <rect key="frame" x="26" y="237" width="21" height="16"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="right" title="Do:" id="14">
                                         <font key="font" metaFont="cellTitle"/>
@@ -175,21 +175,21 @@ Gw
                                     <color key="fillColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </box>
                                 <scrollView wantsLayer="YES" borderType="none" autohidesScrollers="YES" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7BV-3k-SAc">
-                                    <rect key="frame" x="100" y="98" width="289" height="100"/>
+                                    <rect key="frame" x="100" y="97" width="289" height="101"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <clipView key="contentView" id="nsi-by-jyR">
-                                        <rect key="frame" x="0.0" y="0.0" width="289" height="100"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="289" height="101"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                         <subviews>
                                             <textView editable="NO" importsGraphics="NO" verticallyResizable="YES" id="TOr-tJ-9E8">
-                                                <rect key="frame" x="0.0" y="0.0" width="289" height="100"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="289" height="101"/>
                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                 <color key="textColor" red="0.19189956784248352" green="0.19189383089542389" blue="0.19189707934856415" alpha="1" colorSpace="calibratedRGB"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                <size key="minSize" width="289" height="100"/>
+                                                <size key="minSize" width="289" height="101"/>
                                                 <size key="maxSize" width="463" height="10000000"/>
                                                 <attributedString key="textStorage">
-                                                    <fragment content="&lt;memo>">
+                                                    <fragment content="&lt;memo&gt;">
                                                         <attributes>
                                                             <color key="NSColor" red="0.19189956784248352" green="0.19189383089542389" blue="0.19189707934856415" alpha="1" colorSpace="calibratedRGB"/>
                                                             <font key="NSFont" size="12" name="LucidaGrande"/>
@@ -203,7 +203,7 @@ Gw
                                                     </fragment>
                                                 </attributedString>
                                                 <color key="insertionPointColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                                                <size key="minSize" width="289" height="100"/>
+                                                <size key="minSize" width="289" height="101"/>
                                                 <size key="maxSize" width="463" height="10000000"/>
                                             </textView>
                                         </subviews>
@@ -222,7 +222,7 @@ Gw
                                     </scroller>
                                 </scrollView>
                                 <box autoresizesSubviews="NO" title="Box" boxType="custom" borderType="line" translatesAutoresizingMaskIntoConstraints="NO" id="yli-1Y-1Bz" userLabel="separator 2">
-                                    <rect key="frame" x="-1" y="86" width="401" height="1"/>
+                                    <rect key="frame" x="-1" y="85" width="401" height="1"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                     <view key="contentView">
                                         <rect key="frame" x="1" y="1" width="399" height="0.0"/>
@@ -235,7 +235,7 @@ Gw
                                     <color key="fillColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </box>
                                 <popUpButton horizontalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="u5l-cR-nXn" userLabel="Bitcoin format pop up" customClass="HILabelPopUpButton">
-                                    <rect key="frame" x="18" y="54" width="70" height="21"/>
+                                    <rect key="frame" x="18" y="53" width="70" height="21"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                     <constraints>
                                         <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="70" id="Obz-c1-tc0"/>
@@ -251,7 +251,7 @@ Gw
                                     </connections>
                                 </popUpButton>
                                 <textField focusRingType="none" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="36" userLabel="Bitcoin amount">
-                                    <rect key="frame" x="100" y="55" width="225" height="19"/>
+                                    <rect key="frame" x="100" y="54" width="228" height="19"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" focusRingType="none" title="0.0" drawsBackground="YES" id="37">
                                         <font key="font" size="15" name="LucidaGrande"/>
@@ -263,7 +263,7 @@ Gw
                                     </connections>
                                 </textField>
                                 <button horizontalHuggingPriority="300" translatesAutoresizingMaskIntoConstraints="NO" id="fQu-xK-vvV" userLabel="Fee">
-                                    <rect key="frame" x="331" y="49" width="69" height="26"/>
+                                    <rect key="frame" x="334" y="48" width="66" height="26"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="21" id="4BB-3B-AOJ"/>
@@ -280,7 +280,7 @@ Gw
                                     </connections>
                                 </button>
                                 <box autoresizesSubviews="NO" title="Box" boxType="custom" borderType="line" translatesAutoresizingMaskIntoConstraints="NO" id="Uma-46-IZW" userLabel="separator 3">
-                                    <rect key="frame" x="-1" y="42" width="401" height="1"/>
+                                    <rect key="frame" x="-1" y="41" width="401" height="1"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                     <view key="contentView">
                                         <rect key="frame" x="1" y="1" width="399" height="0.0"/>
@@ -293,7 +293,7 @@ Gw
                                     <color key="fillColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </box>
                                 <popUpButton horizontalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="ZPL-GE-Omh" userLabel="Currency pop up" customClass="HILabelPopUpButton">
-                                    <rect key="frame" x="18" y="9" width="70" height="21"/>
+                                    <rect key="frame" x="18" y="8" width="70" height="21"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="21" id="v3B-Fq-FVO"/>
@@ -308,7 +308,7 @@ Gw
                                     </connections>
                                 </popUpButton>
                                 <textField focusRingType="none" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="l47-zx-4mb" userLabel="Currency amount">
-                                    <rect key="frame" x="100" y="11" width="258" height="19"/>
+                                    <rect key="frame" x="100" y="11" width="258" height="18"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" enabled="NO" sendsActionOnEndEditing="YES" state="on" focusRingType="none" title="0.0" drawsBackground="YES" id="DX5-Li-q9R">
                                         <font key="font" size="15" name="LucidaGrande"/>
@@ -320,7 +320,7 @@ Gw
                                     </connections>
                                 </textField>
                                 <button horizontalHuggingPriority="750" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="BS3-Hu-S5U">
-                                    <rect key="frame" x="366" y="10" width="22" height="22"/>
+                                    <rect key="frame" x="366" y="9" width="22" height="22"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                     <buttonCell key="cell" type="help" bezelStyle="helpButton" alignment="center" controlSize="small" refusesFirstResponder="YES" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="3nN-TU-6LA">
                                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
@@ -346,7 +346,7 @@ Gw
                                     </connections>
                                 </button>
                                 <textField horizontalHuggingPriority="750" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="6zj-3w-Hqs">
-                                    <rect key="frame" x="26" y="180" width="48" height="16"/>
+                                    <rect key="frame" x="26" y="180" width="47" height="16"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="right" title="Szczegóły:" id="EeC-5l-RYD">
                                         <font key="font" metaFont="cellTitle"/>
@@ -503,7 +503,7 @@ Gw
                     <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="TzX-tz-eVL">
                         <rect key="frame" x="43" y="15" width="305" height="17"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                        <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="center" title="&lt;It's a trap!>" id="tH6-pe-MMb">
+                        <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="center" title="&lt;It's a trap!&gt;" id="tH6-pe-MMb">
                             <font key="font" metaFont="system"/>
                             <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                             <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
