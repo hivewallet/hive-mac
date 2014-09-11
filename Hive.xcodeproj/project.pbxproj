@@ -157,6 +157,7 @@
 		58605A6818041DFC00FD9C2A /* NPZipFileHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 58605A6418041DFC00FD9C2A /* NPZipFileHeader.m */; };
 		58605A6918041DFC00FD9C2A /* NPZipHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 58605A6618041DFC00FD9C2A /* NPZipHeader.m */; };
 		5860D3FF180455B900BD852C /* HIApplicationsManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 5860D3FE180455B900BD852C /* HIApplicationsManager.m */; };
+		5864AFD619C210590097FCE6 /* Hive.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 5864AFC719C210590097FCE6 /* Hive.xcdatamodeld */; };
 		586905961843DE5C0053D74F /* HIDebuggingToolsWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 586905941843DE5C0053D74F /* HIDebuggingToolsWindowController.m */; };
 		588427D018F2DF6600DE6CC4 /* bitcoinkit.checkpoints in Resources */ = {isa = PBXBuildFile; fileRef = 588427CF18F2DF6600DE6CC4 /* bitcoinkit.checkpoints */; };
 		5884A03E17F57AE9004A31FA /* dsa_pub.pem in Resources */ = {isa = PBXBuildFile; fileRef = 5884A03D17F57AE9004A31FA /* dsa_pub.pem */; };
@@ -243,7 +244,6 @@
 		D94815F217D4D9AF006A0312 /* HISeparatorView.m in Sources */ = {isa = PBXBuildFile; fileRef = D94815F117D4D9AF006A0312 /* HISeparatorView.m */; };
 		D94815F517D72AF8006A0312 /* HITextField.m in Sources */ = {isa = PBXBuildFile; fileRef = D94815F417D72AF8006A0312 /* HITextField.m */; };
 		D958A8B817E8547A00CED98C /* HIFlippedView.m in Sources */ = {isa = PBXBuildFile; fileRef = D958A8B717E8547A00CED98C /* HIFlippedView.m */; };
-		D962AF031769FEF9009F882A /* Hive.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D962AF011769FEF9009F882A /* Hive.xcdatamodeld */; };
 		D9716B6D17D88F8800888F4E /* HIDoneButtonCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D9716B6C17D88F8800888F4E /* HIDoneButtonCell.m */; };
 		D9716B7217D8B42E00888F4E /* HIButtonCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D9716B7117D8B42E00888F4E /* HIButtonCell.m */; };
 		D9716B7717D8C40100888F4E /* HIBox.m in Sources */ = {isa = PBXBuildFile; fileRef = D9716B7617D8C40100888F4E /* HIBox.m */; };
@@ -478,7 +478,6 @@
 		248631D418A7AD1800A020A9 /* HIQRCodeWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HIQRCodeWindowController.h; sourceTree = "<group>"; };
 		248631D518A7AD1800A020A9 /* HIQRCodeWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HIQRCodeWindowController.m; sourceTree = "<group>"; };
 		248631D618A7AD1800A020A9 /* HIQRCodeWindowController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HIQRCodeWindowController.xib; sourceTree = "<group>"; };
-		24A69630191171E8007DC178 /* 2014043001.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = 2014043001.xcdatamodel; sourceTree = "<group>"; };
 		24E2C7BD189D93E6008E17CC /* HICameraWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HICameraWindowController.h; sourceTree = "<group>"; };
 		24E2C7BE189D93E6008E17CC /* HICameraWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HICameraWindowController.m; sourceTree = "<group>"; };
 		24EAAFBF186E1BBD00E1D2D3 /* HiveTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HiveTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -715,7 +714,6 @@
 		5832C538180ECF46002A673F /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/MainMenu.strings; sourceTree = "<group>"; };
 		5832C539180ECF46002A673F /* de */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = de; path = de.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		5832C53C180ECF46002A673F /* de */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Localizable.strings; sourceTree = "<group>"; };
-		58357A3B186068A70077B717 /* 2013121701.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = 2013121701.xcdatamodel; sourceTree = "<group>"; };
 		583B1DCF18620BA800817EF8 /* HILogFormatter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HILogFormatter.h; sourceTree = "<group>"; };
 		583B1DD018620BA800817EF8 /* HILogFormatter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HILogFormatter.m; sourceTree = "<group>"; };
 		583B1DEA186860EC00817EF8 /* HIBackupCenterWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HIBackupCenterWindowController.h; sourceTree = "<group>"; };
@@ -731,7 +729,6 @@
 		583B1E0218687CF400817EF8 /* dropbox-glyph-blue.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "dropbox-glyph-blue.pdf"; sourceTree = "<group>"; };
 		583B1E0B1868BAC000817EF8 /* HIBackupActionsCellView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HIBackupActionsCellView.h; sourceTree = "<group>"; };
 		583B1E0C1868BAC000817EF8 /* HIBackupActionsCellView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HIBackupActionsCellView.m; sourceTree = "<group>"; };
-		584A372619B9F1D700EC65E3 /* 2014090501.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = 2014090501.xcdatamodel; sourceTree = "<group>"; };
 		5850D22F189922C6001736D2 /* HIKeyObservingWindow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HIKeyObservingWindow.h; sourceTree = "<group>"; };
 		5850D230189922C6001736D2 /* HIKeyObservingWindow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HIKeyObservingWindow.m; sourceTree = "<group>"; };
 		58543D8918AA532D002A224A /* hu */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = hu; path = hu.lproj/HINewContactViewController.xib; sourceTree = "<group>"; };
@@ -777,7 +774,6 @@
 		58543DB118AA5330002A224A /* hu */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = hu; path = hu.lproj/MainMenu.strings; sourceTree = "<group>"; };
 		58543DB218AA5330002A224A /* hu */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = hu; path = hu.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		58543DB318AA5330002A224A /* hu */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = hu; path = hu.lproj/Localizable.strings; sourceTree = "<group>"; };
-		58571253188D8E7A0094F884 /* 2014012001.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = 2014012001.xcdatamodel; sourceTree = "<group>"; };
 		585712791890267E0094F884 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/HIWizardBackupViewController.xib; sourceTree = "<group>"; };
 		5857127B189026890094F884 /* pl */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = pl; path = pl.lproj/HIWizardBackupViewController.xib; sourceTree = "<group>"; };
 		5857127C1890268B0094F884 /* it */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = it; path = it.lproj/HIWizardBackupViewController.xib; sourceTree = "<group>"; };
@@ -1090,6 +1086,20 @@
 		58605A6618041DFC00FD9C2A /* NPZipHeader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NPZipHeader.m; sourceTree = "<group>"; };
 		5860D3FD180455B900BD852C /* HIApplicationsManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HIApplicationsManager.h; sourceTree = "<group>"; };
 		5860D3FE180455B900BD852C /* HIApplicationsManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HIApplicationsManager.m; sourceTree = "<group>"; };
+		5864AFC819C210590097FCE6 /* 2013121701.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = 2013121701.xcdatamodel; sourceTree = "<group>"; };
+		5864AFC919C210590097FCE6 /* 2014012001.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = 2014012001.xcdatamodel; sourceTree = "<group>"; };
+		5864AFCA19C210590097FCE6 /* 2014043001.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = 2014043001.xcdatamodel; sourceTree = "<group>"; };
+		5864AFCB19C210590097FCE6 /* 2014081101.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = 2014081101.xcdatamodel; sourceTree = "<group>"; };
+		5864AFCC19C210590097FCE6 /* 2014081102.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = 2014081102.xcdatamodel; sourceTree = "<group>"; };
+		5864AFCD19C210590097FCE6 /* 2014081103.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = 2014081103.xcdatamodel; sourceTree = "<group>"; };
+		5864AFCE19C210590097FCE6 /* 2014081201.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = 2014081201.xcdatamodel; sourceTree = "<group>"; };
+		5864AFCF19C210590097FCE6 /* 2014082101.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = 2014082101.xcdatamodel; sourceTree = "<group>"; };
+		5864AFD019C210590097FCE6 /* 2014082102.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = 2014082102.xcdatamodel; sourceTree = "<group>"; };
+		5864AFD119C210590097FCE6 /* 2014082701.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = 2014082701.xcdatamodel; sourceTree = "<group>"; };
+		5864AFD219C210590097FCE6 /* 2014082801.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = 2014082801.xcdatamodel; sourceTree = "<group>"; };
+		5864AFD319C210590097FCE6 /* 2014083001.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = 2014083001.xcdatamodel; sourceTree = "<group>"; };
+		5864AFD419C210590097FCE6 /* 2014090501.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = 2014090501.xcdatamodel; sourceTree = "<group>"; };
+		5864AFD519C210590097FCE6 /* Hive.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Hive.xcdatamodel; sourceTree = "<group>"; };
 		586905931843DE5C0053D74F /* HIDebuggingToolsWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HIDebuggingToolsWindowController.h; sourceTree = "<group>"; };
 		586905941843DE5C0053D74F /* HIDebuggingToolsWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HIDebuggingToolsWindowController.m; sourceTree = "<group>"; };
 		586905E118450BD90053D74F /* ja */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = ja; path = ja.lproj/HIApplicationsViewController.xib; sourceTree = "<group>"; };
@@ -1817,10 +1827,6 @@
 		58AE8CE3192CCF2C00946C97 /* pt */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = pt; path = pt.lproj/HIGeneralPreferencesViewController.strings; sourceTree = "<group>"; };
 		58AE8CE4192CCF2D00946C97 /* ro */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ro; path = ro.lproj/HIGeneralPreferencesViewController.strings; sourceTree = "<group>"; };
 		58AE8CE5192CCF2D00946C97 /* hu */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = hu; path = hu.lproj/HIGeneralPreferencesViewController.strings; sourceTree = "<group>"; };
-		58C4E83919A5FF91003B5171 /* 2014082101.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = 2014082101.xcdatamodel; sourceTree = "<group>"; };
-		58C4E83F19A605F7003B5171 /* 2014082102.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = 2014082102.xcdatamodel; sourceTree = "<group>"; };
-		58C4E84219AE2B5A003B5171 /* 2014082701.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = 2014082701.xcdatamodel; sourceTree = "<group>"; };
-		58C4E84319AF6F91003B5171 /* 2014082801.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = 2014082801.xcdatamodel; sourceTree = "<group>"; };
 		58C4E84819B0BD53003B5171 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/HITransactionPopoverViewController.xib; sourceTree = "<group>"; };
 		58C4E84A19B0BD5A003B5171 /* pl */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = pl; path = pl.lproj/HITransactionPopoverViewController.xib; sourceTree = "<group>"; };
 		58C4E84B19B0BD61003B5171 /* fr */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = fr; path = fr.lproj/HITransactionPopoverViewController.xib; sourceTree = "<group>"; };
@@ -2234,7 +2240,6 @@
 		58EBA3B11937FE9100F90E50 /* fa */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fa; path = fa.lproj/Localizable.strings; sourceTree = "<group>"; };
 		58F02AEC17E1F5A400B65429 /* HIRightPointingArrowView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HIRightPointingArrowView.h; sourceTree = "<group>"; };
 		58F02AED17E1F5A400B65429 /* HIRightPointingArrowView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HIRightPointingArrowView.m; sourceTree = "<group>"; };
-		58F286EB19B14FE0004ABE48 /* 2014083001.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = 2014083001.xcdatamodel; sourceTree = "<group>"; };
 		58F496F018B67A1C0033B7E0 /* icon-unknown-app.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-unknown-app.png"; sourceTree = "<group>"; };
 		58F496F618B7EE8F0033B7E0 /* HINetworkConnectionMonitor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HINetworkConnectionMonitor.h; sourceTree = "<group>"; };
 		58F496F718B7EE8F0033B7E0 /* HINetworkConnectionMonitor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HINetworkConnectionMonitor.m; sourceTree = "<group>"; };
@@ -2309,7 +2314,6 @@
 		D94815F417D72AF8006A0312 /* HITextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HITextField.m; sourceTree = "<group>"; };
 		D958A8B617E8547A00CED98C /* HIFlippedView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HIFlippedView.h; sourceTree = "<group>"; };
 		D958A8B717E8547A00CED98C /* HIFlippedView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HIFlippedView.m; sourceTree = "<group>"; };
-		D962AF021769FEF9009F882A /* Hive.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Hive.xcdatamodel; sourceTree = "<group>"; };
 		D9716B6B17D88F8800888F4E /* HIDoneButtonCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HIDoneButtonCell.h; sourceTree = "<group>"; };
 		D9716B6C17D88F8800888F4E /* HIDoneButtonCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HIDoneButtonCell.m; sourceTree = "<group>"; };
 		D9716B7017D8B42E00888F4E /* HIButtonCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HIButtonCell.h; sourceTree = "<group>"; };
@@ -3065,7 +3069,7 @@
 				D983D0A517703CE800844D69 /* HIContact.m */,
 				D983D0A117703CDE00844D69 /* HITransaction.h */,
 				D983D0A217703CDE00844D69 /* HITransaction.m */,
-				D962AF011769FEF9009F882A /* Hive.xcdatamodeld */,
+				5864AFC719C210590097FCE6 /* Hive.xcdatamodeld */,
 			);
 			name = Database;
 			sourceTree = "<group>";
@@ -3428,7 +3432,6 @@
 			files = (
 				D9A591D41767B4A800502635 /* main.m in Sources */,
 				D9A591DB1767B4A800502635 /* HIAppDelegate.m in Sources */,
-				D962AF031769FEF9009F882A /* Hive.xcdatamodeld in Sources */,
 				D983D0A317703CDE00844D69 /* HITransaction.m in Sources */,
 				D983D0A617703CE800844D69 /* HIContact.m in Sources */,
 				D9235373177C4222003533DF /* HIApplication.m in Sources */,
@@ -3526,6 +3529,7 @@
 				1AA1031B9A110C6B939AB603 /* HIBitcoinFormatService.m in Sources */,
 				1AA105A7496BDE6BA5E2FA84 /* NSDecimalNumber+HISatoshiConversion.m in Sources */,
 				1AA1076874E6E840D30050E5 /* HILabelPopUpButton.m in Sources */,
+				5864AFD619C210590097FCE6 /* Hive.xcdatamodeld in Sources */,
 				1AA10A3DE7069E497A59CF0C /* HINotificationService.m in Sources */,
 				1AA100A06AF3D94CDB6D1867 /* HIDraggableButton.m in Sources */,
 				1AA10491B94E46EAEE6DD347 /* HIWizardWindowController.m in Sources */,
@@ -5851,22 +5855,27 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		D962AF011769FEF9009F882A /* Hive.xcdatamodeld */ = {
+		5864AFC719C210590097FCE6 /* Hive.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				58357A3B186068A70077B717 /* 2013121701.xcdatamodel */,
-				58571253188D8E7A0094F884 /* 2014012001.xcdatamodel */,
-				24A69630191171E8007DC178 /* 2014043001.xcdatamodel */,
-				58C4E83919A5FF91003B5171 /* 2014082101.xcdatamodel */,
-				58C4E83F19A605F7003B5171 /* 2014082102.xcdatamodel */,
-				58C4E84219AE2B5A003B5171 /* 2014082701.xcdatamodel */,
-				58C4E84319AF6F91003B5171 /* 2014082801.xcdatamodel */,
-				58F286EB19B14FE0004ABE48 /* 2014083001.xcdatamodel */,
-				584A372619B9F1D700EC65E3 /* 2014090501.xcdatamodel */,
-				D962AF021769FEF9009F882A /* Hive.xcdatamodel */,
+				5864AFC819C210590097FCE6 /* 2013121701.xcdatamodel */,
+				5864AFC919C210590097FCE6 /* 2014012001.xcdatamodel */,
+				5864AFCA19C210590097FCE6 /* 2014043001.xcdatamodel */,
+				5864AFCB19C210590097FCE6 /* 2014081101.xcdatamodel */,
+				5864AFCC19C210590097FCE6 /* 2014081102.xcdatamodel */,
+				5864AFCD19C210590097FCE6 /* 2014081103.xcdatamodel */,
+				5864AFCE19C210590097FCE6 /* 2014081201.xcdatamodel */,
+				5864AFCF19C210590097FCE6 /* 2014082101.xcdatamodel */,
+				5864AFD019C210590097FCE6 /* 2014082102.xcdatamodel */,
+				5864AFD119C210590097FCE6 /* 2014082701.xcdatamodel */,
+				5864AFD219C210590097FCE6 /* 2014082801.xcdatamodel */,
+				5864AFD319C210590097FCE6 /* 2014083001.xcdatamodel */,
+				5864AFD419C210590097FCE6 /* 2014090501.xcdatamodel */,
+				5864AFD519C210590097FCE6 /* Hive.xcdatamodel */,
 			);
-			currentVersion = 584A372619B9F1D700EC65E3 /* 2014090501.xcdatamodel */;
-			path = Hive.xcdatamodeld;
+			currentVersion = 5864AFD419C210590097FCE6 /* 2014090501.xcdatamodel */;
+			name = Hive.xcdatamodeld;
+			path = Database/Hive.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};
