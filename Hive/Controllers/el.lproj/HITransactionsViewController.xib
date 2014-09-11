@@ -88,7 +88,7 @@
                                                         </textFieldCell>
                                                     </textField>
                                                     <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="40" userLabel="Date Label">
-                                                        <rect key="frame" x="258" y="45" width="29" height="14"/>
+                                                        <rect key="frame" x="263" y="45" width="29" height="14"/>
                                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES"/>
                                                         <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="right" title="Ημερομηνία" id="41">
                                                             <font key="font" metaFont="smallSystem"/>
@@ -109,7 +109,7 @@
                                                     <constraint firstItem="mY4-hd-Z1f" firstAttribute="leading" secondItem="21" secondAttribute="leading" id="fjw-Ci-gZg"/>
                                                     <constraint firstAttribute="trailing" secondItem="21" secondAttribute="trailing" constant="12" id="kab-Zs-pkI"/>
                                                     <constraint firstItem="46" firstAttribute="leading" secondItem="20" secondAttribute="leading" constant="1" id="nYk-NV-Np3"/>
-                                                    <constraint firstAttribute="trailing" secondItem="40" secondAttribute="trailing" constant="12" id="o5Q-j9-yTJ"/>
+                                                    <constraint firstAttribute="trailing" secondItem="40" secondAttribute="trailing" constant="7" id="o5Q-j9-yTJ"/>
                                                     <constraint firstAttribute="bottom" secondItem="21" secondAttribute="bottom" constant="23" id="rT7-A1-I3i"/>
                                                 </constraints>
                                                 <connections>
