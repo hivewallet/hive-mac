@@ -6,7 +6,7 @@ pod 'CocoaLumberjack'
 pod 'FontAwesomeIconFactory'
 pod 'INAppStoreWindow'
 pod 'LetsMove'
-pod 'ZXingObjC'
+pod 'ZXingObjC', '~> 2.2.8'  # 3.x requires 10.8+
 pod 'Sparkle-pornel'
 pod 'MASPreferences'
 pod 'MASShortcut'
