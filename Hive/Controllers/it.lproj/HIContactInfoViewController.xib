@@ -113,10 +113,10 @@
                             </textFieldCell>
                         </textField>
                         <textField focusRingType="none" verticalHuggingPriority="750" horizontalCompressionResistancePriority="500" translatesAutoresizingMaskIntoConstraints="NO" id="63">
-                            <rect key="frame" x="58" y="12" width="54" height="18"/>
+                            <rect key="frame" x="58" y="13" width="54" height="17"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                             <textFieldCell key="cell" lineBreakMode="truncatingTail" selectable="YES" sendsActionOnEndEditing="YES" state="on" focusRingType="none" title="&lt;email&gt;" placeholderString="" id="66" customClass="HITextFieldCell">
-                                <font key="font" metaFont="system" size="14"/>
+                                <font key="font" metaFont="system"/>
                                 <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
                                 <color key="backgroundColor" red="0.6705882353" green="0.6705882353" blue="0.6705882353" alpha="0.0" colorSpace="calibratedRGB"/>
                             </textFieldCell>
@@ -126,7 +126,7 @@
                         <constraint firstItem="64" firstAttribute="leading" secondItem="60" secondAttribute="leading" constant="13" id="61M-ey-1Od"/>
                         <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="63" secondAttribute="trailing" constant="13" id="8x1-Ns-QMa"/>
                         <constraint firstAttribute="centerY" secondItem="64" secondAttribute="centerY" constant="0.5" id="BAh-EU-fyK"/>
-                        <constraint firstItem="64" firstAttribute="centerY" secondItem="63" secondAttribute="centerY" constant="-0.5" id="utw-yB-x53"/>
+                        <constraint firstItem="64" firstAttribute="centerY" secondItem="63" secondAttribute="centerY" id="utw-yB-x53"/>
                         <constraint firstItem="63" firstAttribute="leading" secondItem="64" secondAttribute="trailing" constant="9" id="wDb-1a-dbg"/>
                     </constraints>
                 </customView>

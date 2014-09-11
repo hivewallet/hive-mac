@@ -107,7 +107,7 @@
                                             <rect key="frame" x="58" y="8" width="41" height="22"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                             <textFieldCell key="cell" lineBreakMode="truncatingTail" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" focusRingType="none" placeholderString="" id="79" customClass="HITextFieldCell">
-                                                <font key="font" metaFont="system" size="14"/>
+                                                <font key="font" metaFont="system"/>
                                                 <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
                                                 <color key="backgroundColor" red="0.6705882353" green="0.6705882353" blue="0.6705882353" alpha="0.0" colorSpace="calibratedRGB"/>
                                             </textFieldCell>
