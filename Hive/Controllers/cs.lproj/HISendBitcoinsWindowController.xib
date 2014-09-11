@@ -129,7 +129,7 @@ Gw
                                         <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="240" id="K3U-Ag-cCK"/>
                                     </constraints>
                                     <textFieldCell key="cell" lineBreakMode="truncatingMiddle" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" focusRingType="none" placeholderString="Napište adresu nebo označení..." id="20">
-                                        <font key="font" size="14" name="LucidaGrande-Bold"/>
+                                        <font key="font" metaFont="systemBold" size="14"/>
                                         <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                     </textFieldCell>
@@ -156,7 +156,7 @@ Gw
                                     <rect key="frame" x="98" y="216" width="288" height="17"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                     <textFieldCell key="cell" lineBreakMode="truncatingTail" sendsActionOnEndEditing="YES" placeholderString="nebo vyberte ze seznamu" id="22">
-                                        <font key="font" size="10" name="LucidaGrande"/>
+                                        <font key="font" metaFont="smallSystem"/>
                                         <color key="textColor" red="0.50653034450000001" green="0.50649648899999999" blue="0.50651627779999997" alpha="1" colorSpace="calibratedRGB"/>
                                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                     </textFieldCell>
@@ -192,7 +192,7 @@ Gw
                                                     <fragment content="&lt;memo&gt;">
                                                         <attributes>
                                                             <color key="NSColor" red="0.19189956784248352" green="0.19189383089542389" blue="0.19189707934856415" alpha="1" colorSpace="calibratedRGB"/>
-                                                            <font key="NSFont" size="12" name="LucidaGrande"/>
+                                                            <font key="NSFont" size="12" name="HelveticaNeue"/>
                                                             <integer key="NSLigature" value="0"/>
                                                             <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" lineHeightMultiple="1.2" defaultTabInterval="28">
                                                                 <tabStops>
@@ -254,7 +254,7 @@ Gw
                                     <rect key="frame" x="100" y="54" width="228" height="19"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" focusRingType="none" title="0.0" drawsBackground="YES" id="37">
-                                        <font key="font" size="15" name="LucidaGrande"/>
+                                        <font key="font" metaFont="system" size="15"/>
                                         <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
                                         <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                     </textFieldCell>
@@ -311,7 +311,7 @@ Gw
                                     <rect key="frame" x="100" y="11" width="258" height="18"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" enabled="NO" sendsActionOnEndEditing="YES" state="on" focusRingType="none" title="0.0" drawsBackground="YES" id="DX5-Li-q9R">
-                                        <font key="font" size="15" name="LucidaGrande"/>
+                                        <font key="font" metaFont="system" size="15"/>
                                         <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
                                         <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                     </textFieldCell>
