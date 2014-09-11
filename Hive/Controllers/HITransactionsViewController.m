@@ -53,7 +53,7 @@ static NSString *const KEY_UNREAD_TRANSACTIONS = @"unreadTransactions";
         _fullTransactionDateFormatter = [NSDateFormatter new];
         [self setDateFormats];
 
-        _amountLabelFont = [NSFont fontWithName:@"Helvetica Bold" size:13.0];
+        _amountLabelFont = [NSFont boldSystemFontOfSize:13.0];
     }
 
     return self;
