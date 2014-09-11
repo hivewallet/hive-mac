@@ -17,7 +17,7 @@ PODS:
   - LetsMove (1.9)
   - MASPreferences (1.1)
   - MASShortcut (1.2.3)
-  - NSURL+Gravatar (1.0.0)
+  - NSURL+Gravatar (1.0.1)
   - OCHamcrest (3.0.1)
   - Sparkle (1.8.0)
   - ZXingObjC (2.2.8)
@@ -47,7 +47,7 @@ SPEC CHECKSUMS:
   LetsMove: 9554c194d1378c89909fd66005cf7a662f43932d
   MASPreferences: 971d03da4b3818f8ea0d0ef10b86b02b2c052d17
   MASShortcut: e5e47bf0367e77f2c4089b4edc4c8143f3106eed
-  NSURL+Gravatar: 5dfb94ae9e33b7aceb201ab03094a361ab4ea767
+  NSURL+Gravatar: 60ba0f56abc4b32d8cfd0fed11d355ba6ae2255b
   OCHamcrest: 207233b7d7a44dadd66aca398947cc7e029c9be5
   Sparkle: 5eb20bb37ca21e471dab8417dee880198d905327
   ZXingObjC: e0f7ff32b616eadab6c5b46169311c1493801719
