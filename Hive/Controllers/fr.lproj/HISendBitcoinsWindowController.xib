@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="5056" systemVersion="14A343f" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="5056" systemVersion="13E28" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
         <deployment defaultVersion="1070" identifier="macosx"/>
         <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="5056"/>
@@ -189,7 +189,7 @@ Gw
                                                 <size key="minSize" width="289" height="102"/>
                                                 <size key="maxSize" width="463" height="10000000"/>
                                                 <attributedString key="textStorage">
-                                                    <fragment content="&lt;memo&gt;">
+                                                    <fragment content="&lt;memo>">
                                                         <attributes>
                                                             <color key="NSColor" red="0.19189956784248352" green="0.19189383089542389" blue="0.19189707934856415" alpha="1" colorSpace="calibratedRGB"/>
                                                             <font key="NSFont" size="12" name="HelveticaNeue"/>
@@ -497,7 +497,7 @@ Gw
                     <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="TzX-tz-eVL">
                         <rect key="frame" x="43" y="15" width="305" height="17"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                        <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="center" title="&lt;It's a trap!&gt;" id="tH6-pe-MMb">
+                        <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="center" title="&lt;It's a trap!>" id="tH6-pe-MMb">
                             <font key="font" metaFont="system"/>
                             <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                             <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
