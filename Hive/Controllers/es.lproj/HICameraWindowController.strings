@@ -1,6 +1,6 @@
 
 /* Class = "NSWindow"; title = "QR code scanner"; ObjectID = "1"; */
-"1.title" = "Escaneador de código QR";
+"1.title" = "Escáner de códigos QR";
 
 /* Class = "NSTextFieldCell"; title = "Hold up a Bitcoin QR code to the camera."; ObjectID = "r6F-kg-ECk"; */
-"r6F-kg-ECk.title" = "¡Muestre el código QR de Bitcoin a la cámara.";
+"r6F-kg-ECk.title" = "Muestre el código QR de Bitcoin a la cámara.";
