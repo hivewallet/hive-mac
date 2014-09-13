@@ -17,9 +17,9 @@ extern NSString * const HIAddressEntity;
 
 @interface HIAddress : NSManagedObject
 
-@property (nonatomic, retain) NSString * address;
-@property (nonatomic, retain) NSString * caption;
-@property (nonatomic, retain) HIContact *contact;
+@property (nonatomic, strong) NSString * address;
+@property (nonatomic, strong) NSString * caption;
+@property (nonatomic, strong) HIContact *contact;
 
 @property (nonatomic, copy, readonly) NSString *addressWithCaption;
 

@@ -8,7 +8,7 @@
 
 @interface NPZipFileHeader : NSObject
 
-@property (nonatomic, retain) NSString *name;
+@property (nonatomic, strong) NSString *name;
 @property (nonatomic, assign) uint32_t signature; /* 0x02014b50 */
 @property (nonatomic, assign) uint16_t made_by;
 @property (nonatomic, assign) uint16_t min_version;

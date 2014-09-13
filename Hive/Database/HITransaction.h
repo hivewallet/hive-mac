@@ -36,7 +36,7 @@ extern NSString * const HITransactionDirectionUnknownException;
 @interface HITransaction : NSManagedObject
 
 // transaction id
-@property (nonatomic, retain) NSString *id;
+@property (nonatomic, strong) NSString *id;
 
 // tells if the user has already seen this transaction; unseen transactions increase the number in the dock icon badge
 @property (nonatomic) BOOL read;
@@ -71,17 +71,17 @@ extern NSString * const HITransactionDirectionUnknownException;
 @property (nonatomic, strong) NSString *targetAddress;
 
 // if the address hash matches any of the contacts' addreses, contact is linked here, otherwise it's nil
-@property (nonatomic, retain) HIContact *contact;
+@property (nonatomic, strong) HIContact *contact;
 
 // transaction metadata (from a URI or payment request, or the contact's name)
-@property (nonatomic, retain) NSString *label;
-@property (nonatomic, retain) NSString *details;
+@property (nonatomic, strong) NSString *label;
+@property (nonatomic, strong) NSString *details;
 
 // URL of the payment request, if the transaction was sent via payment request
-@property (nonatomic, retain) NSString *paymentRequestURL;
+@property (nonatomic, strong) NSString *paymentRequestURL;
 
 // if the transaction was created from within an app
-@property (nonatomic, retain) HIApplication *sourceApplication;
+@property (nonatomic, strong) HIApplication *sourceApplication;
 
 + (BOOL)isAmountWithinExpectedRange:(satoshi_t)amount;
 

@@ -23,7 +23,7 @@
 	uint16_t extra_len;    
 }
 
-@property (nonatomic, retain) NSMutableDictionary *files;
+@property (nonatomic, strong) NSMutableDictionary *files;
 
 - (instancetype)initWithFile:(NSString *)filePath;
 
