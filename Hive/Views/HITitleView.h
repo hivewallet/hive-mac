@@ -27,7 +27,7 @@
 
 @interface HITitleView : NSView
 
-@property (nonatomic, assign) id<HITitleViewDelegate> delegate;
+@property (nonatomic, unsafe_unretained) id<HITitleViewDelegate> delegate;
 
 - (void)pushTitle:(NSString *)title;
 - (void)popToTitleAtPosition:(NSInteger)position;

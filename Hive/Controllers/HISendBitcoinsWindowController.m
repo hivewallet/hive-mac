@@ -71,9 +71,9 @@ NSString * const HISendBitcoinsWindowSuccessKey = @"success";
 @property (strong) IBOutlet HIButtonWithSpinner *sendButton;
 @property (nonatomic, strong) IBOutlet NSButton *dropdownButton;
 
-@property (nonatomic, assign) IBOutlet NSTextField *detailsLabel;
-@property (nonatomic, assign) IBOutlet NSScrollView *detailsBox;
-@property (nonatomic, assign) IBOutlet NSBox *detailsSeparator;
+@property (nonatomic, weak) IBOutlet NSTextField *detailsLabel;
+@property (nonatomic, weak) IBOutlet NSScrollView *detailsBox;
+@property (nonatomic, weak) IBOutlet NSBox *detailsSeparator;
 
 @property (nonatomic, strong) IBOutlet NSBox *ackBar;
 @property (nonatomic, strong) IBOutlet NSTextField *ackMessage;
