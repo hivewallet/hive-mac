@@ -8,20 +8,21 @@
 
 #import "HIContactRowView.h"
 
+static NSColor *HoverColor = nil;
+static NSColor *HighlightColor = nil;
+
 @interface HIContactRowView ()
 
 @property (nonatomic) BOOL mouseInside;
 @property (strong) NSTrackingArea *trackingArea;
-@property (strong) NSColor *highlightColor;
-@property (strong) NSColor *hoverColor;
 
 @end
 
 @implementation HIContactRowView
 
-- (void)awakeFromNib {
-    self.hoverColor = [NSColor colorWithCalibratedHue:215/360.0 saturation:0.03 brightness:0.98 alpha:1.0];
-    self.highlightColor = [NSColor colorWithCalibratedHue:215/360.0 saturation:0.12 brightness:0.98 alpha:1.0];
++ (void)initialize {
+    HoverColor = [NSColor colorWithCalibratedHue:215/360.0 saturation:0.03 brightness:0.98 alpha:1.0];
+    HighlightColor = [NSColor colorWithCalibratedHue:215/360.0 saturation:0.12 brightness:0.98 alpha:1.0];
 }
 
 - (instancetype)init {
@@ -29,13 +30,7 @@
 }
 
 - (instancetype)initWithFrame:(NSRect)frame {
-    self = [super initWithFrame:frame];
-
-    if (self) {
-        [self awakeFromNib];
-    }
-    
-    return self;
+    return [super initWithFrame:frame];
 }
 
 - (void)setMouseInside:(BOOL)mouseInside {
@@ -47,7 +42,7 @@
 
 - (void)drawBackgroundInRect:(NSRect)dirtyRect {
     if (self.mouseInside) {
-        [self.hoverColor setFill];
+        [HoverColor setFill];
         [NSBezierPath fillRect:dirtyRect];
     } else {
         [super drawBackgroundInRect:dirtyRect];
@@ -55,7 +50,7 @@
 }
 
 - (void)drawSelectionInRect:(NSRect)dirtyRect {
-    [self.highlightColor setFill];
+    [HighlightColor setFill];
     [NSBezierPath fillRect:dirtyRect];
 }
 
