@@ -21,5 +21,6 @@
 
 - (instancetype)initWithTransaction:(HITransaction *)transaction;
 - (NSPopover *)createPopover;
+- (void)closePopover;
 
 @end

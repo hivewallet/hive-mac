@@ -368,6 +368,7 @@ static NSString *const KEY_UNREAD_TRANSACTIONS = @"unreadTransactions";
     if (previousRow != -1) {
         [self.tableView deselectRow:previousRow];
 
+        [self.popoverController closePopover];
         self.popoverController.delegate = nil;
         self.popoverController = nil;
         self.currentlySelectedRow = -1;

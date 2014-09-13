@@ -31,6 +31,7 @@
 
 @property (strong) HITransaction *transaction;
 @property (strong) NSDictionary *transactionData;
+@property (weak) NSPopover *popover;
 
 @end
 
@@ -51,19 +52,31 @@
 #pragma mark - Managing the popover
 
 - (NSPopover *)createPopover {
-    NSPopover *popover = [[NSPopover alloc] init];
-    popover.contentViewController = self;
-    popover.delegate = self;
-    popover.behavior = NSPopoverBehaviorSemitransient;
+    NSPopover *popover = self.popover;
+
+    if (!popover) {
+        popover = [[NSPopover alloc] init];
+        popover.contentViewController = self;
+        popover.delegate = self;
+        popover.behavior = NSPopoverBehaviorSemitransient;
+        self.popover = popover;
+    }
+
     return popover;
 }
 
 - (void)popoverDidClose:(NSNotification *)notification {
+    self.popover = nil;
+
     id<HITransactionPopoverDelegate> delegate = self.delegate;
 
     if (delegate && [delegate respondsToSelector:@selector(transactionPopoverDidClose:)]) {
         [delegate transactionPopoverDidClose:self];
     }
+}
+
+- (void)closePopover {
+    [self.popover close];
 }
 
 
