@@ -19,11 +19,11 @@ extern NSString * const HIContactEntity;
 
 @interface HIContact : NSManagedObject
 
-@property (nonatomic, strong) NSString * account;
-@property (nonatomic, strong) NSData * avatar;
-@property (nonatomic, strong) NSString * email;
-@property (nonatomic, strong) NSString * firstname;
-@property (nonatomic, strong) NSString * lastname;
+@property (nonatomic, strong) NSString *account;
+@property (nonatomic, strong) NSData *avatar;
+@property (nonatomic, strong) NSString *email;
+@property (nonatomic, strong) NSString *firstname;
+@property (nonatomic, strong) NSString *lastname;
 @property (nonatomic, strong) NSOrderedSet *transactions;
 @property (nonatomic, readonly, getter = name) NSString *name;
 @property (nonatomic, readonly, getter = avatarImage) NSImage *avatarImage;
