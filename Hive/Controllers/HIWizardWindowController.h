@@ -16,6 +16,6 @@
 
 @property (nonatomic, copy) NSArray *viewControllers;
 @property (nonatomic, copy) void (^onCompletion)();
-@property (readonly) HIWizardViewController *currentViewController;
+@property (nonatomic, readonly) HIWizardViewController *currentViewController;
 
 @end

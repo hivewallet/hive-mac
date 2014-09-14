@@ -24,7 +24,7 @@ typedef void(^HITransactionCompletionCallback)(BOOL success, NSString *transacti
 @interface HISendBitcoinsWindowController : NSWindowController
     <HIContactAutocompleteDelegate, NSWindowDelegate, NSControlTextEditingDelegate>
 
-@property (copy) HITransactionCompletionCallback sendCompletion;
+@property (nonatomic, copy) HITransactionCompletionCallback sendCompletion;
 
 - (void)setHashAddress:(NSString *)hash;
 - (void)setLockedAddress:(NSString *)hash;

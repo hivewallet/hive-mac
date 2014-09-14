@@ -17,8 +17,8 @@
 
 @interface HIJavaScriptObject : NSObject
 
-@property (strong) WebFrame *frame;
-@property (readonly) JSGlobalContextRef context;
+@property (nonatomic, strong) WebFrame *frame;
+@property (nonatomic, readonly) JSGlobalContextRef context;
 
 // override these two in subclasses
 + (NSDictionary *)selectorMap;

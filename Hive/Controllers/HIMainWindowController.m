@@ -30,12 +30,12 @@ static const NSTimeInterval SlideAnimationDuration = 0.3;
 }
 
 // top-level objects
-@property (strong) IBOutlet HILockScreenViewController *lockScreenController;
-@property (strong) IBOutlet HISidebarController *sidebarController;
-@property (strong) IBOutlet NSView *networkErrorView;
+@property (nonatomic, strong) IBOutlet HILockScreenViewController *lockScreenController;
+@property (nonatomic, strong) IBOutlet HISidebarController *sidebarController;
+@property (nonatomic, strong) IBOutlet NSView *networkErrorView;
 
-@property (weak) IBOutlet NSView *contentView;
-@property (weak) IBOutlet NSButton *sendButton;
+@property (nonatomic, weak) IBOutlet NSView *contentView;
+@property (nonatomic, weak) IBOutlet NSButton *sendButton;
 
 @property (nonatomic, strong, readonly) INAppStoreWindow *appStoreWindow;
 

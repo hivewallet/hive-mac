@@ -16,11 +16,11 @@
 
 @interface HISignMessageWindowController () <NSPopoverDelegate>
 
-@property (weak) IBOutlet NSTextField *messageBox;
-@property (weak) IBOutlet NSTextField *signatureBox;
+@property (nonatomic, weak) IBOutlet NSTextField *messageBox;
+@property (nonatomic, weak) IBOutlet NSTextField *signatureBox;
 
-@property (strong) HIPasswordInputViewController *passwordInputViewController;
-@property (strong) NSPopover *passwordPopover;
+@property (nonatomic, strong) HIPasswordInputViewController *passwordInputViewController;
+@property (nonatomic, strong) NSPopover *passwordPopover;
 
 @end
 

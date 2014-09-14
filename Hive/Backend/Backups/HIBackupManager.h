@@ -8,8 +8,8 @@
 
 @interface HIBackupManager : NSObject
 
-@property (readonly) NSArray *allAdapters;
-@property (readonly) NSArray *visibleAdapters;
+@property (nonatomic, readonly) NSArray *allAdapters;
+@property (nonatomic, readonly) NSArray *visibleAdapters;
 
 + (HIBackupManager *)sharedManager;
 - (void)initializeAdapters;

@@ -37,16 +37,16 @@ extern NSString *HIBackupStatusTextFailure;
 
 @interface HIBackupAdapter : NSObject
 
-@property (readonly) NSString *name;
-@property (readonly) NSString *displayedName;
-@property (readonly) NSString *errorMessage;
-@property (readonly) NSImage *icon;
-@property (readonly) CGFloat iconSize;
-@property (readonly) BOOL canBeConfigured;
-@property (readonly) BOOL needsToBeConfigured;
-@property (readonly) BOOL requiresEncryption;
-@property (readonly) BOOL isVisible;
-@property (readonly, getter = isEnabledByDefault) BOOL enabledByDefault;
+@property (nonatomic, readonly) NSString *name;
+@property (nonatomic, readonly) NSString *displayedName;
+@property (nonatomic, readonly) NSString *errorMessage;
+@property (nonatomic, readonly) NSImage *icon;
+@property (nonatomic, readonly) CGFloat iconSize;
+@property (nonatomic, readonly) BOOL canBeConfigured;
+@property (nonatomic, readonly) BOOL needsToBeConfigured;
+@property (nonatomic, readonly) BOOL requiresEncryption;
+@property (nonatomic, readonly) BOOL isVisible;
+@property (nonatomic, readonly, getter = isEnabledByDefault) BOOL enabledByDefault;
 
 @property (nonatomic, assign) HIBackupAdapterStatus status;
 @property (nonatomic, strong) NSError *error;

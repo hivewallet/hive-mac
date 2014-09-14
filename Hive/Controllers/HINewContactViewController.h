@@ -18,6 +18,6 @@
 
 @interface HINewContactViewController : HIViewController
 
-@property (strong) id<HIPerson> contact;
+@property (nonatomic, strong) id<HIPerson> contact;
 
 @end

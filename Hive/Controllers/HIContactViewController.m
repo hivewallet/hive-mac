@@ -19,14 +19,14 @@
     NSArray *_panelControllers;
 }
 
-@property (weak) IBOutlet NSImageView *photoView;
-@property (weak) IBOutlet NSTextField *nameLabel;
-@property (weak) IBOutlet NSButton *sendBitcoinButton;
-@property (weak) IBOutlet HIProfileTabView *tabView;
-@property (weak) IBOutlet NSView *contentView;
+@property (nonatomic, weak) IBOutlet NSImageView *photoView;
+@property (nonatomic, weak) IBOutlet NSTextField *nameLabel;
+@property (nonatomic, weak) IBOutlet NSButton *sendBitcoinButton;
+@property (nonatomic, weak) IBOutlet HIProfileTabView *tabView;
+@property (nonatomic, weak) IBOutlet NSView *contentView;
 
 // top-level objects
-@property (strong) IBOutlet HIContactTabBarController *tabBarController;
+@property (nonatomic, strong) IBOutlet HIContactTabBarController *tabBarController;
 
 @end
 

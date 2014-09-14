@@ -38,20 +38,20 @@ static NSString * const Separator = @"Separator";
     NSMutableArray *_placeholders;
 }
 
-@property (weak) IBOutlet HITextField *firstnameField;
-@property (weak) IBOutlet HITextField *lastnameField;
-@property (weak) IBOutlet HITextField *emailField;
-@property (weak) IBOutlet HIBox *walletsView;
-@property (weak) IBOutlet NSScrollView *scrollView;
-@property (weak) IBOutlet NSView *footerView;
-@property (weak) IBOutlet NSButton *addAddressButton;
-@property (weak) IBOutlet NSButton *scanQRCodeButton;
-@property (weak) IBOutlet NSButton *removeContactButton;
-@property (weak) IBOutlet NSTextField *editAvatarLabel;
-@property (weak) IBOutlet NSImageView *avatarView;
+@property (nonatomic, weak) IBOutlet HITextField *firstnameField;
+@property (nonatomic, weak) IBOutlet HITextField *lastnameField;
+@property (nonatomic, weak) IBOutlet HITextField *emailField;
+@property (nonatomic, weak) IBOutlet HIBox *walletsView;
+@property (nonatomic, weak) IBOutlet NSScrollView *scrollView;
+@property (nonatomic, weak) IBOutlet NSView *footerView;
+@property (nonatomic, weak) IBOutlet NSButton *addAddressButton;
+@property (nonatomic, weak) IBOutlet NSButton *scanQRCodeButton;
+@property (nonatomic, weak) IBOutlet NSButton *removeContactButton;
+@property (nonatomic, weak) IBOutlet NSTextField *editAvatarLabel;
+@property (nonatomic, weak) IBOutlet NSImageView *avatarView;
 
 // top-level objects
-@property (strong) IBOutlet NSView *scrollContent;
+@property (nonatomic, strong) IBOutlet NSView *scrollContent;
 
 - (IBAction)cancelClicked:(NSButton *)sender;
 - (IBAction)doneClicked:(NSButton *)sender;

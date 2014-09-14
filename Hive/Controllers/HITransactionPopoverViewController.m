@@ -16,22 +16,22 @@
 
 @interface HITransactionPopoverViewController () <NSPopoverDelegate>
 
-@property (weak) IBOutlet NSTextField *transactionIdField;
-@property (weak) IBOutlet NSTextField *statusField;
-@property (weak) IBOutlet NSTextField *confirmationsField;
+@property (nonatomic, weak) IBOutlet NSTextField *transactionIdField;
+@property (nonatomic, weak) IBOutlet NSTextField *statusField;
+@property (nonatomic, weak) IBOutlet NSTextField *confirmationsField;
 
-@property (weak) IBOutlet NSBox *separatorAboveMetadataFields;
-@property (weak) IBOutlet NSTextField *amountField;
-@property (weak) IBOutlet NSTextField *exchangeRateField;
-@property (weak) IBOutlet NSTextField *recipientField;
-@property (weak) IBOutlet NSTextField *detailsField;
-@property (weak) IBOutlet NSTextField *targetAddressField;
-@property (weak) IBOutlet NSTextField *targetAddressLabel;
-@property (weak) IBOutlet NSButton *shareButton;
+@property (nonatomic, weak) IBOutlet NSBox *separatorAboveMetadataFields;
+@property (nonatomic, weak) IBOutlet NSTextField *amountField;
+@property (nonatomic, weak) IBOutlet NSTextField *exchangeRateField;
+@property (nonatomic, weak) IBOutlet NSTextField *recipientField;
+@property (nonatomic, weak) IBOutlet NSTextField *detailsField;
+@property (nonatomic, weak) IBOutlet NSTextField *targetAddressField;
+@property (nonatomic, weak) IBOutlet NSTextField *targetAddressLabel;
+@property (nonatomic, weak) IBOutlet NSButton *shareButton;
 
-@property (strong) HITransaction *transaction;
-@property (strong) NSDictionary *transactionData;
-@property (weak) NSPopover *popover;
+@property (nonatomic, strong) HITransaction *transaction;
+@property (nonatomic, strong) NSDictionary *transactionData;
+@property (nonatomic, weak) NSPopover *popover;
 
 @end
 

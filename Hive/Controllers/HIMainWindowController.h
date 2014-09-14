@@ -19,7 +19,7 @@
 
 @interface HIMainWindowController : NSWindowController <HISidebarControllerDelegate>
 
-@property (strong, readonly) HILockScreenViewController *lockScreenController;
+@property (nonatomic, strong, readonly) HILockScreenViewController *lockScreenController;
 
 - (void)switchToPanel:(Class)panelClass;
 

@@ -16,8 +16,8 @@
 
 @interface HINavigationController : HIViewController <HITitleViewDelegate>
 
-@property (readonly) HIViewController *topViewController;
-@property (readonly) HIViewController *rootViewController;
+@property (nonatomic, readonly) HIViewController *topViewController;
+@property (nonatomic, readonly) HIViewController *rootViewController;
 
 - (instancetype)initWithRootViewController:(HIViewController *)rootViewController;
 - (NSArray *)viewControllers;

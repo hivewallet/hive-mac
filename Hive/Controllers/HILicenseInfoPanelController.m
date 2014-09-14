@@ -10,7 +10,7 @@
 
 @interface HILicenseInfoPanelController ()
 
-@property (strong) IBOutlet NSTextView *licenseTextBox;  // NSTextView doesn't support weak references
+@property (nonatomic, strong) IBOutlet NSTextView *licenseTextBox;  // NSTextView doesn't support weak references
 
 @end
 

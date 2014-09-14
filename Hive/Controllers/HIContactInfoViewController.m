@@ -25,11 +25,11 @@
     HIViewController *_parent;
 }
 
-@property (weak) IBOutlet HIAddressesBox *addressBoxView;
-@property (weak) IBOutlet NSTextField *profileEmailField;
-@property (weak) IBOutlet NSScrollView *profileScrollView;
-@property (weak) IBOutlet NSView *profileScrollContent;
-@property (weak) IBOutlet NSButton *editButton;
+@property (nonatomic, weak) IBOutlet HIAddressesBox *addressBoxView;
+@property (nonatomic, weak) IBOutlet NSTextField *profileEmailField;
+@property (nonatomic, weak) IBOutlet NSScrollView *profileScrollView;
+@property (nonatomic, weak) IBOutlet NSView *profileScrollContent;
+@property (nonatomic, weak) IBOutlet NSButton *editButton;
 
 @end
 

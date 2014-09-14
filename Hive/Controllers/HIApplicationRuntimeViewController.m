@@ -32,7 +32,7 @@
     NSMutableDictionary *_sourceFiles;
 }
 
-@property (weak) IBOutlet WebView *webView;
+@property (nonatomic, weak) IBOutlet WebView *webView;
 
 @end
 

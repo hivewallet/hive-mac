@@ -18,7 +18,7 @@
 
 @interface HIAppRuntimeBridge : HIJavaScriptObject
 
-@property (strong) HIApplicationRuntimeViewController *controller;
+@property (nonatomic, strong) HIApplicationRuntimeViewController *controller;
 
 + (BOOL)isApiVersionInApplicationSupported:(HIApplication *)application;
 

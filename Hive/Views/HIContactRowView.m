@@ -14,7 +14,7 @@ static NSColor *HighlightColor = nil;
 @interface HIContactRowView ()
 
 @property (nonatomic, assign) BOOL mouseInside;
-@property (strong) NSTrackingArea *trackingArea;
+@property (nonatomic, strong) NSTrackingArea *trackingArea;
 
 @end
 

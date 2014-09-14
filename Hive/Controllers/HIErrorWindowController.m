@@ -21,10 +21,10 @@
     NSException *_exception;
 }
 
-@property (weak) IBOutlet NSTextField *nameField;
-@property (weak) IBOutlet NSTextField *emailField;
-@property (strong) IBOutlet NSTextView *comments;  // NSTextView doesn't support weak references
-@property (strong) IBOutlet NSTextView *exceptionDetails;  // same here
+@property (nonatomic, weak) IBOutlet NSTextField *nameField;
+@property (nonatomic, weak) IBOutlet NSTextField *emailField;
+@property (nonatomic, strong) IBOutlet NSTextView *comments;  // NSTextView doesn't support weak references
+@property (nonatomic, strong) IBOutlet NSTextView *exceptionDetails;  // same here
 
 @end
 

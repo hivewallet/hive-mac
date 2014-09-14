@@ -54,52 +54,52 @@ NSString * const HISendBitcoinsWindowSuccessKey = @"success";
 }
 
 // top-level objects
-@property (strong) IBOutlet NSBox *ackBar;
-@property (strong) IBOutlet NSBox *loadingBox;
-@property (strong) IBOutlet NSView *currencyRateInfoView;
+@property (nonatomic, strong) IBOutlet NSBox *ackBar;
+@property (nonatomic, strong) IBOutlet NSBox *loadingBox;
+@property (nonatomic, strong) IBOutlet NSView *currencyRateInfoView;
 
-@property (weak) IBOutlet NSBox *wrapper;
+@property (nonatomic, weak) IBOutlet NSBox *wrapper;
 
-@property (weak) IBOutlet NSImageView *photoView;
-@property (weak) IBOutlet NSImageView *lockIcon;
-@property (weak) IBOutlet NSTextField *nameLabel;
-@property (weak) IBOutlet NSTextField *addressLabel;
-@property (weak) IBOutlet NSButton *QRCodeButton;
-@property (weak) IBOutlet NSButton *dropdownButton;
-@property (weak) IBOutlet NSBox *separator;
+@property (nonatomic, weak) IBOutlet NSImageView *photoView;
+@property (nonatomic, weak) IBOutlet NSImageView *lockIcon;
+@property (nonatomic, weak) IBOutlet NSTextField *nameLabel;
+@property (nonatomic, weak) IBOutlet NSTextField *addressLabel;
+@property (nonatomic, weak) IBOutlet NSButton *QRCodeButton;
+@property (nonatomic, weak) IBOutlet NSButton *dropdownButton;
+@property (nonatomic, weak) IBOutlet NSBox *separator;
 
-@property (weak) IBOutlet NSTextField *detailsLabel;
-@property (weak) IBOutlet NSScrollView *detailsBox;
-@property (weak) IBOutlet NSBox *detailsSeparator;
+@property (nonatomic, weak) IBOutlet NSTextField *detailsLabel;
+@property (nonatomic, weak) IBOutlet NSScrollView *detailsBox;
+@property (nonatomic, weak) IBOutlet NSBox *detailsSeparator;
 
-@property (weak) IBOutlet NSPopUpButton *bitcoinCurrencyPopupButton;
-@property (weak) IBOutlet NSTextField *amountField;
-@property (weak) IBOutlet NSButton *feeButton;
+@property (nonatomic, weak) IBOutlet NSPopUpButton *bitcoinCurrencyPopupButton;
+@property (nonatomic, weak) IBOutlet NSTextField *amountField;
+@property (nonatomic, weak) IBOutlet NSButton *feeButton;
 
-@property (weak) IBOutlet NSPopUpButton *convertedCurrencyPopupButton;
-@property (weak) IBOutlet NSTextField *convertedAmountField;
+@property (nonatomic, weak) IBOutlet NSPopUpButton *convertedCurrencyPopupButton;
+@property (nonatomic, weak) IBOutlet NSTextField *convertedAmountField;
 
-@property (weak) IBOutlet NSButton *cancelButton;
-@property (weak) IBOutlet NSButton *closeButton;
-@property (weak) IBOutlet HIButtonWithSpinner *sendButton;
+@property (nonatomic, weak) IBOutlet NSButton *cancelButton;
+@property (nonatomic, weak) IBOutlet NSButton *closeButton;
+@property (nonatomic, weak) IBOutlet HIButtonWithSpinner *sendButton;
 
-@property (weak) IBOutlet NSTextField *ackMessage;
+@property (nonatomic, weak) IBOutlet NSTextField *ackMessage;
 
-@property (weak) IBOutlet NSProgressIndicator *loadingSpinner;
+@property (nonatomic, weak) IBOutlet NSProgressIndicator *loadingSpinner;
 
-@property (assign) satoshi_t amountFieldValue;
-@property (copy) NSDecimalNumber *convertedAmountFieldValue;
-@property (copy) NSDecimalNumber *exchangeRate;
+@property (nonatomic, assign) satoshi_t amountFieldValue;
+@property (nonatomic, copy) NSDecimalNumber *convertedAmountFieldValue;
+@property (nonatomic, copy) NSDecimalNumber *exchangeRate;
 @property (nonatomic, copy) NSString *selectedCurrency;
 @property (copy, nonatomic) NSString *selectedBitcoinFormat;
-@property (strong, readonly) HIExchangeRateService *exchangeRateService;
-@property (strong, readonly) HIBitcoinFormatService *bitcoinFormatService;
+@property (nonatomic, strong, readonly) HIExchangeRateService *exchangeRateService;
+@property (nonatomic, strong, readonly) HIBitcoinFormatService *bitcoinFormatService;
 @property (nonatomic, assign) BOOL sendButtonEnabled;
 
-@property (strong, readonly) HIContactAutocompleteWindowController *autocompleteController;
-@property (strong) HIFeeDetailsViewController *feeDetailsViewController;
-@property (strong) HIPasswordInputViewController *passwordInputViewController;
-@property (strong) NSViewController *currencyRateInfoViewController;
+@property (nonatomic, strong, readonly) HIContactAutocompleteWindowController *autocompleteController;
+@property (nonatomic, strong) HIFeeDetailsViewController *feeDetailsViewController;
+@property (nonatomic, strong) HIPasswordInputViewController *passwordInputViewController;
+@property (nonatomic, strong) NSViewController *currencyRateInfoViewController;
 
 @end
 

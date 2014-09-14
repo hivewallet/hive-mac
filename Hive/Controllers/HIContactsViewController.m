@@ -19,12 +19,12 @@
 @interface HIContactsViewController()<HINameFormatServiceObserver>
 
 // top-level objects
-@property (strong) IBOutlet NSView *navigationView;
-@property (strong) IBOutlet NSArrayController *arrayController;
-@property (strong) IBOutlet NSView *foreverAloneScreen;
+@property (nonatomic, strong) IBOutlet NSView *navigationView;
+@property (nonatomic, strong) IBOutlet NSArrayController *arrayController;
+@property (nonatomic, strong) IBOutlet NSView *foreverAloneScreen;
 
-@property (weak) IBOutlet NSTableView *tableView;
-@property (weak) IBOutlet NSScrollView *scrollView;
+@property (nonatomic, weak) IBOutlet NSTableView *tableView;
+@property (nonatomic, weak) IBOutlet NSScrollView *scrollView;
 
 @property (nonatomic, readonly) NSManagedObjectContext *managedObjectContext;
 @property (nonatomic, copy) NSArray *sortDescriptors;

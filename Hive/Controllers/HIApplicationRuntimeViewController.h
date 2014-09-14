@@ -16,7 +16,7 @@
 
 @interface HIApplicationRuntimeViewController : HIViewController
 
-@property (strong) HIApplication *application;
+@property (nonatomic, strong) HIApplication *application;
 
 - (void)requestPaymentToHash:(NSString *)hash
                       amount:(satoshi_t)amount

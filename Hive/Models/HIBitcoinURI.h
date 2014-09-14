@@ -12,14 +12,14 @@
 
 @interface HIBitcoinURI : NSObject
 
-@property (readonly) BOOL valid;
-@property (copy, readonly) NSString *URIString;
-@property (copy, readonly) NSString *address;
-@property (copy, readonly) NSDictionary *parameters;
-@property (copy, readonly) NSString *label;
-@property (copy, readonly) NSString *message;
-@property (copy, readonly) NSString *paymentRequestURL;
-@property (readonly) satoshi_t amount;
+@property (nonatomic, readonly) BOOL valid;
+@property (nonatomic, copy, readonly) NSString *URIString;
+@property (nonatomic, copy, readonly) NSString *address;
+@property (nonatomic, copy, readonly) NSDictionary *parameters;
+@property (nonatomic, copy, readonly) NSString *label;
+@property (nonatomic, copy, readonly) NSString *message;
+@property (nonatomic, copy, readonly) NSString *paymentRequestURL;
+@property (nonatomic, readonly) satoshi_t amount;
 
 - (instancetype)initWithURIString:(NSString *)URI;
 

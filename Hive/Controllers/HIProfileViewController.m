@@ -22,17 +22,17 @@
     HIContactInfoViewController *_infoPanel;
 }
 
-@property (weak) IBOutlet NSImageView *photoView;
-@property (weak) IBOutlet NSTextField *nameLabel;
-@property (weak) IBOutlet NSTextField *balanceLabel;
-@property (weak) IBOutlet NSTextField *convertedBalanceLabel;
-@property (weak) IBOutlet NSPopUpButton *convertedCurrencyPopupButton;
-@property (weak) IBOutlet NSPopUpButton *bitcoinCurrencyPopupButton;
-@property (weak) IBOutlet NSView *contentView;
+@property (nonatomic, weak) IBOutlet NSImageView *photoView;
+@property (nonatomic, weak) IBOutlet NSTextField *nameLabel;
+@property (nonatomic, weak) IBOutlet NSTextField *balanceLabel;
+@property (nonatomic, weak) IBOutlet NSTextField *convertedBalanceLabel;
+@property (nonatomic, weak) IBOutlet NSPopUpButton *convertedCurrencyPopupButton;
+@property (nonatomic, weak) IBOutlet NSPopUpButton *bitcoinCurrencyPopupButton;
+@property (nonatomic, weak) IBOutlet NSView *contentView;
 
-@property (strong, readonly) HIExchangeRateService *exchangeRateService;
-@property (strong, readonly) HIBitcoinFormatService *bitcoinFormatService;
-@property (copy) NSDecimalNumber *exchangeRate;
+@property (nonatomic, strong, readonly) HIExchangeRateService *exchangeRateService;
+@property (nonatomic, strong, readonly) HIBitcoinFormatService *bitcoinFormatService;
+@property (nonatomic, copy) NSDecimalNumber *exchangeRate;
 @property (copy, nonatomic) NSString *selectedCurrency;
 @property (copy, nonatomic) NSString *selectedBitcoinFormat;
 @property (assign, nonatomic) satoshi_t estimatedBalance;
