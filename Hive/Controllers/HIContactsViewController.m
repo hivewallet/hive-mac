@@ -26,7 +26,7 @@
 @property (weak) IBOutlet NSTableView *tableView;
 @property (weak) IBOutlet NSScrollView *scrollView;
 
-@property (nonatomic, readonly, getter = managedObjectContext) NSManagedObjectContext *managedObjectContext;
+@property (nonatomic, readonly) NSManagedObjectContext *managedObjectContext;
 @property (nonatomic, copy) NSArray *sortDescriptors;
 @property (nonatomic, assign) BOOL sortByLastName;
 

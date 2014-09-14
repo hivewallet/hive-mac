@@ -19,8 +19,8 @@
 @property (nonatomic, strong) NSString *iconName;
 @property (nonatomic, assign) NSUInteger badgeNumber;
 @property (nonatomic, unsafe_unretained) HINavigationController *navigationController;
-@property (nonatomic, readonly, getter = titleBarView) NSView *titleBarView;
-@property (nonatomic, readonly, getter = rightNavigationView) NSView *rightNavigationView;
+@property (nonatomic, readonly) NSView *titleBarView;
+@property (nonatomic, readonly) NSView *rightNavigationView;
 
 - (void)viewWillAppear;
 - (void)viewWillDisappear;

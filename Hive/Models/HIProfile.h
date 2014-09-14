@@ -20,10 +20,10 @@
 @property (nonatomic, strong) NSString *email;
 @property (nonatomic, strong) NSString *firstname;
 @property (nonatomic, strong) NSString *lastname;
-@property (nonatomic, readonly, getter = name) NSString *name;
+@property (nonatomic, readonly) NSString *name;
 @property (nonatomic, strong) NSSet *addresses;
 @property (nonatomic, strong) NSData *avatar;
-@property (nonatomic, readonly, getter = avatarImage) NSImage *avatarImage;
+@property (nonatomic, readonly) NSImage *avatarImage;
 
 - (BOOL)canBeRemoved;
 - (BOOL)canEditAddresses;

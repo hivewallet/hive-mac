@@ -45,7 +45,7 @@ extern NSString * const HITransactionDirectionUnknownException;
 @property (nonatomic) HITransactionStatus status;
 
 // HITransactionDirectionIncoming or HITransactionDirectionOutgoing
-@property (nonatomic, readonly, getter = direction) HITransactionDirection direction;
+@property (nonatomic, readonly) HITransactionDirection direction;
 
 @property (nonatomic, readonly) BOOL isIncoming;
 @property (nonatomic, readonly) BOOL isOutgoing;
@@ -54,7 +54,7 @@ extern NSString * const HITransactionDirectionUnknownException;
 @property (nonatomic) int64_t amount;
 
 // same as amount, but it's always positive
-@property (nonatomic, readonly, getter = absoluteAmount) uint64_t absoluteAmount;
+@property (nonatomic, readonly) uint64_t absoluteAmount;
 
 // fee amount, in satoshis; for incoming transactions it will return 0
 @property (nonatomic) int64_t fee;

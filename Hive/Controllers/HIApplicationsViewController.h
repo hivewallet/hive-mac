@@ -14,7 +14,7 @@
 
 @interface HIApplicationsViewController : HIViewController
 
-@property (nonatomic, readonly, getter = managedObjectContext) NSManagedObjectContext *managedObjectContext;
-@property (nonatomic, readonly, getter = sortDescriptors) NSArray *sortDescriptors;
+@property (nonatomic, readonly) NSManagedObjectContext *managedObjectContext;
+@property (nonatomic, readonly) NSArray *sortDescriptors;
 
 @end

@@ -25,8 +25,8 @@ extern NSString * const HIContactEntity;
 @property (nonatomic, strong) NSString *firstname;
 @property (nonatomic, strong) NSString *lastname;
 @property (nonatomic, strong) NSOrderedSet *transactions;
-@property (nonatomic, readonly, getter = name) NSString *name;
-@property (nonatomic, readonly, getter = avatarImage) NSImage *avatarImage;
+@property (nonatomic, readonly) NSString *name;
+@property (nonatomic, readonly) NSImage *avatarImage;
 @property (nonatomic, strong) NSSet *addresses;
 
 - (BOOL)canBeRemoved;

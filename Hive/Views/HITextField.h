@@ -15,8 +15,8 @@ extern NSString * const kHITextFieldContentChanged;
 
 @interface HITextField : NSTextField <NSTextFieldDelegate>
 
-@property (readonly, nonatomic, getter = isEmpty) BOOL isEmpty;
-@property (readonly, nonatomic, getter = isFocused) BOOL isFocused;
+@property (readonly, nonatomic) BOOL isEmpty;
+@property (readonly, nonatomic) BOOL isFocused;
 
 - (void)recalcForString:(NSString *)string;
 - (void)setValueAndRecalc:(NSString *)value;
