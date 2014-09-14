@@ -7,7 +7,7 @@
     static dispatch_once_t oncePredicate;
 
     dispatch_once(&oncePredicate, ^{
-            sharedService = [[self class] new];
+        sharedService = [[self class] new];
     });
 
     return sharedService;

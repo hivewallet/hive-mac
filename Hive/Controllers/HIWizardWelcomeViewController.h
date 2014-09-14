@@ -10,6 +10,4 @@
 
 @interface HIWizardWelcomeViewController : HIWizardViewController
 
-
-
 @end

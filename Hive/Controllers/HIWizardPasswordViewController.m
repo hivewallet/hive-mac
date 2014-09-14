@@ -13,8 +13,8 @@
 
 @interface HIWizardPasswordViewController ()
 
-@property(nonatomic, strong) IBOutlet NSTextField *passwordField;
-@property(nonatomic, strong) IBOutlet NSTextField *repeatedPasswordField;
+@property (nonatomic, strong) IBOutlet NSTextField *passwordField;
+@property (nonatomic, strong) IBOutlet NSTextField *repeatedPasswordField;
 @property (nonatomic, strong) IBOutlet HIPasswordCreationInputHandler *passwordCreationInputHandler;
 
 @property (nonatomic, assign) BOOL submitButtonEnabled;
@@ -26,9 +26,11 @@
 
 - (instancetype)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
+
     if (self) {
         self.title = NSLocalizedString(@"Password", @"Wizard password page title");
     }
+
     return self;
 }
 

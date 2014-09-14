@@ -21,8 +21,8 @@
 - (void)showWindowWithPanel:(Class)panelClass;
 - (void)handlePaymentRequestLoadError:(NSError *)error;
 
-@property (nonatomic, assign, getter=isFullMenuEnabled) BOOL fullMenuEnabled;
-@property (nonatomic, assign, getter=isApplicationLocked) BOOL applicationLocked;
+@property (nonatomic, assign, getter = isFullMenuEnabled) BOOL fullMenuEnabled;
+@property (nonatomic, assign, getter = isApplicationLocked) BOOL applicationLocked;
 @property (nonatomic, readonly) HINetworkConnectionMonitor *networkMonitor;
 
 @end
