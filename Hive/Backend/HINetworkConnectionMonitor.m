@@ -16,7 +16,7 @@ NSString * const HINetworkConnectionMonitorDisconnected = @"HINetworkConnectionM
 
 @interface HINetworkConnectionMonitor ()
 
-@property (nonatomic) BOOL connected;
+@property (nonatomic, assign) BOOL connected;
 
 @end
 

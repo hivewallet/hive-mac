@@ -48,10 +48,10 @@ extern NSString *HIBackupStatusTextFailure;
 @property (readonly) BOOL isVisible;
 @property (readonly, getter = isEnabledByDefault) BOOL enabledByDefault;
 
-@property (nonatomic) HIBackupAdapterStatus status;
+@property (nonatomic, assign) HIBackupAdapterStatus status;
 @property (nonatomic, strong) NSError *error;
 @property (nonatomic, strong) NSDate *lastBackupDate;
-@property (nonatomic, getter = isEnabled) BOOL enabled;
+@property (nonatomic, assign, getter = isEnabled) BOOL enabled;
 
 + (NSDictionary *)backupSettings;
 + (void)resetBackupSettings;

@@ -28,8 +28,8 @@ NSString * const BCClientPasswordChangedNotification = @"BCClientPasswordChanged
     NSDateFormatter *_dateFormatter;
 }
 
-@property (nonatomic) uint64 availableBalance;
-@property (nonatomic) uint64 estimatedBalance;
+@property (nonatomic, assign) uint64 availableBalance;
+@property (nonatomic, assign) uint64 estimatedBalance;
 @property (nonatomic, strong, readonly) NSMutableSet *transactionObservers;
 
 @end

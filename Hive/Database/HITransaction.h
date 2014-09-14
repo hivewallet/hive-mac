@@ -39,10 +39,10 @@ extern NSString * const HITransactionDirectionUnknownException;
 @property (nonatomic, copy) NSString *id;
 
 // tells if the user has already seen this transaction; unseen transactions increase the number in the dock icon badge
-@property (nonatomic) BOOL read;
+@property (nonatomic, assign) BOOL read;
 
 // transaction status (pending, building etc.)
-@property (nonatomic) HITransactionStatus status;
+@property (nonatomic, assign) HITransactionStatus status;
 
 // HITransactionDirectionIncoming or HITransactionDirectionOutgoing
 @property (nonatomic, readonly) HITransactionDirection direction;
@@ -51,13 +51,13 @@ extern NSString * const HITransactionDirectionUnknownException;
 @property (nonatomic, readonly) BOOL isOutgoing;
 
 // BTC amount, in satoshis; for outgoing transactions the amount is negative
-@property (nonatomic) int64_t amount;
+@property (nonatomic, assign) int64_t amount;
 
 // same as amount, but it's always positive
 @property (nonatomic, readonly) uint64_t absoluteAmount;
 
 // fee amount, in satoshis; for incoming transactions it will return 0
-@property (nonatomic) int64_t fee;
+@property (nonatomic, assign) int64_t fee;
 
 // selected fiat currency, and amount/rate for that currency at the moment of sending
 @property (nonatomic, copy) NSString *fiatCurrency;
@@ -65,7 +65,7 @@ extern NSString * const HITransactionDirectionUnknownException;
 @property (nonatomic, strong) NSDecimalNumber *fiatRate;
 
 // date when transaction was sent/received
-@property (nonatomic) NSDate *date;
+@property (nonatomic, copy) NSDate *date;
 
 @property (nonatomic, copy) NSString *sourceAddress;
 @property (nonatomic, copy) NSString *targetAddress;
