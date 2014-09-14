@@ -29,7 +29,7 @@ extern NSString * const BCClientPasswordChangedNotification;
 @property (nonatomic, readonly) uint64 availableBalance;
 @property (nonatomic, readonly) uint64 estimatedBalance;
 @property (nonatomic, readonly) NSDate *lastWalletChangeDate;
-@property (nonatomic, strong) NSString *walletHash;
+@property (nonatomic, copy) NSString *walletHash;
 @property (nonatomic, readonly) BOOL isRunning;
 @property (nonatomic, assign) NSUInteger checkInterval;
 @property (nonatomic, readonly, getter = isWalletPasswordProtected) BOOL walletPasswordProtected;

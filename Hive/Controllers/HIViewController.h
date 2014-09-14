@@ -16,7 +16,7 @@
 
 @interface HIViewController : NSViewController
 
-@property (nonatomic, strong) NSString *iconName;
+@property (nonatomic, copy) NSString *iconName;
 @property (nonatomic, assign) NSUInteger badgeNumber;
 @property (nonatomic, unsafe_unretained) HINavigationController *navigationController;
 @property (nonatomic, readonly) NSView *titleBarView;

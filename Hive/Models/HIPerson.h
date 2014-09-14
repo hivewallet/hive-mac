@@ -7,13 +7,13 @@
 
 @protocol HIPerson<NSObject>
 
-@property (nonatomic, strong) NSString *email;
-@property (nonatomic, strong) NSString *firstname;
-@property (nonatomic, strong) NSString *lastname;
+@property (nonatomic, copy) NSString *email;
+@property (nonatomic, copy) NSString *firstname;
+@property (nonatomic, copy) NSString *lastname;
 @property (nonatomic, strong) NSSet *addresses;
-@property (nonatomic, strong) NSData *avatar;
+@property (nonatomic, copy) NSData *avatar;
 @property (nonatomic, strong, readonly) NSImage *avatarImage;
-@property (nonatomic, readonly) NSString *name;
+@property (nonatomic, copy, readonly) NSString *name;
 
 - (BOOL)canBeRemoved;
 - (BOOL)canEditAddresses;

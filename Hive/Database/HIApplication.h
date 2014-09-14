@@ -16,9 +16,9 @@ extern NSString * const HIApplicationEntity;
 
 @interface HIApplication : NSManagedObject
 
-@property (nonatomic, strong) NSString *id;
+@property (nonatomic, copy) NSString *id;
 @property (nonatomic, strong) NSURL *path;
-@property (nonatomic, strong) NSString *name;
+@property (nonatomic, copy) NSString *name;
 @property (nonatomic, readonly) NSImage *icon;
 @property (nonatomic, readonly) NSDictionary *manifest;
 @property (nonatomic, readonly) NSURL *baseURL;

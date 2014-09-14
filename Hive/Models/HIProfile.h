@@ -17,12 +17,12 @@
 
 @interface HIProfile : NSObject<HIPerson>
 
-@property (nonatomic, strong) NSString *email;
-@property (nonatomic, strong) NSString *firstname;
-@property (nonatomic, strong) NSString *lastname;
-@property (nonatomic, readonly) NSString *name;
+@property (nonatomic, copy) NSString *email;
+@property (nonatomic, copy) NSString *firstname;
+@property (nonatomic, copy) NSString *lastname;
+@property (nonatomic, copy, readonly) NSString *name;
 @property (nonatomic, strong) NSSet *addresses;
-@property (nonatomic, strong) NSData *avatar;
+@property (nonatomic, copy) NSData *avatar;
 @property (nonatomic, readonly) NSImage *avatarImage;
 
 - (BOOL)canBeRemoved;
@@ -33,8 +33,8 @@
 
 @interface HIProfileAddress : NSObject
 
-@property (nonatomic, strong) NSString *address;
-@property (nonatomic, strong) NSString *caption;
+@property (nonatomic, copy) NSString *address;
+@property (nonatomic, copy) NSString *caption;
 @property (nonatomic, strong) HIProfile *contact;
 
 @end

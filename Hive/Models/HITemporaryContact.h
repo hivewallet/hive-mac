@@ -24,6 +24,6 @@
 
 @interface HITemporaryAddress : NSObject
 
-@property (nonatomic, strong) NSString *address;
+@property (nonatomic, copy) NSString *address;
 
 @end
