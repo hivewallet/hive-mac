@@ -10,9 +10,9 @@
 
 @interface HITransactionCellView ()
 
-@property (strong, nonatomic) IBOutlet NSTextField *dateLabel;
-@property (strong, nonatomic) IBOutlet NSImageView *directionMark;
-@property (strong, nonatomic) IBOutlet NSTextField *pendingLabel;
+@property (weak, nonatomic) IBOutlet NSTextField *dateLabel;
+@property (weak, nonatomic) IBOutlet NSImageView *directionMark;
+@property (weak, nonatomic) IBOutlet NSTextField *pendingLabel;
 
 @end
 

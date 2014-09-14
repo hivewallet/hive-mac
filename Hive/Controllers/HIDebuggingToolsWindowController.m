@@ -13,8 +13,8 @@
 
 @interface HIDebuggingToolsWindowController ()
 
-@property (nonatomic, strong) IBOutlet NSTextField *progressLabel;
-@property (nonatomic, strong) IBOutlet NSProgressIndicator *progressBar;
+@property (nonatomic, weak) IBOutlet NSTextField *progressLabel;
+@property (nonatomic, weak) IBOutlet NSProgressIndicator *progressBar;
 
 - (IBAction)rebuildApplicationListClicked:(id)sender;
 - (IBAction)rebuildTransactionListClicked:(id)sender;

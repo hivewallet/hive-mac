@@ -21,9 +21,11 @@ static const NSTimeInterval IDLE_RESET_DELAY = 30.0;
 
 @interface HIPasswordChangeWindowController ()
 
-@property(nonatomic, strong) IBOutlet NSSecureTextField *passwordField;
-@property(nonatomic, strong) IBOutlet NSSecureTextField *updatedPasswordField;
-@property(nonatomic, strong) IBOutlet NSSecureTextField *repeatedPasswordField;
+@property (nonatomic, weak) IBOutlet NSSecureTextField *passwordField;
+@property (nonatomic, weak) IBOutlet NSSecureTextField *updatedPasswordField;
+@property (nonatomic, weak) IBOutlet NSSecureTextField *repeatedPasswordField;
+
+// top-level objects
 @property (nonatomic, strong) IBOutlet HIPasswordCreationInputHandler *passwordCreationInputHandler;
 
 @property (nonatomic, assign) BOOL submitButtonEnabled;

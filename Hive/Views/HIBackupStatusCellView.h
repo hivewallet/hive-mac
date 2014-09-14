@@ -8,6 +8,6 @@
 
 @interface HIBackupStatusCellView : NSTableCellView
 
-@property (nonatomic, strong, readonly) NSTextField *statusDetailsLabel;
+@property (nonatomic, weak, readonly) NSTextField *statusDetailsLabel;
 
 @end

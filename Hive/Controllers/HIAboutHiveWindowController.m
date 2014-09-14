@@ -12,13 +12,14 @@
 
 @interface HIAboutHiveWindowController ()
 
-@property (strong) IBOutlet NSTextView *creditsBox;
+@property (strong) IBOutlet NSTextView *creditsBox;  // NSTextView doesn't support weak references
 @property (weak) IBOutlet NSTextField *versionField;
 @property (weak) IBOutlet NSTextField *copyrightField;
-@property (strong) HILicenseInfoPanelController *licenseInfoPanel;
 @property (weak) IBOutlet NSButton *twitterButton;
 @property (weak) IBOutlet NSButton *facebookButton;
 @property (weak) IBOutlet NSButton *githubButton;
+
+@property (strong) HILicenseInfoPanelController *licenseInfoPanel;
 
 @end
 

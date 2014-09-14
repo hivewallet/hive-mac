@@ -10,7 +10,7 @@
 
 @interface HIBackupStatusCellView()
 
-@property (nonatomic, strong) IBOutlet NSTextField *statusDetailsLabel;
+@property (nonatomic, weak) IBOutlet NSTextField *statusDetailsLabel;
 
 @end
 

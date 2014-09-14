@@ -23,7 +23,7 @@ static const NSTimeInterval UpdateTimerInterval = 5.0;
     BOOL enableConfiguration;
 }
 
-@property (nonatomic, strong) IBOutlet NSTableView *tableView;
+@property (nonatomic, weak) IBOutlet NSTableView *tableView;
 
 @end
 

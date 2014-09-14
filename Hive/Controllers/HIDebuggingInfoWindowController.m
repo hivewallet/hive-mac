@@ -14,7 +14,7 @@
 
 @interface HIDebuggingInfoWindowController()
 
-@property (strong) IBOutlet NSTextView *textView;
+@property (strong) IBOutlet NSTextView *textView;  // NSTextView doesn't support weak references
 
 @end
 

@@ -8,6 +8,6 @@
 
 @interface HIBackupActionsCellView : NSTableCellView
 
-@property (nonatomic, strong, readonly) NSButton *enableButton;
+@property (nonatomic, weak, readonly) NSButton *enableButton;
 
 @end

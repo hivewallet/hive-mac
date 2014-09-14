@@ -21,11 +21,15 @@ NSString * const LockScreenDidDisappearNotification = @"LockScreenDidDisappearNo
 
 @interface HILockScreenViewController ()
 
+// top-level objects
 @property (nonatomic, strong) IBOutlet HIPasswordInputViewController *passwordInputViewController;
-@property (nonatomic, strong) IBOutlet NSTextField *passwordField;
-@property (nonatomic, strong) IBOutlet NSButton *submitButton;
-@property (nonatomic, strong) IBOutlet NSButton *dontShowAgainField;
-@property (nonatomic, strong) IBOutlet NSView *container;
+
+@property (nonatomic, weak) IBOutlet NSTextField *passwordField;
+@property (nonatomic, weak) IBOutlet NSButton *submitButton;
+@property (nonatomic, weak) IBOutlet NSButton *dontShowAgainField;
+
+// assigned in another xib
+@property (nonatomic, weak) IBOutlet NSView *container;
 
 @end
 

@@ -53,33 +53,39 @@ NSString * const HISendBitcoinsWindowSuccessKey = @"success";
     NSURL *_paymentRequestURL;
 }
 
-@property (strong) IBOutlet NSBox *wrapper;
-@property (strong) IBOutlet NSBox *separator;
-@property (strong) IBOutlet NSImageView *photoView;
-@property (strong) IBOutlet NSImageView *lockIcon;
-@property (strong) IBOutlet NSTextField *nameLabel;
-@property (strong) IBOutlet NSTextField *addressLabel;
-@property (strong) IBOutlet NSTextField *amountField;
-@property (strong) IBOutlet NSTextField *convertedAmountField;
-@property (strong) IBOutlet NSButton *QRCodeButton;
+// top-level objects
+@property (strong) IBOutlet NSBox *ackBar;
+@property (strong) IBOutlet NSBox *loadingBox;
 @property (strong) IBOutlet NSView *currencyRateInfoView;
-@property (strong) IBOutlet NSPopUpButton *convertedCurrencyPopupButton;
-@property (strong) IBOutlet NSPopUpButton *bitcoinCurrencyPopupButton;
-@property (strong) IBOutlet NSButton *feeButton;
-@property (strong) IBOutlet NSButton *cancelButton;
-@property (strong) IBOutlet NSButton *closeButton;
-@property (strong) IBOutlet HIButtonWithSpinner *sendButton;
-@property (nonatomic, strong) IBOutlet NSButton *dropdownButton;
 
-@property (nonatomic, weak) IBOutlet NSTextField *detailsLabel;
-@property (nonatomic, weak) IBOutlet NSScrollView *detailsBox;
-@property (nonatomic, weak) IBOutlet NSBox *detailsSeparator;
+@property (weak) IBOutlet NSBox *wrapper;
 
-@property (nonatomic, strong) IBOutlet NSBox *ackBar;
-@property (nonatomic, strong) IBOutlet NSTextField *ackMessage;
+@property (weak) IBOutlet NSImageView *photoView;
+@property (weak) IBOutlet NSImageView *lockIcon;
+@property (weak) IBOutlet NSTextField *nameLabel;
+@property (weak) IBOutlet NSTextField *addressLabel;
+@property (weak) IBOutlet NSButton *QRCodeButton;
+@property (weak) IBOutlet NSButton *dropdownButton;
+@property (weak) IBOutlet NSBox *separator;
 
-@property (nonatomic, strong) IBOutlet NSBox *loadingBox;
-@property (nonatomic, strong) IBOutlet NSProgressIndicator *loadingSpinner;
+@property (weak) IBOutlet NSTextField *detailsLabel;
+@property (weak) IBOutlet NSScrollView *detailsBox;
+@property (weak) IBOutlet NSBox *detailsSeparator;
+
+@property (weak) IBOutlet NSPopUpButton *bitcoinCurrencyPopupButton;
+@property (weak) IBOutlet NSTextField *amountField;
+@property (weak) IBOutlet NSButton *feeButton;
+
+@property (weak) IBOutlet NSPopUpButton *convertedCurrencyPopupButton;
+@property (weak) IBOutlet NSTextField *convertedAmountField;
+
+@property (weak) IBOutlet NSButton *cancelButton;
+@property (weak) IBOutlet NSButton *closeButton;
+@property (weak) IBOutlet HIButtonWithSpinner *sendButton;
+
+@property (weak) IBOutlet NSTextField *ackMessage;
+
+@property (weak) IBOutlet NSProgressIndicator *loadingSpinner;
 
 @property (assign) satoshi_t amountFieldValue;
 @property (copy) NSDecimalNumber *convertedAmountFieldValue;
@@ -88,13 +94,15 @@ NSString * const HISendBitcoinsWindowSuccessKey = @"success";
 @property (copy, nonatomic) NSString *selectedBitcoinFormat;
 @property (strong, readonly) HIExchangeRateService *exchangeRateService;
 @property (strong, readonly) HIBitcoinFormatService *bitcoinFormatService;
+@property (nonatomic, assign) BOOL sendButtonEnabled;
+
 @property (strong, readonly) HIContactAutocompleteWindowController *autocompleteController;
 @property (strong) HIFeeDetailsViewController *feeDetailsViewController;
 @property (strong) HIPasswordInputViewController *passwordInputViewController;
 @property (strong) NSViewController *currencyRateInfoViewController;
-@property (nonatomic, assign) BOOL sendButtonEnabled;
 
 @end
+
 
 @implementation HISendBitcoinsWindowController
 

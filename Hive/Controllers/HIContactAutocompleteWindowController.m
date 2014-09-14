@@ -19,8 +19,10 @@ static const CGFloat MaxAutocompleteHeight = 300.0;
     NSMutableDictionary *_trackingAreas;
 }
 
+// top-level objects
 @property (nonatomic, strong) IBOutlet NSArrayController *arrayController;
-@property (nonatomic, strong) IBOutlet NSTableView *tableView;
+
+@property (nonatomic, weak) IBOutlet NSTableView *tableView;
 
 @end
 

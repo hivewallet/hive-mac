@@ -3,8 +3,8 @@
 
 @interface HIPasswordCreationInputHandler()
 
-@property (nonatomic, strong) IBOutlet NSTextField *passwordField;
-@property (nonatomic, strong) IBOutlet NSTextField *repeatedPasswordField;
+@property (nonatomic, weak) IBOutlet NSTextField *passwordField;
+@property (nonatomic, weak) IBOutlet NSTextField *repeatedPasswordField;
 
 @end
 

@@ -26,10 +26,13 @@ static NSString *const KEY_UNREAD_TRANSACTIONS = @"unreadTransactions";
 @interface HITransactionsViewController ()
     <BCTransactionObserver, HITransactionPopoverDelegate, NSTableViewDataSource, NSTableViewDelegate>
 
-@property (strong, nonatomic) IBOutlet NSView *noTransactionsView;
-@property (strong, nonatomic) IBOutlet NSScrollView *scrollView;
+// top-level objects
+@property (strong) IBOutlet NSView *noTransactionsView;
 @property (strong) IBOutlet NSArrayController *arrayController;
-@property (strong) IBOutlet NSTableView *tableView;
+
+@property (weak) IBOutlet NSScrollView *scrollView;
+@property (weak) IBOutlet NSTableView *tableView;
+
 @property (strong) HITransactionPopoverViewController *popoverController;
 @property (assign) NSInteger currentlySelectedRow;
 

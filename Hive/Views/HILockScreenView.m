@@ -13,7 +13,7 @@
     NSColor *backgroundPattern;
 }
 
-@property (nonatomic, strong) IBOutlet NSImageView *lockIcon;
+@property (nonatomic, weak) IBOutlet NSImageView *lockIcon;
 
 @end
 

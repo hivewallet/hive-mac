@@ -10,7 +10,7 @@
 
 @interface HIBackupActionsCellView()
 
-@property (nonatomic, strong) IBOutlet NSButton *enableButton;
+@property (nonatomic, weak) IBOutlet NSButton *enableButton;
 
 @end
 

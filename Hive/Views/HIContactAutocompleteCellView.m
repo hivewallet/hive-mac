@@ -10,7 +10,7 @@
 
 @interface HIContactAutocompleteCellView()
 
-@property (nonatomic, strong) IBOutlet NSTextField *addressLabel;
+@property (nonatomic, weak) IBOutlet NSTextField *addressLabel;
 
 @end
 

@@ -18,13 +18,16 @@
 
 @interface HIContactsViewController()<HINameFormatServiceObserver>
 
-@property (strong) IBOutlet NSTableView *tableView;
-@property (strong) IBOutlet NSScrollView *scrollView;
+// top-level objects
 @property (strong) IBOutlet NSView *navigationView;
-@property (nonatomic, readonly, getter = managedObjectContext) NSManagedObjectContext *managedObjectContext;
-@property (nonatomic, copy) NSArray *sortDescriptors;
 @property (strong) IBOutlet NSArrayController *arrayController;
 @property (strong) IBOutlet NSView *foreverAloneScreen;
+
+@property (weak) IBOutlet NSTableView *tableView;
+@property (weak) IBOutlet NSScrollView *scrollView;
+
+@property (nonatomic, readonly, getter = managedObjectContext) NSManagedObjectContext *managedObjectContext;
+@property (nonatomic, copy) NSArray *sortDescriptors;
 @property (nonatomic, assign) BOOL sortByLastName;
 
 - (IBAction)newContactClicked:(NSButton *)sender;

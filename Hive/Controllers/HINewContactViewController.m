@@ -38,10 +38,9 @@ static NSString * const Separator = @"Separator";
     NSMutableArray *_placeholders;
 }
 
-@property (strong) IBOutlet HITextField *firstnameField;
-@property (strong) IBOutlet HITextField *lastnameField;
-@property (strong) IBOutlet HITextField *emailField;
-@property (strong) IBOutlet NSView *scrollContent;
+@property (weak) IBOutlet HITextField *firstnameField;
+@property (weak) IBOutlet HITextField *lastnameField;
+@property (weak) IBOutlet HITextField *emailField;
 @property (weak) IBOutlet HIBox *walletsView;
 @property (weak) IBOutlet NSScrollView *scrollView;
 @property (weak) IBOutlet NSView *footerView;
@@ -49,7 +48,10 @@ static NSString * const Separator = @"Separator";
 @property (weak) IBOutlet NSButton *scanQRCodeButton;
 @property (weak) IBOutlet NSButton *removeContactButton;
 @property (weak) IBOutlet NSTextField *editAvatarLabel;
-@property (strong) IBOutlet NSImageView *avatarView;
+@property (weak) IBOutlet NSImageView *avatarView;
+
+// top-level objects
+@property (strong) IBOutlet NSView *scrollContent;
 
 - (IBAction)cancelClicked:(NSButton *)sender;
 - (IBAction)doneClicked:(NSButton *)sender;

@@ -32,7 +32,7 @@ extern const NSInteger SidebarButtonHeight;
 @property (nonatomic, copy, readonly) NSArray *viewControllers;
 @property (nonatomic, assign) BOOL enabled;
 
-@property (strong, nonatomic, readonly) NSView *view;
+@property (weak, nonatomic, readonly) NSView *view;
 
 - (void)addViewController:(HIViewController *)controller;
 - (void)selectControllerAtIndex:(NSInteger)index;

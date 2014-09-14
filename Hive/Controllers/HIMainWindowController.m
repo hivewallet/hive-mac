@@ -29,11 +29,13 @@ static const NSTimeInterval SlideAnimationDuration = 0.3;
     NSArray *_tabPanels;
 }
 
-@property (strong) IBOutlet NSView *contentView;
-@property (strong) IBOutlet NSButton *sendButton;
+// top-level objects
 @property (strong) IBOutlet HILockScreenViewController *lockScreenController;
 @property (strong) IBOutlet HISidebarController *sidebarController;
 @property (strong) IBOutlet NSView *networkErrorView;
+
+@property (weak) IBOutlet NSView *contentView;
+@property (weak) IBOutlet NSButton *sendButton;
 
 @property (nonatomic, strong, readonly) INAppStoreWindow *appStoreWindow;
 

@@ -2,9 +2,6 @@
 
 #import <FontAwesomeIconFactory/NIKFontAwesomeIconFactory+OSX.h>
 
-@interface HIGeneralPreferencesViewController ()
-@end
-
 @implementation HIGeneralPreferencesViewController
 
 - (instancetype)init {

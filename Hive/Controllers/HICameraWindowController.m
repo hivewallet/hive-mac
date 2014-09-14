@@ -9,7 +9,7 @@ static const NSTimeInterval SCAN_INTERVAL = .25;
 
 @interface HICameraWindowController ()<NSWindowDelegate>
 
-@property (nonatomic, strong) IBOutlet QTCaptureView *captureView;
+@property (nonatomic, weak) IBOutlet QTCaptureView *captureView;
 
 @property (nonatomic, assign) BOOL waiting;
 @property (nonatomic, assign) BOOL scanning;

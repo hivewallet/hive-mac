@@ -12,8 +12,8 @@
 
 @interface HITransactionCellView : NSTableCellView
 
-@property (strong, nonatomic, readonly) NSTextField *dateLabel;
-@property (strong, nonatomic, readonly) NSImageView *directionMark;
-@property (strong, nonatomic, readonly) NSTextField *pendingLabel;
+@property (weak, nonatomic, readonly) NSTextField *dateLabel;
+@property (weak, nonatomic, readonly) NSImageView *directionMark;
+@property (weak, nonatomic, readonly) NSTextField *pendingLabel;
 
 @end

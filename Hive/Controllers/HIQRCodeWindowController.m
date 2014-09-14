@@ -14,9 +14,11 @@
 
 static const NSTimeInterval CURSOR_HIDE_IDLE_DELAY = 1.0;
 
-@interface HIQRCodeWindowController ()<NSWindowDelegate>
 
-@property (nonatomic, strong) IBOutlet NSImageView *imageView;
+@interface HIQRCodeWindowController () <NSWindowDelegate>
+
+@property (nonatomic, weak) IBOutlet NSImageView *imageView;
+
 @property (nonatomic, strong) NSTrackingArea *trackingArea;
 @property (nonatomic, strong) NSTimer *mouseIdleTimer;
 

@@ -16,7 +16,7 @@
 
 @property (nonatomic, copy) NSString *prompt;
 @property (nonatomic, copy) NSString *submitLabel;
-@property (nonatomic, readonly) NSSecureTextField *passwordField;
+@property (nonatomic, weak, readonly) NSSecureTextField *passwordField;
 
 @property (nonatomic, copy) void (^onSubmit)(HIPasswordHolder *passwordHolder);
 

@@ -10,8 +10,8 @@
 
 @interface HIKeyPreferencesViewController ()
 
-@property (nonatomic, strong) IBOutlet MASShortcutView *sendShortcutPicker;
-@property (nonatomic, strong) IBOutlet MASShortcutView *cameraShortcutPicker;
+@property (nonatomic, weak) IBOutlet MASShortcutView *sendShortcutPicker;
+@property (nonatomic, weak) IBOutlet MASShortcutView *cameraShortcutPicker;
 
 @end
 

@@ -12,7 +12,7 @@
 
 @interface HIFeeDetailsViewController ()
 
-@property (nonatomic, strong) IBOutlet NSTextField *feeLabel;
+@property (nonatomic, weak) IBOutlet NSTextField *feeLabel;
 
 @end
 

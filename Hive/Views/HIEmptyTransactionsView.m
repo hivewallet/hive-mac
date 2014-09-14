@@ -5,7 +5,7 @@
 
 @interface HIEmptyTransactionsView ()
 
-@property (nonatomic, strong) IBOutlet HIAddressesBox *addressesBox;
+@property (nonatomic, weak) IBOutlet HIAddressesBox *addressesBox;
 
 @end
 
