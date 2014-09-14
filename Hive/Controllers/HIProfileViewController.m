@@ -33,9 +33,9 @@
 @property (nonatomic, strong, readonly) HIExchangeRateService *exchangeRateService;
 @property (nonatomic, strong, readonly) HIBitcoinFormatService *bitcoinFormatService;
 @property (nonatomic, copy) NSDecimalNumber *exchangeRate;
-@property (copy, nonatomic) NSString *selectedCurrency;
-@property (copy, nonatomic) NSString *selectedBitcoinFormat;
-@property (assign, nonatomic) satoshi_t estimatedBalance;
+@property (nonatomic, copy) NSString *selectedCurrency;
+@property (nonatomic, copy) NSString *selectedBitcoinFormat;
+@property (nonatomic, assign) satoshi_t estimatedBalance;
 
 @end
 

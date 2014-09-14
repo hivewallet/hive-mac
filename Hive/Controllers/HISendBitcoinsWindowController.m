@@ -91,7 +91,7 @@ NSString * const HISendBitcoinsWindowSuccessKey = @"success";
 @property (nonatomic, copy) NSDecimalNumber *convertedAmountFieldValue;
 @property (nonatomic, copy) NSDecimalNumber *exchangeRate;
 @property (nonatomic, copy) NSString *selectedCurrency;
-@property (copy, nonatomic) NSString *selectedBitcoinFormat;
+@property (nonatomic, copy) NSString *selectedBitcoinFormat;
 @property (nonatomic, strong, readonly) HIExchangeRateService *exchangeRateService;
 @property (nonatomic, strong, readonly) HIBitcoinFormatService *bitcoinFormatService;
 @property (nonatomic, assign) BOOL sendButtonEnabled;

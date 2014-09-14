@@ -23,9 +23,9 @@ static NSInteger HIDatabaseManagerFileExistsAtLocationError = 1000;
 
 @interface HIDatabaseManager ()
 
-@property (strong, nonatomic) NSPersistentStoreCoordinator *persistentStoreCoordinator;
-@property (strong, nonatomic) NSManagedObjectModel *managedObjectModel;
-@property (strong, nonatomic) NSManagedObjectContext *managedObjectContext;
+@property (nonatomic, strong) NSPersistentStoreCoordinator *persistentStoreCoordinator;
+@property (nonatomic, strong) NSManagedObjectModel *managedObjectModel;
+@property (nonatomic, strong) NSManagedObjectContext *managedObjectContext;
 
 @end
 

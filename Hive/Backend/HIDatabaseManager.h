@@ -14,7 +14,7 @@
 
 + (HIDatabaseManager *)sharedManager;
 
-@property (readonly, nonatomic) NSManagedObjectContext *managedObjectContext;
+@property (nonatomic, readonly) NSManagedObjectContext *managedObjectContext;
 
 - (BOOL)backupStoreToDirectory:(NSURL *)backupLocation error:(NSError **)error;
 
