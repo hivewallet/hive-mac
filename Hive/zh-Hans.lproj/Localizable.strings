@@ -15,7 +15,7 @@
 "Amount exceeds balance." = "数量高于帐户余额。";
 
 /* Anonymous username for profile page */
-"Anonymous" = "(匿名)";
+"Anonymous" = "匿名";
 
 /* Message when trying to start an app that requires a newer API level. */
 "App requires a newer version of Hive." = "该应用要求高版本 Hive。";
@@ -81,13 +81,13 @@
 "Confirm" = "确认";
 
 /* Status for transaction included in a block in transaction popup */
-"Confirmed" = "Confirmed";
+"Confirmed" = "确认";
 
 /* Contact name empty alert title */
 "Contact can't be saved." = "无法保存此联系人信息";
 
 /* Entry in application icon context menu */
-"Contact the author" = "联系作者";
+"Contact the author" = "联系开发者";
 
 /* Contacts view title */
 "Contacts" = "联系簿";
@@ -171,7 +171,7 @@
 "Hive is currently syncing with the Bitcoin network. Are you sure you want to quit?" = "Hive 任然在和比特币网络同步，确认退出？";
 
 /* No network connection alert title */
-"Hive is not connected to the Bitcoin network." = "Hive 已从比特币网络离线。";
+"Hive is not connected to the Bitcoin network." = "Hive 未连接到比特币网络。";
 
 /* Chain file unreadable error explanation */
 "Hive will now delete the file and synchronize with the Bitcoin network again. Please leave Hive open for the next several minutes, and try not to send any transactions right now." = "Hive 不会删除文件并重新同步。请保持 Hive 开启 且不要进行任何交易 直到 Hive 恢复。";
@@ -228,7 +228,7 @@
 "No Bitcoin have been taken from your wallet." = "没有从帐户中取出比特币。";
 
 /* Status for transaction not sent to any peers in transaction popup */
-"Not broadcasted yet" = "Not broadcasted yet";
+"Not broadcasted yet" = "未进行广播";
 
 /* Title of an alert when trying to send more than you have with fee */
 "Not enough funds left to pay the transaction fee." = "余额不足以支付交易手续费。";
@@ -255,7 +255,7 @@
 "Payment details could not be loaded." = "无法载入交易详情。";
 
 /* Alert title when the time limit to complete the payment has passed */
-"Payment request has already expired." = "交易请求已过期。";
+"Payment request has already expired." = "交易请求已超时。";
 
 /* Pending transaction label */
 "PENDING" = "待确认";
@@ -267,7 +267,7 @@
 "Please enter a different address." = "请输入不同的比特币地址。";
 
 /* Empty address alert message */
-"Please enter a valid Bitcoin address or select one from the dropdown list." = "请输入一个合格的比特币地址，或从列表中选一个。";
+"Please enter a valid Bitcoin address or select one from the dropdown list." = "请输入一个正确的比特币地址，或从列表中选一个。";
 
 /* Preferences window title */
 "Preferences" = "偏好设置";
@@ -288,7 +288,7 @@
 "Reinstall" = "重装";
 
 /* Status for transaction removed from the main blockchain in transaction popup */
-"Rejected by the network" = "Rejected by the network";
+"Rejected by the network" = "由于网络拒绝";
 
 /* No comment provided by engineer. */
 "Remove" = "移除";
@@ -306,7 +306,7 @@
 "Sent &a to &c" = "发送 &a 给 &c";
 
 /* Status for transaction sent via payment request */
-"Sent directly to recipient" = "Sent directly to recipient";
+"Sent directly to recipient" = "直接发送到收款人";
 
 /* Title for shortcut keys preferences panel */
 "Shortcuts" = "热键";
@@ -360,7 +360,7 @@
 "This payment is supposed to be sent on a different Bitcoin network." = "该交易被发送到其他的比特币网络。";
 
 /* Alert title when address can't be extracted from a bitcoin: URI */
-"This QR code can't be used here." = "该二维码不能用于此处。";
+"This QR code can't be used here." = "该二维码无法在此使用。";
 
 /* Backup error message */
 "Time Machine is disabled in System Preferences" = "Time Machine 已被系统禁用。";
@@ -405,7 +405,7 @@
 "Waiting for backup" = "等待备份";
 
 /* Status for transaction sent to some peers in transaction popup */
-"Waiting for confirmation" = "Waiting for confirmation";
+"Waiting for confirmation" = "等待确认";
 
 /* Install app popup warning message */
 "We cannot guarantee the safety of all apps - please be careful if you download Hive apps from third party sites." = "我们不保证所有应用的安全性，请不要轻易信任第三方 Hive 应用。";

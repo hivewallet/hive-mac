@@ -3,4 +3,4 @@
 "1.title" = "二维码扫描";
 
 /* Class = "NSTextFieldCell"; title = "Hold up a Bitcoin QR code to the camera."; ObjectID = "r6F-kg-ECk"; */
-"r6F-kg-ECk.title" = "请将比特币二维码置于摄像头视野中！";
+"r6F-kg-ECk.title" = "请将比特币二维码放入框内即可扫描！";
