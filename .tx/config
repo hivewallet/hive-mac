@@ -26,12 +26,6 @@ source_file = Hive/Controllers/en.lproj/HIBackupCenterWindowController.strings
 source_lang = en
 type = STRINGS
 
-[hive-osx.HIContactAutocompleteWindowController]
-file_filter = Hive/Controllers/<lang>.lproj/HIContactAutocompleteWindowController.strings
-source_file = Hive/Controllers/en.lproj/HIContactAutocompleteWindowController.strings
-source_lang = en
-type = STRINGS
-
 [hive-osx.HIContactInfoViewController]
 file_filter = Hive/Controllers/<lang>.lproj/HIContactInfoViewController.strings
 source_file = Hive/Controllers/en.lproj/HIContactInfoViewController.strings
