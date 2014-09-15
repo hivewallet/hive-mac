@@ -1,30 +1,30 @@
 
 /* Class = "NSTextFieldCell"; title = "Transaction ID:"; ObjectID = "2hR-33-nwC"; */
-"2hR-33-nwC.title" = "Transaction ID:";
+"2hR-33-nwC.title" = "交易ID:";
 
 /* Class = "NSTextFieldCell"; title = "Amount:"; ObjectID = "3G0-0s-dgf"; */
-"3G0-0s-dgf.title" = "Amount:";
+"3G0-0s-dgf.title" = "数额:";
 
 /* Class = "NSTextFieldCell"; title = "Details:"; ObjectID = "6nl-hl-J8B"; */
-"6nl-hl-J8B.title" = "Details:";
+"6nl-hl-J8B.title" = "详情：";
 
 /* Class = "NSTextFieldCell"; title = "Recipient:"; ObjectID = "FNo-KW-FSJ"; */
-"FNo-KW-FSJ.title" = "Recipient:";
+"FNo-KW-FSJ.title" = "收款人：";
 
 /* Class = "NSButtonCell"; title = "Show on blockchain.info..."; ObjectID = "Lay-eO-8hN"; */
-"Lay-eO-8hN.title" = "Show on blockchain.info...";
+"Lay-eO-8hN.title" = "在blockchain.info显示...";
 
 /* Class = "NSTextFieldCell"; title = "Exchange rate:"; ObjectID = "WBQ-QW-Ib4"; */
-"WBQ-QW-Ib4.title" = "Exchange rate:";
+"WBQ-QW-Ib4.title" = "汇率：";
 
 /* Class = "NSTextFieldCell"; title = "Status:"; ObjectID = "uRB-Vb-JTA"; */
-"uRB-Vb-JTA.title" = "Status:";
+"uRB-Vb-JTA.title" = "状态";
 
 /* Class = "NSTextFieldCell"; title = "Confirmations:"; ObjectID = "x54-St-kEH"; */
-"x54-St-kEH.title" = "Confirmations:";
+"x54-St-kEH.title" = "确认：";
 
 /* Class = "NSTextFieldCell"; placeholderString = "Received with address:"; ObjectID = "ybn-TT-lTo"; */
-"ybn-TT-lTo.placeholderString" = "Received with address:";
+"ybn-TT-lTo.placeholderString" = "收款地址：";
 
 /* Class = "NSTextFieldCell"; title = "Target address:"; ObjectID = "ybn-TT-lTo"; */
-"ybn-TT-lTo.title" = "Target address:";
+"ybn-TT-lTo.title" = "目标地址：";
