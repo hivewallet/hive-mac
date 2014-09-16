@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="5056" systemVersion="13D65" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="5056" systemVersion="14A343f" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
         <deployment defaultVersion="1070" identifier="macosx"/>
         <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="5056"/>
@@ -17,7 +17,7 @@
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
             <subviews>
                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="q5b-38-aQg">
-                    <rect key="frame" x="120" y="78" width="109" height="17"/>
+                    <rect key="frame" x="121" y="78" width="108" height="17"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="اظهر الاسم الأول" id="uRu-rC-vCh">
                         <font key="font" metaFont="system"/>
@@ -26,7 +26,7 @@
                     </textFieldCell>
                 </textField>
                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="wd9-nv-Svp">
-                    <rect key="frame" x="177" y="31" width="52" height="17"/>
+                    <rect key="frame" x="175" y="31" width="54" height="17"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="ترتيب حسب:" id="ELC-Fb-fGt">
                         <font key="font" metaFont="system"/>
@@ -35,7 +35,7 @@
                     </textFieldCell>
                 </textField>
                 <popUpButton verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="7Kh-km-ejy">
-                    <rect key="frame" x="233" y="25" width="102" height="26"/>
+                    <rect key="frame" x="233" y="25" width="101" height="26"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <popUpButtonCell key="cell" type="push" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" id="5Ps-Zf-589">
                         <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
@@ -52,13 +52,13 @@
                     </connections>
                 </popUpButton>
                 <matrix verticalHuggingPriority="750" allowsEmptySelection="NO" autosizesCells="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s2V-GR-aA8">
-                    <rect key="frame" x="235" y="57" width="147" height="38"/>
+                    <rect key="frame" x="235" y="57" width="225" height="38"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="38" id="OJr-Eu-FQ9"/>
                     </constraints>
                     <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
-                    <size key="cellSize" width="147" height="18"/>
+                    <size key="cellSize" width="145" height="18"/>
                     <size key="intercellSpacing" width="4" height="2"/>
                     <buttonCell key="prototype" type="radio" imagePosition="left" alignment="left" inset="2" id="f0t-3j-tsu">
                         <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
@@ -87,6 +87,7 @@
                 <constraint firstItem="q5b-38-aQg" firstAttribute="top" secondItem="s2V-GR-aA8" secondAttribute="top" id="R6R-a8-ZE5"/>
                 <constraint firstItem="q5b-38-aQg" firstAttribute="top" secondItem="3uR-5s-aaP" secondAttribute="top" constant="20" id="Uew-wi-KFd"/>
                 <constraint firstItem="wd9-nv-Svp" firstAttribute="baseline" secondItem="7Kh-km-ejy" secondAttribute="baseline" id="a1k-Qy-Lss"/>
+                <constraint firstAttribute="trailing" secondItem="s2V-GR-aA8" secondAttribute="trailing" constant="20" symbolic="YES" id="aKB-85-7Fl"/>
                 <constraint firstItem="7Kh-km-ejy" firstAttribute="leading" secondItem="s2V-GR-aA8" secondAttribute="leading" id="kHK-Q4-oqg"/>
                 <constraint firstItem="s2V-GR-aA8" firstAttribute="leading" secondItem="q5b-38-aQg" secondAttribute="trailing" constant="8" id="oYE-JJ-aec"/>
                 <constraint firstItem="7Kh-km-ejy" firstAttribute="top" secondItem="s2V-GR-aA8" secondAttribute="bottom" constant="8" id="zcG-Vb-7o3"/>

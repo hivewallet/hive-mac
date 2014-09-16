@@ -8,6 +8,19 @@
     return [self initWithNibName:[self className] bundle:nil];
 }
 
+- (void)awakeFromNib {
+    if (NSAppKitVersionNumber >= NSAppKitVersionNumber10_8) {
+        // this should be turned on in the xib, but it breaks the view on 10.7
+        for (NSView *v in self.view.subviews) {
+            if ([v isKindOfClass:[NSMatrix class]]) {
+                [(NSMatrix *) v setAutorecalculatesCellSize:YES];
+                [(NSMatrix *) v setAutoresizesSubviews:YES];
+            }
+        }
+    }
+}
+
+
 #pragma mark - MASPreferencesViewController
 
 - (NSString *)identifier {
