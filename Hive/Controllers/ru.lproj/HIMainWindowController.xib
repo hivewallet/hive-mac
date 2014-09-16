@@ -69,7 +69,7 @@
                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="kiW-99-t6l">
                     <rect key="frame" x="18" y="9" width="272" height="17"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
-                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="Network connection error" id="2MH-gv-3gz">
+                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="Ошибка связи с сетью" id="2MH-gv-3gz">
                         <font key="font" metaFont="systemBold"/>
                         <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>

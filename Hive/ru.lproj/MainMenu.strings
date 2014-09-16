@@ -75,7 +75,7 @@
 "864.title" = "Закрыть";
 
 /* Class = "NSMenuItem"; title = "Send Bitcoin..."; ObjectID = "866"; */
-"866.title" = "Отправить Биткоины...";
+"866.title" = "Отправить биткойны...";
 
 /* Class = "NSMenuItem"; title = "Check for Updates..."; ObjectID = "870"; */
 "870.title" = "Проверить обновления...";
@@ -99,7 +99,7 @@
 "K2u-T2-G1a.title" = "Помощь";
 
 /* Class = "NSMenuItem"; title = "Sign message..."; ObjectID = "SoJ-eV-k9I"; */
-"SoJ-eV-k9I.title" = "Sign message...";
+"SoJ-eV-k9I.title" = "Подписать сообщение...";
 
 /* Class = "NSMenuItem"; title = "Debugging tools"; ObjectID = "Ue9-mi-gbe"; */
 "Ue9-mi-gbe.title" = "Инструменты отладки";

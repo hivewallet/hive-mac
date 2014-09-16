@@ -12,7 +12,7 @@
 "80.title" = "Добавить адрес";
 
 /* Class = "NSTextFieldCell"; title = "Bitcoin addresses"; ObjectID = "81"; */
-"81.title" = "Биткоин адреса";
+"81.title" = "Биткойн-адреса";
 
 /* Class = "NSButtonCell"; title = "Remove contact"; ObjectID = "97"; */
 "97.title" = "Удалить контакт";

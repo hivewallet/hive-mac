@@ -30,7 +30,7 @@
                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Cgc-kK-Z68">
                     <rect key="frame" x="18" y="372" width="103" height="17"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Transaction ID:" id="2hR-33-nwC">
+                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Код транзакции:" id="2hR-33-nwC">
                         <font key="font" metaFont="systemBold"/>
                         <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
@@ -48,7 +48,7 @@
                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="TPU-Gl-Q4M">
                     <rect key="frame" x="18" y="266" width="50" height="17"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Status:" id="uRB-Vb-JTA">
+                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Статус:" id="uRB-Vb-JTA">
                         <font key="font" metaFont="systemBold"/>
                         <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
@@ -66,7 +66,7 @@
                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="6B8-Wf-FKF">
                     <rect key="frame" x="18" y="241" width="101" height="17"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Confirmations:" id="x54-St-kEH">
+                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Подтверждения:" id="x54-St-kEH">
                         <font key="font" metaFont="systemBold"/>
                         <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
@@ -91,7 +91,7 @@
                 <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="5av-kV-hd8">
                     <rect key="frame" x="20" y="307" width="161" height="17"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                    <buttonCell key="cell" type="inline" title="Show on blockchain.info..." bezelStyle="inline" alignment="center" refusesFirstResponder="YES" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="Lay-eO-8hN">
+                    <buttonCell key="cell" type="inline" title="Показать на blockchain.info..." bezelStyle="inline" alignment="center" refusesFirstResponder="YES" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="Lay-eO-8hN">
                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                         <font key="font" metaFont="smallSystemBold"/>
                     </buttonCell>
@@ -109,7 +109,7 @@
                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" tag="107" translatesAutoresizingMaskIntoConstraints="NO" id="QdT-Oh-DCh">
                     <rect key="frame" x="18" y="124" width="105" height="17"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Target address:" placeholderString="Received with address:" id="ybn-TT-lTo">
+                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Адрес получателя:" placeholderString="Получено адресом:" id="ybn-TT-lTo">
                         <font key="font" metaFont="systemBold"/>
                         <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
@@ -127,7 +127,7 @@
                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" tag="101" translatesAutoresizingMaskIntoConstraints="NO" id="wGY-Sd-47R">
                     <rect key="frame" x="18" y="199" width="59" height="17"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Amount:" id="3G0-0s-dgf">
+                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Сумма:" id="3G0-0s-dgf">
                         <font key="font" metaFont="systemBold"/>
                         <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
@@ -145,7 +145,7 @@
                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" tag="103" translatesAutoresizingMaskIntoConstraints="NO" id="bfq-zJ-dtK">
                     <rect key="frame" x="18" y="174" width="103" height="17"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Exchange rate:" id="WBQ-QW-Ib4">
+                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Обменный курс:" id="WBQ-QW-Ib4">
                         <font key="font" metaFont="systemBold"/>
                         <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
@@ -163,7 +163,7 @@
                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" tag="105" translatesAutoresizingMaskIntoConstraints="NO" id="qPd-7W-CcZ">
                     <rect key="frame" x="18" y="149" width="70" height="17"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Recipient:" id="FNo-KW-FSJ">
+                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Получатель:" id="FNo-KW-FSJ">
                         <font key="font" metaFont="systemBold"/>
                         <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
@@ -181,7 +181,7 @@
                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" tag="109" translatesAutoresizingMaskIntoConstraints="NO" id="WH5-v3-hwQ">
                     <rect key="frame" x="18" y="80" width="54" height="17"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Details:" placeholderString="" id="6nl-hl-J8B">
+                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Инфо:" placeholderString="" id="6nl-hl-J8B">
                         <font key="font" metaFont="systemBold"/>
                         <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>

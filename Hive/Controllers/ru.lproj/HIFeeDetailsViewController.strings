@@ -1,6 +1,6 @@
 
 /* Class = "NSTextFieldCell"; title = "The fees you pay help keep the Bitcoin network running!"; ObjectID = "JVe-5I-zWC"; */
-"JVe-5I-zWC.title" = "Комиссии, которые Вы платите помогают сети Биткоин существовать!";
+"JVe-5I-zWC.title" = "Комиссии помогают работе сети Биткойн!";
 
 /* Class = "NSTextFieldCell"; title = "Current transaction fee:"; ObjectID = "exO-xB-xYk"; */
 "exO-xB-xYk.title" = "Текущая комиссия за транзакцию:";

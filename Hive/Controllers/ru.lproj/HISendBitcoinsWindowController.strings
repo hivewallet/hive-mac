@@ -1,6 +1,6 @@
 
 /* Class = "NSWindow"; title = "Send Bitcoin"; ObjectID = "1"; */
-"1.title" = "Отправить Биткоины";
+"1.title" = "Отправить биткойны";
 
 /* Class = "NSButtonCell"; title = "Cancel"; ObjectID = "6"; */
 "6.title" = "Отмена";
@@ -18,16 +18,16 @@
 "22.placeholderString" = "или выберите из списка";
 
 /* Class = "NSTextFieldCell"; title = "Loading payment details..."; ObjectID = "Agy-4s-MVS"; */
-"Agy-4s-MVS.title" = "Loading payment details...";
+"Agy-4s-MVS.title" = "Загрузка платежной информации...";
 
 /* Class = "NSTextFieldCell"; title = "Details:"; ObjectID = "EeC-5l-RYD"; */
-"EeC-5l-RYD.title" = "Details:";
+"EeC-5l-RYD.title" = "Информация:";
 
 /* Class = "NSTextFieldCell"; title = "Payment successful"; ObjectID = "JAi-pl-Y47"; */
-"JAi-pl-Y47.title" = "Payment successful";
+"JAi-pl-Y47.title" = "Платеж проведен";
 
 /* Class = "NSTextFieldCell"; title = "Currency exchange rates are provided by BitcoinAverage markets ticker. Bitcoin prices can change quickly, so other apps or sites might show different exchange rates."; ObjectID = "dxM-9E-wwb"; */
-"dxM-9E-wwb.title" = "Курсы валют предоставляются биржевым тикером BitcoinAverage. Цены на биткоин могут быстро меняться, таким образом другие приложения или сайты могут отображать различные обменные курсы.";
+"dxM-9E-wwb.title" = "Курсы валют предоставляются биржевым тикером BitcoinAverage. Цена биткойна может быстро измениться, поэтому другие приложения или сайты могут отображать иные обменные курсы.";
 
 /* Class = "NSButtonCell"; title = "Close"; ObjectID = "iOT-cc-UWm"; */
-"iOT-cc-UWm.title" = "Close";
+"iOT-cc-UWm.title" = "Закрыть";

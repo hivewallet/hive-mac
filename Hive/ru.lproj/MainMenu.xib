@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="5056" systemVersion="13D65" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none">
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="5056" systemVersion="14A343f" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none">
     <dependencies>
         <deployment version="1070" defaultVersion="1070" identifier="macosx"/>
         <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="5056"/>
@@ -81,7 +81,7 @@
                 <menuItem title="Кошелек" id="GX7-xG-GKH">
                     <menu key="submenu" title="Кошелек" id="jrd-Ul-XjV">
                         <items>
-                            <menuItem title="Отправить Биткоины..." keyEquivalent="S" id="866">
+                            <menuItem title="Отправить биткойны..." keyEquivalent="S" id="866">
                                 <connections>
                                     <action selector="openSendBitcoinsWindow:" target="-1" id="868"/>
                                 </connections>
@@ -173,7 +173,7 @@
                                     <action selector="scanQRCode:" target="494" id="mEt-Z8-Hrc"/>
                                 </connections>
                             </menuItem>
-                            <menuItem title="Sign message..." id="SoJ-eV-k9I">
+                            <menuItem title="Подписать сообщение..." id="SoJ-eV-k9I">
                                 <modifierMask key="keyEquivalentModifierMask"/>
                                 <connections>
                                     <action selector="openSignMessageWindow:" target="494" id="BXf-n1-5Go"/>

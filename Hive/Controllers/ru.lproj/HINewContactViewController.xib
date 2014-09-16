@@ -35,7 +35,7 @@
                         <textField verticalHuggingPriority="750" id="65">
                             <rect key="frame" x="29" y="215" width="234" height="17"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                            <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Биткоин адреса" id="81">
+                            <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Биткойн-адреса" id="81">
                                 <font key="font" metaFont="systemBold"/>
                                 <color key="textColor" red="0.57254901960000004" green="0.57254901960000004" blue="0.57254901960000004" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>

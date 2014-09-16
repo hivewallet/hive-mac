@@ -9,10 +9,10 @@
 "Cob-tq-o5r.title" = "Пожалуйста, отправьте нам отчет, чтобы помочь в устранении проблемы.";
 
 /* Class = "NSTextFieldCell"; title = "Describe what you were doing when the error occurred:"; ObjectID = "F9w-28-7kX"; */
-"F9w-28-7kX.title" = "Опишите, что Вы делали когда ошибка произошла (желательно на английском):";
+"F9w-28-7kX.title" = "Опишите, что вы делали когда ошибка произошла (желательно на английском):";
 
 /* Class = "NSTextFieldCell"; title = "Oh no, something went wrong!"; ObjectID = "Mpx-rH-nUM"; */
-"Mpx-rH-nUM.title" = "О нет! Что-то пошло не так!!";
+"Mpx-rH-nUM.title" = "Кажется, возникла проблема!";
 
 /* Class = "NSTextFieldCell"; title = "Your name (optional)"; ObjectID = "pya-AJ-MPI"; */
 "pya-AJ-MPI.title" = "Имя (необязательно)";

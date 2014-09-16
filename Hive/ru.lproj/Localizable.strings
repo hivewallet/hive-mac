@@ -1,12 +1,12 @@
 
 /* Body for feedback emails */
-"(Please write in English if possible.)" = "(Please write in English if possible.)";
+"(Please write in English if possible.)" = "(Пожалуйста, пишите по-английски)";
 
 /* Alert message when bitcoin: URI is not valid */
-"\"%@\" is not a valid payment link." = "\"%@\" is not a valid payment link.";
+"\"%@\" is not a valid payment link." = "\"%@\" неверная платежная ссылка.";
 
 /* Alert message when payment request URL is not valid */
-"\"%@\" is not a valid URL." = "\"%@\" is not a valid URL.";
+"\"%@\" is not a valid URL." = "\"%@\" неправильный URL.";
 
 /* Address field placeholder */
 "Address" = "Адрес";
@@ -18,7 +18,7 @@
 "Anonymous" = "Анонимный пользователь";
 
 /* Message when trying to start an app that requires a newer API level. */
-"App requires a newer version of Hive." = "App requires a newer version of Hive.";
+"App requires a newer version of Hive." = "Приложение требует новой версии Hive.";
 
 /* App load error title */
 "Application can't be loaded" = "Приложение не может быть загружено";
@@ -27,7 +27,7 @@
 "Apps" = "Приложения";
 
 /* Cancel editing alert title */
-"Are you sure you want to leave this page?" = "Are you sure you want to leave this page?";
+"Are you sure you want to leave this page?" = "Вы уверены, что хотите покинуть страницу?";
 
 /* Warning when trying to a large BTC amount (btc, fiat amount and address) */
 "Are you sure you want to send %@ (%@) to %@?" = "Вы уверены, что хотите отправить %1$@ (%2$@) на %3$@?";
@@ -48,10 +48,10 @@
 "Backup problem" = "Проблема резервного копирования";
 
 /* initialization error */
-"Bitcoin network data file could not be opened - another instance of Hive might still be running." = "Bitcoin network data file could not be opened - another instance of Hive might still be running.";
+"Bitcoin network data file could not be opened - another instance of Hive might still be running." = "Невозможно открыть файл с данными биткойн-сети - возможно, запущен еще один экземпляр Hive.";
 
 /* Chain file unreadable error title */
-"Bitcoin network data file could not be opened." = "Bitcoin network data file could not be opened.";
+"Bitcoin network data file could not be opened." = "Невозможно открыть файл с данными биткойн-сети.";
 
 /* Backup error message */
 "Can't create a directory to store the wallet backup" = "Невозможно создать директория для хранения резерва кошелька";
@@ -63,16 +63,16 @@
 "CANCELLED" = "ОТМЕНЕНО";
 
 /* Alert message when payment request can't be loaded from or sent to the server */
-"Check your network connection, try again later or report the problem to the payment recipient." = "Check your network connection, try again later or report the problem to the payment recipient.";
+"Check your network connection, try again later or report the problem to the payment recipient." = "Проверьте свое сетевое подключение и попробуйте снова, или сообщите получателю о проблеме.";
 
 /* Backup folder save panel confirmation button */
 "Choose" = "Выбрать";
 
 /* No comment provided by engineer. */
-"Choose a directory inside Dropbox folder where the backup should be saved:" = "Выберите директорию внутри папки Dropbox, где сохранить вашу резервную копию:";
+"Choose a directory inside Dropbox folder where the backup should be saved:" = "Выберите директорию в папке Dropbox, где сохранить вашу резервную копию:";
 
 /* No comment provided by engineer. */
-"Choose a directory inside Google Drive folder where the backup should be saved:" = "Choose a directory inside Google Drive folder where the backup should be saved:";
+"Choose a directory inside Google Drive folder where the backup should be saved:" = "Выберите директорию в папке Google Drive, где сохранить вашу резервную копию:";
 
 /* No comment provided by engineer. */
 "click to copy" = "скопировать";
@@ -81,13 +81,13 @@
 "Confirm" = "Подтвердить";
 
 /* Status for transaction included in a block in transaction popup */
-"Confirmed" = "Confirmed";
+"Confirmed" = "Подтверждено";
 
 /* Contact name empty alert title */
 "Contact can't be saved." = "Контакт не может быть сохранен.";
 
 /* Entry in application icon context menu */
-"Contact the author" = "Contact the author";
+"Contact the author" = "Связаться с автором";
 
 /* Contacts view title */
 "Contacts" = "Контакты";
@@ -105,7 +105,7 @@
 "Disabled" = "Отключено";
 
 /* Confirm leaving a form without saving data */
-"Discard Changes" = "Discard Changes";
+"Discard Changes" = "Отменить изменения";
 
 /* Remove contact alert dialog title */
 "Do you really want to remove %@ from your contact list?" = "Вы действительно хотите удалить %@ из ваших контактов?";
@@ -114,7 +114,7 @@
 "Do you want to add \"%@\" to Hive?" = "Вы хотите добавить \"%@\" в Hive?";
 
 /* Uninstall app popup title */
-"Do you want to remove \"%@\" from the application list?" = "Do you want to remove \"%@\" from the application list?";
+"Do you want to remove \"%@\" from the application list?" = "Вы действительно хотите удалить %@ из списка приложений?";
 
 /* Dropbox no backup folder alert title */
 "Dropbox folder not found." = "Папка Dropbox не найдена.";
@@ -141,22 +141,22 @@
 "Enter your password to confirm the transaction:" = "Введите ваш пароль для подтверждения транзакции:";
 
 /* Password prompt for message signing */
-"Enter your password to sign the message:" = "Enter your password to sign the message:";
+"Enter your password to sign the message:" = "Введите пароль для того, чтобы подписать сообщение:";
 
 /* Firstname field placeholder */
 "Firstname" = "Имя";
 
 /* Title for general preferences panel */
-"General" = "General";
+"General" = "Общее";
 
 /* Google Drive no backup folder alert title */
-"Google Drive folder not found." = "Google Drive folder not found.";
+"Google Drive folder not found." = "Папка Google Drive не найдена.";
 
 /* Backup error message */
-"Google Drive isn't running" = "Google Drive isn't running";
+"Google Drive isn't running" = "Google Drive не запущен";
 
 /* Hiveapp file not readable error title */
-"Hive application file \"%@\" could not be opened." = "Hive application file \"%@\" could not be opened.";
+"Hive application file \"%@\" could not be opened." = "Невозможно открыть файл приложения \"%@\".";
 
 /* Initialization error title */
 "Hive cannot be started." = "Hive не может быть запущен.";
@@ -168,31 +168,31 @@
 "Hive directory is excluded from Time Machine backup" = "Директория Hive исключена из ваших резервных копий Time Machine";
 
 /* Sync in progress alert title */
-"Hive is currently syncing with the Bitcoin network. Are you sure you want to quit?" = "Hive is currently syncing with the Bitcoin network. Are you sure you want to quit?";
+"Hive is currently syncing with the Bitcoin network. Are you sure you want to quit?" = "Hive сейчас синхронизируется с биткойн-сетью. Вы действительно хотите выйти?";
 
 /* No network connection alert title */
-"Hive is not connected to the Bitcoin network." = "Hive is not connected to the Bitcoin network.";
+"Hive is not connected to the Bitcoin network." = "Hive не подключен к сети Биткойн.";
 
 /* Chain file unreadable error explanation */
-"Hive will now delete the file and synchronize with the Bitcoin network again. Please leave Hive open for the next several minutes, and try not to send any transactions right now." = "Hive will now delete the file and synchronize with the Bitcoin network again. Please leave Hive open for the next several minutes, and try not to send any transactions right now.";
+"Hive will now delete the file and synchronize with the Bitcoin network again. Please leave Hive open for the next several minutes, and try not to send any transactions right now." = "Hive сейчас удалит файл и повторит синхронизацию с сетью Биткойн. Пожалуйста, не закрывайте Hive и не посылайте транзакции в течении нескольких минут.";
 
 /* Share sent transaction text */
-"I've just received some Bitcoin using Hive" = "Я только что получил Биткоины используя Хайв";
+"I've just received some Bitcoin using Hive" = "Я только что получил биткойны используя Hive";
 
 /* Share sent transaction text */
-"I've just sent some Bitcoin using Hive" = "Я только что отпрвил Биткоины используя хайв";
+"I've just sent some Bitcoin using Hive" = "Я только что отправил биткойны используя Hive";
 
 /* Alert details when trying to send more than you have with fee */
-"If you send your whole wallet balance, there's nothing left to pay the required fee. Try to send a bit less, or split the transaction into smaller ones." = "If you send your whole wallet balance, there's nothing left to pay the required fee. Try to send a bit less, or split the transaction into smaller ones.";
+"If you send your whole wallet balance, there's nothing left to pay the required fee. Try to send a bit less, or split the transaction into smaller ones." = "Если вы отправили весь баланс кошелька, не останется ничего на комиссию. Попробуйте отправить чуть меньше, или разбить транзакцию на более мелкие.";
 
 /* Install app button title */
 "Install" = "Установить";
 
 /* Backup requires password alert details */
-"It's dangerous to upload unencrypted wallets." = "Это опасно загружать незашифрованные кошельки.";
+"It's dangerous to upload unencrypted wallets." = "Загружать незашифрованные кошельки - опасно!";
 
 /* Don't leave a form without saving data */
-"Keep Editing" = "Keep Editing";
+"Keep Editing" = "Продолжить редактирование";
 
 /* Address caption field placeholder */
 "Label" = "Надпись";
@@ -204,7 +204,7 @@
 "Lastname" = "Фамилия";
 
 /* Alert message when address can't be extracted from a bitcoin: URI */
-"Link included in this QR code (\"%@\") is invalid or does not contain a Bitcoin address." = "Link included in this QR code (\"%@\") is invalid or does not contain a Bitcoin address.";
+"Link included in this QR code (\"%@\") is invalid or does not contain a Bitcoin address." = "Этот QR код (\"%@\") с неверной ссылкой или биткойн-адресом.";
 
 /* Main address caption */
 "main" = "основной";
@@ -222,16 +222,16 @@
 "No backup since %@" = "Нет резерв. копий с %@";
 
 /* No backups enabled notification title */
-"No backups configured" = "No backups configured";
+"No backups configured" = "Резерв. копии не настроены";
 
 /* Transaction failed alert message */
-"No Bitcoin have been taken from your wallet." = "Биткоины не были списаны с вашего кошелька.";
+"No Bitcoin have been taken from your wallet." = "Биткойны не были списаны с вашего кошелька.";
 
 /* Status for transaction not sent to any peers in transaction popup */
-"Not broadcasted yet" = "Not broadcasted yet";
+"Not broadcasted yet" = "Не передано в сеть";
 
 /* Title of an alert when trying to send more than you have with fee */
-"Not enough funds left to pay the transaction fee." = "Not enough funds left to pay the transaction fee.";
+"Not enough funds left to pay the transaction fee." = "Недостаточно средств для комиссии.";
 
 /* OK button title */
 "OK" = "ОК";
@@ -240,22 +240,22 @@
 "Password" = "Пароль";
 
 /* Send Bitcoin window title for payment request */
-"Pay with Bitcoin" = "Pay with Bitcoin";
+"Pay with Bitcoin" = "Оплатить биткойнами";
 
 /* Alert title when payment can't be sent to the merchant */
-"Payment could not be completed." = "Payment could not be completed.";
+"Payment could not be completed." = "Платеж не может быть завершен.";
 
 /* Alert title when payment request file can't be read */
-"Payment data file could not be opened." = "Payment data file could not be opened.";
+"Payment data file could not be opened." = "Невозможно открыть файл с платежными данными.";
 
 /* Alert title when payment request file has some invalid or unexpected data */
-"Payment data is invalid." = "Payment data is invalid.";
+"Payment data is invalid." = "Платежные данные неверны.";
 
 /* Alert title when payment request can't be loaded from the server */
-"Payment details could not be loaded." = "Payment details could not be loaded.";
+"Payment details could not be loaded." = "Невозможно загрузить платежные данные.";
 
 /* Alert title when the time limit to complete the payment has passed */
-"Payment request has already expired." = "Payment request has already expired.";
+"Payment request has already expired." = "Запрос на платеж уже истек.";
 
 /* Pending transaction label */
 "PENDING" = "ОЖИДАНИЕ";
@@ -267,10 +267,10 @@
 "Please enter a different address." = "Пожалуйста, введите другой адрес.";
 
 /* Empty address alert message */
-"Please enter a valid Bitcoin address or select one from the dropdown list." = "Пожалуйста, введите корректный Биткоин адрес или выберите из списка.";
+"Please enter a valid Bitcoin address or select one from the dropdown list." = "Пожалуйста, введите корректный биткойн-адрес или выберите из списка.";
 
 /* Preferences window title */
-"Preferences" = "Preferences";
+"Preferences" = "Настройки";
 
 /* Profile view title string */
 "Profile" = "Профиль";
@@ -288,7 +288,7 @@
 "Reinstall" = "Переустановить";
 
 /* Status for transaction removed from the main blockchain in transaction popup */
-"Rejected by the network" = "Rejected by the network";
+"Rejected by the network" = "Отвергнуто сетью";
 
 /* No comment provided by engineer. */
 "Remove" = "Удалить";
@@ -297,7 +297,7 @@
 "Selected directory is outside Dropbox folder." = "Выделенная директория находится вне папки Dropbox.";
 
 /* Google Drive invalid folder alert title */
-"Selected directory is outside Google Drive folder." = "Selected directory is outside Google Drive folder.";
+"Selected directory is outside Google Drive folder." = "Выбранная директория вне папки Google Drive.";
 
 /* Send button title */
 "Send" = "Отправить";
@@ -306,10 +306,10 @@
 "Sent &a to &c" = "Отправлено &a на &c";
 
 /* Status for transaction sent via payment request */
-"Sent directly to recipient" = "Sent directly to recipient";
+"Sent directly to recipient" = "Послать напрямую получателю";
 
 /* Title for shortcut keys preferences panel */
-"Shortcuts" = "Shortcuts";
+"Shortcuts" = "Ссылки";
 
 /* Amount exceeds available balance alert title */
 "Some funds are temporarily unavailable." = "Некоторые средства временно недоступны.";
@@ -327,25 +327,25 @@
 "The existing app file will be replaced by the new version. This will not affect any app settings or saved data." = "Существующее приложение будет заменено новой версиией. Это не повлияет на какие-либо настройки приложения или сохраненные данные.";
 
 /* Alert message when payment request file can't be read */
-"The file doesn't exist or is not accessible." = "The file doesn't exist or is not accessible.";
+"The file doesn't exist or is not accessible." = "Файл не существует или недоступен.";
 
 /* Hiveapp file not readable error details */
-"The file is damaged or does not contain a Hive application." = "The file is damaged or does not contain a Hive application.";
+"The file is damaged or does not contain a Hive application." = "Файл поврежден или не содержит приложения Hive.";
 
 /* Sending dust alert message */
-"This amount is too low to be sent through the network." = "This amount is too low to be sent through the network.";
+"This amount is too low to be sent through the network." = "Эта сумма слишком мала для отправки по сети.";
 
 /* Alert title when bitcoin: URI is not valid */
-"This Bitcoin payment link is invalid." = "This Bitcoin payment link is invalid.";
+"This Bitcoin payment link is invalid." = "Эта ссылка для биткойн-платежа неверна.";
 
 /* Alert title when payment request URL is not valid */
-"This Bitcoin payment URL is invalid." = "This Bitcoin payment URL is invalid.";
+"This Bitcoin payment URL is invalid." = "Этот URL для биткойн-платежа неверен.";
 
 /* Alert details when transaction was cancelled */
 "This can happen because of bugs in the wallet code or because the transaction was rejected by the network." = "Это может произойти из-за ошибок в коде кошелька или потому что транзакция была отменена сетью.";
 
 /* Alert message when payment request file isn't really a payment request at all */
-"This file does not contain a valid Bitcoin payment request." = "This file does not contain a valid Bitcoin payment request.";
+"This file does not contain a valid Bitcoin payment request." = "Этот файл не содержит правильного платежного запроса.";
 
 /* Warning details when trying to send a large BTC amount */
 "This is more than what you usually send." = "Это больше, чем Вы обычно отправляете.";
@@ -354,25 +354,25 @@
 "This is your wallet address." = "Это ваш адрес кошелька.";
 
 /* Invalid address alert title */
-"This isn't a valid Bitcoin address." = "Это некорректный Биткоин адрес.";
+"This isn't a valid Bitcoin address." = "Это некорректный биткойн-адрес.";
 
 /* Alert message when user is on the mainnet and payment request is for testnet (or vice versa) */
-"This payment is supposed to be sent on a different Bitcoin network." = "This payment is supposed to be sent on a different Bitcoin network.";
+"This payment is supposed to be sent on a different Bitcoin network." = "Этот платеж должен быть послан по другой Биткойн-сети.";
 
 /* Alert title when address can't be extracted from a bitcoin: URI */
-"This QR code can't be used here." = "This QR code can't be used here.";
+"This QR code can't be used here." = "Этот QR код здесь нельзя использовать.";
 
 /* Backup error message */
 "Time Machine is disabled in System Preferences" = "Time Machine отключена в системных настройках";
 
 /* No backups enabled notification details */
-"To protect your bitcoins, it's recommended that you enable at least one type of backup." = "To protect your bitcoins, it's recommended that you enable at least one type of backup.";
+"To protect your bitcoins, it's recommended that you enable at least one type of backup." = "Для защиты своих биткойнов, пожалуйста настройте резервное копирование.";
 
 /* Amount exceeds available balance alert message */
 "To send this transaction, you'll need to wait for your pending transactions to be confirmed first (this shouldn't take more than a few minutes)." = "Для отправки этой транзакции Вам нужно сначала дождаться подтверждения неподтвержденных транзакций (это не должно занять более нескольких минут).";
 
 /* Message when trying to start an app that requires a newer API level. */
-"To use the app, please update to the latest version of Hive." = "To use the app, please update to the latest version of Hive.";
+"To use the app, please update to the latest version of Hive." = "Чтобы использовать это приложение, пожалуйста обновите Hive.";
 
 /* Notification of cancelled transaction */
 "Transaction cancelled" = "Транзакция отменена";
@@ -390,22 +390,22 @@
 "Transactions" = "Транзакции";
 
 /* Uninstall app button title */
-"Uninstall" = "Uninstall";
+"Uninstall" = "Деинсталлировать";
 
 /* Entry in application icon context menu */
-"Uninstall application" = "Uninstall application";
+"Uninstall application" = "Деинсталлировать приложение";
 
 /* Backup status: backup up to date */
 "Up to date" = "Актуален";
 
 /* Entry in application icon context menu */
-"Visit application's site" = "Visit application's site";
+"Visit application's site" = "Пойти на сайт приложения";
 
 /* Backup status: backup scheduled or in progress */
 "Waiting for backup" = "Ожидание резерв. копии";
 
 /* Status for transaction sent to some peers in transaction popup */
-"Waiting for confirmation" = "Waiting for confirmation";
+"Waiting for confirmation" = "Ожидание подтверждения";
 
 /* Install app popup warning message */
 "We cannot guarantee the safety of all apps - please be careful if you download Hive apps from third party sites." = "Мы не можем гарантировать безопасность всех приложений - пожалуйста, будьте осторожны когда скачиваете приложения Hive у третьих лиц.";
@@ -417,10 +417,10 @@
 "What does this mean?" = "Что это означает?";
 
 /* Uninstall app popup message */
-"You can install it again through the App Store app later if you change your mind." = "You can install it again through the App Store app later if you change your mind.";
+"You can install it again through the App Store app later if you change your mind." = "Вы можете установить это снова через App Store, если измените мнение.";
 
 /* Details of an alert when trying to send more than you have */
-"You cannot send more money than you own." = "Невозможно отправить больше денег, чем у Вас есть.";
+"You cannot send more money than you own." = "Невозможно отправить больше денег, чем у вас есть.";
 
 /* Install app popup title when app exists */
 "You have already added \"%@\" to Hive. Would you like to overwrite it?" = "Вы уже добавили \"%@\" в Hive. Вы хотите заменить?";
@@ -429,19 +429,19 @@
 "You have sent %@." = "Вы отправили %@.";
 
 /* Dropbox no backup folder alert details */
-"You must install Dropbox first (see www.dropbox.com)." = "Вам нужно сначала установить Dropbox (смоьтри www.dropbox.com).";
+"You must install Dropbox first (see www.dropbox.com)." = "Вам нужно сначала установить Dropbox (смотри www.dropbox.com).";
 
 /* Google Drive no backup folder alert details */
-"You must install Google Drive first (see https://www.google.com/intl/en/drive/download)." = "You must install Google Drive first (see https://www.google.com/intl/en/drive/download).";
+"You must install Google Drive first (see https://www.google.com/intl/en/drive/download)." = "Вам нужно сначала установить Google Drive (смотри https://www.google.com/intl/en/drive/download).";
 
 /* No network connection alert message */
-"You need to be connected to the network to send any transactions." = "You need to be connected to the network to send any transactions.";
+"You need to be connected to the network to send any transactions." = "Вам нужно связаться с сетью для отправки транзакций.";
 
 /* Dropbox invalid folder alert details */
 "You need to choose or create a directory inside your Dropbox folder." = "Вам нужно выбрать или создать директорию внутри папки Dropbox.";
 
 /* Google Drive invalid folder alert details */
-"You need to choose or create a directory inside your Google Drive folder." = "You need to choose or create a directory inside your Google Drive folder.";
+"You need to choose or create a directory inside your Google Drive folder." = "Вам нужно выбрать или создать директорию внутри папки Google Drive.";
 
 /* Contact name empty alert message */
 "You need to give the contact a name before you can add it to the list." = "Необходимо придумать имя контакту, прежде чем Вы сможете добавить его.";
@@ -453,13 +453,13 @@
 "You won't be able to undo this operation." = "Вы не сможете отменить эту операцию.";
 
 /* Alert message when the time limit to complete the payment has passed */
-"You'll need to return to the site that requested the payment and initiate the payment again." = "You'll need to return to the site that requested the payment and initiate the payment again.";
+"You'll need to return to the site that requested the payment and initiate the payment again." = "Вам нужно вернуться на сайт, который запрашивал этот платеж, и повторить запрос.";
 
 /* Notification of incoming transaction */
-"You've received Bitcoin" = "Вы получили Биткоины";
+"You've received Bitcoin" = "Вы получили биткойны";
 
 /* Cancel editing alert message */
-"Your changes won't be saved." = "Your changes won't be saved.";
+"Your changes won't be saved." = "Ваши изменения не сохранены.";
 
 /* Sync in progress alert details */
-"Your pending transactions won't be confirmed until the sync is complete." = "Your pending transactions won't be confirmed until the sync is complete.";
+"Your pending transactions won't be confirmed until the sync is complete." = "Ваши ожидающие транзакции не подтвердятся, пока не завершится синхронизация.";

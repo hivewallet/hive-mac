@@ -155,11 +155,11 @@
         </customView>
         <arrayController mode="entity" entityName="HITransaction" editable="NO" id="3"/>
         <customView wantsLayer="YES" id="50" customClass="HIEmptyTransactionsView">
-            <rect key="frame" x="0.0" y="0.0" width="323" height="511"/>
+            <rect key="frame" x="0.0" y="0.0" width="323" height="510"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="8f9-pc-9qT">
-                    <rect key="frame" x="60" y="242" width="204" height="80"/>
+                    <rect key="frame" x="60" y="241" width="204" height="80"/>
                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <constraints>
                         <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="80" id="Btu-9E-9FJ"/>
@@ -169,19 +169,19 @@
                         <size key="offset" width="0.0" height="1"/>
                         <color key="color" red="1" green="0.99997437" blue="0.99999129769999995" alpha="1" colorSpace="calibratedRGB"/>
                     </shadow>
-                    <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="center" title="Looks like you haven't made any transactions yet. Send some Bitcoin to your Hive wallet address!" id="Tlv-45-Iq6">
+                    <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="center" title="Кажется, у вас пока еще не было транзакций. Отправьте биткойны на адрес вашего кошелька Hive!" id="Tlv-45-Iq6">
                         <font key="font" metaFont="system" size="15"/>
                         <color key="textColor" red="0.3291117549" green="0.32910189029999998" blue="0.32910749319999999" alpha="1" colorSpace="calibratedRGB"/>
                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                     </textFieldCell>
                 </textField>
                 <imageView translatesAutoresizingMaskIntoConstraints="NO" id="68">
-                    <rect key="frame" x="130" y="357" width="63" height="64"/>
+                    <rect key="frame" x="130" y="356" width="63" height="64"/>
                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="icon-gray-btc" id="69"/>
                 </imageView>
                 <customView placeholderIntrinsicWidth="infinite" placeholderIntrinsicHeight="60" translatesAutoresizingMaskIntoConstraints="NO" id="1zA-19-rkA" customClass="HIAddressesBox">
-                    <rect key="frame" x="40" y="152" width="243" height="60"/>
+                    <rect key="frame" x="40" y="151" width="243" height="60"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                 </customView>
                 <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="56">
@@ -194,7 +194,7 @@
                         <size key="offset" width="0.0" height="1"/>
                         <color key="color" red="1" green="0.99988943340000003" blue="0.99995732309999996" alpha="1" colorSpace="calibratedRGB"/>
                     </shadow>
-                    <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="center" title="Затем Вы можете нажать кнопку Отправить, чтобы отправить кому-нибудь деньги." id="63">
+                    <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="center" title="Затем вы можете нажать кнопку Отправить, чтобы отправить кому-либо деньги." id="63">
                         <font key="font" metaFont="system" size="14"/>
                         <color key="textColor" red="0.32231375579999999" green="0.3222793639" blue="0.32230004670000001" alpha="1" colorSpace="calibratedRGB"/>
                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
