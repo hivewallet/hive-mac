@@ -81,7 +81,7 @@
 "Confirm" = "Kumpirmahin";
 
 /* Status for transaction included in a block in transaction popup */
-"Confirmed" = "Confirmed";
+"Confirmed" = "Nakumpirma";
 
 /* Contact name empty alert title */
 "Contact can't be saved." = "Hindi mai-save ang contact.";
@@ -228,7 +228,7 @@
 "No Bitcoin have been taken from your wallet." = "Walang Bitcoin na ibinawas sa iyong wallet.";
 
 /* Status for transaction not sent to any peers in transaction popup */
-"Not broadcasted yet" = "Not broadcasted yet";
+"Not broadcasted yet" = "Hindi pa nai-broadcast";
 
 /* Title of an alert when trying to send more than you have with fee */
 "Not enough funds left to pay the transaction fee." = "Walang sapat na pondo upang bayaran ang transaction fee.";
