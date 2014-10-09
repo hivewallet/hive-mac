@@ -3,22 +3,22 @@
 "2hR-33-nwC.title" = "Transaction ID:";
 
 /* Class = "NSTextFieldCell"; title = "Amount:"; ObjectID = "3G0-0s-dgf"; */
-"3G0-0s-dgf.title" = "Amount:";
+"3G0-0s-dgf.title" = "Somma:";
 
 /* Class = "NSTextFieldCell"; title = "Details:"; ObjectID = "6nl-hl-J8B"; */
-"6nl-hl-J8B.title" = "Details:";
+"6nl-hl-J8B.title" = "Dettagli:";
 
 /* Class = "NSTextFieldCell"; title = "Recipient:"; ObjectID = "FNo-KW-FSJ"; */
-"FNo-KW-FSJ.title" = "Recipient:";
+"FNo-KW-FSJ.title" = "Ricevente:";
 
 /* Class = "NSButtonCell"; title = "Show on blockchain.info..."; ObjectID = "Lay-eO-8hN"; */
-"Lay-eO-8hN.title" = "Show on blockchain.info...";
+"Lay-eO-8hN.title" = "Mostra su blockchain.info...";
 
 /* Class = "NSTextFieldCell"; title = "Exchange rate:"; ObjectID = "WBQ-QW-Ib4"; */
-"WBQ-QW-Ib4.title" = "Exchange rate:";
+"WBQ-QW-Ib4.title" = "Tasso di cambio:";
 
 /* Class = "NSTextFieldCell"; title = "Status:"; ObjectID = "uRB-Vb-JTA"; */
-"uRB-Vb-JTA.title" = "Status:";
+"uRB-Vb-JTA.title" = "Stato:";
 
 /* Class = "NSTextFieldCell"; title = "Confirmations:"; ObjectID = "x54-St-kEH"; */
 "x54-St-kEH.title" = "Confirmations:";
