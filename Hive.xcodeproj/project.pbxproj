@@ -184,7 +184,7 @@
 		58A0A49618ABC75E00A5A084 /* HITemporaryContact.m in Sources */ = {isa = PBXBuildFile; fileRef = 58A0A49518ABC75E00A5A084 /* HITemporaryContact.m */; };
 		58A0A49F18AD37E600A5A084 /* HILocalBackup.m in Sources */ = {isa = PBXBuildFile; fileRef = 58A0A49E18AD37E600A5A084 /* HILocalBackup.m */; };
 		58A149CA18C61BB900591F17 /* HockeySDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 58A149C918C61BB900591F17 /* HockeySDK.framework */; };
-		58A149CB18C61BD600591F17 /* HockeySDK.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 58A149C918C61BB900591F17 /* HockeySDK.framework */; };
+		58A149CB18C61BD600591F17 /* HockeySDK.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 58A149C918C61BB900591F17 /* HockeySDK.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		58A275DB18BBD30300C102B2 /* honey_im_subtle@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 58A275D918BBD30300C102B2 /* honey_im_subtle@2x.png */; };
 		58A275DC18BBD30300C102B2 /* honey_im_subtle.png in Resources */ = {isa = PBXBuildFile; fileRef = 58A275DA18BBD30300C102B2 /* honey_im_subtle.png */; };
 		58A275E118BBD56900C102B2 /* HILockScreenView.m in Sources */ = {isa = PBXBuildFile; fileRef = 58A275E018BBD56900C102B2 /* HILockScreenView.m */; };
@@ -232,7 +232,7 @@
 		58F02AEE17E1F5A400B65429 /* HIRightPointingArrowView.m in Sources */ = {isa = PBXBuildFile; fileRef = 58F02AED17E1F5A400B65429 /* HIRightPointingArrowView.m */; };
 		58F496F118B67A1C0033B7E0 /* icon-unknown-app.png in Resources */ = {isa = PBXBuildFile; fileRef = 58F496F018B67A1C0033B7E0 /* icon-unknown-app.png */; };
 		58F496F818B7EE8F0033B7E0 /* HINetworkConnectionMonitor.m in Sources */ = {isa = PBXBuildFile; fileRef = 58F496F718B7EE8F0033B7E0 /* HINetworkConnectionMonitor.m */; };
-		D901F4F817B272E60071780D /* BitcoinJKit.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = D901F4F517B272CE0071780D /* BitcoinJKit.framework */; };
+		D901F4F817B272E60071780D /* BitcoinJKit.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = D901F4F517B272CE0071780D /* BitcoinJKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		D901F4F917B273440071780D /* BitcoinJKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D901F4F517B272CE0071780D /* BitcoinJKit.framework */; };
 		D91FE827179887C5001B37D8 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = D91FE826179887C4001B37D8 /* libz.dylib */; };
 		D9235373177C4222003533DF /* HIApplication.m in Sources */ = {isa = PBXBuildFile; fileRef = D9235372177C4222003533DF /* HIApplication.m */; };
@@ -3063,7 +3063,7 @@
 			isa = PBXProject;
 			attributes = {
 				CLASSPREFIX = HI;
-				LastUpgradeCheck = 0510;
+				LastUpgradeCheck = 0600;
 				ORGANIZATIONNAME = "Hive Developers";
 				TargetAttributes = {
 					24EAAFBE186E1BBD00E1D2D3 = {
