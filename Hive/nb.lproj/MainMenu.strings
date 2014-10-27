@@ -98,10 +98,10 @@
 /* Class = "NSMenu"; title = "Help"; ObjectID = "K2u-T2-G1a"; */
 "K2u-T2-G1a.title" = "Hjelp";
 
-/* Class = "NSMenuItem"; title = "Sign message..."; ObjectID = "SoJ-eV-k9I"; */
+/* Class = "NSMenuItem"; title = "Sign Message..."; ObjectID = "SoJ-eV-k9I"; */
 "SoJ-eV-k9I.title" = "Signer en beskjed...";
 
-/* Class = "NSMenuItem"; title = "Debugging tools"; ObjectID = "Ue9-mi-gbe"; */
+/* Class = "NSMenuItem"; title = "Debugging Tools"; ObjectID = "Ue9-mi-gbe"; */
 "Ue9-mi-gbe.title" = "Feilsøkingsverktøy";
 
 /* Class = "NSMenuItem"; title = "Backup Center"; ObjectID = "V0L-sM-c8h"; */
@@ -125,8 +125,8 @@
 /* Class = "NSMenu"; title = "Wallet"; ObjectID = "jrd-Ul-XjV"; */
 "jrd-Ul-XjV.title" = "Lommebok";
 
-/* Class = "NSMenuItem"; title = "Debugging info"; ObjectID = "lLT-53-p4m"; */
+/* Class = "NSMenuItem"; title = "Debugging Info"; ObjectID = "lLT-53-p4m"; */
 "lLT-53-p4m.title" = "Felsøkingsinformasjon";
 
-/* Class = "NSMenuItem"; title = "Scan a QR code…"; ObjectID = "vdw-IK-snJ"; */
+/* Class = "NSMenuItem"; title = "Scan QR Code…"; ObjectID = "vdw-IK-snJ"; */
 "vdw-IK-snJ.title" = "Skann en QR kode...";

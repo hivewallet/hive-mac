@@ -190,7 +190,7 @@
                                 </connections>
                             </menuItem>
                             <menuItem isSeparatorItem="YES" id="5f3-xf-h00"/>
-                            <menuItem title="Debugging info" keyEquivalent="D" id="lLT-53-p4m">
+                            <menuItem title="Debugging Info" keyEquivalent="D" id="lLT-53-p4m">
                                 <connections>
                                     <action selector="showDebuggingInfo:" target="-1" id="Exc-Ye-jOL"/>
                                 </connections>
