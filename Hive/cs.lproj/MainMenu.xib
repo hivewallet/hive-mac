@@ -84,6 +84,7 @@
                             <menuItem title="Poslat bitcoiny..." keyEquivalent="S" id="866">
                                 <connections>
                                     <action selector="openSendBitcoinsWindow:" target="-1" id="868"/>
+                                    <binding destination="494" name="enabled" keyPath="encryptedWalletMethodsAvailable" id="Nz5-pg-VAZ"/>
                                 </connections>
                             </menuItem>
                             <menuItem isSeparatorItem="YES" id="CGD-5y-ezT"/>
@@ -97,11 +98,13 @@
                                 <modifierMask key="keyEquivalentModifierMask"/>
                                 <connections>
                                     <action selector="exportPrivateKey:" target="494" id="RFM-DV-pQI"/>
+                                    <binding destination="494" name="enabled" keyPath="encryptedWalletMethodsAvailable" id="7vm-Pc-0dG"/>
                                 </connections>
                             </menuItem>
                             <menuItem title="Uzamknout peněženku" keyEquivalent="l" id="AFM-Ev-d2A">
                                 <connections>
                                     <action selector="lockWallet:" target="-1" id="XWR-xx-Wx0"/>
+                                    <binding destination="494" name="enabled" keyPath="encryptedWalletMethodsAvailable" id="nBT-QG-wjW"/>
                                 </connections>
                             </menuItem>
                         </items>
@@ -183,6 +186,7 @@
                                 <modifierMask key="keyEquivalentModifierMask"/>
                                 <connections>
                                     <action selector="openSignMessageWindow:" target="494" id="BXf-n1-5Go"/>
+                                    <binding destination="494" name="enabled" keyPath="encryptedWalletMethodsAvailable" id="rl9-Ku-uk5"/>
                                 </connections>
                             </menuItem>
                             <menuItem isSeparatorItem="YES" id="5f3-xf-h00"/>
@@ -261,5 +265,6 @@
         <customObject id="494" customClass="HIAppDelegate"/>
         <customObject id="420" customClass="NSFontManager"/>
         <customObject id="869" customClass="SUUpdater"/>
+        <userDefaultsController representsSharedInstance="YES" id="rU0-5e-jtv"/>
     </objects>
 </document>

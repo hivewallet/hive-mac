@@ -63,6 +63,7 @@ static int ddLogLevel = LOG_LEVEL_VERBOSE;
     HIPreferencesWindowController *_preferencesWindowController;
     NSMutableArray *_popupWindows;
     dispatch_queue_t _externalEventQueue;
+    BOOL _initialized;
 }
 
 @property (nonatomic, strong) HIWizardWindowController *wizard;
@@ -82,6 +83,7 @@ static int ddLogLevel = LOG_LEVEL_VERBOSE;
 
     _externalEventQueue = dispatch_queue_create("HIAppDelegate.externalEventQueue", DISPATCH_QUEUE_CONCURRENT);
     self.applicationLocked = YES;
+    _initialized = NO;
 
     // this needs to be set up *before* applicationDidFinishLaunching,
     // otherwise links that cause the app to be launched when it's not running will not be handled
@@ -405,10 +407,16 @@ static int ddLogLevel = LOG_LEVEL_VERBOSE;
     [self setAsDefaultHandler];
     [self startNetworkMonitor];
     [self updateLastVersionKey];
+
+    _initialized = YES;
 }
 
 
 #pragma mark - App lifecycle and external actions
+
+- (BOOL)encryptedWalletMethodsAvailable {
+    return _initialized && [[BCClient sharedClient] isWalletPasswordProtected];
+}
 
 - (void)setApplicationLocked:(BOOL)applicationLocked {
     if (applicationLocked != _applicationLocked) {
