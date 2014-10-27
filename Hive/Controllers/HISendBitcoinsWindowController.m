@@ -657,11 +657,7 @@ NSString * const HISendBitcoinsWindowSuccessKey = @"success";
     }
     else {
         if (_paymentRequestSession > 0) {
-            if ([self isPasswordRequired]) {
-                [self showPasswordPopover:sender forPaymentRequest:_paymentRequestSession];
-            } else {
-                [self sendPaymentRequest:_paymentRequestSession password:nil];
-            }
+            [self showPasswordPopover:sender forPaymentRequest:_paymentRequestSession];
         } else {
             NSString *target = self.currentRecipient;
 
@@ -678,17 +674,9 @@ NSString * const HISendBitcoinsWindowSuccessKey = @"success";
                 [self showLargeAmountAlertForAmount:satoshi toTarget:target button:sender];
             }
             else {
-                [self processSendingBitcoin:satoshi toTarget:target button:sender];
+                [self showPasswordPopover:sender forSendingBitcoin:satoshi toTarget:target];
             }
         }
-    }
-}
-
-- (void)processSendingBitcoin:(uint64)satoshi toTarget:(NSString *)target button:(id)sender {
-    if ([self isPasswordRequired]) {
-        [self showPasswordPopover:sender forSendingBitcoin:satoshi toTarget:target];
-    } else {
-        [self sendBitcoin:satoshi toTarget:target password:nil];
     }
 }
 
@@ -696,9 +684,9 @@ NSString * const HISendBitcoinsWindowSuccessKey = @"success";
     NSDictionary *data = CFBridgingRelease(context);
 
     if (result == NSAlertFirstButtonReturn) {
-        [self processSendingBitcoin:[data[@"amount"] longLongValue]
-                           toTarget:data[@"target"]
-                             button:data[@"button"]];
+        [self showPasswordPopover:data[@"button"]
+                forSendingBitcoin:[data[@"amount"] longLongValue]
+                         toTarget:data[@"target"]];
     }
 }
 
@@ -1155,10 +1143,6 @@ NSString * const HISendBitcoinsWindowSuccessKey = @"success";
 
 
 #pragma mark - Passwords
-
-- (BOOL)isPasswordRequired {
-    return [BCClient sharedClient].isWalletPasswordProtected;
-}
 
 - (NSPopover *)preparePasswordPopover {
     NSPopover *popover = [NSPopover new];

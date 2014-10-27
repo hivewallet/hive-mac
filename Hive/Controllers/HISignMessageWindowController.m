@@ -36,11 +36,7 @@
 }
 
 - (IBAction)signPressed:(id)sender {
-    if ([[BCClient sharedClient] isWalletPasswordProtected]) {
-        [self showPasswordPopoverOnButton:sender];
-    } else {
-        [self signMessageWithPassword:nil];
-    }
+    [self showPasswordPopoverOnButton:sender];
 }
 
 - (void)showPasswordPopoverOnButton:(id)button {
