@@ -28,6 +28,7 @@
 #import "HIDebuggingInfoWindowController.h"
 #import "HIDebuggingToolsWindowController.h"
 #import "HIErrorWindowController.h"
+#import "HIExportPrivateKeyWindowController.h"
 #import "HIFirstRunWizardWindowController.h"
 #import "HILockScreenViewController.h"
 #import "HILogFormatter.h"
@@ -629,6 +630,10 @@ void handleException(NSException *exception) {
 
 - (IBAction)changeWalletPassword:(id)sender {
     [self openPopupWindowWithClass:[HIPasswordChangeWindowController class]];
+}
+
+- (IBAction)exportPrivateKey:(id)sender {
+    [self openPopupWindowWithClass:[HIExportPrivateKeyWindowController class]];
 }
 
 - (IBAction)lockWallet:(id)sender {
