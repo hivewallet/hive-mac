@@ -91,7 +91,7 @@ NSString * const BCClientPasswordChangedNotification = @"BCClientPasswordChanged
         bitcoin.dataURL = [self bitcoinjDirectory];
         bitcoin.exceptionHandler = ^(NSException *exception) {
             dispatch_async(dispatch_get_main_queue(), ^{
-                [[NSApp delegate] showExceptionWindowWithException:exception];
+                [AppDelegate showExceptionWindowWithException:exception];
             });
         };
 

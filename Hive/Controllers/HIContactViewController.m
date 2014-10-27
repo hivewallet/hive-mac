@@ -89,7 +89,7 @@
 }
 
 - (IBAction)sendBitcoinsPressed:(id)sender {
-    HISendBitcoinsWindowController *window = [[NSApp delegate] sendBitcoinsWindowForContact:_contact];
+    HISendBitcoinsWindowController *window = [AppDelegate sendBitcoinsWindowForContact:_contact];
     [window showWindow:self];
 }
 

@@ -229,7 +229,7 @@ const NSInteger HIApplicationManagerInsecureConnectionError = -2;
         [self installApplication:applicationURL];
 
         if (showAppsPage) {
-            [[NSApp delegate] showWindowWithPanel:[HIApplicationsViewController class]];
+            [AppDelegate showWindowWithPanel:[HIApplicationsViewController class]];
         }
 
         return YES;

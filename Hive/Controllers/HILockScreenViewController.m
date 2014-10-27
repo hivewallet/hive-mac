@@ -109,7 +109,7 @@ NSString * const LockScreenDidDisappearNotification = @"LockScreenDidDisappearNo
     }
 
     [self.container.window makeFirstResponder:self.passwordField];
-    [[NSApp delegate] setApplicationLocked:YES];
+    [AppDelegate setApplicationLocked:YES];
 }
 
 - (void)hideLockScreenAnimated:(BOOL)animated {
@@ -130,7 +130,7 @@ NSString * const LockScreenDidDisappearNotification = @"LockScreenDidDisappearNo
     }
 
     [self.container.window makeFirstResponder:nil];
-    [[NSApp delegate] setApplicationLocked:NO];
+    [AppDelegate setApplicationLocked:NO];
 }
 
 - (void)onSleep {

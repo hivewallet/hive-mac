@@ -52,7 +52,7 @@ static NSInteger HIDatabaseManagerFileExistsAtLocationError = 1000;
 }
 
 - (NSURL *)persistentStoreURL {
-    return [[[NSApp delegate] applicationFilesDirectory] URLByAppendingPathComponent:StoreFileName];
+    return [[AppDelegate applicationFilesDirectory] URLByAppendingPathComponent:StoreFileName];
 }
 
 - (NSPersistentStoreCoordinator *)persistentStoreCoordinator {
@@ -67,7 +67,7 @@ static NSInteger HIDatabaseManagerFileExistsAtLocationError = 1000;
         return nil;
     }
 
-    NSURL *applicationFilesDirectory = [[NSApp delegate] applicationFilesDirectory];
+    NSURL *applicationFilesDirectory = [AppDelegate applicationFilesDirectory];
     HILogDebug(@"Using application support directory: %@", applicationFilesDirectory);
     NSFileManager *fileManager = [NSFileManager defaultManager];
     NSError *error = nil;

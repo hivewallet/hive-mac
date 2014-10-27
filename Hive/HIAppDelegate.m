@@ -612,10 +612,10 @@ void handleException(NSException *exception) {
     HILogError(@"Exception caught: %@", exception);
 
     if (dispatch_get_current_queue() == dispatch_get_main_queue()) {
-        [[NSApp delegate] showExceptionWindowWithException:exception];
+        [AppDelegate showExceptionWindowWithException:exception];
     } else {
         dispatch_async(dispatch_get_main_queue(), ^{
-            [[NSApp delegate] showExceptionWindowWithException:exception];
+            [AppDelegate showExceptionWindowWithException:exception];
         });
     }
 }

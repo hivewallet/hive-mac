@@ -116,7 +116,7 @@ const NSInteger HITimeMachineNoFreshBackup = -3;
 - (BOOL)isExcludedFromBackup {
     NSTask *task = [[NSTask alloc] init];
     task.launchPath = @"/usr/bin/tmutil";
-    task.arguments = @[@"isexcluded", [[[NSApp delegate] applicationFilesDirectory] path]];
+    task.arguments = @[@"isexcluded", [[AppDelegate applicationFilesDirectory] path]];
     task.standardOutput = [NSPipe pipe];
 
     [task launch];
