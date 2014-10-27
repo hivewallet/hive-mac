@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="6250" systemVersion="13F34" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="6250"/>
+    </dependencies>
+    <objects>
+        <customObject id="-2" userLabel="File's Owner" customClass="HIExportPrivateKeyWindowController">
+            <connections>
+                <outlet property="window" destination="F0z-JX-Cv5" id="gIp-Ho-8D9"/>
+            </connections>
+        </customObject>
+        <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
+        <customObject id="-3" userLabel="Application" customClass="NSObject"/>
+        <window title="Export Private Key" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" restorable="NO" oneShot="NO" releasedWhenClosed="NO" frameAutosaveName="ExportKeyWindow" animationBehavior="default" id="F0z-JX-Cv5">
+            <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
+            <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
+            <rect key="contentRect" x="295" y="411" width="389" height="233"/>
+            <rect key="screenRect" x="0.0" y="0.0" width="1440" height="878"/>
+            <view key="contentView" wantsLayer="YES" id="se5-gp-TjO">
+                <rect key="frame" x="0.0" y="0.0" width="389" height="233"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="AZZ-os-Qoy">
+                        <rect key="frame" x="18" y="145" width="353" height="68"/>
+                        <textFieldCell key="cell" sendsActionOnEndEditing="YES" id="4FX-bU-CkQ">
+                            <font key="font" metaFont="system"/>
+                            <string key="title">The private key that provides access to your bitcoins is stored securely inside your wallet. You can however export it to a file if you'd like to migrate your address and your bitcoins to another wallet app.</string>
+                            <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                        </textFieldCell>
+                    </textField>
+                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="MMW-PI-OYZ">
+                        <rect key="frame" x="18" y="65" width="353" height="68"/>
+                        <textFieldCell key="cell" sendsActionOnEndEditing="YES" id="FxA-18-Sov">
+                            <font key="font" metaFont="systemBold"/>
+                            <string key="title">Warning: the key is saved in an unencrypted form, so anyone who has access to this file has also access to your bitcoins. Don't share it with anyone, and delete it when you no longer need it.</string>
+                            <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                        </textFieldCell>
+                    </textField>
+                    <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="IR4-1u-XU1">
+                        <rect key="frame" x="247" y="18" width="124" height="29"/>
+                        <constraints>
+                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="120" id="aRa-R3-jYo"/>
+                        </constraints>
+                        <shadow key="shadow" blurRadius="1">
+                            <size key="offset" width="0.0" height="1"/>
+                            <color key="color" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                        </shadow>
+                        <buttonCell key="cell" type="bevel" title="Export the key" bezelStyle="regularSquare" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="gxJ-EB-pf2" customClass="HIDoneButtonCell">
+                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                            <font key="font" metaFont="system"/>
+                            <string key="keyEquivalent" base64-UTF8="YES">
+DQ
+</string>
+                        </buttonCell>
+                        <connections>
+                            <action selector="exportPressed:" target="-2" id="Ep0-hF-g1Z"/>
+                        </connections>
+                    </button>
+                    <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="gxa-L6-EtO">
+                        <rect key="frame" x="20" y="20" width="80" height="25"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="25" id="8qy-p5-gAw"/>
+                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="80" id="Ulk-pw-2as"/>
+                        </constraints>
+                        <shadow key="shadow" blurRadius="1">
+                            <size key="offset" width="0.0" height="1"/>
+                            <color key="color" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                        </shadow>
+                        <buttonCell key="cell" type="square" title="Cancel" bezelStyle="shadowlessSquare" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="8zf-Am-cfA" customClass="HIButtonCell">
+                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                            <font key="font" metaFont="system"/>
+                            <string key="keyEquivalent" base64-UTF8="YES">
+Gw
+</string>
+                        </buttonCell>
+                        <connections>
+                            <action selector="cancelPressed:" target="-2" id="fvm-6J-ekR"/>
+                        </connections>
+                    </button>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="MMW-PI-OYZ" firstAttribute="leading" secondItem="se5-gp-TjO" secondAttribute="leading" constant="20" symbolic="YES" id="4F5-No-Voc"/>
+                    <constraint firstItem="AZZ-os-Qoy" firstAttribute="leading" secondItem="se5-gp-TjO" secondAttribute="leading" constant="20" symbolic="YES" id="6pa-h7-8RI"/>
+                    <constraint firstItem="AZZ-os-Qoy" firstAttribute="top" secondItem="se5-gp-TjO" secondAttribute="top" constant="20" symbolic="YES" id="8QS-LH-YUx"/>
+                    <constraint firstItem="MMW-PI-OYZ" firstAttribute="top" secondItem="AZZ-os-Qoy" secondAttribute="bottom" constant="12" id="SA1-9d-F1j"/>
+                    <constraint firstItem="gxa-L6-EtO" firstAttribute="top" secondItem="MMW-PI-OYZ" secondAttribute="bottom" constant="20" id="U7i-75-jaZ"/>
+                    <constraint firstAttribute="trailing" secondItem="MMW-PI-OYZ" secondAttribute="trailing" constant="20" symbolic="YES" id="hG4-ET-aL2"/>
+                    <constraint firstAttribute="bottom" secondItem="gxa-L6-EtO" secondAttribute="bottom" constant="20" symbolic="YES" id="hzf-yg-Qzd"/>
+                    <constraint firstItem="IR4-1u-XU1" firstAttribute="centerY" secondItem="gxa-L6-EtO" secondAttribute="centerY" id="lCj-SX-pDz"/>
+                    <constraint firstAttribute="trailing" secondItem="IR4-1u-XU1" secondAttribute="trailing" constant="20" symbolic="YES" id="s60-SG-7Ps"/>
+                    <constraint firstItem="gxa-L6-EtO" firstAttribute="leading" secondItem="se5-gp-TjO" secondAttribute="leading" constant="20" symbolic="YES" id="v4B-LD-get"/>
+                    <constraint firstAttribute="trailing" secondItem="AZZ-os-Qoy" secondAttribute="trailing" constant="20" symbolic="YES" id="zSY-Li-N26"/>
+                </constraints>
+            </view>
+            <connections>
+                <outlet property="delegate" destination="-2" id="0bl-1N-AYu"/>
+            </connections>
+            <point key="canvasLocation" x="213.5" y="189.5"/>
+        </window>
+        <customObject id="BoR-OB-zTS" customClass="HIPasswordInputViewController"/>
+        <userDefaultsController representsSharedInstance="YES" id="CnY-CB-2Ue"/>
+    </objects>
+</document>

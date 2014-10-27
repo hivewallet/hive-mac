@@ -158,3 +158,9 @@ source_file = Hive/Controllers/en.lproj/HITransactionPopoverViewController.strin
 source_lang = en
 type = STRINGS
 
+[hive-osx.HIExportPrivateKeyWindowController]
+file_filter = Hive/Controllers/<lang>.lproj/HIExportPrivateKeyWindowController.strings
+source_file = Hive/Controllers/en.lproj/HIExportPrivateKeyWindowController.strings
+source_lang = en
+type = STRINGS
+

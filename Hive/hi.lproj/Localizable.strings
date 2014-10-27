@@ -140,6 +140,9 @@
 /* Password prompt for sending */
 "Enter your password to confirm the transaction:" = "Enter your password to confirm the transaction:";
 
+/* Password prompt for private key export */
+"Enter your password to export the key:" = "Enter your password to export the key:";
+
 /* Password prompt for message signing */
 "Enter your password to sign the message:" = "Enter your password to sign the message:";
 
@@ -271,6 +274,9 @@
 
 /* Preferences window title */
 "Preferences" = "Preferences";
+
+/* Message when private key export fails */
+"Private key could not be exported." = "Private key could not be exported.";
 
 /* Profile view title string */
 "Profile" = "प्रोफाइल";
