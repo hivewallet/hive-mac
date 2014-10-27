@@ -94,7 +94,7 @@
                                     <action selector="changeWalletPassword:" target="494" id="n4h-c8-Hjn"/>
                                 </connections>
                             </menuItem>
-                            <menuItem title="Export Private Key…" id="c87-6N-rhE">
+                            <menuItem title="Exportar Clave Privada..." id="c87-6N-rhE">
                                 <modifierMask key="keyEquivalentModifierMask"/>
                                 <connections>
                                     <action selector="exportPrivateKey:" target="494" id="RFM-DV-pQI"/>

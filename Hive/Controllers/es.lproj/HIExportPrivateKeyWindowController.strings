@@ -1,15 +1,15 @@
 
 /* Class = "NSTextFieldCell"; title = "The private key that provides access to your bitcoins is stored securely inside your wallet. You can however export it to a file if you'd like to migrate your address and your bitcoins to another wallet app."; ObjectID = "4FX-bU-CkQ"; */
-"4FX-bU-CkQ.title" = "The private key that provides access to your bitcoins is stored securely inside your wallet. You can however export it to a file if you'd like to migrate your address and your bitcoins to another wallet app.";
+"4FX-bU-CkQ.title" = "La clave privada que proporciona acceso a sus bitcoins se almacena de forma segura en su cartera. Sin embargo, puede exportarla a un fichero si desea migrar su dirección y sus bitcoins a otra aplicación.";
 
 /* Class = "NSButtonCell"; title = "Cancel"; ObjectID = "8zf-Am-cfA"; */
-"8zf-Am-cfA.title" = "Cancel";
+"8zf-Am-cfA.title" = "Cancelar";
 
 /* Class = "NSWindow"; title = "Export Private Key"; ObjectID = "F0z-JX-Cv5"; */
-"F0z-JX-Cv5.title" = "Export Private Key";
+"F0z-JX-Cv5.title" = "Exportar Clave Privada";
 
 /* Class = "NSTextFieldCell"; title = "Warning: the key is saved in an unencrypted form, so anyone who has access to this file has also access to your bitcoins. Don't share it with anyone, and delete it when you no longer need it."; ObjectID = "FxA-18-Sov"; */
-"FxA-18-Sov.title" = "Warning: the key is saved in an unencrypted form, so anyone who has access to this file has also access to your bitcoins. Don't share it with anyone, and delete it when you no longer need it.";
+"FxA-18-Sov.title" = "Advertencia: la clave se almacena descifrada, por lo que cualquiera con acceso a este fichero tendrá acceso a tus bitcoins. No lo comparta con nadie, y elimínelo cuando no lo necesite más.";
 
 /* Class = "NSButtonCell"; title = "Export the key"; ObjectID = "gxJ-EB-pf2"; */
-"gxJ-EB-pf2.title" = "Export the key";
+"gxJ-EB-pf2.title" = "Exportar la clave";
