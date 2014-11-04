@@ -30,6 +30,7 @@
 #import "HIErrorWindowController.h"
 #import "HIExportPrivateKeyWindowController.h"
 #import "HIFirstRunWizardWindowController.h"
+#import "HIHiveWebWindowController.h"
 #import "HILockScreenViewController.h"
 #import "HILogFormatter.h"
 #import "HIMainWindowController.h"
@@ -48,8 +49,6 @@
 #import "PFMoveApplication.h"
 
 static NSString * const LastVersionKey = @"LastHiveVersion";
-static NSString * const WarningDisplayedKey = @"WarningDisplayed";
-
 static int ddLogLevel = LOG_LEVEL_VERBOSE;
 
 @interface DDLog (ExposePrivateMethod)
@@ -288,6 +287,7 @@ static int ddLogLevel = LOG_LEVEL_VERBOSE;
             [self nagUnprotectedUsers];
             [self initializeBackups];
             [[HINotificationService sharedService] checkIfBackupsEnabled];
+            [self showHiveWebAnnouncement];
             [self finishInitialization];
         });
     }
@@ -369,6 +369,12 @@ static int ddLogLevel = LOG_LEVEL_VERBOSE;
     [alert runModal];
 
     exit(1);
+}
+
+- (void)showHiveWebAnnouncement {
+    if (![[NSUserDefaults standardUserDefaults] boolForKey:HiveWebAnnouncementDisplayedKey]) {
+        [self openPopupWindowWithClass:[HIHiveWebWindowController class]];
+    }
 }
 
 
