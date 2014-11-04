@@ -1132,7 +1132,6 @@
 		58745B7D19FE8C1C0000BEF6 /* fr */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = fr; path = fr.lproj/HIExportPrivateKeyWindowController.xib; sourceTree = "<group>"; };
 		58745B7E19FE8C1E0000BEF6 /* fi */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = fi; path = fi.lproj/HIExportPrivateKeyWindowController.xib; sourceTree = "<group>"; };
 		58745B7F19FE8C1F0000BEF6 /* da */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = da; path = da.lproj/HIExportPrivateKeyWindowController.xib; sourceTree = "<group>"; };
-		58745B8019FE8C210000BEF6 /* he */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = he; path = he.lproj/HIExportPrivateKeyWindowController.xib; sourceTree = "<group>"; };
 		58745B8119FE8C250000BEF6 /* de */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = de; path = de.lproj/HIExportPrivateKeyWindowController.xib; sourceTree = "<group>"; };
 		58745B8219FE8C260000BEF6 /* nl */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = nl; path = nl.lproj/HIExportPrivateKeyWindowController.xib; sourceTree = "<group>"; };
 		58745B8319FE8C280000BEF6 /* ru */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = ru; path = ru.lproj/HIExportPrivateKeyWindowController.xib; sourceTree = "<group>"; };
@@ -1164,7 +1163,6 @@
 		58745BA119FE8CD60000BEF6 /* it */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = it; path = it.lproj/HIExportPrivateKeyWindowController.strings; sourceTree = "<group>"; };
 		58745BA219FE8CD80000BEF6 /* nl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = nl; path = nl.lproj/HIExportPrivateKeyWindowController.strings; sourceTree = "<group>"; };
 		58745BA319FE8CD90000BEF6 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/HIExportPrivateKeyWindowController.strings; sourceTree = "<group>"; };
-		58745BA419FE8CDB0000BEF6 /* he */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = he; path = he.lproj/HIExportPrivateKeyWindowController.strings; sourceTree = "<group>"; };
 		58745BA519FE8CDC0000BEF6 /* da */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = da; path = da.lproj/HIExportPrivateKeyWindowController.strings; sourceTree = "<group>"; };
 		58745BA619FE8CDE0000BEF6 /* fi */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fi; path = fi.lproj/HIExportPrivateKeyWindowController.strings; sourceTree = "<group>"; };
 		58745BA719FE8CDF0000BEF6 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/HIExportPrivateKeyWindowController.strings; sourceTree = "<group>"; };
@@ -3187,7 +3185,6 @@
 				fr,
 				fi,
 				da,
-				he,
 				de,
 				nl,
 				ru,
@@ -4270,7 +4267,6 @@
 				58745B7D19FE8C1C0000BEF6 /* fr */,
 				58745B7E19FE8C1E0000BEF6 /* fi */,
 				58745B7F19FE8C1F0000BEF6 /* da */,
-				58745B8019FE8C210000BEF6 /* he */,
 				58745B8119FE8C250000BEF6 /* de */,
 				58745B8219FE8C260000BEF6 /* nl */,
 				58745B8319FE8C280000BEF6 /* ru */,
@@ -4309,7 +4305,6 @@
 				58745BA119FE8CD60000BEF6 /* it */,
 				58745BA219FE8CD80000BEF6 /* nl */,
 				58745BA319FE8CD90000BEF6 /* de */,
-				58745BA419FE8CDB0000BEF6 /* he */,
 				58745BA519FE8CDC0000BEF6 /* da */,
 				58745BA619FE8CDE0000BEF6 /* fi */,
 				58745BA719FE8CDF0000BEF6 /* fr */,
