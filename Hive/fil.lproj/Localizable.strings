@@ -294,7 +294,7 @@
 "Reinstall" = "I-reinstall";
 
 /* Status for transaction removed from the main blockchain in transaction popup */
-"Rejected by the network" = "Rejected by the network";
+"Rejected by the network" = "Ni-reject ng network";
 
 /* No comment provided by engineer. */
 "Remove" = "Tanggalin";
@@ -312,7 +312,7 @@
 "Sent &a to &c" = "Naipadala ang &a sa &c";
 
 /* Status for transaction sent via payment request */
-"Sent directly to recipient" = "Sent directly to recipient";
+"Sent directly to recipient" = "Napadala nang direkta sa tatanggap";
 
 /* Title for shortcut keys preferences panel */
 "Shortcuts" = "Mga Shortcut";
@@ -411,7 +411,7 @@
 "Waiting for backup" = "Nag-aantay para sa backup";
 
 /* Status for transaction sent to some peers in transaction popup */
-"Waiting for confirmation" = "Waiting for confirmation";
+"Waiting for confirmation" = "Nag-aantay ng kumpirmasyon";
 
 /* Install app popup warning message */
 "We cannot guarantee the safety of all apps - please be careful if you download Hive apps from third party sites." = "Hindi namin magagarantiya ang kaligtasan ng lahat ng mga app - maari lamang na mag-ingat kung mag-download ng mga Hive app mula sa bang sites..";
