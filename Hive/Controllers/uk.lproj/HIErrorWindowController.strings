@@ -9,7 +9,7 @@
 "Cob-tq-o5r.title" = "Будь-ласка вишліть нам звіт про проблему щоб виправити її.";
 
 /* Class = "NSTextFieldCell"; title = "Describe what you were doing when the error occurred:"; ObjectID = "F9w-28-7kX"; */
-"F9w-28-7kX.title" = "Опишіть, що ви робите коли сталась помилка";
+"F9w-28-7kX.title" = "Describe what you were doing when the error occurred (preferably in English):";
 
 /* Class = "NSTextFieldCell"; title = "Oh no, something went wrong!"; ObjectID = "Mpx-rH-nUM"; */
 "Mpx-rH-nUM.title" = "Ооо ні, щось пішло не так!";
