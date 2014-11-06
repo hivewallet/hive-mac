@@ -24,7 +24,7 @@
                 <outlet property="view" destination="35" id="41"/>
             </connections>
         </customObject>
-        <window title="Hive" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" restorable="NO" releasedWhenClosed="NO" frameAutosaveName="HiveMainAppWindow" animationBehavior="default" id="3" customClass="INAppStoreWindow">
+        <window allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" restorable="NO" releasedWhenClosed="NO" frameAutosaveName="HiveMainAppWindow" animationBehavior="default" id="3" customClass="INAppStoreWindow">
             <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
             <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
             <rect key="contentRect" x="169" y="354" width="352" height="500"/>
