@@ -6,7 +6,7 @@
 "75.title" = "Coordonnées";
 
 /* Class = "NSTextFieldCell"; title = "Email:"; ObjectID = "78"; */
-"78.title" = "Courriel :";
+"78.title" = "Adresse courriel :";
 
 /* Class = "NSButtonCell"; title = "Add address"; ObjectID = "80"; */
 "80.title" = "Ajouter une adresse";

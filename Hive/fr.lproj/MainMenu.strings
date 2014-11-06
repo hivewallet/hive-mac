@@ -114,7 +114,7 @@
 "ZUU-kM-x8u.title" = "Aide";
 
 /* Class = "NSMenuItem"; title = "Export Private Key…"; ObjectID = "c87-6N-rhE"; */
-"c87-6N-rhE.title" = "Export Private Key…";
+"c87-6N-rhE.title" = "Exporter la clef privée...";
 
 /* Class = "NSMenu"; title = "Tools"; ObjectID = "cCx-Ak-fii"; */
 "cCx-Ak-fii.title" = "Outils";
@@ -126,7 +126,7 @@
 "jrd-Ul-XjV.title" = "Portefeuille";
 
 /* Class = "NSMenuItem"; title = "Debugging Info"; ObjectID = "lLT-53-p4m"; */
-"lLT-53-p4m.title" = "Infos de débogage";
+"lLT-53-p4m.title" = "Info de débogage";
 
 /* Class = "NSMenuItem"; title = "Scan QR Code…"; ObjectID = "vdw-IK-snJ"; */
 "vdw-IK-snJ.title" = "Lire un code QR...";

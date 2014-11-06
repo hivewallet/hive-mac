@@ -24,7 +24,7 @@
 "x54-St-kEH.title" = "Confirmations :";
 
 /* Class = "NSTextFieldCell"; placeholderString = "Received with address:"; ObjectID = "ybn-TT-lTo"; */
-"ybn-TT-lTo.placeholderString" = "Reçu avec une adresse :";
+"ybn-TT-lTo.placeholderString" = "Reçu avec l'adresse :";
 
 /* Class = "NSTextFieldCell"; title = "Target address:"; ObjectID = "ybn-TT-lTo"; */
 "ybn-TT-lTo.title" = "Adresse cible :";

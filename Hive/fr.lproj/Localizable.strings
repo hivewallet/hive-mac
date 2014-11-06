@@ -141,7 +141,7 @@
 "Enter your password to confirm the transaction:" = "Saisissez votre mot de passe pour confirmer la transaction :";
 
 /* Password prompt for private key export */
-"Enter your password to export the key:" = "Enter your password to export the key:";
+"Enter your password to export the key:" = "Saisissez votre mot de passe pour exporter la clef :";
 
 /* Password prompt for message signing */
 "Enter your password to sign the message:" = "Saisissez votre mot de passe pour signer le message :";
@@ -276,7 +276,7 @@
 "Preferences" = "Préférences";
 
 /* Message when private key export fails */
-"Private key could not be exported." = "Private key could not be exported.";
+"Private key could not be exported." = "La clef privée n'a pas pu être exportée.";
 
 /* Profile view title string */
 "Profile" = "Profil";

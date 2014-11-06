@@ -94,7 +94,7 @@
                                     <action selector="changeWalletPassword:" target="494" id="n4h-c8-Hjn"/>
                                 </connections>
                             </menuItem>
-                            <menuItem title="Export Private Key…" id="c87-6N-rhE">
+                            <menuItem title="Exporter la clef privée..." id="c87-6N-rhE">
                                 <modifierMask key="keyEquivalentModifierMask"/>
                                 <connections>
                                     <action selector="exportPrivateKey:" target="494" id="RFM-DV-pQI"/>
@@ -190,7 +190,7 @@
                                 </connections>
                             </menuItem>
                             <menuItem isSeparatorItem="YES" id="5f3-xf-h00"/>
-                            <menuItem title="Infos de débogage" keyEquivalent="D" id="lLT-53-p4m">
+                            <menuItem title="Info de débogage" keyEquivalent="D" id="lLT-53-p4m">
                                 <connections>
                                     <action selector="showDebuggingInfo:" target="-1" id="Exc-Ye-jOL"/>
                                 </connections>

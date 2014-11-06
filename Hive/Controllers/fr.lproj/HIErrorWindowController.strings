@@ -24,7 +24,7 @@
 "tR0-Dg-y0x.title" = "Annuler";
 
 /* Class = "NSTextFieldCell"; title = "Error details:"; ObjectID = "uLK-ff-isg"; */
-"uLK-ff-isg.title" = "Détails de l'erreur:";
+"uLK-ff-isg.title" = "Détails de l'erreur :";
 
 /* Class = "NSTextFieldCell"; title = "An unexpected error has occurred in Hive."; ObjectID = "xF4-pJ-cQU"; */
 "xF4-pJ-cQU.title" = "Une erreur inattendue est survenue dans Hive.";
