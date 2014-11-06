@@ -141,7 +141,7 @@
 "Enter your password to confirm the transaction:" = "Skriv inn passordet ditt for å bekrefte transaksjonen:";
 
 /* Password prompt for private key export */
-"Enter your password to export the key:" = "Enter your password to export the key:";
+"Enter your password to export the key:" = "Legg inn ditt passord for å eksportere nøkkelen:";
 
 /* Password prompt for message signing */
 "Enter your password to sign the message:" = "Skriv inn passordet ditt for å signere meldingen:";
@@ -276,7 +276,7 @@
 "Preferences" = "Innstillinger";
 
 /* Message when private key export fails */
-"Private key could not be exported." = "Private key could not be exported.";
+"Private key could not be exported." = "Den private nøkkelen kunne ikke eksporteres.";
 
 /* Profile view title string */
 "Profile" = "Profil";
