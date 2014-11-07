@@ -1,12 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="6245" systemVersion="14A388a" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="6250" systemVersion="13F34" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
-        <deployment defaultVersion="1070" identifier="macosx"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="6245"/>
+        <deployment identifier="macosx"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="6250"/>
     </dependencies>
     <objects>
         <customObject id="-2" userLabel="File's Owner" customClass="HIHiveWebWindowController">
             <connections>
+                <outlet property="hivewalletComLink" destination="nU5-VQ-xeX" id="U43-1t-ItJ"/>
+                <outlet property="iphoneImage" destination="HHx-Rp-NSM" id="e4i-eM-nvt"/>
                 <outlet property="window" destination="F0z-JX-Cv5" id="gIp-Ho-8D9"/>
             </connections>
         </customObject>
@@ -16,7 +18,7 @@
             <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES"/>
             <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
             <rect key="contentRect" x="196" y="240" width="480" height="561"/>
-            <rect key="screenRect" x="0.0" y="0.0" width="1920" height="1057"/>
+            <rect key="screenRect" x="0.0" y="0.0" width="1440" height="878"/>
             <view key="contentView" id="se5-gp-TjO">
                 <rect key="frame" x="0.0" y="0.0" width="480" height="561"/>
                 <autoresizingMask key="autoresizingMask"/>
@@ -29,13 +31,6 @@
                             <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                         </textFieldCell>
                     </textField>
-                    <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="CVk-lx-KMG">
-                        <rect key="frame" x="20" y="122" width="440" height="300"/>
-                        <constraints>
-                            <constraint firstAttribute="height" constant="300" id="vqE-eU-una"/>
-                        </constraints>
-                        <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="iphone_crop" id="B1t-Xa-KKx"/>
-                    </imageView>
                     <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="wZF-CY-E5t">
                         <rect key="frame" x="18" y="442" width="444" height="51"/>
                         <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="left" id="Vny-HI-QoB">
@@ -52,7 +47,7 @@
                         <font key="titleFont" metaFont="system"/>
                     </box>
                     <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="nU5-VQ-xeX" customClass="HILinkTextField">
-                        <rect key="frame" x="125" y="73" width="231" height="19"/>
+                        <rect key="frame" x="120" y="73" width="240" height="19"/>
                         <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="See more on hivewallet.com..." id="hgO-wO-BP2">
                             <font key="font" metaFont="system" size="16"/>
                             <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
@@ -63,7 +58,7 @@
                         </userDefinedRuntimeAttributes>
                     </textField>
                     <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="gp7-a5-UIn">
-                        <rect key="frame" x="26" y="13" width="141" height="32"/>
+                        <rect key="frame" x="26" y="13" width="144" height="32"/>
                         <buttonCell key="cell" type="push" title="Remind me later" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="YqP-bd-1f8">
                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                             <font key="font" metaFont="system"/>
@@ -76,7 +71,7 @@ Gw
                         </connections>
                     </button>
                     <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="4aF-v9-ANr">
-                        <rect key="frame" x="347" y="13" width="107" height="32"/>
+                        <rect key="frame" x="346" y="13" width="108" height="32"/>
                         <buttonCell key="cell" type="push" title="Ok, thanks" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="isa-jw-2P0">
                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                             <font key="font" metaFont="system"/>
@@ -88,24 +83,37 @@ DQ
                             <action selector="okPressed:" target="-2" id="KfC-oJ-oea"/>
                         </connections>
                     </button>
+                    <button translatesAutoresizingMaskIntoConstraints="NO" id="HHx-Rp-NSM">
+                        <rect key="frame" x="20" y="122" width="440" height="300"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="300" id="cdQ-o4-A8a"/>
+                        </constraints>
+                        <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="iphone_crop" imagePosition="only" alignment="center" refusesFirstResponder="YES" imageScaling="proportionallyDown" inset="2" id="IEk-2x-gzL">
+                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                            <font key="font" metaFont="system"/>
+                        </buttonCell>
+                        <connections>
+                            <action selector="iphonePressed:" target="-2" id="2et-Fy-EcQ"/>
+                        </connections>
+                    </button>
                 </subviews>
                 <constraints>
                     <constraint firstItem="mum-UF-qZy" firstAttribute="leading" secondItem="se5-gp-TjO" secondAttribute="leading" constant="12" id="2TD-CV-yPf"/>
                     <constraint firstItem="nU5-VQ-xeX" firstAttribute="top" secondItem="mum-UF-qZy" secondAttribute="bottom" constant="28" id="3ZR-J4-wEC"/>
                     <constraint firstItem="gp7-a5-UIn" firstAttribute="leading" secondItem="se5-gp-TjO" secondAttribute="leading" constant="32" id="AoR-aP-Bh3"/>
                     <constraint firstItem="gp7-a5-UIn" firstAttribute="top" secondItem="nU5-VQ-xeX" secondAttribute="bottom" constant="32" id="BOu-4c-qdY"/>
-                    <constraint firstAttribute="trailing" secondItem="CVk-lx-KMG" secondAttribute="trailing" constant="20" symbolic="YES" id="GIk-mV-F7T"/>
-                    <constraint firstItem="CVk-lx-KMG" firstAttribute="top" secondItem="wZF-CY-E5t" secondAttribute="bottom" constant="20" id="HiM-H4-08s"/>
                     <constraint firstItem="wZF-CY-E5t" firstAttribute="top" secondItem="fTK-xt-92N" secondAttribute="bottom" constant="24" id="Mke-hx-JoM"/>
                     <constraint firstAttribute="trailing" secondItem="4aF-v9-ANr" secondAttribute="trailing" constant="32" id="SPC-ZC-lg9"/>
                     <constraint firstAttribute="trailing" secondItem="wZF-CY-E5t" secondAttribute="trailing" constant="20" symbolic="YES" id="b4g-KV-i9T"/>
+                    <constraint firstItem="HHx-Rp-NSM" firstAttribute="top" secondItem="wZF-CY-E5t" secondAttribute="bottom" constant="20" id="cfD-Zk-k9M"/>
+                    <constraint firstItem="HHx-Rp-NSM" firstAttribute="leading" secondItem="se5-gp-TjO" secondAttribute="leading" constant="20" symbolic="YES" id="eqr-XX-mc4"/>
                     <constraint firstItem="fTK-xt-92N" firstAttribute="top" secondItem="se5-gp-TjO" secondAttribute="top" constant="20" symbolic="YES" id="fiV-Ki-qjp"/>
+                    <constraint firstItem="mum-UF-qZy" firstAttribute="top" secondItem="HHx-Rp-NSM" secondAttribute="bottom" constant="1" id="fwo-cc-wjQ"/>
                     <constraint firstItem="wZF-CY-E5t" firstAttribute="leading" secondItem="se5-gp-TjO" secondAttribute="leading" constant="20" symbolic="YES" id="j5o-8l-soG"/>
-                    <constraint firstItem="CVk-lx-KMG" firstAttribute="leading" secondItem="se5-gp-TjO" secondAttribute="leading" constant="20" symbolic="YES" id="lLX-pn-69L"/>
                     <constraint firstAttribute="trailing" secondItem="fTK-xt-92N" secondAttribute="trailing" constant="20" symbolic="YES" id="pEf-En-7CT"/>
                     <constraint firstItem="fTK-xt-92N" firstAttribute="leading" secondItem="se5-gp-TjO" secondAttribute="leading" constant="20" symbolic="YES" id="qLB-Ir-YYP"/>
+                    <constraint firstAttribute="trailing" secondItem="HHx-Rp-NSM" secondAttribute="trailing" constant="20" symbolic="YES" id="rA9-sY-MKF"/>
                     <constraint firstAttribute="bottom" secondItem="4aF-v9-ANr" secondAttribute="bottom" constant="20" symbolic="YES" id="rFK-cg-tt4"/>
-                    <constraint firstItem="mum-UF-qZy" firstAttribute="top" secondItem="CVk-lx-KMG" secondAttribute="bottom" constant="1" id="sky-j0-Se8"/>
                     <constraint firstAttribute="bottom" secondItem="gp7-a5-UIn" secondAttribute="bottom" constant="20" symbolic="YES" id="tp1-z5-CBs"/>
                     <constraint firstAttribute="centerX" secondItem="nU5-VQ-xeX" secondAttribute="centerX" id="vF0-uD-g9J"/>
                     <constraint firstAttribute="trailing" secondItem="mum-UF-qZy" secondAttribute="trailing" constant="12" id="xSG-6E-d45"/>

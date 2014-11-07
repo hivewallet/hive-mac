@@ -6,9 +6,17 @@
 //  Copyright (c) 2014 Hive Developers. All rights reserved.
 //
 
+#import "HILinkTextField.h"
 #import "HIHiveWebWindowController.h"
 
 NSString * const HiveWebAnnouncementDisplayedKey = @"HiveWebAnnouncementDisplayed";
+
+@interface HIHiveWebWindowController ()
+
+@property (nonatomic, weak) IBOutlet NSButton *iphoneImage;
+@property (nonatomic, weak) IBOutlet HILinkTextField *hivewalletComLink;
+
+@end
 
 @implementation HIHiveWebWindowController
 
@@ -18,7 +26,10 @@ NSString * const HiveWebAnnouncementDisplayedKey = @"HiveWebAnnouncementDisplaye
 
 - (void)windowDidLoad {
     [super windowDidLoad];
+
     [self.window center];
+
+    [self.iphoneImage.cell setHighlightsBy:NSNoCellMask];
 }
 
 - (IBAction)cancelPressed:(id)sender {
@@ -28,6 +39,10 @@ NSString * const HiveWebAnnouncementDisplayedKey = @"HiveWebAnnouncementDisplaye
 - (IBAction)okPressed:(id)sender {
     [[NSUserDefaults standardUserDefaults] setBool:YES forKey:HiveWebAnnouncementDisplayedKey];
     [self close];
+}
+
+- (IBAction)iphonePressed:(id)sender {
+    [[NSWorkspace sharedWorkspace] openURL:[NSURL URLWithString:self.hivewalletComLink.href]];
 }
 
 @end
