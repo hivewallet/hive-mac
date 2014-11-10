@@ -54,7 +54,7 @@
                             <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                         </textFieldCell>
                         <userDefinedRuntimeAttributes>
-                            <userDefinedRuntimeAttribute type="string" keyPath="href" value="https://hivewallet.com"/>
+                            <userDefinedRuntimeAttribute type="string" keyPath="href" value="https://hivewallet.com/?utm_medium=app&amp;utm_source=hive-osx&amp;utm_campaign=hive_web_announcement"/>
                         </userDefinedRuntimeAttributes>
                     </textField>
                     <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="gp7-a5-UIn">
