@@ -46,11 +46,14 @@
                        bitcoin.estimatedBalance,
                        [formatService stringWithUnitForBitcoin:bitcoin.estimatedBalance]];
 
-    [info appendFormat:@"Sync progress: %.1f%%\n", bitcoin.syncProgress];
-
     NSFetchRequest *transactionRequest = [NSFetchRequest fetchRequestWithEntityName:HITransactionEntity];
     transactionRequest.returnsObjectsAsFaults = NO;
     NSArray *transactions = [DBM executeFetchRequest:transactionRequest error:NULL];
+
+    [info appendFormat:@"Data store transactions count: %ld\n", transactions.count];
+    [info appendFormat:@"Wallet transactions count: %ld\n", bitcoin.allTransactions.count];
+
+    [info appendFormat:@"Sync progress: %.1f%%\n", bitcoin.syncProgress];
 
     [info appendFormat:@"\n## Data store transactions\n\n"];
     [info appendFormat:@"%@\n", transactions];
