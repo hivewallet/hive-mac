@@ -408,6 +408,9 @@ static int ddLogLevel = LOG_LEVEL_VERBOSE;
 #pragma mark - Last initialization phase, executed asynchronously
 
 - (void)finishInitialization {
+    // Yosemite INAppStoreWindow hack
+    [_mainWindowController.window becomeKeyWindow];
+
     [self preinstallAppsIfNeeded];
     [self rebuildAppsList];
     [self setAsDefaultHandler];
