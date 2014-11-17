@@ -86,9 +86,6 @@
 /* Class = "NSMenuItem"; title = "Lock Wallet"; ObjectID = "AFM-Ev-d2A"; */
 "AFM-Ev-d2A.title" = "Bloquear carteira";
 
-/* Class = "NSMenuItem"; title = "CoinMap"; ObjectID = "ASP-Ns-ktD"; */
-"ASP-Ns-ktD.title" = "CoinMap";
-
 /* Class = "NSMenuItem"; title = "Wallet"; ObjectID = "GX7-xG-GKH"; */
 "GX7-xG-GKH.title" = "Carteira";
 

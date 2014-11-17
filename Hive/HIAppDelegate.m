@@ -657,10 +657,6 @@ void handleException(NSException *exception) {
     [_mainWindowController.lockScreenController lockWalletAnimated:YES];
 }
 
-- (IBAction)openCoinMapSite:(id)sender {
-    [[NSWorkspace sharedWorkspace] openURL:[NSURL URLWithString:@"http://coinmap.org"]];
-}
-
 - (IBAction)openFAQ:(id)sender {
     [[NSWorkspace sharedWorkspace] openURL:[NSURL URLWithString:@"https://github.com/hivewallet/hive-osx/wiki/FAQ"]];
 }
