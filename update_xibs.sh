@@ -36,7 +36,7 @@ for file in $(find Hive "${QUERY[@]}"); do
     fi
 
     # ignore files with only irrelenvant changes
-    changes=`git diff "$file" | egrep "^\+[^+]" | grep -v "<document" | grep -v "</document>" | grep -v "<plugIn"`
+    changes=`git diff "$file" | egrep "^[+-][^+-]" | grep -v "<document" | grep -v "</document>" | grep -v "<plugIn"`
 
     if [ ! "$changes" ]; then
         git checkout HEAD "$file"
