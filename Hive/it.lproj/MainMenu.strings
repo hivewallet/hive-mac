@@ -111,7 +111,7 @@
 "ZUU-kM-x8u.title" = "Aiuto";
 
 /* Class = "NSMenuItem"; title = "Export Private Key…"; ObjectID = "c87-6N-rhE"; */
-"c87-6N-rhE.title" = "Export Private Key…";
+"c87-6N-rhE.title" = "Esporta Chiave Privata...";
 
 /* Class = "NSMenu"; title = "Tools"; ObjectID = "cCx-Ak-fii"; */
 "cCx-Ak-fii.title" = "Strumenti";
