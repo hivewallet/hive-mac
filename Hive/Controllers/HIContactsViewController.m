@@ -11,10 +11,10 @@
 #import "HIContactsViewController.h"
 #import "HIContactViewController.h"
 #import "HIDatabaseManager.h"
+#import "HINameFormatService.h"
 #import "HINavigationController.h"
 #import "HINewContactViewController.h"
 #import "NSColor+Hive.h"
-#import "HINameFormatService.h"
 
 @interface HIContactsViewController()<HINameFormatServiceObserver>
 

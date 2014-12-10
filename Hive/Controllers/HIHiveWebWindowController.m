@@ -6,8 +6,8 @@
 //  Copyright (c) 2014 Hive Developers. All rights reserved.
 //
 
-#import "HILinkTextField.h"
 #import "HIHiveWebWindowController.h"
+#import "HILinkTextField.h"
 
 NSString * const HiveWebAnnouncementDisplayedKey = @"HiveWebAnnouncementDisplayed";
 

@@ -7,8 +7,8 @@
 //
 
 #import "HIContact.h"
-#import "HITransaction.h"
 #import "HINameFormatService.h"
+#import "HITransaction.h"
 
 NSString * const HIContactEntity = @"HIContact";
 

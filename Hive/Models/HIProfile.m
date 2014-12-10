@@ -8,8 +8,8 @@
 
 #import "BCClient.h"
 #import "HIAddress.h"
-#import "HIProfile.h"
 #import "HINameFormatService.h"
+#import "HIProfile.h"
 
 @implementation HIProfileAddress
 

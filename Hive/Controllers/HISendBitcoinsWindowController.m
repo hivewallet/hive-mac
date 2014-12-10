@@ -10,6 +10,7 @@
 #import <BitcoinJKit/HIBitcoinErrorCodes.h>
 #import "BCClient.h"
 #import "HIAddress.h"
+#import "HIApplication.h"
 #import "HIBitcoinFormatService.h"
 #import "HIBitcoinURIService.h"
 #import "HIButtonWithSpinner.h"
@@ -25,12 +26,11 @@
 #import "HIPerson.h"
 #import "HISendBitcoinsWindowController.h"
 #import "HITransaction.h"
+#import "NSAlert+Hive.h"
 #import "NSColor+Hive.h"
 #import "NSDecimalNumber+HISatoshiConversion.h"
-#import "NSAlert+Hive.h"
 #import "NSView+Hive.h"
 #import "NSWindow+HIShake.h"
-#import "HIApplication.h"
 
 #import <FontAwesomeIconFactory/NIKFontAwesomeIconFactory+OSX.h>
 

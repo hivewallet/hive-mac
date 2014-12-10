@@ -11,12 +11,12 @@
 // #import <Tor/Tor.h>
 #import "BCClient.h"
 #import "HIAppDelegate.h"
+#import "HIApplication.h"
 #import "HIApplicationsManager.h"
 #import "HIContact.h"
 #import "HIDatabaseManager.h"
 #import "HIPasswordHolder.h"
 #import "HITransaction.h"
-#import "HIApplication.h"
 
 static NSString * const kBCClientBaseURLString = @"https://grabhive.com/";
 NSString * const BCClientBitcoinjDirectory = @"BitcoinJ.network";

@@ -1,6 +1,6 @@
-#import "HIPreferencesWindowController.h"
-#import "HIKeyPreferencesViewController.h"
 #import "HIGeneralPreferencesViewController.h"
+#import "HIKeyPreferencesViewController.h"
+#import "HIPreferencesWindowController.h"
 
 @implementation HIPreferencesWindowController
 

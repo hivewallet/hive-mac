@@ -15,9 +15,9 @@
 #import "HINavigationController.h"
 #import "HINewContactViewController.h"
 #import "HIProfile.h"
-#import "NSURL+Gravatar.h"
 #import "NSAlert+Hive.h"
 #import "NSColor+Hive.h"
+#import "NSURL+Gravatar.h"
 
 #import <FontAwesomeIconFactory/NIKFontAwesomeIconFactory+OSX.h>
 

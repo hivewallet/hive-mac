@@ -6,10 +6,10 @@
 //  Copyright (c) 2013 Hive Developers. All rights reserved.
 //
 
+#import "HIApplication.h"
 #import "HIContact.h"
 #import "HIDatabaseManager.h"
 #import "HITransaction.h"
-#import "HIApplication.h"
 
 NSString * const HITransactionEntity = @"HITransaction";
 NSString * const HITransactionDirectionUnknownException = @"HITransactionDirectionUnknownException";

@@ -9,8 +9,8 @@
 #import "HISidebarButton.h"
 #import "HISidebarController.h"
 #import "HIViewController.h"
-#import "NSColor+Hive.h"
 #import "KWExample.h"
+#import "NSColor+Hive.h"
 
 static int KVO_CONTEXT;
 
