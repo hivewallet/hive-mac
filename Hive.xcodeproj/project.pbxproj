@@ -303,7 +303,6 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		10153A3CC4364D6799CB4A2D /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = SOURCE_ROOT; };
 		1AA100BCED704B381898FF89 /* HILinkTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HILinkTextField.m; sourceTree = "<group>"; };
 		1AA100CAE5EF0CB61AF126DB /* HIBitcoinFormatService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HIBitcoinFormatService.m; sourceTree = "<group>"; };
 		1AA1010B59273C4F0BB17084 /* HIPasswordCreationInputHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HIPasswordCreationInputHandler.h; sourceTree = "<group>"; };
@@ -512,6 +511,7 @@
 		24FA98801927893100D7058F /* tr */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = tr; path = tr.lproj/HIGeneralPreferencesViewController.xib; sourceTree = "<group>"; };
 		24FA98811927893100D7058F /* pt-PT */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = "pt-PT"; path = "pt-PT.lproj/HIGeneralPreferencesViewController.xib"; sourceTree = "<group>"; };
 		24FA98821927893200D7058F /* sv */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = sv; path = sv.lproj/HIGeneralPreferencesViewController.xib; sourceTree = "<group>"; };
+		404373D60E6AE32EBA7E3C75 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		4D217EA4BBEC47F5A47AFC8E /* libPods-test.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-test.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		58003E2718492B2A00CD19FE /* sr */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = sr; path = sr.lproj/HIApplicationsViewController.xib; sourceTree = "<group>"; };
 		58003E2818492B2A00CD19FE /* sr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = sr; path = sr.lproj/HIContactsViewController.strings; sourceTree = "<group>"; };
@@ -2283,6 +2283,7 @@
 		58F56BB51832909100C57640 /* pt-PT */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-PT"; path = "pt-PT.lproj/MainMenu.strings"; sourceTree = "<group>"; };
 		58F56BB61832909100C57640 /* pt-PT */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = "pt-PT"; path = "pt-PT.lproj/MainMenu.xib"; sourceTree = "<group>"; };
 		58F56BB81832909100C57640 /* pt-PT */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-PT"; path = "pt-PT.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		7D7D8DC037974C00AB4A29A1 /* Pods-test.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-test.debug.xcconfig"; path = "Pods/Target Support Files/Pods-test/Pods-test.debug.xcconfig"; sourceTree = "<group>"; };
 		9A823D1518781AE10040C85C /* sv */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = sv; path = sv.lproj/HIApplicationsViewController.xib; sourceTree = "<group>"; };
 		9A823D1618781AE10040C85C /* sv */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = sv; path = sv.lproj/HIContactsViewController.strings; sourceTree = "<group>"; };
 		9A823D1718781AE10040C85C /* sv */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = sv; path = sv.lproj/HIContactsViewController.xib; sourceTree = "<group>"; };
@@ -2309,7 +2310,8 @@
 		9A823D2E18781AE40040C85C /* sv */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = sv; path = sv.lproj/MainMenu.strings; sourceTree = "<group>"; };
 		9A823D2F18781AE40040C85C /* sv */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = sv; path = sv.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		9A823D3118781AE50040C85C /* sv */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = sv; path = sv.lproj/Localizable.strings; sourceTree = "<group>"; };
-		B9458D6A454B45408789DFA5 /* Pods-test.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-test.xcconfig"; path = "Pods/Pods-test.xcconfig"; sourceTree = "<group>"; };
+		BB42D9F40183087DCC69743B /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		CDA0597D51F28424EA14AC69 /* Pods-test.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-test.release.xcconfig"; path = "Pods/Target Support Files/Pods-test/Pods-test.release.xcconfig"; sourceTree = "<group>"; };
 		D91FE8071793FEFC001B37D8 /* BitcoinKit.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = BitcoinKit.xcodeproj; path = BitcoinKit/BitcoinKit.xcodeproj; sourceTree = "<group>"; };
 		D91FE826179887C4001B37D8 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		D9235371177C4222003533DF /* HIApplication.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HIApplication.h; path = Database/HIApplication.h; sourceTree = "<group>"; };
@@ -2538,6 +2540,17 @@
 				24EAAFCA186E1BBD00E1D2D3 /* HiveTests-Prefix.pch */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		2A2D8571EA7ADA1ADE3E2935 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				BB42D9F40183087DCC69743B /* Pods.debug.xcconfig */,
+				404373D60E6AE32EBA7E3C75 /* Pods.release.xcconfig */,
+				7D7D8DC037974C00AB4A29A1 /* Pods-test.debug.xcconfig */,
+				CDA0597D51F28424EA14AC69 /* Pods-test.release.xcconfig */,
+			);
+			name = Pods;
 			sourceTree = "<group>";
 		};
 		5804C31F17FC884E003B7891 /* Models */ = {
@@ -2925,8 +2938,7 @@
 				24EAAFC2186E1BBD00E1D2D3 /* HiveTests */,
 				D9A591C61767B4A800502635 /* Frameworks */,
 				D9A591C51767B4A800502635 /* Products */,
-				10153A3CC4364D6799CB4A2D /* Pods.xcconfig */,
-				B9458D6A454B45408789DFA5 /* Pods-test.xcconfig */,
+				2A2D8571EA7ADA1ADE3E2935 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -3407,7 +3419,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
 		};
 		243F45FC18C7CB7300E16414 /* Sign frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -3450,7 +3462,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Pods-test-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-test/Pods-test-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -5709,7 +5721,7 @@
 /* Begin XCBuildConfiguration section */
 		24EAAFCD186E1BBE00E1D2D3 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = B9458D6A454B45408789DFA5 /* Pods-test.xcconfig */;
+			baseConfigurationReference = 7D7D8DC037974C00AB4A29A1 /* Pods-test.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Hive.app/Contents/MacOS/Hive";
 				CLANG_WARN_BOOL_CONVERSION = YES;
@@ -5739,7 +5751,7 @@
 		};
 		24EAAFCE186E1BBE00E1D2D3 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = B9458D6A454B45408789DFA5 /* Pods-test.xcconfig */;
+			baseConfigurationReference = CDA0597D51F28424EA14AC69 /* Pods-test.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Hive.app/Contents/MacOS/Hive";
 				CLANG_WARN_BOOL_CONVERSION = YES;
@@ -5827,7 +5839,7 @@
 		};
 		D9A591E51767B4A800502635 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 10153A3CC4364D6799CB4A2D /* Pods.xcconfig */;
+			baseConfigurationReference = BB42D9F40183087DCC69743B /* Pods.debug.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				COMBINE_HIDPI_IMAGES = YES;
@@ -5846,7 +5858,7 @@
 		};
 		D9A591E61767B4A800502635 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 10153A3CC4364D6799CB4A2D /* Pods.xcconfig */;
+			baseConfigurationReference = 404373D60E6AE32EBA7E3C75 /* Pods.release.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "Developer ID Application";
 				COMBINE_HIDPI_IMAGES = YES;

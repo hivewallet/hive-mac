@@ -14,8 +14,8 @@ pod 'NSURL+Gravatar'
 
 target :test, :exclusive => true do
   link_with 'HiveTests'
-  pod 'Kiwi/XCTest'
-  pod 'OCHamcrest', '~> 3.0'
+  pod 'Kiwi'
+  pod 'OCHamcrest', '4.0'    # 4.0.1 requires 10.8+
 end
 
 # Map old locale names (used in LetsMove) to ours
