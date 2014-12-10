@@ -4,10 +4,16 @@
 #import "HIExchangeRateService.h"
 
 static NSString *const HIConversionPreferenceKey = @"ConversionCurrency";
+static NSString *const HIAvailableCurrenciesPreferencesKey = @"AvailableCurrencies";
+static NSString *const HIDefaultCurrency = @"USD";
+
 static const NSTimeInterval HIExchangeRateAutomaticUpdateInterval = 60.0 * 60.0;
 static const NSTimeInterval HIExchangeRateMinimumUpdateInterval = 60.0;
 
-@interface HIExchangeRateService ()
+
+@interface HIExchangeRateService () {
+    NSArray *_availableCurrencies;
+}
 
 @property (nonatomic, strong) AFHTTPClient *client;
 @property (nonatomic, strong) NSMutableSet *observers;
@@ -40,6 +46,10 @@ static const NSTimeInterval HIExchangeRateMinimumUpdateInterval = 60.0;
         self.lastUpdate = [NSDate dateWithTimeIntervalSince1970:0];
 
         [self registerAppNapNotifications];
+
+        [[NSUserDefaults standardUserDefaults] registerDefaults:@{
+          HIAvailableCurrenciesPreferencesKey: @[HIDefaultCurrency]
+        }];
     }
 
     return self;
@@ -54,21 +64,40 @@ static const NSTimeInterval HIExchangeRateMinimumUpdateInterval = 60.0;
 #pragma mark - user defaults
 
 - (NSArray *)availableCurrencies {
-    static NSArray *availableCurrencies;
-    static dispatch_once_t onceToken;
-    dispatch_once(&onceToken, ^ {
-        availableCurrencies =
-            @[
-              @"AUD", @"BRL", @"CAD", @"CHF", @"CNY", @"EUR", @"GBP", @"ILS", @"JPY",
-              @"NOK", @"NZD", @"PLN", @"RUB", @"SEK", @"SGD", @"TRY", @"USD", @"ZAR",
-            ];
-    });
-    return availableCurrencies;
+    if (!_availableCurrencies) {
+        _availableCurrencies = [[NSUserDefaults standardUserDefaults]
+                                objectForKey:HIAvailableCurrenciesPreferencesKey];
+
+        [self performAutomaticUpdate];
+    }
+
+    return _availableCurrencies;
+}
+
+- (void)setAvailableCurrencies:(NSArray *)availableCurrencies {
+    if (![availableCurrencies isEqualToArray:_availableCurrencies]) {
+        for (NSString *currency in availableCurrencies) {
+            if (![_availableCurrencies containsObject:currency]) {
+                HILogInfo(@"Added currency to exchange rate list: %@", currency);
+            }
+        }
+
+        for (NSString *currency in _availableCurrencies) {
+            if (![availableCurrencies containsObject:currency]) {
+                HILogInfo(@"Removed currency from exchange rate list: %@", currency);
+            }
+        }
+
+        _availableCurrencies = [availableCurrencies copy];
+
+        [[NSUserDefaults standardUserDefaults] setObject:_availableCurrencies
+                                                  forKey:HIAvailableCurrenciesPreferencesKey];
+    }
 }
 
 - (NSString *)preferredCurrency {
     NSString *currency = [[NSUserDefaults standardUserDefaults] stringForKey:HIConversionPreferenceKey];
-    return [self.availableCurrencies containsObject:currency] ? currency : @"USD";
+    return [self.availableCurrencies containsObject:currency] ? currency : HIDefaultCurrency;
 }
 
 - (void)setPreferredCurrency:(NSString *)preferredCurrency {
@@ -134,9 +163,33 @@ static const NSTimeInterval HIExchangeRateMinimumUpdateInterval = 60.0;
 }
 
 - (void)updateExchangeRatesFromResponse:(NSDictionary *)response {
+    [self updateAvailableCurrenciesFromResponse:response];
+
     for (NSString *currency in self.availableCurrencies) {
         [self updateExchangeRatesForCurrency:currency fromResponse:response];
     }
+}
+
+- (void)updateAvailableCurrenciesFromResponse:(NSDictionary *)response {
+    NSMutableArray *receivedCurrencies = [NSMutableArray arrayWithCapacity:response.count];
+
+    for (NSString *key in response.allKeys) {
+        if (key.length == 3 && [key.uppercaseString isEqual:key]) {
+            [receivedCurrencies addObject:key];
+        }
+    }
+
+    if (receivedCurrencies.count == 0) {
+        // something went seriously wrong, cancel the update
+        return;
+    }
+
+    if (![receivedCurrencies containsObject:HIDefaultCurrency]) {
+        // make sure the default never disappears
+        [receivedCurrencies addObject:HIDefaultCurrency];
+    }
+
+    self.availableCurrencies = [receivedCurrencies sortedArrayUsingSelector:@selector(compare:)];
 }
 
 - (void)updateExchangeRatesForCurrency:(NSString *)currency fromResponse:(NSDictionary *)response {
