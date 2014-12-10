@@ -30,8 +30,8 @@
 @property (nonatomic, weak) IBOutlet NSPopUpButton *bitcoinCurrencyPopupButton;
 @property (nonatomic, weak) IBOutlet NSView *contentView;
 
-@property (nonatomic, strong, readonly) HIExchangeRateService *exchangeRateService;
-@property (nonatomic, strong, readonly) HIBitcoinFormatService *bitcoinFormatService;
+@property (nonatomic, strong) HIExchangeRateService *exchangeRateService;
+@property (nonatomic, strong) HIBitcoinFormatService *bitcoinFormatService;
 @property (nonatomic, copy) NSDecimalNumber *exchangeRate;
 @property (nonatomic, copy) NSString *selectedCurrency;
 @property (nonatomic, copy) NSString *selectedBitcoinFormat;
@@ -51,10 +51,22 @@
         _profile = [HIProfile new];
         _infoPanel = [[HIContactInfoViewController alloc] initWithParent:self];
 
+        self.exchangeRateService = [HIExchangeRateService sharedService];
+        [self.exchangeRateService addExchangeRateObserver:self];
+        self.selectedCurrency = self.exchangeRateService.preferredCurrency;
+
+        self.bitcoinFormatService = [HIBitcoinFormatService sharedService];
+        self.selectedBitcoinFormat = self.bitcoinFormatService.preferredFormat;
+
         [[BCClient sharedClient] addObserver:self
                                   forKeyPath:@"estimatedBalance"
                                      options:NSKeyValueObservingOptionInitial
                                      context:NULL];
+
+        [self.exchangeRateService addObserver:self
+                                   forKeyPath:@"availableCurrencies"
+                                      options:0
+                                      context:NULL];
 
         [[NSNotificationCenter defaultCenter] addObserver:self
                                                  selector:@selector(updateBitcoinFormat:)
@@ -64,13 +76,6 @@
                                                  selector:@selector(onLocaleChange)
                                                      name:NSCurrentLocaleDidChangeNotification
                                                    object:nil];
-
-        _exchangeRateService = [HIExchangeRateService sharedService];
-        [_exchangeRateService addExchangeRateObserver:self];
-        self.selectedCurrency = _exchangeRateService.preferredCurrency;
-
-        _bitcoinFormatService = [HIBitcoinFormatService sharedService];
-        _selectedBitcoinFormat = _bitcoinFormatService.preferredFormat;
     }
 
     return self;
@@ -78,8 +83,10 @@
 
 - (void)dealloc {
     [[BCClient sharedClient] removeObserver:self forKeyPath:@"estimatedBalance"];
+    [self.exchangeRateService removeObserver:self forKeyPath:@"availableCurrencies"];
+
     [[NSNotificationCenter defaultCenter] removeObserver:self];
-    [_exchangeRateService removeExchangeRateObserver:self];
+    [self.exchangeRateService removeExchangeRateObserver:self];
 }
 
 - (void)loadView {
@@ -91,19 +98,25 @@
     self.photoView.layer.borderWidth = 1.0;
     self.photoView.layer.borderColor = [[NSColor colorWithCalibratedWhite:0.88 alpha:1.0] hiNativeColor];
 
+    [self setupBitcoinFormatLists];
     [self setupCurrencyLists];
     [self updateBalance];
     [self refreshData];
 
     [self showControllerInContentView:_infoPanel];
+}
 
+- (void)setupBitcoinFormatLists {
+    [self.bitcoinCurrencyPopupButton addItemsWithTitles:self.bitcoinFormatService.availableFormats];
+    [self.bitcoinCurrencyPopupButton selectItemWithTitle:self.selectedBitcoinFormat];
 }
 
 - (void)setupCurrencyLists {
-    [self.bitcoinCurrencyPopupButton addItemsWithTitles:self.bitcoinFormatService.availableFormats];
-    [self.bitcoinCurrencyPopupButton selectItemWithTitle:self.selectedBitcoinFormat];
+    [self.convertedCurrencyPopupButton removeAllItems];
     [self.convertedCurrencyPopupButton addItemsWithTitles:self.exchangeRateService.availableCurrencies];
-    [self.convertedCurrencyPopupButton selectItemWithTitle:_selectedCurrency];
+
+    self.selectedCurrency = self.exchangeRateService.preferredCurrency;
+    [self.convertedCurrencyPopupButton selectItemWithTitle:self.selectedCurrency];
 }
 
 - (void)viewWillAppear {
@@ -147,10 +160,17 @@
                       ofObject:(id)object
                         change:(NSDictionary *)change
                        context:(void *)context {
+
     if (object == [BCClient sharedClient]) {
         if ([keyPath isEqual:@"estimatedBalance"]) {
             dispatch_async(dispatch_get_main_queue(), ^{
                 [self updateBalance];
+            });
+        }
+    } else if (object == self.exchangeRateService) {
+        if ([keyPath isEqual:@"availableCurrencies"]) {
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [self setupCurrencyLists];
             });
         }
     }
