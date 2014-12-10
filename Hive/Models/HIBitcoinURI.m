@@ -25,7 +25,7 @@ static NSString * const BitcoinURIPrefix = @"bitcoin:";
             _valid = [self validate];
         } else if ([self looksLikeBitcoinAddress:URI]) {
             _address = [URI copy];
-            _valid = [[HIBitcoinManager defaultManager] isAddressValid:_address];
+            _valid = [self validate];
         } else {
             return nil;
         }
@@ -71,6 +71,10 @@ static NSString * const BitcoinURIPrefix = @"bitcoin:";
         if ([key hasPrefix:@"req-"]) {
             return NO;
         }
+    }
+
+    if (![[HIBitcoinManager defaultManager] isAddressValid:self.address]) {
+        return NO;
     }
 
     return YES;
