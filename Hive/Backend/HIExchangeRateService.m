@@ -11,10 +11,11 @@ static const NSTimeInterval HIExchangeRateMinimumUpdateInterval = 60.0;
 
 @property (nonatomic, strong) AFHTTPClient *client;
 @property (nonatomic, strong) NSMutableSet *observers;
-@property (nonatomic, strong, readonly) NSMutableDictionary *exchangeRates;
+@property (nonatomic, strong) NSMutableDictionary *exchangeRates;
 @property (nonatomic, copy) NSDate *lastUpdate;
 
 @end
+
 
 @implementation HIExchangeRateService
 
@@ -31,14 +32,16 @@ static const NSTimeInterval HIExchangeRateMinimumUpdateInterval = 60.0;
 
 - (instancetype)init {
     self = [super init];
+
     if (self) {
-        _client = [BCClient sharedClient];
-        _observers = [NSMutableSet new];
-        _exchangeRates = [NSMutableDictionary new];
-        _lastUpdate = [NSDate dateWithTimeIntervalSince1970:0];
+        self.client = [BCClient sharedClient];
+        self.observers = [NSMutableSet new];
+        self.exchangeRates = [NSMutableDictionary new];
+        self.lastUpdate = [NSDate dateWithTimeIntervalSince1970:0];
 
         [self registerAppNapNotifications];
     }
+
     return self;
 }
 
@@ -46,6 +49,7 @@ static const NSTimeInterval HIExchangeRateMinimumUpdateInterval = 60.0;
     [self cancelAutomaticUpdate];
     [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
+
 
 #pragma mark - user defaults
 
@@ -109,7 +113,7 @@ static const NSTimeInterval HIExchangeRateMinimumUpdateInterval = 60.0;
             [self updateExchangeRatesFromResponse:response];
             self.lastUpdate = [NSDate date];
         } else {
-            HILogWarn(@"Invalid response from exchange rate API for %@: %@", currency, error);
+            HILogWarn(@"Invalid response from exchange rate API: %@", error);
         }
 
         [self notifyOfExchangeRates];
@@ -158,13 +162,11 @@ static const NSTimeInterval HIExchangeRateMinimumUpdateInterval = 60.0;
 
 - (void)notifyOfExchangeRates {
     for (NSString *currency in self.availableCurrencies) {
-        [self notifyOfExchangeRate:self.exchangeRates[currency]
-                       forCurrency:currency];
+        [self notifyOfExchangeRate:self.exchangeRates[currency] forCurrency:currency];
     }
 }
 
-- (void)notifyOfExchangeRate:(NSDecimalNumber *)exchangeRate
-                 forCurrency:(NSString *)currency {
+- (void)notifyOfExchangeRate:(NSDecimalNumber *)exchangeRate forCurrency:(NSString *)currency {
     for (id<HIExchangeRateObserver> observer in self.observers) {
         [observer exchangeRateUpdatedTo:exchangeRate forCurrency:currency];
     }
