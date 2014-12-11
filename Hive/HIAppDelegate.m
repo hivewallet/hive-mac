@@ -32,6 +32,7 @@
 #import "HIFirstRunWizardWindowController.h"
 #import "HIHiveWebWindowController.h"
 #import "HILockScreenViewController.h"
+#import "HILogFileManager.h"
 #import "HILogFormatter.h"
 #import "HIMainWindowController.h"
 #import "HINetworkConnectionMonitor.h"
@@ -147,17 +148,15 @@ static int ddLogLevel = LOG_LEVEL_VERBOSE;
     [DDLog addLogger:[DDTTYLogger sharedInstance] withLogLevel:LOG_LEVEL_VERBOSE];
     [[DDTTYLogger sharedInstance] setLogFormatter:formatter];
 
-    // file logger
-    DDFileLogger *fileLogger = [[DDFileLogger alloc] init];
+    // file logger manager config - keep 4 log files
+    HILogFileManager *logFileManager = [[HILogFileManager alloc] init];
+    logFileManager.maximumNumberOfLogFiles = 4;
 
-    // roll file after a week or when it reaches 10 MB
+    // file logger config - roll file after a week or when it reaches 10 MB
+    DDFileLogger *fileLogger = [[DDFileLogger alloc] initWithLogFileManager:logFileManager];
     fileLogger.rollingFrequency = 7 * 86400;
     fileLogger.maximumFileSize = 10 * 1024 * 1024;
     fileLogger.logFormatter = formatter;
-
-    // keep 4 log files, use timestamps for naming
-    DDLogFileManagerDefault *logFileManager = (DDLogFileManagerDefault *) fileLogger.logFileManager;
-    logFileManager.maximumNumberOfLogFiles = 4;
 
     [DDLog addLogger:fileLogger withLogLevel:LOG_LEVEL_VERBOSE];
 

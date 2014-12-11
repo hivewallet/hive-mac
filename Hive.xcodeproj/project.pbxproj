@@ -215,6 +215,7 @@
 		58A37ADF180D998700CFCDE3 /* HITransactionsViewController.strings in Resources */ = {isa = PBXBuildFile; fileRef = 58A37ADD180D998700CFCDE3 /* HITransactionsViewController.strings */; };
 		58A37AE2180D99A100CFCDE3 /* HIMainWindowController.strings in Resources */ = {isa = PBXBuildFile; fileRef = 58A37AE0180D99A100CFCDE3 /* HIMainWindowController.strings */; };
 		58A37AE5180D99F200CFCDE3 /* MainMenu.strings in Resources */ = {isa = PBXBuildFile; fileRef = 58A37AE3180D99F200CFCDE3 /* MainMenu.strings */; };
+		58A48FE41A39ED1200ABD9F8 /* HILogFileManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 58A48FE31A39ED1200ABD9F8 /* HILogFileManager.m */; };
 		58A8760A197E9CF600524C77 /* HISyncingAppAdapter.m in Sources */ = {isa = PBXBuildFile; fileRef = 58A87609197E9CF600524C77 /* HISyncingAppAdapter.m */; };
 		58A8760D197E9D0F00524C77 /* HIGoogleDriveBackup.m in Sources */ = {isa = PBXBuildFile; fileRef = 58A8760C197E9D0F00524C77 /* HIGoogleDriveBackup.m */; };
 		58A8760F197E9E8100524C77 /* google-drive-128.png in Resources */ = {isa = PBXBuildFile; fileRef = 58A8760E197E9E8100524C77 /* google-drive-128.png */; };
@@ -1812,6 +1813,8 @@
 		58A37BA2180DBAA100CFCDE3 /* da */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = da; path = da.lproj/MainMenu.strings; sourceTree = "<group>"; };
 		58A37BA3180DBAA100CFCDE3 /* da */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = da; path = da.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		58A37BA6180DBAA100CFCDE3 /* da */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = da; path = da.lproj/Localizable.strings; sourceTree = "<group>"; };
+		58A48FE21A39ED1200ABD9F8 /* HILogFileManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HILogFileManager.h; sourceTree = "<group>"; };
+		58A48FE31A39ED1200ABD9F8 /* HILogFileManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HILogFileManager.m; sourceTree = "<group>"; };
 		58A87608197E9CF600524C77 /* HISyncingAppAdapter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HISyncingAppAdapter.h; sourceTree = "<group>"; };
 		58A87609197E9CF600524C77 /* HISyncingAppAdapter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HISyncingAppAdapter.m; sourceTree = "<group>"; };
 		58A8760B197E9D0F00524C77 /* HIGoogleDriveBackup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HIGoogleDriveBackup.h; sourceTree = "<group>"; };
@@ -2835,6 +2838,8 @@
 				1AA10B46D06417F03AD71274 /* HIDirectoryDataService.m */,
 				1AA10C583F128C0BCD84C878 /* HIExchangeRateService.h */,
 				1AA1032408E917EE5B7752AC /* HIExchangeRateService.m */,
+				58A48FE21A39ED1200ABD9F8 /* HILogFileManager.h */,
+				58A48FE31A39ED1200ABD9F8 /* HILogFileManager.m */,
 				1AA10AF547346B009D38D852 /* HINameFormatService.h */,
 				1AA10FA59EE4E8EDFD4C96AA /* HINameFormatService.m */,
 				58F496F618B7EE8F0033B7E0 /* HINetworkConnectionMonitor.h */,
@@ -3597,6 +3602,7 @@
 				1AA103708F688652981245D2 /* HICurrencyFormatService.m in Sources */,
 				1AA1028C64880CACCA3AE5CA /* HIDirectoryDataService.m in Sources */,
 				1AA10E305C91DC42C81D0DC3 /* HIAddressesBox.m in Sources */,
+				58A48FE41A39ED1200ABD9F8 /* HILogFileManager.m in Sources */,
 				1AA10A26CEBC9FDF10C919A8 /* HIEmptyTransactionsView.m in Sources */,
 				586C655C1A091C2D008AFFDF /* HIHiveWebWindowController.m in Sources */,
 				1AA10D8123CFE9FDA6CFFEA0 /* HISendFeedbackService.m in Sources */,
