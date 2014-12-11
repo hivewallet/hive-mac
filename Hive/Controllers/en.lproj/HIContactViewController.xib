@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="4514" systemVersion="13B42" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none">
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="6254" systemVersion="13F34" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
-        <deployment version="1070" defaultVersion="1070" identifier="macosx"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="4514"/>
+        <deployment version="1070" identifier="macosx"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="6254"/>
     </dependencies>
     <objects>
         <customObject id="-2" userLabel="File's Owner" customClass="HIContactViewController">
@@ -17,28 +17,29 @@
             </connections>
         </customObject>
         <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
-        <customObject id="-3" userLabel="Application"/>
+        <customObject id="-3" userLabel="Application" customClass="NSObject"/>
         <customView wantsLayer="YES" focusRingType="none" id="1">
             <rect key="frame" x="0.0" y="0.0" width="350" height="458"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView id="3">
+                <imageView translatesAutoresizingMaskIntoConstraints="NO" id="3">
                     <rect key="frame" x="0.0" y="380" width="78" height="78"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="78" id="5a3-MA-zCc"/>
+                        <constraint firstAttribute="width" constant="78" id="PFp-sj-gVM"/>
+                    </constraints>
                     <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyUpOrDown" id="4"/>
                 </imageView>
-                <textField verticalHuggingPriority="750" id="21">
-                    <rect key="frame" x="91" y="427" width="236" height="17"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="John Whatshisface" id="22">
+                <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="21">
+                    <rect key="frame" x="91" y="427" width="129" height="17"/>
+                    <textFieldCell key="cell" lineBreakMode="truncatingTail" sendsActionOnEndEditing="YES" title="John Whatshisface" id="22">
                         <font key="font" metaFont="systemBold"/>
                         <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                     </textFieldCell>
                 </textField>
-                <button id="23">
+                <button translatesAutoresizingMaskIntoConstraints="NO" id="23">
                     <rect key="frame" x="88" y="388" width="250" height="29"/>
-                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                     <shadow key="shadow" blurRadius="1">
                         <size key="offset" width="0.0" height="1"/>
                         <color key="color" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
@@ -51,15 +52,33 @@
                         <action selector="sendBitcoinsPressed:" target="-2" id="25"/>
                     </connections>
                 </button>
-                <customView id="29" customClass="HIProfileTabView">
+                <customView translatesAutoresizingMaskIntoConstraints="NO" id="29" customClass="HIProfileTabView">
                     <rect key="frame" x="0.0" y="330" width="350" height="50"/>
-                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="50" id="mHh-e4-ywQ"/>
+                    </constraints>
                 </customView>
-                <customView id="40">
+                <customView translatesAutoresizingMaskIntoConstraints="NO" id="40">
                     <rect key="frame" x="0.0" y="0.0" width="350" height="330"/>
-                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                 </customView>
             </subviews>
+            <constraints>
+                <constraint firstItem="29" firstAttribute="leading" secondItem="1" secondAttribute="leading" id="2ac-1t-bue"/>
+                <constraint firstItem="40" firstAttribute="top" secondItem="29" secondAttribute="bottom" id="3Wb-fZ-zjU"/>
+                <constraint firstItem="23" firstAttribute="leading" secondItem="3" secondAttribute="trailing" constant="12" id="3gJ-nX-cEP"/>
+                <constraint firstAttribute="trailing" secondItem="29" secondAttribute="trailing" id="7eW-oC-3Ai"/>
+                <constraint firstItem="3" firstAttribute="leading" secondItem="1" secondAttribute="leading" id="GFr-if-gz8"/>
+                <constraint firstItem="29" firstAttribute="top" secondItem="3" secondAttribute="bottom" id="Hnr-KE-KOb"/>
+                <constraint firstItem="23" firstAttribute="top" secondItem="21" secondAttribute="bottom" constant="12" id="Kxe-qn-s7k"/>
+                <constraint firstAttribute="trailing" secondItem="23" secondAttribute="trailing" constant="14" id="R4h-u7-biE"/>
+                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="21" secondAttribute="trailing" constant="20" symbolic="YES" id="cIq-dI-fLv"/>
+                <constraint firstItem="40" firstAttribute="leading" secondItem="1" secondAttribute="leading" id="ejL-d2-djm"/>
+                <constraint firstItem="21" firstAttribute="leading" secondItem="3" secondAttribute="trailing" constant="15" id="hrh-6a-EIl"/>
+                <constraint firstItem="21" firstAttribute="top" secondItem="1" secondAttribute="top" constant="14" id="iNo-jE-7dZ"/>
+                <constraint firstAttribute="trailing" secondItem="40" secondAttribute="trailing" id="o4Y-nl-9Ug"/>
+                <constraint firstItem="3" firstAttribute="top" secondItem="1" secondAttribute="top" id="ubN-vY-T3z"/>
+                <constraint firstAttribute="bottom" secondItem="40" secondAttribute="bottom" id="vrv-tx-Dst"/>
+            </constraints>
         </customView>
         <customObject id="36" customClass="HIContactTabBarController">
             <connections>
