@@ -11,7 +11,11 @@
 @implementation HILogFileManager
 
 - (NSString *)applicationName {
-    return @"Hive";
+    if (DEBUG_OPTION_ENABLED(TESTING_NETWORK)) {
+        return @"HiveTest";
+    } else {
+        return @"Hive";
+    }
 }
 
 @end

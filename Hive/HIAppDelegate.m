@@ -149,7 +149,7 @@ static int ddLogLevel = LOG_LEVEL_VERBOSE;
     [[DDTTYLogger sharedInstance] setLogFormatter:formatter];
 
     // file logger manager config - keep 4 log files
-    HILogFileManager *logFileManager = [[HILogFileManager alloc] init];
+    HILogFileManager *logFileManager = [[HILogFileManager alloc] initWithLogsDirectory:[self logFileDirectory]];
     logFileManager.maximumNumberOfLogFiles = 4;
 
     // file logger config - roll file after a week or when it reaches 10 MB
@@ -193,6 +193,18 @@ static int ddLogLevel = LOG_LEVEL_VERBOSE;
         }
     } else {
         return [appSupportURL URLByAppendingPathComponent:@"Hive"];
+    }
+}
+
+- (NSString *)logFileDirectory {
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSLibraryDirectory, NSUserDomainMask, YES);
+    NSString *basePath = ([paths count] > 0) ? [paths objectAtIndex:0] : NSTemporaryDirectory();
+    NSString *logsDirectory = [basePath stringByAppendingPathComponent:@"Logs"];
+
+    if (DEBUG_OPTION_ENABLED(TESTING_NETWORK)) {
+        return [logsDirectory stringByAppendingPathComponent:@"HiveTest"];
+    } else {
+        return [logsDirectory stringByAppendingPathComponent:@"Hive"];
     }
 }
 
