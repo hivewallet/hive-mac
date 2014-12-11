@@ -97,17 +97,6 @@ static int ddLogLevel = LOG_LEVEL_VERBOSE;
 
     HILogInfo(@"Starting Hive v. %@...", [[NSBundle mainBundle] infoDictionary][@"CFBundleVersion"]);
 
-    [[NSUserDefaults standardUserDefaults] registerDefaults:@{
-      // enable WebKit inspector in apps
-      @"WebKitDeveloperExtras": @YES,
-
-      // enable lock screen on startup, unless it's explicitly disabled
-      LockScreenEnabledDefaultsKey: @YES,
-
-      @"LastNameFirst": @0,
-      @"SortByLastName": @1,
-    }];
-
     [NSURLProtocol registerClass:[HIApplicationURLProtocol class]];
 
     _popupWindows = [NSMutableArray new];

@@ -8,7 +8,6 @@
 
 @class HIPasswordInputViewController;
 
-extern NSString * const LockScreenEnabledDefaultsKey;
 extern NSString * const LockScreenWillAppearNotification;
 extern NSString * const LockScreenDidAppearNotification;
 extern NSString * const LockScreenWillDisappearNotification;

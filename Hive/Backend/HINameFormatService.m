@@ -26,14 +26,17 @@ static int KVContext;
 
 - (id)init {
     self = [super init];
+
     if (self) {
         _observers = [NSMutableSet new];
 
+        [[NSUserDefaults standardUserDefaults] registerDefaults:@{ LastNameFirstDefaultsKey: @0 }];
         [[NSUserDefaults standardUserDefaults] addObserver:self
                                                 forKeyPath:LastNameFirstDefaultsKey
                                                    options:0
                                                    context:&KVContext];
     }
+
     return self;
 }
 
@@ -75,10 +78,11 @@ static int KVContext;
 
 - (NSString *)fullNameForPerson:(id<HIPerson>)person {
     if (person.firstname.length > 0 && person.lastname.length > 0) {
-        BOOL lastNameFirst =
-            [[NSUserDefaults standardUserDefaults] boolForKey:LastNameFirstDefaultsKey];
+        BOOL lastNameFirst = [[NSUserDefaults standardUserDefaults] boolForKey:LastNameFirstDefaultsKey];
+
         NSString *first = lastNameFirst ? person.lastname : person.firstname;
         NSString *second = lastNameFirst ? person.firstname : person.lastname;
+
         return [NSString stringWithFormat:@"%@ %@", first, second];
     } else if (person.firstname.length > 0) {
         return person.firstname;

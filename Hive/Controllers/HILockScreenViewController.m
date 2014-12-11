@@ -12,7 +12,8 @@
 #import "HIPasswordInputViewController.h"
 #import "NSWindow+HIShake.h"
 
-NSString * const LockScreenEnabledDefaultsKey = @"LockScreenEnabled";
+static NSString * const LockScreenEnabledDefaultsKey = @"LockScreenEnabled";
+
 NSString * const LockScreenWillAppearNotification = @"LockScreenWillAppearNotification";
 NSString * const LockScreenDidAppearNotification = @"LockScreenDidAppearNotification";
 NSString * const LockScreenWillDisappearNotification = @"LockScreenWillDisappearNotification";
@@ -56,6 +57,9 @@ NSString * const LockScreenDidDisappearNotification = @"LockScreenDidDisappearNo
 }
 
 - (void)setInitialState {
+    // enable lock screen on startup, unless it's explicitly disabled
+    [[NSUserDefaults standardUserDefaults] registerDefaults:@{ LockScreenEnabledDefaultsKey: @YES }];
+
     if ([[HIBitcoinManager defaultManager] isWalletEncrypted] && [self isLockScreenEnabled]) {
         [self showLockScreenAnimated:NO];
     } else {

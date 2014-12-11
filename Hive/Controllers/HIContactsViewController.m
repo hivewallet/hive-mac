@@ -16,6 +16,9 @@
 #import "HINewContactViewController.h"
 #import "NSColor+Hive.h"
 
+static NSString * const SortByLastNamePreferencesKey = @"SortByLastName";
+
+
 @interface HIContactsViewController()<HINameFormatServiceObserver>
 
 // top-level objects
@@ -53,6 +56,8 @@
     [self.foreverAloneScreen.layer setBackgroundColor:[[NSColor hiWindowBackgroundColor] hiNativeColor]];
     [self.view addSubview:self.foreverAloneScreen];
 
+    [[NSUserDefaults standardUserDefaults] registerDefaults:@{ SortByLastNamePreferencesKey: @1 }];
+
     [self.arrayController addObserver:self
                            forKeyPath:@"arrangedObjects.@count"
                               options:NSKeyValueObservingOptionInitial
@@ -64,8 +69,9 @@
                                                object:nil];
     [self bind:@"sortByLastName"
       toObject:[NSUserDefaults standardUserDefaults]
-   withKeyPath:@"SortByLastName"
+   withKeyPath:SortByLastNamePreferencesKey
        options:nil];
+
     [self updateSortDescriptors];
 }
 

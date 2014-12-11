@@ -42,8 +42,10 @@
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
 
     if (self) {
-        // Initialization code here.
         _sourceFiles = [NSMutableDictionary new];
+
+        // enable WebKit inspector in apps
+        [[NSUserDefaults standardUserDefaults] registerDefaults:@{ @"WebKitDeveloperExtras": @YES }];
     }
     
     return self;
