@@ -17,31 +17,3 @@ target :test, :exclusive => true do
   pod 'Kiwi'
   pod 'OCHamcrest', '4.0'    # 4.0.1 requires 10.8+
 end
-
-# Map old locale names (used in LetsMove) to ours
-pre_install do |installer|
-  locale_mapping = {
-    "danish" => "da",
-    "dutch" => "nl",
-    "english" => "en",
-    "french" => "fr",
-    "german" => "de",
-    "italian" => "it",
-    "japanese" => "ja",
-    "portuguese" => "pt",
-    "russian" => "ru",
-    "spanish" => "es",
-  }
-
-  installer.pods.each do |pod|
-    %x[ find "#{pod.root}" -name '*.lproj' ].split("\n").each do |bundle|
-      locale = File.basename(bundle, ".lproj").downcase
-      if locale_mapping.has_key?(locale)
-        newLocaleName = locale_mapping[locale]
-        newBundleName = File.join(File.dirname(bundle), newLocaleName + ".lproj")
-        puts "Moving #{bundle.inspect} -> #{newBundleName.inspect}"
-        FileUtils.mv(bundle, newBundleName)
-      end
-    end
-  end
-end
