@@ -8,9 +8,7 @@
 
 #import <AFNetworking/AFJSONRequestOperation.h>
 #import <BitcoinJKit/BitcoinJKit.h>
-// #import <Tor/Tor.h>
 #import "BCClient.h"
-#import "HIAppDelegate.h"
 #import "HIApplication.h"
 #import "HIApplicationsManager.h"
 #import "HIContact.h"

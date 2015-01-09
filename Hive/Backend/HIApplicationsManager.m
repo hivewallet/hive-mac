@@ -7,7 +7,6 @@
 //
 
 #import <AFNetworking/AFHTTPRequestOperation.h>
-#import "HIAppDelegate.h"
 #import "HIApplication.h"
 #import "HIApplicationsManager.h"
 #import "HIApplicationsViewController.h"
