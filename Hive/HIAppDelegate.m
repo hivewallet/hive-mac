@@ -198,7 +198,7 @@ static int ddLogLevel = LOG_LEVEL_VERBOSE;
 
 - (NSString *)logFileDirectory {
     NSArray *paths = NSSearchPathForDirectoriesInDomains(NSLibraryDirectory, NSUserDomainMask, YES);
-    NSString *basePath = ([paths count] > 0) ? [paths objectAtIndex:0] : NSTemporaryDirectory();
+    NSString *basePath = paths.firstObject ?: NSTemporaryDirectory();
     NSString *logsDirectory = [basePath stringByAppendingPathComponent:@"Logs"];
 
     if (DEBUG_OPTION_ENABLED(TESTING_NETWORK)) {

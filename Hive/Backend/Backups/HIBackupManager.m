@@ -76,7 +76,7 @@
         NSDictionary *settings = [HIBackupAdapter backupSettings];
 
         for (HIBackupAdapter *adapter in self.allAdapters) {
-            if (![settings objectForKey:adapter.name]) {
+            if (!settings[adapter.name]) {
                 adapter.enabled = [adapter isEnabledByDefault];
             }
         }

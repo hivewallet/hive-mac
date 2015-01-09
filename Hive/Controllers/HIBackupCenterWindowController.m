@@ -214,8 +214,8 @@ static const NSTimeInterval UpdateTimerInterval = 5.0;
     NSUInteger row = [_adapters indexOfObject:adapter];
 
     if (row != NSNotFound) {
-        id oldValue = [change objectForKey:NSKeyValueChangeOldKey];
-        id newValue = [change objectForKey:NSKeyValueChangeNewKey];
+        id oldValue = change[NSKeyValueChangeOldKey];
+        id newValue = change[NSKeyValueChangeNewKey];
 
         if (![oldValue isEqual:newValue]) {
             [self.tableView reloadDataForRowIndexes:[NSIndexSet indexSetWithIndex:row]
