@@ -18,7 +18,7 @@ static NSString *const KEY_WALLET_HASH = @"walletHash";
 @interface HIAddressesBox ()
 
 @property (nonatomic, strong, readonly) HIBox *box;
-@property (nonatomic, copy, readonly) NSMutableArray *contentViews;
+@property (nonatomic, strong, readonly) NSMutableArray *contentViews;
 @property (nonatomic, strong, readonly) NSButton *QRCodeButton;
 @property (nonatomic, strong) NSTrackingArea *trackingArea;
 @property (nonatomic, strong) HIQRCodeWindowController *QRCodeWindowController;

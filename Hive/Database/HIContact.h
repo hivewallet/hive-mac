@@ -27,7 +27,7 @@ extern NSString * const HIContactEntity;
 @property (nonatomic, strong) NSOrderedSet *transactions;
 @property (nonatomic, copy, readonly) NSString *name;
 @property (nonatomic, readonly) NSImage *avatarImage;
-@property (nonatomic, strong) NSSet *addresses;
+@property (nonatomic, copy) NSSet *addresses;
 
 - (BOOL)canBeRemoved;
 - (BOOL)canEditAddresses;

@@ -21,7 +21,7 @@
 @property (nonatomic, copy) NSString *firstname;
 @property (nonatomic, copy) NSString *lastname;
 @property (nonatomic, copy, readonly) NSString *name;
-@property (nonatomic, strong) NSSet *addresses;
+@property (nonatomic, copy) NSSet *addresses;
 @property (nonatomic, copy) NSData *avatar;
 @property (nonatomic, readonly) NSImage *avatarImage;
 
