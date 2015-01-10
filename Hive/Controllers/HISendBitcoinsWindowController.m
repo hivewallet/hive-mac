@@ -1042,6 +1042,7 @@ NSString * const HISendBitcoinsWindowSuccessKey = @"success";
     } else if (notification.object == self.convertedAmountField) {
         [self formatConvertedAmountField];
     } else {
+        HILogDebug(@"Target set to: %@ (%@)", self.nameLabel.stringValue, self.addressLabel.stringValue);
         [self hideAutocompleteWindow];
     }
 }
@@ -1135,6 +1136,8 @@ NSString * const HISendBitcoinsWindowSuccessKey = @"success";
 }
 
 - (void)addressSelectedInAutocomplete:(HIAddress *)address {
+    HILogDebug(@"Selected address in autocomplete: %@ (%@)", address, address.contact);
+
     [self selectContact:address.contact address:address];
     [self hideAutocompleteWindow];
     [self updateFee];
@@ -1162,6 +1165,8 @@ NSString * const HISendBitcoinsWindowSuccessKey = @"success";
 }
 
 - (void)showPasswordPopover:(NSButton *)sender forSendingBitcoin:(uint64)bitcoin toTarget:(NSString *)target {
+    HILogDebug(@"Sending %lld to %@", bitcoin, target);
+
     _passwordPopover = [self preparePasswordPopover];
 
     __unsafe_unretained __typeof__ (self) weakSelf = self;
