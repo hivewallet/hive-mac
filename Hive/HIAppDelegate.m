@@ -616,7 +616,7 @@ static void (^logHandler)(const char*, const char*, int, HILoggerLevel, NSString
 void handleException(NSException *exception) {
     HILogError(@"Exception caught: %@", exception);
 
-    if (dispatch_get_current_queue() == dispatch_get_main_queue()) {
+    if ([NSThread isMainThread]) {
         [AppDelegate showExceptionWindowWithException:exception];
     } else {
         dispatch_async(dispatch_get_main_queue(), ^{

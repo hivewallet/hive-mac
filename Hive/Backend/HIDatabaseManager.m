@@ -138,7 +138,7 @@ static NSInteger HIDatabaseManagerFileExistsAtLocationError = 1000;
 
 - (BOOL)backupStoreToDirectory:(NSURL *)backupLocation error:(NSError **)error {
     HILogInfo(@"Backing up Core Data store to %@", backupLocation);
-    NSAssert(dispatch_get_current_queue() == dispatch_get_main_queue(), @"This method must be run on the main thread");
+    NSAssert([NSThread mainThread], @"This method must be run on the main thread");
 
     NSError *backupError = nil;
 

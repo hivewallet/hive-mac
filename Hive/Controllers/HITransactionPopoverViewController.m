@@ -214,13 +214,9 @@
 - (void)configureShareButton {
     [self.shareButton sendActionOn:NSLeftMouseDownMask];
 
-    SInt32 major = 0;
-    SInt32 minor = 0;
-    Gestalt(gestaltSystemVersionMajor, &major);
-    Gestalt(gestaltSystemVersionMinor, &minor);
-
-    if (major == 10 && minor < 10) {
+    if (![[NSProcessInfo processInfo] respondsToSelector:@selector(operatingSystemVersion)]) {
         // the "Bevel" button style looks nice on Yosemite, but ugly on pre-Yosemite systems
+        // operatingSystemVersion is used for checking system version, but it's only added in 10.10...
         [self.shareButton.cell setBezelStyle:NSTexturedRoundedBezelStyle];
     }
 }
