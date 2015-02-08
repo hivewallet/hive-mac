@@ -13,7 +13,6 @@
 @class HIContact;
 @class HIPasswordHolder;
 @class HITransaction;
-@class HIApplication;
 
 extern NSString * const BCClientBitcoinjDirectory;
 extern NSString * const BCClientTorDirectory;
@@ -61,8 +60,6 @@ extern NSString * const BCClientPasswordChangedNotification;
 - (satoshi_t)feeWhenSendingBitcoin:(uint64)amount
                        toRecipient:(NSString *)recipient
                              error:(NSError **)error;
-
-- (void)attachSourceApplication:(HIApplication *)application toTransaction:(HITransaction *)transaction;
 
 - (NSDictionary *)transactionDefinitionWithHash:(NSString *)hash;
 - (void)repairTransactionsList;

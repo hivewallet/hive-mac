@@ -6,7 +6,6 @@
 //  Copyright (c) 2013 Hive Developers. All rights reserved.
 //
 
-@class HIApplication;
 @class HIContact;
 
 typedef NS_ENUM(int16_t, HITransactionStatus) {
@@ -79,9 +78,6 @@ extern NSString * const HITransactionDirectionUnknownException;
 
 // URL of the payment request, if the transaction was sent via payment request
 @property (nonatomic, copy) NSString *paymentRequestURL;
-
-// if the transaction was created from within an app
-@property (nonatomic, strong) HIApplication *sourceApplication;
 
 + (BOOL)isAmountWithinExpectedRange:(satoshi_t)amount;
 

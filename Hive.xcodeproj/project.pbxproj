@@ -146,7 +146,6 @@
 		58605A6718041DFC00FD9C2A /* NPZip.m in Sources */ = {isa = PBXBuildFile; fileRef = 58605A6218041DFC00FD9C2A /* NPZip.m */; };
 		58605A6818041DFC00FD9C2A /* NPZipFileHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 58605A6418041DFC00FD9C2A /* NPZipFileHeader.m */; };
 		58605A6918041DFC00FD9C2A /* NPZipHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 58605A6618041DFC00FD9C2A /* NPZipHeader.m */; };
-		5860D3FF180455B900BD852C /* HIApplicationsManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 5860D3FE180455B900BD852C /* HIApplicationsManager.m */; };
 		5864AFD619C210590097FCE6 /* Hive.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 5864AFC719C210590097FCE6 /* Hive.xcdatamodeld */; };
 		586905961843DE5C0053D74F /* HIDebuggingToolsWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 586905941843DE5C0053D74F /* HIDebuggingToolsWindowController.m */; };
 		586C655C1A091C2D008AFFDF /* HIHiveWebWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 586C655A1A091C2D008AFFDF /* HIHiveWebWindowController.m */; };
@@ -222,7 +221,6 @@
 		D901F4F817B272E60071780D /* BitcoinJKit.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = D901F4F517B272CE0071780D /* BitcoinJKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		D901F4F917B273440071780D /* BitcoinJKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D901F4F517B272CE0071780D /* BitcoinJKit.framework */; };
 		D91FE827179887C5001B37D8 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = D91FE826179887C4001B37D8 /* libz.dylib */; };
-		D9235373177C4222003533DF /* HIApplication.m in Sources */ = {isa = PBXBuildFile; fileRef = D9235372177C4222003533DF /* HIApplication.m */; };
 		D938F01017E6278B00566FFD /* HITextFieldCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D938F00F17E6278B00566FFD /* HITextFieldCell.m */; };
 		D939FE9C17F076E80088F5D3 /* HICopyView.m in Sources */ = {isa = PBXBuildFile; fileRef = D939FE9B17F076E80088F5D3 /* HICopyView.m */; };
 		D94815B417D492A0006A0312 /* HITitleView.m in Sources */ = {isa = PBXBuildFile; fileRef = D94815B317D492A0006A0312 /* HITitleView.m */; };
@@ -1038,8 +1036,6 @@
 		58605A6418041DFC00FD9C2A /* NPZipFileHeader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NPZipFileHeader.m; sourceTree = "<group>"; };
 		58605A6518041DFC00FD9C2A /* NPZipHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NPZipHeader.h; sourceTree = "<group>"; };
 		58605A6618041DFC00FD9C2A /* NPZipHeader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NPZipHeader.m; sourceTree = "<group>"; };
-		5860D3FD180455B900BD852C /* HIApplicationsManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HIApplicationsManager.h; sourceTree = "<group>"; };
-		5860D3FE180455B900BD852C /* HIApplicationsManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HIApplicationsManager.m; sourceTree = "<group>"; };
 		5864AFC819C210590097FCE6 /* 2013121701.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = 2013121701.xcdatamodel; sourceTree = "<group>"; };
 		5864AFC919C210590097FCE6 /* 2014012001.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = 2014012001.xcdatamodel; sourceTree = "<group>"; };
 		5864AFCA19C210590097FCE6 /* 2014043001.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = 2014043001.xcdatamodel; sourceTree = "<group>"; };
@@ -2211,8 +2207,6 @@
 		CDA0597D51F28424EA14AC69 /* Pods-test.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-test.release.xcconfig"; path = "Pods/Target Support Files/Pods-test/Pods-test.release.xcconfig"; sourceTree = "<group>"; };
 		D91FE8071793FEFC001B37D8 /* BitcoinKit.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = BitcoinKit.xcodeproj; path = BitcoinKit/BitcoinKit.xcodeproj; sourceTree = "<group>"; };
 		D91FE826179887C4001B37D8 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
-		D9235371177C4222003533DF /* HIApplication.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HIApplication.h; path = Database/HIApplication.h; sourceTree = "<group>"; };
-		D9235372177C4222003533DF /* HIApplication.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HIApplication.m; path = Database/HIApplication.m; sourceTree = "<group>"; };
 		D938F00E17E6278B00566FFD /* HITextFieldCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HITextFieldCell.h; sourceTree = "<group>"; };
 		D938F00F17E6278B00566FFD /* HITextFieldCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HITextFieldCell.m; sourceTree = "<group>"; };
 		D939FE9A17F076E80088F5D3 /* HICopyView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HICopyView.h; sourceTree = "<group>"; };
@@ -2703,8 +2697,6 @@
 				583B1DF318686BD900817EF8 /* Backups */,
 				586059B2180419F500FD9C2A /* BCClient.h */,
 				586059B3180419F500FD9C2A /* BCClient.m */,
-				5860D3FD180455B900BD852C /* HIApplicationsManager.h */,
-				5860D3FE180455B900BD852C /* HIApplicationsManager.m */,
 				1AA105D345F413155D76B5B8 /* HIBitcoinFormatService.h */,
 				1AA100CAE5EF0CB61AF126DB /* HIBitcoinFormatService.m */,
 				1AA107211BD084775E0C7199 /* HIBitcoinURIService.h */,
@@ -2969,8 +2961,6 @@
 			children = (
 				D9716B7C17D9C9F500888F4E /* HIAddress.h */,
 				D9716B7D17D9C9F500888F4E /* HIAddress.m */,
-				D9235371177C4222003533DF /* HIApplication.h */,
-				D9235372177C4222003533DF /* HIApplication.m */,
 				D983D0A417703CE800844D69 /* HIContact.h */,
 				D983D0A517703CE800844D69 /* HIContact.m */,
 				D983D0A117703CDE00844D69 /* HITransaction.h */,
@@ -3328,7 +3318,6 @@
 				D9A591DB1767B4A800502635 /* HIAppDelegate.m in Sources */,
 				D983D0A317703CDE00844D69 /* HITransaction.m in Sources */,
 				D983D0A617703CE800844D69 /* HIContact.m in Sources */,
-				D9235373177C4222003533DF /* HIApplication.m in Sources */,
 				58CFD95417CF914000A035FA /* HISidebarView.m in Sources */,
 				581711BE17D0A26D00DE775A /* HISidebarButton.m in Sources */,
 				D94815B417D492A0006A0312 /* HITitleView.m in Sources */,
@@ -3405,7 +3394,6 @@
 				583B1DFE18686C8400817EF8 /* HIDropboxBackup.m in Sources */,
 				58605A6818041DFC00FD9C2A /* NPZipFileHeader.m in Sources */,
 				58605A6918041DFC00FD9C2A /* NPZipHeader.m in Sources */,
-				5860D3FF180455B900BD852C /* HIApplicationsManager.m in Sources */,
 				24178E301861005100A73D4E /* HIPasswordChangeWindowController.m in Sources */,
 				589064B7180596B80082BE5C /* HIEditableImageView.m in Sources */,
 				1AA10A016757DBB9BE7808C5 /* HIExchangeRateService.m in Sources */,

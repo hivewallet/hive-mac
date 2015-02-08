@@ -6,7 +6,6 @@
 //  Copyright (c) 2013 Hive Developers. All rights reserved.
 //
 
-#import "HIApplication.h"
 #import "HIContact.h"
 #import "HIDatabaseManager.h"
 #import "HITransaction.h"
@@ -29,7 +28,6 @@ NSString * const HITransactionDirectionUnknownException = @"HITransactionDirecti
 @dynamic read;
 @dynamic paymentRequestURL;
 @dynamic sourceAddress;
-@dynamic sourceApplication;
 @dynamic status;
 @dynamic targetAddress;
 

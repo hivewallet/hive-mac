@@ -17,7 +17,6 @@
 #import "BCClient.h"
 #import "HIAboutHiveWindowController.h"
 #import "HIAppDelegate.h"
-#import "HIApplicationsManager.h"
 #import "HIBackupCenterWindowController.h"
 #import "HIBackupManager.h"
 #import "HIBitcoinURIService.h"
@@ -218,22 +217,9 @@ static int ddLogLevel = LOG_LEVEL_VERBOSE;
     NSSetUncaughtExceptionHandler(&handleException);
 }
 
-- (void)preinstallAppsIfNeeded {
-    NSString *currentVersion = [[NSBundle mainBundle] infoDictionary][@"CFBundleVersion"];
-    NSString *lastVersion = [[NSUserDefaults standardUserDefaults] objectForKey:LastVersionKey];
-
-    if (!lastVersion || [currentVersion isGreaterThan:lastVersion]) {
-        [[HIApplicationsManager sharedManager] preinstallApps];
-    }
-}
-
 - (void)updateLastVersionKey {
     NSString *currentVersion = [[NSBundle mainBundle] infoDictionary][@"CFBundleVersion"];
     [[NSUserDefaults standardUserDefaults] setObject:currentVersion forKey:LastVersionKey];
-}
-
-- (void)rebuildAppsList {
-    [[HIApplicationsManager sharedManager] rebuildAppsList];
 }
 
 - (void)rebuildTransactionListIfNeeded {
@@ -300,12 +286,8 @@ static int ddLogLevel = LOG_LEVEL_VERBOSE;
 
 - (void)setAsDefaultHandler {
     CFStringRef bundleID = (__bridge CFStringRef) [[NSBundle mainBundle] bundleIdentifier];
-    CFStringRef UTI = UTTypeCreatePreferredIdentifierForTag(kUTTagClassFilenameExtension, CFSTR("hiveapp"), NULL);
 
     LSSetDefaultHandlerForURLScheme(CFSTR("bitcoin"), bundleID);
-    LSSetDefaultRoleHandlerForContentType(UTI, kLSRolesAll, bundleID);
-
-    CFRelease(UTI);
 }
 
 - (void)showUnreadableChainFileError {
@@ -407,8 +389,6 @@ static int ddLogLevel = LOG_LEVEL_VERBOSE;
     // Yosemite INAppStoreWindow hack
     [_mainWindowController.window becomeKeyWindow];
 
-    [self preinstallAppsIfNeeded];
-    [self rebuildAppsList];
     [self setAsDefaultHandler];
     [self startNetworkMonitor];
     [self updateLastVersionKey];
@@ -495,15 +475,6 @@ static int ddLogLevel = LOG_LEVEL_VERBOSE;
 }
 
 - (BOOL)application:(NSApplication *)sender openFile:(NSString *)filename {
-    if ([filename.pathExtension isEqual:@"hiveapp"]) {
-        [self handleExternalEvent:^{
-            HIApplicationsManager *manager = [HIApplicationsManager sharedManager];
-            [manager requestLocalAppInstallation:[NSURL fileURLWithPath:filename] showAppsPage:YES error:nil];
-        }];
-
-        return YES;
-    }
-
     if ([filename.pathExtension isEqual:@"bitcoinpaymentrequest"]) {
         __weak id delegate = self;
 
