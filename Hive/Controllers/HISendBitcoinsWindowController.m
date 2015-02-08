@@ -514,7 +514,7 @@ NSString * const HISendBitcoinsWindowSuccessKey = @"success";
                                          NSLinkAttributeName: @"https://bitcoinaverage.com/markets.htm",
                                          NSFontAttributeName: label.font,
                                          NSForegroundColorAttributeName: [NSColor blueColor],
-                                         NSUnderlineStyleAttributeName: @(NSSingleUnderlineStyle)
+//  TODO                                       NSUnderlineStyleAttributeName: @(NSSingleUnderlineStyle)
                                        };
 
         NSDictionary *textAttributes = @{

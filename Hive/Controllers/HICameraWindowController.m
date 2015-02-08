@@ -56,7 +56,8 @@ static const NSTimeInterval SCAN_INTERVAL = .25;
 }
 
 - (BOOL)startCapture:(NSError **)error {
-    self.captureSession = [QTCaptureSession new];
+    // TODO
+    /*self.captureSession = [QTCaptureSession new];
     QTCaptureDevice *videoDevice = [QTCaptureDevice defaultInputDeviceWithMediaType:QTMediaTypeVideo];
 
     if ([videoDevice open:error]) {
@@ -72,7 +73,7 @@ static const NSTimeInterval SCAN_INTERVAL = .25;
 
             return YES;
         }
-    }
+    }*/
 
     return NO;
 }
@@ -81,7 +82,7 @@ static const NSTimeInterval SCAN_INTERVAL = .25;
 
 - (void)windowWillClose:(NSNotification *)notification {
     self.delegate = nil;
-    [self.captureSession stopRunning];
+//    [self.captureSession stopRunning];
 }
 
 - (void)windowDidChangeOcclusionState:(NSNotification *)notification {
@@ -90,9 +91,9 @@ static const NSTimeInterval SCAN_INTERVAL = .25;
 #pragma deploymate pop
 
     if (visible) {
-        [self.captureSession startRunning];
+//        [self.captureSession startRunning];
     } else {
-        [self.captureSession stopRunning];
+//        [self.captureSession stopRunning];
     }
 }
 
@@ -146,7 +147,7 @@ static const NSTimeInterval SCAN_INTERVAL = .25;
 - (void)finishScanningWithCode:(NSString *)scannedQRCode {
     id<HICameraWindowControllerDelegate> delegate = self.delegate;
 
-    [self.captureSession stopRunning];
+//    [self.captureSession stopRunning];
     [self.window performClose:nil];
 
     if (delegate) {

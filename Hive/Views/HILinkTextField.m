@@ -42,7 +42,7 @@
     NSRange range = NSMakeRange(0, string.length);
     [string addAttribute:NSLinkAttributeName value:_href range:range];
     [string addAttribute:NSForegroundColorAttributeName value:[NSColor blueColor] range:range];
-    [string addAttribute:NSUnderlineStyleAttributeName value:@(NSSingleUnderlineStyle) range:range];
+// TODO   [string addAttribute:NSUnderlineStyleAttributeName value:@(NSSingleUnderlineStyle) range:range];
     [string addAttribute:NSFontAttributeName value:self.font range:range];
     self.attributedStringValue = string;
 
