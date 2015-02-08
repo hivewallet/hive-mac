@@ -17,15 +17,6 @@
 /* Anonymous username for profile page */
 "Anonymous" = "Anonimowy użytkownik";
 
-/* Message when trying to start an app that requires a newer API level. */
-"App requires a newer version of Hive." = "Aplikacja wymaga nowszej wersji Hive.";
-
-/* App load error title */
-"Application can't be loaded" = "Nie można otworzyć aplikacji";
-
-/* Applications view title */
-"Apps" = "Aplikacje";
-
 /* Cancel editing alert title */
 "Are you sure you want to leave this page?" = "Czy jesteś pewny, że chcesz opuścić tą stronę?";
 
@@ -86,9 +77,6 @@
 /* Contact name empty alert title */
 "Contact can't be saved." = "Nie można zapisać kontaktu.";
 
-/* Entry in application icon context menu */
-"Contact the author" = "Kontakt z autorem";
-
 /* Contacts view title */
 "Contacts" = "Kontakty";
 
@@ -109,12 +97,6 @@
 
 /* Remove contact alert dialog title */
 "Do you really want to remove %@ from your contact list?" = "Na pewno chcesz usunąć %@ z listy kontaktów?";
-
-/* Install app popup title */
-"Do you want to add \"%@\" to Hive?" = "Czy chcesz dodać aplikację \"%@\" do Hive?";
-
-/* Uninstall app popup title */
-"Do you want to remove \"%@\" from the application list?" = "Czy chcesz usunąć \"%@\" z listy aplikacji?";
 
 /* Dropbox no backup folder alert title */
 "Dropbox folder not found." = "Nie znaleziono folderu Dropbox.";
@@ -158,9 +140,6 @@
 /* Backup error message */
 "Google Drive isn't running" = "Aplikacja Google Drive nie jest uruchomiona";
 
-/* Hiveapp file not readable error title */
-"Hive application file \"%@\" could not be opened." = "Nie można otworzyć pliku aplikacji \"%@\".";
-
 /* Initialization error title */
 "Hive cannot be started." = "Nie można uruchomić Hive.";
 
@@ -187,9 +166,6 @@
 
 /* Alert details when trying to send more than you have with fee */
 "If you send your whole wallet balance, there's nothing left to pay the required fee. Try to send a bit less, or split the transaction into smaller ones." = "Jeśli wyślesz całą zawartość portfela, zabraknie środków do opłacenia wymaganej opłaty. Spróbuj wysłać trochę mniej, lub podziel transakcję na kilka mniejszych.";
-
-/* Install app button title */
-"Install" = "Zainstaluj";
 
 /* Backup requires password alert details */
 "It's dangerous to upload unencrypted wallets." = "Udostępnianie komukolwiek niezaszyfrowanego portfela jest niebezpieczne.";
@@ -290,9 +266,6 @@
 /* Received amount of BTC from contact */
 "Received &a from &c" = "Otrzymano &a od &c";
 
-/* Install app button title when app exists */
-"Reinstall" = "Przeinstaluj";
-
 /* Status for transaction removed from the main blockchain in transaction popup */
 "Rejected by the network" = "Odrzucona przez sieć";
 
@@ -323,20 +296,11 @@
 /* Wizard completed page title */
 "Start!" = "Start!";
 
-/* App load error description */
-"The application data file has been removed or corrupted." = "Plik z danymi aplikacji został usunięty lub uszkodzony.";
-
 /* Error message when database is incompatible with this version */
 "The database was saved by a newer version of Hive - please download the latest version from http://hivewallet.com." = "Dane zostały zapisane przez nowszą wersję Hive - ściągnij najnowszą wersję z http://hivewallet.com.";
 
-/* Install app popup warning message when app exists */
-"The existing app file will be replaced by the new version. This will not affect any app settings or saved data." = "Poprzednia wersja aplikacji zostanie zastąpiona nową. Dane i ustawienia zapisane przez aplikację nie zostaną zmienione.";
-
 /* Alert message when payment request file can't be read */
 "The file doesn't exist or is not accessible." = "Plik nie istnieje lub jest niedostępny.";
-
-/* Hiveapp file not readable error details */
-"The file is damaged or does not contain a Hive application." = "Plik jest uszkodzony lub nie zawiera aplikacji Hive.";
 
 /* Sending dust alert message */
 "This amount is too low to be sent through the network." = "Kwota jest zbyt mała, by wysłać ją przez sieć Bitcoin.";
@@ -377,9 +341,6 @@
 /* Amount exceeds available balance alert message */
 "To send this transaction, you'll need to wait for your pending transactions to be confirmed first (this shouldn't take more than a few minutes)." = "Aby wysłać tą transakcję, musisz poczekać aż poprzednie transakcje zostaną potwierdzone (to nie powinno zająć więcej niż kilka minut).";
 
-/* Message when trying to start an app that requires a newer API level. */
-"To use the app, please update to the latest version of Hive." = "Jeśli chcesz używać tej aplikacji, uaktualnij Hive do najnowszej wersji.";
-
 /* Notification of cancelled transaction */
 "Transaction cancelled" = "Transakcja została anulowana";
 
@@ -395,17 +356,8 @@
 /* Transactions view title */
 "Transactions" = "Transakcje";
 
-/* Uninstall app button title */
-"Uninstall" = "Odinstaluj";
-
-/* Entry in application icon context menu */
-"Uninstall application" = "Odinstaluj aplikację";
-
 /* Backup status: backup up to date */
 "Up to date" = "Aktualna kopia";
-
-/* Entry in application icon context menu */
-"Visit application's site" = "Otwórz stronę aplikacji";
 
 /* Backup status: backup scheduled or in progress */
 "Waiting for backup" = "Oczekiwanie na wykonanie kopii";
@@ -413,23 +365,14 @@
 /* Status for transaction sent to some peers in transaction popup */
 "Waiting for confirmation" = "Oczekuje na potwierdzenie";
 
-/* Install app popup warning message */
-"We cannot guarantee the safety of all apps - please be careful if you download Hive apps from third party sites." = "Nie możemy zagwarantować bezpieczeństwa wszystkich aplikacji - zachowaj ostrożność jeśli ściągasz aplikacje ze stron innych producentów.";
-
 /* Wizard welcome page title */
 "Welcome" = "Witaj";
 
 /* Button to show info about pending funds */
 "What does this mean?" = "Co to znaczy?";
 
-/* Uninstall app popup message */
-"You can install it again through the App Store app later if you change your mind." = "Możesz ją zainstalować ponownie przez aplikację App Store, jeśli zmienisz zdanie.";
-
 /* Details of an alert when trying to send more than you have */
 "You cannot send more money than you own." = "Nie możesz wysłać więcej Bitcoinów niż masz na koncie.";
-
-/* Install app popup title when app exists */
-"You have already added \"%@\" to Hive. Would you like to overwrite it?" = "Dodałeś już aplikację \"%@\" do Hive. Czy chcesz ją zainstalować ponownie?";
 
 /* Notification of confirmed sent transaction (with BTC amount) */
 "You have sent %@." = "Wysłano %@.";

@@ -17,15 +17,6 @@
 /* Anonymous username for profile page */
 "Anonymous" = "Nimetön";
 
-/* Message when trying to start an app that requires a newer API level. */
-"App requires a newer version of Hive." = "Sovellus tarvitsee uudemman version Hive.";
-
-/* App load error title */
-"Application can't be loaded" = "Ohjelmaa ei voida ladata";
-
-/* Applications view title */
-"Apps" = "Ohjelmat";
-
 /* Cancel editing alert title */
 "Are you sure you want to leave this page?" = "Haluatko varmasti poistua sivulta?";
 
@@ -86,9 +77,6 @@
 /* Contact name empty alert title */
 "Contact can't be saved." = "Yhteystietoa ei voida tallentaa.";
 
-/* Entry in application icon context menu */
-"Contact the author" = "Ota yhteyttä julkaisijaan";
-
 /* Contacts view title */
 "Contacts" = "Yhteystiedot";
 
@@ -109,12 +97,6 @@
 
 /* Remove contact alert dialog title */
 "Do you really want to remove %@ from your contact list?" = "Haluatko varmasti poistaa henkilön %@ yhteystiedoistasi?";
-
-/* Install app popup title */
-"Do you want to add \"%@\" to Hive?" = "Haluatko lisätä \"%@\" Hiveen?";
-
-/* Uninstall app popup title */
-"Do you want to remove \"%@\" from the application list?" = "Haluatko varmasti poistaa sovelluksen \"%@\" listalta?";
 
 /* Dropbox no backup folder alert title */
 "Dropbox folder not found." = "Dropbox-kansiota ei löytynyt.";
@@ -158,9 +140,6 @@
 /* Backup error message */
 "Google Drive isn't running" = "Google Drive ei ole käytossää";
 
-/* Hiveapp file not readable error title */
-"Hive application file \"%@\" could not be opened." = "Hive sovelluksen tiedostoa \"%@\" ei voida avata.";
-
 /* Initialization error title */
 "Hive cannot be started." = "Hivea ei voitu käynnistää.";
 
@@ -187,9 +166,6 @@
 
 /* Alert details when trying to send more than you have with fee */
 "If you send your whole wallet balance, there's nothing left to pay the required fee. Try to send a bit less, or split the transaction into smaller ones." = "Ole tarkkana että et käytä koko tililisi saldoa yhdellä kertaa, koska siirroista peritään erillinen maksu. Tee siis mielummin pienempiä siirtoja tai lähetä isot summat osina.";
-
-/* Install app button title */
-"Install" = "Asenna";
 
 /* Backup requires password alert details */
 "It's dangerous to upload unencrypted wallets." = "On vaarallista ladata salaamattomia lompakoita.";
@@ -290,9 +266,6 @@
 /* Received amount of BTC from contact */
 "Received &a from &c" = "Vastaanotettu &a käyttäjältä &c";
 
-/* Install app button title when app exists */
-"Reinstall" = "Asenna uudelleen";
-
 /* Status for transaction removed from the main blockchain in transaction popup */
 "Rejected by the network" = "Rejected by the network";
 
@@ -323,20 +296,11 @@
 /* Wizard completed page title */
 "Start!" = "Aloita!";
 
-/* App load error description */
-"The application data file has been removed or corrupted." = "Sovellustiedosta on poistettu tai vioittunut.";
-
 /* Error message when database is incompatible with this version */
 "The database was saved by a newer version of Hive - please download the latest version from http://hivewallet.com." = "Tietokanta tallennettiin Hiven uudemmalla versiolla - lataa uusin versio osoitteesta http://hivewallet.com.";
 
-/* Install app popup warning message when app exists */
-"The existing app file will be replaced by the new version. This will not affect any app settings or saved data." = "Olemassaoleva sovelluskansio korvataan uudella versiolla. Tämä ei vaikuta sovelluksen asetuksiin tai tallennettuihin tietoihin.";
-
 /* Alert message when payment request file can't be read */
 "The file doesn't exist or is not accessible." = "Tiedostoa ei löytynyt.";
-
-/* Hiveapp file not readable error details */
-"The file is damaged or does not contain a Hive application." = "Tiedosto on vahingoittunut tai ei sisällä Hive-sovellusta.";
 
 /* Sending dust alert message */
 "This amount is too low to be sent through the network." = "Antamasi summa on liian pieni eikä sitä voida lähettää eteenpäin.";
@@ -377,9 +341,6 @@
 /* Amount exceeds available balance alert message */
 "To send this transaction, you'll need to wait for your pending transactions to be confirmed first (this shouldn't take more than a few minutes)." = "Lähettääksesi tämän transaktion sinun täytyy odottaa, että vahvistamaton transaktiosi vahvistetaan (tämän ei pitäisi kestää muutamaa minuuttia pitempään).";
 
-/* Message when trying to start an app that requires a newer API level. */
-"To use the app, please update to the latest version of Hive." = "Pyydämme etta päivitätte Hive sovelluksen uusimpaan versioon.";
-
 /* Notification of cancelled transaction */
 "Transaction cancelled" = "Transaktio peruttu";
 
@@ -395,17 +356,8 @@
 /* Transactions view title */
 "Transactions" = "Transaktiot";
 
-/* Uninstall app button title */
-"Uninstall" = "Poista sovellus";
-
-/* Entry in application icon context menu */
-"Uninstall application" = "Poista sovellus";
-
 /* Backup status: backup up to date */
 "Up to date" = "Päivitetty";
-
-/* Entry in application icon context menu */
-"Visit application's site" = "Siirry sovelluksen nettisivulle";
 
 /* Backup status: backup scheduled or in progress */
 "Waiting for backup" = "Odottaa varmuuskopiointia";
@@ -413,23 +365,14 @@
 /* Status for transaction sent to some peers in transaction popup */
 "Waiting for confirmation" = "Waiting for confirmation";
 
-/* Install app popup warning message */
-"We cannot guarantee the safety of all apps - please be careful if you download Hive apps from third party sites." = "Emme voi taata kaikkien sovellusten turvallisuutta - olethan varovainen, jos lataat Hiven kolmannen osapuolen sivujen kautta.";
-
 /* Wizard welcome page title */
 "Welcome" = "Tervetuloa";
 
 /* Button to show info about pending funds */
 "What does this mean?" = "Mitä tämä tarkoittaa?";
 
-/* Uninstall app popup message */
-"You can install it again through the App Store app later if you change your mind." = "Jos muutat mielesi, voit asentaa ohjelman uudestaan App - storen kautta.";
-
 /* Details of an alert when trying to send more than you have */
 "You cannot send more money than you own." = "Et voi lähettää enempää rahaa kuin sinulla on.";
-
-/* Install app popup title when app exists */
-"You have already added \"%@\" to Hive. Would you like to overwrite it?" = "Olet jo lisännyt \"%@\" Hiveen. Haluatko korvata sen?";
 
 /* Notification of confirmed sent transaction (with BTC amount) */
 "You have sent %@." = "Olet lähettänyt %@.";

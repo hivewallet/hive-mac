@@ -17,15 +17,6 @@
 /* Anonymous username for profile page */
 "Anonymous" = "Anoniman";
 
-/* Message when trying to start an app that requires a newer API level. */
-"App requires a newer version of Hive." = "App requires a newer version of Hive.";
-
-/* App load error title */
-"Application can't be loaded" = "Aplikacija ne može da se učita";
-
-/* Applications view title */
-"Apps" = "Aplikacije";
-
 /* Cancel editing alert title */
 "Are you sure you want to leave this page?" = "Are you sure you want to leave this page?";
 
@@ -86,9 +77,6 @@
 /* Contact name empty alert title */
 "Contact can't be saved." = "Kontakti ne mogu biti sačuvani.";
 
-/* Entry in application icon context menu */
-"Contact the author" = "Contact the author";
-
 /* Contacts view title */
 "Contacts" = "Kontakti";
 
@@ -109,12 +97,6 @@
 
 /* Remove contact alert dialog title */
 "Do you really want to remove %@ from your contact list?" = "Da li zaista želite da uklonite %@ iz vaše liste kontakata?";
-
-/* Install app popup title */
-"Do you want to add \"%@\" to Hive?" = "Da li želite da dodate \"%@\" u Hive?";
-
-/* Uninstall app popup title */
-"Do you want to remove \"%@\" from the application list?" = "Do you want to remove \"%@\" from the application list?";
 
 /* Dropbox no backup folder alert title */
 "Dropbox folder not found." = "Dropbox folder nije pronađen.";
@@ -158,9 +140,6 @@
 /* Backup error message */
 "Google Drive isn't running" = "Google Drive isn't running";
 
-/* Hiveapp file not readable error title */
-"Hive application file \"%@\" could not be opened." = "Hive application file \"%@\" could not be opened.";
-
 /* Initialization error title */
 "Hive cannot be started." = "Hive ne može biti pokrenut.";
 
@@ -187,9 +166,6 @@
 
 /* Alert details when trying to send more than you have with fee */
 "If you send your whole wallet balance, there's nothing left to pay the required fee. Try to send a bit less, or split the transaction into smaller ones." = "If you send your whole wallet balance, there's nothing left to pay the required fee. Try to send a bit less, or split the transaction into smaller ones.";
-
-/* Install app button title */
-"Install" = "Instalirajte";
 
 /* Backup requires password alert details */
 "It's dangerous to upload unencrypted wallets." = "Opasno je slati neenkriptovane novčanike na Internet.";
@@ -290,9 +266,6 @@
 /* Received amount of BTC from contact */
 "Received &a from &c" = "Primljeno &a od &c";
 
-/* Install app button title when app exists */
-"Reinstall" = "Reinstalirajte";
-
 /* Status for transaction removed from the main blockchain in transaction popup */
 "Rejected by the network" = "Rejected by the network";
 
@@ -323,20 +296,11 @@
 /* Wizard completed page title */
 "Start!" = "Pokrenite!";
 
-/* App load error description */
-"The application data file has been removed or corrupted." = "Fajl sa podacima iz aplikacije je uklonjen ili oštećen.";
-
 /* Error message when database is incompatible with this version */
 "The database was saved by a newer version of Hive - please download the latest version from http://hivewallet.com." = "Baza podataka je sačuvana od strane novije Hive verzije - molimo vas preuzmite najnoviju verziju sa http://hivewallet.com.";
 
-/* Install app popup warning message when app exists */
-"The existing app file will be replaced by the new version. This will not affect any app settings or saved data." = "Postojeća aplikacija će biti zamenjena novijom verzijom. To neće uticati na podešavanja i sačuvane podatke.";
-
 /* Alert message when payment request file can't be read */
 "The file doesn't exist or is not accessible." = "The file doesn't exist or is not accessible.";
-
-/* Hiveapp file not readable error details */
-"The file is damaged or does not contain a Hive application." = "The file is damaged or does not contain a Hive application.";
 
 /* Sending dust alert message */
 "This amount is too low to be sent through the network." = "This amount is too low to be sent through the network.";
@@ -377,9 +341,6 @@
 /* Amount exceeds available balance alert message */
 "To send this transaction, you'll need to wait for your pending transactions to be confirmed first (this shouldn't take more than a few minutes)." = "Kako bi poslali ovu transakciju morate sačekati da vaše transakcije na izvršenju budu potvrđene (to ne bi trebalo da traje duže od nekoliko minuta).";
 
-/* Message when trying to start an app that requires a newer API level. */
-"To use the app, please update to the latest version of Hive." = "To use the app, please update to the latest version of Hive.";
-
 /* Notification of cancelled transaction */
 "Transaction cancelled" = "Transakcija je otkazana";
 
@@ -395,17 +356,8 @@
 /* Transactions view title */
 "Transactions" = "Transakcije";
 
-/* Uninstall app button title */
-"Uninstall" = "Uninstall";
-
-/* Entry in application icon context menu */
-"Uninstall application" = "Uninstall application";
-
 /* Backup status: backup up to date */
 "Up to date" = "Usklađeno";
-
-/* Entry in application icon context menu */
-"Visit application's site" = "Visit application's site";
 
 /* Backup status: backup scheduled or in progress */
 "Waiting for backup" = "Čeka se pravljenje pomoćne kopije";
@@ -413,23 +365,14 @@
 /* Status for transaction sent to some peers in transaction popup */
 "Waiting for confirmation" = "Waiting for confirmation";
 
-/* Install app popup warning message */
-"We cannot guarantee the safety of all apps - please be careful if you download Hive apps from third party sites." = "Mi ne možemo garantovati bezbednost svih aplikacija - molimo vas budite pažljivi ukoliko preuzimate Hive aplikacije od trećih strana.";
-
 /* Wizard welcome page title */
 "Welcome" = "Dobrodošli";
 
 /* Button to show info about pending funds */
 "What does this mean?" = "Šta ovo znači?";
 
-/* Uninstall app popup message */
-"You can install it again through the App Store app later if you change your mind." = "You can install it again through the App Store app later if you change your mind.";
-
 /* Details of an alert when trying to send more than you have */
 "You cannot send more money than you own." = "Ne možete poslati više novca nego što imate.";
-
-/* Install app popup title when app exists */
-"You have already added \"%@\" to Hive. Would you like to overwrite it?" = "Već ste dodali \"%@\" na Hive. Da li želite da zapišete preko toga?";
 
 /* Notification of confirmed sent transaction (with BTC amount) */
 "You have sent %@." = "Poslali ste %@.";
