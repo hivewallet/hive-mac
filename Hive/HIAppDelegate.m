@@ -18,8 +18,6 @@
 #import "HIAboutHiveWindowController.h"
 #import "HIAppDelegate.h"
 #import "HIApplicationsManager.h"
-#import "HIApplicationsViewController.h"
-#import "HIApplicationURLProtocol.h"
 #import "HIBackupCenterWindowController.h"
 #import "HIBackupManager.h"
 #import "HIBitcoinURIService.h"
@@ -97,8 +95,6 @@ static int ddLogLevel = LOG_LEVEL_VERBOSE;
     [self configureLoggers];
 
     HILogInfo(@"Starting Hive v. %@...", [[NSBundle mainBundle] infoDictionary][@"CFBundleVersion"]);
-
-    [NSURLProtocol registerClass:[HIApplicationURLProtocol class]];
 
     _popupWindows = [NSMutableArray new];
 
