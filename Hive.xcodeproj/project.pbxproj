@@ -1182,6 +1182,7 @@
 		5874917A1951E4EC00D9C1E9 /* th */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = th; path = th.lproj/Localizable.strings; sourceTree = "<group>"; };
 		588427CF18F2DF6600DE6CC4 /* bitcoinkit.checkpoints */ = {isa = PBXFileReference; lastKnownFileType = file; path = bitcoinkit.checkpoints; sourceTree = "<group>"; };
 		5884A03D17F57AE9004A31FA /* dsa_pub.pem */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = dsa_pub.pem; sourceTree = "<group>"; };
+		5887DB4F1A88039B00F3ADF6 /* 2015020801.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = 2015020801.xcdatamodel; sourceTree = "<group>"; };
 		588953901888A68100243190 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/HIBackupCenterWindowController.xib; sourceTree = "<group>"; };
 		588953941888A68B00243190 /* pl */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = pl; path = pl.lproj/HIBackupCenterWindowController.xib; sourceTree = "<group>"; };
 		588953951888A68B00243190 /* it */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = it; path = it.lproj/HIBackupCenterWindowController.xib; sourceTree = "<group>"; };
@@ -5634,9 +5635,10 @@
 				5864AFD219C210590097FCE6 /* 2014082801.xcdatamodel */,
 				5864AFD319C210590097FCE6 /* 2014083001.xcdatamodel */,
 				5864AFD419C210590097FCE6 /* 2014090501.xcdatamodel */,
+				5887DB4F1A88039B00F3ADF6 /* 2015020801.xcdatamodel */,
 				5864AFD519C210590097FCE6 /* Hive.xcdatamodel */,
 			);
-			currentVersion = 5864AFD419C210590097FCE6 /* 2014090501.xcdatamodel */;
+			currentVersion = 5887DB4F1A88039B00F3ADF6 /* 2015020801.xcdatamodel */;
 			name = Hive.xcdatamodeld;
 			path = Database/Hive.xcdatamodeld;
 			sourceTree = "<group>";
