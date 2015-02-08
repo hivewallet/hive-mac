@@ -1,4 +1,4 @@
-platform :osx, '10.7'
+platform :osx, '10.9'
 
 pod 'AFNetworking',       '~> 1.3.2'
 pod 'AutoLayoutMacros'
