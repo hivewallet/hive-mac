@@ -67,7 +67,6 @@
 		581818E217F1A8A800D00770 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 581818E117F1A8A800D00770 /* README.md */; };
 		581E9EA719214609007B1760 /* icon-lock.png in Resources */ = {isa = PBXBuildFile; fileRef = 581E9EA519214609007B1760 /* icon-lock.png */; };
 		581E9EA819214609007B1760 /* icon-lock@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 581E9EA619214609007B1760 /* icon-lock@2x.png */; };
-		582372EC18C0C48500132894 /* mobile-recharge.hiveapp in Resources */ = {isa = PBXBuildFile; fileRef = 582372EB18C0C48500132894 /* mobile-recharge.hiveapp */; };
 		582918A718E5C732001B0870 /* HILockScreenViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 582918A518E5C732001B0870 /* HILockScreenViewController.m */; };
 		582918B518E9ABF2001B0870 /* HILockScreenViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 582918B718E9ABF2001B0870 /* HILockScreenViewController.xib */; };
 		582918D618E9AC37001B0870 /* HILockScreenViewController.strings in Resources */ = {isa = PBXBuildFile; fileRef = 582918D818E9AC37001B0870 /* HILockScreenViewController.strings */; };
@@ -81,7 +80,6 @@
 		583076C418B3CFDC0017084A /* HILicenseInfoPanelController.m in Sources */ = {isa = PBXBuildFile; fileRef = 583076C218B3CFDB0017084A /* HILicenseInfoPanelController.m */; };
 		583076C518B3CFDC0017084A /* HILicenseInfoPanelController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 583076C318B3CFDB0017084A /* HILicenseInfoPanelController.xib */; };
 		583076C718B3D1260017084A /* Licenses.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 583076C618B3D1260017084A /* Licenses.rtf */; };
-		583076C918B3E8C00017084A /* app-store.hiveapp in Resources */ = {isa = PBXBuildFile; fileRef = 583076C818B3E8C00017084A /* app-store.hiveapp */; };
 		5839692619C66953009690BB /* HIContactAutocompleteWindowController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5839692519C66953009690BB /* HIContactAutocompleteWindowController.xib */; };
 		583B1DD118620BA800817EF8 /* HILogFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = 583B1DD018620BA800817EF8 /* HILogFormatter.m */; };
 		583B1DED186860EC00817EF8 /* HIBackupCenterWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 583B1DEB186860EC00817EF8 /* HIBackupCenterWindowController.m */; };
@@ -193,11 +191,6 @@
 		58A275DB18BBD30300C102B2 /* honey_im_subtle@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 58A275D918BBD30300C102B2 /* honey_im_subtle@2x.png */; };
 		58A275DC18BBD30300C102B2 /* honey_im_subtle.png in Resources */ = {isa = PBXBuildFile; fileRef = 58A275DA18BBD30300C102B2 /* honey_im_subtle.png */; };
 		58A275E118BBD56900C102B2 /* HILockScreenView.m in Sources */ = {isa = PBXBuildFile; fileRef = 58A275E018BBD56900C102B2 /* HILockScreenView.m */; };
-		58A2760518BE81F100C102B2 /* com.hivewallet.bitpremier.hiveapp in Resources */ = {isa = PBXBuildFile; fileRef = 58A2760018BE81F100C102B2 /* com.hivewallet.bitpremier.hiveapp */; };
-		58A2760618BE81F100C102B2 /* com.hivewallet.bitstamptrader.hiveapp in Resources */ = {isa = PBXBuildFile; fileRef = 58A2760118BE81F100C102B2 /* com.hivewallet.bitstamptrader.hiveapp */; };
-		58A2760718BE81F100C102B2 /* com.hivewallet.seansoutpost.hiveapp in Resources */ = {isa = PBXBuildFile; fileRef = 58A2760218BE81F100C102B2 /* com.hivewallet.seansoutpost.hiveapp */; };
-		58A2760818BE81F100C102B2 /* com.hivewallet.supporthive.hiveapp in Resources */ = {isa = PBXBuildFile; fileRef = 58A2760318BE81F100C102B2 /* com.hivewallet.supporthive.hiveapp */; };
-		58A2760B18BE859200C102B2 /* com.hivewallet.minefield.hiveapp in Resources */ = {isa = PBXBuildFile; fileRef = 58A2760A18BE847500C102B2 /* com.hivewallet.minefield.hiveapp */; };
 		58A37A8A180D747C00CFCDE3 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 58A37A8C180D747C00CFCDE3 /* Localizable.strings */; };
 		58A37A98180D7AF000CFCDE3 /* HIApplicationsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 58A37A9A180D7AF000CFCDE3 /* HIApplicationsViewController.xib */; };
 		58A37A9B180D7AF600CFCDE3 /* HIContactsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 58A37A9D180D7AF600CFCDE3 /* HIContactsViewController.xib */; };
@@ -231,11 +224,9 @@
 		58C85B9818FFEA0100B2C350 /* HISignMessageWindowController.strings in Resources */ = {isa = PBXBuildFile; fileRef = 58C85B9A18FFEA0100B2C350 /* HISignMessageWindowController.strings */; };
 		58C85B9B18FFEA0500B2C350 /* HIKeyPreferencesViewController.strings in Resources */ = {isa = PBXBuildFile; fileRef = 58C85B9D18FFEA0500B2C350 /* HIKeyPreferencesViewController.strings */; };
 		58CFD95417CF914000A035FA /* HISidebarView.m in Sources */ = {isa = PBXBuildFile; fileRef = 58CFD95217CF914000A035FA /* HISidebarView.m */; };
-		58D4D61F18290079009CB7A5 /* patten_hive.hiveapp in Resources */ = {isa = PBXBuildFile; fileRef = 58D4D61E18290079009CB7A5 /* patten_hive.hiveapp */; };
 		58DDC5D91998F68B001E47C9 /* HITransactionPopoverViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 58DDC5D71998F68B001E47C9 /* HITransactionPopoverViewController.m */; };
 		58E228DC193359C200851F1B /* NSAlert+Hive.m in Sources */ = {isa = PBXBuildFile; fileRef = 58E228DB193359C200851F1B /* NSAlert+Hive.m */; };
 		58E336171892C02E004D60C3 /* HIApplicationsViewController.strings in Resources */ = {isa = PBXBuildFile; fileRef = 58E336191892C02E004D60C3 /* HIApplicationsViewController.strings */; };
-		58E3363A18934DCB004D60C3 /* coinbase.hiveapp in Resources */ = {isa = PBXBuildFile; fileRef = 58E3363918934DCB004D60C3 /* coinbase.hiveapp */; };
 		58F02AEE17E1F5A400B65429 /* HIRightPointingArrowView.m in Sources */ = {isa = PBXBuildFile; fileRef = 58F02AED17E1F5A400B65429 /* HIRightPointingArrowView.m */; };
 		58F3E37D19ED69ED00A5F144 /* HIExportPrivateKeyWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 58F3E37B19ED69ED00A5F144 /* HIExportPrivateKeyWindowController.m */; };
 		58F496F118B67A1C0033B7E0 /* icon-unknown-app.png in Resources */ = {isa = PBXBuildFile; fileRef = 58F496F018B67A1C0033B7E0 /* icon-unknown-app.png */; };
@@ -574,7 +565,6 @@
 		581E9EA619214609007B1760 /* icon-lock@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-lock@2x.png"; sourceTree = "<group>"; };
 		581EFBCA17DA441A00E2738D /* HITransactionCellView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HITransactionCellView.h; sourceTree = "<group>"; };
 		581EFBCB17DA441B00E2738D /* HITransactionCellView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HITransactionCellView.m; sourceTree = "<group>"; };
-		582372EB18C0C48500132894 /* mobile-recharge.hiveapp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "mobile-recharge.hiveapp"; sourceTree = "<group>"; };
 		582918A418E5C732001B0870 /* HILockScreenViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HILockScreenViewController.h; sourceTree = "<group>"; };
 		582918A518E5C732001B0870 /* HILockScreenViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HILockScreenViewController.m; sourceTree = "<group>"; };
 		582918B618E9ABF2001B0870 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/HILockScreenViewController.xib; sourceTree = "<group>"; };
@@ -696,7 +686,6 @@
 		583076C218B3CFDB0017084A /* HILicenseInfoPanelController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HILicenseInfoPanelController.m; sourceTree = "<group>"; };
 		583076C318B3CFDB0017084A /* HILicenseInfoPanelController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HILicenseInfoPanelController.xib; sourceTree = "<group>"; };
 		583076C618B3D1260017084A /* Licenses.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = Licenses.rtf; sourceTree = "<group>"; };
-		583076C818B3E8C00017084A /* app-store.hiveapp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "app-store.hiveapp"; sourceTree = "<group>"; };
 		5832C527180ECF45002A673F /* de */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = de; path = de.lproj/HIApplicationsViewController.xib; sourceTree = "<group>"; };
 		5832C528180ECF45002A673F /* de */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/HIContactsViewController.strings; sourceTree = "<group>"; };
 		5832C529180ECF45002A673F /* de */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = de; path = de.lproj/HIContactsViewController.xib; sourceTree = "<group>"; };
@@ -1702,11 +1691,6 @@
 		58A275DA18BBD30300C102B2 /* honey_im_subtle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = honey_im_subtle.png; sourceTree = "<group>"; };
 		58A275DF18BBD56900C102B2 /* HILockScreenView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HILockScreenView.h; sourceTree = "<group>"; };
 		58A275E018BBD56900C102B2 /* HILockScreenView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HILockScreenView.m; sourceTree = "<group>"; };
-		58A2760018BE81F100C102B2 /* com.hivewallet.bitpremier.hiveapp */ = {isa = PBXFileReference; lastKnownFileType = file; path = com.hivewallet.bitpremier.hiveapp; sourceTree = "<group>"; };
-		58A2760118BE81F100C102B2 /* com.hivewallet.bitstamptrader.hiveapp */ = {isa = PBXFileReference; lastKnownFileType = file; path = com.hivewallet.bitstamptrader.hiveapp; sourceTree = "<group>"; };
-		58A2760218BE81F100C102B2 /* com.hivewallet.seansoutpost.hiveapp */ = {isa = PBXFileReference; lastKnownFileType = file; path = com.hivewallet.seansoutpost.hiveapp; sourceTree = "<group>"; };
-		58A2760318BE81F100C102B2 /* com.hivewallet.supporthive.hiveapp */ = {isa = PBXFileReference; lastKnownFileType = file; path = com.hivewallet.supporthive.hiveapp; sourceTree = "<group>"; };
-		58A2760A18BE847500C102B2 /* com.hivewallet.minefield.hiveapp */ = {isa = PBXFileReference; lastKnownFileType = file; path = com.hivewallet.minefield.hiveapp; sourceTree = "<group>"; };
 		58A37A8B180D747C00CFCDE3 /* en */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		58A37A99180D7AF000CFCDE3 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/HIApplicationsViewController.xib; sourceTree = "<group>"; };
 		58A37A9C180D7AF600CFCDE3 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/HIContactsViewController.xib; sourceTree = "<group>"; };
@@ -2030,7 +2014,6 @@
 		58C85BD218FFEAA300B2C350 /* hu */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = hu; path = hu.lproj/HISignMessageWindowController.strings; sourceTree = "<group>"; };
 		58CFD95117CF914000A035FA /* HISidebarView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HISidebarView.h; sourceTree = "<group>"; };
 		58CFD95217CF914000A035FA /* HISidebarView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HISidebarView.m; sourceTree = "<group>"; };
-		58D4D61E18290079009CB7A5 /* patten_hive.hiveapp */ = {isa = PBXFileReference; lastKnownFileType = file; path = patten_hive.hiveapp; sourceTree = "<group>"; };
 		58D4D627182A760B009CB7A5 /* el */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = el; path = el.lproj/HIApplicationsViewController.xib; sourceTree = "<group>"; };
 		58D4D628182A760B009CB7A5 /* el */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = el; path = el.lproj/HIContactsViewController.strings; sourceTree = "<group>"; };
 		58D4D629182A760B009CB7A5 /* el */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = el; path = el.lproj/HIContactsViewController.xib; sourceTree = "<group>"; };
@@ -2156,7 +2139,6 @@
 		58E336301892C046004D60C3 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/HIApplicationsViewController.strings; sourceTree = "<group>"; };
 		58E336311892C046004D60C3 /* pt */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = pt; path = pt.lproj/HIApplicationsViewController.strings; sourceTree = "<group>"; };
 		58E336321892C047004D60C3 /* ro */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ro; path = ro.lproj/HIApplicationsViewController.strings; sourceTree = "<group>"; };
-		58E3363918934DCB004D60C3 /* coinbase.hiveapp */ = {isa = PBXFileReference; lastKnownFileType = file; path = coinbase.hiveapp; sourceTree = "<group>"; };
 		58EBA3481937F67500F90E50 /* nb */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = nb; path = nb.lproj/HISendBitcoinsWindowController.strings; sourceTree = "<group>"; };
 		58EBA3491937F67500F90E50 /* nb */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = nb; path = nb.lproj/HISendBitcoinsWindowController.xib; sourceTree = "<group>"; };
 		58EBA34A1937F67500F90E50 /* nb */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = nb; path = nb.lproj/HISignMessageWindowController.strings; sourceTree = "<group>"; };
@@ -2760,22 +2742,6 @@
 			name = HIExportPrivateKeyWindowController;
 			sourceTree = "<group>";
 		};
-		D907A4E317F58F91009B3185 /* Applications */ = {
-			isa = PBXGroup;
-			children = (
-				583076C818B3E8C00017084A /* app-store.hiveapp */,
-				58E3363918934DCB004D60C3 /* coinbase.hiveapp */,
-				58A2760018BE81F100C102B2 /* com.hivewallet.bitpremier.hiveapp */,
-				58A2760118BE81F100C102B2 /* com.hivewallet.bitstamptrader.hiveapp */,
-				58A2760A18BE847500C102B2 /* com.hivewallet.minefield.hiveapp */,
-				58A2760218BE81F100C102B2 /* com.hivewallet.seansoutpost.hiveapp */,
-				58A2760318BE81F100C102B2 /* com.hivewallet.supporthive.hiveapp */,
-				582372EB18C0C48500132894 /* mobile-recharge.hiveapp */,
-				58D4D61E18290079009CB7A5 /* patten_hive.hiveapp */,
-			);
-			path = Applications;
-			sourceTree = "<group>";
-		};
 		D91FE8081793FEFC001B37D8 /* Products */ = {
 			isa = PBXGroup;
 			children = (
@@ -2974,7 +2940,6 @@
 		D9A591CD1767B4A800502635 /* Hive */ = {
 			isa = PBXGroup;
 			children = (
-				D907A4E317F58F91009B3185 /* Applications */,
 				D95929CE177326C4008B4F43 /* Backend */,
 				D9A5922617684D5400502635 /* Categories */,
 				D9A592181768442000502635 /* Controllers */,
@@ -3283,7 +3248,6 @@
 				581818E217F1A8A800D00770 /* README.md in Resources */,
 				5884A03E17F57AE9004A31FA /* dsa_pub.pem in Resources */,
 				58A37AD6180D996E00CFCDE3 /* HIContactViewController.strings in Resources */,
-				58A2760518BE81F100C102B2 /* com.hivewallet.bitpremier.hiveapp in Resources */,
 				2478B8D5184A88E700BA2C35 /* HIFeeDetailsViewController.xib in Resources */,
 				581E9EA719214609007B1760 /* icon-lock.png in Resources */,
 				588E355318212BDF006A6A25 /* HIErrorWindowController.strings in Resources */,
@@ -3335,7 +3299,6 @@
 				582C7DAB185273D400126C10 /* HIApplicationRuntimeViewController.xib in Resources */,
 				58605A4818041D0A00FD9C2A /* icon-dropdown-open.pdf in Resources */,
 				58605A4918041D0A00FD9C2A /* icon-gray-btc.pdf in Resources */,
-				58E3363A18934DCB004D60C3 /* coinbase.hiveapp in Resources */,
 				58605A4A18041D0A00FD9C2A /* icon-group__active.pdf in Resources */,
 				58605A4B18041D0A00FD9C2A /* icon-group__inactive.pdf in Resources */,
 				5889538F1888A68100243190 /* HIBackupCenterWindowController.xib in Resources */,
@@ -3354,9 +3317,7 @@
 				585713521890321A0094F884 /* HIWizardWelcomeViewController.strings in Resources */,
 				582918D618E9AC37001B0870 /* HILockScreenViewController.strings in Resources */,
 				58605A4E18041D0A00FD9C2A /* icon-next.pdf in Resources */,
-				58A2760618BE81F100C102B2 /* com.hivewallet.bitstamptrader.hiveapp in Resources */,
 				581E9EA819214609007B1760 /* icon-lock@2x.png in Resources */,
-				582372EC18C0C48500132894 /* mobile-recharge.hiveapp in Resources */,
 				588953AF188920D000243190 /* HIBackupCenterWindowController.strings in Resources */,
 				58605A4F18041D0A00FD9C2A /* icon-plus.pdf in Resources */,
 				58A37AD5180D996E00CFCDE3 /* HIContactInfoViewController.strings in Resources */,
@@ -3369,12 +3330,9 @@
 				58605A5418041D0A00FD9C2A /* icon-tabbar-user__active.pdf in Resources */,
 				58605A5518041D0A00FD9C2A /* icon-tabbar-user__inactive.pdf in Resources */,
 				58605A5618041D0A00FD9C2A /* icon-timeline__active.pdf in Resources */,
-				58A2760B18BE859200C102B2 /* com.hivewallet.minefield.hiveapp in Resources */,
 				24300BDA18830ACA00FDEF2F /* HIFirstRunWizardWindowController.xib in Resources */,
 				58895405188924FB00243190 /* HIPasswordInputViewController.xib in Resources */,
-				583076C918B3E8C00017084A /* app-store.hiveapp in Resources */,
 				58605A5718041D0A00FD9C2A /* icon-timeline__inactive.pdf in Resources */,
-				58A2760818BE81F100C102B2 /* com.hivewallet.supporthive.hiveapp in Resources */,
 				58A87611197EB36300524C77 /* get_gdrive_folder.sh in Resources */,
 				58605A5818041D0A00FD9C2A /* icon-transactions-arrow-left.pdf in Resources */,
 				58605A5918041D0A00FD9C2A /* icon-transactions-arrow-right.pdf in Resources */,
@@ -3383,11 +3341,9 @@
 				583B1E0318687CF400817EF8 /* dropbox-glyph-blue.pdf in Resources */,
 				58605A5C18041D0A00FD9C2A /* icon-transactions-plus.pdf in Resources */,
 				58C85B7918FFE97F00B2C350 /* HIKeyPreferencesViewController.xib in Resources */,
-				58A2760718BE81F100C102B2 /* com.hivewallet.seansoutpost.hiveapp in Resources */,
 				24FA986C1927891E00D7058F /* HIGeneralPreferencesViewController.xib in Resources */,
 				585712D618902D180094F884 /* HIWizardCompletedViewController.strings in Resources */,
 				58605A5D18041D0A00FD9C2A /* icon-your-profile__active.pdf in Resources */,
-				58D4D61F18290079009CB7A5 /* patten_hive.hiveapp in Resources */,
 				5830767718B38D4B0017084A /* HICameraWindowController.xib in Resources */,
 				58605A5E18041D0A00FD9C2A /* icon-your-profile__inactive.pdf in Resources */,
 				583076C018B3C8220017084A /* HIAboutHiveWindowController.xib in Resources */,
