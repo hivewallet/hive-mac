@@ -233,6 +233,25 @@ static int ddLogLevel = LOG_LEVEL_VERBOSE;
     }
 }
 
+- (void)clearAppsDataIfNeeded {
+    NSString *lastVersion = [[NSUserDefaults standardUserDefaults] objectForKey:LastVersionKey];
+    NSString *versionAfterUpdate = @"2015020801";
+
+    if ([lastVersion isLessThan:versionAfterUpdate]) {
+        HILogInfo(@"Apps data needs to be cleaned up (%@ < %@)", lastVersion, versionAfterUpdate);
+
+        NSHTTPCookieStorage *storage = [NSHTTPCookieStorage sharedHTTPCookieStorage];
+
+        for (NSHTTPCookie *cookie in storage.cookies) {
+            if ([cookie.domain hasSuffix:@".hiveapp"]) {
+                [storage deleteCookie:cookie];
+            }
+        }
+
+        return;
+    }
+}
+
 - (void)configureNotifications {
     __weak __typeof__ (self) weakSelf = self;
     HINotificationService *notificationService = [HINotificationService sharedService];
@@ -263,6 +282,7 @@ static int ddLogLevel = LOG_LEVEL_VERBOSE;
         [self showInitializationError:error];
     } else {
         [self rebuildTransactionListIfNeeded];
+        [self clearAppsDataIfNeeded];
         [self showAppWindow];
 
         dispatch_async(dispatch_get_main_queue(), ^{
