@@ -29,6 +29,7 @@ NSString * const BCClientPasswordChangedNotification = @"BCClientPasswordChanged
     NSMutableDictionary *_balances;
     uint currentAddressIndex;
     Chain *chain;
+    NSMutableArray *observers;
 }
 
 @property (nonatomic, assign) uint64 availableBalance;
@@ -169,6 +170,7 @@ NSString * const BCClientPasswordChangedNotification = @"BCClientPasswordChanged
     __block satoshi_t totalBalance = 0;
     __block satoshi_t availableBalance = 0;
 
+    observers = [[NSMutableArray alloc] init];
     chain = [Chain sharedInstanceWithToken:@"GUEST-TOKEN"];
     [chain getAddresses:addressStrings completionHandler:^(NSDictionary *dictionary, NSError *error) {
           for (NSDictionary *d in dictionary[@"results"]) {
@@ -190,9 +192,7 @@ NSString * const BCClientPasswordChangedNotification = @"BCClientPasswordChanged
         }
     }];
 
-    for (NSString *addr in addressStrings) {
-        [self watchAddress:addr];
-    }
+    [self watchAddress:[addressStrings lastObject]];
 
     return !*error;
 }
@@ -201,11 +201,14 @@ NSString * const BCClientPasswordChangedNotification = @"BCClientPasswordChanged
     ChainNotificationObserver* observer = [chain observerForNotification:
                                            [[ChainNotification alloc] initWithAddress:addr]];
     [observer setResultHandler:^(ChainNotificationResult *res) {
-        NSDictionary *t = res.payloadDictionary[@"transaction"];
-        if (t) {
-            [self processChainTransaction:t];
+        NSString *txid = res.payloadDictionary[@"transaction_hash"];
+        if (txid) {
+            [chain getTransaction:txid completionHandler:^(NSDictionary *dictionary, NSError *error) {
+                [self processChainTransaction:dictionary];
+            }];
         }
     }];
+    [observers addObject:observer];
 }
 
 - (void)processChainTransaction:(NSDictionary *)t {
