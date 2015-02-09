@@ -27,6 +27,7 @@ NSString * const BCClientPasswordChangedNotification = @"BCClientPasswordChanged
     BTCKeychain *_keychain;
     NSMutableArray *_addresses;
     NSMutableDictionary *_balances;
+    uint currentAddressIndex;
 }
 
 @property (nonatomic, assign) uint64 availableBalance;
@@ -36,6 +37,18 @@ NSString * const BCClientPasswordChangedNotification = @"BCClientPasswordChanged
 @end
 
 @implementation BCClient
+
+- (NSDictionary *) balances {
+    return _balances;
+}
+
+- (void)makeNewAddress {
+    currentAddressIndex ++;
+
+    [self willChangeValueForKey:@"walletHash"];
+    _walletHash = [[[_keychain keyAtIndex:currentAddressIndex] address] string];
+    [self didChangeValueForKey:@"walletHash"];
+}
 
 + (BCClient *)sharedClient {
     static BCClient *sharedClient = nil;
@@ -142,7 +155,7 @@ NSString * const BCClientPasswordChangedNotification = @"BCClientPasswordChanged
     }*/
 
     _addresses = [[NSMutableArray alloc] init];
-    for (uint i = 0; i < 5; i++) {
+    for (uint i = 0; i < 10; i++) {
         [_addresses addObject:[[_keychain keyAtIndex:i] address]];
     }
 
@@ -252,8 +265,9 @@ NSString * const BCClientPasswordChangedNotification = @"BCClientPasswordChanged
         [self didChangeValueForKey:@"walletHash"];
     });*/
 
+    currentAddressIndex = 0;
     [self willChangeValueForKey:@"walletHash"];
-    _walletHash = [[[_keychain keyAtIndex:0] address] string];
+    _walletHash = [[[_keychain keyAtIndex:currentAddressIndex] address] string];
     [self didChangeValueForKey:@"walletHash"];
 }
 

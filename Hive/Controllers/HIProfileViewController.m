@@ -41,6 +41,22 @@
 
 @implementation HIProfileViewController
 
+- (IBAction)newAddressClicked:(id)sender {
+    [[BCClient sharedClient] makeNewAddress];
+}
+
+- (IBAction)showAmountsClicked:(id)sender {
+    NSDictionary *balances = [[BCClient sharedClient] balances];
+    NSMutableString *text = [[NSMutableString alloc] init];
+    for (NSString *address in balances) {
+        if ([balances[address] longLongValue] > 0) {
+            [text appendFormat:@"%@: %lld\n", address, [balances[address] longLongValue] / 100];
+        }
+    }
+
+    [[NSAlert alertWithMessageText:@"Your balances:" defaultButton:@"OK" alternateButton:nil otherButton:nil informativeTextWithFormat:@"%@", text] runModal];
+}
+
 - (instancetype)init {
     self = [super initWithNibName:@"HIProfileViewController" bundle:nil];
 
