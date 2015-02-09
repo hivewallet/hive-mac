@@ -681,7 +681,7 @@ NSString * const HISendBitcoinsWindowSuccessKey = @"success";
 - (void)sendBitcoin:(uint64)satoshi toTarget:(NSString *)target password:(HIPasswordHolder *)password {
     NSError *callError = nil;
     BCClient *client = [BCClient sharedClient];
-    NSDictionary *metadata = [self storeFiatCurrencyMetadata];
+//    NSDictionary *metadata = [self storeFiatCurrencyMetadata];
 
     [client sendBitcoins:satoshi
                   toHash:target
@@ -689,8 +689,8 @@ NSString * const HISendBitcoinsWindowSuccessKey = @"success";
                    error:&callError
               completion:^(BOOL success, HITransaction *transaction) {
         if (success) {
-            [self saveMetadata:metadata withTransaction:transaction];
-            [self closeAndNotifyWithSuccess:YES transactionId:transaction.id];
+//            [self saveMetadata:metadata withTransaction:transaction];
+            [self closeAndNotifyWithSuccess:YES transactionId:(NSString *)transaction];
         } else {
             [self showTransactionErrorAlert];
             [self setSendingMode:NO];

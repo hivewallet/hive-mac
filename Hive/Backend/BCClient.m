@@ -53,11 +53,24 @@ NSString * const BCClientPasswordChangedNotification = @"BCClientPasswordChanged
     _walletHash = [[[_keychain keyAtIndex:currentAddressIndex] address] string];
     [self didChangeValueForKey:@"walletHash"];
 
+    [_addresses addObject:[[_keychain keyAtIndex:currentAddressIndex] address]];
     [self watchAddress:_walletHash];
 }
 
 - (NSEnumerator *)unspentOutputsForTransactionBuilder:(BTCTransactionBuilder *)txbuilder {
     return [_unspents objectEnumerator];
+}
+
+- (BTCKey *)transactionBuilder:(BTCTransactionBuilder *)txbuilder keyForUnspentOutput:(BTCTransactionOutput *)txout {
+    BTCAddress *addr = txout.script.standardAddress;
+    if (addr) {
+        for (uint i = 0; i <= currentAddressIndex; i++) {
+            if ([[[_keychain keyAtIndex:i] address] isEqual:addr]) {
+                return [_keychain keyAtIndex:i];
+            }
+        }
+    }
+    return nil;
 }
 
 + (BCClient *)sharedClient {
@@ -172,24 +185,11 @@ NSString * const BCClientPasswordChangedNotification = @"BCClientPasswordChanged
     NSArray *addressStrings = [_addresses valueForKeyPath:@"string"];
 
     _balances = [[NSMutableDictionary alloc] init];
-    __block satoshi_t totalBalance = 0;
-    __block satoshi_t availableBalance = 0;
 
     observers = [[NSMutableArray alloc] init];
     chain = [Chain sharedInstanceWithToken:@"GUEST-TOKEN"];
-    [chain getAddresses:addressStrings completionHandler:^(NSDictionary *dictionary, NSError *error) {
-          for (NSDictionary *d in dictionary[@"results"]) {
-              _balances[d[@"address"]] = d[@"total"][@"balance"];
 
-              totalBalance += [d[@"total"][@"balance"] longLongValue];
-              availableBalance += [d[@"confirmed"][@"balance"] longLongValue];
-          }
-
-          self.availableBalance = availableBalance;
-          self.estimatedBalance = totalBalance;
-
-          NSLog(@"%@", _balances);
-      }];
+    [self reloadBalances];
 
     [chain getAddressesTransactions:addressStrings completionHandler:^(NSDictionary *dictionary, NSError *error) {
         for (NSDictionary *t in dictionary[@"results"]) {
@@ -202,6 +202,25 @@ NSString * const BCClientPasswordChangedNotification = @"BCClientPasswordChanged
     [self reloadUnspents];
 
     return !*error;
+}
+
+- (void)reloadBalances {
+    NSArray *addressStrings = [_addresses valueForKeyPath:@"string"];
+
+    __block satoshi_t totalBalance = 0;
+    __block satoshi_t availableBalance = 0;
+
+    [chain getAddresses:addressStrings completionHandler:^(NSDictionary *dictionary, NSError *error) {
+        for (NSDictionary *d in dictionary[@"results"]) {
+            _balances[d[@"address"]] = d[@"total"][@"balance"];
+
+            totalBalance += [d[@"total"][@"balance"] longLongValue];
+            availableBalance += [d[@"confirmed"][@"balance"] longLongValue];
+        }
+
+        self.availableBalance = availableBalance;
+        self.estimatedBalance = totalBalance;
+    }];
 }
 
 - (void)watchAddress:(NSString *)addr {
@@ -270,6 +289,7 @@ NSString * const BCClientPasswordChangedNotification = @"BCClientPasswordChanged
     [self transactionUpdated:notif];
 
     [self reloadUnspents];
+    [self reloadBalances];
 }
 
 - (void)reloadUnspents {
@@ -668,6 +688,38 @@ NSString * const BCClientPasswordChangedNotification = @"BCClientPasswordChanged
         HILogWarn(@"Not enough balance: only %lld satoshi available", self.availableBalance);
         completion(NO, nil);
     } else {
+        BTCTransactionBuilder *builder = [[BTCTransactionBuilder alloc] init];
+        builder.dataSource = self;
+        builder.outputs = @[
+                            [[BTCTransactionOutput alloc] initWithValue:amount
+                                                                address:[BTCAddress addressWithBase58String:hash]]
+                            ];
+        builder.changeAddress = [[_keychain keyAtIndex:currentAddressIndex+1] address];
+
+        NSError *error = nil;
+        BTCTransactionBuilderResult *result = [builder buildTransaction:&error];
+        if (error) {
+            completion(false, nil);
+        } else {
+            [chain sendTransaction:result.transaction.data completionHandler:^(NSDictionary *dictionary, NSError *error) {
+                if (error) {
+                    completion(false, nil);
+                } else {
+                    [self makeNewAddress];
+
+                    NSString *txid = dictionary[@"transaction_hash"];
+
+                    [chain getTransaction:txid completionHandler:^(NSDictionary *dictionary, NSError *error) {
+                        if (dictionary) {
+                            [self processChainTransaction:dictionary];
+                        }
+                    }];
+
+                    completion(true, (HITransaction *) txid);
+                }
+            }];
+        }
+
         /*HIBitcoinManager *bitcoin = [HIBitcoinManager defaultManager];
 
         // Sanity check first
