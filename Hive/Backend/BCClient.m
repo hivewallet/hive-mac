@@ -28,6 +28,7 @@ NSString * const BCClientPasswordChangedNotification = @"BCClientPasswordChanged
     NSMutableArray *_addresses;
     NSMutableDictionary *_balances;
     uint currentAddressIndex;
+    Chain *chain;
 }
 
 @property (nonatomic, assign) uint64 availableBalance;
@@ -49,6 +50,8 @@ NSString * const BCClientPasswordChangedNotification = @"BCClientPasswordChanged
     [self willChangeValueForKey:@"walletHash"];
     _walletHash = [[[_keychain keyAtIndex:currentAddressIndex] address] string];
     [self didChangeValueForKey:@"walletHash"];
+
+    [self watchAddress:_walletHash];
 }
 
 + (BCClient *)sharedClient {
@@ -166,7 +169,7 @@ NSString * const BCClientPasswordChangedNotification = @"BCClientPasswordChanged
     __block satoshi_t totalBalance = 0;
     __block satoshi_t availableBalance = 0;
 
-    Chain *chain = [Chain sharedInstanceWithToken:@"GUEST-TOKEN"];
+    chain = [Chain sharedInstanceWithToken:@"GUEST-TOKEN"];
     [chain getAddresses:addressStrings completionHandler:^(NSDictionary *dictionary, NSError *error) {
           for (NSDictionary *d in dictionary[@"results"]) {
               _balances[d[@"address"]] = d[@"total"][@"balance"];
@@ -182,60 +185,79 @@ NSString * const BCClientPasswordChangedNotification = @"BCClientPasswordChanged
       }];
 
     [chain getAddressesTransactions:addressStrings completionHandler:^(NSDictionary *dictionary, NSError *error) {
-        ISO8601DateFormatter *fmt = [[ISO8601DateFormatter alloc] init];
-
         for (NSDictionary *t in dictionary[@"results"]) {
-
-            NSMutableDictionary *json = [[NSMutableDictionary alloc] init];
-            json[@"txid"] = t[@"hash"];
-            json[@"fee"] = t[@"fees"];
-
-            json[@"time"] =
-                (t[@"block_time"] && ![t[@"block_time"] isEqual:[NSNull null]]) ?
-                [fmt dateFromString:t[@"block_time"]] :
-                (
-                (t[@"chain_received_at"] && ![t[@"chain_received_at"] isEqual:[NSNull null]]) ?
-                [fmt dateFromString:t[@"chain_received_at"]] :
-                [NSDate date]
-                );
-
-            satoshi_t amount = 0;
-
-            NSMutableArray *inputs = [[NSMutableArray alloc] init];
-            for (NSDictionary *input in t[@"inputs"]) {
-                for (NSString *a in input[@"addresses"]) {
-                    NSString *atype = [addressStrings indexOfObject:a] == NSNotFound ? @"external" : @"own";
-                    [inputs addObject:@{@"address": a, @"type": atype}];
-                }
-
-                if ([[inputs lastObject][@"type"] isEqual:@"own"]) {
-                    amount -= [input[@"value"] longLongValue];
-                }
-            }
-            json[@"inputs"] = inputs;
-
-            NSMutableArray *outputs = [[NSMutableArray alloc] init];
-            for (NSDictionary *output in t[@"outputs"]) {
-                for (NSString *a in output[@"addresses"]) {
-                    NSString *atype = [addressStrings indexOfObject:a] == NSNotFound ? @"external" : @"own";
-                    [outputs addObject:@{@"address": a, @"type": atype}];
-                }
-
-                if ([[outputs lastObject][@"type"] isEqual:@"own"]) {
-                    amount += [output[@"value"] longLongValue];
-                }
-            }
-            json[@"outputs"] = outputs;
-
-            json[@"amount"] = @(amount);
-            json[@"confidence"] = [t[@"confirmations"] integerValue] > 0 ? @"building" : @"pending";
-
-            NSNotification *notif = [NSNotification notificationWithName:@"fake" object:self userInfo:@{@"json": json}];
-            [self transactionUpdated:notif];
+            [self processChainTransaction:t];
         }
     }];
 
+    for (NSString *addr in addressStrings) {
+        [self watchAddress:addr];
+    }
+
     return !*error;
+}
+
+- (void)watchAddress:(NSString *)addr {
+    ChainNotificationObserver* observer = [chain observerForNotification:
+                                           [[ChainNotification alloc] initWithAddress:addr]];
+    [observer setResultHandler:^(ChainNotificationResult *res) {
+        NSDictionary *t = res.payloadDictionary[@"transaction"];
+        if (t) {
+            [self processChainTransaction:t];
+        }
+    }];
+}
+
+- (void)processChainTransaction:(NSDictionary *)t {
+    ISO8601DateFormatter *fmt = [[ISO8601DateFormatter alloc] init];
+    NSArray *addressStrings = [_addresses valueForKeyPath:@"string"];
+
+    NSMutableDictionary *json = [[NSMutableDictionary alloc] init];
+    json[@"txid"] = t[@"hash"];
+    json[@"fee"] = t[@"fees"];
+
+    json[@"time"] =
+    (t[@"block_time"] && ![t[@"block_time"] isEqual:[NSNull null]]) ?
+    [fmt dateFromString:t[@"block_time"]] :
+    (
+     (t[@"chain_received_at"] && ![t[@"chain_received_at"] isEqual:[NSNull null]]) ?
+     [fmt dateFromString:t[@"chain_received_at"]] :
+     [NSDate date]
+     );
+
+    satoshi_t amount = 0;
+
+    NSMutableArray *inputs = [[NSMutableArray alloc] init];
+    for (NSDictionary *input in t[@"inputs"]) {
+        for (NSString *a in input[@"addresses"]) {
+            NSString *atype = [addressStrings indexOfObject:a] == NSNotFound ? @"external" : @"own";
+            [inputs addObject:@{@"address": a, @"type": atype}];
+        }
+
+        if ([[inputs lastObject][@"type"] isEqual:@"own"]) {
+            amount -= [input[@"value"] longLongValue];
+        }
+    }
+    json[@"inputs"] = inputs;
+
+    NSMutableArray *outputs = [[NSMutableArray alloc] init];
+    for (NSDictionary *output in t[@"outputs"]) {
+        for (NSString *a in output[@"addresses"]) {
+            NSString *atype = [addressStrings indexOfObject:a] == NSNotFound ? @"external" : @"own";
+            [outputs addObject:@{@"address": a, @"type": atype}];
+        }
+
+        if ([[outputs lastObject][@"type"] isEqual:@"own"]) {
+            amount += [output[@"value"] longLongValue];
+        }
+    }
+    json[@"outputs"] = outputs;
+
+    json[@"amount"] = @(amount);
+    json[@"confidence"] = [t[@"confirmations"] integerValue] > 0 ? @"building" : @"pending";
+
+    NSNotification *notif = [NSNotification notificationWithName:@"fake" object:self userInfo:@{@"json": json}];
+    [self transactionUpdated:notif];
 }
 
 - (void)createWalletWithPassword:(HIPasswordHolder *)password
