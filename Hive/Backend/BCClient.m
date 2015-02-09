@@ -21,7 +21,7 @@ NSString * const BCClientBitcoinjDirectory = @"BitcoinJ.network";
 NSString * const BCClientTorDirectory = @"Tor.network";
 NSString * const BCClientPasswordChangedNotification = @"BCClientPasswordChangedNotification";
 
-@interface BCClient () {
+@interface BCClient () <BTCTransactionBuilderDataSource> {
     NSManagedObjectContext *_transactionUpdateContext;
     NSDateFormatter *_dateFormatter;
     BTCKeychain *_keychain;
@@ -30,6 +30,7 @@ NSString * const BCClientPasswordChangedNotification = @"BCClientPasswordChanged
     uint currentAddressIndex;
     Chain *chain;
     NSMutableArray *observers;
+    NSArray *_unspents;
 }
 
 @property (nonatomic, assign) uint64 availableBalance;
@@ -53,6 +54,10 @@ NSString * const BCClientPasswordChangedNotification = @"BCClientPasswordChanged
     [self didChangeValueForKey:@"walletHash"];
 
     [self watchAddress:_walletHash];
+}
+
+- (NSEnumerator *)unspentOutputsForTransactionBuilder:(BTCTransactionBuilder *)txbuilder {
+    return [_unspents objectEnumerator];
 }
 
 + (BCClient *)sharedClient {
@@ -194,6 +199,8 @@ NSString * const BCClientPasswordChangedNotification = @"BCClientPasswordChanged
 
     [self watchAddress:[addressStrings lastObject]];
 
+    [self reloadUnspents];
+
     return !*error;
 }
 
@@ -261,6 +268,26 @@ NSString * const BCClientPasswordChangedNotification = @"BCClientPasswordChanged
 
     NSNotification *notif = [NSNotification notificationWithName:@"fake" object:self userInfo:@{@"json": json}];
     [self transactionUpdated:notif];
+
+    [self reloadUnspents];
+}
+
+- (void)reloadUnspents {
+    [chain getAddressesUnspents:[_addresses valueForKeyPath:@"string"]
+ completionHandler:^(NSDictionary *dictionary, NSError *error) {
+     NSMutableArray *outputs = [[NSMutableArray alloc] init];
+     for (NSDictionary* item in dictionary[@"results"])
+     {
+         BTCTransactionOutput* txout = [[BTCTransactionOutput alloc] init];
+
+         txout.value = [item[@"value"] longLongValue];
+         txout.script = [[BTCScript alloc] initWithString:item[@"script"]];
+         txout.index = [item[@"output_index"] intValue];
+         txout.transactionHash = (BTCReversedData(BTCDataFromHex(item[@"transaction_hash"])));
+         [outputs addObject:txout];
+     }
+     _unspents = outputs;
+ }];
 }
 
 - (void)createWalletWithPassword:(HIPasswordHolder *)password
@@ -726,7 +753,17 @@ NSString * const BCClientPasswordChangedNotification = @"BCClientPasswordChanged
     /*return [[HIBitcoinManager defaultManager] calculateTransactionFeeForSendingCoins:amount
                                                                          toRecipient:recipient
                                                                                error:error];*/
-    return 0;
+    BTCTransactionBuilder *builder = [[BTCTransactionBuilder alloc] init];
+    builder.dataSource = self;
+    builder.shouldSign = NO;
+    builder.outputs = @[
+                        [[BTCTransactionOutput alloc] initWithValue:amount
+                                                            address:[BTCAddress addressWithBase58String:recipient]]
+                      ];
+    builder.changeAddress = [[_keychain keyAtIndex:currentAddressIndex+1] address];
+
+    BTCTransactionBuilderResult *result = [builder buildTransaction:nil];
+    return result.fee;
 }
 
 - (void)addTransactionObserver:(id <BCTransactionObserver>)observer {

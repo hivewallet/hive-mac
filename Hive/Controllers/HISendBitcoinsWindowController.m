@@ -632,18 +632,18 @@ NSString * const HISendBitcoinsWindowSuccessKey = @"success";
 
 - (void)sendClicked:(id)sender {
     satoshi_t satoshi = self.amountFieldValue;
-//    satoshi_t satoshiWithFee = satoshi + self.currentFee;
+    satoshi_t satoshiWithFee = satoshi + self.currentFee;
 
     /*if (![[HIBitcoinManager defaultManager] isConnected]) {
         [self showNoConnectionAlert];
     }
-    else if (satoshiWithFee > [[BCClient sharedClient] estimatedBalance]) {
+    else*/ if (satoshiWithFee > [[BCClient sharedClient] estimatedBalance]) {
         [self showInsufficientFundsAlert];
     }
     else if (satoshiWithFee > [[BCClient sharedClient] availableBalance]) {
         [self showBlockedFundsAlert];
     }
-    else {*/
+    else {
         if (_paymentRequestSession > 0) {
             [self showPasswordPopover:sender forPaymentRequest:_paymentRequestSession];
         } else {
@@ -665,7 +665,7 @@ NSString * const HISendBitcoinsWindowSuccessKey = @"success";
                 [self showPasswordPopover:sender forSendingBitcoin:satoshi toTarget:target];
             }
         }
-//    }
+    }
 }
 
 - (void)largeAmountAlertWasClosed:(NSAlert *)alert result:(NSInteger)result context:(void *)context {
