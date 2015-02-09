@@ -2,6 +2,7 @@ platform :osx, '10.9'
 
 pod 'AFNetworking',       '~> 1.3.2'
 pod 'AutoLayoutMacros'
+pod 'Chain', '2.2.0pre2'
 pod 'CocoaLumberjack'
 pod 'CoreBitcoin'
 pod 'FontAwesomeIconFactory'
