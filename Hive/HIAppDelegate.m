@@ -6,8 +6,6 @@
 //  Copyright (c) 2013 Hive Developers. All rights reserved.
 //
 
-#import <BitcoinJKit/HIBitcoinErrorCodes.h>
-#import <BitcoinJKit/HIBitcoinManager.h>
 #import <CocoaLumberjack/DDASLLogger.h>
 #import <CocoaLumberjack/DDFileLogger.h>
 #import <CocoaLumberjack/DDLog.h>
@@ -212,7 +210,7 @@ static int ddLogLevel = LOG_LEVEL_VERBOSE;
     }
 
     [self configureNotifications];
-    [self startBitcoinClientWithPreviousError:nil];
+    [self startBitcoinClient];
 
     NSSetUncaughtExceptionHandler(&handleException);
 }
@@ -267,17 +265,14 @@ static int ddLogLevel = LOG_LEVEL_VERBOSE;
     notificationService.enabled = YES;
 }
 
-- (void)startBitcoinClientWithPreviousError:(NSError *)previousError {
+- (void)startBitcoinClient {
     NSError *error = nil;
     [[BCClient sharedClient] start:&error];
 
-    if (error.code == kHIBitcoinManagerNoWallet) {
-        [self showSetUpWizard];
-    } else if (error.code == kHIBitcoinManagerBlockStoreReadError && !previousError) {
-        [self showUnreadableChainFileError];
-        [[HIBitcoinManager defaultManager] deleteBlockchainDataFile:nil];
-        [self startBitcoinClientWithPreviousError:error];
-    } else if (error) {
+//    if (error.code == kHIBitcoinManagerNoWallet) {
+//        [self showSetUpWizard];
+//    } else
+    if (error) {
         HILogError(@"BitcoinManager start error: %@", error);
         [self showInitializationError:error];
     } else {
@@ -348,15 +343,11 @@ static int ddLogLevel = LOG_LEVEL_VERBOSE;
 - (void)showInitializationError:(NSError *)error {
     NSString *message = nil;
 
-    if (error.code == kHIBitcoinManagerUnreadableWallet) {
-        message = NSLocalizedString(@"Could not read wallet file. It might be damaged.", @"initialization error");
-    } else if (error.code == kHIBitcoinManagerBlockStoreLockError) {
-        message = NSLocalizedString(@"Bitcoin network data file could not be opened - "
-                                    @"another instance of Hive might still be running.",
-                                    @"initialization error");
-    } else {
+//    if (error.code == kHIBitcoinManagerUnreadableWallet) {
+//        message = NSLocalizedString(@"Could not read wallet file. It might be damaged.", @"initialization error");
+//    } else {
         message = [error localizedFailureReason];
-    }
+//    }
 
     HILogError(@"Aborting launch because of initialization error: %@", error);
 
@@ -462,7 +453,7 @@ static int ddLogLevel = LOG_LEVEL_VERBOSE;
 }
 
 - (NSApplicationTerminateReply)applicationShouldTerminate:(NSApplication *)sender {
-    if ([[HIBitcoinManager defaultManager] isSyncing] && [[BCClient sharedClient] hasPendingTransactions]) {
+    /*if ([[HIBitcoinManager defaultManager] isSyncing] && [[BCClient sharedClient] hasPendingTransactions]) {
         NSString *title = NSLocalizedString(@"Hive is currently syncing with the Bitcoin network. "
                                             @"Are you sure you want to quit?",
                                             @"Sync in progress alert title");
@@ -483,7 +474,7 @@ static int ddLogLevel = LOG_LEVEL_VERBOSE;
         if ([alert runModal] != NSAlertDefaultReturn) {
             return NSTerminateCancel;
         }
-    }
+    }*/
 
     return NSTerminateNow;
 }
@@ -496,10 +487,10 @@ static int ddLogLevel = LOG_LEVEL_VERBOSE;
 
 - (BOOL)application:(NSApplication *)sender openFile:(NSString *)filename {
     if ([filename.pathExtension isEqual:@"bitcoinpaymentrequest"]) {
-        __weak id delegate = self;
+//        __weak id delegate = self;
 
         [self handleExternalEvent:^{
-            HIBitcoinManager *manager = [HIBitcoinManager defaultManager];
+            /*HIBitcoinManager *manager = [HIBitcoinManager defaultManager];
             NSError *callError = nil;
 
             HILogDebug(@"Opening local payment request file from %@", filename);
@@ -523,7 +514,7 @@ static int ddLogLevel = LOG_LEVEL_VERBOSE;
                                                       @"Alert message when payment request file can't be read");
 
                 [[NSAlert hiOKAlertWithTitle:title message:message] runModal];
-            }
+            }*/
         }];
 
         return YES;
@@ -535,7 +526,7 @@ static int ddLogLevel = LOG_LEVEL_VERBOSE;
 - (void)handlePaymentRequestLoadError:(NSError *)error {
     HILogDebug(@"Payment request load error: %@", error);
 
-    NSString *title = NSLocalizedString(@"Payment data is invalid.",
+    /*NSString *title = NSLocalizedString(@"Payment data is invalid.",
                                         @"Alert title when payment request file has some invalid or unexpected data");
 
     NSString *message = nil;
@@ -571,7 +562,7 @@ static int ddLogLevel = LOG_LEVEL_VERBOSE;
                                     @"Alert message when payment request can't be loaded from or sent to the server");
     }
 
-    [[NSAlert hiOKAlertWithTitle:title message:message] runModal];
+    [[NSAlert hiOKAlertWithTitle:title message:message] runModal];*/
 }
 
 

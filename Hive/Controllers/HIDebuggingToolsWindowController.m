@@ -6,7 +6,6 @@
 //  Copyright (c) 2013 Hive Developers. All rights reserved.
 //
 
-#import <BitcoinJKit/BitcoinJKit.h>
 #import "BCClient.h"
 #import "HIDebuggingToolsWindowController.h"
 
@@ -27,14 +26,14 @@
 }
 
 - (void)awakeFromNib {
-    [[HIBitcoinManager defaultManager] addObserver:self
+    /*[[HIBitcoinManager defaultManager] addObserver:self
                                         forKeyPath:@"syncProgress"
                                            options:NSKeyValueObservingOptionInitial
-                                           context:NULL];
+                                           context:NULL];*/
 }
 
 - (void)dealloc {
-    [[HIBitcoinManager defaultManager] removeObserver:self forKeyPath:@"syncProgress"];
+//    [[HIBitcoinManager defaultManager] removeObserver:self forKeyPath:@"syncProgress"];
 }
 
 - (IBAction)rebuildTransactionListClicked:(id)sender {
@@ -119,7 +118,7 @@
 }
 
 - (void)rebuildWallet {
-    NSError *error = nil;
+    /*NSError *error = nil;
     NSAlert *alert;
 
     [[HIBitcoinManager defaultManager] resetBlockchain:&error];
@@ -135,15 +134,15 @@
                                               @"until the sync is complete."];
     }
 
-    [alert beginSheetModalForWindow:self.window modalDelegate:nil didEndSelector:nil contextInfo:NULL];
+    [alert beginSheetModalForWindow:self.window modalDelegate:nil didEndSelector:nil contextInfo:NULL];*/
 }
 
 - (void)observeValueForKeyPath:(NSString *)path ofObject:(id)object change:(NSDictionary *)change context:(void *)ctx {
-    if (object == [HIBitcoinManager defaultManager]) {
+    /*if (object == [HIBitcoinManager defaultManager]) {
         float progress = [[HIBitcoinManager defaultManager] syncProgress];
         self.progressLabel.stringValue = [NSString stringWithFormat:@"%.1f%%", progress];
         self.progressBar.doubleValue = progress;
-    }
+    }*/
 }
 
 @end

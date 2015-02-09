@@ -6,10 +6,9 @@
 //  Copyright (c) 2014 Hive Developers. All rights reserved.
 //
 
-#import <BitcoinJKit/HIBitcoinManager.h>
 #import "HINetworkConnectionMonitor.h"
 
-static const NSTimeInterval DisconnectionDelay = 30.0;
+//static const NSTimeInterval DisconnectionDelay = 30.0;
 
 NSString * const HINetworkConnectionMonitorConnected = @"HINetworkConnectionMonitorConnected";
 NSString * const HINetworkConnectionMonitorDisconnected = @"HINetworkConnectionMonitorDisconnected";
@@ -28,10 +27,10 @@ NSString * const HINetworkConnectionMonitorDisconnected = @"HINetworkConnectionM
 
     if (self) {
         self.connected = YES;
-        [[HIBitcoinManager defaultManager] addObserver:self
+        /*[[HIBitcoinManager defaultManager] addObserver:self
                                             forKeyPath:@"isConnected"
                                                options:NSKeyValueObservingOptionInitial
-                                               context:NULL];
+                                               context:NULL];*/
     }
 
     return self;
@@ -41,7 +40,7 @@ NSString * const HINetworkConnectionMonitorDisconnected = @"HINetworkConnectionM
                       ofObject:(id)object
                         change:(NSDictionary *)change
                        context:(void *)context {
-    if (object == [HIBitcoinManager defaultManager] && [path isEqual:@"isConnected"]) {
+    /*if (object == [HIBitcoinManager defaultManager] && [path isEqual:@"isConnected"]) {
         if ([[HIBitcoinManager defaultManager] isConnected]) {
             if (self.connected) {
                 HILogInfo(@"Connection timeout cancelled.");
@@ -57,7 +56,7 @@ NSString * const HINetworkConnectionMonitorDisconnected = @"HINetworkConnectionM
                        withObject:nil
                        afterDelay:DisconnectionDelay];
         }
-    }
+    }*/
 }
 
 - (void)onConnect {
@@ -73,7 +72,7 @@ NSString * const HINetworkConnectionMonitorDisconnected = @"HINetworkConnectionM
 }
 
 - (void)dealloc {
-    [[HIBitcoinManager defaultManager] removeObserver:self forKeyPath:@"isConnected"];
+//    [[HIBitcoinManager defaultManager] removeObserver:self forKeyPath:@"isConnected"];
 }
 
 @end

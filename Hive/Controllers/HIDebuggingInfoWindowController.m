@@ -6,7 +6,6 @@
 //  Copyright (c) 2013 Hive Developers. All rights reserved.
 //
 
-#import <BitcoinJKit/BitcoinJKit.h>
 #import "HIBitcoinFormatService.h"
 #import "HIDatabaseManager.h"
 #import "HIDebuggingInfoWindowController.h"
@@ -31,7 +30,7 @@
 }
 
 - (void)updateInfo {
-    NSMutableString *info = [[NSMutableString alloc] init];
+    /*NSMutableString *info = [[NSMutableString alloc] init];
     HIBitcoinManager *bitcoin = [HIBitcoinManager defaultManager];
     HIBitcoinFormatService *formatService = [HIBitcoinFormatService sharedService];
 
@@ -64,7 +63,7 @@
     [info appendFormat:@"\n## Wallet details\n\n"];
     [info appendString:bitcoin.walletDebuggingInfo];
 
-    self.textView.string = info;
+    self.textView.string = info;*/
 }
 
 - (IBAction)openLogDirectoryPressed:(id)sender {

@@ -6,7 +6,6 @@
 //  Copyright (c) 2013 Hive Developers. All rights reserved.
 //
 
-#import <BitcoinJKit/HIBitcoinManager.h>
 #import "HIBitcoinURI.h"
 #import "NSDecimalNumber+HISatoshiConversion.h"
 
@@ -73,9 +72,9 @@ static NSString * const BitcoinURIPrefix = @"bitcoin:";
         }
     }
 
-    if (![[HIBitcoinManager defaultManager] isAddressValid:self.address]) {
-        return NO;
-    }
+//    if (![[HIBitcoinManager defaultManager] isAddressValid:self.address]) {
+//        return NO;
+//    }
 
     return YES;
 }

@@ -7,7 +7,9 @@
 //
 
 #import <AFNetworking/AFJSONRequestOperation.h>
-#import <BitcoinJKit/BitcoinJKit.h>
+#import <Chain/Chain.h>
+#import <CoreBitcoin/CoreBitcoin.h>
+#import <ISO8601DateFormatter/ISO8601DateFormatter.h>
 #import "BCClient.h"
 #import "HIContact.h"
 #import "HIDatabaseManager.h"
@@ -22,6 +24,9 @@ NSString * const BCClientPasswordChangedNotification = @"BCClientPasswordChanged
 @interface BCClient () {
     NSManagedObjectContext *_transactionUpdateContext;
     NSDateFormatter *_dateFormatter;
+    BTCKeychain *_keychain;
+    NSMutableArray *_addresses;
+    NSMutableDictionary *_balances;
 }
 
 @property (nonatomic, assign) uint64 availableBalance;
@@ -63,19 +68,19 @@ NSString * const BCClientPasswordChangedNotification = @"BCClientPasswordChanged
                                      initWithConcurrencyType:NSPrivateQueueConcurrencyType];
         _transactionUpdateContext.parentContext = mainContext;
 
-        NSNotificationCenter *notificationCenter = [NSNotificationCenter defaultCenter];
+//        NSNotificationCenter *notificationCenter = [NSNotificationCenter defaultCenter];
         /*[notificationCenter addObserver:self
                                selector:@selector(torStarted:)
                                    name:kHITorManagerStarted
                                  object:nil];*/
-        [notificationCenter addObserver:self
+        /*[notificationCenter addObserver:self
                                selector:@selector(bitcoinKitStarted:)
                                    name:kHIBitcoinManagerStartedNotification
                                  object:nil];
         [notificationCenter addObserver:self
                                selector:@selector(transactionUpdated:)
                                    name:kHIBitcoinManagerTransactionChangedNotification
-                                 object:nil];
+                                 object:nil];*/
 
         /*
         HITorManager *tor = [HITorManager defaultManager];
@@ -83,17 +88,17 @@ NSString * const BCClientPasswordChangedNotification = @"BCClientPasswordChanged
         tor.port = 9999;
         */
 
-        HIBitcoinManager *bitcoin = [HIBitcoinManager defaultManager];
+        /*HIBitcoinManager *bitcoin = [HIBitcoinManager defaultManager];
         bitcoin.dataURL = [self bitcoinjDirectory];
         bitcoin.exceptionHandler = ^(NSException *exception) {
             dispatch_async(dispatch_get_main_queue(), ^{
                 [AppDelegate showExceptionWindowWithException:exception];
             });
-        };
+        };*/
 
         _transactionObservers = [NSMutableSet new];
 
-        if (DEBUG_OPTION_ENABLED(TESTING_NETWORK)) {
+        /*if (DEBUG_OPTION_ENABLED(TESTING_NETWORK)) {
             bitcoin.testingNetwork = YES;
         } else {
             bitcoin.checkpointsFilePath = [[NSBundle mainBundle] pathForResource:@"bitcoinkit" ofType:@"checkpoints"];
@@ -110,7 +115,7 @@ NSString * const BCClientPasswordChangedNotification = @"BCClientPasswordChanged
         [bitcoin addObserver:self
                   forKeyPath:@"syncProgress"
                      options:NSKeyValueObservingOptionInitial | NSKeyValueObservingOptionNew
-                     context:NULL];
+                     context:NULL];*/
     }
 
     return self;
@@ -118,18 +123,96 @@ NSString * const BCClientPasswordChangedNotification = @"BCClientPasswordChanged
 
 - (BOOL)start:(NSError **)error {
 
+    NSData* seed = BTCDataWithHexCString("cafebabe20150209");
+
+    _keychain = [[BTCKeychain alloc] initWithSeed:seed];
+    [self bitcoinKitStarted:nil];
+
     // TOR disabled for now
     // [tor start];
 
     *error = nil;
 
-    if ([[HIBitcoinManager defaultManager] start:error]) {
+    /*if ([[HIBitcoinManager defaultManager] start:error]) {
         NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
         self.availableBalance = [[defaults objectForKey:@"LastBalance"] unsignedLongLongValue];
         self.estimatedBalance = [[defaults objectForKey:@"LastEstimatedBalance"] unsignedLongLongValue];
 
         [self updateNotifications];
+    }*/
+
+    _addresses = [[NSMutableArray alloc] init];
+    for (uint i = 0; i < 5; i++) {
+        [_addresses addObject:[[_keychain keyAtIndex:i] address]];
     }
+
+    NSArray *addressStrings = [_addresses valueForKeyPath:@"string"];
+
+    _balances = [[NSMutableDictionary alloc] init];
+    __block satoshi_t totalBalance = 0;
+    __block satoshi_t availableBalance = 0;
+
+    Chain *chain = [Chain sharedInstanceWithToken:@"GUEST-TOKEN"];
+    [chain getAddresses:addressStrings completionHandler:^(NSDictionary *dictionary, NSError *error) {
+          for (NSDictionary *d in dictionary[@"results"]) {
+              _balances[d[@"address"]] = d[@"total"][@"balance"];
+
+              totalBalance += [d[@"total"][@"balance"] longLongValue];
+              availableBalance += [d[@"confirmed"][@"balance"] longLongValue];
+          }
+
+          self.availableBalance = availableBalance;
+          self.estimatedBalance = totalBalance;
+
+          NSLog(@"%@", _balances);
+      }];
+
+    [chain getAddressesTransactions:addressStrings completionHandler:^(NSDictionary *dictionary, NSError *error) {
+        ISO8601DateFormatter *fmt = [[ISO8601DateFormatter alloc] init];
+
+        for (NSDictionary *t in dictionary[@"results"]) {
+
+            NSMutableDictionary *json = [[NSMutableDictionary alloc] init];
+            json[@"txid"] = t[@"hash"];
+            json[@"fee"] = t[@"fees"];
+            json[@"time"] = t[@"block_time"] && ![t[@"block_time"] isEqual:[NSNull null]] ?
+                [fmt dateFromString:t[@"block_time"]] : [NSDate date];
+
+            satoshi_t amount = 0;
+
+            NSMutableArray *inputs = [[NSMutableArray alloc] init];
+            for (NSDictionary *input in t[@"inputs"]) {
+                for (NSString *a in input[@"addresses"]) {
+                    NSString *atype = [addressStrings indexOfObject:a] == NSNotFound ? @"external" : @"own";
+                    [inputs addObject:@{@"address": a, @"type": atype}];
+                }
+
+                if ([[inputs lastObject][@"type"] isEqual:@"own"]) {
+                    amount -= [input[@"value"] longLongValue];
+                }
+            }
+            json[@"inputs"] = inputs;
+
+            NSMutableArray *outputs = [[NSMutableArray alloc] init];
+            for (NSDictionary *output in t[@"outputs"]) {
+                for (NSString *a in output[@"addresses"]) {
+                    NSString *atype = [addressStrings indexOfObject:a] == NSNotFound ? @"external" : @"own";
+                    [outputs addObject:@{@"address": a, @"type": atype}];
+                }
+
+                if ([[outputs lastObject][@"type"] isEqual:@"own"]) {
+                    amount += [output[@"value"] longLongValue];
+                }
+            }
+            json[@"outputs"] = outputs;
+
+            json[@"amount"] = @(amount);
+            json[@"confidence"] = [t[@"confirmations"] integerValue] > 0 ? @"building" : @"pending";
+
+            NSNotification *notif = [NSNotification notificationWithName:@"fake" object:self userInfo:@{@"json": json}];
+            [self transactionUpdated:notif];
+        }
+    }];
 
     return !*error;
 }
@@ -137,20 +220,20 @@ NSString * const BCClientPasswordChangedNotification = @"BCClientPasswordChanged
 - (void)createWalletWithPassword:(HIPasswordHolder *)password
                            error:(NSError **)error {
     HILogInfo(@"Creating new protected wallet...");
-    [[HIBitcoinManager defaultManager] createWalletWithPassword:password.data error:error];
+//    [[HIBitcoinManager defaultManager] createWalletWithPassword:password.data error:error];
 }
 
 - (void)changeWalletPassword:(HIPasswordHolder *)fromPassword
                   toPassword:(HIPasswordHolder *)toPassword
                        error:(NSError **)error {
     HILogInfo(@"Changing wallet password...");
-    [[HIBitcoinManager defaultManager] changeWalletPassword:fromPassword.data
+    /*[[HIBitcoinManager defaultManager] changeWalletPassword:fromPassword.data
                                                  toPassword:toPassword.data
                                                       error:error];
 
     if (!(error && *error)) {
         [[NSNotificationCenter defaultCenter] postNotificationName:BCClientPasswordChangedNotification object:self];
-    }
+    }*/
 }
 
 /*
@@ -160,14 +243,18 @@ NSString * const BCClientPasswordChangedNotification = @"BCClientPasswordChanged
 */
 
 - (void)bitcoinKitStarted:(NSNotification *)notification {
-    dispatch_async(dispatch_get_main_queue(), ^{
+    /*dispatch_async(dispatch_get_main_queue(), ^{
         [self willChangeValueForKey:@"isRunning"];
         [self didChangeValueForKey:@"isRunning"];
 
         [self willChangeValueForKey:@"walletHash"];
         _walletHash = [HIBitcoinManager defaultManager].walletAddress;
         [self didChangeValueForKey:@"walletHash"];
-    });
+    });*/
+
+    [self willChangeValueForKey:@"walletHash"];
+    _walletHash = [[[_keychain keyAtIndex:0] address] string];
+    [self didChangeValueForKey:@"walletHash"];
 }
 
 - (void)clearTransactionsList {
@@ -195,7 +282,7 @@ NSString * const BCClientPasswordChangedNotification = @"BCClientPasswordChanged
 }
 
 - (void)repairTransactionsList {
-    NSArray *transactions = [[HIBitcoinManager defaultManager] allTransactions];
+    /*NSArray *transactions = [[HIBitcoinManager defaultManager] allTransactions];
     HILogInfo(@"Repairing %ld transactions in the database", transactions.count);
 
     NSMutableDictionary *knownTransactions = [NSMutableDictionary new];
@@ -235,7 +322,7 @@ NSString * const BCClientPasswordChangedNotification = @"BCClientPasswordChanged
 
             [self updateNotifications];
         });
-    }];
+    }];*/
 }
 
 - (HITransaction *)repairTransaction:(NSDictionary *)data {
@@ -290,7 +377,7 @@ NSString * const BCClientPasswordChangedNotification = @"BCClientPasswordChanged
                       ofObject:(id)object
                         change:(NSDictionary *)change
                        context:(void *)context {
-    if (object == [HIBitcoinManager defaultManager]) {
+    /*if (object == [HIBitcoinManager defaultManager]) {
         NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
 
         if ([keyPath isEqual:@"availableBalance"]) {
@@ -304,11 +391,11 @@ NSString * const BCClientPasswordChangedNotification = @"BCClientPasswordChanged
                 [defaults setObject:@(self.estimatedBalance) forKey:@"LastEstimatedBalance"];
             });
         }
-    }
+    }*/
 }
 
 - (void)shutdown {
-    [[HIBitcoinManager defaultManager] stop];
+//    [[HIBitcoinManager defaultManager] stop];
     // [[HITorManager defaultManager] stop];
 }
 
@@ -317,11 +404,11 @@ NSString * const BCClientPasswordChangedNotification = @"BCClientPasswordChanged
     [[NSNotificationCenter defaultCenter] removeObserver:self];
 
     @try {
-        HIBitcoinManager *manager = [HIBitcoinManager defaultManager];
+//        HIBitcoinManager *manager = [HIBitcoinManager defaultManager];
 
-        [manager removeObserver:self forKeyPath:@"availableBalance"];
-        [manager removeObserver:self forKeyPath:@"estimatedBalance"];
-        [manager removeObserver:self forKeyPath:@"syncProgress"];
+//        [manager removeObserver:self forKeyPath:@"availableBalance"];
+//        [manager removeObserver:self forKeyPath:@"estimatedBalance"];
+//        [manager removeObserver:self forKeyPath:@"syncProgress"];
     }
     @catch (NSException *exception) {
         // there should be a way to check if I'm added as observer before calling remove but I don't know any...
@@ -340,11 +427,13 @@ NSString * const BCClientPasswordChangedNotification = @"BCClientPasswordChanged
 }
 
 - (BOOL)isRunning {
-    return [HIBitcoinManager defaultManager].isRunning;
+//    return [HIBitcoinManager defaultManager].isRunning;
+    return YES;
 }
 
 - (NSDate *)lastWalletChangeDate {
-    return [[HIBitcoinManager defaultManager] lastWalletChangeDate];
+//    return [[HIBitcoinManager defaultManager] lastWalletChangeDate];
+    return nil;
 }
 
 - (void)setCheckInterval:(NSUInteger)checkInterval {
@@ -385,7 +474,8 @@ NSString * const BCClientPasswordChangedNotification = @"BCClientPasswordChanged
 }
 
 - (NSDictionary *)transactionDefinitionWithHash:(NSString *)hash {
-    return [[HIBitcoinManager defaultManager] transactionForHash:hash];
+//    return [[HIBitcoinManager defaultManager] transactionForHash:hash];
+    return nil;
 }
 
 - (void)parseAndNotifyOfTransaction:(NSDictionary *)data {
@@ -503,7 +593,7 @@ NSString * const BCClientPasswordChangedNotification = @"BCClientPasswordChanged
         HILogWarn(@"Not enough balance: only %lld satoshi available", self.availableBalance);
         completion(NO, nil);
     } else {
-        HIBitcoinManager *bitcoin = [HIBitcoinManager defaultManager];
+        /*HIBitcoinManager *bitcoin = [HIBitcoinManager defaultManager];
 
         // Sanity check first
         if (amount <= 0 || bitcoin.availableBalance < amount || ![bitcoin isAddressValid:hash]) {
@@ -535,7 +625,7 @@ NSString * const BCClientPasswordChangedNotification = @"BCClientPasswordChanged
                     completion(success, transaction);
                 });
             }];
-        }
+        }*/
     }
 }
 
@@ -544,7 +634,7 @@ NSString * const BCClientPasswordChangedNotification = @"BCClientPasswordChanged
                                     error:(NSError **)error
                                completion:(void (^)(NSError *error, NSDictionary *data, HITransaction *tx))completion {
 
-    HIBitcoinManager *manager = [HIBitcoinManager defaultManager];
+    /*HIBitcoinManager *manager = [HIBitcoinManager defaultManager];
 
     [manager sendPaymentRequest:sessionId
                        password:password.data
@@ -557,7 +647,7 @@ NSString * const BCClientPasswordChangedNotification = @"BCClientPasswordChanged
                                    completion(sendError, data, transaction);
                                });
                            }];
-                       }];
+                       }];*/
 }
 
 - (void)updateTransaction:(HITransaction *)transaction {
@@ -585,9 +675,10 @@ NSString * const BCClientPasswordChangedNotification = @"BCClientPasswordChanged
 - (satoshi_t)feeWhenSendingBitcoin:(uint64)amount
                        toRecipient:(NSString *)recipient
                              error:(NSError **)error {
-    return [[HIBitcoinManager defaultManager] calculateTransactionFeeForSendingCoins:amount
+    /*return [[HIBitcoinManager defaultManager] calculateTransactionFeeForSendingCoins:amount
                                                                          toRecipient:recipient
-                                                                               error:error];
+                                                                               error:error];*/
+    return 0;
 }
 
 - (void)addTransactionObserver:(id <BCTransactionObserver>)observer {
@@ -614,11 +705,16 @@ NSString * const BCClientPasswordChangedNotification = @"BCClientPasswordChanged
 - (void)backupWalletToDirectory:(NSURL *)backupURL error:(NSError **)error {
     NSURL *backupFileURL = [backupURL URLByAppendingPathComponent:@"bitcoinkit.wallet"];
     HILogInfo(@"Backing up wallet file to %@", backupFileURL);
-    return [[HIBitcoinManager defaultManager] exportWalletTo:backupFileURL error:error];
+//    return [[HIBitcoinManager defaultManager] exportWalletTo:backupFileURL error:error];
 }
 
 - (BOOL)isWalletPasswordProtected {
-    return [HIBitcoinManager defaultManager].isWalletEncrypted;
+//    return [HIBitcoinManager defaultManager].isWalletEncrypted;
+    return YES;
+}
+
+- (BOOL)isPasswordCorrect:(NSData *)password {
+    return YES;
 }
 
 @end

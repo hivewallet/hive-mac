@@ -6,7 +6,6 @@
 //  Copyright (c) 2014 Hive Developers. All rights reserved.
 //
 
-#import <BitcoinJKit/HIBitcoinManager.h>
 #import "BCClient.h"
 #import "HILocalBackup.h"
 
@@ -102,7 +101,7 @@ const NSInteger HILocalBackupFailed = -2;
 }
 
 - (BOOL)backUpWalletToFile:(NSURL *)backupFile {
-    NSError *error = nil;
+    /*NSError *error = nil;
 
     HILogInfo(@"Backing up wallet file to %@", backupFile);
     [[HIBitcoinManager defaultManager] exportWalletTo:backupFile error:&error];
@@ -111,7 +110,7 @@ const NSInteger HILocalBackupFailed = -2;
         self.status = HIBackupStatusFailure;
         self.error = BackupError(HILocalBackupError, HILocalBackupFailed, error.localizedFailureReason);
         return NO;
-    }
+    }*/
 
     return YES;
 }

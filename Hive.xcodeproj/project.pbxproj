@@ -96,6 +96,7 @@
 		5857133218902F650094F884 /* HIWizardWelcomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5857133418902F650094F884 /* HIWizardWelcomeViewController.xib */; };
 		585713521890321A0094F884 /* HIWizardWelcomeViewController.strings in Resources */ = {isa = PBXBuildFile; fileRef = 585713541890321A0094F884 /* HIWizardWelcomeViewController.strings */; };
 		585A8B2518576F020096888C /* HIDatabaseManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 585A8B2418576F020096888C /* HIDatabaseManager.m */; };
+		585FB17A1A88138000AE2D09 /* HILogger.m in Sources */ = {isa = PBXBuildFile; fileRef = 585FB1791A88138000AE2D09 /* HILogger.m */; };
 		585FFF4418159803005BCF73 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 585FFF4318159803005BCF73 /* Credits.rtf */; };
 		586059B4180419F500FD9C2A /* BCClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 586059B3180419F500FD9C2A /* BCClient.m */; };
 		586059BD18041A1300FD9C2A /* NSColor+Hive.m in Sources */ = {isa = PBXBuildFile; fileRef = 586059B618041A1300FD9C2A /* NSColor+Hive.m */; };
@@ -214,8 +215,6 @@
 		58F02AEE17E1F5A400B65429 /* HIRightPointingArrowView.m in Sources */ = {isa = PBXBuildFile; fileRef = 58F02AED17E1F5A400B65429 /* HIRightPointingArrowView.m */; };
 		58F3E37D19ED69ED00A5F144 /* HIExportPrivateKeyWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 58F3E37B19ED69ED00A5F144 /* HIExportPrivateKeyWindowController.m */; };
 		58F496F818B7EE8F0033B7E0 /* HINetworkConnectionMonitor.m in Sources */ = {isa = PBXBuildFile; fileRef = 58F496F718B7EE8F0033B7E0 /* HINetworkConnectionMonitor.m */; };
-		D901F4F817B272E60071780D /* BitcoinJKit.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = D901F4F517B272CE0071780D /* BitcoinJKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
-		D901F4F917B273440071780D /* BitcoinJKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D901F4F517B272CE0071780D /* BitcoinJKit.framework */; };
 		D91FE827179887C5001B37D8 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = D91FE826179887C4001B37D8 /* libz.dylib */; };
 		D938F01017E6278B00566FFD /* HITextFieldCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D938F00F17E6278B00566FFD /* HITextFieldCell.m */; };
 		D939FE9C17F076E80088F5D3 /* HICopyView.m in Sources */ = {isa = PBXBuildFile; fileRef = D939FE9B17F076E80088F5D3 /* HICopyView.m */; };
@@ -247,20 +246,6 @@
 			remoteGlobalIDString = D9A591C31767B4A800502635;
 			remoteInfo = Hive;
 		};
-		D901F4F417B272CE0071780D /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = D91FE8071793FEFC001B37D8 /* BitcoinKit.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = D958B09D17A29B0500B0EDD5;
-			remoteInfo = BitcoinJKit;
-		};
-		D901F4F617B272D40071780D /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = D91FE8071793FEFC001B37D8 /* BitcoinKit.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = D958B09C17A29B0500B0EDD5;
-			remoteInfo = BitcoinJKit;
-		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -270,7 +255,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				D901F4F817B272E60071780D /* BitcoinJKit.framework in CopyFiles */,
 				58A149CB18C61BD600591F17 /* HockeySDK.framework in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -945,6 +929,8 @@
 		5857136D1890323A0094F884 /* sv */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = sv; path = sv.lproj/HIWizardWelcomeViewController.strings; sourceTree = "<group>"; };
 		585A8B2318576F020096888C /* HIDatabaseManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HIDatabaseManager.h; sourceTree = "<group>"; };
 		585A8B2418576F020096888C /* HIDatabaseManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HIDatabaseManager.m; sourceTree = "<group>"; };
+		585FB1781A88138000AE2D09 /* HILogger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HILogger.h; sourceTree = "<group>"; };
+		585FB1791A88138000AE2D09 /* HILogger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HILogger.m; sourceTree = "<group>"; };
 		585FFF221815374B005BCF73 /* nl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = nl; path = nl.lproj/HIContactsViewController.strings; sourceTree = "<group>"; };
 		585FFF231815374B005BCF73 /* nl */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = nl; path = nl.lproj/HIContactsViewController.xib; sourceTree = "<group>"; };
 		585FFF241815374C005BCF73 /* nl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = nl; path = nl.lproj/HIMainWindowController.strings; sourceTree = "<group>"; };
@@ -2194,7 +2180,6 @@
 		9A823D3118781AE50040C85C /* sv */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = sv; path = sv.lproj/Localizable.strings; sourceTree = "<group>"; };
 		BB42D9F40183087DCC69743B /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		CDA0597D51F28424EA14AC69 /* Pods-test.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-test.release.xcconfig"; path = "Pods/Target Support Files/Pods-test/Pods-test.release.xcconfig"; sourceTree = "<group>"; };
-		D91FE8071793FEFC001B37D8 /* BitcoinKit.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = BitcoinKit.xcodeproj; path = BitcoinKit/BitcoinKit.xcodeproj; sourceTree = "<group>"; };
 		D91FE826179887C4001B37D8 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		D938F00E17E6278B00566FFD /* HITextFieldCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HITextFieldCell.h; sourceTree = "<group>"; };
 		D938F00F17E6278B00566FFD /* HITextFieldCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HITextFieldCell.m; sourceTree = "<group>"; };
@@ -2250,7 +2235,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				D91FE827179887C5001B37D8 /* libz.dylib in Frameworks */,
-				D901F4F917B273440071780D /* BitcoinJKit.framework in Frameworks */,
 				58A149CA18C61BB900591F17 /* HockeySDK.framework in Frameworks */,
 				05D9F526F5294257A0422835 /* libPods.a in Frameworks */,
 			);
@@ -2614,14 +2598,6 @@
 			name = HIExportPrivateKeyWindowController;
 			sourceTree = "<group>";
 		};
-		D91FE8081793FEFC001B37D8 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				D901F4F517B272CE0071780D /* BitcoinJKit.framework */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
 		D948157E17CE10D9006A0312 /* HITransactionsViewController */ = {
 			isa = PBXGroup;
 			children = (
@@ -2677,6 +2653,8 @@
 				1AA1032408E917EE5B7752AC /* HIExchangeRateService.m */,
 				58A48FE21A39ED1200ABD9F8 /* HILogFileManager.h */,
 				58A48FE31A39ED1200ABD9F8 /* HILogFileManager.m */,
+				585FB1781A88138000AE2D09 /* HILogger.h */,
+				585FB1791A88138000AE2D09 /* HILogger.m */,
 				1AA10AF547346B009D38D852 /* HINameFormatService.h */,
 				1AA10FA59EE4E8EDFD4C96AA /* HINameFormatService.m */,
 				58F496F618B7EE8F0033B7E0 /* HINetworkConnectionMonitor.h */,
@@ -2778,7 +2756,6 @@
 				1EFBACBE45EB458A8ED83785 /* libPods.a */,
 				D91FE826179887C4001B37D8 /* libz.dylib */,
 				58A149C918C61BB900591F17 /* HockeySDK.framework */,
-				D91FE8071793FEFC001B37D8 /* BitcoinKit.xcodeproj */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -2973,7 +2950,6 @@
 			buildRules = (
 			);
 			dependencies = (
-				D901F4F717B272D40071780D /* PBXTargetDependency */,
 			);
 			name = Hive;
 			productName = Hive;
@@ -3040,12 +3016,6 @@
 			mainGroup = D9A591BB1767B4A800502635;
 			productRefGroup = D9A591C51767B4A800502635 /* Products */;
 			projectDirPath = "";
-			projectReferences = (
-				{
-					ProductGroup = D91FE8081793FEFC001B37D8 /* Products */;
-					ProjectRef = D91FE8071793FEFC001B37D8 /* BitcoinKit.xcodeproj */;
-				},
-			);
 			projectRoot = "";
 			targets = (
 				D9A591C31767B4A800502635 /* Hive */,
@@ -3053,16 +3023,6 @@
 			);
 		};
 /* End PBXProject section */
-
-/* Begin PBXReferenceProxy section */
-		D901F4F517B272CE0071780D /* BitcoinJKit.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = BitcoinJKit.framework;
-			remoteRef = D901F4F417B272CE0071780D /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		24EAAFBD186E1BBD00E1D2D3 /* Resources */ = {
@@ -3363,6 +3323,7 @@
 				1AA1008D9D0E0DC1B7F4E36D /* HILinkTextField.m in Sources */,
 				58A8760A197E9CF600524C77 /* HISyncingAppAdapter.m in Sources */,
 				1AA10AB8CB13510790BD9A6D /* HIPasswordHolder.m in Sources */,
+				585FB17A1A88138000AE2D09 /* HILogger.m in Sources */,
 				1AA1079715A3C2B9CD4CC308 /* NSWindow+HIShake.m in Sources */,
 				58A8760D197E9D0F00524C77 /* HIGoogleDriveBackup.m in Sources */,
 				1AA1031B9A110C6B939AB603 /* HIBitcoinFormatService.m in Sources */,
@@ -3402,11 +3363,6 @@
 			isa = PBXTargetDependency;
 			target = D9A591C31767B4A800502635 /* Hive */;
 			targetProxy = 24EAAFCB186E1BBE00E1D2D3 /* PBXContainerItemProxy */;
-		};
-		D901F4F717B272D40071780D /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = BitcoinJKit;
-			targetProxy = D901F4F617B272D40071780D /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 

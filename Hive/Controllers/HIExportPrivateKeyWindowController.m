@@ -6,8 +6,6 @@
 //  Copyright (c) 2014 Hive Developers. All rights reserved.
 //
 
-#import <BitcoinJKit/HIBitcoinErrorCodes.h>
-#import <BitcoinJKit/HIBitcoinManager.h>
 #import "BCClient.h"
 #import "HIExportPrivateKeyWindowController.h"
 #import "HIPasswordHolder.h"
@@ -63,7 +61,7 @@
 }
 
 - (void)exportKeyWithPassword:(HIPasswordHolder *)password {
-    NSError *error = nil;
+    /*NSError *error = nil;
 
     NSString *privateKey = [[HIBitcoinManager defaultManager] exportPrivateKeyWithPassword:password.data
                                                                                      error:&error];
@@ -77,7 +75,7 @@
         [self.window hiShake];
     } else {
         [self showAlertForError:error];
-    }
+    }*/
 }
 
 - (void)showSaveDialog {

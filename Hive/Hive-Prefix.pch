@@ -13,6 +13,7 @@
     @import WebKit;
 
     #import "HIAppDelegate.h"
+    #import "HILogger.h"
 
 // change this to 1 to use the testing network, not the main blockchain
     #define TESTING_NETWORK 0
@@ -22,7 +23,6 @@
     #define AppDelegate ((HIAppDelegate *) [NSApp delegate])
     #define RGB(r,g,b) [NSColor colorWithCalibratedRed:((CGFloat)r/255.0) green:((CGFloat)g/255.0) blue:((CGFloat)b/255.0) alpha:1.0]
 
-    #import <BitcoinJKit/HILogger.h>
     #import <AutoLayoutMacros/AutoLayoutMacrosShort.h>
 #endif
 

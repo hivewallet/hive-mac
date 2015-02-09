@@ -1,4 +1,3 @@
-#import <BitcoinJKit/BitcoinJKit.h>
 #import "HIBitcoinURI.h"
 #import "HIBitcoinURIService.h"
 #import "HISendBitcoinsWindowController.h"
@@ -48,10 +47,10 @@
 }
 
 - (BOOL)handlePaymentRequestURL:(NSString *)URLString fromBitcoinURI:(HIBitcoinURI *)bitcoinURI {
-    NSURL *URL = [NSURL URLWithString:URLString];
+//    NSURL *URL = [NSURL URLWithString:URLString];
 
-    if (URL) {
-        HIAppDelegate *appDelegate = [[NSApplication sharedApplication] delegate];
+//    if (URL) {
+        /*HIAppDelegate *appDelegate = [[NSApplication sharedApplication] delegate];
         HIBitcoinManager *manager = [HIBitcoinManager defaultManager];
         NSError *callError = nil;
 
@@ -88,11 +87,11 @@
             [window showWindow:self];
 
             return YES;
-        }
-    } else {
+        }*/
+//    } else {
         [self handlePaymentRequestURLErrorForURL:URLString];
         return NO;
-    }
+//    }
 }
 
 - (void)handlePaymentRequestURLErrorForURL:(NSString *)URLString {

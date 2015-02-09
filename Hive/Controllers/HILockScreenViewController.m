@@ -6,7 +6,7 @@
 //  Copyright (c) 2014 Hive Developers. All rights reserved.
 //
 
-#import <BitcoinJKit/HIBitcoinManager.h>
+#import "BCClient.h"
 #import "HILockScreenViewController.h"
 #import "HIPasswordHolder.h"
 #import "HIPasswordInputViewController.h"
@@ -60,7 +60,7 @@ NSString * const LockScreenDidDisappearNotification = @"LockScreenDidDisappearNo
     // enable lock screen on startup, unless it's explicitly disabled
     [[NSUserDefaults standardUserDefaults] registerDefaults:@{ LockScreenEnabledDefaultsKey: @YES }];
 
-    if ([[HIBitcoinManager defaultManager] isWalletEncrypted] && [self isLockScreenEnabled]) {
+    if ([self isLockScreenEnabled]) {
         [self showLockScreenAnimated:NO];
     } else {
         [self hideLockScreenAnimated:NO];
@@ -76,19 +76,10 @@ NSString * const LockScreenDidDisappearNotification = @"LockScreenDidDisappearNo
 }
 
 - (void)lockWalletAnimated:(BOOL)animated {
-    if ([[HIBitcoinManager defaultManager] isWalletEncrypted]) {
-        self.dontShowAgainField.state = NSOffState;
+    self.dontShowAgainField.state = NSOffState;
 
-        [self showLockScreenAnimated:animated];
-        [self setLockScreenEnabled:YES];
-    } else {
-        NSAlert *alert = [NSAlert alertWithMessageText:@"You need to set a wallet password first."
-                                         defaultButton:@"Ok"
-                                       alternateButton:nil otherButton:nil
-                             informativeTextWithFormat:@"Open the \"Wallet\" menu and select \"Change Password\" "
-                                                       @"to encrypt your wallet with a password."];
-        [alert runModal];
-    }
+    [self showLockScreenAnimated:animated];
+    [self setLockScreenEnabled:YES];
 }
 
 - (void)showLockScreenAnimated:(BOOL)animated {
@@ -144,7 +135,7 @@ NSString * const LockScreenDidDisappearNotification = @"LockScreenDidDisappearNo
 }
 
 - (void)onPasswordEntered:(HIPasswordHolder *)passwordHolder {
-    if ([[HIBitcoinManager defaultManager] isPasswordCorrect:passwordHolder.data]) {
+    if ([[BCClient sharedClient] isPasswordCorrect:passwordHolder.data]) {
         [self hideLockScreenAnimated:YES];
         [self setLockScreenEnabled:(self.dontShowAgainField.state == NSOffState)];
     } else {

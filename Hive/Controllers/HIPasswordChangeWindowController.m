@@ -12,8 +12,6 @@
 #import "HIPasswordHolder.h"
 #import "NSWindow+HIShake.h"
 
-#import <BitcoinJKit/HIBitcoinErrorCodes.h>
-
 /*
  We don't want the password sitting there while the user walks away.
  */
@@ -49,7 +47,7 @@ static const NSTimeInterval IDLE_RESET_DELAY = 30.0;
 }
 
 - (IBAction)submit:(id)sender {
-    [self.passwordCreationInputHandler finishWithPasswordHolder:^(HIPasswordHolder *changedPasswordHolder) {
+    /*[self.passwordCreationInputHandler finishWithPasswordHolder:^(HIPasswordHolder *changedPasswordHolder) {
         HIPasswordHolder *passwordHolder =
             self.passwordField.isEnabled ?
                 [[HIPasswordHolder alloc] initWithString:self.passwordField.stringValue] : nil;
@@ -73,7 +71,7 @@ static const NSTimeInterval IDLE_RESET_DELAY = 30.0;
             [passwordHolder clear];
         }
 
-    }];
+    }];*/
 }
 
 - (void)resetInput {

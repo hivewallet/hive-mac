@@ -74,6 +74,8 @@ extern NSString * const BCClientPasswordChangedNotification;
 
 - (BOOL)hasPendingTransactions;
 
+- (BOOL)isPasswordCorrect:(NSData *)password;
+
 @end
 
 @protocol BCTransactionObserver<NSObject>

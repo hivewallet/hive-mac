@@ -6,8 +6,6 @@
 //  Copyright (c) 2014 Hive Developers. All rights reserved.
 //
 
-#import <BitcoinJKit/BitcoinJKit.h>
-#import <BitcoinJKit/HIBitcoinErrorCodes.h>
 #import "BCClient.h"
 #import "HIPasswordHolder.h"
 #import "HIPasswordInputViewController.h"
@@ -64,7 +62,7 @@
 }
 
 - (void)signMessageWithPassword:(HIPasswordHolder *)password {
-    NSString *message = self.messageBox.stringValue;
+    /*NSString *message = self.messageBox.stringValue;
     NSError *error = nil;
 
     NSString *signature = [[HIBitcoinManager defaultManager] signMessage:message
@@ -78,7 +76,7 @@
         [self.window hiShake];
     } else {
         [self showAlertForError:error];
-    }
+    }*/
 }
 
 - (void)showGeneratedSignature:(NSString *)signature {

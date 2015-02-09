@@ -6,8 +6,6 @@
 //  Copyright (c) 2013 Hive Developers. All rights reserved.
 //
 
-#import <BitcoinJKit/BitcoinJKit.h>
-#import <BitcoinJKit/HIBitcoinErrorCodes.h>
 #import "BCClient.h"
 #import "HIAddress.h"
 #import "HIBitcoinFormatService.h"
@@ -634,9 +632,9 @@ NSString * const HISendBitcoinsWindowSuccessKey = @"success";
 
 - (void)sendClicked:(id)sender {
     satoshi_t satoshi = self.amountFieldValue;
-    satoshi_t satoshiWithFee = satoshi + self.currentFee;
+//    satoshi_t satoshiWithFee = satoshi + self.currentFee;
 
-    if (![[HIBitcoinManager defaultManager] isConnected]) {
+    /*if (![[HIBitcoinManager defaultManager] isConnected]) {
         [self showNoConnectionAlert];
     }
     else if (satoshiWithFee > [[BCClient sharedClient] estimatedBalance]) {
@@ -645,7 +643,7 @@ NSString * const HISendBitcoinsWindowSuccessKey = @"success";
     else if (satoshiWithFee > [[BCClient sharedClient] availableBalance]) {
         [self showBlockedFundsAlert];
     }
-    else {
+    else {*/
         if (_paymentRequestSession > 0) {
             [self showPasswordPopover:sender forPaymentRequest:_paymentRequestSession];
         } else {
@@ -654,12 +652,12 @@ NSString * const HISendBitcoinsWindowSuccessKey = @"success";
             if (target.length == 0) {
                 [self showNoAddressAlert];
             }
-            else if (![[HIBitcoinManager defaultManager] isAddressValid:target]) {
+            /*else if (![[HIBitcoinManager defaultManager] isAddressValid:target]) {
                 [self showInvalidAddressAlert];
             }
             else if ([[HIBitcoinManager defaultManager].walletAddress isEqual:target]) {
                 [self showOwnAddressAlert];
-            }
+            }*/
             else if (![HITransaction isAmountWithinExpectedRange:satoshi]) {
                 [self showLargeAmountAlertForAmount:satoshi toTarget:target button:sender];
             }
@@ -667,7 +665,7 @@ NSString * const HISendBitcoinsWindowSuccessKey = @"success";
                 [self showPasswordPopover:sender forSendingBitcoin:satoshi toTarget:target];
             }
         }
-    }
+//    }
 }
 
 - (void)largeAmountAlertWasClosed:(NSAlert *)alert result:(NSInteger)result context:(void *)context {
@@ -779,7 +777,7 @@ NSString * const HISendBitcoinsWindowSuccessKey = @"success";
 - (void)handleSendingError:(NSError *)error {
     HILogWarn(@"Transaction could not be sent: %@", error);
 
-    if (error.code == kHIBitcoinManagerWrongPassword) {
+    /*if (error.code == kHIBitcoinManagerWrongPassword) {
         [self.window hiShake];
     } else if (error.code == kHIBitcoinManagerSendingDustError) {
         [self showSendingDustAlert];
@@ -787,9 +785,9 @@ NSString * const HISendBitcoinsWindowSuccessKey = @"success";
         [self showInsufficientFundsWithFeeAlert];
     } else if (error.code == kHIBitcoinManagerPaymentRequestExpiredError) {
         [self showPaymentExpiredAlert];
-    } else {
+    } else {*/
         [self showTransactionErrorAlert];
-    }
+    //}
 }
 
 - (void)setSendingMode:(BOOL)sending {
