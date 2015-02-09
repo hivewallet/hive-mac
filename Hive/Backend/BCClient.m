@@ -189,8 +189,15 @@ NSString * const BCClientPasswordChangedNotification = @"BCClientPasswordChanged
             NSMutableDictionary *json = [[NSMutableDictionary alloc] init];
             json[@"txid"] = t[@"hash"];
             json[@"fee"] = t[@"fees"];
-            json[@"time"] = t[@"block_time"] && ![t[@"block_time"] isEqual:[NSNull null]] ?
-                [fmt dateFromString:t[@"block_time"]] : [NSDate date];
+
+            json[@"time"] =
+                (t[@"block_time"] && ![t[@"block_time"] isEqual:[NSNull null]]) ?
+                [fmt dateFromString:t[@"block_time"]] :
+                (
+                (t[@"chain_received_at"] && ![t[@"chain_received_at"] isEqual:[NSNull null]]) ?
+                [fmt dateFromString:t[@"chain_received_at"]] :
+                [NSDate date]
+                );
 
             satoshi_t amount = 0;
 
