@@ -44,6 +44,7 @@ NSString * const BCClientPasswordChangedNotification = @"BCClientPasswordChanged
 
 - (void)makeNewAddress {
     currentAddressIndex ++;
+    [[NSUserDefaults standardUserDefaults] setInteger:currentAddressIndex forKey:@"currentAddressIndex"];
 
     [self willChangeValueForKey:@"walletHash"];
     _walletHash = [[[_keychain keyAtIndex:currentAddressIndex] address] string];
@@ -155,7 +156,7 @@ NSString * const BCClientPasswordChangedNotification = @"BCClientPasswordChanged
     }*/
 
     _addresses = [[NSMutableArray alloc] init];
-    for (uint i = 0; i < 10; i++) {
+    for (uint i = 0; i <= currentAddressIndex; i++) {
         [_addresses addObject:[[_keychain keyAtIndex:i] address]];
     }
 
@@ -265,7 +266,8 @@ NSString * const BCClientPasswordChangedNotification = @"BCClientPasswordChanged
         [self didChangeValueForKey:@"walletHash"];
     });*/
 
-    currentAddressIndex = 0;
+    currentAddressIndex = (uint) [[NSUserDefaults standardUserDefaults] integerForKey:@"currentAddressIndex"];
+
     [self willChangeValueForKey:@"walletHash"];
     _walletHash = [[[_keychain keyAtIndex:currentAddressIndex] address] string];
     [self didChangeValueForKey:@"walletHash"];
