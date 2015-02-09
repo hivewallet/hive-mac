@@ -377,7 +377,19 @@ NSString * const BCClientPasswordChangedNotification = @"BCClientPasswordChanged
 }
 
 - (void)repairTransactionsList {
-    /*NSArray *transactions = [[HIBitcoinManager defaultManager] allTransactions];
+    NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:HITransactionEntity];
+    for (HITransaction *transaction in [_transactionUpdateContext executeFetchRequest:request
+                                                                                error:NULL]) {
+        [_transactionUpdateContext deleteObject:transaction];
+    }
+
+    [_transactionUpdateContext save:nil];
+
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [DBM save:nil];
+    });
+
+        /*NSArray *transactions = [[HIBitcoinManager defaultManager] allTransactions];
     HILogInfo(@"Repairing %ld transactions in the database", transactions.count);
 
     NSMutableDictionary *knownTransactions = [NSMutableDictionary new];
