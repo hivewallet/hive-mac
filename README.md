@@ -15,7 +15,7 @@ Hive is a user-friendly Bitcoin wallet app for OSX.
 
 First, clone the GitHub repository:
 
-    git clone git@github.com:hivewallet/hive-osx.git
+    git clone git@github.com:hivewallet/hive-mac.git
 
 Make sure you have CocoaPods installed:
 
@@ -46,7 +46,7 @@ Hive is currently set up to use the main blockchain. If you prefer to use the te
 
 ## Contributing
 
-Patches and pull requests are very welcome. If you want to send us any code, read the [Coding guidelines](https://github.com/grabhive/hive-osx/wiki/Code-style-guidelines) first.
+Patches and pull requests are very welcome. If you want to send us any code, read the [Coding guidelines](https://github.com/hivewallet/hive-mac/wiki/Code-style-guidelines) first.
 
 Hive code is dual-licensed: we've released it under GPL v2 (see below), however we reserve a right to relicense it under a different license in future (including a commercial one), since we might want to e.g. put it on Mac or iOS App Store, or use it for other purposes with which GPL is incompatible. Because of that, we ask that you specify a more permissive license for your code when you submit a patch to us (e.g. MIT, WTFPL or public domain).
 

@@ -922,7 +922,7 @@ NSString * const HISendBitcoinsWindowSuccessKey = @"success";
 
     HILinkTextField *link = [[HILinkTextField alloc] initWithFrame:NSMakeRect(0, 0, 300, 15)];
     link.stringValue = NSLocalizedString(@"What does this mean?", @"Button to show info about pending funds");
-    link.href = @"https://github.com/hivewallet/hive-osx/wiki/Sending-Bitcoin-from-a-pending-transaction";
+    link.href = @"https://github.com/hivewallet/hive-mac/wiki/Sending-Bitcoin-from-a-pending-transaction";
     link.font = [NSFont systemFontOfSize:11.0];
     [alert setAccessoryView:link];
 

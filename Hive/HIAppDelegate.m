@@ -658,7 +658,7 @@ void handleException(NSException *exception) {
 }
 
 - (IBAction)openFAQ:(id)sender {
-    [[NSWorkspace sharedWorkspace] openURL:[NSURL URLWithString:@"https://github.com/hivewallet/hive-osx/wiki/FAQ"]];
+    [[NSWorkspace sharedWorkspace] openURL:[NSURL URLWithString:@"https://github.com/hivewallet/hive-mac/wiki/FAQ"]];
 }
 
 - (IBAction)openSignMessageWindow:(id)sender {
