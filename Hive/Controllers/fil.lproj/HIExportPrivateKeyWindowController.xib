@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="6250" systemVersion="13F34" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="6254" systemVersion="13F34" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="6250"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="6254"/>
     </dependencies>
     <objects>
         <customObject id="-2" userLabel="File's Owner" customClass="HIExportPrivateKeyWindowController">
@@ -11,20 +11,20 @@
         </customObject>
         <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
         <customObject id="-3" userLabel="Application" customClass="NSObject"/>
-        <window title="Export Private Key" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" restorable="NO" oneShot="NO" releasedWhenClosed="NO" frameAutosaveName="ExportKeyWindow" animationBehavior="default" id="F0z-JX-Cv5">
+        <window title="I-export ang Private Key" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" restorable="NO" oneShot="NO" releasedWhenClosed="NO" frameAutosaveName="ExportKeyWindow" animationBehavior="default" id="F0z-JX-Cv5">
             <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
             <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
-            <rect key="contentRect" x="295" y="411" width="389" height="233"/>
+            <rect key="contentRect" x="295" y="411" width="389" height="267"/>
             <rect key="screenRect" x="0.0" y="0.0" width="1440" height="878"/>
             <view key="contentView" wantsLayer="YES" id="se5-gp-TjO">
-                <rect key="frame" x="0.0" y="0.0" width="389" height="233"/>
+                <rect key="frame" x="0.0" y="0.0" width="389" height="267"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="AZZ-os-Qoy">
-                        <rect key="frame" x="18" y="145" width="353" height="68"/>
+                        <rect key="frame" x="18" y="179" width="353" height="68"/>
                         <textFieldCell key="cell" sendsActionOnEndEditing="YES" id="4FX-bU-CkQ">
                             <font key="font" metaFont="system"/>
-                            <string key="title">The private key that provides access to your bitcoins is stored securely inside your wallet. You can however export it to a file if you'd like to migrate your address and your bitcoins to another wallet app.</string>
+                            <string key="title">Ang private key na nagbibigay daan sa iyong mga bitcoin ay nakatagong mabuti sa loob ng iyong wallet. Maari mo rin itong ma-export sa isang file kung nais mong ilipat ang iyong address at bitcoin sa ibang wallet app.</string>
                             <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                             <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                         </textFieldCell>
@@ -33,7 +33,7 @@
                         <rect key="frame" x="18" y="65" width="353" height="68"/>
                         <textFieldCell key="cell" sendsActionOnEndEditing="YES" id="FxA-18-Sov">
                             <font key="font" metaFont="systemBold"/>
-                            <string key="title">Warning: the key is saved in an unencrypted form, so anyone who has access to this file has also access to your bitcoins. Don't share it with anyone, and delete it when you no longer need it.</string>
+                            <string key="title">Babala: ang key ay nai-save sa hindi na-encrypt na paraan kaya ang sinumang may access sa file na ito ay maaring may access din sa iyong mga bitcoin. Huwag ibahagi ito kahit kanino at burahin kapag hindi na kinakailangan.</string>
                             <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                             <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                         </textFieldCell>
@@ -47,7 +47,7 @@
                             <size key="offset" width="0.0" height="1"/>
                             <color key="color" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         </shadow>
-                        <buttonCell key="cell" type="bevel" title="Export the key" bezelStyle="regularSquare" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="gxJ-EB-pf2" customClass="HIDoneButtonCell">
+                        <buttonCell key="cell" type="bevel" title="I-export ang key" bezelStyle="regularSquare" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="gxJ-EB-pf2" customClass="HIDoneButtonCell">
                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                             <font key="font" metaFont="system"/>
                             <string key="keyEquivalent" base64-UTF8="YES">
@@ -68,7 +68,7 @@ DQ
                             <size key="offset" width="0.0" height="1"/>
                             <color key="color" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         </shadow>
-                        <buttonCell key="cell" type="square" title="Cancel" bezelStyle="shadowlessSquare" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="8zf-Am-cfA" customClass="HIButtonCell">
+                        <buttonCell key="cell" type="square" title="Ikansela" bezelStyle="shadowlessSquare" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="8zf-Am-cfA" customClass="HIButtonCell">
                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                             <font key="font" metaFont="system"/>
                             <string key="keyEquivalent" base64-UTF8="YES">

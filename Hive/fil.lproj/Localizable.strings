@@ -48,7 +48,7 @@
 "Backup problem" = "Backup problem";
 
 /* initialization error */
-"Bitcoin network data file could not be opened - another instance of Hive might still be running." = "Ang Bitcoin network data file ay hinid mabuksan - ibang instansiya ng Hive ay maaring tumatakbo.";
+"Bitcoin network data file could not be opened - another instance of Hive might still be running." = "Ang Bitcoin network data file ay hindi mabuksan - ibang instansiya ng Hive ay maaring tumatakbo.";
 
 /* Chain file unreadable error title */
 "Bitcoin network data file could not be opened." = "Ang Bitcoin network date file ay hindi mabuksan.";
@@ -111,7 +111,7 @@
 "Do you really want to remove %@ from your contact list?" = "Gusto mo ba talaga tanggalin %@ sa iyong listahan ng mga contacts?";
 
 /* Install app popup title */
-"Do you want to add \"%@\" to Hive?" = "Gusto mo bang idagdag any \"%@\" sa Hive?";
+"Do you want to add \"%@\" to Hive?" = "Gusto mo bang idagdag ang \"%@\" sa Hive?";
 
 /* Uninstall app popup title */
 "Do you want to remove \"%@\" from the application list?" = "Nais mo bang tanggaling ang \"%@\" mula sa listahan ng application?";
@@ -141,7 +141,7 @@
 "Enter your password to confirm the transaction:" = "I-enter ang iyong password upang maikumpirma ang transaksyon:";
 
 /* Password prompt for private key export */
-"Enter your password to export the key:" = "Enter your password to export the key:";
+"Enter your password to export the key:" = "I-enter ang iyong password upang i-export and key:";
 
 /* Password prompt for message signing */
 "Enter your password to sign the message:" = "I-enter ang iyong password upang mag-sign ng mensahe:";
@@ -276,7 +276,7 @@
 "Preferences" = "Mga Preference";
 
 /* Message when private key export fails */
-"Private key could not be exported." = "Private key could not be exported.";
+"Private key could not be exported." = "Ang Private key ay hindi ma-export.";
 
 /* Profile view title string */
 "Profile" = "Profile";
@@ -414,7 +414,7 @@
 "Waiting for confirmation" = "Nag-aantay ng kumpirmasyon";
 
 /* Install app popup warning message */
-"We cannot guarantee the safety of all apps - please be careful if you download Hive apps from third party sites." = "Hindi namin magagarantiya ang kaligtasan ng lahat ng mga app - maari lamang na mag-ingat kung mag-download ng mga Hive app mula sa bang sites..";
+"We cannot guarantee the safety of all apps - please be careful if you download Hive apps from third party sites." = "Hindi namin magagarantiya ang kaligtasan ng lahat ng mga app - maari lamang na mag-ingat kung mag-download ng mga Hive app mula sa ibang sites..";
 
 /* Wizard welcome page title */
 "Welcome" = "Mabuhay";
@@ -444,7 +444,7 @@
 "You need to be connected to the network to send any transactions." = "Kinakailangan mong maging konektado sa network upang makapagpadala ng mga transaksyon.";
 
 /* Dropbox invalid folder alert details */
-"You need to choose or create a directory inside your Dropbox folder." = "Kinakailangan mong mamili o gumawa ng directory sa loob ny iyong Dropbox folder.";
+"You need to choose or create a directory inside your Dropbox folder." = "Kinakailangan mong mamili o gumawa ng directory sa loob ng iyong Dropbox folder.";
 
 /* Google Drive invalid folder alert details */
 "You need to choose or create a directory inside your Google Drive folder." = "Kinakailangan mong mamili o gumawa ng directory sa loob ng iyong Google Drive folder.";
