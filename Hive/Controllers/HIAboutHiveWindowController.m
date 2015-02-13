@@ -8,6 +8,7 @@
 
 #import <FontAwesomeIconFactory/NIKFontAwesomeIconFactory+OSX.h>
 #import "HIAboutHiveWindowController.h"
+#import "HIBitcoinURIService.h"
 #import "HILicenseInfoPanelController.h"
 
 @interface HIAboutHiveWindowController ()
@@ -39,7 +40,9 @@
 
     NSCalendar *calendar = [NSCalendar currentCalendar];
     NSDateComponents *components = [calendar components:NSYearCalendarUnit fromDate:[NSDate date]];
-    self.copyrightField.stringValue = [NSString stringWithFormat:@"Copyright © %ld hivewallet.com", components.year];
+    NSString *year = [NSString stringWithFormat:@"%ld", components.year];
+    self.copyrightField.stringValue = [self.copyrightField.stringValue stringByReplacingOccurrencesOfString:@"20xx"
+                                                                                                 withString:year];
 
     NSData *creditsFile = [NSData dataWithContentsOfFile:[bundle pathForResource:@"Credits" ofType:@"rtf"]];
     NSAttributedString *credits = [[NSAttributedString alloc] initWithRTF:creditsFile documentAttributes:nil];
