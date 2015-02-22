@@ -4,6 +4,6 @@
 
 @interface HILinkTextField : NSTextField
 
-@property (nonatomic, copy) NSString *href;
+@property (nonatomic, copy) IBInspectable NSString *href;
 
 @end

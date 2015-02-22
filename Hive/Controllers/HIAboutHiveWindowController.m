@@ -16,9 +16,11 @@
 @property (nonatomic, strong) IBOutlet NSTextView *creditsBox;  // NSTextView doesn't support weak references
 @property (nonatomic, weak) IBOutlet NSTextField *versionField;
 @property (nonatomic, weak) IBOutlet NSTextField *copyrightField;
-@property (nonatomic, weak) IBOutlet NSButton *twitterButton;
-@property (nonatomic, weak) IBOutlet NSButton *facebookButton;
-@property (nonatomic, weak) IBOutlet NSButton *githubButton;
+
+@property (nonatomic, weak) IBOutlet NSImageView *twitterGeneralIcon;
+@property (nonatomic, weak) IBOutlet NSImageView *twitterMacIcon;
+@property (nonatomic, weak) IBOutlet NSImageView *githubIcon;
+@property (nonatomic, weak) IBOutlet NSImageView *websiteIcon;
 
 @property (nonatomic, strong) HILicenseInfoPanelController *licenseInfoPanel;
 
@@ -49,11 +51,17 @@
     [self.creditsBox.textStorage setAttributedString:credits];
 
     NIKFontAwesomeIconFactory *iconFactory = [[NIKFontAwesomeIconFactory alloc] init];
-    iconFactory.size = self.twitterButton.frame.size.width;
+    iconFactory.size = self.twitterGeneralIcon.frame.size.width;
 
-    self.twitterButton.image = [iconFactory createImageForIcon:NIKFontAwesomeIconTwitter];
-    self.facebookButton.image = [iconFactory createImageForIcon:NIKFontAwesomeIconFacebookSquare];
-    self.githubButton.image = [iconFactory createImageForIcon:NIKFontAwesomeIconGithub];
+    self.twitterGeneralIcon.image = [iconFactory createImageForIcon:NIKFontAwesomeIconTwitter];
+    self.twitterMacIcon.image = [iconFactory createImageForIcon:NIKFontAwesomeIconTwitter];
+    self.githubIcon.image = [iconFactory createImageForIcon:NIKFontAwesomeIconGithub];
+    self.websiteIcon.image = [iconFactory createImageForIcon:NIKFontAwesomeIconGlobe];
+
+    self.twitterGeneralIcon.imageFrameStyle = NSImageFrameNone;
+    self.twitterMacIcon.imageFrameStyle = NSImageFrameNone;
+    self.githubIcon.imageFrameStyle = NSImageFrameNone;
+    self.websiteIcon.imageFrameStyle = NSImageFrameNone;
 
     [self.window center];
 }
@@ -68,10 +76,6 @@
 
 - (IBAction)openTwitterProfile:(id)sender {
     [[NSWorkspace sharedWorkspace] openURL:[NSURL URLWithString:@"http://twitter.com/hivewallet"]];
-}
-
-- (IBAction)openFacebookProfile:(id)sender {
-    [[NSWorkspace sharedWorkspace] openURL:[NSURL URLWithString:@"http://facebook.com/hivewallet"]];
 }
 
 - (IBAction)openGitHubProfile:(id)sender {
