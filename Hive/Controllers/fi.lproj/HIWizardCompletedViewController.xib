@@ -3,10 +3,15 @@
     <dependencies>
         <deployment version="1070" identifier="macosx"/>
         <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="6254"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
     </dependencies>
     <objects>
         <customObject id="-2" userLabel="File's Owner" customClass="HIWizardCompletedViewController">
             <connections>
+                <outlet property="twitterGeneralIcon" destination="g4N-ox-1I2" id="f9V-ep-ESk"/>
+                <outlet property="twitterGeneralLink" destination="bER-db-YdW" id="DgB-8D-DWf"/>
+                <outlet property="twitterMacIcon" destination="ZOl-mR-Zqg" id="BhI-uN-cq4"/>
+                <outlet property="twitterMacLink" destination="iQi-HG-3R9" id="eNk-LS-c7C"/>
                 <outlet property="view" destination="1" id="2"/>
             </connections>
         </customObject>
@@ -17,17 +22,15 @@
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
             <subviews>
                 <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="J19-Tc-gPi">
-                    <rect key="frame" x="325" y="350" width="200" height="200"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <rect key="frame" x="345" y="390" width="160" height="160"/>
                     <constraints>
-                        <constraint firstAttribute="width" constant="200" id="h3f-ZZ-8Lg"/>
-                        <constraint firstAttribute="height" constant="200" id="oEG-Hc-T4Z"/>
+                        <constraint firstAttribute="width" constant="160" id="h3f-ZZ-8Lg"/>
+                        <constraint firstAttribute="height" constant="160" id="oEG-Hc-T4Z"/>
                     </constraints>
                     <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyUpOrDown" image="Icon" id="YoY-sh-puc"/>
                 </imageView>
                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="mdk-zD-vWi">
-                    <rect key="frame" x="216" y="235" width="418" height="51"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <rect key="frame" x="216" y="275" width="418" height="51"/>
                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Olet nyt valmis!" id="I10-iV-C0e">
                         <font key="font" metaFont="systemBold" size="42"/>
                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -36,7 +39,6 @@
                 </textField>
                 <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="gDC-Cm-H3d">
                     <rect key="frame" x="392" y="59" width="67" height="23"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <buttonCell key="cell" type="smallSquare" title="Käynnistä Hive" bezelStyle="smallSquare" imagePosition="overlaps" alignment="center" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="j0E-b4-dgh" customClass="HIWizardButtonCell">
                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                         <font key="font" metaFont="system"/>
@@ -45,27 +47,89 @@
                         <action selector="nextButtonPressed:" target="-2" id="dES-jo-C6H"/>
                     </connections>
                 </button>
-                <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="0Gn-sQ-ZVg">
-                    <rect key="frame" x="123" y="208" width="604" height="19"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="fjq-9a-4HJ">
+                    <rect key="frame" x="123" y="212" width="604" height="38"/>
                     <constraints>
-                        <constraint firstAttribute="width" constant="600" id="Jn9-t9-FWD"/>
+                        <constraint firstAttribute="width" constant="600" id="yVU-W2-0az"/>
                     </constraints>
-                    <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="center" title="Klikkaa vain painiketta alapuolella ja saat selville, kuinka helppoa ja hauskaa raha voi olla!" id="AHC-MY-HDw">
+                    <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="center" id="FGU-3c-rb5">
                         <font key="font" metaFont="system" size="16"/>
+                        <string key="title">It might take a moment to sync Hive with the Bitcoin network.
+In the meantime, you can check out our Twitter profiles:</string>
                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                     </textFieldCell>
                 </textField>
+                <customView translatesAutoresizingMaskIntoConstraints="NO" id="4WI-v0-JzA">
+                    <rect key="frame" x="309" y="162" width="232" height="25"/>
+                    <subviews>
+                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="iQi-HG-3R9" customClass="HILinkTextField">
+                            <rect key="frame" x="26" y="5" width="75" height="17"/>
+                            <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="@hive_mac" id="jus-y8-QkJ">
+                                <font key="font" metaFont="system"/>
+                                <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                            </textFieldCell>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="string" keyPath="href" value="https://twitter.com/hive_mac"/>
+                                <userDefinedRuntimeAttribute type="color" keyPath="linkColor">
+                                    <color key="value" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
+                        </textField>
+                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="bER-db-YdW" customClass="HILinkTextField">
+                            <rect key="frame" x="155" y="5" width="79" height="17"/>
+                            <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="@hivewallet" id="pjF-vb-1bP">
+                                <font key="font" metaFont="system"/>
+                                <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                            </textFieldCell>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="string" keyPath="href" value="https://twitter.com/hivewallet"/>
+                                <userDefinedRuntimeAttribute type="color" keyPath="linkColor">
+                                    <color key="value" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
+                        </textField>
+                        <imageView horizontalHuggingPriority="1000" verticalHuggingPriority="1000" translatesAutoresizingMaskIntoConstraints="NO" id="ZOl-mR-Zqg">
+                            <rect key="frame" x="-3" y="-3" width="31" height="31"/>
+                            <constraints>
+                                <constraint firstAttribute="width" secondItem="ZOl-mR-Zqg" secondAttribute="height" multiplier="1:1" id="A39-Bd-szu"/>
+                                <constraint firstAttribute="width" constant="25" id="Sob-pB-rau"/>
+                            </constraints>
+                            <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" imageFrameStyle="grayBezel" id="qoB-j8-vCp"/>
+                        </imageView>
+                        <imageView horizontalHuggingPriority="1000" verticalHuggingPriority="1000" translatesAutoresizingMaskIntoConstraints="NO" id="g4N-ox-1I2">
+                            <rect key="frame" x="126" y="-3" width="31" height="31"/>
+                            <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" imageFrameStyle="grayBezel" id="Wem-Wf-JUX"/>
+                        </imageView>
+                    </subviews>
+                    <constraints>
+                        <constraint firstItem="ZOl-mR-Zqg" firstAttribute="height" secondItem="g4N-ox-1I2" secondAttribute="height" id="2yl-qg-Ojw"/>
+                        <constraint firstItem="iQi-HG-3R9" firstAttribute="leading" secondItem="ZOl-mR-Zqg" secondAttribute="trailing" constant="3" id="GeI-WU-5cF"/>
+                        <constraint firstItem="bER-db-YdW" firstAttribute="leading" secondItem="g4N-ox-1I2" secondAttribute="trailing" constant="3" id="Jzh-nB-OPe"/>
+                        <constraint firstItem="g4N-ox-1I2" firstAttribute="leading" secondItem="iQi-HG-3R9" secondAttribute="trailing" constant="30" id="L8H-I6-WlQ"/>
+                        <constraint firstItem="bER-db-YdW" firstAttribute="centerY" secondItem="g4N-ox-1I2" secondAttribute="centerY" constant="-1" id="M5b-wI-wOM"/>
+                        <constraint firstItem="ZOl-mR-Zqg" firstAttribute="top" secondItem="4WI-v0-JzA" secondAttribute="top" id="TaV-VY-PO8"/>
+                        <constraint firstItem="ZOl-mR-Zqg" firstAttribute="centerY" secondItem="g4N-ox-1I2" secondAttribute="centerY" id="Xws-mp-0T7"/>
+                        <constraint firstItem="ZOl-mR-Zqg" firstAttribute="width" secondItem="g4N-ox-1I2" secondAttribute="width" id="bJ1-cu-2RA"/>
+                        <constraint firstItem="ZOl-mR-Zqg" firstAttribute="leading" secondItem="4WI-v0-JzA" secondAttribute="leading" id="bcP-6p-Qsg"/>
+                        <constraint firstAttribute="bottom" secondItem="ZOl-mR-Zqg" secondAttribute="bottom" id="dju-DR-amu"/>
+                        <constraint firstItem="ZOl-mR-Zqg" firstAttribute="centerY" secondItem="iQi-HG-3R9" secondAttribute="centerY" constant="1" id="dmt-nq-A7H"/>
+                        <constraint firstAttribute="trailing" secondItem="bER-db-YdW" secondAttribute="trailing" id="fAQ-be-IQK"/>
+                    </constraints>
+                </customView>
             </subviews>
             <constraints>
                 <constraint firstAttribute="centerX" secondItem="mdk-zD-vWi" secondAttribute="centerX" id="2kL-8E-36b"/>
                 <constraint firstItem="J19-Tc-gPi" firstAttribute="top" secondItem="1" secondAttribute="top" constant="100" id="88u-ix-KK1"/>
+                <constraint firstItem="4WI-v0-JzA" firstAttribute="top" secondItem="fjq-9a-4HJ" secondAttribute="bottom" constant="25" id="9zo-cd-dG7"/>
+                <constraint firstItem="fjq-9a-4HJ" firstAttribute="top" secondItem="mdk-zD-vWi" secondAttribute="bottom" constant="25" id="Jkd-JB-zfM"/>
+                <constraint firstAttribute="centerX" secondItem="fjq-9a-4HJ" secondAttribute="centerX" id="Ks5-ug-gpk"/>
                 <constraint firstAttribute="centerX" secondItem="gDC-Cm-H3d" secondAttribute="centerX" id="WGS-IL-M2j"/>
-                <constraint firstAttribute="centerX" secondItem="0Gn-sQ-ZVg" secondAttribute="centerX" id="WnZ-Wm-UYh"/>
                 <constraint firstItem="mdk-zD-vWi" firstAttribute="top" secondItem="J19-Tc-gPi" secondAttribute="bottom" constant="64" id="ZEk-gO-Ry9"/>
                 <constraint firstAttribute="bottom" secondItem="gDC-Cm-H3d" secondAttribute="bottom" constant="60" id="bNu-ow-W56"/>
-                <constraint firstItem="0Gn-sQ-ZVg" firstAttribute="top" secondItem="mdk-zD-vWi" secondAttribute="bottom" constant="8" id="ss7-rd-uia"/>
+                <constraint firstAttribute="centerX" secondItem="4WI-v0-JzA" secondAttribute="centerX" id="dJH-a7-Gyo"/>
                 <constraint firstAttribute="centerX" secondItem="J19-Tc-gPi" secondAttribute="centerX" id="yCa-GG-u1A"/>
             </constraints>
         </customView>

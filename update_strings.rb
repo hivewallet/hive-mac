@@ -40,7 +40,7 @@ class StringsFile
   end
 
   def should_be_ignored?(string)
-    IGNORED_LABELS.include?(string) || string !~ /[[:alpha:]]/ || string =~ /^<.*>$/
+    IGNORED_LABELS.include?(string) || string !~ /[[:alpha:]]/ || string =~ /^<.*>$/ || string =~ /^@/
   end
 
   def update_from(source, options = {})
