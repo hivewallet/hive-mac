@@ -64,7 +64,6 @@
 		5802106317ECCAAA0039BA4B /* HIContactAutocompleteCellView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5802106217ECCAAA0039BA4B /* HIContactAutocompleteCellView.m */; };
 		5804C32617FC88BA003B7891 /* HIProfile.m in Sources */ = {isa = PBXBuildFile; fileRef = 5804C32517FC88BA003B7891 /* HIProfile.m */; };
 		581711BE17D0A26D00DE775A /* HISidebarButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 581711BD17D0A26D00DE775A /* HISidebarButton.m */; };
-		581818E217F1A8A800D00770 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 581818E117F1A8A800D00770 /* README.md */; };
 		581E9EA719214609007B1760 /* icon-lock.png in Resources */ = {isa = PBXBuildFile; fileRef = 581E9EA519214609007B1760 /* icon-lock.png */; };
 		581E9EA819214609007B1760 /* icon-lock@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 581E9EA619214609007B1760 /* icon-lock@2x.png */; };
 		582372EC18C0C48500132894 /* mobile-recharge.hiveapp in Resources */ = {isa = PBXBuildFile; fileRef = 582372EB18C0C48500132894 /* mobile-recharge.hiveapp */; };
@@ -3282,7 +3281,6 @@
 				D9A591DE1767B4A800502635 /* MainMenu.xib in Resources */,
 				586C655F1A0928B2008AFFDF /* iphone_crop.png in Resources */,
 				D9F8454F1781C509004076F6 /* Icon.icns in Resources */,
-				581818E217F1A8A800D00770 /* README.md in Resources */,
 				5884A03E17F57AE9004A31FA /* dsa_pub.pem in Resources */,
 				58A37AD6180D996E00CFCDE3 /* HIContactViewController.strings in Resources */,
 				58A2760518BE81F100C102B2 /* com.hivewallet.bitpremier.hiveapp in Resources */,
