@@ -1243,6 +1243,7 @@
 		587491781951E4EC00D9C1E9 /* th */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = th; path = th.lproj/MainMenu.strings; sourceTree = "<group>"; };
 		587491791951E4EC00D9C1E9 /* th */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = th; path = th.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		5874917A1951E4EC00D9C1E9 /* th */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = th; path = th.lproj/Localizable.strings; sourceTree = "<group>"; };
+		587CB13D1A9A74C600F52DBD /* appcast.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = appcast.xml; sourceTree = SOURCE_ROOT; };
 		588427CF18F2DF6600DE6CC4 /* bitcoinkit.checkpoints */ = {isa = PBXFileReference; lastKnownFileType = file; path = bitcoinkit.checkpoints; sourceTree = "<group>"; };
 		5884A03D17F57AE9004A31FA /* dsa_pub.pem */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = dsa_pub.pem; sourceTree = "<group>"; };
 		588953901888A68100243190 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/HIBackupCenterWindowController.xib; sourceTree = "<group>"; };
@@ -2996,6 +2997,7 @@
 		D9A591CE1767B4A800502635 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				587CB13D1A9A74C600F52DBD /* appcast.xml */,
 				588427CF18F2DF6600DE6CC4 /* bitcoinkit.checkpoints */,
 				585FFF4318159803005BCF73 /* Credits.rtf */,
 				5884A03D17F57AE9004A31FA /* dsa_pub.pem */,
