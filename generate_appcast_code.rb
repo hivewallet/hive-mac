@@ -4,16 +4,15 @@ require 'json'
 require 'open-uri'
 require 'time'
 
-if ARGV.length < 4
-  puts "Usage: #{$PROGRAM_NAME} <version> <build> <local_zip_file> <private_key_file>"
+if ARGV.length < 3
+  puts "Usage: #{$PROGRAM_NAME} <version> <build> <local_zip_file>"
   exit 1
 end
 
-version, build, local_zip_file, private_key_file = ARGV
+version, build, local_zip_file = ARGV
 
 local_zip_file = File.expand_path(local_zip_file)
 file_size = File.size(local_zip_file)
-signature = %x(./sign_update.rb #{local_zip_file} #{private_key_file}).gsub(/\s+/, '')
 
 json = JSON.parse(open("https://api.github.com/repos/hivewallet/hive-osx/releases").read)
 release = json.detect { |r| r['tag_name'] == version }
@@ -58,7 +57,6 @@ puts %(
     sparkle:version="#{build}"
     sparkle:shortVersionString="#{version}"
     length="#{file_size}"
-    type="application/octet-stream"
-    sparkle:dsaSignature="#{signature}" />
+    type="application/octet-stream" />
 </item>
 )
