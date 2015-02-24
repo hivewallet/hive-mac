@@ -79,5 +79,7 @@ Released under GNU GPL license version 2 or later.</string>
 	<string>https://mac.hivewallet.com/feed/hive-mac</string>
 	<key>SUPublicDSAKeyFile</key>
 	<string>dsa_pub.pem</string>
+	<key>SUScheduledCheckInterval</key>
+	<integer>86400</integer>
 </dict>
 </plist>
