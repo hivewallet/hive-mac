@@ -71,6 +71,8 @@ Released under GNU GPL license version 2 or later.</string>
 	<string>MainMenu</string>
 	<key>NSPrincipalClass</key>
 	<string>BITCrashExceptionApplication</string>
+	<key>SUAllowsAutomaticUpdates</key>
+	<false/>
 	<key>SUEnableAutomaticChecks</key>
 	<true/>
 	<key>SUFeedURL</key>
