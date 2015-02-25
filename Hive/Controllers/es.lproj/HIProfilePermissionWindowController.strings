@@ -1,15 +1,15 @@
 
 /* Class = "NSButtonCell"; title = "More Info..."; ObjectID = "c9Q-Ir-kAl"; */
-"c9Q-Ir-kAl.title" = "More Info...";
+"c9Q-Ir-kAl.title" = "Más información...";
 
 /* Class = "NSTextFieldCell"; title = "Hive would like to periodically send some anonymous system stats to the developers, is that okay?"; ObjectID = "jie-Sl-QOI"; */
-"jie-Sl-QOI.title" = "Hive would like to periodically send some anonymous system stats to the developers, is that okay?";
+"jie-Sl-QOI.title" = "A Hive le gustaría enviar periódicamente a los desarrolladores algunos datos anónimos del sistema, ¿estás de acuerdo?";
 
 /* Class = "NSTextFieldCell"; title = "This only includes things like OS X version or CPU type, nothing personal or Bitcoin-related."; ObjectID = "qdU-0j-05G"; */
-"qdU-0j-05G.title" = "This only includes things like OS X version or CPU type, nothing personal or Bitcoin-related.";
+"qdU-0j-05G.title" = "La información solamente incluye cosas como la versión de OS X o el tipo de CPU, nada personal ni relacionado con Bitcoin.";
 
 /* Class = "NSButtonCell"; title = "Allow"; ObjectID = "wjt-hM-Hzk"; */
-"wjt-hM-Hzk.title" = "Allow";
+"wjt-hM-Hzk.title" = "Permitir";
 
 /* Class = "NSButtonCell"; title = "Don't Allow"; ObjectID = "zYH-qJ-GMu"; */
-"zYH-qJ-GMu.title" = "Don't Allow";
+"zYH-qJ-GMu.title" = "No permitir";

@@ -54,8 +54,8 @@
                     </constraints>
                     <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="center" id="FGU-3c-rb5">
                         <font key="font" metaFont="system" size="16"/>
-                        <string key="title">It might take a moment to sync Hive with the Bitcoin network.
-In the meantime, you can check out our Twitter profiles:</string>
+                        <string key="title">La synchronisation de Hive avec le réseau Bitcoin pourrait prendre un moment.
+Vous pouvez consulter nos profils Twitter en attendant :</string>
                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                     </textFieldCell>
