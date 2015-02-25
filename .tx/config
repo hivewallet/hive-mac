@@ -164,3 +164,9 @@ source_file = Hive/Controllers/en.lproj/HIExportPrivateKeyWindowController.strin
 source_lang = en
 type = STRINGS
 
+[hive-osx.HIProfilePermissionWindowController]
+file_filter = Hive/Controllers/<lang>.lproj/HIProfilePermissionWindowController.strings
+source_file = Hive/Controllers/en.lproj/HIProfilePermissionWindowController.strings
+source_lang = en
+type = STRINGS
+
