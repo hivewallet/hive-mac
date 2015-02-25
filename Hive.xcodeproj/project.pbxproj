@@ -224,7 +224,8 @@
 		58AE8CC9192CCF1200946C97 /* HIGeneralPreferencesViewController.strings in Resources */ = {isa = PBXBuildFile; fileRef = 58AE8CCB192CCF1200946C97 /* HIGeneralPreferencesViewController.strings */; };
 		58B83ABE1A60B5BF00A9172D /* NSDecimalNumberSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 58B83ABD1A60B5BF00A9172D /* NSDecimalNumberSpec.m */; };
 		58C0091A1A9D46040079553F /* HIProfilePermissionWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 58C009181A9D46040079553F /* HIProfilePermissionWindowController.m */; };
-		58C0091B1A9D46040079553F /* HIProfilePermissionWindowController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 58C009191A9D46040079553F /* HIProfilePermissionWindowController.xib */; };
+		58C0091E1A9D55030079553F /* HIProfilePermissionWindowController.strings in Resources */ = {isa = PBXBuildFile; fileRef = 58C009201A9D55030079553F /* HIProfilePermissionWindowController.strings */; };
+		58C009411A9D55580079553F /* HIProfilePermissionWindowController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 58C009431A9D55580079553F /* HIProfilePermissionWindowController.xib */; };
 		58C4E84719B0BD53003B5171 /* HITransactionPopoverViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 58C4E84919B0BD53003B5171 /* HITransactionPopoverViewController.xib */; };
 		58C4E86819B0BDD3003B5171 /* HITransactionPopoverViewController.strings in Resources */ = {isa = PBXBuildFile; fileRef = 58C4E86A19B0BDD3003B5171 /* HITransactionPopoverViewController.strings */; };
 		58C85B5818FFE90700B2C350 /* HISignMessageWindowController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 58C85B5A18FFE90700B2C350 /* HISignMessageWindowController.xib */; };
@@ -1862,7 +1863,70 @@
 		58B83ABD1A60B5BF00A9172D /* NSDecimalNumberSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSDecimalNumberSpec.m; sourceTree = "<group>"; };
 		58C009171A9D46040079553F /* HIProfilePermissionWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HIProfilePermissionWindowController.h; sourceTree = "<group>"; };
 		58C009181A9D46040079553F /* HIProfilePermissionWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HIProfilePermissionWindowController.m; sourceTree = "<group>"; };
-		58C009191A9D46040079553F /* HIProfilePermissionWindowController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HIProfilePermissionWindowController.xib; sourceTree = "<group>"; };
+		58C0091F1A9D55030079553F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/HIProfilePermissionWindowController.strings; sourceTree = "<group>"; };
+		58C009211A9D55060079553F /* pl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = pl; path = pl.lproj/HIProfilePermissionWindowController.strings; sourceTree = "<group>"; };
+		58C009221A9D55070079553F /* it */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = it; path = it.lproj/HIProfilePermissionWindowController.strings; sourceTree = "<group>"; };
+		58C009231A9D55080079553F /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/HIProfilePermissionWindowController.strings; sourceTree = "<group>"; };
+		58C009241A9D55090079553F /* fi */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fi; path = fi.lproj/HIProfilePermissionWindowController.strings; sourceTree = "<group>"; };
+		58C009251A9D550A0079553F /* da */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = da; path = da.lproj/HIProfilePermissionWindowController.strings; sourceTree = "<group>"; };
+		58C009261A9D550C0079553F /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/HIProfilePermissionWindowController.strings; sourceTree = "<group>"; };
+		58C009271A9D550D0079553F /* nl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = nl; path = nl.lproj/HIProfilePermissionWindowController.strings; sourceTree = "<group>"; };
+		58C009281A9D550E0079553F /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/HIProfilePermissionWindowController.strings; sourceTree = "<group>"; };
+		58C009291A9D550F0079553F /* tr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = tr; path = tr.lproj/HIProfilePermissionWindowController.strings; sourceTree = "<group>"; };
+		58C0092A1A9D55100079553F /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/HIProfilePermissionWindowController.strings"; sourceTree = "<group>"; };
+		58C0092B1A9D55120079553F /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/HIProfilePermissionWindowController.strings; sourceTree = "<group>"; };
+		58C0092C1A9D55120079553F /* ur */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ur; path = ur.lproj/HIProfilePermissionWindowController.strings; sourceTree = "<group>"; };
+		58C0092D1A9D55130079553F /* hi */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = hi; path = hi.lproj/HIProfilePermissionWindowController.strings; sourceTree = "<group>"; };
+		58C0092E1A9D55160079553F /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = ko.lproj/HIProfilePermissionWindowController.strings; sourceTree = "<group>"; };
+		58C0092F1A9D55170079553F /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/HIProfilePermissionWindowController.strings; sourceTree = "<group>"; };
+		58C009301A9D55180079553F /* cs */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = cs; path = cs.lproj/HIProfilePermissionWindowController.strings; sourceTree = "<group>"; };
+		58C009311A9D55190079553F /* fil */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fil; path = fil.lproj/HIProfilePermissionWindowController.strings; sourceTree = "<group>"; };
+		58C009321A9D551C0079553F /* el */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = el; path = el.lproj/HIProfilePermissionWindowController.strings; sourceTree = "<group>"; };
+		58C009331A9D551C0079553F /* pt */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = pt; path = pt.lproj/HIProfilePermissionWindowController.strings; sourceTree = "<group>"; };
+		58C009341A9D551D0079553F /* ro */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ro; path = ro.lproj/HIProfilePermissionWindowController.strings; sourceTree = "<group>"; };
+		58C009351A9D551E0079553F /* pt-BR */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-BR"; path = "pt-BR.lproj/HIProfilePermissionWindowController.strings"; sourceTree = "<group>"; };
+		58C009361A9D55200079553F /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/HIProfilePermissionWindowController.strings; sourceTree = "<group>"; };
+		58C009371A9D55200079553F /* sr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = sr; path = sr.lproj/HIProfilePermissionWindowController.strings; sourceTree = "<group>"; };
+		58C009381A9D55260079553F /* th */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = th; path = th.lproj/HIProfilePermissionWindowController.strings; sourceTree = "<group>"; };
+		58C009391A9D55280079553F /* uk */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = uk; path = uk.lproj/HIProfilePermissionWindowController.strings; sourceTree = "<group>"; };
+		58C0093A1A9D55280079553F /* fa */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fa; path = fa.lproj/HIProfilePermissionWindowController.strings; sourceTree = "<group>"; };
+		58C0093B1A9D552A0079553F /* nb */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = nb; path = nb.lproj/HIProfilePermissionWindowController.strings; sourceTree = "<group>"; };
+		58C0093C1A9D552A0079553F /* pt-PT */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-PT"; path = "pt-PT.lproj/HIProfilePermissionWindowController.strings"; sourceTree = "<group>"; };
+		58C0093D1A9D552C0079553F /* hu */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = hu; path = hu.lproj/HIProfilePermissionWindowController.strings; sourceTree = "<group>"; };
+		58C0093E1A9D552D0079553F /* sv */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = sv; path = sv.lproj/HIProfilePermissionWindowController.strings; sourceTree = "<group>"; };
+		58C0093F1A9D552F0079553F /* sr-Latn */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "sr-Latn"; path = "sr-Latn.lproj/HIProfilePermissionWindowController.strings"; sourceTree = "<group>"; };
+		58C009421A9D55580079553F /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/HIProfilePermissionWindowController.xib; sourceTree = "<group>"; };
+		58C009441A9D555A0079553F /* pl */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = pl; path = pl.lproj/HIProfilePermissionWindowController.xib; sourceTree = "<group>"; };
+		58C009451A9D555C0079553F /* it */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = it; path = it.lproj/HIProfilePermissionWindowController.xib; sourceTree = "<group>"; };
+		58C009461A9D555F0079553F /* fr */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = fr; path = fr.lproj/HIProfilePermissionWindowController.xib; sourceTree = "<group>"; };
+		58C009471A9D55610079553F /* fi */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = fi; path = fi.lproj/HIProfilePermissionWindowController.xib; sourceTree = "<group>"; };
+		58C009481A9D55630079553F /* da */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = da; path = da.lproj/HIProfilePermissionWindowController.xib; sourceTree = "<group>"; };
+		58C009491A9D55650079553F /* de */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = de; path = de.lproj/HIProfilePermissionWindowController.xib; sourceTree = "<group>"; };
+		58C0094A1A9D55680079553F /* nl */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = nl; path = nl.lproj/HIProfilePermissionWindowController.xib; sourceTree = "<group>"; };
+		58C0094B1A9D556A0079553F /* ru */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = ru; path = ru.lproj/HIProfilePermissionWindowController.xib; sourceTree = "<group>"; };
+		58C0094C1A9D556E0079553F /* tr */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = tr; path = tr.lproj/HIProfilePermissionWindowController.xib; sourceTree = "<group>"; };
+		58C0094D1A9D556F0079553F /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = "zh-Hans"; path = "zh-Hans.lproj/HIProfilePermissionWindowController.xib"; sourceTree = "<group>"; };
+		58C0094E1A9D55710079553F /* ar */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = ar; path = ar.lproj/HIProfilePermissionWindowController.xib; sourceTree = "<group>"; };
+		58C0094F1A9D55730079553F /* ur */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = ur; path = ur.lproj/HIProfilePermissionWindowController.xib; sourceTree = "<group>"; };
+		58C009501A9D55750079553F /* hi */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = hi; path = hi.lproj/HIProfilePermissionWindowController.xib; sourceTree = "<group>"; };
+		58C009511A9D55770079553F /* ko */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = ko; path = ko.lproj/HIProfilePermissionWindowController.xib; sourceTree = "<group>"; };
+		58C009521A9D557A0079553F /* es */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = es; path = es.lproj/HIProfilePermissionWindowController.xib; sourceTree = "<group>"; };
+		58C009531A9D557D0079553F /* cs */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = cs; path = cs.lproj/HIProfilePermissionWindowController.xib; sourceTree = "<group>"; };
+		58C009541A9D557F0079553F /* fil */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = fil; path = fil.lproj/HIProfilePermissionWindowController.xib; sourceTree = "<group>"; };
+		58C009551A9D55810079553F /* el */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = el; path = el.lproj/HIProfilePermissionWindowController.xib; sourceTree = "<group>"; };
+		58C009561A9D55830079553F /* pt */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = pt; path = pt.lproj/HIProfilePermissionWindowController.xib; sourceTree = "<group>"; };
+		58C009571A9D55850079553F /* ro */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = ro; path = ro.lproj/HIProfilePermissionWindowController.xib; sourceTree = "<group>"; };
+		58C009581A9D55890079553F /* pt-BR */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = "pt-BR"; path = "pt-BR.lproj/HIProfilePermissionWindowController.xib"; sourceTree = "<group>"; };
+		58C009591A9D558C0079553F /* ja */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = ja; path = ja.lproj/HIProfilePermissionWindowController.xib; sourceTree = "<group>"; };
+		58C0095A1A9D558D0079553F /* sr */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = sr; path = sr.lproj/HIProfilePermissionWindowController.xib; sourceTree = "<group>"; };
+		58C0095B1A9D55900079553F /* sr-Latn */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = "sr-Latn"; path = "sr-Latn.lproj/HIProfilePermissionWindowController.xib"; sourceTree = "<group>"; };
+		58C0095C1A9D55920079553F /* sv */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = sv; path = sv.lproj/HIProfilePermissionWindowController.xib; sourceTree = "<group>"; };
+		58C0095D1A9D55950079553F /* hu */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = hu; path = hu.lproj/HIProfilePermissionWindowController.xib; sourceTree = "<group>"; };
+		58C0095E1A9D55970079553F /* pt-PT */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = "pt-PT"; path = "pt-PT.lproj/HIProfilePermissionWindowController.xib"; sourceTree = "<group>"; };
+		58C0095F1A9D55990079553F /* nb */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = nb; path = nb.lproj/HIProfilePermissionWindowController.xib; sourceTree = "<group>"; };
+		58C009601A9D559C0079553F /* fa */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = fa; path = fa.lproj/HIProfilePermissionWindowController.xib; sourceTree = "<group>"; };
+		58C009611A9D559D0079553F /* uk */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = uk; path = uk.lproj/HIProfilePermissionWindowController.xib; sourceTree = "<group>"; };
+		58C009621A9D559F0079553F /* th */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = th; path = th.lproj/HIProfilePermissionWindowController.xib; sourceTree = "<group>"; };
 		58C4E84819B0BD53003B5171 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/HITransactionPopoverViewController.xib; sourceTree = "<group>"; };
 		58C4E84A19B0BD5A003B5171 /* pl */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = pl; path = pl.lproj/HITransactionPopoverViewController.xib; sourceTree = "<group>"; };
 		58C4E84B19B0BD61003B5171 /* fr */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = fr; path = fr.lproj/HITransactionPopoverViewController.xib; sourceTree = "<group>"; };
@@ -2759,7 +2823,8 @@
 			children = (
 				58C009171A9D46040079553F /* HIProfilePermissionWindowController.h */,
 				58C009181A9D46040079553F /* HIProfilePermissionWindowController.m */,
-				58C009191A9D46040079553F /* HIProfilePermissionWindowController.xib */,
+				58C009201A9D55030079553F /* HIProfilePermissionWindowController.strings */,
+				58C009431A9D55580079553F /* HIProfilePermissionWindowController.xib */,
 			);
 			name = HIProfilePermissionWindowController;
 			sourceTree = "<group>";
@@ -3328,6 +3393,7 @@
 				58A37AAD180D7B1500CFCDE3 /* HISendBitcoinsWindowController.xib in Resources */,
 				58C85B9B18FFEA0500B2C350 /* HIKeyPreferencesViewController.strings in Resources */,
 				58A37AB0180D7B1D00CFCDE3 /* HITransactionsViewController.xib in Resources */,
+				58C0091E1A9D55030079553F /* HIProfilePermissionWindowController.strings in Resources */,
 				58A37A9E180D7AFC00CFCDE3 /* HIMainWindowController.xib in Resources */,
 				58605A4018041D0A00FD9C2A /* avatar-empty.pdf in Resources */,
 				585712F418902E1E0094F884 /* HIWizardPasswordViewController.xib in Resources */,
@@ -3398,7 +3464,7 @@
 				58605A5B18041D0A00FD9C2A /* icon-transactions-minus.pdf in Resources */,
 				583B1E0318687CF400817EF8 /* dropbox-glyph-blue.pdf in Resources */,
 				58605A5C18041D0A00FD9C2A /* icon-transactions-plus.pdf in Resources */,
-				58C0091B1A9D46040079553F /* HIProfilePermissionWindowController.xib in Resources */,
+				58C009411A9D55580079553F /* HIProfilePermissionWindowController.xib in Resources */,
 				58C85B7918FFE97F00B2C350 /* HIKeyPreferencesViewController.xib in Resources */,
 				58A2760718BE81F100C102B2 /* com.hivewallet.seansoutpost.hiveapp in Resources */,
 				24FA986C1927891E00D7058F /* HIGeneralPreferencesViewController.xib in Resources */,
@@ -5438,6 +5504,84 @@
 				587491731951E4EC00D9C1E9 /* th */,
 			);
 			name = HIGeneralPreferencesViewController.strings;
+			sourceTree = "<group>";
+		};
+		58C009201A9D55030079553F /* HIProfilePermissionWindowController.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				58C0091F1A9D55030079553F /* en */,
+				58C009211A9D55060079553F /* pl */,
+				58C009221A9D55070079553F /* it */,
+				58C009231A9D55080079553F /* fr */,
+				58C009241A9D55090079553F /* fi */,
+				58C009251A9D550A0079553F /* da */,
+				58C009261A9D550C0079553F /* de */,
+				58C009271A9D550D0079553F /* nl */,
+				58C009281A9D550E0079553F /* ru */,
+				58C009291A9D550F0079553F /* tr */,
+				58C0092A1A9D55100079553F /* zh-Hans */,
+				58C0092B1A9D55120079553F /* ar */,
+				58C0092C1A9D55120079553F /* ur */,
+				58C0092D1A9D55130079553F /* hi */,
+				58C0092E1A9D55160079553F /* ko */,
+				58C0092F1A9D55170079553F /* es */,
+				58C009301A9D55180079553F /* cs */,
+				58C009311A9D55190079553F /* fil */,
+				58C009321A9D551C0079553F /* el */,
+				58C009331A9D551C0079553F /* pt */,
+				58C009341A9D551D0079553F /* ro */,
+				58C009351A9D551E0079553F /* pt-BR */,
+				58C009361A9D55200079553F /* ja */,
+				58C009371A9D55200079553F /* sr */,
+				58C009381A9D55260079553F /* th */,
+				58C009391A9D55280079553F /* uk */,
+				58C0093A1A9D55280079553F /* fa */,
+				58C0093B1A9D552A0079553F /* nb */,
+				58C0093C1A9D552A0079553F /* pt-PT */,
+				58C0093D1A9D552C0079553F /* hu */,
+				58C0093E1A9D552D0079553F /* sv */,
+				58C0093F1A9D552F0079553F /* sr-Latn */,
+			);
+			name = HIProfilePermissionWindowController.strings;
+			sourceTree = "<group>";
+		};
+		58C009431A9D55580079553F /* HIProfilePermissionWindowController.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				58C009421A9D55580079553F /* en */,
+				58C009441A9D555A0079553F /* pl */,
+				58C009451A9D555C0079553F /* it */,
+				58C009461A9D555F0079553F /* fr */,
+				58C009471A9D55610079553F /* fi */,
+				58C009481A9D55630079553F /* da */,
+				58C009491A9D55650079553F /* de */,
+				58C0094A1A9D55680079553F /* nl */,
+				58C0094B1A9D556A0079553F /* ru */,
+				58C0094C1A9D556E0079553F /* tr */,
+				58C0094D1A9D556F0079553F /* zh-Hans */,
+				58C0094E1A9D55710079553F /* ar */,
+				58C0094F1A9D55730079553F /* ur */,
+				58C009501A9D55750079553F /* hi */,
+				58C009511A9D55770079553F /* ko */,
+				58C009521A9D557A0079553F /* es */,
+				58C009531A9D557D0079553F /* cs */,
+				58C009541A9D557F0079553F /* fil */,
+				58C009551A9D55810079553F /* el */,
+				58C009561A9D55830079553F /* pt */,
+				58C009571A9D55850079553F /* ro */,
+				58C009581A9D55890079553F /* pt-BR */,
+				58C009591A9D558C0079553F /* ja */,
+				58C0095A1A9D558D0079553F /* sr */,
+				58C0095B1A9D55900079553F /* sr-Latn */,
+				58C0095C1A9D55920079553F /* sv */,
+				58C0095D1A9D55950079553F /* hu */,
+				58C0095E1A9D55970079553F /* pt-PT */,
+				58C0095F1A9D55990079553F /* nb */,
+				58C009601A9D559C0079553F /* fa */,
+				58C009611A9D559D0079553F /* uk */,
+				58C009621A9D559F0079553F /* th */,
+			);
+			name = HIProfilePermissionWindowController.xib;
 			sourceTree = "<group>";
 		};
 		58C4E84919B0BD53003B5171 /* HITransactionPopoverViewController.xib */ = {
