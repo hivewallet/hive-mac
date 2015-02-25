@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="6254" systemVersion="13F34" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
+    <dependencies>
+        <deployment identifier="macosx"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="6254"/>
+    </dependencies>
+    <objects>
+        <customObject id="-2" userLabel="File's Owner" customClass="HIProfilePermissionWindowController">
+            <connections>
+                <outlet property="window" destination="F0z-JX-Cv5" id="gIp-Ho-8D9"/>
+            </connections>
+        </customObject>
+        <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
+        <customObject id="-3" userLabel="Application" customClass="NSObject"/>
+        <window allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" restorable="NO" oneShot="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" animationBehavior="default" id="F0z-JX-Cv5">
+            <windowStyleMask key="styleMask" titled="YES" closable="YES"/>
+            <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
+            <rect key="contentRect" x="196" y="240" width="500" height="155"/>
+            <rect key="screenRect" x="0.0" y="0.0" width="1440" height="878"/>
+            <value key="minSize" type="size" width="500" height="155"/>
+            <value key="maxSize" type="size" width="500" height="155"/>
+            <view key="contentView" id="se5-gp-TjO">
+                <rect key="frame" x="0.0" y="0.0" width="500" height="155"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="fRd-Cg-kI9">
+                        <rect key="frame" x="20" y="71" width="64" height="64"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="64" id="2cM-ut-t49"/>
+                            <constraint firstAttribute="width" constant="64" id="2dZ-n5-OVW"/>
+                        </constraints>
+                        <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="Icon" id="mZV-A8-OUn"/>
+                    </imageView>
+                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="I3k-aF-iSd">
+                        <rect key="frame" x="102" y="101" width="380" height="34"/>
+                        <textFieldCell key="cell" sendsActionOnEndEditing="YES" title="Hive would like to periodically send some anonymous system stats to the developers, is that okay?" id="jie-Sl-QOI">
+                            <font key="font" metaFont="systemBold"/>
+                            <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                        </textFieldCell>
+                    </textField>
+                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" setsMaxLayoutWidthAtFirstLayout="YES" translatesAutoresizingMaskIntoConstraints="NO" id="sbJ-c7-q5i">
+                        <rect key="frame" x="102" y="61" width="380" height="32"/>
+                        <textFieldCell key="cell" sendsActionOnEndEditing="YES" title="This only includes things like OS X version or CPU type, nothing personal or Bitcoin-related." id="qdU-0j-05G">
+                            <font key="font" metaFont="cellTitle"/>
+                            <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                        </textFieldCell>
+                    </textField>
+                    <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="FxK-C8-H96">
+                        <rect key="frame" x="411" y="13" width="75" height="32"/>
+                        <buttonCell key="cell" type="push" title="Allow" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="wjt-hM-Hzk">
+                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                            <font key="font" metaFont="system"/>
+                            <string key="keyEquivalent" base64-UTF8="YES">
+DQ
+</string>
+                        </buttonCell>
+                        <connections>
+                            <action selector="allowButtonPressed:" target="-2" id="tea-gq-9ie"/>
+                        </connections>
+                    </button>
+                    <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="dOY-4j-Be4">
+                        <rect key="frame" x="298" y="13" width="113" height="32"/>
+                        <buttonCell key="cell" type="push" title="Don't Allow" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="zYH-qJ-GMu">
+                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                            <font key="font" metaFont="system"/>
+                        </buttonCell>
+                        <connections>
+                            <action selector="dontAllowButtonPressed:" target="-2" id="ALz-nM-0Gp"/>
+                        </connections>
+                    </button>
+                    <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="43O-r1-SPm">
+                        <rect key="frame" x="98" y="13" width="113" height="32"/>
+                        <buttonCell key="cell" type="push" title="More Info..." bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="c9Q-Ir-kAl">
+                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                            <font key="font" metaFont="system"/>
+                        </buttonCell>
+                        <connections>
+                            <action selector="moreInfoButtonPressed:" target="-2" id="J5e-vZ-52T"/>
+                        </connections>
+                    </button>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="bottom" secondItem="FxK-C8-H96" secondAttribute="bottom" constant="20" symbolic="YES" id="5cH-ad-GQJ"/>
+                    <constraint firstItem="dOY-4j-Be4" firstAttribute="centerY" secondItem="43O-r1-SPm" secondAttribute="centerY" id="FWP-Hi-avJ"/>
+                    <constraint firstItem="fRd-Cg-kI9" firstAttribute="top" secondItem="se5-gp-TjO" secondAttribute="top" constant="20" symbolic="YES" id="Gq7-V3-3oZ"/>
+                    <constraint firstItem="sbJ-c7-q5i" firstAttribute="leading" secondItem="I3k-aF-iSd" secondAttribute="leading" id="JhA-9n-ggR"/>
+                    <constraint firstItem="FxK-C8-H96" firstAttribute="top" secondItem="sbJ-c7-q5i" secondAttribute="bottom" constant="20" id="QBc-QN-2nr"/>
+                    <constraint firstItem="fRd-Cg-kI9" firstAttribute="leading" secondItem="se5-gp-TjO" secondAttribute="leading" constant="20" symbolic="YES" id="Vfn-LJ-2jx"/>
+                    <constraint firstItem="dOY-4j-Be4" firstAttribute="centerY" secondItem="FxK-C8-H96" secondAttribute="centerY" id="d3Z-fh-rep"/>
+                    <constraint firstItem="sbJ-c7-q5i" firstAttribute="top" secondItem="I3k-aF-iSd" secondAttribute="bottom" constant="8" symbolic="YES" id="fcY-fo-aNn"/>
+                    <constraint firstAttribute="trailing" secondItem="FxK-C8-H96" secondAttribute="trailing" constant="20" symbolic="YES" id="gGr-RL-zxW"/>
+                    <constraint firstItem="I3k-aF-iSd" firstAttribute="leading" secondItem="fRd-Cg-kI9" secondAttribute="trailing" constant="20" id="miq-ZY-wlc"/>
+                    <constraint firstItem="sbJ-c7-q5i" firstAttribute="leading" secondItem="43O-r1-SPm" secondAttribute="leading" id="pzX-xq-fww"/>
+                    <constraint firstAttribute="trailing" secondItem="I3k-aF-iSd" secondAttribute="trailing" constant="20" symbolic="YES" id="qQq-d6-sNn"/>
+                    <constraint firstItem="I3k-aF-iSd" firstAttribute="top" secondItem="se5-gp-TjO" secondAttribute="top" constant="20" symbolic="YES" id="sKm-aD-cum"/>
+                    <constraint firstItem="sbJ-c7-q5i" firstAttribute="trailing" secondItem="I3k-aF-iSd" secondAttribute="trailing" id="tBb-Ns-E1q"/>
+                    <constraint firstItem="FxK-C8-H96" firstAttribute="leading" secondItem="dOY-4j-Be4" secondAttribute="trailing" constant="12" symbolic="YES" id="x8D-4W-Edy"/>
+                </constraints>
+            </view>
+            <connections>
+                <outlet property="delegate" destination="-2" id="0bl-1N-AYu"/>
+            </connections>
+            <point key="canvasLocation" x="-10" y="83.5"/>
+        </window>
+    </objects>
+    <resources>
+        <image name="Icon" width="512" height="512"/>
+    </resources>
+</document>

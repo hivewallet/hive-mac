@@ -258,7 +258,11 @@
         </menu>
         <customObject id="494" customClass="HIAppDelegate"/>
         <customObject id="420" customClass="NSFontManager"/>
-        <customObject id="869" customClass="SUUpdater"/>
+        <customObject id="869" customClass="SUUpdater">
+            <connections>
+                <outlet property="delegate" destination="494" id="jKL-HT-5JU"/>
+            </connections>
+        </customObject>
         <userDefaultsController representsSharedInstance="YES" id="rU0-5e-jtv"/>
     </objects>
 </document>

@@ -223,6 +223,8 @@
 		58AE8CBC19226AF900946C97 /* icon-success@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 58AE8CBA19226AF800946C97 /* icon-success@2x.png */; };
 		58AE8CC9192CCF1200946C97 /* HIGeneralPreferencesViewController.strings in Resources */ = {isa = PBXBuildFile; fileRef = 58AE8CCB192CCF1200946C97 /* HIGeneralPreferencesViewController.strings */; };
 		58B83ABE1A60B5BF00A9172D /* NSDecimalNumberSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 58B83ABD1A60B5BF00A9172D /* NSDecimalNumberSpec.m */; };
+		58C0091A1A9D46040079553F /* HIProfilePermissionWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 58C009181A9D46040079553F /* HIProfilePermissionWindowController.m */; };
+		58C0091B1A9D46040079553F /* HIProfilePermissionWindowController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 58C009191A9D46040079553F /* HIProfilePermissionWindowController.xib */; };
 		58C4E84719B0BD53003B5171 /* HITransactionPopoverViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 58C4E84919B0BD53003B5171 /* HITransactionPopoverViewController.xib */; };
 		58C4E86819B0BDD3003B5171 /* HITransactionPopoverViewController.strings in Resources */ = {isa = PBXBuildFile; fileRef = 58C4E86A19B0BDD3003B5171 /* HITransactionPopoverViewController.strings */; };
 		58C85B5818FFE90700B2C350 /* HISignMessageWindowController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 58C85B5A18FFE90700B2C350 /* HISignMessageWindowController.xib */; };
@@ -1858,6 +1860,9 @@
 		58AE8CE4192CCF2D00946C97 /* ro */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ro; path = ro.lproj/HIGeneralPreferencesViewController.strings; sourceTree = "<group>"; };
 		58AE8CE5192CCF2D00946C97 /* hu */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = hu; path = hu.lproj/HIGeneralPreferencesViewController.strings; sourceTree = "<group>"; };
 		58B83ABD1A60B5BF00A9172D /* NSDecimalNumberSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSDecimalNumberSpec.m; sourceTree = "<group>"; };
+		58C009171A9D46040079553F /* HIProfilePermissionWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HIProfilePermissionWindowController.h; sourceTree = "<group>"; };
+		58C009181A9D46040079553F /* HIProfilePermissionWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HIProfilePermissionWindowController.m; sourceTree = "<group>"; };
+		58C009191A9D46040079553F /* HIProfilePermissionWindowController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HIProfilePermissionWindowController.xib; sourceTree = "<group>"; };
 		58C4E84819B0BD53003B5171 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/HITransactionPopoverViewController.xib; sourceTree = "<group>"; };
 		58C4E84A19B0BD5A003B5171 /* pl */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = pl; path = pl.lproj/HITransactionPopoverViewController.xib; sourceTree = "<group>"; };
 		58C4E84B19B0BD61003B5171 /* fr */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = fr; path = fr.lproj/HITransactionPopoverViewController.xib; sourceTree = "<group>"; };
@@ -2749,6 +2754,16 @@
 			name = HISendBitcoinsWindowController;
 			sourceTree = "<group>";
 		};
+		58C009161A9D45B40079553F /* HIProfilePermissionWindowController */ = {
+			isa = PBXGroup;
+			children = (
+				58C009171A9D46040079553F /* HIProfilePermissionWindowController.h */,
+				58C009181A9D46040079553F /* HIProfilePermissionWindowController.m */,
+				58C009191A9D46040079553F /* HIProfilePermissionWindowController.xib */,
+			);
+			name = HIProfilePermissionWindowController;
+			sourceTree = "<group>";
+		};
 		58F3E37919ED69BC00A5F144 /* HIExportPrivateKeyWindowController */ = {
 			isa = PBXGroup;
 			children = (
@@ -3083,6 +3098,7 @@
 				244303B2185670DB00AD59B8 /* HIPasswordInputViewController */,
 				1AA10541E9CC36CCCF16920A /* HIPreferencesWindowController */,
 				1AA103C2AED626BF5E200D14 /* HIProfileViewController */,
+				58C009161A9D45B40079553F /* HIProfilePermissionWindowController */,
 				1AA10FD814FF44C3B5CF256D /* HIQRCodeWindowController */,
 				58A2A7E817D8783D0001464A /* HISendBitcoinsWindowController */,
 				58904B8E18EAB76800B471B3 /* HISignMessageWindowController */,
@@ -3382,6 +3398,7 @@
 				58605A5B18041D0A00FD9C2A /* icon-transactions-minus.pdf in Resources */,
 				583B1E0318687CF400817EF8 /* dropbox-glyph-blue.pdf in Resources */,
 				58605A5C18041D0A00FD9C2A /* icon-transactions-plus.pdf in Resources */,
+				58C0091B1A9D46040079553F /* HIProfilePermissionWindowController.xib in Resources */,
 				58C85B7918FFE97F00B2C350 /* HIKeyPreferencesViewController.xib in Resources */,
 				58A2760718BE81F100C102B2 /* com.hivewallet.seansoutpost.hiveapp in Resources */,
 				24FA986C1927891E00D7058F /* HIGeneralPreferencesViewController.xib in Resources */,
@@ -3565,6 +3582,7 @@
 				586059FF18041AD600FD9C2A /* HIMainWindowController.m in Sources */,
 				58605A0018041AD600FD9C2A /* HINavigationController.m in Sources */,
 				2478B8D3184A80A400BA2C35 /* HIFeeDetailsViewController.m in Sources */,
+				58C0091A1A9D46040079553F /* HIProfilePermissionWindowController.m in Sources */,
 				582C7DA918521A3500126C10 /* HIJavaScriptObject.m in Sources */,
 				58904B9418EAB78A00B471B3 /* HISignMessageWindowController.m in Sources */,
 				588E33B71817E6AE006A6A25 /* HIBitcoinURI.m in Sources */,

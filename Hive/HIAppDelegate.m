@@ -13,6 +13,7 @@
 #import <CocoaLumberjack/DDLog.h>
 #import <CocoaLumberjack/DDTTYLogger.h>
 #import <HockeySDK/HockeySDK.h>
+#import <Sparkle/Sparkle.h>
 
 #import "BCClient.h"
 #import "HIAboutHiveWindowController.h"
@@ -39,6 +40,7 @@
 #import "HINotificationService.h"
 #import "HIPasswordChangeWindowController.h"
 #import "HIPreferencesWindowController.h"
+#import "HIProfilePermissionWindowController.h"
 #import "HISendBitcoinsWindowController.h"
 #import "HISendFeedbackService.h"
 #import "HIShortcutService.h"
@@ -58,12 +60,13 @@ static int ddLogLevel = LOG_LEVEL_VERBOSE;
 
 @end
 
-@interface HIAppDelegate () <BITHockeyManagerDelegate> {
+@interface HIAppDelegate () <BITHockeyManagerDelegate, SUUpdaterDelegate> {
     HIMainWindowController *_mainWindowController;
     HIPreferencesWindowController *_preferencesWindowController;
     NSMutableArray *_popupWindows;
     dispatch_queue_t _externalEventQueue;
     BOOL _initialized;
+    BOOL _announcementShown;
 }
 
 @property (nonatomic, strong) HIWizardWindowController *wizard;
@@ -84,6 +87,7 @@ static int ddLogLevel = LOG_LEVEL_VERBOSE;
     _externalEventQueue = dispatch_queue_create("HIAppDelegate.externalEventQueue", DISPATCH_QUEUE_CONCURRENT);
     self.applicationLocked = YES;
     _initialized = NO;
+    _announcementShown = NO;
 
     // this needs to be set up *before* applicationDidFinishLaunching,
     // otherwise links that cause the app to be launched when it's not running will not be handled
@@ -372,7 +376,13 @@ static int ddLogLevel = LOG_LEVEL_VERBOSE;
 }
 
 - (void)showHiveWebAnnouncement {
+    if (_announcementShown) {
+        // don't spam the user too much at once
+        return;
+    }
+
     if (![[NSUserDefaults standardUserDefaults] boolForKey:HiveWebAnnouncementDisplayedKey]) {
+        _announcementShown = YES;
         [self openPopupWindowWithClass:[HIHiveWebWindowController class]];
     }
 }
@@ -418,6 +428,23 @@ static int ddLogLevel = LOG_LEVEL_VERBOSE;
     [self updateLastVersionKey];
 
     _initialized = YES;
+}
+
+
+#pragma mark - Sparkle delegate
+
+- (void)updaterDidNotFindUpdate:(SUUpdater *)updater {
+    if (_announcementShown) {
+        // don't spam the user too much at once
+        return;
+    }
+
+    // if we didn't get an Allow or Don't Allow response to the question about sending anonymous profile info,
+    // then ask now (this should run at startup but not more often than once per day)
+    if (![[NSUserDefaults standardUserDefaults] objectForKey:SUSendProfileInfoKey]) {
+        _announcementShown = YES;
+        [self openPopupWindowWithClass:[HIProfilePermissionWindowController class]];
+    }
 }
 
 
