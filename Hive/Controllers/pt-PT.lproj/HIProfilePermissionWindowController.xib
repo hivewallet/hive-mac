@@ -38,7 +38,7 @@
                             <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                         </textFieldCell>
                     </textField>
-                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" setsMaxLayoutWidthAtFirstLayout="YES" translatesAutoresizingMaskIntoConstraints="NO" id="sbJ-c7-q5i">
+                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="sbJ-c7-q5i">
                         <rect key="frame" x="102" y="61" width="380" height="32"/>
                         <textFieldCell key="cell" sendsActionOnEndEditing="YES" title="This only includes things like OS X version or CPU type, nothing personal or Bitcoin-related." id="qdU-0j-05G">
                             <font key="font" metaFont="cellTitle"/>
