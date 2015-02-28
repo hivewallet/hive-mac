@@ -32,7 +32,7 @@
                     </imageView>
                     <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="I3k-aF-iSd">
                         <rect key="frame" x="102" y="101" width="380" height="34"/>
-                        <textFieldCell key="cell" sendsActionOnEndEditing="YES" title="Hive would like to periodically send some anonymous system stats to the developers, is that okay?" id="jie-Sl-QOI">
+                        <textFieldCell key="cell" sendsActionOnEndEditing="YES" title="Hive kan periodevis sende anonyme systemdata til utviklerne, er dette greit?" id="jie-Sl-QOI">
                             <font key="font" metaFont="systemBold"/>
                             <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                             <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
@@ -40,7 +40,7 @@
                     </textField>
                     <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="sbJ-c7-q5i">
                         <rect key="frame" x="102" y="61" width="380" height="32"/>
-                        <textFieldCell key="cell" sendsActionOnEndEditing="YES" title="This only includes things like OS X version or CPU type, nothing personal or Bitcoin-related." id="qdU-0j-05G">
+                        <textFieldCell key="cell" sendsActionOnEndEditing="YES" title="Det som inkluderes er informasjon som OS X versjon eller type CPU, men ingenting personlig eller Bitcoin-relatert." id="qdU-0j-05G">
                             <font key="font" metaFont="cellTitle"/>
                             <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                             <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
@@ -48,7 +48,7 @@
                     </textField>
                     <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="FxK-C8-H96">
                         <rect key="frame" x="411" y="13" width="75" height="32"/>
-                        <buttonCell key="cell" type="push" title="Allow" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="wjt-hM-Hzk">
+                        <buttonCell key="cell" type="push" title="Tillat" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="wjt-hM-Hzk">
                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                             <font key="font" metaFont="system"/>
                             <string key="keyEquivalent" base64-UTF8="YES">
@@ -61,7 +61,7 @@ DQ
                     </button>
                     <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="dOY-4j-Be4">
                         <rect key="frame" x="298" y="13" width="113" height="32"/>
-                        <buttonCell key="cell" type="push" title="Don't Allow" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="zYH-qJ-GMu">
+                        <buttonCell key="cell" type="push" title="Ikke Tillat" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="zYH-qJ-GMu">
                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                             <font key="font" metaFont="system"/>
                         </buttonCell>
@@ -71,7 +71,7 @@ DQ
                     </button>
                     <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="43O-r1-SPm">
                         <rect key="frame" x="98" y="13" width="113" height="32"/>
-                        <buttonCell key="cell" type="push" title="More Info..." bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="c9Q-Ir-kAl">
+                        <buttonCell key="cell" type="push" title="Mer informasjon..." bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="c9Q-Ir-kAl">
                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                             <font key="font" metaFont="system"/>
                         </buttonCell>
