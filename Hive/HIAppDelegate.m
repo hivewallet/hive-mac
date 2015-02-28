@@ -688,6 +688,10 @@ void handleException(NSException *exception) {
     [[NSWorkspace sharedWorkspace] openURL:[NSURL URLWithString:@"https://github.com/hivewallet/hive-mac/wiki/FAQ"]];
 }
 
+- (IBAction)openHiveWebSite:(id)sender {
+    [[NSWorkspace sharedWorkspace] openURL:[NSURL URLWithString:@"https://hivewallet.com"]];
+}
+
 - (IBAction)openSignMessageWindow:(id)sender {
     [self openPopupWindowWithClass:[HISignMessageWindowController class]];
 }

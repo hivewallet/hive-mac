@@ -110,6 +110,9 @@
 /* Class = "NSMenuItem"; title = "Help"; ObjectID = "ZUU-kM-x8u"; */
 "ZUU-kM-x8u.title" = "Ajutor";
 
+/* Class = "NSMenuItem"; title = "Other Hive Products…"; ObjectID = "ZbX-GK-wSy"; */
+"ZbX-GK-wSy.title" = "Other Hive Products…";
+
 /* Class = "NSMenuItem"; title = "Export Private Key…"; ObjectID = "c87-6N-rhE"; */
 "c87-6N-rhE.title" = "Export Private Key…";
 
