@@ -25,13 +25,13 @@
 #import "HIBackupManager.h"
 #import "HIBitcoinURIService.h"
 #import "HICameraWindowController.h"
+#import "HICrowdfundingWindowController.h"
 #import "HIDatabaseManager.h"
 #import "HIDebuggingInfoWindowController.h"
 #import "HIDebuggingToolsWindowController.h"
 #import "HIErrorWindowController.h"
 #import "HIExportPrivateKeyWindowController.h"
 #import "HIFirstRunWizardWindowController.h"
-#import "HIHiveWebWindowController.h"
 #import "HILockScreenViewController.h"
 #import "HILogFileManager.h"
 #import "HILogFormatter.h"
@@ -291,7 +291,7 @@ static int ddLogLevel = LOG_LEVEL_VERBOSE;
             [self nagUnprotectedUsers];
             [self initializeBackups];
             [[HINotificationService sharedService] checkIfBackupsEnabled];
-            [self showHiveWebAnnouncement];
+            [self showCrowdfundingAnnouncement];
             [self finishInitialization];
         });
     }
@@ -375,15 +375,15 @@ static int ddLogLevel = LOG_LEVEL_VERBOSE;
     exit(1);
 }
 
-- (void)showHiveWebAnnouncement {
+- (void)showCrowdfundingAnnouncement {
     if (_announcementShown) {
         // don't spam the user too much at once
         return;
     }
 
-    if (![[NSUserDefaults standardUserDefaults] boolForKey:HiveWebAnnouncementDisplayedKey]) {
+    if (![[NSUserDefaults standardUserDefaults] boolForKey:CrowdfundingAnnouncementDisplayedKey]) {
         _announcementShown = YES;
-        [self openPopupWindowWithClass:[HIHiveWebWindowController class]];
+        [self openPopupWindowWithClass:[HICrowdfundingWindowController class]];
     }
 }
 

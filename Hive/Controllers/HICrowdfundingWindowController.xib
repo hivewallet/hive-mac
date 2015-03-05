@@ -1,14 +1,12 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="6250" systemVersion="13F34" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="6254" systemVersion="13F34" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
         <deployment identifier="macosx"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="6250"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="6254"/>
     </dependencies>
     <objects>
-        <customObject id="-2" userLabel="File's Owner" customClass="HIHiveWebWindowController">
+        <customObject id="-2" userLabel="File's Owner" customClass="HICrowdfundingWindowController">
             <connections>
-                <outlet property="hivewalletComLink" destination="nU5-VQ-xeX" id="U43-1t-ItJ"/>
-                <outlet property="iphoneImage" destination="HHx-Rp-NSM" id="e4i-eM-nvt"/>
                 <outlet property="window" destination="F0z-JX-Cv5" id="gIp-Ho-8D9"/>
             </connections>
         </customObject>
@@ -17,44 +15,47 @@
         <window title="Hive Announcement" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" restorable="NO" oneShot="NO" releasedWhenClosed="NO" frameAutosaveName="HiveWebWindow" animationBehavior="default" id="F0z-JX-Cv5">
             <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES"/>
             <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
-            <rect key="contentRect" x="196" y="240" width="480" height="561"/>
+            <rect key="contentRect" x="196" y="240" width="530" height="697"/>
             <rect key="screenRect" x="0.0" y="0.0" width="1440" height="878"/>
             <view key="contentView" id="se5-gp-TjO">
-                <rect key="frame" x="0.0" y="0.0" width="480" height="561"/>
+                <rect key="frame" x="0.0" y="0.0" width="530" height="697"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="fTK-xt-92N">
-                        <rect key="frame" x="18" y="517" width="444" height="24"/>
-                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="Hive is now available for iOS and Android!" id="k0W-Qf-wyi">
+                        <rect key="frame" x="18" y="653" width="494" height="24"/>
+                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="Hive Mac 2.0 Crowdfunding" id="k0W-Qf-wyi">
                             <font key="font" metaFont="system" size="20"/>
                             <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                             <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                         </textFieldCell>
                     </textField>
-                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="wZF-CY-E5t">
-                        <rect key="frame" x="18" y="442" width="444" height="51"/>
+                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="1000" translatesAutoresizingMaskIntoConstraints="NO" id="wZF-CY-E5t">
+                        <rect key="frame" x="18" y="365" width="494" height="272"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="490" id="rt4-rB-75C"/>
+                        </constraints>
                         <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="left" id="Vny-HI-QoB">
                             <font key="font" metaFont="system"/>
-                            <string key="title">We've recently released Hive Web, a new wallet made specifically for mobile devices. You can run it in the browser, or download it as an app to your iPhone or Android phone.</string>
+                            <mutableString key="title">Hi there! We hope you enjoy using your Hive wallet. We're really happy with what we've built so far and that so many people are using our app - happy users are what makes all the hard work worth it.
+
+That said, it's time to make Hive even better. A lot of you have told us that having only one address is a problem, and we're fully aware of that. We want to make Hive 2.0 a modern HD wallet which changes the address for each transaction to protect your privacy and make it compatible with other HD wallets.
+
+We've launched a crowdfunding campaign on Lighthouse (the "Bitcoin Kickstarter") to raise funds for building the new version. If you want to see a new better Hive as much as we do, please help if you can!
+
+Click the image below to see a video of a very early prototype (this just shows that the address changes - it will definitely look different in the final version):</mutableString>
                             <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                             <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                         </textFieldCell>
                     </textField>
-                    <box verticalHuggingPriority="750" title="Box" boxType="separator" titlePosition="noTitle" translatesAutoresizingMaskIntoConstraints="NO" id="mum-UF-qZy">
-                        <rect key="frame" x="12" y="118" width="456" height="5"/>
-                        <color key="borderColor" white="0.0" alpha="0.41999999999999998" colorSpace="calibratedWhite"/>
-                        <color key="fillColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                        <font key="titleFont" metaFont="system"/>
-                    </box>
-                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="nU5-VQ-xeX" customClass="HILinkTextField">
-                        <rect key="frame" x="120" y="73" width="240" height="19"/>
-                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="See more on hivewallet.com..." id="hgO-wO-BP2">
-                            <font key="font" metaFont="system" size="16"/>
+                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" horizontalCompressionResistancePriority="1000" translatesAutoresizingMaskIntoConstraints="NO" id="nU5-VQ-xeX" customClass="HILinkTextField">
+                        <rect key="frame" x="110" y="73" width="311" height="22"/>
+                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="See more on mac.hivewallet.com..." id="hgO-wO-BP2">
+                            <font key="font" metaFont="system" size="18"/>
                             <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                             <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                         </textFieldCell>
                         <userDefinedRuntimeAttributes>
-                            <userDefinedRuntimeAttribute type="string" keyPath="href" value="https://hivewallet.com/?utm_medium=app&amp;utm_source=hive-osx&amp;utm_campaign=hive_web_announcement"/>
+                            <userDefinedRuntimeAttribute type="string" keyPath="href" value="https://mac.hivewallet.com/crowdfunding"/>
                         </userDefinedRuntimeAttributes>
                     </textField>
                     <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="gp7-a5-UIn">
@@ -71,7 +72,7 @@ Gw
                         </connections>
                     </button>
                     <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="4aF-v9-ANr">
-                        <rect key="frame" x="346" y="13" width="108" height="32"/>
+                        <rect key="frame" x="396" y="13" width="108" height="32"/>
                         <buttonCell key="cell" type="push" title="Ok, thanks" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="isa-jw-2P0">
                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                             <font key="font" metaFont="system"/>
@@ -84,31 +85,29 @@ DQ
                         </connections>
                     </button>
                     <button translatesAutoresizingMaskIntoConstraints="NO" id="HHx-Rp-NSM">
-                        <rect key="frame" x="20" y="122" width="440" height="300"/>
+                        <rect key="frame" x="20" y="125" width="490" height="220"/>
                         <constraints>
-                            <constraint firstAttribute="height" constant="300" id="cdQ-o4-A8a"/>
+                            <constraint firstAttribute="height" constant="220" id="cdQ-o4-A8a"/>
                         </constraints>
-                        <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="iphone_crop" imagePosition="only" alignment="center" refusesFirstResponder="YES" imageScaling="proportionallyDown" inset="2" id="IEk-2x-gzL">
+                        <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="hive-mac-demo" imagePosition="only" alignment="center" refusesFirstResponder="YES" imageScaling="proportionallyDown" inset="2" id="IEk-2x-gzL">
                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                             <font key="font" metaFont="system"/>
                         </buttonCell>
                         <connections>
-                            <action selector="iphonePressed:" target="-2" id="2et-Fy-EcQ"/>
+                            <action selector="videoImagePressed:" target="-2" id="uiq-5W-TW4"/>
                         </connections>
                     </button>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="mum-UF-qZy" firstAttribute="leading" secondItem="se5-gp-TjO" secondAttribute="leading" constant="12" id="2TD-CV-yPf"/>
-                    <constraint firstItem="nU5-VQ-xeX" firstAttribute="top" secondItem="mum-UF-qZy" secondAttribute="bottom" constant="28" id="3ZR-J4-wEC"/>
                     <constraint firstItem="gp7-a5-UIn" firstAttribute="leading" secondItem="se5-gp-TjO" secondAttribute="leading" constant="32" id="AoR-aP-Bh3"/>
                     <constraint firstItem="gp7-a5-UIn" firstAttribute="top" secondItem="nU5-VQ-xeX" secondAttribute="bottom" constant="32" id="BOu-4c-qdY"/>
-                    <constraint firstItem="wZF-CY-E5t" firstAttribute="top" secondItem="fTK-xt-92N" secondAttribute="bottom" constant="24" id="Mke-hx-JoM"/>
+                    <constraint firstItem="wZF-CY-E5t" firstAttribute="top" secondItem="fTK-xt-92N" secondAttribute="bottom" constant="16" id="Mke-hx-JoM"/>
                     <constraint firstAttribute="trailing" secondItem="4aF-v9-ANr" secondAttribute="trailing" constant="32" id="SPC-ZC-lg9"/>
+                    <constraint firstItem="nU5-VQ-xeX" firstAttribute="top" secondItem="HHx-Rp-NSM" secondAttribute="bottom" constant="30" id="UAs-jR-BH1"/>
                     <constraint firstAttribute="trailing" secondItem="wZF-CY-E5t" secondAttribute="trailing" constant="20" symbolic="YES" id="b4g-KV-i9T"/>
                     <constraint firstItem="HHx-Rp-NSM" firstAttribute="top" secondItem="wZF-CY-E5t" secondAttribute="bottom" constant="20" id="cfD-Zk-k9M"/>
                     <constraint firstItem="HHx-Rp-NSM" firstAttribute="leading" secondItem="se5-gp-TjO" secondAttribute="leading" constant="20" symbolic="YES" id="eqr-XX-mc4"/>
                     <constraint firstItem="fTK-xt-92N" firstAttribute="top" secondItem="se5-gp-TjO" secondAttribute="top" constant="20" symbolic="YES" id="fiV-Ki-qjp"/>
-                    <constraint firstItem="mum-UF-qZy" firstAttribute="top" secondItem="HHx-Rp-NSM" secondAttribute="bottom" constant="1" id="fwo-cc-wjQ"/>
                     <constraint firstItem="wZF-CY-E5t" firstAttribute="leading" secondItem="se5-gp-TjO" secondAttribute="leading" constant="20" symbolic="YES" id="j5o-8l-soG"/>
                     <constraint firstAttribute="trailing" secondItem="fTK-xt-92N" secondAttribute="trailing" constant="20" symbolic="YES" id="pEf-En-7CT"/>
                     <constraint firstItem="fTK-xt-92N" firstAttribute="leading" secondItem="se5-gp-TjO" secondAttribute="leading" constant="20" symbolic="YES" id="qLB-Ir-YYP"/>
@@ -116,16 +115,15 @@ DQ
                     <constraint firstAttribute="bottom" secondItem="4aF-v9-ANr" secondAttribute="bottom" constant="20" symbolic="YES" id="rFK-cg-tt4"/>
                     <constraint firstAttribute="bottom" secondItem="gp7-a5-UIn" secondAttribute="bottom" constant="20" symbolic="YES" id="tp1-z5-CBs"/>
                     <constraint firstAttribute="centerX" secondItem="nU5-VQ-xeX" secondAttribute="centerX" id="vF0-uD-g9J"/>
-                    <constraint firstAttribute="trailing" secondItem="mum-UF-qZy" secondAttribute="trailing" constant="12" id="xSG-6E-d45"/>
                 </constraints>
             </view>
             <connections>
                 <outlet property="delegate" destination="-2" id="0bl-1N-AYu"/>
             </connections>
-            <point key="canvasLocation" x="161" y="302.5"/>
+            <point key="canvasLocation" x="362" y="287"/>
         </window>
     </objects>
     <resources>
-        <image name="iphone_crop" width="359" height="300"/>
+        <image name="hive-mac-demo" width="709" height="497"/>
     </resources>
 </document>
