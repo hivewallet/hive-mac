@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="6254" systemVersion="13F34" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="6254" systemVersion="14C109" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
         <deployment identifier="macosx"/>
         <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="6254"/>
@@ -14,9 +14,8 @@
         <customObject id="-3" userLabel="Application" customClass="NSObject"/>
         <window title="Hive Announcement" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" restorable="NO" oneShot="NO" releasedWhenClosed="NO" frameAutosaveName="HiveWebWindow" animationBehavior="default" id="F0z-JX-Cv5">
             <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES"/>
-            <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
-            <rect key="contentRect" x="196" y="240" width="530" height="697"/>
-            <rect key="screenRect" x="0.0" y="0.0" width="1440" height="878"/>
+            <rect key="contentRect" x="0.0" y="0.0" width="530" height="697"/>
+            <rect key="screenRect" x="0.0" y="0.0" width="1920" height="1057"/>
             <view key="contentView" id="se5-gp-TjO">
                 <rect key="frame" x="0.0" y="0.0" width="530" height="697"/>
                 <autoresizingMask key="autoresizingMask"/>
@@ -36,19 +35,19 @@
                         </constraints>
                         <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="left" id="Vny-HI-QoB">
                             <font key="font" metaFont="system"/>
-                            <mutableString key="title">Hi there! We hope you enjoy using your Hive wallet. We're really happy with what we've built so far and that so many people are using our app - happy users are what makes all the hard work worth it.
+                            <string key="title">Hi there! We hope you enjoy using your Hive wallet. We're really happy with what we've built so far and that so many people are using our app - happy users are what makes all the hard work worth it.
 
 That said, it's time to make Hive even better. A lot of you have told us that having only one address is a problem, and we're fully aware of that. We want to make Hive 2.0 a modern HD wallet which changes the address for each transaction to protect your privacy and make it compatible with other HD wallets.
 
 We've launched a crowdfunding campaign on Lighthouse (the "Bitcoin Kickstarter") to raise funds for building the new version. If you want to see a new better Hive as much as we do, please help if you can!
 
-Click the image below to see a video of a very early prototype (this just shows that the address changes - it will definitely look different in the final version):</mutableString>
+Click the image below to see a video of a very early prototype (this just shows that the address changes - it will definitely look different in the final version):</string>
                             <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                             <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                         </textFieldCell>
                     </textField>
                     <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" horizontalCompressionResistancePriority="1000" translatesAutoresizingMaskIntoConstraints="NO" id="nU5-VQ-xeX" customClass="HILinkTextField">
-                        <rect key="frame" x="110" y="73" width="311" height="22"/>
+                        <rect key="frame" x="118" y="73" width="295" height="22"/>
                         <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="See more on mac.hivewallet.com..." id="hgO-wO-BP2">
                             <font key="font" metaFont="system" size="18"/>
                             <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
@@ -59,7 +58,7 @@ Click the image below to see a video of a very early prototype (this just shows 
                         </userDefinedRuntimeAttributes>
                     </textField>
                     <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="gp7-a5-UIn">
-                        <rect key="frame" x="26" y="13" width="144" height="32"/>
+                        <rect key="frame" x="26" y="13" width="141" height="32"/>
                         <buttonCell key="cell" type="push" title="Remind me later" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="YqP-bd-1f8">
                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                             <font key="font" metaFont="system"/>
@@ -72,7 +71,7 @@ Gw
                         </connections>
                     </button>
                     <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="4aF-v9-ANr">
-                        <rect key="frame" x="396" y="13" width="108" height="32"/>
+                        <rect key="frame" x="397" y="13" width="107" height="32"/>
                         <buttonCell key="cell" type="push" title="Ok, thanks" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="isa-jw-2P0">
                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                             <font key="font" metaFont="system"/>
