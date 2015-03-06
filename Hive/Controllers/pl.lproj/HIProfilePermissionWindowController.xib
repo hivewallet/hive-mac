@@ -14,14 +14,14 @@
         <window allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" restorable="NO" oneShot="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" animationBehavior="default" id="F0z-JX-Cv5">
             <windowStyleMask key="styleMask" titled="YES" closable="YES"/>
             <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
-            <rect key="contentRect" x="196" y="240" width="500" height="155"/>
+            <rect key="contentRect" x="196" y="240" width="575" height="188"/>
             <rect key="screenRect" x="0.0" y="0.0" width="1440" height="878"/>
             <view key="contentView" id="se5-gp-TjO">
-                <rect key="frame" x="0.0" y="0.0" width="500" height="155"/>
+                <rect key="frame" x="0.0" y="0.0" width="575" height="188"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="fRd-Cg-kI9">
-                        <rect key="frame" x="20" y="71" width="64" height="64"/>
+                        <rect key="frame" x="20" y="104" width="64" height="64"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="64" id="2cM-ut-t49"/>
                             <constraint firstAttribute="width" constant="64" id="2dZ-n5-OVW"/>
@@ -29,8 +29,8 @@
                         <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="Icon" id="mZV-A8-OUn"/>
                     </imageView>
                     <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="I3k-aF-iSd">
-                        <rect key="frame" x="102" y="101" width="380" height="34"/>
-                        <textFieldCell key="cell" sendsActionOnEndEditing="YES" title="Hive would like to periodically send some anonymous system stats to the developers, is that okay?" id="jie-Sl-QOI">
+                        <rect key="frame" x="102" y="134" width="380" height="34"/>
+                        <textFieldCell key="cell" sendsActionOnEndEditing="YES" title="Jeśli nie masz nic przeciwko, Hive będzie okresowo wysyłać do programistów anonimowe statystyki systemu. Czy wyrażasz zgodę?" id="jie-Sl-QOI">
                             <font key="font" metaFont="systemBold"/>
                             <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                             <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
@@ -38,15 +38,16 @@
                     </textField>
                     <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="sbJ-c7-q5i">
                         <rect key="frame" x="102" y="61" width="380" height="32"/>
-                        <textFieldCell key="cell" sendsActionOnEndEditing="YES" title="This only includes things like OS X version or CPU type, nothing personal or Bitcoin-related." id="qdU-0j-05G">
+                        <textFieldCell key="cell" sendsActionOnEndEditing="YES" id="qdU-0j-05G">
                             <font key="font" metaFont="cellTitle"/>
+                            <string key="title">Wysyłane informacje obejmują tylko takie dane jak wersja OS X czy rodzaj procesora, żadnych danych osobistych ani nic związanego z Bitcoinem.</string>
                             <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                             <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                         </textFieldCell>
                     </textField>
                     <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="FxK-C8-H96">
                         <rect key="frame" x="411" y="13" width="75" height="32"/>
-                        <buttonCell key="cell" type="push" title="Allow" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="wjt-hM-Hzk">
+                        <buttonCell key="cell" type="push" title="Zgadzam się" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="wjt-hM-Hzk">
                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                             <font key="font" metaFont="system"/>
                             <string key="keyEquivalent" base64-UTF8="YES">
@@ -59,7 +60,7 @@ DQ
                     </button>
                     <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="dOY-4j-Be4">
                         <rect key="frame" x="298" y="13" width="113" height="32"/>
-                        <buttonCell key="cell" type="push" title="Don't Allow" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="zYH-qJ-GMu">
+                        <buttonCell key="cell" type="push" title="Nie zgadzam się" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="zYH-qJ-GMu">
                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                             <font key="font" metaFont="system"/>
                         </buttonCell>
@@ -69,7 +70,7 @@ DQ
                     </button>
                     <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="43O-r1-SPm">
                         <rect key="frame" x="98" y="13" width="113" height="32"/>
-                        <buttonCell key="cell" type="push" title="More Info..." bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="c9Q-Ir-kAl">
+                        <buttonCell key="cell" type="push" title="Więcej informacji..." bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="c9Q-Ir-kAl">
                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                             <font key="font" metaFont="system"/>
                         </buttonCell>
