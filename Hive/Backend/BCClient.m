@@ -9,8 +9,6 @@
 #import <AFNetworking/AFJSONRequestOperation.h>
 #import <BitcoinJKit/BitcoinJKit.h>
 #import "BCClient.h"
-#import "HIApplication.h"
-#import "HIApplicationsManager.h"
 #import "HIContact.h"
 #import "HIDatabaseManager.h"
 #import "HIPasswordHolder.h"
@@ -560,18 +558,6 @@ NSString * const BCClientPasswordChangedNotification = @"BCClientPasswordChanged
                                });
                            }];
                        }];
-}
-
-- (void)attachSourceApplication:(HIApplication *)application toTransaction:(HITransaction *)transaction {
-    HIApplication *applicationInUpdateContext = [self fetchApplicationForUpdateContext:application];
-    transaction.sourceApplication = applicationInUpdateContext;
-}
-
-- (HIApplication *)fetchApplicationForUpdateContext:(HIApplication *)application {
-    NSFetchRequest *request = [[NSFetchRequest alloc] initWithEntityName:HIApplicationEntity];
-    request.predicate = [NSPredicate predicateWithFormat:@"id == %@", application.id];
-    NSArray *response = [_transactionUpdateContext executeFetchRequest:request error:NULL];
-    return response.count > 0 ? response[0] : nil;
 }
 
 - (void)updateTransaction:(HITransaction *)transaction {

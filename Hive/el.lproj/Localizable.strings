@@ -17,15 +17,6 @@
 /* Anonymous username for profile page */
 "Anonymous" = "Ανώνυμος";
 
-/* Message when trying to start an app that requires a newer API level. */
-"App requires a newer version of Hive." = "Η εφαρμογή απαιτεί μια νεότερη έκδοση του Hive.";
-
-/* App load error title */
-"Application can't be loaded" = "Αδύνατη η φόρτωση της εφαρμογής";
-
-/* Applications view title */
-"Apps" = "Εφαρμογές";
-
 /* Cancel editing alert title */
 "Are you sure you want to leave this page?" = "Είστε σίγουρος ότι θέλετε να κλείσετε αυτήν την σελίδα;";
 
@@ -86,9 +77,6 @@
 /* Contact name empty alert title */
 "Contact can't be saved." = "Αδύνατη η αποθήκευση της επαφής.";
 
-/* Entry in application icon context menu */
-"Contact the author" = "Eπικοινωνήστε με τον συγγραφέα";
-
 /* Contacts view title */
 "Contacts" = "Επαφές";
 
@@ -109,12 +97,6 @@
 
 /* Remove contact alert dialog title */
 "Do you really want to remove %@ from your contact list?" = "Είστε σίγουροι πως θέλετε ν' αφαιρέσετε τον/ην %@ από τη λίστα επαφών σας;";
-
-/* Install app popup title */
-"Do you want to add \"%@\" to Hive?" = "Θέλετε να προσθέσετε το \"%@\" στο Hive?";
-
-/* Uninstall app popup title */
-"Do you want to remove \"%@\" from the application list?" = "Do you want to remove \"%@\" from the application list?";
 
 /* Dropbox no backup folder alert title */
 "Dropbox folder not found." = "Δε βρέθηκε ο φάκελος του Dropbox.";
@@ -158,9 +140,6 @@
 /* Backup error message */
 "Google Drive isn't running" = "Το Google Drive δεν τρέχει";
 
-/* Hiveapp file not readable error title */
-"Hive application file \"%@\" could not be opened." = "Hive application file \"%@\" could not be opened.";
-
 /* Initialization error title */
 "Hive cannot be started." = "Αδυναμία έναρξης του Hive.";
 
@@ -187,9 +166,6 @@
 
 /* Alert details when trying to send more than you have with fee */
 "If you send your whole wallet balance, there's nothing left to pay the required fee. Try to send a bit less, or split the transaction into smaller ones." = "If you send your whole wallet balance, there's nothing left to pay the required fee. Try to send a bit less, or split the transaction into smaller ones.";
-
-/* Install app button title */
-"Install" = "Εγκατάσταση";
 
 /* Backup requires password alert details */
 "It's dangerous to upload unencrypted wallets." = "Είναι επικίνδυνη η μεταφόρτωση μη κρυπτογραφημένων πορτοφολιών.";
@@ -290,9 +266,6 @@
 /* Received amount of BTC from contact */
 "Received &a from &c" = "Λήψη &a από &c";
 
-/* Install app button title when app exists */
-"Reinstall" = "Επανεγκατάσταση";
-
 /* Status for transaction removed from the main blockchain in transaction popup */
 "Rejected by the network" = "Rejected by the network";
 
@@ -323,20 +296,11 @@
 /* Wizard completed page title */
 "Start!" = "Έναρξη!";
 
-/* App load error description */
-"The application data file has been removed or corrupted." = "Το αρχείο δεδομένων της εφαρμογής έχει αφαιρεθεί ή καταστραφεί.";
-
 /* Error message when database is incompatible with this version */
 "The database was saved by a newer version of Hive - please download the latest version from http://hivewallet.com." = "Η βάση δεδομένων έχει αποθηκευθεί από νεότερη έκδοση του Hive - Παρακαλώ κατεβάστε τη νεότερη έκδοση από http://hivewallet.com.";
 
-/* Install app popup warning message when app exists */
-"The existing app file will be replaced by the new version. This will not affect any app settings or saved data." = "Το υπάρχον αρχείο της εφαρμογής θ' αντικατασταθεί από τη νεότερη έκδοση. Αυτό δεν θα επηρεάσει τις ρυθμίσεις ή τα δεδομένα της εφαρμογής.";
-
 /* Alert message when payment request file can't be read */
 "The file doesn't exist or is not accessible." = "Το αρχείο δεν υπάρχει ή δεν είναι προσβάσιμο.";
-
-/* Hiveapp file not readable error details */
-"The file is damaged or does not contain a Hive application." = "The file is damaged or does not contain a Hive application.";
 
 /* Sending dust alert message */
 "This amount is too low to be sent through the network." = "This amount is too low to be sent through the network.";
@@ -377,9 +341,6 @@
 /* Amount exceeds available balance alert message */
 "To send this transaction, you'll need to wait for your pending transactions to be confirmed first (this shouldn't take more than a few minutes)." = "Για να ολοκληρώσετε αυτή τη συναλλαγή θα πρέπει να περιμένετε να επιβεβαιωθούν οι εκκρεμείς συναλλαγές πρώτα (δε θα διαρκέσει περισσότερο από μερικά λεπτά).";
 
-/* Message when trying to start an app that requires a newer API level. */
-"To use the app, please update to the latest version of Hive." = "Για να χρησιμοποιήσετε αυτήν την εφαρμογή, παρακαλώ ενημερώστε στην τελευταία έκδοση του Hive.";
-
 /* Notification of cancelled transaction */
 "Transaction cancelled" = "Η συναλλαγή ακυρώθηκε";
 
@@ -395,17 +356,8 @@
 /* Transactions view title */
 "Transactions" = "Συναλλαγές";
 
-/* Uninstall app button title */
-"Uninstall" = "Απεγκατάσταση";
-
-/* Entry in application icon context menu */
-"Uninstall application" = "Απεγκατάσταση εφασμογής";
-
 /* Backup status: backup up to date */
 "Up to date" = "Ενημερωμένο";
-
-/* Entry in application icon context menu */
-"Visit application's site" = "Επισκεφθείτε την ιστοσελίδα της εφαρμογής";
 
 /* Backup status: backup scheduled or in progress */
 "Waiting for backup" = "Αναμονή για backup";
@@ -413,23 +365,14 @@
 /* Status for transaction sent to some peers in transaction popup */
 "Waiting for confirmation" = "Waiting for confirmation";
 
-/* Install app popup warning message */
-"We cannot guarantee the safety of all apps - please be careful if you download Hive apps from third party sites." = "Δε μπορούμε να εγγυηθούμε την ασφάλεια όλων των εφαρμογών - Παρακαλούμε να είστε ιδιαίτερα προσεκτικοί όταν κατεβάζετε εφαρμογές Hive από τρίτους.";
-
 /* Wizard welcome page title */
 "Welcome" = "Καλώς ορίσατε";
 
 /* Button to show info about pending funds */
 "What does this mean?" = "Τί σημαίνει αυτό;";
 
-/* Uninstall app popup message */
-"You can install it again through the App Store app later if you change your mind." = "You can install it again through the App Store app later if you change your mind.";
-
 /* Details of an alert when trying to send more than you have */
 "You cannot send more money than you own." = "Δε μπορείτε να στείλετε περισσότερα από όσα έχετε.";
-
-/* Install app popup title when app exists */
-"You have already added \"%@\" to Hive. Would you like to overwrite it?" = "Έχετε ήδη προσθέσει τη \"%@\" στο Hive. Θέλετε να την αντικαταστήσετε;";
 
 /* Notification of confirmed sent transaction (with BTC amount) */
 "You have sent %@." = "Έχετε στείλει %@.";

@@ -17,15 +17,6 @@
 /* Anonymous username for profile page */
 "Anonymous" = "นิรนาม";
 
-/* Message when trying to start an app that requires a newer API level. */
-"App requires a newer version of Hive." = "โปรแกรมนี้ต้องการเวอร์ชั่นล่าสุดของ ไฮฟ์";
-
-/* App load error title */
-"Application can't be loaded" = "โปรแกรมนี้ไม่สามารถโหลดได้";
-
-/* Applications view title */
-"Apps" = "โปรแกรม";
-
 /* Cancel editing alert title */
 "Are you sure you want to leave this page?" = "คุณแน่ใจแล้วหรือที่จะออกจากหน้านี้";
 
@@ -86,9 +77,6 @@
 /* Contact name empty alert title */
 "Contact can't be saved." = "ไม่สามารถจัดเก็บรายชื่อผู้ติดต่อ";
 
-/* Entry in application icon context menu */
-"Contact the author" = "ติดต่อผู้เขียนโปรแกรม";
-
 /* Contacts view title */
 "Contacts" = "รายชื่อผู้ติดต่อ";
 
@@ -109,12 +97,6 @@
 
 /* Remove contact alert dialog title */
 "Do you really want to remove %@ from your contact list?" = "คุณต้องการลบ %@ จากรายชื่อผู้ติดต่อหรือไม่";
-
-/* Install app popup title */
-"Do you want to add \"%@\" to Hive?" = "คุณต้องการเพิ่ม %@ ในไฮฟ์หรือไม่";
-
-/* Uninstall app popup title */
-"Do you want to remove \"%@\" from the application list?" = "คุณจะลบ \"%@\" ออกจากรายชื่อโปรแกรมหรือไม่";
 
 /* Dropbox no backup folder alert title */
 "Dropbox folder not found." = "ไม่สามารถค้นหาแฟ้ม Dropbox ";
@@ -158,9 +140,6 @@
 /* Backup error message */
 "Google Drive isn't running" = "กูเกิ้ลไดร์ฟไม่ทำงาน";
 
-/* Hiveapp file not readable error title */
-"Hive application file \"%@\" could not be opened." = "ข้อมูล \"%@\" ของโปรแกรม ไฮฟ์ ไม่สามารถเปิดได้";
-
 /* Initialization error title */
 "Hive cannot be started." = "ไม่สามารถเปิดใช้งานไฮฟ์ได้";
 
@@ -187,9 +166,6 @@
 
 /* Alert details when trying to send more than you have with fee */
 "If you send your whole wallet balance, there's nothing left to pay the required fee. Try to send a bit less, or split the transaction into smaller ones." = "ถ้าคุณโอนเงินทั้งหมด คุณจะไม่มีเงินเพียงพอในการชำระค่าธรรมเนียม คุณควรแบ่งเงินส่งทีละน้อย เพื่อให้มีจำนวนเงินชำระค่าธรรมเนียมด้วย";
-
-/* Install app button title */
-"Install" = "ติดตั้ง";
 
 /* Backup requires password alert details */
 "It's dangerous to upload unencrypted wallets." = "มันอันตรายมากในการเพิ่มข้อมูลกระเป๋าเงินที่ไม่ได้เข้ารหัสลับ";
@@ -290,9 +266,6 @@
 /* Received amount of BTC from contact */
 "Received &a from &c" = "ได้รับ &a จาก &c";
 
-/* Install app button title when app exists */
-"Reinstall" = "ติดตั้งอีกครั้ง";
-
 /* Status for transaction removed from the main blockchain in transaction popup */
 "Rejected by the network" = "Rejected by the network";
 
@@ -323,20 +296,11 @@
 /* Wizard completed page title */
 "Start!" = "เริ่ม!";
 
-/* App load error description */
-"The application data file has been removed or corrupted." = "แฟ้มข้อมูลของโปรแกรมถูกยกเลิกหรือเสียหาย";
-
 /* Error message when database is incompatible with this version */
 "The database was saved by a newer version of Hive - please download the latest version from http://hivewallet.com." = "ฐานข้อมูลถูกจัดเก็บด้วยไฮฟ์เวอร์ชั่นล่าสุด กรุณาติดตั้งเวอร์ชั่นล่าสุดได้ที่ http://hivewallet.com";
 
-/* Install app popup warning message when app exists */
-"The existing app file will be replaced by the new version. This will not affect any app settings or saved data." = "ข้อมูลของโปรแกรมที่มีอยู่จะถูกแทนที่ด้วยเวอร์ชั่นใหม่ แต่จะไม่ส่งผลกระทบใดๆต่อการตั้งค่าของโปรแกรมหรือข้อมูลที่จัดเก็บไว้";
-
 /* Alert message when payment request file can't be read */
 "The file doesn't exist or is not accessible." = "ไม่มีข้อมูล หรือเข้าค้นข้อมูลไม่ได้";
-
-/* Hiveapp file not readable error details */
-"The file is damaged or does not contain a Hive application." = "ข้อมูลเสียหายหรือไม่มีโปรแกรม ไฮฟ์";
 
 /* Sending dust alert message */
 "This amount is too low to be sent through the network." = "เงินจำนวนนี้น้อยเกินไปที่จะส่งผ่านระบบ";
@@ -377,9 +341,6 @@
 /* Amount exceeds available balance alert message */
 "To send this transaction, you'll need to wait for your pending transactions to be confirmed first (this shouldn't take more than a few minutes)." = "คุณต้องรอการยืนยันก่อน จึงจะทำธุรกรรมนี้ได้ (ใช้เวลารอไม่เกินสองสามนาที)";
 
-/* Message when trying to start an app that requires a newer API level. */
-"To use the app, please update to the latest version of Hive." = "หากจะใช้โปรแกรม กรุณาอัพเดท เวอร์ชั่นล่าสุดของ ไฮฟ์";
-
 /* Notification of cancelled transaction */
 "Transaction cancelled" = "ยกเลิกการทำธุรกรรม";
 
@@ -395,17 +356,8 @@
 /* Transactions view title */
 "Transactions" = "การทำธุรกรรม";
 
-/* Uninstall app button title */
-"Uninstall" = "ถอนการติดตั้ง";
-
-/* Entry in application icon context menu */
-"Uninstall application" = "ถอนการติดตั้งโปรแกรม";
-
 /* Backup status: backup up to date */
 "Up to date" = "ข้อมูลเป็นปัจจุบัน";
-
-/* Entry in application icon context menu */
-"Visit application's site" = "เยี่ยมชมเว็บไซด์ของโปรแกรม";
 
 /* Backup status: backup scheduled or in progress */
 "Waiting for backup" = "รอการจัดเก็บฐานข้อมูล";
@@ -413,23 +365,14 @@
 /* Status for transaction sent to some peers in transaction popup */
 "Waiting for confirmation" = "Waiting for confirmation";
 
-/* Install app popup warning message */
-"We cannot guarantee the safety of all apps - please be careful if you download Hive apps from third party sites." = "เราไม่สามารถการันตีความปลอดภัยได้ทุกโปรแกรม กรุณาระมัดระวังในการดาวน์โหลดโปรแกรมไฮฟ์ จากเว็บไซด์อื่นๆ";
-
 /* Wizard welcome page title */
 "Welcome" = "ยินดีต้อนรับ";
 
 /* Button to show info about pending funds */
 "What does this mean?" = "แปลว่าอะไร";
 
-/* Uninstall app popup message */
-"You can install it again through the App Store app later if you change your mind." = "คุณสามารถติดตั้งโปรแกรมนี้ได้อีกครั้งผ่าน App Store";
-
 /* Details of an alert when trying to send more than you have */
 "You cannot send more money than you own." = "คุณไม่สามารถโอนเงินได้มากกว่าจำนวนที่คุณมี";
-
-/* Install app popup title when app exists */
-"You have already added \"%@\" to Hive. Would you like to overwrite it?" = "คุณได้เพิ่ม \"%@\" ใน ไฮฟ์ แล้ว คุณต้องการบันทึกข้อมูลแทนที่ข้อมูลเก่าหรือไม่";
 
 /* Notification of confirmed sent transaction (with BTC amount) */
 "You have sent %@." = "คุณส่ง %@";

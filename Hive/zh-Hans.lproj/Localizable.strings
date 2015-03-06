@@ -17,15 +17,6 @@
 /* Anonymous username for profile page */
 "Anonymous" = "匿名";
 
-/* Message when trying to start an app that requires a newer API level. */
-"App requires a newer version of Hive." = "该应用要求高版本 Hive。";
-
-/* App load error title */
-"Application can't be loaded" = "应用程序无法加载";
-
-/* Applications view title */
-"Apps" = "应用";
-
 /* Cancel editing alert title */
 "Are you sure you want to leave this page?" = "您确定您要离开该页面？";
 
@@ -86,9 +77,6 @@
 /* Contact name empty alert title */
 "Contact can't be saved." = "无法保存此联系人信息";
 
-/* Entry in application icon context menu */
-"Contact the author" = "联系开发者";
-
 /* Contacts view title */
 "Contacts" = "联系簿";
 
@@ -109,12 +97,6 @@
 
 /* Remove contact alert dialog title */
 "Do you really want to remove %@ from your contact list?" = "您要把 %@ 从联系簿中删除吗？";
-
-/* Install app popup title */
-"Do you want to add \"%@\" to Hive?" = "您要安装 “%@” 吗？";
-
-/* Uninstall app popup title */
-"Do you want to remove \"%@\" from the application list?" = "您确定要卸载 “%@” ？";
 
 /* Dropbox no backup folder alert title */
 "Dropbox folder not found." = "找不到 Dropbox 文件夹";
@@ -158,9 +140,6 @@
 /* Backup error message */
 "Google Drive isn't running" = "Google Drive没有运行";
 
-/* Hiveapp file not readable error title */
-"Hive application file \"%@\" could not be opened." = "Hive 文件 “%@” 无法打开。";
-
 /* Initialization error title */
 "Hive cannot be started." = "无法启动 Hive";
 
@@ -187,9 +166,6 @@
 
 /* Alert details when trying to send more than you have with fee */
 "If you send your whole wallet balance, there's nothing left to pay the required fee. Try to send a bit less, or split the transaction into smaller ones." = "您不能全额发送您的钱包，这样您将无法支付交易手续费。";
-
-/* Install app button title */
-"Install" = "安装";
 
 /* Backup requires password alert details */
 "It's dangerous to upload unencrypted wallets." = "上传未加密的钱包文件有风险！";
@@ -290,9 +266,6 @@
 /* Received amount of BTC from contact */
 "Received &a from &c" = "从 &c 收到 &a";
 
-/* Install app button title when app exists */
-"Reinstall" = "重装";
-
 /* Status for transaction removed from the main blockchain in transaction popup */
 "Rejected by the network" = "由于网络拒绝";
 
@@ -323,20 +296,11 @@
 /* Wizard completed page title */
 "Start!" = "开始";
 
-/* App load error description */
-"The application data file has been removed or corrupted." = "应用文件已被移除或损坏。";
-
 /* Error message when database is incompatible with this version */
 "The database was saved by a newer version of Hive - please download the latest version from http://hivewallet.com." = "请使用新版本 Hive 打开钱包！获取新版本请访问：http://hivewallet.com";
 
-/* Install app popup warning message when app exists */
-"The existing app file will be replaced by the new version. This will not affect any app settings or saved data." = "应用文件会被新版本覆盖，但是不会影响您的设置和数据。";
-
 /* Alert message when payment request file can't be read */
 "The file doesn't exist or is not accessible." = "文件不存在或无权访问。";
-
-/* Hiveapp file not readable error details */
-"The file is damaged or does not contain a Hive application." = "文件损坏或无法被 Hive 使用。";
 
 /* Sending dust alert message */
 "This amount is too low to be sent through the network." = "数目过小无法发送。";
@@ -377,9 +341,6 @@
 /* Amount exceeds available balance alert message */
 "To send this transaction, you'll need to wait for your pending transactions to be confirmed first (this shouldn't take more than a few minutes)." = "发送款项后您需要等待比特币网络确认交易信息。";
 
-/* Message when trying to start an app that requires a newer API level. */
-"To use the app, please update to the latest version of Hive." = "请升级到最新版 Hive 以使用该应用。";
-
 /* Notification of cancelled transaction */
 "Transaction cancelled" = "交易取消";
 
@@ -395,17 +356,8 @@
 /* Transactions view title */
 "Transactions" = "交易";
 
-/* Uninstall app button title */
-"Uninstall" = "卸载";
-
-/* Entry in application icon context menu */
-"Uninstall application" = "卸载应用";
-
 /* Backup status: backup up to date */
 "Up to date" = "最新状态";
-
-/* Entry in application icon context menu */
-"Visit application's site" = "访问应用网址";
 
 /* Backup status: backup scheduled or in progress */
 "Waiting for backup" = "等待备份";
@@ -413,23 +365,14 @@
 /* Status for transaction sent to some peers in transaction popup */
 "Waiting for confirmation" = "等待确认";
 
-/* Install app popup warning message */
-"We cannot guarantee the safety of all apps - please be careful if you download Hive apps from third party sites." = "我们不保证所有应用的安全性，请不要轻易信任第三方 Hive 应用。";
-
 /* Wizard welcome page title */
 "Welcome" = "欢迎";
 
 /* Button to show info about pending funds */
 "What does this mean?" = "这代表了什么？";
 
-/* Uninstall app popup message */
-"You can install it again through the App Store app later if you change your mind." = "您可以通过应用商店重新安装该应用。";
-
 /* Details of an alert when trying to send more than you have */
 "You cannot send more money than you own." = "您要取出的数量不可高于帐户余额。";
-
-/* Install app popup title when app exists */
-"You have already added \"%@\" to Hive. Would you like to overwrite it?" = "您已经安装过 “%@” ，您要覆盖它吗？";
 
 /* Notification of confirmed sent transaction (with BTC amount) */
 "You have sent %@." = "您已发送 %@";

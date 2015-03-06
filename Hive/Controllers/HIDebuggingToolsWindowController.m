@@ -8,7 +8,6 @@
 
 #import <BitcoinJKit/BitcoinJKit.h>
 #import "BCClient.h"
-#import "HIApplicationsManager.h"
 #import "HIDebuggingToolsWindowController.h"
 
 @interface HIDebuggingToolsWindowController ()
@@ -16,10 +15,8 @@
 @property (nonatomic, weak) IBOutlet NSTextField *progressLabel;
 @property (nonatomic, weak) IBOutlet NSProgressIndicator *progressBar;
 
-- (IBAction)rebuildApplicationListClicked:(id)sender;
 - (IBAction)rebuildTransactionListClicked:(id)sender;
 - (IBAction)rebuildWalletClicked:(id)sender;
-- (IBAction)reinstallBundledAppsClicked:(id)sender;
 
 @end
 
@@ -51,32 +48,6 @@
                       modalDelegate:self
                      didEndSelector:@selector(alertClosed:withReturnCode:context:)
                         contextInfo:@selector(rebuildTransactionList)];
-}
-
-- (IBAction)rebuildApplicationListClicked:(id)sender {
-    NSAlert *alert = [NSAlert alertWithMessageText:@"Are you sure?"
-                                     defaultButton:@"Rebuild application list"
-                                   alternateButton:@"Cancel"
-                                       otherButton:nil
-                         informativeTextWithFormat:@"Your application list will be rebuilt now."];
-
-    [alert beginSheetModalForWindow:self.window
-                      modalDelegate:self
-                     didEndSelector:@selector(alertClosed:withReturnCode:context:)
-                        contextInfo:@selector(rebuildApplicationList)];
-}
-
-- (IBAction)reinstallBundledAppsClicked:(id)sender {
-    NSAlert *alert = [NSAlert alertWithMessageText:@"Are you sure?"
-                                     defaultButton:@"Reinstall apps"
-                                   alternateButton:@"Cancel"
-                                       otherButton:nil
-                         informativeTextWithFormat:@"Any changes you've made to the code in those apps will be lost."];
-
-    [alert beginSheetModalForWindow:self.window
-                      modalDelegate:self
-                     didEndSelector:@selector(alertClosed:withReturnCode:context:)
-                        contextInfo:@selector(reinstallBundledApps)];
 }
 
 - (IBAction)rebuildWalletClicked:(id)sender {
@@ -123,22 +94,28 @@
     [[BCClient sharedClient] repairTransactionsList];
 }
 
-- (void)rebuildApplicationList {
-    [[HIApplicationsManager sharedManager] rebuildAppsList];
-}
-
-- (void)reinstallBundledApps {
-    [[HIApplicationsManager sharedManager] preinstallApps];
-}
-
 - (void)clearApplicationData {
-    NSUInteger deleted = [[HIApplicationsManager sharedManager] clearAllApplicationCookies];
+    NSUInteger deleted = [self clearAllApplicationCookies];
 
     [[NSAlert alertWithMessageText:@"Application data deleted."
                      defaultButton:NSLocalizedString(@"OK", @"OK button title")
                    alternateButton:nil
                        otherButton:nil
          informativeTextWithFormat:@"%ld cookie(s) have been removed.", deleted] runModal];
+}
+
+- (NSUInteger)clearAllApplicationCookies {
+    NSHTTPCookieStorage *storage = [NSHTTPCookieStorage sharedHTTPCookieStorage];
+    NSUInteger count = 0;
+
+    for (NSHTTPCookie *cookie in storage.cookies) {
+        if ([cookie.domain hasSuffix:@".hiveapp"]) {
+            [storage deleteCookie:cookie];
+            count++;
+        }
+    }
+
+    return count;
 }
 
 - (void)rebuildWallet {

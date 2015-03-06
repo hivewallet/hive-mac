@@ -9,18 +9,6 @@
 		<dict>
 			<key>CFBundleTypeExtensions</key>
 			<array>
-				<string>hiveapp</string>
-			</array>
-			<key>CFBundleTypeIconFile</key>
-			<string>3</string>
-			<key>CFBundleTypeName</key>
-			<string>Hive App</string>
-			<key>CFBundleTypeRole</key>
-			<string>Viewer</string>
-		</dict>
-		<dict>
-			<key>CFBundleTypeExtensions</key>
-			<array>
 				<string>bitcoinpaymentrequest</string>
 			</array>
 			<key>CFBundleTypeName</key>
@@ -63,8 +51,7 @@
 	<key>LSMinimumSystemVersion</key>
 	<string>${MACOSX_DEPLOYMENT_TARGET}</string>
 	<key>NSHumanReadableCopyright</key>
-	<string>Copyright © 2015 Hive Developers.
-Released under GNU GPL license version 2 or later.</string>
+	<string>Copyright © 2015 Hive Developers</string>
 	<key>NSJavaNeeded</key>
 	<true/>
 	<key>NSMainNibFile</key>

@@ -17,15 +17,6 @@
 /* Anonymous username for profile page */
 "Anonymous" = "Anonymní";
 
-/* Message when trying to start an app that requires a newer API level. */
-"App requires a newer version of Hive." = "Aplikace vyžaduje novější verzi Hive.";
-
-/* App load error title */
-"Application can't be loaded" = "Aplikaci nelze načíst";
-
-/* Applications view title */
-"Apps" = "Aplikace";
-
 /* Cancel editing alert title */
 "Are you sure you want to leave this page?" = "Jste si jistí, že chcete opustit tuto stránku?";
 
@@ -86,9 +77,6 @@
 /* Contact name empty alert title */
 "Contact can't be saved." = "Kontakt nelze uložit.";
 
-/* Entry in application icon context menu */
-"Contact the author" = "Kontaktujte autora";
-
 /* Contacts view title */
 "Contacts" = "Kontakty";
 
@@ -109,12 +97,6 @@
 
 /* Remove contact alert dialog title */
 "Do you really want to remove %@ from your contact list?" = "Opravdu chcete odstranit kontakt %@ z adresáře?";
-
-/* Install app popup title */
-"Do you want to add \"%@\" to Hive?" = "Chcete přidat \"%@\" do Hive?";
-
-/* Uninstall app popup title */
-"Do you want to remove \"%@\" from the application list?" = "Chcete odstranit \"%@\", ze seznamu aplikací?";
 
 /* Dropbox no backup folder alert title */
 "Dropbox folder not found." = "Dropbox adresář nenalezen.";
@@ -158,9 +140,6 @@
 /* Backup error message */
 "Google Drive isn't running" = "Google Drive isn't running";
 
-/* Hiveapp file not readable error title */
-"Hive application file \"%@\" could not be opened." = "Soubor aplikace Hive \"%@\" nelze otevřít.";
-
 /* Initialization error title */
 "Hive cannot be started." = "Hive nelze spustit.";
 
@@ -187,9 +166,6 @@
 
 /* Alert details when trying to send more than you have with fee */
 "If you send your whole wallet balance, there's nothing left to pay the required fee. Try to send a bit less, or split the transaction into smaller ones." = "Pokud jste odeslali všechen svůj zůstatek, je možné, že nezbylo na poplatek za transakci. Zkuste odeslat méně, nebo platbu rozdělit do více menších.";
-
-/* Install app button title */
-"Install" = "Instalace";
 
 /* Backup requires password alert details */
 "It's dangerous to upload unencrypted wallets." = "Je nebezpečné nahrávat nešifrované peněženky.";
@@ -290,9 +266,6 @@
 /* Received amount of BTC from contact */
 "Received &a from &c" = "Přijaté &a od &c";
 
-/* Install app button title when app exists */
-"Reinstall" = "Přeinstalovat";
-
 /* Status for transaction removed from the main blockchain in transaction popup */
 "Rejected by the network" = "Rejected by the network";
 
@@ -323,20 +296,11 @@
 /* Wizard completed page title */
 "Start!" = "Start!";
 
-/* App load error description */
-"The application data file has been removed or corrupted." = "Datové soubory aplikace byly odstraněny nebo poškozeny.";
-
 /* Error message when database is incompatible with this version */
 "The database was saved by a newer version of Hive - please download the latest version from http://hivewallet.com." = "Databáze byla uložena v novější verzi Hive - prosím stáhněte si poslední verzi aplikace z http://hivewallet.com.";
 
-/* Install app popup warning message when app exists */
-"The existing app file will be replaced by the new version. This will not affect any app settings or saved data." = "Stávající aplikace bude nahrazena novější verzí. Nebude to mít žádný vliv na nastavení aplikace nebo uložená data.";
-
 /* Alert message when payment request file can't be read */
 "The file doesn't exist or is not accessible." = "Soubor neexistuje, nebo není dostupný.";
-
-/* Hiveapp file not readable error details */
-"The file is damaged or does not contain a Hive application." = "Soubor je poškozen, nebo neobsahuje žádné Hive aplikace.";
 
 /* Sending dust alert message */
 "This amount is too low to be sent through the network." = "Tato částka je příliš nízká na zaslání do Bitcoinové sítě.";
@@ -377,9 +341,6 @@
 /* Amount exceeds available balance alert message */
 "To send this transaction, you'll need to wait for your pending transactions to be confirmed first (this shouldn't take more than a few minutes)." = "Chcete-li odeslat tuto transakci, budete muset počkat ještě na vyřízení předchozích transakcí, které musí být vyřízené jako první. (to by mělo trvat několik minut)";
 
-/* Message when trying to start an app that requires a newer API level. */
-"To use the app, please update to the latest version of Hive." = "Chcete-li využívat aplikaci, aktualizujte si jí prosím na novější verzi.";
-
 /* Notification of cancelled transaction */
 "Transaction cancelled" = "Transakce zrušena";
 
@@ -395,17 +356,8 @@
 /* Transactions view title */
 "Transactions" = "Transakce";
 
-/* Uninstall app button title */
-"Uninstall" = "Odinstalovat";
-
-/* Entry in application icon context menu */
-"Uninstall application" = "Odinstalovat aplikaci";
-
 /* Backup status: backup up to date */
 "Up to date" = "Aktuální";
-
-/* Entry in application icon context menu */
-"Visit application's site" = "Navštívit stránku aplikace";
 
 /* Backup status: backup scheduled or in progress */
 "Waiting for backup" = "Čekání na zálohy";
@@ -413,23 +365,14 @@
 /* Status for transaction sent to some peers in transaction popup */
 "Waiting for confirmation" = "Waiting for confirmation";
 
-/* Install app popup warning message */
-"We cannot guarantee the safety of all apps - please be careful if you download Hive apps from third party sites." = "Nemůžeme zaručit bezpečnost všech aplikací - prosím dejte pozor, pokud stahujete Hive ze stránek které nejsou naše.";
-
 /* Wizard welcome page title */
 "Welcome" = "Vítejte";
 
 /* Button to show info about pending funds */
 "What does this mean?" = "Co to znamená?";
 
-/* Uninstall app popup message */
-"You can install it again through the App Store app later if you change your mind." = "Pokud si to rozmyslíte, můžete jí později pomocí App Store znovu nainstalovat.";
-
 /* Details of an alert when trying to send more than you have */
 "You cannot send more money than you own." = "Nemůžete poslat víc peněz, než kolik jich máte.";
-
-/* Install app popup title when app exists */
-"You have already added \"%@\" to Hive. Would you like to overwrite it?" = "Už jste jednou do \"%@\" Hive přidali. Chcete to přepsat?";
 
 /* Notification of confirmed sent transaction (with BTC amount) */
 "You have sent %@." = "Odeslali jste: %@.";

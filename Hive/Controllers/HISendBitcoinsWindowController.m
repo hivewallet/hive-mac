@@ -10,7 +10,6 @@
 #import <BitcoinJKit/HIBitcoinErrorCodes.h>
 #import "BCClient.h"
 #import "HIAddress.h"
-#import "HIApplication.h"
 #import "HIBitcoinFormatService.h"
 #import "HIBitcoinURIService.h"
 #import "HIButtonWithSpinner.h"
@@ -39,7 +38,6 @@ NSString * const HISendBitcoinsWindowSuccessKey = @"success";
 
 @interface HISendBitcoinsWindowController ()
         <HIExchangeRateObserver, NSPopoverDelegate, HICameraWindowControllerDelegate> {
-    HIApplication *_sourceApplication;
     HIContact *_contact;
     HIContactAutocompleteWindowController *_autocompleteController;
     NSString *_hashAddress;
@@ -291,12 +289,6 @@ NSString * const HISendBitcoinsWindowSuccessKey = @"success";
     [self updateAvatarImage];
 }
 
-- (void)setSourceApplication:(HIApplication *)application {
-    _sourceApplication = application;
-
-    [self updateAvatarImage];
-}
-
 - (void)selectContact:(id<HIPerson>)contact {
     [self selectContact:contact address:[contact.addresses anyObject]];
 }
@@ -388,8 +380,6 @@ NSString * const HISendBitcoinsWindowSuccessKey = @"success";
 
     if (_contact.avatar) {
         self.photoView.image = _contact.avatarImage;
-    } else if (_sourceApplication.icon) {
-        self.photoView.image = _sourceApplication.icon;
     } else if (_lockedAddress) {
         self.photoView.hidden = YES;
     } else {
@@ -777,10 +767,6 @@ NSString * const HISendBitcoinsWindowSuccessKey = @"success";
     NSString *detailsText = [self detailsText];
     if (detailsText) {
         transaction.details = detailsText;
-    }
-
-    if (_sourceApplication) {
-        [client attachSourceApplication:_sourceApplication toTransaction:transaction];
     }
 
     if (_paymentRequestURL) {

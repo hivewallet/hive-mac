@@ -17,15 +17,6 @@
 /* Anonymous username for profile page */
 "Anonymous" = "匿名";
 
-/* Message when trying to start an app that requires a newer API level. */
-"App requires a newer version of Hive." = "アプリを利用するには新しいバージョンのHiveが必要です。";
-
-/* App load error title */
-"Application can't be loaded" = "アプリケーションのロードに失敗しました";
-
-/* Applications view title */
-"Apps" = "アプリ";
-
 /* Cancel editing alert title */
 "Are you sure you want to leave this page?" = "このページを離れてもよろしいですか？";
 
@@ -86,9 +77,6 @@
 /* Contact name empty alert title */
 "Contact can't be saved." = "コンタクトの保存ができません。";
 
-/* Entry in application icon context menu */
-"Contact the author" = "作者に連絡";
-
 /* Contacts view title */
 "Contacts" = "コンタクト";
 
@@ -109,12 +97,6 @@
 
 /* Remove contact alert dialog title */
 "Do you really want to remove %@ from your contact list?" = "本当に %@ をコンタクトリストから削除しますか？";
-
-/* Install app popup title */
-"Do you want to add \"%@\" to Hive?" = "\"%@\" をHiveに追加する";
-
-/* Uninstall app popup title */
-"Do you want to remove \"%@\" from the application list?" = "\"%@\" をリストから削除してもよろしいですか？";
 
 /* Dropbox no backup folder alert title */
 "Dropbox folder not found." = "Dropboxのフォルダーが見つかりません";
@@ -158,9 +140,6 @@
 /* Backup error message */
 "Google Drive isn't running" = "Google Drive isn't running";
 
-/* Hiveapp file not readable error title */
-"Hive application file \"%@\" could not be opened." = "Hiveのアプリケーションファイル \"%@\" を開くことができません。";
-
 /* Initialization error title */
 "Hive cannot be started." = "Hiveを起動できません。";
 
@@ -187,9 +166,6 @@
 
 /* Alert details when trying to send more than you have with fee */
 "If you send your whole wallet balance, there's nothing left to pay the required fee. Try to send a bit less, or split the transaction into smaller ones." = "ウォレットにあるビットコインの残高すべてを送る場合は、手数料は払う事ができません。少ないビットコインを送る事をお勧めします。";
-
-/* Install app button title */
-"Install" = "インストール";
 
 /* Backup requires password alert details */
 "It's dangerous to upload unencrypted wallets." = "暗号化されていないウォレットをアップロードするのは危険です。";
@@ -290,9 +266,6 @@
 /* Received amount of BTC from contact */
 "Received &a from &c" = "&cから&aを受け取りました";
 
-/* Install app button title when app exists */
-"Reinstall" = "再インストール";
-
 /* Status for transaction removed from the main blockchain in transaction popup */
 "Rejected by the network" = "Rejected by the network";
 
@@ -323,20 +296,11 @@
 /* Wizard completed page title */
 "Start!" = "スタート!";
 
-/* App load error description */
-"The application data file has been removed or corrupted." = "アプリケーションのデータファイルは削除されたか壊れています。";
-
 /* Error message when database is incompatible with this version */
 "The database was saved by a newer version of Hive - please download the latest version from http://hivewallet.com." = "データベースは新しいバージョンのHiveで保存されています - http://hivewallet.com　で最新バージョンをダウンロードしてください。";
 
-/* Install app popup warning message when app exists */
-"The existing app file will be replaced by the new version. This will not affect any app settings or saved data." = "アプリのファイルは新しいバージョンに置き換えられます。設定や保存したデータに影響はありません。";
-
 /* Alert message when payment request file can't be read */
 "The file doesn't exist or is not accessible." = "ファイルを開く事ができません。";
-
-/* Hiveapp file not readable error details */
-"The file is damaged or does not contain a Hive application." = "ファイルが壊れているか、Hiveのファイルではありません。";
 
 /* Sending dust alert message */
 "This amount is too low to be sent through the network." = "少額すぎて送金できません。";
@@ -377,9 +341,6 @@
 /* Amount exceeds available balance alert message */
 "To send this transaction, you'll need to wait for your pending transactions to be confirmed first (this shouldn't take more than a few minutes)." = "送金はコインが確認済みになるまでお待ちください。（数分もかからないはずです）";
 
-/* Message when trying to start an app that requires a newer API level. */
-"To use the app, please update to the latest version of Hive." = "このアプリを利用するためには、Hiveを最新バージョンにアップデートしてください。";
-
 /* Notification of cancelled transaction */
 "Transaction cancelled" = "取引はキャンセルされました";
 
@@ -395,17 +356,8 @@
 /* Transactions view title */
 "Transactions" = "取引履歴";
 
-/* Uninstall app button title */
-"Uninstall" = "削除";
-
-/* Entry in application icon context menu */
-"Uninstall application" = "アプリを削除";
-
 /* Backup status: backup up to date */
 "Up to date" = "最新";
-
-/* Entry in application icon context menu */
-"Visit application's site" = "アプリのウェブサイトを表示";
 
 /* Backup status: backup scheduled or in progress */
 "Waiting for backup" = "バックアップを待機中";
@@ -413,23 +365,14 @@
 /* Status for transaction sent to some peers in transaction popup */
 "Waiting for confirmation" = "Waiting for confirmation";
 
-/* Install app popup warning message */
-"We cannot guarantee the safety of all apps - please be careful if you download Hive apps from third party sites." = "アプリの安全性は保障できません - サードパーティのアプリをダウンロードする場合は気をつけてください。";
-
 /* Wizard welcome page title */
 "Welcome" = "ようこそ！";
 
 /* Button to show info about pending funds */
 "What does this mean?" = "詳細";
 
-/* Uninstall app popup message */
-"You can install it again through the App Store app later if you change your mind." = "アプリストアから後で再インストールすることができます。";
-
 /* Details of an alert when trying to send more than you have */
 "You cannot send more money than you own." = "残高を超える送金をすることはできません。";
-
-/* Install app popup title when app exists */
-"You have already added \"%@\" to Hive. Would you like to overwrite it?" = "すでに　\"%@\" はインストールされています。再インストールしますか？";
 
 /* Notification of confirmed sent transaction (with BTC amount) */
 "You have sent %@." = "%@　を送金しました。";

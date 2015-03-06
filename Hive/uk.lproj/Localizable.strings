@@ -17,15 +17,6 @@
 /* Anonymous username for profile page */
 "Anonymous" = "Анонімний";
 
-/* Message when trying to start an app that requires a newer API level. */
-"App requires a newer version of Hive." = "Програмульці потрібна нова версія Хайву.";
-
-/* App load error title */
-"Application can't be loaded" = "Програма не може бути завантажена";
-
-/* Applications view title */
-"Apps" = "Програмульки";
-
 /* Cancel editing alert title */
 "Are you sure you want to leave this page?" = "Ви впевнені, що хочете залишити цю сторінку?";
 
@@ -86,9 +77,6 @@
 /* Contact name empty alert title */
 "Contact can't be saved." = "Контакти не можуть бути збережені.";
 
-/* Entry in application icon context menu */
-"Contact the author" = "Контакт до автора";
-
 /* Contacts view title */
 "Contacts" = "Контакти";
 
@@ -109,12 +97,6 @@
 
 /* Remove contact alert dialog title */
 "Do you really want to remove %@ from your contact list?" = "Ви дійсно хочете витерти %@ з вашої адресної книги?";
-
-/* Install app popup title */
-"Do you want to add \"%@\" to Hive?" = "Ви хочете додати \"%@\" до Хайву?";
-
-/* Uninstall app popup title */
-"Do you want to remove \"%@\" from the application list?" = "Ви хочете витерти \"%@\" із списку програми?";
 
 /* Dropbox no backup folder alert title */
 "Dropbox folder not found." = "Директорія Дропбоксу не знайдена.";
@@ -158,9 +140,6 @@
 /* Backup error message */
 "Google Drive isn't running" = "Google Drive isn't running";
 
-/* Hiveapp file not readable error title */
-"Hive application file \"%@\" could not be opened." = "Програмний файл Хайву \"%@\" не може бути відкритий.";
-
 /* Initialization error title */
 "Hive cannot be started." = "Хайв не може бути включений.";
 
@@ -187,9 +166,6 @@
 
 /* Alert details when trying to send more than you have with fee */
 "If you send your whole wallet balance, there's nothing left to pay the required fee. Try to send a bit less, or split the transaction into smaller ones." = "Якщо ви відправляєте весь баланс гаманця, тоді не залишиться коштів щоб заплатити комісію. Спробуйте відправити трохи менше, або ж розділіть трансакції на більш дрібні.";
-
-/* Install app button title */
-"Install" = "Встановлення";
 
 /* Backup requires password alert details */
 "It's dangerous to upload unencrypted wallets." = "Не безпечно завантажувати не зашифровані гаманці.";
@@ -290,9 +266,6 @@
 /* Received amount of BTC from contact */
 "Received &a from &c" = "Отримано &a від &c";
 
-/* Install app button title when app exists */
-"Reinstall" = "Переінсталювати";
-
 /* Status for transaction removed from the main blockchain in transaction popup */
 "Rejected by the network" = "Rejected by the network";
 
@@ -323,20 +296,11 @@
 /* Wizard completed page title */
 "Start!" = "Старт!";
 
-/* App load error description */
-"The application data file has been removed or corrupted." = "Файл даних було видалено або пошкоджено.";
-
 /* Error message when database is incompatible with this version */
 "The database was saved by a newer version of Hive - please download the latest version from http://hivewallet.com." = "База даних була збережена в новій версії Хайву - буль-ласка завантажте новішу версію з http://hivewallet.com.";
 
-/* Install app popup warning message when app exists */
-"The existing app file will be replaced by the new version. This will not affect any app settings or saved data." = "Існуючи програмний файл буде замінений новою версією. Це не повпливає на будьякі налаштування в програмі або збережених даних.";
-
 /* Alert message when payment request file can't be read */
 "The file doesn't exist or is not accessible." = "Цей файл не існує або не доступний.";
-
-/* Hiveapp file not readable error details */
-"The file is damaged or does not contain a Hive application." = "Файл пошкоджено або не містить Хайв застосування.";
 
 /* Sending dust alert message */
 "This amount is too low to be sent through the network." = "Ця сума надто мала для відправлення через мережу.";
@@ -377,9 +341,6 @@
 /* Amount exceeds available balance alert message */
 "To send this transaction, you'll need to wait for your pending transactions to be confirmed first (this shouldn't take more than a few minutes)." = "Щоб відправити цю транзакцію, ти повинен почекати твоїх транзакцій які з находяться в очікуванні щоб були підтвердженими (це не повинно зайняти більшеніж декілька хвилин).";
 
-/* Message when trying to start an app that requires a newer API level. */
-"To use the app, please update to the latest version of Hive." = "Щоб використовувати програмульку, будь-ласка обновіть версію Хайву.";
-
 /* Notification of cancelled transaction */
 "Transaction cancelled" = "Транзакція Відмінена";
 
@@ -395,17 +356,8 @@
 /* Transactions view title */
 "Transactions" = "Транзакція";
 
-/* Uninstall app button title */
-"Uninstall" = "Деінсталяція";
-
-/* Entry in application icon context menu */
-"Uninstall application" = "Деінсталяція програми";
-
 /* Backup status: backup up to date */
 "Up to date" = "До теперішнього часу";
-
-/* Entry in application icon context menu */
-"Visit application's site" = "Відвідати сайт з програмою";
 
 /* Backup status: backup scheduled or in progress */
 "Waiting for backup" = "В очікуванні резервного копіювання";
@@ -413,23 +365,14 @@
 /* Status for transaction sent to some peers in transaction popup */
 "Waiting for confirmation" = "Waiting for confirmation";
 
-/* Install app popup warning message */
-"We cannot guarantee the safety of all apps - please be careful if you download Hive apps from third party sites." = "Ми не можемо гарантувати безпеку всіх програм - будь-ласка будьте уважні якщо ви завантажуєте Хайв програми з інших сайтів.";
-
 /* Wizard welcome page title */
 "Welcome" = "Ласкаво просило";
 
 /* Button to show info about pending funds */
 "What does this mean?" = "Що це означає?";
 
-/* Uninstall app popup message */
-"You can install it again through the App Store app later if you change your mind." = "Ви можете заінталювати це ще раз через пропгамний магазин пізніше якщо ви зміните свою думку.";
-
 /* Details of an alert when trying to send more than you have */
 "You cannot send more money than you own." = "Ви не можете вислати більше грошей а ніж маєте.";
-
-/* Install app popup title when app exists */
-"You have already added \"%@\" to Hive. Would you like to overwrite it?" = "Ви вже додали \"%@\" до Хайву. Ви бажаєте перезберегти це?";
 
 /* Notification of confirmed sent transaction (with BTC amount) */
 "You have sent %@." = "Ви відправили %@.";

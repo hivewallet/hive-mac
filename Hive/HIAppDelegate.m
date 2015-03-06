@@ -18,9 +18,6 @@
 #import "BCClient.h"
 #import "HIAboutHiveWindowController.h"
 #import "HIAppDelegate.h"
-#import "HIApplicationsManager.h"
-#import "HIApplicationsViewController.h"
-#import "HIApplicationURLProtocol.h"
 #import "HIBackupCenterWindowController.h"
 #import "HIBackupManager.h"
 #import "HIBitcoinURIService.h"
@@ -101,8 +98,6 @@ static int ddLogLevel = LOG_LEVEL_VERBOSE;
     [self configureLoggers];
 
     HILogInfo(@"Starting Hive v. %@...", [[NSBundle mainBundle] infoDictionary][@"CFBundleVersion"]);
-
-    [NSURLProtocol registerClass:[HIApplicationURLProtocol class]];
 
     _popupWindows = [NSMutableArray new];
 
@@ -226,22 +221,9 @@ static int ddLogLevel = LOG_LEVEL_VERBOSE;
     NSSetUncaughtExceptionHandler(&handleException);
 }
 
-- (void)preinstallAppsIfNeeded {
-    NSString *currentVersion = [[NSBundle mainBundle] infoDictionary][@"CFBundleVersion"];
-    NSString *lastVersion = [[NSUserDefaults standardUserDefaults] objectForKey:LastVersionKey];
-
-    if (!lastVersion || [currentVersion isGreaterThan:lastVersion]) {
-        [[HIApplicationsManager sharedManager] preinstallApps];
-    }
-}
-
 - (void)updateLastVersionKey {
     NSString *currentVersion = [[NSBundle mainBundle] infoDictionary][@"CFBundleVersion"];
     [[NSUserDefaults standardUserDefaults] setObject:currentVersion forKey:LastVersionKey];
-}
-
-- (void)rebuildAppsList {
-    [[HIApplicationsManager sharedManager] rebuildAppsList];
 }
 
 - (void)rebuildTransactionListIfNeeded {
@@ -251,6 +233,25 @@ static int ddLogLevel = LOG_LEVEL_VERBOSE;
     if ([lastVersion isLessThan:versionAfterUpdate]) {
         HILogInfo(@"Transaction list needs to be updated (%@ < %@)", lastVersion, versionAfterUpdate);
         [[BCClient sharedClient] repairTransactionsList];
+        return;
+    }
+}
+
+- (void)clearAppsDataIfNeeded {
+    NSString *lastVersion = [[NSUserDefaults standardUserDefaults] objectForKey:LastVersionKey];
+    NSString *versionAfterUpdate = @"2015020801";
+
+    if ([lastVersion isLessThan:versionAfterUpdate]) {
+        HILogInfo(@"Apps data needs to be cleaned up (%@ < %@)", lastVersion, versionAfterUpdate);
+
+        NSHTTPCookieStorage *storage = [NSHTTPCookieStorage sharedHTTPCookieStorage];
+
+        for (NSHTTPCookie *cookie in storage.cookies) {
+            if ([cookie.domain hasSuffix:@".hiveapp"]) {
+                [storage deleteCookie:cookie];
+            }
+        }
+
         return;
     }
 }
@@ -285,6 +286,7 @@ static int ddLogLevel = LOG_LEVEL_VERBOSE;
         [self showInitializationError:error];
     } else {
         [self rebuildTransactionListIfNeeded];
+        [self clearAppsDataIfNeeded];
         [self showAppWindow];
 
         dispatch_async(dispatch_get_main_queue(), ^{
@@ -308,12 +310,8 @@ static int ddLogLevel = LOG_LEVEL_VERBOSE;
 
 - (void)setAsDefaultHandler {
     CFStringRef bundleID = (__bridge CFStringRef) [[NSBundle mainBundle] bundleIdentifier];
-    CFStringRef UTI = UTTypeCreatePreferredIdentifierForTag(kUTTagClassFilenameExtension, CFSTR("hiveapp"), NULL);
 
     LSSetDefaultHandlerForURLScheme(CFSTR("bitcoin"), bundleID);
-    LSSetDefaultRoleHandlerForContentType(UTI, kLSRolesAll, bundleID);
-
-    CFRelease(UTI);
 }
 
 - (void)showUnreadableChainFileError {
@@ -421,8 +419,6 @@ static int ddLogLevel = LOG_LEVEL_VERBOSE;
     // Yosemite INAppStoreWindow hack
     [_mainWindowController.window becomeKeyWindow];
 
-    [self preinstallAppsIfNeeded];
-    [self rebuildAppsList];
     [self setAsDefaultHandler];
     [self startNetworkMonitor];
     [self updateLastVersionKey];
@@ -526,15 +522,6 @@ static int ddLogLevel = LOG_LEVEL_VERBOSE;
 }
 
 - (BOOL)application:(NSApplication *)sender openFile:(NSString *)filename {
-    if ([filename.pathExtension isEqual:@"hiveapp"]) {
-        [self handleExternalEvent:^{
-            HIApplicationsManager *manager = [HIApplicationsManager sharedManager];
-            [manager requestLocalAppInstallation:[NSURL fileURLWithPath:filename] showAppsPage:YES error:nil];
-        }];
-
-        return YES;
-    }
-
     if ([filename.pathExtension isEqual:@"bitcoinpaymentrequest"]) {
         __weak id delegate = self;
 

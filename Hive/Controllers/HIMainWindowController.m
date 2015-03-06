@@ -6,7 +6,6 @@
 //  Copyright (c) 2013 Hive Developers. All rights reserved.
 //
 
-#import "HIApplicationsViewController.h"
 #import "HIContactsViewController.h"
 #import "HILockScreenViewController.h"
 #import "HIMainWindowController.h"
@@ -104,7 +103,6 @@ static const NSTimeInterval SlideAnimationDuration = 0.3;
 
     _tabPanels = @[
                    [HIProfileViewController new],
-                   [HIApplicationsViewController new],
                    [HIContactsViewController new],
                    [HITransactionsViewController new],
                  ];

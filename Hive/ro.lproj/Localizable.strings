@@ -17,15 +17,6 @@
 /* Anonymous username for profile page */
 "Anonymous" = "Anonim";
 
-/* Message when trying to start an app that requires a newer API level. */
-"App requires a newer version of Hive." = "Aplicaţia necesită o versiune nouă de Hive.";
-
-/* App load error title */
-"Application can't be loaded" = "Aplicația nu poate fi încarcată";
-
-/* Applications view title */
-"Apps" = "Aplicaţii";
-
 /* Cancel editing alert title */
 "Are you sure you want to leave this page?" = "Sigur doriţi să părăsiţi această pagină?";
 
@@ -86,9 +77,6 @@
 /* Contact name empty alert title */
 "Contact can't be saved." = "Contactul nu poate fi salvat.";
 
-/* Entry in application icon context menu */
-"Contact the author" = "Contactaţi autorul";
-
 /* Contacts view title */
 "Contacts" = "Contacte";
 
@@ -109,12 +97,6 @@
 
 /* Remove contact alert dialog title */
 "Do you really want to remove %@ from your contact list?" = "Sigur doriți să ștergeți %@ din lista de contacte?";
-
-/* Install app popup title */
-"Do you want to add \"%@\" to Hive?" = "Doriţi să adăugaţi la \"%@\" Hive?";
-
-/* Uninstall app popup title */
-"Do you want to remove \"%@\" from the application list?" = "Doriţi să ştergeţi \"%@\" din lista de aplicaţii?";
 
 /* Dropbox no backup folder alert title */
 "Dropbox folder not found." = "Directorul Dropbox nu a putut fi găsit.";
@@ -158,9 +140,6 @@
 /* Backup error message */
 "Google Drive isn't running" = "Google Drive nu a fost găsit";
 
-/* Hiveapp file not readable error title */
-"Hive application file \"%@\" could not be opened." = "Fişierul aplicaţiei Hive \"%@\" nu a putut fi deschis.";
-
 /* Initialization error title */
 "Hive cannot be started." = "Hive nu poate fi pornit.";
 
@@ -187,9 +166,6 @@
 
 /* Alert details when trying to send more than you have with fee */
 "If you send your whole wallet balance, there's nothing left to pay the required fee. Try to send a bit less, or split the transaction into smaller ones." = "Dacă trimiteţi întreagă balanţă a portofelului, nu mai rămâne nimic pentru a plăti taxa respectivă. Încercaţi să trimiteţi un pic mai puţin, sau împărţiţi transactia în tranzacţii mai mici.";
-
-/* Install app button title */
-"Install" = "Instalare";
 
 /* Backup requires password alert details */
 "It's dangerous to upload unencrypted wallets." = "Este periculos să se încarce portofele necriptate.";
@@ -290,9 +266,6 @@
 /* Received amount of BTC from contact */
 "Received &a from &c" = "Primit &a de la &c";
 
-/* Install app button title when app exists */
-"Reinstall" = "Reinstalare";
-
 /* Status for transaction removed from the main blockchain in transaction popup */
 "Rejected by the network" = "Rejected by the network";
 
@@ -323,20 +296,11 @@
 /* Wizard completed page title */
 "Start!" = "Start!";
 
-/* App load error description */
-"The application data file has been removed or corrupted." = "Fişierul de date al aplicaţiei a fost îndepărtat sau corupt.";
-
 /* Error message when database is incompatible with this version */
 "The database was saved by a newer version of Hive - please download the latest version from http://hivewallet.com." = "Baza de date a fost salvată de o versiune mai nouă de Hive - va rugăm să descărcaţi ultima versiune de pe http://hivewallet.com.";
 
-/* Install app popup warning message when app exists */
-"The existing app file will be replaced by the new version. This will not affect any app settings or saved data." = "Aplicaţia existentă va fi înlocuită de o versiune nouă. Acest lucru nu va afecta nici o setare a aplicaţiei sau a datelor salvate.";
-
 /* Alert message when payment request file can't be read */
 "The file doesn't exist or is not accessible." = "Fişierul nu există sau nu este accesibil.";
-
-/* Hiveapp file not readable error details */
-"The file is damaged or does not contain a Hive application." = "Fişierul este corupt sau nu conţine o aplicaţie Hive.";
 
 /* Sending dust alert message */
 "This amount is too low to be sent through the network." = "Această sumă este prea mică pentru a fi trimisă prin reţea.";
@@ -377,9 +341,6 @@
 /* Amount exceeds available balance alert message */
 "To send this transaction, you'll need to wait for your pending transactions to be confirmed first (this shouldn't take more than a few minutes)." = "Pentru a efectua această tranzacţie, va trebui să aşteptaţi ca tranzacţiile aflate în derulare să fie confirmate(nu ar trebui să dureze mai mult de câteva minute).";
 
-/* Message when trying to start an app that requires a newer API level. */
-"To use the app, please update to the latest version of Hive." = "Pentru a folosi aplicaţia, va rugăm updataţi Hive la ultima versiune.";
-
 /* Notification of cancelled transaction */
 "Transaction cancelled" = "Tranzacţie anulată";
 
@@ -395,17 +356,8 @@
 /* Transactions view title */
 "Transactions" = "Tranzacții";
 
-/* Uninstall app button title */
-"Uninstall" = "Dezinstalează";
-
-/* Entry in application icon context menu */
-"Uninstall application" = "Dezinstalează aplicaţia";
-
 /* Backup status: backup up to date */
 "Up to date" = "La zi";
-
-/* Entry in application icon context menu */
-"Visit application's site" = "Vizitaţi site-ul aplicaţiei";
 
 /* Backup status: backup scheduled or in progress */
 "Waiting for backup" = "În aşteptarea backup-ului";
@@ -413,23 +365,14 @@
 /* Status for transaction sent to some peers in transaction popup */
 "Waiting for confirmation" = "Waiting for confirmation";
 
-/* Install app popup warning message */
-"We cannot guarantee the safety of all apps - please be careful if you download Hive apps from third party sites." = "Nu putem garanta siguranţa tuturor aplicaţiilor - acordaţi atenţie sporită dacă descărcaţi aplicaţii Hive de pe alte site-uri.";
-
 /* Wizard welcome page title */
 "Welcome" = "Bine aţi venit";
 
 /* Button to show info about pending funds */
 "What does this mean?" = "Ce înseamnă asta?";
 
-/* Uninstall app popup message */
-"You can install it again through the App Store app later if you change your mind." = "Dacă va răzgândiţi, puteţi reinstala mai târziu din App Store.";
-
 /* Details of an alert when trying to send more than you have */
 "You cannot send more money than you own." = "Nu puteți trimite mai mulți bani decât aveți.";
-
-/* Install app popup title when app exists */
-"You have already added \"%@\" to Hive. Would you like to overwrite it?" = "Deja aţi adăugat \"%@\" la Hive. Doriţi să suprascrieţi?";
 
 /* Notification of confirmed sent transaction (with BTC amount) */
 "You have sent %@." = "Aţi trimis %@.";
