@@ -111,7 +111,7 @@
 "ZUU-kM-x8u.title" = "Ayuda";
 
 /* Class = "NSMenuItem"; title = "Other Hive Products…"; ObjectID = "ZbX-GK-wSy"; */
-"ZbX-GK-wSy.title" = "Other Hive Products…";
+"ZbX-GK-wSy.title" = "Otros Productos de Hive...";
 
 /* Class = "NSMenuItem"; title = "Export Private Key…"; ObjectID = "c87-6N-rhE"; */
 "c87-6N-rhE.title" = "Exportar Clave Privada...";

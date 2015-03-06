@@ -23,7 +23,7 @@
                                     <action selector="showAboutWindow:" target="494" id="cP6-Rg-Zok"/>
                                 </connections>
                             </menuItem>
-                            <menuItem title="Other Hive Products…" id="ZbX-GK-wSy">
+                            <menuItem title="Otros Productos de Hive..." id="ZbX-GK-wSy">
                                 <modifierMask key="keyEquivalentModifierMask"/>
                                 <connections>
                                     <action selector="openHiveWebSite:" target="494" id="D5k-NX-zMz"/>
