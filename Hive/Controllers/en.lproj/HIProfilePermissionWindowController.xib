@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="6254" systemVersion="14C109" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="6254" systemVersion="13F34" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
         <deployment identifier="macosx"/>
         <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="6254"/>
@@ -16,7 +16,7 @@
             <windowStyleMask key="styleMask" titled="YES" closable="YES"/>
             <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
             <rect key="contentRect" x="196" y="240" width="500" height="155"/>
-            <rect key="screenRect" x="0.0" y="0.0" width="1920" height="1057"/>
+            <rect key="screenRect" x="0.0" y="0.0" width="1440" height="878"/>
             <view key="contentView" id="se5-gp-TjO">
                 <rect key="frame" x="0.0" y="0.0" width="500" height="155"/>
                 <autoresizingMask key="autoresizingMask"/>
@@ -46,7 +46,7 @@
                         </textFieldCell>
                     </textField>
                     <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="FxK-C8-H96">
-                        <rect key="frame" x="412" y="13" width="74" height="32"/>
+                        <rect key="frame" x="411" y="13" width="75" height="32"/>
                         <buttonCell key="cell" type="push" title="Allow" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="wjt-hM-Hzk">
                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                             <font key="font" metaFont="system"/>
@@ -59,7 +59,7 @@ DQ
                         </connections>
                     </button>
                     <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="dOY-4j-Be4">
-                        <rect key="frame" x="301" y="13" width="111" height="32"/>
+                        <rect key="frame" x="298" y="13" width="113" height="32"/>
                         <buttonCell key="cell" type="push" title="Don't Allow" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="zYH-qJ-GMu">
                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                             <font key="font" metaFont="system"/>
@@ -69,7 +69,7 @@ DQ
                         </connections>
                     </button>
                     <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="43O-r1-SPm">
-                        <rect key="frame" x="98" y="13" width="111" height="32"/>
+                        <rect key="frame" x="98" y="13" width="113" height="32"/>
                         <buttonCell key="cell" type="push" title="More Info..." bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="c9Q-Ir-kAl">
                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                             <font key="font" metaFont="system"/>
@@ -87,6 +87,7 @@ DQ
                     <constraint firstItem="FxK-C8-H96" firstAttribute="top" secondItem="sbJ-c7-q5i" secondAttribute="bottom" constant="20" id="QBc-QN-2nr"/>
                     <constraint firstItem="fRd-Cg-kI9" firstAttribute="leading" secondItem="se5-gp-TjO" secondAttribute="leading" constant="20" symbolic="YES" id="Vfn-LJ-2jx"/>
                     <constraint firstItem="dOY-4j-Be4" firstAttribute="centerY" secondItem="FxK-C8-H96" secondAttribute="centerY" id="d3Z-fh-rep"/>
+                    <constraint firstItem="dOY-4j-Be4" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="43O-r1-SPm" secondAttribute="trailing" constant="50" id="eUX-zp-6L6"/>
                     <constraint firstItem="sbJ-c7-q5i" firstAttribute="top" secondItem="I3k-aF-iSd" secondAttribute="bottom" constant="8" symbolic="YES" id="fcY-fo-aNn"/>
                     <constraint firstAttribute="trailing" secondItem="FxK-C8-H96" secondAttribute="trailing" constant="20" symbolic="YES" id="gGr-RL-zxW"/>
                     <constraint firstItem="I3k-aF-iSd" firstAttribute="leading" secondItem="fRd-Cg-kI9" secondAttribute="trailing" constant="20" id="miq-ZY-wlc"/>
