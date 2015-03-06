@@ -14,7 +14,7 @@ version, build, local_zip_file = ARGV
 local_zip_file = File.expand_path(local_zip_file)
 file_size = File.size(local_zip_file)
 
-json = JSON.parse(open("https://api.github.com/repos/hivewallet/hive-osx/releases").read)
+json = JSON.parse(open("https://api.github.com/repos/hivewallet/hive-mac/releases").read)
 release = json.detect { |r| r['tag_name'] == version }
 
 unless release
@@ -31,7 +31,7 @@ unless zip_asset
   exit 1
 end
 
-zip_url = "https://github.com/hivewallet/hive-osx/releases/download/#{version}/#{zip_asset['name']}"
+zip_url = "https://github.com/hivewallet/hive-mac/releases/download/#{version}/#{zip_asset['name']}"
 
 puts %(
 <item>
