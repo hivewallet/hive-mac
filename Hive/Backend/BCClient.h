@@ -15,11 +15,10 @@
 @class HITransaction;
 
 extern NSString * const BCClientBitcoinjDirectory;
-extern NSString * const BCClientTorDirectory;
 extern NSString * const BCClientPasswordChangedNotification;
 
 /*
- This object acts as a single gateway to BitcoinKit and Tor, handles sending bitcoins, managing wallets etc.
+ This object acts as a single gateway to BitcoinKit, handles sending bitcoins, managing wallets etc.
  */
 
 @interface BCClient : AFHTTPClient

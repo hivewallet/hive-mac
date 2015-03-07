@@ -16,7 +16,6 @@
 
 static NSString * const kBCClientBaseURLString = @"https://grabhive.com/";
 NSString * const BCClientBitcoinjDirectory = @"BitcoinJ.network";
-NSString * const BCClientTorDirectory = @"Tor.network";
 NSString * const BCClientPasswordChangedNotification = @"BCClientPasswordChangedNotification";
 
 @interface BCClient () {
@@ -64,10 +63,6 @@ NSString * const BCClientPasswordChangedNotification = @"BCClientPasswordChanged
         _transactionUpdateContext.parentContext = mainContext;
 
         NSNotificationCenter *notificationCenter = [NSNotificationCenter defaultCenter];
-        /*[notificationCenter addObserver:self
-                               selector:@selector(torStarted:)
-                                   name:kHITorManagerStarted
-                                 object:nil];*/
         [notificationCenter addObserver:self
                                selector:@selector(bitcoinKitStarted:)
                                    name:kHIBitcoinManagerStartedNotification
@@ -76,12 +71,6 @@ NSString * const BCClientPasswordChangedNotification = @"BCClientPasswordChanged
                                selector:@selector(transactionUpdated:)
                                    name:kHIBitcoinManagerTransactionChangedNotification
                                  object:nil];
-
-        /*
-        HITorManager *tor = [HITorManager defaultManager];
-        tor.dataDirectoryURL = [self torDirectory];
-        tor.port = 9999;
-        */
 
         HIBitcoinManager *bitcoin = [HIBitcoinManager defaultManager];
         bitcoin.dataURL = [self bitcoinjDirectory];
@@ -118,9 +107,6 @@ NSString * const BCClientPasswordChangedNotification = @"BCClientPasswordChanged
 
 - (BOOL)start:(NSError **)error {
 
-    // TOR disabled for now
-    // [tor start];
-
     *error = nil;
 
     if ([[HIBitcoinManager defaultManager] start:error]) {
@@ -152,12 +138,6 @@ NSString * const BCClientPasswordChangedNotification = @"BCClientPasswordChanged
         [[NSNotificationCenter defaultCenter] postNotificationName:BCClientPasswordChangedNotification object:self];
     }
 }
-
-/*
-- (void)torStarted:(NSNotification *)notification {
-    [HITorManager defaultManager].torRouting = YES;
-}
-*/
 
 - (void)bitcoinKitStarted:(NSNotification *)notification {
     dispatch_async(dispatch_get_main_queue(), ^{
@@ -309,7 +289,6 @@ NSString * const BCClientPasswordChangedNotification = @"BCClientPasswordChanged
 
 - (void)shutdown {
     [[HIBitcoinManager defaultManager] stop];
-    // [[HITorManager defaultManager] stop];
 }
 
 - (void)dealloc {
@@ -332,11 +311,6 @@ NSString * const BCClientPasswordChangedNotification = @"BCClientPasswordChanged
 - (NSURL *)bitcoinjDirectory {
     NSURL *appSupportURL = [(HIAppDelegate *) [NSApp delegate] applicationFilesDirectory];
     return [appSupportURL URLByAppendingPathComponent:BCClientBitcoinjDirectory];
-}
-
-- (NSURL *)torDirectory {
-    NSURL *appSupportURL = [(HIAppDelegate *) [NSApp delegate] applicationFilesDirectory];
-    return [appSupportURL URLByAppendingPathComponent:BCClientTorDirectory];
 }
 
 - (BOOL)isRunning {
