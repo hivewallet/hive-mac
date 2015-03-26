@@ -10,6 +10,7 @@
 #import "HIPasswordChangeWindowController.h"
 #import "HIPasswordCreationInputHandler.h"
 #import "HIPasswordHolder.h"
+#import "KSPasswordField.h"
 #import "NSWindow+HIShake.h"
 
 #import <BitcoinJKit/HIBitcoinErrorCodes.h>
@@ -21,9 +22,9 @@ static const NSTimeInterval IDLE_RESET_DELAY = 30.0;
 
 @interface HIPasswordChangeWindowController ()
 
-@property (nonatomic, weak) IBOutlet NSSecureTextField *passwordField;
-@property (nonatomic, weak) IBOutlet NSSecureTextField *updatedPasswordField;
-@property (nonatomic, weak) IBOutlet NSSecureTextField *repeatedPasswordField;
+@property (nonatomic, weak) IBOutlet KSPasswordField  *passwordField;
+@property (nonatomic, weak) IBOutlet KSPasswordField *updatedPasswordField;
+@property (nonatomic, weak) IBOutlet KSPasswordField *repeatedPasswordField;
 
 // top-level objects
 @property (nonatomic, strong) IBOutlet HIPasswordCreationInputHandler *passwordCreationInputHandler;
@@ -76,6 +77,12 @@ static const NSTimeInterval IDLE_RESET_DELAY = 30.0;
     }];
 }
 
+- (IBAction)togglePasswordVisibility:(id)sender {
+    [self.passwordField toggleTextShown:sender];
+    [self.updatedPasswordField toggleTextShown:sender];
+    [self.repeatedPasswordField toggleTextShown:sender];
+}
+
 - (void)resetInput {
     self.passwordField.stringValue = @"";
     [self.passwordCreationInputHandler resetInput];
@@ -86,6 +93,7 @@ static const NSTimeInterval IDLE_RESET_DELAY = 30.0;
     [self resetInput];
     [super close];
 }
+
 
 #pragma mark - NSTextFieldDelegate
 
