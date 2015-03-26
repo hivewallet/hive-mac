@@ -1,5 +1,5 @@
 
-/* Class = "HIKeyObservingWindow"; title = "Backup Center"; ObjectID = "1"; */
+/* Class = "NSWindow"; title = "Backup Center"; ObjectID = "1"; */
 "1.title" = "Yedekleme Merkezi";
 
 /* Class = "NSTextFieldCell"; title = "Status details"; ObjectID = "1f9-7o-UKm"; */
