@@ -5,5 +5,8 @@
 /* Class = "NSButtonCell"; title = "Unlock"; ObjectID = "W4R-hH-myj"; */
 "W4R-hH-myj.title" = "Lås op";
 
+/* Class = "NSButtonCell"; title = "Show password"; ObjectID = "aVq-f6-sCR"; */
+"aVq-f6-sCR.title" = "Show password";
+
 /* Class = "NSButtonCell"; title = "Don't show this screen again"; ObjectID = "fZF-LI-0oD"; */
 "fZF-LI-0oD.title" = "Vis ikke denne besked igen";
