@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="6254" systemVersion="13F34" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="6751" systemVersion="14C2513" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="6254"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="6751"/>
     </dependencies>
     <objects>
         <customObject id="-2" userLabel="File's Owner" customClass="HILockScreenViewController">
@@ -21,7 +21,6 @@
             <subviews>
                 <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="49j-5C-X2h">
                     <rect key="frame" x="122" y="292" width="48" height="48"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="48" id="2N2-fL-0qf"/>
                         <constraint firstAttribute="height" constant="48" id="2jU-Dr-56R"/>
@@ -30,7 +29,6 @@
                 </imageView>
                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="nNU-tC-eaq">
                     <rect key="frame" x="18" y="248" width="256" height="36"/>
-                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                     <constraints>
                         <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="36" id="KxG-LR-FSg"/>
                     </constraints>
@@ -42,9 +40,8 @@ Kilidi açmak için şifrenizi girin:</string>
                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                     </textFieldCell>
                 </textField>
-                <secureTextField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="CJt-wU-87F">
+                <secureTextField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="CJt-wU-87F" customClass="KSPasswordField">
                     <rect key="frame" x="32" y="211" width="228" height="22"/>
-                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                     <secureTextFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" drawsBackground="YES" usesSingleLineMode="YES" id="tbw-e8-rUR">
                         <font key="font" metaFont="system"/>
                         <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
@@ -57,9 +54,25 @@ Kilidi açmak için şifrenizi girin:</string>
                         <outlet property="delegate" destination="ukd-ED-bNz" id="bLu-6O-RnO"/>
                     </connections>
                 </secureTextField>
+                <button translatesAutoresizingMaskIntoConstraints="NO" id="mNZ-Bj-zUU">
+                    <rect key="frame" x="46" y="23" width="201" height="18"/>
+                    <buttonCell key="cell" type="check" title="Bu ekranı tekrar gösterme" bezelStyle="regularSquare" imagePosition="left" inset="2" id="fZF-LI-0oD">
+                        <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                        <font key="font" metaFont="system"/>
+                    </buttonCell>
+                </button>
+                <button translatesAutoresizingMaskIntoConstraints="NO" id="cTt-1r-b8L">
+                    <rect key="frame" x="86" y="183" width="121" height="18"/>
+                    <buttonCell key="cell" type="check" title="Show password" bezelStyle="regularSquare" imagePosition="left" inset="2" id="aVq-f6-sCR">
+                        <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                        <font key="font" metaFont="system"/>
+                    </buttonCell>
+                    <connections>
+                        <action selector="toggleTextShown:" target="CJt-wU-87F" id="I0t-3f-axT"/>
+                    </connections>
+                </button>
                 <button translatesAutoresizingMaskIntoConstraints="NO" id="raB-9O-wMt">
-                    <rect key="frame" x="113" y="169" width="67" height="29"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <rect key="frame" x="113" y="138" width="67" height="29"/>
                     <buttonCell key="cell" type="bevel" title="Kilidi Aç" bezelStyle="regularSquare" imagePosition="overlaps" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="W4R-hH-myj" customClass="HIDoneButtonCell">
                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                         <font key="font" metaFont="system"/>
@@ -68,24 +81,18 @@ Kilidi açmak için şifrenizi girin:</string>
                         <action selector="submit:" target="ukd-ED-bNz" id="jt9-ey-nfR"/>
                     </connections>
                 </button>
-                <button translatesAutoresizingMaskIntoConstraints="NO" id="mNZ-Bj-zUU">
-                    <rect key="frame" x="45" y="23" width="202" height="18"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <buttonCell key="cell" type="check" title="Bu ekranı tekrar gösterme" bezelStyle="regularSquare" imagePosition="left" inset="2" id="fZF-LI-0oD">
-                        <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
-                        <font key="font" metaFont="system"/>
-                    </buttonCell>
-                </button>
             </subviews>
             <constraints>
                 <constraint firstAttribute="centerX" secondItem="mNZ-Bj-zUU" secondAttribute="centerX" id="8GQ-ay-duj"/>
+                <constraint firstItem="raB-9O-wMt" firstAttribute="top" secondItem="cTt-1r-b8L" secondAttribute="bottom" constant="20" id="9tc-Hv-0dV"/>
                 <constraint firstItem="CJt-wU-87F" firstAttribute="top" secondItem="nNU-tC-eaq" secondAttribute="bottom" constant="15" id="Hgq-0b-57P"/>
                 <constraint firstItem="49j-5C-X2h" firstAttribute="top" secondItem="VU8-5Z-Uvp" secondAttribute="top" constant="160" id="KZg-GD-eW4"/>
                 <constraint firstItem="nNU-tC-eaq" firstAttribute="top" secondItem="49j-5C-X2h" secondAttribute="bottom" constant="8" symbolic="YES" id="Npp-c6-Ffd"/>
-                <constraint firstItem="raB-9O-wMt" firstAttribute="top" secondItem="CJt-wU-87F" secondAttribute="bottom" constant="15" id="U99-sO-ziF"/>
+                <constraint firstItem="cTt-1r-b8L" firstAttribute="top" secondItem="CJt-wU-87F" secondAttribute="bottom" constant="12" id="TRD-cD-6T4"/>
                 <constraint firstAttribute="bottom" secondItem="mNZ-Bj-zUU" secondAttribute="bottom" constant="25" id="WUa-37-Lsj"/>
                 <constraint firstItem="CJt-wU-87F" firstAttribute="leading" secondItem="VU8-5Z-Uvp" secondAttribute="leading" constant="32" id="YJQ-Ej-0Xu"/>
                 <constraint firstItem="nNU-tC-eaq" firstAttribute="leading" secondItem="VU8-5Z-Uvp" secondAttribute="leading" constant="20" symbolic="YES" id="YUB-Pv-FEi"/>
+                <constraint firstAttribute="centerX" secondItem="cTt-1r-b8L" secondAttribute="centerX" id="etg-rG-xyt"/>
                 <constraint firstAttribute="trailing" secondItem="nNU-tC-eaq" secondAttribute="trailing" constant="20" symbolic="YES" id="hkl-Bg-oTN"/>
                 <constraint firstItem="raB-9O-wMt" firstAttribute="centerX" secondItem="CJt-wU-87F" secondAttribute="centerX" id="ie3-g1-sL2"/>
                 <constraint firstItem="CJt-wU-87F" firstAttribute="centerX" secondItem="nNU-tC-eaq" secondAttribute="centerX" id="qaE-YF-ODc"/>
