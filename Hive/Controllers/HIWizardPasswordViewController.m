@@ -9,13 +9,15 @@
 #import "HIWizardPasswordViewController.h"
 
 #import "BCClient.h"
+#import "KSPasswordField.h"
 #import "HIPasswordCreationInputHandler.h"
 
 @interface HIWizardPasswordViewController ()
 
-@property (nonatomic, strong) IBOutlet NSTextField *passwordField;
-@property (nonatomic, strong) IBOutlet NSTextField *repeatedPasswordField;
+@property (nonatomic, strong) IBOutlet KSPasswordField *passwordField;
+@property (nonatomic, strong) IBOutlet KSPasswordField *repeatedPasswordField;
 @property (nonatomic, strong) IBOutlet HIPasswordCreationInputHandler *passwordCreationInputHandler;
+@property (nonatomic, strong) IBOutlet NSButton *showPasswordsToggle;
 
 @property (nonatomic, assign) BOOL submitButtonEnabled;
 
@@ -34,6 +36,13 @@
     return self;
 }
 
+- (void)viewDidLoad {
+    NSDictionary *textAttributes = @{ NSForegroundColorAttributeName: [NSColor whiteColor] };
+    NSAttributedString *showPasswords = [[NSAttributedString alloc] initWithString:self.showPasswordsToggle.title
+                                                                        attributes:textAttributes];
+    [self.showPasswordsToggle setAttributedTitle:showPasswords];
+}
+
 - (NSResponder *)initialFirstResponder {
     return self.passwordField;
 }
@@ -50,6 +59,12 @@
         }
     }];
 }
+
+- (IBAction)togglePasswordVisibility:(id)sender {
+    [self.passwordField toggleTextShown:sender];
+    [self.repeatedPasswordField toggleTextShown:sender];
+}
+
 
 #pragma mark - NSTextFieldDelegate
 
