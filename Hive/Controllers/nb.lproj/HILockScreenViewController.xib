@@ -50,6 +50,9 @@ Skriv inn passordet ditt for å låse opp:</string>
                             <string>NSAllRomanInputSourcesLocaleIdentifier</string>
                         </allowedInputSourceLocales>
                     </secureTextFieldCell>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="useSmartPaste" value="NO"/>
+                    </userDefinedRuntimeAttributes>
                     <connections>
                         <outlet property="delegate" destination="ukd-ED-bNz" id="bLu-6O-RnO"/>
                     </connections>

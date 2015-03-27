@@ -50,6 +50,9 @@ Introduce tu contraseña para desbloquearlo:</string>
                             <string>NSAllRomanInputSourcesLocaleIdentifier</string>
                         </allowedInputSourceLocales>
                     </secureTextFieldCell>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="useSmartPaste" value="NO"/>
+                    </userDefinedRuntimeAttributes>
                     <connections>
                         <outlet property="delegate" destination="ukd-ED-bNz" id="bLu-6O-RnO"/>
                     </connections>
