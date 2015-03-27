@@ -1,3 +1,6 @@
 [submodule "BitcoinKit"]
 	path = BitcoinKit
 	url = git@github.com:hivewallet/BitcoinKit.git
+[submodule "Hive/Lib/SecurityInterface"]
+	path = Hive/Lib/SecurityInterface
+	url = git@github.com:jsuder/SecurityInterface.git
