@@ -198,13 +198,13 @@ NSString * const HISendBitcoinsWindowSuccessKey = @"success";
 }
 
 - (void)updateAvailableFundsField {
-    satoshi_t balance = [[BCClient sharedClient] availableBalance];
+    satoshi_t balance = [[BCClient sharedClient] estimatedBalance];
     self.availableFundsField.stringValue =
         [self.bitcoinFormatService stringForBitcoin:balance withFormat:self.selectedBitcoinFormat];
 }
 
 - (void)updateAvailableFundsFieldColor {
-    satoshi_t balance = [[BCClient sharedClient] availableBalance];
+    satoshi_t balance = [[BCClient sharedClient] estimatedBalance];
     satoshi_t amount = self.amountFieldValue;
 
     if (amount <= balance) {
