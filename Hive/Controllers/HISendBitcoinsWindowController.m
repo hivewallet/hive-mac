@@ -129,6 +129,11 @@ NSString * const HISendBitcoinsWindowSuccessKey = @"success";
                                                  selector:@selector(onLocaleChange)
                                                      name:NSCurrentLocaleDidChangeNotification
                                                    object:nil];
+
+        [[BCClient sharedClient] addObserver:self
+                                  forKeyPath:@"estimatedBalance"
+                                     options:0
+                                     context:NULL];
     }
 
     return self;
@@ -253,6 +258,7 @@ NSString * const HISendBitcoinsWindowSuccessKey = @"success";
 
 - (void)dealloc {
     [[NSNotificationCenter defaultCenter] removeObserver:self];
+    [[BCClient sharedClient] removeObserver:self forKeyPath:@"estimatedBalance"];
 }
 
 
@@ -579,6 +585,24 @@ NSString * const HISendBitcoinsWindowSuccessKey = @"success";
 - (void)updateInterfaceForExchangeRate {
     self.convertedAmountField.enabled = YES;
     [self updateConvertedAmountFromAmount];
+}
+
+
+#pragma mark - BCClient observer
+
+- (void)observeValueForKeyPath:(NSString *)keyPath
+                      ofObject:(id)object
+                        change:(NSDictionary *)change
+                       context:(void *)context {
+
+    if (object == [BCClient sharedClient]) {
+        if ([keyPath isEqual:@"estimatedBalance"]) {
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [self updateAvailableFundsField];
+                [self updateAvailableFundsFieldColor];
+            });
+        }
+    }
 }
 
 
