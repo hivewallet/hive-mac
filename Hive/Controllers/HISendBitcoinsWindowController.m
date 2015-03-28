@@ -49,6 +49,7 @@ NSString * const HISendBitcoinsWindowSuccessKey = @"success";
     NSArray *_detailsSectionConstraints;
     NSString *_savedLabel;
     NSURL *_paymentRequestURL;
+    NSColor *_availableFundsDefaultColor;
 }
 
 // top-level objects
@@ -153,7 +154,7 @@ NSString * const HISendBitcoinsWindowSuccessKey = @"success";
 
     [self setupQRCodeButton];
     [self setupCurrencyList];
-    [self updateAvailableFundsField];
+    [self setupAvailableFundsField];
     [self setAmountFieldValue:0];
     [self updateAvatarImage];
     [self updateInterfaceForExchangeRate];
@@ -191,10 +192,26 @@ NSString * const HISendBitcoinsWindowSuccessKey = @"success";
     [self.convertedCurrencyPopupButton selectItemWithTitle:_selectedCurrency];
 }
 
+- (void)setupAvailableFundsField {
+    _availableFundsDefaultColor = self.availableFundsField.textColor;
+    [self updateAvailableFundsField];
+}
+
 - (void)updateAvailableFundsField {
     satoshi_t balance = [[BCClient sharedClient] availableBalance];
     self.availableFundsField.stringValue =
         [self.bitcoinFormatService stringForBitcoin:balance withFormat:self.selectedBitcoinFormat];
+}
+
+- (void)updateAvailableFundsFieldColor {
+    satoshi_t balance = [[BCClient sharedClient] availableBalance];
+    satoshi_t amount = self.amountFieldValue;
+
+    if (amount <= balance) {
+        self.availableFundsField.textColor = _availableFundsDefaultColor;
+    } else {
+        self.availableFundsField.textColor = [NSColor redColor];
+    }
 }
 
 - (void)updateSendButtonEnabled {
@@ -432,6 +449,7 @@ NSString * const HISendBitcoinsWindowSuccessKey = @"success";
     self.amountField.stringValue = [self.bitcoinFormatService stringForBitcoin:amount
                                                                     withFormat:self.selectedBitcoinFormat];
     [self updateFee];
+    [self updateAvailableFundsFieldColor];
 }
 
 - (void)formatAmountField {
@@ -1029,6 +1047,7 @@ NSString * const HISendBitcoinsWindowSuccessKey = @"success";
     }
 
     [self updateFee];
+    [self updateAvailableFundsFieldColor];
     [self updateSendButtonEnabled];
 }
 
