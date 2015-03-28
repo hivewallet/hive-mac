@@ -77,6 +77,8 @@ NSString * const HISendBitcoinsWindowSuccessKey = @"success";
 @property (nonatomic, weak) IBOutlet NSPopUpButton *convertedCurrencyPopupButton;
 @property (nonatomic, weak) IBOutlet NSTextField *convertedAmountField;
 
+@property (nonatomic, weak) IBOutlet NSTextField *availableFundsField;
+
 @property (nonatomic, weak) IBOutlet NSButton *cancelButton;
 @property (nonatomic, weak) IBOutlet NSButton *closeButton;
 @property (nonatomic, weak) IBOutlet HIButtonWithSpinner *sendButton;
@@ -151,6 +153,7 @@ NSString * const HISendBitcoinsWindowSuccessKey = @"success";
 
     [self setupQRCodeButton];
     [self setupCurrencyList];
+    [self updateAvailableFundsField];
     [self setAmountFieldValue:0];
     [self updateAvatarImage];
     [self updateInterfaceForExchangeRate];
@@ -186,6 +189,12 @@ NSString * const HISendBitcoinsWindowSuccessKey = @"success";
     [self.bitcoinCurrencyPopupButton selectItemWithTitle:self.bitcoinFormatService.preferredFormat];
     [self.convertedCurrencyPopupButton addItemsWithTitles:self.exchangeRateService.availableCurrencies];
     [self.convertedCurrencyPopupButton selectItemWithTitle:_selectedCurrency];
+}
+
+- (void)updateAvailableFundsField {
+    satoshi_t balance = [[BCClient sharedClient] availableBalance];
+    self.availableFundsField.stringValue =
+        [self.bitcoinFormatService stringForBitcoin:balance withFormat:self.selectedBitcoinFormat];
 }
 
 - (void)updateSendButtonEnabled {
@@ -400,7 +409,7 @@ NSString * const HISendBitcoinsWindowSuccessKey = @"success";
                                                        locale:_locale
                                                         error:NULL];
     self.amountFieldValue = MAX(amount, 0);
-
+    [self updateAvailableFundsField];
     [self updateFee];
     [self updateConvertedAmountFromAmount];
 
@@ -412,6 +421,7 @@ NSString * const HISendBitcoinsWindowSuccessKey = @"success";
         satoshi_t oldValue = self.amountFieldValue;
         _selectedBitcoinFormat = [selectedBitcoinFormat copy];
         self.amountFieldValue = oldValue;
+        [self updateAvailableFundsField];
 
         self.bitcoinFormatService.preferredFormat = selectedBitcoinFormat;
         self.feeDetailsViewController.bitcoinFormat = selectedBitcoinFormat;
