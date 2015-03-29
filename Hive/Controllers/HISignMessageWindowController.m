@@ -52,7 +52,7 @@
             NSLocalizedString(@"Confirm", @"Confirm button in password entry form");
     }
 
-    __unsafe_unretained id weakSelf = self;
+    __weak id weakSelf = self;
     self.passwordInputViewController.onSubmit = ^(HIPasswordHolder *passwordHolder) {
         [weakSelf signMessageWithPassword:passwordHolder];
     };

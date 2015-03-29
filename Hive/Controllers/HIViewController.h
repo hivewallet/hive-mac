@@ -18,7 +18,7 @@
 
 @property (nonatomic, copy) NSString *iconName;
 @property (nonatomic, assign) NSUInteger badgeNumber;
-@property (nonatomic, unsafe_unretained) HINavigationController *navigationController;
+@property (nonatomic, weak) HINavigationController *navigationController;
 @property (nonatomic, readonly) NSView *titleBarView;
 @property (nonatomic, readonly) NSView *rightNavigationView;
 

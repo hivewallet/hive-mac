@@ -48,7 +48,7 @@ NSString * const LockScreenDidDisappearNotification = @"LockScreenDidDisappearNo
                                                                name:NSWorkspaceWillSleepNotification
                                                              object:nil];
 
-    __unsafe_unretained typeof(self) lwc = self;
+    __weak typeof(self) lwc = self;
     self.passwordInputViewController.onSubmit = ^(HIPasswordHolder *passwordHolder) {
         [lwc onPasswordEntered:passwordHolder];
     };

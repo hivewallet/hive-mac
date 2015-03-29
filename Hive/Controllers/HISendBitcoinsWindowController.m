@@ -1208,7 +1208,7 @@ NSString * const HISendBitcoinsWindowSuccessKey = @"success";
 
     _passwordPopover = [self preparePasswordPopover];
 
-    __unsafe_unretained __typeof__ (self) weakSelf = self;
+    __weak __typeof__ (self) weakSelf = self;
     self.passwordInputViewController.onSubmit = ^(HIPasswordHolder *passwordHolder) {
         [weakSelf sendBitcoin:bitcoin toTarget:target password:passwordHolder];
     };
@@ -1219,7 +1219,7 @@ NSString * const HISendBitcoinsWindowSuccessKey = @"success";
 - (void)showPasswordPopover:(NSButton *)sender forPaymentRequest:(int)sessionId {
     _passwordPopover = [self preparePasswordPopover];
 
-    __unsafe_unretained __typeof__ (self) weakSelf = self;
+    __weak __typeof__ (self) weakSelf = self;
     self.passwordInputViewController.onSubmit = ^(HIPasswordHolder *passwordHolder) {
         [weakSelf sendPaymentRequest:sessionId password:passwordHolder];
     };
