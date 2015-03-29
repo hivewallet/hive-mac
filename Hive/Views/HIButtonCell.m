@@ -40,11 +40,11 @@ static const float PADDING_Y = 0.0;
         [p fill];
         [sP stroke];
         
-        controlView.layer.shadowColor = [[NSColor whiteColor] hiNativeColor];
+        controlView.layer.shadowColor = [[NSColor whiteColor] CGColor];
     } else {
         NSGradient *g = [[NSGradient alloc] initWithColors:@[RGB(250,250,250), RGB(237, 237, 237)]];
         [g drawInBezierPath:p angle:90];
-        controlView.layer.shadowColor = [[NSColor blackColor] hiNativeColor];
+        controlView.layer.shadowColor = [[NSColor blackColor] CGColor];
 
         if (!self.isEnabled) {
             strokeColor = RGB(184, 203, 230);

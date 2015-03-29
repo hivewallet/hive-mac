@@ -53,7 +53,7 @@ static NSString * const SortByLastNamePreferencesKey = @"SortByLastName";
 - (void)awakeFromNib {
     [self.foreverAloneScreen setFrame:self.view.bounds];
     [self.foreverAloneScreen setHidden:YES];
-    [self.foreverAloneScreen.layer setBackgroundColor:[[NSColor hiWindowBackgroundColor] hiNativeColor]];
+    [self.foreverAloneScreen.layer setBackgroundColor:[[NSColor hiWindowBackgroundColor] CGColor]];
     [self.view addSubview:self.foreverAloneScreen];
 
     [[NSUserDefaults standardUserDefaults] registerDefaults:@{ SortByLastNamePreferencesKey: @1 }];

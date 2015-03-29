@@ -13,7 +13,7 @@
 
 - (void)awakeFromNib {
     self.wantsLayer = YES;
-    self.layer.backgroundColor = [RGB(211,211,211) hiNativeColor];
+    self.layer.backgroundColor = [RGB(211,211,211) CGColor];
 }
 
 

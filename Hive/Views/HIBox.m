@@ -33,8 +33,8 @@
 
     self.layer.borderWidth = 1.0;
     self.layer.cornerRadius = 5.0;
-    self.layer.borderColor = RGB(195,195,195).hiNativeColor;
-    self.layer.backgroundColor = [NSColor whiteColor].hiNativeColor;
+    self.layer.borderColor = [RGB(195,195,195) CGColor];
+    self.layer.backgroundColor = [[NSColor whiteColor] CGColor];
 }
 
 @end

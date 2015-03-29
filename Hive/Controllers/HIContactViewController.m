@@ -51,7 +51,7 @@
     [super loadView];
     [_infoPanel loadView];
 
-    self.view.layer.backgroundColor = [[NSColor hiWindowBackgroundColor] hiNativeColor];
+    self.view.layer.backgroundColor = [[NSColor hiWindowBackgroundColor] CGColor];
 
     [self.tabBarController selectTabAtIndex:0];
 }

@@ -94,7 +94,7 @@ static NSString *const KEY_UNREAD_TRANSACTIONS = @"unreadTransactions";
 
     [self.noTransactionsView setFrame:self.view.bounds];
     [self.noTransactionsView setHidden:YES];
-    [self.noTransactionsView.layer setBackgroundColor:[[NSColor hiWindowBackgroundColor] hiNativeColor]];
+    [self.noTransactionsView.layer setBackgroundColor:[[NSColor hiWindowBackgroundColor] CGColor]];
     [self.view addSubview:self.noTransactionsView];
 
     [self.arrayController addObserver:self

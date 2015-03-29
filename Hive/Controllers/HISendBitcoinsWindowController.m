@@ -149,12 +149,12 @@ NSString * const HISendBitcoinsWindowSuccessKey = @"success";
 
     NSView *wrapperContents = self.wrapper.contentView;
     wrapperContents.layer.borderWidth = 1.0;
-    wrapperContents.layer.borderColor = [[NSColor colorWithCalibratedWhite:0.8 alpha:1.0] hiNativeColor];
-    wrapperContents.layer.backgroundColor = [[NSColor whiteColor] hiNativeColor];
+    wrapperContents.layer.borderColor = [[NSColor colorWithCalibratedWhite:0.8 alpha:1.0] CGColor];
+    wrapperContents.layer.backgroundColor = [[NSColor whiteColor] CGColor];
     wrapperContents.layer.cornerRadius = 5.0;
 
     self.detailsBox.layer.borderWidth = 1.0;
-    self.detailsBox.layer.borderColor = [[NSColor colorWithCalibratedWhite:0.85 alpha:1.0] hiNativeColor];
+    self.detailsBox.layer.borderColor = [[NSColor colorWithCalibratedWhite:0.85 alpha:1.0] CGColor];
     [[self.detailsBox documentView] setTextContainerInset:NSMakeSize(1.0, 5.0)];
 
     [self setupQRCodeButton];
@@ -895,8 +895,8 @@ NSString * const HISendBitcoinsWindowSuccessKey = @"success";
     NSColor *borderColor = [NSColor colorWithCalibratedHue:95.0/360 saturation:0.5 brightness:0.8 alpha:1.0];
 
     NSView *ackBarContents = self.ackBar.contentView;
-    ackBarContents.layer.backgroundColor = [fillColor hiNativeColor];
-    ackBarContents.layer.borderColor = [borderColor hiNativeColor];
+    ackBarContents.layer.backgroundColor = [fillColor CGColor];
+    ackBarContents.layer.borderColor = [borderColor CGColor];
     ackBarContents.layer.borderWidth = 1.0;
     ackBarContents.layer.cornerRadius = 5.0;
 

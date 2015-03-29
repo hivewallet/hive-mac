@@ -93,10 +93,10 @@
     [super loadView];
     [_infoPanel loadView];
 
-    self.view.layer.backgroundColor = [[NSColor hiWindowBackgroundColor] hiNativeColor];
+    self.view.layer.backgroundColor = [[NSColor hiWindowBackgroundColor] CGColor];
 
     self.photoView.layer.borderWidth = 1.0;
-    self.photoView.layer.borderColor = [[NSColor colorWithCalibratedWhite:0.88 alpha:1.0] hiNativeColor];
+    self.photoView.layer.borderColor = [[NSColor colorWithCalibratedWhite:0.88 alpha:1.0] CGColor];
 
     [self setupBitcoinFormatLists];
     [self setupCurrencyLists];

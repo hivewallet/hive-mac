@@ -77,7 +77,7 @@ static NSString * const Separator = @"Separator";
     [super loadView];
 
     [self setUpQrCodeButton];
-    _avatarView.layer.backgroundColor = [[NSColor whiteColor] hiNativeColor];
+    _avatarView.layer.backgroundColor = [[NSColor whiteColor] CGColor];
 
     // Hide some buttons if necessary
 
@@ -230,7 +230,7 @@ static NSString * const Separator = @"Separator";
                              NSMakeRect(1, AddressCellHeight, self.walletsView.bounds.size.width - 2, 1)];
 
         separator.wantsLayer = YES;
-        separator.layer.backgroundColor = [[NSColor colorWithCalibratedWhite:0.5 alpha:0.5] hiNativeColor];
+        separator.layer.backgroundColor = [[NSColor colorWithCalibratedWhite:0.5 alpha:0.5] CGColor];
         separator.autoresizingMask = NSViewMinYMargin | NSViewWidthSizable;
 
         [self.walletsView addSubview:separator];
@@ -239,7 +239,7 @@ static NSString * const Separator = @"Separator";
 
     NSView *fieldContentView = [[NSView alloc] initWithFrame:
                                 NSMakeRect(0, 0, self.walletsView.bounds.size.width - 40, AddressCellHeight)];
-    fieldContentView.layer.backgroundColor = [[NSColor clearColor] hiNativeColor];
+    fieldContentView.layer.backgroundColor = [[NSColor clearColor] CGColor];
     fieldContentView.autoresizingMask = NSViewMinYMargin | NSViewWidthSizable;
     [self.walletsView addSubview:fieldContentView];
     parts[ContentsView] = fieldContentView;

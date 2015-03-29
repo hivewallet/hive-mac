@@ -31,18 +31,18 @@ static const float PADDING_Y = 0.0;
         [RGB(35, 116, 238) setFill];
         [p fill];
         [[NSColor colorWithCalibratedWhite:0 alpha:0.35] set];
-        controlView.layer.shadowColor = [[NSColor whiteColor] hiNativeColor];
+        controlView.layer.shadowColor = [[NSColor whiteColor] CGColor];
     } else if (self.isEnabled) {
         NSGradient *g = [[NSGradient alloc] initWithColors:@[RGB(54,185,251), RGB(35, 116, 238)]];
         [g drawInBezierPath:p angle:90];
         [RGB(255, 255, 255) set];
-        controlView.layer.shadowColor = [[NSColor blackColor] hiNativeColor];
+        controlView.layer.shadowColor = [[NSColor blackColor] CGColor];
     } else {
         strokeColor = RGB(184, 203, 230);
         NSGradient *g = [[NSGradient alloc] initWithColors:@[RGB(204,238,255), RGB(190, 209, 238)]];
         [g drawInBezierPath:p angle:90];
         [RGB(255, 255, 255) set];
-        controlView.layer.shadowColor = [[NSColor grayColor] hiNativeColor];
+        controlView.layer.shadowColor = [[NSColor grayColor] CGColor];
     }
     if (self.hasShadow) {
         [sP stroke];

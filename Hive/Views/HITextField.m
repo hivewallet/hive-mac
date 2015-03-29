@@ -33,11 +33,11 @@ NSString * const kHITextFieldContentChanged = @"kHITextFieldContentChanged";
                                                        self.frame.size.width + 2,
                                                        self.frame.size.height + 2)];
     _bgView.wantsLayer = YES;
-    _bgView.layer.backgroundColor = [[NSColor whiteColor] hiNativeColor];
+    _bgView.layer.backgroundColor = [[NSColor whiteColor] CGColor];
     _bgView.layer.borderWidth = 1.0;
-    _bgView.layer.borderColor = [[NSColor blackColor] hiNativeColor];
+    _bgView.layer.borderColor = [[NSColor blackColor] CGColor];
     _bgView.autoresizingMask = NSViewMaxYMargin | NSViewMinXMargin;
-    _bgView.layer.shadowColor = [[NSColor colorWithCalibratedWhite:0.3 alpha:1.0] hiNativeColor];
+    _bgView.layer.shadowColor = [[NSColor colorWithCalibratedWhite:0.3 alpha:1.0] CGColor];
     _bgView.layer.shadowOffset = NSMakeSize(-2, -2);
     _bgView.layer.shadowOpacity = 0.8;
     _bgView.layer.shadowRadius = 2.0;

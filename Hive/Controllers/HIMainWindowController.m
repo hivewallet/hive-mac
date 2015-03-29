@@ -210,7 +210,7 @@ static const NSTimeInterval SlideAnimationDuration = 0.3;
     newTitleView.alphaValue = 0.0;
     [self.appStoreWindow.titleBarView addSubview:newTitleView];
 
-    newController.view.layer.shadowColor = [[NSColor blackColor] hiNativeColor];
+    newController.view.layer.shadowColor = [[NSColor blackColor] CGColor];
     newController.view.layer.shadowOffset = CGSizeMake(50.0, 0.0);
     newController.view.layer.shadowRadius = 50.0;
     newController.view.layer.shadowOpacity = 0.25;

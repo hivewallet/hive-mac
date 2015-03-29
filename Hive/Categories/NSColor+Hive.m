@@ -14,14 +14,4 @@
     return [NSColor colorWithCalibratedWhite:0.94 alpha:1.0];
 }
 
-- (CGColorRef)hiNativeColor {
-    const NSInteger numberOfComponents = [self numberOfComponents];
-    CGFloat components[numberOfComponents];
-    CGColorSpaceRef colorSpace = [[self colorSpace] CGColorSpace];
-    
-    [self getComponents:(CGFloat *)&components];
-    
-    return (__bridge CGColorRef) CFBridgingRelease(CGColorCreate(colorSpace, components));
-}
-
 @end

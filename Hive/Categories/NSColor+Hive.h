@@ -10,6 +10,4 @@
 
 + (NSColor *)hiWindowBackgroundColor;
 
-- (CGColorRef)hiNativeColor;
-
 @end

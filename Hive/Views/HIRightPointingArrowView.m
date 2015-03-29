@@ -18,7 +18,7 @@
         _strokeColor = [NSColor colorWithCalibratedWhite:0.0 alpha:0.75];
         _strokeWidth = 0.5;
 
-        self.layer.shadowColor = [[NSColor whiteColor] hiNativeColor];
+        self.layer.shadowColor = [[NSColor whiteColor] CGColor];
         self.layer.shadowOffset = NSMakeSize(1, -1);
         self.layer.shadowOpacity = 1.0;
         self.layer.shadowRadius = 0.0;

@@ -29,12 +29,12 @@
         [RGB(167, 31, 39) setFill];
         [p fill];
         [[NSColor colorWithCalibratedWhite:0 alpha:0.35] set];
-        controlView.layer.shadowColor = [[NSColor whiteColor] hiNativeColor];
+        controlView.layer.shadowColor = [[NSColor whiteColor] CGColor];
     } else {
         NSGradient *g = [[NSGradient alloc] initWithColors:@[RGB(248,85,94), RGB(167, 31, 39)]];
         [g drawInBezierPath:p angle:90];
         [RGB(255, 255, 255) set];
-        controlView.layer.shadowColor = [[NSColor blackColor] hiNativeColor];
+        controlView.layer.shadowColor = [[NSColor blackColor] CGColor];
     }
     [sP stroke];
     

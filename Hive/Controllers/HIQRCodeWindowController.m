@@ -44,7 +44,7 @@ static const NSTimeInterval CURSOR_HIDE_IDLE_DELAY = 1.0;
     [super windowDidLoad];
 
     [self.window.contentView setWantsLayer:YES];
-    [self.window.contentView layer].backgroundColor = [NSColor whiteColor].hiNativeColor;
+    [self.window.contentView layer].backgroundColor = [[NSColor whiteColor] CGColor];
 }
 
 

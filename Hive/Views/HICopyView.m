@@ -34,7 +34,7 @@
         _selectionView = [[NSView alloc] initWithFrame:self.bounds];
         _selectionView.autoresizingMask = NSViewWidthSizable | NSViewMinYMargin;
         _selectionView.wantsLayer = YES;
-        _selectionView.layer.backgroundColor = [RGB(42, 140, 244) hiNativeColor];
+        _selectionView.layer.backgroundColor = [RGB(42, 140, 244) CGColor];
         _selectionView.alphaValue = 0.0;
         [self addSubview:_selectionView];
 
