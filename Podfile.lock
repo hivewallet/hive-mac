@@ -13,7 +13,7 @@ PODS:
   - MASPreferences (1.1.2)
   - MASShortcut (1.3.1)
   - NSURL+Gravatar (1.0.1)
-  - OCHamcrest (4.0.0)
+  - OCHamcrest (4.1.1)
   - Sparkle (1.8.0)
   - ZXingObjC (3.0.4):
     - ZXingObjC/All (= 3.0.4)
@@ -30,7 +30,7 @@ DEPENDENCIES:
   - MASPreferences
   - MASShortcut
   - NSURL+Gravatar
-  - OCHamcrest (= 4.0)
+  - OCHamcrest
   - Sparkle
   - ZXingObjC
 
@@ -45,7 +45,7 @@ SPEC CHECKSUMS:
   MASPreferences: 32d8a2c5ef1d60b63240f5676b011ff72e194cb1
   MASShortcut: 65f5fac12bbdd3622abcb8175a633f68f553c60f
   NSURL+Gravatar: a1344ed953aa05b0d929462cd73f4ee240d5a1d8
-  OCHamcrest: 046a57295e3b976a8feeb5636e25d3836bb10da4
+  OCHamcrest: 6f03ffa81d12feab872638490a44ab0a6d3aca10
   Sparkle: 3adb45d38bcdf80caf505f2b4cd693031db70835
   ZXingObjC: ae99f1ef6d791ebe4a508f1bec20b2d7a20288c5
 
