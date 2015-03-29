@@ -26,11 +26,7 @@
 }
 
 - (void)setUpBox {
-    [self setWantsLayer:YES];
-
-    // Workaround missing layer on 10.7
-    self.layer = [CALayer new];
-
+    self.wantsLayer = YES;
     self.layer.borderWidth = 1.0;
     self.layer.cornerRadius = 5.0;
     self.layer.borderColor = [RGB(195,195,195) CGColor];
