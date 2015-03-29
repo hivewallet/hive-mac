@@ -9,7 +9,7 @@ PODS:
   - FontAwesomeIconFactory (1.4)
   - INAppStoreWindow (1.4)
   - Kiwi (2.3.1)
-  - LetsMove (1.16)
+  - LetsMove (1.18)
   - MASPreferences (1.1.2)
   - MASShortcut (1.3.1)
   - NSURL+Gravatar (1.0.1)
@@ -41,7 +41,7 @@ SPEC CHECKSUMS:
   FontAwesomeIconFactory: 4b6d0a8d90b2604a2518e34d15bbc100af99f11c
   INAppStoreWindow: 4fd569f7435557239e78316de139e886ccbaec4d
   Kiwi: f038a6c61f7a9e4d7766bff5717aa3b3fdb75f55
-  LetsMove: c70420fc27ca466717b82eb52fabd7e4dfd40017
+  LetsMove: 218a0ce5c6cc1581c06efb8777f7f44dfadc4b73
   MASPreferences: 32d8a2c5ef1d60b63240f5676b011ff72e194cb1
   MASShortcut: 65f5fac12bbdd3622abcb8175a633f68f553c60f
   NSURL+Gravatar: a1344ed953aa05b0d929462cd73f4ee240d5a1d8
