@@ -119,11 +119,7 @@
 
     self.targetAddressField.stringValue = self.transaction.targetAddress ?: @"?";
 
-    if ([self isSharingSupported]) {
-        [self configureShareButton];
-    } else {
-        [self.shareButton setHidden:YES];
-    }
+    [self configureShareButton];
 }
 
 - (void)hideField:(NSView *)field {
@@ -205,10 +201,6 @@
     }
 
     return view;
-}
-
-- (BOOL)isSharingSupported {
-    return NSClassFromString(@"NSSharingServicePicker") != nil;
 }
 
 - (void)configureShareButton {
@@ -322,12 +314,10 @@
 }
 
 - (IBAction)shareButtonPressed:(NSButton *)sender {
-    #pragma deploymate push "ignored-api-availability"
     NSSharingServicePicker *sharingServicePicker = [[NSSharingServicePicker alloc] initWithItems:@[[self shareText]]];
     [sharingServicePicker showRelativeToRect:sender.bounds
                                       ofView:sender
                                preferredEdge:CGRectMaxXEdge];
-    #pragma deploymate pop
 }
 
 @end
