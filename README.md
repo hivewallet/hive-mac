@@ -7,7 +7,7 @@ Hive is a user-friendly Bitcoin wallet app for OSX.
 
 ## Requirements
 
-* OSX 10.7 (Lion) or newer
+* OSX 10.8 (Mountain Lion) or newer
 * Java runtime (for now - required by bitcoinj lib)
 
 
