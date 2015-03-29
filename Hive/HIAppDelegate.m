@@ -430,17 +430,19 @@ static int ddLogLevel = LOG_LEVEL_VERBOSE;
 #pragma mark - Sparkle delegate
 
 - (void)updaterDidNotFindUpdate:(SUUpdater *)updater {
-    if (_announcementShown) {
-        // don't spam the user too much at once
-        return;
-    }
+    dispatch_async(dispatch_get_main_queue(), ^{
+        if (_announcementShown || ![[BCClient sharedClient] isRunning]) {
+            // don't spam the user too much at once, and don't show at first launch
+            return;
+        }
 
-    // if we didn't get an Allow or Don't Allow response to the question about sending anonymous profile info,
-    // then ask now (this should run at startup but not more often than once per day)
-    if (![[NSUserDefaults standardUserDefaults] objectForKey:SUSendProfileInfoKey]) {
-        _announcementShown = YES;
-        [self openPopupWindowWithClass:[HIProfilePermissionWindowController class]];
-    }
+        // if we didn't get an Allow or Don't Allow response to the question about sending anonymous profile info,
+        // then ask now (this should run at startup but not more often than once per day)
+        if (![[NSUserDefaults standardUserDefaults] objectForKey:SUSendProfileInfoKey]) {
+            _announcementShown = YES;
+            [self openPopupWindowWithClass:[HIProfilePermissionWindowController class]];
+        }
+    });
 }
 
 
