@@ -2,7 +2,7 @@
 
 # generate strings from source code files
 echo "Regenerating Localizable.strings..."
-find Hive -name '*.m' | xargs genstrings -o Hive/en.lproj
+find Hive -name '*.m' -and -not -path 'Hive/Lib/*' | xargs genstrings -o Hive/en.lproj
 iconv -f UTF-16 -t UTF-8 Hive/en.lproj/Localizable.strings > Hive/en.lproj/Localizable.strings.8
 mv Hive/en.lproj/Localizable.strings.8 Hive/en.lproj/Localizable.strings
 
