@@ -12,7 +12,7 @@
  */
 @interface HICameraWindowController : NSWindowController
 
-@property (nonatomic, strong) id<HICameraWindowControllerDelegate> delegate;
+@property (nonatomic, weak) id<HICameraWindowControllerDelegate> delegate;
 
 + (HICameraWindowController *)sharedCameraWindowController;
 

@@ -32,7 +32,7 @@ static const NSInteger SidebarIndexNotSelected = -1;
 
 @property (nonatomic, weak) IBOutlet NSView *view;
 @property (nonatomic, weak) IBOutlet NSButton *sendButton;
-@property (nonatomic, unsafe_unretained) IBOutlet id<HISidebarControllerDelegate> delegate;
+@property (nonatomic, weak) IBOutlet id<HISidebarControllerDelegate> delegate;
 
 @property (nonatomic, assign) NSInteger selectedTabIndex;
 

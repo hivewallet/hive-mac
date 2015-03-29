@@ -17,7 +17,7 @@
 
 @interface HITransactionPopoverViewController : NSViewController
 
-@property (nonatomic, strong) id<HITransactionPopoverDelegate> delegate;
+@property (nonatomic, weak) id<HITransactionPopoverDelegate> delegate;
 
 - (instancetype)initWithTransaction:(HITransaction *)transaction;
 - (NSPopover *)createPopover;

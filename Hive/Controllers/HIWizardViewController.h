@@ -14,7 +14,7 @@
 
 @interface HIWizardViewController : NSViewController
 
-@property (nonatomic, strong) id<HIWizardViewControllerDelegate> wizardDelegate;
+@property (nonatomic, weak) id<HIWizardViewControllerDelegate> wizardDelegate;
 @property (nonatomic, strong, readonly) NSResponder *initialFirstResponder;
 
 - (void)viewWillAppear;

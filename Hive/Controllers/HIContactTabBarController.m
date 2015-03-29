@@ -15,7 +15,7 @@ static NSInteger TabBarButtonTagStart = 1000;
     NSArray *_tabBarButtons;
 }
 
-@property (nonatomic, strong) IBOutlet id<HIProfileTabBarControllerDelegate> tabDelegate;
+@property (nonatomic, weak) IBOutlet id<HIProfileTabBarControllerDelegate> tabDelegate;
 
 @end
 
