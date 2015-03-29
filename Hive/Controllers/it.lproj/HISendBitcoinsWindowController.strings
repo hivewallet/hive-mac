@@ -26,6 +26,9 @@
 /* Class = "NSTextFieldCell"; title = "Payment successful"; ObjectID = "JAi-pl-Y47"; */
 "JAi-pl-Y47.title" = "Pagamento avvenuto";
 
+/* Class = "NSTextFieldCell"; title = "Available:"; ObjectID = "MUD-jz-geH"; */
+"MUD-jz-geH.title" = "Available:";
+
 /* Class = "NSTextFieldCell"; title = "Currency exchange rates are provided by BitcoinAverage markets ticker. Bitcoin prices can change quickly, so other apps or sites might show different exchange rates."; ObjectID = "dxM-9E-wwb"; */
 "dxM-9E-wwb.title" = "I tassi di cambio sono ottenuti dal sito BitcoinAverage. Il prezzo del Bitcoin può cambiare velocemente, può capitare che altri siti / applicazioni mostrino prezzi diversi.";
 

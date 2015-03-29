@@ -26,6 +26,9 @@
 /* Class = "NSTextFieldCell"; title = "Payment successful"; ObjectID = "JAi-pl-Y47"; */
 "JAi-pl-Y47.title" = "Plată efectuată";
 
+/* Class = "NSTextFieldCell"; title = "Available:"; ObjectID = "MUD-jz-geH"; */
+"MUD-jz-geH.title" = "Available:";
+
 /* Class = "NSTextFieldCell"; title = "Currency exchange rates are provided by BitcoinAverage markets ticker. Bitcoin prices can change quickly, so other apps or sites might show different exchange rates."; ObjectID = "dxM-9E-wwb"; */
 "dxM-9E-wwb.title" = "Rata de schimb este cea afişată de Bitcoin Average. Preţul Bitcoin se poate schimba foarte rapid, aşa că alte aplicaţii sau site-uri pot afişa diferite rate de schimb.";
 
