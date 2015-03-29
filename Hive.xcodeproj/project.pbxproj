@@ -59,6 +59,7 @@
 		24EAAFC9186E1BBD00E1D2D3 /* HIBitcoinFormatServiceSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 24EAAFC8186E1BBD00E1D2D3 /* HIBitcoinFormatServiceSpec.m */; };
 		24FA9859192757A800D7058F /* HIGeneralPreferencesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 24FA9858192757A800D7058F /* HIGeneralPreferencesViewController.m */; };
 		24FA986C1927891E00D7058F /* HIGeneralPreferencesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 24FA986E1927891E00D7058F /* HIGeneralPreferencesViewController.xib */; };
+		58012E851AC7966000DF6859 /* HIAvatarEditBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 58012E841AC7966000DF6859 /* HIAvatarEditBar.m */; };
 		5802106017ECC4F50039BA4B /* HITransactionCellView.m in Sources */ = {isa = PBXBuildFile; fileRef = 581EFBCB17DA441B00E2738D /* HITransactionCellView.m */; };
 		5802106317ECCAAA0039BA4B /* HIContactAutocompleteCellView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5802106217ECCAAA0039BA4B /* HIContactAutocompleteCellView.m */; };
 		5804C32617FC88BA003B7891 /* HIProfile.m in Sources */ = {isa = PBXBuildFile; fileRef = 5804C32517FC88BA003B7891 /* HIProfile.m */; };
@@ -534,6 +535,8 @@
 		58003E6018492B4E00CD19FE /* sr-Latn */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "sr-Latn"; path = "sr-Latn.lproj/MainMenu.strings"; sourceTree = "<group>"; };
 		58003E6118492B4E00CD19FE /* sr-Latn */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = "sr-Latn"; path = "sr-Latn.lproj/MainMenu.xib"; sourceTree = "<group>"; };
 		58003E6318492B4E00CD19FE /* sr-Latn */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "sr-Latn"; path = "sr-Latn.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		58012E831AC7966000DF6859 /* HIAvatarEditBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HIAvatarEditBar.h; sourceTree = "<group>"; };
+		58012E841AC7966000DF6859 /* HIAvatarEditBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HIAvatarEditBar.m; sourceTree = "<group>"; };
 		5802106117ECCAAA0039BA4B /* HIContactAutocompleteCellView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HIContactAutocompleteCellView.h; sourceTree = "<group>"; };
 		5802106217ECCAAA0039BA4B /* HIContactAutocompleteCellView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HIContactAutocompleteCellView.m; sourceTree = "<group>"; };
 		5804C32417FC88BA003B7891 /* HIProfile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HIProfile.h; sourceTree = "<group>"; };
@@ -2775,6 +2778,8 @@
 				24300C54188C50E300FDEF2F /* Buttons */,
 				1AA10789485D85E021441CEF /* HIAddressesBox.h */,
 				1AA107FF085E51B83E5F751D /* HIAddressesBox.m */,
+				58012E831AC7966000DF6859 /* HIAvatarEditBar.h */,
+				58012E841AC7966000DF6859 /* HIAvatarEditBar.m */,
 				583B1E0B1868BAC000817EF8 /* HIBackupActionsCellView.h */,
 				583B1E0C1868BAC000817EF8 /* HIBackupActionsCellView.m */,
 				588F3E8318719A9000FF42EA /* HIBackupStatusCellView.h */,
@@ -3367,6 +3372,7 @@
 				58CFD95417CF914000A035FA /* HISidebarView.m in Sources */,
 				581711BE17D0A26D00DE775A /* HISidebarButton.m in Sources */,
 				D94815B417D492A0006A0312 /* HITitleView.m in Sources */,
+				58012E851AC7966000DF6859 /* HIAvatarEditBar.m in Sources */,
 				D94815E917D4BCEF006A0312 /* HIContactRowView.m in Sources */,
 				D94815F217D4D9AF006A0312 /* HISeparatorView.m in Sources */,
 				583B1E0D1868BAC000817EF8 /* HIBackupActionsCellView.m in Sources */,
