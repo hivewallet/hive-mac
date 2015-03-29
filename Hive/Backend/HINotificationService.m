@@ -35,17 +35,13 @@ typedef NS_ENUM(NSInteger, HINotificationType) {
     return sharedService;
 }
 
-- (BOOL)notificationsAvailable {
-    return NSClassFromString(@"NSUserNotificationCenter") != nil;
-}
-
 - (void)setEnabled:(BOOL)enabled {
-    enabled = enabled && self.notificationsAvailable;
     if (!_enabled && enabled) {
         [self enable];
     } else if (_enabled && !enabled) {
         [self disable];
     }
+
     _enabled = enabled;
 }
 

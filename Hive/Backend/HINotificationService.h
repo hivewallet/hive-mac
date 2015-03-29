@@ -3,9 +3,6 @@
  */
 @interface HINotificationService : NSObject
 
-/* Test in notifications are supported on the current OS version. */
-@property (nonatomic, assign, readonly) BOOL notificationsAvailable;
-
 /* Enables or disables notifications. */
 @property (nonatomic, assign) BOOL enabled;
 
