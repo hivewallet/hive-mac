@@ -25,7 +25,7 @@ NSString * const BCClientPasswordChangedNotification = @"BCClientPasswordChanged
 
 @property (nonatomic, assign) uint64 availableBalance;
 @property (nonatomic, assign) uint64 estimatedBalance;
-@property (nonatomic, strong, readonly) NSMutableSet *transactionObservers;
+@property (nonatomic, strong, readonly) NSHashTable *transactionObservers;
 
 @end
 
@@ -80,7 +80,7 @@ NSString * const BCClientPasswordChangedNotification = @"BCClientPasswordChanged
             });
         };
 
-        _transactionObservers = [NSMutableSet new];
+        _transactionObservers = [NSHashTable weakObjectsHashTable];
 
         if (DEBUG_OPTION_ENABLED(TESTING_NETWORK)) {
             bitcoin.testingNetwork = YES;

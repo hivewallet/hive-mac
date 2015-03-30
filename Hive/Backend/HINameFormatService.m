@@ -7,7 +7,7 @@ static int KVContext;
 
 @interface HINameFormatService()
 
-@property (nonatomic, strong) NSMutableSet *observers;
+@property (nonatomic, strong) NSHashTable *observers;
 
 @end
 
@@ -28,7 +28,7 @@ static int KVContext;
     self = [super init];
 
     if (self) {
-        _observers = [NSMutableSet new];
+        _observers = [NSHashTable weakObjectsHashTable];
 
         [[NSUserDefaults standardUserDefaults] registerDefaults:@{ LastNameFirstDefaultsKey: @0 }];
         [[NSUserDefaults standardUserDefaults] addObserver:self

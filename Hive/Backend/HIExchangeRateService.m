@@ -16,7 +16,7 @@ static const NSTimeInterval HIExchangeRateMinimumUpdateInterval = 60.0;
 }
 
 @property (nonatomic, strong) AFHTTPClient *client;
-@property (nonatomic, strong) NSMutableSet *observers;
+@property (nonatomic, strong) NSHashTable *observers;
 @property (nonatomic, strong) NSMutableDictionary *exchangeRates;
 @property (nonatomic, copy) NSDate *lastUpdate;
 
@@ -41,7 +41,7 @@ static const NSTimeInterval HIExchangeRateMinimumUpdateInterval = 60.0;
 
     if (self) {
         self.client = [BCClient sharedClient];
-        self.observers = [NSMutableSet new];
+        self.observers = [NSHashTable weakObjectsHashTable];
         self.exchangeRates = [NSMutableDictionary new];
         self.lastUpdate = [NSDate dateWithTimeIntervalSince1970:0];
 
