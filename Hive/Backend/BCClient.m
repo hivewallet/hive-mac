@@ -18,6 +18,8 @@ static NSString * const kBCClientBaseURLString = @"https://grabhive.com/";
 NSString * const BCClientBitcoinjDirectory = @"BitcoinJ.network";
 NSString * const BCClientPasswordChangedNotification = @"BCClientPasswordChangedNotification";
 
+static BCClient *sharedClient = nil;
+
 @interface BCClient () {
     NSManagedObjectContext *_transactionUpdateContext;
     NSDateFormatter *_dateFormatter;
@@ -31,8 +33,11 @@ NSString * const BCClientPasswordChangedNotification = @"BCClientPasswordChanged
 
 @implementation BCClient
 
++ (BOOL)isInitialized {
+    return sharedClient != nil;
+}
+
 + (BCClient *)sharedClient {
-    static BCClient *sharedClient = nil;
     static dispatch_once_t oncePredicate;
 
     dispatch_once(&oncePredicate, ^{

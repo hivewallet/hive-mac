@@ -33,6 +33,7 @@ extern NSString * const BCClientPasswordChangedNotification;
 @property (nonatomic, readonly, getter = isWalletPasswordProtected) BOOL walletPasswordProtected;
 
 + (BCClient *)sharedClient;
++ (BOOL)isInitialized;
 
 - (BOOL)start:(NSError **)error;
 - (void)shutdown;

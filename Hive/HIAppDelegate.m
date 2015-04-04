@@ -431,7 +431,7 @@ static int ddLogLevel = LOG_LEVEL_VERBOSE;
 
 - (void)updaterDidNotFindUpdate:(SUUpdater *)updater {
     dispatch_async(dispatch_get_main_queue(), ^{
-        if (_announcementShown || ![[BCClient sharedClient] isRunning]) {
+        if (_announcementShown || ![BCClient isInitialized]) {
             // don't spam the user too much at once, and don't show at first launch
             return;
         }
