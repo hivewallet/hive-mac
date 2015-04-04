@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="6254" systemVersion="13F34" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="6751" systemVersion="14C2513" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="6254"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="6751"/>
         <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
     </dependencies>
     <objects>
@@ -19,23 +19,20 @@
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
             <subviews>
                 <customView placeholderIntrinsicWidth="infinite" placeholderIntrinsicHeight="20" translatesAutoresizingMaskIntoConstraints="NO" id="EUb-FB-dlv" customClass="MASShortcutView">
-                    <rect key="frame" x="235" y="61" width="140" height="20"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <rect key="frame" x="235" y="62" width="140" height="19"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="140" id="Htu-6T-4dq"/>
-                        <constraint firstAttribute="height" constant="20" id="izm-rz-lsJ"/>
+                        <constraint firstAttribute="height" constant="19" id="izm-rz-lsJ"/>
                     </constraints>
                 </customView>
                 <customView placeholderIntrinsicWidth="infinite" placeholderIntrinsicHeight="20" translatesAutoresizingMaskIntoConstraints="NO" id="qCu-pV-oDw" customClass="MASShortcutView">
-                    <rect key="frame" x="235" y="33" width="140" height="20"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <rect key="frame" x="235" y="35" width="140" height="19"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="20" id="lLh-Hn-Ahs"/>
+                        <constraint firstAttribute="height" constant="19" id="lLh-Hn-Ahs"/>
                     </constraints>
                 </customView>
                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="yXb-o1-MTN">
-                    <rect key="frame" x="18" y="98" width="116" height="17"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <rect key="frame" x="18" y="98" width="114" height="17"/>
                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="グローバルショートカット" id="uBD-1D-rbI">
                         <font key="font" metaFont="systemBold"/>
                         <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
@@ -43,8 +40,7 @@
                     </textFieldCell>
                 </textField>
                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="VCt-xi-Nos">
-                    <rect key="frame" x="89" y="63" width="140" height="17"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <rect key="frame" x="87" y="64" width="142" height="17"/>
                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="「送金」ウィンドウを表示:" id="sbC-cS-hdN">
                         <font key="font" metaFont="system"/>
                         <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
@@ -52,8 +48,7 @@
                     </textFieldCell>
                 </textField>
                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="W0T-gT-NN9">
-                    <rect key="frame" x="135" y="35" width="94" height="17"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <rect key="frame" x="131" y="37" width="98" height="17"/>
                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="QRコードを読み取る:" id="psj-Lk-deP">
                         <font key="font" metaFont="system"/>
                         <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
@@ -63,7 +58,7 @@
             </subviews>
             <constraints>
                 <constraint firstItem="EUb-FB-dlv" firstAttribute="centerY" secondItem="VCt-xi-Nos" secondAttribute="centerY" constant="0.5" id="A8a-HZ-wQm"/>
-                <constraint firstItem="qCu-pV-oDw" firstAttribute="top" secondItem="EUb-FB-dlv" secondAttribute="bottom" constant="8" id="GrH-aa-yqn"/>
+                <constraint firstItem="qCu-pV-oDw" firstAttribute="top" secondItem="EUb-FB-dlv" secondAttribute="bottom" constant="8" symbolic="YES" id="GrH-aa-yqn"/>
                 <constraint firstItem="yXb-o1-MTN" firstAttribute="leading" secondItem="c22-O7-iKe" secondAttribute="leading" constant="20" id="XvW-72-P3s"/>
                 <constraint firstItem="EUb-FB-dlv" firstAttribute="top" secondItem="yXb-o1-MTN" secondAttribute="bottom" constant="17" id="eKq-D0-Xwa"/>
                 <constraint firstItem="qCu-pV-oDw" firstAttribute="leading" secondItem="W0T-gT-NN9" secondAttribute="trailing" constant="8" id="f3B-PT-9XV"/>
