@@ -8,10 +8,7 @@
 
 #import <BitcoinJKit/HIBitcoinErrorCodes.h>
 #import <BitcoinJKit/HIBitcoinManager.h>
-#import <CocoaLumberjack/DDASLLogger.h>
-#import <CocoaLumberjack/DDFileLogger.h>
-#import <CocoaLumberjack/DDLog.h>
-#import <CocoaLumberjack/DDTTYLogger.h>
+#import <CocoaLumberjack/CocoaLumberjack.h>
 #import <HockeySDK/HockeySDK.h>
 #import <Sparkle/Sparkle.h>
 
@@ -49,13 +46,6 @@
 #import "PFMoveApplication.h"
 
 static NSString * const LastVersionKey = @"LastHiveVersion";
-static int ddLogLevel = LOG_LEVEL_VERBOSE;
-
-@interface DDLog (ExposePrivateMethod)
-
-+ (void)queueLogMessage:(DDLogMessage *)logMessage asynchronously:(BOOL)asyncFlag;
-
-@end
 
 @interface HIAppDelegate () <BITHockeyManagerDelegate, SUUpdaterDelegate> {
     HIMainWindowController *_mainWindowController;
@@ -143,8 +133,8 @@ static int ddLogLevel = LOG_LEVEL_VERBOSE;
     HILogFormatter *formatter = [HILogFormatter new];
 
     // default loggers - Console.app and Xcode console
-    [DDLog addLogger:[DDASLLogger sharedInstance] withLogLevel:LOG_LEVEL_WARN];
-    [DDLog addLogger:[DDTTYLogger sharedInstance] withLogLevel:LOG_LEVEL_VERBOSE];
+    [DDLog addLogger:[DDASLLogger sharedInstance] withLevel:DDLogLevelWarning];
+    [DDLog addLogger:[DDTTYLogger sharedInstance] withLevel:DDLogLevelVerbose];
     [[DDTTYLogger sharedInstance] setLogFormatter:formatter];
 
     // file logger manager config - keep 4 log files
@@ -157,7 +147,7 @@ static int ddLogLevel = LOG_LEVEL_VERBOSE;
     fileLogger.maximumFileSize = 10 * 1024 * 1024;
     fileLogger.logFormatter = formatter;
 
-    [DDLog addLogger:fileLogger withLogLevel:LOG_LEVEL_VERBOSE];
+    [DDLog addLogger:fileLogger withLevel:DDLogLevelVerbose];
 
     // configure BitcoinKit logger to use CocoaLumberjack system
     [[HILogger sharedLogger] setLogHandler:logHandler];
@@ -609,34 +599,35 @@ static int ddLogLevel = LOG_LEVEL_VERBOSE;
 static void (^logHandler)(const char*, const char*, int, HILoggerLevel, NSString*) =
     ^(const char *fileName, const char *functionName, int lineNumber, HILoggerLevel level, NSString *message) {
 
-    int flag;
+    DDLogFlag flag;
 
     switch (level) {
         case HILoggerLevelInfo:
-            flag = LOG_FLAG_INFO;
+            flag = DDLogFlagInfo;
             break;
         case HILoggerLevelWarn:
-            flag = LOG_FLAG_WARN;
+            flag = DDLogFlagWarning;
             break;
         case HILoggerLevelError:
-            flag = LOG_FLAG_ERROR;
+            flag = DDLogFlagError;
             break;
         default:
-            flag = LOG_FLAG_DEBUG;
+            flag = DDLogFlagDebug;
             break;
     }
 
-    DDLogMessage *log = [[DDLogMessage alloc] initWithLogMsg:message
-                                                       level:ddLogLevel
-                                                        flag:flag
-                                                     context:0
-                                                        file:fileName
-                                                    function:functionName
-                                                        line:lineNumber
-                                                         tag:nil
-                                                     options:DDLogMessageCopyFile | DDLogMessageCopyFunction];
+    DDLogMessage *log = [[DDLogMessage alloc] initWithMessage:message
+                                                        level:LOG_LEVEL_DEF
+                                                         flag:flag
+                                                      context:0
+                                                         file:[NSString stringWithFormat:@"%s", fileName]
+                                                     function:[NSString stringWithFormat:@"%s", functionName]
+                                                         line:lineNumber
+                                                          tag:nil
+                                                      options:(DDLogMessageCopyFile | DDLogMessageCopyFunction)
+                                                    timestamp:nil];
 
-    [DDLog queueLogMessage:log asynchronously:YES];
+    [DDLog log:YES message:log];
 };
 
 

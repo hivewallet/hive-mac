@@ -13,31 +13,33 @@
 - (NSString *)formatLogMessage:(DDLogMessage *)message {
     NSString *logLevel;
 
-    switch (message->logFlag) {
-        case LOG_FLAG_ERROR:
+    switch (message->_flag) {
+        case DDLogFlagError:
             logLevel = @"ERROR";
             break;
-        case LOG_FLAG_WARN:
+        case DDLogFlagWarning:
             logLevel = @"WARN";
             break;
-        case LOG_FLAG_INFO:
+        case DDLogFlagInfo:
             logLevel = @"INFO";
             break;
-        case LOG_FLAG_DEBUG:
+        case DDLogFlagDebug:
             logLevel = @"DEBUG";
             break;
-        case LOG_FLAG_VERBOSE:
+        case DDLogFlagVerbose:
             logLevel = @"VERBOSE";
             break;
         default:
             logLevel = @"UNKNOWN";
     }
 
-    NSString *fileName = [[NSString stringWithUTF8String:message->file] lastPathComponent];
-
-    return [NSString stringWithFormat:@"%@ %s (%@:%d)\n%@: %@\n",
-            message->timestamp, message->function, fileName, message->lineNumber,
-            logLevel, message->logMsg];
+    return [NSString stringWithFormat:@"%@ %@ (%@:%lu)\n%@: %@\n",
+            message->_timestamp,
+            message->_function,
+            [message->_file lastPathComponent],
+            message->_line,
+            logLevel,
+            message->_message];
 }
 
 @end
