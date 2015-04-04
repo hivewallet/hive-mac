@@ -1,12 +1,10 @@
-#import <MASPreferences/MASPreferencesViewController.h>
-
 #import <FontAwesomeIconFactory/NIKFontAwesomeIconFactory+OSX.h>
 #import <FontAwesomeIconFactory/NIKFontAwesomeIconFactory.h>
+#import <MASPreferences/MASPreferencesViewController.h>
+#import <MASShortcut/Shortcut.h>
 
 #import "HIKeyPreferencesViewController.h"
 #import "HIShortcutService.h"
-#import "MASShortcutView+UserDefaults.h"
-#import "MASShortcutView.h"
 
 @interface HIKeyPreferencesViewController ()
 

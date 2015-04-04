@@ -1,6 +1,6 @@
-#import "HIShortcutService.h"
+#import <MASShortcut/Shortcut.h>
 
-#import "MASShortcut+UserDefaults.h"
+#import "HIShortcutService.h"
 
 @implementation HIShortcutService
 
@@ -29,14 +29,14 @@
 
 - (void)setSendBlock:(void (^)())sendBlock {
     _sendBlock = [sendBlock copy];
-    [MASShortcut registerGlobalShortcutWithUserDefaultsKey:self.sendPreferenceKey
-                                                   handler:sendBlock];
+    [[MASShortcutBinder sharedBinder] bindShortcutWithDefaultsKey:self.sendPreferenceKey
+                                                         toAction:self.sendBlock];
 }
 
 - (void)setCameraBlock:(void (^)())cameraBlock {
     _cameraBlock = [cameraBlock copy];
-    [MASShortcut registerGlobalShortcutWithUserDefaultsKey:self.cameraPreferenceKey
-                                                   handler:cameraBlock];
+    [[MASShortcutBinder sharedBinder] bindShortcutWithDefaultsKey:self.cameraPreferenceKey
+                                                         toAction:self.cameraBlock];
 }
 
 @end
