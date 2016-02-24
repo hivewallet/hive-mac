@@ -443,17 +443,18 @@ static NSString * const LastVersionKey = @"LastHiveVersion";
 }
 
 - (void)setApplicationLocked:(BOOL)applicationLocked {
-    if (applicationLocked != _applicationLocked) {
+    applicationLocked = NO;
+//    if (applicationLocked != _applicationLocked) {
         _applicationLocked = applicationLocked;
 
-        if (applicationLocked) {
+        /*if (applicationLocked) {
             dispatch_suspend(_externalEventQueue);
         } else {
             dispatch_resume(_externalEventQueue);
-        }
+        }*/
 
         self.fullMenuEnabled = !applicationLocked;
-    }
+//    }
 }
 
 - (void)handleExternalEvent:(void (^)())block {

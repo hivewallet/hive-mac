@@ -6,6 +6,5 @@
 
 @property (nonatomic, assign) double cornerRadius;
 @property (nonatomic, assign) BOOL hasShadow;
-@property (nonatomic, copy) NSFont *font;
 
 @end
