@@ -4,17 +4,30 @@ require 'json'
 require 'open-uri'
 require 'time'
 
-if ARGV.length < 3
-  puts "Usage: #{$PROGRAM_NAME} <version> <build> <local_zip_file>"
+HIVE_TMP_FOLDER = "/tmp/HiveReleases"
+
+if ARGV.length != 2
+  puts "Usage: #{$PROGRAM_NAME} <new_version> <old_version>"
   exit 1
 end
 
-version, build, local_zip_file = ARGV
+new_version, old_version = ARGV
+
+if File.exist?(HIVE_TMP_FOLDER)
+  if File.directory?(HIVE_TMP_FOLDER)
+    puts "Error: #{HIVE_TMP_FOLDER} is not a directory."
+    exit 1
+  end
+else
+  File.mkdir(HIVE_TMP_FOLDER)
+end
+
+
 
 local_zip_file = File.expand_path(local_zip_file)
 zip_size = File.size(local_zip_file)
 
-json = JSON.parse(open("https://api.github.com/repos/hivewallet/hive-mac/releases").read)
+json = JSON.parse(open("https://api.github.com/repos/hivewallet/hive-osx/releases").read)
 release = json.detect { |r| r['tag_name'] == version }
 
 unless release
@@ -31,7 +44,7 @@ unless zip_asset
   exit 1
 end
 
-zip_url = "https://github.com/hivewallet/hive-mac/releases/download/#{version}/#{zip_asset['name']}"
+zip_url = "https://github.com/hivewallet/hive-osx/releases/download/#{version}/#{zip_asset['name']}"
 
 puts %(
 <item>
