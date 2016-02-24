@@ -11,6 +11,7 @@ zh_TW.lproj
 
 *.xcuserdatad
 *.xccheckout
+*.xcscmblueprint
 .DS_Store
 FauxPasConfig
 Pods
