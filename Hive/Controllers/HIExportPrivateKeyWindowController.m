@@ -128,7 +128,7 @@
                                 defaultButton:NSLocalizedString(@"OK", @"OK button title")
                               alternateButton:nil
                                   otherButton:nil
-                    informativeTextWithFormat:nil];
+                    informativeTextWithFormat:@""];
     }
 
     [alert beginSheetModalForWindow:self.window modalDelegate:nil didEndSelector:nil contextInfo:NULL];

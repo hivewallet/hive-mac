@@ -97,7 +97,7 @@
                                 defaultButton:@"OK"
                               alternateButton:nil
                                   otherButton:nil
-                    informativeTextWithFormat:nil];
+                    informativeTextWithFormat:@""];
     }
 
     [alert beginSheetModalForWindow:self.window modalDelegate:nil didEndSelector:nil contextInfo:NULL];

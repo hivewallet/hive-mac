@@ -328,7 +328,7 @@
     NSSharingServicePicker *sharingServicePicker = [[NSSharingServicePicker alloc] initWithItems:@[[self shareText]]];
     [sharingServicePicker showRelativeToRect:sender.bounds
                                       ofView:sender
-                               preferredEdge:CGRectMaxXEdge];
+                               preferredEdge:NSRectEdgeMaxX];
     #pragma deploymate pop
 }
 
