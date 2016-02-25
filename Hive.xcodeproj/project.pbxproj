@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		05D9F526F5294257A0422835 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1EFBACBE45EB458A8ED83785 /* libPods.a */; };
 		1AA1008D9D0E0DC1B7F4E36D /* HILinkTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AA100BCED704B381898FF89 /* HILinkTextField.m */; };
 		1AA100A06AF3D94CDB6D1867 /* HIDraggableButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AA10ED2A6A54B40FB3067FD /* HIDraggableButton.m */; };
 		1AA100EA733AE3603014D604 /* HIBitcoinURIService.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AA109C51D4A1A22BB28F6BF /* HIBitcoinURIService.m */; };
@@ -37,6 +36,7 @@
 		1AA10F0AB0B36A26463B74A9 /* HIShortcutService.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AA1085915844864667B118C /* HIShortcutService.m */; };
 		1AA10F7BD079E23BAB09D4E1 /* HIPreferencesWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AA10D7BCF51F6AE70202C19 /* HIPreferencesWindowController.m */; };
 		1AA10FF5281477AC42B0B952 /* HIWizardSmallButtonCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AA101A350D2350E6AF62F4C /* HIWizardSmallButtonCell.m */; };
+		1F54E0D5A7615E2A7EE8CD9F /* libPods-HiveTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 48FD7FC519C8C77C32650CEB /* libPods-HiveTests.a */; };
 		24178E301861005100A73D4E /* HIPasswordChangeWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 24178E2E1861005100A73D4E /* HIPasswordChangeWindowController.m */; };
 		24300BD918830ACA00FDEF2F /* HIFirstRunWizardWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 24300BD718830ACA00FDEF2F /* HIFirstRunWizardWindowController.m */; };
 		24300BDA18830ACA00FDEF2F /* HIFirstRunWizardWindowController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 24300BD818830ACA00FDEF2F /* HIFirstRunWizardWindowController.xib */; };
@@ -239,7 +239,6 @@
 		D9A591DE1767B4A800502635 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = D9A591DC1767B4A800502635 /* MainMenu.xib */; };
 		D9F0B9F817EC654C0050A0A2 /* HIImageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D9F0B9F717EC654C0050A0A2 /* HIImageCell.m */; };
 		D9F8454F1781C509004076F6 /* Icon.icns in Resources */ = {isa = PBXBuildFile; fileRef = D9F8454E1781C509004076F6 /* Icon.icns */; };
-		DCDAE98650D74356A85FD777 /* libPods-test.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D217EA4BBEC47F5A47AFC8E /* libPods-test.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -339,7 +338,6 @@
 		1AA10F3E7660E657A58361D9 /* HIProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HIProfileViewController.h; sourceTree = "<group>"; };
 		1AA10FA59EE4E8EDFD4C96AA /* HINameFormatService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HINameFormatService.m; sourceTree = "<group>"; };
 		1AA10FF5AC215B56078E2A1F /* HIWizardWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HIWizardWindowController.h; sourceTree = "<group>"; };
-		1EFBACBE45EB458A8ED83785 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		24178E2D1861005100A73D4E /* HIPasswordChangeWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HIPasswordChangeWindowController.h; sourceTree = "<group>"; };
 		24178E2E1861005100A73D4E /* HIPasswordChangeWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HIPasswordChangeWindowController.m; sourceTree = "<group>"; };
 		24300BD618830ACA00FDEF2F /* HIFirstRunWizardWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HIFirstRunWizardWindowController.h; sourceTree = "<group>"; };
@@ -487,8 +485,7 @@
 		24FA98801927893100D7058F /* tr */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = tr; path = tr.lproj/HIGeneralPreferencesViewController.xib; sourceTree = "<group>"; };
 		24FA98811927893100D7058F /* pt-PT */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = "pt-PT"; path = "pt-PT.lproj/HIGeneralPreferencesViewController.xib"; sourceTree = "<group>"; };
 		24FA98821927893200D7058F /* sv */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = sv; path = sv.lproj/HIGeneralPreferencesViewController.xib; sourceTree = "<group>"; };
-		404373D60E6AE32EBA7E3C75 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
-		4D217EA4BBEC47F5A47AFC8E /* libPods-test.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-test.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		48FD7FC519C8C77C32650CEB /* libPods-HiveTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-HiveTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		58003E2818492B2A00CD19FE /* sr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = sr; path = sr.lproj/HIContactsViewController.strings; sourceTree = "<group>"; };
 		58003E2918492B2A00CD19FE /* sr */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = sr; path = sr.lproj/HIContactsViewController.xib; sourceTree = "<group>"; };
 		58003E2A18492B2A00CD19FE /* sr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = sr; path = sr.lproj/HIContactInfoViewController.strings; sourceTree = "<group>"; };
@@ -1743,6 +1740,7 @@
 		58A8760C197E9D0F00524C77 /* HIGoogleDriveBackup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HIGoogleDriveBackup.m; sourceTree = "<group>"; };
 		58A8760E197E9E8100524C77 /* google-drive-128.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "google-drive-128.png"; sourceTree = "<group>"; };
 		58A87610197EB35800524C77 /* get_gdrive_folder.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = get_gdrive_folder.sh; sourceTree = "<group>"; };
+		58AE50512945E2EFD81C9244 /* Pods-HiveTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HiveTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HiveTests/Pods-HiveTests.debug.xcconfig"; sourceTree = "<group>"; };
 		58AE8CB919226AF800946C97 /* icon-success.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-success.png"; sourceTree = "<group>"; };
 		58AE8CBA19226AF800946C97 /* icon-success@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-success@2x.png"; sourceTree = "<group>"; };
 		58AE8CC0192A8DE900946C97 /* sr-Latn */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = "sr-Latn"; path = "sr-Latn.lproj/HIGeneralPreferencesViewController.xib"; sourceTree = "<group>"; };
@@ -2236,7 +2234,6 @@
 		58F56BB51832909100C57640 /* pt-PT */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-PT"; path = "pt-PT.lproj/MainMenu.strings"; sourceTree = "<group>"; };
 		58F56BB61832909100C57640 /* pt-PT */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = "pt-PT"; path = "pt-PT.lproj/MainMenu.xib"; sourceTree = "<group>"; };
 		58F56BB81832909100C57640 /* pt-PT */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-PT"; path = "pt-PT.lproj/Localizable.strings"; sourceTree = "<group>"; };
-		7D7D8DC037974C00AB4A29A1 /* Pods-test.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-test.debug.xcconfig"; path = "Pods/Target Support Files/Pods-test/Pods-test.debug.xcconfig"; sourceTree = "<group>"; };
 		9A823D1618781AE10040C85C /* sv */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = sv; path = sv.lproj/HIContactsViewController.strings; sourceTree = "<group>"; };
 		9A823D1718781AE10040C85C /* sv */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = sv; path = sv.lproj/HIContactsViewController.xib; sourceTree = "<group>"; };
 		9A823D1818781AE10040C85C /* sv */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = sv; path = sv.lproj/HIContactInfoViewController.strings; sourceTree = "<group>"; };
@@ -2262,8 +2259,7 @@
 		9A823D2E18781AE40040C85C /* sv */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = sv; path = sv.lproj/MainMenu.strings; sourceTree = "<group>"; };
 		9A823D2F18781AE40040C85C /* sv */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = sv; path = sv.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		9A823D3118781AE50040C85C /* sv */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = sv; path = sv.lproj/Localizable.strings; sourceTree = "<group>"; };
-		BB42D9F40183087DCC69743B /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
-		CDA0597D51F28424EA14AC69 /* Pods-test.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-test.release.xcconfig"; path = "Pods/Target Support Files/Pods-test/Pods-test.release.xcconfig"; sourceTree = "<group>"; };
+		D3C4D2813CCF56BB01E3F871 /* Pods-HiveTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HiveTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-HiveTests/Pods-HiveTests.release.xcconfig"; sourceTree = "<group>"; };
 		D91FE8071793FEFC001B37D8 /* BitcoinKit.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = BitcoinKit.xcodeproj; path = BitcoinKit/BitcoinKit.xcodeproj; sourceTree = "<group>"; };
 		D91FE826179887C4001B37D8 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		D938F00E17E6278B00566FFD /* HITextFieldCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HITextFieldCell.h; sourceTree = "<group>"; };
@@ -2311,7 +2307,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DCDAE98650D74356A85FD777 /* libPods-test.a in Frameworks */,
+				1F54E0D5A7615E2A7EE8CD9F /* libPods-HiveTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2322,7 +2318,6 @@
 				D91FE827179887C5001B37D8 /* libz.dylib in Frameworks */,
 				D901F4F917B273440071780D /* BitcoinJKit.framework in Frameworks */,
 				58A149CA18C61BB900591F17 /* HockeySDK.framework in Frameworks */,
-				05D9F526F5294257A0422835 /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2491,17 +2486,6 @@
 				24EAAFCA186E1BBD00E1D2D3 /* HiveTests-Prefix.pch */,
 			);
 			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		2A2D8571EA7ADA1ADE3E2935 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				BB42D9F40183087DCC69743B /* Pods.debug.xcconfig */,
-				404373D60E6AE32EBA7E3C75 /* Pods.release.xcconfig */,
-				7D7D8DC037974C00AB4A29A1 /* Pods-test.debug.xcconfig */,
-				CDA0597D51F28424EA14AC69 /* Pods-test.release.xcconfig */,
-			);
-			name = Pods;
 			sourceTree = "<group>";
 		};
 		5804C31F17FC884E003B7891 /* Models */ = {
@@ -2695,6 +2679,15 @@
 			name = HIExportPrivateKeyWindowController;
 			sourceTree = "<group>";
 		};
+		B7C3588F60CABE5EAE86F4CC /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				58AE50512945E2EFD81C9244 /* Pods-HiveTests.debug.xcconfig */,
+				D3C4D2813CCF56BB01E3F871 /* Pods-HiveTests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		D91FE8081793FEFC001B37D8 /* Products */ = {
 			isa = PBXGroup;
 			children = (
@@ -2841,7 +2834,7 @@
 				24EAAFC2186E1BBD00E1D2D3 /* HiveTests */,
 				D9A591C61767B4A800502635 /* Frameworks */,
 				D9A591C51767B4A800502635 /* Products */,
-				2A2D8571EA7ADA1ADE3E2935 /* Pods */,
+				B7C3588F60CABE5EAE86F4CC /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -2857,11 +2850,10 @@
 		D9A591C61767B4A800502635 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				4D217EA4BBEC47F5A47AFC8E /* libPods-test.a */,
-				1EFBACBE45EB458A8ED83785 /* libPods.a */,
 				D91FE826179887C4001B37D8 /* libz.dylib */,
 				58A149C918C61BB900591F17 /* HockeySDK.framework */,
 				D91FE8071793FEFC001B37D8 /* BitcoinKit.xcodeproj */,
+				48FD7FC519C8C77C32650CEB /* libPods-HiveTests.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -3027,11 +3019,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 24EAAFD1186E1BBE00E1D2D3 /* Build configuration list for PBXNativeTarget "HiveTests" */;
 			buildPhases = (
-				06286C700A054417970F51CA /* Check Pods Manifest.lock */,
+				B288BD9703FFB04F352A8ED2 /* Check Pods Manifest.lock */,
 				24EAAFBB186E1BBD00E1D2D3 /* Sources */,
 				24EAAFBC186E1BBD00E1D2D3 /* Frameworks */,
 				24EAAFBD186E1BBD00E1D2D3 /* Resources */,
-				9C2C93EA614A4323B0C3CF98 /* Copy Pods Resources */,
+				D2208C93FAA65F837C43D98D /* Embed Pods Frameworks */,
+				D61F43E1747A1FBC7B51A78B /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -3047,11 +3040,9 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D9A591E41767B4A800502635 /* Build configuration list for PBXNativeTarget "Hive" */;
 			buildPhases = (
-				76E026BD5FBE46B6A03E4CCE /* Check Pods Manifest.lock */,
 				D9A591C01767B4A800502635 /* Sources */,
 				D9A591C11767B4A800502635 /* Frameworks */,
 				D9A591C21767B4A800502635 /* Resources */,
-				145A6D7ED7BD4D8BAE1D6E18 /* Copy Pods Resources */,
 				D91FE815179424A8001B37D8 /* CopyFiles */,
 				243F45FC18C7CB7300E16414 /* Sign frameworks */,
 			);
@@ -3275,35 +3266,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		06286C700A054417970F51CA /* Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Check Pods Manifest.lock";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
-		145A6D7ED7BD4D8BAE1D6E18 /* Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
-		};
 		243F45FC18C7CB7300E16414 /* Sign frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -3319,7 +3281,7 @@
 			shellScript = "if [ -n \"$CODE_SIGN_IDENTITY\" ]; then\n  for name in BitcoinJKit Sparkle; do\n    codesign -f --preserve-metadata=identifier,entitlements,resource-rules,requirements -s \"$CODE_SIGN_IDENTITY\" \"$CONFIGURATION_BUILD_DIR/$FRAMEWORKS_FOLDER_PATH/$name.framework\"\n  done\nfi\n";
 			showEnvVarsInLog = 0;
 		};
-		76E026BD5FBE46B6A03E4CCE /* Check Pods Manifest.lock */ = {
+		B288BD9703FFB04F352A8ED2 /* Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -3332,8 +3294,24 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
 		};
-		9C2C93EA614A4323B0C3CF98 /* Copy Pods Resources */ = {
+		D2208C93FAA65F837C43D98D /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-HiveTests/Pods-HiveTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D61F43E1747A1FBC7B51A78B /* Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -3345,7 +3323,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-test/Pods-test-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-HiveTests/Pods-HiveTests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -5596,7 +5574,7 @@
 /* Begin XCBuildConfiguration section */
 		24EAAFCD186E1BBE00E1D2D3 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 7D7D8DC037974C00AB4A29A1 /* Pods-test.debug.xcconfig */;
+			baseConfigurationReference = 58AE50512945E2EFD81C9244 /* Pods-HiveTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Hive.app/Contents/MacOS/Hive";
 				CLANG_WARN_BOOL_CONVERSION = YES;
@@ -5626,7 +5604,7 @@
 		};
 		24EAAFCE186E1BBE00E1D2D3 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = CDA0597D51F28424EA14AC69 /* Pods-test.release.xcconfig */;
+			baseConfigurationReference = D3C4D2813CCF56BB01E3F871 /* Pods-HiveTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Hive.app/Contents/MacOS/Hive";
 				CLANG_WARN_BOOL_CONVERSION = YES;
@@ -5714,7 +5692,6 @@
 		};
 		D9A591E51767B4A800502635 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = BB42D9F40183087DCC69743B /* Pods.debug.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				COMBINE_HIDPI_IMAGES = YES;
@@ -5733,7 +5710,6 @@
 		};
 		D9A591E61767B4A800502635 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 404373D60E6AE32EBA7E3C75 /* Pods.release.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "Developer ID Application";
 				COMBINE_HIDPI_IMAGES = YES;
