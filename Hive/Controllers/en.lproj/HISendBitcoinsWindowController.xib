@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="6751" systemVersion="14C2513" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="9532" systemVersion="14F1605" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
         <deployment identifier="macosx"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="6751"/>
+        <development version="6300" identifier="xcode"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="9532"/>
     </dependencies>
     <objects>
         <customObject id="-2" userLabel="File's Owner" customClass="HISendBitcoinsWindowController">
@@ -156,6 +157,7 @@ Gw
                                 <box autoresizesSubviews="NO" title="Box" boxType="custom" borderType="line" translatesAutoresizingMaskIntoConstraints="NO" id="23" userLabel="separator 1">
                                     <rect key="frame" x="-1" y="231" width="401" height="1"/>
                                     <view key="contentView">
+                                        <rect key="frame" x="1" y="1" width="399" height="0.0"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     </view>
                                     <constraints>
@@ -213,6 +215,7 @@ Gw
                                 <box autoresizesSubviews="NO" title="Box" boxType="custom" borderType="line" translatesAutoresizingMaskIntoConstraints="NO" id="yli-1Y-1Bz" userLabel="separator 2">
                                     <rect key="frame" x="-1" y="108" width="401" height="1"/>
                                     <view key="contentView">
+                                        <rect key="frame" x="1" y="1" width="399" height="0.0"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     </view>
                                     <constraints>
@@ -263,6 +266,7 @@ Gw
                                 <box autoresizesSubviews="NO" title="Box" boxType="custom" borderType="line" translatesAutoresizingMaskIntoConstraints="NO" id="Uma-46-IZW" userLabel="separator 3">
                                     <rect key="frame" x="-1" y="41" width="401" height="1"/>
                                     <view key="contentView">
+                                        <rect key="frame" x="1" y="1" width="399" height="0.0"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     </view>
                                     <constraints>
@@ -359,6 +363,7 @@ Gw
                             <constraint firstAttribute="trailing" secondItem="Uma-46-IZW" secondAttribute="trailing" id="ALc-iV-4oe"/>
                             <constraint firstAttribute="trailing" secondItem="23" secondAttribute="trailing" id="ArZ-gD-OFX"/>
                             <constraint firstAttribute="trailing" secondItem="fQu-xK-vvV" secondAttribute="trailing" constant="5" id="BBU-1Y-B5O"/>
+                            <constraint firstItem="u5l-cR-nXn" firstAttribute="top" secondItem="yli-1Y-1Bz" secondAttribute="bottom" constant="7" id="BDS-bg-vxf"/>
                             <constraint firstAttribute="bottom" secondItem="l47-zx-4mb" secondAttribute="bottom" constant="12" id="BOQ-Bu-fJ1"/>
                             <constraint firstItem="7BV-3k-SAc" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="6zj-3w-Hqs" secondAttribute="trailing" constant="8" symbolic="YES" id="Bks-AN-Z6L"/>
                             <constraint firstItem="l47-zx-4mb" firstAttribute="top" secondItem="Uma-46-IZW" secondAttribute="bottom" constant="12" id="Brg-eg-7Bc"/>
@@ -393,6 +398,7 @@ Gw
                             <constraint firstItem="u5l-cR-nXn" firstAttribute="baseline" secondItem="36" secondAttribute="baseline" constant="-1" id="sAO-df-euR"/>
                             <constraint firstItem="19" firstAttribute="leading" secondItem="21" secondAttribute="leading" id="sc1-MY-6J3"/>
                             <constraint firstItem="19" firstAttribute="top" secondItem="11" secondAttribute="top" constant="18" id="ttp-a8-W68"/>
+                            <constraint firstItem="UWb-Mc-LiM" firstAttribute="top" secondItem="u5l-cR-nXn" secondAttribute="bottom" constant="12" id="ufe-rz-Qzc"/>
                             <constraint firstItem="51" firstAttribute="leading" secondItem="19" secondAttribute="trailing" id="w3B-kL-td1"/>
                             <constraint firstItem="yli-1Y-1Bz" firstAttribute="leading" secondItem="11" secondAttribute="leading" id="wU3-lG-VwX"/>
                             <constraint firstItem="BS3-Hu-S5U" firstAttribute="leading" secondItem="l47-zx-4mb" secondAttribute="trailing" constant="10" id="wj6-dg-B88"/>
@@ -447,7 +453,7 @@ Gw
             <rect key="frame" x="0.0" y="0.0" width="343" height="92"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
             <subviews>
-                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="tct-Xp-d6b">
+                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" preferredMaxLayoutWidth="319" translatesAutoresizingMaskIntoConstraints="NO" id="tct-Xp-d6b">
                     <rect key="frame" x="10" y="12" width="323" height="68"/>
                     <textFieldCell key="cell" selectable="YES" sendsActionOnEndEditing="YES" id="dxM-9E-wwb">
                         <font key="font" metaFont="system"/>
@@ -486,7 +492,7 @@ Gw
                             <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                         </textFieldCell>
                     </textField>
-                    <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="TzX-tz-eVL">
+                    <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" preferredMaxLayoutWidth="301" translatesAutoresizingMaskIntoConstraints="NO" id="TzX-tz-eVL">
                         <rect key="frame" x="43" y="15" width="305" height="17"/>
                         <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="center" title="&lt;It's a trap!&gt;" id="tH6-pe-MMb">
                             <font key="font" metaFont="system"/>

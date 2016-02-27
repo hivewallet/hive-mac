@@ -32,11 +32,12 @@
                     <textField horizontalHuggingPriority="251" verticalHuggingPriority="1000" preferredMaxLayoutWidth="490" translatesAutoresizingMaskIntoConstraints="NO" id="wZF-CY-E5t">
                         <rect key="frame" x="18" y="125" width="494" height="360"/>
                         <constraints>
+                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="360" id="1gS-Ga-Zht"/>
                             <constraint firstAttribute="width" constant="490" id="rt4-rB-75C"/>
                         </constraints>
                         <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="left" allowsEditingTextAttributes="YES" id="Vny-HI-QoB">
                             <font key="font" size="14" name=".HelveticaNeueDeskInterface-Regular"/>
-                            <mutableString key="title">We've got bad news: unfortunately, Hive is no longer being maintained. This means there will be no further updates with new features or bug fixes.
+                            <string key="title">We've got bad news: unfortunately, Hive is no longer being maintained. This means there will be no further updates with new features or bug fixes.
 
 Due to its architecture (SPV wallet), the app doesn't rely on any servers apart from the Bitcoin network nodes, so it will continue to work for now without any need for maintenance. It will however stop working at some point in the future, e.g. because of a new OS X release or a Bitcoin protocol change.
 
@@ -46,7 +47,7 @@ For that reason, it's recommended that you switch to a different wallet app and 
 
 2) Simply make one transaction that transfers all the funds to a new address in another wallet. We recommend e.g. Electrum, Breadwallet, Multibit HD, BitGo or Coinkite.
 
-You can find more information in the Hive Mac FAQ.</mutableString>
+You can find more information in the Hive Mac FAQ.</string>
                             <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                             <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                         </textFieldCell>
