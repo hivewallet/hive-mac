@@ -5,10 +5,17 @@ Hive is a user-friendly Bitcoin wallet app for OSX.
 ![](http://i.imgur.com/p5VoeND.png)
 
 
+## Status
+
+Hive development has stopped and it's not being maintained anymore. There are no plans for any further updates or bug fixes.
+
+The app still works in the current state, because it doesn't rely on any server-side components managed by Hive, but it might stop working after a breaking change in the Bitcoin protocol, and it will almost certainly stop working on the next version of OS X which drops support for old Java. It's recommended that you migrate your funds to a different wallet.
+
+
 ## Requirements
 
-* OSX 10.7 (Lion) or newer
-* Java runtime (for now - required by bitcoinj lib)
+* OSX 10.7 (Lion) or newer, up to 10.11 (10.12 will not be supported)
+* [Apple Java runtime](https://support.apple.com/kb/DL1572)
 
 
 ## Building
