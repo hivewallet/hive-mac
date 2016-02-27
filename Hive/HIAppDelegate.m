@@ -22,7 +22,6 @@
 #import "HIBackupManager.h"
 #import "HIBitcoinURIService.h"
 #import "HICameraWindowController.h"
-#import "HICrowdfundingWindowController.h"
 #import "HIDatabaseManager.h"
 #import "HIDebuggingInfoWindowController.h"
 #import "HIDebuggingToolsWindowController.h"
@@ -41,6 +40,7 @@
 #import "HISendBitcoinsWindowController.h"
 #import "HISendFeedbackService.h"
 #import "HIShortcutService.h"
+#import "HIShutdownAnnouncementWindowController.h"
 #import "HISignMessageWindowController.h"
 #import "HITransaction.h"
 #import "HITransactionsViewController.h"
@@ -293,7 +293,7 @@ static int ddLogLevel = LOG_LEVEL_VERBOSE;
             [self nagUnprotectedUsers];
             [self initializeBackups];
             [[HINotificationService sharedService] checkIfBackupsEnabled];
-            [self showCrowdfundingAnnouncement];
+            [self showShutdownAnnouncement];
             [self finishInitialization];
         });
     }
@@ -373,15 +373,15 @@ static int ddLogLevel = LOG_LEVEL_VERBOSE;
     exit(1);
 }
 
-- (void)showCrowdfundingAnnouncement {
+- (void)showShutdownAnnouncement {
     if (_announcementShown) {
         // don't spam the user too much at once
         return;
     }
 
-    if (![[NSUserDefaults standardUserDefaults] boolForKey:CrowdfundingAnnouncementDisplayedKey]) {
+    if (![[NSUserDefaults standardUserDefaults] boolForKey:ShutdownAnnouncementDisplayedKey]) {
         _announcementShown = YES;
-        [self openPopupWindowWithClass:[HICrowdfundingWindowController class]];
+        [self openPopupWindowWithClass:[HIShutdownAnnouncementWindowController class]];
     }
 }
 

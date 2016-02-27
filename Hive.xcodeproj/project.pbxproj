@@ -144,8 +144,8 @@
 		58605A5E18041D0A00FD9C2A /* icon-your-profile__inactive.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 58605A3F18041D0A00FD9C2A /* icon-your-profile__inactive.pdf */; };
 		5864AFD619C210590097FCE6 /* Hive.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 5864AFC719C210590097FCE6 /* Hive.xcdatamodeld */; };
 		586905961843DE5C0053D74F /* HIDebuggingToolsWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 586905941843DE5C0053D74F /* HIDebuggingToolsWindowController.m */; };
-		586C655C1A091C2D008AFFDF /* HICrowdfundingWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 586C655A1A091C2D008AFFDF /* HICrowdfundingWindowController.m */; };
-		586C655D1A091C2D008AFFDF /* HICrowdfundingWindowController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 586C655B1A091C2D008AFFDF /* HICrowdfundingWindowController.xib */; };
+		586C655C1A091C2D008AFFDF /* HIShutdownAnnouncementWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 586C655A1A091C2D008AFFDF /* HIShutdownAnnouncementWindowController.m */; };
+		586C655D1A091C2D008AFFDF /* HIShutdownAnnouncementWindowController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 586C655B1A091C2D008AFFDF /* HIShutdownAnnouncementWindowController.xib */; };
 		58745B7819FE8C0C0000BEF6 /* HIExportPrivateKeyWindowController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 58745B7A19FE8C0C0000BEF6 /* HIExportPrivateKeyWindowController.xib */; };
 		58745B9D19FE8CD20000BEF6 /* HIExportPrivateKeyWindowController.strings in Resources */ = {isa = PBXBuildFile; fileRef = 58745B9F19FE8CD20000BEF6 /* HIExportPrivateKeyWindowController.strings */; };
 		588427D018F2DF6600DE6CC4 /* bitcoinkit.checkpoints in Resources */ = {isa = PBXBuildFile; fileRef = 588427CF18F2DF6600DE6CC4 /* bitcoinkit.checkpoints */; };
@@ -1068,9 +1068,9 @@
 		586905FA18450BDC0053D74F /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/MainMenu.strings; sourceTree = "<group>"; };
 		586905FB18450BDC0053D74F /* ja */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = ja; path = ja.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		586905FD18450BDC0053D74F /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Localizable.strings; sourceTree = "<group>"; };
-		586C65591A091C2D008AFFDF /* HICrowdfundingWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HICrowdfundingWindowController.h; sourceTree = "<group>"; };
-		586C655A1A091C2D008AFFDF /* HICrowdfundingWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HICrowdfundingWindowController.m; sourceTree = "<group>"; };
-		586C655B1A091C2D008AFFDF /* HICrowdfundingWindowController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HICrowdfundingWindowController.xib; sourceTree = "<group>"; };
+		586C65591A091C2D008AFFDF /* HIShutdownAnnouncementWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HIShutdownAnnouncementWindowController.h; sourceTree = "<group>"; };
+		586C655A1A091C2D008AFFDF /* HIShutdownAnnouncementWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HIShutdownAnnouncementWindowController.m; sourceTree = "<group>"; };
+		586C655B1A091C2D008AFFDF /* HIShutdownAnnouncementWindowController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HIShutdownAnnouncementWindowController.xib; sourceTree = "<group>"; };
 		58745B7919FE8C0C0000BEF6 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/HIExportPrivateKeyWindowController.xib; sourceTree = "<group>"; };
 		58745B7B19FE8C160000BEF6 /* pl */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = pl; path = pl.lproj/HIExportPrivateKeyWindowController.xib; sourceTree = "<group>"; };
 		58745B7C19FE8C170000BEF6 /* it */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = it; path = it.lproj/HIExportPrivateKeyWindowController.xib; sourceTree = "<group>"; };
@@ -2616,14 +2616,14 @@
 			name = HIDebuggingToolsWindowController;
 			sourceTree = "<group>";
 		};
-		586C65581A091BF9008AFFDF /* HICrowdfundingWindowController */ = {
+		586C65581A091BF9008AFFDF /* HIShutdownAnnouncementWindowController */ = {
 			isa = PBXGroup;
 			children = (
-				586C65591A091C2D008AFFDF /* HICrowdfundingWindowController.h */,
-				586C655A1A091C2D008AFFDF /* HICrowdfundingWindowController.m */,
-				586C655B1A091C2D008AFFDF /* HICrowdfundingWindowController.xib */,
+				586C65591A091C2D008AFFDF /* HIShutdownAnnouncementWindowController.h */,
+				586C655A1A091C2D008AFFDF /* HIShutdownAnnouncementWindowController.m */,
+				586C655B1A091C2D008AFFDF /* HIShutdownAnnouncementWindowController.xib */,
 			);
-			name = HICrowdfundingWindowController;
+			name = HIShutdownAnnouncementWindowController;
 			sourceTree = "<group>";
 		};
 		588E34D0181FF28C006A6A25 /* HIDebuggingInfoWindowController */ = {
@@ -2959,7 +2959,7 @@
 				24E2C7C4189D93EB008E17CC /* HICameraWindowController */,
 				D948158417CE1BD4006A0312 /* HIContactsViewController */,
 				581711D917D0FD8F00DE775A /* HIContactViewController */,
-				586C65581A091BF9008AFFDF /* HICrowdfundingWindowController */,
+				586C65581A091BF9008AFFDF /* HIShutdownAnnouncementWindowController */,
 				588E34D0181FF28C006A6A25 /* HIDebuggingInfoWindowController */,
 				586905891843DE0C0053D74F /* HIDebuggingToolsWindowController */,
 				588E354718212B79006A6A25 /* HIErrorWindowController */,
@@ -3209,7 +3209,7 @@
 				585712781890267E0094F884 /* HIWizardBackupViewController.xib in Resources */,
 				58AE8CC9192CCF1200946C97 /* HIGeneralPreferencesViewController.strings in Resources */,
 				58605A4518041D0A00FD9C2A /* icon-bitcoin.pdf in Resources */,
-				586C655D1A091C2D008AFFDF /* HICrowdfundingWindowController.xib in Resources */,
+				586C655D1A091C2D008AFFDF /* HIShutdownAnnouncementWindowController.xib in Resources */,
 				58605A4618041D0A00FD9C2A /* icon-delete.pdf in Resources */,
 				58AE8CBB19226AF900946C97 /* icon-success.png in Resources */,
 				585712B618902CD70094F884 /* HIWizardCompletedViewController.xib in Resources */,
@@ -3489,7 +3489,7 @@
 				1AA10E305C91DC42C81D0DC3 /* HIAddressesBox.m in Sources */,
 				58A48FE41A39ED1200ABD9F8 /* HILogFileManager.m in Sources */,
 				1AA10A26CEBC9FDF10C919A8 /* HIEmptyTransactionsView.m in Sources */,
-				586C655C1A091C2D008AFFDF /* HICrowdfundingWindowController.m in Sources */,
+				586C655C1A091C2D008AFFDF /* HIShutdownAnnouncementWindowController.m in Sources */,
 				1AA10D8123CFE9FDA6CFFEA0 /* HISendFeedbackService.m in Sources */,
 				1AA100EA733AE3603014D604 /* HIBitcoinURIService.m in Sources */,
 				1AA10F7BD079E23BAB09D4E1 /* HIPreferencesWindowController.m in Sources */,

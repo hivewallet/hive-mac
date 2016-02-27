@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="9532" systemVersion="14F1605" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
+    <dependencies>
+        <deployment identifier="macosx"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="9532"/>
+    </dependencies>
+    <objects>
+        <customObject id="-2" userLabel="File's Owner" customClass="HIShutdownAnnouncementWindowController">
+            <connections>
+                <outlet property="textBox" destination="wZF-CY-E5t" id="jTn-4G-D3C"/>
+                <outlet property="window" destination="F0z-JX-Cv5" id="gIp-Ho-8D9"/>
+            </connections>
+        </customObject>
+        <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
+        <customObject id="-3" userLabel="Application" customClass="NSObject"/>
+        <window title="Hive Announcement" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" restorable="NO" oneShot="NO" releasedWhenClosed="NO" frameAutosaveName="HiveWebWindow" animationBehavior="default" id="F0z-JX-Cv5">
+            <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES"/>
+            <rect key="contentRect" x="0.0" y="0.0" width="530" height="559"/>
+            <rect key="screenRect" x="0.0" y="0.0" width="1440" height="877"/>
+            <view key="contentView" id="se5-gp-TjO">
+                <rect key="frame" x="0.0" y="0.0" width="530" height="559"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="fTK-xt-92N">
+                        <rect key="frame" x="18" y="515" width="494" height="24"/>
+                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="⚠️ Important Announcement" id="k0W-Qf-wyi">
+                            <font key="font" metaFont="system" size="20"/>
+                            <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                        </textFieldCell>
+                    </textField>
+                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="1000" preferredMaxLayoutWidth="490" translatesAutoresizingMaskIntoConstraints="NO" id="wZF-CY-E5t">
+                        <rect key="frame" x="18" y="125" width="494" height="360"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="490" id="rt4-rB-75C"/>
+                        </constraints>
+                        <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="left" allowsEditingTextAttributes="YES" id="Vny-HI-QoB">
+                            <font key="font" size="14" name=".HelveticaNeueDeskInterface-Regular"/>
+                            <mutableString key="title">We've got bad news: unfortunately, Hive is no longer being maintained. This means there will be no further updates with new features or bug fixes.
+
+Due to its architecture (SPV wallet), the app doesn't rely on any servers apart from the Bitcoin network nodes, so it will continue to work for now without any need for maintenance. It will however stop working at some point in the future, e.g. because of a new OS X release or a Bitcoin protocol change.
+
+For that reason, it's recommended that you switch to a different wallet app and move your funds there. There are two ways to do this:
+
+1) Export the private key to a file (Wallet &gt; Export Private Key) and import it to a wallet that supports this (e.g. Electrum, Bitcoin Core).
+
+2) Simply make one transaction that transfers all the funds to a new address in another wallet. We recommend e.g. Electrum, Breadwallet, Multibit HD, BitGo or Coinkite.
+
+You can find more information in the Hive Mac FAQ.</mutableString>
+                            <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                        </textFieldCell>
+                    </textField>
+                    <button translatesAutoresizingMaskIntoConstraints="NO" id="eS7-SV-bXg">
+                        <rect key="frame" x="203" y="69" width="125" height="18"/>
+                        <buttonCell key="cell" type="check" title="Ok, I understand" bezelStyle="regularSquare" imagePosition="left" inset="2" id="opa-gl-dgK">
+                            <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                            <font key="font" metaFont="system"/>
+                        </buttonCell>
+                        <connections>
+                            <binding destination="-2" name="value" keyPath="messageAcknowledged" id="f8g-vv-Gwf"/>
+                        </connections>
+                    </button>
+                    <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="4aF-v9-ANr">
+                        <rect key="frame" x="202" y="13" width="127" height="32"/>
+                        <buttonCell key="cell" type="push" title="Close window" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="isa-jw-2P0">
+                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                            <font key="font" metaFont="system"/>
+                            <string key="keyEquivalent" base64-UTF8="YES">
+DQ
+</string>
+                        </buttonCell>
+                        <connections>
+                            <action selector="okPressed:" target="-2" id="KfC-oJ-oea"/>
+                            <binding destination="-2" name="enabled" keyPath="messageAcknowledged" id="dle-Jo-wQr"/>
+                        </connections>
+                    </button>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="bottom" secondItem="4aF-v9-ANr" secondAttribute="bottom" constant="20" id="4xY-cb-1M1"/>
+                    <constraint firstItem="eS7-SV-bXg" firstAttribute="centerX" secondItem="se5-gp-TjO" secondAttribute="centerX" id="D1o-lt-jEO"/>
+                    <constraint firstItem="wZF-CY-E5t" firstAttribute="top" secondItem="fTK-xt-92N" secondAttribute="bottom" constant="30" id="Mke-hx-JoM"/>
+                    <constraint firstAttribute="trailing" secondItem="wZF-CY-E5t" secondAttribute="trailing" constant="20" symbolic="YES" id="b4g-KV-i9T"/>
+                    <constraint firstItem="fTK-xt-92N" firstAttribute="top" secondItem="se5-gp-TjO" secondAttribute="top" constant="20" symbolic="YES" id="fiV-Ki-qjp"/>
+                    <constraint firstItem="wZF-CY-E5t" firstAttribute="leading" secondItem="se5-gp-TjO" secondAttribute="leading" constant="20" symbolic="YES" id="j5o-8l-soG"/>
+                    <constraint firstItem="4aF-v9-ANr" firstAttribute="top" secondItem="eS7-SV-bXg" secondAttribute="bottom" constant="30" id="kfO-W4-DKy"/>
+                    <constraint firstItem="eS7-SV-bXg" firstAttribute="top" secondItem="wZF-CY-E5t" secondAttribute="bottom" constant="40" id="mIC-jO-yee"/>
+                    <constraint firstAttribute="trailing" secondItem="fTK-xt-92N" secondAttribute="trailing" constant="20" symbolic="YES" id="pEf-En-7CT"/>
+                    <constraint firstItem="fTK-xt-92N" firstAttribute="leading" secondItem="se5-gp-TjO" secondAttribute="leading" constant="20" symbolic="YES" id="qLB-Ir-YYP"/>
+                    <constraint firstItem="4aF-v9-ANr" firstAttribute="centerX" secondItem="se5-gp-TjO" secondAttribute="centerX" id="zzX-yf-YhY"/>
+                </constraints>
+            </view>
+            <connections>
+                <outlet property="delegate" destination="-2" id="0bl-1N-AYu"/>
+            </connections>
+            <point key="canvasLocation" x="362" y="258.5"/>
+        </window>
+        <userDefaultsController representsSharedInstance="YES" id="Bpn-bx-hcX"/>
+    </objects>
+</document>
