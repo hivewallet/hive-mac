@@ -9,7 +9,7 @@
         <language>en</language>
 
         <item>
-            <title>Hive 1.4.2</title>
+            <title>Hive 1.5</title>
             <description>
                 <![CDATA[
                     <style type="text/css">
@@ -21,24 +21,20 @@
                     <h2>What's changed:</h2>
 
                     <ul>
-                    <li>added a one-time popup about the Hive 2.0 crowdfunding</li>
-                    <li>added sending anonymous system stats to developers (if you agree)</li>
-                    <li>fixed some problems with entering fiat currency amounts</li>
-                    <li>fiat currency list is updated automatically based on what is supported by BitcoinAverage</li>
-                    <li>added "Other Hive Products" link in the Hive menu</li>
-                    <li>updated links in the About dialog - now linking to the new site (mac.hivewallet.com) and new Twitter profile (@hive_mac)</li>
-                    <li>minor fixes and improvements</li>
+                    <li>added an announcement that Hive is not maintained anymore</li>
+                    <li>added available balance display to send window</li>
+                    <li>removed applications tab</li>
+                    <li>minor fixes</li>
                     </ul>
                 ]]>
             </description>
-            <pubDate>Fri, 06 Mar 2015 12:23:53 -0000</pubDate>
+            <pubDate>Tue, 01 Mar 2016 22:48:53 -0000</pubDate>
             <enclosure
-            url="https://github.com/hivewallet/hive-mac/releases/download/1.4.2/Hive-1.4.2s.zip"
-            sparkle:version="2015030601"
-            sparkle:shortVersionString="1.4.2"
-            length="20127646"
+            url="https://github.com/hivewallet/hive-mac/releases/download/1.5/Hive-1.5.zip"
+            sparkle:version="2016022705"
+            sparkle:shortVersionString="1.5"
+            length="16318700"
             type="application/octet-stream" />
         </item>
-
     </channel>
 </rss>
