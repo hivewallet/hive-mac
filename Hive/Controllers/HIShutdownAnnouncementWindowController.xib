@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="9532" systemVersion="14F1605" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="9532" systemVersion="14F1713" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
         <deployment identifier="macosx"/>
         <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="9532"/>
@@ -37,7 +37,7 @@
                         </constraints>
                         <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="left" allowsEditingTextAttributes="YES" id="Vny-HI-QoB">
                             <font key="font" size="14" name=".HelveticaNeueDeskInterface-Regular"/>
-                            <string key="title">We've got bad news: unfortunately, Hive is no longer being maintained. This means there will be no further updates with new features or bug fixes.
+                            <mutableString key="title">We've got bad news: unfortunately, Hive is no longer being maintained. This means there will be no further updates with new features or bug fixes.
 
 Due to its architecture (SPV wallet), the app doesn't rely on any servers apart from the Bitcoin network nodes, so it will continue to work for now without any need for maintenance. It will however stop working at some point in the future, e.g. because of a new OS X release or a Bitcoin protocol change.
 
@@ -45,9 +45,9 @@ For that reason, it's recommended that you switch to a different wallet app and 
 
 1) Export the private key to a file (Wallet &gt; Export Private Key) and import it to a wallet that supports this (e.g. Electrum, Bitcoin Core).
 
-2) Simply make one transaction that transfers all the funds to a new address in another wallet. We recommend e.g. Electrum, Breadwallet, Multibit HD, BitGo or Coinkite.
+2) Simply make one transaction that transfers all the funds to a new address in another wallet. We recommend e.g. Electrum, Breadwallet, Multibit HD, BitGo or Mycelium.
 
-You can find more information in the Hive Mac FAQ.</string>
+You can find more information in the Hive Mac FAQ.</mutableString>
                             <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                             <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                         </textFieldCell>

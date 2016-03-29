@@ -62,8 +62,8 @@ NSString * const ShutdownAnnouncementDisplayedKey = @"ShutdownAnnouncementDispla
                       URL:@"https://www.bitgo.com"];
 
     [self addLinkToString:string
-   forOccurrencesOfString:@"Coinkite"
-                      URL:@"https://coinkite.com"];
+   forOccurrencesOfString:@"Mycelium"
+                      URL:@"https://mycelium.com"];
 
     self.textBox.attributedStringValue = string;
     self.textBox.allowsEditingTextAttributes = YES;
