@@ -31,9 +31,9 @@
             <pubDate>Tue, 01 Mar 2016 22:48:53 -0000</pubDate>
             <enclosure
             url="https://github.com/hivewallet/hive-mac/releases/download/1.5/Hive-1.5.zip"
-            sparkle:version="2016022705"
+            sparkle:version="2016033001"
             sparkle:shortVersionString="1.5"
-            length="16318700"
+            length="16318705"
             type="application/octet-stream" />
         </item>
     </channel>
